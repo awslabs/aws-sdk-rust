@@ -2,22 +2,15 @@
 
 /// <p>The user is not authorized to perform this request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotAuthorizedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for NotAuthorizedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotAuthorizedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl NotAuthorizedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -25,7 +18,9 @@ impl std::fmt::Display for NotAuthorizedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NotAuthorizedException")?;
         if let Some(inner_1) = &self.message {
-            write!(f, ": {}", inner_1)?;
+            {
+                write!(f, ": {}", inner_1)?;
+            }
         }
         Ok(())
     }
@@ -35,7 +30,7 @@ impl std::error::Error for NotAuthorizedException {}
 pub mod not_authorized_exception {
 
     /// A builder for [`NotAuthorizedException`](crate::error::NotAuthorizedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -67,22 +62,15 @@ impl NotAuthorizedException {
 
 /// <p>One of the arguments provided is invalid for this request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidArgumentException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidArgumentException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidArgumentException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidArgumentException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -90,7 +78,9 @@ impl std::fmt::Display for InvalidArgumentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidArgumentException")?;
         if let Some(inner_2) = &self.message {
-            write!(f, ": {}", inner_2)?;
+            {
+                write!(f, ": {}", inner_2)?;
+            }
         }
         Ok(())
     }
@@ -100,7 +90,7 @@ impl std::error::Error for InvalidArgumentException {}
 pub mod invalid_argument_exception {
 
     /// A builder for [`InvalidArgumentException`](crate::error::InvalidArgumentException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -132,22 +122,15 @@ impl InvalidArgumentException {
 
 /// <p>The request failed due to an unknown error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalServiceError {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InternalServiceError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServiceError");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InternalServiceError {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -155,7 +138,9 @@ impl std::fmt::Display for InternalServiceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServiceError")?;
         if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+            {
+                write!(f, ": {}", inner_3)?;
+            }
         }
         Ok(())
     }
@@ -165,7 +150,7 @@ impl std::error::Error for InternalServiceError {}
 pub mod internal_service_error {
 
     /// A builder for [`InternalServiceError`](crate::error::InternalServiceError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -204,6 +189,14 @@ pub struct DescribeDimensionKeysError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDimensionKeysError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDimensionKeysErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeDimensionKeys` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -214,8 +207,15 @@ pub enum DescribeDimensionKeysErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The user is not authorized to perform this request.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDimensionKeysError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -244,7 +244,9 @@ impl DescribeDimensionKeysError {
     /// Creates the `DescribeDimensionKeysError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDimensionKeysErrorKind::Unhandled(err.into()),
+            kind: DescribeDimensionKeysErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -253,7 +255,9 @@ impl DescribeDimensionKeysError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDimensionKeysErrorKind::Unhandled(err.into()),
+            kind: DescribeDimensionKeysErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -305,7 +309,7 @@ impl std::error::Error for DescribeDimensionKeysError {
             DescribeDimensionKeysErrorKind::InternalServiceError(_inner) => Some(_inner),
             DescribeDimensionKeysErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             DescribeDimensionKeysErrorKind::NotAuthorizedException(_inner) => Some(_inner),
-            DescribeDimensionKeysErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeDimensionKeysErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -319,6 +323,14 @@ pub struct GetDimensionKeyDetailsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetDimensionKeyDetailsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetDimensionKeyDetailsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetDimensionKeyDetails` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -329,8 +341,15 @@ pub enum GetDimensionKeyDetailsErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The user is not authorized to perform this request.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDimensionKeyDetailsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -359,7 +378,9 @@ impl GetDimensionKeyDetailsError {
     /// Creates the `GetDimensionKeyDetailsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDimensionKeyDetailsErrorKind::Unhandled(err.into()),
+            kind: GetDimensionKeyDetailsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -368,7 +389,9 @@ impl GetDimensionKeyDetailsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDimensionKeyDetailsErrorKind::Unhandled(err.into()),
+            kind: GetDimensionKeyDetailsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -420,7 +443,7 @@ impl std::error::Error for GetDimensionKeyDetailsError {
             GetDimensionKeyDetailsErrorKind::InternalServiceError(_inner) => Some(_inner),
             GetDimensionKeyDetailsErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             GetDimensionKeyDetailsErrorKind::NotAuthorizedException(_inner) => Some(_inner),
-            GetDimensionKeyDetailsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDimensionKeyDetailsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -434,6 +457,14 @@ pub struct GetResourceMetadataError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetResourceMetadataError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetResourceMetadataErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetResourceMetadata` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -444,8 +475,15 @@ pub enum GetResourceMetadataErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The user is not authorized to perform this request.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetResourceMetadataError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -474,7 +512,7 @@ impl GetResourceMetadataError {
     /// Creates the `GetResourceMetadataError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetResourceMetadataErrorKind::Unhandled(err.into()),
+            kind: GetResourceMetadataErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -483,7 +521,7 @@ impl GetResourceMetadataError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetResourceMetadataErrorKind::Unhandled(err.into()),
+            kind: GetResourceMetadataErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -535,7 +573,7 @@ impl std::error::Error for GetResourceMetadataError {
             GetResourceMetadataErrorKind::InternalServiceError(_inner) => Some(_inner),
             GetResourceMetadataErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             GetResourceMetadataErrorKind::NotAuthorizedException(_inner) => Some(_inner),
-            GetResourceMetadataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetResourceMetadataErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -549,6 +587,14 @@ pub struct GetResourceMetricsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetResourceMetricsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetResourceMetricsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetResourceMetrics` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -559,8 +605,15 @@ pub enum GetResourceMetricsErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The user is not authorized to perform this request.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetResourceMetricsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -589,7 +642,7 @@ impl GetResourceMetricsError {
     /// Creates the `GetResourceMetricsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetResourceMetricsErrorKind::Unhandled(err.into()),
+            kind: GetResourceMetricsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -598,7 +651,7 @@ impl GetResourceMetricsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetResourceMetricsErrorKind::Unhandled(err.into()),
+            kind: GetResourceMetricsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -650,7 +703,7 @@ impl std::error::Error for GetResourceMetricsError {
             GetResourceMetricsErrorKind::InternalServiceError(_inner) => Some(_inner),
             GetResourceMetricsErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             GetResourceMetricsErrorKind::NotAuthorizedException(_inner) => Some(_inner),
-            GetResourceMetricsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetResourceMetricsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -664,6 +717,16 @@ pub struct ListAvailableResourceDimensionsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListAvailableResourceDimensionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListAvailableResourceDimensionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListAvailableResourceDimensions` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -674,8 +737,15 @@ pub enum ListAvailableResourceDimensionsErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The user is not authorized to perform this request.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAvailableResourceDimensionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -711,7 +781,9 @@ impl ListAvailableResourceDimensionsError {
     /// Creates the `ListAvailableResourceDimensionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAvailableResourceDimensionsErrorKind::Unhandled(err.into()),
+            kind: ListAvailableResourceDimensionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -720,7 +792,9 @@ impl ListAvailableResourceDimensionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAvailableResourceDimensionsErrorKind::Unhandled(err.into()),
+            kind: ListAvailableResourceDimensionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -776,7 +850,7 @@ impl std::error::Error for ListAvailableResourceDimensionsError {
             ListAvailableResourceDimensionsErrorKind::NotAuthorizedException(_inner) => {
                 Some(_inner)
             }
-            ListAvailableResourceDimensionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAvailableResourceDimensionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -790,6 +864,16 @@ pub struct ListAvailableResourceMetricsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListAvailableResourceMetricsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListAvailableResourceMetricsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListAvailableResourceMetrics` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -800,8 +884,15 @@ pub enum ListAvailableResourceMetricsErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The user is not authorized to perform this request.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAvailableResourceMetricsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -832,7 +923,9 @@ impl ListAvailableResourceMetricsError {
     /// Creates the `ListAvailableResourceMetricsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAvailableResourceMetricsErrorKind::Unhandled(err.into()),
+            kind: ListAvailableResourceMetricsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -841,7 +934,9 @@ impl ListAvailableResourceMetricsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAvailableResourceMetricsErrorKind::Unhandled(err.into()),
+            kind: ListAvailableResourceMetricsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -893,7 +988,35 @@ impl std::error::Error for ListAvailableResourceMetricsError {
             ListAvailableResourceMetricsErrorKind::InternalServiceError(_inner) => Some(_inner),
             ListAvailableResourceMetricsErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             ListAvailableResourceMetricsErrorKind::NotAuthorizedException(_inner) => Some(_inner),
-            ListAvailableResourceMetricsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAvailableResourceMetricsErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+///
+/// When logging an error from the SDK, it is recommended that you either wrap the error in
+/// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+/// error reporter library that visits the error's cause/source chain, or call
+/// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

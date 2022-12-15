@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod associate_external_connection_input {
 
     /// A builder for [`AssociateExternalConnectionInput`](crate::input::AssociateExternalConnectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -77,7 +77,7 @@ pub mod associate_external_connection_input {
             self,
         ) -> Result<
             crate::input::AssociateExternalConnectionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::AssociateExternalConnectionInput {
                 domain: self.domain,
@@ -101,13 +101,13 @@ impl AssociateExternalConnectionInput {
             crate::operation::AssociateExternalConnection,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AssociateExternalConnectionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/repository/external-connection")
                     .expect("formatting should succeed");
                 Ok(())
@@ -115,34 +115,77 @@ impl AssociateExternalConnectionInput {
             fn uri_query(
                 _input: &crate::input::AssociateExternalConnectionInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_1) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_1));
+                let inner_1 = &_input.domain;
+                let inner_1 = inner_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_1.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_1));
                 if let Some(inner_2) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_2),
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_2),
+                        );
+                    }
+                }
+                let inner_3 = &_input.repository;
+                let inner_3 = inner_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "repository",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_3.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_3) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_3));
-                }
-                if let Some(inner_4) = &_input.external_connection {
-                    query.push_kv(
-                        "external-connection",
-                        &aws_smithy_http::query::fmt_string(&inner_4),
+                query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_3));
+                let inner_4 = &_input.external_connection;
+                let inner_4 = inner_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "external_connection",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_4.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "external_connection",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "external-connection",
+                    &aws_smithy_http::query::fmt_string(&inner_4),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::AssociateExternalConnectionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -213,7 +256,7 @@ impl AssociateExternalConnectionInput {
 pub mod copy_package_versions_input {
 
     /// A builder for [`CopyPackageVersionsInput`](crate::input::CopyPackageVersionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -394,8 +437,10 @@ pub mod copy_package_versions_input {
         /// Consumes the builder and constructs a [`CopyPackageVersionsInput`](crate::input::CopyPackageVersionsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CopyPackageVersionsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CopyPackageVersionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CopyPackageVersionsInput {
                 domain: self.domain,
                 domain_owner: self.domain_owner,
@@ -425,59 +470,122 @@ impl CopyPackageVersionsInput {
             crate::operation::CopyPackageVersions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CopyPackageVersionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/package/versions/copy").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::CopyPackageVersionsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_5) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_5));
+                let inner_5 = &_input.domain;
+                let inner_5 = inner_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_5.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_5));
                 if let Some(inner_6) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_6),
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_6),
+                        );
+                    }
+                }
+                let inner_7 = &_input.source_repository;
+                let inner_7 = inner_7.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "source_repository",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_7.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "source_repository",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_7) = &_input.source_repository {
-                    query.push_kv(
-                        "source-repository",
-                        &aws_smithy_http::query::fmt_string(&inner_7),
+                query.push_kv(
+                    "source-repository",
+                    &aws_smithy_http::query::fmt_string(&inner_7),
+                );
+                let inner_8 = &_input.destination_repository;
+                let inner_8 = inner_8.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "destination_repository",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_8.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "destination_repository",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_8) = &_input.destination_repository {
-                    query.push_kv(
-                        "destination-repository",
-                        &aws_smithy_http::query::fmt_string(&inner_8),
-                    );
-                }
-                if let Some(inner_9) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_9));
-                }
+                query.push_kv(
+                    "destination-repository",
+                    &aws_smithy_http::query::fmt_string(&inner_8),
+                );
+                let inner_9 = &_input.format;
+                let inner_9 = inner_9.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "format",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_9));
                 if let Some(inner_10) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_10));
+                    {
+                        query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_10));
+                    }
                 }
-                if let Some(inner_11) = &_input.package {
-                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_11));
+                let inner_11 = &_input.package;
+                let inner_11 = inner_11.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "package",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_11.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "package",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_11));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::CopyPackageVersionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -562,7 +670,7 @@ impl CopyPackageVersionsInput {
 pub mod create_domain_input {
 
     /// A builder for [`CreateDomainInput`](crate::input::CreateDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) encryption_key: std::option::Option<std::string::String>,
@@ -618,7 +726,7 @@ pub mod create_domain_input {
         /// Consumes the builder and constructs a [`CreateDomainInput`](crate::input::CreateDomainInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateDomainInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateDomainInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateDomainInput {
                 domain: self.domain,
@@ -641,32 +749,47 @@ impl CreateDomainInput {
             crate::operation::CreateDomain,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateDomainInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/domain").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::CreateDomainInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_12) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_12));
+                let inner_12 = &_input.domain;
+                let inner_12 = inner_12.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_12.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_12));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::CreateDomainInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -751,7 +874,7 @@ impl CreateDomainInput {
 pub mod create_repository_input {
 
     /// A builder for [`CreateRepositoryInput`](crate::input::CreateRepositoryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -842,8 +965,10 @@ pub mod create_repository_input {
         /// Consumes the builder and constructs a [`CreateRepositoryInput`](crate::input::CreateRepositoryInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateRepositoryInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateRepositoryInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateRepositoryInput {
                 domain: self.domain,
                 domain_owner: self.domain_owner,
@@ -868,41 +993,71 @@ impl CreateRepositoryInput {
             crate::operation::CreateRepository,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateRepositoryInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/repository").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::CreateRepositoryInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_13) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_13));
-                }
-                if let Some(inner_14) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_14),
+                let inner_13 = &_input.domain;
+                let inner_13 = inner_13.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_13.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_15) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_15));
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_13));
+                if let Some(inner_14) = &_input.domain_owner {
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_14),
+                        );
+                    }
                 }
+                let inner_15 = &_input.repository;
+                let inner_15 = inner_15.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "repository",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_15.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_15));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::CreateRepositoryInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -987,7 +1142,7 @@ impl CreateRepositoryInput {
 pub mod delete_domain_input {
 
     /// A builder for [`DeleteDomainInput`](crate::input::DeleteDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -1016,7 +1171,7 @@ pub mod delete_domain_input {
         /// Consumes the builder and constructs a [`DeleteDomainInput`](crate::input::DeleteDomainInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteDomainInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteDomainInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteDomainInput {
                 domain: self.domain,
@@ -1038,29 +1193,44 @@ impl DeleteDomainInput {
             crate::operation::DeleteDomain,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteDomainInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/domain").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::DeleteDomainInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_16) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_16));
-                }
-                if let Some(inner_17) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_17),
+                let inner_16 = &_input.domain;
+                let inner_16 = inner_16.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_16.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
                     );
+                }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_16));
+                if let Some(inner_17) = &_input.domain_owner {
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_17),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -1068,8 +1238,10 @@ impl DeleteDomainInput {
             fn update_http_builder(
                 input: &crate::input::DeleteDomainInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1140,7 +1312,7 @@ impl DeleteDomainInput {
 pub mod delete_domain_permissions_policy_input {
 
     /// A builder for [`DeleteDomainPermissionsPolicyInput`](crate::input::DeleteDomainPermissionsPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -1185,7 +1357,7 @@ pub mod delete_domain_permissions_policy_input {
             self,
         ) -> Result<
             crate::input::DeleteDomainPermissionsPolicyInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteDomainPermissionsPolicyInput {
                 domain: self.domain,
@@ -1208,35 +1380,52 @@ impl DeleteDomainPermissionsPolicyInput {
             crate::operation::DeleteDomainPermissionsPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteDomainPermissionsPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/domain/permissions/policy").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::DeleteDomainPermissionsPolicyInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_18) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_18));
-                }
-                if let Some(inner_19) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_19),
+                let inner_18 = &_input.domain;
+                let inner_18 = inner_18.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_18.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
                     );
+                }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_18));
+                if let Some(inner_19) = &_input.domain_owner {
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_19),
+                        );
+                    }
                 }
                 if let Some(inner_20) = &_input.policy_revision {
-                    query.push_kv(
-                        "policy-revision",
-                        &aws_smithy_http::query::fmt_string(&inner_20),
-                    );
+                    {
+                        query.push_kv(
+                            "policy-revision",
+                            &aws_smithy_http::query::fmt_string(&inner_20),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -1244,8 +1433,10 @@ impl DeleteDomainPermissionsPolicyInput {
             fn update_http_builder(
                 input: &crate::input::DeleteDomainPermissionsPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1316,7 +1507,7 @@ impl DeleteDomainPermissionsPolicyInput {
 pub mod delete_package_versions_input {
 
     /// A builder for [`DeletePackageVersionsInput`](crate::input::DeletePackageVersionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -1436,8 +1627,10 @@ pub mod delete_package_versions_input {
         /// Consumes the builder and constructs a [`DeletePackageVersionsInput`](crate::input::DeletePackageVersionsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeletePackageVersionsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeletePackageVersionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeletePackageVersionsInput {
                 domain: self.domain,
                 domain_owner: self.domain_owner,
@@ -1464,50 +1657,100 @@ impl DeletePackageVersionsInput {
             crate::operation::DeletePackageVersions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeletePackageVersionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/package/versions/delete").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::DeletePackageVersionsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_21) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_21));
-                }
-                if let Some(inner_22) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_22),
+                let inner_21 = &_input.domain;
+                let inner_21 = inner_21.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_21.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_23) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_23));
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_21));
+                if let Some(inner_22) = &_input.domain_owner {
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_22),
+                        );
+                    }
                 }
-                if let Some(inner_24) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_24));
+                let inner_23 = &_input.repository;
+                let inner_23 = inner_23.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "repository",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_23.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_23));
+                let inner_24 = &_input.format;
+                let inner_24 = inner_24.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "format",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_24));
                 if let Some(inner_25) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_25));
+                    {
+                        query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_25));
+                    }
                 }
-                if let Some(inner_26) = &_input.package {
-                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_26));
+                let inner_26 = &_input.package;
+                let inner_26 = inner_26.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "package",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_26.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "package",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_26));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::DeletePackageVersionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1594,7 +1837,7 @@ impl DeletePackageVersionsInput {
 pub mod delete_repository_input {
 
     /// A builder for [`DeleteRepositoryInput`](crate::input::DeleteRepositoryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -1634,8 +1877,10 @@ pub mod delete_repository_input {
         /// Consumes the builder and constructs a [`DeleteRepositoryInput`](crate::input::DeleteRepositoryInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteRepositoryInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteRepositoryInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteRepositoryInput {
                 domain: self.domain,
                 domain_owner: self.domain_owner,
@@ -1657,41 +1902,71 @@ impl DeleteRepositoryInput {
             crate::operation::DeleteRepository,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteRepositoryInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/repository").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::DeleteRepositoryInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_27) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_27));
-                }
-                if let Some(inner_28) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_28),
+                let inner_27 = &_input.domain;
+                let inner_27 = inner_27.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_27.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_29) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_29));
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_27));
+                if let Some(inner_28) = &_input.domain_owner {
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_28),
+                        );
+                    }
                 }
+                let inner_29 = &_input.repository;
+                let inner_29 = inner_29.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "repository",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_29.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_29));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::DeleteRepositoryInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1762,7 +2037,7 @@ impl DeleteRepositoryInput {
 pub mod delete_repository_permissions_policy_input {
 
     /// A builder for [`DeleteRepositoryPermissionsPolicyInput`](crate::input::DeleteRepositoryPermissionsPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -1818,7 +2093,7 @@ pub mod delete_repository_permissions_policy_input {
             self,
         ) -> Result<
             crate::input::DeleteRepositoryPermissionsPolicyInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteRepositoryPermissionsPolicyInput {
                 domain: self.domain,
@@ -1842,13 +2117,13 @@ impl DeleteRepositoryPermissionsPolicyInput {
             crate::operation::DeleteRepositoryPermissionsPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteRepositoryPermissionsPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/repository/permissions/policies")
                     .expect("formatting should succeed");
                 Ok(())
@@ -1856,25 +2131,55 @@ impl DeleteRepositoryPermissionsPolicyInput {
             fn uri_query(
                 _input: &crate::input::DeleteRepositoryPermissionsPolicyInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_30) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_30));
+                let inner_30 = &_input.domain;
+                let inner_30 = inner_30.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_30.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_30));
                 if let Some(inner_31) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_31),
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_31),
+                        );
+                    }
+                }
+                let inner_32 = &_input.repository;
+                let inner_32 = inner_32.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "repository",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_32.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_32) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_32));
-                }
+                query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_32));
                 if let Some(inner_33) = &_input.policy_revision {
-                    query.push_kv(
-                        "policy-revision",
-                        &aws_smithy_http::query::fmt_string(&inner_33),
-                    );
+                    {
+                        query.push_kv(
+                            "policy-revision",
+                            &aws_smithy_http::query::fmt_string(&inner_33),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -1882,8 +2187,10 @@ impl DeleteRepositoryPermissionsPolicyInput {
             fn update_http_builder(
                 input: &crate::input::DeleteRepositoryPermissionsPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1954,7 +2261,7 @@ impl DeleteRepositoryPermissionsPolicyInput {
 pub mod describe_domain_input {
 
     /// A builder for [`DescribeDomainInput`](crate::input::DescribeDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -1983,7 +2290,7 @@ pub mod describe_domain_input {
         /// Consumes the builder and constructs a [`DescribeDomainInput`](crate::input::DescribeDomainInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeDomainInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeDomainInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeDomainInput {
                 domain: self.domain,
@@ -2005,29 +2312,44 @@ impl DescribeDomainInput {
             crate::operation::DescribeDomain,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeDomainInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/domain").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::DescribeDomainInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_34) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_34));
-                }
-                if let Some(inner_35) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_35),
+                let inner_34 = &_input.domain;
+                let inner_34 = inner_34.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_34.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
                     );
+                }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_34));
+                if let Some(inner_35) = &_input.domain_owner {
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_35),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -2035,8 +2357,10 @@ impl DescribeDomainInput {
             fn update_http_builder(
                 input: &crate::input::DescribeDomainInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2107,7 +2431,7 @@ impl DescribeDomainInput {
 pub mod describe_package_input {
 
     /// A builder for [`DescribePackageInput`](crate::input::DescribePackageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -2193,7 +2517,7 @@ pub mod describe_package_input {
         /// Consumes the builder and constructs a [`DescribePackageInput`](crate::input::DescribePackageInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribePackageInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribePackageInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribePackageInput {
                 domain: self.domain,
@@ -2219,50 +2543,100 @@ impl DescribePackageInput {
             crate::operation::DescribePackage,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribePackageInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/package").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::DescribePackageInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_36) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_36));
-                }
-                if let Some(inner_37) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_37),
+                let inner_36 = &_input.domain;
+                let inner_36 = inner_36.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_36.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_38) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_38));
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_36));
+                if let Some(inner_37) = &_input.domain_owner {
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_37),
+                        );
+                    }
                 }
-                if let Some(inner_39) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_39));
+                let inner_38 = &_input.repository;
+                let inner_38 = inner_38.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "repository",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_38.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_38));
+                let inner_39 = &_input.format;
+                let inner_39 = inner_39.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "format",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_39));
                 if let Some(inner_40) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_40));
+                    {
+                        query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_40));
+                    }
                 }
-                if let Some(inner_41) = &_input.package {
-                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_41));
+                let inner_41 = &_input.package;
+                let inner_41 = inner_41.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "package",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_41.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "package",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_41));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::DescribePackageInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2333,7 +2707,7 @@ impl DescribePackageInput {
 pub mod describe_package_version_input {
 
     /// A builder for [`DescribePackageVersionInput`](crate::input::DescribePackageVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -2433,8 +2807,10 @@ pub mod describe_package_version_input {
         /// Consumes the builder and constructs a [`DescribePackageVersionInput`](crate::input::DescribePackageVersionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribePackageVersionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribePackageVersionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribePackageVersionInput {
                 domain: self.domain,
                 domain_owner: self.domain_owner,
@@ -2460,53 +2836,116 @@ impl DescribePackageVersionInput {
             crate::operation::DescribePackageVersion,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribePackageVersionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/package/version").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::DescribePackageVersionInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_42) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_42));
-                }
-                if let Some(inner_43) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_43),
+                let inner_42 = &_input.domain;
+                let inner_42 = inner_42.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_42.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_44) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_44));
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_42));
+                if let Some(inner_43) = &_input.domain_owner {
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_43),
+                        );
+                    }
                 }
-                if let Some(inner_45) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_45));
+                let inner_44 = &_input.repository;
+                let inner_44 = inner_44.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "repository",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_44.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_44));
+                let inner_45 = &_input.format;
+                let inner_45 = inner_45.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "format",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_45));
                 if let Some(inner_46) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_46));
+                    {
+                        query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_46));
+                    }
                 }
-                if let Some(inner_47) = &_input.package {
-                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_47));
+                let inner_47 = &_input.package;
+                let inner_47 = inner_47.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "package",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_47.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "package",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_48) = &_input.package_version {
-                    query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_48));
+                query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_47));
+                let inner_48 = &_input.package_version;
+                let inner_48 = inner_48.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "package_version",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_48.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "package_version",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_48));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::DescribePackageVersionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2577,7 +3016,7 @@ impl DescribePackageVersionInput {
 pub mod describe_repository_input {
 
     /// A builder for [`DescribeRepositoryInput`](crate::input::DescribeRepositoryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -2617,8 +3056,10 @@ pub mod describe_repository_input {
         /// Consumes the builder and constructs a [`DescribeRepositoryInput`](crate::input::DescribeRepositoryInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeRepositoryInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeRepositoryInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeRepositoryInput {
                 domain: self.domain,
                 domain_owner: self.domain_owner,
@@ -2640,41 +3081,71 @@ impl DescribeRepositoryInput {
             crate::operation::DescribeRepository,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeRepositoryInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/repository").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::DescribeRepositoryInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_49) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_49));
-                }
-                if let Some(inner_50) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_50),
+                let inner_49 = &_input.domain;
+                let inner_49 = inner_49.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_49.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_51) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_51));
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_49));
+                if let Some(inner_50) = &_input.domain_owner {
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_50),
+                        );
+                    }
                 }
+                let inner_51 = &_input.repository;
+                let inner_51 = inner_51.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "repository",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_51.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_51));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::DescribeRepositoryInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2745,7 +3216,7 @@ impl DescribeRepositoryInput {
 pub mod disassociate_external_connection_input {
 
     /// A builder for [`DisassociateExternalConnectionInput`](crate::input::DisassociateExternalConnectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -2801,7 +3272,7 @@ pub mod disassociate_external_connection_input {
             self,
         ) -> Result<
             crate::input::DisassociateExternalConnectionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DisassociateExternalConnectionInput {
                 domain: self.domain,
@@ -2825,13 +3296,13 @@ impl DisassociateExternalConnectionInput {
             crate::operation::DisassociateExternalConnection,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisassociateExternalConnectionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/repository/external-connection")
                     .expect("formatting should succeed");
                 Ok(())
@@ -2839,34 +3310,77 @@ impl DisassociateExternalConnectionInput {
             fn uri_query(
                 _input: &crate::input::DisassociateExternalConnectionInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_52) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_52));
+                let inner_52 = &_input.domain;
+                let inner_52 = inner_52.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_52.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_52));
                 if let Some(inner_53) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_53),
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_53),
+                        );
+                    }
+                }
+                let inner_54 = &_input.repository;
+                let inner_54 = inner_54.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "repository",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_54.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_54) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_54));
-                }
-                if let Some(inner_55) = &_input.external_connection {
-                    query.push_kv(
-                        "external-connection",
-                        &aws_smithy_http::query::fmt_string(&inner_55),
+                query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_54));
+                let inner_55 = &_input.external_connection;
+                let inner_55 = inner_55.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "external_connection",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_55.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "external_connection",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "external-connection",
+                    &aws_smithy_http::query::fmt_string(&inner_55),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::DisassociateExternalConnectionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2937,7 +3451,7 @@ impl DisassociateExternalConnectionInput {
 pub mod dispose_package_versions_input {
 
     /// A builder for [`DisposePackageVersionsInput`](crate::input::DisposePackageVersionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -3085,8 +3599,10 @@ pub mod dispose_package_versions_input {
         /// Consumes the builder and constructs a [`DisposePackageVersionsInput`](crate::input::DisposePackageVersionsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DisposePackageVersionsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DisposePackageVersionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DisposePackageVersionsInput {
                 domain: self.domain,
                 domain_owner: self.domain_owner,
@@ -3114,50 +3630,100 @@ impl DisposePackageVersionsInput {
             crate::operation::DisposePackageVersions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisposePackageVersionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/package/versions/dispose").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::DisposePackageVersionsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_56) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_56));
-                }
-                if let Some(inner_57) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_57),
+                let inner_56 = &_input.domain;
+                let inner_56 = inner_56.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_56.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_58) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_58));
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_56));
+                if let Some(inner_57) = &_input.domain_owner {
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_57),
+                        );
+                    }
                 }
-                if let Some(inner_59) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_59));
+                let inner_58 = &_input.repository;
+                let inner_58 = inner_58.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "repository",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_58.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_58));
+                let inner_59 = &_input.format;
+                let inner_59 = inner_59.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "format",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_59));
                 if let Some(inner_60) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_60));
+                    {
+                        query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_60));
+                    }
                 }
-                if let Some(inner_61) = &_input.package {
-                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_61));
+                let inner_61 = &_input.package;
+                let inner_61 = inner_61.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "package",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_61.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "package",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_61));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::DisposePackageVersionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3244,7 +3810,7 @@ impl DisposePackageVersionsInput {
 pub mod get_authorization_token_input {
 
     /// A builder for [`GetAuthorizationTokenInput`](crate::input::GetAuthorizationTokenInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -3284,8 +3850,10 @@ pub mod get_authorization_token_input {
         /// Consumes the builder and constructs a [`GetAuthorizationTokenInput`](crate::input::GetAuthorizationTokenInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetAuthorizationTokenInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetAuthorizationTokenInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetAuthorizationTokenInput {
                 domain: self.domain,
                 domain_owner: self.domain_owner,
@@ -3307,35 +3875,52 @@ impl GetAuthorizationTokenInput {
             crate::operation::GetAuthorizationToken,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetAuthorizationTokenInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/authorization-token").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::GetAuthorizationTokenInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_62) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_62));
-                }
-                if let Some(inner_63) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_63),
+                let inner_62 = &_input.domain;
+                let inner_62 = inner_62.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_62.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
                     );
+                }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_62));
+                if let Some(inner_63) = &_input.domain_owner {
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_63),
+                        );
+                    }
                 }
                 if let Some(inner_64) = &_input.duration_seconds {
-                    query.push_kv(
-                        "duration",
-                        aws_smithy_types::primitive::Encoder::from(*inner_64).encode(),
-                    );
+                    if *inner_64 != 0 {
+                        query.push_kv(
+                            "duration",
+                            aws_smithy_types::primitive::Encoder::from(*inner_64).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -3343,8 +3928,10 @@ impl GetAuthorizationTokenInput {
             fn update_http_builder(
                 input: &crate::input::GetAuthorizationTokenInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3415,7 +4002,7 @@ impl GetAuthorizationTokenInput {
 pub mod get_domain_permissions_policy_input {
 
     /// A builder for [`GetDomainPermissionsPolicyInput`](crate::input::GetDomainPermissionsPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -3446,7 +4033,7 @@ pub mod get_domain_permissions_policy_input {
             self,
         ) -> Result<
             crate::input::GetDomainPermissionsPolicyInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetDomainPermissionsPolicyInput {
                 domain: self.domain,
@@ -3468,29 +4055,44 @@ impl GetDomainPermissionsPolicyInput {
             crate::operation::GetDomainPermissionsPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetDomainPermissionsPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/domain/permissions/policy").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::GetDomainPermissionsPolicyInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_65) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_65));
-                }
-                if let Some(inner_66) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_66),
+                let inner_65 = &_input.domain;
+                let inner_65 = inner_65.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_65.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
                     );
+                }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_65));
+                if let Some(inner_66) = &_input.domain_owner {
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_66),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -3498,8 +4100,10 @@ impl GetDomainPermissionsPolicyInput {
             fn update_http_builder(
                 input: &crate::input::GetDomainPermissionsPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3570,7 +4174,7 @@ impl GetDomainPermissionsPolicyInput {
 pub mod get_package_version_asset_input {
 
     /// A builder for [`GetPackageVersionAssetInput`](crate::input::GetPackageVersionAssetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -3695,8 +4299,10 @@ pub mod get_package_version_asset_input {
         /// Consumes the builder and constructs a [`GetPackageVersionAssetInput`](crate::input::GetPackageVersionAssetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetPackageVersionAssetInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetPackageVersionAssetInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetPackageVersionAssetInput {
                 domain: self.domain,
                 domain_owner: self.domain_owner,
@@ -3724,50 +4330,126 @@ impl GetPackageVersionAssetInput {
             crate::operation::GetPackageVersionAsset,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetPackageVersionAssetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/package/version/asset").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::GetPackageVersionAssetInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_67) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_67));
-                }
-                if let Some(inner_68) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_68),
+                let inner_67 = &_input.domain;
+                let inner_67 = inner_67.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_67.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_69) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_69));
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_67));
+                if let Some(inner_68) = &_input.domain_owner {
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_68),
+                        );
+                    }
                 }
-                if let Some(inner_70) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_70));
+                let inner_69 = &_input.repository;
+                let inner_69 = inner_69.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "repository",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_69.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_69));
+                let inner_70 = &_input.format;
+                let inner_70 = inner_70.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "format",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_70));
                 if let Some(inner_71) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_71));
+                    {
+                        query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_71));
+                    }
                 }
-                if let Some(inner_72) = &_input.package {
-                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_72));
+                let inner_72 = &_input.package;
+                let inner_72 = inner_72.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "package",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_72.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "package",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_73) = &_input.package_version {
-                    query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_73));
+                query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_72));
+                let inner_73 = &_input.package_version;
+                let inner_73 = inner_73.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "package_version",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_73.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "package_version",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_74) = &_input.asset {
-                    query.push_kv("asset", &aws_smithy_http::query::fmt_string(&inner_74));
+                query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_73));
+                let inner_74 = &_input.asset;
+                let inner_74 = inner_74.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "asset",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_74.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "asset",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("asset", &aws_smithy_http::query::fmt_string(&inner_74));
                 if let Some(inner_75) = &_input.package_version_revision {
-                    query.push_kv("revision", &aws_smithy_http::query::fmt_string(&inner_75));
+                    {
+                        query.push_kv("revision", &aws_smithy_http::query::fmt_string(&inner_75));
+                    }
                 }
                 Ok(())
             }
@@ -3775,8 +4457,10 @@ impl GetPackageVersionAssetInput {
             fn update_http_builder(
                 input: &crate::input::GetPackageVersionAssetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3847,7 +4531,7 @@ impl GetPackageVersionAssetInput {
 pub mod get_package_version_readme_input {
 
     /// A builder for [`GetPackageVersionReadmeInput`](crate::input::GetPackageVersionReadmeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -3949,7 +4633,7 @@ pub mod get_package_version_readme_input {
             self,
         ) -> Result<
             crate::input::GetPackageVersionReadmeInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetPackageVersionReadmeInput {
                 domain: self.domain,
@@ -3976,53 +4660,116 @@ impl GetPackageVersionReadmeInput {
             crate::operation::GetPackageVersionReadme,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetPackageVersionReadmeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/package/version/readme").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::GetPackageVersionReadmeInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_76) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_76));
-                }
-                if let Some(inner_77) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_77),
+                let inner_76 = &_input.domain;
+                let inner_76 = inner_76.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_76.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_78) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_78));
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_76));
+                if let Some(inner_77) = &_input.domain_owner {
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_77),
+                        );
+                    }
                 }
-                if let Some(inner_79) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_79));
+                let inner_78 = &_input.repository;
+                let inner_78 = inner_78.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "repository",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_78.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_78));
+                let inner_79 = &_input.format;
+                let inner_79 = inner_79.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "format",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_79));
                 if let Some(inner_80) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_80));
+                    {
+                        query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_80));
+                    }
                 }
-                if let Some(inner_81) = &_input.package {
-                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_81));
+                let inner_81 = &_input.package;
+                let inner_81 = inner_81.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "package",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_81.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "package",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_82) = &_input.package_version {
-                    query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_82));
+                query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_81));
+                let inner_82 = &_input.package_version;
+                let inner_82 = inner_82.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "package_version",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_82.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "package_version",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_82));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::GetPackageVersionReadmeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4093,7 +4840,7 @@ impl GetPackageVersionReadmeInput {
 pub mod get_repository_endpoint_input {
 
     /// A builder for [`GetRepositoryEndpointInput`](crate::input::GetRepositoryEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -4147,8 +4894,10 @@ pub mod get_repository_endpoint_input {
         /// Consumes the builder and constructs a [`GetRepositoryEndpointInput`](crate::input::GetRepositoryEndpointInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetRepositoryEndpointInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetRepositoryEndpointInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetRepositoryEndpointInput {
                 domain: self.domain,
                 domain_owner: self.domain_owner,
@@ -4171,44 +4920,79 @@ impl GetRepositoryEndpointInput {
             crate::operation::GetRepositoryEndpoint,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetRepositoryEndpointInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/repository/endpoint").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::GetRepositoryEndpointInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_83) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_83));
-                }
-                if let Some(inner_84) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_84),
+                let inner_83 = &_input.domain;
+                let inner_83 = inner_83.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_83.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_85) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_85));
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_83));
+                if let Some(inner_84) = &_input.domain_owner {
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_84),
+                        );
+                    }
                 }
-                if let Some(inner_86) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_86));
+                let inner_85 = &_input.repository;
+                let inner_85 = inner_85.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "repository",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_85.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_85));
+                let inner_86 = &_input.format;
+                let inner_86 = inner_86.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "format",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_86));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::GetRepositoryEndpointInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4279,7 +5063,7 @@ impl GetRepositoryEndpointInput {
 pub mod get_repository_permissions_policy_input {
 
     /// A builder for [`GetRepositoryPermissionsPolicyInput`](crate::input::GetRepositoryPermissionsPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -4321,7 +5105,7 @@ pub mod get_repository_permissions_policy_input {
             self,
         ) -> Result<
             crate::input::GetRepositoryPermissionsPolicyInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetRepositoryPermissionsPolicyInput {
                 domain: self.domain,
@@ -4344,13 +5128,13 @@ impl GetRepositoryPermissionsPolicyInput {
             crate::operation::GetRepositoryPermissionsPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetRepositoryPermissionsPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/repository/permissions/policy")
                     .expect("formatting should succeed");
                 Ok(())
@@ -4358,28 +5142,58 @@ impl GetRepositoryPermissionsPolicyInput {
             fn uri_query(
                 _input: &crate::input::GetRepositoryPermissionsPolicyInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_87) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_87));
-                }
-                if let Some(inner_88) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_88),
+                let inner_87 = &_input.domain;
+                let inner_87 = inner_87.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_87.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_89) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_89));
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_87));
+                if let Some(inner_88) = &_input.domain_owner {
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_88),
+                        );
+                    }
                 }
+                let inner_89 = &_input.repository;
+                let inner_89 = inner_89.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "repository",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_89.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_89));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::GetRepositoryPermissionsPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4450,7 +5264,7 @@ impl GetRepositoryPermissionsPolicyInput {
 pub mod list_domains_input {
 
     /// A builder for [`ListDomainsInput`](crate::input::ListDomainsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4479,7 +5293,7 @@ pub mod list_domains_input {
         /// Consumes the builder and constructs a [`ListDomainsInput`](crate::input::ListDomainsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListDomainsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListDomainsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListDomainsInput {
                 max_results: self.max_results,
@@ -4501,13 +5315,13 @@ impl ListDomainsInput {
             crate::operation::ListDomains,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListDomainsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/domains").expect("formatting should succeed");
                 Ok(())
             }
@@ -4515,8 +5329,10 @@ impl ListDomainsInput {
             fn update_http_builder(
                 input: &crate::input::ListDomainsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4600,7 +5416,7 @@ impl ListDomainsInput {
 pub mod list_packages_input {
 
     /// A builder for [`ListPackagesInput`](crate::input::ListPackagesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -4739,7 +5555,7 @@ pub mod list_packages_input {
         /// Consumes the builder and constructs a [`ListPackagesInput`](crate::input::ListPackagesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListPackagesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListPackagesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListPackagesInput {
                 domain: self.domain,
@@ -4769,59 +5585,101 @@ impl ListPackagesInput {
             crate::operation::ListPackages,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListPackagesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/packages").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListPackagesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_90) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_90));
-                }
-                if let Some(inner_91) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_91),
+                let inner_90 = &_input.domain;
+                let inner_90 = inner_90.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_90.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_92) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_92));
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_90));
+                if let Some(inner_91) = &_input.domain_owner {
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_91),
+                        );
+                    }
                 }
+                let inner_92 = &_input.repository;
+                let inner_92 = inner_92.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "repository",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_92.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_92));
                 if let Some(inner_93) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_93));
+                    {
+                        query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_93));
+                    }
                 }
                 if let Some(inner_94) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_94));
+                    {
+                        query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_94));
+                    }
                 }
                 if let Some(inner_95) = &_input.package_prefix {
-                    query.push_kv(
-                        "package-prefix",
-                        &aws_smithy_http::query::fmt_string(&inner_95),
-                    );
+                    {
+                        query.push_kv(
+                            "package-prefix",
+                            &aws_smithy_http::query::fmt_string(&inner_95),
+                        );
+                    }
                 }
                 if let Some(inner_96) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_96).encode(),
-                    );
+                    if *inner_96 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_96).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_97) = &_input.next_token {
-                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_97));
+                    {
+                        query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_97));
+                    }
                 }
                 if let Some(inner_98) = &_input.publish {
-                    query.push_kv("publish", &aws_smithy_http::query::fmt_string(&inner_98));
+                    {
+                        query.push_kv("publish", &aws_smithy_http::query::fmt_string(&inner_98));
+                    }
                 }
                 if let Some(inner_99) = &_input.upstream {
-                    query.push_kv("upstream", &aws_smithy_http::query::fmt_string(&inner_99));
+                    {
+                        query.push_kv("upstream", &aws_smithy_http::query::fmt_string(&inner_99));
+                    }
                 }
                 Ok(())
             }
@@ -4829,8 +5687,10 @@ impl ListPackagesInput {
             fn update_http_builder(
                 input: &crate::input::ListPackagesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4901,7 +5761,7 @@ impl ListPackagesInput {
 pub mod list_package_version_assets_input {
 
     /// A builder for [`ListPackageVersionAssetsInput`](crate::input::ListPackageVersionAssetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -5025,7 +5885,7 @@ pub mod list_package_version_assets_input {
             self,
         ) -> Result<
             crate::input::ListPackageVersionAssetsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListPackageVersionAssetsInput {
                 domain: self.domain,
@@ -5054,59 +5914,124 @@ impl ListPackageVersionAssetsInput {
             crate::operation::ListPackageVersionAssets,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListPackageVersionAssetsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/package/version/assets").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListPackageVersionAssetsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_100) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_100));
+                let inner_100 = &_input.domain;
+                let inner_100 = inner_100.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_100.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_100));
                 if let Some(inner_101) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_101),
-                    );
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_101),
+                        );
+                    }
                 }
-                if let Some(inner_102) = &_input.repository {
-                    query.push_kv(
+                let inner_102 = &_input.repository;
+                let inner_102 = inner_102.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
                         "repository",
-                        &aws_smithy_http::query::fmt_string(&inner_102),
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_102.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_103) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_103));
-                }
+                query.push_kv(
+                    "repository",
+                    &aws_smithy_http::query::fmt_string(&inner_102),
+                );
+                let inner_103 = &_input.format;
+                let inner_103 = inner_103.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "format",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_103));
                 if let Some(inner_104) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_104));
+                    {
+                        query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_104));
+                    }
                 }
-                if let Some(inner_105) = &_input.package {
-                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_105));
-                }
-                if let Some(inner_106) = &_input.package_version {
-                    query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_106));
-                }
-                if let Some(inner_107) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_107).encode(),
+                let inner_105 = &_input.package;
+                let inner_105 = inner_105.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "package",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_105.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "package",
+                            "cannot be empty or unset",
+                        ),
                     );
+                }
+                query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_105));
+                let inner_106 = &_input.package_version;
+                let inner_106 = inner_106.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "package_version",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_106.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "package_version",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_106));
+                if let Some(inner_107) = &_input.max_results {
+                    if *inner_107 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_107).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_108) = &_input.next_token {
-                    query.push_kv(
-                        "next-token",
-                        &aws_smithy_http::query::fmt_string(&inner_108),
-                    );
+                    {
+                        query.push_kv(
+                            "next-token",
+                            &aws_smithy_http::query::fmt_string(&inner_108),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -5114,8 +6039,10 @@ impl ListPackageVersionAssetsInput {
             fn update_http_builder(
                 input: &crate::input::ListPackageVersionAssetsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5186,7 +6113,7 @@ impl ListPackageVersionAssetsInput {
 pub mod list_package_version_dependencies_input {
 
     /// A builder for [`ListPackageVersionDependenciesInput`](crate::input::ListPackageVersionDependenciesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -5299,7 +6226,7 @@ pub mod list_package_version_dependencies_input {
             self,
         ) -> Result<
             crate::input::ListPackageVersionDependenciesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListPackageVersionDependenciesInput {
                 domain: self.domain,
@@ -5327,13 +6254,13 @@ impl ListPackageVersionDependenciesInput {
             crate::operation::ListPackageVersionDependencies,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListPackageVersionDependenciesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/package/version/dependencies")
                     .expect("formatting should succeed");
                 Ok(())
@@ -5341,40 +6268,103 @@ impl ListPackageVersionDependenciesInput {
             fn uri_query(
                 _input: &crate::input::ListPackageVersionDependenciesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_109) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_109));
+                let inner_109 = &_input.domain;
+                let inner_109 = inner_109.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_109.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_109));
                 if let Some(inner_110) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_110),
-                    );
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_110),
+                        );
+                    }
                 }
-                if let Some(inner_111) = &_input.repository {
-                    query.push_kv(
+                let inner_111 = &_input.repository;
+                let inner_111 = inner_111.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
                         "repository",
-                        &aws_smithy_http::query::fmt_string(&inner_111),
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_111.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_112) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_112));
-                }
+                query.push_kv(
+                    "repository",
+                    &aws_smithy_http::query::fmt_string(&inner_111),
+                );
+                let inner_112 = &_input.format;
+                let inner_112 = inner_112.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "format",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_112));
                 if let Some(inner_113) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_113));
+                    {
+                        query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_113));
+                    }
                 }
-                if let Some(inner_114) = &_input.package {
-                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_114));
-                }
-                if let Some(inner_115) = &_input.package_version {
-                    query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_115));
-                }
-                if let Some(inner_116) = &_input.next_token {
-                    query.push_kv(
-                        "next-token",
-                        &aws_smithy_http::query::fmt_string(&inner_116),
+                let inner_114 = &_input.package;
+                let inner_114 = inner_114.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "package",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_114.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "package",
+                            "cannot be empty or unset",
+                        ),
                     );
+                }
+                query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_114));
+                let inner_115 = &_input.package_version;
+                let inner_115 = inner_115.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "package_version",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_115.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "package_version",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_115));
+                if let Some(inner_116) = &_input.next_token {
+                    {
+                        query.push_kv(
+                            "next-token",
+                            &aws_smithy_http::query::fmt_string(&inner_116),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -5382,8 +6372,10 @@ impl ListPackageVersionDependenciesInput {
             fn update_http_builder(
                 input: &crate::input::ListPackageVersionDependenciesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5454,7 +6446,7 @@ impl ListPackageVersionDependenciesInput {
 pub mod list_package_versions_input {
 
     /// A builder for [`ListPackageVersionsInput`](crate::input::ListPackageVersionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -5604,8 +6596,10 @@ pub mod list_package_versions_input {
         /// Consumes the builder and constructs a [`ListPackageVersionsInput`](crate::input::ListPackageVersionsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListPackageVersionsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListPackageVersionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListPackageVersionsInput {
                 domain: self.domain,
                 domain_owner: self.domain_owner,
@@ -5635,68 +6629,126 @@ impl ListPackageVersionsInput {
             crate::operation::ListPackageVersions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListPackageVersionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/package/versions").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListPackageVersionsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_117) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_117));
+                let inner_117 = &_input.domain;
+                let inner_117 = inner_117.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_117.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_117));
                 if let Some(inner_118) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_118),
-                    );
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_118),
+                        );
+                    }
                 }
-                if let Some(inner_119) = &_input.repository {
-                    query.push_kv(
+                let inner_119 = &_input.repository;
+                let inner_119 = inner_119.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
                         "repository",
-                        &aws_smithy_http::query::fmt_string(&inner_119),
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_119.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_120) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_120));
-                }
+                query.push_kv(
+                    "repository",
+                    &aws_smithy_http::query::fmt_string(&inner_119),
+                );
+                let inner_120 = &_input.format;
+                let inner_120 = inner_120.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "format",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_120));
                 if let Some(inner_121) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_121));
+                    {
+                        query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_121));
+                    }
                 }
-                if let Some(inner_122) = &_input.package {
-                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_122));
+                let inner_122 = &_input.package;
+                let inner_122 = inner_122.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "package",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_122.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "package",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_122));
                 if let Some(inner_123) = &_input.status {
-                    query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_123));
+                    {
+                        query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_123));
+                    }
                 }
                 if let Some(inner_124) = &_input.sort_by {
-                    query.push_kv("sortBy", &aws_smithy_http::query::fmt_string(&inner_124));
+                    {
+                        query.push_kv("sortBy", &aws_smithy_http::query::fmt_string(&inner_124));
+                    }
                 }
                 if let Some(inner_125) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_125).encode(),
-                    );
+                    if *inner_125 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_125).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_126) = &_input.next_token {
-                    query.push_kv(
-                        "next-token",
-                        &aws_smithy_http::query::fmt_string(&inner_126),
-                    );
+                    {
+                        query.push_kv(
+                            "next-token",
+                            &aws_smithy_http::query::fmt_string(&inner_126),
+                        );
+                    }
                 }
                 if let Some(inner_127) = &_input.origin_type {
-                    query.push_kv(
-                        "originType",
-                        &aws_smithy_http::query::fmt_string(&inner_127),
-                    );
+                    {
+                        query.push_kv(
+                            "originType",
+                            &aws_smithy_http::query::fmt_string(&inner_127),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -5704,8 +6756,10 @@ impl ListPackageVersionsInput {
             fn update_http_builder(
                 input: &crate::input::ListPackageVersionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5776,7 +6830,7 @@ impl ListPackageVersionsInput {
 pub mod list_repositories_input {
 
     /// A builder for [`ListRepositoriesInput`](crate::input::ListRepositoriesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_prefix: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -5819,8 +6873,10 @@ pub mod list_repositories_input {
         /// Consumes the builder and constructs a [`ListRepositoriesInput`](crate::input::ListRepositoriesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListRepositoriesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListRepositoriesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListRepositoriesInput {
                 repository_prefix: self.repository_prefix,
                 max_results: self.max_results,
@@ -5842,38 +6898,44 @@ impl ListRepositoriesInput {
             crate::operation::ListRepositories,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListRepositoriesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/repositories").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListRepositoriesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_128) = &_input.repository_prefix {
-                    query.push_kv(
-                        "repository-prefix",
-                        &aws_smithy_http::query::fmt_string(&inner_128),
-                    );
+                    {
+                        query.push_kv(
+                            "repository-prefix",
+                            &aws_smithy_http::query::fmt_string(&inner_128),
+                        );
+                    }
                 }
                 if let Some(inner_129) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_129).encode(),
-                    );
+                    if *inner_129 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_129).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_130) = &_input.next_token {
-                    query.push_kv(
-                        "next-token",
-                        &aws_smithy_http::query::fmt_string(&inner_130),
-                    );
+                    {
+                        query.push_kv(
+                            "next-token",
+                            &aws_smithy_http::query::fmt_string(&inner_130),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -5881,8 +6943,10 @@ impl ListRepositoriesInput {
             fn update_http_builder(
                 input: &crate::input::ListRepositoriesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5953,7 +7017,7 @@ impl ListRepositoriesInput {
 pub mod list_repositories_in_domain_input {
 
     /// A builder for [`ListRepositoriesInDomainInput`](crate::input::ListRepositoriesInDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -6034,7 +7098,7 @@ pub mod list_repositories_in_domain_input {
             self,
         ) -> Result<
             crate::input::ListRepositoriesInDomainInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListRepositoriesInDomainInput {
                 domain: self.domain,
@@ -6060,53 +7124,76 @@ impl ListRepositoriesInDomainInput {
             crate::operation::ListRepositoriesInDomain,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListRepositoriesInDomainInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/domain/repositories").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListRepositoriesInDomainInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_131) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_131));
-                }
-                if let Some(inner_132) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_132),
+                let inner_131 = &_input.domain;
+                let inner_131 = inner_131.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_131.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
                     );
+                }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_131));
+                if let Some(inner_132) = &_input.domain_owner {
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_132),
+                        );
+                    }
                 }
                 if let Some(inner_133) = &_input.administrator_account {
-                    query.push_kv(
-                        "administrator-account",
-                        &aws_smithy_http::query::fmt_string(&inner_133),
-                    );
+                    {
+                        query.push_kv(
+                            "administrator-account",
+                            &aws_smithy_http::query::fmt_string(&inner_133),
+                        );
+                    }
                 }
                 if let Some(inner_134) = &_input.repository_prefix {
-                    query.push_kv(
-                        "repository-prefix",
-                        &aws_smithy_http::query::fmt_string(&inner_134),
-                    );
+                    {
+                        query.push_kv(
+                            "repository-prefix",
+                            &aws_smithy_http::query::fmt_string(&inner_134),
+                        );
+                    }
                 }
                 if let Some(inner_135) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_135).encode(),
-                    );
+                    if *inner_135 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_135).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_136) = &_input.next_token {
-                    query.push_kv(
-                        "next-token",
-                        &aws_smithy_http::query::fmt_string(&inner_136),
-                    );
+                    {
+                        query.push_kv(
+                            "next-token",
+                            &aws_smithy_http::query::fmt_string(&inner_136),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -6114,8 +7201,10 @@ impl ListRepositoriesInDomainInput {
             fn update_http_builder(
                 input: &crate::input::ListRepositoriesInDomainInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -6186,7 +7275,7 @@ impl ListRepositoriesInDomainInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -6204,8 +7293,10 @@ pub mod list_tags_for_resource_input {
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
             })
@@ -6225,35 +7316,50 @@ impl ListTagsForResourceInput {
             crate::operation::ListTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/tags").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListTagsForResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_137) = &_input.resource_arn {
-                    query.push_kv(
-                        "resourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_137),
+                let inner_137 = &_input.resource_arn;
+                let inner_137 = inner_137.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_137.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_137),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::ListTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -6324,7 +7430,7 @@ impl ListTagsForResourceInput {
 pub mod put_domain_permissions_policy_input {
 
     /// A builder for [`PutDomainPermissionsPolicyInput`](crate::input::PutDomainPermissionsPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -6383,7 +7489,7 @@ pub mod put_domain_permissions_policy_input {
             self,
         ) -> Result<
             crate::input::PutDomainPermissionsPolicyInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::PutDomainPermissionsPolicyInput {
                 domain: self.domain,
@@ -6407,13 +7513,13 @@ impl PutDomainPermissionsPolicyInput {
             crate::operation::PutDomainPermissionsPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutDomainPermissionsPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/domain/permissions/policy").expect("formatting should succeed");
                 Ok(())
             }
@@ -6421,8 +7527,10 @@ impl PutDomainPermissionsPolicyInput {
             fn update_http_builder(
                 input: &crate::input::PutDomainPermissionsPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -6505,7 +7613,7 @@ impl PutDomainPermissionsPolicyInput {
 pub mod put_package_origin_configuration_input {
 
     /// A builder for [`PutPackageOriginConfigurationInput`](crate::input::PutPackageOriginConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -6609,7 +7717,7 @@ pub mod put_package_origin_configuration_input {
             self,
         ) -> Result<
             crate::input::PutPackageOriginConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::PutPackageOriginConfigurationInput {
                 domain: self.domain,
@@ -6636,53 +7744,103 @@ impl PutPackageOriginConfigurationInput {
             crate::operation::PutPackageOriginConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutPackageOriginConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/package").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::PutPackageOriginConfigurationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_138) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_138));
+                let inner_138 = &_input.domain;
+                let inner_138 = inner_138.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_138.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_138));
                 if let Some(inner_139) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_139),
-                    );
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_139),
+                        );
+                    }
                 }
-                if let Some(inner_140) = &_input.repository {
-                    query.push_kv(
+                let inner_140 = &_input.repository;
+                let inner_140 = inner_140.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
                         "repository",
-                        &aws_smithy_http::query::fmt_string(&inner_140),
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_140.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_141) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_141));
-                }
+                query.push_kv(
+                    "repository",
+                    &aws_smithy_http::query::fmt_string(&inner_140),
+                );
+                let inner_141 = &_input.format;
+                let inner_141 = inner_141.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "format",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_141));
                 if let Some(inner_142) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_142));
+                    {
+                        query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_142));
+                    }
                 }
-                if let Some(inner_143) = &_input.package {
-                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_143));
+                let inner_143 = &_input.package;
+                let inner_143 = inner_143.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "package",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_143.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "package",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_143));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::PutPackageOriginConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -6766,7 +7924,7 @@ impl PutPackageOriginConfigurationInput {
 pub mod put_repository_permissions_policy_input {
 
     /// A builder for [`PutRepositoryPermissionsPolicyInput`](crate::input::PutRepositoryPermissionsPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -6836,7 +7994,7 @@ pub mod put_repository_permissions_policy_input {
             self,
         ) -> Result<
             crate::input::PutRepositoryPermissionsPolicyInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::PutRepositoryPermissionsPolicyInput {
                 domain: self.domain,
@@ -6861,13 +8019,13 @@ impl PutRepositoryPermissionsPolicyInput {
             crate::operation::PutRepositoryPermissionsPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutRepositoryPermissionsPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/repository/permissions/policy")
                     .expect("formatting should succeed");
                 Ok(())
@@ -6875,31 +8033,61 @@ impl PutRepositoryPermissionsPolicyInput {
             fn uri_query(
                 _input: &crate::input::PutRepositoryPermissionsPolicyInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_144) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_144));
+                let inner_144 = &_input.domain;
+                let inner_144 = inner_144.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_144.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_144));
                 if let Some(inner_145) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_145),
-                    );
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_145),
+                        );
+                    }
                 }
-                if let Some(inner_146) = &_input.repository {
-                    query.push_kv(
+                let inner_146 = &_input.repository;
+                let inner_146 = inner_146.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
                         "repository",
-                        &aws_smithy_http::query::fmt_string(&inner_146),
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_146.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "repository",
+                    &aws_smithy_http::query::fmt_string(&inner_146),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::PutRepositoryPermissionsPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -6983,7 +8171,7 @@ impl PutRepositoryPermissionsPolicyInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -7021,7 +8209,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
@@ -7043,35 +8231,50 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/tag").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::TagResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_147) = &_input.resource_arn {
-                    query.push_kv(
-                        "resourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_147),
+                let inner_147 = &_input.resource_arn;
+                let inner_147 = inner_147.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_147.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_147),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -7156,7 +8359,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7194,7 +8397,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
@@ -7216,35 +8419,50 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/untag").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::UntagResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_148) = &_input.resource_arn {
-                    query.push_kv(
-                        "resourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_148),
+                let inner_148 = &_input.resource_arn;
+                let inner_148 = inner_148.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_148.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_148),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -7329,7 +8547,7 @@ impl UntagResourceInput {
 pub mod update_package_versions_status_input {
 
     /// A builder for [`UpdatePackageVersionsStatusInput`](crate::input::UpdatePackageVersionsStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -7493,7 +8711,7 @@ pub mod update_package_versions_status_input {
             self,
         ) -> Result<
             crate::input::UpdatePackageVersionsStatusInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdatePackageVersionsStatusInput {
                 domain: self.domain,
@@ -7523,13 +8741,13 @@ impl UpdatePackageVersionsStatusInput {
             crate::operation::UpdatePackageVersionsStatus,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdatePackageVersionsStatusInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/package/versions/update_status")
                     .expect("formatting should succeed");
                 Ok(())
@@ -7537,40 +8755,90 @@ impl UpdatePackageVersionsStatusInput {
             fn uri_query(
                 _input: &crate::input::UpdatePackageVersionsStatusInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_149) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_149));
+                let inner_149 = &_input.domain;
+                let inner_149 = inner_149.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_149.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_149));
                 if let Some(inner_150) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_150),
-                    );
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_150),
+                        );
+                    }
                 }
-                if let Some(inner_151) = &_input.repository {
-                    query.push_kv(
+                let inner_151 = &_input.repository;
+                let inner_151 = inner_151.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
                         "repository",
-                        &aws_smithy_http::query::fmt_string(&inner_151),
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_151.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_152) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_152));
-                }
+                query.push_kv(
+                    "repository",
+                    &aws_smithy_http::query::fmt_string(&inner_151),
+                );
+                let inner_152 = &_input.format;
+                let inner_152 = inner_152.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "format",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_152));
                 if let Some(inner_153) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_153));
+                    {
+                        query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_153));
+                    }
                 }
-                if let Some(inner_154) = &_input.package {
-                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_154));
+                let inner_154 = &_input.package;
+                let inner_154 = inner_154.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "package",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_154.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "package",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_154));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::UpdatePackageVersionsStatusInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -7654,7 +8922,7 @@ impl UpdatePackageVersionsStatusInput {
 pub mod update_repository_input {
 
     /// A builder for [`UpdateRepositoryInput`](crate::input::UpdateRepositoryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -7725,8 +8993,10 @@ pub mod update_repository_input {
         /// Consumes the builder and constructs a [`UpdateRepositoryInput`](crate::input::UpdateRepositoryInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateRepositoryInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateRepositoryInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateRepositoryInput {
                 domain: self.domain,
                 domain_owner: self.domain_owner,
@@ -7750,44 +9020,74 @@ impl UpdateRepositoryInput {
             crate::operation::UpdateRepository,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateRepositoryInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/repository").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::UpdateRepositoryInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_155) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_155));
+                let inner_155 = &_input.domain;
+                let inner_155 = inner_155.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "domain",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_155.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "domain",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_155));
                 if let Some(inner_156) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_156),
-                    );
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_156),
+                        );
+                    }
                 }
-                if let Some(inner_157) = &_input.repository {
-                    query.push_kv(
+                let inner_157 = &_input.repository;
+                let inner_157 = inner_157.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
                         "repository",
-                        &aws_smithy_http::query::fmt_string(&inner_157),
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_157.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "repository",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "repository",
+                    &aws_smithy_http::query::fmt_string(&inner_157),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::UpdateRepositoryInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -7870,7 +9170,7 @@ impl UpdateRepositoryInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRepositoryInput {
     /// <p> The name of the domain associated with the repository to update. </p>
     #[doc(hidden)]
@@ -7910,21 +9210,10 @@ impl UpdateRepositoryInput {
         self.upstreams.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRepositoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRepositoryInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("description", &self.description);
-        formatter.field("upstreams", &self.upstreams);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePackageVersionsStatusInput {
     /// <p> The name of the domain that contains the repository that contains the package versions with a status to be updated. </p>
     #[doc(hidden)]
@@ -8013,26 +9302,10 @@ impl UpdatePackageVersionsStatusInput {
         self.target_status.as_ref()
     }
 }
-impl std::fmt::Debug for UpdatePackageVersionsStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePackageVersionsStatusInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("format", &self.format);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("package", &self.package);
-        formatter.field("versions", &self.versions);
-        formatter.field("version_revisions", &self.version_revisions);
-        formatter.field("expected_status", &self.expected_status);
-        formatter.field("target_status", &self.target_status);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove tags from.</p>
     #[doc(hidden)]
@@ -8051,18 +9324,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to add or update tags for.</p>
     #[doc(hidden)]
@@ -8081,18 +9346,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRepositoryPermissionsPolicyInput {
     /// <p> The name of the domain containing the repository to set the resource policy on. </p>
     #[doc(hidden)]
@@ -8132,21 +9389,10 @@ impl PutRepositoryPermissionsPolicyInput {
         self.policy_document.as_deref()
     }
 }
-impl std::fmt::Debug for PutRepositoryPermissionsPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRepositoryPermissionsPolicyInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("policy_revision", &self.policy_revision);
-        formatter.field("policy_document", &self.policy_document);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutPackageOriginConfigurationInput {
     /// <p>The name of the domain that contains the repository that contains the package.</p>
     #[doc(hidden)]
@@ -8212,23 +9458,10 @@ impl PutPackageOriginConfigurationInput {
         self.restrictions.as_ref()
     }
 }
-impl std::fmt::Debug for PutPackageOriginConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutPackageOriginConfigurationInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("format", &self.format);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("package", &self.package);
-        formatter.field("restrictions", &self.restrictions);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutDomainPermissionsPolicyInput {
     /// <p> The name of the domain on which to set the resource policy. </p>
     #[doc(hidden)]
@@ -8261,20 +9494,10 @@ impl PutDomainPermissionsPolicyInput {
         self.policy_document.as_deref()
     }
 }
-impl std::fmt::Debug for PutDomainPermissionsPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutDomainPermissionsPolicyInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("policy_revision", &self.policy_revision);
-        formatter.field("policy_document", &self.policy_document);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to get tags for.</p>
     #[doc(hidden)]
@@ -8286,17 +9509,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRepositoriesInDomainInput {
     /// <p> The name of the domain that contains the returned list of repositories. </p>
     #[doc(hidden)]
@@ -8343,22 +9559,10 @@ impl ListRepositoriesInDomainInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListRepositoriesInDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRepositoriesInDomainInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("administrator_account", &self.administrator_account);
-        formatter.field("repository_prefix", &self.repository_prefix);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRepositoriesInput {
     /// <p> A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned.</p>
     #[doc(hidden)]
@@ -8384,19 +9588,10 @@ impl ListRepositoriesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListRepositoriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRepositoriesInput");
-        formatter.field("repository_prefix", &self.repository_prefix);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPackageVersionsInput {
     /// <p> The name of the domain that contains the repository that contains the requested package versions. </p>
     #[doc(hidden)]
@@ -8488,27 +9683,10 @@ impl ListPackageVersionsInput {
         self.origin_type.as_ref()
     }
 }
-impl std::fmt::Debug for ListPackageVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPackageVersionsInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("format", &self.format);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("package", &self.package);
-        formatter.field("status", &self.status);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("origin_type", &self.origin_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPackageVersionDependenciesInput {
     /// <p> The name of the domain that contains the repository that contains the requested package version dependencies. </p>
     #[doc(hidden)]
@@ -8579,24 +9757,10 @@ impl ListPackageVersionDependenciesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPackageVersionDependenciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPackageVersionDependenciesInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("format", &self.format);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("package", &self.package);
-        formatter.field("package_version", &self.package_version);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPackageVersionAssetsInput {
     /// <p> The name of the domain that contains the repository associated with the package version assets. </p>
     #[doc(hidden)]
@@ -8674,25 +9838,10 @@ impl ListPackageVersionAssetsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPackageVersionAssetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPackageVersionAssetsInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("format", &self.format);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("package", &self.package);
-        formatter.field("package_version", &self.package_version);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPackagesInput {
     /// <p> The name of the domain that contains the repository that contains the requested packages. </p>
     #[doc(hidden)]
@@ -8777,26 +9926,10 @@ impl ListPackagesInput {
         self.upstream.as_ref()
     }
 }
-impl std::fmt::Debug for ListPackagesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPackagesInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("format", &self.format);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("package_prefix", &self.package_prefix);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("publish", &self.publish);
-        formatter.field("upstream", &self.upstream);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDomainsInput {
     /// <p> The maximum number of results to return per page. </p>
     #[doc(hidden)]
@@ -8815,18 +9948,10 @@ impl ListDomainsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListDomainsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDomainsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRepositoryPermissionsPolicyInput {
     /// <p> The name of the domain containing the repository whose associated resource policy is to be retrieved. </p>
     #[doc(hidden)]
@@ -8852,19 +9977,10 @@ impl GetRepositoryPermissionsPolicyInput {
         self.repository.as_deref()
     }
 }
-impl std::fmt::Debug for GetRepositoryPermissionsPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRepositoryPermissionsPolicyInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRepositoryEndpointInput {
     /// <p> The name of the domain that contains the repository. </p>
     #[doc(hidden)]
@@ -8897,20 +10013,10 @@ impl GetRepositoryEndpointInput {
         self.format.as_ref()
     }
 }
-impl std::fmt::Debug for GetRepositoryEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRepositoryEndpointInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("format", &self.format);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPackageVersionReadmeInput {
     /// <p> The name of the domain that contains the repository that contains the package version with the requested readme file. </p>
     #[doc(hidden)]
@@ -8974,23 +10080,10 @@ impl GetPackageVersionReadmeInput {
         self.package_version.as_deref()
     }
 }
-impl std::fmt::Debug for GetPackageVersionReadmeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPackageVersionReadmeInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("format", &self.format);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("package", &self.package);
-        formatter.field("package_version", &self.package_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPackageVersionAssetInput {
     /// <p> The name of the domain that contains the repository that contains the package version with the requested asset. </p>
     #[doc(hidden)]
@@ -9068,25 +10161,10 @@ impl GetPackageVersionAssetInput {
         self.package_version_revision.as_deref()
     }
 }
-impl std::fmt::Debug for GetPackageVersionAssetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPackageVersionAssetInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("format", &self.format);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("package", &self.package);
-        formatter.field("package_version", &self.package_version);
-        formatter.field("asset", &self.asset);
-        formatter.field("package_version_revision", &self.package_version_revision);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDomainPermissionsPolicyInput {
     /// <p> The name of the domain to which the resource policy is attached. </p>
     #[doc(hidden)]
@@ -9105,18 +10183,10 @@ impl GetDomainPermissionsPolicyInput {
         self.domain_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetDomainPermissionsPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDomainPermissionsPolicyInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAuthorizationTokenInput {
     /// <p> The name of the domain that is in scope for the generated authorization token. </p>
     #[doc(hidden)]
@@ -9142,19 +10212,10 @@ impl GetAuthorizationTokenInput {
         self.duration_seconds
     }
 }
-impl std::fmt::Debug for GetAuthorizationTokenInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAuthorizationTokenInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("duration_seconds", &self.duration_seconds);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisposePackageVersionsInput {
     /// <p> The name of the domain that contains the repository you want to dispose. </p>
     #[doc(hidden)]
@@ -9236,25 +10297,10 @@ impl DisposePackageVersionsInput {
         self.expected_status.as_ref()
     }
 }
-impl std::fmt::Debug for DisposePackageVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisposePackageVersionsInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("format", &self.format);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("package", &self.package);
-        formatter.field("versions", &self.versions);
-        formatter.field("version_revisions", &self.version_revisions);
-        formatter.field("expected_status", &self.expected_status);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateExternalConnectionInput {
     /// <p>The name of the domain that contains the repository from which to remove the external repository. </p>
     #[doc(hidden)]
@@ -9287,20 +10333,10 @@ impl DisassociateExternalConnectionInput {
         self.external_connection.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateExternalConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateExternalConnectionInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("external_connection", &self.external_connection);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRepositoryInput {
     /// <p> The name of the domain that contains the repository to describe. </p>
     #[doc(hidden)]
@@ -9326,19 +10362,10 @@ impl DescribeRepositoryInput {
         self.repository.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeRepositoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRepositoryInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePackageVersionInput {
     /// <p> The name of the domain that contains the repository that contains the package version. </p>
     #[doc(hidden)]
@@ -9402,23 +10429,10 @@ impl DescribePackageVersionInput {
         self.package_version.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePackageVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePackageVersionInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("format", &self.format);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("package", &self.package);
-        formatter.field("package_version", &self.package_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePackageInput {
     /// <p>The name of the domain that contains the repository that contains the package.</p>
     #[doc(hidden)]
@@ -9475,22 +10489,10 @@ impl DescribePackageInput {
         self.package.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePackageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePackageInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("format", &self.format);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("package", &self.package);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDomainInput {
     /// <p> A string that specifies the name of the requested domain. </p>
     #[doc(hidden)]
@@ -9509,18 +10511,10 @@ impl DescribeDomainInput {
         self.domain_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDomainInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRepositoryPermissionsPolicyInput {
     /// <p> The name of the domain that contains the repository associated with the resource policy to be deleted. </p>
     #[doc(hidden)]
@@ -9553,20 +10547,10 @@ impl DeleteRepositoryPermissionsPolicyInput {
         self.policy_revision.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRepositoryPermissionsPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRepositoryPermissionsPolicyInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("policy_revision", &self.policy_revision);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRepositoryInput {
     /// <p> The name of the domain that contains the repository to delete. </p>
     #[doc(hidden)]
@@ -9592,19 +10576,10 @@ impl DeleteRepositoryInput {
         self.repository.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRepositoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRepositoryInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePackageVersionsInput {
     /// <p> The name of the domain that contains the package to delete. </p>
     #[doc(hidden)]
@@ -9675,24 +10650,10 @@ impl DeletePackageVersionsInput {
         self.expected_status.as_ref()
     }
 }
-impl std::fmt::Debug for DeletePackageVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePackageVersionsInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("format", &self.format);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("package", &self.package);
-        formatter.field("versions", &self.versions);
-        formatter.field("expected_status", &self.expected_status);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDomainPermissionsPolicyInput {
     /// <p> The name of the domain associated with the resource policy to be deleted. </p>
     #[doc(hidden)]
@@ -9718,19 +10679,10 @@ impl DeleteDomainPermissionsPolicyInput {
         self.policy_revision.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDomainPermissionsPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDomainPermissionsPolicyInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("policy_revision", &self.policy_revision);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDomainInput {
     /// <p> The name of the domain to delete. </p>
     #[doc(hidden)]
@@ -9749,18 +10701,10 @@ impl DeleteDomainInput {
         self.domain_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDomainInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRepositoryInput {
     /// <p> The name of the domain that contains the created repository. </p>
     #[doc(hidden)]
@@ -9807,22 +10751,10 @@ impl CreateRepositoryInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateRepositoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRepositoryInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("description", &self.description);
-        formatter.field("upstreams", &self.upstreams);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDomainInput {
     /// <p> The name of the domain to create. All domain names in an Amazon Web Services Region that are in the same Amazon Web Services account must be unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive information in a domain name because it is publicly discoverable. </p>
     #[doc(hidden)]
@@ -9852,19 +10784,10 @@ impl CreateDomainInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDomainInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("encryption_key", &self.encryption_key);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CopyPackageVersionsInput {
     /// <p> The name of the domain that contains the source and destination repositories. </p>
     #[doc(hidden)]
@@ -9968,27 +10891,10 @@ impl CopyPackageVersionsInput {
         self.include_from_upstream
     }
 }
-impl std::fmt::Debug for CopyPackageVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CopyPackageVersionsInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("source_repository", &self.source_repository);
-        formatter.field("destination_repository", &self.destination_repository);
-        formatter.field("format", &self.format);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("package", &self.package);
-        formatter.field("versions", &self.versions);
-        formatter.field("version_revisions", &self.version_revisions);
-        formatter.field("allow_overwrite", &self.allow_overwrite);
-        formatter.field("include_from_upstream", &self.include_from_upstream);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateExternalConnectionInput {
     /// <p>The name of the domain that contains the repository.</p>
     #[doc(hidden)]
@@ -10035,15 +10941,5 @@ impl AssociateExternalConnectionInput {
     /// </ul>
     pub fn external_connection(&self) -> std::option::Option<&str> {
         self.external_connection.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateExternalConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateExternalConnectionInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("external_connection", &self.external_connection);
-        formatter.finish()
     }
 }

@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_create_savings_plan_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateSavingsPlanInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.client_token {
         object.key("clientToken").string(var_1.as_str());
     }
@@ -18,10 +18,11 @@ pub fn serialize_structure_crate_input_create_savings_plan_input(
         object.key("savingsPlanOfferingId").string(var_4.as_str());
     }
     if let Some(var_5) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_6 = object.key("tags").start_object();
         for (key_7, value_8) in var_5 {
             {
-                object_6.key(key_7).string(value_8.as_str());
+                object_6.key(key_7.as_str()).string(value_8.as_str());
             }
         }
         object_6.finish();
@@ -35,7 +36,7 @@ pub fn serialize_structure_crate_input_create_savings_plan_input(
 pub fn serialize_structure_crate_input_delete_queued_savings_plan_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteQueuedSavingsPlanInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_10) = &input.savings_plan_id {
         object.key("savingsPlanId").string(var_10.as_str());
     }
@@ -45,11 +46,12 @@ pub fn serialize_structure_crate_input_delete_queued_savings_plan_input(
 pub fn serialize_structure_crate_input_describe_savings_plan_rates_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeSavingsPlanRatesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_11) = &input.filters {
         let mut array_12 = object.key("filters").start_array();
         for item_13 in var_11 {
             {
+                #[allow(unused_mut)]
                 let mut object_14 = array_12.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_savings_plan_rate_filter(
                     &mut object_14,
@@ -78,11 +80,12 @@ pub fn serialize_structure_crate_input_describe_savings_plan_rates_input(
 pub fn serialize_structure_crate_input_describe_savings_plans_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeSavingsPlansInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_18) = &input.filters {
         let mut array_19 = object.key("filters").start_array();
         for item_20 in var_18 {
             {
+                #[allow(unused_mut)]
                 let mut object_21 = array_19.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_savings_plan_filter(
                     &mut object_21,
@@ -135,11 +138,12 @@ pub fn serialize_structure_crate_input_describe_savings_plans_input(
 pub fn serialize_structure_crate_input_describe_savings_plans_offering_rates_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeSavingsPlansOfferingRatesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_33) = &input.filters {
         let mut array_34 = object.key("filters").start_array();
         for item_35 in var_33 {
             {
+                #[allow(unused_mut)]
                 let mut object_36 = array_34.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_savings_plan_offering_rate_filter_element(&mut object_36, item_35)?;
                 object_36.finish();
@@ -225,7 +229,7 @@ pub fn serialize_structure_crate_input_describe_savings_plans_offering_rates_inp
 pub fn serialize_structure_crate_input_describe_savings_plans_offerings_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeSavingsPlansOfferingsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_59) = &input.currencies {
         let mut array_60 = object.key("currencies").start_array();
         for item_61 in var_59 {
@@ -260,6 +264,7 @@ pub fn serialize_structure_crate_input_describe_savings_plans_offerings_input(
         let mut array_69 = object.key("filters").start_array();
         for item_70 in var_68 {
             {
+                #[allow(unused_mut)]
                 let mut object_71 = array_69.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_savings_plan_offering_filter_element(&mut object_71, item_70)?;
                 object_71.finish();
@@ -339,7 +344,7 @@ pub fn serialize_structure_crate_input_describe_savings_plans_offerings_input(
 pub fn serialize_structure_crate_input_list_tags_for_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListTagsForResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_92) = &input.resource_arn {
         object.key("resourceArn").string(var_92.as_str());
     }
@@ -349,15 +354,16 @@ pub fn serialize_structure_crate_input_list_tags_for_resource_input(
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_93) = &input.resource_arn {
         object.key("resourceArn").string(var_93.as_str());
     }
     if let Some(var_94) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_95 = object.key("tags").start_object();
         for (key_96, value_97) in var_94 {
             {
-                object_95.key(key_96).string(value_97.as_str());
+                object_95.key(key_96.as_str()).string(value_97.as_str());
             }
         }
         object_95.finish();
@@ -368,7 +374,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_input_untag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UntagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_98) = &input.resource_arn {
         object.key("resourceArn").string(var_98.as_str());
     }
@@ -387,7 +393,7 @@ pub fn serialize_structure_crate_input_untag_resource_input(
 pub fn serialize_structure_crate_model_savings_plan_rate_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SavingsPlanRateFilter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_102) = &input.name {
         object.key("name").string(var_102.as_str());
     }
@@ -406,7 +412,7 @@ pub fn serialize_structure_crate_model_savings_plan_rate_filter(
 pub fn serialize_structure_crate_model_savings_plan_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SavingsPlanFilter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_106) = &input.name {
         object.key("name").string(var_106.as_str());
     }
@@ -425,7 +431,7 @@ pub fn serialize_structure_crate_model_savings_plan_filter(
 pub fn serialize_structure_crate_model_savings_plan_offering_rate_filter_element(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SavingsPlanOfferingRateFilterElement,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_110) = &input.name {
         object.key("name").string(var_110.as_str());
     }
@@ -444,7 +450,7 @@ pub fn serialize_structure_crate_model_savings_plan_offering_rate_filter_element
 pub fn serialize_structure_crate_model_savings_plan_offering_filter_element(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SavingsPlanOfferingFilterElement,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_114) = &input.name {
         object.key("name").string(var_114.as_str());
     }

@@ -124,7 +124,7 @@ async fn test_presigned_upload_part() -> Result<(), Box<dyn Error>> {
         .build()?);
     assert_eq!(
         presigned.uri().to_string(),
-        "https://s3.us-east-1.amazonaws.com/bucket/key?x-id=UploadPart&uploadId=upload-id&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ANOTREAL%2F20090213%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20090213T233131Z&X-Amz-Expires=30&X-Amz-SignedHeaders=content-length%3Bhost&X-Amz-Signature=e50e1a4d1dae7465bb7731863a565bdf4137393e3ab4119b5764fb49f5f60b14&X-Amz-Security-Token=notarealsessiontoken"
+        "https://s3.us-east-1.amazonaws.com/bucket/key?x-id=UploadPart&partNumber=0&uploadId=upload-id&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ANOTREAL%2F20090213%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20090213T233131Z&X-Amz-Expires=30&X-Amz-SignedHeaders=content-length%3Bhost&X-Amz-Signature=59777f7ddd2f324dfe0749685e06b978433d03e6f090dceb96eb23cc9540c30c&X-Amz-Security-Token=notarealsessiontoken"
     );
     Ok(())
 }

@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod get_raw_message_content_input {
 
     /// A builder for [`GetRawMessageContentInput`](crate::input::GetRawMessageContentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
     }
@@ -23,8 +23,10 @@ pub mod get_raw_message_content_input {
         /// Consumes the builder and constructs a [`GetRawMessageContentInput`](crate::input::GetRawMessageContentInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetRawMessageContentInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetRawMessageContentInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetRawMessageContentInput {
                 message_id: self.message_id,
             })
@@ -44,26 +46,31 @@ impl GetRawMessageContentInput {
             crate::operation::GetRawMessageContent,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetRawMessageContentInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.message_id;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "message_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let message_id = aws_smithy_http::label::fmt_string(input_1, false);
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "message_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let message_id = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if message_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "message_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "message_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/messages/{messageId}", messageId = message_id)
                     .expect("formatting should succeed");
@@ -73,8 +80,10 @@ impl GetRawMessageContentInput {
             fn update_http_builder(
                 input: &crate::input::GetRawMessageContentInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -144,7 +153,7 @@ impl GetRawMessageContentInput {
 pub mod put_raw_message_content_input {
 
     /// A builder for [`PutRawMessageContentInput`](crate::input::PutRawMessageContentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
         pub(crate) content: std::option::Option<crate::model::RawMessageContent>,
@@ -176,8 +185,10 @@ pub mod put_raw_message_content_input {
         /// Consumes the builder and constructs a [`PutRawMessageContentInput`](crate::input::PutRawMessageContentInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutRawMessageContentInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutRawMessageContentInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutRawMessageContentInput {
                 message_id: self.message_id,
                 content: self.content,
@@ -198,26 +209,31 @@ impl PutRawMessageContentInput {
             crate::operation::PutRawMessageContent,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutRawMessageContentInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_2 = &_input.message_id;
-                let input_2 = input_2.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "message_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let message_id = aws_smithy_http::label::fmt_string(input_2, false);
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "message_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let message_id = aws_smithy_http::label::fmt_string(
+                    input_2,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if message_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "message_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "message_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/messages/{messageId}", messageId = message_id)
                     .expect("formatting should succeed");
@@ -227,8 +243,10 @@ impl PutRawMessageContentInput {
             fn update_http_builder(
                 input: &crate::input::PutRawMessageContentInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -312,7 +330,7 @@ impl PutRawMessageContentInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRawMessageContentInput {
     /// <p>The identifier of the email message being updated.</p>
     #[doc(hidden)]
@@ -331,18 +349,10 @@ impl PutRawMessageContentInput {
         self.content.as_ref()
     }
 }
-impl std::fmt::Debug for PutRawMessageContentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRawMessageContentInput");
-        formatter.field("message_id", &self.message_id);
-        formatter.field("content", &self.content);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRawMessageContentInput {
     /// <p>The identifier of the email message to retrieve.</p>
     #[doc(hidden)]
@@ -352,12 +362,5 @@ impl GetRawMessageContentInput {
     /// <p>The identifier of the email message to retrieve.</p>
     pub fn message_id(&self) -> std::option::Option<&str> {
         self.message_id.as_deref()
-    }
-}
-impl std::fmt::Debug for GetRawMessageContentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRawMessageContentInput");
-        formatter.field("message_id", &self.message_id);
-        formatter.finish()
     }
 }

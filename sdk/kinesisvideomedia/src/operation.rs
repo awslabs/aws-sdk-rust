@@ -5,7 +5,7 @@
 /// [`get_media`](crate::client::Client::get_media).
 ///
 /// See [`crate::client::fluent_builders::GetMedia`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetMedia {
     _private: (),
 }

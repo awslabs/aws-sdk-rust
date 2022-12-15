@@ -2,7 +2,7 @@
 
 /// <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTrailOutput {
     /// <p>Specifies the name of the trail.</p>
     #[doc(hidden)]
@@ -106,39 +106,11 @@ impl UpdateTrailOutput {
         self.is_organization_trail
     }
 }
-impl std::fmt::Debug for UpdateTrailOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTrailOutput");
-        formatter.field("name", &self.name);
-        formatter.field("s3_bucket_name", &self.s3_bucket_name);
-        formatter.field("s3_key_prefix", &self.s3_key_prefix);
-        formatter.field("sns_topic_name", &self.sns_topic_name);
-        formatter.field("sns_topic_arn", &self.sns_topic_arn);
-        formatter.field(
-            "include_global_service_events",
-            &self.include_global_service_events,
-        );
-        formatter.field("is_multi_region_trail", &self.is_multi_region_trail);
-        formatter.field("trail_arn", &self.trail_arn);
-        formatter.field(
-            "log_file_validation_enabled",
-            &self.log_file_validation_enabled,
-        );
-        formatter.field(
-            "cloud_watch_logs_log_group_arn",
-            &self.cloud_watch_logs_log_group_arn,
-        );
-        formatter.field("cloud_watch_logs_role_arn", &self.cloud_watch_logs_role_arn);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("is_organization_trail", &self.is_organization_trail);
-        formatter.finish()
-    }
-}
 /// See [`UpdateTrailOutput`](crate::output::UpdateTrailOutput).
 pub mod update_trail_output {
 
     /// A builder for [`UpdateTrailOutput`](crate::output::UpdateTrailOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) s3_bucket_name: std::option::Option<std::string::String>,
@@ -346,7 +318,7 @@ impl UpdateTrailOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEventDataStoreOutput {
     /// <p>The ARN of the event data store.</p>
     #[doc(hidden)]
@@ -424,30 +396,11 @@ impl UpdateEventDataStoreOutput {
         self.updated_timestamp.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateEventDataStoreOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateEventDataStoreOutput");
-        formatter.field("event_data_store_arn", &self.event_data_store_arn);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("advanced_event_selectors", &self.advanced_event_selectors);
-        formatter.field("multi_region_enabled", &self.multi_region_enabled);
-        formatter.field("organization_enabled", &self.organization_enabled);
-        formatter.field("retention_period", &self.retention_period);
-        formatter.field(
-            "termination_protection_enabled",
-            &self.termination_protection_enabled,
-        );
-        formatter.field("created_timestamp", &self.created_timestamp);
-        formatter.field("updated_timestamp", &self.updated_timestamp);
-        formatter.finish()
-    }
-}
 /// See [`UpdateEventDataStoreOutput`](crate::output::UpdateEventDataStoreOutput).
 pub mod update_event_data_store_output {
 
     /// A builder for [`UpdateEventDataStoreOutput`](crate::output::UpdateEventDataStoreOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_data_store_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -615,19 +568,13 @@ impl UpdateEventDataStoreOutput {
 
 /// <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopLoggingOutput {}
-impl std::fmt::Debug for StopLoggingOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopLoggingOutput");
-        formatter.finish()
-    }
-}
 /// See [`StopLoggingOutput`](crate::output::StopLoggingOutput).
 pub mod stop_logging_output {
 
     /// A builder for [`StopLoggingOutput`](crate::output::StopLoggingOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`StopLoggingOutput`](crate::output::StopLoggingOutput).
@@ -645,7 +592,7 @@ impl StopLoggingOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopImportOutput {
     /// <p> The ID for the import. </p>
     #[doc(hidden)]
@@ -713,26 +660,11 @@ impl StopImportOutput {
         self.import_statistics.as_ref()
     }
 }
-impl std::fmt::Debug for StopImportOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopImportOutput");
-        formatter.field("import_id", &self.import_id);
-        formatter.field("import_source", &self.import_source);
-        formatter.field("destinations", &self.destinations);
-        formatter.field("import_status", &self.import_status);
-        formatter.field("created_timestamp", &self.created_timestamp);
-        formatter.field("updated_timestamp", &self.updated_timestamp);
-        formatter.field("start_event_time", &self.start_event_time);
-        formatter.field("end_event_time", &self.end_event_time);
-        formatter.field("import_statistics", &self.import_statistics);
-        formatter.finish()
-    }
-}
 /// See [`StopImportOutput`](crate::output::StopImportOutput).
 pub mod stop_import_output {
 
     /// A builder for [`StopImportOutput`](crate::output::StopImportOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_id: std::option::Option<std::string::String>,
         pub(crate) import_source: std::option::Option<crate::model::ImportSource>,
@@ -890,7 +822,7 @@ impl StopImportOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartQueryOutput {
     /// <p>The ID of the started query.</p>
     #[doc(hidden)]
@@ -902,18 +834,11 @@ impl StartQueryOutput {
         self.query_id.as_deref()
     }
 }
-impl std::fmt::Debug for StartQueryOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartQueryOutput");
-        formatter.field("query_id", &self.query_id);
-        formatter.finish()
-    }
-}
 /// See [`StartQueryOutput`](crate::output::StartQueryOutput).
 pub mod start_query_output {
 
     /// A builder for [`StartQueryOutput`](crate::output::StartQueryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_id: std::option::Option<std::string::String>,
     }
@@ -945,19 +870,13 @@ impl StartQueryOutput {
 
 /// <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartLoggingOutput {}
-impl std::fmt::Debug for StartLoggingOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartLoggingOutput");
-        formatter.finish()
-    }
-}
 /// See [`StartLoggingOutput`](crate::output::StartLoggingOutput).
 pub mod start_logging_output {
 
     /// A builder for [`StartLoggingOutput`](crate::output::StartLoggingOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`StartLoggingOutput`](crate::output::StartLoggingOutput).
@@ -975,7 +894,7 @@ impl StartLoggingOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartImportOutput {
     /// <p> The ID of the import. </p>
     #[doc(hidden)]
@@ -1036,25 +955,11 @@ impl StartImportOutput {
         self.updated_timestamp.as_ref()
     }
 }
-impl std::fmt::Debug for StartImportOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartImportOutput");
-        formatter.field("import_id", &self.import_id);
-        formatter.field("destinations", &self.destinations);
-        formatter.field("import_source", &self.import_source);
-        formatter.field("start_event_time", &self.start_event_time);
-        formatter.field("end_event_time", &self.end_event_time);
-        formatter.field("import_status", &self.import_status);
-        formatter.field("created_timestamp", &self.created_timestamp);
-        formatter.field("updated_timestamp", &self.updated_timestamp);
-        formatter.finish()
-    }
-}
 /// See [`StartImportOutput`](crate::output::StartImportOutput).
 pub mod start_import_output {
 
     /// A builder for [`StartImportOutput`](crate::output::StartImportOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_id: std::option::Option<std::string::String>,
         pub(crate) destinations: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1197,7 +1102,7 @@ impl StartImportOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestoreEventDataStoreOutput {
     /// <p>The event data store ARN.</p>
     #[doc(hidden)]
@@ -1275,30 +1180,11 @@ impl RestoreEventDataStoreOutput {
         self.updated_timestamp.as_ref()
     }
 }
-impl std::fmt::Debug for RestoreEventDataStoreOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestoreEventDataStoreOutput");
-        formatter.field("event_data_store_arn", &self.event_data_store_arn);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("advanced_event_selectors", &self.advanced_event_selectors);
-        formatter.field("multi_region_enabled", &self.multi_region_enabled);
-        formatter.field("organization_enabled", &self.organization_enabled);
-        formatter.field("retention_period", &self.retention_period);
-        formatter.field(
-            "termination_protection_enabled",
-            &self.termination_protection_enabled,
-        );
-        formatter.field("created_timestamp", &self.created_timestamp);
-        formatter.field("updated_timestamp", &self.updated_timestamp);
-        formatter.finish()
-    }
-}
 /// See [`RestoreEventDataStoreOutput`](crate::output::RestoreEventDataStoreOutput).
 pub mod restore_event_data_store_output {
 
     /// A builder for [`RestoreEventDataStoreOutput`](crate::output::RestoreEventDataStoreOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_data_store_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1466,19 +1352,13 @@ impl RestoreEventDataStoreOutput {
 
 /// <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveTagsOutput {}
-impl std::fmt::Debug for RemoveTagsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveTagsOutput");
-        formatter.finish()
-    }
-}
 /// See [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
 pub mod remove_tags_output {
 
     /// A builder for [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
@@ -1496,7 +1376,7 @@ impl RemoveTagsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutInsightSelectorsOutput {
     /// <p>The Amazon Resource Name (ARN) of a trail for which you want to change or add Insights selectors.</p>
     #[doc(hidden)]
@@ -1515,19 +1395,11 @@ impl PutInsightSelectorsOutput {
         self.insight_selectors.as_deref()
     }
 }
-impl std::fmt::Debug for PutInsightSelectorsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutInsightSelectorsOutput");
-        formatter.field("trail_arn", &self.trail_arn);
-        formatter.field("insight_selectors", &self.insight_selectors);
-        formatter.finish()
-    }
-}
 /// See [`PutInsightSelectorsOutput`](crate::output::PutInsightSelectorsOutput).
 pub mod put_insight_selectors_output {
 
     /// A builder for [`PutInsightSelectorsOutput`](crate::output::PutInsightSelectorsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trail_arn: std::option::Option<std::string::String>,
         pub(crate) insight_selectors:
@@ -1581,7 +1453,7 @@ impl PutInsightSelectorsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutEventSelectorsOutput {
     /// <p>Specifies the ARN of the trail that was updated with event selectors. The following is the format of a trail ARN.</p>
     /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
@@ -1612,20 +1484,11 @@ impl PutEventSelectorsOutput {
         self.advanced_event_selectors.as_deref()
     }
 }
-impl std::fmt::Debug for PutEventSelectorsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutEventSelectorsOutput");
-        formatter.field("trail_arn", &self.trail_arn);
-        formatter.field("event_selectors", &self.event_selectors);
-        formatter.field("advanced_event_selectors", &self.advanced_event_selectors);
-        formatter.finish()
-    }
-}
 /// See [`PutEventSelectorsOutput`](crate::output::PutEventSelectorsOutput).
 pub mod put_event_selectors_output {
 
     /// A builder for [`PutEventSelectorsOutput`](crate::output::PutEventSelectorsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trail_arn: std::option::Option<std::string::String>,
         pub(crate) event_selectors: std::option::Option<std::vec::Vec<crate::model::EventSelector>>,
@@ -1705,7 +1568,7 @@ impl PutEventSelectorsOutput {
 
 /// <p>Contains a response to a LookupEvents action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LookupEventsOutput {
     /// <p>A list of events returned based on the lookup attributes specified and the CloudTrail event. The events list is sorted by time. The most recent event is listed first.</p>
     #[doc(hidden)]
@@ -1724,19 +1587,11 @@ impl LookupEventsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for LookupEventsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LookupEventsOutput");
-        formatter.field("events", &self.events);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`LookupEventsOutput`](crate::output::LookupEventsOutput).
 pub mod lookup_events_output {
 
     /// A builder for [`LookupEventsOutput`](crate::output::LookupEventsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::Event>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1789,7 +1644,7 @@ impl LookupEventsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTrailsOutput {
     /// <p>Returns the name, ARN, and home region of trails in the current account.</p>
     #[doc(hidden)]
@@ -1808,19 +1663,11 @@ impl ListTrailsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTrailsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTrailsOutput");
-        formatter.field("trails", &self.trails);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListTrailsOutput`](crate::output::ListTrailsOutput).
 pub mod list_trails_output {
 
     /// A builder for [`ListTrailsOutput`](crate::output::ListTrailsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trails: std::option::Option<std::vec::Vec<crate::model::TrailInfo>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1873,7 +1720,7 @@ impl ListTrailsOutput {
 
 /// <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsOutput {
     /// <p>A list of resource tags.</p>
     #[doc(hidden)]
@@ -1892,19 +1739,11 @@ impl ListTagsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsOutput");
-        formatter.field("resource_tag_list", &self.resource_tag_list);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListTagsOutput`](crate::output::ListTagsOutput).
 pub mod list_tags_output {
 
     /// A builder for [`ListTagsOutput`](crate::output::ListTagsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_tag_list: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1957,7 +1796,7 @@ impl ListTagsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListQueriesOutput {
     /// <p>Lists matching query results, and shows query ID, status, and creation time of each query.</p>
     #[doc(hidden)]
@@ -1976,19 +1815,11 @@ impl ListQueriesOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListQueriesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListQueriesOutput");
-        formatter.field("queries", &self.queries);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListQueriesOutput`](crate::output::ListQueriesOutput).
 pub mod list_queries_output {
 
     /// A builder for [`ListQueriesOutput`](crate::output::ListQueriesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queries: std::option::Option<std::vec::Vec<crate::model::Query>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2041,7 +1872,7 @@ impl ListQueriesOutput {
 
 /// <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPublicKeysOutput {
     /// <p>Contains an array of PublicKey objects.</p> <note>
     /// <p>The returned public keys may have validity time ranges that overlap.</p>
@@ -2064,19 +1895,11 @@ impl ListPublicKeysOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPublicKeysOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPublicKeysOutput");
-        formatter.field("public_key_list", &self.public_key_list);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListPublicKeysOutput`](crate::output::ListPublicKeysOutput).
 pub mod list_public_keys_output {
 
     /// A builder for [`ListPublicKeysOutput`](crate::output::ListPublicKeysOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) public_key_list: std::option::Option<std::vec::Vec<crate::model::PublicKey>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2133,7 +1956,7 @@ impl ListPublicKeysOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListImportsOutput {
     /// <p> The list of returned imports. </p>
     #[doc(hidden)]
@@ -2152,19 +1975,11 @@ impl ListImportsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListImportsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListImportsOutput");
-        formatter.field("imports", &self.imports);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListImportsOutput`](crate::output::ListImportsOutput).
 pub mod list_imports_output {
 
     /// A builder for [`ListImportsOutput`](crate::output::ListImportsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) imports: std::option::Option<std::vec::Vec<crate::model::ImportsListItem>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2217,7 +2032,7 @@ impl ListImportsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListImportFailuresOutput {
     /// <p> Contains information about the import failures. </p>
     #[doc(hidden)]
@@ -2236,19 +2051,11 @@ impl ListImportFailuresOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListImportFailuresOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListImportFailuresOutput");
-        formatter.field("failures", &self.failures);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListImportFailuresOutput`](crate::output::ListImportFailuresOutput).
 pub mod list_import_failures_output {
 
     /// A builder for [`ListImportFailuresOutput`](crate::output::ListImportFailuresOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failures:
             std::option::Option<std::vec::Vec<crate::model::ImportFailureListItem>>,
@@ -2302,7 +2109,7 @@ impl ListImportFailuresOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEventDataStoresOutput {
     /// <p>Contains information about event data stores in the account, in the current region.</p>
     #[doc(hidden)]
@@ -2321,19 +2128,11 @@ impl ListEventDataStoresOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListEventDataStoresOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEventDataStoresOutput");
-        formatter.field("event_data_stores", &self.event_data_stores);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListEventDataStoresOutput`](crate::output::ListEventDataStoresOutput).
 pub mod list_event_data_stores_output {
 
     /// A builder for [`ListEventDataStoresOutput`](crate::output::ListEventDataStoresOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_data_stores:
             std::option::Option<std::vec::Vec<crate::model::EventDataStore>>,
@@ -2387,7 +2186,7 @@ impl ListEventDataStoresOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListChannelsOutput {
     /// <p> The list of CloudTrail channels. </p>
     #[doc(hidden)]
@@ -2406,19 +2205,11 @@ impl ListChannelsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListChannelsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListChannelsOutput");
-        formatter.field("channels", &self.channels);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListChannelsOutput`](crate::output::ListChannelsOutput).
 pub mod list_channels_output {
 
     /// A builder for [`ListChannelsOutput`](crate::output::ListChannelsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channels: std::option::Option<std::vec::Vec<crate::model::Channel>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2471,7 +2262,7 @@ impl ListChannelsOutput {
 
 /// <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTrailStatusOutput {
     /// <p>Whether the CloudTrail trail is currently logging Amazon Web Services API calls.</p>
     #[doc(hidden)]
@@ -2605,58 +2396,11 @@ impl GetTrailStatusOutput {
         self.time_logging_stopped.as_deref()
     }
 }
-impl std::fmt::Debug for GetTrailStatusOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTrailStatusOutput");
-        formatter.field("is_logging", &self.is_logging);
-        formatter.field("latest_delivery_error", &self.latest_delivery_error);
-        formatter.field("latest_notification_error", &self.latest_notification_error);
-        formatter.field("latest_delivery_time", &self.latest_delivery_time);
-        formatter.field("latest_notification_time", &self.latest_notification_time);
-        formatter.field("start_logging_time", &self.start_logging_time);
-        formatter.field("stop_logging_time", &self.stop_logging_time);
-        formatter.field(
-            "latest_cloud_watch_logs_delivery_error",
-            &self.latest_cloud_watch_logs_delivery_error,
-        );
-        formatter.field(
-            "latest_cloud_watch_logs_delivery_time",
-            &self.latest_cloud_watch_logs_delivery_time,
-        );
-        formatter.field(
-            "latest_digest_delivery_time",
-            &self.latest_digest_delivery_time,
-        );
-        formatter.field(
-            "latest_digest_delivery_error",
-            &self.latest_digest_delivery_error,
-        );
-        formatter.field(
-            "latest_delivery_attempt_time",
-            &self.latest_delivery_attempt_time,
-        );
-        formatter.field(
-            "latest_notification_attempt_time",
-            &self.latest_notification_attempt_time,
-        );
-        formatter.field(
-            "latest_notification_attempt_succeeded",
-            &self.latest_notification_attempt_succeeded,
-        );
-        formatter.field(
-            "latest_delivery_attempt_succeeded",
-            &self.latest_delivery_attempt_succeeded,
-        );
-        formatter.field("time_logging_started", &self.time_logging_started);
-        formatter.field("time_logging_stopped", &self.time_logging_stopped);
-        formatter.finish()
-    }
-}
 /// See [`GetTrailStatusOutput`](crate::output::GetTrailStatusOutput).
 pub mod get_trail_status_output {
 
     /// A builder for [`GetTrailStatusOutput`](crate::output::GetTrailStatusOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) is_logging: std::option::Option<bool>,
         pub(crate) latest_delivery_error: std::option::Option<std::string::String>,
@@ -2958,7 +2702,7 @@ impl GetTrailStatusOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTrailOutput {
     /// <p>The settings for a trail.</p>
     #[doc(hidden)]
@@ -2970,18 +2714,11 @@ impl GetTrailOutput {
         self.trail.as_ref()
     }
 }
-impl std::fmt::Debug for GetTrailOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTrailOutput");
-        formatter.field("trail", &self.trail);
-        formatter.finish()
-    }
-}
 /// See [`GetTrailOutput`](crate::output::GetTrailOutput).
 pub mod get_trail_output {
 
     /// A builder for [`GetTrailOutput`](crate::output::GetTrailOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trail: std::option::Option<crate::model::Trail>,
     }
@@ -3011,7 +2748,7 @@ impl GetTrailOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetQueryResultsOutput {
     /// <p>The status of the query. Values include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code>.</p>
     #[doc(hidden)]
@@ -3059,22 +2796,11 @@ impl GetQueryResultsOutput {
         self.error_message.as_deref()
     }
 }
-impl std::fmt::Debug for GetQueryResultsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetQueryResultsOutput");
-        formatter.field("query_status", &self.query_status);
-        formatter.field("query_statistics", &self.query_statistics);
-        formatter.field("query_result_rows", &self.query_result_rows);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
-    }
-}
 /// See [`GetQueryResultsOutput`](crate::output::GetQueryResultsOutput).
 pub mod get_query_results_output {
 
     /// A builder for [`GetQueryResultsOutput`](crate::output::GetQueryResultsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_status: std::option::Option<crate::model::QueryStatus>,
         pub(crate) query_statistics: std::option::Option<crate::model::QueryStatistics>,
@@ -3187,7 +2913,7 @@ impl GetQueryResultsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetInsightSelectorsOutput {
     /// <p>The Amazon Resource Name (ARN) of a trail for which you want to get Insights selectors.</p>
     #[doc(hidden)]
@@ -3206,19 +2932,11 @@ impl GetInsightSelectorsOutput {
         self.insight_selectors.as_deref()
     }
 }
-impl std::fmt::Debug for GetInsightSelectorsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetInsightSelectorsOutput");
-        formatter.field("trail_arn", &self.trail_arn);
-        formatter.field("insight_selectors", &self.insight_selectors);
-        formatter.finish()
-    }
-}
 /// See [`GetInsightSelectorsOutput`](crate::output::GetInsightSelectorsOutput).
 pub mod get_insight_selectors_output {
 
     /// A builder for [`GetInsightSelectorsOutput`](crate::output::GetInsightSelectorsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trail_arn: std::option::Option<std::string::String>,
         pub(crate) insight_selectors:
@@ -3272,7 +2990,7 @@ impl GetInsightSelectorsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetImportOutput {
     /// <p> The ID of the import. </p>
     #[doc(hidden)]
@@ -3340,26 +3058,11 @@ impl GetImportOutput {
         self.import_statistics.as_ref()
     }
 }
-impl std::fmt::Debug for GetImportOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetImportOutput");
-        formatter.field("import_id", &self.import_id);
-        formatter.field("destinations", &self.destinations);
-        formatter.field("import_source", &self.import_source);
-        formatter.field("start_event_time", &self.start_event_time);
-        formatter.field("end_event_time", &self.end_event_time);
-        formatter.field("import_status", &self.import_status);
-        formatter.field("created_timestamp", &self.created_timestamp);
-        formatter.field("updated_timestamp", &self.updated_timestamp);
-        formatter.field("import_statistics", &self.import_statistics);
-        formatter.finish()
-    }
-}
 /// See [`GetImportOutput`](crate::output::GetImportOutput).
 pub mod get_import_output {
 
     /// A builder for [`GetImportOutput`](crate::output::GetImportOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_id: std::option::Option<std::string::String>,
         pub(crate) destinations: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3517,7 +3220,7 @@ impl GetImportOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEventSelectorsOutput {
     /// <p>The specified trail ARN that has the event selectors.</p>
     #[doc(hidden)]
@@ -3546,20 +3249,11 @@ impl GetEventSelectorsOutput {
         self.advanced_event_selectors.as_deref()
     }
 }
-impl std::fmt::Debug for GetEventSelectorsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEventSelectorsOutput");
-        formatter.field("trail_arn", &self.trail_arn);
-        formatter.field("event_selectors", &self.event_selectors);
-        formatter.field("advanced_event_selectors", &self.advanced_event_selectors);
-        formatter.finish()
-    }
-}
 /// See [`GetEventSelectorsOutput`](crate::output::GetEventSelectorsOutput).
 pub mod get_event_selectors_output {
 
     /// A builder for [`GetEventSelectorsOutput`](crate::output::GetEventSelectorsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trail_arn: std::option::Option<std::string::String>,
         pub(crate) event_selectors: std::option::Option<std::vec::Vec<crate::model::EventSelector>>,
@@ -3637,7 +3331,7 @@ impl GetEventSelectorsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEventDataStoreOutput {
     /// <p>The event data store Amazon Resource Number (ARN).</p>
     #[doc(hidden)]
@@ -3715,30 +3409,11 @@ impl GetEventDataStoreOutput {
         self.updated_timestamp.as_ref()
     }
 }
-impl std::fmt::Debug for GetEventDataStoreOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEventDataStoreOutput");
-        formatter.field("event_data_store_arn", &self.event_data_store_arn);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("advanced_event_selectors", &self.advanced_event_selectors);
-        formatter.field("multi_region_enabled", &self.multi_region_enabled);
-        formatter.field("organization_enabled", &self.organization_enabled);
-        formatter.field("retention_period", &self.retention_period);
-        formatter.field(
-            "termination_protection_enabled",
-            &self.termination_protection_enabled,
-        );
-        formatter.field("created_timestamp", &self.created_timestamp);
-        formatter.field("updated_timestamp", &self.updated_timestamp);
-        formatter.finish()
-    }
-}
 /// See [`GetEventDataStoreOutput`](crate::output::GetEventDataStoreOutput).
 pub mod get_event_data_store_output {
 
     /// A builder for [`GetEventDataStoreOutput`](crate::output::GetEventDataStoreOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_data_store_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3906,7 +3581,7 @@ impl GetEventDataStoreOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetChannelOutput {
     /// <p> The ARN of the CloudTrail service-linked channel. </p>
     #[doc(hidden)]
@@ -3946,22 +3621,11 @@ impl GetChannelOutput {
         self.destinations.as_deref()
     }
 }
-impl std::fmt::Debug for GetChannelOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetChannelOutput");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("name", &self.name);
-        formatter.field("source", &self.source);
-        formatter.field("source_config", &self.source_config);
-        formatter.field("destinations", &self.destinations);
-        formatter.finish()
-    }
-}
 /// See [`GetChannelOutput`](crate::output::GetChannelOutput).
 pub mod get_channel_output {
 
     /// A builder for [`GetChannelOutput`](crate::output::GetChannelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4053,7 +3717,7 @@ impl GetChannelOutput {
 
 /// <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTrailsOutput {
     /// <p>The list of trail objects. Trail objects with string values are only returned if values for the objects exist in a trail's configuration. For example, <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in results if a trail is configured to send SNS notifications. Similarly, <code>KMSKeyId</code> only appears in results if a trail's log files are encrypted with KMS customer managed keys.</p>
     #[doc(hidden)]
@@ -4065,18 +3729,11 @@ impl DescribeTrailsOutput {
         self.trail_list.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTrailsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTrailsOutput");
-        formatter.field("trail_list", &self.trail_list);
-        formatter.finish()
-    }
-}
 /// See [`DescribeTrailsOutput`](crate::output::DescribeTrailsOutput).
 pub mod describe_trails_output {
 
     /// A builder for [`DescribeTrailsOutput`](crate::output::DescribeTrailsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trail_list: std::option::Option<std::vec::Vec<crate::model::Trail>>,
     }
@@ -4117,7 +3774,7 @@ impl DescribeTrailsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeQueryOutput {
     /// <p>The ID of the query.</p>
     #[doc(hidden)]
@@ -4159,22 +3816,11 @@ impl DescribeQueryOutput {
         self.error_message.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeQueryOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeQueryOutput");
-        formatter.field("query_id", &self.query_id);
-        formatter.field("query_string", &self.query_string);
-        formatter.field("query_status", &self.query_status);
-        formatter.field("query_statistics", &self.query_statistics);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
-    }
-}
 /// See [`DescribeQueryOutput`](crate::output::DescribeQueryOutput).
 pub mod describe_query_output {
 
     /// A builder for [`DescribeQueryOutput`](crate::output::DescribeQueryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_id: std::option::Option<std::string::String>,
         pub(crate) query_string: std::option::Option<std::string::String>,
@@ -4267,19 +3913,13 @@ impl DescribeQueryOutput {
 
 /// <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTrailOutput {}
-impl std::fmt::Debug for DeleteTrailOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTrailOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteTrailOutput`](crate::output::DeleteTrailOutput).
 pub mod delete_trail_output {
 
     /// A builder for [`DeleteTrailOutput`](crate::output::DeleteTrailOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteTrailOutput`](crate::output::DeleteTrailOutput).
@@ -4297,19 +3937,13 @@ impl DeleteTrailOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEventDataStoreOutput {}
-impl std::fmt::Debug for DeleteEventDataStoreOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEventDataStoreOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteEventDataStoreOutput`](crate::output::DeleteEventDataStoreOutput).
 pub mod delete_event_data_store_output {
 
     /// A builder for [`DeleteEventDataStoreOutput`](crate::output::DeleteEventDataStoreOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteEventDataStoreOutput`](crate::output::DeleteEventDataStoreOutput).
@@ -4327,7 +3961,7 @@ impl DeleteEventDataStoreOutput {
 
 /// <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTrailOutput {
     /// <p>Specifies the name of the trail.</p>
     #[doc(hidden)]
@@ -4431,39 +4065,11 @@ impl CreateTrailOutput {
         self.is_organization_trail
     }
 }
-impl std::fmt::Debug for CreateTrailOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTrailOutput");
-        formatter.field("name", &self.name);
-        formatter.field("s3_bucket_name", &self.s3_bucket_name);
-        formatter.field("s3_key_prefix", &self.s3_key_prefix);
-        formatter.field("sns_topic_name", &self.sns_topic_name);
-        formatter.field("sns_topic_arn", &self.sns_topic_arn);
-        formatter.field(
-            "include_global_service_events",
-            &self.include_global_service_events,
-        );
-        formatter.field("is_multi_region_trail", &self.is_multi_region_trail);
-        formatter.field("trail_arn", &self.trail_arn);
-        formatter.field(
-            "log_file_validation_enabled",
-            &self.log_file_validation_enabled,
-        );
-        formatter.field(
-            "cloud_watch_logs_log_group_arn",
-            &self.cloud_watch_logs_log_group_arn,
-        );
-        formatter.field("cloud_watch_logs_role_arn", &self.cloud_watch_logs_role_arn);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("is_organization_trail", &self.is_organization_trail);
-        formatter.finish()
-    }
-}
 /// See [`CreateTrailOutput`](crate::output::CreateTrailOutput).
 pub mod create_trail_output {
 
     /// A builder for [`CreateTrailOutput`](crate::output::CreateTrailOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) s3_bucket_name: std::option::Option<std::string::String>,
@@ -4671,7 +4277,7 @@ impl CreateTrailOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateEventDataStoreOutput {
     /// <p>The ARN of the event data store.</p>
     #[doc(hidden)]
@@ -4756,31 +4362,11 @@ impl CreateEventDataStoreOutput {
         self.updated_timestamp.as_ref()
     }
 }
-impl std::fmt::Debug for CreateEventDataStoreOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateEventDataStoreOutput");
-        formatter.field("event_data_store_arn", &self.event_data_store_arn);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("advanced_event_selectors", &self.advanced_event_selectors);
-        formatter.field("multi_region_enabled", &self.multi_region_enabled);
-        formatter.field("organization_enabled", &self.organization_enabled);
-        formatter.field("retention_period", &self.retention_period);
-        formatter.field(
-            "termination_protection_enabled",
-            &self.termination_protection_enabled,
-        );
-        formatter.field("tags_list", &self.tags_list);
-        formatter.field("created_timestamp", &self.created_timestamp);
-        formatter.field("updated_timestamp", &self.updated_timestamp);
-        formatter.finish()
-    }
-}
 /// See [`CreateEventDataStoreOutput`](crate::output::CreateEventDataStoreOutput).
 pub mod create_event_data_store_output {
 
     /// A builder for [`CreateEventDataStoreOutput`](crate::output::CreateEventDataStoreOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_data_store_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4969,7 +4555,7 @@ impl CreateEventDataStoreOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelQueryOutput {
     /// <p>The ID of the canceled query.</p>
     #[doc(hidden)]
@@ -4988,19 +4574,11 @@ impl CancelQueryOutput {
         self.query_status.as_ref()
     }
 }
-impl std::fmt::Debug for CancelQueryOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelQueryOutput");
-        formatter.field("query_id", &self.query_id);
-        formatter.field("query_status", &self.query_status);
-        formatter.finish()
-    }
-}
 /// See [`CancelQueryOutput`](crate::output::CancelQueryOutput).
 pub mod cancel_query_output {
 
     /// A builder for [`CancelQueryOutput`](crate::output::CancelQueryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_id: std::option::Option<std::string::String>,
         pub(crate) query_status: std::option::Option<crate::model::QueryStatus>,
@@ -5047,19 +4625,13 @@ impl CancelQueryOutput {
 
 /// <p>Returns the objects or data if successful. Otherwise, returns an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddTagsOutput {}
-impl std::fmt::Debug for AddTagsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddTagsOutput");
-        formatter.finish()
-    }
-}
 /// See [`AddTagsOutput`](crate::output::AddTagsOutput).
 pub mod add_tags_output {
 
     /// A builder for [`AddTagsOutput`](crate::output::AddTagsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AddTagsOutput`](crate::output::AddTagsOutput).

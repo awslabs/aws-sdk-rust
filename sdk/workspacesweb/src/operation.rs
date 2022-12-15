@@ -5,7 +5,7 @@
 /// [`associate_browser_settings`](crate::client::Client::associate_browser_settings).
 ///
 /// See [`crate::client::fluent_builders::AssociateBrowserSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateBrowserSettings {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateBrowserSettings
 /// [`associate_network_settings`](crate::client::Client::associate_network_settings).
 ///
 /// See [`crate::client::fluent_builders::AssociateNetworkSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateNetworkSettings {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateNetworkSettings
 /// [`associate_trust_store`](crate::client::Client::associate_trust_store).
 ///
 /// See [`crate::client::fluent_builders::AssociateTrustStore`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateTrustStore {
     _private: (),
 }
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateTrustStore {
 /// [`associate_user_settings`](crate::client::Client::associate_user_settings).
 ///
 /// See [`crate::client::fluent_builders::AssociateUserSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateUserSettings {
     _private: (),
 }
@@ -141,7 +141,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateUserSettings {
 /// [`create_browser_settings`](crate::client::Client::create_browser_settings).
 ///
 /// See [`crate::client::fluent_builders::CreateBrowserSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateBrowserSettings {
     _private: (),
 }
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBrowserSettings {
 /// [`create_identity_provider`](crate::client::Client::create_identity_provider).
 ///
 /// See [`crate::client::fluent_builders::CreateIdentityProvider`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateIdentityProvider {
     _private: (),
 }
@@ -209,7 +209,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateIdentityProvider {
 /// [`create_network_settings`](crate::client::Client::create_network_settings).
 ///
 /// See [`crate::client::fluent_builders::CreateNetworkSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateNetworkSettings {
     _private: (),
 }
@@ -243,7 +243,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNetworkSettings {
 /// [`create_portal`](crate::client::Client::create_portal).
 ///
 /// See [`crate::client::fluent_builders::CreatePortal`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreatePortal {
     _private: (),
 }
@@ -275,7 +275,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePortal {
 /// [`create_trust_store`](crate::client::Client::create_trust_store).
 ///
 /// See [`crate::client::fluent_builders::CreateTrustStore`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateTrustStore {
     _private: (),
 }
@@ -309,7 +309,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTrustStore {
 /// [`create_user_settings`](crate::client::Client::create_user_settings).
 ///
 /// See [`crate::client::fluent_builders::CreateUserSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateUserSettings {
     _private: (),
 }
@@ -343,7 +343,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateUserSettings {
 /// [`delete_browser_settings`](crate::client::Client::delete_browser_settings).
 ///
 /// See [`crate::client::fluent_builders::DeleteBrowserSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBrowserSettings {
     _private: (),
 }
@@ -377,7 +377,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBrowserSettings {
 /// [`delete_identity_provider`](crate::client::Client::delete_identity_provider).
 ///
 /// See [`crate::client::fluent_builders::DeleteIdentityProvider`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteIdentityProvider {
     _private: (),
 }
@@ -411,7 +411,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteIdentityProvider {
 /// [`delete_network_settings`](crate::client::Client::delete_network_settings).
 ///
 /// See [`crate::client::fluent_builders::DeleteNetworkSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteNetworkSettings {
     _private: (),
 }
@@ -445,7 +445,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNetworkSettings {
 /// [`delete_portal`](crate::client::Client::delete_portal).
 ///
 /// See [`crate::client::fluent_builders::DeletePortal`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeletePortal {
     _private: (),
 }
@@ -477,7 +477,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePortal {
 /// [`delete_trust_store`](crate::client::Client::delete_trust_store).
 ///
 /// See [`crate::client::fluent_builders::DeleteTrustStore`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteTrustStore {
     _private: (),
 }
@@ -511,7 +511,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTrustStore {
 /// [`delete_user_settings`](crate::client::Client::delete_user_settings).
 ///
 /// See [`crate::client::fluent_builders::DeleteUserSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteUserSettings {
     _private: (),
 }
@@ -545,7 +545,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteUserSettings {
 /// [`disassociate_browser_settings`](crate::client::Client::disassociate_browser_settings).
 ///
 /// See [`crate::client::fluent_builders::DisassociateBrowserSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateBrowserSettings {
     _private: (),
 }
@@ -579,7 +579,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateBrowserSetti
 /// [`disassociate_network_settings`](crate::client::Client::disassociate_network_settings).
 ///
 /// See [`crate::client::fluent_builders::DisassociateNetworkSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateNetworkSettings {
     _private: (),
 }
@@ -613,7 +613,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateNetworkSetti
 /// [`disassociate_trust_store`](crate::client::Client::disassociate_trust_store).
 ///
 /// See [`crate::client::fluent_builders::DisassociateTrustStore`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateTrustStore {
     _private: (),
 }
@@ -647,7 +647,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateTrustStore {
 /// [`disassociate_user_settings`](crate::client::Client::disassociate_user_settings).
 ///
 /// See [`crate::client::fluent_builders::DisassociateUserSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateUserSettings {
     _private: (),
 }
@@ -681,7 +681,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateUserSettings
 /// [`get_browser_settings`](crate::client::Client::get_browser_settings).
 ///
 /// See [`crate::client::fluent_builders::GetBrowserSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBrowserSettings {
     _private: (),
 }
@@ -715,7 +715,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBrowserSettings {
 /// [`get_identity_provider`](crate::client::Client::get_identity_provider).
 ///
 /// See [`crate::client::fluent_builders::GetIdentityProvider`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetIdentityProvider {
     _private: (),
 }
@@ -749,7 +749,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIdentityProvider {
 /// [`get_network_settings`](crate::client::Client::get_network_settings).
 ///
 /// See [`crate::client::fluent_builders::GetNetworkSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetNetworkSettings {
     _private: (),
 }
@@ -783,7 +783,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetNetworkSettings {
 /// [`get_portal`](crate::client::Client::get_portal).
 ///
 /// See [`crate::client::fluent_builders::GetPortal`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPortal {
     _private: (),
 }
@@ -814,7 +814,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPortal {
 /// [`get_portal_service_provider_metadata`](crate::client::Client::get_portal_service_provider_metadata).
 ///
 /// See [`crate::client::fluent_builders::GetPortalServiceProviderMetadata`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPortalServiceProviderMetadata {
     _private: (),
 }
@@ -848,7 +848,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPortalServiceProvider
 /// [`get_trust_store`](crate::client::Client::get_trust_store).
 ///
 /// See [`crate::client::fluent_builders::GetTrustStore`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetTrustStore {
     _private: (),
 }
@@ -880,7 +880,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTrustStore {
 /// [`get_trust_store_certificate`](crate::client::Client::get_trust_store_certificate).
 ///
 /// See [`crate::client::fluent_builders::GetTrustStoreCertificate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetTrustStoreCertificate {
     _private: (),
 }
@@ -914,7 +914,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTrustStoreCertificate
 /// [`get_user_settings`](crate::client::Client::get_user_settings).
 ///
 /// See [`crate::client::fluent_builders::GetUserSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetUserSettings {
     _private: (),
 }
@@ -948,7 +948,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUserSettings {
 /// [`list_browser_settings`](crate::client::Client::list_browser_settings).
 ///
 /// See [`crate::client::fluent_builders::ListBrowserSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListBrowserSettings {
     _private: (),
 }
@@ -982,7 +982,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBrowserSettings {
 /// [`list_identity_providers`](crate::client::Client::list_identity_providers).
 ///
 /// See [`crate::client::fluent_builders::ListIdentityProviders`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListIdentityProviders {
     _private: (),
 }
@@ -1016,7 +1016,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListIdentityProviders {
 /// [`list_network_settings`](crate::client::Client::list_network_settings).
 ///
 /// See [`crate::client::fluent_builders::ListNetworkSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListNetworkSettings {
     _private: (),
 }
@@ -1050,7 +1050,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListNetworkSettings {
 /// [`list_portals`](crate::client::Client::list_portals).
 ///
 /// See [`crate::client::fluent_builders::ListPortals`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPortals {
     _private: (),
 }
@@ -1082,7 +1082,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPortals {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -1116,7 +1116,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`list_trust_store_certificates`](crate::client::Client::list_trust_store_certificates).
 ///
 /// See [`crate::client::fluent_builders::ListTrustStoreCertificates`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTrustStoreCertificates {
     _private: (),
 }
@@ -1150,7 +1150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTrustStoreCertificat
 /// [`list_trust_stores`](crate::client::Client::list_trust_stores).
 ///
 /// See [`crate::client::fluent_builders::ListTrustStores`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTrustStores {
     _private: (),
 }
@@ -1184,7 +1184,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTrustStores {
 /// [`list_user_settings`](crate::client::Client::list_user_settings).
 ///
 /// See [`crate::client::fluent_builders::ListUserSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListUserSettings {
     _private: (),
 }
@@ -1218,7 +1218,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListUserSettings {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -1250,7 +1250,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -1282,7 +1282,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_browser_settings`](crate::client::Client::update_browser_settings).
 ///
 /// See [`crate::client::fluent_builders::UpdateBrowserSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateBrowserSettings {
     _private: (),
 }
@@ -1316,7 +1316,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateBrowserSettings {
 /// [`update_identity_provider`](crate::client::Client::update_identity_provider).
 ///
 /// See [`crate::client::fluent_builders::UpdateIdentityProvider`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateIdentityProvider {
     _private: (),
 }
@@ -1350,7 +1350,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateIdentityProvider {
 /// [`update_network_settings`](crate::client::Client::update_network_settings).
 ///
 /// See [`crate::client::fluent_builders::UpdateNetworkSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateNetworkSettings {
     _private: (),
 }
@@ -1384,7 +1384,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateNetworkSettings {
 /// [`update_portal`](crate::client::Client::update_portal).
 ///
 /// See [`crate::client::fluent_builders::UpdatePortal`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdatePortal {
     _private: (),
 }
@@ -1416,7 +1416,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePortal {
 /// [`update_trust_store`](crate::client::Client::update_trust_store).
 ///
 /// See [`crate::client::fluent_builders::UpdateTrustStore`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateTrustStore {
     _private: (),
 }
@@ -1450,7 +1450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateTrustStore {
 /// [`update_user_settings`](crate::client::Client::update_user_settings).
 ///
 /// See [`crate::client::fluent_builders::UpdateUserSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateUserSettings {
     _private: (),
 }

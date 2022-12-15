@@ -5,7 +5,7 @@
 /// [`create_parallel_data`](crate::client::Client::create_parallel_data).
 ///
 /// See [`crate::client::fluent_builders::CreateParallelData`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateParallelData {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateParallelData {
 /// [`delete_parallel_data`](crate::client::Client::delete_parallel_data).
 ///
 /// See [`crate::client::fluent_builders::DeleteParallelData`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteParallelData {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteParallelData {
 /// [`delete_terminology`](crate::client::Client::delete_terminology).
 ///
 /// See [`crate::client::fluent_builders::DeleteTerminology`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteTerminology {
     _private: (),
 }
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTerminology {
 /// [`describe_text_translation_job`](crate::client::Client::describe_text_translation_job).
 ///
 /// See [`crate::client::fluent_builders::DescribeTextTranslationJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeTextTranslationJob {
     _private: (),
 }
@@ -141,7 +141,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTextTranslationJ
 /// [`get_parallel_data`](crate::client::Client::get_parallel_data).
 ///
 /// See [`crate::client::fluent_builders::GetParallelData`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetParallelData {
     _private: (),
 }
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetParallelData {
 /// [`get_terminology`](crate::client::Client::get_terminology).
 ///
 /// See [`crate::client::fluent_builders::GetTerminology`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetTerminology {
     _private: (),
 }
@@ -207,7 +207,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTerminology {
 /// [`import_terminology`](crate::client::Client::import_terminology).
 ///
 /// See [`crate::client::fluent_builders::ImportTerminology`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ImportTerminology {
     _private: (),
 }
@@ -241,7 +241,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportTerminology {
 /// [`list_languages`](crate::client::Client::list_languages).
 ///
 /// See [`crate::client::fluent_builders::ListLanguages`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListLanguages {
     _private: (),
 }
@@ -273,7 +273,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLanguages {
 /// [`list_parallel_data`](crate::client::Client::list_parallel_data).
 ///
 /// See [`crate::client::fluent_builders::ListParallelData`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListParallelData {
     _private: (),
 }
@@ -307,7 +307,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListParallelData {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -341,7 +341,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`list_terminologies`](crate::client::Client::list_terminologies).
 ///
 /// See [`crate::client::fluent_builders::ListTerminologies`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTerminologies {
     _private: (),
 }
@@ -375,7 +375,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTerminologies {
 /// [`list_text_translation_jobs`](crate::client::Client::list_text_translation_jobs).
 ///
 /// See [`crate::client::fluent_builders::ListTextTranslationJobs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTextTranslationJobs {
     _private: (),
 }
@@ -409,7 +409,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTextTranslationJobs 
 /// [`start_text_translation_job`](crate::client::Client::start_text_translation_job).
 ///
 /// See [`crate::client::fluent_builders::StartTextTranslationJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartTextTranslationJob {
     _private: (),
 }
@@ -443,7 +443,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartTextTranslationJob 
 /// [`stop_text_translation_job`](crate::client::Client::stop_text_translation_job).
 ///
 /// See [`crate::client::fluent_builders::StopTextTranslationJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopTextTranslationJob {
     _private: (),
 }
@@ -477,7 +477,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopTextTranslationJob {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -509,7 +509,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`translate_text`](crate::client::Client::translate_text).
 ///
 /// See [`crate::client::fluent_builders::TranslateText`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TranslateText {
     _private: (),
 }
@@ -541,7 +541,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TranslateText {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -573,7 +573,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_parallel_data`](crate::client::Client::update_parallel_data).
 ///
 /// See [`crate::client::fluent_builders::UpdateParallelData`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateParallelData {
     _private: (),
 }

@@ -115,11 +115,11 @@ impl CredentialProcessProvider {
 
         let mut command = if cfg!(windows) {
             let mut command = Command::new("cmd.exe");
-            command.args(&["/C", self.command.unredacted()]);
+            command.args(["/C", self.command.unredacted()]);
             command
         } else {
             let mut command = Command::new("sh");
-            command.args(&["-c", self.command.unredacted()]);
+            command.args(["-c", self.command.unredacted()]);
             command
         };
 

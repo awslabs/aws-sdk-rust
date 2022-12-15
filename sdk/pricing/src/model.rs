@@ -2,7 +2,7 @@
 
 /// <p>The constraints that you want all returned products to match.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Filter {
     /// <p>The type of filter that you want to use.</p>
     /// <p>Valid values are: <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only products that match both the given filter field and the given value.</p>
@@ -34,20 +34,11 @@ impl Filter {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Filter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Filter");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("field", &self.field);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
 
     /// A builder for [`Filter`](crate::model::Filter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::FilterType>,
         pub(crate) field: std::option::Option<std::string::String>,
@@ -107,6 +98,40 @@ impl Filter {
     }
 }
 
+/// When writing a match expression against `FilterType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let filtertype = unimplemented!();
+/// match filtertype {
+///     FilterType::TermMatch => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `filtertype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `FilterType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `FilterType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `FilterType::NewFeature` is defined.
+/// Specifically, when `filtertype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `FilterType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -121,14 +146,14 @@ impl Filter {
 pub enum FilterType {
     #[allow(missing_docs)] // documentation missing in model
     TermMatch,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for FilterType {
     fn from(s: &str) -> Self {
         match s {
             "TERM_MATCH" => FilterType::TermMatch,
-            other => FilterType::Unknown(other.to_owned()),
+            other => FilterType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -144,11 +169,11 @@ impl FilterType {
     pub fn as_str(&self) -> &str {
         match self {
             FilterType::TermMatch => "TERM_MATCH",
-            FilterType::Unknown(s) => s.as_ref(),
+            FilterType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["TERM_MATCH"]
     }
 }
@@ -160,7 +185,7 @@ impl AsRef<str> for FilterType {
 
 /// <p>The values of a given attribute, such as <code>Throughput Optimized HDD</code> or <code>Provisioned IOPS</code> for the <code>Amazon EC2</code> <code>volumeType</code> attribute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttributeValue {
     /// <p>The specific value of an <code>attributeName</code>.</p>
     #[doc(hidden)]
@@ -172,18 +197,11 @@ impl AttributeValue {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for AttributeValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttributeValue");
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`AttributeValue`](crate::model::AttributeValue).
 pub mod attribute_value {
 
     /// A builder for [`AttributeValue`](crate::model::AttributeValue).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
     }
@@ -213,7 +231,7 @@ impl AttributeValue {
 
 /// <p>The metadata for a service, such as the service code and available attribute names.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Service {
     /// <p>The code for the Amazon Web Services service.</p>
     #[doc(hidden)]
@@ -232,19 +250,11 @@ impl Service {
         self.attribute_names.as_deref()
     }
 }
-impl std::fmt::Debug for Service {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Service");
-        formatter.field("service_code", &self.service_code);
-        formatter.field("attribute_names", &self.attribute_names);
-        formatter.finish()
-    }
-}
 /// See [`Service`](crate::model::Service).
 pub mod service {
 
     /// A builder for [`Service`](crate::model::Service).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
         pub(crate) attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,

@@ -2,7 +2,7 @@
 
 /// <p>The key of a tag.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagKeyOnly {
     /// <p>The name of the key.</p>
     #[doc(hidden)]
@@ -14,18 +14,11 @@ impl TagKeyOnly {
         self.key.as_deref()
     }
 }
-impl std::fmt::Debug for TagKeyOnly {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagKeyOnly");
-        formatter.field("key", &self.key);
-        formatter.finish()
-    }
-}
 /// See [`TagKeyOnly`](crate::model::TagKeyOnly).
 pub mod tag_key_only {
 
     /// A builder for [`TagKeyOnly`](crate::model::TagKeyOnly).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
     }
@@ -55,7 +48,7 @@ impl TagKeyOnly {
 
 /// <p>The ID of an EC2 instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Instance {
     /// <p>The instance ID.</p>
     #[doc(hidden)]
@@ -67,18 +60,11 @@ impl Instance {
         self.instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for Instance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Instance");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.finish()
-    }
-}
 /// See [`Instance`](crate::model::Instance).
 pub mod instance {
 
     /// A builder for [`Instance`](crate::model::Instance).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
     }
@@ -110,7 +96,7 @@ impl Instance {
 
 /// <p>The attributes for a load balancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoadBalancerAttributes {
     /// <p>If enabled, the load balancer routes the request traffic evenly across all instances regardless of the Availability Zones.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Configure Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers Guide</i>.</p>
@@ -163,22 +149,11 @@ impl LoadBalancerAttributes {
         self.additional_attributes.as_deref()
     }
 }
-impl std::fmt::Debug for LoadBalancerAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoadBalancerAttributes");
-        formatter.field("cross_zone_load_balancing", &self.cross_zone_load_balancing);
-        formatter.field("access_log", &self.access_log);
-        formatter.field("connection_draining", &self.connection_draining);
-        formatter.field("connection_settings", &self.connection_settings);
-        formatter.field("additional_attributes", &self.additional_attributes);
-        formatter.finish()
-    }
-}
 /// See [`LoadBalancerAttributes`](crate::model::LoadBalancerAttributes).
 pub mod load_balancer_attributes {
 
     /// A builder for [`LoadBalancerAttributes`](crate::model::LoadBalancerAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cross_zone_load_balancing:
             std::option::Option<crate::model::CrossZoneLoadBalancing>,
@@ -292,7 +267,7 @@ impl LoadBalancerAttributes {
 
 /// <p>Information about additional load balancer attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdditionalAttribute {
     /// <p>The name of the attribute.</p>
     /// <p>The following attribute is supported.</p>
@@ -319,19 +294,11 @@ impl AdditionalAttribute {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for AdditionalAttribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdditionalAttribute");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`AdditionalAttribute`](crate::model::AdditionalAttribute).
 pub mod additional_attribute {
 
     /// A builder for [`AdditionalAttribute`](crate::model::AdditionalAttribute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -383,7 +350,7 @@ impl AdditionalAttribute {
 
 /// <p>Information about the <code>ConnectionSettings</code> attribute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectionSettings {
     /// <p>The time, in seconds, that the connection is allowed to be idle (no data has been sent over the connection) before it is closed by the load balancer.</p>
     #[doc(hidden)]
@@ -395,18 +362,11 @@ impl ConnectionSettings {
         self.idle_timeout
     }
 }
-impl std::fmt::Debug for ConnectionSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectionSettings");
-        formatter.field("idle_timeout", &self.idle_timeout);
-        formatter.finish()
-    }
-}
 /// See [`ConnectionSettings`](crate::model::ConnectionSettings).
 pub mod connection_settings {
 
     /// A builder for [`ConnectionSettings`](crate::model::ConnectionSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) idle_timeout: std::option::Option<i32>,
     }
@@ -438,7 +398,7 @@ impl ConnectionSettings {
 
 /// <p>Information about the <code>ConnectionDraining</code> attribute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectionDraining {
     /// <p>Specifies whether connection draining is enabled for the load balancer.</p>
     #[doc(hidden)]
@@ -457,19 +417,11 @@ impl ConnectionDraining {
         self.timeout
     }
 }
-impl std::fmt::Debug for ConnectionDraining {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectionDraining");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("timeout", &self.timeout);
-        formatter.finish()
-    }
-}
 /// See [`ConnectionDraining`](crate::model::ConnectionDraining).
 pub mod connection_draining {
 
     /// A builder for [`ConnectionDraining`](crate::model::ConnectionDraining).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
         pub(crate) timeout: std::option::Option<i32>,
@@ -513,7 +465,7 @@ impl ConnectionDraining {
 
 /// <p>Information about the <code>AccessLog</code> attribute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessLog {
     /// <p>Specifies whether access logs are enabled for the load balancer.</p>
     #[doc(hidden)]
@@ -548,21 +500,11 @@ impl AccessLog {
         self.s3_bucket_prefix.as_deref()
     }
 }
-impl std::fmt::Debug for AccessLog {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessLog");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("s3_bucket_name", &self.s3_bucket_name);
-        formatter.field("emit_interval", &self.emit_interval);
-        formatter.field("s3_bucket_prefix", &self.s3_bucket_prefix);
-        formatter.finish()
-    }
-}
 /// See [`AccessLog`](crate::model::AccessLog).
 pub mod access_log {
 
     /// A builder for [`AccessLog`](crate::model::AccessLog).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
         pub(crate) s3_bucket_name: std::option::Option<std::string::String>,
@@ -638,7 +580,7 @@ impl AccessLog {
 
 /// <p>Information about the <code>CrossZoneLoadBalancing</code> attribute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CrossZoneLoadBalancing {
     /// <p>Specifies whether cross-zone load balancing is enabled for the load balancer.</p>
     #[doc(hidden)]
@@ -650,18 +592,11 @@ impl CrossZoneLoadBalancing {
         self.enabled
     }
 }
-impl std::fmt::Debug for CrossZoneLoadBalancing {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CrossZoneLoadBalancing");
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
-    }
-}
 /// See [`CrossZoneLoadBalancing`](crate::model::CrossZoneLoadBalancing).
 pub mod cross_zone_load_balancing {
 
     /// A builder for [`CrossZoneLoadBalancing`](crate::model::CrossZoneLoadBalancing).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
     }
@@ -693,7 +628,7 @@ impl CrossZoneLoadBalancing {
 
 /// <p>The tags associated with a load balancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagDescription {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
@@ -712,19 +647,11 @@ impl TagDescription {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagDescription");
-        formatter.field("load_balancer_name", &self.load_balancer_name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`TagDescription`](crate::model::TagDescription).
 pub mod tag_description {
 
     /// A builder for [`TagDescription`](crate::model::TagDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -780,7 +707,7 @@ impl TagDescription {
 
 /// <p>Information about a tag.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key of the tag.</p>
     #[doc(hidden)]
@@ -799,19 +726,11 @@ impl Tag {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -855,7 +774,7 @@ impl Tag {
 
 /// <p>Information about a load balancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoadBalancerDescription {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
@@ -984,42 +903,11 @@ impl LoadBalancerDescription {
         self.scheme.as_deref()
     }
 }
-impl std::fmt::Debug for LoadBalancerDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoadBalancerDescription");
-        formatter.field("load_balancer_name", &self.load_balancer_name);
-        formatter.field("dns_name", &self.dns_name);
-        formatter.field(
-            "canonical_hosted_zone_name",
-            &self.canonical_hosted_zone_name,
-        );
-        formatter.field(
-            "canonical_hosted_zone_name_id",
-            &self.canonical_hosted_zone_name_id,
-        );
-        formatter.field("listener_descriptions", &self.listener_descriptions);
-        formatter.field("policies", &self.policies);
-        formatter.field(
-            "backend_server_descriptions",
-            &self.backend_server_descriptions,
-        );
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.field("subnets", &self.subnets);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("instances", &self.instances);
-        formatter.field("health_check", &self.health_check);
-        formatter.field("source_security_group", &self.source_security_group);
-        formatter.field("security_groups", &self.security_groups);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("scheme", &self.scheme);
-        formatter.finish()
-    }
-}
 /// See [`LoadBalancerDescription`](crate::model::LoadBalancerDescription).
 pub mod load_balancer_description {
 
     /// A builder for [`LoadBalancerDescription`](crate::model::LoadBalancerDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) dns_name: std::option::Option<std::string::String>,
@@ -1317,7 +1205,7 @@ impl LoadBalancerDescription {
 
 /// <p>Information about a source security group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceSecurityGroup {
     /// <p>The owner of the security group.</p>
     #[doc(hidden)]
@@ -1336,19 +1224,11 @@ impl SourceSecurityGroup {
         self.group_name.as_deref()
     }
 }
-impl std::fmt::Debug for SourceSecurityGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceSecurityGroup");
-        formatter.field("owner_alias", &self.owner_alias);
-        formatter.field("group_name", &self.group_name);
-        formatter.finish()
-    }
-}
 /// See [`SourceSecurityGroup`](crate::model::SourceSecurityGroup).
 pub mod source_security_group {
 
     /// A builder for [`SourceSecurityGroup`](crate::model::SourceSecurityGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_alias: std::option::Option<std::string::String>,
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -1392,7 +1272,7 @@ impl SourceSecurityGroup {
 
 /// <p>Information about a health check.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HealthCheck {
     /// <p>The instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL. The range of valid ports is one (1) through 65535.</p>
     /// <p>TCP is the default, specified as a TCP: port pair, for example "TCP:5000". In this case, a health check simply attempts to open a TCP connection to the instance on the specified port. Failure to connect within the configured timeout is considered unhealthy.</p>
@@ -1442,22 +1322,11 @@ impl HealthCheck {
         self.healthy_threshold
     }
 }
-impl std::fmt::Debug for HealthCheck {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HealthCheck");
-        formatter.field("target", &self.target);
-        formatter.field("interval", &self.interval);
-        formatter.field("timeout", &self.timeout);
-        formatter.field("unhealthy_threshold", &self.unhealthy_threshold);
-        formatter.field("healthy_threshold", &self.healthy_threshold);
-        formatter.finish()
-    }
-}
 /// See [`HealthCheck`](crate::model::HealthCheck).
 pub mod health_check {
 
     /// A builder for [`HealthCheck`](crate::model::HealthCheck).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target: std::option::Option<std::string::String>,
         pub(crate) interval: std::option::Option<i32>,
@@ -1547,7 +1416,7 @@ impl HealthCheck {
 
 /// <p>Information about the configuration of an EC2 instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackendServerDescription {
     /// <p>The port on which the EC2 instance is listening.</p>
     #[doc(hidden)]
@@ -1566,19 +1435,11 @@ impl BackendServerDescription {
         self.policy_names.as_deref()
     }
 }
-impl std::fmt::Debug for BackendServerDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackendServerDescription");
-        formatter.field("instance_port", &self.instance_port);
-        formatter.field("policy_names", &self.policy_names);
-        formatter.finish()
-    }
-}
 /// See [`BackendServerDescription`](crate::model::BackendServerDescription).
 pub mod backend_server_description {
 
     /// A builder for [`BackendServerDescription`](crate::model::BackendServerDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_port: std::option::Option<i32>,
         pub(crate) policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1631,7 +1492,7 @@ impl BackendServerDescription {
 
 /// <p>The policies for a load balancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Policies {
     /// <p>The stickiness policies created using <code>CreateAppCookieStickinessPolicy</code>.</p>
     #[doc(hidden)]
@@ -1663,26 +1524,11 @@ impl Policies {
         self.other_policies.as_deref()
     }
 }
-impl std::fmt::Debug for Policies {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Policies");
-        formatter.field(
-            "app_cookie_stickiness_policies",
-            &self.app_cookie_stickiness_policies,
-        );
-        formatter.field(
-            "lb_cookie_stickiness_policies",
-            &self.lb_cookie_stickiness_policies,
-        );
-        formatter.field("other_policies", &self.other_policies);
-        formatter.finish()
-    }
-}
 /// See [`Policies`](crate::model::Policies).
 pub mod policies {
 
     /// A builder for [`Policies`](crate::model::Policies).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_cookie_stickiness_policies:
             std::option::Option<std::vec::Vec<crate::model::AppCookieStickinessPolicy>>,
@@ -1773,7 +1619,7 @@ impl Policies {
 
 /// <p>Information about a policy for duration-based session stickiness.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LbCookieStickinessPolicy {
     /// <p>The name of the policy. This name must be unique within the set of policies for this load balancer.</p>
     #[doc(hidden)]
@@ -1792,19 +1638,11 @@ impl LbCookieStickinessPolicy {
         self.cookie_expiration_period
     }
 }
-impl std::fmt::Debug for LbCookieStickinessPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LbCookieStickinessPolicy");
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("cookie_expiration_period", &self.cookie_expiration_period);
-        formatter.finish()
-    }
-}
 /// See [`LbCookieStickinessPolicy`](crate::model::LbCookieStickinessPolicy).
 pub mod lb_cookie_stickiness_policy {
 
     /// A builder for [`LbCookieStickinessPolicy`](crate::model::LbCookieStickinessPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_name: std::option::Option<std::string::String>,
         pub(crate) cookie_expiration_period: std::option::Option<i64>,
@@ -1848,7 +1686,7 @@ impl LbCookieStickinessPolicy {
 
 /// <p>Information about a policy for application-controlled session stickiness.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AppCookieStickinessPolicy {
     /// <p>The mnemonic name for the policy being created. The name must be unique within a set of policies for this load balancer.</p>
     #[doc(hidden)]
@@ -1867,19 +1705,11 @@ impl AppCookieStickinessPolicy {
         self.cookie_name.as_deref()
     }
 }
-impl std::fmt::Debug for AppCookieStickinessPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AppCookieStickinessPolicy");
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("cookie_name", &self.cookie_name);
-        formatter.finish()
-    }
-}
 /// See [`AppCookieStickinessPolicy`](crate::model::AppCookieStickinessPolicy).
 pub mod app_cookie_stickiness_policy {
 
     /// A builder for [`AppCookieStickinessPolicy`](crate::model::AppCookieStickinessPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_name: std::option::Option<std::string::String>,
         pub(crate) cookie_name: std::option::Option<std::string::String>,
@@ -1923,7 +1753,7 @@ impl AppCookieStickinessPolicy {
 
 /// <p>The policies enabled for a listener.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListenerDescription {
     /// <p>The listener.</p>
     #[doc(hidden)]
@@ -1942,19 +1772,11 @@ impl ListenerDescription {
         self.policy_names.as_deref()
     }
 }
-impl std::fmt::Debug for ListenerDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListenerDescription");
-        formatter.field("listener", &self.listener);
-        formatter.field("policy_names", &self.policy_names);
-        formatter.finish()
-    }
-}
 /// See [`ListenerDescription`](crate::model::ListenerDescription).
 pub mod listener_description {
 
     /// A builder for [`ListenerDescription`](crate::model::ListenerDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) listener: std::option::Option<crate::model::Listener>,
         pub(crate) policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2008,7 +1830,7 @@ impl ListenerDescription {
 /// <p>Information about a listener.</p>
 /// <p>For information about the protocols and the ports supported by Elastic Load Balancing, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Listener {
     /// <p>The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or SSL.</p>
     #[doc(hidden)]
@@ -2054,22 +1876,11 @@ impl Listener {
         self.ssl_certificate_id.as_deref()
     }
 }
-impl std::fmt::Debug for Listener {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Listener");
-        formatter.field("protocol", &self.protocol);
-        formatter.field("load_balancer_port", &self.load_balancer_port);
-        formatter.field("instance_protocol", &self.instance_protocol);
-        formatter.field("instance_port", &self.instance_port);
-        formatter.field("ssl_certificate_id", &self.ssl_certificate_id);
-        formatter.finish()
-    }
-}
 /// See [`Listener`](crate::model::Listener).
 pub mod listener {
 
     /// A builder for [`Listener`](crate::model::Listener).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protocol: std::option::Option<std::string::String>,
         pub(crate) load_balancer_port: std::option::Option<i32>,
@@ -2161,7 +1972,7 @@ impl Listener {
 
 /// <p>Information about a policy type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyTypeDescription {
     /// <p>The name of the policy type.</p>
     #[doc(hidden)]
@@ -2190,23 +2001,11 @@ impl PolicyTypeDescription {
         self.policy_attribute_type_descriptions.as_deref()
     }
 }
-impl std::fmt::Debug for PolicyTypeDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyTypeDescription");
-        formatter.field("policy_type_name", &self.policy_type_name);
-        formatter.field("description", &self.description);
-        formatter.field(
-            "policy_attribute_type_descriptions",
-            &self.policy_attribute_type_descriptions,
-        );
-        formatter.finish()
-    }
-}
 /// See [`PolicyTypeDescription`](crate::model::PolicyTypeDescription).
 pub mod policy_type_description {
 
     /// A builder for [`PolicyTypeDescription`](crate::model::PolicyTypeDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_type_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -2278,7 +2077,7 @@ impl PolicyTypeDescription {
 
 /// <p>Information about a policy attribute type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyAttributeTypeDescription {
     /// <p>The name of the attribute.</p>
     #[doc(hidden)]
@@ -2332,22 +2131,11 @@ impl PolicyAttributeTypeDescription {
         self.cardinality.as_deref()
     }
 }
-impl std::fmt::Debug for PolicyAttributeTypeDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyAttributeTypeDescription");
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("attribute_type", &self.attribute_type);
-        formatter.field("description", &self.description);
-        formatter.field("default_value", &self.default_value);
-        formatter.field("cardinality", &self.cardinality);
-        formatter.finish()
-    }
-}
 /// See [`PolicyAttributeTypeDescription`](crate::model::PolicyAttributeTypeDescription).
 pub mod policy_attribute_type_description {
 
     /// A builder for [`PolicyAttributeTypeDescription`](crate::model::PolicyAttributeTypeDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_name: std::option::Option<std::string::String>,
         pub(crate) attribute_type: std::option::Option<std::string::String>,
@@ -2450,7 +2238,7 @@ impl PolicyAttributeTypeDescription {
 
 /// <p>Information about a policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyDescription {
     /// <p>The name of the policy.</p>
     #[doc(hidden)]
@@ -2479,23 +2267,11 @@ impl PolicyDescription {
         self.policy_attribute_descriptions.as_deref()
     }
 }
-impl std::fmt::Debug for PolicyDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyDescription");
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("policy_type_name", &self.policy_type_name);
-        formatter.field(
-            "policy_attribute_descriptions",
-            &self.policy_attribute_descriptions,
-        );
-        formatter.finish()
-    }
-}
 /// See [`PolicyDescription`](crate::model::PolicyDescription).
 pub mod policy_description {
 
     /// A builder for [`PolicyDescription`](crate::model::PolicyDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_name: std::option::Option<std::string::String>,
         pub(crate) policy_type_name: std::option::Option<std::string::String>,
@@ -2567,7 +2343,7 @@ impl PolicyDescription {
 
 /// <p>Information about a policy attribute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyAttributeDescription {
     /// <p>The name of the attribute.</p>
     #[doc(hidden)]
@@ -2586,19 +2362,11 @@ impl PolicyAttributeDescription {
         self.attribute_value.as_deref()
     }
 }
-impl std::fmt::Debug for PolicyAttributeDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyAttributeDescription");
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("attribute_value", &self.attribute_value);
-        formatter.finish()
-    }
-}
 /// See [`PolicyAttributeDescription`](crate::model::PolicyAttributeDescription).
 pub mod policy_attribute_description {
 
     /// A builder for [`PolicyAttributeDescription`](crate::model::PolicyAttributeDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_name: std::option::Option<std::string::String>,
         pub(crate) attribute_value: std::option::Option<std::string::String>,
@@ -2648,7 +2416,7 @@ impl PolicyAttributeDescription {
 
 /// <p>Information about the state of an EC2 instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceState {
     /// <p>The ID of the instance.</p>
     #[doc(hidden)]
@@ -2713,21 +2481,11 @@ impl InstanceState {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for InstanceState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceState");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("state", &self.state);
-        formatter.field("reason_code", &self.reason_code);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 /// See [`InstanceState`](crate::model::InstanceState).
 pub mod instance_state {
 
     /// A builder for [`InstanceState`](crate::model::InstanceState).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<std::string::String>,
@@ -2827,7 +2585,7 @@ impl InstanceState {
 
 /// <p>Information about an Elastic Load Balancing resource limit for your AWS account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Limit {
     /// <p>The name of the limit. The possible values are:</p>
     /// <ul>
@@ -2856,19 +2614,11 @@ impl Limit {
         self.max.as_deref()
     }
 }
-impl std::fmt::Debug for Limit {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Limit");
-        formatter.field("name", &self.name);
-        formatter.field("max", &self.max);
-        formatter.finish()
-    }
-}
 /// See [`Limit`](crate::model::Limit).
 pub mod limit {
 
     /// A builder for [`Limit`](crate::model::Limit).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) max: std::option::Option<std::string::String>,
@@ -2922,7 +2672,7 @@ impl Limit {
 
 /// <p>Information about a policy attribute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyAttribute {
     /// <p>The name of the attribute.</p>
     #[doc(hidden)]
@@ -2941,19 +2691,11 @@ impl PolicyAttribute {
         self.attribute_value.as_deref()
     }
 }
-impl std::fmt::Debug for PolicyAttribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyAttribute");
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("attribute_value", &self.attribute_value);
-        formatter.finish()
-    }
-}
 /// See [`PolicyAttribute`](crate::model::PolicyAttribute).
 pub mod policy_attribute {
 
     /// A builder for [`PolicyAttribute`](crate::model::PolicyAttribute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_name: std::option::Option<std::string::String>,
         pub(crate) attribute_value: std::option::Option<std::string::String>,

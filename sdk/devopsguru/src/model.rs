@@ -2,7 +2,7 @@
 
 /// <p> The field associated with the validation exception. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationExceptionField {
     /// <p> The name of the field. </p>
     #[doc(hidden)]
@@ -21,19 +21,11 @@ impl ValidationExceptionField {
         self.message.as_deref()
     }
 }
-impl std::fmt::Debug for ValidationExceptionField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationExceptionField");
-        formatter.field("name", &self.name);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
 
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -75,6 +67,45 @@ impl ValidationExceptionField {
     }
 }
 
+/// When writing a match expression against `ValidationExceptionReason`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let validationexceptionreason = unimplemented!();
+/// match validationexceptionreason {
+///     ValidationExceptionReason::CannotParse => { /* ... */ },
+///     ValidationExceptionReason::FieldValidationFailed => { /* ... */ },
+///     ValidationExceptionReason::InvalidParameterCombination => { /* ... */ },
+///     ValidationExceptionReason::Other => { /* ... */ },
+///     ValidationExceptionReason::ParameterInconsistentWithServiceState => { /* ... */ },
+///     ValidationExceptionReason::UnknownOperation => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `validationexceptionreason` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ValidationExceptionReason::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ValidationExceptionReason::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ValidationExceptionReason::NewFeature` is defined.
+/// Specifically, when `validationexceptionreason` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ValidationExceptionReason::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -99,8 +130,8 @@ pub enum ValidationExceptionReason {
     ParameterInconsistentWithServiceState,
     #[allow(missing_docs)] // documentation missing in model
     UnknownOperation,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ValidationExceptionReason {
     fn from(s: &str) -> Self {
@@ -115,7 +146,9 @@ impl std::convert::From<&str> for ValidationExceptionReason {
                 ValidationExceptionReason::ParameterInconsistentWithServiceState
             }
             "UNKNOWN_OPERATION" => ValidationExceptionReason::UnknownOperation,
-            other => ValidationExceptionReason::Unknown(other.to_owned()),
+            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -140,11 +173,11 @@ impl ValidationExceptionReason {
                 "PARAMETER_INCONSISTENT_WITH_SERVICE_STATE"
             }
             ValidationExceptionReason::UnknownOperation => "UNKNOWN_OPERATION",
-            ValidationExceptionReason::Unknown(s) => s.as_ref(),
+            ValidationExceptionReason::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANNOT_PARSE",
             "FIELD_VALIDATION_FAILED",
@@ -163,7 +196,7 @@ impl AsRef<str> for ValidationExceptionReason {
 
 /// <p> Information about updating the integration status of an Amazon Web Services service, such as Amazon Web Services Systems Manager, with DevOps Guru. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateServiceIntegrationConfig {
     /// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. You can use this to update the configuration.</p>
     #[doc(hidden)]
@@ -185,19 +218,11 @@ impl UpdateServiceIntegrationConfig {
         self.logs_anomaly_detection.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateServiceIntegrationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateServiceIntegrationConfig");
-        formatter.field("ops_center", &self.ops_center);
-        formatter.field("logs_anomaly_detection", &self.logs_anomaly_detection);
-        formatter.finish()
-    }
-}
 /// See [`UpdateServiceIntegrationConfig`](crate::model::UpdateServiceIntegrationConfig).
 pub mod update_service_integration_config {
 
     /// A builder for [`UpdateServiceIntegrationConfig`](crate::model::UpdateServiceIntegrationConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ops_center: std::option::Option<crate::model::OpsCenterIntegrationConfig>,
         pub(crate) logs_anomaly_detection:
@@ -251,7 +276,7 @@ impl UpdateServiceIntegrationConfig {
 
 /// <p> Information about the integration of DevOps Guru with CloudWatch log groups for log anomaly detection. You can use this to update the configuration. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogsAnomalyDetectionIntegrationConfig {
     /// <p>Specifies if DevOps Guru is configured to perform log anomaly detection on CloudWatch log groups.</p>
     #[doc(hidden)]
@@ -263,18 +288,11 @@ impl LogsAnomalyDetectionIntegrationConfig {
         self.opt_in_status.as_ref()
     }
 }
-impl std::fmt::Debug for LogsAnomalyDetectionIntegrationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogsAnomalyDetectionIntegrationConfig");
-        formatter.field("opt_in_status", &self.opt_in_status);
-        formatter.finish()
-    }
-}
 /// See [`LogsAnomalyDetectionIntegrationConfig`](crate::model::LogsAnomalyDetectionIntegrationConfig).
 pub mod logs_anomaly_detection_integration_config {
 
     /// A builder for [`LogsAnomalyDetectionIntegrationConfig`](crate::model::LogsAnomalyDetectionIntegrationConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) opt_in_status: std::option::Option<crate::model::OptInStatus>,
     }
@@ -307,6 +325,41 @@ impl LogsAnomalyDetectionIntegrationConfig {
     }
 }
 
+/// When writing a match expression against `OptInStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let optinstatus = unimplemented!();
+/// match optinstatus {
+///     OptInStatus::Disabled => { /* ... */ },
+///     OptInStatus::Enabled => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `optinstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `OptInStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `OptInStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `OptInStatus::NewFeature` is defined.
+/// Specifically, when `optinstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `OptInStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 /// <p> Specifies if DevOps Guru is enabled to create an Amazon Web Services Systems Manager OpsItem for each created
 /// insight. </p>
 #[non_exhaustive]
@@ -324,15 +377,15 @@ pub enum OptInStatus {
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for OptInStatus {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => OptInStatus::Disabled,
             "ENABLED" => OptInStatus::Enabled,
-            other => OptInStatus::Unknown(other.to_owned()),
+            other => OptInStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -349,11 +402,11 @@ impl OptInStatus {
         match self {
             OptInStatus::Disabled => "DISABLED",
             OptInStatus::Enabled => "ENABLED",
-            OptInStatus::Unknown(s) => s.as_ref(),
+            OptInStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -365,7 +418,7 @@ impl AsRef<str> for OptInStatus {
 
 /// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. You can use this to update the configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpsCenterIntegrationConfig {
     /// <p> Specifies if DevOps Guru is enabled to create an Amazon Web Services Systems Manager OpsItem for each created insight. </p>
     #[doc(hidden)]
@@ -377,18 +430,11 @@ impl OpsCenterIntegrationConfig {
         self.opt_in_status.as_ref()
     }
 }
-impl std::fmt::Debug for OpsCenterIntegrationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpsCenterIntegrationConfig");
-        formatter.field("opt_in_status", &self.opt_in_status);
-        formatter.finish()
-    }
-}
 /// See [`OpsCenterIntegrationConfig`](crate::model::OpsCenterIntegrationConfig).
 pub mod ops_center_integration_config {
 
     /// A builder for [`OpsCenterIntegrationConfig`](crate::model::OpsCenterIntegrationConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) opt_in_status: std::option::Option<crate::model::OptInStatus>,
     }
@@ -423,7 +469,7 @@ impl OpsCenterIntegrationConfig {
 
 /// <p> Contains information used to update a collection of Amazon Web Services resources. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateResourceCollectionFilter {
     /// <p> A collection of Amazon Web Services CloudFormation stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     #[doc(hidden)]
@@ -462,19 +508,11 @@ impl UpdateResourceCollectionFilter {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateResourceCollectionFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateResourceCollectionFilter");
-        formatter.field("cloud_formation", &self.cloud_formation);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`UpdateResourceCollectionFilter`](crate::model::UpdateResourceCollectionFilter).
 pub mod update_resource_collection_filter {
 
     /// A builder for [`UpdateResourceCollectionFilter`](crate::model::UpdateResourceCollectionFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_formation:
             std::option::Option<crate::model::UpdateCloudFormationCollectionFilter>,
@@ -553,7 +591,7 @@ impl UpdateResourceCollectionFilter {
 
 /// <p>A new collection of Amazon Web Services resources that are defined by an Amazon Web Services tag or tag <i>key</i>/<i>value</i> pair.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTagCollectionFilter {
     /// <p>An Amazon Web Services tag <i>key</i> that is used to identify the Amazon Web Services resources that DevOps Guru analyzes. All Amazon Web Services resources in your account and Region tagged with this <i>key</i> make up your DevOps Guru application and analysis boundary.</p> <important>
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i> can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
@@ -578,19 +616,11 @@ impl UpdateTagCollectionFilter {
         self.tag_values.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateTagCollectionFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTagCollectionFilter");
-        formatter.field("app_boundary_key", &self.app_boundary_key);
-        formatter.field("tag_values", &self.tag_values);
-        formatter.finish()
-    }
-}
 /// See [`UpdateTagCollectionFilter`](crate::model::UpdateTagCollectionFilter).
 pub mod update_tag_collection_filter {
 
     /// A builder for [`UpdateTagCollectionFilter`](crate::model::UpdateTagCollectionFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_boundary_key: std::option::Option<std::string::String>,
         pub(crate) tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -652,7 +682,7 @@ impl UpdateTagCollectionFilter {
 
 /// <p> Contains the names of Amazon Web Services CloudFormation stacks used to update a collection of stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCloudFormationCollectionFilter {
     /// <p> An array of the names of the Amazon Web Services CloudFormation stacks to update. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     #[doc(hidden)]
@@ -664,18 +694,11 @@ impl UpdateCloudFormationCollectionFilter {
         self.stack_names.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateCloudFormationCollectionFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCloudFormationCollectionFilter");
-        formatter.field("stack_names", &self.stack_names);
-        formatter.finish()
-    }
-}
 /// See [`UpdateCloudFormationCollectionFilter`](crate::model::UpdateCloudFormationCollectionFilter).
 pub mod update_cloud_formation_collection_filter {
 
     /// A builder for [`UpdateCloudFormationCollectionFilter`](crate::model::UpdateCloudFormationCollectionFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -714,6 +737,41 @@ impl UpdateCloudFormationCollectionFilter {
     }
 }
 
+/// When writing a match expression against `UpdateResourceCollectionAction`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let updateresourcecollectionaction = unimplemented!();
+/// match updateresourcecollectionaction {
+///     UpdateResourceCollectionAction::Add => { /* ... */ },
+///     UpdateResourceCollectionAction::Remove => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `updateresourcecollectionaction` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `UpdateResourceCollectionAction::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `UpdateResourceCollectionAction::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `UpdateResourceCollectionAction::NewFeature` is defined.
+/// Specifically, when `updateresourcecollectionaction` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `UpdateResourceCollectionAction::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -730,15 +788,17 @@ pub enum UpdateResourceCollectionAction {
     Add,
     #[allow(missing_docs)] // documentation missing in model
     Remove,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for UpdateResourceCollectionAction {
     fn from(s: &str) -> Self {
         match s {
             "ADD" => UpdateResourceCollectionAction::Add,
             "REMOVE" => UpdateResourceCollectionAction::Remove,
-            other => UpdateResourceCollectionAction::Unknown(other.to_owned()),
+            other => UpdateResourceCollectionAction::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -755,11 +815,11 @@ impl UpdateResourceCollectionAction {
         match self {
             UpdateResourceCollectionAction::Add => "ADD",
             UpdateResourceCollectionAction::Remove => "REMOVE",
-            UpdateResourceCollectionAction::Unknown(s) => s.as_ref(),
+            UpdateResourceCollectionAction::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ADD", "REMOVE"]
     }
 }
@@ -771,7 +831,7 @@ impl AsRef<str> for UpdateResourceCollectionAction {
 
 /// <p>Information about the integration of DevOps Guru as consumer with another AWS service, such as AWS CodeGuru Profiler via EventBridge.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventSourcesConfig {
     /// <p>Information about whether DevOps Guru is configured to consume recommendations which are generated from AWS CodeGuru Profiler.</p>
     #[doc(hidden)]
@@ -786,18 +846,11 @@ impl EventSourcesConfig {
         self.amazon_code_guru_profiler.as_ref()
     }
 }
-impl std::fmt::Debug for EventSourcesConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventSourcesConfig");
-        formatter.field("amazon_code_guru_profiler", &self.amazon_code_guru_profiler);
-        formatter.finish()
-    }
-}
 /// See [`EventSourcesConfig`](crate::model::EventSourcesConfig).
 pub mod event_sources_config {
 
     /// A builder for [`EventSourcesConfig`](crate::model::EventSourcesConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amazon_code_guru_profiler:
             std::option::Option<crate::model::AmazonCodeGuruProfilerIntegration>,
@@ -836,7 +889,7 @@ impl EventSourcesConfig {
 
 /// <p>Information about your account's integration with Amazon CodeGuru Profiler. This returns whether DevOps Guru is configured to consume recommendations generated from Amazon CodeGuru Profiler.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AmazonCodeGuruProfilerIntegration {
     /// <p>The status of the CodeGuru Profiler integration. Specifies if DevOps Guru is enabled to consume recommendations that are generated from Amazon CodeGuru Profiler.</p>
     #[doc(hidden)]
@@ -848,18 +901,11 @@ impl AmazonCodeGuruProfilerIntegration {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for AmazonCodeGuruProfilerIntegration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AmazonCodeGuruProfilerIntegration");
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 /// See [`AmazonCodeGuruProfilerIntegration`](crate::model::AmazonCodeGuruProfilerIntegration).
 pub mod amazon_code_guru_profiler_integration {
 
     /// A builder for [`AmazonCodeGuruProfilerIntegration`](crate::model::AmazonCodeGuruProfilerIntegration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::EventSourceOptInStatus>,
     }
@@ -892,6 +938,41 @@ impl AmazonCodeGuruProfilerIntegration {
     }
 }
 
+/// When writing a match expression against `EventSourceOptInStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let eventsourceoptinstatus = unimplemented!();
+/// match eventsourceoptinstatus {
+///     EventSourceOptInStatus::Disabled => { /* ... */ },
+///     EventSourceOptInStatus::Enabled => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `eventsourceoptinstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EventSourceOptInStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EventSourceOptInStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EventSourceOptInStatus::NewFeature` is defined.
+/// Specifically, when `eventsourceoptinstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EventSourceOptInStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -908,15 +989,17 @@ pub enum EventSourceOptInStatus {
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EventSourceOptInStatus {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => EventSourceOptInStatus::Disabled,
             "ENABLED" => EventSourceOptInStatus::Enabled,
-            other => EventSourceOptInStatus::Unknown(other.to_owned()),
+            other => {
+                EventSourceOptInStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -933,11 +1016,11 @@ impl EventSourceOptInStatus {
         match self {
             EventSourceOptInStatus::Disabled => "DISABLED",
             EventSourceOptInStatus::Enabled => "ENABLED",
-            EventSourceOptInStatus::Unknown(s) => s.as_ref(),
+            EventSourceOptInStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -949,7 +1032,7 @@ impl AsRef<str> for EventSourceOptInStatus {
 
 /// <p>Information about a filter used to specify which Amazon Web Services resources are analyzed to create a monthly DevOps Guru cost estimate. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/cost-estimate.html">Estimate your Amazon DevOps Guru costs</a> and <a href="http://aws.amazon.com/devops-guru/pricing/">Amazon DevOps Guru pricing</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CostEstimationResourceCollectionFilter {
     /// <p>An object that specifies the CloudFormation stack that defines the Amazon Web Services resources used to create a monthly estimate for DevOps Guru.</p>
     #[doc(hidden)]
@@ -993,19 +1076,11 @@ impl CostEstimationResourceCollectionFilter {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CostEstimationResourceCollectionFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CostEstimationResourceCollectionFilter");
-        formatter.field("cloud_formation", &self.cloud_formation);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`CostEstimationResourceCollectionFilter`](crate::model::CostEstimationResourceCollectionFilter).
 pub mod cost_estimation_resource_collection_filter {
 
     /// A builder for [`CostEstimationResourceCollectionFilter`](crate::model::CostEstimationResourceCollectionFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_formation:
             std::option::Option<crate::model::CloudFormationCostEstimationResourceCollectionFilter>,
@@ -1092,7 +1167,7 @@ impl CostEstimationResourceCollectionFilter {
 
 /// <p>Information about a collection of Amazon Web Services resources that are identified by an Amazon Web Services tag. This collection of resources is used to create a monthly cost estimate for DevOps Guru to analyze Amazon Web Services resources. The maximum number of tags you can specify for a cost estimate is one. The estimate created is for the cost to analyze the Amazon Web Services resources defined by the tag. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a> in the <i>Amazon Web Services CloudFormation User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagCostEstimationResourceCollectionFilter {
     /// <p>An Amazon Web Services tag <i>key</i> that is used to identify the Amazon Web Services resources that DevOps Guru analyzes. All Amazon Web Services resources in your account and Region tagged with this <i>key</i> make up your DevOps Guru application and analysis boundary.</p> <important>
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i> can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
@@ -1117,19 +1192,11 @@ impl TagCostEstimationResourceCollectionFilter {
         self.tag_values.as_deref()
     }
 }
-impl std::fmt::Debug for TagCostEstimationResourceCollectionFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagCostEstimationResourceCollectionFilter");
-        formatter.field("app_boundary_key", &self.app_boundary_key);
-        formatter.field("tag_values", &self.tag_values);
-        formatter.finish()
-    }
-}
 /// See [`TagCostEstimationResourceCollectionFilter`](crate::model::TagCostEstimationResourceCollectionFilter).
 pub mod tag_cost_estimation_resource_collection_filter {
 
     /// A builder for [`TagCostEstimationResourceCollectionFilter`](crate::model::TagCostEstimationResourceCollectionFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_boundary_key: std::option::Option<std::string::String>,
         pub(crate) tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1191,7 +1258,7 @@ impl TagCostEstimationResourceCollectionFilter {
 
 /// <p>Information about an Amazon Web Services CloudFormation stack used to create a monthly cost estimate for DevOps Guru to analyze Amazon Web Services resources. The maximum number of stacks you can specify for a cost estimate is one. The estimate created is for the cost to analyze the Amazon Web Services resources defined by the stack. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a> in the <i>Amazon Web Services CloudFormation User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudFormationCostEstimationResourceCollectionFilter {
     /// <p>An array of CloudFormation stack names. Its size is fixed at 1 item.</p>
     #[doc(hidden)]
@@ -1203,18 +1270,11 @@ impl CloudFormationCostEstimationResourceCollectionFilter {
         self.stack_names.as_deref()
     }
 }
-impl std::fmt::Debug for CloudFormationCostEstimationResourceCollectionFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudFormationCostEstimationResourceCollectionFilter");
-        formatter.field("stack_names", &self.stack_names);
-        formatter.finish()
-    }
-}
 /// See [`CloudFormationCostEstimationResourceCollectionFilter`](crate::model::CloudFormationCostEstimationResourceCollectionFilter).
 pub mod cloud_formation_cost_estimation_resource_collection_filter {
 
     /// A builder for [`CloudFormationCostEstimationResourceCollectionFilter`](crate::model::CloudFormationCostEstimationResourceCollectionFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -1256,7 +1316,7 @@ impl CloudFormationCostEstimationResourceCollectionFilter {
 
 /// <p> Information about a reactive insight. This object is returned by <code>DescribeInsight.</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReactiveInsightSummary {
     /// <p> The ID of a reactive summary. </p>
     #[doc(hidden)]
@@ -1317,25 +1377,11 @@ impl ReactiveInsightSummary {
         self.associated_resource_arns.as_deref()
     }
 }
-impl std::fmt::Debug for ReactiveInsightSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReactiveInsightSummary");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("severity", &self.severity);
-        formatter.field("status", &self.status);
-        formatter.field("insight_time_range", &self.insight_time_range);
-        formatter.field("resource_collection", &self.resource_collection);
-        formatter.field("service_collection", &self.service_collection);
-        formatter.field("associated_resource_arns", &self.associated_resource_arns);
-        formatter.finish()
-    }
-}
 /// See [`ReactiveInsightSummary`](crate::model::ReactiveInsightSummary).
 pub mod reactive_insight_summary {
 
     /// A builder for [`ReactiveInsightSummary`](crate::model::ReactiveInsightSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1476,7 +1522,7 @@ impl ReactiveInsightSummary {
 
 /// <p>A collection of the names of Amazon Web Services services.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceCollection {
     /// <p>An array of strings that each specifies the name of an Amazon Web Services service.</p>
     #[doc(hidden)]
@@ -1488,18 +1534,11 @@ impl ServiceCollection {
         self.service_names.as_deref()
     }
 }
-impl std::fmt::Debug for ServiceCollection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceCollection");
-        formatter.field("service_names", &self.service_names);
-        formatter.finish()
-    }
-}
 /// See [`ServiceCollection`](crate::model::ServiceCollection).
 pub mod service_collection {
 
     /// A builder for [`ServiceCollection`](crate::model::ServiceCollection).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_names: std::option::Option<std::vec::Vec<crate::model::ServiceName>>,
     }
@@ -1538,6 +1577,64 @@ impl ServiceCollection {
     }
 }
 
+/// When writing a match expression against `ServiceName`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let servicename = unimplemented!();
+/// match servicename {
+///     ServiceName::ApiGateway => { /* ... */ },
+///     ServiceName::ApplicationElb => { /* ... */ },
+///     ServiceName::AutoScalingGroup => { /* ... */ },
+///     ServiceName::CloudFront => { /* ... */ },
+///     ServiceName::DynamoDb => { /* ... */ },
+///     ServiceName::Ec2 => { /* ... */ },
+///     ServiceName::Ecs => { /* ... */ },
+///     ServiceName::Eks => { /* ... */ },
+///     ServiceName::ElasticBeanstalk => { /* ... */ },
+///     ServiceName::ElastiCache => { /* ... */ },
+///     ServiceName::Elb => { /* ... */ },
+///     ServiceName::Es => { /* ... */ },
+///     ServiceName::Kinesis => { /* ... */ },
+///     ServiceName::Lambda => { /* ... */ },
+///     ServiceName::NatGateway => { /* ... */ },
+///     ServiceName::NetworkElb => { /* ... */ },
+///     ServiceName::Rds => { /* ... */ },
+///     ServiceName::Redshift => { /* ... */ },
+///     ServiceName::Route53 => { /* ... */ },
+///     ServiceName::S3 => { /* ... */ },
+///     ServiceName::SageMaker => { /* ... */ },
+///     ServiceName::Sns => { /* ... */ },
+///     ServiceName::Sqs => { /* ... */ },
+///     ServiceName::StepFunctions => { /* ... */ },
+///     ServiceName::Swf => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `servicename` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ServiceName::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ServiceName::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ServiceName::NewFeature` is defined.
+/// Specifically, when `servicename` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ServiceName::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1600,8 +1697,8 @@ pub enum ServiceName {
     StepFunctions,
     #[allow(missing_docs)] // documentation missing in model
     Swf,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ServiceName {
     fn from(s: &str) -> Self {
@@ -1631,7 +1728,7 @@ impl std::convert::From<&str> for ServiceName {
             "SQS" => ServiceName::Sqs,
             "STEP_FUNCTIONS" => ServiceName::StepFunctions,
             "SWF" => ServiceName::Swf,
-            other => ServiceName::Unknown(other.to_owned()),
+            other => ServiceName::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1671,11 +1768,11 @@ impl ServiceName {
             ServiceName::Sqs => "SQS",
             ServiceName::StepFunctions => "STEP_FUNCTIONS",
             ServiceName::Swf => "SWF",
-            ServiceName::Unknown(s) => s.as_ref(),
+            ServiceName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "API_GATEWAY",
             "APPLICATION_ELB",
@@ -1713,7 +1810,7 @@ impl AsRef<str> for ServiceName {
 
 /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceCollection {
     /// <p> An array of the names of Amazon Web Services CloudFormation stacks. The stacks define Amazon Web Services resources that DevOps Guru analyzes. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     #[doc(hidden)]
@@ -1750,19 +1847,11 @@ impl ResourceCollection {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for ResourceCollection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceCollection");
-        formatter.field("cloud_formation", &self.cloud_formation);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`ResourceCollection`](crate::model::ResourceCollection).
 pub mod resource_collection {
 
     /// A builder for [`ResourceCollection`](crate::model::ResourceCollection).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_formation: std::option::Option<crate::model::CloudFormationCollection>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::TagCollection>>,
@@ -1845,7 +1934,7 @@ impl ResourceCollection {
 /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i> can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
 /// </important>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagCollection {
     /// <p>An Amazon Web Services tag <i>key</i> that is used to identify the Amazon Web Services resources that DevOps Guru analyzes. All Amazon Web Services resources in your account and Region tagged with this <i>key</i> make up your DevOps Guru application and analysis boundary.</p> <important>
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i> can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
@@ -1870,19 +1959,11 @@ impl TagCollection {
         self.tag_values.as_deref()
     }
 }
-impl std::fmt::Debug for TagCollection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagCollection");
-        formatter.field("app_boundary_key", &self.app_boundary_key);
-        formatter.field("tag_values", &self.tag_values);
-        formatter.finish()
-    }
-}
 /// See [`TagCollection`](crate::model::TagCollection).
 pub mod tag_collection {
 
     /// A builder for [`TagCollection`](crate::model::TagCollection).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_boundary_key: std::option::Option<std::string::String>,
         pub(crate) tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1944,7 +2025,7 @@ impl TagCollection {
 
 /// <p> Information about Amazon Web Services CloudFormation stacks. You can use up to 500 stacks to specify which Amazon Web Services resources in your account to analyze. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a> in the <i>Amazon Web Services CloudFormation User Guide</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudFormationCollection {
     /// <p> An array of CloudFormation stack names. </p>
     #[doc(hidden)]
@@ -1956,18 +2037,11 @@ impl CloudFormationCollection {
         self.stack_names.as_deref()
     }
 }
-impl std::fmt::Debug for CloudFormationCollection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudFormationCollection");
-        formatter.field("stack_names", &self.stack_names);
-        formatter.finish()
-    }
-}
 /// See [`CloudFormationCollection`](crate::model::CloudFormationCollection).
 pub mod cloud_formation_collection {
 
     /// A builder for [`CloudFormationCollection`](crate::model::CloudFormationCollection).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -2008,7 +2082,7 @@ impl CloudFormationCollection {
 
 /// <p> A time ranged that specifies when the observed behavior in an insight started and ended. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsightTimeRange {
     /// <p> The time when the behavior described in an insight started. </p>
     #[doc(hidden)]
@@ -2027,19 +2101,11 @@ impl InsightTimeRange {
         self.end_time.as_ref()
     }
 }
-impl std::fmt::Debug for InsightTimeRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsightTimeRange");
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
-    }
-}
 /// See [`InsightTimeRange`](crate::model::InsightTimeRange).
 pub mod insight_time_range {
 
     /// A builder for [`InsightTimeRange`](crate::model::InsightTimeRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -2087,6 +2153,41 @@ impl InsightTimeRange {
     }
 }
 
+/// When writing a match expression against `InsightStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let insightstatus = unimplemented!();
+/// match insightstatus {
+///     InsightStatus::Closed => { /* ... */ },
+///     InsightStatus::Ongoing => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `insightstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `InsightStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `InsightStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `InsightStatus::NewFeature` is defined.
+/// Specifically, when `insightstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `InsightStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2103,15 +2204,15 @@ pub enum InsightStatus {
     Closed,
     #[allow(missing_docs)] // documentation missing in model
     Ongoing,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for InsightStatus {
     fn from(s: &str) -> Self {
         match s {
             "CLOSED" => InsightStatus::Closed,
             "ONGOING" => InsightStatus::Ongoing,
-            other => InsightStatus::Unknown(other.to_owned()),
+            other => InsightStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2128,11 +2229,11 @@ impl InsightStatus {
         match self {
             InsightStatus::Closed => "CLOSED",
             InsightStatus::Ongoing => "ONGOING",
-            InsightStatus::Unknown(s) => s.as_ref(),
+            InsightStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CLOSED", "ONGOING"]
     }
 }
@@ -2142,6 +2243,42 @@ impl AsRef<str> for InsightStatus {
     }
 }
 
+/// When writing a match expression against `InsightSeverity`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let insightseverity = unimplemented!();
+/// match insightseverity {
+///     InsightSeverity::High => { /* ... */ },
+///     InsightSeverity::Low => { /* ... */ },
+///     InsightSeverity::Medium => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `insightseverity` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `InsightSeverity::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `InsightSeverity::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `InsightSeverity::NewFeature` is defined.
+/// Specifically, when `insightseverity` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `InsightSeverity::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2160,8 +2297,8 @@ pub enum InsightSeverity {
     Low,
     #[allow(missing_docs)] // documentation missing in model
     Medium,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for InsightSeverity {
     fn from(s: &str) -> Self {
@@ -2169,7 +2306,7 @@ impl std::convert::From<&str> for InsightSeverity {
             "HIGH" => InsightSeverity::High,
             "LOW" => InsightSeverity::Low,
             "MEDIUM" => InsightSeverity::Medium,
-            other => InsightSeverity::Unknown(other.to_owned()),
+            other => InsightSeverity::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2187,11 +2324,11 @@ impl InsightSeverity {
             InsightSeverity::High => "HIGH",
             InsightSeverity::Low => "LOW",
             InsightSeverity::Medium => "MEDIUM",
-            InsightSeverity::Unknown(s) => s.as_ref(),
+            InsightSeverity::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HIGH", "LOW", "MEDIUM"]
     }
 }
@@ -2203,7 +2340,7 @@ impl AsRef<str> for InsightSeverity {
 
 /// <p>Details about a proactive insight. This object is returned by <code>DescribeInsight.</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProactiveInsightSummary {
     /// <p>The ID of the proactive insight. </p>
     #[doc(hidden)]
@@ -2271,26 +2408,11 @@ impl ProactiveInsightSummary {
         self.associated_resource_arns.as_deref()
     }
 }
-impl std::fmt::Debug for ProactiveInsightSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProactiveInsightSummary");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("severity", &self.severity);
-        formatter.field("status", &self.status);
-        formatter.field("insight_time_range", &self.insight_time_range);
-        formatter.field("prediction_time_range", &self.prediction_time_range);
-        formatter.field("resource_collection", &self.resource_collection);
-        formatter.field("service_collection", &self.service_collection);
-        formatter.field("associated_resource_arns", &self.associated_resource_arns);
-        formatter.finish()
-    }
-}
 /// See [`ProactiveInsightSummary`](crate::model::ProactiveInsightSummary).
 pub mod proactive_insight_summary {
 
     /// A builder for [`ProactiveInsightSummary`](crate::model::ProactiveInsightSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2446,7 +2568,7 @@ impl ProactiveInsightSummary {
 
 /// <p> The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PredictionTimeRange {
     /// <p> The time range during which a metric limit is expected to be exceeded. This applies to proactive insights only. </p>
     #[doc(hidden)]
@@ -2465,19 +2587,11 @@ impl PredictionTimeRange {
         self.end_time.as_ref()
     }
 }
-impl std::fmt::Debug for PredictionTimeRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PredictionTimeRange");
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
-    }
-}
 /// See [`PredictionTimeRange`](crate::model::PredictionTimeRange).
 pub mod prediction_time_range {
 
     /// A builder for [`PredictionTimeRange`](crate::model::PredictionTimeRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -2525,6 +2639,41 @@ impl PredictionTimeRange {
     }
 }
 
+/// When writing a match expression against `InsightType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let insighttype = unimplemented!();
+/// match insighttype {
+///     InsightType::Proactive => { /* ... */ },
+///     InsightType::Reactive => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `insighttype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `InsightType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `InsightType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `InsightType::NewFeature` is defined.
+/// Specifically, when `insighttype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `InsightType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2541,15 +2690,15 @@ pub enum InsightType {
     Proactive,
     #[allow(missing_docs)] // documentation missing in model
     Reactive,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for InsightType {
     fn from(s: &str) -> Self {
         match s {
             "PROACTIVE" => InsightType::Proactive,
             "REACTIVE" => InsightType::Reactive,
-            other => InsightType::Unknown(other.to_owned()),
+            other => InsightType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2566,11 +2715,11 @@ impl InsightType {
         match self {
             InsightType::Proactive => "PROACTIVE",
             InsightType::Reactive => "REACTIVE",
-            InsightType::Unknown(s) => s.as_ref(),
+            InsightType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PROACTIVE", "REACTIVE"]
     }
 }
@@ -2582,7 +2731,7 @@ impl AsRef<str> for InsightType {
 
 /// <p> Filters you can use to specify which events are returned when <code>ListEvents</code> is called. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchOrganizationInsightsFilters {
     /// <p> An array of severity values used to search for insights. </p>
     #[doc(hidden)]
@@ -2615,21 +2764,11 @@ impl SearchOrganizationInsightsFilters {
         self.service_collection.as_ref()
     }
 }
-impl std::fmt::Debug for SearchOrganizationInsightsFilters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchOrganizationInsightsFilters");
-        formatter.field("severities", &self.severities);
-        formatter.field("statuses", &self.statuses);
-        formatter.field("resource_collection", &self.resource_collection);
-        formatter.field("service_collection", &self.service_collection);
-        formatter.finish()
-    }
-}
 /// See [`SearchOrganizationInsightsFilters`](crate::model::SearchOrganizationInsightsFilters).
 pub mod search_organization_insights_filters {
 
     /// A builder for [`SearchOrganizationInsightsFilters`](crate::model::SearchOrganizationInsightsFilters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) severities: std::option::Option<std::vec::Vec<crate::model::InsightSeverity>>,
         pub(crate) statuses: std::option::Option<std::vec::Vec<crate::model::InsightStatus>>,
@@ -2721,7 +2860,7 @@ impl SearchOrganizationInsightsFilters {
 
 /// <p> A time range used to specify when the behavior of an insight or anomaly started. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartTimeRange {
     /// <p> The start time of the time range. </p>
     #[doc(hidden)]
@@ -2740,19 +2879,11 @@ impl StartTimeRange {
         self.to_time.as_ref()
     }
 }
-impl std::fmt::Debug for StartTimeRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartTimeRange");
-        formatter.field("from_time", &self.from_time);
-        formatter.field("to_time", &self.to_time);
-        formatter.finish()
-    }
-}
 /// See [`StartTimeRange`](crate::model::StartTimeRange).
 pub mod start_time_range {
 
     /// A builder for [`StartTimeRange`](crate::model::StartTimeRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) from_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) to_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -2802,7 +2933,7 @@ impl StartTimeRange {
 
 /// <p> Specifies one or more severity values and one or more status values that are used to search for insights. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchInsightsFilters {
     /// <p> An array of severity values used to search for insights. </p>
     #[doc(hidden)]
@@ -2835,21 +2966,11 @@ impl SearchInsightsFilters {
         self.service_collection.as_ref()
     }
 }
-impl std::fmt::Debug for SearchInsightsFilters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchInsightsFilters");
-        formatter.field("severities", &self.severities);
-        formatter.field("statuses", &self.statuses);
-        formatter.field("resource_collection", &self.resource_collection);
-        formatter.field("service_collection", &self.service_collection);
-        formatter.finish()
-    }
-}
 /// See [`SearchInsightsFilters`](crate::model::SearchInsightsFilters).
 pub mod search_insights_filters {
 
     /// A builder for [`SearchInsightsFilters`](crate::model::SearchInsightsFilters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) severities: std::option::Option<std::vec::Vec<crate::model::InsightSeverity>>,
         pub(crate) statuses: std::option::Option<std::vec::Vec<crate::model::InsightStatus>>,
@@ -2941,7 +3062,7 @@ impl SearchInsightsFilters {
 
 /// <p> Information about insight feedback received from a customer. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsightFeedback {
     /// <p> The insight feedback ID. </p>
     #[doc(hidden)]
@@ -2960,19 +3081,11 @@ impl InsightFeedback {
         self.feedback.as_ref()
     }
 }
-impl std::fmt::Debug for InsightFeedback {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsightFeedback");
-        formatter.field("id", &self.id);
-        formatter.field("feedback", &self.feedback);
-        formatter.finish()
-    }
-}
 /// See [`InsightFeedback`](crate::model::InsightFeedback).
 pub mod insight_feedback {
 
     /// A builder for [`InsightFeedback`](crate::model::InsightFeedback).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) feedback: std::option::Option<crate::model::InsightFeedbackOption>,
@@ -3017,6 +3130,44 @@ impl InsightFeedback {
     }
 }
 
+/// When writing a match expression against `InsightFeedbackOption`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let insightfeedbackoption = unimplemented!();
+/// match insightfeedbackoption {
+///     InsightFeedbackOption::AlertTooSensitive => { /* ... */ },
+///     InsightFeedbackOption::DataIncorrect => { /* ... */ },
+///     InsightFeedbackOption::DataNoisyAnomaly => { /* ... */ },
+///     InsightFeedbackOption::RecommendationUseful => { /* ... */ },
+///     InsightFeedbackOption::ValidCollection => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `insightfeedbackoption` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `InsightFeedbackOption::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `InsightFeedbackOption::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `InsightFeedbackOption::NewFeature` is defined.
+/// Specifically, when `insightfeedbackoption` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `InsightFeedbackOption::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3039,8 +3190,8 @@ pub enum InsightFeedbackOption {
     RecommendationUseful,
     #[allow(missing_docs)] // documentation missing in model
     ValidCollection,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for InsightFeedbackOption {
     fn from(s: &str) -> Self {
@@ -3050,7 +3201,9 @@ impl std::convert::From<&str> for InsightFeedbackOption {
             "DATA_NOISY_ANOMALY" => InsightFeedbackOption::DataNoisyAnomaly,
             "RECOMMENDATION_USEFUL" => InsightFeedbackOption::RecommendationUseful,
             "VALID_COLLECTION" => InsightFeedbackOption::ValidCollection,
-            other => InsightFeedbackOption::Unknown(other.to_owned()),
+            other => {
+                InsightFeedbackOption::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -3070,11 +3223,11 @@ impl InsightFeedbackOption {
             InsightFeedbackOption::DataNoisyAnomaly => "DATA_NOISY_ANOMALY",
             InsightFeedbackOption::RecommendationUseful => "RECOMMENDATION_USEFUL",
             InsightFeedbackOption::ValidCollection => "VALID_COLLECTION",
-            InsightFeedbackOption::Unknown(s) => s.as_ref(),
+            InsightFeedbackOption::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ALERT_TOO_SENSITIVE",
             "DATA_INCORRECT",
@@ -3092,7 +3245,7 @@ impl AsRef<str> for InsightFeedbackOption {
 
 /// <p> Recommendation information to help you remediate detected anomalous behavior that generated an insight. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Recommendation {
     /// <p> A description of the problem. </p>
     #[doc(hidden)]
@@ -3152,24 +3305,11 @@ impl Recommendation {
         self.category.as_deref()
     }
 }
-impl std::fmt::Debug for Recommendation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Recommendation");
-        formatter.field("description", &self.description);
-        formatter.field("link", &self.link);
-        formatter.field("name", &self.name);
-        formatter.field("reason", &self.reason);
-        formatter.field("related_events", &self.related_events);
-        formatter.field("related_anomalies", &self.related_anomalies);
-        formatter.field("category", &self.category);
-        formatter.finish()
-    }
-}
 /// See [`Recommendation`](crate::model::Recommendation).
 pub mod recommendation {
 
     /// A builder for [`Recommendation`](crate::model::Recommendation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) link: std::option::Option<std::string::String>,
@@ -3296,7 +3436,7 @@ impl Recommendation {
 
 /// <p> Information about an anomaly that is related to a recommendation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecommendationRelatedAnomaly {
     /// <p> An array of objects that represent resources in which DevOps Guru detected anomalous behavior. Each object contains the name and type of the resource. </p>
     #[doc(hidden)]
@@ -3328,20 +3468,11 @@ impl RecommendationRelatedAnomaly {
         self.anomaly_id.as_deref()
     }
 }
-impl std::fmt::Debug for RecommendationRelatedAnomaly {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecommendationRelatedAnomaly");
-        formatter.field("resources", &self.resources);
-        formatter.field("source_details", &self.source_details);
-        formatter.field("anomaly_id", &self.anomaly_id);
-        formatter.finish()
-    }
-}
 /// See [`RecommendationRelatedAnomaly`](crate::model::RecommendationRelatedAnomaly).
 pub mod recommendation_related_anomaly {
 
     /// A builder for [`RecommendationRelatedAnomaly`](crate::model::RecommendationRelatedAnomaly).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resources:
             std::option::Option<std::vec::Vec<crate::model::RecommendationRelatedAnomalyResource>>,
@@ -3428,7 +3559,7 @@ impl RecommendationRelatedAnomaly {
 
 /// <p> Contains an array of <code>RecommendationRelatedCloudWatchMetricsSourceDetail</code> objects that contain the name and namespace of an Amazon CloudWatch metric. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecommendationRelatedAnomalySourceDetail {
     /// <p> An array of <code>CloudWatchMetricsDetail</code> objects that contains information about the analyzed metrics that displayed anomalous behavior. </p>
     #[doc(hidden)]
@@ -3445,18 +3576,11 @@ impl RecommendationRelatedAnomalySourceDetail {
         self.cloud_watch_metrics.as_deref()
     }
 }
-impl std::fmt::Debug for RecommendationRelatedAnomalySourceDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecommendationRelatedAnomalySourceDetail");
-        formatter.field("cloud_watch_metrics", &self.cloud_watch_metrics);
-        formatter.finish()
-    }
-}
 /// See [`RecommendationRelatedAnomalySourceDetail`](crate::model::RecommendationRelatedAnomalySourceDetail).
 pub mod recommendation_related_anomaly_source_detail {
 
     /// A builder for [`RecommendationRelatedAnomalySourceDetail`](crate::model::RecommendationRelatedAnomalySourceDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_metrics: std::option::Option<
             std::vec::Vec<crate::model::RecommendationRelatedCloudWatchMetricsSourceDetail>,
@@ -3504,7 +3628,7 @@ impl RecommendationRelatedAnomalySourceDetail {
 
 /// <p> Information about an Amazon CloudWatch metric that is analyzed by DevOps Guru. It is one of many analyzed metrics that are used to generate insights. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecommendationRelatedCloudWatchMetricsSourceDetail {
     /// <p>The name of the CloudWatch metric.</p>
     #[doc(hidden)]
@@ -3523,19 +3647,11 @@ impl RecommendationRelatedCloudWatchMetricsSourceDetail {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for RecommendationRelatedCloudWatchMetricsSourceDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecommendationRelatedCloudWatchMetricsSourceDetail");
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 /// See [`RecommendationRelatedCloudWatchMetricsSourceDetail`](crate::model::RecommendationRelatedCloudWatchMetricsSourceDetail).
 pub mod recommendation_related_cloud_watch_metrics_source_detail {
 
     /// A builder for [`RecommendationRelatedCloudWatchMetricsSourceDetail`](crate::model::RecommendationRelatedCloudWatchMetricsSourceDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_name: std::option::Option<std::string::String>,
         pub(crate) namespace: std::option::Option<std::string::String>,
@@ -3580,7 +3696,7 @@ impl RecommendationRelatedCloudWatchMetricsSourceDetail {
 
 /// <p> Information about a resource in which DevOps Guru detected anomalous behavior. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecommendationRelatedAnomalyResource {
     /// <p> The name of the resource. </p>
     #[doc(hidden)]
@@ -3599,19 +3715,11 @@ impl RecommendationRelatedAnomalyResource {
         self.r#type.as_deref()
     }
 }
-impl std::fmt::Debug for RecommendationRelatedAnomalyResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecommendationRelatedAnomalyResource");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 /// See [`RecommendationRelatedAnomalyResource`](crate::model::RecommendationRelatedAnomalyResource).
 pub mod recommendation_related_anomaly_resource {
 
     /// A builder for [`RecommendationRelatedAnomalyResource`](crate::model::RecommendationRelatedAnomalyResource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -3655,7 +3763,7 @@ impl RecommendationRelatedAnomalyResource {
 
 /// <p> Information about an event that is related to a recommendation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecommendationRelatedEvent {
     /// <p> The name of the event. This corresponds to the <code>Name</code> field in an <code>Event</code> object. </p>
     #[doc(hidden)]
@@ -3677,19 +3785,11 @@ impl RecommendationRelatedEvent {
         self.resources.as_deref()
     }
 }
-impl std::fmt::Debug for RecommendationRelatedEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecommendationRelatedEvent");
-        formatter.field("name", &self.name);
-        formatter.field("resources", &self.resources);
-        formatter.finish()
-    }
-}
 /// See [`RecommendationRelatedEvent`](crate::model::RecommendationRelatedEvent).
 pub mod recommendation_related_event {
 
     /// A builder for [`RecommendationRelatedEvent`](crate::model::RecommendationRelatedEvent).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) resources:
@@ -3748,7 +3848,7 @@ impl RecommendationRelatedEvent {
 
 /// <p> Information about an Amazon Web Services resource that emitted and event that is related to a recommendation in an insight. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecommendationRelatedEventResource {
     /// <p> The name of the resource that emitted the event. This corresponds to the <code>Name</code> field in an <code>EventResource</code> object. </p>
     #[doc(hidden)]
@@ -3767,19 +3867,11 @@ impl RecommendationRelatedEventResource {
         self.r#type.as_deref()
     }
 }
-impl std::fmt::Debug for RecommendationRelatedEventResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecommendationRelatedEventResource");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 /// See [`RecommendationRelatedEventResource`](crate::model::RecommendationRelatedEventResource).
 pub mod recommendation_related_event_resource {
 
     /// A builder for [`RecommendationRelatedEventResource`](crate::model::RecommendationRelatedEventResource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -3821,6 +3913,50 @@ impl RecommendationRelatedEventResource {
     }
 }
 
+/// When writing a match expression against `Locale`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let locale = unimplemented!();
+/// match locale {
+///     Locale::DeDe => { /* ... */ },
+///     Locale::EnGb => { /* ... */ },
+///     Locale::EnUs => { /* ... */ },
+///     Locale::EsEs => { /* ... */ },
+///     Locale::FrFr => { /* ... */ },
+///     Locale::ItIt => { /* ... */ },
+///     Locale::JaJp => { /* ... */ },
+///     Locale::KoKr => { /* ... */ },
+///     Locale::PtBr => { /* ... */ },
+///     Locale::ZhCn => { /* ... */ },
+///     Locale::ZhTw => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `locale` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Locale::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Locale::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Locale::NewFeature` is defined.
+/// Specifically, when `locale` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Locale::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3855,8 +3991,8 @@ pub enum Locale {
     ZhCn,
     #[allow(missing_docs)] // documentation missing in model
     ZhTw,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Locale {
     fn from(s: &str) -> Self {
@@ -3872,7 +4008,7 @@ impl std::convert::From<&str> for Locale {
             "PT_BR" => Locale::PtBr,
             "ZH_CN" => Locale::ZhCn,
             "ZH_TW" => Locale::ZhTw,
-            other => Locale::Unknown(other.to_owned()),
+            other => Locale::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -3898,11 +4034,11 @@ impl Locale {
             Locale::PtBr => "PT_BR",
             Locale::ZhCn => "ZH_CN",
             Locale::ZhTw => "ZH_TW",
-            Locale::Unknown(s) => s.as_ref(),
+            Locale::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DE_DE", "EN_GB", "EN_US", "ES_ES", "FR_FR", "IT_IT", "JA_JP", "KO_KR", "PT_BR",
             "ZH_CN", "ZH_TW",
@@ -3917,7 +4053,7 @@ impl AsRef<str> for Locale {
 
 /// <p>Information about a reactive insight. This object is returned by <code>DescribeInsight</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReactiveOrganizationInsightSummary {
     /// <p>The ID of the insight summary.</p>
     #[doc(hidden)]
@@ -3985,26 +4121,11 @@ impl ReactiveOrganizationInsightSummary {
         self.service_collection.as_ref()
     }
 }
-impl std::fmt::Debug for ReactiveOrganizationInsightSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReactiveOrganizationInsightSummary");
-        formatter.field("id", &self.id);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("organizational_unit_id", &self.organizational_unit_id);
-        formatter.field("name", &self.name);
-        formatter.field("severity", &self.severity);
-        formatter.field("status", &self.status);
-        formatter.field("insight_time_range", &self.insight_time_range);
-        formatter.field("resource_collection", &self.resource_collection);
-        formatter.field("service_collection", &self.service_collection);
-        formatter.finish()
-    }
-}
 /// See [`ReactiveOrganizationInsightSummary`](crate::model::ReactiveOrganizationInsightSummary).
 pub mod reactive_organization_insight_summary {
 
     /// A builder for [`ReactiveOrganizationInsightSummary`](crate::model::ReactiveOrganizationInsightSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -4150,7 +4271,7 @@ impl ReactiveOrganizationInsightSummary {
 
 /// <p>Details about a proactive insight. This object is returned by <code>DescribeInsight</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProactiveOrganizationInsightSummary {
     /// <p>The ID of the insight summary.</p>
     #[doc(hidden)]
@@ -4225,27 +4346,11 @@ impl ProactiveOrganizationInsightSummary {
         self.service_collection.as_ref()
     }
 }
-impl std::fmt::Debug for ProactiveOrganizationInsightSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProactiveOrganizationInsightSummary");
-        formatter.field("id", &self.id);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("organizational_unit_id", &self.organizational_unit_id);
-        formatter.field("name", &self.name);
-        formatter.field("severity", &self.severity);
-        formatter.field("status", &self.status);
-        formatter.field("insight_time_range", &self.insight_time_range);
-        formatter.field("prediction_time_range", &self.prediction_time_range);
-        formatter.field("resource_collection", &self.resource_collection);
-        formatter.field("service_collection", &self.service_collection);
-        formatter.finish()
-    }
-}
 /// See [`ProactiveOrganizationInsightSummary`](crate::model::ProactiveOrganizationInsightSummary).
 pub mod proactive_organization_insight_summary {
 
     /// A builder for [`ProactiveOrganizationInsightSummary`](crate::model::ProactiveOrganizationInsightSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -4406,7 +4511,7 @@ impl ProactiveOrganizationInsightSummary {
 
 /// <p> A filter used by <code>ListInsights</code> to specify which insights to return. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInsightsStatusFilter {
     /// <p> A <code>ListInsightsAnyStatusFilter</code> that specifies ongoing insights that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
     #[doc(hidden)]
@@ -4432,20 +4537,11 @@ impl ListInsightsStatusFilter {
         self.any.as_ref()
     }
 }
-impl std::fmt::Debug for ListInsightsStatusFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListInsightsStatusFilter");
-        formatter.field("ongoing", &self.ongoing);
-        formatter.field("closed", &self.closed);
-        formatter.field("any", &self.any);
-        formatter.finish()
-    }
-}
 /// See [`ListInsightsStatusFilter`](crate::model::ListInsightsStatusFilter).
 pub mod list_insights_status_filter {
 
     /// A builder for [`ListInsightsStatusFilter`](crate::model::ListInsightsStatusFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ongoing: std::option::Option<crate::model::ListInsightsOngoingStatusFilter>,
         pub(crate) closed: std::option::Option<crate::model::ListInsightsClosedStatusFilter>,
@@ -4510,7 +4606,7 @@ impl ListInsightsStatusFilter {
 
 /// <p> Used to filter for insights that have any status. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInsightsAnyStatusFilter {
     /// <p> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights. </p>
     #[doc(hidden)]
@@ -4529,19 +4625,11 @@ impl ListInsightsAnyStatusFilter {
         self.start_time_range.as_ref()
     }
 }
-impl std::fmt::Debug for ListInsightsAnyStatusFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListInsightsAnyStatusFilter");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("start_time_range", &self.start_time_range);
-        formatter.finish()
-    }
-}
 /// See [`ListInsightsAnyStatusFilter`](crate::model::ListInsightsAnyStatusFilter).
 pub mod list_insights_any_status_filter {
 
     /// A builder for [`ListInsightsAnyStatusFilter`](crate::model::ListInsightsAnyStatusFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::InsightType>,
         pub(crate) start_time_range: std::option::Option<crate::model::StartTimeRange>,
@@ -4588,7 +4676,7 @@ impl ListInsightsAnyStatusFilter {
 
 /// <p> Used to filter for insights that have the status <code>CLOSED</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInsightsClosedStatusFilter {
     /// <p> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights. </p>
     #[doc(hidden)]
@@ -4607,19 +4695,11 @@ impl ListInsightsClosedStatusFilter {
         self.end_time_range.as_ref()
     }
 }
-impl std::fmt::Debug for ListInsightsClosedStatusFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListInsightsClosedStatusFilter");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("end_time_range", &self.end_time_range);
-        formatter.finish()
-    }
-}
 /// See [`ListInsightsClosedStatusFilter`](crate::model::ListInsightsClosedStatusFilter).
 pub mod list_insights_closed_status_filter {
 
     /// A builder for [`ListInsightsClosedStatusFilter`](crate::model::ListInsightsClosedStatusFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::InsightType>,
         pub(crate) end_time_range: std::option::Option<crate::model::EndTimeRange>,
@@ -4666,7 +4746,7 @@ impl ListInsightsClosedStatusFilter {
 
 /// <p> A range of time that specifies when anomalous behavior in an anomaly or insight ended. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndTimeRange {
     /// <p> The earliest end time in the time range. </p>
     #[doc(hidden)]
@@ -4685,19 +4765,11 @@ impl EndTimeRange {
         self.to_time.as_ref()
     }
 }
-impl std::fmt::Debug for EndTimeRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndTimeRange");
-        formatter.field("from_time", &self.from_time);
-        formatter.field("to_time", &self.to_time);
-        formatter.finish()
-    }
-}
 /// See [`EndTimeRange`](crate::model::EndTimeRange).
 pub mod end_time_range {
 
     /// A builder for [`EndTimeRange`](crate::model::EndTimeRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) from_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) to_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -4747,7 +4819,7 @@ impl EndTimeRange {
 
 /// <p> Used to filter for insights that have the status <code>ONGOING</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInsightsOngoingStatusFilter {
     /// <p> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights. </p>
     #[doc(hidden)]
@@ -4759,18 +4831,11 @@ impl ListInsightsOngoingStatusFilter {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for ListInsightsOngoingStatusFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListInsightsOngoingStatusFilter");
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 /// See [`ListInsightsOngoingStatusFilter`](crate::model::ListInsightsOngoingStatusFilter).
 pub mod list_insights_ongoing_status_filter {
 
     /// A builder for [`ListInsightsOngoingStatusFilter`](crate::model::ListInsightsOngoingStatusFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::InsightType>,
     }
@@ -4805,7 +4870,7 @@ impl ListInsightsOngoingStatusFilter {
 /// <p>If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account. For more information, see Permissions for cross account Amazon SNS topics.</p>
 /// <p>If you use an Amazon SNS topic that is encrypted by an Amazon Web Services Key Management Service customer-managed key (CMK), then you must add permissions to the CMK. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html">Permissions for Amazon Web Services KMS–encrypted Amazon SNS topics</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotificationChannel {
     /// <p> The ID of a notification channel. </p>
     #[doc(hidden)]
@@ -4824,19 +4889,11 @@ impl NotificationChannel {
         self.config.as_ref()
     }
 }
-impl std::fmt::Debug for NotificationChannel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotificationChannel");
-        formatter.field("id", &self.id);
-        formatter.field("config", &self.config);
-        formatter.finish()
-    }
-}
 /// See [`NotificationChannel`](crate::model::NotificationChannel).
 pub mod notification_channel {
 
     /// A builder for [`NotificationChannel`](crate::model::NotificationChannel).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) config: std::option::Option<crate::model::NotificationChannelConfig>,
@@ -4883,7 +4940,7 @@ impl NotificationChannel {
 
 /// <p> Information about notification channels you have configured with DevOps Guru. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotificationChannelConfig {
     /// <p> Information about a notification channel configured in DevOps Guru to send notifications when insights are created. </p>
     /// <p>If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account. DevOps Guru only supports standard SNS topics. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions for cross account Amazon SNS topics</a>.</p>
@@ -4908,19 +4965,11 @@ impl NotificationChannelConfig {
         self.filters.as_ref()
     }
 }
-impl std::fmt::Debug for NotificationChannelConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotificationChannelConfig");
-        formatter.field("sns", &self.sns);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 /// See [`NotificationChannelConfig`](crate::model::NotificationChannelConfig).
 pub mod notification_channel_config {
 
     /// A builder for [`NotificationChannelConfig`](crate::model::NotificationChannelConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sns: std::option::Option<crate::model::SnsChannelConfig>,
         pub(crate) filters: std::option::Option<crate::model::NotificationFilterConfig>,
@@ -4976,7 +5025,7 @@ impl NotificationChannelConfig {
 
 /// <p> The filter configurations for the Amazon SNS notification topic you use with DevOps Guru. You can choose to specify which events or message types to receive notifications for. You can also choose to specify which severity levels to receive notifications for. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotificationFilterConfig {
     /// <p> The severity levels that you want to receive notifications for. For example, you can choose to receive notifications only for insights with <code>HIGH</code> and <code>MEDIUM</code> severity levels. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a>. </p>
     #[doc(hidden)]
@@ -4995,19 +5044,11 @@ impl NotificationFilterConfig {
         self.message_types.as_deref()
     }
 }
-impl std::fmt::Debug for NotificationFilterConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotificationFilterConfig");
-        formatter.field("severities", &self.severities);
-        formatter.field("message_types", &self.message_types);
-        formatter.finish()
-    }
-}
 /// See [`NotificationFilterConfig`](crate::model::NotificationFilterConfig).
 pub mod notification_filter_config {
 
     /// A builder for [`NotificationFilterConfig`](crate::model::NotificationFilterConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) severities: std::option::Option<std::vec::Vec<crate::model::InsightSeverity>>,
         pub(crate) message_types:
@@ -5068,6 +5109,44 @@ impl NotificationFilterConfig {
     }
 }
 
+/// When writing a match expression against `NotificationMessageType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let notificationmessagetype = unimplemented!();
+/// match notificationmessagetype {
+///     NotificationMessageType::ClosedInsight => { /* ... */ },
+///     NotificationMessageType::NewAssociation => { /* ... */ },
+///     NotificationMessageType::NewInsight => { /* ... */ },
+///     NotificationMessageType::NewRecommendation => { /* ... */ },
+///     NotificationMessageType::SeverityUpgraded => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `notificationmessagetype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `NotificationMessageType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `NotificationMessageType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `NotificationMessageType::NewFeature` is defined.
+/// Specifically, when `notificationmessagetype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `NotificationMessageType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -5090,8 +5169,8 @@ pub enum NotificationMessageType {
     NewRecommendation,
     #[allow(missing_docs)] // documentation missing in model
     SeverityUpgraded,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for NotificationMessageType {
     fn from(s: &str) -> Self {
@@ -5101,7 +5180,9 @@ impl std::convert::From<&str> for NotificationMessageType {
             "NEW_INSIGHT" => NotificationMessageType::NewInsight,
             "NEW_RECOMMENDATION" => NotificationMessageType::NewRecommendation,
             "SEVERITY_UPGRADED" => NotificationMessageType::SeverityUpgraded,
-            other => NotificationMessageType::Unknown(other.to_owned()),
+            other => NotificationMessageType::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -5121,11 +5202,11 @@ impl NotificationMessageType {
             NotificationMessageType::NewInsight => "NEW_INSIGHT",
             NotificationMessageType::NewRecommendation => "NEW_RECOMMENDATION",
             NotificationMessageType::SeverityUpgraded => "SEVERITY_UPGRADED",
-            NotificationMessageType::Unknown(s) => s.as_ref(),
+            NotificationMessageType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CLOSED_INSIGHT",
             "NEW_ASSOCIATION",
@@ -5146,7 +5227,7 @@ impl AsRef<str> for NotificationMessageType {
 /// <p>If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account. For more information, see Permissions for cross account Amazon SNS topics.</p>
 /// <p>If you use an Amazon SNS topic that is encrypted by an Amazon Web Services Key Management Service customer-managed key (CMK), then you must add permissions to the CMK. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html">Permissions for Amazon Web Services KMS–encrypted Amazon SNS topics</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnsChannelConfig {
     /// <p> The Amazon Resource Name (ARN) of an Amazon Simple Notification Service topic. </p>
     #[doc(hidden)]
@@ -5158,18 +5239,11 @@ impl SnsChannelConfig {
         self.topic_arn.as_deref()
     }
 }
-impl std::fmt::Debug for SnsChannelConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnsChannelConfig");
-        formatter.field("topic_arn", &self.topic_arn);
-        formatter.finish()
-    }
-}
 /// See [`SnsChannelConfig`](crate::model::SnsChannelConfig).
 pub mod sns_channel_config {
 
     /// A builder for [`SnsChannelConfig`](crate::model::SnsChannelConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic_arn: std::option::Option<std::string::String>,
     }
@@ -5201,7 +5275,7 @@ impl SnsChannelConfig {
 
 /// <p> Information about the resource that is being monitored, including the name of the resource, the type of resource, and whether or not permission is given to DevOps Guru to access that resource. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MonitoredResourceIdentifier {
     /// <p> The name of the resource being monitored. </p>
     #[doc(hidden)]
@@ -5227,20 +5301,11 @@ impl MonitoredResourceIdentifier {
         self.resource_permission.as_ref()
     }
 }
-impl std::fmt::Debug for MonitoredResourceIdentifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MonitoredResourceIdentifier");
-        formatter.field("monitored_resource_name", &self.monitored_resource_name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("resource_permission", &self.resource_permission);
-        formatter.finish()
-    }
-}
 /// See [`MonitoredResourceIdentifier`](crate::model::MonitoredResourceIdentifier).
 pub mod monitored_resource_identifier {
 
     /// A builder for [`MonitoredResourceIdentifier`](crate::model::MonitoredResourceIdentifier).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) monitored_resource_name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -5300,6 +5365,41 @@ impl MonitoredResourceIdentifier {
     }
 }
 
+/// When writing a match expression against `ResourcePermission`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let resourcepermission = unimplemented!();
+/// match resourcepermission {
+///     ResourcePermission::FullPermission => { /* ... */ },
+///     ResourcePermission::MissingPermission => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `resourcepermission` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ResourcePermission::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ResourcePermission::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ResourcePermission::NewFeature` is defined.
+/// Specifically, when `resourcepermission` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ResourcePermission::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -5316,15 +5416,17 @@ pub enum ResourcePermission {
     FullPermission,
     #[allow(missing_docs)] // documentation missing in model
     MissingPermission,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ResourcePermission {
     fn from(s: &str) -> Self {
         match s {
             "FULL_PERMISSION" => ResourcePermission::FullPermission,
             "MISSING_PERMISSION" => ResourcePermission::MissingPermission,
-            other => ResourcePermission::Unknown(other.to_owned()),
+            other => {
+                ResourcePermission::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -5341,11 +5443,11 @@ impl ResourcePermission {
         match self {
             ResourcePermission::FullPermission => "FULL_PERMISSION",
             ResourcePermission::MissingPermission => "MISSING_PERMISSION",
-            ResourcePermission::Unknown(s) => s.as_ref(),
+            ResourcePermission::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FULL_PERMISSION", "MISSING_PERMISSION"]
     }
 }
@@ -5357,7 +5459,7 @@ impl AsRef<str> for ResourcePermission {
 
 /// <p> Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMonitoredResourcesFilters {
     /// <p> The permission status of a resource. </p>
     #[doc(hidden)]
@@ -5378,19 +5480,11 @@ impl ListMonitoredResourcesFilters {
         self.resource_type_filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListMonitoredResourcesFilters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMonitoredResourcesFilters");
-        formatter.field("resource_permission", &self.resource_permission);
-        formatter.field("resource_type_filters", &self.resource_type_filters);
-        formatter.finish()
-    }
-}
 /// See [`ListMonitoredResourcesFilters`](crate::model::ListMonitoredResourcesFilters).
 pub mod list_monitored_resources_filters {
 
     /// A builder for [`ListMonitoredResourcesFilters`](crate::model::ListMonitoredResourcesFilters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_permission: std::option::Option<crate::model::ResourcePermission>,
         pub(crate) resource_type_filters:
@@ -5445,6 +5539,40 @@ impl ListMonitoredResourcesFilters {
     }
 }
 
+/// When writing a match expression against `ResourceTypeFilter`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let resourcetypefilter = unimplemented!();
+/// match resourcetypefilter {
+///     ResourceTypeFilter::LogGroups => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `resourcetypefilter` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ResourceTypeFilter::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ResourceTypeFilter::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ResourceTypeFilter::NewFeature` is defined.
+/// Specifically, when `resourcetypefilter` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ResourceTypeFilter::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -5459,14 +5587,16 @@ impl ListMonitoredResourcesFilters {
 pub enum ResourceTypeFilter {
     #[allow(missing_docs)] // documentation missing in model
     LogGroups,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ResourceTypeFilter {
     fn from(s: &str) -> Self {
         match s {
             "LOG_GROUPS" => ResourceTypeFilter::LogGroups,
-            other => ResourceTypeFilter::Unknown(other.to_owned()),
+            other => {
+                ResourceTypeFilter::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -5482,11 +5612,11 @@ impl ResourceTypeFilter {
     pub fn as_str(&self) -> &str {
         match self {
             ResourceTypeFilter::LogGroups => "LOG_GROUPS",
-            ResourceTypeFilter::Unknown(s) => s.as_ref(),
+            ResourceTypeFilter::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LOG_GROUPS"]
     }
 }
@@ -5498,7 +5628,7 @@ impl AsRef<str> for ResourceTypeFilter {
 
 /// <p> An Amazon Web Services resource event. Amazon Web Services resource events and metrics are analyzed by DevOps Guru to find anomalous behavior and provide recommendations to improve your operational solutions. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Event {
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     #[doc(hidden)]
@@ -5559,25 +5689,11 @@ impl Event {
         self.resources.as_deref()
     }
 }
-impl std::fmt::Debug for Event {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Event");
-        formatter.field("resource_collection", &self.resource_collection);
-        formatter.field("id", &self.id);
-        formatter.field("time", &self.time);
-        formatter.field("event_source", &self.event_source);
-        formatter.field("name", &self.name);
-        formatter.field("data_source", &self.data_source);
-        formatter.field("event_class", &self.event_class);
-        formatter.field("resources", &self.resources);
-        formatter.finish()
-    }
-}
 /// See [`Event`](crate::model::Event).
 pub mod event {
 
     /// A builder for [`Event`](crate::model::Event).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_collection: std::option::Option<crate::model::ResourceCollection>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5711,7 +5827,7 @@ impl Event {
 
 /// <p> The Amazon Web Services resource that emitted an event. Amazon Web Services resource events and metrics are analyzed by DevOps Guru to find anomalous behavior and provide recommendations to improve your operational solutions. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventResource {
     /// <p> The type of resource that emitted an event. </p>
     #[doc(hidden)]
@@ -5737,20 +5853,11 @@ impl EventResource {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for EventResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventResource");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 /// See [`EventResource`](crate::model::EventResource).
 pub mod event_resource {
 
     /// A builder for [`EventResource`](crate::model::EventResource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5804,6 +5911,44 @@ impl EventResource {
     }
 }
 
+/// When writing a match expression against `EventClass`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let eventclass = unimplemented!();
+/// match eventclass {
+///     EventClass::ConfigChange => { /* ... */ },
+///     EventClass::Deployment => { /* ... */ },
+///     EventClass::Infrastructure => { /* ... */ },
+///     EventClass::SchemaChange => { /* ... */ },
+///     EventClass::SecurityChange => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `eventclass` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EventClass::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EventClass::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EventClass::NewFeature` is defined.
+/// Specifically, when `eventclass` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EventClass::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -5826,8 +5971,8 @@ pub enum EventClass {
     SchemaChange,
     #[allow(missing_docs)] // documentation missing in model
     SecurityChange,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EventClass {
     fn from(s: &str) -> Self {
@@ -5837,7 +5982,7 @@ impl std::convert::From<&str> for EventClass {
             "INFRASTRUCTURE" => EventClass::Infrastructure,
             "SCHEMA_CHANGE" => EventClass::SchemaChange,
             "SECURITY_CHANGE" => EventClass::SecurityChange,
-            other => EventClass::Unknown(other.to_owned()),
+            other => EventClass::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -5857,11 +6002,11 @@ impl EventClass {
             EventClass::Infrastructure => "INFRASTRUCTURE",
             EventClass::SchemaChange => "SCHEMA_CHANGE",
             EventClass::SecurityChange => "SECURITY_CHANGE",
-            EventClass::Unknown(s) => s.as_ref(),
+            EventClass::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CONFIG_CHANGE",
             "DEPLOYMENT",
@@ -5877,6 +6022,41 @@ impl AsRef<str> for EventClass {
     }
 }
 
+/// When writing a match expression against `EventDataSource`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let eventdatasource = unimplemented!();
+/// match eventdatasource {
+///     EventDataSource::AwsCloudTrail => { /* ... */ },
+///     EventDataSource::AwsCodeDeploy => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `eventdatasource` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EventDataSource::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EventDataSource::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EventDataSource::NewFeature` is defined.
+/// Specifically, when `eventdatasource` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EventDataSource::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -5893,15 +6073,15 @@ pub enum EventDataSource {
     AwsCloudTrail,
     #[allow(missing_docs)] // documentation missing in model
     AwsCodeDeploy,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EventDataSource {
     fn from(s: &str) -> Self {
         match s {
             "AWS_CLOUD_TRAIL" => EventDataSource::AwsCloudTrail,
             "AWS_CODE_DEPLOY" => EventDataSource::AwsCodeDeploy,
-            other => EventDataSource::Unknown(other.to_owned()),
+            other => EventDataSource::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -5918,11 +6098,11 @@ impl EventDataSource {
         match self {
             EventDataSource::AwsCloudTrail => "AWS_CLOUD_TRAIL",
             EventDataSource::AwsCodeDeploy => "AWS_CODE_DEPLOY",
-            EventDataSource::Unknown(s) => s.as_ref(),
+            EventDataSource::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS_CLOUD_TRAIL", "AWS_CODE_DEPLOY"]
     }
 }
@@ -5934,7 +6114,7 @@ impl AsRef<str> for EventDataSource {
 
 /// <p> Filters you can use to specify which events are returned when <code>ListEvents</code> is called. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEventsFilters {
     /// <p> An ID of an insight that is related to the events you want to filter for. </p>
     #[doc(hidden)]
@@ -5981,23 +6161,11 @@ impl ListEventsFilters {
         self.resource_collection.as_ref()
     }
 }
-impl std::fmt::Debug for ListEventsFilters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEventsFilters");
-        formatter.field("insight_id", &self.insight_id);
-        formatter.field("event_time_range", &self.event_time_range);
-        formatter.field("event_class", &self.event_class);
-        formatter.field("event_source", &self.event_source);
-        formatter.field("data_source", &self.data_source);
-        formatter.field("resource_collection", &self.resource_collection);
-        formatter.finish()
-    }
-}
 /// See [`ListEventsFilters`](crate::model::ListEventsFilters).
 pub mod list_events_filters {
 
     /// A builder for [`ListEventsFilters`](crate::model::ListEventsFilters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) insight_id: std::option::Option<std::string::String>,
         pub(crate) event_time_range: std::option::Option<crate::model::EventTimeRange>,
@@ -6101,7 +6269,7 @@ impl ListEventsFilters {
 
 /// <p> The time range during which an Amazon Web Services event occurred. Amazon Web Services resource events and metrics are analyzed by DevOps Guru to find anomalous behavior and provide recommendations to improve your operational solutions. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventTimeRange {
     /// <p> The time when the event started. </p>
     #[doc(hidden)]
@@ -6120,19 +6288,11 @@ impl EventTimeRange {
         self.to_time.as_ref()
     }
 }
-impl std::fmt::Debug for EventTimeRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventTimeRange");
-        formatter.field("from_time", &self.from_time);
-        formatter.field("to_time", &self.to_time);
-        formatter.finish()
-    }
-}
 /// See [`EventTimeRange`](crate::model::EventTimeRange).
 pub mod event_time_range {
 
     /// A builder for [`EventTimeRange`](crate::model::EventTimeRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) from_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) to_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -6182,7 +6342,7 @@ impl EventTimeRange {
 
 /// <p> An Amazon CloudWatch log group that contains log anomalies and is used to generate an insight. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnomalousLogGroup {
     /// <p> The name of the CloudWatch log group. </p>
     #[doc(hidden)]
@@ -6224,25 +6384,11 @@ impl AnomalousLogGroup {
         self.log_anomaly_showcases.as_deref()
     }
 }
-impl std::fmt::Debug for AnomalousLogGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnomalousLogGroup");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("impact_start_time", &self.impact_start_time);
-        formatter.field("impact_end_time", &self.impact_end_time);
-        formatter.field(
-            "number_of_log_lines_scanned",
-            &self.number_of_log_lines_scanned,
-        );
-        formatter.field("log_anomaly_showcases", &self.log_anomaly_showcases);
-        formatter.finish()
-    }
-}
 /// See [`AnomalousLogGroup`](crate::model::AnomalousLogGroup).
 pub mod anomalous_log_group {
 
     /// A builder for [`AnomalousLogGroup`](crate::model::AnomalousLogGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
         pub(crate) impact_start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -6341,7 +6487,7 @@ impl AnomalousLogGroup {
 
 /// <p> A cluster of similar anomalous log events found within a log group. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogAnomalyShowcase {
     /// <p> A list of anomalous log events that may be related. </p>
     #[doc(hidden)]
@@ -6353,18 +6499,11 @@ impl LogAnomalyShowcase {
         self.log_anomaly_classes.as_deref()
     }
 }
-impl std::fmt::Debug for LogAnomalyShowcase {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogAnomalyShowcase");
-        formatter.field("log_anomaly_classes", &self.log_anomaly_classes);
-        formatter.finish()
-    }
-}
 /// See [`LogAnomalyShowcase`](crate::model::LogAnomalyShowcase).
 pub mod log_anomaly_showcase {
 
     /// A builder for [`LogAnomalyShowcase`](crate::model::LogAnomalyShowcase).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_anomaly_classes:
             std::option::Option<std::vec::Vec<crate::model::LogAnomalyClass>>,
@@ -6406,7 +6545,7 @@ impl LogAnomalyShowcase {
 
 /// <p> Information about an anomalous log event found within a log group. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogAnomalyClass {
     /// <p> The name of the Amazon CloudWatch log stream that the anomalous log event belongs to. A log stream is a sequence of log events that share the same source. </p>
     #[doc(hidden)]
@@ -6460,27 +6599,11 @@ impl LogAnomalyClass {
         self.log_event_timestamp.as_ref()
     }
 }
-impl std::fmt::Debug for LogAnomalyClass {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogAnomalyClass");
-        formatter.field("log_stream_name", &self.log_stream_name);
-        formatter.field("log_anomaly_type", &self.log_anomaly_type);
-        formatter.field("log_anomaly_token", &self.log_anomaly_token);
-        formatter.field("log_event_id", &self.log_event_id);
-        formatter.field("explanation", &self.explanation);
-        formatter.field(
-            "number_of_log_lines_occurrences",
-            &self.number_of_log_lines_occurrences,
-        );
-        formatter.field("log_event_timestamp", &self.log_event_timestamp);
-        formatter.finish()
-    }
-}
 /// See [`LogAnomalyClass`](crate::model::LogAnomalyClass).
 pub mod log_anomaly_class {
 
     /// A builder for [`LogAnomalyClass`](crate::model::LogAnomalyClass).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_stream_name: std::option::Option<std::string::String>,
         pub(crate) log_anomaly_type: std::option::Option<crate::model::LogAnomalyType>,
@@ -6599,6 +6722,47 @@ impl LogAnomalyClass {
     }
 }
 
+/// When writing a match expression against `LogAnomalyType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let loganomalytype = unimplemented!();
+/// match loganomalytype {
+///     LogAnomalyType::BlockFormat => { /* ... */ },
+///     LogAnomalyType::Format => { /* ... */ },
+///     LogAnomalyType::HttpCode => { /* ... */ },
+///     LogAnomalyType::Keyword => { /* ... */ },
+///     LogAnomalyType::KeywordToken => { /* ... */ },
+///     LogAnomalyType::NewFieldName => { /* ... */ },
+///     LogAnomalyType::NumericalNan => { /* ... */ },
+///     LogAnomalyType::NumericalPoint => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `loganomalytype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `LogAnomalyType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `LogAnomalyType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `LogAnomalyType::NewFeature` is defined.
+/// Specifically, when `loganomalytype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `LogAnomalyType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -6627,8 +6791,8 @@ pub enum LogAnomalyType {
     NumericalNan,
     #[allow(missing_docs)] // documentation missing in model
     NumericalPoint,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for LogAnomalyType {
     fn from(s: &str) -> Self {
@@ -6641,7 +6805,7 @@ impl std::convert::From<&str> for LogAnomalyType {
             "NEW_FIELD_NAME" => LogAnomalyType::NewFieldName,
             "NUMERICAL_NAN" => LogAnomalyType::NumericalNan,
             "NUMERICAL_POINT" => LogAnomalyType::NumericalPoint,
-            other => LogAnomalyType::Unknown(other.to_owned()),
+            other => LogAnomalyType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -6664,11 +6828,11 @@ impl LogAnomalyType {
             LogAnomalyType::NewFieldName => "NEW_FIELD_NAME",
             LogAnomalyType::NumericalNan => "NUMERICAL_NAN",
             LogAnomalyType::NumericalPoint => "NUMERICAL_POINT",
-            LogAnomalyType::Unknown(s) => s.as_ref(),
+            LogAnomalyType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BLOCK_FORMAT",
             "FORMAT",
@@ -6689,7 +6853,7 @@ impl AsRef<str> for LogAnomalyType {
 
 /// <p>Details about a reactive anomaly. This object is returned by <code>DescribeAnomaly.</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReactiveAnomalySummary {
     /// <p> The ID of the reactive anomaly. </p>
     #[doc(hidden)]
@@ -6795,33 +6959,11 @@ impl ReactiveAnomalySummary {
         self.anomaly_resources.as_deref()
     }
 }
-impl std::fmt::Debug for ReactiveAnomalySummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReactiveAnomalySummary");
-        formatter.field("id", &self.id);
-        formatter.field("severity", &self.severity);
-        formatter.field("status", &self.status);
-        formatter.field("anomaly_time_range", &self.anomaly_time_range);
-        formatter.field(
-            "anomaly_reported_time_range",
-            &self.anomaly_reported_time_range,
-        );
-        formatter.field("source_details", &self.source_details);
-        formatter.field("associated_insight_id", &self.associated_insight_id);
-        formatter.field("resource_collection", &self.resource_collection);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("causal_anomaly_id", &self.causal_anomaly_id);
-        formatter.field("anomaly_resources", &self.anomaly_resources);
-        formatter.finish()
-    }
-}
 /// See [`ReactiveAnomalySummary`](crate::model::ReactiveAnomalySummary).
 pub mod reactive_anomaly_summary {
 
     /// A builder for [`ReactiveAnomalySummary`](crate::model::ReactiveAnomalySummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) severity: std::option::Option<crate::model::AnomalySeverity>,
@@ -7043,7 +7185,7 @@ impl ReactiveAnomalySummary {
 
 /// <p>The Amazon Web Services resources in which DevOps Guru detected unusual behavior that resulted in the generation of an anomaly. When DevOps Guru detects multiple related anomalies, it creates and insight with details about the anomalous behavior and suggestions about how to correct the problem.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnomalyResource {
     /// <p>The name of the Amazon Web Services resource.</p>
     #[doc(hidden)]
@@ -7062,19 +7204,11 @@ impl AnomalyResource {
         self.r#type.as_deref()
     }
 }
-impl std::fmt::Debug for AnomalyResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnomalyResource");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 /// See [`AnomalyResource`](crate::model::AnomalyResource).
 pub mod anomaly_resource {
 
     /// A builder for [`AnomalyResource`](crate::model::AnomalyResource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -7116,6 +7250,41 @@ impl AnomalyResource {
     }
 }
 
+/// When writing a match expression against `AnomalyType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let anomalytype = unimplemented!();
+/// match anomalytype {
+///     AnomalyType::Causal => { /* ... */ },
+///     AnomalyType::Contextual => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `anomalytype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `AnomalyType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `AnomalyType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `AnomalyType::NewFeature` is defined.
+/// Specifically, when `anomalytype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `AnomalyType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -7132,15 +7301,15 @@ pub enum AnomalyType {
     Causal,
     #[allow(missing_docs)] // documentation missing in model
     Contextual,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AnomalyType {
     fn from(s: &str) -> Self {
         match s {
             "CAUSAL" => AnomalyType::Causal,
             "CONTEXTUAL" => AnomalyType::Contextual,
-            other => AnomalyType::Unknown(other.to_owned()),
+            other => AnomalyType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -7157,11 +7326,11 @@ impl AnomalyType {
         match self {
             AnomalyType::Causal => "CAUSAL",
             AnomalyType::Contextual => "CONTEXTUAL",
-            AnomalyType::Unknown(s) => s.as_ref(),
+            AnomalyType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CAUSAL", "CONTEXTUAL"]
     }
 }
@@ -7173,7 +7342,7 @@ impl AsRef<str> for AnomalyType {
 
 /// <p> Details about the source of the anomalous operational data that triggered the anomaly.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnomalySourceDetails {
     /// <p>An array of <code>CloudWatchMetricsDetail</code> objects that contain information about analyzed CloudWatch metrics that show anomalous behavior. </p>
     #[doc(hidden)]
@@ -7198,22 +7367,11 @@ impl AnomalySourceDetails {
         self.performance_insights_metrics.as_deref()
     }
 }
-impl std::fmt::Debug for AnomalySourceDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnomalySourceDetails");
-        formatter.field("cloud_watch_metrics", &self.cloud_watch_metrics);
-        formatter.field(
-            "performance_insights_metrics",
-            &self.performance_insights_metrics,
-        );
-        formatter.finish()
-    }
-}
 /// See [`AnomalySourceDetails`](crate::model::AnomalySourceDetails).
 pub mod anomaly_source_details {
 
     /// A builder for [`AnomalySourceDetails`](crate::model::AnomalySourceDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_metrics:
             std::option::Option<std::vec::Vec<crate::model::CloudWatchMetricsDetail>>,
@@ -7287,7 +7445,7 @@ impl AnomalySourceDetails {
 /// <li> <p>To learn more about Performance Insights and Amazon RDS DB instances, go to the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html"> Amazon RDS User Guide</a>. </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PerformanceInsightsMetricsDetail {
     /// <p>The name used for a specific Performance Insights metric.</p>
     #[doc(hidden)]
@@ -7344,23 +7502,11 @@ impl PerformanceInsightsMetricsDetail {
         self.stats_at_baseline.as_deref()
     }
 }
-impl std::fmt::Debug for PerformanceInsightsMetricsDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PerformanceInsightsMetricsDetail");
-        formatter.field("metric_display_name", &self.metric_display_name);
-        formatter.field("unit", &self.unit);
-        formatter.field("metric_query", &self.metric_query);
-        formatter.field("reference_data", &self.reference_data);
-        formatter.field("stats_at_anomaly", &self.stats_at_anomaly);
-        formatter.field("stats_at_baseline", &self.stats_at_baseline);
-        formatter.finish()
-    }
-}
 /// See [`PerformanceInsightsMetricsDetail`](crate::model::PerformanceInsightsMetricsDetail).
 pub mod performance_insights_metrics_detail {
 
     /// A builder for [`PerformanceInsightsMetricsDetail`](crate::model::PerformanceInsightsMetricsDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_display_name: std::option::Option<std::string::String>,
         pub(crate) unit: std::option::Option<std::string::String>,
@@ -7493,7 +7639,7 @@ impl PerformanceInsightsMetricsDetail {
 
 /// <p>A statistic in a Performance Insights collection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PerformanceInsightsStat {
     /// <p>The statistic type.</p>
     #[doc(hidden)]
@@ -7512,19 +7658,11 @@ impl PerformanceInsightsStat {
         self.value
     }
 }
-impl std::fmt::Debug for PerformanceInsightsStat {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PerformanceInsightsStat");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`PerformanceInsightsStat`](crate::model::PerformanceInsightsStat).
 pub mod performance_insights_stat {
 
     /// A builder for [`PerformanceInsightsStat`](crate::model::PerformanceInsightsStat).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<f64>,
@@ -7568,7 +7706,7 @@ impl PerformanceInsightsStat {
 
 /// <p>Reference data used to evaluate Performance Insights to determine if its performance is anomalous or not.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PerformanceInsightsReferenceData {
     /// <p>The name of the reference data.</p>
     #[doc(hidden)]
@@ -7590,19 +7728,11 @@ impl PerformanceInsightsReferenceData {
         self.comparison_values.as_ref()
     }
 }
-impl std::fmt::Debug for PerformanceInsightsReferenceData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PerformanceInsightsReferenceData");
-        formatter.field("name", &self.name);
-        formatter.field("comparison_values", &self.comparison_values);
-        formatter.finish()
-    }
-}
 /// See [`PerformanceInsightsReferenceData`](crate::model::PerformanceInsightsReferenceData).
 pub mod performance_insights_reference_data {
 
     /// A builder for [`PerformanceInsightsReferenceData`](crate::model::PerformanceInsightsReferenceData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) comparison_values:
@@ -7653,7 +7783,7 @@ impl PerformanceInsightsReferenceData {
 
 /// <p>Reference scalar values and other metrics that DevOps Guru displays on a graph in its console along with the actual metrics it analyzed. Compare these reference values to your actual metrics to help you understand anomalous behavior that DevOps Guru detected.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PerformanceInsightsReferenceComparisonValues {
     /// <p>A scalar value DevOps Guru for a metric that DevOps Guru compares to actual metric values. This reference value is used to determine if an actual metric value should be considered anomalous.</p>
     #[doc(hidden)]
@@ -7676,19 +7806,11 @@ impl PerformanceInsightsReferenceComparisonValues {
         self.reference_metric.as_ref()
     }
 }
-impl std::fmt::Debug for PerformanceInsightsReferenceComparisonValues {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PerformanceInsightsReferenceComparisonValues");
-        formatter.field("reference_scalar", &self.reference_scalar);
-        formatter.field("reference_metric", &self.reference_metric);
-        formatter.finish()
-    }
-}
 /// See [`PerformanceInsightsReferenceComparisonValues`](crate::model::PerformanceInsightsReferenceComparisonValues).
 pub mod performance_insights_reference_comparison_values {
 
     /// A builder for [`PerformanceInsightsReferenceComparisonValues`](crate::model::PerformanceInsightsReferenceComparisonValues).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reference_scalar:
             std::option::Option<crate::model::PerformanceInsightsReferenceScalar>,
@@ -7746,7 +7868,7 @@ impl PerformanceInsightsReferenceComparisonValues {
 
 /// <p>Information about a reference metric used to evaluate Performance Insights.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PerformanceInsightsReferenceMetric {
     /// <p>A query to be processed on the metric.</p>
     #[doc(hidden)]
@@ -7760,18 +7882,11 @@ impl PerformanceInsightsReferenceMetric {
         self.metric_query.as_ref()
     }
 }
-impl std::fmt::Debug for PerformanceInsightsReferenceMetric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PerformanceInsightsReferenceMetric");
-        formatter.field("metric_query", &self.metric_query);
-        formatter.finish()
-    }
-}
 /// See [`PerformanceInsightsReferenceMetric`](crate::model::PerformanceInsightsReferenceMetric).
 pub mod performance_insights_reference_metric {
 
     /// A builder for [`PerformanceInsightsReferenceMetric`](crate::model::PerformanceInsightsReferenceMetric).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_query: std::option::Option<crate::model::PerformanceInsightsMetricQuery>,
     }
@@ -7811,7 +7926,7 @@ impl PerformanceInsightsReferenceMetric {
 /// <li> <p>To learn more about Performance Insights and Amazon RDS DB instances, go to the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html"> Amazon RDS User Guide</a>. </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PerformanceInsightsMetricQuery {
     /// <p>The name of the meteric used used when querying an Performance Insights <code>GetResourceMetrics</code> API for anomaly metrics.</p>
     /// <p>Valid values for <code>Metric</code> are:</p>
@@ -7863,20 +7978,11 @@ impl PerformanceInsightsMetricQuery {
         self.filter.as_ref()
     }
 }
-impl std::fmt::Debug for PerformanceInsightsMetricQuery {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PerformanceInsightsMetricQuery");
-        formatter.field("metric", &self.metric);
-        formatter.field("group_by", &self.group_by);
-        formatter.field("filter", &self.filter);
-        formatter.finish()
-    }
-}
 /// See [`PerformanceInsightsMetricQuery`](crate::model::PerformanceInsightsMetricQuery).
 pub mod performance_insights_metric_query {
 
     /// A builder for [`PerformanceInsightsMetricQuery`](crate::model::PerformanceInsightsMetricQuery).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric: std::option::Option<std::string::String>,
         pub(crate) group_by:
@@ -7983,7 +8089,7 @@ impl PerformanceInsightsMetricQuery {
 /// <li> <p>To learn more about Performance Insights and Amazon RDS DB instances, go to the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html"> Amazon RDS User Guide</a>. </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PerformanceInsightsMetricDimensionGroup {
     /// <p>The name of the dimension group. Its valid values are:</p>
     /// <ul>
@@ -8071,20 +8177,11 @@ impl PerformanceInsightsMetricDimensionGroup {
         self.limit
     }
 }
-impl std::fmt::Debug for PerformanceInsightsMetricDimensionGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PerformanceInsightsMetricDimensionGroup");
-        formatter.field("group", &self.group);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 /// See [`PerformanceInsightsMetricDimensionGroup`](crate::model::PerformanceInsightsMetricDimensionGroup).
 pub mod performance_insights_metric_dimension_group {
 
     /// A builder for [`PerformanceInsightsMetricDimensionGroup`](crate::model::PerformanceInsightsMetricDimensionGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group: std::option::Option<std::string::String>,
         pub(crate) dimensions: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8211,7 +8308,7 @@ impl PerformanceInsightsMetricDimensionGroup {
 
 /// <p>A reference value to compare Performance Insights metrics against to determine if the metrics demonstrate anomalous behavior.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PerformanceInsightsReferenceScalar {
     /// <p>The reference value.</p>
     #[doc(hidden)]
@@ -8223,18 +8320,11 @@ impl PerformanceInsightsReferenceScalar {
         self.value
     }
 }
-impl std::fmt::Debug for PerformanceInsightsReferenceScalar {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PerformanceInsightsReferenceScalar");
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`PerformanceInsightsReferenceScalar`](crate::model::PerformanceInsightsReferenceScalar).
 pub mod performance_insights_reference_scalar {
 
     /// A builder for [`PerformanceInsightsReferenceScalar`](crate::model::PerformanceInsightsReferenceScalar).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<f64>,
     }
@@ -8264,7 +8354,7 @@ impl PerformanceInsightsReferenceScalar {
 
 /// <p> Information about an Amazon CloudWatch metric. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudWatchMetricsDetail {
     /// <p> The name of the CloudWatch metric. </p>
     #[doc(hidden)]
@@ -8320,24 +8410,11 @@ impl CloudWatchMetricsDetail {
         self.metric_data_summary.as_ref()
     }
 }
-impl std::fmt::Debug for CloudWatchMetricsDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudWatchMetricsDetail");
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("stat", &self.stat);
-        formatter.field("unit", &self.unit);
-        formatter.field("period", &self.period);
-        formatter.field("metric_data_summary", &self.metric_data_summary);
-        formatter.finish()
-    }
-}
 /// See [`CloudWatchMetricsDetail`](crate::model::CloudWatchMetricsDetail).
 pub mod cloud_watch_metrics_detail {
 
     /// A builder for [`CloudWatchMetricsDetail`](crate::model::CloudWatchMetricsDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_name: std::option::Option<std::string::String>,
         pub(crate) namespace: std::option::Option<std::string::String>,
@@ -8461,7 +8538,7 @@ impl CloudWatchMetricsDetail {
 
 /// <p>Contains information about the analyzed metrics that displayed anomalous behavior. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudWatchMetricsDataSummary {
     /// <p>This is a list of Amazon CloudWatch metric values at given timestamp.</p>
     #[doc(hidden)]
@@ -8485,22 +8562,11 @@ impl CloudWatchMetricsDataSummary {
         self.status_code.as_ref()
     }
 }
-impl std::fmt::Debug for CloudWatchMetricsDataSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudWatchMetricsDataSummary");
-        formatter.field(
-            "timestamp_metric_value_pair_list",
-            &self.timestamp_metric_value_pair_list,
-        );
-        formatter.field("status_code", &self.status_code);
-        formatter.finish()
-    }
-}
 /// See [`CloudWatchMetricsDataSummary`](crate::model::CloudWatchMetricsDataSummary).
 pub mod cloud_watch_metrics_data_summary {
 
     /// A builder for [`CloudWatchMetricsDataSummary`](crate::model::CloudWatchMetricsDataSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp_metric_value_pair_list:
             std::option::Option<std::vec::Vec<crate::model::TimestampMetricValuePair>>,
@@ -8558,6 +8624,42 @@ impl CloudWatchMetricsDataSummary {
     }
 }
 
+/// When writing a match expression against `CloudWatchMetricDataStatusCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let cloudwatchmetricdatastatuscode = unimplemented!();
+/// match cloudwatchmetricdatastatuscode {
+///     CloudWatchMetricDataStatusCode::Complete => { /* ... */ },
+///     CloudWatchMetricDataStatusCode::InternalError => { /* ... */ },
+///     CloudWatchMetricDataStatusCode::PartialData => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `cloudwatchmetricdatastatuscode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CloudWatchMetricDataStatusCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CloudWatchMetricDataStatusCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CloudWatchMetricDataStatusCode::NewFeature` is defined.
+/// Specifically, when `cloudwatchmetricdatastatuscode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CloudWatchMetricDataStatusCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -8576,8 +8678,8 @@ pub enum CloudWatchMetricDataStatusCode {
     InternalError,
     #[allow(missing_docs)] // documentation missing in model
     PartialData,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CloudWatchMetricDataStatusCode {
     fn from(s: &str) -> Self {
@@ -8585,7 +8687,9 @@ impl std::convert::From<&str> for CloudWatchMetricDataStatusCode {
             "Complete" => CloudWatchMetricDataStatusCode::Complete,
             "InternalError" => CloudWatchMetricDataStatusCode::InternalError,
             "PartialData" => CloudWatchMetricDataStatusCode::PartialData,
-            other => CloudWatchMetricDataStatusCode::Unknown(other.to_owned()),
+            other => CloudWatchMetricDataStatusCode::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -8603,11 +8707,11 @@ impl CloudWatchMetricDataStatusCode {
             CloudWatchMetricDataStatusCode::Complete => "Complete",
             CloudWatchMetricDataStatusCode::InternalError => "InternalError",
             CloudWatchMetricDataStatusCode::PartialData => "PartialData",
-            CloudWatchMetricDataStatusCode::Unknown(s) => s.as_ref(),
+            CloudWatchMetricDataStatusCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Complete", "InternalError", "PartialData"]
     }
 }
@@ -8619,7 +8723,7 @@ impl AsRef<str> for CloudWatchMetricDataStatusCode {
 
 /// <p>A pair that contains metric values at the respective timestamp.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimestampMetricValuePair {
     /// <p>A <code>Timestamp</code> that specifies the time the event occurred. </p>
     #[doc(hidden)]
@@ -8638,19 +8742,11 @@ impl TimestampMetricValuePair {
         self.metric_value
     }
 }
-impl std::fmt::Debug for TimestampMetricValuePair {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimestampMetricValuePair");
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("metric_value", &self.metric_value);
-        formatter.finish()
-    }
-}
 /// See [`TimestampMetricValuePair`](crate::model::TimestampMetricValuePair).
 pub mod timestamp_metric_value_pair {
 
     /// A builder for [`TimestampMetricValuePair`](crate::model::TimestampMetricValuePair).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) metric_value: std::option::Option<f64>,
@@ -8695,6 +8791,47 @@ impl TimestampMetricValuePair {
     }
 }
 
+/// When writing a match expression against `CloudWatchMetricsStat`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let cloudwatchmetricsstat = unimplemented!();
+/// match cloudwatchmetricsstat {
+///     CloudWatchMetricsStat::Average => { /* ... */ },
+///     CloudWatchMetricsStat::Maximum => { /* ... */ },
+///     CloudWatchMetricsStat::Minimum => { /* ... */ },
+///     CloudWatchMetricsStat::SampleCount => { /* ... */ },
+///     CloudWatchMetricsStat::Sum => { /* ... */ },
+///     CloudWatchMetricsStat::P50 => { /* ... */ },
+///     CloudWatchMetricsStat::P90 => { /* ... */ },
+///     CloudWatchMetricsStat::P99 => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `cloudwatchmetricsstat` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CloudWatchMetricsStat::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CloudWatchMetricsStat::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CloudWatchMetricsStat::NewFeature` is defined.
+/// Specifically, when `cloudwatchmetricsstat` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CloudWatchMetricsStat::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -8723,8 +8860,8 @@ pub enum CloudWatchMetricsStat {
     P90,
     #[allow(missing_docs)] // documentation missing in model
     P99,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CloudWatchMetricsStat {
     fn from(s: &str) -> Self {
@@ -8737,7 +8874,9 @@ impl std::convert::From<&str> for CloudWatchMetricsStat {
             "p50" => CloudWatchMetricsStat::P50,
             "p90" => CloudWatchMetricsStat::P90,
             "p99" => CloudWatchMetricsStat::P99,
-            other => CloudWatchMetricsStat::Unknown(other.to_owned()),
+            other => {
+                CloudWatchMetricsStat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -8760,11 +8899,11 @@ impl CloudWatchMetricsStat {
             CloudWatchMetricsStat::P50 => "p50",
             CloudWatchMetricsStat::P90 => "p90",
             CloudWatchMetricsStat::P99 => "p99",
-            CloudWatchMetricsStat::Unknown(s) => s.as_ref(),
+            CloudWatchMetricsStat::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Average",
             "Maximum",
@@ -8785,7 +8924,7 @@ impl AsRef<str> for CloudWatchMetricsStat {
 
 /// <p> The dimension of an Amazon CloudWatch metric that is used when DevOps Guru analyzes the resources in your account for operational problems and anomalous behavior. A dimension is a name/value pair that is part of the identity of a metric. A metric can have up to 10 dimensions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Dimension">Dimensions</a> in the <i>Amazon CloudWatch User Guide</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudWatchMetricsDimension {
     /// <p> The name of the CloudWatch dimension. </p>
     #[doc(hidden)]
@@ -8804,19 +8943,11 @@ impl CloudWatchMetricsDimension {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for CloudWatchMetricsDimension {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudWatchMetricsDimension");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`CloudWatchMetricsDimension`](crate::model::CloudWatchMetricsDimension).
 pub mod cloud_watch_metrics_dimension {
 
     /// A builder for [`CloudWatchMetricsDimension`](crate::model::CloudWatchMetricsDimension).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -8860,7 +8991,7 @@ impl CloudWatchMetricsDimension {
 
 /// <p> A time range that specifies when DevOps Guru opens and then closes an anomaly. This is different from <code>AnomalyTimeRange</code>, which specifies the time range when DevOps Guru actually observes the anomalous behavior. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnomalyReportedTimeRange {
     /// <p> The time when an anomaly is opened. </p>
     #[doc(hidden)]
@@ -8879,19 +9010,11 @@ impl AnomalyReportedTimeRange {
         self.close_time.as_ref()
     }
 }
-impl std::fmt::Debug for AnomalyReportedTimeRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnomalyReportedTimeRange");
-        formatter.field("open_time", &self.open_time);
-        formatter.field("close_time", &self.close_time);
-        formatter.finish()
-    }
-}
 /// See [`AnomalyReportedTimeRange`](crate::model::AnomalyReportedTimeRange).
 pub mod anomaly_reported_time_range {
 
     /// A builder for [`AnomalyReportedTimeRange`](crate::model::AnomalyReportedTimeRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) open_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) close_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -8941,7 +9064,7 @@ impl AnomalyReportedTimeRange {
 
 /// <p> A time range that specifies when the observed unusual behavior in an anomaly started and ended. This is different from <code>AnomalyReportedTimeRange</code>, which specifies the time range when DevOps Guru opens and then closes an anomaly. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnomalyTimeRange {
     /// <p> The time when the anomalous behavior started. </p>
     #[doc(hidden)]
@@ -8960,19 +9083,11 @@ impl AnomalyTimeRange {
         self.end_time.as_ref()
     }
 }
-impl std::fmt::Debug for AnomalyTimeRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnomalyTimeRange");
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
-    }
-}
 /// See [`AnomalyTimeRange`](crate::model::AnomalyTimeRange).
 pub mod anomaly_time_range {
 
     /// A builder for [`AnomalyTimeRange`](crate::model::AnomalyTimeRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -9020,6 +9135,41 @@ impl AnomalyTimeRange {
     }
 }
 
+/// When writing a match expression against `AnomalyStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let anomalystatus = unimplemented!();
+/// match anomalystatus {
+///     AnomalyStatus::Closed => { /* ... */ },
+///     AnomalyStatus::Ongoing => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `anomalystatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `AnomalyStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `AnomalyStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `AnomalyStatus::NewFeature` is defined.
+/// Specifically, when `anomalystatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `AnomalyStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -9036,15 +9186,15 @@ pub enum AnomalyStatus {
     Closed,
     #[allow(missing_docs)] // documentation missing in model
     Ongoing,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AnomalyStatus {
     fn from(s: &str) -> Self {
         match s {
             "CLOSED" => AnomalyStatus::Closed,
             "ONGOING" => AnomalyStatus::Ongoing,
-            other => AnomalyStatus::Unknown(other.to_owned()),
+            other => AnomalyStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -9061,11 +9211,11 @@ impl AnomalyStatus {
         match self {
             AnomalyStatus::Closed => "CLOSED",
             AnomalyStatus::Ongoing => "ONGOING",
-            AnomalyStatus::Unknown(s) => s.as_ref(),
+            AnomalyStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CLOSED", "ONGOING"]
     }
 }
@@ -9075,6 +9225,42 @@ impl AsRef<str> for AnomalyStatus {
     }
 }
 
+/// When writing a match expression against `AnomalySeverity`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let anomalyseverity = unimplemented!();
+/// match anomalyseverity {
+///     AnomalySeverity::High => { /* ... */ },
+///     AnomalySeverity::Low => { /* ... */ },
+///     AnomalySeverity::Medium => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `anomalyseverity` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `AnomalySeverity::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `AnomalySeverity::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `AnomalySeverity::NewFeature` is defined.
+/// Specifically, when `anomalyseverity` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `AnomalySeverity::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -9093,8 +9279,8 @@ pub enum AnomalySeverity {
     Low,
     #[allow(missing_docs)] // documentation missing in model
     Medium,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AnomalySeverity {
     fn from(s: &str) -> Self {
@@ -9102,7 +9288,7 @@ impl std::convert::From<&str> for AnomalySeverity {
             "HIGH" => AnomalySeverity::High,
             "LOW" => AnomalySeverity::Low,
             "MEDIUM" => AnomalySeverity::Medium,
-            other => AnomalySeverity::Unknown(other.to_owned()),
+            other => AnomalySeverity::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -9120,11 +9306,11 @@ impl AnomalySeverity {
             AnomalySeverity::High => "HIGH",
             AnomalySeverity::Low => "LOW",
             AnomalySeverity::Medium => "MEDIUM",
-            AnomalySeverity::Unknown(s) => s.as_ref(),
+            AnomalySeverity::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HIGH", "LOW", "MEDIUM"]
     }
 }
@@ -9136,7 +9322,7 @@ impl AsRef<str> for AnomalySeverity {
 
 /// <p>Details about a proactive anomaly. This object is returned by <code>DescribeAnomaly.</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProactiveAnomalySummary {
     /// <p>The ID of the anomaly.</p>
     #[doc(hidden)]
@@ -9234,33 +9420,11 @@ impl ProactiveAnomalySummary {
         self.anomaly_resources.as_deref()
     }
 }
-impl std::fmt::Debug for ProactiveAnomalySummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProactiveAnomalySummary");
-        formatter.field("id", &self.id);
-        formatter.field("severity", &self.severity);
-        formatter.field("status", &self.status);
-        formatter.field("update_time", &self.update_time);
-        formatter.field("anomaly_time_range", &self.anomaly_time_range);
-        formatter.field(
-            "anomaly_reported_time_range",
-            &self.anomaly_reported_time_range,
-        );
-        formatter.field("prediction_time_range", &self.prediction_time_range);
-        formatter.field("source_details", &self.source_details);
-        formatter.field("associated_insight_id", &self.associated_insight_id);
-        formatter.field("resource_collection", &self.resource_collection);
-        formatter.field("limit", &self.limit);
-        formatter.field("source_metadata", &self.source_metadata);
-        formatter.field("anomaly_resources", &self.anomaly_resources);
-        formatter.finish()
-    }
-}
 /// See [`ProactiveAnomalySummary`](crate::model::ProactiveAnomalySummary).
 pub mod proactive_anomaly_summary {
 
     /// A builder for [`ProactiveAnomalySummary`](crate::model::ProactiveAnomalySummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) severity: std::option::Option<crate::model::AnomalySeverity>,
@@ -9480,7 +9644,7 @@ impl ProactiveAnomalySummary {
 
 /// <p>Metadata about the detection source that generates proactive anomalies. The anomaly is detected using analysis of the metric data  over a period of time</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnomalySourceMetadata {
     /// <p>The source of the anomaly.</p>
     #[doc(hidden)]
@@ -9506,20 +9670,11 @@ impl AnomalySourceMetadata {
         self.source_resource_type.as_deref()
     }
 }
-impl std::fmt::Debug for AnomalySourceMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnomalySourceMetadata");
-        formatter.field("source", &self.source);
-        formatter.field("source_resource_name", &self.source_resource_name);
-        formatter.field("source_resource_type", &self.source_resource_type);
-        formatter.finish()
-    }
-}
 /// See [`AnomalySourceMetadata`](crate::model::AnomalySourceMetadata).
 pub mod anomaly_source_metadata {
 
     /// A builder for [`AnomalySourceMetadata`](crate::model::AnomalySourceMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<std::string::String>,
         pub(crate) source_resource_name: std::option::Option<std::string::String>,
@@ -9581,7 +9736,7 @@ impl AnomalySourceMetadata {
 
 /// <p> Information about a filter used to specify which Amazon Web Services resources are analyzed for anomalous behavior by DevOps Guru. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceCollectionFilter {
     /// <p> Information about Amazon Web Services CloudFormation stacks. You can use up to 500 stacks to specify which Amazon Web Services resources in your account to analyze. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a> in the <i>Amazon Web Services CloudFormation User Guide</i>. </p>
     #[doc(hidden)]
@@ -9620,19 +9775,11 @@ impl ResourceCollectionFilter {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for ResourceCollectionFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceCollectionFilter");
-        formatter.field("cloud_formation", &self.cloud_formation);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`ResourceCollectionFilter`](crate::model::ResourceCollectionFilter).
 pub mod resource_collection_filter {
 
     /// A builder for [`ResourceCollectionFilter`](crate::model::ResourceCollectionFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_formation:
             std::option::Option<crate::model::CloudFormationCollectionFilter>,
@@ -9710,7 +9857,7 @@ impl ResourceCollectionFilter {
 
 /// <p>A collection of Amazon Web Services tags used to filter insights. This is used to return insights generated from only resources that contain the tags in the tag collection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagCollectionFilter {
     /// <p>An Amazon Web Services tag <i>key</i> that is used to identify the Amazon Web Services resources that DevOps Guru analyzes. All Amazon Web Services resources in your account and Region tagged with this <i>key</i> make up your DevOps Guru application and analysis boundary.</p> <important>
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i> can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
@@ -9735,19 +9882,11 @@ impl TagCollectionFilter {
         self.tag_values.as_deref()
     }
 }
-impl std::fmt::Debug for TagCollectionFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagCollectionFilter");
-        formatter.field("app_boundary_key", &self.app_boundary_key);
-        formatter.field("tag_values", &self.tag_values);
-        formatter.finish()
-    }
-}
 /// See [`TagCollectionFilter`](crate::model::TagCollectionFilter).
 pub mod tag_collection_filter {
 
     /// A builder for [`TagCollectionFilter`](crate::model::TagCollectionFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_boundary_key: std::option::Option<std::string::String>,
         pub(crate) tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9809,7 +9948,7 @@ impl TagCollectionFilter {
 
 /// <p> Information about Amazon Web Services CloudFormation stacks. You can use up to 500 stacks to specify which Amazon Web Services resources in your account to analyze. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a> in the <i>Amazon Web Services CloudFormation User Guide</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudFormationCollectionFilter {
     /// <p> An array of CloudFormation stack names. </p>
     #[doc(hidden)]
@@ -9821,18 +9960,11 @@ impl CloudFormationCollectionFilter {
         self.stack_names.as_deref()
     }
 }
-impl std::fmt::Debug for CloudFormationCollectionFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudFormationCollectionFilter");
-        formatter.field("stack_names", &self.stack_names);
-        formatter.finish()
-    }
-}
 /// See [`CloudFormationCollectionFilter`](crate::model::CloudFormationCollectionFilter).
 pub mod cloud_formation_collection_filter {
 
     /// A builder for [`CloudFormationCollectionFilter`](crate::model::CloudFormationCollectionFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -9871,6 +10003,42 @@ impl CloudFormationCollectionFilter {
     }
 }
 
+/// When writing a match expression against `ResourceCollectionType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let resourcecollectiontype = unimplemented!();
+/// match resourcecollectiontype {
+///     ResourceCollectionType::AwsCloudFormation => { /* ... */ },
+///     ResourceCollectionType::AwsService => { /* ... */ },
+///     ResourceCollectionType::AwsTags => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `resourcecollectiontype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ResourceCollectionType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ResourceCollectionType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ResourceCollectionType::NewFeature` is defined.
+/// Specifically, when `resourcecollectiontype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ResourceCollectionType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -9889,8 +10057,8 @@ pub enum ResourceCollectionType {
     AwsService,
     #[allow(missing_docs)] // documentation missing in model
     AwsTags,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ResourceCollectionType {
     fn from(s: &str) -> Self {
@@ -9898,7 +10066,9 @@ impl std::convert::From<&str> for ResourceCollectionType {
             "AWS_CLOUD_FORMATION" => ResourceCollectionType::AwsCloudFormation,
             "AWS_SERVICE" => ResourceCollectionType::AwsService,
             "AWS_TAGS" => ResourceCollectionType::AwsTags,
-            other => ResourceCollectionType::Unknown(other.to_owned()),
+            other => {
+                ResourceCollectionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -9916,11 +10086,11 @@ impl ResourceCollectionType {
             ResourceCollectionType::AwsCloudFormation => "AWS_CLOUD_FORMATION",
             ResourceCollectionType::AwsService => "AWS_SERVICE",
             ResourceCollectionType::AwsTags => "AWS_TAGS",
-            ResourceCollectionType::Unknown(s) => s.as_ref(),
+            ResourceCollectionType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS_CLOUD_FORMATION", "AWS_SERVICE", "AWS_TAGS"]
     }
 }
@@ -9932,7 +10102,7 @@ impl AsRef<str> for ResourceCollectionType {
 
 /// <p>The time range of a cost estimation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CostEstimationTimeRange {
     /// <p>The start time of the cost estimation.</p>
     #[doc(hidden)]
@@ -9951,19 +10121,11 @@ impl CostEstimationTimeRange {
         self.end_time.as_ref()
     }
 }
-impl std::fmt::Debug for CostEstimationTimeRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CostEstimationTimeRange");
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
-    }
-}
 /// See [`CostEstimationTimeRange`](crate::model::CostEstimationTimeRange).
 pub mod cost_estimation_time_range {
 
     /// A builder for [`CostEstimationTimeRange`](crate::model::CostEstimationTimeRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -10013,7 +10175,7 @@ impl CostEstimationTimeRange {
 
 /// <p>An object that contains information about the estimated monthly cost to analyze an Amazon Web Services resource. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/cost-estimate.html">Estimate your Amazon DevOps Guru costs</a> and <a href="http://aws.amazon.com/devops-guru/pricing/">Amazon DevOps Guru pricing</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceResourceCost {
     /// <p>The type of the Amazon Web Services resource.</p>
     #[doc(hidden)]
@@ -10053,22 +10215,11 @@ impl ServiceResourceCost {
         self.cost
     }
 }
-impl std::fmt::Debug for ServiceResourceCost {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceResourceCost");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("state", &self.state);
-        formatter.field("count", &self.count);
-        formatter.field("unit_cost", &self.unit_cost);
-        formatter.field("cost", &self.cost);
-        formatter.finish()
-    }
-}
 /// See [`ServiceResourceCost`](crate::model::ServiceResourceCost).
 pub mod service_resource_cost {
 
     /// A builder for [`ServiceResourceCost`](crate::model::ServiceResourceCost).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::CostEstimationServiceResourceState>,
@@ -10149,6 +10300,41 @@ impl ServiceResourceCost {
     }
 }
 
+/// When writing a match expression against `CostEstimationServiceResourceState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let costestimationserviceresourcestate = unimplemented!();
+/// match costestimationserviceresourcestate {
+///     CostEstimationServiceResourceState::Active => { /* ... */ },
+///     CostEstimationServiceResourceState::Inactive => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `costestimationserviceresourcestate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CostEstimationServiceResourceState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CostEstimationServiceResourceState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CostEstimationServiceResourceState::NewFeature` is defined.
+/// Specifically, when `costestimationserviceresourcestate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CostEstimationServiceResourceState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -10165,15 +10351,17 @@ pub enum CostEstimationServiceResourceState {
     Active,
     #[allow(missing_docs)] // documentation missing in model
     Inactive,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CostEstimationServiceResourceState {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => CostEstimationServiceResourceState::Active,
             "INACTIVE" => CostEstimationServiceResourceState::Inactive,
-            other => CostEstimationServiceResourceState::Unknown(other.to_owned()),
+            other => CostEstimationServiceResourceState::Unknown(
+                crate::types::UnknownVariantValue(other.to_owned()),
+            ),
         }
     }
 }
@@ -10190,11 +10378,11 @@ impl CostEstimationServiceResourceState {
         match self {
             CostEstimationServiceResourceState::Active => "ACTIVE",
             CostEstimationServiceResourceState::Inactive => "INACTIVE",
-            CostEstimationServiceResourceState::Unknown(s) => s.as_ref(),
+            CostEstimationServiceResourceState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE"]
     }
 }
@@ -10204,6 +10392,41 @@ impl AsRef<str> for CostEstimationServiceResourceState {
     }
 }
 
+/// When writing a match expression against `CostEstimationStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let costestimationstatus = unimplemented!();
+/// match costestimationstatus {
+///     CostEstimationStatus::Completed => { /* ... */ },
+///     CostEstimationStatus::Ongoing => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `costestimationstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CostEstimationStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CostEstimationStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CostEstimationStatus::NewFeature` is defined.
+/// Specifically, when `costestimationstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CostEstimationStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -10220,15 +10443,17 @@ pub enum CostEstimationStatus {
     Completed,
     #[allow(missing_docs)] // documentation missing in model
     Ongoing,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CostEstimationStatus {
     fn from(s: &str) -> Self {
         match s {
             "COMPLETED" => CostEstimationStatus::Completed,
             "ONGOING" => CostEstimationStatus::Ongoing,
-            other => CostEstimationStatus::Unknown(other.to_owned()),
+            other => {
+                CostEstimationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -10245,11 +10470,11 @@ impl CostEstimationStatus {
         match self {
             CostEstimationStatus::Completed => "COMPLETED",
             CostEstimationStatus::Ongoing => "ONGOING",
-            CostEstimationStatus::Unknown(s) => s.as_ref(),
+            CostEstimationStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETED", "ONGOING"]
     }
 }
@@ -10261,7 +10486,7 @@ impl AsRef<str> for CostEstimationStatus {
 
 /// <p> Information about the integration of DevOps Guru with another Amazon Web Services service, such as Amazon Web Services Systems Manager. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceIntegrationConfig {
     /// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. </p>
     #[doc(hidden)]
@@ -10282,19 +10507,11 @@ impl ServiceIntegrationConfig {
         self.logs_anomaly_detection.as_ref()
     }
 }
-impl std::fmt::Debug for ServiceIntegrationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceIntegrationConfig");
-        formatter.field("ops_center", &self.ops_center);
-        formatter.field("logs_anomaly_detection", &self.logs_anomaly_detection);
-        formatter.finish()
-    }
-}
 /// See [`ServiceIntegrationConfig`](crate::model::ServiceIntegrationConfig).
 pub mod service_integration_config {
 
     /// A builder for [`ServiceIntegrationConfig`](crate::model::ServiceIntegrationConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ops_center: std::option::Option<crate::model::OpsCenterIntegration>,
         pub(crate) logs_anomaly_detection:
@@ -10348,7 +10565,7 @@ impl ServiceIntegrationConfig {
 
 /// <p> Information about the integration of DevOps Guru with CloudWatch log groups for log anomaly detection. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogsAnomalyDetectionIntegration {
     /// <p>Specifies if DevOps Guru is configured to perform log anomaly detection on CloudWatch log groups.</p>
     #[doc(hidden)]
@@ -10360,18 +10577,11 @@ impl LogsAnomalyDetectionIntegration {
         self.opt_in_status.as_ref()
     }
 }
-impl std::fmt::Debug for LogsAnomalyDetectionIntegration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogsAnomalyDetectionIntegration");
-        formatter.field("opt_in_status", &self.opt_in_status);
-        formatter.finish()
-    }
-}
 /// See [`LogsAnomalyDetectionIntegration`](crate::model::LogsAnomalyDetectionIntegration).
 pub mod logs_anomaly_detection_integration {
 
     /// A builder for [`LogsAnomalyDetectionIntegration`](crate::model::LogsAnomalyDetectionIntegration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) opt_in_status: std::option::Option<crate::model::OptInStatus>,
     }
@@ -10406,7 +10616,7 @@ impl LogsAnomalyDetectionIntegration {
 
 /// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpsCenterIntegration {
     /// <p> Specifies if DevOps Guru is enabled to create an Amazon Web Services Systems Manager OpsItem for each created insight. </p>
     #[doc(hidden)]
@@ -10418,18 +10628,11 @@ impl OpsCenterIntegration {
         self.opt_in_status.as_ref()
     }
 }
-impl std::fmt::Debug for OpsCenterIntegration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpsCenterIntegration");
-        formatter.field("opt_in_status", &self.opt_in_status);
-        formatter.finish()
-    }
-}
 /// See [`OpsCenterIntegration`](crate::model::OpsCenterIntegration).
 pub mod ops_center_integration {
 
     /// A builder for [`OpsCenterIntegration`](crate::model::OpsCenterIntegration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) opt_in_status: std::option::Option<crate::model::OptInStatus>,
     }
@@ -10464,7 +10667,7 @@ impl OpsCenterIntegration {
 
 /// <p> Information about the health of Amazon Web Services resources in your account that are specified by an Amazon Web Services tag <i>key</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagHealth {
     /// <p>An Amazon Web Services tag <i>key</i> that is used to identify the Amazon Web Services resources that DevOps Guru analyzes. All Amazon Web Services resources in your account and Region tagged with this <i>key</i> make up your DevOps Guru application and analysis boundary.</p> <important>
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i> can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
@@ -10496,20 +10699,11 @@ impl TagHealth {
         self.insight.as_ref()
     }
 }
-impl std::fmt::Debug for TagHealth {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagHealth");
-        formatter.field("app_boundary_key", &self.app_boundary_key);
-        formatter.field("tag_value", &self.tag_value);
-        formatter.field("insight", &self.insight);
-        formatter.finish()
-    }
-}
 /// See [`TagHealth`](crate::model::TagHealth).
 pub mod tag_health {
 
     /// A builder for [`TagHealth`](crate::model::TagHealth).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_boundary_key: std::option::Option<std::string::String>,
         pub(crate) tag_value: std::option::Option<std::string::String>,
@@ -10577,7 +10771,7 @@ impl TagHealth {
 
 /// <p> Information about the number of open reactive and proactive insights that can be used to gauge the health of your system. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsightHealth {
     /// <p> The number of open proactive insights. </p>
     #[doc(hidden)]
@@ -10603,23 +10797,11 @@ impl InsightHealth {
         self.mean_time_to_recover_in_milliseconds
     }
 }
-impl std::fmt::Debug for InsightHealth {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsightHealth");
-        formatter.field("open_proactive_insights", &self.open_proactive_insights);
-        formatter.field("open_reactive_insights", &self.open_reactive_insights);
-        formatter.field(
-            "mean_time_to_recover_in_milliseconds",
-            &self.mean_time_to_recover_in_milliseconds,
-        );
-        formatter.finish()
-    }
-}
 /// See [`InsightHealth`](crate::model::InsightHealth).
 pub mod insight_health {
 
     /// A builder for [`InsightHealth`](crate::model::InsightHealth).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) open_proactive_insights: std::option::Option<i32>,
         pub(crate) open_reactive_insights: std::option::Option<i32>,
@@ -10678,7 +10860,7 @@ impl InsightHealth {
 
 /// <p>Represents the health of an Amazon Web Services service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceHealth {
     /// <p>The name of the Amazon Web Services service.</p>
     #[doc(hidden)]
@@ -10697,19 +10879,11 @@ impl ServiceHealth {
         self.insight.as_ref()
     }
 }
-impl std::fmt::Debug for ServiceHealth {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceHealth");
-        formatter.field("service_name", &self.service_name);
-        formatter.field("insight", &self.insight);
-        formatter.finish()
-    }
-}
 /// See [`ServiceHealth`](crate::model::ServiceHealth).
 pub mod service_health {
 
     /// A builder for [`ServiceHealth`](crate::model::ServiceHealth).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_name: std::option::Option<crate::model::ServiceName>,
         pub(crate) insight: std::option::Option<crate::model::ServiceInsightHealth>,
@@ -10759,7 +10933,7 @@ impl ServiceHealth {
 
 /// <p>Contains the number of open proactive and reactive insights in an analyzed Amazon Web Services service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceInsightHealth {
     /// <p>The number of open proactive insights in the Amazon Web Services service</p>
     #[doc(hidden)]
@@ -10778,19 +10952,11 @@ impl ServiceInsightHealth {
         self.open_reactive_insights
     }
 }
-impl std::fmt::Debug for ServiceInsightHealth {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceInsightHealth");
-        formatter.field("open_proactive_insights", &self.open_proactive_insights);
-        formatter.field("open_reactive_insights", &self.open_reactive_insights);
-        formatter.finish()
-    }
-}
 /// See [`ServiceInsightHealth`](crate::model::ServiceInsightHealth).
 pub mod service_insight_health {
 
     /// A builder for [`ServiceInsightHealth`](crate::model::ServiceInsightHealth).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) open_proactive_insights: std::option::Option<i32>,
         pub(crate) open_reactive_insights: std::option::Option<i32>,
@@ -10834,7 +11000,7 @@ impl ServiceInsightHealth {
 
 /// <p> Information about the health of Amazon Web Services resources in your account that are specified by an Amazon Web Services CloudFormation stack. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudFormationHealth {
     /// <p> The name of the CloudFormation stack. </p>
     #[doc(hidden)]
@@ -10853,19 +11019,11 @@ impl CloudFormationHealth {
         self.insight.as_ref()
     }
 }
-impl std::fmt::Debug for CloudFormationHealth {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudFormationHealth");
-        formatter.field("stack_name", &self.stack_name);
-        formatter.field("insight", &self.insight);
-        formatter.finish()
-    }
-}
 /// See [`CloudFormationHealth`](crate::model::CloudFormationHealth).
 pub mod cloud_formation_health {
 
     /// A builder for [`CloudFormationHealth`](crate::model::CloudFormationHealth).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_name: std::option::Option<std::string::String>,
         pub(crate) insight: std::option::Option<crate::model::InsightHealth>,
@@ -10912,7 +11070,7 @@ impl CloudFormationHealth {
 
 /// <p> Returns the number of open reactive insights, the number of open proactive insights, and the number of metrics analyzed in your Amazon Web Services account. Use these numbers to gauge the health of operations in your Amazon Web Services account. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountHealth {
     /// <p>The ID of the Amazon Web Services account. </p>
     #[doc(hidden)]
@@ -10931,19 +11089,11 @@ impl AccountHealth {
         self.insight.as_ref()
     }
 }
-impl std::fmt::Debug for AccountHealth {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountHealth");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("insight", &self.insight);
-        formatter.finish()
-    }
-}
 /// See [`AccountHealth`](crate::model::AccountHealth).
 pub mod account_health {
 
     /// A builder for [`AccountHealth`](crate::model::AccountHealth).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) insight: std::option::Option<crate::model::AccountInsightHealth>,
@@ -10990,7 +11140,7 @@ impl AccountHealth {
 
 /// <p> Information about the number of open reactive and proactive insights that can be used to gauge the health of your system. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountInsightHealth {
     /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -11009,19 +11159,11 @@ impl AccountInsightHealth {
         self.open_reactive_insights
     }
 }
-impl std::fmt::Debug for AccountInsightHealth {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountInsightHealth");
-        formatter.field("open_proactive_insights", &self.open_proactive_insights);
-        formatter.field("open_reactive_insights", &self.open_reactive_insights);
-        formatter.finish()
-    }
-}
 /// See [`AccountInsightHealth`](crate::model::AccountInsightHealth).
 pub mod account_insight_health {
 
     /// A builder for [`AccountInsightHealth`](crate::model::AccountInsightHealth).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) open_proactive_insights: std::option::Option<i32>,
         pub(crate) open_reactive_insights: std::option::Option<i32>,
@@ -11063,6 +11205,43 @@ impl AccountInsightHealth {
     }
 }
 
+/// When writing a match expression against `OrganizationResourceCollectionType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let organizationresourcecollectiontype = unimplemented!();
+/// match organizationresourcecollectiontype {
+///     OrganizationResourceCollectionType::AwsAccount => { /* ... */ },
+///     OrganizationResourceCollectionType::AwsCloudFormation => { /* ... */ },
+///     OrganizationResourceCollectionType::AwsService => { /* ... */ },
+///     OrganizationResourceCollectionType::AwsTags => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `organizationresourcecollectiontype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `OrganizationResourceCollectionType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `OrganizationResourceCollectionType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `OrganizationResourceCollectionType::NewFeature` is defined.
+/// Specifically, when `organizationresourcecollectiontype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `OrganizationResourceCollectionType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -11083,8 +11262,8 @@ pub enum OrganizationResourceCollectionType {
     AwsService,
     #[allow(missing_docs)] // documentation missing in model
     AwsTags,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for OrganizationResourceCollectionType {
     fn from(s: &str) -> Self {
@@ -11093,7 +11272,9 @@ impl std::convert::From<&str> for OrganizationResourceCollectionType {
             "AWS_CLOUD_FORMATION" => OrganizationResourceCollectionType::AwsCloudFormation,
             "AWS_SERVICE" => OrganizationResourceCollectionType::AwsService,
             "AWS_TAGS" => OrganizationResourceCollectionType::AwsTags,
-            other => OrganizationResourceCollectionType::Unknown(other.to_owned()),
+            other => OrganizationResourceCollectionType::Unknown(
+                crate::types::UnknownVariantValue(other.to_owned()),
+            ),
         }
     }
 }
@@ -11112,11 +11293,11 @@ impl OrganizationResourceCollectionType {
             OrganizationResourceCollectionType::AwsCloudFormation => "AWS_CLOUD_FORMATION",
             OrganizationResourceCollectionType::AwsService => "AWS_SERVICE",
             OrganizationResourceCollectionType::AwsTags => "AWS_TAGS",
-            OrganizationResourceCollectionType::Unknown(s) => s.as_ref(),
+            OrganizationResourceCollectionType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AWS_ACCOUNT",
             "AWS_CLOUD_FORMATION",
@@ -11133,7 +11314,7 @@ impl AsRef<str> for OrganizationResourceCollectionType {
 
 /// <p> Information about a reactive insight. This object is returned by <code>ListInsights</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReactiveInsight {
     /// <p> The ID of a reactive insight. </p>
     #[doc(hidden)]
@@ -11194,25 +11375,11 @@ impl ReactiveInsight {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for ReactiveInsight {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReactiveInsight");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("severity", &self.severity);
-        formatter.field("status", &self.status);
-        formatter.field("insight_time_range", &self.insight_time_range);
-        formatter.field("resource_collection", &self.resource_collection);
-        formatter.field("ssm_ops_item_id", &self.ssm_ops_item_id);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 /// See [`ReactiveInsight`](crate::model::ReactiveInsight).
 pub mod reactive_insight {
 
     /// A builder for [`ReactiveInsight`](crate::model::ReactiveInsight).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -11343,7 +11510,7 @@ impl ReactiveInsight {
 
 /// <p>Details about a proactive insight. This object is returned by <code>ListInsights</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProactiveInsight {
     /// <p>The ID of the proactive insight. </p>
     #[doc(hidden)]
@@ -11411,26 +11578,11 @@ impl ProactiveInsight {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for ProactiveInsight {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProactiveInsight");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("severity", &self.severity);
-        formatter.field("status", &self.status);
-        formatter.field("insight_time_range", &self.insight_time_range);
-        formatter.field("prediction_time_range", &self.prediction_time_range);
-        formatter.field("resource_collection", &self.resource_collection);
-        formatter.field("ssm_ops_item_id", &self.ssm_ops_item_id);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 /// See [`ProactiveInsight`](crate::model::ProactiveInsight).
 pub mod proactive_insight {
 
     /// A builder for [`ProactiveInsight`](crate::model::ProactiveInsight).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -11576,7 +11728,7 @@ impl ProactiveInsight {
 
 /// <p>Details about a reactive anomaly. This object is returned by <code>ListAnomalies</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReactiveAnomaly {
     /// <p>The ID of the reactive anomaly. </p>
     #[doc(hidden)]
@@ -11682,33 +11834,11 @@ impl ReactiveAnomaly {
         self.anomaly_resources.as_deref()
     }
 }
-impl std::fmt::Debug for ReactiveAnomaly {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReactiveAnomaly");
-        formatter.field("id", &self.id);
-        formatter.field("severity", &self.severity);
-        formatter.field("status", &self.status);
-        formatter.field("anomaly_time_range", &self.anomaly_time_range);
-        formatter.field(
-            "anomaly_reported_time_range",
-            &self.anomaly_reported_time_range,
-        );
-        formatter.field("source_details", &self.source_details);
-        formatter.field("associated_insight_id", &self.associated_insight_id);
-        formatter.field("resource_collection", &self.resource_collection);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("causal_anomaly_id", &self.causal_anomaly_id);
-        formatter.field("anomaly_resources", &self.anomaly_resources);
-        formatter.finish()
-    }
-}
 /// See [`ReactiveAnomaly`](crate::model::ReactiveAnomaly).
 pub mod reactive_anomaly {
 
     /// A builder for [`ReactiveAnomaly`](crate::model::ReactiveAnomaly).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) severity: std::option::Option<crate::model::AnomalySeverity>,
@@ -11930,7 +12060,7 @@ impl ReactiveAnomaly {
 
 /// <p>Information about an anomaly. This object is returned by <code>ListAnomalies</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProactiveAnomaly {
     /// <p> The ID of a proactive anomaly. </p>
     #[doc(hidden)]
@@ -12028,33 +12158,11 @@ impl ProactiveAnomaly {
         self.anomaly_resources.as_deref()
     }
 }
-impl std::fmt::Debug for ProactiveAnomaly {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProactiveAnomaly");
-        formatter.field("id", &self.id);
-        formatter.field("severity", &self.severity);
-        formatter.field("status", &self.status);
-        formatter.field("update_time", &self.update_time);
-        formatter.field("anomaly_time_range", &self.anomaly_time_range);
-        formatter.field(
-            "anomaly_reported_time_range",
-            &self.anomaly_reported_time_range,
-        );
-        formatter.field("prediction_time_range", &self.prediction_time_range);
-        formatter.field("source_details", &self.source_details);
-        formatter.field("associated_insight_id", &self.associated_insight_id);
-        formatter.field("resource_collection", &self.resource_collection);
-        formatter.field("limit", &self.limit);
-        formatter.field("source_metadata", &self.source_metadata);
-        formatter.field("anomaly_resources", &self.anomaly_resources);
-        formatter.finish()
-    }
-}
 /// See [`ProactiveAnomaly`](crate::model::ProactiveAnomaly).
 pub mod proactive_anomaly {
 
     /// A builder for [`ProactiveAnomaly`](crate::model::ProactiveAnomaly).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) severity: std::option::Option<crate::model::AnomalySeverity>,

@@ -48,7 +48,7 @@ impl HttpCredentialProvider {
         let credentials = self.client.call(self.operation(auth)).await;
         match credentials {
             Ok(creds) => Ok(creds),
-            Err(SdkError::ServiceError { err, .. }) => Err(err),
+            Err(SdkError::ServiceError(context)) => Err(context.into_err()),
             Err(other) => Err(CredentialsError::unhandled(other)),
         }
     }
@@ -176,13 +176,20 @@ impl ClassifyRetry<SdkSuccess<Credentials>, SdkError<CredentialsError>>
                 RetryKind::Error(ErrorKind::TransientError)
             }
             // non-parseable 200s
-            Err(SdkError::ServiceError {
-                err: CredentialsError::Unhandled { .. },
-                raw,
-            }) if raw.http().status().is_success() => RetryKind::Error(ErrorKind::ServerError),
+            Err(SdkError::ServiceError(context))
+                if matches!(context.err(), CredentialsError::Unhandled { .. })
+                    && context.raw().http().status().is_success() =>
+            {
+                RetryKind::Error(ErrorKind::ServerError)
+            }
             // 5xx errors
-            Err(SdkError::ServiceError { raw, .. } | SdkError::ResponseError { raw, .. })
-                if raw.http().status().is_server_error() =>
+            Err(SdkError::ResponseError(context))
+                if context.raw().http().status().is_server_error() =>
+            {
+                RetryKind::Error(ErrorKind::ServerError)
+            }
+            Err(SdkError::ServiceError(context))
+                if context.raw().http().status().is_server_error() =>
             {
                 RetryKind::Error(ErrorKind::ServerError)
             }
@@ -219,10 +226,10 @@ mod test {
                 raw: operation::Response::new(resp.map(SdkBody::from)),
                 parsed: creds,
             }),
-            Err(err) => Err(SdkError::ServiceError {
+            Err(err) => Err(SdkError::service_error(
                 err,
-                raw: operation::Response::new(resp.map(SdkBody::from)),
-            }),
+                operation::Response::new(resp.map(SdkBody::from)),
+            )),
         }
     }
 
@@ -278,10 +285,7 @@ mod test {
         assert!(
             matches!(
                 sdk_error,
-                SdkError::ServiceError {
-                    err: CredentialsError::ProviderError { .. },
-                    ..
-                }
+                SdkError::ServiceError(ref context) if matches!(context.err(), CredentialsError::ProviderError { .. })
             ),
             "should be provider error: {}",
             sdk_error

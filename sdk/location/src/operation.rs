@@ -5,7 +5,7 @@
 /// [`associate_tracker_consumer`](crate::client::Client::associate_tracker_consumer).
 ///
 /// See [`crate::client::fluent_builders::AssociateTrackerConsumer`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateTrackerConsumer {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateTrackerConsumer
 /// [`batch_delete_device_position_history`](crate::client::Client::batch_delete_device_position_history).
 ///
 /// See [`crate::client::fluent_builders::BatchDeleteDevicePositionHistory`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchDeleteDevicePositionHistory {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDeleteDevicePositio
 /// [`batch_delete_geofence`](crate::client::Client::batch_delete_geofence).
 ///
 /// See [`crate::client::fluent_builders::BatchDeleteGeofence`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchDeleteGeofence {
     _private: (),
 }
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDeleteGeofence {
 /// [`batch_evaluate_geofences`](crate::client::Client::batch_evaluate_geofences).
 ///
 /// See [`crate::client::fluent_builders::BatchEvaluateGeofences`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchEvaluateGeofences {
     _private: (),
 }
@@ -141,7 +141,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchEvaluateGeofences {
 /// [`batch_get_device_position`](crate::client::Client::batch_get_device_position).
 ///
 /// See [`crate::client::fluent_builders::BatchGetDevicePosition`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchGetDevicePosition {
     _private: (),
 }
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetDevicePosition {
 /// [`batch_put_geofence`](crate::client::Client::batch_put_geofence).
 ///
 /// See [`crate::client::fluent_builders::BatchPutGeofence`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchPutGeofence {
     _private: (),
 }
@@ -209,7 +209,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchPutGeofence {
 /// [`batch_update_device_position`](crate::client::Client::batch_update_device_position).
 ///
 /// See [`crate::client::fluent_builders::BatchUpdateDevicePosition`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchUpdateDevicePosition {
     _private: (),
 }
@@ -243,7 +243,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchUpdateDevicePositio
 /// [`calculate_route`](crate::client::Client::calculate_route).
 ///
 /// See [`crate::client::fluent_builders::CalculateRoute`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CalculateRoute {
     _private: (),
 }
@@ -275,7 +275,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CalculateRoute {
 /// [`calculate_route_matrix`](crate::client::Client::calculate_route_matrix).
 ///
 /// See [`crate::client::fluent_builders::CalculateRouteMatrix`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CalculateRouteMatrix {
     _private: (),
 }
@@ -309,7 +309,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CalculateRouteMatrix {
 /// [`create_geofence_collection`](crate::client::Client::create_geofence_collection).
 ///
 /// See [`crate::client::fluent_builders::CreateGeofenceCollection`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateGeofenceCollection {
     _private: (),
 }
@@ -343,7 +343,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGeofenceCollection
 /// [`create_map`](crate::client::Client::create_map).
 ///
 /// See [`crate::client::fluent_builders::CreateMap`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateMap {
     _private: (),
 }
@@ -374,7 +374,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMap {
 /// [`create_place_index`](crate::client::Client::create_place_index).
 ///
 /// See [`crate::client::fluent_builders::CreatePlaceIndex`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreatePlaceIndex {
     _private: (),
 }
@@ -408,7 +408,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePlaceIndex {
 /// [`create_route_calculator`](crate::client::Client::create_route_calculator).
 ///
 /// See [`crate::client::fluent_builders::CreateRouteCalculator`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateRouteCalculator {
     _private: (),
 }
@@ -442,7 +442,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRouteCalculator {
 /// [`create_tracker`](crate::client::Client::create_tracker).
 ///
 /// See [`crate::client::fluent_builders::CreateTracker`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateTracker {
     _private: (),
 }
@@ -474,7 +474,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTracker {
 /// [`delete_geofence_collection`](crate::client::Client::delete_geofence_collection).
 ///
 /// See [`crate::client::fluent_builders::DeleteGeofenceCollection`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteGeofenceCollection {
     _private: (),
 }
@@ -508,7 +508,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGeofenceCollection
 /// [`delete_map`](crate::client::Client::delete_map).
 ///
 /// See [`crate::client::fluent_builders::DeleteMap`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteMap {
     _private: (),
 }
@@ -539,7 +539,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMap {
 /// [`delete_place_index`](crate::client::Client::delete_place_index).
 ///
 /// See [`crate::client::fluent_builders::DeletePlaceIndex`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeletePlaceIndex {
     _private: (),
 }
@@ -573,7 +573,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePlaceIndex {
 /// [`delete_route_calculator`](crate::client::Client::delete_route_calculator).
 ///
 /// See [`crate::client::fluent_builders::DeleteRouteCalculator`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRouteCalculator {
     _private: (),
 }
@@ -607,7 +607,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRouteCalculator {
 /// [`delete_tracker`](crate::client::Client::delete_tracker).
 ///
 /// See [`crate::client::fluent_builders::DeleteTracker`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteTracker {
     _private: (),
 }
@@ -639,7 +639,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTracker {
 /// [`describe_geofence_collection`](crate::client::Client::describe_geofence_collection).
 ///
 /// See [`crate::client::fluent_builders::DescribeGeofenceCollection`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeGeofenceCollection {
     _private: (),
 }
@@ -673,7 +673,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeGeofenceCollecti
 /// [`describe_map`](crate::client::Client::describe_map).
 ///
 /// See [`crate::client::fluent_builders::DescribeMap`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeMap {
     _private: (),
 }
@@ -705,7 +705,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMap {
 /// [`describe_place_index`](crate::client::Client::describe_place_index).
 ///
 /// See [`crate::client::fluent_builders::DescribePlaceIndex`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribePlaceIndex {
     _private: (),
 }
@@ -739,7 +739,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePlaceIndex {
 /// [`describe_route_calculator`](crate::client::Client::describe_route_calculator).
 ///
 /// See [`crate::client::fluent_builders::DescribeRouteCalculator`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeRouteCalculator {
     _private: (),
 }
@@ -773,7 +773,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRouteCalculator 
 /// [`describe_tracker`](crate::client::Client::describe_tracker).
 ///
 /// See [`crate::client::fluent_builders::DescribeTracker`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeTracker {
     _private: (),
 }
@@ -807,7 +807,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTracker {
 /// [`disassociate_tracker_consumer`](crate::client::Client::disassociate_tracker_consumer).
 ///
 /// See [`crate::client::fluent_builders::DisassociateTrackerConsumer`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateTrackerConsumer {
     _private: (),
 }
@@ -841,7 +841,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateTrackerConsu
 /// [`get_device_position`](crate::client::Client::get_device_position).
 ///
 /// See [`crate::client::fluent_builders::GetDevicePosition`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDevicePosition {
     _private: (),
 }
@@ -875,7 +875,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDevicePosition {
 /// [`get_device_position_history`](crate::client::Client::get_device_position_history).
 ///
 /// See [`crate::client::fluent_builders::GetDevicePositionHistory`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDevicePositionHistory {
     _private: (),
 }
@@ -909,7 +909,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDevicePositionHistory
 /// [`get_geofence`](crate::client::Client::get_geofence).
 ///
 /// See [`crate::client::fluent_builders::GetGeofence`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetGeofence {
     _private: (),
 }
@@ -941,7 +941,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGeofence {
 /// [`get_map_glyphs`](crate::client::Client::get_map_glyphs).
 ///
 /// See [`crate::client::fluent_builders::GetMapGlyphs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetMapGlyphs {
     _private: (),
 }
@@ -973,7 +973,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMapGlyphs {
 /// [`get_map_sprites`](crate::client::Client::get_map_sprites).
 ///
 /// See [`crate::client::fluent_builders::GetMapSprites`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetMapSprites {
     _private: (),
 }
@@ -1005,7 +1005,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMapSprites {
 /// [`get_map_style_descriptor`](crate::client::Client::get_map_style_descriptor).
 ///
 /// See [`crate::client::fluent_builders::GetMapStyleDescriptor`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetMapStyleDescriptor {
     _private: (),
 }
@@ -1039,7 +1039,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMapStyleDescriptor {
 /// [`get_map_tile`](crate::client::Client::get_map_tile).
 ///
 /// See [`crate::client::fluent_builders::GetMapTile`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetMapTile {
     _private: (),
 }
@@ -1071,7 +1071,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMapTile {
 /// [`get_place`](crate::client::Client::get_place).
 ///
 /// See [`crate::client::fluent_builders::GetPlace`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPlace {
     _private: (),
 }
@@ -1102,7 +1102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPlace {
 /// [`list_device_positions`](crate::client::Client::list_device_positions).
 ///
 /// See [`crate::client::fluent_builders::ListDevicePositions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDevicePositions {
     _private: (),
 }
@@ -1136,7 +1136,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDevicePositions {
 /// [`list_geofence_collections`](crate::client::Client::list_geofence_collections).
 ///
 /// See [`crate::client::fluent_builders::ListGeofenceCollections`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListGeofenceCollections {
     _private: (),
 }
@@ -1170,7 +1170,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGeofenceCollections 
 /// [`list_geofences`](crate::client::Client::list_geofences).
 ///
 /// See [`crate::client::fluent_builders::ListGeofences`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListGeofences {
     _private: (),
 }
@@ -1202,7 +1202,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGeofences {
 /// [`list_maps`](crate::client::Client::list_maps).
 ///
 /// See [`crate::client::fluent_builders::ListMaps`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListMaps {
     _private: (),
 }
@@ -1233,7 +1233,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMaps {
 /// [`list_place_indexes`](crate::client::Client::list_place_indexes).
 ///
 /// See [`crate::client::fluent_builders::ListPlaceIndexes`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPlaceIndexes {
     _private: (),
 }
@@ -1267,7 +1267,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPlaceIndexes {
 /// [`list_route_calculators`](crate::client::Client::list_route_calculators).
 ///
 /// See [`crate::client::fluent_builders::ListRouteCalculators`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRouteCalculators {
     _private: (),
 }
@@ -1301,7 +1301,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRouteCalculators {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -1335,7 +1335,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`list_tracker_consumers`](crate::client::Client::list_tracker_consumers).
 ///
 /// See [`crate::client::fluent_builders::ListTrackerConsumers`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTrackerConsumers {
     _private: (),
 }
@@ -1369,7 +1369,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTrackerConsumers {
 /// [`list_trackers`](crate::client::Client::list_trackers).
 ///
 /// See [`crate::client::fluent_builders::ListTrackers`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTrackers {
     _private: (),
 }
@@ -1401,7 +1401,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTrackers {
 /// [`put_geofence`](crate::client::Client::put_geofence).
 ///
 /// See [`crate::client::fluent_builders::PutGeofence`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutGeofence {
     _private: (),
 }
@@ -1433,7 +1433,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutGeofence {
 /// [`search_place_index_for_position`](crate::client::Client::search_place_index_for_position).
 ///
 /// See [`crate::client::fluent_builders::SearchPlaceIndexForPosition`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SearchPlaceIndexForPosition {
     _private: (),
 }
@@ -1467,7 +1467,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchPlaceIndexForPosit
 /// [`search_place_index_for_suggestions`](crate::client::Client::search_place_index_for_suggestions).
 ///
 /// See [`crate::client::fluent_builders::SearchPlaceIndexForSuggestions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SearchPlaceIndexForSuggestions {
     _private: (),
 }
@@ -1501,7 +1501,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchPlaceIndexForSugge
 /// [`search_place_index_for_text`](crate::client::Client::search_place_index_for_text).
 ///
 /// See [`crate::client::fluent_builders::SearchPlaceIndexForText`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SearchPlaceIndexForText {
     _private: (),
 }
@@ -1535,7 +1535,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchPlaceIndexForText 
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -1567,7 +1567,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -1599,7 +1599,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_geofence_collection`](crate::client::Client::update_geofence_collection).
 ///
 /// See [`crate::client::fluent_builders::UpdateGeofenceCollection`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateGeofenceCollection {
     _private: (),
 }
@@ -1633,7 +1633,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGeofenceCollection
 /// [`update_map`](crate::client::Client::update_map).
 ///
 /// See [`crate::client::fluent_builders::UpdateMap`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateMap {
     _private: (),
 }
@@ -1664,7 +1664,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateMap {
 /// [`update_place_index`](crate::client::Client::update_place_index).
 ///
 /// See [`crate::client::fluent_builders::UpdatePlaceIndex`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdatePlaceIndex {
     _private: (),
 }
@@ -1698,7 +1698,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePlaceIndex {
 /// [`update_route_calculator`](crate::client::Client::update_route_calculator).
 ///
 /// See [`crate::client::fluent_builders::UpdateRouteCalculator`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateRouteCalculator {
     _private: (),
 }
@@ -1732,7 +1732,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRouteCalculator {
 /// [`update_tracker`](crate::client::Client::update_tracker).
 ///
 /// See [`crate::client::fluent_builders::UpdateTracker`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateTracker {
     _private: (),
 }

@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod list_realtime_contact_analysis_segments_input {
 
     /// A builder for [`ListRealtimeContactAnalysisSegmentsInput`](crate::input::ListRealtimeContactAnalysisSegmentsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
         pub(crate) contact_id: std::option::Option<std::string::String>,
@@ -58,7 +58,7 @@ pub mod list_realtime_contact_analysis_segments_input {
             self,
         ) -> Result<
             crate::input::ListRealtimeContactAnalysisSegmentsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListRealtimeContactAnalysisSegmentsInput {
                 instance_id: self.instance_id,
@@ -82,13 +82,13 @@ impl ListRealtimeContactAnalysisSegmentsInput {
             crate::operation::ListRealtimeContactAnalysisSegments,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListRealtimeContactAnalysisSegmentsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/realtime-contact-analysis/analysis-segments")
                     .expect("formatting should succeed");
                 Ok(())
@@ -97,8 +97,10 @@ impl ListRealtimeContactAnalysisSegmentsInput {
             fn update_http_builder(
                 input: &crate::input::ListRealtimeContactAnalysisSegmentsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -179,7 +181,7 @@ impl ListRealtimeContactAnalysisSegmentsInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRealtimeContactAnalysisSegmentsInput {
     /// <p>The identifier of the Amazon Connect instance.</p>
     #[doc(hidden)]
@@ -210,15 +212,5 @@ impl ListRealtimeContactAnalysisSegmentsInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListRealtimeContactAnalysisSegmentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRealtimeContactAnalysisSegmentsInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("contact_id", &self.contact_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }

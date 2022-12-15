@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_create_cluster_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateClusterInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.client_token {
         object.key("ClientToken").string(var_1.as_str());
     }
@@ -10,10 +10,11 @@ pub fn serialize_structure_crate_input_create_cluster_input(
         object.key("ClusterName").string(var_2.as_str());
     }
     if let Some(var_3) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_4 = object.key("Tags").start_object();
         for (key_5, value_6) in var_3 {
             {
-                object_4.key(key_5).string(value_6.as_str());
+                object_4.key(key_5.as_str()).string(value_6.as_str());
             }
         }
         object_4.finish();
@@ -24,7 +25,7 @@ pub fn serialize_structure_crate_input_create_cluster_input(
 pub fn serialize_structure_crate_input_create_control_panel_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateControlPanelInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_7) = &input.client_token {
         object.key("ClientToken").string(var_7.as_str());
     }
@@ -35,10 +36,11 @@ pub fn serialize_structure_crate_input_create_control_panel_input(
         object.key("ControlPanelName").string(var_9.as_str());
     }
     if let Some(var_10) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_11 = object.key("Tags").start_object();
         for (key_12, value_13) in var_10 {
             {
-                object_11.key(key_12).string(value_13.as_str());
+                object_11.key(key_12.as_str()).string(value_13.as_str());
             }
         }
         object_11.finish();
@@ -49,7 +51,7 @@ pub fn serialize_structure_crate_input_create_control_panel_input(
 pub fn serialize_structure_crate_input_create_routing_control_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateRoutingControlInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_14) = &input.client_token {
         object.key("ClientToken").string(var_14.as_str());
     }
@@ -68,8 +70,9 @@ pub fn serialize_structure_crate_input_create_routing_control_input(
 pub fn serialize_structure_crate_input_create_safety_rule_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateSafetyRuleInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_18) = &input.assertion_rule {
+        #[allow(unused_mut)]
         let mut object_19 = object.key("AssertionRule").start_object();
         crate::json_ser::serialize_structure_crate_model_new_assertion_rule(
             &mut object_19,
@@ -81,15 +84,17 @@ pub fn serialize_structure_crate_input_create_safety_rule_input(
         object.key("ClientToken").string(var_20.as_str());
     }
     if let Some(var_21) = &input.gating_rule {
+        #[allow(unused_mut)]
         let mut object_22 = object.key("GatingRule").start_object();
         crate::json_ser::serialize_structure_crate_model_new_gating_rule(&mut object_22, var_21)?;
         object_22.finish();
     }
     if let Some(var_23) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_24 = object.key("Tags").start_object();
         for (key_25, value_26) in var_23 {
             {
-                object_24.key(key_25).string(value_26.as_str());
+                object_24.key(key_25.as_str()).string(value_26.as_str());
             }
         }
         object_24.finish();
@@ -100,12 +105,13 @@ pub fn serialize_structure_crate_input_create_safety_rule_input(
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_27) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_28 = object.key("Tags").start_object();
         for (key_29, value_30) in var_27 {
             {
-                object_28.key(key_29).string(value_30.as_str());
+                object_28.key(key_29.as_str()).string(value_30.as_str());
             }
         }
         object_28.finish();
@@ -116,7 +122,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_input_update_control_panel_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateControlPanelInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_31) = &input.control_panel_arn {
         object.key("ControlPanelArn").string(var_31.as_str());
     }
@@ -129,7 +135,7 @@ pub fn serialize_structure_crate_input_update_control_panel_input(
 pub fn serialize_structure_crate_input_update_routing_control_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateRoutingControlInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_33) = &input.routing_control_arn {
         object.key("RoutingControlArn").string(var_33.as_str());
     }
@@ -142,8 +148,9 @@ pub fn serialize_structure_crate_input_update_routing_control_input(
 pub fn serialize_structure_crate_input_update_safety_rule_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateSafetyRuleInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_35) = &input.assertion_rule_update {
+        #[allow(unused_mut)]
         let mut object_36 = object.key("AssertionRuleUpdate").start_object();
         crate::json_ser::serialize_structure_crate_model_assertion_rule_update(
             &mut object_36,
@@ -152,6 +159,7 @@ pub fn serialize_structure_crate_input_update_safety_rule_input(
         object_36.finish();
     }
     if let Some(var_37) = &input.gating_rule_update {
+        #[allow(unused_mut)]
         let mut object_38 = object.key("GatingRuleUpdate").start_object();
         crate::json_ser::serialize_structure_crate_model_gating_rule_update(
             &mut object_38,
@@ -165,7 +173,7 @@ pub fn serialize_structure_crate_input_update_safety_rule_input(
 pub fn serialize_structure_crate_model_new_assertion_rule(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::NewAssertionRule,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_39) = &input.asserted_controls {
         let mut array_40 = object.key("AssertedControls").start_array();
         for item_41 in var_39 {
@@ -182,6 +190,7 @@ pub fn serialize_structure_crate_model_new_assertion_rule(
         object.key("Name").string(var_43.as_str());
     }
     if let Some(var_44) = &input.rule_config {
+        #[allow(unused_mut)]
         let mut object_45 = object.key("RuleConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_rule_config(&mut object_45, var_44)?;
         object_45.finish();
@@ -198,7 +207,7 @@ pub fn serialize_structure_crate_model_new_assertion_rule(
 pub fn serialize_structure_crate_model_new_gating_rule(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::NewGatingRule,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_46) = &input.control_panel_arn {
         object.key("ControlPanelArn").string(var_46.as_str());
     }
@@ -215,6 +224,7 @@ pub fn serialize_structure_crate_model_new_gating_rule(
         object.key("Name").string(var_50.as_str());
     }
     if let Some(var_51) = &input.rule_config {
+        #[allow(unused_mut)]
         let mut object_52 = object.key("RuleConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_rule_config(&mut object_52, var_51)?;
         object_52.finish();
@@ -240,7 +250,7 @@ pub fn serialize_structure_crate_model_new_gating_rule(
 pub fn serialize_structure_crate_model_assertion_rule_update(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AssertionRuleUpdate,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_56) = &input.name {
         object.key("Name").string(var_56.as_str());
     }
@@ -259,7 +269,7 @@ pub fn serialize_structure_crate_model_assertion_rule_update(
 pub fn serialize_structure_crate_model_gating_rule_update(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::GatingRuleUpdate,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_58) = &input.name {
         object.key("Name").string(var_58.as_str());
     }
@@ -278,7 +288,7 @@ pub fn serialize_structure_crate_model_gating_rule_update(
 pub fn serialize_structure_crate_model_rule_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RuleConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     {
         object.key("Inverted").boolean(input.inverted);
     }

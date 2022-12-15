@@ -2,7 +2,7 @@
 
 /// <p> The request has invalid or missing parameters. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -24,18 +24,9 @@ impl ValidationException {
         self.fields.as_deref()
     }
 }
-impl std::fmt::Debug for ValidationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationException");
-        formatter.field("message", &self.message);
-        formatter.field("reason", &self.reason);
-        formatter.field("fields", &self.fields);
-        formatter.finish()
-    }
-}
 impl ValidationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -43,7 +34,9 @@ impl std::fmt::Display for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ValidationException")?;
         if let Some(inner_1) = &self.message {
-            write!(f, ": {}", inner_1)?;
+            {
+                write!(f, ": {}", inner_1)?;
+            }
         }
         Ok(())
     }
@@ -53,7 +46,7 @@ impl std::error::Error for ValidationException {}
 pub mod validation_exception {
 
     /// A builder for [`ValidationException`](crate::error::ValidationException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) reason: std::option::Option<crate::model::ValidationExceptionReason>,
@@ -122,7 +115,7 @@ impl ValidationException {
 
 /// <p> The resource that's specified in the request can't be found. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -144,18 +137,9 @@ impl ResourceNotFoundException {
         self.resource_type.as_deref()
     }
 }
-impl std::fmt::Debug for ResourceNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
-    }
-}
 impl ResourceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -163,7 +147,9 @@ impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
         if let Some(inner_2) = &self.message {
-            write!(f, ": {}", inner_2)?;
+            {
+                write!(f, ": {}", inner_2)?;
+            }
         }
         Ok(())
     }
@@ -173,7 +159,7 @@ impl std::error::Error for ResourceNotFoundException {}
 pub mod resource_not_found_exception {
 
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -232,22 +218,15 @@ impl ResourceNotFoundException {
 
 /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalServerException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InternalServerException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InternalServerException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -255,7 +234,9 @@ impl std::fmt::Display for InternalServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServerException")?;
         if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+            {
+                write!(f, ": {}", inner_3)?;
+            }
         }
         Ok(())
     }
@@ -265,7 +246,7 @@ impl std::error::Error for InternalServerException {}
 pub mod internal_server_exception {
 
     /// A builder for [`InternalServerException`](crate::error::InternalServerException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -297,22 +278,15 @@ impl InternalServerException {
 
 /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for AccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessDeniedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl AccessDeniedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -320,7 +294,9 @@ impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
         if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+            {
+                write!(f, ": {}", inner_4)?;
+            }
         }
         Ok(())
     }
@@ -330,7 +306,7 @@ impl std::error::Error for AccessDeniedException {}
 pub mod access_denied_exception {
 
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -362,22 +338,15 @@ impl AccessDeniedException {
 
 /// <p>You've reached your account quota for this resource type. To perform the requested action, delete some existing resources or <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">request a quota increase</a> from the Service Quotas console. For a list of Audit Manager service quotas, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas and restrictions for Audit Manager</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceQuotaExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ServiceQuotaExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceQuotaExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ServiceQuotaExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -385,7 +354,9 @@ impl std::fmt::Display for ServiceQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceQuotaExceededException")?;
         if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+            {
+                write!(f, ": {}", inner_5)?;
+            }
         }
         Ok(())
     }
@@ -395,7 +366,7 @@ impl std::error::Error for ServiceQuotaExceededException {}
 pub mod service_quota_exceeded_exception {
 
     /// A builder for [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -427,22 +398,15 @@ impl ServiceQuotaExceededException {
 
 /// <p>The request was denied due to request throttling.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ThrottlingException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThrottlingException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ThrottlingException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -450,7 +414,9 @@ impl std::fmt::Display for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ThrottlingException")?;
         if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+            {
+                write!(f, ": {}", inner_6)?;
+            }
         }
         Ok(())
     }
@@ -460,7 +426,7 @@ impl std::error::Error for ThrottlingException {}
 pub mod throttling_exception {
 
     /// A builder for [`ThrottlingException`](crate::error::ThrottlingException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -499,6 +465,18 @@ pub struct AssociateAssessmentReportEvidenceFolderError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError
+    for AssociateAssessmentReportEvidenceFolderError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AssociateAssessmentReportEvidenceFolderErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AssociateAssessmentReportEvidenceFolder` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -511,8 +489,15 @@ pub enum AssociateAssessmentReportEvidenceFolderErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateAssessmentReportEvidenceFolderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -553,7 +538,9 @@ impl AssociateAssessmentReportEvidenceFolderError {
     /// Creates the `AssociateAssessmentReportEvidenceFolderError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssociateAssessmentReportEvidenceFolderErrorKind::Unhandled(err.into()),
+            kind: AssociateAssessmentReportEvidenceFolderErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -562,7 +549,9 @@ impl AssociateAssessmentReportEvidenceFolderError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssociateAssessmentReportEvidenceFolderErrorKind::Unhandled(err.into()),
+            kind: AssociateAssessmentReportEvidenceFolderErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -630,9 +619,7 @@ impl std::error::Error for AssociateAssessmentReportEvidenceFolderError {
             AssociateAssessmentReportEvidenceFolderErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            AssociateAssessmentReportEvidenceFolderErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            AssociateAssessmentReportEvidenceFolderErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -646,6 +633,16 @@ pub struct BatchAssociateAssessmentReportEvidenceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for BatchAssociateAssessmentReportEvidenceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: BatchAssociateAssessmentReportEvidenceErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `BatchAssociateAssessmentReportEvidence` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -658,8 +655,15 @@ pub enum BatchAssociateAssessmentReportEvidenceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchAssociateAssessmentReportEvidenceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -700,7 +704,9 @@ impl BatchAssociateAssessmentReportEvidenceError {
     /// Creates the `BatchAssociateAssessmentReportEvidenceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchAssociateAssessmentReportEvidenceErrorKind::Unhandled(err.into()),
+            kind: BatchAssociateAssessmentReportEvidenceErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -709,7 +715,9 @@ impl BatchAssociateAssessmentReportEvidenceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchAssociateAssessmentReportEvidenceErrorKind::Unhandled(err.into()),
+            kind: BatchAssociateAssessmentReportEvidenceErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -777,9 +785,7 @@ impl std::error::Error for BatchAssociateAssessmentReportEvidenceError {
             BatchAssociateAssessmentReportEvidenceErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            BatchAssociateAssessmentReportEvidenceErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            BatchAssociateAssessmentReportEvidenceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -793,6 +799,16 @@ pub struct BatchCreateDelegationByAssessmentError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for BatchCreateDelegationByAssessmentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: BatchCreateDelegationByAssessmentErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `BatchCreateDelegationByAssessment` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -805,8 +821,15 @@ pub enum BatchCreateDelegationByAssessmentErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchCreateDelegationByAssessmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -847,7 +870,9 @@ impl BatchCreateDelegationByAssessmentError {
     /// Creates the `BatchCreateDelegationByAssessmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchCreateDelegationByAssessmentErrorKind::Unhandled(err.into()),
+            kind: BatchCreateDelegationByAssessmentErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -856,7 +881,9 @@ impl BatchCreateDelegationByAssessmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchCreateDelegationByAssessmentErrorKind::Unhandled(err.into()),
+            kind: BatchCreateDelegationByAssessmentErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -922,7 +949,7 @@ impl std::error::Error for BatchCreateDelegationByAssessmentError {
                 Some(_inner)
             }
             BatchCreateDelegationByAssessmentErrorKind::ValidationException(_inner) => Some(_inner),
-            BatchCreateDelegationByAssessmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchCreateDelegationByAssessmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -936,6 +963,16 @@ pub struct BatchDeleteDelegationByAssessmentError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for BatchDeleteDelegationByAssessmentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: BatchDeleteDelegationByAssessmentErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `BatchDeleteDelegationByAssessment` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -948,8 +985,15 @@ pub enum BatchDeleteDelegationByAssessmentErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchDeleteDelegationByAssessmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -990,7 +1034,9 @@ impl BatchDeleteDelegationByAssessmentError {
     /// Creates the `BatchDeleteDelegationByAssessmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchDeleteDelegationByAssessmentErrorKind::Unhandled(err.into()),
+            kind: BatchDeleteDelegationByAssessmentErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -999,7 +1045,9 @@ impl BatchDeleteDelegationByAssessmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchDeleteDelegationByAssessmentErrorKind::Unhandled(err.into()),
+            kind: BatchDeleteDelegationByAssessmentErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1065,7 +1113,7 @@ impl std::error::Error for BatchDeleteDelegationByAssessmentError {
                 Some(_inner)
             }
             BatchDeleteDelegationByAssessmentErrorKind::ValidationException(_inner) => Some(_inner),
-            BatchDeleteDelegationByAssessmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchDeleteDelegationByAssessmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1079,6 +1127,18 @@ pub struct BatchDisassociateAssessmentReportEvidenceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError
+    for BatchDisassociateAssessmentReportEvidenceError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: BatchDisassociateAssessmentReportEvidenceErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `BatchDisassociateAssessmentReportEvidence` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1091,8 +1151,15 @@ pub enum BatchDisassociateAssessmentReportEvidenceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchDisassociateAssessmentReportEvidenceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1133,7 +1200,9 @@ impl BatchDisassociateAssessmentReportEvidenceError {
     /// Creates the `BatchDisassociateAssessmentReportEvidenceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchDisassociateAssessmentReportEvidenceErrorKind::Unhandled(err.into()),
+            kind: BatchDisassociateAssessmentReportEvidenceErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1142,7 +1211,9 @@ impl BatchDisassociateAssessmentReportEvidenceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchDisassociateAssessmentReportEvidenceErrorKind::Unhandled(err.into()),
+            kind: BatchDisassociateAssessmentReportEvidenceErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1210,9 +1281,7 @@ impl std::error::Error for BatchDisassociateAssessmentReportEvidenceError {
             BatchDisassociateAssessmentReportEvidenceErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            BatchDisassociateAssessmentReportEvidenceErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            BatchDisassociateAssessmentReportEvidenceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1226,6 +1295,16 @@ pub struct BatchImportEvidenceToAssessmentControlError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for BatchImportEvidenceToAssessmentControlError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: BatchImportEvidenceToAssessmentControlErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `BatchImportEvidenceToAssessmentControl` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1238,8 +1317,15 @@ pub enum BatchImportEvidenceToAssessmentControlErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchImportEvidenceToAssessmentControlError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1280,7 +1366,9 @@ impl BatchImportEvidenceToAssessmentControlError {
     /// Creates the `BatchImportEvidenceToAssessmentControlError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchImportEvidenceToAssessmentControlErrorKind::Unhandled(err.into()),
+            kind: BatchImportEvidenceToAssessmentControlErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1289,7 +1377,9 @@ impl BatchImportEvidenceToAssessmentControlError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchImportEvidenceToAssessmentControlErrorKind::Unhandled(err.into()),
+            kind: BatchImportEvidenceToAssessmentControlErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1357,9 +1447,7 @@ impl std::error::Error for BatchImportEvidenceToAssessmentControlError {
             BatchImportEvidenceToAssessmentControlErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            BatchImportEvidenceToAssessmentControlErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            BatchImportEvidenceToAssessmentControlErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1372,6 +1460,14 @@ pub struct CreateAssessmentError {
     pub kind: CreateAssessmentErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateAssessmentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateAssessmentErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateAssessment` operation.
 #[non_exhaustive]
@@ -1387,8 +1483,15 @@ pub enum CreateAssessmentErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateAssessmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1419,7 +1522,7 @@ impl CreateAssessmentError {
     /// Creates the `CreateAssessmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateAssessmentErrorKind::Unhandled(err.into()),
+            kind: CreateAssessmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1428,7 +1531,7 @@ impl CreateAssessmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateAssessmentErrorKind::Unhandled(err.into()),
+            kind: CreateAssessmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1496,7 +1599,7 @@ impl std::error::Error for CreateAssessmentError {
             CreateAssessmentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateAssessmentErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateAssessmentErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateAssessmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateAssessmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1509,6 +1612,16 @@ pub struct CreateAssessmentFrameworkError {
     pub kind: CreateAssessmentFrameworkErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateAssessmentFrameworkError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateAssessmentFrameworkErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateAssessmentFramework` operation.
 #[non_exhaustive]
@@ -1524,8 +1637,15 @@ pub enum CreateAssessmentFrameworkErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateAssessmentFrameworkError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1558,7 +1678,9 @@ impl CreateAssessmentFrameworkError {
     /// Creates the `CreateAssessmentFrameworkError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateAssessmentFrameworkErrorKind::Unhandled(err.into()),
+            kind: CreateAssessmentFrameworkErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1567,7 +1689,9 @@ impl CreateAssessmentFrameworkError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateAssessmentFrameworkErrorKind::Unhandled(err.into()),
+            kind: CreateAssessmentFrameworkErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1637,7 +1761,7 @@ impl std::error::Error for CreateAssessmentFrameworkError {
                 Some(_inner)
             }
             CreateAssessmentFrameworkErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateAssessmentFrameworkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateAssessmentFrameworkErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1651,6 +1775,14 @@ pub struct CreateAssessmentReportError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateAssessmentReportError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateAssessmentReportErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateAssessmentReport` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1663,8 +1795,15 @@ pub enum CreateAssessmentReportErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateAssessmentReportError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1694,7 +1833,9 @@ impl CreateAssessmentReportError {
     /// Creates the `CreateAssessmentReportError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateAssessmentReportErrorKind::Unhandled(err.into()),
+            kind: CreateAssessmentReportErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1703,7 +1844,9 @@ impl CreateAssessmentReportError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateAssessmentReportErrorKind::Unhandled(err.into()),
+            kind: CreateAssessmentReportErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1763,7 +1906,7 @@ impl std::error::Error for CreateAssessmentReportError {
             CreateAssessmentReportErrorKind::InternalServerException(_inner) => Some(_inner),
             CreateAssessmentReportErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateAssessmentReportErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateAssessmentReportErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateAssessmentReportErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1776,6 +1919,14 @@ pub struct CreateControlError {
     pub kind: CreateControlErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateControlError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateControlErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateControl` operation.
 #[non_exhaustive]
@@ -1791,8 +1942,15 @@ pub enum CreateControlErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateControlError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1823,7 +1981,7 @@ impl CreateControlError {
     /// Creates the `CreateControlError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateControlErrorKind::Unhandled(err.into()),
+            kind: CreateControlErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1832,7 +1990,7 @@ impl CreateControlError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateControlErrorKind::Unhandled(err.into()),
+            kind: CreateControlErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1894,7 +2052,7 @@ impl std::error::Error for CreateControlError {
             CreateControlErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateControlErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateControlErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateControlErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateControlErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1908,6 +2066,14 @@ pub struct DeleteAssessmentError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteAssessmentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteAssessmentErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteAssessment` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1920,8 +2086,15 @@ pub enum DeleteAssessmentErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAssessmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1951,7 +2124,7 @@ impl DeleteAssessmentError {
     /// Creates the `DeleteAssessmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAssessmentErrorKind::Unhandled(err.into()),
+            kind: DeleteAssessmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1960,7 +2133,7 @@ impl DeleteAssessmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAssessmentErrorKind::Unhandled(err.into()),
+            kind: DeleteAssessmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2020,7 +2193,7 @@ impl std::error::Error for DeleteAssessmentError {
             DeleteAssessmentErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteAssessmentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteAssessmentErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteAssessmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAssessmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2034,6 +2207,16 @@ pub struct DeleteAssessmentFrameworkError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteAssessmentFrameworkError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteAssessmentFrameworkErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteAssessmentFramework` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2046,8 +2229,15 @@ pub enum DeleteAssessmentFrameworkErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAssessmentFrameworkError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2077,7 +2267,9 @@ impl DeleteAssessmentFrameworkError {
     /// Creates the `DeleteAssessmentFrameworkError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAssessmentFrameworkErrorKind::Unhandled(err.into()),
+            kind: DeleteAssessmentFrameworkErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2086,7 +2278,9 @@ impl DeleteAssessmentFrameworkError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAssessmentFrameworkErrorKind::Unhandled(err.into()),
+            kind: DeleteAssessmentFrameworkErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2146,7 +2340,7 @@ impl std::error::Error for DeleteAssessmentFrameworkError {
             DeleteAssessmentFrameworkErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteAssessmentFrameworkErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteAssessmentFrameworkErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteAssessmentFrameworkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAssessmentFrameworkErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2160,6 +2354,16 @@ pub struct DeleteAssessmentFrameworkShareError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteAssessmentFrameworkShareError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteAssessmentFrameworkShareErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteAssessmentFrameworkShare` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2172,8 +2376,15 @@ pub enum DeleteAssessmentFrameworkShareErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAssessmentFrameworkShareError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2210,7 +2421,9 @@ impl DeleteAssessmentFrameworkShareError {
     /// Creates the `DeleteAssessmentFrameworkShareError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAssessmentFrameworkShareErrorKind::Unhandled(err.into()),
+            kind: DeleteAssessmentFrameworkShareErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2219,7 +2432,9 @@ impl DeleteAssessmentFrameworkShareError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAssessmentFrameworkShareErrorKind::Unhandled(err.into()),
+            kind: DeleteAssessmentFrameworkShareErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2283,7 +2498,7 @@ impl std::error::Error for DeleteAssessmentFrameworkShareError {
                 Some(_inner)
             }
             DeleteAssessmentFrameworkShareErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteAssessmentFrameworkShareErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAssessmentFrameworkShareErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2297,6 +2512,14 @@ pub struct DeleteAssessmentReportError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteAssessmentReportError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteAssessmentReportErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteAssessmentReport` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2309,8 +2532,15 @@ pub enum DeleteAssessmentReportErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAssessmentReportError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2340,7 +2570,9 @@ impl DeleteAssessmentReportError {
     /// Creates the `DeleteAssessmentReportError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAssessmentReportErrorKind::Unhandled(err.into()),
+            kind: DeleteAssessmentReportErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2349,7 +2581,9 @@ impl DeleteAssessmentReportError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAssessmentReportErrorKind::Unhandled(err.into()),
+            kind: DeleteAssessmentReportErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2409,7 +2643,7 @@ impl std::error::Error for DeleteAssessmentReportError {
             DeleteAssessmentReportErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteAssessmentReportErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteAssessmentReportErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteAssessmentReportErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAssessmentReportErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2423,6 +2657,14 @@ pub struct DeleteControlError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteControlError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteControlErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteControl` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2435,8 +2677,15 @@ pub enum DeleteControlErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteControlError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2466,7 +2715,7 @@ impl DeleteControlError {
     /// Creates the `DeleteControlError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteControlErrorKind::Unhandled(err.into()),
+            kind: DeleteControlErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2475,7 +2724,7 @@ impl DeleteControlError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteControlErrorKind::Unhandled(err.into()),
+            kind: DeleteControlErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2529,7 +2778,7 @@ impl std::error::Error for DeleteControlError {
             DeleteControlErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteControlErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteControlErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteControlErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteControlErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2543,6 +2792,14 @@ pub struct DeregisterAccountError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeregisterAccountError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeregisterAccountErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeregisterAccount` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2555,8 +2812,15 @@ pub enum DeregisterAccountErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeregisterAccountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2586,7 +2850,7 @@ impl DeregisterAccountError {
     /// Creates the `DeregisterAccountError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeregisterAccountErrorKind::Unhandled(err.into()),
+            kind: DeregisterAccountErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2595,7 +2859,7 @@ impl DeregisterAccountError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeregisterAccountErrorKind::Unhandled(err.into()),
+            kind: DeregisterAccountErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2655,7 +2919,7 @@ impl std::error::Error for DeregisterAccountError {
             DeregisterAccountErrorKind::InternalServerException(_inner) => Some(_inner),
             DeregisterAccountErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeregisterAccountErrorKind::ValidationException(_inner) => Some(_inner),
-            DeregisterAccountErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeregisterAccountErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2669,6 +2933,16 @@ pub struct DeregisterOrganizationAdminAccountError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeregisterOrganizationAdminAccountError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeregisterOrganizationAdminAccountErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeregisterOrganizationAdminAccount` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2681,8 +2955,15 @@ pub enum DeregisterOrganizationAdminAccountErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeregisterOrganizationAdminAccountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2723,7 +3004,9 @@ impl DeregisterOrganizationAdminAccountError {
     /// Creates the `DeregisterOrganizationAdminAccountError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeregisterOrganizationAdminAccountErrorKind::Unhandled(err.into()),
+            kind: DeregisterOrganizationAdminAccountErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2732,7 +3015,9 @@ impl DeregisterOrganizationAdminAccountError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeregisterOrganizationAdminAccountErrorKind::Unhandled(err.into()),
+            kind: DeregisterOrganizationAdminAccountErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2800,7 +3085,7 @@ impl std::error::Error for DeregisterOrganizationAdminAccountError {
             DeregisterOrganizationAdminAccountErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            DeregisterOrganizationAdminAccountErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeregisterOrganizationAdminAccountErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2814,6 +3099,18 @@ pub struct DisassociateAssessmentReportEvidenceFolderError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError
+    for DisassociateAssessmentReportEvidenceFolderError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DisassociateAssessmentReportEvidenceFolderErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DisassociateAssessmentReportEvidenceFolder` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2826,8 +3123,15 @@ pub enum DisassociateAssessmentReportEvidenceFolderErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateAssessmentReportEvidenceFolderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2868,7 +3172,9 @@ impl DisassociateAssessmentReportEvidenceFolderError {
     /// Creates the `DisassociateAssessmentReportEvidenceFolderError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisassociateAssessmentReportEvidenceFolderErrorKind::Unhandled(err.into()),
+            kind: DisassociateAssessmentReportEvidenceFolderErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2877,7 +3183,9 @@ impl DisassociateAssessmentReportEvidenceFolderError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisassociateAssessmentReportEvidenceFolderErrorKind::Unhandled(err.into()),
+            kind: DisassociateAssessmentReportEvidenceFolderErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2945,9 +3253,7 @@ impl std::error::Error for DisassociateAssessmentReportEvidenceFolderError {
             DisassociateAssessmentReportEvidenceFolderErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            DisassociateAssessmentReportEvidenceFolderErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DisassociateAssessmentReportEvidenceFolderErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2961,14 +3267,29 @@ pub struct GetAccountStatusError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetAccountStatusError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetAccountStatusErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetAccountStatus` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAccountStatusErrorKind {
     /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAccountStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2995,7 +3316,7 @@ impl GetAccountStatusError {
     /// Creates the `GetAccountStatusError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetAccountStatusErrorKind::Unhandled(err.into()),
+            kind: GetAccountStatusErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3004,7 +3325,7 @@ impl GetAccountStatusError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetAccountStatusErrorKind::Unhandled(err.into()),
+            kind: GetAccountStatusErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3040,7 +3361,7 @@ impl std::error::Error for GetAccountStatusError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             GetAccountStatusErrorKind::InternalServerException(_inner) => Some(_inner),
-            GetAccountStatusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetAccountStatusErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3054,6 +3375,14 @@ pub struct GetAssessmentError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetAssessmentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetAssessmentErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetAssessment` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3066,8 +3395,15 @@ pub enum GetAssessmentErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAssessmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3097,7 +3433,7 @@ impl GetAssessmentError {
     /// Creates the `GetAssessmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetAssessmentErrorKind::Unhandled(err.into()),
+            kind: GetAssessmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3106,7 +3442,7 @@ impl GetAssessmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetAssessmentErrorKind::Unhandled(err.into()),
+            kind: GetAssessmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3160,7 +3496,7 @@ impl std::error::Error for GetAssessmentError {
             GetAssessmentErrorKind::InternalServerException(_inner) => Some(_inner),
             GetAssessmentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetAssessmentErrorKind::ValidationException(_inner) => Some(_inner),
-            GetAssessmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetAssessmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3174,6 +3510,14 @@ pub struct GetAssessmentFrameworkError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetAssessmentFrameworkError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetAssessmentFrameworkErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetAssessmentFramework` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3186,8 +3530,15 @@ pub enum GetAssessmentFrameworkErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAssessmentFrameworkError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3217,7 +3568,9 @@ impl GetAssessmentFrameworkError {
     /// Creates the `GetAssessmentFrameworkError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetAssessmentFrameworkErrorKind::Unhandled(err.into()),
+            kind: GetAssessmentFrameworkErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3226,7 +3579,9 @@ impl GetAssessmentFrameworkError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetAssessmentFrameworkErrorKind::Unhandled(err.into()),
+            kind: GetAssessmentFrameworkErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3286,7 +3641,7 @@ impl std::error::Error for GetAssessmentFrameworkError {
             GetAssessmentFrameworkErrorKind::InternalServerException(_inner) => Some(_inner),
             GetAssessmentFrameworkErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetAssessmentFrameworkErrorKind::ValidationException(_inner) => Some(_inner),
-            GetAssessmentFrameworkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetAssessmentFrameworkErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3300,6 +3655,14 @@ pub struct GetAssessmentReportUrlError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetAssessmentReportUrlError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetAssessmentReportUrlErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetAssessmentReportUrl` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3312,8 +3675,15 @@ pub enum GetAssessmentReportUrlErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAssessmentReportUrlError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3343,7 +3713,9 @@ impl GetAssessmentReportUrlError {
     /// Creates the `GetAssessmentReportUrlError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetAssessmentReportUrlErrorKind::Unhandled(err.into()),
+            kind: GetAssessmentReportUrlErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3352,7 +3724,9 @@ impl GetAssessmentReportUrlError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetAssessmentReportUrlErrorKind::Unhandled(err.into()),
+            kind: GetAssessmentReportUrlErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3412,7 +3786,7 @@ impl std::error::Error for GetAssessmentReportUrlError {
             GetAssessmentReportUrlErrorKind::InternalServerException(_inner) => Some(_inner),
             GetAssessmentReportUrlErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetAssessmentReportUrlErrorKind::ValidationException(_inner) => Some(_inner),
-            GetAssessmentReportUrlErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetAssessmentReportUrlErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3426,6 +3800,14 @@ pub struct GetChangeLogsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetChangeLogsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetChangeLogsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetChangeLogs` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3438,8 +3820,15 @@ pub enum GetChangeLogsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetChangeLogsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3469,7 +3858,7 @@ impl GetChangeLogsError {
     /// Creates the `GetChangeLogsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetChangeLogsErrorKind::Unhandled(err.into()),
+            kind: GetChangeLogsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3478,7 +3867,7 @@ impl GetChangeLogsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetChangeLogsErrorKind::Unhandled(err.into()),
+            kind: GetChangeLogsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3532,7 +3921,7 @@ impl std::error::Error for GetChangeLogsError {
             GetChangeLogsErrorKind::InternalServerException(_inner) => Some(_inner),
             GetChangeLogsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetChangeLogsErrorKind::ValidationException(_inner) => Some(_inner),
-            GetChangeLogsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetChangeLogsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3546,6 +3935,14 @@ pub struct GetControlError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetControlError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetControlErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetControl` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3558,8 +3955,15 @@ pub enum GetControlErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetControlError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3589,7 +3993,7 @@ impl GetControlError {
     /// Creates the `GetControlError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetControlErrorKind::Unhandled(err.into()),
+            kind: GetControlErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3598,7 +4002,7 @@ impl GetControlError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetControlErrorKind::Unhandled(err.into()),
+            kind: GetControlErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3649,7 +4053,7 @@ impl std::error::Error for GetControlError {
             GetControlErrorKind::InternalServerException(_inner) => Some(_inner),
             GetControlErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetControlErrorKind::ValidationException(_inner) => Some(_inner),
-            GetControlErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetControlErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3663,6 +4067,14 @@ pub struct GetDelegationsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetDelegationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetDelegationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetDelegations` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3673,8 +4085,15 @@ pub enum GetDelegationsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDelegationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3703,7 +4122,7 @@ impl GetDelegationsError {
     /// Creates the `GetDelegationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDelegationsErrorKind::Unhandled(err.into()),
+            kind: GetDelegationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3712,7 +4131,7 @@ impl GetDelegationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDelegationsErrorKind::Unhandled(err.into()),
+            kind: GetDelegationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3761,7 +4180,7 @@ impl std::error::Error for GetDelegationsError {
             GetDelegationsErrorKind::AccessDeniedException(_inner) => Some(_inner),
             GetDelegationsErrorKind::InternalServerException(_inner) => Some(_inner),
             GetDelegationsErrorKind::ValidationException(_inner) => Some(_inner),
-            GetDelegationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDelegationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3775,6 +4194,14 @@ pub struct GetEvidenceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetEvidenceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetEvidenceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetEvidence` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3787,8 +4214,15 @@ pub enum GetEvidenceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetEvidenceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3818,7 +4252,7 @@ impl GetEvidenceError {
     /// Creates the `GetEvidenceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetEvidenceErrorKind::Unhandled(err.into()),
+            kind: GetEvidenceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3827,7 +4261,7 @@ impl GetEvidenceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetEvidenceErrorKind::Unhandled(err.into()),
+            kind: GetEvidenceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3878,7 +4312,7 @@ impl std::error::Error for GetEvidenceError {
             GetEvidenceErrorKind::InternalServerException(_inner) => Some(_inner),
             GetEvidenceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetEvidenceErrorKind::ValidationException(_inner) => Some(_inner),
-            GetEvidenceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetEvidenceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3892,6 +4326,16 @@ pub struct GetEvidenceByEvidenceFolderError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetEvidenceByEvidenceFolderError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetEvidenceByEvidenceFolderErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetEvidenceByEvidenceFolder` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3904,8 +4348,15 @@ pub enum GetEvidenceByEvidenceFolderErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetEvidenceByEvidenceFolderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3937,7 +4388,9 @@ impl GetEvidenceByEvidenceFolderError {
     /// Creates the `GetEvidenceByEvidenceFolderError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetEvidenceByEvidenceFolderErrorKind::Unhandled(err.into()),
+            kind: GetEvidenceByEvidenceFolderErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3946,7 +4399,9 @@ impl GetEvidenceByEvidenceFolderError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetEvidenceByEvidenceFolderErrorKind::Unhandled(err.into()),
+            kind: GetEvidenceByEvidenceFolderErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4006,7 +4461,7 @@ impl std::error::Error for GetEvidenceByEvidenceFolderError {
             GetEvidenceByEvidenceFolderErrorKind::InternalServerException(_inner) => Some(_inner),
             GetEvidenceByEvidenceFolderErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetEvidenceByEvidenceFolderErrorKind::ValidationException(_inner) => Some(_inner),
-            GetEvidenceByEvidenceFolderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetEvidenceByEvidenceFolderErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4020,6 +4475,14 @@ pub struct GetEvidenceFolderError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetEvidenceFolderError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetEvidenceFolderErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetEvidenceFolder` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4032,8 +4495,15 @@ pub enum GetEvidenceFolderErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetEvidenceFolderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4063,7 +4533,7 @@ impl GetEvidenceFolderError {
     /// Creates the `GetEvidenceFolderError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetEvidenceFolderErrorKind::Unhandled(err.into()),
+            kind: GetEvidenceFolderErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4072,7 +4542,7 @@ impl GetEvidenceFolderError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetEvidenceFolderErrorKind::Unhandled(err.into()),
+            kind: GetEvidenceFolderErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4132,7 +4602,7 @@ impl std::error::Error for GetEvidenceFolderError {
             GetEvidenceFolderErrorKind::InternalServerException(_inner) => Some(_inner),
             GetEvidenceFolderErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetEvidenceFolderErrorKind::ValidationException(_inner) => Some(_inner),
-            GetEvidenceFolderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetEvidenceFolderErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4146,6 +4616,16 @@ pub struct GetEvidenceFoldersByAssessmentError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetEvidenceFoldersByAssessmentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetEvidenceFoldersByAssessmentErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetEvidenceFoldersByAssessment` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4158,8 +4638,15 @@ pub enum GetEvidenceFoldersByAssessmentErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetEvidenceFoldersByAssessmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4196,7 +4683,9 @@ impl GetEvidenceFoldersByAssessmentError {
     /// Creates the `GetEvidenceFoldersByAssessmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetEvidenceFoldersByAssessmentErrorKind::Unhandled(err.into()),
+            kind: GetEvidenceFoldersByAssessmentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4205,7 +4694,9 @@ impl GetEvidenceFoldersByAssessmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetEvidenceFoldersByAssessmentErrorKind::Unhandled(err.into()),
+            kind: GetEvidenceFoldersByAssessmentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4269,7 +4760,7 @@ impl std::error::Error for GetEvidenceFoldersByAssessmentError {
                 Some(_inner)
             }
             GetEvidenceFoldersByAssessmentErrorKind::ValidationException(_inner) => Some(_inner),
-            GetEvidenceFoldersByAssessmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetEvidenceFoldersByAssessmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4283,6 +4774,16 @@ pub struct GetEvidenceFoldersByAssessmentControlError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetEvidenceFoldersByAssessmentControlError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetEvidenceFoldersByAssessmentControlErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetEvidenceFoldersByAssessmentControl` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4295,8 +4796,15 @@ pub enum GetEvidenceFoldersByAssessmentControlErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetEvidenceFoldersByAssessmentControlError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4337,7 +4845,9 @@ impl GetEvidenceFoldersByAssessmentControlError {
     /// Creates the `GetEvidenceFoldersByAssessmentControlError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetEvidenceFoldersByAssessmentControlErrorKind::Unhandled(err.into()),
+            kind: GetEvidenceFoldersByAssessmentControlErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -4346,7 +4856,9 @@ impl GetEvidenceFoldersByAssessmentControlError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetEvidenceFoldersByAssessmentControlErrorKind::Unhandled(err.into()),
+            kind: GetEvidenceFoldersByAssessmentControlErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -4414,9 +4926,7 @@ impl std::error::Error for GetEvidenceFoldersByAssessmentControlError {
             GetEvidenceFoldersByAssessmentControlErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            GetEvidenceFoldersByAssessmentControlErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            GetEvidenceFoldersByAssessmentControlErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4430,6 +4940,14 @@ pub struct GetInsightsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetInsightsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetInsightsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetInsights` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4438,8 +4956,15 @@ pub enum GetInsightsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetInsightsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4467,7 +4992,7 @@ impl GetInsightsError {
     /// Creates the `GetInsightsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetInsightsErrorKind::Unhandled(err.into()),
+            kind: GetInsightsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4476,7 +5001,7 @@ impl GetInsightsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetInsightsErrorKind::Unhandled(err.into()),
+            kind: GetInsightsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4514,7 +5039,7 @@ impl std::error::Error for GetInsightsError {
         match &self.kind {
             GetInsightsErrorKind::AccessDeniedException(_inner) => Some(_inner),
             GetInsightsErrorKind::InternalServerException(_inner) => Some(_inner),
-            GetInsightsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetInsightsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4528,6 +5053,14 @@ pub struct GetInsightsByAssessmentError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetInsightsByAssessmentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetInsightsByAssessmentErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetInsightsByAssessment` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4540,8 +5073,15 @@ pub enum GetInsightsByAssessmentErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetInsightsByAssessmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4571,7 +5111,9 @@ impl GetInsightsByAssessmentError {
     /// Creates the `GetInsightsByAssessmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetInsightsByAssessmentErrorKind::Unhandled(err.into()),
+            kind: GetInsightsByAssessmentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4580,7 +5122,9 @@ impl GetInsightsByAssessmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetInsightsByAssessmentErrorKind::Unhandled(err.into()),
+            kind: GetInsightsByAssessmentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4640,7 +5184,7 @@ impl std::error::Error for GetInsightsByAssessmentError {
             GetInsightsByAssessmentErrorKind::InternalServerException(_inner) => Some(_inner),
             GetInsightsByAssessmentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetInsightsByAssessmentErrorKind::ValidationException(_inner) => Some(_inner),
-            GetInsightsByAssessmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetInsightsByAssessmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4654,6 +5198,16 @@ pub struct GetOrganizationAdminAccountError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetOrganizationAdminAccountError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetOrganizationAdminAccountErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetOrganizationAdminAccount` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4666,8 +5220,15 @@ pub enum GetOrganizationAdminAccountErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetOrganizationAdminAccountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4699,7 +5260,9 @@ impl GetOrganizationAdminAccountError {
     /// Creates the `GetOrganizationAdminAccountError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetOrganizationAdminAccountErrorKind::Unhandled(err.into()),
+            kind: GetOrganizationAdminAccountErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4708,7 +5271,9 @@ impl GetOrganizationAdminAccountError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetOrganizationAdminAccountErrorKind::Unhandled(err.into()),
+            kind: GetOrganizationAdminAccountErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4768,7 +5333,7 @@ impl std::error::Error for GetOrganizationAdminAccountError {
             GetOrganizationAdminAccountErrorKind::InternalServerException(_inner) => Some(_inner),
             GetOrganizationAdminAccountErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetOrganizationAdminAccountErrorKind::ValidationException(_inner) => Some(_inner),
-            GetOrganizationAdminAccountErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetOrganizationAdminAccountErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4782,6 +5347,14 @@ pub struct GetServicesInScopeError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetServicesInScopeError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetServicesInScopeErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetServicesInScope` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4792,8 +5365,15 @@ pub enum GetServicesInScopeErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetServicesInScopeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4822,7 +5402,7 @@ impl GetServicesInScopeError {
     /// Creates the `GetServicesInScopeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetServicesInScopeErrorKind::Unhandled(err.into()),
+            kind: GetServicesInScopeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4831,7 +5411,7 @@ impl GetServicesInScopeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetServicesInScopeErrorKind::Unhandled(err.into()),
+            kind: GetServicesInScopeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4883,7 +5463,7 @@ impl std::error::Error for GetServicesInScopeError {
             GetServicesInScopeErrorKind::AccessDeniedException(_inner) => Some(_inner),
             GetServicesInScopeErrorKind::InternalServerException(_inner) => Some(_inner),
             GetServicesInScopeErrorKind::ValidationException(_inner) => Some(_inner),
-            GetServicesInScopeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetServicesInScopeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4897,6 +5477,14 @@ pub struct GetSettingsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetSettingsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetSettingsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetSettings` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4905,8 +5493,15 @@ pub enum GetSettingsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSettingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4934,7 +5529,7 @@ impl GetSettingsError {
     /// Creates the `GetSettingsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetSettingsErrorKind::Unhandled(err.into()),
+            kind: GetSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4943,7 +5538,7 @@ impl GetSettingsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetSettingsErrorKind::Unhandled(err.into()),
+            kind: GetSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4981,7 +5576,7 @@ impl std::error::Error for GetSettingsError {
         match &self.kind {
             GetSettingsErrorKind::AccessDeniedException(_inner) => Some(_inner),
             GetSettingsErrorKind::InternalServerException(_inner) => Some(_inner),
-            GetSettingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetSettingsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4995,6 +5590,18 @@ pub struct ListAssessmentControlInsightsByControlDomainError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError
+    for ListAssessmentControlInsightsByControlDomainError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListAssessmentControlInsightsByControlDomainErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListAssessmentControlInsightsByControlDomain` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5007,8 +5614,15 @@ pub enum ListAssessmentControlInsightsByControlDomainErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAssessmentControlInsightsByControlDomainError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5053,7 +5667,9 @@ impl ListAssessmentControlInsightsByControlDomainError {
     /// Creates the `ListAssessmentControlInsightsByControlDomainError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAssessmentControlInsightsByControlDomainErrorKind::Unhandled(err.into()),
+            kind: ListAssessmentControlInsightsByControlDomainErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -5062,7 +5678,9 @@ impl ListAssessmentControlInsightsByControlDomainError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAssessmentControlInsightsByControlDomainErrorKind::Unhandled(err.into()),
+            kind: ListAssessmentControlInsightsByControlDomainErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -5131,7 +5749,7 @@ impl std::error::Error for ListAssessmentControlInsightsByControlDomainError {
                 Some(_inner)
             }
             ListAssessmentControlInsightsByControlDomainErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -5146,6 +5764,16 @@ pub struct ListAssessmentFrameworksError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListAssessmentFrameworksError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListAssessmentFrameworksErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListAssessmentFrameworks` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5156,8 +5784,15 @@ pub enum ListAssessmentFrameworksErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAssessmentFrameworksError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5186,7 +5821,9 @@ impl ListAssessmentFrameworksError {
     /// Creates the `ListAssessmentFrameworksError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAssessmentFrameworksErrorKind::Unhandled(err.into()),
+            kind: ListAssessmentFrameworksErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5195,7 +5832,9 @@ impl ListAssessmentFrameworksError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAssessmentFrameworksErrorKind::Unhandled(err.into()),
+            kind: ListAssessmentFrameworksErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5247,7 +5886,7 @@ impl std::error::Error for ListAssessmentFrameworksError {
             ListAssessmentFrameworksErrorKind::AccessDeniedException(_inner) => Some(_inner),
             ListAssessmentFrameworksErrorKind::InternalServerException(_inner) => Some(_inner),
             ListAssessmentFrameworksErrorKind::ValidationException(_inner) => Some(_inner),
-            ListAssessmentFrameworksErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAssessmentFrameworksErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5261,6 +5900,16 @@ pub struct ListAssessmentFrameworkShareRequestsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListAssessmentFrameworkShareRequestsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListAssessmentFrameworkShareRequestsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListAssessmentFrameworkShareRequests` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5271,8 +5920,15 @@ pub enum ListAssessmentFrameworkShareRequestsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAssessmentFrameworkShareRequestsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5310,7 +5966,9 @@ impl ListAssessmentFrameworkShareRequestsError {
     /// Creates the `ListAssessmentFrameworkShareRequestsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAssessmentFrameworkShareRequestsErrorKind::Unhandled(err.into()),
+            kind: ListAssessmentFrameworkShareRequestsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -5319,7 +5977,9 @@ impl ListAssessmentFrameworkShareRequestsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAssessmentFrameworkShareRequestsErrorKind::Unhandled(err.into()),
+            kind: ListAssessmentFrameworkShareRequestsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -5377,9 +6037,7 @@ impl std::error::Error for ListAssessmentFrameworkShareRequestsError {
             ListAssessmentFrameworkShareRequestsErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            ListAssessmentFrameworkShareRequestsErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            ListAssessmentFrameworkShareRequestsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5393,6 +6051,14 @@ pub struct ListAssessmentReportsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListAssessmentReportsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListAssessmentReportsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListAssessmentReports` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5403,8 +6069,15 @@ pub enum ListAssessmentReportsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAssessmentReportsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5433,7 +6106,9 @@ impl ListAssessmentReportsError {
     /// Creates the `ListAssessmentReportsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAssessmentReportsErrorKind::Unhandled(err.into()),
+            kind: ListAssessmentReportsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5442,7 +6117,9 @@ impl ListAssessmentReportsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAssessmentReportsErrorKind::Unhandled(err.into()),
+            kind: ListAssessmentReportsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5494,7 +6171,7 @@ impl std::error::Error for ListAssessmentReportsError {
             ListAssessmentReportsErrorKind::AccessDeniedException(_inner) => Some(_inner),
             ListAssessmentReportsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListAssessmentReportsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListAssessmentReportsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAssessmentReportsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5508,6 +6185,14 @@ pub struct ListAssessmentsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListAssessmentsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListAssessmentsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListAssessments` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5518,8 +6203,15 @@ pub enum ListAssessmentsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAssessmentsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5548,7 +6240,7 @@ impl ListAssessmentsError {
     /// Creates the `ListAssessmentsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAssessmentsErrorKind::Unhandled(err.into()),
+            kind: ListAssessmentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5557,7 +6249,7 @@ impl ListAssessmentsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAssessmentsErrorKind::Unhandled(err.into()),
+            kind: ListAssessmentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5606,7 +6298,7 @@ impl std::error::Error for ListAssessmentsError {
             ListAssessmentsErrorKind::AccessDeniedException(_inner) => Some(_inner),
             ListAssessmentsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListAssessmentsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListAssessmentsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAssessmentsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5620,6 +6312,16 @@ pub struct ListControlDomainInsightsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListControlDomainInsightsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListControlDomainInsightsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListControlDomainInsights` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5632,8 +6334,15 @@ pub enum ListControlDomainInsightsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListControlDomainInsightsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5663,7 +6372,9 @@ impl ListControlDomainInsightsError {
     /// Creates the `ListControlDomainInsightsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListControlDomainInsightsErrorKind::Unhandled(err.into()),
+            kind: ListControlDomainInsightsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5672,7 +6383,9 @@ impl ListControlDomainInsightsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListControlDomainInsightsErrorKind::Unhandled(err.into()),
+            kind: ListControlDomainInsightsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5732,7 +6445,7 @@ impl std::error::Error for ListControlDomainInsightsError {
             ListControlDomainInsightsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListControlDomainInsightsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListControlDomainInsightsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListControlDomainInsightsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListControlDomainInsightsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5746,6 +6459,16 @@ pub struct ListControlDomainInsightsByAssessmentError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListControlDomainInsightsByAssessmentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListControlDomainInsightsByAssessmentErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListControlDomainInsightsByAssessment` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5758,8 +6481,15 @@ pub enum ListControlDomainInsightsByAssessmentErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListControlDomainInsightsByAssessmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5800,7 +6530,9 @@ impl ListControlDomainInsightsByAssessmentError {
     /// Creates the `ListControlDomainInsightsByAssessmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListControlDomainInsightsByAssessmentErrorKind::Unhandled(err.into()),
+            kind: ListControlDomainInsightsByAssessmentErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -5809,7 +6541,9 @@ impl ListControlDomainInsightsByAssessmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListControlDomainInsightsByAssessmentErrorKind::Unhandled(err.into()),
+            kind: ListControlDomainInsightsByAssessmentErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -5877,9 +6611,7 @@ impl std::error::Error for ListControlDomainInsightsByAssessmentError {
             ListControlDomainInsightsByAssessmentErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            ListControlDomainInsightsByAssessmentErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            ListControlDomainInsightsByAssessmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5893,6 +6625,16 @@ pub struct ListControlInsightsByControlDomainError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListControlInsightsByControlDomainError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListControlInsightsByControlDomainErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListControlInsightsByControlDomain` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5905,8 +6647,15 @@ pub enum ListControlInsightsByControlDomainErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListControlInsightsByControlDomainError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5947,7 +6696,9 @@ impl ListControlInsightsByControlDomainError {
     /// Creates the `ListControlInsightsByControlDomainError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListControlInsightsByControlDomainErrorKind::Unhandled(err.into()),
+            kind: ListControlInsightsByControlDomainErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -5956,7 +6707,9 @@ impl ListControlInsightsByControlDomainError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListControlInsightsByControlDomainErrorKind::Unhandled(err.into()),
+            kind: ListControlInsightsByControlDomainErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -6024,7 +6777,7 @@ impl std::error::Error for ListControlInsightsByControlDomainError {
             ListControlInsightsByControlDomainErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            ListControlInsightsByControlDomainErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListControlInsightsByControlDomainErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6038,6 +6791,14 @@ pub struct ListControlsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListControlsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListControlsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListControls` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6048,8 +6809,15 @@ pub enum ListControlsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListControlsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6078,7 +6846,7 @@ impl ListControlsError {
     /// Creates the `ListControlsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListControlsErrorKind::Unhandled(err.into()),
+            kind: ListControlsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6087,7 +6855,7 @@ impl ListControlsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListControlsErrorKind::Unhandled(err.into()),
+            kind: ListControlsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6133,7 +6901,7 @@ impl std::error::Error for ListControlsError {
             ListControlsErrorKind::AccessDeniedException(_inner) => Some(_inner),
             ListControlsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListControlsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListControlsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListControlsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6147,6 +6915,16 @@ pub struct ListKeywordsForDataSourceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListKeywordsForDataSourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListKeywordsForDataSourceErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListKeywordsForDataSource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6157,8 +6935,15 @@ pub enum ListKeywordsForDataSourceErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListKeywordsForDataSourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6187,7 +6972,9 @@ impl ListKeywordsForDataSourceError {
     /// Creates the `ListKeywordsForDataSourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListKeywordsForDataSourceErrorKind::Unhandled(err.into()),
+            kind: ListKeywordsForDataSourceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6196,7 +6983,9 @@ impl ListKeywordsForDataSourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListKeywordsForDataSourceErrorKind::Unhandled(err.into()),
+            kind: ListKeywordsForDataSourceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6248,7 +7037,7 @@ impl std::error::Error for ListKeywordsForDataSourceError {
             ListKeywordsForDataSourceErrorKind::AccessDeniedException(_inner) => Some(_inner),
             ListKeywordsForDataSourceErrorKind::InternalServerException(_inner) => Some(_inner),
             ListKeywordsForDataSourceErrorKind::ValidationException(_inner) => Some(_inner),
-            ListKeywordsForDataSourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListKeywordsForDataSourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6262,6 +7051,14 @@ pub struct ListNotificationsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListNotificationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListNotificationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListNotifications` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6272,8 +7069,15 @@ pub enum ListNotificationsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListNotificationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6302,7 +7106,7 @@ impl ListNotificationsError {
     /// Creates the `ListNotificationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListNotificationsErrorKind::Unhandled(err.into()),
+            kind: ListNotificationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6311,7 +7115,7 @@ impl ListNotificationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListNotificationsErrorKind::Unhandled(err.into()),
+            kind: ListNotificationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6363,7 +7167,7 @@ impl std::error::Error for ListNotificationsError {
             ListNotificationsErrorKind::AccessDeniedException(_inner) => Some(_inner),
             ListNotificationsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListNotificationsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListNotificationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListNotificationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6377,6 +7181,14 @@ pub struct ListTagsForResourceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListTagsForResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListTagsForResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6387,8 +7199,15 @@ pub enum ListTagsForResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6417,7 +7236,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6426,7 +7245,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6478,7 +7297,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::InternalServerException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6491,6 +7310,14 @@ pub struct RegisterAccountError {
     pub kind: RegisterAccountErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for RegisterAccountError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RegisterAccountErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `RegisterAccount` operation.
 #[non_exhaustive]
@@ -6506,8 +7333,15 @@ pub enum RegisterAccountErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RegisterAccountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6538,7 +7372,7 @@ impl RegisterAccountError {
     /// Creates the `RegisterAccountError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RegisterAccountErrorKind::Unhandled(err.into()),
+            kind: RegisterAccountErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6547,7 +7381,7 @@ impl RegisterAccountError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RegisterAccountErrorKind::Unhandled(err.into()),
+            kind: RegisterAccountErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6609,7 +7443,7 @@ impl std::error::Error for RegisterAccountError {
             RegisterAccountErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             RegisterAccountErrorKind::ThrottlingException(_inner) => Some(_inner),
             RegisterAccountErrorKind::ValidationException(_inner) => Some(_inner),
-            RegisterAccountErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RegisterAccountErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6623,6 +7457,16 @@ pub struct RegisterOrganizationAdminAccountError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for RegisterOrganizationAdminAccountError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RegisterOrganizationAdminAccountErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `RegisterOrganizationAdminAccount` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6635,8 +7479,15 @@ pub enum RegisterOrganizationAdminAccountErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RegisterOrganizationAdminAccountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6675,7 +7526,9 @@ impl RegisterOrganizationAdminAccountError {
     /// Creates the `RegisterOrganizationAdminAccountError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RegisterOrganizationAdminAccountErrorKind::Unhandled(err.into()),
+            kind: RegisterOrganizationAdminAccountErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -6684,7 +7537,9 @@ impl RegisterOrganizationAdminAccountError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RegisterOrganizationAdminAccountErrorKind::Unhandled(err.into()),
+            kind: RegisterOrganizationAdminAccountErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -6750,7 +7605,7 @@ impl std::error::Error for RegisterOrganizationAdminAccountError {
                 Some(_inner)
             }
             RegisterOrganizationAdminAccountErrorKind::ValidationException(_inner) => Some(_inner),
-            RegisterOrganizationAdminAccountErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RegisterOrganizationAdminAccountErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6764,6 +7619,16 @@ pub struct StartAssessmentFrameworkShareError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for StartAssessmentFrameworkShareError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StartAssessmentFrameworkShareErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `StartAssessmentFrameworkShare` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6776,8 +7641,15 @@ pub enum StartAssessmentFrameworkShareErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartAssessmentFrameworkShareError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6814,7 +7686,9 @@ impl StartAssessmentFrameworkShareError {
     /// Creates the `StartAssessmentFrameworkShareError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartAssessmentFrameworkShareErrorKind::Unhandled(err.into()),
+            kind: StartAssessmentFrameworkShareErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6823,7 +7697,9 @@ impl StartAssessmentFrameworkShareError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartAssessmentFrameworkShareErrorKind::Unhandled(err.into()),
+            kind: StartAssessmentFrameworkShareErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6885,7 +7761,7 @@ impl std::error::Error for StartAssessmentFrameworkShareError {
                 Some(_inner)
             }
             StartAssessmentFrameworkShareErrorKind::ValidationException(_inner) => Some(_inner),
-            StartAssessmentFrameworkShareErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartAssessmentFrameworkShareErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6899,6 +7775,14 @@ pub struct TagResourceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for TagResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `TagResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6909,8 +7793,15 @@ pub enum TagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6939,7 +7830,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6948,7 +7839,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6994,7 +7885,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::InternalServerException(_inner) => Some(_inner),
             TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7008,6 +7899,14 @@ pub struct UntagResourceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UntagResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UntagResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7018,8 +7917,15 @@ pub enum UntagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7048,7 +7954,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7057,7 +7963,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7106,7 +8012,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::InternalServerException(_inner) => Some(_inner),
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7120,6 +8026,14 @@ pub struct UpdateAssessmentError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UpdateAssessmentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateAssessmentErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UpdateAssessment` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7132,8 +8046,15 @@ pub enum UpdateAssessmentErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAssessmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7163,7 +8084,7 @@ impl UpdateAssessmentError {
     /// Creates the `UpdateAssessmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateAssessmentErrorKind::Unhandled(err.into()),
+            kind: UpdateAssessmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7172,7 +8093,7 @@ impl UpdateAssessmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateAssessmentErrorKind::Unhandled(err.into()),
+            kind: UpdateAssessmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7232,7 +8153,7 @@ impl std::error::Error for UpdateAssessmentError {
             UpdateAssessmentErrorKind::InternalServerException(_inner) => Some(_inner),
             UpdateAssessmentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateAssessmentErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateAssessmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateAssessmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7246,6 +8167,14 @@ pub struct UpdateAssessmentControlError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UpdateAssessmentControlError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateAssessmentControlErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UpdateAssessmentControl` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7258,8 +8187,15 @@ pub enum UpdateAssessmentControlErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAssessmentControlError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7289,7 +8225,9 @@ impl UpdateAssessmentControlError {
     /// Creates the `UpdateAssessmentControlError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateAssessmentControlErrorKind::Unhandled(err.into()),
+            kind: UpdateAssessmentControlErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7298,7 +8236,9 @@ impl UpdateAssessmentControlError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateAssessmentControlErrorKind::Unhandled(err.into()),
+            kind: UpdateAssessmentControlErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7358,7 +8298,7 @@ impl std::error::Error for UpdateAssessmentControlError {
             UpdateAssessmentControlErrorKind::InternalServerException(_inner) => Some(_inner),
             UpdateAssessmentControlErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateAssessmentControlErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateAssessmentControlErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateAssessmentControlErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7372,6 +8312,16 @@ pub struct UpdateAssessmentControlSetStatusError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UpdateAssessmentControlSetStatusError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateAssessmentControlSetStatusErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UpdateAssessmentControlSetStatus` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7384,8 +8334,15 @@ pub enum UpdateAssessmentControlSetStatusErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAssessmentControlSetStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7424,7 +8381,9 @@ impl UpdateAssessmentControlSetStatusError {
     /// Creates the `UpdateAssessmentControlSetStatusError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateAssessmentControlSetStatusErrorKind::Unhandled(err.into()),
+            kind: UpdateAssessmentControlSetStatusErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -7433,7 +8392,9 @@ impl UpdateAssessmentControlSetStatusError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateAssessmentControlSetStatusErrorKind::Unhandled(err.into()),
+            kind: UpdateAssessmentControlSetStatusErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -7499,7 +8460,7 @@ impl std::error::Error for UpdateAssessmentControlSetStatusError {
                 Some(_inner)
             }
             UpdateAssessmentControlSetStatusErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateAssessmentControlSetStatusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateAssessmentControlSetStatusErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7513,6 +8474,16 @@ pub struct UpdateAssessmentFrameworkError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UpdateAssessmentFrameworkError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateAssessmentFrameworkErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UpdateAssessmentFramework` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7525,8 +8496,15 @@ pub enum UpdateAssessmentFrameworkErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAssessmentFrameworkError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7556,7 +8534,9 @@ impl UpdateAssessmentFrameworkError {
     /// Creates the `UpdateAssessmentFrameworkError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateAssessmentFrameworkErrorKind::Unhandled(err.into()),
+            kind: UpdateAssessmentFrameworkErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7565,7 +8545,9 @@ impl UpdateAssessmentFrameworkError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateAssessmentFrameworkErrorKind::Unhandled(err.into()),
+            kind: UpdateAssessmentFrameworkErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7625,7 +8607,7 @@ impl std::error::Error for UpdateAssessmentFrameworkError {
             UpdateAssessmentFrameworkErrorKind::InternalServerException(_inner) => Some(_inner),
             UpdateAssessmentFrameworkErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateAssessmentFrameworkErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateAssessmentFrameworkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateAssessmentFrameworkErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7639,6 +8621,16 @@ pub struct UpdateAssessmentFrameworkShareError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UpdateAssessmentFrameworkShareError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateAssessmentFrameworkShareErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UpdateAssessmentFrameworkShare` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7651,8 +8643,15 @@ pub enum UpdateAssessmentFrameworkShareErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAssessmentFrameworkShareError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7689,7 +8688,9 @@ impl UpdateAssessmentFrameworkShareError {
     /// Creates the `UpdateAssessmentFrameworkShareError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateAssessmentFrameworkShareErrorKind::Unhandled(err.into()),
+            kind: UpdateAssessmentFrameworkShareErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7698,7 +8699,9 @@ impl UpdateAssessmentFrameworkShareError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateAssessmentFrameworkShareErrorKind::Unhandled(err.into()),
+            kind: UpdateAssessmentFrameworkShareErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7762,7 +8765,7 @@ impl std::error::Error for UpdateAssessmentFrameworkShareError {
                 Some(_inner)
             }
             UpdateAssessmentFrameworkShareErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateAssessmentFrameworkShareErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateAssessmentFrameworkShareErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7775,6 +8778,14 @@ pub struct UpdateAssessmentStatusError {
     pub kind: UpdateAssessmentStatusErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateAssessmentStatusError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateAssessmentStatusErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateAssessmentStatus` operation.
 #[non_exhaustive]
@@ -7790,8 +8801,15 @@ pub enum UpdateAssessmentStatusErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAssessmentStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7822,7 +8840,9 @@ impl UpdateAssessmentStatusError {
     /// Creates the `UpdateAssessmentStatusError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateAssessmentStatusErrorKind::Unhandled(err.into()),
+            kind: UpdateAssessmentStatusErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7831,7 +8851,9 @@ impl UpdateAssessmentStatusError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateAssessmentStatusErrorKind::Unhandled(err.into()),
+            kind: UpdateAssessmentStatusErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7899,7 +8921,7 @@ impl std::error::Error for UpdateAssessmentStatusError {
             UpdateAssessmentStatusErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateAssessmentStatusErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             UpdateAssessmentStatusErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateAssessmentStatusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateAssessmentStatusErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7913,6 +8935,14 @@ pub struct UpdateControlError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UpdateControlError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateControlErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UpdateControl` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7925,8 +8955,15 @@ pub enum UpdateControlErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateControlError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7956,7 +8993,7 @@ impl UpdateControlError {
     /// Creates the `UpdateControlError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateControlErrorKind::Unhandled(err.into()),
+            kind: UpdateControlErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7965,7 +9002,7 @@ impl UpdateControlError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateControlErrorKind::Unhandled(err.into()),
+            kind: UpdateControlErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8019,7 +9056,7 @@ impl std::error::Error for UpdateControlError {
             UpdateControlErrorKind::InternalServerException(_inner) => Some(_inner),
             UpdateControlErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateControlErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateControlErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateControlErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8033,6 +9070,14 @@ pub struct UpdateSettingsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UpdateSettingsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateSettingsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UpdateSettings` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8043,8 +9088,15 @@ pub enum UpdateSettingsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateSettingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8073,7 +9125,7 @@ impl UpdateSettingsError {
     /// Creates the `UpdateSettingsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateSettingsErrorKind::Unhandled(err.into()),
+            kind: UpdateSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8082,7 +9134,7 @@ impl UpdateSettingsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateSettingsErrorKind::Unhandled(err.into()),
+            kind: UpdateSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8131,7 +9183,7 @@ impl std::error::Error for UpdateSettingsError {
             UpdateSettingsErrorKind::AccessDeniedException(_inner) => Some(_inner),
             UpdateSettingsErrorKind::InternalServerException(_inner) => Some(_inner),
             UpdateSettingsErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateSettingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateSettingsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8145,6 +9197,16 @@ pub struct ValidateAssessmentReportIntegrityError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ValidateAssessmentReportIntegrityError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ValidateAssessmentReportIntegrityErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ValidateAssessmentReportIntegrity` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8157,8 +9219,15 @@ pub enum ValidateAssessmentReportIntegrityErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ValidateAssessmentReportIntegrityError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8199,7 +9268,9 @@ impl ValidateAssessmentReportIntegrityError {
     /// Creates the `ValidateAssessmentReportIntegrityError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ValidateAssessmentReportIntegrityErrorKind::Unhandled(err.into()),
+            kind: ValidateAssessmentReportIntegrityErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -8208,7 +9279,9 @@ impl ValidateAssessmentReportIntegrityError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ValidateAssessmentReportIntegrityErrorKind::Unhandled(err.into()),
+            kind: ValidateAssessmentReportIntegrityErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -8274,7 +9347,35 @@ impl std::error::Error for ValidateAssessmentReportIntegrityError {
                 Some(_inner)
             }
             ValidateAssessmentReportIntegrityErrorKind::ValidationException(_inner) => Some(_inner),
-            ValidateAssessmentReportIntegrityErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ValidateAssessmentReportIntegrityErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+///
+/// When logging an error from the SDK, it is recommended that you either wrap the error in
+/// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+/// error reporter library that visits the error's cause/source chain, or call
+/// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

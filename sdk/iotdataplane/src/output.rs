@@ -2,7 +2,7 @@
 
 /// <p>The output from the UpdateThingShadow operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateThingShadowOutput {
     /// <p>The state information, in JSON format.</p>
     #[doc(hidden)]
@@ -14,18 +14,11 @@ impl UpdateThingShadowOutput {
         self.payload.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateThingShadowOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateThingShadowOutput");
-        formatter.field("payload", &self.payload);
-        formatter.finish()
-    }
-}
 /// See [`UpdateThingShadowOutput`](crate::output::UpdateThingShadowOutput).
 pub mod update_thing_shadow_output {
 
     /// A builder for [`UpdateThingShadowOutput`](crate::output::UpdateThingShadowOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) payload: std::option::Option<aws_smithy_types::Blob>,
     }
@@ -57,19 +50,13 @@ impl UpdateThingShadowOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublishOutput {}
-impl std::fmt::Debug for PublishOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublishOutput");
-        formatter.finish()
-    }
-}
 /// See [`PublishOutput`](crate::output::PublishOutput).
 pub mod publish_output {
 
     /// A builder for [`PublishOutput`](crate::output::PublishOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PublishOutput`](crate::output::PublishOutput).
@@ -87,7 +74,7 @@ impl PublishOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRetainedMessagesOutput {
     /// <p>A summary list the account's retained messages. The information returned doesn't include the message payloads of the retained messages.</p>
     #[doc(hidden)]
@@ -106,19 +93,11 @@ impl ListRetainedMessagesOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListRetainedMessagesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRetainedMessagesOutput");
-        formatter.field("retained_topics", &self.retained_topics);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListRetainedMessagesOutput`](crate::output::ListRetainedMessagesOutput).
 pub mod list_retained_messages_output {
 
     /// A builder for [`ListRetainedMessagesOutput`](crate::output::ListRetainedMessagesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) retained_topics:
             std::option::Option<std::vec::Vec<crate::model::RetainedMessageSummary>>,
@@ -172,7 +151,7 @@ impl ListRetainedMessagesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListNamedShadowsForThingOutput {
     /// <p>The list of shadows for the specified thing.</p>
     #[doc(hidden)]
@@ -198,20 +177,11 @@ impl ListNamedShadowsForThingOutput {
         self.timestamp
     }
 }
-impl std::fmt::Debug for ListNamedShadowsForThingOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListNamedShadowsForThingOutput");
-        formatter.field("results", &self.results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.finish()
-    }
-}
 /// See [`ListNamedShadowsForThingOutput`](crate::output::ListNamedShadowsForThingOutput).
 pub mod list_named_shadows_for_thing_output {
 
     /// A builder for [`ListNamedShadowsForThingOutput`](crate::output::ListNamedShadowsForThingOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) results: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -276,7 +246,7 @@ impl ListNamedShadowsForThingOutput {
 
 /// <p>The output from the GetThingShadow operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetThingShadowOutput {
     /// <p>The state information, in JSON format.</p>
     #[doc(hidden)]
@@ -288,18 +258,11 @@ impl GetThingShadowOutput {
         self.payload.as_ref()
     }
 }
-impl std::fmt::Debug for GetThingShadowOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetThingShadowOutput");
-        formatter.field("payload", &self.payload);
-        formatter.finish()
-    }
-}
 /// See [`GetThingShadowOutput`](crate::output::GetThingShadowOutput).
 pub mod get_thing_shadow_output {
 
     /// A builder for [`GetThingShadowOutput`](crate::output::GetThingShadowOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) payload: std::option::Option<aws_smithy_types::Blob>,
     }
@@ -331,7 +294,7 @@ impl GetThingShadowOutput {
 
 /// <p>The output from the GetRetainedMessage operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRetainedMessageOutput {
     /// <p>The topic name to which the retained message was published.</p>
     #[doc(hidden)]
@@ -364,21 +327,11 @@ impl GetRetainedMessageOutput {
         self.last_modified_time
     }
 }
-impl std::fmt::Debug for GetRetainedMessageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRetainedMessageOutput");
-        formatter.field("topic", &self.topic);
-        formatter.field("payload", &self.payload);
-        formatter.field("qos", &self.qos);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.finish()
-    }
-}
 /// See [`GetRetainedMessageOutput`](crate::output::GetRetainedMessageOutput).
 pub mod get_retained_message_output {
 
     /// A builder for [`GetRetainedMessageOutput`](crate::output::GetRetainedMessageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic: std::option::Option<std::string::String>,
         pub(crate) payload: std::option::Option<aws_smithy_types::Blob>,
@@ -446,7 +399,7 @@ impl GetRetainedMessageOutput {
 
 /// <p>The output from the DeleteThingShadow operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteThingShadowOutput {
     /// <p>The state information, in JSON format.</p>
     #[doc(hidden)]
@@ -458,18 +411,11 @@ impl DeleteThingShadowOutput {
         self.payload.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteThingShadowOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteThingShadowOutput");
-        formatter.field("payload", &self.payload);
-        formatter.finish()
-    }
-}
 /// See [`DeleteThingShadowOutput`](crate::output::DeleteThingShadowOutput).
 pub mod delete_thing_shadow_output {
 
     /// A builder for [`DeleteThingShadowOutput`](crate::output::DeleteThingShadowOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) payload: std::option::Option<aws_smithy_types::Blob>,
     }

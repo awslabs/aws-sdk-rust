@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_create_environment_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateEnvironmentInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.data_bundles {
         let mut array_2 = object.key("dataBundles").start_array();
         for item_3 in var_1 {
@@ -19,6 +19,7 @@ pub fn serialize_structure_crate_input_create_environment_input(
         object.key("federationMode").string(var_5.as_str());
     }
     if let Some(var_6) = &input.federation_parameters {
+        #[allow(unused_mut)]
         let mut object_7 = object.key("federationParameters").start_object();
         crate::json_ser::serialize_structure_crate_model_federation_parameters(
             &mut object_7,
@@ -33,6 +34,7 @@ pub fn serialize_structure_crate_input_create_environment_input(
         object.key("name").string(var_9.as_str());
     }
     if let Some(var_10) = &input.superuser_parameters {
+        #[allow(unused_mut)]
         let mut object_11 = object.key("superuserParameters").start_object();
         crate::json_ser::serialize_structure_crate_model_superuser_parameters(
             &mut object_11,
@@ -41,10 +43,11 @@ pub fn serialize_structure_crate_input_create_environment_input(
         object_11.finish();
     }
     if let Some(var_12) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_13 = object.key("tags").start_object();
         for (key_14, value_15) in var_12 {
             {
-                object_13.key(key_14).string(value_15.as_str());
+                object_13.key(key_14.as_str()).string(value_15.as_str());
             }
         }
         object_13.finish();
@@ -55,12 +58,13 @@ pub fn serialize_structure_crate_input_create_environment_input(
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_16) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_17 = object.key("tags").start_object();
         for (key_18, value_19) in var_16 {
             {
-                object_17.key(key_18).string(value_19.as_str());
+                object_17.key(key_18.as_str()).string(value_19.as_str());
             }
         }
         object_17.finish();
@@ -71,7 +75,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_input_update_environment_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateEnvironmentInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_20) = &input.description {
         object.key("description").string(var_20.as_str());
     }
@@ -79,6 +83,7 @@ pub fn serialize_structure_crate_input_update_environment_input(
         object.key("federationMode").string(var_21.as_str());
     }
     if let Some(var_22) = &input.federation_parameters {
+        #[allow(unused_mut)]
         let mut object_23 = object.key("federationParameters").start_object();
         crate::json_ser::serialize_structure_crate_model_federation_parameters(
             &mut object_23,
@@ -95,7 +100,7 @@ pub fn serialize_structure_crate_input_update_environment_input(
 pub fn serialize_structure_crate_model_federation_parameters(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::FederationParameters,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_25) = &input.saml_metadata_document {
         object.key("samlMetadataDocument").string(var_25.as_str());
     }
@@ -112,10 +117,11 @@ pub fn serialize_structure_crate_model_federation_parameters(
         object.key("federationProviderName").string(var_29.as_str());
     }
     if let Some(var_30) = &input.attribute_map {
+        #[allow(unused_mut)]
         let mut object_31 = object.key("attributeMap").start_object();
         for (key_32, value_33) in var_30 {
             {
-                object_31.key(key_32).string(value_33.as_str());
+                object_31.key(key_32.as_str()).string(value_33.as_str());
             }
         }
         object_31.finish();
@@ -126,7 +132,7 @@ pub fn serialize_structure_crate_model_federation_parameters(
 pub fn serialize_structure_crate_model_superuser_parameters(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SuperuserParameters,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_34) = &input.email_address {
         object.key("emailAddress").string(var_34.as_str());
     }

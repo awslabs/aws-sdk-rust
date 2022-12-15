@@ -2,7 +2,7 @@
 
 /// <p>The client is not currently authorized to make the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnauthorizedClientException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -17,17 +17,9 @@ impl UnauthorizedClientException {
         self.code.as_ref()
     }
 }
-impl std::fmt::Debug for UnauthorizedClientException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnauthorizedClientException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl UnauthorizedClientException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -35,7 +27,9 @@ impl std::fmt::Display for UnauthorizedClientException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnauthorizedClientException")?;
         if let Some(inner_1) = &self.message {
-            write!(f, ": {}", inner_1)?;
+            {
+                write!(f, ": {}", inner_1)?;
+            }
         }
         Ok(())
     }
@@ -45,7 +39,7 @@ impl std::error::Error for UnauthorizedClientException {}
 pub mod unauthorized_client_exception {
 
     /// A builder for [`UnauthorizedClientException`](crate::error::UnauthorizedClientException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<crate::model::ErrorCode>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -89,7 +83,7 @@ impl UnauthorizedClientException {
 
 /// <p>The client exceeded its request rate limit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThrottledClientException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -104,17 +98,9 @@ impl ThrottledClientException {
         self.code.as_ref()
     }
 }
-impl std::fmt::Debug for ThrottledClientException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThrottledClientException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ThrottledClientException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -122,7 +108,9 @@ impl std::fmt::Display for ThrottledClientException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ThrottledClientException")?;
         if let Some(inner_2) = &self.message {
-            write!(f, ": {}", inner_2)?;
+            {
+                write!(f, ": {}", inner_2)?;
+            }
         }
         Ok(())
     }
@@ -132,7 +120,7 @@ impl std::error::Error for ThrottledClientException {}
 pub mod throttled_client_exception {
 
     /// A builder for [`ThrottledClientException`](crate::error::ThrottledClientException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<crate::model::ErrorCode>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -176,7 +164,7 @@ impl ThrottledClientException {
 
 /// <p>The service is currently unavailable.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceUnavailableException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -191,17 +179,9 @@ impl ServiceUnavailableException {
         self.code.as_ref()
     }
 }
-impl std::fmt::Debug for ServiceUnavailableException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceUnavailableException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ServiceUnavailableException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -209,7 +189,9 @@ impl std::fmt::Display for ServiceUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceUnavailableException")?;
         if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+            {
+                write!(f, ": {}", inner_3)?;
+            }
         }
         Ok(())
     }
@@ -219,7 +201,7 @@ impl std::error::Error for ServiceUnavailableException {}
 pub mod service_unavailable_exception {
 
     /// A builder for [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<crate::model::ErrorCode>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -263,7 +245,7 @@ impl ServiceUnavailableException {
 
 /// <p>The service encountered an unexpected error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceFailureException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -278,17 +260,9 @@ impl ServiceFailureException {
         self.code.as_ref()
     }
 }
-impl std::fmt::Debug for ServiceFailureException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceFailureException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ServiceFailureException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -296,7 +270,9 @@ impl std::fmt::Display for ServiceFailureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceFailureException")?;
         if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+            {
+                write!(f, ": {}", inner_4)?;
+            }
         }
         Ok(())
     }
@@ -306,7 +282,7 @@ impl std::error::Error for ServiceFailureException {}
 pub mod service_failure_exception {
 
     /// A builder for [`ServiceFailureException`](crate::error::ServiceFailureException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<crate::model::ErrorCode>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -350,7 +326,7 @@ impl ServiceFailureException {
 
 /// <p>The client is permanently forbidden from making the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ForbiddenException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -365,17 +341,9 @@ impl ForbiddenException {
         self.code.as_ref()
     }
 }
-impl std::fmt::Debug for ForbiddenException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ForbiddenException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ForbiddenException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -383,7 +351,9 @@ impl std::fmt::Display for ForbiddenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ForbiddenException")?;
         if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+            {
+                write!(f, ": {}", inner_5)?;
+            }
         }
         Ok(())
     }
@@ -393,7 +363,7 @@ impl std::error::Error for ForbiddenException {}
 pub mod forbidden_exception {
 
     /// A builder for [`ForbiddenException`](crate::error::ForbiddenException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<crate::model::ErrorCode>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -437,7 +407,7 @@ impl ForbiddenException {
 
 /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -452,17 +422,9 @@ impl ConflictException {
         self.code.as_ref()
     }
 }
-impl std::fmt::Debug for ConflictException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConflictException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -470,7 +432,9 @@ impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
         if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+            {
+                write!(f, ": {}", inner_6)?;
+            }
         }
         Ok(())
     }
@@ -480,7 +444,7 @@ impl std::error::Error for ConflictException {}
 pub mod conflict_exception {
 
     /// A builder for [`ConflictException`](crate::error::ConflictException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<crate::model::ErrorCode>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -524,7 +488,7 @@ impl ConflictException {
 
 /// <p>The input parameters don't match the service's restrictions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BadRequestException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -539,17 +503,9 @@ impl BadRequestException {
         self.code.as_ref()
     }
 }
-impl std::fmt::Debug for BadRequestException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BadRequestException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl BadRequestException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -557,7 +513,9 @@ impl std::fmt::Display for BadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BadRequestException")?;
         if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
+            {
+                write!(f, ": {}", inner_7)?;
+            }
         }
         Ok(())
     }
@@ -567,7 +525,7 @@ impl std::error::Error for BadRequestException {}
 pub mod bad_request_exception {
 
     /// A builder for [`BadRequestException`](crate::error::BadRequestException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<crate::model::ErrorCode>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -611,7 +569,7 @@ impl BadRequestException {
 
 /// <p>The request exceeds the resource limit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -626,17 +584,9 @@ impl ResourceLimitExceededException {
         self.code.as_ref()
     }
 }
-impl std::fmt::Debug for ResourceLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceLimitExceededException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ResourceLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -644,7 +594,9 @@ impl std::fmt::Display for ResourceLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceLimitExceededException")?;
         if let Some(inner_8) = &self.message {
-            write!(f, ": {}", inner_8)?;
+            {
+                write!(f, ": {}", inner_8)?;
+            }
         }
         Ok(())
     }
@@ -654,7 +606,7 @@ impl std::error::Error for ResourceLimitExceededException {}
 pub mod resource_limit_exceeded_exception {
 
     /// A builder for [`ResourceLimitExceededException`](crate::error::ResourceLimitExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<crate::model::ErrorCode>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -698,7 +650,7 @@ impl ResourceLimitExceededException {
 
 /// <p>One or more of the resources in the request does not exist in the system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -713,17 +665,9 @@ impl NotFoundException {
         self.code.as_ref()
     }
 }
-impl std::fmt::Debug for NotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotFoundException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl NotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -731,7 +675,9 @@ impl std::fmt::Display for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NotFoundException")?;
         if let Some(inner_9) = &self.message {
-            write!(f, ": {}", inner_9)?;
+            {
+                write!(f, ": {}", inner_9)?;
+            }
         }
         Ok(())
     }
@@ -741,7 +687,7 @@ impl std::error::Error for NotFoundException {}
 pub mod not_found_exception {
 
     /// A builder for [`NotFoundException`](crate::error::NotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<crate::model::ErrorCode>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -792,6 +738,14 @@ pub struct AssociateChannelFlowError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for AssociateChannelFlowError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AssociateChannelFlowErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AssociateChannelFlow` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -812,8 +766,15 @@ pub enum AssociateChannelFlowErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateChannelFlowError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -847,7 +808,9 @@ impl AssociateChannelFlowError {
     /// Creates the `AssociateChannelFlowError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssociateChannelFlowErrorKind::Unhandled(err.into()),
+            kind: AssociateChannelFlowErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -856,7 +819,9 @@ impl AssociateChannelFlowError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssociateChannelFlowErrorKind::Unhandled(err.into()),
+            kind: AssociateChannelFlowErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -948,7 +913,7 @@ impl std::error::Error for AssociateChannelFlowError {
             AssociateChannelFlowErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             AssociateChannelFlowErrorKind::ThrottledClientException(_inner) => Some(_inner),
             AssociateChannelFlowErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            AssociateChannelFlowErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AssociateChannelFlowErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -961,6 +926,16 @@ pub struct BatchCreateChannelMembershipError {
     pub kind: BatchCreateChannelMembershipErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for BatchCreateChannelMembershipError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: BatchCreateChannelMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `BatchCreateChannelMembership` operation.
 #[non_exhaustive]
@@ -982,8 +957,15 @@ pub enum BatchCreateChannelMembershipErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchCreateChannelMembershipError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1025,7 +1007,9 @@ impl BatchCreateChannelMembershipError {
     /// Creates the `BatchCreateChannelMembershipError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchCreateChannelMembershipErrorKind::Unhandled(err.into()),
+            kind: BatchCreateChannelMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1034,7 +1018,9 @@ impl BatchCreateChannelMembershipError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchCreateChannelMembershipErrorKind::Unhandled(err.into()),
+            kind: BatchCreateChannelMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1132,7 +1118,7 @@ impl std::error::Error for BatchCreateChannelMembershipError {
             BatchCreateChannelMembershipErrorKind::UnauthorizedClientException(_inner) => {
                 Some(_inner)
             }
-            BatchCreateChannelMembershipErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchCreateChannelMembershipErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1145,6 +1131,14 @@ pub struct ChannelFlowCallbackError {
     pub kind: ChannelFlowCallbackErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ChannelFlowCallbackError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ChannelFlowCallbackErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ChannelFlowCallback` operation.
 #[non_exhaustive]
@@ -1164,8 +1158,15 @@ pub enum ChannelFlowCallbackErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ChannelFlowCallbackError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1198,7 +1199,7 @@ impl ChannelFlowCallbackError {
     /// Creates the `ChannelFlowCallbackError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ChannelFlowCallbackErrorKind::Unhandled(err.into()),
+            kind: ChannelFlowCallbackErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1207,7 +1208,7 @@ impl ChannelFlowCallbackError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ChannelFlowCallbackErrorKind::Unhandled(err.into()),
+            kind: ChannelFlowCallbackErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1291,7 +1292,7 @@ impl std::error::Error for ChannelFlowCallbackError {
             ChannelFlowCallbackErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ChannelFlowCallbackErrorKind::ThrottledClientException(_inner) => Some(_inner),
             ChannelFlowCallbackErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            ChannelFlowCallbackErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ChannelFlowCallbackErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1304,6 +1305,14 @@ pub struct CreateChannelError {
     pub kind: CreateChannelErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateChannelError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateChannelErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateChannel` operation.
 #[non_exhaustive]
@@ -1325,8 +1334,15 @@ pub enum CreateChannelErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateChannelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1360,7 +1376,7 @@ impl CreateChannelError {
     /// Creates the `CreateChannelError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateChannelErrorKind::Unhandled(err.into()),
+            kind: CreateChannelErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1369,7 +1385,7 @@ impl CreateChannelError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateChannelErrorKind::Unhandled(err.into()),
+            kind: CreateChannelErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1452,7 +1468,7 @@ impl std::error::Error for CreateChannelError {
             CreateChannelErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateChannelErrorKind::ThrottledClientException(_inner) => Some(_inner),
             CreateChannelErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            CreateChannelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateChannelErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1465,6 +1481,14 @@ pub struct CreateChannelBanError {
     pub kind: CreateChannelBanErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateChannelBanError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateChannelBanErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateChannelBan` operation.
 #[non_exhaustive]
@@ -1486,8 +1510,15 @@ pub enum CreateChannelBanErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateChannelBanError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1521,7 +1552,7 @@ impl CreateChannelBanError {
     /// Creates the `CreateChannelBanError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateChannelBanErrorKind::Unhandled(err.into()),
+            kind: CreateChannelBanErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1530,7 +1561,7 @@ impl CreateChannelBanError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateChannelBanErrorKind::Unhandled(err.into()),
+            kind: CreateChannelBanErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1616,7 +1647,7 @@ impl std::error::Error for CreateChannelBanError {
             CreateChannelBanErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateChannelBanErrorKind::ThrottledClientException(_inner) => Some(_inner),
             CreateChannelBanErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            CreateChannelBanErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateChannelBanErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1629,6 +1660,14 @@ pub struct CreateChannelFlowError {
     pub kind: CreateChannelFlowErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateChannelFlowError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateChannelFlowErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateChannelFlow` operation.
 #[non_exhaustive]
@@ -1650,8 +1689,15 @@ pub enum CreateChannelFlowErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateChannelFlowError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1685,7 +1731,7 @@ impl CreateChannelFlowError {
     /// Creates the `CreateChannelFlowError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateChannelFlowErrorKind::Unhandled(err.into()),
+            kind: CreateChannelFlowErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1694,7 +1740,7 @@ impl CreateChannelFlowError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateChannelFlowErrorKind::Unhandled(err.into()),
+            kind: CreateChannelFlowErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1783,7 +1829,7 @@ impl std::error::Error for CreateChannelFlowError {
             CreateChannelFlowErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateChannelFlowErrorKind::ThrottledClientException(_inner) => Some(_inner),
             CreateChannelFlowErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            CreateChannelFlowErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateChannelFlowErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1796,6 +1842,14 @@ pub struct CreateChannelMembershipError {
     pub kind: CreateChannelMembershipErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateChannelMembershipError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateChannelMembershipErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateChannelMembership` operation.
 #[non_exhaustive]
@@ -1819,8 +1873,15 @@ pub enum CreateChannelMembershipErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateChannelMembershipError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1857,7 +1918,9 @@ impl CreateChannelMembershipError {
     /// Creates the `CreateChannelMembershipError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateChannelMembershipErrorKind::Unhandled(err.into()),
+            kind: CreateChannelMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1866,7 +1929,9 @@ impl CreateChannelMembershipError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateChannelMembershipErrorKind::Unhandled(err.into()),
+            kind: CreateChannelMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1968,7 +2033,7 @@ impl std::error::Error for CreateChannelMembershipError {
             CreateChannelMembershipErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateChannelMembershipErrorKind::ThrottledClientException(_inner) => Some(_inner),
             CreateChannelMembershipErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            CreateChannelMembershipErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateChannelMembershipErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1981,6 +2046,14 @@ pub struct CreateChannelModeratorError {
     pub kind: CreateChannelModeratorErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateChannelModeratorError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateChannelModeratorErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateChannelModerator` operation.
 #[non_exhaustive]
@@ -2002,8 +2075,15 @@ pub enum CreateChannelModeratorErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateChannelModeratorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2039,7 +2119,9 @@ impl CreateChannelModeratorError {
     /// Creates the `CreateChannelModeratorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateChannelModeratorErrorKind::Unhandled(err.into()),
+            kind: CreateChannelModeratorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2048,7 +2130,9 @@ impl CreateChannelModeratorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateChannelModeratorErrorKind::Unhandled(err.into()),
+            kind: CreateChannelModeratorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2140,7 +2224,7 @@ impl std::error::Error for CreateChannelModeratorError {
             CreateChannelModeratorErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateChannelModeratorErrorKind::ThrottledClientException(_inner) => Some(_inner),
             CreateChannelModeratorErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            CreateChannelModeratorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateChannelModeratorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2153,6 +2237,14 @@ pub struct DeleteChannelError {
     pub kind: DeleteChannelErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteChannelError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteChannelErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteChannel` operation.
 #[non_exhaustive]
@@ -2170,8 +2262,15 @@ pub enum DeleteChannelErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteChannelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2203,7 +2302,7 @@ impl DeleteChannelError {
     /// Creates the `DeleteChannelError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteChannelErrorKind::Unhandled(err.into()),
+            kind: DeleteChannelErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2212,7 +2311,7 @@ impl DeleteChannelError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteChannelErrorKind::Unhandled(err.into()),
+            kind: DeleteChannelErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2282,7 +2381,7 @@ impl std::error::Error for DeleteChannelError {
             DeleteChannelErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteChannelErrorKind::ThrottledClientException(_inner) => Some(_inner),
             DeleteChannelErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            DeleteChannelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteChannelErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2295,6 +2394,14 @@ pub struct DeleteChannelBanError {
     pub kind: DeleteChannelBanErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteChannelBanError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteChannelBanErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteChannelBan` operation.
 #[non_exhaustive]
@@ -2312,8 +2419,15 @@ pub enum DeleteChannelBanErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteChannelBanError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2345,7 +2459,7 @@ impl DeleteChannelBanError {
     /// Creates the `DeleteChannelBanError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteChannelBanErrorKind::Unhandled(err.into()),
+            kind: DeleteChannelBanErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2354,7 +2468,7 @@ impl DeleteChannelBanError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteChannelBanErrorKind::Unhandled(err.into()),
+            kind: DeleteChannelBanErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2427,7 +2541,7 @@ impl std::error::Error for DeleteChannelBanError {
             DeleteChannelBanErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteChannelBanErrorKind::ThrottledClientException(_inner) => Some(_inner),
             DeleteChannelBanErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            DeleteChannelBanErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteChannelBanErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2440,6 +2554,14 @@ pub struct DeleteChannelFlowError {
     pub kind: DeleteChannelFlowErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteChannelFlowError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteChannelFlowErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteChannelFlow` operation.
 #[non_exhaustive]
@@ -2459,8 +2581,15 @@ pub enum DeleteChannelFlowErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteChannelFlowError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2493,7 +2622,7 @@ impl DeleteChannelFlowError {
     /// Creates the `DeleteChannelFlowError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteChannelFlowErrorKind::Unhandled(err.into()),
+            kind: DeleteChannelFlowErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2502,7 +2631,7 @@ impl DeleteChannelFlowError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteChannelFlowErrorKind::Unhandled(err.into()),
+            kind: DeleteChannelFlowErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2583,7 +2712,7 @@ impl std::error::Error for DeleteChannelFlowError {
             DeleteChannelFlowErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteChannelFlowErrorKind::ThrottledClientException(_inner) => Some(_inner),
             DeleteChannelFlowErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            DeleteChannelFlowErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteChannelFlowErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2596,6 +2725,14 @@ pub struct DeleteChannelMembershipError {
     pub kind: DeleteChannelMembershipErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteChannelMembershipError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteChannelMembershipErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteChannelMembership` operation.
 #[non_exhaustive]
@@ -2615,8 +2752,15 @@ pub enum DeleteChannelMembershipErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteChannelMembershipError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2649,7 +2793,9 @@ impl DeleteChannelMembershipError {
     /// Creates the `DeleteChannelMembershipError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteChannelMembershipErrorKind::Unhandled(err.into()),
+            kind: DeleteChannelMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2658,7 +2804,9 @@ impl DeleteChannelMembershipError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteChannelMembershipErrorKind::Unhandled(err.into()),
+            kind: DeleteChannelMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2742,7 +2890,7 @@ impl std::error::Error for DeleteChannelMembershipError {
             DeleteChannelMembershipErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteChannelMembershipErrorKind::ThrottledClientException(_inner) => Some(_inner),
             DeleteChannelMembershipErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            DeleteChannelMembershipErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteChannelMembershipErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2755,6 +2903,14 @@ pub struct DeleteChannelMessageError {
     pub kind: DeleteChannelMessageErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteChannelMessageError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteChannelMessageErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteChannelMessage` operation.
 #[non_exhaustive]
@@ -2772,8 +2928,15 @@ pub enum DeleteChannelMessageErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteChannelMessageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2805,7 +2968,9 @@ impl DeleteChannelMessageError {
     /// Creates the `DeleteChannelMessageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteChannelMessageErrorKind::Unhandled(err.into()),
+            kind: DeleteChannelMessageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2814,7 +2979,9 @@ impl DeleteChannelMessageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteChannelMessageErrorKind::Unhandled(err.into()),
+            kind: DeleteChannelMessageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2890,7 +3057,7 @@ impl std::error::Error for DeleteChannelMessageError {
             DeleteChannelMessageErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteChannelMessageErrorKind::ThrottledClientException(_inner) => Some(_inner),
             DeleteChannelMessageErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            DeleteChannelMessageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteChannelMessageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2903,6 +3070,14 @@ pub struct DeleteChannelModeratorError {
     pub kind: DeleteChannelModeratorErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteChannelModeratorError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteChannelModeratorErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteChannelModerator` operation.
 #[non_exhaustive]
@@ -2920,8 +3095,15 @@ pub enum DeleteChannelModeratorErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteChannelModeratorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2953,7 +3135,9 @@ impl DeleteChannelModeratorError {
     /// Creates the `DeleteChannelModeratorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteChannelModeratorErrorKind::Unhandled(err.into()),
+            kind: DeleteChannelModeratorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2962,7 +3146,9 @@ impl DeleteChannelModeratorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteChannelModeratorErrorKind::Unhandled(err.into()),
+            kind: DeleteChannelModeratorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3038,7 +3224,7 @@ impl std::error::Error for DeleteChannelModeratorError {
             DeleteChannelModeratorErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteChannelModeratorErrorKind::ThrottledClientException(_inner) => Some(_inner),
             DeleteChannelModeratorErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            DeleteChannelModeratorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteChannelModeratorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3051,6 +3237,14 @@ pub struct DescribeChannelError {
     pub kind: DescribeChannelErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeChannelError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeChannelErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeChannel` operation.
 #[non_exhaustive]
@@ -3068,8 +3262,15 @@ pub enum DescribeChannelErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeChannelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3101,7 +3302,7 @@ impl DescribeChannelError {
     /// Creates the `DescribeChannelError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeChannelErrorKind::Unhandled(err.into()),
+            kind: DescribeChannelErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3110,7 +3311,7 @@ impl DescribeChannelError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeChannelErrorKind::Unhandled(err.into()),
+            kind: DescribeChannelErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3180,7 +3381,7 @@ impl std::error::Error for DescribeChannelError {
             DescribeChannelErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DescribeChannelErrorKind::ThrottledClientException(_inner) => Some(_inner),
             DescribeChannelErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            DescribeChannelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeChannelErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3193,6 +3394,14 @@ pub struct DescribeChannelBanError {
     pub kind: DescribeChannelBanErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeChannelBanError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeChannelBanErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeChannelBan` operation.
 #[non_exhaustive]
@@ -3212,8 +3421,15 @@ pub enum DescribeChannelBanErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeChannelBanError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3246,7 +3462,7 @@ impl DescribeChannelBanError {
     /// Creates the `DescribeChannelBanError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeChannelBanErrorKind::Unhandled(err.into()),
+            kind: DescribeChannelBanErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3255,7 +3471,7 @@ impl DescribeChannelBanError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeChannelBanErrorKind::Unhandled(err.into()),
+            kind: DescribeChannelBanErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3339,7 +3555,7 @@ impl std::error::Error for DescribeChannelBanError {
             DescribeChannelBanErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DescribeChannelBanErrorKind::ThrottledClientException(_inner) => Some(_inner),
             DescribeChannelBanErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            DescribeChannelBanErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeChannelBanErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3352,6 +3568,14 @@ pub struct DescribeChannelFlowError {
     pub kind: DescribeChannelFlowErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeChannelFlowError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeChannelFlowErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeChannelFlow` operation.
 #[non_exhaustive]
@@ -3369,8 +3593,15 @@ pub enum DescribeChannelFlowErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeChannelFlowError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3402,7 +3633,7 @@ impl DescribeChannelFlowError {
     /// Creates the `DescribeChannelFlowError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeChannelFlowErrorKind::Unhandled(err.into()),
+            kind: DescribeChannelFlowErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3411,7 +3642,7 @@ impl DescribeChannelFlowError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeChannelFlowErrorKind::Unhandled(err.into()),
+            kind: DescribeChannelFlowErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3487,7 +3718,7 @@ impl std::error::Error for DescribeChannelFlowError {
             DescribeChannelFlowErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DescribeChannelFlowErrorKind::ThrottledClientException(_inner) => Some(_inner),
             DescribeChannelFlowErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            DescribeChannelFlowErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeChannelFlowErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3500,6 +3731,16 @@ pub struct DescribeChannelMembershipError {
     pub kind: DescribeChannelMembershipErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeChannelMembershipError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeChannelMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeChannelMembership` operation.
 #[non_exhaustive]
@@ -3519,8 +3760,15 @@ pub enum DescribeChannelMembershipErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeChannelMembershipError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3557,7 +3805,9 @@ impl DescribeChannelMembershipError {
     /// Creates the `DescribeChannelMembershipError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeChannelMembershipErrorKind::Unhandled(err.into()),
+            kind: DescribeChannelMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3566,7 +3816,9 @@ impl DescribeChannelMembershipError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeChannelMembershipErrorKind::Unhandled(err.into()),
+            kind: DescribeChannelMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3650,7 +3902,7 @@ impl std::error::Error for DescribeChannelMembershipError {
             DescribeChannelMembershipErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DescribeChannelMembershipErrorKind::ThrottledClientException(_inner) => Some(_inner),
             DescribeChannelMembershipErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            DescribeChannelMembershipErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeChannelMembershipErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3663,6 +3915,18 @@ pub struct DescribeChannelMembershipForAppInstanceUserError {
     pub kind: DescribeChannelMembershipForAppInstanceUserErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for DescribeChannelMembershipForAppInstanceUserError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeChannelMembershipForAppInstanceUserErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeChannelMembershipForAppInstanceUser` operation.
 #[non_exhaustive]
@@ -3680,8 +3944,15 @@ pub enum DescribeChannelMembershipForAppInstanceUserErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeChannelMembershipForAppInstanceUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3732,7 +4003,9 @@ impl DescribeChannelMembershipForAppInstanceUserError {
     /// Creates the `DescribeChannelMembershipForAppInstanceUserError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeChannelMembershipForAppInstanceUserErrorKind::Unhandled(err.into()),
+            kind: DescribeChannelMembershipForAppInstanceUserErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3741,7 +4014,9 @@ impl DescribeChannelMembershipForAppInstanceUserError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeChannelMembershipForAppInstanceUserErrorKind::Unhandled(err.into()),
+            kind: DescribeChannelMembershipForAppInstanceUserErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3829,9 +4104,7 @@ impl std::error::Error for DescribeChannelMembershipForAppInstanceUserError {
             DescribeChannelMembershipForAppInstanceUserErrorKind::UnauthorizedClientException(
                 _inner,
             ) => Some(_inner),
-            DescribeChannelMembershipForAppInstanceUserErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DescribeChannelMembershipForAppInstanceUserErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3844,6 +4117,18 @@ pub struct DescribeChannelModeratedByAppInstanceUserError {
     pub kind: DescribeChannelModeratedByAppInstanceUserErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for DescribeChannelModeratedByAppInstanceUserError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeChannelModeratedByAppInstanceUserErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeChannelModeratedByAppInstanceUser` operation.
 #[non_exhaustive]
@@ -3861,8 +4146,15 @@ pub enum DescribeChannelModeratedByAppInstanceUserErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeChannelModeratedByAppInstanceUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3909,7 +4201,9 @@ impl DescribeChannelModeratedByAppInstanceUserError {
     /// Creates the `DescribeChannelModeratedByAppInstanceUserError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeChannelModeratedByAppInstanceUserErrorKind::Unhandled(err.into()),
+            kind: DescribeChannelModeratedByAppInstanceUserErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3918,7 +4212,9 @@ impl DescribeChannelModeratedByAppInstanceUserError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeChannelModeratedByAppInstanceUserErrorKind::Unhandled(err.into()),
+            kind: DescribeChannelModeratedByAppInstanceUserErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -4006,9 +4302,7 @@ impl std::error::Error for DescribeChannelModeratedByAppInstanceUserError {
             DescribeChannelModeratedByAppInstanceUserErrorKind::UnauthorizedClientException(
                 _inner,
             ) => Some(_inner),
-            DescribeChannelModeratedByAppInstanceUserErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DescribeChannelModeratedByAppInstanceUserErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4021,6 +4315,16 @@ pub struct DescribeChannelModeratorError {
     pub kind: DescribeChannelModeratorErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeChannelModeratorError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeChannelModeratorErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeChannelModerator` operation.
 #[non_exhaustive]
@@ -4040,8 +4344,15 @@ pub enum DescribeChannelModeratorErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeChannelModeratorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4074,7 +4385,9 @@ impl DescribeChannelModeratorError {
     /// Creates the `DescribeChannelModeratorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeChannelModeratorErrorKind::Unhandled(err.into()),
+            kind: DescribeChannelModeratorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4083,7 +4396,9 @@ impl DescribeChannelModeratorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeChannelModeratorErrorKind::Unhandled(err.into()),
+            kind: DescribeChannelModeratorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4167,7 +4482,7 @@ impl std::error::Error for DescribeChannelModeratorError {
             DescribeChannelModeratorErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DescribeChannelModeratorErrorKind::ThrottledClientException(_inner) => Some(_inner),
             DescribeChannelModeratorErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            DescribeChannelModeratorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeChannelModeratorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4180,6 +4495,14 @@ pub struct DisassociateChannelFlowError {
     pub kind: DisassociateChannelFlowErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DisassociateChannelFlowError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DisassociateChannelFlowErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DisassociateChannelFlow` operation.
 #[non_exhaustive]
@@ -4201,8 +4524,15 @@ pub enum DisassociateChannelFlowErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateChannelFlowError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4236,7 +4566,9 @@ impl DisassociateChannelFlowError {
     /// Creates the `DisassociateChannelFlowError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisassociateChannelFlowErrorKind::Unhandled(err.into()),
+            kind: DisassociateChannelFlowErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4245,7 +4577,9 @@ impl DisassociateChannelFlowError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisassociateChannelFlowErrorKind::Unhandled(err.into()),
+            kind: DisassociateChannelFlowErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4337,7 +4671,7 @@ impl std::error::Error for DisassociateChannelFlowError {
             DisassociateChannelFlowErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DisassociateChannelFlowErrorKind::ThrottledClientException(_inner) => Some(_inner),
             DisassociateChannelFlowErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            DisassociateChannelFlowErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisassociateChannelFlowErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4350,6 +4684,16 @@ pub struct GetChannelMembershipPreferencesError {
     pub kind: GetChannelMembershipPreferencesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetChannelMembershipPreferencesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetChannelMembershipPreferencesErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetChannelMembershipPreferences` operation.
 #[non_exhaustive]
@@ -4367,8 +4711,15 @@ pub enum GetChannelMembershipPreferencesErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetChannelMembershipPreferencesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4411,7 +4762,9 @@ impl GetChannelMembershipPreferencesError {
     /// Creates the `GetChannelMembershipPreferencesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetChannelMembershipPreferencesErrorKind::Unhandled(err.into()),
+            kind: GetChannelMembershipPreferencesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -4420,7 +4773,9 @@ impl GetChannelMembershipPreferencesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetChannelMembershipPreferencesErrorKind::Unhandled(err.into()),
+            kind: GetChannelMembershipPreferencesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -4504,7 +4859,7 @@ impl std::error::Error for GetChannelMembershipPreferencesError {
             GetChannelMembershipPreferencesErrorKind::UnauthorizedClientException(_inner) => {
                 Some(_inner)
             }
-            GetChannelMembershipPreferencesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetChannelMembershipPreferencesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4517,6 +4872,14 @@ pub struct GetChannelMessageError {
     pub kind: GetChannelMessageErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetChannelMessageError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetChannelMessageErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetChannelMessage` operation.
 #[non_exhaustive]
@@ -4536,8 +4899,15 @@ pub enum GetChannelMessageErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetChannelMessageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4570,7 +4940,7 @@ impl GetChannelMessageError {
     /// Creates the `GetChannelMessageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetChannelMessageErrorKind::Unhandled(err.into()),
+            kind: GetChannelMessageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4579,7 +4949,7 @@ impl GetChannelMessageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetChannelMessageErrorKind::Unhandled(err.into()),
+            kind: GetChannelMessageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4660,7 +5030,7 @@ impl std::error::Error for GetChannelMessageError {
             GetChannelMessageErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             GetChannelMessageErrorKind::ThrottledClientException(_inner) => Some(_inner),
             GetChannelMessageErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            GetChannelMessageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetChannelMessageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4673,6 +5043,14 @@ pub struct GetChannelMessageStatusError {
     pub kind: GetChannelMessageStatusErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetChannelMessageStatusError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetChannelMessageStatusErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetChannelMessageStatus` operation.
 #[non_exhaustive]
@@ -4690,8 +5068,15 @@ pub enum GetChannelMessageStatusErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetChannelMessageStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4723,7 +5108,9 @@ impl GetChannelMessageStatusError {
     /// Creates the `GetChannelMessageStatusError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetChannelMessageStatusErrorKind::Unhandled(err.into()),
+            kind: GetChannelMessageStatusErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4732,7 +5119,9 @@ impl GetChannelMessageStatusError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetChannelMessageStatusErrorKind::Unhandled(err.into()),
+            kind: GetChannelMessageStatusErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4808,7 +5197,7 @@ impl std::error::Error for GetChannelMessageStatusError {
             GetChannelMessageStatusErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             GetChannelMessageStatusErrorKind::ThrottledClientException(_inner) => Some(_inner),
             GetChannelMessageStatusErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            GetChannelMessageStatusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetChannelMessageStatusErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4821,6 +5210,16 @@ pub struct GetMessagingSessionEndpointError {
     pub kind: GetMessagingSessionEndpointErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetMessagingSessionEndpointError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetMessagingSessionEndpointErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetMessagingSessionEndpoint` operation.
 #[non_exhaustive]
@@ -4836,8 +5235,15 @@ pub enum GetMessagingSessionEndpointErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetMessagingSessionEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4872,7 +5278,9 @@ impl GetMessagingSessionEndpointError {
     /// Creates the `GetMessagingSessionEndpointError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetMessagingSessionEndpointErrorKind::Unhandled(err.into()),
+            kind: GetMessagingSessionEndpointErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4881,7 +5289,9 @@ impl GetMessagingSessionEndpointError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetMessagingSessionEndpointErrorKind::Unhandled(err.into()),
+            kind: GetMessagingSessionEndpointErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4953,7 +5363,7 @@ impl std::error::Error for GetMessagingSessionEndpointError {
             GetMessagingSessionEndpointErrorKind::UnauthorizedClientException(_inner) => {
                 Some(_inner)
             }
-            GetMessagingSessionEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetMessagingSessionEndpointErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4966,6 +5376,14 @@ pub struct ListChannelBansError {
     pub kind: ListChannelBansErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListChannelBansError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListChannelBansErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListChannelBans` operation.
 #[non_exhaustive]
@@ -4983,8 +5401,15 @@ pub enum ListChannelBansErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListChannelBansError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5016,7 +5441,7 @@ impl ListChannelBansError {
     /// Creates the `ListChannelBansError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListChannelBansErrorKind::Unhandled(err.into()),
+            kind: ListChannelBansErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5025,7 +5450,7 @@ impl ListChannelBansError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListChannelBansErrorKind::Unhandled(err.into()),
+            kind: ListChannelBansErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5095,7 +5520,7 @@ impl std::error::Error for ListChannelBansError {
             ListChannelBansErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListChannelBansErrorKind::ThrottledClientException(_inner) => Some(_inner),
             ListChannelBansErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            ListChannelBansErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListChannelBansErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5108,6 +5533,14 @@ pub struct ListChannelFlowsError {
     pub kind: ListChannelFlowsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListChannelFlowsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListChannelFlowsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListChannelFlows` operation.
 #[non_exhaustive]
@@ -5125,8 +5558,15 @@ pub enum ListChannelFlowsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListChannelFlowsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5158,7 +5598,7 @@ impl ListChannelFlowsError {
     /// Creates the `ListChannelFlowsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListChannelFlowsErrorKind::Unhandled(err.into()),
+            kind: ListChannelFlowsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5167,7 +5607,7 @@ impl ListChannelFlowsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListChannelFlowsErrorKind::Unhandled(err.into()),
+            kind: ListChannelFlowsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5240,7 +5680,7 @@ impl std::error::Error for ListChannelFlowsError {
             ListChannelFlowsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListChannelFlowsErrorKind::ThrottledClientException(_inner) => Some(_inner),
             ListChannelFlowsErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            ListChannelFlowsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListChannelFlowsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5253,6 +5693,14 @@ pub struct ListChannelMembershipsError {
     pub kind: ListChannelMembershipsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListChannelMembershipsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListChannelMembershipsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListChannelMemberships` operation.
 #[non_exhaustive]
@@ -5270,8 +5718,15 @@ pub enum ListChannelMembershipsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListChannelMembershipsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5303,7 +5758,9 @@ impl ListChannelMembershipsError {
     /// Creates the `ListChannelMembershipsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListChannelMembershipsErrorKind::Unhandled(err.into()),
+            kind: ListChannelMembershipsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5312,7 +5769,9 @@ impl ListChannelMembershipsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListChannelMembershipsErrorKind::Unhandled(err.into()),
+            kind: ListChannelMembershipsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5388,7 +5847,7 @@ impl std::error::Error for ListChannelMembershipsError {
             ListChannelMembershipsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListChannelMembershipsErrorKind::ThrottledClientException(_inner) => Some(_inner),
             ListChannelMembershipsErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            ListChannelMembershipsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListChannelMembershipsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5401,6 +5860,18 @@ pub struct ListChannelMembershipsForAppInstanceUserError {
     pub kind: ListChannelMembershipsForAppInstanceUserErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for ListChannelMembershipsForAppInstanceUserError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListChannelMembershipsForAppInstanceUserErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListChannelMembershipsForAppInstanceUser` operation.
 #[non_exhaustive]
@@ -5418,8 +5889,15 @@ pub enum ListChannelMembershipsForAppInstanceUserErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListChannelMembershipsForAppInstanceUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5466,7 +5944,9 @@ impl ListChannelMembershipsForAppInstanceUserError {
     /// Creates the `ListChannelMembershipsForAppInstanceUserError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListChannelMembershipsForAppInstanceUserErrorKind::Unhandled(err.into()),
+            kind: ListChannelMembershipsForAppInstanceUserErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -5475,7 +5955,9 @@ impl ListChannelMembershipsForAppInstanceUserError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListChannelMembershipsForAppInstanceUserErrorKind::Unhandled(err.into()),
+            kind: ListChannelMembershipsForAppInstanceUserErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -5563,9 +6045,7 @@ impl std::error::Error for ListChannelMembershipsForAppInstanceUserError {
             ListChannelMembershipsForAppInstanceUserErrorKind::UnauthorizedClientException(
                 _inner,
             ) => Some(_inner),
-            ListChannelMembershipsForAppInstanceUserErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            ListChannelMembershipsForAppInstanceUserErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5578,6 +6058,14 @@ pub struct ListChannelMessagesError {
     pub kind: ListChannelMessagesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListChannelMessagesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListChannelMessagesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListChannelMessages` operation.
 #[non_exhaustive]
@@ -5595,8 +6083,15 @@ pub enum ListChannelMessagesErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListChannelMessagesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5628,7 +6123,7 @@ impl ListChannelMessagesError {
     /// Creates the `ListChannelMessagesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListChannelMessagesErrorKind::Unhandled(err.into()),
+            kind: ListChannelMessagesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5637,7 +6132,7 @@ impl ListChannelMessagesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListChannelMessagesErrorKind::Unhandled(err.into()),
+            kind: ListChannelMessagesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5713,7 +6208,7 @@ impl std::error::Error for ListChannelMessagesError {
             ListChannelMessagesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListChannelMessagesErrorKind::ThrottledClientException(_inner) => Some(_inner),
             ListChannelMessagesErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            ListChannelMessagesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListChannelMessagesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5726,6 +6221,14 @@ pub struct ListChannelModeratorsError {
     pub kind: ListChannelModeratorsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListChannelModeratorsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListChannelModeratorsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListChannelModerators` operation.
 #[non_exhaustive]
@@ -5743,8 +6246,15 @@ pub enum ListChannelModeratorsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListChannelModeratorsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5776,7 +6286,9 @@ impl ListChannelModeratorsError {
     /// Creates the `ListChannelModeratorsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListChannelModeratorsErrorKind::Unhandled(err.into()),
+            kind: ListChannelModeratorsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5785,7 +6297,9 @@ impl ListChannelModeratorsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListChannelModeratorsErrorKind::Unhandled(err.into()),
+            kind: ListChannelModeratorsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5861,7 +6375,7 @@ impl std::error::Error for ListChannelModeratorsError {
             ListChannelModeratorsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListChannelModeratorsErrorKind::ThrottledClientException(_inner) => Some(_inner),
             ListChannelModeratorsErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            ListChannelModeratorsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListChannelModeratorsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5874,6 +6388,14 @@ pub struct ListChannelsError {
     pub kind: ListChannelsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListChannelsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListChannelsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListChannels` operation.
 #[non_exhaustive]
@@ -5891,8 +6413,15 @@ pub enum ListChannelsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListChannelsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5924,7 +6453,7 @@ impl ListChannelsError {
     /// Creates the `ListChannelsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListChannelsErrorKind::Unhandled(err.into()),
+            kind: ListChannelsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5933,7 +6462,7 @@ impl ListChannelsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListChannelsErrorKind::Unhandled(err.into()),
+            kind: ListChannelsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6003,7 +6532,7 @@ impl std::error::Error for ListChannelsError {
             ListChannelsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListChannelsErrorKind::ThrottledClientException(_inner) => Some(_inner),
             ListChannelsErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            ListChannelsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListChannelsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6016,6 +6545,16 @@ pub struct ListChannelsAssociatedWithChannelFlowError {
     pub kind: ListChannelsAssociatedWithChannelFlowErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListChannelsAssociatedWithChannelFlowError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListChannelsAssociatedWithChannelFlowErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListChannelsAssociatedWithChannelFlow` operation.
 #[non_exhaustive]
@@ -6033,8 +6572,15 @@ pub enum ListChannelsAssociatedWithChannelFlowErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListChannelsAssociatedWithChannelFlowError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6081,7 +6627,9 @@ impl ListChannelsAssociatedWithChannelFlowError {
     /// Creates the `ListChannelsAssociatedWithChannelFlowError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListChannelsAssociatedWithChannelFlowErrorKind::Unhandled(err.into()),
+            kind: ListChannelsAssociatedWithChannelFlowErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -6090,7 +6638,9 @@ impl ListChannelsAssociatedWithChannelFlowError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListChannelsAssociatedWithChannelFlowErrorKind::Unhandled(err.into()),
+            kind: ListChannelsAssociatedWithChannelFlowErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -6178,9 +6728,7 @@ impl std::error::Error for ListChannelsAssociatedWithChannelFlowError {
             ListChannelsAssociatedWithChannelFlowErrorKind::UnauthorizedClientException(_inner) => {
                 Some(_inner)
             }
-            ListChannelsAssociatedWithChannelFlowErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            ListChannelsAssociatedWithChannelFlowErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6193,6 +6741,16 @@ pub struct ListChannelsModeratedByAppInstanceUserError {
     pub kind: ListChannelsModeratedByAppInstanceUserErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListChannelsModeratedByAppInstanceUserError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListChannelsModeratedByAppInstanceUserErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListChannelsModeratedByAppInstanceUser` operation.
 #[non_exhaustive]
@@ -6210,8 +6768,15 @@ pub enum ListChannelsModeratedByAppInstanceUserErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListChannelsModeratedByAppInstanceUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6258,7 +6823,9 @@ impl ListChannelsModeratedByAppInstanceUserError {
     /// Creates the `ListChannelsModeratedByAppInstanceUserError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListChannelsModeratedByAppInstanceUserErrorKind::Unhandled(err.into()),
+            kind: ListChannelsModeratedByAppInstanceUserErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -6267,7 +6834,9 @@ impl ListChannelsModeratedByAppInstanceUserError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListChannelsModeratedByAppInstanceUserErrorKind::Unhandled(err.into()),
+            kind: ListChannelsModeratedByAppInstanceUserErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -6355,9 +6924,7 @@ impl std::error::Error for ListChannelsModeratedByAppInstanceUserError {
             ListChannelsModeratedByAppInstanceUserErrorKind::UnauthorizedClientException(
                 _inner,
             ) => Some(_inner),
-            ListChannelsModeratedByAppInstanceUserErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            ListChannelsModeratedByAppInstanceUserErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6370,6 +6937,14 @@ pub struct ListSubChannelsError {
     pub kind: ListSubChannelsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListSubChannelsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListSubChannelsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListSubChannels` operation.
 #[non_exhaustive]
@@ -6387,8 +6962,15 @@ pub enum ListSubChannelsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSubChannelsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6420,7 +7002,7 @@ impl ListSubChannelsError {
     /// Creates the `ListSubChannelsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListSubChannelsErrorKind::Unhandled(err.into()),
+            kind: ListSubChannelsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6429,7 +7011,7 @@ impl ListSubChannelsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListSubChannelsErrorKind::Unhandled(err.into()),
+            kind: ListSubChannelsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6499,7 +7081,7 @@ impl std::error::Error for ListSubChannelsError {
             ListSubChannelsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListSubChannelsErrorKind::ThrottledClientException(_inner) => Some(_inner),
             ListSubChannelsErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            ListSubChannelsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListSubChannelsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6512,6 +7094,14 @@ pub struct ListTagsForResourceError {
     pub kind: ListTagsForResourceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListTagsForResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListTagsForResource` operation.
 #[non_exhaustive]
@@ -6529,8 +7119,15 @@ pub enum ListTagsForResourceErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6562,7 +7159,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6571,7 +7168,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6647,7 +7244,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ThrottledClientException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6660,6 +7257,16 @@ pub struct PutChannelMembershipPreferencesError {
     pub kind: PutChannelMembershipPreferencesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PutChannelMembershipPreferencesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PutChannelMembershipPreferencesErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `PutChannelMembershipPreferences` operation.
 #[non_exhaustive]
@@ -6679,8 +7286,15 @@ pub enum PutChannelMembershipPreferencesErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutChannelMembershipPreferencesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6724,7 +7338,9 @@ impl PutChannelMembershipPreferencesError {
     /// Creates the `PutChannelMembershipPreferencesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutChannelMembershipPreferencesErrorKind::Unhandled(err.into()),
+            kind: PutChannelMembershipPreferencesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -6733,7 +7349,9 @@ impl PutChannelMembershipPreferencesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutChannelMembershipPreferencesErrorKind::Unhandled(err.into()),
+            kind: PutChannelMembershipPreferencesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -6825,7 +7443,7 @@ impl std::error::Error for PutChannelMembershipPreferencesError {
             PutChannelMembershipPreferencesErrorKind::UnauthorizedClientException(_inner) => {
                 Some(_inner)
             }
-            PutChannelMembershipPreferencesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutChannelMembershipPreferencesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6838,6 +7456,14 @@ pub struct RedactChannelMessageError {
     pub kind: RedactChannelMessageErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for RedactChannelMessageError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RedactChannelMessageErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `RedactChannelMessage` operation.
 #[non_exhaustive]
@@ -6857,8 +7483,15 @@ pub enum RedactChannelMessageErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RedactChannelMessageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6891,7 +7524,9 @@ impl RedactChannelMessageError {
     /// Creates the `RedactChannelMessageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RedactChannelMessageErrorKind::Unhandled(err.into()),
+            kind: RedactChannelMessageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6900,7 +7535,9 @@ impl RedactChannelMessageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RedactChannelMessageErrorKind::Unhandled(err.into()),
+            kind: RedactChannelMessageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6984,7 +7621,7 @@ impl std::error::Error for RedactChannelMessageError {
             RedactChannelMessageErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             RedactChannelMessageErrorKind::ThrottledClientException(_inner) => Some(_inner),
             RedactChannelMessageErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            RedactChannelMessageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RedactChannelMessageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6997,6 +7634,14 @@ pub struct SearchChannelsError {
     pub kind: SearchChannelsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for SearchChannelsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: SearchChannelsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `SearchChannels` operation.
 #[non_exhaustive]
@@ -7014,8 +7659,15 @@ pub enum SearchChannelsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SearchChannelsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7047,7 +7699,7 @@ impl SearchChannelsError {
     /// Creates the `SearchChannelsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SearchChannelsErrorKind::Unhandled(err.into()),
+            kind: SearchChannelsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7056,7 +7708,7 @@ impl SearchChannelsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SearchChannelsErrorKind::Unhandled(err.into()),
+            kind: SearchChannelsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7126,7 +7778,7 @@ impl std::error::Error for SearchChannelsError {
             SearchChannelsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             SearchChannelsErrorKind::ThrottledClientException(_inner) => Some(_inner),
             SearchChannelsErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            SearchChannelsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SearchChannelsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7139,6 +7791,14 @@ pub struct SendChannelMessageError {
     pub kind: SendChannelMessageErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for SendChannelMessageError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: SendChannelMessageErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `SendChannelMessage` operation.
 #[non_exhaustive]
@@ -7158,8 +7818,15 @@ pub enum SendChannelMessageErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SendChannelMessageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7192,7 +7859,7 @@ impl SendChannelMessageError {
     /// Creates the `SendChannelMessageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SendChannelMessageErrorKind::Unhandled(err.into()),
+            kind: SendChannelMessageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7201,7 +7868,7 @@ impl SendChannelMessageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SendChannelMessageErrorKind::Unhandled(err.into()),
+            kind: SendChannelMessageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7285,7 +7952,7 @@ impl std::error::Error for SendChannelMessageError {
             SendChannelMessageErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             SendChannelMessageErrorKind::ThrottledClientException(_inner) => Some(_inner),
             SendChannelMessageErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            SendChannelMessageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SendChannelMessageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7298,6 +7965,14 @@ pub struct TagResourceError {
     pub kind: TagResourceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for TagResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `TagResource` operation.
 #[non_exhaustive]
@@ -7317,8 +7992,15 @@ pub enum TagResourceErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7351,7 +8033,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7360,7 +8042,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7435,7 +8117,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             TagResourceErrorKind::ThrottledClientException(_inner) => Some(_inner),
             TagResourceErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7448,6 +8130,14 @@ pub struct UntagResourceError {
     pub kind: UntagResourceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UntagResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UntagResource` operation.
 #[non_exhaustive]
@@ -7465,8 +8155,15 @@ pub enum UntagResourceErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7498,7 +8195,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7507,7 +8204,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7577,7 +8274,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UntagResourceErrorKind::ThrottledClientException(_inner) => Some(_inner),
             UntagResourceErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7590,6 +8287,14 @@ pub struct UpdateChannelError {
     pub kind: UpdateChannelErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateChannelError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateChannelErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateChannel` operation.
 #[non_exhaustive]
@@ -7609,8 +8314,15 @@ pub enum UpdateChannelErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateChannelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7643,7 +8355,7 @@ impl UpdateChannelError {
     /// Creates the `UpdateChannelError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateChannelErrorKind::Unhandled(err.into()),
+            kind: UpdateChannelErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7652,7 +8364,7 @@ impl UpdateChannelError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateChannelErrorKind::Unhandled(err.into()),
+            kind: UpdateChannelErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7727,7 +8439,7 @@ impl std::error::Error for UpdateChannelError {
             UpdateChannelErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateChannelErrorKind::ThrottledClientException(_inner) => Some(_inner),
             UpdateChannelErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            UpdateChannelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateChannelErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7740,6 +8452,14 @@ pub struct UpdateChannelFlowError {
     pub kind: UpdateChannelFlowErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateChannelFlowError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateChannelFlowErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateChannelFlow` operation.
 #[non_exhaustive]
@@ -7759,8 +8479,15 @@ pub enum UpdateChannelFlowErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateChannelFlowError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7793,7 +8520,7 @@ impl UpdateChannelFlowError {
     /// Creates the `UpdateChannelFlowError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateChannelFlowErrorKind::Unhandled(err.into()),
+            kind: UpdateChannelFlowErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7802,7 +8529,7 @@ impl UpdateChannelFlowError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateChannelFlowErrorKind::Unhandled(err.into()),
+            kind: UpdateChannelFlowErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7883,7 +8610,7 @@ impl std::error::Error for UpdateChannelFlowError {
             UpdateChannelFlowErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateChannelFlowErrorKind::ThrottledClientException(_inner) => Some(_inner),
             UpdateChannelFlowErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            UpdateChannelFlowErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateChannelFlowErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7896,6 +8623,14 @@ pub struct UpdateChannelMessageError {
     pub kind: UpdateChannelMessageErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateChannelMessageError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateChannelMessageErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateChannelMessage` operation.
 #[non_exhaustive]
@@ -7915,8 +8650,15 @@ pub enum UpdateChannelMessageErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateChannelMessageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7949,7 +8691,9 @@ impl UpdateChannelMessageError {
     /// Creates the `UpdateChannelMessageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateChannelMessageErrorKind::Unhandled(err.into()),
+            kind: UpdateChannelMessageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7958,7 +8702,9 @@ impl UpdateChannelMessageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateChannelMessageErrorKind::Unhandled(err.into()),
+            kind: UpdateChannelMessageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8042,7 +8788,7 @@ impl std::error::Error for UpdateChannelMessageError {
             UpdateChannelMessageErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateChannelMessageErrorKind::ThrottledClientException(_inner) => Some(_inner),
             UpdateChannelMessageErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            UpdateChannelMessageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateChannelMessageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8055,6 +8801,14 @@ pub struct UpdateChannelReadMarkerError {
     pub kind: UpdateChannelReadMarkerErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateChannelReadMarkerError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateChannelReadMarkerErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateChannelReadMarker` operation.
 #[non_exhaustive]
@@ -8074,8 +8828,15 @@ pub enum UpdateChannelReadMarkerErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateChannelReadMarkerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8108,7 +8869,9 @@ impl UpdateChannelReadMarkerError {
     /// Creates the `UpdateChannelReadMarkerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateChannelReadMarkerErrorKind::Unhandled(err.into()),
+            kind: UpdateChannelReadMarkerErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8117,7 +8880,9 @@ impl UpdateChannelReadMarkerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateChannelReadMarkerErrorKind::Unhandled(err.into()),
+            kind: UpdateChannelReadMarkerErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8201,7 +8966,35 @@ impl std::error::Error for UpdateChannelReadMarkerError {
             UpdateChannelReadMarkerErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateChannelReadMarkerErrorKind::ThrottledClientException(_inner) => Some(_inner),
             UpdateChannelReadMarkerErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            UpdateChannelReadMarkerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateChannelReadMarkerErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+///
+/// When logging an error from the SDK, it is recommended that you either wrap the error in
+/// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+/// error reporter library that visits the error's cause/source chain, or call
+/// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

@@ -36,8 +36,8 @@ impl From<EscapeError> for InvalidJsonCredentials {
     }
 }
 
-impl From<aws_smithy_json::deserialize::Error> for InvalidJsonCredentials {
-    fn from(err: aws_smithy_json::deserialize::Error) -> Self {
+impl From<aws_smithy_json::deserialize::error::DeserializeError> for InvalidJsonCredentials {
+    fn from(err: aws_smithy_json::deserialize::error::DeserializeError) -> Self {
         InvalidJsonCredentials::JsonError(err.into())
     }
 }

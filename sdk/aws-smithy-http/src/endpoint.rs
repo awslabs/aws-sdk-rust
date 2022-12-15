@@ -3,54 +3,22 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use crate::endpoint::error::InvalidEndpointError;
+use crate::operation::error::BuildError;
+use http::uri::{Authority, Uri};
 use std::borrow::Cow;
-use std::fmt::{Display, Formatter};
+use std::result::Result as StdResult;
 use std::str::FromStr;
 
-use http::uri::{Authority, Uri};
+pub mod error;
+pub mod middleware;
 
-use crate::operation::BuildError;
+pub use error::ResolveEndpointError;
 
-pub type Result = std::result::Result<aws_smithy_types::endpoint::Endpoint, Error>;
+pub type Result = std::result::Result<aws_smithy_types::endpoint::Endpoint, ResolveEndpointError>;
 
 pub trait ResolveEndpoint<Params>: Send + Sync {
     fn resolve_endpoint(&self, params: &Params) -> Result;
-}
-
-/// Endpoint Resolution Error
-#[derive(Debug)]
-pub struct Error {
-    message: String,
-    extra: Option<Box<dyn std::error::Error + Send + Sync>>,
-}
-
-impl Error {
-    /// Create an [`Error`] with a message
-    pub fn message(message: impl Into<String>) -> Self {
-        Self {
-            message: message.into(),
-            extra: None,
-        }
-    }
-
-    pub fn with_cause(self, cause: impl Into<Box<dyn std::error::Error + Send + Sync>>) -> Self {
-        Self {
-            extra: Some(cause.into()),
-            ..self
-        }
-    }
-}
-
-impl Display for Error {
-    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
-        write!(f, "{}", self.message)
-    }
-}
-
-impl std::error::Error for Error {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        self.extra.as_ref().map(|err| err.as_ref() as _)
-    }
 }
 
 // TODO(endpoints 2.0): when `endpoint_url` is added, deprecate & delete `Endpoint`
@@ -69,15 +37,15 @@ pub struct Endpoint {
 #[derive(Clone, Debug, Eq, PartialEq)]
 pub struct EndpointPrefix(String);
 impl EndpointPrefix {
-    pub fn new(prefix: impl Into<String>) -> std::result::Result<Self, BuildError> {
+    pub fn new(prefix: impl Into<String>) -> StdResult<Self, BuildError> {
         let prefix = prefix.into();
         match Authority::from_str(&prefix) {
             Ok(_) => Ok(EndpointPrefix(prefix)),
-            Err(err) => Err(BuildError::InvalidUri {
-                uri: prefix,
+            Err(err) => Err(BuildError::invalid_uri(
+                prefix,
+                "invalid prefix".into(),
                 err,
-                message: "invalid prefix".into(),
-            }),
+            )),
         }
     }
 
@@ -85,37 +53,6 @@ impl EndpointPrefix {
         &self.0
     }
 }
-
-#[non_exhaustive]
-#[derive(Debug, Eq, PartialEq, Clone)]
-pub enum InvalidEndpoint {
-    EndpointMustHaveAuthority,
-    EndpointMustHaveScheme,
-    FailedToConstructAuthority,
-    FailedToConstructUri,
-}
-
-impl Display for InvalidEndpoint {
-    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
-        match self {
-            InvalidEndpoint::EndpointMustHaveAuthority => {
-                write!(f, "Endpoint must contain an authority")
-            }
-            InvalidEndpoint::EndpointMustHaveScheme => {
-                write!(f, "Endpoint must contain a valid scheme")
-            }
-            InvalidEndpoint::FailedToConstructAuthority => {
-                write!(
-                    f,
-                    "Endpoint must contain a valid authority when combined with endpoint prefix"
-                )
-            }
-            InvalidEndpoint::FailedToConstructUri => write!(f, "Failed to construct URI"),
-        }
-    }
-}
-
-impl std::error::Error for InvalidEndpoint {}
 
 /// Apply `endpoint` to `uri`
 ///
@@ -127,7 +64,7 @@ pub fn apply_endpoint(
     uri: &mut Uri,
     endpoint: &Uri,
     prefix: Option<&EndpointPrefix>,
-) -> std::result::Result<(), InvalidEndpoint> {
+) -> StdResult<(), InvalidEndpointError> {
     let prefix = prefix.map(|p| p.0.as_str()).unwrap_or("");
     let authority = endpoint
         .authority()
@@ -139,17 +76,17 @@ pub fn apply_endpoint(
     } else {
         Authority::from_str(authority)
     }
-    .map_err(|_| InvalidEndpoint::FailedToConstructAuthority)?;
+    .map_err(InvalidEndpointError::failed_to_construct_authority)?;
     let scheme = *endpoint
         .scheme()
         .as_ref()
-        .ok_or(InvalidEndpoint::EndpointMustHaveScheme)?;
+        .ok_or_else(InvalidEndpointError::endpoint_must_have_scheme)?;
     let new_uri = Uri::builder()
         .authority(authority)
         .scheme(scheme.clone())
         .path_and_query(Endpoint::merge_paths(endpoint, uri).as_ref())
         .build()
-        .map_err(|_| InvalidEndpoint::FailedToConstructUri)?;
+        .map_err(InvalidEndpointError::failed_to_construct_uri)?;
     *uri = new_uri;
     Ok(())
 }
@@ -160,11 +97,22 @@ impl Endpoint {
     /// Certain services will augment the endpoint with additional metadata. For example,
     /// S3 can prefix the host with the bucket name. If your endpoint does not support this,
     /// (for example, when communicating with localhost), use [`Endpoint::immutable`].
-    pub fn mutable(uri: Uri) -> Self {
-        Endpoint {
-            uri,
+    pub fn mutable_uri(uri: Uri) -> StdResult<Self, InvalidEndpointError> {
+        Ok(Endpoint {
+            uri: Self::validate_endpoint(uri)?,
             immutable: false,
-        }
+        })
+    }
+
+    /// Create a new endpoint from a URI string
+    ///
+    /// Certain services will augment the endpoint with additional metadata. For example,
+    /// S3 can prefix the host with the bucket name. If your endpoint does not support this,
+    /// (for example, when communicating with localhost), use [`Endpoint::immutable`].
+    pub fn mutable(uri: impl AsRef<str>) -> StdResult<Self, InvalidEndpointError> {
+        Self::mutable_uri(
+            Uri::try_from(uri.as_ref()).map_err(InvalidEndpointError::failed_to_construct_uri)?,
+        )
     }
 
     /// Returns the URI of this endpoint
@@ -177,27 +125,57 @@ impl Endpoint {
     /// ```rust
     /// # use aws_smithy_http::endpoint::Endpoint;
     /// use http::Uri;
-    /// let endpoint = Endpoint::immutable(Uri::from_static("http://localhost:8000"));
+    /// let uri = Uri::from_static("http://localhost:8000");
+    /// let endpoint = Endpoint::immutable_uri(uri);
     /// ```
     ///
     /// Certain services will augment the endpoint with additional metadata. For example,
     /// S3 can prefix the host with the bucket name. This constructor creates an endpoint which will
     /// ignore those mutations. If you want an endpoint which will obey mutation requests, use
     /// [`Endpoint::mutable`] instead.
-    pub fn immutable(uri: Uri) -> Self {
-        Endpoint {
-            uri,
+    pub fn immutable_uri(uri: Uri) -> StdResult<Self, InvalidEndpointError> {
+        Ok(Endpoint {
+            uri: Self::validate_endpoint(uri)?,
             immutable: true,
-        }
+        })
+    }
+
+    /// Create a new immutable endpoint from a URI string
+    ///
+    /// ```rust
+    /// # use aws_smithy_http::endpoint::Endpoint;
+    /// let endpoint = Endpoint::immutable("http://localhost:8000");
+    /// ```
+    ///
+    /// Certain services will augment the endpoint with additional metadata. For example,
+    /// S3 can prefix the host with the bucket name. This constructor creates an endpoint which will
+    /// ignore those mutations. If you want an endpoint which will obey mutation requests, use
+    /// [`Endpoint::mutable`] instead.
+    pub fn immutable(uri: impl AsRef<str>) -> StdResult<Self, InvalidEndpointError> {
+        Self::immutable_uri(
+            Uri::try_from(uri.as_ref()).map_err(InvalidEndpointError::failed_to_construct_uri)?,
+        )
     }
 
     /// Sets the endpoint on `uri`, potentially applying the specified `prefix` in the process.
-    pub fn set_endpoint(&self, uri: &mut http::Uri, prefix: Option<&EndpointPrefix>) {
+    pub fn set_endpoint(
+        &self,
+        uri: &mut http::Uri,
+        prefix: Option<&EndpointPrefix>,
+    ) -> StdResult<(), InvalidEndpointError> {
         let prefix = match self.immutable {
             true => None,
             false => prefix,
         };
-        apply_endpoint(uri, &self.uri, prefix).expect("failed to set endpoint");
+        apply_endpoint(uri, &self.uri, prefix)
+    }
+
+    fn validate_endpoint(endpoint: Uri) -> StdResult<Uri, InvalidEndpointError> {
+        if endpoint.scheme().is_none() {
+            Err(InvalidEndpointError::endpoint_must_have_scheme())
+        } else {
+            Ok(endpoint)
+        }
     }
 
     fn merge_paths<'a>(endpoint: &'a Uri, uri: &'a Uri) -> Cow<'a, str> {
@@ -220,18 +198,19 @@ impl Endpoint {
 
 #[cfg(test)]
 mod test {
-    use http::Uri;
-
+    use crate::endpoint::error::{InvalidEndpointError, InvalidEndpointErrorKind};
     use crate::endpoint::{Endpoint, EndpointPrefix};
+    use http::Uri;
 
     #[test]
     fn prefix_endpoint() {
-        let ep = Endpoint::mutable(Uri::from_static("https://us-east-1.dynamo.amazonaws.com"));
+        let ep = Endpoint::mutable("https://us-east-1.dynamo.amazonaws.com").unwrap();
         let mut uri = Uri::from_static("/list_tables?k=v");
         ep.set_endpoint(
             &mut uri,
             Some(&EndpointPrefix::new("subregion.").expect("valid prefix")),
-        );
+        )
+        .unwrap();
         assert_eq!(
             uri,
             Uri::from_static("https://subregion.us-east-1.dynamo.amazonaws.com/list_tables?k=v")
@@ -240,14 +219,13 @@ mod test {
 
     #[test]
     fn prefix_endpoint_custom_port() {
-        let ep = Endpoint::mutable(Uri::from_static(
-            "https://us-east-1.dynamo.amazonaws.com:6443",
-        ));
+        let ep = Endpoint::mutable("https://us-east-1.dynamo.amazonaws.com:6443").unwrap();
         let mut uri = Uri::from_static("/list_tables?k=v");
         ep.set_endpoint(
             &mut uri,
             Some(&EndpointPrefix::new("subregion.").expect("valid prefix")),
-        );
+        )
+        .unwrap();
         assert_eq!(
             uri,
             Uri::from_static(
@@ -258,12 +236,13 @@ mod test {
 
     #[test]
     fn prefix_immutable_endpoint() {
-        let ep = Endpoint::immutable(Uri::from_static("https://us-east-1.dynamo.amazonaws.com"));
+        let ep = Endpoint::immutable("https://us-east-1.dynamo.amazonaws.com").unwrap();
         let mut uri = Uri::from_static("/list_tables?k=v");
         ep.set_endpoint(
             &mut uri,
             Some(&EndpointPrefix::new("subregion.").expect("valid prefix")),
-        );
+        )
+        .unwrap();
         assert_eq!(
             uri,
             Uri::from_static("https://us-east-1.dynamo.amazonaws.com/list_tables?k=v")
@@ -277,12 +256,13 @@ mod test {
             "https://us-east-1.dynamo.amazonaws.com/private",
             "https://us-east-1.dynamo.amazonaws.com/private/",
         ] {
-            let ep = Endpoint::immutable(Uri::from_static(uri));
+            let ep = Endpoint::immutable(uri).unwrap();
             let mut uri = Uri::from_static("/list_tables?k=v");
             ep.set_endpoint(
                 &mut uri,
                 Some(&EndpointPrefix::new("subregion.").expect("valid prefix")),
-            );
+            )
+            .unwrap();
             assert_eq!(
                 uri,
                 Uri::from_static("https://us-east-1.dynamo.amazonaws.com/private/list_tables?k=v")
@@ -292,9 +272,25 @@ mod test {
 
     #[test]
     fn set_endpoint_empty_path() {
-        let ep = Endpoint::immutable(Uri::from_static("http://localhost:8000"));
+        let ep = Endpoint::immutable("http://localhost:8000").unwrap();
         let mut uri = Uri::from_static("/");
-        ep.set_endpoint(&mut uri, None);
+        ep.set_endpoint(&mut uri, None).unwrap();
         assert_eq!(uri, Uri::from_static("http://localhost:8000/"))
+    }
+
+    #[test]
+    fn endpoint_construction_missing_scheme() {
+        assert!(matches!(
+            Endpoint::mutable("localhost:8000"),
+            Err(InvalidEndpointError {
+                kind: InvalidEndpointErrorKind::EndpointMustHaveScheme
+            })
+        ));
+        assert!(matches!(
+            Endpoint::immutable("localhost:8000"),
+            Err(InvalidEndpointError {
+                kind: InvalidEndpointErrorKind::EndpointMustHaveScheme
+            })
+        ));
     }
 }

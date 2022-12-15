@@ -2,22 +2,15 @@
 
 /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnauthorizedOperationException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for UnauthorizedOperationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnauthorizedOperationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl UnauthorizedOperationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -25,7 +18,9 @@ impl std::fmt::Display for UnauthorizedOperationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnauthorizedOperationException")?;
         if let Some(inner_1) = &self.message {
-            write!(f, ": {}", inner_1)?;
+            {
+                write!(f, ": {}", inner_1)?;
+            }
         }
         Ok(())
     }
@@ -35,7 +30,7 @@ impl std::error::Error for UnauthorizedOperationException {}
 pub mod unauthorized_operation_exception {
 
     /// A builder for [`UnauthorizedOperationException`](crate::error::UnauthorizedOperationException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -67,22 +62,15 @@ impl UnauthorizedOperationException {
 
 /// <p>The service is temporarily unavailable.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemporarilyUnavailableException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TemporarilyUnavailableException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemporarilyUnavailableException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl TemporarilyUnavailableException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -90,7 +78,9 @@ impl std::fmt::Display for TemporarilyUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TemporarilyUnavailableException")?;
         if let Some(inner_2) = &self.message {
-            write!(f, ": {}", inner_2)?;
+            {
+                write!(f, ": {}", inner_2)?;
+            }
         }
         Ok(())
     }
@@ -100,7 +90,7 @@ impl std::error::Error for TemporarilyUnavailableException {}
 pub mod temporarily_unavailable_exception {
 
     /// A builder for [`TemporarilyUnavailableException`](crate::error::TemporarilyUnavailableException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -132,22 +122,15 @@ impl TemporarilyUnavailableException {
 
 /// <p>The specified server cannot be replicated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServerCannotBeReplicatedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ServerCannotBeReplicatedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServerCannotBeReplicatedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ServerCannotBeReplicatedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -155,7 +138,9 @@ impl std::fmt::Display for ServerCannotBeReplicatedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServerCannotBeReplicatedException")?;
         if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+            {
+                write!(f, ": {}", inner_3)?;
+            }
         }
         Ok(())
     }
@@ -165,7 +150,7 @@ impl std::error::Error for ServerCannotBeReplicatedException {}
 pub mod server_cannot_be_replicated_exception {
 
     /// A builder for [`ServerCannotBeReplicatedException`](crate::error::ServerCannotBeReplicatedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -197,22 +182,15 @@ impl ServerCannotBeReplicatedException {
 
 /// <p>The specified replication job does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicationJobNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ReplicationJobNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicationJobNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ReplicationJobNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -220,7 +198,9 @@ impl std::fmt::Display for ReplicationJobNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ReplicationJobNotFoundException")?;
         if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+            {
+                write!(f, ": {}", inner_4)?;
+            }
         }
         Ok(())
     }
@@ -230,7 +210,7 @@ impl std::error::Error for ReplicationJobNotFoundException {}
 pub mod replication_job_not_found_exception {
 
     /// A builder for [`ReplicationJobNotFoundException`](crate::error::ReplicationJobNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -262,22 +242,15 @@ impl ReplicationJobNotFoundException {
 
 /// <p>This operation is not allowed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OperationNotPermittedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for OperationNotPermittedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OperationNotPermittedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl OperationNotPermittedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -285,7 +258,9 @@ impl std::fmt::Display for OperationNotPermittedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OperationNotPermittedException")?;
         if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+            {
+                write!(f, ": {}", inner_5)?;
+            }
         }
         Ok(())
     }
@@ -295,7 +270,7 @@ impl std::error::Error for OperationNotPermittedException {}
 pub mod operation_not_permitted_exception {
 
     /// A builder for [`OperationNotPermittedException`](crate::error::OperationNotPermittedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -327,22 +302,15 @@ impl OperationNotPermittedException {
 
 /// <p>A required parameter is missing.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MissingRequiredParameterException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for MissingRequiredParameterException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MissingRequiredParameterException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl MissingRequiredParameterException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -350,7 +318,9 @@ impl std::fmt::Display for MissingRequiredParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MissingRequiredParameterException")?;
         if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+            {
+                write!(f, ": {}", inner_6)?;
+            }
         }
         Ok(())
     }
@@ -360,7 +330,7 @@ impl std::error::Error for MissingRequiredParameterException {}
 pub mod missing_required_parameter_exception {
 
     /// A builder for [`MissingRequiredParameterException`](crate::error::MissingRequiredParameterException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -392,22 +362,15 @@ impl MissingRequiredParameterException {
 
 /// <p>A specified parameter is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidParameterException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidParameterException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidParameterException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -415,7 +378,9 @@ impl std::fmt::Display for InvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidParameterException")?;
         if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
+            {
+                write!(f, ": {}", inner_7)?;
+            }
         }
         Ok(())
     }
@@ -425,7 +390,7 @@ impl std::error::Error for InvalidParameterException {}
 pub mod invalid_parameter_exception {
 
     /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -457,22 +422,15 @@ impl InvalidParameterException {
 
 /// <p>An internal error occurred.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalError {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InternalError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalError");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InternalError {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -480,7 +438,9 @@ impl std::fmt::Display for InternalError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalError")?;
         if let Some(inner_8) = &self.message {
-            write!(f, ": {}", inner_8)?;
+            {
+                write!(f, ": {}", inner_8)?;
+            }
         }
         Ok(())
     }
@@ -490,7 +450,7 @@ impl std::error::Error for InternalError {}
 pub mod internal_error {
 
     /// A builder for [`InternalError`](crate::error::InternalError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -522,22 +482,15 @@ impl InternalError {
 
 /// <p>You have exceeded the number of on-demand replication runs you can request in a 24-hour period.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicationRunLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ReplicationRunLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicationRunLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ReplicationRunLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -545,7 +498,9 @@ impl std::fmt::Display for ReplicationRunLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ReplicationRunLimitExceededException")?;
         if let Some(inner_9) = &self.message {
-            write!(f, ": {}", inner_9)?;
+            {
+                write!(f, ": {}", inner_9)?;
+            }
         }
         Ok(())
     }
@@ -555,7 +510,7 @@ impl std::error::Error for ReplicationRunLimitExceededException {}
 pub mod replication_run_limit_exceeded_exception {
 
     /// A builder for [`ReplicationRunLimitExceededException`](crate::error::ReplicationRunLimitExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -587,22 +542,15 @@ impl ReplicationRunLimitExceededException {
 
 /// <p>The user has the required permissions, so the request would have succeeded, but a dry run was performed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DryRunOperationException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DryRunOperationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DryRunOperationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DryRunOperationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -610,7 +558,9 @@ impl std::fmt::Display for DryRunOperationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DryRunOperationException")?;
         if let Some(inner_10) = &self.message {
-            write!(f, ": {}", inner_10)?;
+            {
+                write!(f, ": {}", inner_10)?;
+            }
         }
         Ok(())
     }
@@ -620,7 +570,7 @@ impl std::error::Error for DryRunOperationException {}
 pub mod dry_run_operation_exception {
 
     /// A builder for [`DryRunOperationException`](crate::error::DryRunOperationException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -652,22 +602,15 @@ impl DryRunOperationException {
 
 /// <p>There are no connectors available.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoConnectorsAvailableException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for NoConnectorsAvailableException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoConnectorsAvailableException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl NoConnectorsAvailableException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -675,7 +618,9 @@ impl std::fmt::Display for NoConnectorsAvailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoConnectorsAvailableException")?;
         if let Some(inner_11) = &self.message {
-            write!(f, ": {}", inner_11)?;
+            {
+                write!(f, ": {}", inner_11)?;
+            }
         }
         Ok(())
     }
@@ -685,7 +630,7 @@ impl std::error::Error for NoConnectorsAvailableException {}
 pub mod no_connectors_available_exception {
 
     /// A builder for [`NoConnectorsAvailableException`](crate::error::NoConnectorsAvailableException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -717,22 +662,15 @@ impl NoConnectorsAvailableException {
 
 /// <p>The specified replication job already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicationJobAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ReplicationJobAlreadyExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicationJobAlreadyExistsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ReplicationJobAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -740,7 +678,9 @@ impl std::fmt::Display for ReplicationJobAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ReplicationJobAlreadyExistsException")?;
         if let Some(inner_12) = &self.message {
-            write!(f, ": {}", inner_12)?;
+            {
+                write!(f, ": {}", inner_12)?;
+            }
         }
         Ok(())
     }
@@ -750,7 +690,7 @@ impl std::error::Error for ReplicationJobAlreadyExistsException {}
 pub mod replication_job_already_exists_exception {
 
     /// A builder for [`ReplicationJobAlreadyExistsException`](crate::error::ReplicationJobAlreadyExistsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -789,6 +729,14 @@ pub struct CreateAppError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateAppError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateAppErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateApp` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -803,8 +751,15 @@ pub enum CreateAppErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateAppError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -835,7 +790,7 @@ impl CreateAppError {
     /// Creates the `CreateAppError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateAppErrorKind::Unhandled(err.into()),
+            kind: CreateAppErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -844,7 +799,7 @@ impl CreateAppError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateAppErrorKind::Unhandled(err.into()),
+            kind: CreateAppErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -906,7 +861,7 @@ impl std::error::Error for CreateAppError {
             CreateAppErrorKind::MissingRequiredParameterException(_inner) => Some(_inner),
             CreateAppErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             CreateAppErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
-            CreateAppErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateAppErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -919,6 +874,14 @@ pub struct CreateReplicationJobError {
     pub kind: CreateReplicationJobErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateReplicationJobError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateReplicationJobErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateReplicationJob` operation.
 #[non_exhaustive]
@@ -942,8 +905,15 @@ pub enum CreateReplicationJobErrorKind {
     TemporarilyUnavailableException(crate::error::TemporarilyUnavailableException),
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateReplicationJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -984,7 +954,9 @@ impl CreateReplicationJobError {
     /// Creates the `CreateReplicationJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateReplicationJobErrorKind::Unhandled(err.into()),
+            kind: CreateReplicationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -993,7 +965,9 @@ impl CreateReplicationJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateReplicationJobErrorKind::Unhandled(err.into()),
+            kind: CreateReplicationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1096,7 +1070,7 @@ impl std::error::Error for CreateReplicationJobError {
             }
             CreateReplicationJobErrorKind::TemporarilyUnavailableException(_inner) => Some(_inner),
             CreateReplicationJobErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
-            CreateReplicationJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateReplicationJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1109,6 +1083,14 @@ pub struct DeleteAppError {
     pub kind: DeleteAppErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteAppError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteAppErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteApp` operation.
 #[non_exhaustive]
@@ -1124,8 +1106,15 @@ pub enum DeleteAppErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAppError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1156,7 +1145,7 @@ impl DeleteAppError {
     /// Creates the `DeleteAppError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAppErrorKind::Unhandled(err.into()),
+            kind: DeleteAppErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1165,7 +1154,7 @@ impl DeleteAppError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAppErrorKind::Unhandled(err.into()),
+            kind: DeleteAppErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1227,7 +1216,7 @@ impl std::error::Error for DeleteAppError {
             DeleteAppErrorKind::MissingRequiredParameterException(_inner) => Some(_inner),
             DeleteAppErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             DeleteAppErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
-            DeleteAppErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAppErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1240,6 +1229,16 @@ pub struct DeleteAppLaunchConfigurationError {
     pub kind: DeleteAppLaunchConfigurationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteAppLaunchConfigurationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteAppLaunchConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteAppLaunchConfiguration` operation.
 #[non_exhaustive]
@@ -1255,8 +1254,15 @@ pub enum DeleteAppLaunchConfigurationErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAppLaunchConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1295,7 +1301,9 @@ impl DeleteAppLaunchConfigurationError {
     /// Creates the `DeleteAppLaunchConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAppLaunchConfigurationErrorKind::Unhandled(err.into()),
+            kind: DeleteAppLaunchConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1304,7 +1312,9 @@ impl DeleteAppLaunchConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAppLaunchConfigurationErrorKind::Unhandled(err.into()),
+            kind: DeleteAppLaunchConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1380,7 +1390,7 @@ impl std::error::Error for DeleteAppLaunchConfigurationError {
             DeleteAppLaunchConfigurationErrorKind::UnauthorizedOperationException(_inner) => {
                 Some(_inner)
             }
-            DeleteAppLaunchConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAppLaunchConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1393,6 +1403,16 @@ pub struct DeleteAppReplicationConfigurationError {
     pub kind: DeleteAppReplicationConfigurationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteAppReplicationConfigurationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteAppReplicationConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteAppReplicationConfiguration` operation.
 #[non_exhaustive]
@@ -1408,8 +1428,15 @@ pub enum DeleteAppReplicationConfigurationErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAppReplicationConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1451,7 +1478,9 @@ impl DeleteAppReplicationConfigurationError {
     /// Creates the `DeleteAppReplicationConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAppReplicationConfigurationErrorKind::Unhandled(err.into()),
+            kind: DeleteAppReplicationConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1460,7 +1489,9 @@ impl DeleteAppReplicationConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAppReplicationConfigurationErrorKind::Unhandled(err.into()),
+            kind: DeleteAppReplicationConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1536,7 +1567,7 @@ impl std::error::Error for DeleteAppReplicationConfigurationError {
             DeleteAppReplicationConfigurationErrorKind::UnauthorizedOperationException(_inner) => {
                 Some(_inner)
             }
-            DeleteAppReplicationConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAppReplicationConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1549,6 +1580,16 @@ pub struct DeleteAppValidationConfigurationError {
     pub kind: DeleteAppValidationConfigurationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteAppValidationConfigurationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteAppValidationConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteAppValidationConfiguration` operation.
 #[non_exhaustive]
@@ -1564,8 +1605,15 @@ pub enum DeleteAppValidationConfigurationErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAppValidationConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1607,7 +1655,9 @@ impl DeleteAppValidationConfigurationError {
     /// Creates the `DeleteAppValidationConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAppValidationConfigurationErrorKind::Unhandled(err.into()),
+            kind: DeleteAppValidationConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1616,7 +1666,9 @@ impl DeleteAppValidationConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAppValidationConfigurationErrorKind::Unhandled(err.into()),
+            kind: DeleteAppValidationConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1692,7 +1744,7 @@ impl std::error::Error for DeleteAppValidationConfigurationError {
             DeleteAppValidationConfigurationErrorKind::UnauthorizedOperationException(_inner) => {
                 Some(_inner)
             }
-            DeleteAppValidationConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAppValidationConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1705,6 +1757,14 @@ pub struct DeleteReplicationJobError {
     pub kind: DeleteReplicationJobErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteReplicationJobError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteReplicationJobErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteReplicationJob` operation.
 #[non_exhaustive]
@@ -1720,8 +1780,15 @@ pub enum DeleteReplicationJobErrorKind {
     ReplicationJobNotFoundException(crate::error::ReplicationJobNotFoundException),
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteReplicationJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1754,7 +1821,9 @@ impl DeleteReplicationJobError {
     /// Creates the `DeleteReplicationJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteReplicationJobErrorKind::Unhandled(err.into()),
+            kind: DeleteReplicationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1763,7 +1832,9 @@ impl DeleteReplicationJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteReplicationJobErrorKind::Unhandled(err.into()),
+            kind: DeleteReplicationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1833,7 +1904,7 @@ impl std::error::Error for DeleteReplicationJobError {
             DeleteReplicationJobErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             DeleteReplicationJobErrorKind::ReplicationJobNotFoundException(_inner) => Some(_inner),
             DeleteReplicationJobErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
-            DeleteReplicationJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteReplicationJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1847,6 +1918,14 @@ pub struct DeleteServerCatalogError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteServerCatalogError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteServerCatalogErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteServerCatalog` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1859,8 +1938,15 @@ pub enum DeleteServerCatalogErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteServerCatalogError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1892,7 +1978,7 @@ impl DeleteServerCatalogError {
     /// Creates the `DeleteServerCatalogError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteServerCatalogErrorKind::Unhandled(err.into()),
+            kind: DeleteServerCatalogErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1901,7 +1987,7 @@ impl DeleteServerCatalogError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteServerCatalogErrorKind::Unhandled(err.into()),
+            kind: DeleteServerCatalogErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1961,7 +2047,7 @@ impl std::error::Error for DeleteServerCatalogError {
             DeleteServerCatalogErrorKind::MissingRequiredParameterException(_inner) => Some(_inner),
             DeleteServerCatalogErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             DeleteServerCatalogErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
-            DeleteServerCatalogErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteServerCatalogErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1975,6 +2061,14 @@ pub struct DisassociateConnectorError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DisassociateConnectorError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DisassociateConnectorErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DisassociateConnector` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1987,8 +2081,15 @@ pub enum DisassociateConnectorErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateConnectorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2020,7 +2121,9 @@ impl DisassociateConnectorError {
     /// Creates the `DisassociateConnectorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisassociateConnectorErrorKind::Unhandled(err.into()),
+            kind: DisassociateConnectorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2029,7 +2132,9 @@ impl DisassociateConnectorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisassociateConnectorErrorKind::Unhandled(err.into()),
+            kind: DisassociateConnectorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2091,7 +2196,7 @@ impl std::error::Error for DisassociateConnectorError {
             }
             DisassociateConnectorErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             DisassociateConnectorErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
-            DisassociateConnectorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisassociateConnectorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2104,6 +2209,14 @@ pub struct GenerateChangeSetError {
     pub kind: GenerateChangeSetErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GenerateChangeSetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GenerateChangeSetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GenerateChangeSet` operation.
 #[non_exhaustive]
@@ -2119,8 +2232,15 @@ pub enum GenerateChangeSetErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GenerateChangeSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2151,7 +2271,7 @@ impl GenerateChangeSetError {
     /// Creates the `GenerateChangeSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GenerateChangeSetErrorKind::Unhandled(err.into()),
+            kind: GenerateChangeSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2160,7 +2280,7 @@ impl GenerateChangeSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GenerateChangeSetErrorKind::Unhandled(err.into()),
+            kind: GenerateChangeSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2225,7 +2345,7 @@ impl std::error::Error for GenerateChangeSetError {
             GenerateChangeSetErrorKind::MissingRequiredParameterException(_inner) => Some(_inner),
             GenerateChangeSetErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             GenerateChangeSetErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
-            GenerateChangeSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GenerateChangeSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2238,6 +2358,14 @@ pub struct GenerateTemplateError {
     pub kind: GenerateTemplateErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GenerateTemplateError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GenerateTemplateErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GenerateTemplate` operation.
 #[non_exhaustive]
@@ -2253,8 +2381,15 @@ pub enum GenerateTemplateErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GenerateTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2285,7 +2420,7 @@ impl GenerateTemplateError {
     /// Creates the `GenerateTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GenerateTemplateErrorKind::Unhandled(err.into()),
+            kind: GenerateTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2294,7 +2429,7 @@ impl GenerateTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GenerateTemplateErrorKind::Unhandled(err.into()),
+            kind: GenerateTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2359,7 +2494,7 @@ impl std::error::Error for GenerateTemplateError {
             GenerateTemplateErrorKind::MissingRequiredParameterException(_inner) => Some(_inner),
             GenerateTemplateErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             GenerateTemplateErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
-            GenerateTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GenerateTemplateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2372,6 +2507,14 @@ pub struct GetAppError {
     pub kind: GetAppErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetAppError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetAppErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetApp` operation.
 #[non_exhaustive]
@@ -2387,8 +2530,15 @@ pub enum GetAppErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAppError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2419,7 +2569,7 @@ impl GetAppError {
     /// Creates the `GetAppError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetAppErrorKind::Unhandled(err.into()),
+            kind: GetAppErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2428,7 +2578,7 @@ impl GetAppError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetAppErrorKind::Unhandled(err.into()),
+            kind: GetAppErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2490,7 +2640,7 @@ impl std::error::Error for GetAppError {
             GetAppErrorKind::MissingRequiredParameterException(_inner) => Some(_inner),
             GetAppErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             GetAppErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
-            GetAppErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetAppErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2503,6 +2653,16 @@ pub struct GetAppLaunchConfigurationError {
     pub kind: GetAppLaunchConfigurationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetAppLaunchConfigurationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetAppLaunchConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetAppLaunchConfiguration` operation.
 #[non_exhaustive]
@@ -2518,8 +2678,15 @@ pub enum GetAppLaunchConfigurationErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAppLaunchConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2556,7 +2723,9 @@ impl GetAppLaunchConfigurationError {
     /// Creates the `GetAppLaunchConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetAppLaunchConfigurationErrorKind::Unhandled(err.into()),
+            kind: GetAppLaunchConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2565,7 +2734,9 @@ impl GetAppLaunchConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetAppLaunchConfigurationErrorKind::Unhandled(err.into()),
+            kind: GetAppLaunchConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2639,7 +2810,7 @@ impl std::error::Error for GetAppLaunchConfigurationError {
             GetAppLaunchConfigurationErrorKind::UnauthorizedOperationException(_inner) => {
                 Some(_inner)
             }
-            GetAppLaunchConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetAppLaunchConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2652,6 +2823,16 @@ pub struct GetAppReplicationConfigurationError {
     pub kind: GetAppReplicationConfigurationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetAppReplicationConfigurationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetAppReplicationConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetAppReplicationConfiguration` operation.
 #[non_exhaustive]
@@ -2667,8 +2848,15 @@ pub enum GetAppReplicationConfigurationErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAppReplicationConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2710,7 +2898,9 @@ impl GetAppReplicationConfigurationError {
     /// Creates the `GetAppReplicationConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetAppReplicationConfigurationErrorKind::Unhandled(err.into()),
+            kind: GetAppReplicationConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2719,7 +2909,9 @@ impl GetAppReplicationConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetAppReplicationConfigurationErrorKind::Unhandled(err.into()),
+            kind: GetAppReplicationConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2795,7 +2987,7 @@ impl std::error::Error for GetAppReplicationConfigurationError {
             GetAppReplicationConfigurationErrorKind::UnauthorizedOperationException(_inner) => {
                 Some(_inner)
             }
-            GetAppReplicationConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetAppReplicationConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2808,6 +3000,16 @@ pub struct GetAppValidationConfigurationError {
     pub kind: GetAppValidationConfigurationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetAppValidationConfigurationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetAppValidationConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetAppValidationConfiguration` operation.
 #[non_exhaustive]
@@ -2823,8 +3025,15 @@ pub enum GetAppValidationConfigurationErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAppValidationConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2866,7 +3075,9 @@ impl GetAppValidationConfigurationError {
     /// Creates the `GetAppValidationConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetAppValidationConfigurationErrorKind::Unhandled(err.into()),
+            kind: GetAppValidationConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2875,7 +3086,9 @@ impl GetAppValidationConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetAppValidationConfigurationErrorKind::Unhandled(err.into()),
+            kind: GetAppValidationConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2951,7 +3164,7 @@ impl std::error::Error for GetAppValidationConfigurationError {
             GetAppValidationConfigurationErrorKind::UnauthorizedOperationException(_inner) => {
                 Some(_inner)
             }
-            GetAppValidationConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetAppValidationConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2964,6 +3177,14 @@ pub struct GetAppValidationOutputError {
     pub kind: GetAppValidationOutputErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetAppValidationOutputError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetAppValidationOutputErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetAppValidationOutput` operation.
 #[non_exhaustive]
@@ -2979,8 +3200,15 @@ pub enum GetAppValidationOutputErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAppValidationOutputError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3017,7 +3245,9 @@ impl GetAppValidationOutputError {
     /// Creates the `GetAppValidationOutputError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetAppValidationOutputErrorKind::Unhandled(err.into()),
+            kind: GetAppValidationOutputErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3026,7 +3256,9 @@ impl GetAppValidationOutputError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetAppValidationOutputErrorKind::Unhandled(err.into()),
+            kind: GetAppValidationOutputErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3096,7 +3328,7 @@ impl std::error::Error for GetAppValidationOutputError {
             }
             GetAppValidationOutputErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             GetAppValidationOutputErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
-            GetAppValidationOutputErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetAppValidationOutputErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3110,14 +3342,29 @@ pub struct GetConnectorsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetConnectorsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetConnectorsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetConnectors` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetConnectorsErrorKind {
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetConnectorsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3144,7 +3391,7 @@ impl GetConnectorsError {
     /// Creates the `GetConnectorsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetConnectorsErrorKind::Unhandled(err.into()),
+            kind: GetConnectorsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3153,7 +3400,7 @@ impl GetConnectorsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetConnectorsErrorKind::Unhandled(err.into()),
+            kind: GetConnectorsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3189,7 +3436,7 @@ impl std::error::Error for GetConnectorsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             GetConnectorsErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
-            GetConnectorsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetConnectorsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3203,6 +3450,14 @@ pub struct GetReplicationJobsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetReplicationJobsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetReplicationJobsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetReplicationJobs` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3213,8 +3468,15 @@ pub enum GetReplicationJobsErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetReplicationJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3243,7 +3505,7 @@ impl GetReplicationJobsError {
     /// Creates the `GetReplicationJobsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetReplicationJobsErrorKind::Unhandled(err.into()),
+            kind: GetReplicationJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3252,7 +3514,7 @@ impl GetReplicationJobsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetReplicationJobsErrorKind::Unhandled(err.into()),
+            kind: GetReplicationJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3304,7 +3566,7 @@ impl std::error::Error for GetReplicationJobsError {
             GetReplicationJobsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GetReplicationJobsErrorKind::MissingRequiredParameterException(_inner) => Some(_inner),
             GetReplicationJobsErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
-            GetReplicationJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetReplicationJobsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3318,6 +3580,14 @@ pub struct GetReplicationRunsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetReplicationRunsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetReplicationRunsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetReplicationRuns` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3328,8 +3598,15 @@ pub enum GetReplicationRunsErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetReplicationRunsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3358,7 +3635,7 @@ impl GetReplicationRunsError {
     /// Creates the `GetReplicationRunsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetReplicationRunsErrorKind::Unhandled(err.into()),
+            kind: GetReplicationRunsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3367,7 +3644,7 @@ impl GetReplicationRunsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetReplicationRunsErrorKind::Unhandled(err.into()),
+            kind: GetReplicationRunsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3419,7 +3696,7 @@ impl std::error::Error for GetReplicationRunsError {
             GetReplicationRunsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GetReplicationRunsErrorKind::MissingRequiredParameterException(_inner) => Some(_inner),
             GetReplicationRunsErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
-            GetReplicationRunsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetReplicationRunsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3433,6 +3710,14 @@ pub struct GetServersError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetServersError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetServersErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetServers` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3445,8 +3730,15 @@ pub enum GetServersErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetServersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3476,7 +3768,7 @@ impl GetServersError {
     /// Creates the `GetServersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetServersErrorKind::Unhandled(err.into()),
+            kind: GetServersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3485,7 +3777,7 @@ impl GetServersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetServersErrorKind::Unhandled(err.into()),
+            kind: GetServersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3542,7 +3834,7 @@ impl std::error::Error for GetServersError {
             GetServersErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GetServersErrorKind::MissingRequiredParameterException(_inner) => Some(_inner),
             GetServersErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
-            GetServersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetServersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3555,6 +3847,14 @@ pub struct ImportAppCatalogError {
     pub kind: ImportAppCatalogErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ImportAppCatalogError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ImportAppCatalogErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ImportAppCatalog` operation.
 #[non_exhaustive]
@@ -3570,8 +3870,15 @@ pub enum ImportAppCatalogErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ImportAppCatalogError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3602,7 +3909,7 @@ impl ImportAppCatalogError {
     /// Creates the `ImportAppCatalogError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ImportAppCatalogErrorKind::Unhandled(err.into()),
+            kind: ImportAppCatalogErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3611,7 +3918,7 @@ impl ImportAppCatalogError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ImportAppCatalogErrorKind::Unhandled(err.into()),
+            kind: ImportAppCatalogErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3676,7 +3983,7 @@ impl std::error::Error for ImportAppCatalogError {
             ImportAppCatalogErrorKind::MissingRequiredParameterException(_inner) => Some(_inner),
             ImportAppCatalogErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             ImportAppCatalogErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
-            ImportAppCatalogErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ImportAppCatalogErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3689,6 +3996,14 @@ pub struct ImportServerCatalogError {
     pub kind: ImportServerCatalogErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ImportServerCatalogError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ImportServerCatalogErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ImportServerCatalog` operation.
 #[non_exhaustive]
@@ -3704,8 +4019,15 @@ pub enum ImportServerCatalogErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ImportServerCatalogError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3738,7 +4060,7 @@ impl ImportServerCatalogError {
     /// Creates the `ImportServerCatalogError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ImportServerCatalogErrorKind::Unhandled(err.into()),
+            kind: ImportServerCatalogErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3747,7 +4069,7 @@ impl ImportServerCatalogError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ImportServerCatalogErrorKind::Unhandled(err.into()),
+            kind: ImportServerCatalogErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3815,7 +4137,7 @@ impl std::error::Error for ImportServerCatalogError {
             ImportServerCatalogErrorKind::NoConnectorsAvailableException(_inner) => Some(_inner),
             ImportServerCatalogErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             ImportServerCatalogErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
-            ImportServerCatalogErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ImportServerCatalogErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3828,6 +4150,14 @@ pub struct LaunchAppError {
     pub kind: LaunchAppErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for LaunchAppError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: LaunchAppErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `LaunchApp` operation.
 #[non_exhaustive]
@@ -3843,8 +4173,15 @@ pub enum LaunchAppErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for LaunchAppError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3875,7 +4212,7 @@ impl LaunchAppError {
     /// Creates the `LaunchAppError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: LaunchAppErrorKind::Unhandled(err.into()),
+            kind: LaunchAppErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3884,7 +4221,7 @@ impl LaunchAppError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: LaunchAppErrorKind::Unhandled(err.into()),
+            kind: LaunchAppErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3946,7 +4283,7 @@ impl std::error::Error for LaunchAppError {
             LaunchAppErrorKind::MissingRequiredParameterException(_inner) => Some(_inner),
             LaunchAppErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             LaunchAppErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
-            LaunchAppErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            LaunchAppErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3959,6 +4296,14 @@ pub struct ListAppsError {
     pub kind: ListAppsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListAppsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListAppsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListApps` operation.
 #[non_exhaustive]
@@ -3974,8 +4319,15 @@ pub enum ListAppsErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAppsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4006,7 +4358,7 @@ impl ListAppsError {
     /// Creates the `ListAppsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAppsErrorKind::Unhandled(err.into()),
+            kind: ListAppsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4015,7 +4367,7 @@ impl ListAppsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAppsErrorKind::Unhandled(err.into()),
+            kind: ListAppsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4077,7 +4429,7 @@ impl std::error::Error for ListAppsError {
             ListAppsErrorKind::MissingRequiredParameterException(_inner) => Some(_inner),
             ListAppsErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             ListAppsErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
-            ListAppsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAppsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4090,6 +4442,16 @@ pub struct NotifyAppValidationOutputError {
     pub kind: NotifyAppValidationOutputErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for NotifyAppValidationOutputError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: NotifyAppValidationOutputErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `NotifyAppValidationOutput` operation.
 #[non_exhaustive]
@@ -4105,8 +4467,15 @@ pub enum NotifyAppValidationOutputErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for NotifyAppValidationOutputError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4143,7 +4512,9 @@ impl NotifyAppValidationOutputError {
     /// Creates the `NotifyAppValidationOutputError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: NotifyAppValidationOutputErrorKind::Unhandled(err.into()),
+            kind: NotifyAppValidationOutputErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4152,7 +4523,9 @@ impl NotifyAppValidationOutputError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: NotifyAppValidationOutputErrorKind::Unhandled(err.into()),
+            kind: NotifyAppValidationOutputErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4226,7 +4599,7 @@ impl std::error::Error for NotifyAppValidationOutputError {
             NotifyAppValidationOutputErrorKind::UnauthorizedOperationException(_inner) => {
                 Some(_inner)
             }
-            NotifyAppValidationOutputErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            NotifyAppValidationOutputErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4239,6 +4612,16 @@ pub struct PutAppLaunchConfigurationError {
     pub kind: PutAppLaunchConfigurationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PutAppLaunchConfigurationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PutAppLaunchConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `PutAppLaunchConfiguration` operation.
 #[non_exhaustive]
@@ -4254,8 +4637,15 @@ pub enum PutAppLaunchConfigurationErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutAppLaunchConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4292,7 +4682,9 @@ impl PutAppLaunchConfigurationError {
     /// Creates the `PutAppLaunchConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutAppLaunchConfigurationErrorKind::Unhandled(err.into()),
+            kind: PutAppLaunchConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4301,7 +4693,9 @@ impl PutAppLaunchConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutAppLaunchConfigurationErrorKind::Unhandled(err.into()),
+            kind: PutAppLaunchConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4375,7 +4769,7 @@ impl std::error::Error for PutAppLaunchConfigurationError {
             PutAppLaunchConfigurationErrorKind::UnauthorizedOperationException(_inner) => {
                 Some(_inner)
             }
-            PutAppLaunchConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutAppLaunchConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4388,6 +4782,16 @@ pub struct PutAppReplicationConfigurationError {
     pub kind: PutAppReplicationConfigurationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PutAppReplicationConfigurationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PutAppReplicationConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `PutAppReplicationConfiguration` operation.
 #[non_exhaustive]
@@ -4403,8 +4807,15 @@ pub enum PutAppReplicationConfigurationErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutAppReplicationConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4446,7 +4857,9 @@ impl PutAppReplicationConfigurationError {
     /// Creates the `PutAppReplicationConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutAppReplicationConfigurationErrorKind::Unhandled(err.into()),
+            kind: PutAppReplicationConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4455,7 +4868,9 @@ impl PutAppReplicationConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutAppReplicationConfigurationErrorKind::Unhandled(err.into()),
+            kind: PutAppReplicationConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4531,7 +4946,7 @@ impl std::error::Error for PutAppReplicationConfigurationError {
             PutAppReplicationConfigurationErrorKind::UnauthorizedOperationException(_inner) => {
                 Some(_inner)
             }
-            PutAppReplicationConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutAppReplicationConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4544,6 +4959,16 @@ pub struct PutAppValidationConfigurationError {
     pub kind: PutAppValidationConfigurationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PutAppValidationConfigurationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PutAppValidationConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `PutAppValidationConfiguration` operation.
 #[non_exhaustive]
@@ -4559,8 +4984,15 @@ pub enum PutAppValidationConfigurationErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutAppValidationConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4602,7 +5034,9 @@ impl PutAppValidationConfigurationError {
     /// Creates the `PutAppValidationConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutAppValidationConfigurationErrorKind::Unhandled(err.into()),
+            kind: PutAppValidationConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4611,7 +5045,9 @@ impl PutAppValidationConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutAppValidationConfigurationErrorKind::Unhandled(err.into()),
+            kind: PutAppValidationConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4687,7 +5123,7 @@ impl std::error::Error for PutAppValidationConfigurationError {
             PutAppValidationConfigurationErrorKind::UnauthorizedOperationException(_inner) => {
                 Some(_inner)
             }
-            PutAppValidationConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutAppValidationConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4700,6 +5136,14 @@ pub struct StartAppReplicationError {
     pub kind: StartAppReplicationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for StartAppReplicationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StartAppReplicationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `StartAppReplication` operation.
 #[non_exhaustive]
@@ -4715,8 +5159,15 @@ pub enum StartAppReplicationErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartAppReplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4749,7 +5200,7 @@ impl StartAppReplicationError {
     /// Creates the `StartAppReplicationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartAppReplicationErrorKind::Unhandled(err.into()),
+            kind: StartAppReplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4758,7 +5209,7 @@ impl StartAppReplicationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartAppReplicationErrorKind::Unhandled(err.into()),
+            kind: StartAppReplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4823,7 +5274,7 @@ impl std::error::Error for StartAppReplicationError {
             StartAppReplicationErrorKind::MissingRequiredParameterException(_inner) => Some(_inner),
             StartAppReplicationErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             StartAppReplicationErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
-            StartAppReplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartAppReplicationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4836,6 +5287,16 @@ pub struct StartOnDemandAppReplicationError {
     pub kind: StartOnDemandAppReplicationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for StartOnDemandAppReplicationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StartOnDemandAppReplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `StartOnDemandAppReplication` operation.
 #[non_exhaustive]
@@ -4851,8 +5312,15 @@ pub enum StartOnDemandAppReplicationErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartOnDemandAppReplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4891,7 +5359,9 @@ impl StartOnDemandAppReplicationError {
     /// Creates the `StartOnDemandAppReplicationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartOnDemandAppReplicationErrorKind::Unhandled(err.into()),
+            kind: StartOnDemandAppReplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4900,7 +5370,9 @@ impl StartOnDemandAppReplicationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartOnDemandAppReplicationErrorKind::Unhandled(err.into()),
+            kind: StartOnDemandAppReplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4974,7 +5446,7 @@ impl std::error::Error for StartOnDemandAppReplicationError {
             StartOnDemandAppReplicationErrorKind::UnauthorizedOperationException(_inner) => {
                 Some(_inner)
             }
-            StartOnDemandAppReplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartOnDemandAppReplicationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4987,6 +5459,16 @@ pub struct StartOnDemandReplicationRunError {
     pub kind: StartOnDemandReplicationRunErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for StartOnDemandReplicationRunError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StartOnDemandReplicationRunErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `StartOnDemandReplicationRun` operation.
 #[non_exhaustive]
@@ -5004,8 +5486,15 @@ pub enum StartOnDemandReplicationRunErrorKind {
     ReplicationRunLimitExceededException(crate::error::ReplicationRunLimitExceededException),
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartOnDemandReplicationRunError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5047,7 +5536,9 @@ impl StartOnDemandReplicationRunError {
     /// Creates the `StartOnDemandReplicationRunError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartOnDemandReplicationRunErrorKind::Unhandled(err.into()),
+            kind: StartOnDemandReplicationRunErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5056,7 +5547,9 @@ impl StartOnDemandReplicationRunError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartOnDemandReplicationRunErrorKind::Unhandled(err.into()),
+            kind: StartOnDemandReplicationRunErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5140,7 +5633,7 @@ impl std::error::Error for StartOnDemandReplicationRunError {
             StartOnDemandReplicationRunErrorKind::UnauthorizedOperationException(_inner) => {
                 Some(_inner)
             }
-            StartOnDemandReplicationRunErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartOnDemandReplicationRunErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5153,6 +5646,14 @@ pub struct StopAppReplicationError {
     pub kind: StopAppReplicationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for StopAppReplicationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StopAppReplicationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `StopAppReplication` operation.
 #[non_exhaustive]
@@ -5168,8 +5669,15 @@ pub enum StopAppReplicationErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StopAppReplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5200,7 +5708,7 @@ impl StopAppReplicationError {
     /// Creates the `StopAppReplicationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StopAppReplicationErrorKind::Unhandled(err.into()),
+            kind: StopAppReplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5209,7 +5717,7 @@ impl StopAppReplicationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StopAppReplicationErrorKind::Unhandled(err.into()),
+            kind: StopAppReplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5274,7 +5782,7 @@ impl std::error::Error for StopAppReplicationError {
             StopAppReplicationErrorKind::MissingRequiredParameterException(_inner) => Some(_inner),
             StopAppReplicationErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             StopAppReplicationErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
-            StopAppReplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StopAppReplicationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5287,6 +5795,14 @@ pub struct TerminateAppError {
     pub kind: TerminateAppErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for TerminateAppError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: TerminateAppErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `TerminateApp` operation.
 #[non_exhaustive]
@@ -5302,8 +5818,15 @@ pub enum TerminateAppErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TerminateAppError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5334,7 +5857,7 @@ impl TerminateAppError {
     /// Creates the `TerminateAppError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TerminateAppErrorKind::Unhandled(err.into()),
+            kind: TerminateAppErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5343,7 +5866,7 @@ impl TerminateAppError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TerminateAppErrorKind::Unhandled(err.into()),
+            kind: TerminateAppErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5408,7 +5931,7 @@ impl std::error::Error for TerminateAppError {
             TerminateAppErrorKind::MissingRequiredParameterException(_inner) => Some(_inner),
             TerminateAppErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             TerminateAppErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
-            TerminateAppErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TerminateAppErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5421,6 +5944,14 @@ pub struct UpdateAppError {
     pub kind: UpdateAppErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateAppError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateAppErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateApp` operation.
 #[non_exhaustive]
@@ -5436,8 +5967,15 @@ pub enum UpdateAppErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAppError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5468,7 +6006,7 @@ impl UpdateAppError {
     /// Creates the `UpdateAppError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateAppErrorKind::Unhandled(err.into()),
+            kind: UpdateAppErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5477,7 +6015,7 @@ impl UpdateAppError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateAppErrorKind::Unhandled(err.into()),
+            kind: UpdateAppErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5539,7 +6077,7 @@ impl std::error::Error for UpdateAppError {
             UpdateAppErrorKind::MissingRequiredParameterException(_inner) => Some(_inner),
             UpdateAppErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             UpdateAppErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
-            UpdateAppErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateAppErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5552,6 +6090,14 @@ pub struct UpdateReplicationJobError {
     pub kind: UpdateReplicationJobErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateReplicationJobError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateReplicationJobErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateReplicationJob` operation.
 #[non_exhaustive]
@@ -5573,8 +6119,15 @@ pub enum UpdateReplicationJobErrorKind {
     TemporarilyUnavailableException(crate::error::TemporarilyUnavailableException),
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateReplicationJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5612,7 +6165,9 @@ impl UpdateReplicationJobError {
     /// Creates the `UpdateReplicationJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateReplicationJobErrorKind::Unhandled(err.into()),
+            kind: UpdateReplicationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5621,7 +6176,9 @@ impl UpdateReplicationJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateReplicationJobErrorKind::Unhandled(err.into()),
+            kind: UpdateReplicationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5714,7 +6271,35 @@ impl std::error::Error for UpdateReplicationJobError {
             }
             UpdateReplicationJobErrorKind::TemporarilyUnavailableException(_inner) => Some(_inner),
             UpdateReplicationJobErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
-            UpdateReplicationJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateReplicationJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+///
+/// When logging an error from the SDK, it is recommended that you either wrap the error in
+/// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+/// error reporter library that visits the error's cause/source chain, or call
+/// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

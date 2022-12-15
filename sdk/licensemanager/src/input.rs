@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod accept_grant_input {
 
     /// A builder for [`AcceptGrantInput`](crate::input::AcceptGrantInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) grant_arn: std::option::Option<std::string::String>,
     }
@@ -23,7 +23,7 @@ pub mod accept_grant_input {
         /// Consumes the builder and constructs a [`AcceptGrantInput`](crate::input::AcceptGrantInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::AcceptGrantInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::AcceptGrantInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::AcceptGrantInput {
                 grant_arn: self.grant_arn,
@@ -44,13 +44,13 @@ impl AcceptGrantInput {
             crate::operation::AcceptGrant,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AcceptGrantInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -58,8 +58,10 @@ impl AcceptGrantInput {
             fn update_http_builder(
                 input: &crate::input::AcceptGrantInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -148,7 +150,7 @@ impl AcceptGrantInput {
 pub mod check_in_license_input {
 
     /// A builder for [`CheckInLicenseInput`](crate::input::CheckInLicenseInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_consumption_token: std::option::Option<std::string::String>,
         pub(crate) beneficiary: std::option::Option<std::string::String>,
@@ -180,7 +182,7 @@ pub mod check_in_license_input {
         /// Consumes the builder and constructs a [`CheckInLicenseInput`](crate::input::CheckInLicenseInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CheckInLicenseInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CheckInLicenseInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CheckInLicenseInput {
                 license_consumption_token: self.license_consumption_token,
@@ -202,13 +204,13 @@ impl CheckInLicenseInput {
             crate::operation::CheckInLicense,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CheckInLicenseInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -216,8 +218,10 @@ impl CheckInLicenseInput {
             fn update_http_builder(
                 input: &crate::input::CheckInLicenseInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -306,7 +310,7 @@ impl CheckInLicenseInput {
 pub mod checkout_borrow_license_input {
 
     /// A builder for [`CheckoutBorrowLicenseInput`](crate::input::CheckoutBorrowLicenseInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_arn: std::option::Option<std::string::String>,
         pub(crate) entitlements: std::option::Option<std::vec::Vec<crate::model::EntitlementData>>,
@@ -404,8 +408,10 @@ pub mod checkout_borrow_license_input {
         /// Consumes the builder and constructs a [`CheckoutBorrowLicenseInput`](crate::input::CheckoutBorrowLicenseInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CheckoutBorrowLicenseInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CheckoutBorrowLicenseInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CheckoutBorrowLicenseInput {
                 license_arn: self.license_arn,
                 entitlements: self.entitlements,
@@ -430,13 +436,13 @@ impl CheckoutBorrowLicenseInput {
             crate::operation::CheckoutBorrowLicense,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CheckoutBorrowLicenseInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -444,8 +450,10 @@ impl CheckoutBorrowLicenseInput {
             fn update_http_builder(
                 input: &crate::input::CheckoutBorrowLicenseInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -536,7 +544,7 @@ impl CheckoutBorrowLicenseInput {
 pub mod checkout_license_input {
 
     /// A builder for [`CheckoutLicenseInput`](crate::input::CheckoutLicenseInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_sku: std::option::Option<std::string::String>,
         pub(crate) checkout_type: std::option::Option<crate::model::CheckoutType>,
@@ -635,7 +643,7 @@ pub mod checkout_license_input {
         /// Consumes the builder and constructs a [`CheckoutLicenseInput`](crate::input::CheckoutLicenseInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CheckoutLicenseInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CheckoutLicenseInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CheckoutLicenseInput {
                 product_sku: self.product_sku,
@@ -662,13 +670,13 @@ impl CheckoutLicenseInput {
             crate::operation::CheckoutLicense,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CheckoutLicenseInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -676,8 +684,10 @@ impl CheckoutLicenseInput {
             fn update_http_builder(
                 input: &crate::input::CheckoutLicenseInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -766,7 +776,7 @@ impl CheckoutLicenseInput {
 pub mod create_grant_input {
 
     /// A builder for [`CreateGrantInput`](crate::input::CreateGrantInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) grant_name: std::option::Option<std::string::String>,
@@ -858,7 +868,7 @@ pub mod create_grant_input {
         /// Consumes the builder and constructs a [`CreateGrantInput`](crate::input::CreateGrantInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateGrantInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateGrantInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateGrantInput {
                 client_token: self.client_token,
@@ -884,13 +894,13 @@ impl CreateGrantInput {
             crate::operation::CreateGrant,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateGrantInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -898,8 +908,10 @@ impl CreateGrantInput {
             fn update_http_builder(
                 input: &crate::input::CreateGrantInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -988,7 +1000,7 @@ impl CreateGrantInput {
 pub mod create_grant_version_input {
 
     /// A builder for [`CreateGrantVersionInput`](crate::input::CreateGrantVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) grant_arn: std::option::Option<std::string::String>,
@@ -1088,8 +1100,10 @@ pub mod create_grant_version_input {
         /// Consumes the builder and constructs a [`CreateGrantVersionInput`](crate::input::CreateGrantVersionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateGrantVersionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateGrantVersionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateGrantVersionInput {
                 client_token: self.client_token,
                 grant_arn: self.grant_arn,
@@ -1115,13 +1129,13 @@ impl CreateGrantVersionInput {
             crate::operation::CreateGrantVersion,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateGrantVersionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1129,8 +1143,10 @@ impl CreateGrantVersionInput {
             fn update_http_builder(
                 input: &crate::input::CreateGrantVersionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1219,7 +1235,7 @@ impl CreateGrantVersionInput {
 pub mod create_license_input {
 
     /// A builder for [`CreateLicenseInput`](crate::input::CreateLicenseInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_name: std::option::Option<std::string::String>,
         pub(crate) product_name: std::option::Option<std::string::String>,
@@ -1375,7 +1391,7 @@ pub mod create_license_input {
         /// Consumes the builder and constructs a [`CreateLicenseInput`](crate::input::CreateLicenseInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateLicenseInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateLicenseInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateLicenseInput {
                 license_name: self.license_name,
@@ -1406,13 +1422,13 @@ impl CreateLicenseInput {
             crate::operation::CreateLicense,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateLicenseInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1420,8 +1436,10 @@ impl CreateLicenseInput {
             fn update_http_builder(
                 input: &crate::input::CreateLicenseInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1510,7 +1528,7 @@ impl CreateLicenseInput {
 pub mod create_license_configuration_input {
 
     /// A builder for [`CreateLicenseConfigurationInput`](crate::input::CreateLicenseConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1663,7 +1681,7 @@ pub mod create_license_configuration_input {
             self,
         ) -> Result<
             crate::input::CreateLicenseConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateLicenseConfigurationInput {
                 name: self.name,
@@ -1692,13 +1710,13 @@ impl CreateLicenseConfigurationInput {
             crate::operation::CreateLicenseConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateLicenseConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1706,8 +1724,10 @@ impl CreateLicenseConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::CreateLicenseConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1798,7 +1818,7 @@ impl CreateLicenseConfigurationInput {
 pub mod create_license_conversion_task_for_resource_input {
 
     /// A builder for [`CreateLicenseConversionTaskForResourceInput`](crate::input::CreateLicenseConversionTaskForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) source_license_context:
@@ -1854,7 +1874,7 @@ pub mod create_license_conversion_task_for_resource_input {
             self,
         ) -> Result<
             crate::input::CreateLicenseConversionTaskForResourceInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateLicenseConversionTaskForResourceInput {
                 resource_arn: self.resource_arn,
@@ -1877,13 +1897,13 @@ impl CreateLicenseConversionTaskForResourceInput {
             crate::operation::CreateLicenseConversionTaskForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateLicenseConversionTaskForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1891,8 +1911,10 @@ impl CreateLicenseConversionTaskForResourceInput {
             fn update_http_builder(
                 input: &crate::input::CreateLicenseConversionTaskForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1980,7 +2002,7 @@ impl CreateLicenseConversionTaskForResourceInput {
 pub mod create_license_manager_report_generator_input {
 
     /// A builder for [`CreateLicenseManagerReportGeneratorInput`](crate::input::CreateLicenseManagerReportGeneratorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_generator_name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::vec::Vec<crate::model::ReportType>>,
@@ -2101,7 +2123,7 @@ pub mod create_license_manager_report_generator_input {
             self,
         ) -> Result<
             crate::input::CreateLicenseManagerReportGeneratorInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateLicenseManagerReportGeneratorInput {
                 report_generator_name: self.report_generator_name,
@@ -2128,13 +2150,13 @@ impl CreateLicenseManagerReportGeneratorInput {
             crate::operation::CreateLicenseManagerReportGenerator,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateLicenseManagerReportGeneratorInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2142,8 +2164,10 @@ impl CreateLicenseManagerReportGeneratorInput {
             fn update_http_builder(
                 input: &crate::input::CreateLicenseManagerReportGeneratorInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2231,7 +2255,7 @@ impl CreateLicenseManagerReportGeneratorInput {
 pub mod create_license_version_input {
 
     /// A builder for [`CreateLicenseVersionInput`](crate::input::CreateLicenseVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_arn: std::option::Option<std::string::String>,
         pub(crate) license_name: std::option::Option<std::string::String>,
@@ -2404,8 +2428,10 @@ pub mod create_license_version_input {
         /// Consumes the builder and constructs a [`CreateLicenseVersionInput`](crate::input::CreateLicenseVersionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateLicenseVersionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateLicenseVersionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateLicenseVersionInput {
                 license_arn: self.license_arn,
                 license_name: self.license_name,
@@ -2436,13 +2462,13 @@ impl CreateLicenseVersionInput {
             crate::operation::CreateLicenseVersion,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateLicenseVersionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2450,8 +2476,10 @@ impl CreateLicenseVersionInput {
             fn update_http_builder(
                 input: &crate::input::CreateLicenseVersionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2542,7 +2570,7 @@ impl CreateLicenseVersionInput {
 pub mod create_token_input {
 
     /// A builder for [`CreateTokenInput`](crate::input::CreateTokenInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_arn: std::option::Option<std::string::String>,
         pub(crate) role_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2622,7 +2650,7 @@ pub mod create_token_input {
         /// Consumes the builder and constructs a [`CreateTokenInput`](crate::input::CreateTokenInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateTokenInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateTokenInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateTokenInput {
                 license_arn: self.license_arn,
@@ -2647,13 +2675,13 @@ impl CreateTokenInput {
             crate::operation::CreateToken,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateTokenInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2661,8 +2689,10 @@ impl CreateTokenInput {
             fn update_http_builder(
                 input: &crate::input::CreateTokenInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2751,7 +2781,7 @@ impl CreateTokenInput {
 pub mod delete_grant_input {
 
     /// A builder for [`DeleteGrantInput`](crate::input::DeleteGrantInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) grant_arn: std::option::Option<std::string::String>,
         pub(crate) status_reason: std::option::Option<std::string::String>,
@@ -2794,7 +2824,7 @@ pub mod delete_grant_input {
         /// Consumes the builder and constructs a [`DeleteGrantInput`](crate::input::DeleteGrantInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteGrantInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteGrantInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteGrantInput {
                 grant_arn: self.grant_arn,
@@ -2817,13 +2847,13 @@ impl DeleteGrantInput {
             crate::operation::DeleteGrant,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteGrantInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2831,8 +2861,10 @@ impl DeleteGrantInput {
             fn update_http_builder(
                 input: &crate::input::DeleteGrantInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2921,7 +2953,7 @@ impl DeleteGrantInput {
 pub mod delete_license_input {
 
     /// A builder for [`DeleteLicenseInput`](crate::input::DeleteLicenseInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_arn: std::option::Option<std::string::String>,
         pub(crate) source_version: std::option::Option<std::string::String>,
@@ -2953,7 +2985,7 @@ pub mod delete_license_input {
         /// Consumes the builder and constructs a [`DeleteLicenseInput`](crate::input::DeleteLicenseInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteLicenseInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteLicenseInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteLicenseInput {
                 license_arn: self.license_arn,
@@ -2975,13 +3007,13 @@ impl DeleteLicenseInput {
             crate::operation::DeleteLicense,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteLicenseInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2989,8 +3021,10 @@ impl DeleteLicenseInput {
             fn update_http_builder(
                 input: &crate::input::DeleteLicenseInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3079,7 +3113,7 @@ impl DeleteLicenseInput {
 pub mod delete_license_configuration_input {
 
     /// A builder for [`DeleteLicenseConfigurationInput`](crate::input::DeleteLicenseConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_configuration_arn: std::option::Option<std::string::String>,
     }
@@ -3102,7 +3136,7 @@ pub mod delete_license_configuration_input {
             self,
         ) -> Result<
             crate::input::DeleteLicenseConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteLicenseConfigurationInput {
                 license_configuration_arn: self.license_configuration_arn,
@@ -3123,13 +3157,13 @@ impl DeleteLicenseConfigurationInput {
             crate::operation::DeleteLicenseConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteLicenseConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3137,8 +3171,10 @@ impl DeleteLicenseConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::DeleteLicenseConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3229,7 +3265,7 @@ impl DeleteLicenseConfigurationInput {
 pub mod delete_license_manager_report_generator_input {
 
     /// A builder for [`DeleteLicenseManagerReportGeneratorInput`](crate::input::DeleteLicenseManagerReportGeneratorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_manager_report_generator_arn: std::option::Option<std::string::String>,
     }
@@ -3255,7 +3291,7 @@ pub mod delete_license_manager_report_generator_input {
             self,
         ) -> Result<
             crate::input::DeleteLicenseManagerReportGeneratorInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteLicenseManagerReportGeneratorInput {
                 license_manager_report_generator_arn: self.license_manager_report_generator_arn,
@@ -3276,13 +3312,13 @@ impl DeleteLicenseManagerReportGeneratorInput {
             crate::operation::DeleteLicenseManagerReportGenerator,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteLicenseManagerReportGeneratorInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3290,8 +3326,10 @@ impl DeleteLicenseManagerReportGeneratorInput {
             fn update_http_builder(
                 input: &crate::input::DeleteLicenseManagerReportGeneratorInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3379,7 +3417,7 @@ impl DeleteLicenseManagerReportGeneratorInput {
 pub mod delete_token_input {
 
     /// A builder for [`DeleteTokenInput`](crate::input::DeleteTokenInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) token_id: std::option::Option<std::string::String>,
     }
@@ -3397,7 +3435,7 @@ pub mod delete_token_input {
         /// Consumes the builder and constructs a [`DeleteTokenInput`](crate::input::DeleteTokenInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteTokenInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteTokenInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteTokenInput {
                 token_id: self.token_id,
@@ -3418,13 +3456,13 @@ impl DeleteTokenInput {
             crate::operation::DeleteToken,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteTokenInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3432,8 +3470,10 @@ impl DeleteTokenInput {
             fn update_http_builder(
                 input: &crate::input::DeleteTokenInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3522,7 +3562,7 @@ impl DeleteTokenInput {
 pub mod extend_license_consumption_input {
 
     /// A builder for [`ExtendLicenseConsumptionInput`](crate::input::ExtendLicenseConsumptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_consumption_token: std::option::Option<std::string::String>,
         pub(crate) dry_run: std::option::Option<bool>,
@@ -3556,7 +3596,7 @@ pub mod extend_license_consumption_input {
             self,
         ) -> Result<
             crate::input::ExtendLicenseConsumptionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ExtendLicenseConsumptionInput {
                 license_consumption_token: self.license_consumption_token,
@@ -3578,13 +3618,13 @@ impl ExtendLicenseConsumptionInput {
             crate::operation::ExtendLicenseConsumption,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ExtendLicenseConsumptionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3592,8 +3632,10 @@ impl ExtendLicenseConsumptionInput {
             fn update_http_builder(
                 input: &crate::input::ExtendLicenseConsumptionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3684,7 +3726,7 @@ impl ExtendLicenseConsumptionInput {
 pub mod get_access_token_input {
 
     /// A builder for [`GetAccessTokenInput`](crate::input::GetAccessTokenInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) token: std::option::Option<std::string::String>,
         pub(crate) token_properties: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3722,7 +3764,7 @@ pub mod get_access_token_input {
         /// Consumes the builder and constructs a [`GetAccessTokenInput`](crate::input::GetAccessTokenInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetAccessTokenInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetAccessTokenInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetAccessTokenInput {
                 token: self.token,
@@ -3744,13 +3786,13 @@ impl GetAccessTokenInput {
             crate::operation::GetAccessToken,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetAccessTokenInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3758,8 +3800,10 @@ impl GetAccessTokenInput {
             fn update_http_builder(
                 input: &crate::input::GetAccessTokenInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3848,7 +3892,7 @@ impl GetAccessTokenInput {
 pub mod get_grant_input {
 
     /// A builder for [`GetGrantInput`](crate::input::GetGrantInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) grant_arn: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<std::string::String>,
@@ -3877,7 +3921,8 @@ pub mod get_grant_input {
         /// Consumes the builder and constructs a [`GetGrantInput`](crate::input::GetGrantInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetGrantInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::GetGrantInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::GetGrantInput {
                 grant_arn: self.grant_arn,
                 version: self.version,
@@ -3898,13 +3943,13 @@ impl GetGrantInput {
             crate::operation::GetGrant,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetGrantInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3912,8 +3957,10 @@ impl GetGrantInput {
             fn update_http_builder(
                 input: &crate::input::GetGrantInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4000,7 +4047,7 @@ impl GetGrantInput {
 pub mod get_license_input {
 
     /// A builder for [`GetLicenseInput`](crate::input::GetLicenseInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_arn: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<std::string::String>,
@@ -4029,7 +4076,8 @@ pub mod get_license_input {
         /// Consumes the builder and constructs a [`GetLicenseInput`](crate::input::GetLicenseInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetLicenseInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::GetLicenseInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::GetLicenseInput {
                 license_arn: self.license_arn,
                 version: self.version,
@@ -4050,13 +4098,13 @@ impl GetLicenseInput {
             crate::operation::GetLicense,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetLicenseInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4064,8 +4112,10 @@ impl GetLicenseInput {
             fn update_http_builder(
                 input: &crate::input::GetLicenseInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4154,7 +4204,7 @@ impl GetLicenseInput {
 pub mod get_license_configuration_input {
 
     /// A builder for [`GetLicenseConfigurationInput`](crate::input::GetLicenseConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_configuration_arn: std::option::Option<std::string::String>,
     }
@@ -4177,7 +4227,7 @@ pub mod get_license_configuration_input {
             self,
         ) -> Result<
             crate::input::GetLicenseConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetLicenseConfigurationInput {
                 license_configuration_arn: self.license_configuration_arn,
@@ -4198,13 +4248,13 @@ impl GetLicenseConfigurationInput {
             crate::operation::GetLicenseConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetLicenseConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4212,8 +4262,10 @@ impl GetLicenseConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::GetLicenseConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4304,7 +4356,7 @@ impl GetLicenseConfigurationInput {
 pub mod get_license_conversion_task_input {
 
     /// A builder for [`GetLicenseConversionTaskInput`](crate::input::GetLicenseConversionTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_conversion_task_id: std::option::Option<std::string::String>,
     }
@@ -4327,7 +4379,7 @@ pub mod get_license_conversion_task_input {
             self,
         ) -> Result<
             crate::input::GetLicenseConversionTaskInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetLicenseConversionTaskInput {
                 license_conversion_task_id: self.license_conversion_task_id,
@@ -4348,13 +4400,13 @@ impl GetLicenseConversionTaskInput {
             crate::operation::GetLicenseConversionTask,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetLicenseConversionTaskInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4362,8 +4414,10 @@ impl GetLicenseConversionTaskInput {
             fn update_http_builder(
                 input: &crate::input::GetLicenseConversionTaskInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4454,7 +4508,7 @@ impl GetLicenseConversionTaskInput {
 pub mod get_license_manager_report_generator_input {
 
     /// A builder for [`GetLicenseManagerReportGeneratorInput`](crate::input::GetLicenseManagerReportGeneratorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_manager_report_generator_arn: std::option::Option<std::string::String>,
     }
@@ -4480,7 +4534,7 @@ pub mod get_license_manager_report_generator_input {
             self,
         ) -> Result<
             crate::input::GetLicenseManagerReportGeneratorInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetLicenseManagerReportGeneratorInput {
                 license_manager_report_generator_arn: self.license_manager_report_generator_arn,
@@ -4501,13 +4555,13 @@ impl GetLicenseManagerReportGeneratorInput {
             crate::operation::GetLicenseManagerReportGenerator,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetLicenseManagerReportGeneratorInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4515,8 +4569,10 @@ impl GetLicenseManagerReportGeneratorInput {
             fn update_http_builder(
                 input: &crate::input::GetLicenseManagerReportGeneratorInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4604,7 +4660,7 @@ impl GetLicenseManagerReportGeneratorInput {
 pub mod get_license_usage_input {
 
     /// A builder for [`GetLicenseUsageInput`](crate::input::GetLicenseUsageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_arn: std::option::Option<std::string::String>,
     }
@@ -4622,7 +4678,7 @@ pub mod get_license_usage_input {
         /// Consumes the builder and constructs a [`GetLicenseUsageInput`](crate::input::GetLicenseUsageInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetLicenseUsageInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetLicenseUsageInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetLicenseUsageInput {
                 license_arn: self.license_arn,
@@ -4643,13 +4699,13 @@ impl GetLicenseUsageInput {
             crate::operation::GetLicenseUsage,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetLicenseUsageInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4657,8 +4713,10 @@ impl GetLicenseUsageInput {
             fn update_http_builder(
                 input: &crate::input::GetLicenseUsageInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4747,14 +4805,16 @@ impl GetLicenseUsageInput {
 pub mod get_service_settings_input {
 
     /// A builder for [`GetServiceSettingsInput`](crate::input::GetServiceSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetServiceSettingsInput`](crate::input::GetServiceSettingsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetServiceSettingsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetServiceSettingsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetServiceSettingsInput {})
         }
     }
@@ -4772,13 +4832,13 @@ impl GetServiceSettingsInput {
             crate::operation::GetServiceSettings,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetServiceSettingsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4786,8 +4846,10 @@ impl GetServiceSettingsInput {
             fn update_http_builder(
                 input: &crate::input::GetServiceSettingsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4869,7 +4931,7 @@ impl GetServiceSettingsInput {
 pub mod list_associations_for_license_configuration_input {
 
     /// A builder for [`ListAssociationsForLicenseConfigurationInput`](crate::input::ListAssociationsForLicenseConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_configuration_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4914,7 +4976,7 @@ pub mod list_associations_for_license_configuration_input {
             self,
         ) -> Result<
             crate::input::ListAssociationsForLicenseConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListAssociationsForLicenseConfigurationInput {
                 license_configuration_arn: self.license_configuration_arn,
@@ -4937,13 +4999,13 @@ impl ListAssociationsForLicenseConfigurationInput {
             crate::operation::ListAssociationsForLicenseConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListAssociationsForLicenseConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4951,8 +5013,10 @@ impl ListAssociationsForLicenseConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::ListAssociationsForLicenseConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5040,7 +5104,7 @@ impl ListAssociationsForLicenseConfigurationInput {
 pub mod list_distributed_grants_input {
 
     /// A builder for [`ListDistributedGrantsInput`](crate::input::ListDistributedGrantsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) grant_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -5123,8 +5187,10 @@ pub mod list_distributed_grants_input {
         /// Consumes the builder and constructs a [`ListDistributedGrantsInput`](crate::input::ListDistributedGrantsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListDistributedGrantsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListDistributedGrantsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListDistributedGrantsInput {
                 grant_arns: self.grant_arns,
                 filters: self.filters,
@@ -5147,13 +5213,13 @@ impl ListDistributedGrantsInput {
             crate::operation::ListDistributedGrants,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListDistributedGrantsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5161,8 +5227,10 @@ impl ListDistributedGrantsInput {
             fn update_http_builder(
                 input: &crate::input::ListDistributedGrantsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5253,7 +5321,7 @@ impl ListDistributedGrantsInput {
 pub mod list_failures_for_license_configuration_operations_input {
 
     /// A builder for [`ListFailuresForLicenseConfigurationOperationsInput`](crate::input::ListFailuresForLicenseConfigurationOperationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_configuration_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -5298,7 +5366,7 @@ pub mod list_failures_for_license_configuration_operations_input {
             self,
         ) -> Result<
             crate::input::ListFailuresForLicenseConfigurationOperationsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(
                 crate::input::ListFailuresForLicenseConfigurationOperationsInput {
@@ -5323,13 +5391,13 @@ impl ListFailuresForLicenseConfigurationOperationsInput {
             crate::operation::ListFailuresForLicenseConfigurationOperations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListFailuresForLicenseConfigurationOperationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5337,8 +5405,10 @@ impl ListFailuresForLicenseConfigurationOperationsInput {
             fn update_http_builder(
                 input: &crate::input::ListFailuresForLicenseConfigurationOperationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5427,7 +5497,7 @@ impl ListFailuresForLicenseConfigurationOperationsInput {
 pub mod list_license_configurations_input {
 
     /// A builder for [`ListLicenseConfigurationsInput`](crate::input::ListLicenseConfigurationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_configuration_arns:
             std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5509,7 +5579,7 @@ pub mod list_license_configurations_input {
             self,
         ) -> Result<
             crate::input::ListLicenseConfigurationsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListLicenseConfigurationsInput {
                 license_configuration_arns: self.license_configuration_arns,
@@ -5533,13 +5603,13 @@ impl ListLicenseConfigurationsInput {
             crate::operation::ListLicenseConfigurations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListLicenseConfigurationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5547,8 +5617,10 @@ impl ListLicenseConfigurationsInput {
             fn update_http_builder(
                 input: &crate::input::ListLicenseConfigurationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5639,7 +5711,7 @@ impl ListLicenseConfigurationsInput {
 pub mod list_license_conversion_tasks_input {
 
     /// A builder for [`ListLicenseConversionTasksInput`](crate::input::ListLicenseConversionTasksInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -5690,7 +5762,7 @@ pub mod list_license_conversion_tasks_input {
             self,
         ) -> Result<
             crate::input::ListLicenseConversionTasksInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListLicenseConversionTasksInput {
                 next_token: self.next_token,
@@ -5713,13 +5785,13 @@ impl ListLicenseConversionTasksInput {
             crate::operation::ListLicenseConversionTasks,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListLicenseConversionTasksInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5727,8 +5799,10 @@ impl ListLicenseConversionTasksInput {
             fn update_http_builder(
                 input: &crate::input::ListLicenseConversionTasksInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5816,7 +5890,7 @@ impl ListLicenseConversionTasksInput {
 pub mod list_license_manager_report_generators_input {
 
     /// A builder for [`ListLicenseManagerReportGeneratorsInput`](crate::input::ListLicenseManagerReportGeneratorsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5873,7 +5947,7 @@ pub mod list_license_manager_report_generators_input {
             self,
         ) -> Result<
             crate::input::ListLicenseManagerReportGeneratorsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListLicenseManagerReportGeneratorsInput {
                 filters: self.filters,
@@ -5896,13 +5970,13 @@ impl ListLicenseManagerReportGeneratorsInput {
             crate::operation::ListLicenseManagerReportGenerators,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListLicenseManagerReportGeneratorsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5910,8 +5984,10 @@ impl ListLicenseManagerReportGeneratorsInput {
             fn update_http_builder(
                 input: &crate::input::ListLicenseManagerReportGeneratorsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5999,7 +6075,7 @@ impl ListLicenseManagerReportGeneratorsInput {
 pub mod list_licenses_input {
 
     /// A builder for [`ListLicensesInput`](crate::input::ListLicensesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -6080,7 +6156,7 @@ pub mod list_licenses_input {
         /// Consumes the builder and constructs a [`ListLicensesInput`](crate::input::ListLicensesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListLicensesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListLicensesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListLicensesInput {
                 license_arns: self.license_arns,
@@ -6104,13 +6180,13 @@ impl ListLicensesInput {
             crate::operation::ListLicenses,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListLicensesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6118,8 +6194,10 @@ impl ListLicensesInput {
             fn update_http_builder(
                 input: &crate::input::ListLicensesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6208,7 +6286,7 @@ impl ListLicensesInput {
 pub mod list_license_specifications_for_resource_input {
 
     /// A builder for [`ListLicenseSpecificationsForResourceInput`](crate::input::ListLicenseSpecificationsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -6250,7 +6328,7 @@ pub mod list_license_specifications_for_resource_input {
             self,
         ) -> Result<
             crate::input::ListLicenseSpecificationsForResourceInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListLicenseSpecificationsForResourceInput {
                 resource_arn: self.resource_arn,
@@ -6273,13 +6351,13 @@ impl ListLicenseSpecificationsForResourceInput {
             crate::operation::ListLicenseSpecificationsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListLicenseSpecificationsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6287,8 +6365,10 @@ impl ListLicenseSpecificationsForResourceInput {
             fn update_http_builder(
                 input: &crate::input::ListLicenseSpecificationsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6376,7 +6456,7 @@ impl ListLicenseSpecificationsForResourceInput {
 pub mod list_license_versions_input {
 
     /// A builder for [`ListLicenseVersionsInput`](crate::input::ListLicenseVersionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -6416,8 +6496,10 @@ pub mod list_license_versions_input {
         /// Consumes the builder and constructs a [`ListLicenseVersionsInput`](crate::input::ListLicenseVersionsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListLicenseVersionsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListLicenseVersionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListLicenseVersionsInput {
                 license_arn: self.license_arn,
                 next_token: self.next_token,
@@ -6439,13 +6521,13 @@ impl ListLicenseVersionsInput {
             crate::operation::ListLicenseVersions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListLicenseVersionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6453,8 +6535,10 @@ impl ListLicenseVersionsInput {
             fn update_http_builder(
                 input: &crate::input::ListLicenseVersionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6543,7 +6627,7 @@ impl ListLicenseVersionsInput {
 pub mod list_received_grants_input {
 
     /// A builder for [`ListReceivedGrantsInput`](crate::input::ListReceivedGrantsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) grant_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -6626,8 +6710,10 @@ pub mod list_received_grants_input {
         /// Consumes the builder and constructs a [`ListReceivedGrantsInput`](crate::input::ListReceivedGrantsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListReceivedGrantsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListReceivedGrantsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListReceivedGrantsInput {
                 grant_arns: self.grant_arns,
                 filters: self.filters,
@@ -6650,13 +6736,13 @@ impl ListReceivedGrantsInput {
             crate::operation::ListReceivedGrants,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListReceivedGrantsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6664,8 +6750,10 @@ impl ListReceivedGrantsInput {
             fn update_http_builder(
                 input: &crate::input::ListReceivedGrantsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6754,7 +6842,7 @@ impl ListReceivedGrantsInput {
 pub mod list_received_licenses_input {
 
     /// A builder for [`ListReceivedLicensesInput`](crate::input::ListReceivedLicensesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -6837,8 +6925,10 @@ pub mod list_received_licenses_input {
         /// Consumes the builder and constructs a [`ListReceivedLicensesInput`](crate::input::ListReceivedLicensesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListReceivedLicensesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListReceivedLicensesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListReceivedLicensesInput {
                 license_arns: self.license_arns,
                 filters: self.filters,
@@ -6861,13 +6951,13 @@ impl ListReceivedLicensesInput {
             crate::operation::ListReceivedLicenses,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListReceivedLicensesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6875,8 +6965,10 @@ impl ListReceivedLicensesInput {
             fn update_http_builder(
                 input: &crate::input::ListReceivedLicensesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6967,7 +7059,7 @@ impl ListReceivedLicensesInput {
 pub mod list_resource_inventory_input {
 
     /// A builder for [`ListResourceInventoryInput`](crate::input::ListResourceInventoryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -7034,8 +7126,10 @@ pub mod list_resource_inventory_input {
         /// Consumes the builder and constructs a [`ListResourceInventoryInput`](crate::input::ListResourceInventoryInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListResourceInventoryInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListResourceInventoryInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListResourceInventoryInput {
                 max_results: self.max_results,
                 next_token: self.next_token,
@@ -7057,13 +7151,13 @@ impl ListResourceInventoryInput {
             crate::operation::ListResourceInventory,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListResourceInventoryInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7071,8 +7165,10 @@ impl ListResourceInventoryInput {
             fn update_http_builder(
                 input: &crate::input::ListResourceInventoryInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7163,7 +7259,7 @@ impl ListResourceInventoryInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -7181,8 +7277,10 @@ pub mod list_tags_for_resource_input {
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
             })
@@ -7202,13 +7300,13 @@ impl ListTagsForResourceInput {
             crate::operation::ListTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7216,8 +7314,10 @@ impl ListTagsForResourceInput {
             fn update_http_builder(
                 input: &crate::input::ListTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7308,7 +7408,7 @@ impl ListTagsForResourceInput {
 pub mod list_tokens_input {
 
     /// A builder for [`ListTokensInput`](crate::input::ListTokensInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) token_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -7383,7 +7483,8 @@ pub mod list_tokens_input {
         /// Consumes the builder and constructs a [`ListTokensInput`](crate::input::ListTokensInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTokensInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ListTokensInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ListTokensInput {
                 token_ids: self.token_ids,
                 filters: self.filters,
@@ -7406,13 +7507,13 @@ impl ListTokensInput {
             crate::operation::ListTokens,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTokensInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7420,8 +7521,10 @@ impl ListTokensInput {
             fn update_http_builder(
                 input: &crate::input::ListTokensInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7510,7 +7613,7 @@ impl ListTokensInput {
 pub mod list_usage_for_license_configuration_input {
 
     /// A builder for [`ListUsageForLicenseConfigurationInput`](crate::input::ListUsageForLicenseConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_configuration_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -7585,7 +7688,7 @@ pub mod list_usage_for_license_configuration_input {
             self,
         ) -> Result<
             crate::input::ListUsageForLicenseConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListUsageForLicenseConfigurationInput {
                 license_configuration_arn: self.license_configuration_arn,
@@ -7609,13 +7712,13 @@ impl ListUsageForLicenseConfigurationInput {
             crate::operation::ListUsageForLicenseConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListUsageForLicenseConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7623,8 +7726,10 @@ impl ListUsageForLicenseConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::ListUsageForLicenseConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7712,7 +7817,7 @@ impl ListUsageForLicenseConfigurationInput {
 pub mod reject_grant_input {
 
     /// A builder for [`RejectGrantInput`](crate::input::RejectGrantInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) grant_arn: std::option::Option<std::string::String>,
     }
@@ -7730,7 +7835,7 @@ pub mod reject_grant_input {
         /// Consumes the builder and constructs a [`RejectGrantInput`](crate::input::RejectGrantInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::RejectGrantInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::RejectGrantInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::RejectGrantInput {
                 grant_arn: self.grant_arn,
@@ -7751,13 +7856,13 @@ impl RejectGrantInput {
             crate::operation::RejectGrant,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RejectGrantInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7765,8 +7870,10 @@ impl RejectGrantInput {
             fn update_http_builder(
                 input: &crate::input::RejectGrantInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7855,7 +7962,7 @@ impl RejectGrantInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -7893,7 +8000,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
@@ -7915,13 +8022,13 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7929,8 +8036,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8019,7 +8128,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8057,7 +8166,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
@@ -8079,13 +8188,13 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -8093,8 +8202,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8183,7 +8294,7 @@ impl UntagResourceInput {
 pub mod update_license_configuration_input {
 
     /// A builder for [`UpdateLicenseConfigurationInput`](crate::input::UpdateLicenseConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_configuration_arn: std::option::Option<std::string::String>,
         pub(crate) license_configuration_status:
@@ -8320,7 +8431,7 @@ pub mod update_license_configuration_input {
             self,
         ) -> Result<
             crate::input::UpdateLicenseConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateLicenseConfigurationInput {
                 license_configuration_arn: self.license_configuration_arn,
@@ -8349,13 +8460,13 @@ impl UpdateLicenseConfigurationInput {
             crate::operation::UpdateLicenseConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateLicenseConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -8363,8 +8474,10 @@ impl UpdateLicenseConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::UpdateLicenseConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8455,7 +8568,7 @@ impl UpdateLicenseConfigurationInput {
 pub mod update_license_manager_report_generator_input {
 
     /// A builder for [`UpdateLicenseManagerReportGeneratorInput`](crate::input::UpdateLicenseManagerReportGeneratorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_manager_report_generator_arn: std::option::Option<std::string::String>,
         pub(crate) report_generator_name: std::option::Option<std::string::String>,
@@ -8573,7 +8686,7 @@ pub mod update_license_manager_report_generator_input {
             self,
         ) -> Result<
             crate::input::UpdateLicenseManagerReportGeneratorInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateLicenseManagerReportGeneratorInput {
                 license_manager_report_generator_arn: self.license_manager_report_generator_arn,
@@ -8600,13 +8713,13 @@ impl UpdateLicenseManagerReportGeneratorInput {
             crate::operation::UpdateLicenseManagerReportGenerator,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateLicenseManagerReportGeneratorInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -8614,8 +8727,10 @@ impl UpdateLicenseManagerReportGeneratorInput {
             fn update_http_builder(
                 input: &crate::input::UpdateLicenseManagerReportGeneratorInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8703,7 +8818,7 @@ impl UpdateLicenseManagerReportGeneratorInput {
 pub mod update_license_specifications_for_resource_input {
 
     /// A builder for [`UpdateLicenseSpecificationsForResourceInput`](crate::input::UpdateLicenseSpecificationsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) add_license_specifications:
@@ -8771,7 +8886,7 @@ pub mod update_license_specifications_for_resource_input {
             self,
         ) -> Result<
             crate::input::UpdateLicenseSpecificationsForResourceInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateLicenseSpecificationsForResourceInput {
                 resource_arn: self.resource_arn,
@@ -8794,13 +8909,13 @@ impl UpdateLicenseSpecificationsForResourceInput {
             crate::operation::UpdateLicenseSpecificationsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateLicenseSpecificationsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -8808,8 +8923,10 @@ impl UpdateLicenseSpecificationsForResourceInput {
             fn update_http_builder(
                 input: &crate::input::UpdateLicenseSpecificationsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8897,7 +9014,7 @@ impl UpdateLicenseSpecificationsForResourceInput {
 pub mod update_service_settings_input {
 
     /// A builder for [`UpdateServiceSettingsInput`](crate::input::UpdateServiceSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_bucket_arn: std::option::Option<std::string::String>,
         pub(crate) sns_topic_arn: std::option::Option<std::string::String>,
@@ -8964,8 +9081,10 @@ pub mod update_service_settings_input {
         /// Consumes the builder and constructs a [`UpdateServiceSettingsInput`](crate::input::UpdateServiceSettingsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateServiceSettingsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateServiceSettingsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateServiceSettingsInput {
                 s3_bucket_arn: self.s3_bucket_arn,
                 sns_topic_arn: self.sns_topic_arn,
@@ -8988,13 +9107,13 @@ impl UpdateServiceSettingsInput {
             crate::operation::UpdateServiceSettings,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateServiceSettingsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -9002,8 +9121,10 @@ impl UpdateServiceSettingsInput {
             fn update_http_builder(
                 input: &crate::input::UpdateServiceSettingsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -9092,7 +9213,7 @@ impl UpdateServiceSettingsInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateServiceSettingsInput {
     /// <p>Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager information is stored.</p>
     #[doc(hidden)]
@@ -9127,26 +9248,10 @@ impl UpdateServiceSettingsInput {
         self.enable_cross_accounts_discovery
     }
 }
-impl std::fmt::Debug for UpdateServiceSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateServiceSettingsInput");
-        formatter.field("s3_bucket_arn", &self.s3_bucket_arn);
-        formatter.field("sns_topic_arn", &self.sns_topic_arn);
-        formatter.field(
-            "organization_configuration",
-            &self.organization_configuration,
-        );
-        formatter.field(
-            "enable_cross_accounts_discovery",
-            &self.enable_cross_accounts_discovery,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLicenseSpecificationsForResourceInput {
     /// <p>Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
     #[doc(hidden)]
@@ -9178,25 +9283,10 @@ impl UpdateLicenseSpecificationsForResourceInput {
         self.remove_license_specifications.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateLicenseSpecificationsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLicenseSpecificationsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field(
-            "add_license_specifications",
-            &self.add_license_specifications,
-        );
-        formatter.field(
-            "remove_license_specifications",
-            &self.remove_license_specifications,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLicenseManagerReportGeneratorInput {
     /// <p>Amazon Resource Name (ARN) of the report generator to update.</p>
     #[doc(hidden)]
@@ -9258,26 +9348,10 @@ impl UpdateLicenseManagerReportGeneratorInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateLicenseManagerReportGeneratorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLicenseManagerReportGeneratorInput");
-        formatter.field(
-            "license_manager_report_generator_arn",
-            &self.license_manager_report_generator_arn,
-        );
-        formatter.field("report_generator_name", &self.report_generator_name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("report_context", &self.report_context);
-        formatter.field("report_frequency", &self.report_frequency);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLicenseConfigurationInput {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     #[doc(hidden)]
@@ -9350,31 +9424,10 @@ impl UpdateLicenseConfigurationInput {
         self.disassociate_when_not_found
     }
 }
-impl std::fmt::Debug for UpdateLicenseConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLicenseConfigurationInput");
-        formatter.field("license_configuration_arn", &self.license_configuration_arn);
-        formatter.field(
-            "license_configuration_status",
-            &self.license_configuration_status,
-        );
-        formatter.field("license_rules", &self.license_rules);
-        formatter.field("license_count", &self.license_count);
-        formatter.field("license_count_hard_limit", &self.license_count_hard_limit);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("product_information_list", &self.product_information_list);
-        formatter.field(
-            "disassociate_when_not_found",
-            &self.disassociate_when_not_found,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     #[doc(hidden)]
@@ -9393,18 +9446,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     #[doc(hidden)]
@@ -9423,18 +9468,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RejectGrantInput {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
     #[doc(hidden)]
@@ -9446,17 +9483,10 @@ impl RejectGrantInput {
         self.grant_arn.as_deref()
     }
 }
-impl std::fmt::Debug for RejectGrantInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RejectGrantInput");
-        formatter.field("grant_arn", &self.grant_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUsageForLicenseConfigurationInput {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     #[doc(hidden)]
@@ -9499,20 +9529,10 @@ impl ListUsageForLicenseConfigurationInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListUsageForLicenseConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUsageForLicenseConfigurationInput");
-        formatter.field("license_configuration_arn", &self.license_configuration_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTokensInput {
     /// <p>Token IDs.</p>
     #[doc(hidden)]
@@ -9551,20 +9571,10 @@ impl ListTokensInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListTokensInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTokensInput");
-        formatter.field("token_ids", &self.token_ids);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     #[doc(hidden)]
@@ -9576,17 +9586,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResourceInventoryInput {
     /// <p>Maximum number of results to return in a single call.</p>
     #[doc(hidden)]
@@ -9630,19 +9633,10 @@ impl ListResourceInventoryInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListResourceInventoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResourceInventoryInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListReceivedLicensesInput {
     /// <p>Amazon Resource Names (ARNs) of the licenses.</p>
     #[doc(hidden)]
@@ -9689,20 +9683,10 @@ impl ListReceivedLicensesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListReceivedLicensesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListReceivedLicensesInput");
-        formatter.field("license_arns", &self.license_arns);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListReceivedGrantsInput {
     /// <p>Amazon Resource Names (ARNs) of the grants.</p>
     #[doc(hidden)]
@@ -9749,20 +9733,10 @@ impl ListReceivedGrantsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListReceivedGrantsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListReceivedGrantsInput");
-        formatter.field("grant_arns", &self.grant_arns);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLicenseVersionsInput {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     #[doc(hidden)]
@@ -9788,19 +9762,10 @@ impl ListLicenseVersionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListLicenseVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLicenseVersionsInput");
-        formatter.field("license_arn", &self.license_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLicenseSpecificationsForResourceInput {
     /// <p>Amazon Resource Name (ARN) of a resource that has an associated license configuration.</p>
     #[doc(hidden)]
@@ -9826,19 +9791,10 @@ impl ListLicenseSpecificationsForResourceInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListLicenseSpecificationsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLicenseSpecificationsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLicensesInput {
     /// <p>Amazon Resource Names (ARNs) of the licenses.</p>
     #[doc(hidden)]
@@ -9883,20 +9839,10 @@ impl ListLicensesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListLicensesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLicensesInput");
-        formatter.field("license_arns", &self.license_arns);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLicenseManagerReportGeneratorsInput {
     /// <p>Filters to scope the results. The following filters are supported: </p>
     /// <ul>
@@ -9928,19 +9874,10 @@ impl ListLicenseManagerReportGeneratorsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListLicenseManagerReportGeneratorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLicenseManagerReportGeneratorsInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLicenseConversionTasksInput {
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
@@ -9966,19 +9903,10 @@ impl ListLicenseConversionTasksInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListLicenseConversionTasksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLicenseConversionTasksInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLicenseConfigurationsInput {
     /// <p>Amazon Resource Names (ARN) of the license configurations.</p>
     #[doc(hidden)]
@@ -10021,23 +9949,10 @@ impl ListLicenseConfigurationsInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListLicenseConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLicenseConfigurationsInput");
-        formatter.field(
-            "license_configuration_arns",
-            &self.license_configuration_arns,
-        );
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFailuresForLicenseConfigurationOperationsInput {
     /// <p>Amazon Resource Name of the license configuration.</p>
     #[doc(hidden)]
@@ -10063,19 +9978,10 @@ impl ListFailuresForLicenseConfigurationOperationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListFailuresForLicenseConfigurationOperationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFailuresForLicenseConfigurationOperationsInput");
-        formatter.field("license_configuration_arn", &self.license_configuration_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDistributedGrantsInput {
     /// <p>Amazon Resource Names (ARNs) of the grants.</p>
     #[doc(hidden)]
@@ -10122,20 +10028,10 @@ impl ListDistributedGrantsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDistributedGrantsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDistributedGrantsInput");
-        formatter.field("grant_arns", &self.grant_arns);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAssociationsForLicenseConfigurationInput {
     /// <p>Amazon Resource Name (ARN) of a license configuration.</p>
     #[doc(hidden)]
@@ -10161,30 +10057,15 @@ impl ListAssociationsForLicenseConfigurationInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListAssociationsForLicenseConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAssociationsForLicenseConfigurationInput");
-        formatter.field("license_configuration_arn", &self.license_configuration_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetServiceSettingsInput {}
-impl std::fmt::Debug for GetServiceSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetServiceSettingsInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLicenseUsageInput {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     #[doc(hidden)]
@@ -10196,17 +10077,10 @@ impl GetLicenseUsageInput {
         self.license_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetLicenseUsageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLicenseUsageInput");
-        formatter.field("license_arn", &self.license_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLicenseManagerReportGeneratorInput {
     /// <p>Amazon Resource Name (ARN) of the report generator.</p>
     #[doc(hidden)]
@@ -10218,20 +10092,10 @@ impl GetLicenseManagerReportGeneratorInput {
         self.license_manager_report_generator_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetLicenseManagerReportGeneratorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLicenseManagerReportGeneratorInput");
-        formatter.field(
-            "license_manager_report_generator_arn",
-            &self.license_manager_report_generator_arn,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLicenseConversionTaskInput {
     /// <p>ID of the license type conversion task to retrieve information on.</p>
     #[doc(hidden)]
@@ -10243,20 +10107,10 @@ impl GetLicenseConversionTaskInput {
         self.license_conversion_task_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetLicenseConversionTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLicenseConversionTaskInput");
-        formatter.field(
-            "license_conversion_task_id",
-            &self.license_conversion_task_id,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLicenseConfigurationInput {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     #[doc(hidden)]
@@ -10268,17 +10122,10 @@ impl GetLicenseConfigurationInput {
         self.license_configuration_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetLicenseConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLicenseConfigurationInput");
-        formatter.field("license_configuration_arn", &self.license_configuration_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLicenseInput {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     #[doc(hidden)]
@@ -10297,18 +10144,10 @@ impl GetLicenseInput {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for GetLicenseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLicenseInput");
-        formatter.field("license_arn", &self.license_arn);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGrantInput {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
     #[doc(hidden)]
@@ -10327,18 +10166,10 @@ impl GetGrantInput {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for GetGrantInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGrantInput");
-        formatter.field("grant_arn", &self.grant_arn);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccessTokenInput {
     /// <p>Refresh token, encoded as a JWT token.</p>
     #[doc(hidden)]
@@ -10357,18 +10188,10 @@ impl GetAccessTokenInput {
         self.token_properties.as_deref()
     }
 }
-impl std::fmt::Debug for GetAccessTokenInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccessTokenInput");
-        formatter.field("token", &self.token);
-        formatter.field("token_properties", &self.token_properties);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExtendLicenseConsumptionInput {
     /// <p>License consumption token.</p>
     #[doc(hidden)]
@@ -10387,18 +10210,10 @@ impl ExtendLicenseConsumptionInput {
         self.dry_run
     }
 }
-impl std::fmt::Debug for ExtendLicenseConsumptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExtendLicenseConsumptionInput");
-        formatter.field("license_consumption_token", &self.license_consumption_token);
-        formatter.field("dry_run", &self.dry_run);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTokenInput {
     /// <p>Token ID.</p>
     #[doc(hidden)]
@@ -10410,17 +10225,10 @@ impl DeleteTokenInput {
         self.token_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTokenInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTokenInput");
-        formatter.field("token_id", &self.token_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLicenseManagerReportGeneratorInput {
     /// <p>Amazon Resource Name (ARN) of the report generator to be deleted.</p>
     #[doc(hidden)]
@@ -10432,20 +10240,10 @@ impl DeleteLicenseManagerReportGeneratorInput {
         self.license_manager_report_generator_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLicenseManagerReportGeneratorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLicenseManagerReportGeneratorInput");
-        formatter.field(
-            "license_manager_report_generator_arn",
-            &self.license_manager_report_generator_arn,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLicenseConfigurationInput {
     /// <p>ID of the license configuration.</p>
     #[doc(hidden)]
@@ -10457,17 +10255,10 @@ impl DeleteLicenseConfigurationInput {
         self.license_configuration_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLicenseConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLicenseConfigurationInput");
-        formatter.field("license_configuration_arn", &self.license_configuration_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLicenseInput {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     #[doc(hidden)]
@@ -10486,18 +10277,10 @@ impl DeleteLicenseInput {
         self.source_version.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLicenseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLicenseInput");
-        formatter.field("license_arn", &self.license_arn);
-        formatter.field("source_version", &self.source_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGrantInput {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
     #[doc(hidden)]
@@ -10523,19 +10306,10 @@ impl DeleteGrantInput {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteGrantInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGrantInput");
-        formatter.field("grant_arn", &self.grant_arn);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTokenInput {
     /// <p>Amazon Resource Name (ARN) of the license. The ARN is mapped to the aud claim of the JWT token.</p>
     #[doc(hidden)]
@@ -10575,21 +10349,10 @@ impl CreateTokenInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateTokenInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTokenInput");
-        formatter.field("license_arn", &self.license_arn);
-        formatter.field("role_arns", &self.role_arns);
-        formatter.field("expiration_in_days", &self.expiration_in_days);
-        formatter.field("token_properties", &self.token_properties);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLicenseVersionInput {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     #[doc(hidden)]
@@ -10680,28 +10443,10 @@ impl CreateLicenseVersionInput {
         self.source_version.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLicenseVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLicenseVersionInput");
-        formatter.field("license_arn", &self.license_arn);
-        formatter.field("license_name", &self.license_name);
-        formatter.field("product_name", &self.product_name);
-        formatter.field("issuer", &self.issuer);
-        formatter.field("home_region", &self.home_region);
-        formatter.field("validity", &self.validity);
-        formatter.field("license_metadata", &self.license_metadata);
-        formatter.field("entitlements", &self.entitlements);
-        formatter.field("consumption_configuration", &self.consumption_configuration);
-        formatter.field("status", &self.status);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("source_version", &self.source_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLicenseManagerReportGeneratorInput {
     /// <p>Name of the report generator.</p>
     #[doc(hidden)]
@@ -10763,23 +10508,10 @@ impl CreateLicenseManagerReportGeneratorInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLicenseManagerReportGeneratorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLicenseManagerReportGeneratorInput");
-        formatter.field("report_generator_name", &self.report_generator_name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("report_context", &self.report_context);
-        formatter.field("report_frequency", &self.report_frequency);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLicenseConversionTaskForResourceInput {
     /// <p>Amazon Resource Name (ARN) of the resource you are converting the license type for.</p>
     #[doc(hidden)]
@@ -10809,22 +10541,10 @@ impl CreateLicenseConversionTaskForResourceInput {
         self.destination_license_context.as_ref()
     }
 }
-impl std::fmt::Debug for CreateLicenseConversionTaskForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLicenseConversionTaskForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("source_license_context", &self.source_license_context);
-        formatter.field(
-            "destination_license_context",
-            &self.destination_license_context,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLicenseConfigurationInput {
     /// <p>Name of the license configuration.</p>
     #[doc(hidden)]
@@ -10909,28 +10629,10 @@ impl CreateLicenseConfigurationInput {
         self.product_information_list.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLicenseConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLicenseConfigurationInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("license_counting_type", &self.license_counting_type);
-        formatter.field("license_count", &self.license_count);
-        formatter.field("license_count_hard_limit", &self.license_count_hard_limit);
-        formatter.field("license_rules", &self.license_rules);
-        formatter.field("tags", &self.tags);
-        formatter.field(
-            "disassociate_when_not_found",
-            &self.disassociate_when_not_found,
-        );
-        formatter.field("product_information_list", &self.product_information_list);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLicenseInput {
     /// <p>License name.</p>
     #[doc(hidden)]
@@ -11014,27 +10716,10 @@ impl CreateLicenseInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLicenseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLicenseInput");
-        formatter.field("license_name", &self.license_name);
-        formatter.field("product_name", &self.product_name);
-        formatter.field("product_sku", &self.product_sku);
-        formatter.field("issuer", &self.issuer);
-        formatter.field("home_region", &self.home_region);
-        formatter.field("validity", &self.validity);
-        formatter.field("entitlements", &self.entitlements);
-        formatter.field("beneficiary", &self.beneficiary);
-        formatter.field("consumption_configuration", &self.consumption_configuration);
-        formatter.field("license_metadata", &self.license_metadata);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGrantVersionInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     #[doc(hidden)]
@@ -11088,23 +10773,10 @@ impl CreateGrantVersionInput {
         self.source_version.as_deref()
     }
 }
-impl std::fmt::Debug for CreateGrantVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGrantVersionInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("grant_arn", &self.grant_arn);
-        formatter.field("grant_name", &self.grant_name);
-        formatter.field("allowed_operations", &self.allowed_operations);
-        formatter.field("status", &self.status);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.field("source_version", &self.source_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGrantInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     #[doc(hidden)]
@@ -11151,22 +10823,10 @@ impl CreateGrantInput {
         self.allowed_operations.as_deref()
     }
 }
-impl std::fmt::Debug for CreateGrantInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGrantInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("grant_name", &self.grant_name);
-        formatter.field("license_arn", &self.license_arn);
-        formatter.field("principals", &self.principals);
-        formatter.field("home_region", &self.home_region);
-        formatter.field("allowed_operations", &self.allowed_operations);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CheckoutLicenseInput {
     /// <p>Product SKU.</p>
     #[doc(hidden)]
@@ -11220,23 +10880,10 @@ impl CheckoutLicenseInput {
         self.node_id.as_deref()
     }
 }
-impl std::fmt::Debug for CheckoutLicenseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CheckoutLicenseInput");
-        formatter.field("product_sku", &self.product_sku);
-        formatter.field("checkout_type", &self.checkout_type);
-        formatter.field("key_fingerprint", &self.key_fingerprint);
-        formatter.field("entitlements", &self.entitlements);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("beneficiary", &self.beneficiary);
-        formatter.field("node_id", &self.node_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CheckoutBorrowLicenseInput {
     /// <p>Amazon Resource Name (ARN) of the license. The license must use the borrow consumption configuration.</p>
     #[doc(hidden)]
@@ -11285,22 +10932,10 @@ impl CheckoutBorrowLicenseInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CheckoutBorrowLicenseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CheckoutBorrowLicenseInput");
-        formatter.field("license_arn", &self.license_arn);
-        formatter.field("entitlements", &self.entitlements);
-        formatter.field("digital_signature_method", &self.digital_signature_method);
-        formatter.field("node_id", &self.node_id);
-        formatter.field("checkout_metadata", &self.checkout_metadata);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CheckInLicenseInput {
     /// <p>License consumption token.</p>
     #[doc(hidden)]
@@ -11319,18 +10954,10 @@ impl CheckInLicenseInput {
         self.beneficiary.as_deref()
     }
 }
-impl std::fmt::Debug for CheckInLicenseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CheckInLicenseInput");
-        formatter.field("license_consumption_token", &self.license_consumption_token);
-        formatter.field("beneficiary", &self.beneficiary);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceptGrantInput {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
     #[doc(hidden)]
@@ -11340,12 +10967,5 @@ impl AcceptGrantInput {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
     pub fn grant_arn(&self) -> std::option::Option<&str> {
         self.grant_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for AcceptGrantInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceptGrantInput");
-        formatter.field("grant_arn", &self.grant_arn);
-        formatter.finish()
     }
 }

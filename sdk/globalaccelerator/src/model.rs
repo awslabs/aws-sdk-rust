@@ -16,7 +16,7 @@
 /// <li> <p> <b>FAILED_DEPROVISION </b> — The request to deprovision the address range from Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact Amazon Web Services support.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ByoipCidr {
     /// <p>The address range, in CIDR notation.</p>
     #[doc(hidden)]
@@ -42,20 +42,11 @@ impl ByoipCidr {
         self.events.as_deref()
     }
 }
-impl std::fmt::Debug for ByoipCidr {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ByoipCidr");
-        formatter.field("cidr", &self.cidr);
-        formatter.field("state", &self.state);
-        formatter.field("events", &self.events);
-        formatter.finish()
-    }
-}
 /// See [`ByoipCidr`](crate::model::ByoipCidr).
 pub mod byoip_cidr {
 
     /// A builder for [`ByoipCidr`](crate::model::ByoipCidr).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cidr: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::ByoipCidrState>,
@@ -123,7 +114,7 @@ impl ByoipCidr {
 
 /// <p>A complex type that contains a <code>Message</code> and a <code>Timestamp</code> value for changes that you make in the status of an IP address range that you bring to Global Accelerator through bring your own IP address (BYOIP).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ByoipCidrEvent {
     /// <p>A string that contains an <code>Event</code> message describing changes that you make in the status of an IP address range that you bring to Global Accelerator through bring your own IP address (BYOIP).</p>
     #[doc(hidden)]
@@ -142,19 +133,11 @@ impl ByoipCidrEvent {
         self.timestamp.as_ref()
     }
 }
-impl std::fmt::Debug for ByoipCidrEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ByoipCidrEvent");
-        formatter.field("message", &self.message);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.finish()
-    }
-}
 /// See [`ByoipCidrEvent`](crate::model::ByoipCidrEvent).
 pub mod byoip_cidr_event {
 
     /// A builder for [`ByoipCidrEvent`](crate::model::ByoipCidrEvent).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -199,6 +182,50 @@ impl ByoipCidrEvent {
     }
 }
 
+/// When writing a match expression against `ByoipCidrState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let byoipcidrstate = unimplemented!();
+/// match byoipcidrstate {
+///     ByoipCidrState::Advertising => { /* ... */ },
+///     ByoipCidrState::Deprovisioned => { /* ... */ },
+///     ByoipCidrState::FailedAdvertising => { /* ... */ },
+///     ByoipCidrState::FailedDeprovision => { /* ... */ },
+///     ByoipCidrState::FailedProvision => { /* ... */ },
+///     ByoipCidrState::FailedWithdraw => { /* ... */ },
+///     ByoipCidrState::PendingAdvertising => { /* ... */ },
+///     ByoipCidrState::PendingDeprovisioning => { /* ... */ },
+///     ByoipCidrState::PendingProvisioning => { /* ... */ },
+///     ByoipCidrState::PendingWithdrawing => { /* ... */ },
+///     ByoipCidrState::Ready => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `byoipcidrstate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ByoipCidrState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ByoipCidrState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ByoipCidrState::NewFeature` is defined.
+/// Specifically, when `byoipcidrstate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ByoipCidrState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -233,8 +260,8 @@ pub enum ByoipCidrState {
     PendingWithdrawing,
     #[allow(missing_docs)] // documentation missing in model
     Ready,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ByoipCidrState {
     fn from(s: &str) -> Self {
@@ -250,7 +277,7 @@ impl std::convert::From<&str> for ByoipCidrState {
             "PENDING_PROVISIONING" => ByoipCidrState::PendingProvisioning,
             "PENDING_WITHDRAWING" => ByoipCidrState::PendingWithdrawing,
             "READY" => ByoipCidrState::Ready,
-            other => ByoipCidrState::Unknown(other.to_owned()),
+            other => ByoipCidrState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -276,11 +303,11 @@ impl ByoipCidrState {
             ByoipCidrState::PendingProvisioning => "PENDING_PROVISIONING",
             ByoipCidrState::PendingWithdrawing => "PENDING_WITHDRAWING",
             ByoipCidrState::Ready => "READY",
-            ByoipCidrState::Unknown(s) => s.as_ref(),
+            ByoipCidrState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ADVERTISING",
             "DEPROVISIONED",
@@ -304,7 +331,7 @@ impl AsRef<str> for ByoipCidrState {
 
 /// <p>A complex type for a listener.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Listener {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     #[doc(hidden)]
@@ -343,21 +370,11 @@ impl Listener {
         self.client_affinity.as_ref()
     }
 }
-impl std::fmt::Debug for Listener {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Listener");
-        formatter.field("listener_arn", &self.listener_arn);
-        formatter.field("port_ranges", &self.port_ranges);
-        formatter.field("protocol", &self.protocol);
-        formatter.field("client_affinity", &self.client_affinity);
-        formatter.finish()
-    }
-}
 /// See [`Listener`](crate::model::Listener).
 pub mod listener {
 
     /// A builder for [`Listener`](crate::model::Listener).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) listener_arn: std::option::Option<std::string::String>,
         pub(crate) port_ranges: std::option::Option<std::vec::Vec<crate::model::PortRange>>,
@@ -441,6 +458,41 @@ impl Listener {
     }
 }
 
+/// When writing a match expression against `ClientAffinity`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let clientaffinity = unimplemented!();
+/// match clientaffinity {
+///     ClientAffinity::None => { /* ... */ },
+///     ClientAffinity::SourceIp => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `clientaffinity` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ClientAffinity::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ClientAffinity::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ClientAffinity::NewFeature` is defined.
+/// Specifically, when `clientaffinity` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ClientAffinity::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -457,15 +509,15 @@ pub enum ClientAffinity {
     None,
     #[allow(missing_docs)] // documentation missing in model
     SourceIp,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ClientAffinity {
     fn from(s: &str) -> Self {
         match s {
             "NONE" => ClientAffinity::None,
             "SOURCE_IP" => ClientAffinity::SourceIp,
-            other => ClientAffinity::Unknown(other.to_owned()),
+            other => ClientAffinity::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -482,11 +534,11 @@ impl ClientAffinity {
         match self {
             ClientAffinity::None => "NONE",
             ClientAffinity::SourceIp => "SOURCE_IP",
-            ClientAffinity::Unknown(s) => s.as_ref(),
+            ClientAffinity::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NONE", "SOURCE_IP"]
     }
 }
@@ -496,6 +548,41 @@ impl AsRef<str> for ClientAffinity {
     }
 }
 
+/// When writing a match expression against `Protocol`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let protocol = unimplemented!();
+/// match protocol {
+///     Protocol::Tcp => { /* ... */ },
+///     Protocol::Udp => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `protocol` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Protocol::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Protocol::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Protocol::NewFeature` is defined.
+/// Specifically, when `protocol` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Protocol::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -512,15 +599,15 @@ pub enum Protocol {
     Tcp,
     #[allow(missing_docs)] // documentation missing in model
     Udp,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Protocol {
     fn from(s: &str) -> Self {
         match s {
             "TCP" => Protocol::Tcp,
             "UDP" => Protocol::Udp,
-            other => Protocol::Unknown(other.to_owned()),
+            other => Protocol::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -537,11 +624,11 @@ impl Protocol {
         match self {
             Protocol::Tcp => "TCP",
             Protocol::Udp => "UDP",
-            Protocol::Unknown(s) => s.as_ref(),
+            Protocol::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["TCP", "UDP"]
     }
 }
@@ -553,7 +640,7 @@ impl AsRef<str> for Protocol {
 
 /// <p>A complex type for a range of ports for a listener.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PortRange {
     /// <p>The first port in the range of ports, inclusive.</p>
     #[doc(hidden)]
@@ -572,19 +659,11 @@ impl PortRange {
         self.to_port
     }
 }
-impl std::fmt::Debug for PortRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PortRange");
-        formatter.field("from_port", &self.from_port);
-        formatter.field("to_port", &self.to_port);
-        formatter.finish()
-    }
-}
 /// See [`PortRange`](crate::model::PortRange).
 pub mod port_range {
 
     /// A builder for [`PortRange`](crate::model::PortRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) from_port: std::option::Option<i32>,
         pub(crate) to_port: std::option::Option<i32>,
@@ -628,7 +707,7 @@ impl PortRange {
 
 /// <p>A complex type for the endpoint group. An Amazon Web Services Region can have only one endpoint group for a specific listener. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointGroup {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     #[doc(hidden)]
@@ -712,30 +791,11 @@ impl EndpointGroup {
         self.port_overrides.as_deref()
     }
 }
-impl std::fmt::Debug for EndpointGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointGroup");
-        formatter.field("endpoint_group_arn", &self.endpoint_group_arn);
-        formatter.field("endpoint_group_region", &self.endpoint_group_region);
-        formatter.field("endpoint_descriptions", &self.endpoint_descriptions);
-        formatter.field("traffic_dial_percentage", &self.traffic_dial_percentage);
-        formatter.field("health_check_port", &self.health_check_port);
-        formatter.field("health_check_protocol", &self.health_check_protocol);
-        formatter.field("health_check_path", &self.health_check_path);
-        formatter.field(
-            "health_check_interval_seconds",
-            &self.health_check_interval_seconds,
-        );
-        formatter.field("threshold_count", &self.threshold_count);
-        formatter.field("port_overrides", &self.port_overrides);
-        formatter.finish()
-    }
-}
 /// See [`EndpointGroup`](crate::model::EndpointGroup).
 pub mod endpoint_group {
 
     /// A builder for [`EndpointGroup`](crate::model::EndpointGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_group_arn: std::option::Option<std::string::String>,
         pub(crate) endpoint_group_region: std::option::Option<std::string::String>,
@@ -916,7 +976,7 @@ impl EndpointGroup {
 /// <p>Override specific listener ports used to route traffic to endpoints that are part of an endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Overriding listener ports</a> in the <i>Global Accelerator Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PortOverride {
     /// <p>The listener port that you want to map to a specific endpoint port. This is the port that user traffic arrives to the Global Accelerator on.</p>
     #[doc(hidden)]
@@ -935,19 +995,11 @@ impl PortOverride {
         self.endpoint_port
     }
 }
-impl std::fmt::Debug for PortOverride {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PortOverride");
-        formatter.field("listener_port", &self.listener_port);
-        formatter.field("endpoint_port", &self.endpoint_port);
-        formatter.finish()
-    }
-}
 /// See [`PortOverride`](crate::model::PortOverride).
 pub mod port_override {
 
     /// A builder for [`PortOverride`](crate::model::PortOverride).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) listener_port: std::option::Option<i32>,
         pub(crate) endpoint_port: std::option::Option<i32>,
@@ -989,6 +1041,42 @@ impl PortOverride {
     }
 }
 
+/// When writing a match expression against `HealthCheckProtocol`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let healthcheckprotocol = unimplemented!();
+/// match healthcheckprotocol {
+///     HealthCheckProtocol::Http => { /* ... */ },
+///     HealthCheckProtocol::Https => { /* ... */ },
+///     HealthCheckProtocol::Tcp => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `healthcheckprotocol` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `HealthCheckProtocol::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `HealthCheckProtocol::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `HealthCheckProtocol::NewFeature` is defined.
+/// Specifically, when `healthcheckprotocol` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `HealthCheckProtocol::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1007,8 +1095,8 @@ pub enum HealthCheckProtocol {
     Https,
     #[allow(missing_docs)] // documentation missing in model
     Tcp,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for HealthCheckProtocol {
     fn from(s: &str) -> Self {
@@ -1016,7 +1104,9 @@ impl std::convert::From<&str> for HealthCheckProtocol {
             "HTTP" => HealthCheckProtocol::Http,
             "HTTPS" => HealthCheckProtocol::Https,
             "TCP" => HealthCheckProtocol::Tcp,
-            other => HealthCheckProtocol::Unknown(other.to_owned()),
+            other => {
+                HealthCheckProtocol::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -1034,11 +1124,11 @@ impl HealthCheckProtocol {
             HealthCheckProtocol::Http => "HTTP",
             HealthCheckProtocol::Https => "HTTPS",
             HealthCheckProtocol::Tcp => "TCP",
-            HealthCheckProtocol::Unknown(s) => s.as_ref(),
+            HealthCheckProtocol::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HTTP", "HTTPS", "TCP"]
     }
 }
@@ -1050,7 +1140,7 @@ impl AsRef<str> for HealthCheckProtocol {
 
 /// <p>A complex type for an endpoint. Each endpoint group can include one or more endpoints, such as load balancers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointDescription {
     /// <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. </p>
     /// <p>An Application Load Balancer can be either internal or internet-facing.</p>
@@ -1098,25 +1188,11 @@ impl EndpointDescription {
         self.client_ip_preservation_enabled
     }
 }
-impl std::fmt::Debug for EndpointDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointDescription");
-        formatter.field("endpoint_id", &self.endpoint_id);
-        formatter.field("weight", &self.weight);
-        formatter.field("health_state", &self.health_state);
-        formatter.field("health_reason", &self.health_reason);
-        formatter.field(
-            "client_ip_preservation_enabled",
-            &self.client_ip_preservation_enabled,
-        );
-        formatter.finish()
-    }
-}
 /// See [`EndpointDescription`](crate::model::EndpointDescription).
 pub mod endpoint_description {
 
     /// A builder for [`EndpointDescription`](crate::model::EndpointDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_id: std::option::Option<std::string::String>,
         pub(crate) weight: std::option::Option<i32>,
@@ -1211,6 +1287,42 @@ impl EndpointDescription {
     }
 }
 
+/// When writing a match expression against `HealthState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let healthstate = unimplemented!();
+/// match healthstate {
+///     HealthState::Healthy => { /* ... */ },
+///     HealthState::Initial => { /* ... */ },
+///     HealthState::Unhealthy => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `healthstate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `HealthState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `HealthState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `HealthState::NewFeature` is defined.
+/// Specifically, when `healthstate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `HealthState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1229,8 +1341,8 @@ pub enum HealthState {
     Initial,
     #[allow(missing_docs)] // documentation missing in model
     Unhealthy,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for HealthState {
     fn from(s: &str) -> Self {
@@ -1238,7 +1350,7 @@ impl std::convert::From<&str> for HealthState {
             "HEALTHY" => HealthState::Healthy,
             "INITIAL" => HealthState::Initial,
             "UNHEALTHY" => HealthState::Unhealthy,
-            other => HealthState::Unknown(other.to_owned()),
+            other => HealthState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1256,11 +1368,11 @@ impl HealthState {
             HealthState::Healthy => "HEALTHY",
             HealthState::Initial => "INITIAL",
             HealthState::Unhealthy => "UNHEALTHY",
-            HealthState::Unknown(s) => s.as_ref(),
+            HealthState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HEALTHY", "INITIAL", "UNHEALTHY"]
     }
 }
@@ -1272,7 +1384,7 @@ impl AsRef<str> for HealthState {
 
 /// <p>A complex type for endpoints. A resource must be valid and active when you add it as an endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointConfiguration {
     /// <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. A resource must be valid and active when you add it as an endpoint.</p>
     /// <p>An Application Load Balancer can be either internal or internet-facing.</p>
@@ -1306,23 +1418,11 @@ impl EndpointConfiguration {
         self.client_ip_preservation_enabled
     }
 }
-impl std::fmt::Debug for EndpointConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointConfiguration");
-        formatter.field("endpoint_id", &self.endpoint_id);
-        formatter.field("weight", &self.weight);
-        formatter.field(
-            "client_ip_preservation_enabled",
-            &self.client_ip_preservation_enabled,
-        );
-        formatter.finish()
-    }
-}
 /// See [`EndpointConfiguration`](crate::model::EndpointConfiguration).
 pub mod endpoint_configuration {
 
     /// A builder for [`EndpointConfiguration`](crate::model::EndpointConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_id: std::option::Option<std::string::String>,
         pub(crate) weight: std::option::Option<i32>,
@@ -1389,7 +1489,7 @@ impl EndpointConfiguration {
 
 /// <p>A complex type for a listener for a custom routing accelerator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomRoutingListener {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     #[doc(hidden)]
@@ -1410,19 +1510,11 @@ impl CustomRoutingListener {
         self.port_ranges.as_deref()
     }
 }
-impl std::fmt::Debug for CustomRoutingListener {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomRoutingListener");
-        formatter.field("listener_arn", &self.listener_arn);
-        formatter.field("port_ranges", &self.port_ranges);
-        formatter.finish()
-    }
-}
 /// See [`CustomRoutingListener`](crate::model::CustomRoutingListener).
 pub mod custom_routing_listener {
 
     /// A builder for [`CustomRoutingListener`](crate::model::CustomRoutingListener).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) listener_arn: std::option::Option<std::string::String>,
         pub(crate) port_ranges: std::option::Option<std::vec::Vec<crate::model::PortRange>>,
@@ -1477,7 +1569,7 @@ impl CustomRoutingListener {
 
 /// <p>Attributes of a custom routing accelerator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomRoutingAcceleratorAttributes {
     /// <p>Indicates whether flow logs are enabled. The default value is false. If the value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow logs</a> in the <i>Global Accelerator Developer Guide</i>.</p>
@@ -1509,20 +1601,11 @@ impl CustomRoutingAcceleratorAttributes {
         self.flow_logs_s3_prefix.as_deref()
     }
 }
-impl std::fmt::Debug for CustomRoutingAcceleratorAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomRoutingAcceleratorAttributes");
-        formatter.field("flow_logs_enabled", &self.flow_logs_enabled);
-        formatter.field("flow_logs_s3_bucket", &self.flow_logs_s3_bucket);
-        formatter.field("flow_logs_s3_prefix", &self.flow_logs_s3_prefix);
-        formatter.finish()
-    }
-}
 /// See [`CustomRoutingAcceleratorAttributes`](crate::model::CustomRoutingAcceleratorAttributes).
 pub mod custom_routing_accelerator_attributes {
 
     /// A builder for [`CustomRoutingAcceleratorAttributes`](crate::model::CustomRoutingAcceleratorAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_logs_enabled: std::option::Option<bool>,
         pub(crate) flow_logs_s3_bucket: std::option::Option<std::string::String>,
@@ -1590,7 +1673,7 @@ impl CustomRoutingAcceleratorAttributes {
 
 /// <p>Attributes of a custom routing accelerator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomRoutingAccelerator {
     /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator.</p>
     #[doc(hidden)]
@@ -1666,26 +1749,11 @@ impl CustomRoutingAccelerator {
         self.last_modified_time.as_ref()
     }
 }
-impl std::fmt::Debug for CustomRoutingAccelerator {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomRoutingAccelerator");
-        formatter.field("accelerator_arn", &self.accelerator_arn);
-        formatter.field("name", &self.name);
-        formatter.field("ip_address_type", &self.ip_address_type);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("ip_sets", &self.ip_sets);
-        formatter.field("dns_name", &self.dns_name);
-        formatter.field("status", &self.status);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.finish()
-    }
-}
 /// See [`CustomRoutingAccelerator`](crate::model::CustomRoutingAccelerator).
 pub mod custom_routing_accelerator {
 
     /// A builder for [`CustomRoutingAccelerator`](crate::model::CustomRoutingAccelerator).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1843,6 +1911,41 @@ impl CustomRoutingAccelerator {
     }
 }
 
+/// When writing a match expression against `CustomRoutingAcceleratorStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let customroutingacceleratorstatus = unimplemented!();
+/// match customroutingacceleratorstatus {
+///     CustomRoutingAcceleratorStatus::Deployed => { /* ... */ },
+///     CustomRoutingAcceleratorStatus::InProgress => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `customroutingacceleratorstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CustomRoutingAcceleratorStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CustomRoutingAcceleratorStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CustomRoutingAcceleratorStatus::NewFeature` is defined.
+/// Specifically, when `customroutingacceleratorstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CustomRoutingAcceleratorStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1859,15 +1962,17 @@ pub enum CustomRoutingAcceleratorStatus {
     Deployed,
     #[allow(missing_docs)] // documentation missing in model
     InProgress,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CustomRoutingAcceleratorStatus {
     fn from(s: &str) -> Self {
         match s {
             "DEPLOYED" => CustomRoutingAcceleratorStatus::Deployed,
             "IN_PROGRESS" => CustomRoutingAcceleratorStatus::InProgress,
-            other => CustomRoutingAcceleratorStatus::Unknown(other.to_owned()),
+            other => CustomRoutingAcceleratorStatus::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -1884,11 +1989,11 @@ impl CustomRoutingAcceleratorStatus {
         match self {
             CustomRoutingAcceleratorStatus::Deployed => "DEPLOYED",
             CustomRoutingAcceleratorStatus::InProgress => "IN_PROGRESS",
-            CustomRoutingAcceleratorStatus::Unknown(s) => s.as_ref(),
+            CustomRoutingAcceleratorStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEPLOYED", "IN_PROGRESS"]
     }
 }
@@ -1900,7 +2005,7 @@ impl AsRef<str> for CustomRoutingAcceleratorStatus {
 
 /// <p>A complex type for the set of IP addresses for an accelerator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IpSet {
     /// <p>IpFamily is deprecated and has been replaced by IpAddressFamily.</p>
     #[deprecated(note = "IpFamily has been replaced by IpAddressFamily")]
@@ -1928,20 +2033,11 @@ impl IpSet {
         self.ip_address_family.as_ref()
     }
 }
-impl std::fmt::Debug for IpSet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IpSet");
-        formatter.field("ip_family", &self.ip_family);
-        formatter.field("ip_addresses", &self.ip_addresses);
-        formatter.field("ip_address_family", &self.ip_address_family);
-        formatter.finish()
-    }
-}
 /// See [`IpSet`](crate::model::IpSet).
 pub mod ip_set {
 
     /// A builder for [`IpSet`](crate::model::IpSet).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_family: std::option::Option<std::string::String>,
         pub(crate) ip_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2009,6 +2105,41 @@ impl IpSet {
     }
 }
 
+/// When writing a match expression against `IpAddressFamily`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let ipaddressfamily = unimplemented!();
+/// match ipaddressfamily {
+///     IpAddressFamily::IPv4 => { /* ... */ },
+///     IpAddressFamily::IPv6 => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `ipaddressfamily` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `IpAddressFamily::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `IpAddressFamily::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `IpAddressFamily::NewFeature` is defined.
+/// Specifically, when `ipaddressfamily` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `IpAddressFamily::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2025,15 +2156,15 @@ pub enum IpAddressFamily {
     IPv4,
     #[allow(missing_docs)] // documentation missing in model
     IPv6,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for IpAddressFamily {
     fn from(s: &str) -> Self {
         match s {
             "IPv4" => IpAddressFamily::IPv4,
             "IPv6" => IpAddressFamily::IPv6,
-            other => IpAddressFamily::Unknown(other.to_owned()),
+            other => IpAddressFamily::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2050,11 +2181,11 @@ impl IpAddressFamily {
         match self {
             IpAddressFamily::IPv4 => "IPv4",
             IpAddressFamily::IPv6 => "IPv6",
-            IpAddressFamily::Unknown(s) => s.as_ref(),
+            IpAddressFamily::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IPv4", "IPv6"]
     }
 }
@@ -2064,6 +2195,41 @@ impl AsRef<str> for IpAddressFamily {
     }
 }
 
+/// When writing a match expression against `IpAddressType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let ipaddresstype = unimplemented!();
+/// match ipaddresstype {
+///     IpAddressType::DualStack => { /* ... */ },
+///     IpAddressType::Ipv4 => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `ipaddresstype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `IpAddressType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `IpAddressType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `IpAddressType::NewFeature` is defined.
+/// Specifically, when `ipaddresstype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `IpAddressType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2080,15 +2246,15 @@ pub enum IpAddressType {
     DualStack,
     #[allow(missing_docs)] // documentation missing in model
     Ipv4,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for IpAddressType {
     fn from(s: &str) -> Self {
         match s {
             "DUAL_STACK" => IpAddressType::DualStack,
             "IPV4" => IpAddressType::Ipv4,
-            other => IpAddressType::Unknown(other.to_owned()),
+            other => IpAddressType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2105,11 +2271,11 @@ impl IpAddressType {
         match self {
             IpAddressType::DualStack => "DUAL_STACK",
             IpAddressType::Ipv4 => "IPV4",
-            IpAddressType::Unknown(s) => s.as_ref(),
+            IpAddressType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DUAL_STACK", "IPV4"]
     }
 }
@@ -2121,7 +2287,7 @@ impl AsRef<str> for IpAddressType {
 
 /// <p>Attributes of an accelerator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceleratorAttributes {
     /// <p>Indicates whether flow logs are enabled. The default value is false. If the value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow logs</a> in the <i>Global Accelerator Developer Guide</i>.</p>
@@ -2153,20 +2319,11 @@ impl AcceleratorAttributes {
         self.flow_logs_s3_prefix.as_deref()
     }
 }
-impl std::fmt::Debug for AcceleratorAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceleratorAttributes");
-        formatter.field("flow_logs_enabled", &self.flow_logs_enabled);
-        formatter.field("flow_logs_s3_bucket", &self.flow_logs_s3_bucket);
-        formatter.field("flow_logs_s3_prefix", &self.flow_logs_s3_prefix);
-        formatter.finish()
-    }
-}
 /// See [`AcceleratorAttributes`](crate::model::AcceleratorAttributes).
 pub mod accelerator_attributes {
 
     /// A builder for [`AcceleratorAttributes`](crate::model::AcceleratorAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_logs_enabled: std::option::Option<bool>,
         pub(crate) flow_logs_s3_bucket: std::option::Option<std::string::String>,
@@ -2234,7 +2391,7 @@ impl AcceleratorAttributes {
 
 /// <p>An accelerator is a complex type that includes one or more listeners that process inbound connections and then direct traffic to one or more endpoint groups, each of which includes endpoints, such as load balancers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Accelerator {
     /// <p>The Amazon Resource Name (ARN) of the accelerator.</p>
     #[doc(hidden)]
@@ -2330,28 +2487,11 @@ impl Accelerator {
         self.events.as_deref()
     }
 }
-impl std::fmt::Debug for Accelerator {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Accelerator");
-        formatter.field("accelerator_arn", &self.accelerator_arn);
-        formatter.field("name", &self.name);
-        formatter.field("ip_address_type", &self.ip_address_type);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("ip_sets", &self.ip_sets);
-        formatter.field("dns_name", &self.dns_name);
-        formatter.field("status", &self.status);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field("dual_stack_dns_name", &self.dual_stack_dns_name);
-        formatter.field("events", &self.events);
-        formatter.finish()
-    }
-}
 /// See [`Accelerator`](crate::model::Accelerator).
 pub mod accelerator {
 
     /// A builder for [`Accelerator`](crate::model::Accelerator).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2553,7 +2693,7 @@ impl Accelerator {
 
 /// <p>A complex type that contains a <code>Timestamp</code> value and <code>Message</code> for changes that you make to an accelerator in Global Accelerator. Messages stored here provide progress or error information when you update an accelerator from IPv4 to dual-stack, or from dual-stack to IPv4. Global Accelerator stores a maximum of ten event messages. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceleratorEvent {
     /// <p>A string that contains an <code>Event</code> message describing changes or errors when you update an accelerator in Global Accelerator from IPv4 to dual-stack, or dual-stack to IPv4.</p>
     #[doc(hidden)]
@@ -2572,19 +2712,11 @@ impl AcceleratorEvent {
         self.timestamp.as_ref()
     }
 }
-impl std::fmt::Debug for AcceleratorEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceleratorEvent");
-        formatter.field("message", &self.message);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.finish()
-    }
-}
 /// See [`AcceleratorEvent`](crate::model::AcceleratorEvent).
 pub mod accelerator_event {
 
     /// A builder for [`AcceleratorEvent`](crate::model::AcceleratorEvent).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -2629,6 +2761,41 @@ impl AcceleratorEvent {
     }
 }
 
+/// When writing a match expression against `AcceleratorStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let acceleratorstatus = unimplemented!();
+/// match acceleratorstatus {
+///     AcceleratorStatus::Deployed => { /* ... */ },
+///     AcceleratorStatus::InProgress => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `acceleratorstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `AcceleratorStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `AcceleratorStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `AcceleratorStatus::NewFeature` is defined.
+/// Specifically, when `acceleratorstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `AcceleratorStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2645,15 +2812,17 @@ pub enum AcceleratorStatus {
     Deployed,
     #[allow(missing_docs)] // documentation missing in model
     InProgress,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AcceleratorStatus {
     fn from(s: &str) -> Self {
         match s {
             "DEPLOYED" => AcceleratorStatus::Deployed,
             "IN_PROGRESS" => AcceleratorStatus::InProgress,
-            other => AcceleratorStatus::Unknown(other.to_owned()),
+            other => {
+                AcceleratorStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -2670,11 +2839,11 @@ impl AcceleratorStatus {
         match self {
             AcceleratorStatus::Deployed => "DEPLOYED",
             AcceleratorStatus::InProgress => "IN_PROGRESS",
-            AcceleratorStatus::Unknown(s) => s.as_ref(),
+            AcceleratorStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEPLOYED", "IN_PROGRESS"]
     }
 }
@@ -2686,7 +2855,7 @@ impl AsRef<str> for AcceleratorStatus {
 
 /// <p>A complex type that contains a <code>Tag</code> key and <code>Tag</code> value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>A string that contains a <code>Tag</code> key.</p>
     #[doc(hidden)]
@@ -2705,19 +2874,11 @@ impl Tag {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -2762,7 +2923,7 @@ impl Tag {
 /// <p>Provides authorization for Amazon to bring a specific IP address range to a specific Amazon Web Services account using bring your own IP addresses (BYOIP). </p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CidrAuthorizationContext {
     /// <p>The plain-text authorization message for the prefix and account.</p>
     #[doc(hidden)]
@@ -2781,19 +2942,11 @@ impl CidrAuthorizationContext {
         self.signature.as_deref()
     }
 }
-impl std::fmt::Debug for CidrAuthorizationContext {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CidrAuthorizationContext");
-        formatter.field("message", &self.message);
-        formatter.field("signature", &self.signature);
-        formatter.finish()
-    }
-}
 /// See [`CidrAuthorizationContext`](crate::model::CidrAuthorizationContext).
 pub mod cidr_authorization_context {
 
     /// A builder for [`CidrAuthorizationContext`](crate::model::CidrAuthorizationContext).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) signature: std::option::Option<std::string::String>,
@@ -2837,7 +2990,7 @@ impl CidrAuthorizationContext {
 
 /// <p>The port mappings for a specified endpoint IP address (destination).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DestinationPortMapping {
     /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator that you have port mappings for.</p>
     #[doc(hidden)]
@@ -2904,31 +3057,11 @@ impl DestinationPortMapping {
         self.destination_traffic_state.as_ref()
     }
 }
-impl std::fmt::Debug for DestinationPortMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DestinationPortMapping");
-        formatter.field("accelerator_arn", &self.accelerator_arn);
-        formatter.field(
-            "accelerator_socket_addresses",
-            &self.accelerator_socket_addresses,
-        );
-        formatter.field("endpoint_group_arn", &self.endpoint_group_arn);
-        formatter.field("endpoint_id", &self.endpoint_id);
-        formatter.field("endpoint_group_region", &self.endpoint_group_region);
-        formatter.field(
-            "destination_socket_address",
-            &self.destination_socket_address,
-        );
-        formatter.field("ip_address_type", &self.ip_address_type);
-        formatter.field("destination_traffic_state", &self.destination_traffic_state);
-        formatter.finish()
-    }
-}
 /// See [`DestinationPortMapping`](crate::model::DestinationPortMapping).
 pub mod destination_port_mapping {
 
     /// A builder for [`DestinationPortMapping`](crate::model::DestinationPortMapping).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_arn: std::option::Option<std::string::String>,
         pub(crate) accelerator_socket_addresses:
@@ -3074,6 +3207,41 @@ impl DestinationPortMapping {
     }
 }
 
+/// When writing a match expression against `CustomRoutingDestinationTrafficState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let customroutingdestinationtrafficstate = unimplemented!();
+/// match customroutingdestinationtrafficstate {
+///     CustomRoutingDestinationTrafficState::Allow => { /* ... */ },
+///     CustomRoutingDestinationTrafficState::Deny => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `customroutingdestinationtrafficstate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CustomRoutingDestinationTrafficState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CustomRoutingDestinationTrafficState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CustomRoutingDestinationTrafficState::NewFeature` is defined.
+/// Specifically, when `customroutingdestinationtrafficstate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CustomRoutingDestinationTrafficState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3090,15 +3258,17 @@ pub enum CustomRoutingDestinationTrafficState {
     Allow,
     #[allow(missing_docs)] // documentation missing in model
     Deny,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CustomRoutingDestinationTrafficState {
     fn from(s: &str) -> Self {
         match s {
             "ALLOW" => CustomRoutingDestinationTrafficState::Allow,
             "DENY" => CustomRoutingDestinationTrafficState::Deny,
-            other => CustomRoutingDestinationTrafficState::Unknown(other.to_owned()),
+            other => CustomRoutingDestinationTrafficState::Unknown(
+                crate::types::UnknownVariantValue(other.to_owned()),
+            ),
         }
     }
 }
@@ -3115,11 +3285,11 @@ impl CustomRoutingDestinationTrafficState {
         match self {
             CustomRoutingDestinationTrafficState::Allow => "ALLOW",
             CustomRoutingDestinationTrafficState::Deny => "DENY",
-            CustomRoutingDestinationTrafficState::Unknown(s) => s.as_ref(),
+            CustomRoutingDestinationTrafficState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALLOW", "DENY"]
     }
 }
@@ -3131,7 +3301,7 @@ impl AsRef<str> for CustomRoutingDestinationTrafficState {
 
 /// <p>An IP address/port combination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SocketAddress {
     /// <p>The IP address for the socket address.</p>
     #[doc(hidden)]
@@ -3150,19 +3320,11 @@ impl SocketAddress {
         self.port
     }
 }
-impl std::fmt::Debug for SocketAddress {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SocketAddress");
-        formatter.field("ip_address", &self.ip_address);
-        formatter.field("port", &self.port);
-        formatter.finish()
-    }
-}
 /// See [`SocketAddress`](crate::model::SocketAddress).
 pub mod socket_address {
 
     /// A builder for [`SocketAddress`](crate::model::SocketAddress).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_address: std::option::Option<std::string::String>,
         pub(crate) port: std::option::Option<i32>,
@@ -3206,7 +3368,7 @@ impl SocketAddress {
 
 /// <p>Returns the ports and associated IP addresses and ports of Amazon EC2 instances in your virtual private cloud (VPC) subnets. Custom routing is a port mapping protocol in Global Accelerator that statically associates port ranges with VPC subnets, which allows Global Accelerator to route to specific instances and ports within one or more subnets. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PortMapping {
     /// <p>The accelerator port.</p>
     #[doc(hidden)]
@@ -3256,26 +3418,11 @@ impl PortMapping {
         self.destination_traffic_state.as_ref()
     }
 }
-impl std::fmt::Debug for PortMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PortMapping");
-        formatter.field("accelerator_port", &self.accelerator_port);
-        formatter.field("endpoint_group_arn", &self.endpoint_group_arn);
-        formatter.field("endpoint_id", &self.endpoint_id);
-        formatter.field(
-            "destination_socket_address",
-            &self.destination_socket_address,
-        );
-        formatter.field("protocols", &self.protocols);
-        formatter.field("destination_traffic_state", &self.destination_traffic_state);
-        formatter.finish()
-    }
-}
 /// See [`PortMapping`](crate::model::PortMapping).
 pub mod port_mapping {
 
     /// A builder for [`PortMapping`](crate::model::PortMapping).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_port: std::option::Option<i32>,
         pub(crate) endpoint_group_arn: std::option::Option<std::string::String>,
@@ -3388,6 +3535,41 @@ impl PortMapping {
     }
 }
 
+/// When writing a match expression against `CustomRoutingProtocol`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let customroutingprotocol = unimplemented!();
+/// match customroutingprotocol {
+///     CustomRoutingProtocol::Tcp => { /* ... */ },
+///     CustomRoutingProtocol::Udp => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `customroutingprotocol` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CustomRoutingProtocol::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CustomRoutingProtocol::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CustomRoutingProtocol::NewFeature` is defined.
+/// Specifically, when `customroutingprotocol` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CustomRoutingProtocol::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3404,15 +3586,17 @@ pub enum CustomRoutingProtocol {
     Tcp,
     #[allow(missing_docs)] // documentation missing in model
     Udp,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CustomRoutingProtocol {
     fn from(s: &str) -> Self {
         match s {
             "TCP" => CustomRoutingProtocol::Tcp,
             "UDP" => CustomRoutingProtocol::Udp,
-            other => CustomRoutingProtocol::Unknown(other.to_owned()),
+            other => {
+                CustomRoutingProtocol::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -3429,11 +3613,11 @@ impl CustomRoutingProtocol {
         match self {
             CustomRoutingProtocol::Tcp => "TCP",
             CustomRoutingProtocol::Udp => "UDP",
-            CustomRoutingProtocol::Unknown(s) => s.as_ref(),
+            CustomRoutingProtocol::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["TCP", "UDP"]
     }
 }
@@ -3445,7 +3629,7 @@ impl AsRef<str> for CustomRoutingProtocol {
 
 /// <p>A complex type for the endpoint group for a custom routing accelerator. An Amazon Web Services Region can have only one endpoint group for a specific listener. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomRoutingEndpointGroup {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     #[doc(hidden)]
@@ -3484,21 +3668,11 @@ impl CustomRoutingEndpointGroup {
         self.endpoint_descriptions.as_deref()
     }
 }
-impl std::fmt::Debug for CustomRoutingEndpointGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomRoutingEndpointGroup");
-        formatter.field("endpoint_group_arn", &self.endpoint_group_arn);
-        formatter.field("endpoint_group_region", &self.endpoint_group_region);
-        formatter.field("destination_descriptions", &self.destination_descriptions);
-        formatter.field("endpoint_descriptions", &self.endpoint_descriptions);
-        formatter.finish()
-    }
-}
 /// See [`CustomRoutingEndpointGroup`](crate::model::CustomRoutingEndpointGroup).
 pub mod custom_routing_endpoint_group {
 
     /// A builder for [`CustomRoutingEndpointGroup`](crate::model::CustomRoutingEndpointGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_group_arn: std::option::Option<std::string::String>,
         pub(crate) endpoint_group_region: std::option::Option<std::string::String>,
@@ -3602,7 +3776,7 @@ impl CustomRoutingEndpointGroup {
 
 /// <p>A complex type for an endpoint for a custom routing accelerator. Each endpoint group can include one or more endpoints, which are virtual private cloud (VPC) subnets.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomRoutingEndpointDescription {
     /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID. </p>
     #[doc(hidden)]
@@ -3614,18 +3788,11 @@ impl CustomRoutingEndpointDescription {
         self.endpoint_id.as_deref()
     }
 }
-impl std::fmt::Debug for CustomRoutingEndpointDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomRoutingEndpointDescription");
-        formatter.field("endpoint_id", &self.endpoint_id);
-        formatter.finish()
-    }
-}
 /// See [`CustomRoutingEndpointDescription`](crate::model::CustomRoutingEndpointDescription).
 pub mod custom_routing_endpoint_description {
 
     /// A builder for [`CustomRoutingEndpointDescription`](crate::model::CustomRoutingEndpointDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_id: std::option::Option<std::string::String>,
     }
@@ -3657,7 +3824,7 @@ impl CustomRoutingEndpointDescription {
 
 /// <p>For a custom routing accelerator, describes the port range and protocol for all endpoints (virtual private cloud subnets) in an endpoint group to accept client traffic on.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomRoutingDestinationDescription {
     /// <p>The first port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
     #[doc(hidden)]
@@ -3683,20 +3850,11 @@ impl CustomRoutingDestinationDescription {
         self.protocols.as_deref()
     }
 }
-impl std::fmt::Debug for CustomRoutingDestinationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomRoutingDestinationDescription");
-        formatter.field("from_port", &self.from_port);
-        formatter.field("to_port", &self.to_port);
-        formatter.field("protocols", &self.protocols);
-        formatter.finish()
-    }
-}
 /// See [`CustomRoutingDestinationDescription`](crate::model::CustomRoutingDestinationDescription).
 pub mod custom_routing_destination_description {
 
     /// A builder for [`CustomRoutingDestinationDescription`](crate::model::CustomRoutingDestinationDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) from_port: std::option::Option<i32>,
         pub(crate) to_port: std::option::Option<i32>,
@@ -3761,7 +3919,7 @@ impl CustomRoutingDestinationDescription {
 
 /// <p>For a custom routing accelerator, sets the port range and protocol for all endpoints (virtual private cloud subnets) in an endpoint group to accept client traffic on.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomRoutingDestinationConfiguration {
     /// <p>The first port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
     #[doc(hidden)]
@@ -3787,20 +3945,11 @@ impl CustomRoutingDestinationConfiguration {
         self.protocols.as_deref()
     }
 }
-impl std::fmt::Debug for CustomRoutingDestinationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomRoutingDestinationConfiguration");
-        formatter.field("from_port", &self.from_port);
-        formatter.field("to_port", &self.to_port);
-        formatter.field("protocols", &self.protocols);
-        formatter.finish()
-    }
-}
 /// See [`CustomRoutingDestinationConfiguration`](crate::model::CustomRoutingDestinationConfiguration).
 pub mod custom_routing_destination_configuration {
 
     /// A builder for [`CustomRoutingDestinationConfiguration`](crate::model::CustomRoutingDestinationConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) from_port: std::option::Option<i32>,
         pub(crate) to_port: std::option::Option<i32>,
@@ -3866,7 +4015,7 @@ impl CustomRoutingDestinationConfiguration {
 
 /// <p>The list of endpoint objects. For custom routing, this is a list of virtual private cloud (VPC) subnet IDs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomRoutingEndpointConfiguration {
     /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID. </p>
     #[doc(hidden)]
@@ -3878,18 +4027,11 @@ impl CustomRoutingEndpointConfiguration {
         self.endpoint_id.as_deref()
     }
 }
-impl std::fmt::Debug for CustomRoutingEndpointConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomRoutingEndpointConfiguration");
-        formatter.field("endpoint_id", &self.endpoint_id);
-        formatter.finish()
-    }
-}
 /// See [`CustomRoutingEndpointConfiguration`](crate::model::CustomRoutingEndpointConfiguration).
 pub mod custom_routing_endpoint_configuration {
 
     /// A builder for [`CustomRoutingEndpointConfiguration`](crate::model::CustomRoutingEndpointConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_id: std::option::Option<std::string::String>,
     }

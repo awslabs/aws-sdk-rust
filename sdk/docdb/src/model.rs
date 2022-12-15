@@ -2,7 +2,7 @@
 
 /// <p>Detailed information about a cluster. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbCluster {
     /// <p>Provides the list of Amazon EC2 Availability Zones that instances in the cluster can be created in.</p>
     #[doc(hidden)]
@@ -236,61 +236,11 @@ impl DbCluster {
         self.deletion_protection
     }
 }
-impl std::fmt::Debug for DbCluster {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbCluster");
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.field("backup_retention_period", &self.backup_retention_period);
-        formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
-        formatter.field(
-            "db_cluster_parameter_group",
-            &self.db_cluster_parameter_group,
-        );
-        formatter.field("db_subnet_group", &self.db_subnet_group);
-        formatter.field("status", &self.status);
-        formatter.field("percent_progress", &self.percent_progress);
-        formatter.field("earliest_restorable_time", &self.earliest_restorable_time);
-        formatter.field("endpoint", &self.endpoint);
-        formatter.field("reader_endpoint", &self.reader_endpoint);
-        formatter.field("multi_az", &self.multi_az);
-        formatter.field("engine", &self.engine);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("latest_restorable_time", &self.latest_restorable_time);
-        formatter.field("port", &self.port);
-        formatter.field("master_username", &self.master_username);
-        formatter.field("preferred_backup_window", &self.preferred_backup_window);
-        formatter.field(
-            "preferred_maintenance_window",
-            &self.preferred_maintenance_window,
-        );
-        formatter.field(
-            "replication_source_identifier",
-            &self.replication_source_identifier,
-        );
-        formatter.field("read_replica_identifiers", &self.read_replica_identifiers);
-        formatter.field("db_cluster_members", &self.db_cluster_members);
-        formatter.field("vpc_security_groups", &self.vpc_security_groups);
-        formatter.field("hosted_zone_id", &self.hosted_zone_id);
-        formatter.field("storage_encrypted", &self.storage_encrypted);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("db_cluster_resource_id", &self.db_cluster_resource_id);
-        formatter.field("db_cluster_arn", &self.db_cluster_arn);
-        formatter.field("associated_roles", &self.associated_roles);
-        formatter.field("clone_group_id", &self.clone_group_id);
-        formatter.field("cluster_create_time", &self.cluster_create_time);
-        formatter.field(
-            "enabled_cloudwatch_logs_exports",
-            &self.enabled_cloudwatch_logs_exports,
-        );
-        formatter.field("deletion_protection", &self.deletion_protection);
-        formatter.finish()
-    }
-}
 /// See [`DbCluster`](crate::model::DbCluster).
 pub mod db_cluster {
 
     /// A builder for [`DbCluster`](crate::model::DbCluster).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) backup_retention_period: std::option::Option<i32>,
@@ -818,7 +768,7 @@ impl DbCluster {
 
 /// <p>Describes an Identity and Access Management (IAM) role that is associated with a cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbClusterRole {
     /// <p>The Amazon Resource Name (ARN) of the IAMrole that is associated with the DB cluster.</p>
     #[doc(hidden)]
@@ -847,19 +797,11 @@ impl DbClusterRole {
         self.status.as_deref()
     }
 }
-impl std::fmt::Debug for DbClusterRole {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbClusterRole");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 /// See [`DbClusterRole`](crate::model::DbClusterRole).
 pub mod db_cluster_role {
 
     /// A builder for [`DbClusterRole`](crate::model::DbClusterRole).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
@@ -913,7 +855,7 @@ impl DbClusterRole {
 
 /// <p>Used as a response element for queries on virtual private cloud (VPC) security group membership.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcSecurityGroupMembership {
     /// <p>The name of the VPC security group.</p>
     #[doc(hidden)]
@@ -932,19 +874,11 @@ impl VpcSecurityGroupMembership {
         self.status.as_deref()
     }
 }
-impl std::fmt::Debug for VpcSecurityGroupMembership {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcSecurityGroupMembership");
-        formatter.field("vpc_security_group_id", &self.vpc_security_group_id);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 /// See [`VpcSecurityGroupMembership`](crate::model::VpcSecurityGroupMembership).
 pub mod vpc_security_group_membership {
 
     /// A builder for [`VpcSecurityGroupMembership`](crate::model::VpcSecurityGroupMembership).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_security_group_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
@@ -991,7 +925,7 @@ impl VpcSecurityGroupMembership {
 
 /// <p>Contains information about an instance that is part of a cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbClusterMember {
     /// <p>Specifies the instance identifier for this member of the cluster.</p>
     #[doc(hidden)]
@@ -1024,24 +958,11 @@ impl DbClusterMember {
         self.promotion_tier
     }
 }
-impl std::fmt::Debug for DbClusterMember {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbClusterMember");
-        formatter.field("db_instance_identifier", &self.db_instance_identifier);
-        formatter.field("is_cluster_writer", &self.is_cluster_writer);
-        formatter.field(
-            "db_cluster_parameter_group_status",
-            &self.db_cluster_parameter_group_status,
-        );
-        formatter.field("promotion_tier", &self.promotion_tier);
-        formatter.finish()
-    }
-}
 /// See [`DbClusterMember`](crate::model::DbClusterMember).
 pub mod db_cluster_member {
 
     /// A builder for [`DbClusterMember`](crate::model::DbClusterMember).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance_identifier: std::option::Option<std::string::String>,
         pub(crate) is_cluster_writer: std::option::Option<bool>,
@@ -1118,7 +1039,7 @@ impl DbClusterMember {
 
 /// <p>Metadata assigned to an Amazon DocumentDB resource consisting of a key-value pair.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The required name of the tag. The string value can be from 1 to 128 Unicode characters in length and can't be prefixed with "<code>aws:</code>" or "<code>rds:</code>". The string can contain only the set of Unicode letters, digits, white space, '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
     #[doc(hidden)]
@@ -1137,19 +1058,11 @@ impl Tag {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -1193,7 +1106,7 @@ impl Tag {
 
 /// <p>Detailed information about an individual parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Parameter {
     /// <p>Specifies the name of the parameter.</p>
     #[doc(hidden)]
@@ -1268,27 +1181,11 @@ impl Parameter {
         self.apply_method.as_ref()
     }
 }
-impl std::fmt::Debug for Parameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Parameter");
-        formatter.field("parameter_name", &self.parameter_name);
-        formatter.field("parameter_value", &self.parameter_value);
-        formatter.field("description", &self.description);
-        formatter.field("source", &self.source);
-        formatter.field("apply_type", &self.apply_type);
-        formatter.field("data_type", &self.data_type);
-        formatter.field("allowed_values", &self.allowed_values);
-        formatter.field("is_modifiable", &self.is_modifiable);
-        formatter.field("minimum_engine_version", &self.minimum_engine_version);
-        formatter.field("apply_method", &self.apply_method);
-        formatter.finish()
-    }
-}
 /// See [`Parameter`](crate::model::Parameter).
 pub mod parameter {
 
     /// A builder for [`Parameter`](crate::model::Parameter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_name: std::option::Option<std::string::String>,
         pub(crate) parameter_value: std::option::Option<std::string::String>,
@@ -1441,6 +1338,41 @@ impl Parameter {
     }
 }
 
+/// When writing a match expression against `ApplyMethod`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let applymethod = unimplemented!();
+/// match applymethod {
+///     ApplyMethod::Immediate => { /* ... */ },
+///     ApplyMethod::PendingReboot => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `applymethod` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ApplyMethod::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ApplyMethod::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ApplyMethod::NewFeature` is defined.
+/// Specifically, when `applymethod` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ApplyMethod::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1457,15 +1389,15 @@ pub enum ApplyMethod {
     Immediate,
     #[allow(missing_docs)] // documentation missing in model
     PendingReboot,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ApplyMethod {
     fn from(s: &str) -> Self {
         match s {
             "immediate" => ApplyMethod::Immediate,
             "pending-reboot" => ApplyMethod::PendingReboot,
-            other => ApplyMethod::Unknown(other.to_owned()),
+            other => ApplyMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1482,11 +1414,11 @@ impl ApplyMethod {
         match self {
             ApplyMethod::Immediate => "immediate",
             ApplyMethod::PendingReboot => "pending-reboot",
-            ApplyMethod::Unknown(s) => s.as_ref(),
+            ApplyMethod::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["immediate", "pending-reboot"]
     }
 }
@@ -1498,7 +1430,7 @@ impl AsRef<str> for ApplyMethod {
 
 /// <p>Detailed information about an event to which you have subscribed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventSubscription {
     /// <p>The Amazon Web Services customer account that is associated with the Amazon DocumentDB event notification subscription.</p>
     #[doc(hidden)]
@@ -1579,30 +1511,11 @@ impl EventSubscription {
         self.event_subscription_arn.as_deref()
     }
 }
-impl std::fmt::Debug for EventSubscription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventSubscription");
-        formatter.field("customer_aws_id", &self.customer_aws_id);
-        formatter.field("cust_subscription_id", &self.cust_subscription_id);
-        formatter.field("sns_topic_arn", &self.sns_topic_arn);
-        formatter.field("status", &self.status);
-        formatter.field(
-            "subscription_creation_time",
-            &self.subscription_creation_time,
-        );
-        formatter.field("source_type", &self.source_type);
-        formatter.field("source_ids_list", &self.source_ids_list);
-        formatter.field("event_categories_list", &self.event_categories_list);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("event_subscription_arn", &self.event_subscription_arn);
-        formatter.finish()
-    }
-}
 /// See [`EventSubscription`](crate::model::EventSubscription).
 pub mod event_subscription {
 
     /// A builder for [`EventSubscription`](crate::model::EventSubscription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) customer_aws_id: std::option::Option<std::string::String>,
         pub(crate) cust_subscription_id: std::option::Option<std::string::String>,
@@ -1781,7 +1694,7 @@ impl EventSubscription {
 
 /// <p>A data type representing an Amazon DocumentDB global cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GlobalCluster {
     /// <p>Contains a user-supplied global cluster identifier. This identifier is the unique key that identifies a global cluster. </p>
     #[doc(hidden)]
@@ -1859,30 +1772,11 @@ impl GlobalCluster {
         self.global_cluster_members.as_deref()
     }
 }
-impl std::fmt::Debug for GlobalCluster {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GlobalCluster");
-        formatter.field("global_cluster_identifier", &self.global_cluster_identifier);
-        formatter.field(
-            "global_cluster_resource_id",
-            &self.global_cluster_resource_id,
-        );
-        formatter.field("global_cluster_arn", &self.global_cluster_arn);
-        formatter.field("status", &self.status);
-        formatter.field("engine", &self.engine);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("database_name", &self.database_name);
-        formatter.field("storage_encrypted", &self.storage_encrypted);
-        formatter.field("deletion_protection", &self.deletion_protection);
-        formatter.field("global_cluster_members", &self.global_cluster_members);
-        formatter.finish()
-    }
-}
 /// See [`GlobalCluster`](crate::model::GlobalCluster).
 pub mod global_cluster {
 
     /// A builder for [`GlobalCluster`](crate::model::GlobalCluster).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_cluster_identifier: std::option::Option<std::string::String>,
         pub(crate) global_cluster_resource_id: std::option::Option<std::string::String>,
@@ -2047,7 +1941,7 @@ impl GlobalCluster {
 
 /// <p>A data structure with information about any primary and secondary clusters associated with an Amazon DocumentDB global clusters. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GlobalClusterMember {
     /// <p>The Amazon Resource Name (ARN) for each Amazon DocumentDB cluster.</p>
     #[doc(hidden)]
@@ -2073,20 +1967,11 @@ impl GlobalClusterMember {
         self.is_writer
     }
 }
-impl std::fmt::Debug for GlobalClusterMember {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GlobalClusterMember");
-        formatter.field("db_cluster_arn", &self.db_cluster_arn);
-        formatter.field("readers", &self.readers);
-        formatter.field("is_writer", &self.is_writer);
-        formatter.finish()
-    }
-}
 /// See [`GlobalClusterMember`](crate::model::GlobalClusterMember).
 pub mod global_cluster_member {
 
     /// A builder for [`GlobalClusterMember`](crate::model::GlobalClusterMember).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_arn: std::option::Option<std::string::String>,
         pub(crate) readers: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2154,7 +2039,7 @@ impl GlobalClusterMember {
 
 /// <p>Detailed information about an instance. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbInstance {
     /// <p>Contains a user-provided database identifier. This identifier is the unique key that identifies an instance.</p>
     #[doc(hidden)]
@@ -2353,53 +2238,11 @@ impl DbInstance {
         self.enabled_cloudwatch_logs_exports.as_deref()
     }
 }
-impl std::fmt::Debug for DbInstance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbInstance");
-        formatter.field("db_instance_identifier", &self.db_instance_identifier);
-        formatter.field("db_instance_class", &self.db_instance_class);
-        formatter.field("engine", &self.engine);
-        formatter.field("db_instance_status", &self.db_instance_status);
-        formatter.field("endpoint", &self.endpoint);
-        formatter.field("instance_create_time", &self.instance_create_time);
-        formatter.field("preferred_backup_window", &self.preferred_backup_window);
-        formatter.field("backup_retention_period", &self.backup_retention_period);
-        formatter.field("vpc_security_groups", &self.vpc_security_groups);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("db_subnet_group", &self.db_subnet_group);
-        formatter.field(
-            "preferred_maintenance_window",
-            &self.preferred_maintenance_window,
-        );
-        formatter.field("pending_modified_values", &self.pending_modified_values);
-        formatter.field("latest_restorable_time", &self.latest_restorable_time);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field(
-            "auto_minor_version_upgrade",
-            &self.auto_minor_version_upgrade,
-        );
-        formatter.field("publicly_accessible", &self.publicly_accessible);
-        formatter.field("status_infos", &self.status_infos);
-        formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
-        formatter.field("storage_encrypted", &self.storage_encrypted);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("dbi_resource_id", &self.dbi_resource_id);
-        formatter.field("ca_certificate_identifier", &self.ca_certificate_identifier);
-        formatter.field("copy_tags_to_snapshot", &self.copy_tags_to_snapshot);
-        formatter.field("promotion_tier", &self.promotion_tier);
-        formatter.field("db_instance_arn", &self.db_instance_arn);
-        formatter.field(
-            "enabled_cloudwatch_logs_exports",
-            &self.enabled_cloudwatch_logs_exports,
-        );
-        formatter.finish()
-    }
-}
 /// See [`DbInstance`](crate::model::DbInstance).
 pub mod db_instance {
 
     /// A builder for [`DbInstance`](crate::model::DbInstance).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance_identifier: std::option::Option<std::string::String>,
         pub(crate) db_instance_class: std::option::Option<std::string::String>,
@@ -2831,7 +2674,7 @@ impl DbInstance {
 
 /// <p>Provides a list of status information for an instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbInstanceStatusInfo {
     /// <p>This value is currently "<code>read replication</code>."</p>
     #[doc(hidden)]
@@ -2864,21 +2707,11 @@ impl DbInstanceStatusInfo {
         self.message.as_deref()
     }
 }
-impl std::fmt::Debug for DbInstanceStatusInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbInstanceStatusInfo");
-        formatter.field("status_type", &self.status_type);
-        formatter.field("normal", &self.normal);
-        formatter.field("status", &self.status);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 /// See [`DbInstanceStatusInfo`](crate::model::DbInstanceStatusInfo).
 pub mod db_instance_status_info {
 
     /// A builder for [`DbInstanceStatusInfo`](crate::model::DbInstanceStatusInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status_type: std::option::Option<std::string::String>,
         pub(crate) normal: std::option::Option<bool>,
@@ -2946,7 +2779,7 @@ impl DbInstanceStatusInfo {
 
 /// <p> One or more modified settings for an instance. These modified settings have been requested, but haven't been applied yet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PendingModifiedValues {
     /// <p> Contains the new <code>DBInstanceClass</code> for the instance that will be applied or is currently being applied. </p>
     #[doc(hidden)]
@@ -3054,34 +2887,11 @@ impl PendingModifiedValues {
         self.pending_cloudwatch_logs_exports.as_ref()
     }
 }
-impl std::fmt::Debug for PendingModifiedValues {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PendingModifiedValues");
-        formatter.field("db_instance_class", &self.db_instance_class);
-        formatter.field("allocated_storage", &self.allocated_storage);
-        formatter.field("master_user_password", &self.master_user_password);
-        formatter.field("port", &self.port);
-        formatter.field("backup_retention_period", &self.backup_retention_period);
-        formatter.field("multi_az", &self.multi_az);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("license_model", &self.license_model);
-        formatter.field("iops", &self.iops);
-        formatter.field("db_instance_identifier", &self.db_instance_identifier);
-        formatter.field("storage_type", &self.storage_type);
-        formatter.field("ca_certificate_identifier", &self.ca_certificate_identifier);
-        formatter.field("db_subnet_group_name", &self.db_subnet_group_name);
-        formatter.field(
-            "pending_cloudwatch_logs_exports",
-            &self.pending_cloudwatch_logs_exports,
-        );
-        formatter.finish()
-    }
-}
 /// See [`PendingModifiedValues`](crate::model::PendingModifiedValues).
 pub mod pending_modified_values {
 
     /// A builder for [`PendingModifiedValues`](crate::model::PendingModifiedValues).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance_class: std::option::Option<std::string::String>,
         pub(crate) allocated_storage: std::option::Option<i32>,
@@ -3299,7 +3109,7 @@ impl PendingModifiedValues {
 
 /// <p>A list of the log types whose configuration is still pending. These log types are in the process of being activated or deactivated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PendingCloudwatchLogsExports {
     /// <p>Log types that are in the process of being deactivated. After they are deactivated, these log types aren't exported to CloudWatch Logs.</p>
     #[doc(hidden)]
@@ -3318,19 +3128,11 @@ impl PendingCloudwatchLogsExports {
         self.log_types_to_disable.as_deref()
     }
 }
-impl std::fmt::Debug for PendingCloudwatchLogsExports {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PendingCloudwatchLogsExports");
-        formatter.field("log_types_to_enable", &self.log_types_to_enable);
-        formatter.field("log_types_to_disable", &self.log_types_to_disable);
-        formatter.finish()
-    }
-}
 /// See [`PendingCloudwatchLogsExports`](crate::model::PendingCloudwatchLogsExports).
 pub mod pending_cloudwatch_logs_exports {
 
     /// A builder for [`PendingCloudwatchLogsExports`](crate::model::PendingCloudwatchLogsExports).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_types_to_enable: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) log_types_to_disable: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3392,7 +3194,7 @@ impl PendingCloudwatchLogsExports {
 
 /// <p>Detailed information about a subnet group. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbSubnetGroup {
     /// <p>The name of the subnet group.</p>
     #[doc(hidden)]
@@ -3439,26 +3241,11 @@ impl DbSubnetGroup {
         self.db_subnet_group_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DbSubnetGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbSubnetGroup");
-        formatter.field("db_subnet_group_name", &self.db_subnet_group_name);
-        formatter.field(
-            "db_subnet_group_description",
-            &self.db_subnet_group_description,
-        );
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("subnet_group_status", &self.subnet_group_status);
-        formatter.field("subnets", &self.subnets);
-        formatter.field("db_subnet_group_arn", &self.db_subnet_group_arn);
-        formatter.finish()
-    }
-}
 /// See [`DbSubnetGroup`](crate::model::DbSubnetGroup).
 pub mod db_subnet_group {
 
     /// A builder for [`DbSubnetGroup`](crate::model::DbSubnetGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_subnet_group_name: std::option::Option<std::string::String>,
         pub(crate) db_subnet_group_description: std::option::Option<std::string::String>,
@@ -3574,7 +3361,7 @@ impl DbSubnetGroup {
 
 /// <p> Detailed information about a subnet. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Subnet {
     /// <p>Specifies the identifier of the subnet.</p>
     #[doc(hidden)]
@@ -3600,20 +3387,11 @@ impl Subnet {
         self.subnet_status.as_deref()
     }
 }
-impl std::fmt::Debug for Subnet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Subnet");
-        formatter.field("subnet_identifier", &self.subnet_identifier);
-        formatter.field("subnet_availability_zone", &self.subnet_availability_zone);
-        formatter.field("subnet_status", &self.subnet_status);
-        formatter.finish()
-    }
-}
 /// See [`Subnet`](crate::model::Subnet).
 pub mod subnet {
 
     /// A builder for [`Subnet`](crate::model::Subnet).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_identifier: std::option::Option<std::string::String>,
         pub(crate) subnet_availability_zone: std::option::Option<crate::model::AvailabilityZone>,
@@ -3678,7 +3456,7 @@ impl Subnet {
 
 /// <p>Information about an Availability Zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AvailabilityZone {
     /// <p>The name of the Availability Zone.</p>
     #[doc(hidden)]
@@ -3690,18 +3468,11 @@ impl AvailabilityZone {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for AvailabilityZone {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AvailabilityZone");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 /// See [`AvailabilityZone`](crate::model::AvailabilityZone).
 pub mod availability_zone {
 
     /// A builder for [`AvailabilityZone`](crate::model::AvailabilityZone).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -3731,7 +3502,7 @@ impl AvailabilityZone {
 
 /// <p>Network information for accessing a cluster or instance. Client programs must specify a valid endpoint to access these Amazon DocumentDB resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Endpoint {
     /// <p>Specifies the DNS address of the instance.</p>
     #[doc(hidden)]
@@ -3757,20 +3528,11 @@ impl Endpoint {
         self.hosted_zone_id.as_deref()
     }
 }
-impl std::fmt::Debug for Endpoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Endpoint");
-        formatter.field("address", &self.address);
-        formatter.field("port", &self.port);
-        formatter.field("hosted_zone_id", &self.hosted_zone_id);
-        formatter.finish()
-    }
-}
 /// See [`Endpoint`](crate::model::Endpoint).
 pub mod endpoint {
 
     /// A builder for [`Endpoint`](crate::model::Endpoint).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address: std::option::Option<std::string::String>,
         pub(crate) port: std::option::Option<i32>,
@@ -3829,7 +3591,7 @@ impl Endpoint {
 
 /// <p>Detailed information about the attributes that are associated with a cluster snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbClusterSnapshotAttributesResult {
     /// <p>The identifier of the cluster snapshot that the attributes apply to.</p>
     #[doc(hidden)]
@@ -3851,25 +3613,11 @@ impl DbClusterSnapshotAttributesResult {
         self.db_cluster_snapshot_attributes.as_deref()
     }
 }
-impl std::fmt::Debug for DbClusterSnapshotAttributesResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbClusterSnapshotAttributesResult");
-        formatter.field(
-            "db_cluster_snapshot_identifier",
-            &self.db_cluster_snapshot_identifier,
-        );
-        formatter.field(
-            "db_cluster_snapshot_attributes",
-            &self.db_cluster_snapshot_attributes,
-        );
-        formatter.finish()
-    }
-}
 /// See [`DbClusterSnapshotAttributesResult`](crate::model::DbClusterSnapshotAttributesResult).
 pub mod db_cluster_snapshot_attributes_result {
 
     /// A builder for [`DbClusterSnapshotAttributesResult`](crate::model::DbClusterSnapshotAttributesResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_snapshot_identifier: std::option::Option<std::string::String>,
         pub(crate) db_cluster_snapshot_attributes:
@@ -3933,7 +3681,7 @@ impl DbClusterSnapshotAttributesResult {
 /// <p>Contains the name and values of a manual cluster snapshot attribute.</p>
 /// <p>Manual cluster snapshot attributes are used to authorize other Amazon Web Services accounts to restore a manual cluster snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbClusterSnapshotAttribute {
     /// <p>The name of the manual cluster snapshot attribute.</p>
     /// <p>The attribute named <code>restore</code> refers to the list of Amazon Web Services accounts that have permission to copy or restore the manual cluster snapshot.</p>
@@ -3956,19 +3704,11 @@ impl DbClusterSnapshotAttribute {
         self.attribute_values.as_deref()
     }
 }
-impl std::fmt::Debug for DbClusterSnapshotAttribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbClusterSnapshotAttribute");
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("attribute_values", &self.attribute_values);
-        formatter.finish()
-    }
-}
 /// See [`DbClusterSnapshotAttribute`](crate::model::DbClusterSnapshotAttribute).
 pub mod db_cluster_snapshot_attribute {
 
     /// A builder for [`DbClusterSnapshotAttribute`](crate::model::DbClusterSnapshotAttribute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_name: std::option::Option<std::string::String>,
         pub(crate) attribute_values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4029,7 +3769,7 @@ impl DbClusterSnapshotAttribute {
 /// <p>The configuration setting for the log types to be enabled for export to Amazon CloudWatch Logs for a specific instance or cluster.</p>
 /// <p>The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs are exported (or not exported) to CloudWatch Logs. The values within these arrays depend on the engine that is being used.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudwatchLogsExportConfiguration {
     /// <p>The list of log types to enable.</p>
     #[doc(hidden)]
@@ -4048,19 +3788,11 @@ impl CloudwatchLogsExportConfiguration {
         self.disable_log_types.as_deref()
     }
 }
-impl std::fmt::Debug for CloudwatchLogsExportConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudwatchLogsExportConfiguration");
-        formatter.field("enable_log_types", &self.enable_log_types);
-        formatter.field("disable_log_types", &self.disable_log_types);
-        formatter.finish()
-    }
-}
 /// See [`CloudwatchLogsExportConfiguration`](crate::model::CloudwatchLogsExportConfiguration).
 pub mod cloudwatch_logs_export_configuration {
 
     /// A builder for [`CloudwatchLogsExportConfiguration`](crate::model::CloudwatchLogsExportConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enable_log_types: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) disable_log_types: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4123,7 +3855,7 @@ impl CloudwatchLogsExportConfiguration {
 /// <p>A named set of filter values, used to return a more specific list of results. You can use a filter to match a set of resources by specific criteria, such as IDs.</p>
 /// <p>Wildcards are not supported in filters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Filter {
     /// <p>The name of the filter. Filter names are case sensitive.</p>
     #[doc(hidden)]
@@ -4142,19 +3874,11 @@ impl Filter {
         self.values.as_deref()
     }
 }
-impl std::fmt::Debug for Filter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Filter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
-    }
-}
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
 
     /// A builder for [`Filter`](crate::model::Filter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4207,7 +3931,7 @@ impl Filter {
 
 /// <p>Represents the output of <code>ApplyPendingMaintenanceAction</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourcePendingMaintenanceActions {
     /// <p>The Amazon Resource Name (ARN) of the resource that has pending maintenance actions.</p>
     #[doc(hidden)]
@@ -4229,22 +3953,11 @@ impl ResourcePendingMaintenanceActions {
         self.pending_maintenance_action_details.as_deref()
     }
 }
-impl std::fmt::Debug for ResourcePendingMaintenanceActions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourcePendingMaintenanceActions");
-        formatter.field("resource_identifier", &self.resource_identifier);
-        formatter.field(
-            "pending_maintenance_action_details",
-            &self.pending_maintenance_action_details,
-        );
-        formatter.finish()
-    }
-}
 /// See [`ResourcePendingMaintenanceActions`](crate::model::ResourcePendingMaintenanceActions).
 pub mod resource_pending_maintenance_actions {
 
     /// A builder for [`ResourcePendingMaintenanceActions`](crate::model::ResourcePendingMaintenanceActions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_identifier: std::option::Option<std::string::String>,
         pub(crate) pending_maintenance_action_details:
@@ -4304,7 +4017,7 @@ impl ResourcePendingMaintenanceActions {
 
 /// <p>Provides information about a pending maintenance action for a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PendingMaintenanceAction {
     /// <p>The type of pending maintenance action that is available for the resource.</p>
     #[doc(hidden)]
@@ -4351,23 +4064,11 @@ impl PendingMaintenanceAction {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for PendingMaintenanceAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PendingMaintenanceAction");
-        formatter.field("action", &self.action);
-        formatter.field("auto_applied_after_date", &self.auto_applied_after_date);
-        formatter.field("forced_apply_date", &self.forced_apply_date);
-        formatter.field("opt_in_status", &self.opt_in_status);
-        formatter.field("current_apply_date", &self.current_apply_date);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 /// See [`PendingMaintenanceAction`](crate::model::PendingMaintenanceAction).
 pub mod pending_maintenance_action {
 
     /// A builder for [`PendingMaintenanceAction`](crate::model::PendingMaintenanceAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<std::string::String>,
         pub(crate) auto_applied_after_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -4471,7 +4172,7 @@ impl PendingMaintenanceAction {
 
 /// <p>The options that are available for an instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrderableDbInstanceOption {
     /// <p>The engine type of an instance.</p>
     #[doc(hidden)]
@@ -4518,23 +4219,11 @@ impl OrderableDbInstanceOption {
         self.vpc
     }
 }
-impl std::fmt::Debug for OrderableDbInstanceOption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrderableDbInstanceOption");
-        formatter.field("engine", &self.engine);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("db_instance_class", &self.db_instance_class);
-        formatter.field("license_model", &self.license_model);
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.field("vpc", &self.vpc);
-        formatter.finish()
-    }
-}
 /// See [`OrderableDbInstanceOption`](crate::model::OrderableDbInstanceOption).
 pub mod orderable_db_instance_option {
 
     /// A builder for [`OrderableDbInstanceOption`](crate::model::OrderableDbInstanceOption).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine: std::option::Option<std::string::String>,
         pub(crate) engine_version: std::option::Option<std::string::String>,
@@ -4645,7 +4334,7 @@ impl OrderableDbInstanceOption {
 
 /// <p>Detailed information about an event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Event {
     /// <p>Provides the identifier for the source of the event.</p>
     #[doc(hidden)]
@@ -4692,23 +4381,11 @@ impl Event {
         self.source_arn.as_deref()
     }
 }
-impl std::fmt::Debug for Event {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Event");
-        formatter.field("source_identifier", &self.source_identifier);
-        formatter.field("source_type", &self.source_type);
-        formatter.field("message", &self.message);
-        formatter.field("event_categories", &self.event_categories);
-        formatter.field("date", &self.date);
-        formatter.field("source_arn", &self.source_arn);
-        formatter.finish()
-    }
-}
 /// See [`Event`](crate::model::Event).
 pub mod event {
 
     /// A builder for [`Event`](crate::model::Event).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_identifier: std::option::Option<std::string::String>,
         pub(crate) source_type: std::option::Option<crate::model::SourceType>,
@@ -4813,6 +4490,45 @@ impl Event {
     }
 }
 
+/// When writing a match expression against `SourceType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let sourcetype = unimplemented!();
+/// match sourcetype {
+///     SourceType::DbCluster => { /* ... */ },
+///     SourceType::DbClusterSnapshot => { /* ... */ },
+///     SourceType::DbInstance => { /* ... */ },
+///     SourceType::DbParameterGroup => { /* ... */ },
+///     SourceType::DbSecurityGroup => { /* ... */ },
+///     SourceType::DbSnapshot => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `sourcetype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SourceType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SourceType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SourceType::NewFeature` is defined.
+/// Specifically, when `sourcetype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SourceType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -4837,8 +4553,8 @@ pub enum SourceType {
     DbSecurityGroup,
     #[allow(missing_docs)] // documentation missing in model
     DbSnapshot,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SourceType {
     fn from(s: &str) -> Self {
@@ -4849,7 +4565,7 @@ impl std::convert::From<&str> for SourceType {
             "db-parameter-group" => SourceType::DbParameterGroup,
             "db-security-group" => SourceType::DbSecurityGroup,
             "db-snapshot" => SourceType::DbSnapshot,
-            other => SourceType::Unknown(other.to_owned()),
+            other => SourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -4870,11 +4586,11 @@ impl SourceType {
             SourceType::DbParameterGroup => "db-parameter-group",
             SourceType::DbSecurityGroup => "db-security-group",
             SourceType::DbSnapshot => "db-snapshot",
-            SourceType::Unknown(s) => s.as_ref(),
+            SourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "db-cluster",
             "db-cluster-snapshot",
@@ -4893,7 +4609,7 @@ impl AsRef<str> for SourceType {
 
 /// <p>An event source type, accompanied by one or more event category names.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventCategoriesMap {
     /// <p>The source type that the returned categories belong to.</p>
     #[doc(hidden)]
@@ -4912,19 +4628,11 @@ impl EventCategoriesMap {
         self.event_categories.as_deref()
     }
 }
-impl std::fmt::Debug for EventCategoriesMap {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventCategoriesMap");
-        formatter.field("source_type", &self.source_type);
-        formatter.field("event_categories", &self.event_categories);
-        formatter.finish()
-    }
-}
 /// See [`EventCategoriesMap`](crate::model::EventCategoriesMap).
 pub mod event_categories_map {
 
     /// A builder for [`EventCategoriesMap`](crate::model::EventCategoriesMap).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_type: std::option::Option<std::string::String>,
         pub(crate) event_categories: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4977,7 +4685,7 @@ impl EventCategoriesMap {
 
 /// <p>Contains the result of a successful invocation of the <code>DescribeEngineDefaultClusterParameters</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EngineDefaults {
     /// <p>The name of the cluster parameter group family to return the engine parameter information for.</p>
     #[doc(hidden)]
@@ -5003,20 +4711,11 @@ impl EngineDefaults {
         self.parameters.as_deref()
     }
 }
-impl std::fmt::Debug for EngineDefaults {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EngineDefaults");
-        formatter.field("db_parameter_group_family", &self.db_parameter_group_family);
-        formatter.field("marker", &self.marker);
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
-    }
-}
 /// See [`EngineDefaults`](crate::model::EngineDefaults).
 pub mod engine_defaults {
 
     /// A builder for [`EngineDefaults`](crate::model::EngineDefaults).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_parameter_group_family: std::option::Option<std::string::String>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -5084,7 +4783,7 @@ impl EngineDefaults {
 
 /// <p> Detailed information about an engine version. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbEngineVersion {
     /// <p>The name of the database engine.</p>
     #[doc(hidden)]
@@ -5145,31 +4844,11 @@ impl DbEngineVersion {
         self.supports_log_exports_to_cloudwatch_logs
     }
 }
-impl std::fmt::Debug for DbEngineVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbEngineVersion");
-        formatter.field("engine", &self.engine);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("db_parameter_group_family", &self.db_parameter_group_family);
-        formatter.field("db_engine_description", &self.db_engine_description);
-        formatter.field(
-            "db_engine_version_description",
-            &self.db_engine_version_description,
-        );
-        formatter.field("valid_upgrade_target", &self.valid_upgrade_target);
-        formatter.field("exportable_log_types", &self.exportable_log_types);
-        formatter.field(
-            "supports_log_exports_to_cloudwatch_logs",
-            &self.supports_log_exports_to_cloudwatch_logs,
-        );
-        formatter.finish()
-    }
-}
 /// See [`DbEngineVersion`](crate::model::DbEngineVersion).
 pub mod db_engine_version {
 
     /// A builder for [`DbEngineVersion`](crate::model::DbEngineVersion).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine: std::option::Option<std::string::String>,
         pub(crate) engine_version: std::option::Option<std::string::String>,
@@ -5324,7 +5003,7 @@ impl DbEngineVersion {
 
 /// <p>The version of the database engine that an instance can be upgraded to.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpgradeTarget {
     /// <p>The name of the upgrade target database engine.</p>
     #[doc(hidden)]
@@ -5364,22 +5043,11 @@ impl UpgradeTarget {
         self.is_major_version_upgrade
     }
 }
-impl std::fmt::Debug for UpgradeTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpgradeTarget");
-        formatter.field("engine", &self.engine);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("description", &self.description);
-        formatter.field("auto_upgrade", &self.auto_upgrade);
-        formatter.field("is_major_version_upgrade", &self.is_major_version_upgrade);
-        formatter.finish()
-    }
-}
 /// See [`UpgradeTarget`](crate::model::UpgradeTarget).
 pub mod upgrade_target {
 
     /// A builder for [`UpgradeTarget`](crate::model::UpgradeTarget).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine: std::option::Option<std::string::String>,
         pub(crate) engine_version: std::option::Option<std::string::String>,
@@ -5462,7 +5130,7 @@ impl UpgradeTarget {
 
 /// <p>Detailed information about a cluster snapshot. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbClusterSnapshot {
     /// <p>Provides the list of Amazon EC2 Availability Zones that instances in the cluster snapshot can be restored in.</p>
     #[doc(hidden)]
@@ -5586,40 +5254,11 @@ impl DbClusterSnapshot {
         self.source_db_cluster_snapshot_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DbClusterSnapshot {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbClusterSnapshot");
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.field(
-            "db_cluster_snapshot_identifier",
-            &self.db_cluster_snapshot_identifier,
-        );
-        formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
-        formatter.field("snapshot_create_time", &self.snapshot_create_time);
-        formatter.field("engine", &self.engine);
-        formatter.field("status", &self.status);
-        formatter.field("port", &self.port);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("cluster_create_time", &self.cluster_create_time);
-        formatter.field("master_username", &self.master_username);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("snapshot_type", &self.snapshot_type);
-        formatter.field("percent_progress", &self.percent_progress);
-        formatter.field("storage_encrypted", &self.storage_encrypted);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("db_cluster_snapshot_arn", &self.db_cluster_snapshot_arn);
-        formatter.field(
-            "source_db_cluster_snapshot_arn",
-            &self.source_db_cluster_snapshot_arn,
-        );
-        formatter.finish()
-    }
-}
 /// See [`DbClusterSnapshot`](crate::model::DbClusterSnapshot).
 pub mod db_cluster_snapshot {
 
     /// A builder for [`DbClusterSnapshot`](crate::model::DbClusterSnapshot).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) db_cluster_snapshot_identifier: std::option::Option<std::string::String>,
@@ -5885,7 +5524,7 @@ impl DbClusterSnapshot {
 
 /// <p>Detailed information about a cluster parameter group. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbClusterParameterGroup {
     /// <p>Provides the name of the cluster parameter group.</p>
     #[doc(hidden)]
@@ -5918,27 +5557,11 @@ impl DbClusterParameterGroup {
         self.db_cluster_parameter_group_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DbClusterParameterGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbClusterParameterGroup");
-        formatter.field(
-            "db_cluster_parameter_group_name",
-            &self.db_cluster_parameter_group_name,
-        );
-        formatter.field("db_parameter_group_family", &self.db_parameter_group_family);
-        formatter.field("description", &self.description);
-        formatter.field(
-            "db_cluster_parameter_group_arn",
-            &self.db_cluster_parameter_group_arn,
-        );
-        formatter.finish()
-    }
-}
 /// See [`DbClusterParameterGroup`](crate::model::DbClusterParameterGroup).
 pub mod db_cluster_parameter_group {
 
     /// A builder for [`DbClusterParameterGroup`](crate::model::DbClusterParameterGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_parameter_group_name: std::option::Option<std::string::String>,
         pub(crate) db_parameter_group_family: std::option::Option<std::string::String>,
@@ -6021,7 +5644,7 @@ impl DbClusterParameterGroup {
 
 /// <p>A certificate authority (CA) certificate for an Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Certificate {
     /// <p>The unique key that identifies a certificate.</p>
     /// <p>Example: <code>rds-ca-2019</code> </p>
@@ -6078,23 +5701,11 @@ impl Certificate {
         self.certificate_arn.as_deref()
     }
 }
-impl std::fmt::Debug for Certificate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Certificate");
-        formatter.field("certificate_identifier", &self.certificate_identifier);
-        formatter.field("certificate_type", &self.certificate_type);
-        formatter.field("thumbprint", &self.thumbprint);
-        formatter.field("valid_from", &self.valid_from);
-        formatter.field("valid_till", &self.valid_till);
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.finish()
-    }
-}
 /// See [`Certificate`](crate::model::Certificate).
 pub mod certificate {
 
     /// A builder for [`Certificate`](crate::model::Certificate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_identifier: std::option::Option<std::string::String>,
         pub(crate) certificate_type: std::option::Option<std::string::String>,

@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod count_closed_workflow_executions_input {
 
     /// A builder for [`CountClosedWorkflowExecutionsInput`](crate::input::CountClosedWorkflowExecutionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) start_time_filter: std::option::Option<crate::model::ExecutionTimeFilter>,
@@ -133,7 +133,7 @@ pub mod count_closed_workflow_executions_input {
             self,
         ) -> Result<
             crate::input::CountClosedWorkflowExecutionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CountClosedWorkflowExecutionsInput {
                 domain: self.domain,
@@ -160,13 +160,13 @@ impl CountClosedWorkflowExecutionsInput {
             crate::operation::CountClosedWorkflowExecutions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CountClosedWorkflowExecutionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -174,8 +174,10 @@ impl CountClosedWorkflowExecutionsInput {
             fn update_http_builder(
                 input: &crate::input::CountClosedWorkflowExecutionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -263,7 +265,7 @@ impl CountClosedWorkflowExecutionsInput {
 pub mod count_open_workflow_executions_input {
 
     /// A builder for [`CountOpenWorkflowExecutionsInput`](crate::input::CountOpenWorkflowExecutionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) start_time_filter: std::option::Option<crate::model::ExecutionTimeFilter>,
@@ -351,7 +353,7 @@ pub mod count_open_workflow_executions_input {
             self,
         ) -> Result<
             crate::input::CountOpenWorkflowExecutionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CountOpenWorkflowExecutionsInput {
                 domain: self.domain,
@@ -376,13 +378,13 @@ impl CountOpenWorkflowExecutionsInput {
             crate::operation::CountOpenWorkflowExecutions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CountOpenWorkflowExecutionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -390,8 +392,10 @@ impl CountOpenWorkflowExecutionsInput {
             fn update_http_builder(
                 input: &crate::input::CountOpenWorkflowExecutionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -479,7 +483,7 @@ impl CountOpenWorkflowExecutionsInput {
 pub mod count_pending_activity_tasks_input {
 
     /// A builder for [`CountPendingActivityTasksInput`](crate::input::CountPendingActivityTasksInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) task_list: std::option::Option<crate::model::TaskList>,
@@ -510,7 +514,7 @@ pub mod count_pending_activity_tasks_input {
             self,
         ) -> Result<
             crate::input::CountPendingActivityTasksInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CountPendingActivityTasksInput {
                 domain: self.domain,
@@ -532,13 +536,13 @@ impl CountPendingActivityTasksInput {
             crate::operation::CountPendingActivityTasks,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CountPendingActivityTasksInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -546,8 +550,10 @@ impl CountPendingActivityTasksInput {
             fn update_http_builder(
                 input: &crate::input::CountPendingActivityTasksInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -638,7 +644,7 @@ impl CountPendingActivityTasksInput {
 pub mod count_pending_decision_tasks_input {
 
     /// A builder for [`CountPendingDecisionTasksInput`](crate::input::CountPendingDecisionTasksInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) task_list: std::option::Option<crate::model::TaskList>,
@@ -669,7 +675,7 @@ pub mod count_pending_decision_tasks_input {
             self,
         ) -> Result<
             crate::input::CountPendingDecisionTasksInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CountPendingDecisionTasksInput {
                 domain: self.domain,
@@ -691,13 +697,13 @@ impl CountPendingDecisionTasksInput {
             crate::operation::CountPendingDecisionTasks,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CountPendingDecisionTasksInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -705,8 +711,10 @@ impl CountPendingDecisionTasksInput {
             fn update_http_builder(
                 input: &crate::input::CountPendingDecisionTasksInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -797,7 +805,7 @@ impl CountPendingDecisionTasksInput {
 pub mod deprecate_activity_type_input {
 
     /// A builder for [`DeprecateActivityTypeInput`](crate::input::DeprecateActivityTypeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) activity_type: std::option::Option<crate::model::ActivityType>,
@@ -829,8 +837,10 @@ pub mod deprecate_activity_type_input {
         /// Consumes the builder and constructs a [`DeprecateActivityTypeInput`](crate::input::DeprecateActivityTypeInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeprecateActivityTypeInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeprecateActivityTypeInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeprecateActivityTypeInput {
                 domain: self.domain,
                 activity_type: self.activity_type,
@@ -851,13 +861,13 @@ impl DeprecateActivityTypeInput {
             crate::operation::DeprecateActivityType,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeprecateActivityTypeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -865,8 +875,10 @@ impl DeprecateActivityTypeInput {
             fn update_http_builder(
                 input: &crate::input::DeprecateActivityTypeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -957,7 +969,7 @@ impl DeprecateActivityTypeInput {
 pub mod deprecate_domain_input {
 
     /// A builder for [`DeprecateDomainInput`](crate::input::DeprecateDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -975,7 +987,7 @@ pub mod deprecate_domain_input {
         /// Consumes the builder and constructs a [`DeprecateDomainInput`](crate::input::DeprecateDomainInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeprecateDomainInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeprecateDomainInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeprecateDomainInput { name: self.name })
         }
@@ -994,13 +1006,13 @@ impl DeprecateDomainInput {
             crate::operation::DeprecateDomain,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeprecateDomainInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1008,8 +1020,10 @@ impl DeprecateDomainInput {
             fn update_http_builder(
                 input: &crate::input::DeprecateDomainInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1098,7 +1112,7 @@ impl DeprecateDomainInput {
 pub mod deprecate_workflow_type_input {
 
     /// A builder for [`DeprecateWorkflowTypeInput`](crate::input::DeprecateWorkflowTypeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) workflow_type: std::option::Option<crate::model::WorkflowType>,
@@ -1130,8 +1144,10 @@ pub mod deprecate_workflow_type_input {
         /// Consumes the builder and constructs a [`DeprecateWorkflowTypeInput`](crate::input::DeprecateWorkflowTypeInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeprecateWorkflowTypeInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeprecateWorkflowTypeInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeprecateWorkflowTypeInput {
                 domain: self.domain,
                 workflow_type: self.workflow_type,
@@ -1152,13 +1168,13 @@ impl DeprecateWorkflowTypeInput {
             crate::operation::DeprecateWorkflowType,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeprecateWorkflowTypeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1166,8 +1182,10 @@ impl DeprecateWorkflowTypeInput {
             fn update_http_builder(
                 input: &crate::input::DeprecateWorkflowTypeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1258,7 +1276,7 @@ impl DeprecateWorkflowTypeInput {
 pub mod describe_activity_type_input {
 
     /// A builder for [`DescribeActivityTypeInput`](crate::input::DescribeActivityTypeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) activity_type: std::option::Option<crate::model::ActivityType>,
@@ -1290,8 +1308,10 @@ pub mod describe_activity_type_input {
         /// Consumes the builder and constructs a [`DescribeActivityTypeInput`](crate::input::DescribeActivityTypeInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeActivityTypeInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeActivityTypeInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeActivityTypeInput {
                 domain: self.domain,
                 activity_type: self.activity_type,
@@ -1312,13 +1332,13 @@ impl DescribeActivityTypeInput {
             crate::operation::DescribeActivityType,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeActivityTypeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1326,8 +1346,10 @@ impl DescribeActivityTypeInput {
             fn update_http_builder(
                 input: &crate::input::DescribeActivityTypeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1418,7 +1440,7 @@ impl DescribeActivityTypeInput {
 pub mod describe_domain_input {
 
     /// A builder for [`DescribeDomainInput`](crate::input::DescribeDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -1436,7 +1458,7 @@ pub mod describe_domain_input {
         /// Consumes the builder and constructs a [`DescribeDomainInput`](crate::input::DescribeDomainInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeDomainInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeDomainInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeDomainInput { name: self.name })
         }
@@ -1455,13 +1477,13 @@ impl DescribeDomainInput {
             crate::operation::DescribeDomain,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeDomainInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1469,8 +1491,10 @@ impl DescribeDomainInput {
             fn update_http_builder(
                 input: &crate::input::DescribeDomainInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1559,7 +1583,7 @@ impl DescribeDomainInput {
 pub mod describe_workflow_execution_input {
 
     /// A builder for [`DescribeWorkflowExecutionInput`](crate::input::DescribeWorkflowExecutionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) execution: std::option::Option<crate::model::WorkflowExecution>,
@@ -1593,7 +1617,7 @@ pub mod describe_workflow_execution_input {
             self,
         ) -> Result<
             crate::input::DescribeWorkflowExecutionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeWorkflowExecutionInput {
                 domain: self.domain,
@@ -1615,13 +1639,13 @@ impl DescribeWorkflowExecutionInput {
             crate::operation::DescribeWorkflowExecution,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeWorkflowExecutionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1629,8 +1653,10 @@ impl DescribeWorkflowExecutionInput {
             fn update_http_builder(
                 input: &crate::input::DescribeWorkflowExecutionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1721,7 +1747,7 @@ impl DescribeWorkflowExecutionInput {
 pub mod describe_workflow_type_input {
 
     /// A builder for [`DescribeWorkflowTypeInput`](crate::input::DescribeWorkflowTypeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) workflow_type: std::option::Option<crate::model::WorkflowType>,
@@ -1753,8 +1779,10 @@ pub mod describe_workflow_type_input {
         /// Consumes the builder and constructs a [`DescribeWorkflowTypeInput`](crate::input::DescribeWorkflowTypeInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeWorkflowTypeInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeWorkflowTypeInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeWorkflowTypeInput {
                 domain: self.domain,
                 workflow_type: self.workflow_type,
@@ -1775,13 +1803,13 @@ impl DescribeWorkflowTypeInput {
             crate::operation::DescribeWorkflowType,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeWorkflowTypeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1789,8 +1817,10 @@ impl DescribeWorkflowTypeInput {
             fn update_http_builder(
                 input: &crate::input::DescribeWorkflowTypeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1881,7 +1911,7 @@ impl DescribeWorkflowTypeInput {
 pub mod get_workflow_execution_history_input {
 
     /// A builder for [`GetWorkflowExecutionHistoryInput`](crate::input::GetWorkflowExecutionHistoryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) execution: std::option::Option<crate::model::WorkflowExecution>,
@@ -1953,7 +1983,7 @@ pub mod get_workflow_execution_history_input {
             self,
         ) -> Result<
             crate::input::GetWorkflowExecutionHistoryInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetWorkflowExecutionHistoryInput {
                 domain: self.domain,
@@ -1978,13 +2008,13 @@ impl GetWorkflowExecutionHistoryInput {
             crate::operation::GetWorkflowExecutionHistory,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetWorkflowExecutionHistoryInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1992,8 +2022,10 @@ impl GetWorkflowExecutionHistoryInput {
             fn update_http_builder(
                 input: &crate::input::GetWorkflowExecutionHistoryInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2081,7 +2113,7 @@ impl GetWorkflowExecutionHistoryInput {
 pub mod list_activity_types_input {
 
     /// A builder for [`ListActivityTypesInput`](crate::input::ListActivityTypesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2162,8 +2194,10 @@ pub mod list_activity_types_input {
         /// Consumes the builder and constructs a [`ListActivityTypesInput`](crate::input::ListActivityTypesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListActivityTypesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListActivityTypesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListActivityTypesInput {
                 domain: self.domain,
                 name: self.name,
@@ -2188,13 +2222,13 @@ impl ListActivityTypesInput {
             crate::operation::ListActivityTypes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListActivityTypesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2202,8 +2236,10 @@ impl ListActivityTypesInput {
             fn update_http_builder(
                 input: &crate::input::ListActivityTypesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2292,7 +2328,7 @@ impl ListActivityTypesInput {
 pub mod list_closed_workflow_executions_input {
 
     /// A builder for [`ListClosedWorkflowExecutionsInput`](crate::input::ListClosedWorkflowExecutionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) start_time_filter: std::option::Option<crate::model::ExecutionTimeFilter>,
@@ -2458,7 +2494,7 @@ pub mod list_closed_workflow_executions_input {
             self,
         ) -> Result<
             crate::input::ListClosedWorkflowExecutionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListClosedWorkflowExecutionsInput {
                 domain: self.domain,
@@ -2488,13 +2524,13 @@ impl ListClosedWorkflowExecutionsInput {
             crate::operation::ListClosedWorkflowExecutions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListClosedWorkflowExecutionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2502,8 +2538,10 @@ impl ListClosedWorkflowExecutionsInput {
             fn update_http_builder(
                 input: &crate::input::ListClosedWorkflowExecutionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2591,7 +2629,7 @@ impl ListClosedWorkflowExecutionsInput {
 pub mod list_domains_input {
 
     /// A builder for [`ListDomainsInput`](crate::input::ListDomainsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_page_token: std::option::Option<std::string::String>,
         pub(crate) registration_status: std::option::Option<crate::model::RegistrationStatus>,
@@ -2650,7 +2688,7 @@ pub mod list_domains_input {
         /// Consumes the builder and constructs a [`ListDomainsInput`](crate::input::ListDomainsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListDomainsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListDomainsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListDomainsInput {
                 next_page_token: self.next_page_token,
@@ -2674,13 +2712,13 @@ impl ListDomainsInput {
             crate::operation::ListDomains,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListDomainsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2688,8 +2726,10 @@ impl ListDomainsInput {
             fn update_http_builder(
                 input: &crate::input::ListDomainsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2778,7 +2818,7 @@ impl ListDomainsInput {
 pub mod list_open_workflow_executions_input {
 
     /// A builder for [`ListOpenWorkflowExecutionsInput`](crate::input::ListOpenWorkflowExecutionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) start_time_filter: std::option::Option<crate::model::ExecutionTimeFilter>,
@@ -2904,7 +2944,7 @@ pub mod list_open_workflow_executions_input {
             self,
         ) -> Result<
             crate::input::ListOpenWorkflowExecutionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListOpenWorkflowExecutionsInput {
                 domain: self.domain,
@@ -2932,13 +2972,13 @@ impl ListOpenWorkflowExecutionsInput {
             crate::operation::ListOpenWorkflowExecutions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListOpenWorkflowExecutionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2946,8 +2986,10 @@ impl ListOpenWorkflowExecutionsInput {
             fn update_http_builder(
                 input: &crate::input::ListOpenWorkflowExecutionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3035,7 +3077,7 @@ impl ListOpenWorkflowExecutionsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -3053,8 +3095,10 @@ pub mod list_tags_for_resource_input {
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
             })
@@ -3074,13 +3118,13 @@ impl ListTagsForResourceInput {
             crate::operation::ListTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3088,8 +3132,10 @@ impl ListTagsForResourceInput {
             fn update_http_builder(
                 input: &crate::input::ListTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3180,7 +3226,7 @@ impl ListTagsForResourceInput {
 pub mod list_workflow_types_input {
 
     /// A builder for [`ListWorkflowTypesInput`](crate::input::ListWorkflowTypesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3261,8 +3307,10 @@ pub mod list_workflow_types_input {
         /// Consumes the builder and constructs a [`ListWorkflowTypesInput`](crate::input::ListWorkflowTypesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListWorkflowTypesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListWorkflowTypesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListWorkflowTypesInput {
                 domain: self.domain,
                 name: self.name,
@@ -3287,13 +3335,13 @@ impl ListWorkflowTypesInput {
             crate::operation::ListWorkflowTypes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListWorkflowTypesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3301,8 +3349,10 @@ impl ListWorkflowTypesInput {
             fn update_http_builder(
                 input: &crate::input::ListWorkflowTypesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3391,7 +3441,7 @@ impl ListWorkflowTypesInput {
 pub mod poll_for_activity_task_input {
 
     /// A builder for [`PollForActivityTaskInput`](crate::input::PollForActivityTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) task_list: std::option::Option<crate::model::TaskList>,
@@ -3433,8 +3483,10 @@ pub mod poll_for_activity_task_input {
         /// Consumes the builder and constructs a [`PollForActivityTaskInput`](crate::input::PollForActivityTaskInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PollForActivityTaskInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PollForActivityTaskInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PollForActivityTaskInput {
                 domain: self.domain,
                 task_list: self.task_list,
@@ -3456,13 +3508,13 @@ impl PollForActivityTaskInput {
             crate::operation::PollForActivityTask,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PollForActivityTaskInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3470,8 +3522,10 @@ impl PollForActivityTaskInput {
             fn update_http_builder(
                 input: &crate::input::PollForActivityTaskInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3562,7 +3616,7 @@ impl PollForActivityTaskInput {
 pub mod poll_for_decision_task_input {
 
     /// A builder for [`PollForDecisionTaskInput`](crate::input::PollForDecisionTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) task_list: std::option::Option<crate::model::TaskList>,
@@ -3648,8 +3702,10 @@ pub mod poll_for_decision_task_input {
         /// Consumes the builder and constructs a [`PollForDecisionTaskInput`](crate::input::PollForDecisionTaskInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PollForDecisionTaskInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PollForDecisionTaskInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PollForDecisionTaskInput {
                 domain: self.domain,
                 task_list: self.task_list,
@@ -3674,13 +3730,13 @@ impl PollForDecisionTaskInput {
             crate::operation::PollForDecisionTask,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PollForDecisionTaskInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3688,8 +3744,10 @@ impl PollForDecisionTaskInput {
             fn update_http_builder(
                 input: &crate::input::PollForDecisionTaskInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3780,7 +3838,7 @@ impl PollForDecisionTaskInput {
 pub mod record_activity_task_heartbeat_input {
 
     /// A builder for [`RecordActivityTaskHeartbeatInput`](crate::input::RecordActivityTaskHeartbeatInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_token: std::option::Option<std::string::String>,
         pub(crate) details: std::option::Option<std::string::String>,
@@ -3815,7 +3873,7 @@ pub mod record_activity_task_heartbeat_input {
             self,
         ) -> Result<
             crate::input::RecordActivityTaskHeartbeatInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::RecordActivityTaskHeartbeatInput {
                 task_token: self.task_token,
@@ -3837,13 +3895,13 @@ impl RecordActivityTaskHeartbeatInput {
             crate::operation::RecordActivityTaskHeartbeat,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RecordActivityTaskHeartbeatInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3851,8 +3909,10 @@ impl RecordActivityTaskHeartbeatInput {
             fn update_http_builder(
                 input: &crate::input::RecordActivityTaskHeartbeatInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3940,7 +4000,7 @@ impl RecordActivityTaskHeartbeatInput {
 pub mod register_activity_type_input {
 
     /// A builder for [`RegisterActivityTypeInput`](crate::input::RegisterActivityTypeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4105,8 +4165,10 @@ pub mod register_activity_type_input {
         /// Consumes the builder and constructs a [`RegisterActivityTypeInput`](crate::input::RegisterActivityTypeInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::RegisterActivityTypeInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::RegisterActivityTypeInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::RegisterActivityTypeInput {
                 domain: self.domain,
                 name: self.name,
@@ -4135,13 +4197,13 @@ impl RegisterActivityTypeInput {
             crate::operation::RegisterActivityType,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RegisterActivityTypeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4149,8 +4211,10 @@ impl RegisterActivityTypeInput {
             fn update_http_builder(
                 input: &crate::input::RegisterActivityTypeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4241,7 +4305,7 @@ impl RegisterActivityTypeInput {
 pub mod register_domain_input {
 
     /// A builder for [`RegisterDomainInput`](crate::input::RegisterDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -4316,7 +4380,7 @@ pub mod register_domain_input {
         /// Consumes the builder and constructs a [`RegisterDomainInput`](crate::input::RegisterDomainInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::RegisterDomainInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::RegisterDomainInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::RegisterDomainInput {
                 name: self.name,
@@ -4341,13 +4405,13 @@ impl RegisterDomainInput {
             crate::operation::RegisterDomain,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RegisterDomainInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4355,8 +4419,10 @@ impl RegisterDomainInput {
             fn update_http_builder(
                 input: &crate::input::RegisterDomainInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4445,7 +4511,7 @@ impl RegisterDomainInput {
 pub mod register_workflow_type_input {
 
     /// A builder for [`RegisterWorkflowTypeInput`](crate::input::RegisterWorkflowTypeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4617,8 +4683,10 @@ pub mod register_workflow_type_input {
         /// Consumes the builder and constructs a [`RegisterWorkflowTypeInput`](crate::input::RegisterWorkflowTypeInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::RegisterWorkflowTypeInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::RegisterWorkflowTypeInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::RegisterWorkflowTypeInput {
                 domain: self.domain,
                 name: self.name,
@@ -4648,13 +4716,13 @@ impl RegisterWorkflowTypeInput {
             crate::operation::RegisterWorkflowType,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RegisterWorkflowTypeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4662,8 +4730,10 @@ impl RegisterWorkflowTypeInput {
             fn update_http_builder(
                 input: &crate::input::RegisterWorkflowTypeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4754,7 +4824,7 @@ impl RegisterWorkflowTypeInput {
 pub mod request_cancel_workflow_execution_input {
 
     /// A builder for [`RequestCancelWorkflowExecutionInput`](crate::input::RequestCancelWorkflowExecutionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) workflow_id: std::option::Option<std::string::String>,
@@ -4796,7 +4866,7 @@ pub mod request_cancel_workflow_execution_input {
             self,
         ) -> Result<
             crate::input::RequestCancelWorkflowExecutionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::RequestCancelWorkflowExecutionInput {
                 domain: self.domain,
@@ -4819,13 +4889,13 @@ impl RequestCancelWorkflowExecutionInput {
             crate::operation::RequestCancelWorkflowExecution,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RequestCancelWorkflowExecutionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4833,8 +4903,10 @@ impl RequestCancelWorkflowExecutionInput {
             fn update_http_builder(
                 input: &crate::input::RequestCancelWorkflowExecutionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4922,7 +4994,7 @@ impl RequestCancelWorkflowExecutionInput {
 pub mod respond_activity_task_canceled_input {
 
     /// A builder for [`RespondActivityTaskCanceledInput`](crate::input::RespondActivityTaskCanceledInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_token: std::option::Option<std::string::String>,
         pub(crate) details: std::option::Option<std::string::String>,
@@ -4957,7 +5029,7 @@ pub mod respond_activity_task_canceled_input {
             self,
         ) -> Result<
             crate::input::RespondActivityTaskCanceledInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::RespondActivityTaskCanceledInput {
                 task_token: self.task_token,
@@ -4979,13 +5051,13 @@ impl RespondActivityTaskCanceledInput {
             crate::operation::RespondActivityTaskCanceled,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RespondActivityTaskCanceledInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4993,8 +5065,10 @@ impl RespondActivityTaskCanceledInput {
             fn update_http_builder(
                 input: &crate::input::RespondActivityTaskCanceledInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5082,7 +5156,7 @@ impl RespondActivityTaskCanceledInput {
 pub mod respond_activity_task_completed_input {
 
     /// A builder for [`RespondActivityTaskCompletedInput`](crate::input::RespondActivityTaskCompletedInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_token: std::option::Option<std::string::String>,
         pub(crate) result: std::option::Option<std::string::String>,
@@ -5117,7 +5191,7 @@ pub mod respond_activity_task_completed_input {
             self,
         ) -> Result<
             crate::input::RespondActivityTaskCompletedInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::RespondActivityTaskCompletedInput {
                 task_token: self.task_token,
@@ -5139,13 +5213,13 @@ impl RespondActivityTaskCompletedInput {
             crate::operation::RespondActivityTaskCompleted,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RespondActivityTaskCompletedInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5153,8 +5227,10 @@ impl RespondActivityTaskCompletedInput {
             fn update_http_builder(
                 input: &crate::input::RespondActivityTaskCompletedInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5242,7 +5318,7 @@ impl RespondActivityTaskCompletedInput {
 pub mod respond_activity_task_failed_input {
 
     /// A builder for [`RespondActivityTaskFailedInput`](crate::input::RespondActivityTaskFailedInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_token: std::option::Option<std::string::String>,
         pub(crate) reason: std::option::Option<std::string::String>,
@@ -5288,7 +5364,7 @@ pub mod respond_activity_task_failed_input {
             self,
         ) -> Result<
             crate::input::RespondActivityTaskFailedInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::RespondActivityTaskFailedInput {
                 task_token: self.task_token,
@@ -5311,13 +5387,13 @@ impl RespondActivityTaskFailedInput {
             crate::operation::RespondActivityTaskFailed,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RespondActivityTaskFailedInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5325,8 +5401,10 @@ impl RespondActivityTaskFailedInput {
             fn update_http_builder(
                 input: &crate::input::RespondActivityTaskFailedInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5417,7 +5495,7 @@ impl RespondActivityTaskFailedInput {
 pub mod respond_decision_task_completed_input {
 
     /// A builder for [`RespondDecisionTaskCompletedInput`](crate::input::RespondDecisionTaskCompletedInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_token: std::option::Option<std::string::String>,
         pub(crate) decisions: std::option::Option<std::vec::Vec<crate::model::Decision>>,
@@ -5475,7 +5553,7 @@ pub mod respond_decision_task_completed_input {
             self,
         ) -> Result<
             crate::input::RespondDecisionTaskCompletedInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::RespondDecisionTaskCompletedInput {
                 task_token: self.task_token,
@@ -5498,13 +5576,13 @@ impl RespondDecisionTaskCompletedInput {
             crate::operation::RespondDecisionTaskCompleted,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RespondDecisionTaskCompletedInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5512,8 +5590,10 @@ impl RespondDecisionTaskCompletedInput {
             fn update_http_builder(
                 input: &crate::input::RespondDecisionTaskCompletedInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5601,7 +5681,7 @@ impl RespondDecisionTaskCompletedInput {
 pub mod signal_workflow_execution_input {
 
     /// A builder for [`SignalWorkflowExecutionInput`](crate::input::SignalWorkflowExecutionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) workflow_id: std::option::Option<std::string::String>,
@@ -5665,7 +5745,7 @@ pub mod signal_workflow_execution_input {
             self,
         ) -> Result<
             crate::input::SignalWorkflowExecutionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::SignalWorkflowExecutionInput {
                 domain: self.domain,
@@ -5690,13 +5770,13 @@ impl SignalWorkflowExecutionInput {
             crate::operation::SignalWorkflowExecution,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SignalWorkflowExecutionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5704,8 +5784,10 @@ impl SignalWorkflowExecutionInput {
             fn update_http_builder(
                 input: &crate::input::SignalWorkflowExecutionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5796,7 +5878,7 @@ impl SignalWorkflowExecutionInput {
 pub mod start_workflow_execution_input {
 
     /// A builder for [`StartWorkflowExecutionInput`](crate::input::StartWorkflowExecutionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) workflow_id: std::option::Option<std::string::String>,
@@ -5996,8 +6078,10 @@ pub mod start_workflow_execution_input {
         /// Consumes the builder and constructs a [`StartWorkflowExecutionInput`](crate::input::StartWorkflowExecutionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StartWorkflowExecutionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::StartWorkflowExecutionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::StartWorkflowExecutionInput {
                 domain: self.domain,
                 workflow_id: self.workflow_id,
@@ -6027,13 +6111,13 @@ impl StartWorkflowExecutionInput {
             crate::operation::StartWorkflowExecution,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StartWorkflowExecutionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6041,8 +6125,10 @@ impl StartWorkflowExecutionInput {
             fn update_http_builder(
                 input: &crate::input::StartWorkflowExecutionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6133,7 +6219,7 @@ impl StartWorkflowExecutionInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
@@ -6173,7 +6259,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
@@ -6195,13 +6281,13 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6209,8 +6295,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6299,7 +6387,7 @@ impl TagResourceInput {
 pub mod terminate_workflow_execution_input {
 
     /// A builder for [`TerminateWorkflowExecutionInput`](crate::input::TerminateWorkflowExecutionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) workflow_id: std::option::Option<std::string::String>,
@@ -6393,7 +6481,7 @@ pub mod terminate_workflow_execution_input {
             self,
         ) -> Result<
             crate::input::TerminateWorkflowExecutionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::TerminateWorkflowExecutionInput {
                 domain: self.domain,
@@ -6419,13 +6507,13 @@ impl TerminateWorkflowExecutionInput {
             crate::operation::TerminateWorkflowExecution,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TerminateWorkflowExecutionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6433,8 +6521,10 @@ impl TerminateWorkflowExecutionInput {
             fn update_http_builder(
                 input: &crate::input::TerminateWorkflowExecutionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6525,7 +6615,7 @@ impl TerminateWorkflowExecutionInput {
 pub mod undeprecate_activity_type_input {
 
     /// A builder for [`UndeprecateActivityTypeInput`](crate::input::UndeprecateActivityTypeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) activity_type: std::option::Option<crate::model::ActivityType>,
@@ -6559,7 +6649,7 @@ pub mod undeprecate_activity_type_input {
             self,
         ) -> Result<
             crate::input::UndeprecateActivityTypeInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UndeprecateActivityTypeInput {
                 domain: self.domain,
@@ -6581,13 +6671,13 @@ impl UndeprecateActivityTypeInput {
             crate::operation::UndeprecateActivityType,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UndeprecateActivityTypeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6595,8 +6685,10 @@ impl UndeprecateActivityTypeInput {
             fn update_http_builder(
                 input: &crate::input::UndeprecateActivityTypeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6687,7 +6779,7 @@ impl UndeprecateActivityTypeInput {
 pub mod undeprecate_domain_input {
 
     /// A builder for [`UndeprecateDomainInput`](crate::input::UndeprecateDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -6705,8 +6797,10 @@ pub mod undeprecate_domain_input {
         /// Consumes the builder and constructs a [`UndeprecateDomainInput`](crate::input::UndeprecateDomainInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UndeprecateDomainInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UndeprecateDomainInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UndeprecateDomainInput { name: self.name })
         }
     }
@@ -6724,13 +6818,13 @@ impl UndeprecateDomainInput {
             crate::operation::UndeprecateDomain,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UndeprecateDomainInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6738,8 +6832,10 @@ impl UndeprecateDomainInput {
             fn update_http_builder(
                 input: &crate::input::UndeprecateDomainInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6828,7 +6924,7 @@ impl UndeprecateDomainInput {
 pub mod undeprecate_workflow_type_input {
 
     /// A builder for [`UndeprecateWorkflowTypeInput`](crate::input::UndeprecateWorkflowTypeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) workflow_type: std::option::Option<crate::model::WorkflowType>,
@@ -6862,7 +6958,7 @@ pub mod undeprecate_workflow_type_input {
             self,
         ) -> Result<
             crate::input::UndeprecateWorkflowTypeInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UndeprecateWorkflowTypeInput {
                 domain: self.domain,
@@ -6884,13 +6980,13 @@ impl UndeprecateWorkflowTypeInput {
             crate::operation::UndeprecateWorkflowType,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UndeprecateWorkflowTypeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6898,8 +6994,10 @@ impl UndeprecateWorkflowTypeInput {
             fn update_http_builder(
                 input: &crate::input::UndeprecateWorkflowTypeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6990,7 +7088,7 @@ impl UndeprecateWorkflowTypeInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7028,7 +7126,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
@@ -7050,13 +7148,13 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7064,8 +7162,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7152,7 +7252,7 @@ impl UntagResourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
     #[doc(hidden)]
@@ -7171,18 +7271,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UndeprecateWorkflowTypeInput {
     /// <p>The name of the domain of the deprecated workflow type.</p>
     #[doc(hidden)]
@@ -7201,18 +7293,10 @@ impl UndeprecateWorkflowTypeInput {
         self.workflow_type.as_ref()
     }
 }
-impl std::fmt::Debug for UndeprecateWorkflowTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UndeprecateWorkflowTypeInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("workflow_type", &self.workflow_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UndeprecateDomainInput {
     /// <p>The name of the domain of the deprecated workflow type.</p>
     #[doc(hidden)]
@@ -7224,17 +7308,10 @@ impl UndeprecateDomainInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for UndeprecateDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UndeprecateDomainInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UndeprecateActivityTypeInput {
     /// <p>The name of the domain of the deprecated activity type.</p>
     #[doc(hidden)]
@@ -7253,18 +7330,10 @@ impl UndeprecateActivityTypeInput {
         self.activity_type.as_ref()
     }
 }
-impl std::fmt::Debug for UndeprecateActivityTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UndeprecateActivityTypeInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("activity_type", &self.activity_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TerminateWorkflowExecutionInput {
     /// <p>The domain of the workflow execution to terminate.</p>
     #[doc(hidden)]
@@ -7327,22 +7396,10 @@ impl TerminateWorkflowExecutionInput {
         self.child_policy.as_ref()
     }
 }
-impl std::fmt::Debug for TerminateWorkflowExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TerminateWorkflowExecutionInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("run_id", &self.run_id);
-        formatter.field("reason", &self.reason);
-        formatter.field("details", &self.details);
-        formatter.field("child_policy", &self.child_policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
     #[doc(hidden)]
@@ -7363,18 +7420,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartWorkflowExecutionInput {
     /// <p>The name of the domain in which the workflow execution is created.</p>
     #[doc(hidden)]
@@ -7498,33 +7547,10 @@ impl StartWorkflowExecutionInput {
         self.lambda_role.as_deref()
     }
 }
-impl std::fmt::Debug for StartWorkflowExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartWorkflowExecutionInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("workflow_type", &self.workflow_type);
-        formatter.field("task_list", &self.task_list);
-        formatter.field("task_priority", &self.task_priority);
-        formatter.field("input", &self.input);
-        formatter.field(
-            "execution_start_to_close_timeout",
-            &self.execution_start_to_close_timeout,
-        );
-        formatter.field("tag_list", &self.tag_list);
-        formatter.field(
-            "task_start_to_close_timeout",
-            &self.task_start_to_close_timeout,
-        );
-        formatter.field("child_policy", &self.child_policy);
-        formatter.field("lambda_role", &self.lambda_role);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SignalWorkflowExecutionInput {
     /// <p>The name of the domain containing the workflow execution to signal.</p>
     #[doc(hidden)]
@@ -7564,21 +7590,10 @@ impl SignalWorkflowExecutionInput {
         self.input.as_deref()
     }
 }
-impl std::fmt::Debug for SignalWorkflowExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SignalWorkflowExecutionInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("run_id", &self.run_id);
-        formatter.field("signal_name", &self.signal_name);
-        formatter.field("input", &self.input);
-        formatter.finish()
-    }
-}
 
 /// <p>Input data for a TaskCompleted response to a decision task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RespondDecisionTaskCompletedInput {
     /// <p>The <code>taskToken</code> from the <code>DecisionTask</code>.</p> <important>
     /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
@@ -7608,19 +7623,10 @@ impl RespondDecisionTaskCompletedInput {
         self.execution_context.as_deref()
     }
 }
-impl std::fmt::Debug for RespondDecisionTaskCompletedInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RespondDecisionTaskCompletedInput");
-        formatter.field("task_token", &self.task_token);
-        formatter.field("decisions", &self.decisions);
-        formatter.field("execution_context", &self.execution_context);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RespondActivityTaskFailedInput {
     /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
     /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
@@ -7650,19 +7656,10 @@ impl RespondActivityTaskFailedInput {
         self.details.as_deref()
     }
 }
-impl std::fmt::Debug for RespondActivityTaskFailedInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RespondActivityTaskFailedInput");
-        formatter.field("task_token", &self.task_token);
-        formatter.field("reason", &self.reason);
-        formatter.field("details", &self.details);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RespondActivityTaskCompletedInput {
     /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
     /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
@@ -7685,18 +7682,10 @@ impl RespondActivityTaskCompletedInput {
         self.result.as_deref()
     }
 }
-impl std::fmt::Debug for RespondActivityTaskCompletedInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RespondActivityTaskCompletedInput");
-        formatter.field("task_token", &self.task_token);
-        formatter.field("result", &self.result);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RespondActivityTaskCanceledInput {
     /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
     /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
@@ -7719,18 +7708,10 @@ impl RespondActivityTaskCanceledInput {
         self.details.as_deref()
     }
 }
-impl std::fmt::Debug for RespondActivityTaskCanceledInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RespondActivityTaskCanceledInput");
-        formatter.field("task_token", &self.task_token);
-        formatter.field("details", &self.details);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequestCancelWorkflowExecutionInput {
     /// <p>The name of the domain containing the workflow execution to cancel.</p>
     #[doc(hidden)]
@@ -7756,19 +7737,10 @@ impl RequestCancelWorkflowExecutionInput {
         self.run_id.as_deref()
     }
 }
-impl std::fmt::Debug for RequestCancelWorkflowExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RequestCancelWorkflowExecutionInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("run_id", &self.run_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterWorkflowTypeInput {
     /// <p>The name of the domain in which to register the workflow type.</p>
     #[doc(hidden)]
@@ -7873,32 +7845,10 @@ impl RegisterWorkflowTypeInput {
         self.default_lambda_role.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterWorkflowTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterWorkflowTypeInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.field("description", &self.description);
-        formatter.field(
-            "default_task_start_to_close_timeout",
-            &self.default_task_start_to_close_timeout,
-        );
-        formatter.field(
-            "default_execution_start_to_close_timeout",
-            &self.default_execution_start_to_close_timeout,
-        );
-        formatter.field("default_task_list", &self.default_task_list);
-        formatter.field("default_task_priority", &self.default_task_priority);
-        formatter.field("default_child_policy", &self.default_child_policy);
-        formatter.field("default_lambda_role", &self.default_lambda_role);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterDomainInput {
     /// <p>Name of the domain to register. The name must be unique in the region that the domain is registered in.</p>
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
@@ -7939,23 +7889,10 @@ impl RegisterDomainInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterDomainInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field(
-            "workflow_execution_retention_period_in_days",
-            &self.workflow_execution_retention_period_in_days,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterActivityTypeInput {
     /// <p>The name of the domain in which this activity is to be registered.</p>
     #[doc(hidden)]
@@ -8048,38 +7985,10 @@ impl RegisterActivityTypeInput {
         self.default_task_schedule_to_close_timeout.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterActivityTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterActivityTypeInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.field("description", &self.description);
-        formatter.field(
-            "default_task_start_to_close_timeout",
-            &self.default_task_start_to_close_timeout,
-        );
-        formatter.field(
-            "default_task_heartbeat_timeout",
-            &self.default_task_heartbeat_timeout,
-        );
-        formatter.field("default_task_list", &self.default_task_list);
-        formatter.field("default_task_priority", &self.default_task_priority);
-        formatter.field(
-            "default_task_schedule_to_start_timeout",
-            &self.default_task_schedule_to_start_timeout,
-        );
-        formatter.field(
-            "default_task_schedule_to_close_timeout",
-            &self.default_task_schedule_to_close_timeout,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecordActivityTaskHeartbeatInput {
     /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
     /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results. </p>
@@ -8102,18 +8011,10 @@ impl RecordActivityTaskHeartbeatInput {
         self.details.as_deref()
     }
 }
-impl std::fmt::Debug for RecordActivityTaskHeartbeatInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecordActivityTaskHeartbeatInput");
-        formatter.field("task_token", &self.task_token);
-        formatter.field("details", &self.details);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PollForDecisionTaskInput {
     /// <p>The name of the domain containing the task lists to poll.</p>
     #[doc(hidden)]
@@ -8170,22 +8071,10 @@ impl PollForDecisionTaskInput {
         self.reverse_order
     }
 }
-impl std::fmt::Debug for PollForDecisionTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PollForDecisionTaskInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("task_list", &self.task_list);
-        formatter.field("identity", &self.identity);
-        formatter.field("next_page_token", &self.next_page_token);
-        formatter.field("maximum_page_size", &self.maximum_page_size);
-        formatter.field("reverse_order", &self.reverse_order);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PollForActivityTaskInput {
     /// <p>The name of the domain that contains the task lists being polled.</p>
     #[doc(hidden)]
@@ -8213,19 +8102,10 @@ impl PollForActivityTaskInput {
         self.identity.as_deref()
     }
 }
-impl std::fmt::Debug for PollForActivityTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PollForActivityTaskInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("task_list", &self.task_list);
-        formatter.field("identity", &self.identity);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWorkflowTypesInput {
     /// <p>The name of the domain in which the workflow types have been registered.</p>
     #[doc(hidden)]
@@ -8274,22 +8154,10 @@ impl ListWorkflowTypesInput {
         self.reverse_order
     }
 }
-impl std::fmt::Debug for ListWorkflowTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWorkflowTypesInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("name", &self.name);
-        formatter.field("registration_status", &self.registration_status);
-        formatter.field("next_page_token", &self.next_page_token);
-        formatter.field("maximum_page_size", &self.maximum_page_size);
-        formatter.field("reverse_order", &self.reverse_order);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
     #[doc(hidden)]
@@ -8301,17 +8169,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOpenWorkflowExecutionsInput {
     /// <p>The name of the domain that contains the workflow executions to list.</p>
     #[doc(hidden)]
@@ -8386,24 +8247,10 @@ impl ListOpenWorkflowExecutionsInput {
         self.execution_filter.as_ref()
     }
 }
-impl std::fmt::Debug for ListOpenWorkflowExecutionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOpenWorkflowExecutionsInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("start_time_filter", &self.start_time_filter);
-        formatter.field("type_filter", &self.type_filter);
-        formatter.field("tag_filter", &self.tag_filter);
-        formatter.field("next_page_token", &self.next_page_token);
-        formatter.field("maximum_page_size", &self.maximum_page_size);
-        formatter.field("reverse_order", &self.reverse_order);
-        formatter.field("execution_filter", &self.execution_filter);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDomainsInput {
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
@@ -8438,20 +8285,10 @@ impl ListDomainsInput {
         self.reverse_order
     }
 }
-impl std::fmt::Debug for ListDomainsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDomainsInput");
-        formatter.field("next_page_token", &self.next_page_token);
-        formatter.field("registration_status", &self.registration_status);
-        formatter.field("maximum_page_size", &self.maximum_page_size);
-        formatter.field("reverse_order", &self.reverse_order);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListClosedWorkflowExecutionsInput {
     /// <p>The name of the domain that contains the workflow executions to list.</p>
     #[doc(hidden)]
@@ -8552,26 +8389,10 @@ impl ListClosedWorkflowExecutionsInput {
         self.reverse_order
     }
 }
-impl std::fmt::Debug for ListClosedWorkflowExecutionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListClosedWorkflowExecutionsInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("start_time_filter", &self.start_time_filter);
-        formatter.field("close_time_filter", &self.close_time_filter);
-        formatter.field("execution_filter", &self.execution_filter);
-        formatter.field("close_status_filter", &self.close_status_filter);
-        formatter.field("type_filter", &self.type_filter);
-        formatter.field("tag_filter", &self.tag_filter);
-        formatter.field("next_page_token", &self.next_page_token);
-        formatter.field("maximum_page_size", &self.maximum_page_size);
-        formatter.field("reverse_order", &self.reverse_order);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListActivityTypesInput {
     /// <p>The name of the domain in which the activity types have been registered.</p>
     #[doc(hidden)]
@@ -8620,22 +8441,10 @@ impl ListActivityTypesInput {
         self.reverse_order
     }
 }
-impl std::fmt::Debug for ListActivityTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListActivityTypesInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("name", &self.name);
-        formatter.field("registration_status", &self.registration_status);
-        formatter.field("next_page_token", &self.next_page_token);
-        formatter.field("maximum_page_size", &self.maximum_page_size);
-        formatter.field("reverse_order", &self.reverse_order);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWorkflowExecutionHistoryInput {
     /// <p>The name of the domain containing the workflow execution.</p>
     #[doc(hidden)]
@@ -8677,21 +8486,10 @@ impl GetWorkflowExecutionHistoryInput {
         self.reverse_order
     }
 }
-impl std::fmt::Debug for GetWorkflowExecutionHistoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWorkflowExecutionHistoryInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("execution", &self.execution);
-        formatter.field("next_page_token", &self.next_page_token);
-        formatter.field("maximum_page_size", &self.maximum_page_size);
-        formatter.field("reverse_order", &self.reverse_order);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeWorkflowTypeInput {
     /// <p>The name of the domain in which this workflow type is registered.</p>
     #[doc(hidden)]
@@ -8710,18 +8508,10 @@ impl DescribeWorkflowTypeInput {
         self.workflow_type.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeWorkflowTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeWorkflowTypeInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("workflow_type", &self.workflow_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeWorkflowExecutionInput {
     /// <p>The name of the domain containing the workflow execution.</p>
     #[doc(hidden)]
@@ -8740,18 +8530,10 @@ impl DescribeWorkflowExecutionInput {
         self.execution.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeWorkflowExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeWorkflowExecutionInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("execution", &self.execution);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDomainInput {
     /// <p>The name of the domain to describe.</p>
     #[doc(hidden)]
@@ -8763,17 +8545,10 @@ impl DescribeDomainInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDomainInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeActivityTypeInput {
     /// <p>The name of the domain in which the activity type is registered.</p>
     #[doc(hidden)]
@@ -8792,18 +8567,10 @@ impl DescribeActivityTypeInput {
         self.activity_type.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeActivityTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeActivityTypeInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("activity_type", &self.activity_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeprecateWorkflowTypeInput {
     /// <p>The name of the domain in which the workflow type is registered.</p>
     #[doc(hidden)]
@@ -8822,18 +8589,10 @@ impl DeprecateWorkflowTypeInput {
         self.workflow_type.as_ref()
     }
 }
-impl std::fmt::Debug for DeprecateWorkflowTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeprecateWorkflowTypeInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("workflow_type", &self.workflow_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeprecateDomainInput {
     /// <p>The name of the domain to deprecate.</p>
     #[doc(hidden)]
@@ -8845,17 +8604,10 @@ impl DeprecateDomainInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeprecateDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeprecateDomainInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeprecateActivityTypeInput {
     /// <p>The name of the domain in which the activity type is registered.</p>
     #[doc(hidden)]
@@ -8874,18 +8626,10 @@ impl DeprecateActivityTypeInput {
         self.activity_type.as_ref()
     }
 }
-impl std::fmt::Debug for DeprecateActivityTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeprecateActivityTypeInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("activity_type", &self.activity_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CountPendingDecisionTasksInput {
     /// <p>The name of the domain that contains the task list.</p>
     #[doc(hidden)]
@@ -8904,18 +8648,10 @@ impl CountPendingDecisionTasksInput {
         self.task_list.as_ref()
     }
 }
-impl std::fmt::Debug for CountPendingDecisionTasksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CountPendingDecisionTasksInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("task_list", &self.task_list);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CountPendingActivityTasksInput {
     /// <p>The name of the domain that contains the task list.</p>
     #[doc(hidden)]
@@ -8934,18 +8670,10 @@ impl CountPendingActivityTasksInput {
         self.task_list.as_ref()
     }
 }
-impl std::fmt::Debug for CountPendingActivityTasksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CountPendingActivityTasksInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("task_list", &self.task_list);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CountOpenWorkflowExecutionsInput {
     /// <p>The name of the domain containing the workflow executions to count.</p>
     #[doc(hidden)]
@@ -8997,21 +8725,10 @@ impl CountOpenWorkflowExecutionsInput {
         self.execution_filter.as_ref()
     }
 }
-impl std::fmt::Debug for CountOpenWorkflowExecutionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CountOpenWorkflowExecutionsInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("start_time_filter", &self.start_time_filter);
-        formatter.field("type_filter", &self.type_filter);
-        formatter.field("tag_filter", &self.tag_filter);
-        formatter.field("execution_filter", &self.execution_filter);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CountClosedWorkflowExecutionsInput {
     /// <p>The name of the domain containing the workflow executions to count.</p>
     #[doc(hidden)]
@@ -9087,18 +8804,5 @@ impl CountClosedWorkflowExecutionsInput {
     /// </note>
     pub fn close_status_filter(&self) -> std::option::Option<&crate::model::CloseStatusFilter> {
         self.close_status_filter.as_ref()
-    }
-}
-impl std::fmt::Debug for CountClosedWorkflowExecutionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CountClosedWorkflowExecutionsInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("start_time_filter", &self.start_time_filter);
-        formatter.field("close_time_filter", &self.close_time_filter);
-        formatter.field("execution_filter", &self.execution_filter);
-        formatter.field("type_filter", &self.type_filter);
-        formatter.field("tag_filter", &self.tag_filter);
-        formatter.field("close_status_filter", &self.close_status_filter);
-        formatter.finish()
     }
 }

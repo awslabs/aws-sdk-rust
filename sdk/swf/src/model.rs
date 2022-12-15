@@ -2,7 +2,7 @@
 
 /// <p>Represents a workflow type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowType {
     /// <p> The name of the workflow type.</p> <note>
     /// <p>The combination of workflow type name and version must be unique with in a domain.</p>
@@ -29,19 +29,11 @@ impl WorkflowType {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for WorkflowType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowType");
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 /// See [`WorkflowType`](crate::model::WorkflowType).
 pub mod workflow_type {
 
     /// A builder for [`WorkflowType`](crate::model::WorkflowType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<std::string::String>,
@@ -93,7 +85,7 @@ impl WorkflowType {
 
 /// <p>Represents an activity type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivityType {
     /// <p>The name of this activity.</p> <note>
     /// <p>The combination of activity type name and version must be unique within a domain.</p>
@@ -120,19 +112,11 @@ impl ActivityType {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for ActivityType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivityType");
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 /// See [`ActivityType`](crate::model::ActivityType).
 pub mod activity_type {
 
     /// A builder for [`ActivityType`](crate::model::ActivityType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<std::string::String>,
@@ -182,6 +166,42 @@ impl ActivityType {
     }
 }
 
+/// When writing a match expression against `ChildPolicy`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let childpolicy = unimplemented!();
+/// match childpolicy {
+///     ChildPolicy::Abandon => { /* ... */ },
+///     ChildPolicy::RequestCancel => { /* ... */ },
+///     ChildPolicy::Terminate => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `childpolicy` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ChildPolicy::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ChildPolicy::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ChildPolicy::NewFeature` is defined.
+/// Specifically, when `childpolicy` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ChildPolicy::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -200,8 +220,8 @@ pub enum ChildPolicy {
     RequestCancel,
     #[allow(missing_docs)] // documentation missing in model
     Terminate,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ChildPolicy {
     fn from(s: &str) -> Self {
@@ -209,7 +229,7 @@ impl std::convert::From<&str> for ChildPolicy {
             "ABANDON" => ChildPolicy::Abandon,
             "REQUEST_CANCEL" => ChildPolicy::RequestCancel,
             "TERMINATE" => ChildPolicy::Terminate,
-            other => ChildPolicy::Unknown(other.to_owned()),
+            other => ChildPolicy::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -227,11 +247,11 @@ impl ChildPolicy {
             ChildPolicy::Abandon => "ABANDON",
             ChildPolicy::RequestCancel => "REQUEST_CANCEL",
             ChildPolicy::Terminate => "TERMINATE",
-            ChildPolicy::Unknown(s) => s.as_ref(),
+            ChildPolicy::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ABANDON", "REQUEST_CANCEL", "TERMINATE"]
     }
 }
@@ -244,7 +264,7 @@ impl AsRef<str> for ChildPolicy {
 /// <p>Tags are key-value pairs that can be associated with Amazon SWF state machines and activities.</p>
 /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceTag {
     /// <p>The key of a tag.</p>
     #[doc(hidden)]
@@ -263,19 +283,11 @@ impl ResourceTag {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for ResourceTag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceTag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`ResourceTag`](crate::model::ResourceTag).
 pub mod resource_tag {
 
     /// A builder for [`ResourceTag`](crate::model::ResourceTag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -319,7 +331,7 @@ impl ResourceTag {
 
 /// <p>Represents a task list.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TaskList {
     /// <p>The name of the task list.</p>
     #[doc(hidden)]
@@ -331,18 +343,11 @@ impl TaskList {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for TaskList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TaskList");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 /// See [`TaskList`](crate::model::TaskList).
 pub mod task_list {
 
     /// A builder for [`TaskList`](crate::model::TaskList).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -428,7 +433,7 @@ impl TaskList {
 /// <li> <p> <code> <code>StartChildWorkflowExecutionDecisionAttributes</code> </code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Decision {
     /// <p>Specifies the type of the decision.</p>
     #[doc(hidden)]
@@ -577,70 +582,11 @@ impl Decision {
         self.schedule_lambda_function_decision_attributes.as_ref()
     }
 }
-impl std::fmt::Debug for Decision {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Decision");
-        formatter.field("decision_type", &self.decision_type);
-        formatter.field(
-            "schedule_activity_task_decision_attributes",
-            &self.schedule_activity_task_decision_attributes,
-        );
-        formatter.field(
-            "request_cancel_activity_task_decision_attributes",
-            &self.request_cancel_activity_task_decision_attributes,
-        );
-        formatter.field(
-            "complete_workflow_execution_decision_attributes",
-            &self.complete_workflow_execution_decision_attributes,
-        );
-        formatter.field(
-            "fail_workflow_execution_decision_attributes",
-            &self.fail_workflow_execution_decision_attributes,
-        );
-        formatter.field(
-            "cancel_workflow_execution_decision_attributes",
-            &self.cancel_workflow_execution_decision_attributes,
-        );
-        formatter.field(
-            "continue_as_new_workflow_execution_decision_attributes",
-            &self.continue_as_new_workflow_execution_decision_attributes,
-        );
-        formatter.field(
-            "record_marker_decision_attributes",
-            &self.record_marker_decision_attributes,
-        );
-        formatter.field(
-            "start_timer_decision_attributes",
-            &self.start_timer_decision_attributes,
-        );
-        formatter.field(
-            "cancel_timer_decision_attributes",
-            &self.cancel_timer_decision_attributes,
-        );
-        formatter.field(
-            "signal_external_workflow_execution_decision_attributes",
-            &self.signal_external_workflow_execution_decision_attributes,
-        );
-        formatter.field(
-            "request_cancel_external_workflow_execution_decision_attributes",
-            &self.request_cancel_external_workflow_execution_decision_attributes,
-        );
-        formatter.field(
-            "start_child_workflow_execution_decision_attributes",
-            &self.start_child_workflow_execution_decision_attributes,
-        );
-        formatter.field(
-            "schedule_lambda_function_decision_attributes",
-            &self.schedule_lambda_function_decision_attributes,
-        );
-        formatter.finish()
-    }
-}
 /// See [`Decision`](crate::model::Decision).
 pub mod decision {
 
     /// A builder for [`Decision`](crate::model::Decision).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) decision_type: std::option::Option<crate::model::DecisionType>,
         pub(crate) schedule_activity_task_decision_attributes:
@@ -940,7 +886,7 @@ impl Decision {
 
 /// <p>Decision attributes specified in <code>scheduleLambdaFunctionDecisionAttributes</code> within the list of decisions <code>decisions</code> passed to <code>RespondDecisionTaskCompleted</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduleLambdaFunctionDecisionAttributes {
     /// <p>A string that identifies the Lambda function execution in the event history.</p>
     #[doc(hidden)]
@@ -980,22 +926,11 @@ impl ScheduleLambdaFunctionDecisionAttributes {
         self.start_to_close_timeout.as_deref()
     }
 }
-impl std::fmt::Debug for ScheduleLambdaFunctionDecisionAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduleLambdaFunctionDecisionAttributes");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("control", &self.control);
-        formatter.field("input", &self.input);
-        formatter.field("start_to_close_timeout", &self.start_to_close_timeout);
-        formatter.finish()
-    }
-}
 /// See [`ScheduleLambdaFunctionDecisionAttributes`](crate::model::ScheduleLambdaFunctionDecisionAttributes).
 pub mod schedule_lambda_function_decision_attributes {
 
     /// A builder for [`ScheduleLambdaFunctionDecisionAttributes`](crate::model::ScheduleLambdaFunctionDecisionAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1092,7 +1027,7 @@ impl ScheduleLambdaFunctionDecisionAttributes {
 /// </ul>
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartChildWorkflowExecutionDecisionAttributes {
     /// <p> The type of the workflow execution to be started.</p>
     #[doc(hidden)]
@@ -1212,34 +1147,11 @@ impl StartChildWorkflowExecutionDecisionAttributes {
         self.lambda_role.as_deref()
     }
 }
-impl std::fmt::Debug for StartChildWorkflowExecutionDecisionAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartChildWorkflowExecutionDecisionAttributes");
-        formatter.field("workflow_type", &self.workflow_type);
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("control", &self.control);
-        formatter.field("input", &self.input);
-        formatter.field(
-            "execution_start_to_close_timeout",
-            &self.execution_start_to_close_timeout,
-        );
-        formatter.field("task_list", &self.task_list);
-        formatter.field("task_priority", &self.task_priority);
-        formatter.field(
-            "task_start_to_close_timeout",
-            &self.task_start_to_close_timeout,
-        );
-        formatter.field("child_policy", &self.child_policy);
-        formatter.field("tag_list", &self.tag_list);
-        formatter.field("lambda_role", &self.lambda_role);
-        formatter.finish()
-    }
-}
 /// See [`StartChildWorkflowExecutionDecisionAttributes`](crate::model::StartChildWorkflowExecutionDecisionAttributes).
 pub mod start_child_workflow_execution_decision_attributes {
 
     /// A builder for [`StartChildWorkflowExecutionDecisionAttributes`](crate::model::StartChildWorkflowExecutionDecisionAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_type: std::option::Option<crate::model::WorkflowType>,
         pub(crate) workflow_id: std::option::Option<std::string::String>,
@@ -1467,7 +1379,7 @@ impl StartChildWorkflowExecutionDecisionAttributes {
 /// </ul>
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequestCancelExternalWorkflowExecutionDecisionAttributes {
     /// <p> The <code>workflowId</code> of the external workflow execution to cancel.</p>
     #[doc(hidden)]
@@ -1493,21 +1405,11 @@ impl RequestCancelExternalWorkflowExecutionDecisionAttributes {
         self.control.as_deref()
     }
 }
-impl std::fmt::Debug for RequestCancelExternalWorkflowExecutionDecisionAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("RequestCancelExternalWorkflowExecutionDecisionAttributes");
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("run_id", &self.run_id);
-        formatter.field("control", &self.control);
-        formatter.finish()
-    }
-}
 /// See [`RequestCancelExternalWorkflowExecutionDecisionAttributes`](crate::model::RequestCancelExternalWorkflowExecutionDecisionAttributes).
 pub mod request_cancel_external_workflow_execution_decision_attributes {
 
     /// A builder for [`RequestCancelExternalWorkflowExecutionDecisionAttributes`](crate::model::RequestCancelExternalWorkflowExecutionDecisionAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
         pub(crate) run_id: std::option::Option<std::string::String>,
@@ -1574,7 +1476,7 @@ impl RequestCancelExternalWorkflowExecutionDecisionAttributes {
 /// </ul>
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SignalExternalWorkflowExecutionDecisionAttributes {
     /// <p> The <code>workflowId</code> of the workflow execution to be signaled.</p>
     #[doc(hidden)]
@@ -1614,22 +1516,11 @@ impl SignalExternalWorkflowExecutionDecisionAttributes {
         self.control.as_deref()
     }
 }
-impl std::fmt::Debug for SignalExternalWorkflowExecutionDecisionAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SignalExternalWorkflowExecutionDecisionAttributes");
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("run_id", &self.run_id);
-        formatter.field("signal_name", &self.signal_name);
-        formatter.field("input", &self.input);
-        formatter.field("control", &self.control);
-        formatter.finish()
-    }
-}
 /// See [`SignalExternalWorkflowExecutionDecisionAttributes`](crate::model::SignalExternalWorkflowExecutionDecisionAttributes).
 pub mod signal_external_workflow_execution_decision_attributes {
 
     /// A builder for [`SignalExternalWorkflowExecutionDecisionAttributes`](crate::model::SignalExternalWorkflowExecutionDecisionAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
         pub(crate) run_id: std::option::Option<std::string::String>,
@@ -1718,7 +1609,7 @@ impl SignalExternalWorkflowExecutionDecisionAttributes {
 /// </ul>
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelTimerDecisionAttributes {
     /// <p> The unique ID of the timer to cancel.</p>
     #[doc(hidden)]
@@ -1730,18 +1621,11 @@ impl CancelTimerDecisionAttributes {
         self.timer_id.as_deref()
     }
 }
-impl std::fmt::Debug for CancelTimerDecisionAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelTimerDecisionAttributes");
-        formatter.field("timer_id", &self.timer_id);
-        formatter.finish()
-    }
-}
 /// See [`CancelTimerDecisionAttributes`](crate::model::CancelTimerDecisionAttributes).
 pub mod cancel_timer_decision_attributes {
 
     /// A builder for [`CancelTimerDecisionAttributes`](crate::model::CancelTimerDecisionAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timer_id: std::option::Option<std::string::String>,
     }
@@ -1781,7 +1665,7 @@ impl CancelTimerDecisionAttributes {
 /// </ul>
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartTimerDecisionAttributes {
     /// <p> The unique ID of the timer.</p>
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.</p>
@@ -1811,20 +1695,11 @@ impl StartTimerDecisionAttributes {
         self.start_to_fire_timeout.as_deref()
     }
 }
-impl std::fmt::Debug for StartTimerDecisionAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartTimerDecisionAttributes");
-        formatter.field("timer_id", &self.timer_id);
-        formatter.field("control", &self.control);
-        formatter.field("start_to_fire_timeout", &self.start_to_fire_timeout);
-        formatter.finish()
-    }
-}
 /// See [`StartTimerDecisionAttributes`](crate::model::StartTimerDecisionAttributes).
 pub mod start_timer_decision_attributes {
 
     /// A builder for [`StartTimerDecisionAttributes`](crate::model::StartTimerDecisionAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timer_id: std::option::Option<std::string::String>,
         pub(crate) control: std::option::Option<std::string::String>,
@@ -1895,7 +1770,7 @@ impl StartTimerDecisionAttributes {
 /// </ul>
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecordMarkerDecisionAttributes {
     /// <p> The name of the marker.</p>
     #[doc(hidden)]
@@ -1914,19 +1789,11 @@ impl RecordMarkerDecisionAttributes {
         self.details.as_deref()
     }
 }
-impl std::fmt::Debug for RecordMarkerDecisionAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecordMarkerDecisionAttributes");
-        formatter.field("marker_name", &self.marker_name);
-        formatter.field("details", &self.details);
-        formatter.finish()
-    }
-}
 /// See [`RecordMarkerDecisionAttributes`](crate::model::RecordMarkerDecisionAttributes).
 pub mod record_marker_decision_attributes {
 
     /// A builder for [`RecordMarkerDecisionAttributes`](crate::model::RecordMarkerDecisionAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker_name: std::option::Option<std::string::String>,
         pub(crate) details: std::option::Option<std::string::String>,
@@ -1983,7 +1850,7 @@ impl RecordMarkerDecisionAttributes {
 /// </ul>
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContinueAsNewWorkflowExecutionDecisionAttributes {
     /// <p>The input provided to the new workflow execution.</p>
     #[doc(hidden)]
@@ -2081,32 +1948,11 @@ impl ContinueAsNewWorkflowExecutionDecisionAttributes {
         self.lambda_role.as_deref()
     }
 }
-impl std::fmt::Debug for ContinueAsNewWorkflowExecutionDecisionAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContinueAsNewWorkflowExecutionDecisionAttributes");
-        formatter.field("input", &self.input);
-        formatter.field(
-            "execution_start_to_close_timeout",
-            &self.execution_start_to_close_timeout,
-        );
-        formatter.field("task_list", &self.task_list);
-        formatter.field("task_priority", &self.task_priority);
-        formatter.field(
-            "task_start_to_close_timeout",
-            &self.task_start_to_close_timeout,
-        );
-        formatter.field("child_policy", &self.child_policy);
-        formatter.field("tag_list", &self.tag_list);
-        formatter.field("workflow_type_version", &self.workflow_type_version);
-        formatter.field("lambda_role", &self.lambda_role);
-        formatter.finish()
-    }
-}
 /// See [`ContinueAsNewWorkflowExecutionDecisionAttributes`](crate::model::ContinueAsNewWorkflowExecutionDecisionAttributes).
 pub mod continue_as_new_workflow_execution_decision_attributes {
 
     /// A builder for [`ContinueAsNewWorkflowExecutionDecisionAttributes`](crate::model::ContinueAsNewWorkflowExecutionDecisionAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input: std::option::Option<std::string::String>,
         pub(crate) execution_start_to_close_timeout: std::option::Option<std::string::String>,
@@ -2303,7 +2149,7 @@ impl ContinueAsNewWorkflowExecutionDecisionAttributes {
 /// </ul>
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelWorkflowExecutionDecisionAttributes {
     /// <p> Details of the cancellation.</p>
     #[doc(hidden)]
@@ -2315,18 +2161,11 @@ impl CancelWorkflowExecutionDecisionAttributes {
         self.details.as_deref()
     }
 }
-impl std::fmt::Debug for CancelWorkflowExecutionDecisionAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelWorkflowExecutionDecisionAttributes");
-        formatter.field("details", &self.details);
-        formatter.finish()
-    }
-}
 /// See [`CancelWorkflowExecutionDecisionAttributes`](crate::model::CancelWorkflowExecutionDecisionAttributes).
 pub mod cancel_workflow_execution_decision_attributes {
 
     /// A builder for [`CancelWorkflowExecutionDecisionAttributes`](crate::model::CancelWorkflowExecutionDecisionAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) details: std::option::Option<std::string::String>,
     }
@@ -2366,7 +2205,7 @@ impl CancelWorkflowExecutionDecisionAttributes {
 /// </ul>
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FailWorkflowExecutionDecisionAttributes {
     /// <p>A descriptive reason for the failure that may help in diagnostics.</p>
     #[doc(hidden)]
@@ -2385,19 +2224,11 @@ impl FailWorkflowExecutionDecisionAttributes {
         self.details.as_deref()
     }
 }
-impl std::fmt::Debug for FailWorkflowExecutionDecisionAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FailWorkflowExecutionDecisionAttributes");
-        formatter.field("reason", &self.reason);
-        formatter.field("details", &self.details);
-        formatter.finish()
-    }
-}
 /// See [`FailWorkflowExecutionDecisionAttributes`](crate::model::FailWorkflowExecutionDecisionAttributes).
 pub mod fail_workflow_execution_decision_attributes {
 
     /// A builder for [`FailWorkflowExecutionDecisionAttributes`](crate::model::FailWorkflowExecutionDecisionAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reason: std::option::Option<std::string::String>,
         pub(crate) details: std::option::Option<std::string::String>,
@@ -2449,7 +2280,7 @@ impl FailWorkflowExecutionDecisionAttributes {
 /// </ul>
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CompleteWorkflowExecutionDecisionAttributes {
     /// <p>The result of the workflow execution. The form of the result is implementation defined.</p>
     #[doc(hidden)]
@@ -2461,18 +2292,11 @@ impl CompleteWorkflowExecutionDecisionAttributes {
         self.result.as_deref()
     }
 }
-impl std::fmt::Debug for CompleteWorkflowExecutionDecisionAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CompleteWorkflowExecutionDecisionAttributes");
-        formatter.field("result", &self.result);
-        formatter.finish()
-    }
-}
 /// See [`CompleteWorkflowExecutionDecisionAttributes`](crate::model::CompleteWorkflowExecutionDecisionAttributes).
 pub mod complete_workflow_execution_decision_attributes {
 
     /// A builder for [`CompleteWorkflowExecutionDecisionAttributes`](crate::model::CompleteWorkflowExecutionDecisionAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) result: std::option::Option<std::string::String>,
     }
@@ -2512,7 +2336,7 @@ impl CompleteWorkflowExecutionDecisionAttributes {
 /// </ul>
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequestCancelActivityTaskDecisionAttributes {
     /// <p>The <code>activityId</code> of the activity task to be canceled.</p>
     #[doc(hidden)]
@@ -2524,18 +2348,11 @@ impl RequestCancelActivityTaskDecisionAttributes {
         self.activity_id.as_deref()
     }
 }
-impl std::fmt::Debug for RequestCancelActivityTaskDecisionAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RequestCancelActivityTaskDecisionAttributes");
-        formatter.field("activity_id", &self.activity_id);
-        formatter.finish()
-    }
-}
 /// See [`RequestCancelActivityTaskDecisionAttributes`](crate::model::RequestCancelActivityTaskDecisionAttributes).
 pub mod request_cancel_activity_task_decision_attributes {
 
     /// A builder for [`RequestCancelActivityTaskDecisionAttributes`](crate::model::RequestCancelActivityTaskDecisionAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activity_id: std::option::Option<std::string::String>,
     }
@@ -2580,7 +2397,7 @@ impl RequestCancelActivityTaskDecisionAttributes {
 /// </ul>
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduleActivityTaskDecisionAttributes {
     /// <p> The type of the activity task to schedule.</p>
     #[doc(hidden)]
@@ -2685,27 +2502,11 @@ impl ScheduleActivityTaskDecisionAttributes {
         self.heartbeat_timeout.as_deref()
     }
 }
-impl std::fmt::Debug for ScheduleActivityTaskDecisionAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduleActivityTaskDecisionAttributes");
-        formatter.field("activity_type", &self.activity_type);
-        formatter.field("activity_id", &self.activity_id);
-        formatter.field("control", &self.control);
-        formatter.field("input", &self.input);
-        formatter.field("schedule_to_close_timeout", &self.schedule_to_close_timeout);
-        formatter.field("task_list", &self.task_list);
-        formatter.field("task_priority", &self.task_priority);
-        formatter.field("schedule_to_start_timeout", &self.schedule_to_start_timeout);
-        formatter.field("start_to_close_timeout", &self.start_to_close_timeout);
-        formatter.field("heartbeat_timeout", &self.heartbeat_timeout);
-        formatter.finish()
-    }
-}
 /// See [`ScheduleActivityTaskDecisionAttributes`](crate::model::ScheduleActivityTaskDecisionAttributes).
 pub mod schedule_activity_task_decision_attributes {
 
     /// A builder for [`ScheduleActivityTaskDecisionAttributes`](crate::model::ScheduleActivityTaskDecisionAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activity_type: std::option::Option<crate::model::ActivityType>,
         pub(crate) activity_id: std::option::Option<std::string::String>,
@@ -2891,6 +2692,52 @@ impl ScheduleActivityTaskDecisionAttributes {
     }
 }
 
+/// When writing a match expression against `DecisionType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let decisiontype = unimplemented!();
+/// match decisiontype {
+///     DecisionType::CancelTimer => { /* ... */ },
+///     DecisionType::CancelWorkflowExecution => { /* ... */ },
+///     DecisionType::CompleteWorkflowExecution => { /* ... */ },
+///     DecisionType::ContinueAsNewWorkflowExecution => { /* ... */ },
+///     DecisionType::FailWorkflowExecution => { /* ... */ },
+///     DecisionType::RecordMarker => { /* ... */ },
+///     DecisionType::RequestCancelActivityTask => { /* ... */ },
+///     DecisionType::RequestCancelExternalWorkflowExecution => { /* ... */ },
+///     DecisionType::ScheduleActivityTask => { /* ... */ },
+///     DecisionType::ScheduleLambdaFunction => { /* ... */ },
+///     DecisionType::SignalExternalWorkflowExecution => { /* ... */ },
+///     DecisionType::StartChildWorkflowExecution => { /* ... */ },
+///     DecisionType::StartTimer => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `decisiontype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DecisionType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DecisionType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DecisionType::NewFeature` is defined.
+/// Specifically, when `decisiontype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DecisionType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2929,8 +2776,8 @@ pub enum DecisionType {
     StartChildWorkflowExecution,
     #[allow(missing_docs)] // documentation missing in model
     StartTimer,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DecisionType {
     fn from(s: &str) -> Self {
@@ -2950,7 +2797,7 @@ impl std::convert::From<&str> for DecisionType {
             "SignalExternalWorkflowExecution" => DecisionType::SignalExternalWorkflowExecution,
             "StartChildWorkflowExecution" => DecisionType::StartChildWorkflowExecution,
             "StartTimer" => DecisionType::StartTimer,
-            other => DecisionType::Unknown(other.to_owned()),
+            other => DecisionType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2980,11 +2827,11 @@ impl DecisionType {
             DecisionType::SignalExternalWorkflowExecution => "SignalExternalWorkflowExecution",
             DecisionType::StartChildWorkflowExecution => "StartChildWorkflowExecution",
             DecisionType::StartTimer => "StartTimer",
-            DecisionType::Unknown(s) => s.as_ref(),
+            DecisionType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CancelTimer",
             "CancelWorkflowExecution",
@@ -3060,7 +2907,7 @@ impl AsRef<str> for DecisionType {
 /// <li> <p> <code>WorkflowExecutionTimedOut</code> – The workflow execution was closed because a time out was exceeded.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HistoryEvent {
     /// <p>The date and time when the event occurred.</p>
     #[doc(hidden)]
@@ -3659,236 +3506,11 @@ impl HistoryEvent {
         self.start_lambda_function_failed_event_attributes.as_ref()
     }
 }
-impl std::fmt::Debug for HistoryEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HistoryEvent");
-        formatter.field("event_timestamp", &self.event_timestamp);
-        formatter.field("event_type", &self.event_type);
-        formatter.field("event_id", &self.event_id);
-        formatter.field(
-            "workflow_execution_started_event_attributes",
-            &self.workflow_execution_started_event_attributes,
-        );
-        formatter.field(
-            "workflow_execution_completed_event_attributes",
-            &self.workflow_execution_completed_event_attributes,
-        );
-        formatter.field(
-            "complete_workflow_execution_failed_event_attributes",
-            &self.complete_workflow_execution_failed_event_attributes,
-        );
-        formatter.field(
-            "workflow_execution_failed_event_attributes",
-            &self.workflow_execution_failed_event_attributes,
-        );
-        formatter.field(
-            "fail_workflow_execution_failed_event_attributes",
-            &self.fail_workflow_execution_failed_event_attributes,
-        );
-        formatter.field(
-            "workflow_execution_timed_out_event_attributes",
-            &self.workflow_execution_timed_out_event_attributes,
-        );
-        formatter.field(
-            "workflow_execution_canceled_event_attributes",
-            &self.workflow_execution_canceled_event_attributes,
-        );
-        formatter.field(
-            "cancel_workflow_execution_failed_event_attributes",
-            &self.cancel_workflow_execution_failed_event_attributes,
-        );
-        formatter.field(
-            "workflow_execution_continued_as_new_event_attributes",
-            &self.workflow_execution_continued_as_new_event_attributes,
-        );
-        formatter.field(
-            "continue_as_new_workflow_execution_failed_event_attributes",
-            &self.continue_as_new_workflow_execution_failed_event_attributes,
-        );
-        formatter.field(
-            "workflow_execution_terminated_event_attributes",
-            &self.workflow_execution_terminated_event_attributes,
-        );
-        formatter.field(
-            "workflow_execution_cancel_requested_event_attributes",
-            &self.workflow_execution_cancel_requested_event_attributes,
-        );
-        formatter.field(
-            "decision_task_scheduled_event_attributes",
-            &self.decision_task_scheduled_event_attributes,
-        );
-        formatter.field(
-            "decision_task_started_event_attributes",
-            &self.decision_task_started_event_attributes,
-        );
-        formatter.field(
-            "decision_task_completed_event_attributes",
-            &self.decision_task_completed_event_attributes,
-        );
-        formatter.field(
-            "decision_task_timed_out_event_attributes",
-            &self.decision_task_timed_out_event_attributes,
-        );
-        formatter.field(
-            "activity_task_scheduled_event_attributes",
-            &self.activity_task_scheduled_event_attributes,
-        );
-        formatter.field(
-            "activity_task_started_event_attributes",
-            &self.activity_task_started_event_attributes,
-        );
-        formatter.field(
-            "activity_task_completed_event_attributes",
-            &self.activity_task_completed_event_attributes,
-        );
-        formatter.field(
-            "activity_task_failed_event_attributes",
-            &self.activity_task_failed_event_attributes,
-        );
-        formatter.field(
-            "activity_task_timed_out_event_attributes",
-            &self.activity_task_timed_out_event_attributes,
-        );
-        formatter.field(
-            "activity_task_canceled_event_attributes",
-            &self.activity_task_canceled_event_attributes,
-        );
-        formatter.field(
-            "activity_task_cancel_requested_event_attributes",
-            &self.activity_task_cancel_requested_event_attributes,
-        );
-        formatter.field(
-            "workflow_execution_signaled_event_attributes",
-            &self.workflow_execution_signaled_event_attributes,
-        );
-        formatter.field(
-            "marker_recorded_event_attributes",
-            &self.marker_recorded_event_attributes,
-        );
-        formatter.field(
-            "record_marker_failed_event_attributes",
-            &self.record_marker_failed_event_attributes,
-        );
-        formatter.field(
-            "timer_started_event_attributes",
-            &self.timer_started_event_attributes,
-        );
-        formatter.field(
-            "timer_fired_event_attributes",
-            &self.timer_fired_event_attributes,
-        );
-        formatter.field(
-            "timer_canceled_event_attributes",
-            &self.timer_canceled_event_attributes,
-        );
-        formatter.field(
-            "start_child_workflow_execution_initiated_event_attributes",
-            &self.start_child_workflow_execution_initiated_event_attributes,
-        );
-        formatter.field(
-            "child_workflow_execution_started_event_attributes",
-            &self.child_workflow_execution_started_event_attributes,
-        );
-        formatter.field(
-            "child_workflow_execution_completed_event_attributes",
-            &self.child_workflow_execution_completed_event_attributes,
-        );
-        formatter.field(
-            "child_workflow_execution_failed_event_attributes",
-            &self.child_workflow_execution_failed_event_attributes,
-        );
-        formatter.field(
-            "child_workflow_execution_timed_out_event_attributes",
-            &self.child_workflow_execution_timed_out_event_attributes,
-        );
-        formatter.field(
-            "child_workflow_execution_canceled_event_attributes",
-            &self.child_workflow_execution_canceled_event_attributes,
-        );
-        formatter.field(
-            "child_workflow_execution_terminated_event_attributes",
-            &self.child_workflow_execution_terminated_event_attributes,
-        );
-        formatter.field(
-            "signal_external_workflow_execution_initiated_event_attributes",
-            &self.signal_external_workflow_execution_initiated_event_attributes,
-        );
-        formatter.field(
-            "external_workflow_execution_signaled_event_attributes",
-            &self.external_workflow_execution_signaled_event_attributes,
-        );
-        formatter.field(
-            "signal_external_workflow_execution_failed_event_attributes",
-            &self.signal_external_workflow_execution_failed_event_attributes,
-        );
-        formatter.field(
-            "external_workflow_execution_cancel_requested_event_attributes",
-            &self.external_workflow_execution_cancel_requested_event_attributes,
-        );
-        formatter.field(
-            "request_cancel_external_workflow_execution_initiated_event_attributes",
-            &self.request_cancel_external_workflow_execution_initiated_event_attributes,
-        );
-        formatter.field(
-            "request_cancel_external_workflow_execution_failed_event_attributes",
-            &self.request_cancel_external_workflow_execution_failed_event_attributes,
-        );
-        formatter.field(
-            "schedule_activity_task_failed_event_attributes",
-            &self.schedule_activity_task_failed_event_attributes,
-        );
-        formatter.field(
-            "request_cancel_activity_task_failed_event_attributes",
-            &self.request_cancel_activity_task_failed_event_attributes,
-        );
-        formatter.field(
-            "start_timer_failed_event_attributes",
-            &self.start_timer_failed_event_attributes,
-        );
-        formatter.field(
-            "cancel_timer_failed_event_attributes",
-            &self.cancel_timer_failed_event_attributes,
-        );
-        formatter.field(
-            "start_child_workflow_execution_failed_event_attributes",
-            &self.start_child_workflow_execution_failed_event_attributes,
-        );
-        formatter.field(
-            "lambda_function_scheduled_event_attributes",
-            &self.lambda_function_scheduled_event_attributes,
-        );
-        formatter.field(
-            "lambda_function_started_event_attributes",
-            &self.lambda_function_started_event_attributes,
-        );
-        formatter.field(
-            "lambda_function_completed_event_attributes",
-            &self.lambda_function_completed_event_attributes,
-        );
-        formatter.field(
-            "lambda_function_failed_event_attributes",
-            &self.lambda_function_failed_event_attributes,
-        );
-        formatter.field(
-            "lambda_function_timed_out_event_attributes",
-            &self.lambda_function_timed_out_event_attributes,
-        );
-        formatter.field(
-            "schedule_lambda_function_failed_event_attributes",
-            &self.schedule_lambda_function_failed_event_attributes,
-        );
-        formatter.field(
-            "start_lambda_function_failed_event_attributes",
-            &self.start_lambda_function_failed_event_attributes,
-        );
-        formatter.finish()
-    }
-}
 /// See [`HistoryEvent`](crate::model::HistoryEvent).
 pub mod history_event {
 
     /// A builder for [`HistoryEvent`](crate::model::HistoryEvent).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) event_type: std::option::Option<crate::model::EventType>,
@@ -5059,7 +4681,7 @@ impl HistoryEvent {
 
 /// <p>Provides the details of the <code>StartLambdaFunctionFailed</code> event. It isn't set for other event types.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartLambdaFunctionFailedEventAttributes {
     /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     #[doc(hidden)]
@@ -5089,20 +4711,11 @@ impl StartLambdaFunctionFailedEventAttributes {
         self.message.as_deref()
     }
 }
-impl std::fmt::Debug for StartLambdaFunctionFailedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartLambdaFunctionFailedEventAttributes");
-        formatter.field("scheduled_event_id", &self.scheduled_event_id);
-        formatter.field("cause", &self.cause);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 /// See [`StartLambdaFunctionFailedEventAttributes`](crate::model::StartLambdaFunctionFailedEventAttributes).
 pub mod start_lambda_function_failed_event_attributes {
 
     /// A builder for [`StartLambdaFunctionFailedEventAttributes`](crate::model::StartLambdaFunctionFailedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scheduled_event_id: std::option::Option<i64>,
         pub(crate) cause: std::option::Option<crate::model::StartLambdaFunctionFailedCause>,
@@ -5163,6 +4776,40 @@ impl StartLambdaFunctionFailedEventAttributes {
     }
 }
 
+/// When writing a match expression against `StartLambdaFunctionFailedCause`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let startlambdafunctionfailedcause = unimplemented!();
+/// match startlambdafunctionfailedcause {
+///     StartLambdaFunctionFailedCause::AssumeRoleFailed => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `startlambdafunctionfailedcause` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `StartLambdaFunctionFailedCause::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `StartLambdaFunctionFailedCause::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `StartLambdaFunctionFailedCause::NewFeature` is defined.
+/// Specifically, when `startlambdafunctionfailedcause` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `StartLambdaFunctionFailedCause::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -5177,14 +4824,16 @@ impl StartLambdaFunctionFailedEventAttributes {
 pub enum StartLambdaFunctionFailedCause {
     #[allow(missing_docs)] // documentation missing in model
     AssumeRoleFailed,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for StartLambdaFunctionFailedCause {
     fn from(s: &str) -> Self {
         match s {
             "ASSUME_ROLE_FAILED" => StartLambdaFunctionFailedCause::AssumeRoleFailed,
-            other => StartLambdaFunctionFailedCause::Unknown(other.to_owned()),
+            other => StartLambdaFunctionFailedCause::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -5200,11 +4849,11 @@ impl StartLambdaFunctionFailedCause {
     pub fn as_str(&self) -> &str {
         match self {
             StartLambdaFunctionFailedCause::AssumeRoleFailed => "ASSUME_ROLE_FAILED",
-            StartLambdaFunctionFailedCause::Unknown(s) => s.as_ref(),
+            StartLambdaFunctionFailedCause::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ASSUME_ROLE_FAILED"]
     }
 }
@@ -5216,7 +4865,7 @@ impl AsRef<str> for StartLambdaFunctionFailedCause {
 
 /// <p>Provides the details of the <code>ScheduleLambdaFunctionFailed</code> event. It isn't set for other event types.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduleLambdaFunctionFailedEventAttributes {
     /// <p>The ID provided in the <code>ScheduleLambdaFunction</code> decision that failed. </p>
     #[doc(hidden)]
@@ -5253,24 +4902,11 @@ impl ScheduleLambdaFunctionFailedEventAttributes {
         self.decision_task_completed_event_id
     }
 }
-impl std::fmt::Debug for ScheduleLambdaFunctionFailedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduleLambdaFunctionFailedEventAttributes");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("cause", &self.cause);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.finish()
-    }
-}
 /// See [`ScheduleLambdaFunctionFailedEventAttributes`](crate::model::ScheduleLambdaFunctionFailedEventAttributes).
 pub mod schedule_lambda_function_failed_event_attributes {
 
     /// A builder for [`ScheduleLambdaFunctionFailedEventAttributes`](crate::model::ScheduleLambdaFunctionFailedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5348,6 +4984,43 @@ impl ScheduleLambdaFunctionFailedEventAttributes {
     }
 }
 
+/// When writing a match expression against `ScheduleLambdaFunctionFailedCause`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let schedulelambdafunctionfailedcause = unimplemented!();
+/// match schedulelambdafunctionfailedcause {
+///     ScheduleLambdaFunctionFailedCause::IdAlreadyInUse => { /* ... */ },
+///     ScheduleLambdaFunctionFailedCause::LambdaFunctionCreationRateExceeded => { /* ... */ },
+///     ScheduleLambdaFunctionFailedCause::LambdaServiceNotAvailableInRegion => { /* ... */ },
+///     ScheduleLambdaFunctionFailedCause::OpenLambdaFunctionsLimitExceeded => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `schedulelambdafunctionfailedcause` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ScheduleLambdaFunctionFailedCause::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ScheduleLambdaFunctionFailedCause::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ScheduleLambdaFunctionFailedCause::NewFeature` is defined.
+/// Specifically, when `schedulelambdafunctionfailedcause` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ScheduleLambdaFunctionFailedCause::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -5368,8 +5041,8 @@ pub enum ScheduleLambdaFunctionFailedCause {
     LambdaServiceNotAvailableInRegion,
     #[allow(missing_docs)] // documentation missing in model
     OpenLambdaFunctionsLimitExceeded,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ScheduleLambdaFunctionFailedCause {
     fn from(s: &str) -> Self {
@@ -5384,7 +5057,9 @@ impl std::convert::From<&str> for ScheduleLambdaFunctionFailedCause {
             "OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED" => {
                 ScheduleLambdaFunctionFailedCause::OpenLambdaFunctionsLimitExceeded
             }
-            other => ScheduleLambdaFunctionFailedCause::Unknown(other.to_owned()),
+            other => ScheduleLambdaFunctionFailedCause::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -5409,11 +5084,11 @@ impl ScheduleLambdaFunctionFailedCause {
             ScheduleLambdaFunctionFailedCause::OpenLambdaFunctionsLimitExceeded => {
                 "OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED"
             }
-            ScheduleLambdaFunctionFailedCause::Unknown(s) => s.as_ref(),
+            ScheduleLambdaFunctionFailedCause::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ID_ALREADY_IN_USE",
             "LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED",
@@ -5430,7 +5105,7 @@ impl AsRef<str> for ScheduleLambdaFunctionFailedCause {
 
 /// <p>Provides details of the <code>LambdaFunctionTimedOut</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaFunctionTimedOutEventAttributes {
     /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     #[doc(hidden)]
@@ -5456,20 +5131,11 @@ impl LambdaFunctionTimedOutEventAttributes {
         self.timeout_type.as_ref()
     }
 }
-impl std::fmt::Debug for LambdaFunctionTimedOutEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaFunctionTimedOutEventAttributes");
-        formatter.field("scheduled_event_id", &self.scheduled_event_id);
-        formatter.field("started_event_id", &self.started_event_id);
-        formatter.field("timeout_type", &self.timeout_type);
-        formatter.finish()
-    }
-}
 /// See [`LambdaFunctionTimedOutEventAttributes`](crate::model::LambdaFunctionTimedOutEventAttributes).
 pub mod lambda_function_timed_out_event_attributes {
 
     /// A builder for [`LambdaFunctionTimedOutEventAttributes`](crate::model::LambdaFunctionTimedOutEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scheduled_event_id: std::option::Option<i64>,
         pub(crate) started_event_id: std::option::Option<i64>,
@@ -5526,6 +5192,40 @@ impl LambdaFunctionTimedOutEventAttributes {
     }
 }
 
+/// When writing a match expression against `LambdaFunctionTimeoutType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let lambdafunctiontimeouttype = unimplemented!();
+/// match lambdafunctiontimeouttype {
+///     LambdaFunctionTimeoutType::StartToClose => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `lambdafunctiontimeouttype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `LambdaFunctionTimeoutType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `LambdaFunctionTimeoutType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `LambdaFunctionTimeoutType::NewFeature` is defined.
+/// Specifically, when `lambdafunctiontimeouttype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `LambdaFunctionTimeoutType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -5540,14 +5240,16 @@ impl LambdaFunctionTimedOutEventAttributes {
 pub enum LambdaFunctionTimeoutType {
     #[allow(missing_docs)] // documentation missing in model
     StartToClose,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for LambdaFunctionTimeoutType {
     fn from(s: &str) -> Self {
         match s {
             "START_TO_CLOSE" => LambdaFunctionTimeoutType::StartToClose,
-            other => LambdaFunctionTimeoutType::Unknown(other.to_owned()),
+            other => LambdaFunctionTimeoutType::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -5563,11 +5265,11 @@ impl LambdaFunctionTimeoutType {
     pub fn as_str(&self) -> &str {
         match self {
             LambdaFunctionTimeoutType::StartToClose => "START_TO_CLOSE",
-            LambdaFunctionTimeoutType::Unknown(s) => s.as_ref(),
+            LambdaFunctionTimeoutType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["START_TO_CLOSE"]
     }
 }
@@ -5579,7 +5281,7 @@ impl AsRef<str> for LambdaFunctionTimeoutType {
 
 /// <p>Provides the details of the <code>LambdaFunctionFailed</code> event. It isn't set for other event types.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaFunctionFailedEventAttributes {
     /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     #[doc(hidden)]
@@ -5612,21 +5314,11 @@ impl LambdaFunctionFailedEventAttributes {
         self.details.as_deref()
     }
 }
-impl std::fmt::Debug for LambdaFunctionFailedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaFunctionFailedEventAttributes");
-        formatter.field("scheduled_event_id", &self.scheduled_event_id);
-        formatter.field("started_event_id", &self.started_event_id);
-        formatter.field("reason", &self.reason);
-        formatter.field("details", &self.details);
-        formatter.finish()
-    }
-}
 /// See [`LambdaFunctionFailedEventAttributes`](crate::model::LambdaFunctionFailedEventAttributes).
 pub mod lambda_function_failed_event_attributes {
 
     /// A builder for [`LambdaFunctionFailedEventAttributes`](crate::model::LambdaFunctionFailedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scheduled_event_id: std::option::Option<i64>,
         pub(crate) started_event_id: std::option::Option<i64>,
@@ -5694,7 +5386,7 @@ impl LambdaFunctionFailedEventAttributes {
 
 /// <p>Provides the details of the <code>LambdaFunctionCompleted</code> event. It isn't set for other event types.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaFunctionCompletedEventAttributes {
     /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this Lambda task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     #[doc(hidden)]
@@ -5720,20 +5412,11 @@ impl LambdaFunctionCompletedEventAttributes {
         self.result.as_deref()
     }
 }
-impl std::fmt::Debug for LambdaFunctionCompletedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaFunctionCompletedEventAttributes");
-        formatter.field("scheduled_event_id", &self.scheduled_event_id);
-        formatter.field("started_event_id", &self.started_event_id);
-        formatter.field("result", &self.result);
-        formatter.finish()
-    }
-}
 /// See [`LambdaFunctionCompletedEventAttributes`](crate::model::LambdaFunctionCompletedEventAttributes).
 pub mod lambda_function_completed_event_attributes {
 
     /// A builder for [`LambdaFunctionCompletedEventAttributes`](crate::model::LambdaFunctionCompletedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scheduled_event_id: std::option::Option<i64>,
         pub(crate) started_event_id: std::option::Option<i64>,
@@ -5789,7 +5472,7 @@ impl LambdaFunctionCompletedEventAttributes {
 
 /// <p>Provides the details of the <code>LambdaFunctionStarted</code> event. It isn't set for other event types.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaFunctionStartedEventAttributes {
     /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     #[doc(hidden)]
@@ -5801,18 +5484,11 @@ impl LambdaFunctionStartedEventAttributes {
         self.scheduled_event_id
     }
 }
-impl std::fmt::Debug for LambdaFunctionStartedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaFunctionStartedEventAttributes");
-        formatter.field("scheduled_event_id", &self.scheduled_event_id);
-        formatter.finish()
-    }
-}
 /// See [`LambdaFunctionStartedEventAttributes`](crate::model::LambdaFunctionStartedEventAttributes).
 pub mod lambda_function_started_event_attributes {
 
     /// A builder for [`LambdaFunctionStartedEventAttributes`](crate::model::LambdaFunctionStartedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scheduled_event_id: std::option::Option<i64>,
     }
@@ -5844,7 +5520,7 @@ impl LambdaFunctionStartedEventAttributes {
 
 /// <p>Provides the details of the <code>LambdaFunctionScheduled</code> event. It isn't set for other event types.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaFunctionScheduledEventAttributes {
     /// <p>The unique ID of the Lambda task.</p>
     #[doc(hidden)]
@@ -5891,26 +5567,11 @@ impl LambdaFunctionScheduledEventAttributes {
         self.decision_task_completed_event_id
     }
 }
-impl std::fmt::Debug for LambdaFunctionScheduledEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaFunctionScheduledEventAttributes");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("control", &self.control);
-        formatter.field("input", &self.input);
-        formatter.field("start_to_close_timeout", &self.start_to_close_timeout);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.finish()
-    }
-}
 /// See [`LambdaFunctionScheduledEventAttributes`](crate::model::LambdaFunctionScheduledEventAttributes).
 pub mod lambda_function_scheduled_event_attributes {
 
     /// A builder for [`LambdaFunctionScheduledEventAttributes`](crate::model::LambdaFunctionScheduledEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6010,7 +5671,7 @@ impl LambdaFunctionScheduledEventAttributes {
 
 /// <p>Provides the details of the <code>StartChildWorkflowExecutionFailed</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartChildWorkflowExecutionFailedEventAttributes {
     /// <p>The workflow type provided in the <code>StartChildWorkflowExecution</code> <code>Decision</code> that failed.</p>
     #[doc(hidden)]
@@ -6065,26 +5726,11 @@ impl StartChildWorkflowExecutionFailedEventAttributes {
         self.control.as_deref()
     }
 }
-impl std::fmt::Debug for StartChildWorkflowExecutionFailedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartChildWorkflowExecutionFailedEventAttributes");
-        formatter.field("workflow_type", &self.workflow_type);
-        formatter.field("cause", &self.cause);
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("initiated_event_id", &self.initiated_event_id);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.field("control", &self.control);
-        formatter.finish()
-    }
-}
 /// See [`StartChildWorkflowExecutionFailedEventAttributes`](crate::model::StartChildWorkflowExecutionFailedEventAttributes).
 pub mod start_child_workflow_execution_failed_event_attributes {
 
     /// A builder for [`StartChildWorkflowExecutionFailedEventAttributes`](crate::model::StartChildWorkflowExecutionFailedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_type: std::option::Option<crate::model::WorkflowType>,
         pub(crate) cause: std::option::Option<crate::model::StartChildWorkflowExecutionFailedCause>,
@@ -6195,6 +5841,50 @@ impl StartChildWorkflowExecutionFailedEventAttributes {
     }
 }
 
+/// When writing a match expression against `StartChildWorkflowExecutionFailedCause`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let startchildworkflowexecutionfailedcause = unimplemented!();
+/// match startchildworkflowexecutionfailedcause {
+///     StartChildWorkflowExecutionFailedCause::ChildCreationRateExceeded => { /* ... */ },
+///     StartChildWorkflowExecutionFailedCause::DefaultChildPolicyUndefined => { /* ... */ },
+///     StartChildWorkflowExecutionFailedCause::DefaultExecutionStartToCloseTimeoutUndefined => { /* ... */ },
+///     StartChildWorkflowExecutionFailedCause::DefaultTaskListUndefined => { /* ... */ },
+///     StartChildWorkflowExecutionFailedCause::DefaultTaskStartToCloseTimeoutUndefined => { /* ... */ },
+///     StartChildWorkflowExecutionFailedCause::OpenChildrenLimitExceeded => { /* ... */ },
+///     StartChildWorkflowExecutionFailedCause::OpenWorkflowsLimitExceeded => { /* ... */ },
+///     StartChildWorkflowExecutionFailedCause::OperationNotPermitted => { /* ... */ },
+///     StartChildWorkflowExecutionFailedCause::WorkflowAlreadyRunning => { /* ... */ },
+///     StartChildWorkflowExecutionFailedCause::WorkflowTypeDeprecated => { /* ... */ },
+///     StartChildWorkflowExecutionFailedCause::WorkflowTypeDoesNotExist => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `startchildworkflowexecutionfailedcause` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `StartChildWorkflowExecutionFailedCause::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `StartChildWorkflowExecutionFailedCause::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `StartChildWorkflowExecutionFailedCause::NewFeature` is defined.
+/// Specifically, when `startchildworkflowexecutionfailedcause` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `StartChildWorkflowExecutionFailedCause::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -6229,8 +5919,8 @@ pub enum StartChildWorkflowExecutionFailedCause {
     WorkflowTypeDeprecated,
     #[allow(missing_docs)] // documentation missing in model
     WorkflowTypeDoesNotExist,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for StartChildWorkflowExecutionFailedCause {
     fn from(s: &str) -> Self {
@@ -6268,7 +5958,9 @@ impl std::convert::From<&str> for StartChildWorkflowExecutionFailedCause {
             "WORKFLOW_TYPE_DOES_NOT_EXIST" => {
                 StartChildWorkflowExecutionFailedCause::WorkflowTypeDoesNotExist
             }
-            other => StartChildWorkflowExecutionFailedCause::Unknown(other.to_owned()),
+            other => StartChildWorkflowExecutionFailedCause::Unknown(
+                crate::types::UnknownVariantValue(other.to_owned()),
+            ),
         }
     }
 }
@@ -6294,11 +5986,11 @@ impl StartChildWorkflowExecutionFailedCause {
             StartChildWorkflowExecutionFailedCause::WorkflowAlreadyRunning => "WORKFLOW_ALREADY_RUNNING",
             StartChildWorkflowExecutionFailedCause::WorkflowTypeDeprecated => "WORKFLOW_TYPE_DEPRECATED",
             StartChildWorkflowExecutionFailedCause::WorkflowTypeDoesNotExist => "WORKFLOW_TYPE_DOES_NOT_EXIST",
-            StartChildWorkflowExecutionFailedCause::Unknown(s) => s.as_ref()
+            StartChildWorkflowExecutionFailedCause::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CHILD_CREATION_RATE_EXCEEDED",
             "DEFAULT_CHILD_POLICY_UNDEFINED",
@@ -6322,7 +6014,7 @@ impl AsRef<str> for StartChildWorkflowExecutionFailedCause {
 
 /// <p>Provides the details of the <code>CancelTimerFailed</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelTimerFailedEventAttributes {
     /// <p>The timerId provided in the <code>CancelTimer</code> decision that failed.</p>
     #[doc(hidden)]
@@ -6352,23 +6044,11 @@ impl CancelTimerFailedEventAttributes {
         self.decision_task_completed_event_id
     }
 }
-impl std::fmt::Debug for CancelTimerFailedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelTimerFailedEventAttributes");
-        formatter.field("timer_id", &self.timer_id);
-        formatter.field("cause", &self.cause);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.finish()
-    }
-}
 /// See [`CancelTimerFailedEventAttributes`](crate::model::CancelTimerFailedEventAttributes).
 pub mod cancel_timer_failed_event_attributes {
 
     /// A builder for [`CancelTimerFailedEventAttributes`](crate::model::CancelTimerFailedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timer_id: std::option::Option<std::string::String>,
         pub(crate) cause: std::option::Option<crate::model::CancelTimerFailedCause>,
@@ -6434,6 +6114,41 @@ impl CancelTimerFailedEventAttributes {
     }
 }
 
+/// When writing a match expression against `CancelTimerFailedCause`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let canceltimerfailedcause = unimplemented!();
+/// match canceltimerfailedcause {
+///     CancelTimerFailedCause::OperationNotPermitted => { /* ... */ },
+///     CancelTimerFailedCause::TimerIdUnknown => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `canceltimerfailedcause` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CancelTimerFailedCause::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CancelTimerFailedCause::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CancelTimerFailedCause::NewFeature` is defined.
+/// Specifically, when `canceltimerfailedcause` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CancelTimerFailedCause::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -6450,15 +6165,17 @@ pub enum CancelTimerFailedCause {
     OperationNotPermitted,
     #[allow(missing_docs)] // documentation missing in model
     TimerIdUnknown,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CancelTimerFailedCause {
     fn from(s: &str) -> Self {
         match s {
             "OPERATION_NOT_PERMITTED" => CancelTimerFailedCause::OperationNotPermitted,
             "TIMER_ID_UNKNOWN" => CancelTimerFailedCause::TimerIdUnknown,
-            other => CancelTimerFailedCause::Unknown(other.to_owned()),
+            other => {
+                CancelTimerFailedCause::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -6475,11 +6192,11 @@ impl CancelTimerFailedCause {
         match self {
             CancelTimerFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
             CancelTimerFailedCause::TimerIdUnknown => "TIMER_ID_UNKNOWN",
-            CancelTimerFailedCause::Unknown(s) => s.as_ref(),
+            CancelTimerFailedCause::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OPERATION_NOT_PERMITTED", "TIMER_ID_UNKNOWN"]
     }
 }
@@ -6491,7 +6208,7 @@ impl AsRef<str> for CancelTimerFailedCause {
 
 /// <p>Provides the details of the <code>StartTimerFailed</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartTimerFailedEventAttributes {
     /// <p>The timerId provided in the <code>StartTimer</code> decision that failed.</p>
     #[doc(hidden)]
@@ -6521,23 +6238,11 @@ impl StartTimerFailedEventAttributes {
         self.decision_task_completed_event_id
     }
 }
-impl std::fmt::Debug for StartTimerFailedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartTimerFailedEventAttributes");
-        formatter.field("timer_id", &self.timer_id);
-        formatter.field("cause", &self.cause);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.finish()
-    }
-}
 /// See [`StartTimerFailedEventAttributes`](crate::model::StartTimerFailedEventAttributes).
 pub mod start_timer_failed_event_attributes {
 
     /// A builder for [`StartTimerFailedEventAttributes`](crate::model::StartTimerFailedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timer_id: std::option::Option<std::string::String>,
         pub(crate) cause: std::option::Option<crate::model::StartTimerFailedCause>,
@@ -6603,6 +6308,43 @@ impl StartTimerFailedEventAttributes {
     }
 }
 
+/// When writing a match expression against `StartTimerFailedCause`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let starttimerfailedcause = unimplemented!();
+/// match starttimerfailedcause {
+///     StartTimerFailedCause::OpenTimersLimitExceeded => { /* ... */ },
+///     StartTimerFailedCause::OperationNotPermitted => { /* ... */ },
+///     StartTimerFailedCause::TimerCreationRateExceeded => { /* ... */ },
+///     StartTimerFailedCause::TimerIdAlreadyInUse => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `starttimerfailedcause` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `StartTimerFailedCause::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `StartTimerFailedCause::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `StartTimerFailedCause::NewFeature` is defined.
+/// Specifically, when `starttimerfailedcause` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `StartTimerFailedCause::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -6623,8 +6365,8 @@ pub enum StartTimerFailedCause {
     TimerCreationRateExceeded,
     #[allow(missing_docs)] // documentation missing in model
     TimerIdAlreadyInUse,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for StartTimerFailedCause {
     fn from(s: &str) -> Self {
@@ -6633,7 +6375,9 @@ impl std::convert::From<&str> for StartTimerFailedCause {
             "OPERATION_NOT_PERMITTED" => StartTimerFailedCause::OperationNotPermitted,
             "TIMER_CREATION_RATE_EXCEEDED" => StartTimerFailedCause::TimerCreationRateExceeded,
             "TIMER_ID_ALREADY_IN_USE" => StartTimerFailedCause::TimerIdAlreadyInUse,
-            other => StartTimerFailedCause::Unknown(other.to_owned()),
+            other => {
+                StartTimerFailedCause::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -6652,11 +6396,11 @@ impl StartTimerFailedCause {
             StartTimerFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
             StartTimerFailedCause::TimerCreationRateExceeded => "TIMER_CREATION_RATE_EXCEEDED",
             StartTimerFailedCause::TimerIdAlreadyInUse => "TIMER_ID_ALREADY_IN_USE",
-            StartTimerFailedCause::Unknown(s) => s.as_ref(),
+            StartTimerFailedCause::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "OPEN_TIMERS_LIMIT_EXCEEDED",
             "OPERATION_NOT_PERMITTED",
@@ -6673,7 +6417,7 @@ impl AsRef<str> for StartTimerFailedCause {
 
 /// <p>Provides the details of the <code>RequestCancelActivityTaskFailed</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequestCancelActivityTaskFailedEventAttributes {
     /// <p>The activityId provided in the <code>RequestCancelActivityTask</code> decision that failed.</p>
     #[doc(hidden)]
@@ -6705,23 +6449,11 @@ impl RequestCancelActivityTaskFailedEventAttributes {
         self.decision_task_completed_event_id
     }
 }
-impl std::fmt::Debug for RequestCancelActivityTaskFailedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RequestCancelActivityTaskFailedEventAttributes");
-        formatter.field("activity_id", &self.activity_id);
-        formatter.field("cause", &self.cause);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.finish()
-    }
-}
 /// See [`RequestCancelActivityTaskFailedEventAttributes`](crate::model::RequestCancelActivityTaskFailedEventAttributes).
 pub mod request_cancel_activity_task_failed_event_attributes {
 
     /// A builder for [`RequestCancelActivityTaskFailedEventAttributes`](crate::model::RequestCancelActivityTaskFailedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activity_id: std::option::Option<std::string::String>,
         pub(crate) cause: std::option::Option<crate::model::RequestCancelActivityTaskFailedCause>,
@@ -6788,6 +6520,41 @@ impl RequestCancelActivityTaskFailedEventAttributes {
     }
 }
 
+/// When writing a match expression against `RequestCancelActivityTaskFailedCause`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let requestcancelactivitytaskfailedcause = unimplemented!();
+/// match requestcancelactivitytaskfailedcause {
+///     RequestCancelActivityTaskFailedCause::ActivityIdUnknown => { /* ... */ },
+///     RequestCancelActivityTaskFailedCause::OperationNotPermitted => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `requestcancelactivitytaskfailedcause` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RequestCancelActivityTaskFailedCause::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RequestCancelActivityTaskFailedCause::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RequestCancelActivityTaskFailedCause::NewFeature` is defined.
+/// Specifically, when `requestcancelactivitytaskfailedcause` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RequestCancelActivityTaskFailedCause::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -6804,8 +6571,8 @@ pub enum RequestCancelActivityTaskFailedCause {
     ActivityIdUnknown,
     #[allow(missing_docs)] // documentation missing in model
     OperationNotPermitted,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for RequestCancelActivityTaskFailedCause {
     fn from(s: &str) -> Self {
@@ -6814,7 +6581,9 @@ impl std::convert::From<&str> for RequestCancelActivityTaskFailedCause {
             "OPERATION_NOT_PERMITTED" => {
                 RequestCancelActivityTaskFailedCause::OperationNotPermitted
             }
-            other => RequestCancelActivityTaskFailedCause::Unknown(other.to_owned()),
+            other => RequestCancelActivityTaskFailedCause::Unknown(
+                crate::types::UnknownVariantValue(other.to_owned()),
+            ),
         }
     }
 }
@@ -6833,11 +6602,11 @@ impl RequestCancelActivityTaskFailedCause {
             RequestCancelActivityTaskFailedCause::OperationNotPermitted => {
                 "OPERATION_NOT_PERMITTED"
             }
-            RequestCancelActivityTaskFailedCause::Unknown(s) => s.as_ref(),
+            RequestCancelActivityTaskFailedCause::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVITY_ID_UNKNOWN", "OPERATION_NOT_PERMITTED"]
     }
 }
@@ -6849,7 +6618,7 @@ impl AsRef<str> for RequestCancelActivityTaskFailedCause {
 
 /// <p>Provides the details of the <code>ScheduleActivityTaskFailed</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduleActivityTaskFailedEventAttributes {
     /// <p>The activity type provided in the <code>ScheduleActivityTask</code> decision that failed.</p>
     #[doc(hidden)]
@@ -6886,24 +6655,11 @@ impl ScheduleActivityTaskFailedEventAttributes {
         self.decision_task_completed_event_id
     }
 }
-impl std::fmt::Debug for ScheduleActivityTaskFailedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduleActivityTaskFailedEventAttributes");
-        formatter.field("activity_type", &self.activity_type);
-        formatter.field("activity_id", &self.activity_id);
-        formatter.field("cause", &self.cause);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.finish()
-    }
-}
 /// See [`ScheduleActivityTaskFailedEventAttributes`](crate::model::ScheduleActivityTaskFailedEventAttributes).
 pub mod schedule_activity_task_failed_event_attributes {
 
     /// A builder for [`ScheduleActivityTaskFailedEventAttributes`](crate::model::ScheduleActivityTaskFailedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activity_type: std::option::Option<crate::model::ActivityType>,
         pub(crate) activity_id: std::option::Option<std::string::String>,
@@ -6984,6 +6740,50 @@ impl ScheduleActivityTaskFailedEventAttributes {
     }
 }
 
+/// When writing a match expression against `ScheduleActivityTaskFailedCause`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let scheduleactivitytaskfailedcause = unimplemented!();
+/// match scheduleactivitytaskfailedcause {
+///     ScheduleActivityTaskFailedCause::ActivityCreationRateExceeded => { /* ... */ },
+///     ScheduleActivityTaskFailedCause::ActivityIdAlreadyInUse => { /* ... */ },
+///     ScheduleActivityTaskFailedCause::ActivityTypeDeprecated => { /* ... */ },
+///     ScheduleActivityTaskFailedCause::ActivityTypeDoesNotExist => { /* ... */ },
+///     ScheduleActivityTaskFailedCause::DefaultHeartbeatTimeoutUndefined => { /* ... */ },
+///     ScheduleActivityTaskFailedCause::DefaultScheduleToCloseTimeoutUndefined => { /* ... */ },
+///     ScheduleActivityTaskFailedCause::DefaultScheduleToStartTimeoutUndefined => { /* ... */ },
+///     ScheduleActivityTaskFailedCause::DefaultStartToCloseTimeoutUndefined => { /* ... */ },
+///     ScheduleActivityTaskFailedCause::DefaultTaskListUndefined => { /* ... */ },
+///     ScheduleActivityTaskFailedCause::OpenActivitiesLimitExceeded => { /* ... */ },
+///     ScheduleActivityTaskFailedCause::OperationNotPermitted => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `scheduleactivitytaskfailedcause` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ScheduleActivityTaskFailedCause::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ScheduleActivityTaskFailedCause::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ScheduleActivityTaskFailedCause::NewFeature` is defined.
+/// Specifically, when `scheduleactivitytaskfailedcause` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ScheduleActivityTaskFailedCause::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -7018,8 +6818,8 @@ pub enum ScheduleActivityTaskFailedCause {
     OpenActivitiesLimitExceeded,
     #[allow(missing_docs)] // documentation missing in model
     OperationNotPermitted,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ScheduleActivityTaskFailedCause {
     fn from(s: &str) -> Self {
@@ -7051,7 +6851,9 @@ impl std::convert::From<&str> for ScheduleActivityTaskFailedCause {
                 ScheduleActivityTaskFailedCause::OpenActivitiesLimitExceeded
             }
             "OPERATION_NOT_PERMITTED" => ScheduleActivityTaskFailedCause::OperationNotPermitted,
-            other => ScheduleActivityTaskFailedCause::Unknown(other.to_owned()),
+            other => ScheduleActivityTaskFailedCause::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -7093,11 +6895,11 @@ impl ScheduleActivityTaskFailedCause {
                 "OPEN_ACTIVITIES_LIMIT_EXCEEDED"
             }
             ScheduleActivityTaskFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
-            ScheduleActivityTaskFailedCause::Unknown(s) => s.as_ref(),
+            ScheduleActivityTaskFailedCause::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVITY_CREATION_RATE_EXCEEDED",
             "ACTIVITY_ID_ALREADY_IN_USE",
@@ -7121,7 +6923,7 @@ impl AsRef<str> for ScheduleActivityTaskFailedCause {
 
 /// <p>Provides the details of the <code>RequestCancelExternalWorkflowExecutionFailed</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequestCancelExternalWorkflowExecutionFailedEventAttributes {
     /// <p>The <code>workflowId</code> of the external workflow to which the cancel request was to be delivered.</p>
     #[doc(hidden)]
@@ -7174,27 +6976,11 @@ impl RequestCancelExternalWorkflowExecutionFailedEventAttributes {
         self.control.as_deref()
     }
 }
-impl std::fmt::Debug for RequestCancelExternalWorkflowExecutionFailedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("RequestCancelExternalWorkflowExecutionFailedEventAttributes");
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("run_id", &self.run_id);
-        formatter.field("cause", &self.cause);
-        formatter.field("initiated_event_id", &self.initiated_event_id);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.field("control", &self.control);
-        formatter.finish()
-    }
-}
 /// See [`RequestCancelExternalWorkflowExecutionFailedEventAttributes`](crate::model::RequestCancelExternalWorkflowExecutionFailedEventAttributes).
 pub mod request_cancel_external_workflow_execution_failed_event_attributes {
 
     /// A builder for [`RequestCancelExternalWorkflowExecutionFailedEventAttributes`](crate::model::RequestCancelExternalWorkflowExecutionFailedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
         pub(crate) run_id: std::option::Option<std::string::String>,
@@ -7306,6 +7092,42 @@ impl RequestCancelExternalWorkflowExecutionFailedEventAttributes {
     }
 }
 
+/// When writing a match expression against `RequestCancelExternalWorkflowExecutionFailedCause`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let requestcancelexternalworkflowexecutionfailedcause = unimplemented!();
+/// match requestcancelexternalworkflowexecutionfailedcause {
+///     RequestCancelExternalWorkflowExecutionFailedCause::OperationNotPermitted => { /* ... */ },
+///     RequestCancelExternalWorkflowExecutionFailedCause::RequestCancelExternalWorkflowExecutionRateExceeded => { /* ... */ },
+///     RequestCancelExternalWorkflowExecutionFailedCause::UnknownExternalWorkflowExecution => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `requestcancelexternalworkflowexecutionfailedcause` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RequestCancelExternalWorkflowExecutionFailedCause::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RequestCancelExternalWorkflowExecutionFailedCause::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RequestCancelExternalWorkflowExecutionFailedCause::NewFeature` is defined.
+/// Specifically, when `requestcancelexternalworkflowexecutionfailedcause` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RequestCancelExternalWorkflowExecutionFailedCause::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -7324,8 +7146,8 @@ pub enum RequestCancelExternalWorkflowExecutionFailedCause {
     RequestCancelExternalWorkflowExecutionRateExceeded,
     #[allow(missing_docs)] // documentation missing in model
     UnknownExternalWorkflowExecution,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for RequestCancelExternalWorkflowExecutionFailedCause {
     fn from(s: &str) -> Self {
@@ -7333,7 +7155,7 @@ impl std::convert::From<&str> for RequestCancelExternalWorkflowExecutionFailedCa
             "OPERATION_NOT_PERMITTED" => RequestCancelExternalWorkflowExecutionFailedCause::OperationNotPermitted,
             "REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED" => RequestCancelExternalWorkflowExecutionFailedCause::RequestCancelExternalWorkflowExecutionRateExceeded,
             "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION" => RequestCancelExternalWorkflowExecutionFailedCause::UnknownExternalWorkflowExecution,
-            other => RequestCancelExternalWorkflowExecutionFailedCause::Unknown(other.to_owned())
+            other => RequestCancelExternalWorkflowExecutionFailedCause::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
@@ -7351,11 +7173,11 @@ impl RequestCancelExternalWorkflowExecutionFailedCause {
             RequestCancelExternalWorkflowExecutionFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
             RequestCancelExternalWorkflowExecutionFailedCause::RequestCancelExternalWorkflowExecutionRateExceeded => "REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED",
             RequestCancelExternalWorkflowExecutionFailedCause::UnknownExternalWorkflowExecution => "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION",
-            RequestCancelExternalWorkflowExecutionFailedCause::Unknown(s) => s.as_ref()
+            RequestCancelExternalWorkflowExecutionFailedCause::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "OPERATION_NOT_PERMITTED",
             "REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED",
@@ -7371,7 +7193,7 @@ impl AsRef<str> for RequestCancelExternalWorkflowExecutionFailedCause {
 
 /// <p>Provides the details of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
     /// <p>The <code>workflowId</code> of the external workflow execution to be canceled.</p>
     #[doc(hidden)]
@@ -7404,25 +7226,11 @@ impl RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
         self.control.as_deref()
     }
 }
-impl std::fmt::Debug for RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("RequestCancelExternalWorkflowExecutionInitiatedEventAttributes");
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("run_id", &self.run_id);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.field("control", &self.control);
-        formatter.finish()
-    }
-}
 /// See [`RequestCancelExternalWorkflowExecutionInitiatedEventAttributes`](crate::model::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes).
 pub mod request_cancel_external_workflow_execution_initiated_event_attributes {
 
     /// A builder for [`RequestCancelExternalWorkflowExecutionInitiatedEventAttributes`](crate::model::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
         pub(crate) run_id: std::option::Option<std::string::String>,
@@ -7499,7 +7307,7 @@ impl RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
 
 /// <p>Provides the details of the <code>ExternalWorkflowExecutionCancelRequested</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExternalWorkflowExecutionCancelRequestedEventAttributes {
     /// <p>The external workflow execution to which the cancellation request was delivered.</p>
     #[doc(hidden)]
@@ -7518,20 +7326,11 @@ impl ExternalWorkflowExecutionCancelRequestedEventAttributes {
         self.initiated_event_id
     }
 }
-impl std::fmt::Debug for ExternalWorkflowExecutionCancelRequestedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("ExternalWorkflowExecutionCancelRequestedEventAttributes");
-        formatter.field("workflow_execution", &self.workflow_execution);
-        formatter.field("initiated_event_id", &self.initiated_event_id);
-        formatter.finish()
-    }
-}
 /// See [`ExternalWorkflowExecutionCancelRequestedEventAttributes`](crate::model::ExternalWorkflowExecutionCancelRequestedEventAttributes).
 pub mod external_workflow_execution_cancel_requested_event_attributes {
 
     /// A builder for [`ExternalWorkflowExecutionCancelRequestedEventAttributes`](crate::model::ExternalWorkflowExecutionCancelRequestedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_execution: std::option::Option<crate::model::WorkflowExecution>,
         pub(crate) initiated_event_id: std::option::Option<i64>,
@@ -7581,7 +7380,7 @@ impl ExternalWorkflowExecutionCancelRequestedEventAttributes {
 
 /// <p>Represents a workflow execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowExecution {
     /// <p>The user defined identifier associated with the workflow execution.</p>
     #[doc(hidden)]
@@ -7600,19 +7399,11 @@ impl WorkflowExecution {
         self.run_id.as_deref()
     }
 }
-impl std::fmt::Debug for WorkflowExecution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowExecution");
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("run_id", &self.run_id);
-        formatter.finish()
-    }
-}
 /// See [`WorkflowExecution`](crate::model::WorkflowExecution).
 pub mod workflow_execution {
 
     /// A builder for [`WorkflowExecution`](crate::model::WorkflowExecution).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
         pub(crate) run_id: std::option::Option<std::string::String>,
@@ -7656,7 +7447,7 @@ impl WorkflowExecution {
 
 /// <p>Provides the details of the <code>SignalExternalWorkflowExecutionFailed</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SignalExternalWorkflowExecutionFailedEventAttributes {
     /// <p>The <code>workflowId</code> of the external workflow execution that the signal was being delivered to.</p>
     #[doc(hidden)]
@@ -7709,26 +7500,11 @@ impl SignalExternalWorkflowExecutionFailedEventAttributes {
         self.control.as_deref()
     }
 }
-impl std::fmt::Debug for SignalExternalWorkflowExecutionFailedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SignalExternalWorkflowExecutionFailedEventAttributes");
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("run_id", &self.run_id);
-        formatter.field("cause", &self.cause);
-        formatter.field("initiated_event_id", &self.initiated_event_id);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.field("control", &self.control);
-        formatter.finish()
-    }
-}
 /// See [`SignalExternalWorkflowExecutionFailedEventAttributes`](crate::model::SignalExternalWorkflowExecutionFailedEventAttributes).
 pub mod signal_external_workflow_execution_failed_event_attributes {
 
     /// A builder for [`SignalExternalWorkflowExecutionFailedEventAttributes`](crate::model::SignalExternalWorkflowExecutionFailedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
         pub(crate) run_id: std::option::Option<std::string::String>,
@@ -7835,6 +7611,42 @@ impl SignalExternalWorkflowExecutionFailedEventAttributes {
     }
 }
 
+/// When writing a match expression against `SignalExternalWorkflowExecutionFailedCause`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let signalexternalworkflowexecutionfailedcause = unimplemented!();
+/// match signalexternalworkflowexecutionfailedcause {
+///     SignalExternalWorkflowExecutionFailedCause::OperationNotPermitted => { /* ... */ },
+///     SignalExternalWorkflowExecutionFailedCause::SignalExternalWorkflowExecutionRateExceeded => { /* ... */ },
+///     SignalExternalWorkflowExecutionFailedCause::UnknownExternalWorkflowExecution => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `signalexternalworkflowexecutionfailedcause` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SignalExternalWorkflowExecutionFailedCause::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SignalExternalWorkflowExecutionFailedCause::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SignalExternalWorkflowExecutionFailedCause::NewFeature` is defined.
+/// Specifically, when `signalexternalworkflowexecutionfailedcause` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SignalExternalWorkflowExecutionFailedCause::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -7853,8 +7665,8 @@ pub enum SignalExternalWorkflowExecutionFailedCause {
     SignalExternalWorkflowExecutionRateExceeded,
     #[allow(missing_docs)] // documentation missing in model
     UnknownExternalWorkflowExecution,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SignalExternalWorkflowExecutionFailedCause {
     fn from(s: &str) -> Self {
@@ -7862,7 +7674,7 @@ impl std::convert::From<&str> for SignalExternalWorkflowExecutionFailedCause {
             "OPERATION_NOT_PERMITTED" => SignalExternalWorkflowExecutionFailedCause::OperationNotPermitted,
             "SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED" => SignalExternalWorkflowExecutionFailedCause::SignalExternalWorkflowExecutionRateExceeded,
             "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION" => SignalExternalWorkflowExecutionFailedCause::UnknownExternalWorkflowExecution,
-            other => SignalExternalWorkflowExecutionFailedCause::Unknown(other.to_owned())
+            other => SignalExternalWorkflowExecutionFailedCause::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
@@ -7880,11 +7692,11 @@ impl SignalExternalWorkflowExecutionFailedCause {
             SignalExternalWorkflowExecutionFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
             SignalExternalWorkflowExecutionFailedCause::SignalExternalWorkflowExecutionRateExceeded => "SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED",
             SignalExternalWorkflowExecutionFailedCause::UnknownExternalWorkflowExecution => "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION",
-            SignalExternalWorkflowExecutionFailedCause::Unknown(s) => s.as_ref()
+            SignalExternalWorkflowExecutionFailedCause::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "OPERATION_NOT_PERMITTED",
             "SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED",
@@ -7900,7 +7712,7 @@ impl AsRef<str> for SignalExternalWorkflowExecutionFailedCause {
 
 /// <p>Provides the details of the <code>ExternalWorkflowExecutionSignaled</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExternalWorkflowExecutionSignaledEventAttributes {
     /// <p>The external workflow execution that the signal was delivered to.</p>
     #[doc(hidden)]
@@ -7919,19 +7731,11 @@ impl ExternalWorkflowExecutionSignaledEventAttributes {
         self.initiated_event_id
     }
 }
-impl std::fmt::Debug for ExternalWorkflowExecutionSignaledEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExternalWorkflowExecutionSignaledEventAttributes");
-        formatter.field("workflow_execution", &self.workflow_execution);
-        formatter.field("initiated_event_id", &self.initiated_event_id);
-        formatter.finish()
-    }
-}
 /// See [`ExternalWorkflowExecutionSignaledEventAttributes`](crate::model::ExternalWorkflowExecutionSignaledEventAttributes).
 pub mod external_workflow_execution_signaled_event_attributes {
 
     /// A builder for [`ExternalWorkflowExecutionSignaledEventAttributes`](crate::model::ExternalWorkflowExecutionSignaledEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_execution: std::option::Option<crate::model::WorkflowExecution>,
         pub(crate) initiated_event_id: std::option::Option<i64>,
@@ -7979,7 +7783,7 @@ impl ExternalWorkflowExecutionSignaledEventAttributes {
 
 /// <p>Provides the details of the <code>SignalExternalWorkflowExecutionInitiated</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SignalExternalWorkflowExecutionInitiatedEventAttributes {
     /// <p>The <code>workflowId</code> of the external workflow execution.</p>
     #[doc(hidden)]
@@ -8026,27 +7830,11 @@ impl SignalExternalWorkflowExecutionInitiatedEventAttributes {
         self.control.as_deref()
     }
 }
-impl std::fmt::Debug for SignalExternalWorkflowExecutionInitiatedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("SignalExternalWorkflowExecutionInitiatedEventAttributes");
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("run_id", &self.run_id);
-        formatter.field("signal_name", &self.signal_name);
-        formatter.field("input", &self.input);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.field("control", &self.control);
-        formatter.finish()
-    }
-}
 /// See [`SignalExternalWorkflowExecutionInitiatedEventAttributes`](crate::model::SignalExternalWorkflowExecutionInitiatedEventAttributes).
 pub mod signal_external_workflow_execution_initiated_event_attributes {
 
     /// A builder for [`SignalExternalWorkflowExecutionInitiatedEventAttributes`](crate::model::SignalExternalWorkflowExecutionInitiatedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
         pub(crate) run_id: std::option::Option<std::string::String>,
@@ -8146,7 +7934,7 @@ impl SignalExternalWorkflowExecutionInitiatedEventAttributes {
 
 /// <p>Provides the details of the <code>ChildWorkflowExecutionTerminated</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChildWorkflowExecutionTerminatedEventAttributes {
     /// <p>The child workflow execution that was terminated.</p>
     #[doc(hidden)]
@@ -8179,21 +7967,11 @@ impl ChildWorkflowExecutionTerminatedEventAttributes {
         self.started_event_id
     }
 }
-impl std::fmt::Debug for ChildWorkflowExecutionTerminatedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChildWorkflowExecutionTerminatedEventAttributes");
-        formatter.field("workflow_execution", &self.workflow_execution);
-        formatter.field("workflow_type", &self.workflow_type);
-        formatter.field("initiated_event_id", &self.initiated_event_id);
-        formatter.field("started_event_id", &self.started_event_id);
-        formatter.finish()
-    }
-}
 /// See [`ChildWorkflowExecutionTerminatedEventAttributes`](crate::model::ChildWorkflowExecutionTerminatedEventAttributes).
 pub mod child_workflow_execution_terminated_event_attributes {
 
     /// A builder for [`ChildWorkflowExecutionTerminatedEventAttributes`](crate::model::ChildWorkflowExecutionTerminatedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_execution: std::option::Option<crate::model::WorkflowExecution>,
         pub(crate) workflow_type: std::option::Option<crate::model::WorkflowType>,
@@ -8268,7 +8046,7 @@ impl ChildWorkflowExecutionTerminatedEventAttributes {
 
 /// <p>Provide details of the <code>ChildWorkflowExecutionCanceled</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChildWorkflowExecutionCanceledEventAttributes {
     /// <p>The child workflow execution that was canceled.</p>
     #[doc(hidden)]
@@ -8308,22 +8086,11 @@ impl ChildWorkflowExecutionCanceledEventAttributes {
         self.started_event_id
     }
 }
-impl std::fmt::Debug for ChildWorkflowExecutionCanceledEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChildWorkflowExecutionCanceledEventAttributes");
-        formatter.field("workflow_execution", &self.workflow_execution);
-        formatter.field("workflow_type", &self.workflow_type);
-        formatter.field("details", &self.details);
-        formatter.field("initiated_event_id", &self.initiated_event_id);
-        formatter.field("started_event_id", &self.started_event_id);
-        formatter.finish()
-    }
-}
 /// See [`ChildWorkflowExecutionCanceledEventAttributes`](crate::model::ChildWorkflowExecutionCanceledEventAttributes).
 pub mod child_workflow_execution_canceled_event_attributes {
 
     /// A builder for [`ChildWorkflowExecutionCanceledEventAttributes`](crate::model::ChildWorkflowExecutionCanceledEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_execution: std::option::Option<crate::model::WorkflowExecution>,
         pub(crate) workflow_type: std::option::Option<crate::model::WorkflowType>,
@@ -8409,7 +8176,7 @@ impl ChildWorkflowExecutionCanceledEventAttributes {
 
 /// <p>Provides the details of the <code>ChildWorkflowExecutionTimedOut</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChildWorkflowExecutionTimedOutEventAttributes {
     /// <p>The child workflow execution that timed out.</p>
     #[doc(hidden)]
@@ -8449,22 +8216,11 @@ impl ChildWorkflowExecutionTimedOutEventAttributes {
         self.started_event_id
     }
 }
-impl std::fmt::Debug for ChildWorkflowExecutionTimedOutEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChildWorkflowExecutionTimedOutEventAttributes");
-        formatter.field("workflow_execution", &self.workflow_execution);
-        formatter.field("workflow_type", &self.workflow_type);
-        formatter.field("timeout_type", &self.timeout_type);
-        formatter.field("initiated_event_id", &self.initiated_event_id);
-        formatter.field("started_event_id", &self.started_event_id);
-        formatter.finish()
-    }
-}
 /// See [`ChildWorkflowExecutionTimedOutEventAttributes`](crate::model::ChildWorkflowExecutionTimedOutEventAttributes).
 pub mod child_workflow_execution_timed_out_event_attributes {
 
     /// A builder for [`ChildWorkflowExecutionTimedOutEventAttributes`](crate::model::ChildWorkflowExecutionTimedOutEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_execution: std::option::Option<crate::model::WorkflowExecution>,
         pub(crate) workflow_type: std::option::Option<crate::model::WorkflowType>,
@@ -8551,6 +8307,40 @@ impl ChildWorkflowExecutionTimedOutEventAttributes {
     }
 }
 
+/// When writing a match expression against `WorkflowExecutionTimeoutType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let workflowexecutiontimeouttype = unimplemented!();
+/// match workflowexecutiontimeouttype {
+///     WorkflowExecutionTimeoutType::StartToClose => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `workflowexecutiontimeouttype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `WorkflowExecutionTimeoutType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `WorkflowExecutionTimeoutType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `WorkflowExecutionTimeoutType::NewFeature` is defined.
+/// Specifically, when `workflowexecutiontimeouttype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `WorkflowExecutionTimeoutType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -8565,14 +8355,16 @@ impl ChildWorkflowExecutionTimedOutEventAttributes {
 pub enum WorkflowExecutionTimeoutType {
     #[allow(missing_docs)] // documentation missing in model
     StartToClose,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for WorkflowExecutionTimeoutType {
     fn from(s: &str) -> Self {
         match s {
             "START_TO_CLOSE" => WorkflowExecutionTimeoutType::StartToClose,
-            other => WorkflowExecutionTimeoutType::Unknown(other.to_owned()),
+            other => WorkflowExecutionTimeoutType::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -8588,11 +8380,11 @@ impl WorkflowExecutionTimeoutType {
     pub fn as_str(&self) -> &str {
         match self {
             WorkflowExecutionTimeoutType::StartToClose => "START_TO_CLOSE",
-            WorkflowExecutionTimeoutType::Unknown(s) => s.as_ref(),
+            WorkflowExecutionTimeoutType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["START_TO_CLOSE"]
     }
 }
@@ -8604,7 +8396,7 @@ impl AsRef<str> for WorkflowExecutionTimeoutType {
 
 /// <p>Provides the details of the <code>ChildWorkflowExecutionFailed</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChildWorkflowExecutionFailedEventAttributes {
     /// <p>The child workflow execution that failed.</p>
     #[doc(hidden)]
@@ -8651,23 +8443,11 @@ impl ChildWorkflowExecutionFailedEventAttributes {
         self.started_event_id
     }
 }
-impl std::fmt::Debug for ChildWorkflowExecutionFailedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChildWorkflowExecutionFailedEventAttributes");
-        formatter.field("workflow_execution", &self.workflow_execution);
-        formatter.field("workflow_type", &self.workflow_type);
-        formatter.field("reason", &self.reason);
-        formatter.field("details", &self.details);
-        formatter.field("initiated_event_id", &self.initiated_event_id);
-        formatter.field("started_event_id", &self.started_event_id);
-        formatter.finish()
-    }
-}
 /// See [`ChildWorkflowExecutionFailedEventAttributes`](crate::model::ChildWorkflowExecutionFailedEventAttributes).
 pub mod child_workflow_execution_failed_event_attributes {
 
     /// A builder for [`ChildWorkflowExecutionFailedEventAttributes`](crate::model::ChildWorkflowExecutionFailedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_execution: std::option::Option<crate::model::WorkflowExecution>,
         pub(crate) workflow_type: std::option::Option<crate::model::WorkflowType>,
@@ -8765,7 +8545,7 @@ impl ChildWorkflowExecutionFailedEventAttributes {
 
 /// <p>Provides the details of the <code>ChildWorkflowExecutionCompleted</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChildWorkflowExecutionCompletedEventAttributes {
     /// <p>The child workflow execution that was completed.</p>
     #[doc(hidden)]
@@ -8805,22 +8585,11 @@ impl ChildWorkflowExecutionCompletedEventAttributes {
         self.started_event_id
     }
 }
-impl std::fmt::Debug for ChildWorkflowExecutionCompletedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChildWorkflowExecutionCompletedEventAttributes");
-        formatter.field("workflow_execution", &self.workflow_execution);
-        formatter.field("workflow_type", &self.workflow_type);
-        formatter.field("result", &self.result);
-        formatter.field("initiated_event_id", &self.initiated_event_id);
-        formatter.field("started_event_id", &self.started_event_id);
-        formatter.finish()
-    }
-}
 /// See [`ChildWorkflowExecutionCompletedEventAttributes`](crate::model::ChildWorkflowExecutionCompletedEventAttributes).
 pub mod child_workflow_execution_completed_event_attributes {
 
     /// A builder for [`ChildWorkflowExecutionCompletedEventAttributes`](crate::model::ChildWorkflowExecutionCompletedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_execution: std::option::Option<crate::model::WorkflowExecution>,
         pub(crate) workflow_type: std::option::Option<crate::model::WorkflowType>,
@@ -8906,7 +8675,7 @@ impl ChildWorkflowExecutionCompletedEventAttributes {
 
 /// <p>Provides the details of the <code>ChildWorkflowExecutionStarted</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChildWorkflowExecutionStartedEventAttributes {
     /// <p>The child workflow execution that was started.</p>
     #[doc(hidden)]
@@ -8932,20 +8701,11 @@ impl ChildWorkflowExecutionStartedEventAttributes {
         self.initiated_event_id
     }
 }
-impl std::fmt::Debug for ChildWorkflowExecutionStartedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChildWorkflowExecutionStartedEventAttributes");
-        formatter.field("workflow_execution", &self.workflow_execution);
-        formatter.field("workflow_type", &self.workflow_type);
-        formatter.field("initiated_event_id", &self.initiated_event_id);
-        formatter.finish()
-    }
-}
 /// See [`ChildWorkflowExecutionStartedEventAttributes`](crate::model::ChildWorkflowExecutionStartedEventAttributes).
 pub mod child_workflow_execution_started_event_attributes {
 
     /// A builder for [`ChildWorkflowExecutionStartedEventAttributes`](crate::model::ChildWorkflowExecutionStartedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_execution: std::option::Option<crate::model::WorkflowExecution>,
         pub(crate) workflow_type: std::option::Option<crate::model::WorkflowType>,
@@ -9007,7 +8767,7 @@ impl ChildWorkflowExecutionStartedEventAttributes {
 
 /// <p>Provides the details of the <code>StartChildWorkflowExecutionInitiated</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartChildWorkflowExecutionInitiatedEventAttributes {
     /// <p>The <code>workflowId</code> of the child workflow execution.</p>
     #[doc(hidden)]
@@ -9114,38 +8874,11 @@ impl StartChildWorkflowExecutionInitiatedEventAttributes {
         self.lambda_role.as_deref()
     }
 }
-impl std::fmt::Debug for StartChildWorkflowExecutionInitiatedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartChildWorkflowExecutionInitiatedEventAttributes");
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("workflow_type", &self.workflow_type);
-        formatter.field("control", &self.control);
-        formatter.field("input", &self.input);
-        formatter.field(
-            "execution_start_to_close_timeout",
-            &self.execution_start_to_close_timeout,
-        );
-        formatter.field("task_list", &self.task_list);
-        formatter.field("task_priority", &self.task_priority);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.field("child_policy", &self.child_policy);
-        formatter.field(
-            "task_start_to_close_timeout",
-            &self.task_start_to_close_timeout,
-        );
-        formatter.field("tag_list", &self.tag_list);
-        formatter.field("lambda_role", &self.lambda_role);
-        formatter.finish()
-    }
-}
 /// See [`StartChildWorkflowExecutionInitiatedEventAttributes`](crate::model::StartChildWorkflowExecutionInitiatedEventAttributes).
 pub mod start_child_workflow_execution_initiated_event_attributes {
 
     /// A builder for [`StartChildWorkflowExecutionInitiatedEventAttributes`](crate::model::StartChildWorkflowExecutionInitiatedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
         pub(crate) workflow_type: std::option::Option<crate::model::WorkflowType>,
@@ -9363,7 +9096,7 @@ impl StartChildWorkflowExecutionInitiatedEventAttributes {
 
 /// <p> Provides the details of the <code>TimerCanceled</code> event. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimerCanceledEventAttributes {
     /// <p>The unique ID of the timer that was canceled.</p>
     #[doc(hidden)]
@@ -9389,23 +9122,11 @@ impl TimerCanceledEventAttributes {
         self.decision_task_completed_event_id
     }
 }
-impl std::fmt::Debug for TimerCanceledEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimerCanceledEventAttributes");
-        formatter.field("timer_id", &self.timer_id);
-        formatter.field("started_event_id", &self.started_event_id);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.finish()
-    }
-}
 /// See [`TimerCanceledEventAttributes`](crate::model::TimerCanceledEventAttributes).
 pub mod timer_canceled_event_attributes {
 
     /// A builder for [`TimerCanceledEventAttributes`](crate::model::TimerCanceledEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timer_id: std::option::Option<std::string::String>,
         pub(crate) started_event_id: std::option::Option<i64>,
@@ -9466,7 +9187,7 @@ impl TimerCanceledEventAttributes {
 
 /// <p>Provides the details of the <code>TimerFired</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimerFiredEventAttributes {
     /// <p>The unique ID of the timer that fired.</p>
     #[doc(hidden)]
@@ -9485,19 +9206,11 @@ impl TimerFiredEventAttributes {
         self.started_event_id
     }
 }
-impl std::fmt::Debug for TimerFiredEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimerFiredEventAttributes");
-        formatter.field("timer_id", &self.timer_id);
-        formatter.field("started_event_id", &self.started_event_id);
-        formatter.finish()
-    }
-}
 /// See [`TimerFiredEventAttributes`](crate::model::TimerFiredEventAttributes).
 pub mod timer_fired_event_attributes {
 
     /// A builder for [`TimerFiredEventAttributes`](crate::model::TimerFiredEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timer_id: std::option::Option<std::string::String>,
         pub(crate) started_event_id: std::option::Option<i64>,
@@ -9541,7 +9254,7 @@ impl TimerFiredEventAttributes {
 
 /// <p>Provides the details of the <code>TimerStarted</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimerStartedEventAttributes {
     /// <p>The unique ID of the timer that was started.</p>
     #[doc(hidden)]
@@ -9576,24 +9289,11 @@ impl TimerStartedEventAttributes {
         self.decision_task_completed_event_id
     }
 }
-impl std::fmt::Debug for TimerStartedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimerStartedEventAttributes");
-        formatter.field("timer_id", &self.timer_id);
-        formatter.field("control", &self.control);
-        formatter.field("start_to_fire_timeout", &self.start_to_fire_timeout);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.finish()
-    }
-}
 /// See [`TimerStartedEventAttributes`](crate::model::TimerStartedEventAttributes).
 pub mod timer_started_event_attributes {
 
     /// A builder for [`TimerStartedEventAttributes`](crate::model::TimerStartedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timer_id: std::option::Option<std::string::String>,
         pub(crate) control: std::option::Option<std::string::String>,
@@ -9671,7 +9371,7 @@ impl TimerStartedEventAttributes {
 
 /// <p>Provides the details of the <code>RecordMarkerFailed</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecordMarkerFailedEventAttributes {
     /// <p>The marker's name.</p>
     #[doc(hidden)]
@@ -9701,23 +9401,11 @@ impl RecordMarkerFailedEventAttributes {
         self.decision_task_completed_event_id
     }
 }
-impl std::fmt::Debug for RecordMarkerFailedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecordMarkerFailedEventAttributes");
-        formatter.field("marker_name", &self.marker_name);
-        formatter.field("cause", &self.cause);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.finish()
-    }
-}
 /// See [`RecordMarkerFailedEventAttributes`](crate::model::RecordMarkerFailedEventAttributes).
 pub mod record_marker_failed_event_attributes {
 
     /// A builder for [`RecordMarkerFailedEventAttributes`](crate::model::RecordMarkerFailedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker_name: std::option::Option<std::string::String>,
         pub(crate) cause: std::option::Option<crate::model::RecordMarkerFailedCause>,
@@ -9783,6 +9471,40 @@ impl RecordMarkerFailedEventAttributes {
     }
 }
 
+/// When writing a match expression against `RecordMarkerFailedCause`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let recordmarkerfailedcause = unimplemented!();
+/// match recordmarkerfailedcause {
+///     RecordMarkerFailedCause::OperationNotPermitted => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `recordmarkerfailedcause` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RecordMarkerFailedCause::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RecordMarkerFailedCause::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RecordMarkerFailedCause::NewFeature` is defined.
+/// Specifically, when `recordmarkerfailedcause` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RecordMarkerFailedCause::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -9797,14 +9519,16 @@ impl RecordMarkerFailedEventAttributes {
 pub enum RecordMarkerFailedCause {
     #[allow(missing_docs)] // documentation missing in model
     OperationNotPermitted,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for RecordMarkerFailedCause {
     fn from(s: &str) -> Self {
         match s {
             "OPERATION_NOT_PERMITTED" => RecordMarkerFailedCause::OperationNotPermitted,
-            other => RecordMarkerFailedCause::Unknown(other.to_owned()),
+            other => RecordMarkerFailedCause::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -9820,11 +9544,11 @@ impl RecordMarkerFailedCause {
     pub fn as_str(&self) -> &str {
         match self {
             RecordMarkerFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
-            RecordMarkerFailedCause::Unknown(s) => s.as_ref(),
+            RecordMarkerFailedCause::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OPERATION_NOT_PERMITTED"]
     }
 }
@@ -9836,7 +9560,7 @@ impl AsRef<str> for RecordMarkerFailedCause {
 
 /// <p>Provides the details of the <code>MarkerRecorded</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MarkerRecordedEventAttributes {
     /// <p>The name of the marker.</p>
     #[doc(hidden)]
@@ -9862,23 +9586,11 @@ impl MarkerRecordedEventAttributes {
         self.decision_task_completed_event_id
     }
 }
-impl std::fmt::Debug for MarkerRecordedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MarkerRecordedEventAttributes");
-        formatter.field("marker_name", &self.marker_name);
-        formatter.field("details", &self.details);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.finish()
-    }
-}
 /// See [`MarkerRecordedEventAttributes`](crate::model::MarkerRecordedEventAttributes).
 pub mod marker_recorded_event_attributes {
 
     /// A builder for [`MarkerRecordedEventAttributes`](crate::model::MarkerRecordedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker_name: std::option::Option<std::string::String>,
         pub(crate) details: std::option::Option<std::string::String>,
@@ -9939,7 +9651,7 @@ impl MarkerRecordedEventAttributes {
 
 /// <p>Provides the details of the <code>WorkflowExecutionSignaled</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowExecutionSignaledEventAttributes {
     /// <p>The name of the signal received. The decider can use the signal name and inputs to determine how to the process the signal.</p>
     #[doc(hidden)]
@@ -9974,27 +9686,11 @@ impl WorkflowExecutionSignaledEventAttributes {
         self.external_initiated_event_id
     }
 }
-impl std::fmt::Debug for WorkflowExecutionSignaledEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowExecutionSignaledEventAttributes");
-        formatter.field("signal_name", &self.signal_name);
-        formatter.field("input", &self.input);
-        formatter.field(
-            "external_workflow_execution",
-            &self.external_workflow_execution,
-        );
-        formatter.field(
-            "external_initiated_event_id",
-            &self.external_initiated_event_id,
-        );
-        formatter.finish()
-    }
-}
 /// See [`WorkflowExecutionSignaledEventAttributes`](crate::model::WorkflowExecutionSignaledEventAttributes).
 pub mod workflow_execution_signaled_event_attributes {
 
     /// A builder for [`WorkflowExecutionSignaledEventAttributes`](crate::model::WorkflowExecutionSignaledEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) signal_name: std::option::Option<std::string::String>,
         pub(crate) input: std::option::Option<std::string::String>,
@@ -10069,7 +9765,7 @@ impl WorkflowExecutionSignaledEventAttributes {
 
 /// <p>Provides the details of the <code>ActivityTaskCancelRequested</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivityTaskCancelRequestedEventAttributes {
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RequestCancelActivityTask</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     #[doc(hidden)]
@@ -10088,22 +9784,11 @@ impl ActivityTaskCancelRequestedEventAttributes {
         self.activity_id.as_deref()
     }
 }
-impl std::fmt::Debug for ActivityTaskCancelRequestedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivityTaskCancelRequestedEventAttributes");
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.field("activity_id", &self.activity_id);
-        formatter.finish()
-    }
-}
 /// See [`ActivityTaskCancelRequestedEventAttributes`](crate::model::ActivityTaskCancelRequestedEventAttributes).
 pub mod activity_task_cancel_requested_event_attributes {
 
     /// A builder for [`ActivityTaskCancelRequestedEventAttributes`](crate::model::ActivityTaskCancelRequestedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) decision_task_completed_event_id: std::option::Option<i64>,
         pub(crate) activity_id: std::option::Option<std::string::String>,
@@ -10152,7 +9837,7 @@ impl ActivityTaskCancelRequestedEventAttributes {
 
 /// <p>Provides the details of the <code>ActivityTaskCanceled</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivityTaskCanceledEventAttributes {
     /// <p>Details of the cancellation.</p>
     #[doc(hidden)]
@@ -10185,24 +9870,11 @@ impl ActivityTaskCanceledEventAttributes {
         self.latest_cancel_requested_event_id
     }
 }
-impl std::fmt::Debug for ActivityTaskCanceledEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivityTaskCanceledEventAttributes");
-        formatter.field("details", &self.details);
-        formatter.field("scheduled_event_id", &self.scheduled_event_id);
-        formatter.field("started_event_id", &self.started_event_id);
-        formatter.field(
-            "latest_cancel_requested_event_id",
-            &self.latest_cancel_requested_event_id,
-        );
-        formatter.finish()
-    }
-}
 /// See [`ActivityTaskCanceledEventAttributes`](crate::model::ActivityTaskCanceledEventAttributes).
 pub mod activity_task_canceled_event_attributes {
 
     /// A builder for [`ActivityTaskCanceledEventAttributes`](crate::model::ActivityTaskCanceledEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) details: std::option::Option<std::string::String>,
         pub(crate) scheduled_event_id: std::option::Option<i64>,
@@ -10275,7 +9947,7 @@ impl ActivityTaskCanceledEventAttributes {
 
 /// <p>Provides the details of the <code>ActivityTaskTimedOut</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivityTaskTimedOutEventAttributes {
     /// <p>The type of the timeout that caused this event.</p>
     #[doc(hidden)]
@@ -10308,21 +9980,11 @@ impl ActivityTaskTimedOutEventAttributes {
         self.details.as_deref()
     }
 }
-impl std::fmt::Debug for ActivityTaskTimedOutEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivityTaskTimedOutEventAttributes");
-        formatter.field("timeout_type", &self.timeout_type);
-        formatter.field("scheduled_event_id", &self.scheduled_event_id);
-        formatter.field("started_event_id", &self.started_event_id);
-        formatter.field("details", &self.details);
-        formatter.finish()
-    }
-}
 /// See [`ActivityTaskTimedOutEventAttributes`](crate::model::ActivityTaskTimedOutEventAttributes).
 pub mod activity_task_timed_out_event_attributes {
 
     /// A builder for [`ActivityTaskTimedOutEventAttributes`](crate::model::ActivityTaskTimedOutEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timeout_type: std::option::Option<crate::model::ActivityTaskTimeoutType>,
         pub(crate) scheduled_event_id: std::option::Option<i64>,
@@ -10391,6 +10053,43 @@ impl ActivityTaskTimedOutEventAttributes {
     }
 }
 
+/// When writing a match expression against `ActivityTaskTimeoutType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let activitytasktimeouttype = unimplemented!();
+/// match activitytasktimeouttype {
+///     ActivityTaskTimeoutType::Heartbeat => { /* ... */ },
+///     ActivityTaskTimeoutType::ScheduleToClose => { /* ... */ },
+///     ActivityTaskTimeoutType::ScheduleToStart => { /* ... */ },
+///     ActivityTaskTimeoutType::StartToClose => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `activitytasktimeouttype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ActivityTaskTimeoutType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ActivityTaskTimeoutType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ActivityTaskTimeoutType::NewFeature` is defined.
+/// Specifically, when `activitytasktimeouttype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ActivityTaskTimeoutType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -10411,8 +10110,8 @@ pub enum ActivityTaskTimeoutType {
     ScheduleToStart,
     #[allow(missing_docs)] // documentation missing in model
     StartToClose,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ActivityTaskTimeoutType {
     fn from(s: &str) -> Self {
@@ -10421,7 +10120,9 @@ impl std::convert::From<&str> for ActivityTaskTimeoutType {
             "SCHEDULE_TO_CLOSE" => ActivityTaskTimeoutType::ScheduleToClose,
             "SCHEDULE_TO_START" => ActivityTaskTimeoutType::ScheduleToStart,
             "START_TO_CLOSE" => ActivityTaskTimeoutType::StartToClose,
-            other => ActivityTaskTimeoutType::Unknown(other.to_owned()),
+            other => ActivityTaskTimeoutType::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -10440,11 +10141,11 @@ impl ActivityTaskTimeoutType {
             ActivityTaskTimeoutType::ScheduleToClose => "SCHEDULE_TO_CLOSE",
             ActivityTaskTimeoutType::ScheduleToStart => "SCHEDULE_TO_START",
             ActivityTaskTimeoutType::StartToClose => "START_TO_CLOSE",
-            ActivityTaskTimeoutType::Unknown(s) => s.as_ref(),
+            ActivityTaskTimeoutType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "HEARTBEAT",
             "SCHEDULE_TO_CLOSE",
@@ -10461,7 +10162,7 @@ impl AsRef<str> for ActivityTaskTimeoutType {
 
 /// <p>Provides the details of the <code>ActivityTaskFailed</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivityTaskFailedEventAttributes {
     /// <p>The reason provided for the failure.</p>
     #[doc(hidden)]
@@ -10494,21 +10195,11 @@ impl ActivityTaskFailedEventAttributes {
         self.started_event_id
     }
 }
-impl std::fmt::Debug for ActivityTaskFailedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivityTaskFailedEventAttributes");
-        formatter.field("reason", &self.reason);
-        formatter.field("details", &self.details);
-        formatter.field("scheduled_event_id", &self.scheduled_event_id);
-        formatter.field("started_event_id", &self.started_event_id);
-        formatter.finish()
-    }
-}
 /// See [`ActivityTaskFailedEventAttributes`](crate::model::ActivityTaskFailedEventAttributes).
 pub mod activity_task_failed_event_attributes {
 
     /// A builder for [`ActivityTaskFailedEventAttributes`](crate::model::ActivityTaskFailedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reason: std::option::Option<std::string::String>,
         pub(crate) details: std::option::Option<std::string::String>,
@@ -10576,7 +10267,7 @@ impl ActivityTaskFailedEventAttributes {
 
 /// <p>Provides the details of the <code>ActivityTaskCompleted</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivityTaskCompletedEventAttributes {
     /// <p>The results of the activity task.</p>
     #[doc(hidden)]
@@ -10602,20 +10293,11 @@ impl ActivityTaskCompletedEventAttributes {
         self.started_event_id
     }
 }
-impl std::fmt::Debug for ActivityTaskCompletedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivityTaskCompletedEventAttributes");
-        formatter.field("result", &self.result);
-        formatter.field("scheduled_event_id", &self.scheduled_event_id);
-        formatter.field("started_event_id", &self.started_event_id);
-        formatter.finish()
-    }
-}
 /// See [`ActivityTaskCompletedEventAttributes`](crate::model::ActivityTaskCompletedEventAttributes).
 pub mod activity_task_completed_event_attributes {
 
     /// A builder for [`ActivityTaskCompletedEventAttributes`](crate::model::ActivityTaskCompletedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) result: std::option::Option<std::string::String>,
         pub(crate) scheduled_event_id: std::option::Option<i64>,
@@ -10671,7 +10353,7 @@ impl ActivityTaskCompletedEventAttributes {
 
 /// <p>Provides the details of the <code>ActivityTaskStarted</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivityTaskStartedEventAttributes {
     /// <p>Identity of the worker that was assigned this task. This aids diagnostics when problems arise. The form of this identity is user defined.</p>
     #[doc(hidden)]
@@ -10690,19 +10372,11 @@ impl ActivityTaskStartedEventAttributes {
         self.scheduled_event_id
     }
 }
-impl std::fmt::Debug for ActivityTaskStartedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivityTaskStartedEventAttributes");
-        formatter.field("identity", &self.identity);
-        formatter.field("scheduled_event_id", &self.scheduled_event_id);
-        formatter.finish()
-    }
-}
 /// See [`ActivityTaskStartedEventAttributes`](crate::model::ActivityTaskStartedEventAttributes).
 pub mod activity_task_started_event_attributes {
 
     /// A builder for [`ActivityTaskStartedEventAttributes`](crate::model::ActivityTaskStartedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity: std::option::Option<std::string::String>,
         pub(crate) scheduled_event_id: std::option::Option<i64>,
@@ -10746,7 +10420,7 @@ impl ActivityTaskStartedEventAttributes {
 
 /// <p>Provides the details of the <code>ActivityTaskScheduled</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivityTaskScheduledEventAttributes {
     /// <p>The type of the activity task.</p>
     #[doc(hidden)]
@@ -10832,31 +10506,11 @@ impl ActivityTaskScheduledEventAttributes {
         self.heartbeat_timeout.as_deref()
     }
 }
-impl std::fmt::Debug for ActivityTaskScheduledEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivityTaskScheduledEventAttributes");
-        formatter.field("activity_type", &self.activity_type);
-        formatter.field("activity_id", &self.activity_id);
-        formatter.field("input", &self.input);
-        formatter.field("control", &self.control);
-        formatter.field("schedule_to_start_timeout", &self.schedule_to_start_timeout);
-        formatter.field("schedule_to_close_timeout", &self.schedule_to_close_timeout);
-        formatter.field("start_to_close_timeout", &self.start_to_close_timeout);
-        formatter.field("task_list", &self.task_list);
-        formatter.field("task_priority", &self.task_priority);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.field("heartbeat_timeout", &self.heartbeat_timeout);
-        formatter.finish()
-    }
-}
 /// See [`ActivityTaskScheduledEventAttributes`](crate::model::ActivityTaskScheduledEventAttributes).
 pub mod activity_task_scheduled_event_attributes {
 
     /// A builder for [`ActivityTaskScheduledEventAttributes`](crate::model::ActivityTaskScheduledEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activity_type: std::option::Option<crate::model::ActivityType>,
         pub(crate) activity_id: std::option::Option<std::string::String>,
@@ -11035,7 +10689,7 @@ impl ActivityTaskScheduledEventAttributes {
 
 /// <p>Provides the details of the <code>DecisionTaskTimedOut</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DecisionTaskTimedOutEventAttributes {
     /// <p>The type of timeout that expired before the decision task could be completed.</p>
     #[doc(hidden)]
@@ -11061,20 +10715,11 @@ impl DecisionTaskTimedOutEventAttributes {
         self.started_event_id
     }
 }
-impl std::fmt::Debug for DecisionTaskTimedOutEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DecisionTaskTimedOutEventAttributes");
-        formatter.field("timeout_type", &self.timeout_type);
-        formatter.field("scheduled_event_id", &self.scheduled_event_id);
-        formatter.field("started_event_id", &self.started_event_id);
-        formatter.finish()
-    }
-}
 /// See [`DecisionTaskTimedOutEventAttributes`](crate::model::DecisionTaskTimedOutEventAttributes).
 pub mod decision_task_timed_out_event_attributes {
 
     /// A builder for [`DecisionTaskTimedOutEventAttributes`](crate::model::DecisionTaskTimedOutEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timeout_type: std::option::Option<crate::model::DecisionTaskTimeoutType>,
         pub(crate) scheduled_event_id: std::option::Option<i64>,
@@ -11131,6 +10776,40 @@ impl DecisionTaskTimedOutEventAttributes {
     }
 }
 
+/// When writing a match expression against `DecisionTaskTimeoutType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let decisiontasktimeouttype = unimplemented!();
+/// match decisiontasktimeouttype {
+///     DecisionTaskTimeoutType::StartToClose => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `decisiontasktimeouttype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DecisionTaskTimeoutType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DecisionTaskTimeoutType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DecisionTaskTimeoutType::NewFeature` is defined.
+/// Specifically, when `decisiontasktimeouttype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DecisionTaskTimeoutType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -11145,14 +10824,16 @@ impl DecisionTaskTimedOutEventAttributes {
 pub enum DecisionTaskTimeoutType {
     #[allow(missing_docs)] // documentation missing in model
     StartToClose,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DecisionTaskTimeoutType {
     fn from(s: &str) -> Self {
         match s {
             "START_TO_CLOSE" => DecisionTaskTimeoutType::StartToClose,
-            other => DecisionTaskTimeoutType::Unknown(other.to_owned()),
+            other => DecisionTaskTimeoutType::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -11168,11 +10849,11 @@ impl DecisionTaskTimeoutType {
     pub fn as_str(&self) -> &str {
         match self {
             DecisionTaskTimeoutType::StartToClose => "START_TO_CLOSE",
-            DecisionTaskTimeoutType::Unknown(s) => s.as_ref(),
+            DecisionTaskTimeoutType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["START_TO_CLOSE"]
     }
 }
@@ -11184,7 +10865,7 @@ impl AsRef<str> for DecisionTaskTimeoutType {
 
 /// <p>Provides the details of the <code>DecisionTaskCompleted</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DecisionTaskCompletedEventAttributes {
     /// <p>User defined context for the workflow execution.</p>
     #[doc(hidden)]
@@ -11210,20 +10891,11 @@ impl DecisionTaskCompletedEventAttributes {
         self.started_event_id
     }
 }
-impl std::fmt::Debug for DecisionTaskCompletedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DecisionTaskCompletedEventAttributes");
-        formatter.field("execution_context", &self.execution_context);
-        formatter.field("scheduled_event_id", &self.scheduled_event_id);
-        formatter.field("started_event_id", &self.started_event_id);
-        formatter.finish()
-    }
-}
 /// See [`DecisionTaskCompletedEventAttributes`](crate::model::DecisionTaskCompletedEventAttributes).
 pub mod decision_task_completed_event_attributes {
 
     /// A builder for [`DecisionTaskCompletedEventAttributes`](crate::model::DecisionTaskCompletedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) execution_context: std::option::Option<std::string::String>,
         pub(crate) scheduled_event_id: std::option::Option<i64>,
@@ -11282,7 +10954,7 @@ impl DecisionTaskCompletedEventAttributes {
 
 /// <p>Provides the details of the <code>DecisionTaskStarted</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DecisionTaskStartedEventAttributes {
     /// <p>Identity of the decider making the request. This enables diagnostic tracing when problems arise. The form of this identity is user defined.</p>
     #[doc(hidden)]
@@ -11301,19 +10973,11 @@ impl DecisionTaskStartedEventAttributes {
         self.scheduled_event_id
     }
 }
-impl std::fmt::Debug for DecisionTaskStartedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DecisionTaskStartedEventAttributes");
-        formatter.field("identity", &self.identity);
-        formatter.field("scheduled_event_id", &self.scheduled_event_id);
-        formatter.finish()
-    }
-}
 /// See [`DecisionTaskStartedEventAttributes`](crate::model::DecisionTaskStartedEventAttributes).
 pub mod decision_task_started_event_attributes {
 
     /// A builder for [`DecisionTaskStartedEventAttributes`](crate::model::DecisionTaskStartedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity: std::option::Option<std::string::String>,
         pub(crate) scheduled_event_id: std::option::Option<i64>,
@@ -11357,7 +11021,7 @@ impl DecisionTaskStartedEventAttributes {
 
 /// <p>Provides details about the <code>DecisionTaskScheduled</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DecisionTaskScheduledEventAttributes {
     /// <p>The name of the task list in which the decision task was scheduled.</p>
     #[doc(hidden)]
@@ -11387,20 +11051,11 @@ impl DecisionTaskScheduledEventAttributes {
         self.start_to_close_timeout.as_deref()
     }
 }
-impl std::fmt::Debug for DecisionTaskScheduledEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DecisionTaskScheduledEventAttributes");
-        formatter.field("task_list", &self.task_list);
-        formatter.field("task_priority", &self.task_priority);
-        formatter.field("start_to_close_timeout", &self.start_to_close_timeout);
-        formatter.finish()
-    }
-}
 /// See [`DecisionTaskScheduledEventAttributes`](crate::model::DecisionTaskScheduledEventAttributes).
 pub mod decision_task_scheduled_event_attributes {
 
     /// A builder for [`DecisionTaskScheduledEventAttributes`](crate::model::DecisionTaskScheduledEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_list: std::option::Option<crate::model::TaskList>,
         pub(crate) task_priority: std::option::Option<std::string::String>,
@@ -11466,7 +11121,7 @@ impl DecisionTaskScheduledEventAttributes {
 
 /// <p>Provides the details of the <code>WorkflowExecutionCancelRequested</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowExecutionCancelRequestedEventAttributes {
     /// <p>The external workflow execution for which the cancellation was requested.</p>
     #[doc(hidden)]
@@ -11496,26 +11151,11 @@ impl WorkflowExecutionCancelRequestedEventAttributes {
         self.cause.as_ref()
     }
 }
-impl std::fmt::Debug for WorkflowExecutionCancelRequestedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowExecutionCancelRequestedEventAttributes");
-        formatter.field(
-            "external_workflow_execution",
-            &self.external_workflow_execution,
-        );
-        formatter.field(
-            "external_initiated_event_id",
-            &self.external_initiated_event_id,
-        );
-        formatter.field("cause", &self.cause);
-        formatter.finish()
-    }
-}
 /// See [`WorkflowExecutionCancelRequestedEventAttributes`](crate::model::WorkflowExecutionCancelRequestedEventAttributes).
 pub mod workflow_execution_cancel_requested_event_attributes {
 
     /// A builder for [`WorkflowExecutionCancelRequestedEventAttributes`](crate::model::WorkflowExecutionCancelRequestedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) external_workflow_execution:
             std::option::Option<crate::model::WorkflowExecution>,
@@ -11580,6 +11220,40 @@ impl WorkflowExecutionCancelRequestedEventAttributes {
     }
 }
 
+/// When writing a match expression against `WorkflowExecutionCancelRequestedCause`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let workflowexecutioncancelrequestedcause = unimplemented!();
+/// match workflowexecutioncancelrequestedcause {
+///     WorkflowExecutionCancelRequestedCause::ChildPolicyApplied => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `workflowexecutioncancelrequestedcause` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `WorkflowExecutionCancelRequestedCause::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `WorkflowExecutionCancelRequestedCause::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `WorkflowExecutionCancelRequestedCause::NewFeature` is defined.
+/// Specifically, when `workflowexecutioncancelrequestedcause` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `WorkflowExecutionCancelRequestedCause::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -11594,14 +11268,16 @@ impl WorkflowExecutionCancelRequestedEventAttributes {
 pub enum WorkflowExecutionCancelRequestedCause {
     #[allow(missing_docs)] // documentation missing in model
     ChildPolicyApplied,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for WorkflowExecutionCancelRequestedCause {
     fn from(s: &str) -> Self {
         match s {
             "CHILD_POLICY_APPLIED" => WorkflowExecutionCancelRequestedCause::ChildPolicyApplied,
-            other => WorkflowExecutionCancelRequestedCause::Unknown(other.to_owned()),
+            other => WorkflowExecutionCancelRequestedCause::Unknown(
+                crate::types::UnknownVariantValue(other.to_owned()),
+            ),
         }
     }
 }
@@ -11617,11 +11293,11 @@ impl WorkflowExecutionCancelRequestedCause {
     pub fn as_str(&self) -> &str {
         match self {
             WorkflowExecutionCancelRequestedCause::ChildPolicyApplied => "CHILD_POLICY_APPLIED",
-            WorkflowExecutionCancelRequestedCause::Unknown(s) => s.as_ref(),
+            WorkflowExecutionCancelRequestedCause::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CHILD_POLICY_APPLIED"]
     }
 }
@@ -11633,7 +11309,7 @@ impl AsRef<str> for WorkflowExecutionCancelRequestedCause {
 
 /// <p>Provides the details of the <code>WorkflowExecutionTerminated</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowExecutionTerminatedEventAttributes {
     /// <p>The reason provided for the termination.</p>
     #[doc(hidden)]
@@ -11678,21 +11354,11 @@ impl WorkflowExecutionTerminatedEventAttributes {
         self.cause.as_ref()
     }
 }
-impl std::fmt::Debug for WorkflowExecutionTerminatedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowExecutionTerminatedEventAttributes");
-        formatter.field("reason", &self.reason);
-        formatter.field("details", &self.details);
-        formatter.field("child_policy", &self.child_policy);
-        formatter.field("cause", &self.cause);
-        formatter.finish()
-    }
-}
 /// See [`WorkflowExecutionTerminatedEventAttributes`](crate::model::WorkflowExecutionTerminatedEventAttributes).
 pub mod workflow_execution_terminated_event_attributes {
 
     /// A builder for [`WorkflowExecutionTerminatedEventAttributes`](crate::model::WorkflowExecutionTerminatedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reason: std::option::Option<std::string::String>,
         pub(crate) details: std::option::Option<std::string::String>,
@@ -11776,6 +11442,42 @@ impl WorkflowExecutionTerminatedEventAttributes {
     }
 }
 
+/// When writing a match expression against `WorkflowExecutionTerminatedCause`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let workflowexecutionterminatedcause = unimplemented!();
+/// match workflowexecutionterminatedcause {
+///     WorkflowExecutionTerminatedCause::ChildPolicyApplied => { /* ... */ },
+///     WorkflowExecutionTerminatedCause::EventLimitExceeded => { /* ... */ },
+///     WorkflowExecutionTerminatedCause::OperatorInitiated => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `workflowexecutionterminatedcause` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `WorkflowExecutionTerminatedCause::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `WorkflowExecutionTerminatedCause::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `WorkflowExecutionTerminatedCause::NewFeature` is defined.
+/// Specifically, when `workflowexecutionterminatedcause` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `WorkflowExecutionTerminatedCause::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -11794,8 +11496,8 @@ pub enum WorkflowExecutionTerminatedCause {
     EventLimitExceeded,
     #[allow(missing_docs)] // documentation missing in model
     OperatorInitiated,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for WorkflowExecutionTerminatedCause {
     fn from(s: &str) -> Self {
@@ -11803,7 +11505,9 @@ impl std::convert::From<&str> for WorkflowExecutionTerminatedCause {
             "CHILD_POLICY_APPLIED" => WorkflowExecutionTerminatedCause::ChildPolicyApplied,
             "EVENT_LIMIT_EXCEEDED" => WorkflowExecutionTerminatedCause::EventLimitExceeded,
             "OPERATOR_INITIATED" => WorkflowExecutionTerminatedCause::OperatorInitiated,
-            other => WorkflowExecutionTerminatedCause::Unknown(other.to_owned()),
+            other => WorkflowExecutionTerminatedCause::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -11821,11 +11525,11 @@ impl WorkflowExecutionTerminatedCause {
             WorkflowExecutionTerminatedCause::ChildPolicyApplied => "CHILD_POLICY_APPLIED",
             WorkflowExecutionTerminatedCause::EventLimitExceeded => "EVENT_LIMIT_EXCEEDED",
             WorkflowExecutionTerminatedCause::OperatorInitiated => "OPERATOR_INITIATED",
-            WorkflowExecutionTerminatedCause::Unknown(s) => s.as_ref(),
+            WorkflowExecutionTerminatedCause::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CHILD_POLICY_APPLIED",
             "EVENT_LIMIT_EXCEEDED",
@@ -11841,7 +11545,7 @@ impl AsRef<str> for WorkflowExecutionTerminatedCause {
 
 /// <p>Provides the details of the <code>ContinueAsNewWorkflowExecutionFailed</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContinueAsNewWorkflowExecutionFailedEventAttributes {
     /// <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p> <note>
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
@@ -11866,22 +11570,11 @@ impl ContinueAsNewWorkflowExecutionFailedEventAttributes {
         self.decision_task_completed_event_id
     }
 }
-impl std::fmt::Debug for ContinueAsNewWorkflowExecutionFailedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContinueAsNewWorkflowExecutionFailedEventAttributes");
-        formatter.field("cause", &self.cause);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.finish()
-    }
-}
 /// See [`ContinueAsNewWorkflowExecutionFailedEventAttributes`](crate::model::ContinueAsNewWorkflowExecutionFailedEventAttributes).
 pub mod continue_as_new_workflow_execution_failed_event_attributes {
 
     /// A builder for [`ContinueAsNewWorkflowExecutionFailedEventAttributes`](crate::model::ContinueAsNewWorkflowExecutionFailedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cause:
             std::option::Option<crate::model::ContinueAsNewWorkflowExecutionFailedCause>,
@@ -11940,6 +11633,48 @@ impl ContinueAsNewWorkflowExecutionFailedEventAttributes {
     }
 }
 
+/// When writing a match expression against `ContinueAsNewWorkflowExecutionFailedCause`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let continueasnewworkflowexecutionfailedcause = unimplemented!();
+/// match continueasnewworkflowexecutionfailedcause {
+///     ContinueAsNewWorkflowExecutionFailedCause::ContinueAsNewWorkflowExecutionRateExceeded => { /* ... */ },
+///     ContinueAsNewWorkflowExecutionFailedCause::DefaultChildPolicyUndefined => { /* ... */ },
+///     ContinueAsNewWorkflowExecutionFailedCause::DefaultExecutionStartToCloseTimeoutUndefined => { /* ... */ },
+///     ContinueAsNewWorkflowExecutionFailedCause::DefaultTaskListUndefined => { /* ... */ },
+///     ContinueAsNewWorkflowExecutionFailedCause::DefaultTaskStartToCloseTimeoutUndefined => { /* ... */ },
+///     ContinueAsNewWorkflowExecutionFailedCause::OperationNotPermitted => { /* ... */ },
+///     ContinueAsNewWorkflowExecutionFailedCause::UnhandledDecision => { /* ... */ },
+///     ContinueAsNewWorkflowExecutionFailedCause::WorkflowTypeDeprecated => { /* ... */ },
+///     ContinueAsNewWorkflowExecutionFailedCause::WorkflowTypeDoesNotExist => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `continueasnewworkflowexecutionfailedcause` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ContinueAsNewWorkflowExecutionFailedCause::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ContinueAsNewWorkflowExecutionFailedCause::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ContinueAsNewWorkflowExecutionFailedCause::NewFeature` is defined.
+/// Specifically, when `continueasnewworkflowexecutionfailedcause` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ContinueAsNewWorkflowExecutionFailedCause::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -11970,8 +11705,8 @@ pub enum ContinueAsNewWorkflowExecutionFailedCause {
     WorkflowTypeDeprecated,
     #[allow(missing_docs)] // documentation missing in model
     WorkflowTypeDoesNotExist,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ContinueAsNewWorkflowExecutionFailedCause {
     fn from(s: &str) -> Self {
@@ -11985,7 +11720,7 @@ impl std::convert::From<&str> for ContinueAsNewWorkflowExecutionFailedCause {
             "UNHANDLED_DECISION" => ContinueAsNewWorkflowExecutionFailedCause::UnhandledDecision,
             "WORKFLOW_TYPE_DEPRECATED" => ContinueAsNewWorkflowExecutionFailedCause::WorkflowTypeDeprecated,
             "WORKFLOW_TYPE_DOES_NOT_EXIST" => ContinueAsNewWorkflowExecutionFailedCause::WorkflowTypeDoesNotExist,
-            other => ContinueAsNewWorkflowExecutionFailedCause::Unknown(other.to_owned())
+            other => ContinueAsNewWorkflowExecutionFailedCause::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
@@ -12009,11 +11744,11 @@ impl ContinueAsNewWorkflowExecutionFailedCause {
             ContinueAsNewWorkflowExecutionFailedCause::UnhandledDecision => "UNHANDLED_DECISION",
             ContinueAsNewWorkflowExecutionFailedCause::WorkflowTypeDeprecated => "WORKFLOW_TYPE_DEPRECATED",
             ContinueAsNewWorkflowExecutionFailedCause::WorkflowTypeDoesNotExist => "WORKFLOW_TYPE_DOES_NOT_EXIST",
-            ContinueAsNewWorkflowExecutionFailedCause::Unknown(s) => s.as_ref()
+            ContinueAsNewWorkflowExecutionFailedCause::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED",
             "DEFAULT_CHILD_POLICY_UNDEFINED",
@@ -12035,7 +11770,7 @@ impl AsRef<str> for ContinueAsNewWorkflowExecutionFailedCause {
 
 /// <p>Provides the details of the <code>WorkflowExecutionContinuedAsNew</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowExecutionContinuedAsNewEventAttributes {
     /// <p>The input provided to the new workflow execution.</p>
     #[doc(hidden)]
@@ -12133,37 +11868,11 @@ impl WorkflowExecutionContinuedAsNewEventAttributes {
         self.lambda_role.as_deref()
     }
 }
-impl std::fmt::Debug for WorkflowExecutionContinuedAsNewEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowExecutionContinuedAsNewEventAttributes");
-        formatter.field("input", &self.input);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.field("new_execution_run_id", &self.new_execution_run_id);
-        formatter.field(
-            "execution_start_to_close_timeout",
-            &self.execution_start_to_close_timeout,
-        );
-        formatter.field("task_list", &self.task_list);
-        formatter.field("task_priority", &self.task_priority);
-        formatter.field(
-            "task_start_to_close_timeout",
-            &self.task_start_to_close_timeout,
-        );
-        formatter.field("child_policy", &self.child_policy);
-        formatter.field("tag_list", &self.tag_list);
-        formatter.field("workflow_type", &self.workflow_type);
-        formatter.field("lambda_role", &self.lambda_role);
-        formatter.finish()
-    }
-}
 /// See [`WorkflowExecutionContinuedAsNewEventAttributes`](crate::model::WorkflowExecutionContinuedAsNewEventAttributes).
 pub mod workflow_execution_continued_as_new_event_attributes {
 
     /// A builder for [`WorkflowExecutionContinuedAsNewEventAttributes`](crate::model::WorkflowExecutionContinuedAsNewEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input: std::option::Option<std::string::String>,
         pub(crate) decision_task_completed_event_id: std::option::Option<i64>,
@@ -12370,7 +12079,7 @@ impl WorkflowExecutionContinuedAsNewEventAttributes {
 
 /// <p>Provides the details of the <code>CancelWorkflowExecutionFailed</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelWorkflowExecutionFailedEventAttributes {
     /// <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p> <note>
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
@@ -12393,22 +12102,11 @@ impl CancelWorkflowExecutionFailedEventAttributes {
         self.decision_task_completed_event_id
     }
 }
-impl std::fmt::Debug for CancelWorkflowExecutionFailedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelWorkflowExecutionFailedEventAttributes");
-        formatter.field("cause", &self.cause);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.finish()
-    }
-}
 /// See [`CancelWorkflowExecutionFailedEventAttributes`](crate::model::CancelWorkflowExecutionFailedEventAttributes).
 pub mod cancel_workflow_execution_failed_event_attributes {
 
     /// A builder for [`CancelWorkflowExecutionFailedEventAttributes`](crate::model::CancelWorkflowExecutionFailedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cause: std::option::Option<crate::model::CancelWorkflowExecutionFailedCause>,
         pub(crate) decision_task_completed_event_id: std::option::Option<i64>,
@@ -12462,6 +12160,41 @@ impl CancelWorkflowExecutionFailedEventAttributes {
     }
 }
 
+/// When writing a match expression against `CancelWorkflowExecutionFailedCause`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let cancelworkflowexecutionfailedcause = unimplemented!();
+/// match cancelworkflowexecutionfailedcause {
+///     CancelWorkflowExecutionFailedCause::OperationNotPermitted => { /* ... */ },
+///     CancelWorkflowExecutionFailedCause::UnhandledDecision => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `cancelworkflowexecutionfailedcause` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CancelWorkflowExecutionFailedCause::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CancelWorkflowExecutionFailedCause::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CancelWorkflowExecutionFailedCause::NewFeature` is defined.
+/// Specifically, when `cancelworkflowexecutionfailedcause` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CancelWorkflowExecutionFailedCause::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -12478,15 +12211,17 @@ pub enum CancelWorkflowExecutionFailedCause {
     OperationNotPermitted,
     #[allow(missing_docs)] // documentation missing in model
     UnhandledDecision,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CancelWorkflowExecutionFailedCause {
     fn from(s: &str) -> Self {
         match s {
             "OPERATION_NOT_PERMITTED" => CancelWorkflowExecutionFailedCause::OperationNotPermitted,
             "UNHANDLED_DECISION" => CancelWorkflowExecutionFailedCause::UnhandledDecision,
-            other => CancelWorkflowExecutionFailedCause::Unknown(other.to_owned()),
+            other => CancelWorkflowExecutionFailedCause::Unknown(
+                crate::types::UnknownVariantValue(other.to_owned()),
+            ),
         }
     }
 }
@@ -12503,11 +12238,11 @@ impl CancelWorkflowExecutionFailedCause {
         match self {
             CancelWorkflowExecutionFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
             CancelWorkflowExecutionFailedCause::UnhandledDecision => "UNHANDLED_DECISION",
-            CancelWorkflowExecutionFailedCause::Unknown(s) => s.as_ref(),
+            CancelWorkflowExecutionFailedCause::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OPERATION_NOT_PERMITTED", "UNHANDLED_DECISION"]
     }
 }
@@ -12519,7 +12254,7 @@ impl AsRef<str> for CancelWorkflowExecutionFailedCause {
 
 /// <p>Provides the details of the <code>WorkflowExecutionCanceled</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowExecutionCanceledEventAttributes {
     /// <p>The details of the cancellation.</p>
     #[doc(hidden)]
@@ -12538,22 +12273,11 @@ impl WorkflowExecutionCanceledEventAttributes {
         self.decision_task_completed_event_id
     }
 }
-impl std::fmt::Debug for WorkflowExecutionCanceledEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowExecutionCanceledEventAttributes");
-        formatter.field("details", &self.details);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.finish()
-    }
-}
 /// See [`WorkflowExecutionCanceledEventAttributes`](crate::model::WorkflowExecutionCanceledEventAttributes).
 pub mod workflow_execution_canceled_event_attributes {
 
     /// A builder for [`WorkflowExecutionCanceledEventAttributes`](crate::model::WorkflowExecutionCanceledEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) details: std::option::Option<std::string::String>,
         pub(crate) decision_task_completed_event_id: std::option::Option<i64>,
@@ -12602,7 +12326,7 @@ impl WorkflowExecutionCanceledEventAttributes {
 
 /// <p>Provides the details of the <code>WorkflowExecutionTimedOut</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowExecutionTimedOutEventAttributes {
     /// <p>The type of timeout that caused this event.</p>
     #[doc(hidden)]
@@ -12633,19 +12357,11 @@ impl WorkflowExecutionTimedOutEventAttributes {
         self.child_policy.as_ref()
     }
 }
-impl std::fmt::Debug for WorkflowExecutionTimedOutEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowExecutionTimedOutEventAttributes");
-        formatter.field("timeout_type", &self.timeout_type);
-        formatter.field("child_policy", &self.child_policy);
-        formatter.finish()
-    }
-}
 /// See [`WorkflowExecutionTimedOutEventAttributes`](crate::model::WorkflowExecutionTimedOutEventAttributes).
 pub mod workflow_execution_timed_out_event_attributes {
 
     /// A builder for [`WorkflowExecutionTimedOutEventAttributes`](crate::model::WorkflowExecutionTimedOutEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timeout_type: std::option::Option<crate::model::WorkflowExecutionTimeoutType>,
         pub(crate) child_policy: std::option::Option<crate::model::ChildPolicy>,
@@ -12707,7 +12423,7 @@ impl WorkflowExecutionTimedOutEventAttributes {
 
 /// <p>Provides the details of the <code>FailWorkflowExecutionFailed</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FailWorkflowExecutionFailedEventAttributes {
     /// <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p> <note>
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
@@ -12730,22 +12446,11 @@ impl FailWorkflowExecutionFailedEventAttributes {
         self.decision_task_completed_event_id
     }
 }
-impl std::fmt::Debug for FailWorkflowExecutionFailedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FailWorkflowExecutionFailedEventAttributes");
-        formatter.field("cause", &self.cause);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.finish()
-    }
-}
 /// See [`FailWorkflowExecutionFailedEventAttributes`](crate::model::FailWorkflowExecutionFailedEventAttributes).
 pub mod fail_workflow_execution_failed_event_attributes {
 
     /// A builder for [`FailWorkflowExecutionFailedEventAttributes`](crate::model::FailWorkflowExecutionFailedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cause: std::option::Option<crate::model::FailWorkflowExecutionFailedCause>,
         pub(crate) decision_task_completed_event_id: std::option::Option<i64>,
@@ -12799,6 +12504,41 @@ impl FailWorkflowExecutionFailedEventAttributes {
     }
 }
 
+/// When writing a match expression against `FailWorkflowExecutionFailedCause`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let failworkflowexecutionfailedcause = unimplemented!();
+/// match failworkflowexecutionfailedcause {
+///     FailWorkflowExecutionFailedCause::OperationNotPermitted => { /* ... */ },
+///     FailWorkflowExecutionFailedCause::UnhandledDecision => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `failworkflowexecutionfailedcause` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `FailWorkflowExecutionFailedCause::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `FailWorkflowExecutionFailedCause::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `FailWorkflowExecutionFailedCause::NewFeature` is defined.
+/// Specifically, when `failworkflowexecutionfailedcause` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `FailWorkflowExecutionFailedCause::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -12815,15 +12555,17 @@ pub enum FailWorkflowExecutionFailedCause {
     OperationNotPermitted,
     #[allow(missing_docs)] // documentation missing in model
     UnhandledDecision,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for FailWorkflowExecutionFailedCause {
     fn from(s: &str) -> Self {
         match s {
             "OPERATION_NOT_PERMITTED" => FailWorkflowExecutionFailedCause::OperationNotPermitted,
             "UNHANDLED_DECISION" => FailWorkflowExecutionFailedCause::UnhandledDecision,
-            other => FailWorkflowExecutionFailedCause::Unknown(other.to_owned()),
+            other => FailWorkflowExecutionFailedCause::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -12840,11 +12582,11 @@ impl FailWorkflowExecutionFailedCause {
         match self {
             FailWorkflowExecutionFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
             FailWorkflowExecutionFailedCause::UnhandledDecision => "UNHANDLED_DECISION",
-            FailWorkflowExecutionFailedCause::Unknown(s) => s.as_ref(),
+            FailWorkflowExecutionFailedCause::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OPERATION_NOT_PERMITTED", "UNHANDLED_DECISION"]
     }
 }
@@ -12856,7 +12598,7 @@ impl AsRef<str> for FailWorkflowExecutionFailedCause {
 
 /// <p>Provides the details of the <code>WorkflowExecutionFailed</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowExecutionFailedEventAttributes {
     /// <p>The descriptive reason provided for the failure.</p>
     #[doc(hidden)]
@@ -12882,23 +12624,11 @@ impl WorkflowExecutionFailedEventAttributes {
         self.decision_task_completed_event_id
     }
 }
-impl std::fmt::Debug for WorkflowExecutionFailedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowExecutionFailedEventAttributes");
-        formatter.field("reason", &self.reason);
-        formatter.field("details", &self.details);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.finish()
-    }
-}
 /// See [`WorkflowExecutionFailedEventAttributes`](crate::model::WorkflowExecutionFailedEventAttributes).
 pub mod workflow_execution_failed_event_attributes {
 
     /// A builder for [`WorkflowExecutionFailedEventAttributes`](crate::model::WorkflowExecutionFailedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reason: std::option::Option<std::string::String>,
         pub(crate) details: std::option::Option<std::string::String>,
@@ -12959,7 +12689,7 @@ impl WorkflowExecutionFailedEventAttributes {
 
 /// <p>Provides the details of the <code>CompleteWorkflowExecutionFailed</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CompleteWorkflowExecutionFailedEventAttributes {
     /// <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p> <note>
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
@@ -12984,22 +12714,11 @@ impl CompleteWorkflowExecutionFailedEventAttributes {
         self.decision_task_completed_event_id
     }
 }
-impl std::fmt::Debug for CompleteWorkflowExecutionFailedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CompleteWorkflowExecutionFailedEventAttributes");
-        formatter.field("cause", &self.cause);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.finish()
-    }
-}
 /// See [`CompleteWorkflowExecutionFailedEventAttributes`](crate::model::CompleteWorkflowExecutionFailedEventAttributes).
 pub mod complete_workflow_execution_failed_event_attributes {
 
     /// A builder for [`CompleteWorkflowExecutionFailedEventAttributes`](crate::model::CompleteWorkflowExecutionFailedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cause: std::option::Option<crate::model::CompleteWorkflowExecutionFailedCause>,
         pub(crate) decision_task_completed_event_id: std::option::Option<i64>,
@@ -13053,6 +12772,41 @@ impl CompleteWorkflowExecutionFailedEventAttributes {
     }
 }
 
+/// When writing a match expression against `CompleteWorkflowExecutionFailedCause`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let completeworkflowexecutionfailedcause = unimplemented!();
+/// match completeworkflowexecutionfailedcause {
+///     CompleteWorkflowExecutionFailedCause::OperationNotPermitted => { /* ... */ },
+///     CompleteWorkflowExecutionFailedCause::UnhandledDecision => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `completeworkflowexecutionfailedcause` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CompleteWorkflowExecutionFailedCause::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CompleteWorkflowExecutionFailedCause::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CompleteWorkflowExecutionFailedCause::NewFeature` is defined.
+/// Specifically, when `completeworkflowexecutionfailedcause` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CompleteWorkflowExecutionFailedCause::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -13069,8 +12823,8 @@ pub enum CompleteWorkflowExecutionFailedCause {
     OperationNotPermitted,
     #[allow(missing_docs)] // documentation missing in model
     UnhandledDecision,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CompleteWorkflowExecutionFailedCause {
     fn from(s: &str) -> Self {
@@ -13079,7 +12833,9 @@ impl std::convert::From<&str> for CompleteWorkflowExecutionFailedCause {
                 CompleteWorkflowExecutionFailedCause::OperationNotPermitted
             }
             "UNHANDLED_DECISION" => CompleteWorkflowExecutionFailedCause::UnhandledDecision,
-            other => CompleteWorkflowExecutionFailedCause::Unknown(other.to_owned()),
+            other => CompleteWorkflowExecutionFailedCause::Unknown(
+                crate::types::UnknownVariantValue(other.to_owned()),
+            ),
         }
     }
 }
@@ -13098,11 +12854,11 @@ impl CompleteWorkflowExecutionFailedCause {
                 "OPERATION_NOT_PERMITTED"
             }
             CompleteWorkflowExecutionFailedCause::UnhandledDecision => "UNHANDLED_DECISION",
-            CompleteWorkflowExecutionFailedCause::Unknown(s) => s.as_ref(),
+            CompleteWorkflowExecutionFailedCause::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OPERATION_NOT_PERMITTED", "UNHANDLED_DECISION"]
     }
 }
@@ -13114,7 +12870,7 @@ impl AsRef<str> for CompleteWorkflowExecutionFailedCause {
 
 /// <p>Provides the details of the <code>WorkflowExecutionCompleted</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowExecutionCompletedEventAttributes {
     /// <p>The result produced by the workflow execution upon successful completion.</p>
     #[doc(hidden)]
@@ -13133,22 +12889,11 @@ impl WorkflowExecutionCompletedEventAttributes {
         self.decision_task_completed_event_id
     }
 }
-impl std::fmt::Debug for WorkflowExecutionCompletedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowExecutionCompletedEventAttributes");
-        formatter.field("result", &self.result);
-        formatter.field(
-            "decision_task_completed_event_id",
-            &self.decision_task_completed_event_id,
-        );
-        formatter.finish()
-    }
-}
 /// See [`WorkflowExecutionCompletedEventAttributes`](crate::model::WorkflowExecutionCompletedEventAttributes).
 pub mod workflow_execution_completed_event_attributes {
 
     /// A builder for [`WorkflowExecutionCompletedEventAttributes`](crate::model::WorkflowExecutionCompletedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) result: std::option::Option<std::string::String>,
         pub(crate) decision_task_completed_event_id: std::option::Option<i64>,
@@ -13197,7 +12942,7 @@ impl WorkflowExecutionCompletedEventAttributes {
 
 /// <p>Provides details of <code>WorkflowExecutionStarted</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowExecutionStartedEventAttributes {
     /// <p>The input provided to the workflow execution.</p>
     #[doc(hidden)]
@@ -13304,38 +13049,11 @@ impl WorkflowExecutionStartedEventAttributes {
         self.lambda_role.as_deref()
     }
 }
-impl std::fmt::Debug for WorkflowExecutionStartedEventAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowExecutionStartedEventAttributes");
-        formatter.field("input", &self.input);
-        formatter.field(
-            "execution_start_to_close_timeout",
-            &self.execution_start_to_close_timeout,
-        );
-        formatter.field(
-            "task_start_to_close_timeout",
-            &self.task_start_to_close_timeout,
-        );
-        formatter.field("child_policy", &self.child_policy);
-        formatter.field("task_list", &self.task_list);
-        formatter.field("task_priority", &self.task_priority);
-        formatter.field("workflow_type", &self.workflow_type);
-        formatter.field("tag_list", &self.tag_list);
-        formatter.field(
-            "continued_execution_run_id",
-            &self.continued_execution_run_id,
-        );
-        formatter.field("parent_workflow_execution", &self.parent_workflow_execution);
-        formatter.field("parent_initiated_event_id", &self.parent_initiated_event_id);
-        formatter.field("lambda_role", &self.lambda_role);
-        formatter.finish()
-    }
-}
 /// See [`WorkflowExecutionStartedEventAttributes`](crate::model::WorkflowExecutionStartedEventAttributes).
 pub mod workflow_execution_started_event_attributes {
 
     /// A builder for [`WorkflowExecutionStartedEventAttributes`](crate::model::WorkflowExecutionStartedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input: std::option::Option<std::string::String>,
         pub(crate) execution_start_to_close_timeout: std::option::Option<std::string::String>,
@@ -13549,6 +13267,93 @@ impl WorkflowExecutionStartedEventAttributes {
     }
 }
 
+/// When writing a match expression against `EventType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let eventtype = unimplemented!();
+/// match eventtype {
+///     EventType::ActivityTaskCancelRequested => { /* ... */ },
+///     EventType::ActivityTaskCanceled => { /* ... */ },
+///     EventType::ActivityTaskCompleted => { /* ... */ },
+///     EventType::ActivityTaskFailed => { /* ... */ },
+///     EventType::ActivityTaskScheduled => { /* ... */ },
+///     EventType::ActivityTaskStarted => { /* ... */ },
+///     EventType::ActivityTaskTimedOut => { /* ... */ },
+///     EventType::CancelTimerFailed => { /* ... */ },
+///     EventType::CancelWorkflowExecutionFailed => { /* ... */ },
+///     EventType::ChildWorkflowExecutionCanceled => { /* ... */ },
+///     EventType::ChildWorkflowExecutionCompleted => { /* ... */ },
+///     EventType::ChildWorkflowExecutionFailed => { /* ... */ },
+///     EventType::ChildWorkflowExecutionStarted => { /* ... */ },
+///     EventType::ChildWorkflowExecutionTerminated => { /* ... */ },
+///     EventType::ChildWorkflowExecutionTimedOut => { /* ... */ },
+///     EventType::CompleteWorkflowExecutionFailed => { /* ... */ },
+///     EventType::ContinueAsNewWorkflowExecutionFailed => { /* ... */ },
+///     EventType::DecisionTaskCompleted => { /* ... */ },
+///     EventType::DecisionTaskScheduled => { /* ... */ },
+///     EventType::DecisionTaskStarted => { /* ... */ },
+///     EventType::DecisionTaskTimedOut => { /* ... */ },
+///     EventType::ExternalWorkflowExecutionCancelRequested => { /* ... */ },
+///     EventType::ExternalWorkflowExecutionSignaled => { /* ... */ },
+///     EventType::FailWorkflowExecutionFailed => { /* ... */ },
+///     EventType::LambdaFunctionCompleted => { /* ... */ },
+///     EventType::LambdaFunctionFailed => { /* ... */ },
+///     EventType::LambdaFunctionScheduled => { /* ... */ },
+///     EventType::LambdaFunctionStarted => { /* ... */ },
+///     EventType::LambdaFunctionTimedOut => { /* ... */ },
+///     EventType::MarkerRecorded => { /* ... */ },
+///     EventType::RecordMarkerFailed => { /* ... */ },
+///     EventType::RequestCancelActivityTaskFailed => { /* ... */ },
+///     EventType::RequestCancelExternalWorkflowExecutionFailed => { /* ... */ },
+///     EventType::RequestCancelExternalWorkflowExecutionInitiated => { /* ... */ },
+///     EventType::ScheduleActivityTaskFailed => { /* ... */ },
+///     EventType::ScheduleLambdaFunctionFailed => { /* ... */ },
+///     EventType::SignalExternalWorkflowExecutionFailed => { /* ... */ },
+///     EventType::SignalExternalWorkflowExecutionInitiated => { /* ... */ },
+///     EventType::StartChildWorkflowExecutionFailed => { /* ... */ },
+///     EventType::StartChildWorkflowExecutionInitiated => { /* ... */ },
+///     EventType::StartLambdaFunctionFailed => { /* ... */ },
+///     EventType::StartTimerFailed => { /* ... */ },
+///     EventType::TimerCanceled => { /* ... */ },
+///     EventType::TimerFired => { /* ... */ },
+///     EventType::TimerStarted => { /* ... */ },
+///     EventType::WorkflowExecutionCancelRequested => { /* ... */ },
+///     EventType::WorkflowExecutionCanceled => { /* ... */ },
+///     EventType::WorkflowExecutionCompleted => { /* ... */ },
+///     EventType::WorkflowExecutionContinuedAsNew => { /* ... */ },
+///     EventType::WorkflowExecutionFailed => { /* ... */ },
+///     EventType::WorkflowExecutionSignaled => { /* ... */ },
+///     EventType::WorkflowExecutionStarted => { /* ... */ },
+///     EventType::WorkflowExecutionTerminated => { /* ... */ },
+///     EventType::WorkflowExecutionTimedOut => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `eventtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EventType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EventType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EventType::NewFeature` is defined.
+/// Specifically, when `eventtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EventType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -13669,8 +13474,8 @@ pub enum EventType {
     WorkflowExecutionTerminated,
     #[allow(missing_docs)] // documentation missing in model
     WorkflowExecutionTimedOut,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EventType {
     fn from(s: &str) -> Self {
@@ -13743,7 +13548,7 @@ impl std::convert::From<&str> for EventType {
             "WorkflowExecutionStarted" => EventType::WorkflowExecutionStarted,
             "WorkflowExecutionTerminated" => EventType::WorkflowExecutionTerminated,
             "WorkflowExecutionTimedOut" => EventType::WorkflowExecutionTimedOut,
-            other => EventType::Unknown(other.to_owned()),
+            other => EventType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -13826,11 +13631,11 @@ impl EventType {
             EventType::WorkflowExecutionStarted => "WorkflowExecutionStarted",
             EventType::WorkflowExecutionTerminated => "WorkflowExecutionTerminated",
             EventType::WorkflowExecutionTimedOut => "WorkflowExecutionTimedOut",
-            EventType::Unknown(s) => s.as_ref(),
+            EventType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ActivityTaskCancelRequested",
             "ActivityTaskCanceled",
@@ -13897,7 +13702,7 @@ impl AsRef<str> for EventType {
 
 /// <p>Contains information about a workflow type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowTypeInfo {
     /// <p>The workflow type this information is about.</p>
     #[doc(hidden)]
@@ -13937,22 +13742,11 @@ impl WorkflowTypeInfo {
         self.deprecation_date.as_ref()
     }
 }
-impl std::fmt::Debug for WorkflowTypeInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowTypeInfo");
-        formatter.field("workflow_type", &self.workflow_type);
-        formatter.field("status", &self.status);
-        formatter.field("description", &self.description);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("deprecation_date", &self.deprecation_date);
-        formatter.finish()
-    }
-}
 /// See [`WorkflowTypeInfo`](crate::model::WorkflowTypeInfo).
 pub mod workflow_type_info {
 
     /// A builder for [`WorkflowTypeInfo`](crate::model::WorkflowTypeInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_type: std::option::Option<crate::model::WorkflowType>,
         pub(crate) status: std::option::Option<crate::model::RegistrationStatus>,
@@ -14042,6 +13836,41 @@ impl WorkflowTypeInfo {
     }
 }
 
+/// When writing a match expression against `RegistrationStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let registrationstatus = unimplemented!();
+/// match registrationstatus {
+///     RegistrationStatus::Deprecated => { /* ... */ },
+///     RegistrationStatus::Registered => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `registrationstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RegistrationStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RegistrationStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RegistrationStatus::NewFeature` is defined.
+/// Specifically, when `registrationstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RegistrationStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -14058,15 +13887,17 @@ pub enum RegistrationStatus {
     Deprecated,
     #[allow(missing_docs)] // documentation missing in model
     Registered,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for RegistrationStatus {
     fn from(s: &str) -> Self {
         match s {
             "DEPRECATED" => RegistrationStatus::Deprecated,
             "REGISTERED" => RegistrationStatus::Registered,
-            other => RegistrationStatus::Unknown(other.to_owned()),
+            other => {
+                RegistrationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -14083,11 +13914,11 @@ impl RegistrationStatus {
         match self {
             RegistrationStatus::Deprecated => "DEPRECATED",
             RegistrationStatus::Registered => "REGISTERED",
-            RegistrationStatus::Unknown(s) => s.as_ref(),
+            RegistrationStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEPRECATED", "REGISTERED"]
     }
 }
@@ -14099,7 +13930,7 @@ impl AsRef<str> for RegistrationStatus {
 
 /// <p>Contains information about a workflow execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowExecutionInfo {
     /// <p>The workflow execution this information is about.</p>
     #[doc(hidden)]
@@ -14183,26 +14014,11 @@ impl WorkflowExecutionInfo {
         self.cancel_requested
     }
 }
-impl std::fmt::Debug for WorkflowExecutionInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowExecutionInfo");
-        formatter.field("execution", &self.execution);
-        formatter.field("workflow_type", &self.workflow_type);
-        formatter.field("start_timestamp", &self.start_timestamp);
-        formatter.field("close_timestamp", &self.close_timestamp);
-        formatter.field("execution_status", &self.execution_status);
-        formatter.field("close_status", &self.close_status);
-        formatter.field("parent", &self.parent);
-        formatter.field("tag_list", &self.tag_list);
-        formatter.field("cancel_requested", &self.cancel_requested);
-        formatter.finish()
-    }
-}
 /// See [`WorkflowExecutionInfo`](crate::model::WorkflowExecutionInfo).
 pub mod workflow_execution_info {
 
     /// A builder for [`WorkflowExecutionInfo`](crate::model::WorkflowExecutionInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) execution: std::option::Option<crate::model::WorkflowExecution>,
         pub(crate) workflow_type: std::option::Option<crate::model::WorkflowType>,
@@ -14374,6 +14190,45 @@ impl WorkflowExecutionInfo {
     }
 }
 
+/// When writing a match expression against `CloseStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let closestatus = unimplemented!();
+/// match closestatus {
+///     CloseStatus::Canceled => { /* ... */ },
+///     CloseStatus::Completed => { /* ... */ },
+///     CloseStatus::ContinuedAsNew => { /* ... */ },
+///     CloseStatus::Failed => { /* ... */ },
+///     CloseStatus::Terminated => { /* ... */ },
+///     CloseStatus::TimedOut => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `closestatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CloseStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CloseStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CloseStatus::NewFeature` is defined.
+/// Specifically, when `closestatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CloseStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -14398,8 +14253,8 @@ pub enum CloseStatus {
     Terminated,
     #[allow(missing_docs)] // documentation missing in model
     TimedOut,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CloseStatus {
     fn from(s: &str) -> Self {
@@ -14410,7 +14265,7 @@ impl std::convert::From<&str> for CloseStatus {
             "FAILED" => CloseStatus::Failed,
             "TERMINATED" => CloseStatus::Terminated,
             "TIMED_OUT" => CloseStatus::TimedOut,
-            other => CloseStatus::Unknown(other.to_owned()),
+            other => CloseStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -14431,11 +14286,11 @@ impl CloseStatus {
             CloseStatus::Failed => "FAILED",
             CloseStatus::Terminated => "TERMINATED",
             CloseStatus::TimedOut => "TIMED_OUT",
-            CloseStatus::Unknown(s) => s.as_ref(),
+            CloseStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELED",
             "COMPLETED",
@@ -14452,6 +14307,41 @@ impl AsRef<str> for CloseStatus {
     }
 }
 
+/// When writing a match expression against `ExecutionStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let executionstatus = unimplemented!();
+/// match executionstatus {
+///     ExecutionStatus::Closed => { /* ... */ },
+///     ExecutionStatus::Open => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `executionstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ExecutionStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ExecutionStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ExecutionStatus::NewFeature` is defined.
+/// Specifically, when `executionstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ExecutionStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -14468,15 +14358,15 @@ pub enum ExecutionStatus {
     Closed,
     #[allow(missing_docs)] // documentation missing in model
     Open,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ExecutionStatus {
     fn from(s: &str) -> Self {
         match s {
             "CLOSED" => ExecutionStatus::Closed,
             "OPEN" => ExecutionStatus::Open,
-            other => ExecutionStatus::Unknown(other.to_owned()),
+            other => ExecutionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -14493,11 +14383,11 @@ impl ExecutionStatus {
         match self {
             ExecutionStatus::Closed => "CLOSED",
             ExecutionStatus::Open => "OPEN",
-            ExecutionStatus::Unknown(s) => s.as_ref(),
+            ExecutionStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CLOSED", "OPEN"]
     }
 }
@@ -14509,7 +14399,7 @@ impl AsRef<str> for ExecutionStatus {
 
 /// <p>Used to filter the workflow executions in visibility APIs by their <code>workflowId</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowExecutionFilter {
     /// <p>The workflowId to pass of match the criteria of this filter.</p>
     #[doc(hidden)]
@@ -14521,18 +14411,11 @@ impl WorkflowExecutionFilter {
         self.workflow_id.as_deref()
     }
 }
-impl std::fmt::Debug for WorkflowExecutionFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowExecutionFilter");
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.finish()
-    }
-}
 /// See [`WorkflowExecutionFilter`](crate::model::WorkflowExecutionFilter).
 pub mod workflow_execution_filter {
 
     /// A builder for [`WorkflowExecutionFilter`](crate::model::WorkflowExecutionFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
     }
@@ -14564,7 +14447,7 @@ impl WorkflowExecutionFilter {
 
 /// <p>Used to filter the workflow executions in visibility APIs based on a tag.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagFilter {
     /// <p> Specifies the tag that must be associated with the execution for it to meet the filter criteria.</p>
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
@@ -14578,18 +14461,11 @@ impl TagFilter {
         self.tag.as_deref()
     }
 }
-impl std::fmt::Debug for TagFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagFilter");
-        formatter.field("tag", &self.tag);
-        formatter.finish()
-    }
-}
 /// See [`TagFilter`](crate::model::TagFilter).
 pub mod tag_filter {
 
     /// A builder for [`TagFilter`](crate::model::TagFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag: std::option::Option<std::string::String>,
     }
@@ -14621,7 +14497,7 @@ impl TagFilter {
 
 /// <p>Used to filter workflow execution query results by type. Each parameter, if specified, defines a rule that must be satisfied by each returned result.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowTypeFilter {
     /// <p> Name of the workflow type.</p>
     #[doc(hidden)]
@@ -14640,19 +14516,11 @@ impl WorkflowTypeFilter {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for WorkflowTypeFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowTypeFilter");
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 /// See [`WorkflowTypeFilter`](crate::model::WorkflowTypeFilter).
 pub mod workflow_type_filter {
 
     /// A builder for [`WorkflowTypeFilter`](crate::model::WorkflowTypeFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<std::string::String>,
@@ -14696,7 +14564,7 @@ impl WorkflowTypeFilter {
 
 /// <p>Used to filter the workflow executions in visibility APIs by various time-based rules. Each parameter, if specified, defines a rule that must be satisfied by each returned query result. The parameter values are in the <a href="https://en.wikipedia.org/wiki/Unix_time">Unix Time format</a>. For example: <code>"oldestDate": 1325376070.</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecutionTimeFilter {
     /// <p>Specifies the oldest start or close date and time to return.</p>
     #[doc(hidden)]
@@ -14715,19 +14583,11 @@ impl ExecutionTimeFilter {
         self.latest_date.as_ref()
     }
 }
-impl std::fmt::Debug for ExecutionTimeFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecutionTimeFilter");
-        formatter.field("oldest_date", &self.oldest_date);
-        formatter.field("latest_date", &self.latest_date);
-        formatter.finish()
-    }
-}
 /// See [`ExecutionTimeFilter`](crate::model::ExecutionTimeFilter).
 pub mod execution_time_filter {
 
     /// A builder for [`ExecutionTimeFilter`](crate::model::ExecutionTimeFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) oldest_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) latest_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -14777,7 +14637,7 @@ impl ExecutionTimeFilter {
 
 /// <p>Contains general information about a domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainInfo {
     /// <p>The name of the domain. This name is unique within the account.</p>
     #[doc(hidden)]
@@ -14818,21 +14678,11 @@ impl DomainInfo {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for DomainInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainInfo");
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("description", &self.description);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 /// See [`DomainInfo`](crate::model::DomainInfo).
 pub mod domain_info {
 
     /// A builder for [`DomainInfo`](crate::model::DomainInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::RegistrationStatus>,
@@ -14911,7 +14761,7 @@ impl DomainInfo {
 
 /// <p>Used to filter the closed workflow executions in visibility APIs by their close status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloseStatusFilter {
     /// <p> The close status that must match the close status of an execution for it to meet the criteria of this filter.</p>
     #[doc(hidden)]
@@ -14923,18 +14773,11 @@ impl CloseStatusFilter {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for CloseStatusFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloseStatusFilter");
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 /// See [`CloseStatusFilter`](crate::model::CloseStatusFilter).
 pub mod close_status_filter {
 
     /// A builder for [`CloseStatusFilter`](crate::model::CloseStatusFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::CloseStatus>,
     }
@@ -14966,7 +14809,7 @@ impl CloseStatusFilter {
 
 /// <p>Detailed information about an activity type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivityTypeInfo {
     /// <p>The <code>ActivityType</code> type structure representing the activity type.</p>
     #[doc(hidden)]
@@ -15006,22 +14849,11 @@ impl ActivityTypeInfo {
         self.deprecation_date.as_ref()
     }
 }
-impl std::fmt::Debug for ActivityTypeInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivityTypeInfo");
-        formatter.field("activity_type", &self.activity_type);
-        formatter.field("status", &self.status);
-        formatter.field("description", &self.description);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("deprecation_date", &self.deprecation_date);
-        formatter.finish()
-    }
-}
 /// See [`ActivityTypeInfo`](crate::model::ActivityTypeInfo).
 pub mod activity_type_info {
 
     /// A builder for [`ActivityTypeInfo`](crate::model::ActivityTypeInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activity_type: std::option::Option<crate::model::ActivityType>,
         pub(crate) status: std::option::Option<crate::model::RegistrationStatus>,
@@ -15113,7 +14945,7 @@ impl ActivityTypeInfo {
 
 /// <p>The configuration settings of a workflow type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowTypeConfiguration {
     /// <p> The default maximum duration, specified when registering the workflow type, that a decision task for executions of this workflow type might take before returning completion or failure. If the task doesn'tdo close in the specified time then the task is automatically timed out and rescheduled. If the decider eventually reports a completion or failure, it is ignored. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
@@ -15184,29 +15016,11 @@ impl WorkflowTypeConfiguration {
         self.default_lambda_role.as_deref()
     }
 }
-impl std::fmt::Debug for WorkflowTypeConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowTypeConfiguration");
-        formatter.field(
-            "default_task_start_to_close_timeout",
-            &self.default_task_start_to_close_timeout,
-        );
-        formatter.field(
-            "default_execution_start_to_close_timeout",
-            &self.default_execution_start_to_close_timeout,
-        );
-        formatter.field("default_task_list", &self.default_task_list);
-        formatter.field("default_task_priority", &self.default_task_priority);
-        formatter.field("default_child_policy", &self.default_child_policy);
-        formatter.field("default_lambda_role", &self.default_lambda_role);
-        formatter.finish()
-    }
-}
 /// See [`WorkflowTypeConfiguration`](crate::model::WorkflowTypeConfiguration).
 pub mod workflow_type_configuration {
 
     /// A builder for [`WorkflowTypeConfiguration`](crate::model::WorkflowTypeConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_task_start_to_close_timeout: std::option::Option<std::string::String>,
         pub(crate) default_execution_start_to_close_timeout:
@@ -15348,7 +15162,7 @@ impl WorkflowTypeConfiguration {
 
 /// <p>Contains the counts of open tasks, child workflow executions and timers for a workflow execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowExecutionOpenCounts {
     /// <p>The count of activity tasks whose status is <code>OPEN</code>.</p>
     #[doc(hidden)]
@@ -15388,25 +15202,11 @@ impl WorkflowExecutionOpenCounts {
         self.open_lambda_functions
     }
 }
-impl std::fmt::Debug for WorkflowExecutionOpenCounts {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowExecutionOpenCounts");
-        formatter.field("open_activity_tasks", &self.open_activity_tasks);
-        formatter.field("open_decision_tasks", &self.open_decision_tasks);
-        formatter.field("open_timers", &self.open_timers);
-        formatter.field(
-            "open_child_workflow_executions",
-            &self.open_child_workflow_executions,
-        );
-        formatter.field("open_lambda_functions", &self.open_lambda_functions);
-        formatter.finish()
-    }
-}
 /// See [`WorkflowExecutionOpenCounts`](crate::model::WorkflowExecutionOpenCounts).
 pub mod workflow_execution_open_counts {
 
     /// A builder for [`WorkflowExecutionOpenCounts`](crate::model::WorkflowExecutionOpenCounts).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) open_activity_tasks: std::option::Option<i32>,
         pub(crate) open_decision_tasks: std::option::Option<i32>,
@@ -15491,7 +15291,7 @@ impl WorkflowExecutionOpenCounts {
 
 /// <p>The configuration settings for a workflow execution including timeout values, tasklist etc. These configuration settings are determined from the defaults specified when registering the workflow type and those specified when starting the workflow execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowExecutionConfiguration {
     /// <p>The maximum duration allowed for decision tasks for this workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
@@ -15556,29 +15356,11 @@ impl WorkflowExecutionConfiguration {
         self.lambda_role.as_deref()
     }
 }
-impl std::fmt::Debug for WorkflowExecutionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowExecutionConfiguration");
-        formatter.field(
-            "task_start_to_close_timeout",
-            &self.task_start_to_close_timeout,
-        );
-        formatter.field(
-            "execution_start_to_close_timeout",
-            &self.execution_start_to_close_timeout,
-        );
-        formatter.field("task_list", &self.task_list);
-        formatter.field("task_priority", &self.task_priority);
-        formatter.field("child_policy", &self.child_policy);
-        formatter.field("lambda_role", &self.lambda_role);
-        formatter.finish()
-    }
-}
 /// See [`WorkflowExecutionConfiguration`](crate::model::WorkflowExecutionConfiguration).
 pub mod workflow_execution_configuration {
 
     /// A builder for [`WorkflowExecutionConfiguration`](crate::model::WorkflowExecutionConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_start_to_close_timeout: std::option::Option<std::string::String>,
         pub(crate) execution_start_to_close_timeout: std::option::Option<std::string::String>,
@@ -15706,7 +15488,7 @@ impl WorkflowExecutionConfiguration {
 
 /// <p>Contains the configuration settings of a domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainConfiguration {
     /// <p>The retention period for workflow executions in this domain.</p>
     #[doc(hidden)]
@@ -15718,21 +15500,11 @@ impl DomainConfiguration {
         self.workflow_execution_retention_period_in_days.as_deref()
     }
 }
-impl std::fmt::Debug for DomainConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainConfiguration");
-        formatter.field(
-            "workflow_execution_retention_period_in_days",
-            &self.workflow_execution_retention_period_in_days,
-        );
-        formatter.finish()
-    }
-}
 /// See [`DomainConfiguration`](crate::model::DomainConfiguration).
 pub mod domain_configuration {
 
     /// A builder for [`DomainConfiguration`](crate::model::DomainConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_execution_retention_period_in_days:
             std::option::Option<std::string::String>,
@@ -15772,7 +15544,7 @@ impl DomainConfiguration {
 
 /// <p>Configuration settings registered with the activity type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivityTypeConfiguration {
     /// <p> The default maximum duration for tasks of an activity type specified when registering the activity type. You can override this default when scheduling a task through the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
@@ -15833,35 +15605,11 @@ impl ActivityTypeConfiguration {
         self.default_task_schedule_to_close_timeout.as_deref()
     }
 }
-impl std::fmt::Debug for ActivityTypeConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivityTypeConfiguration");
-        formatter.field(
-            "default_task_start_to_close_timeout",
-            &self.default_task_start_to_close_timeout,
-        );
-        formatter.field(
-            "default_task_heartbeat_timeout",
-            &self.default_task_heartbeat_timeout,
-        );
-        formatter.field("default_task_list", &self.default_task_list);
-        formatter.field("default_task_priority", &self.default_task_priority);
-        formatter.field(
-            "default_task_schedule_to_start_timeout",
-            &self.default_task_schedule_to_start_timeout,
-        );
-        formatter.field(
-            "default_task_schedule_to_close_timeout",
-            &self.default_task_schedule_to_close_timeout,
-        );
-        formatter.finish()
-    }
-}
 /// See [`ActivityTypeConfiguration`](crate::model::ActivityTypeConfiguration).
 pub mod activity_type_configuration {
 
     /// A builder for [`ActivityTypeConfiguration`](crate::model::ActivityTypeConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_task_start_to_close_timeout: std::option::Option<std::string::String>,
         pub(crate) default_task_heartbeat_timeout: std::option::Option<std::string::String>,

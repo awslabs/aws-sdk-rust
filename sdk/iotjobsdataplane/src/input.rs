@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod describe_job_execution_input {
 
     /// A builder for [`DescribeJobExecutionInput`](crate::input::DescribeJobExecutionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) thing_name: std::option::Option<std::string::String>,
@@ -56,8 +56,10 @@ pub mod describe_job_execution_input {
         /// Consumes the builder and constructs a [`DescribeJobExecutionInput`](crate::input::DescribeJobExecutionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeJobExecutionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeJobExecutionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeJobExecutionInput {
                 job_id: self.job_id,
                 thing_name: self.thing_name,
@@ -80,40 +82,50 @@ impl DescribeJobExecutionInput {
             crate::operation::DescribeJobExecution,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeJobExecutionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.thing_name;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "thing_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let thing_name = aws_smithy_http::label::fmt_string(input_1, false);
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "thing_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let thing_name = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if thing_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "thing_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "thing_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_2 = &_input.job_id;
-                let input_2 = input_2.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let job_id = aws_smithy_http::label::fmt_string(input_2, false);
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "job_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let job_id = aws_smithy_http::label::fmt_string(
+                    input_2,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if job_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "job_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -127,19 +139,23 @@ impl DescribeJobExecutionInput {
             fn uri_query(
                 _input: &crate::input::DescribeJobExecutionInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_3) = &_input.include_job_document {
-                    query.push_kv(
-                        "includeJobDocument",
-                        aws_smithy_types::primitive::Encoder::from(*inner_3).encode(),
-                    );
+                    if *inner_3 {
+                        query.push_kv(
+                            "includeJobDocument",
+                            aws_smithy_types::primitive::Encoder::from(*inner_3).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_4) = &_input.execution_number {
-                    query.push_kv(
-                        "executionNumber",
-                        aws_smithy_types::primitive::Encoder::from(*inner_4).encode(),
-                    );
+                    if *inner_4 != 0 {
+                        query.push_kv(
+                            "executionNumber",
+                            aws_smithy_types::primitive::Encoder::from(*inner_4).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -147,8 +163,10 @@ impl DescribeJobExecutionInput {
             fn update_http_builder(
                 input: &crate::input::DescribeJobExecutionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -219,7 +237,7 @@ impl DescribeJobExecutionInput {
 pub mod get_pending_job_executions_input {
 
     /// A builder for [`GetPendingJobExecutionsInput`](crate::input::GetPendingJobExecutionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_name: std::option::Option<std::string::String>,
     }
@@ -239,7 +257,7 @@ pub mod get_pending_job_executions_input {
             self,
         ) -> Result<
             crate::input::GetPendingJobExecutionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetPendingJobExecutionsInput {
                 thing_name: self.thing_name,
@@ -260,26 +278,31 @@ impl GetPendingJobExecutionsInput {
             crate::operation::GetPendingJobExecutions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetPendingJobExecutionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_5 = &_input.thing_name;
-                let input_5 = input_5.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "thing_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let thing_name = aws_smithy_http::label::fmt_string(input_5, false);
+                let input_5 = input_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "thing_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let thing_name = aws_smithy_http::label::fmt_string(
+                    input_5,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if thing_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "thing_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "thing_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/things/{thingName}/jobs", thingName = thing_name)
                     .expect("formatting should succeed");
@@ -289,8 +312,10 @@ impl GetPendingJobExecutionsInput {
             fn update_http_builder(
                 input: &crate::input::GetPendingJobExecutionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -360,7 +385,7 @@ impl GetPendingJobExecutionsInput {
 pub mod start_next_pending_job_execution_input {
 
     /// A builder for [`StartNextPendingJobExecutionInput`](crate::input::StartNextPendingJobExecutionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_name: std::option::Option<std::string::String>,
         pub(crate) status_details: std::option::Option<
@@ -419,7 +444,7 @@ pub mod start_next_pending_job_execution_input {
             self,
         ) -> Result<
             crate::input::StartNextPendingJobExecutionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::StartNextPendingJobExecutionInput {
                 thing_name: self.thing_name,
@@ -442,26 +467,31 @@ impl StartNextPendingJobExecutionInput {
             crate::operation::StartNextPendingJobExecution,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StartNextPendingJobExecutionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_6 = &_input.thing_name;
-                let input_6 = input_6.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "thing_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let thing_name = aws_smithy_http::label::fmt_string(input_6, false);
+                let input_6 = input_6.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "thing_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let thing_name = aws_smithy_http::label::fmt_string(
+                    input_6,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if thing_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "thing_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "thing_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -475,8 +505,10 @@ impl StartNextPendingJobExecutionInput {
             fn update_http_builder(
                 input: &crate::input::StartNextPendingJobExecutionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -559,7 +591,7 @@ impl StartNextPendingJobExecutionInput {
 pub mod update_job_execution_input {
 
     /// A builder for [`UpdateJobExecutionInput`](crate::input::UpdateJobExecutionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) thing_name: std::option::Option<std::string::String>,
@@ -685,8 +717,10 @@ pub mod update_job_execution_input {
         /// Consumes the builder and constructs a [`UpdateJobExecutionInput`](crate::input::UpdateJobExecutionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateJobExecutionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateJobExecutionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateJobExecutionInput {
                 job_id: self.job_id,
                 thing_name: self.thing_name,
@@ -714,40 +748,50 @@ impl UpdateJobExecutionInput {
             crate::operation::UpdateJobExecution,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateJobExecutionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_7 = &_input.thing_name;
-                let input_7 = input_7.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "thing_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let thing_name = aws_smithy_http::label::fmt_string(input_7, false);
+                let input_7 = input_7.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "thing_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let thing_name = aws_smithy_http::label::fmt_string(
+                    input_7,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if thing_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "thing_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "thing_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_8 = &_input.job_id;
-                let input_8 = input_8.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let job_id = aws_smithy_http::label::fmt_string(input_8, false);
+                let input_8 = input_8.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "job_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let job_id = aws_smithy_http::label::fmt_string(
+                    input_8,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if job_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "job_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -762,8 +806,10 @@ impl UpdateJobExecutionInput {
             fn update_http_builder(
                 input: &crate::input::UpdateJobExecutionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -845,7 +891,7 @@ impl UpdateJobExecutionInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateJobExecutionInput {
     /// <p>The unique identifier assigned to this job when it was created.</p>
     #[doc(hidden)]
@@ -917,28 +963,10 @@ impl UpdateJobExecutionInput {
         self.execution_number
     }
 }
-impl std::fmt::Debug for UpdateJobExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateJobExecutionInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("thing_name", &self.thing_name);
-        formatter.field("status", &self.status);
-        formatter.field("status_details", &self.status_details);
-        formatter.field("step_timeout_in_minutes", &self.step_timeout_in_minutes);
-        formatter.field("expected_version", &self.expected_version);
-        formatter.field(
-            "include_job_execution_state",
-            &self.include_job_execution_state,
-        );
-        formatter.field("include_job_document", &self.include_job_document);
-        formatter.field("execution_number", &self.execution_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartNextPendingJobExecutionInput {
     /// <p>The name of the thing associated with the device.</p>
     #[doc(hidden)]
@@ -968,19 +996,10 @@ impl StartNextPendingJobExecutionInput {
         self.step_timeout_in_minutes
     }
 }
-impl std::fmt::Debug for StartNextPendingJobExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartNextPendingJobExecutionInput");
-        formatter.field("thing_name", &self.thing_name);
-        formatter.field("status_details", &self.status_details);
-        formatter.field("step_timeout_in_minutes", &self.step_timeout_in_minutes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPendingJobExecutionsInput {
     /// <p>The name of the thing that is executing the job.</p>
     #[doc(hidden)]
@@ -992,17 +1011,10 @@ impl GetPendingJobExecutionsInput {
         self.thing_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetPendingJobExecutionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPendingJobExecutionsInput");
-        formatter.field("thing_name", &self.thing_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeJobExecutionInput {
     /// <p>The unique identifier assigned to this job when it was created.</p>
     #[doc(hidden)]
@@ -1033,15 +1045,5 @@ impl DescribeJobExecutionInput {
     /// <p>Optional. A number that identifies a particular job execution on a particular device. If not specified, the latest job execution is returned.</p>
     pub fn execution_number(&self) -> std::option::Option<i64> {
         self.execution_number
-    }
-}
-impl std::fmt::Debug for DescribeJobExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeJobExecutionInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("thing_name", &self.thing_name);
-        formatter.field("include_job_document", &self.include_job_document);
-        formatter.field("execution_number", &self.execution_number);
-        formatter.finish()
     }
 }

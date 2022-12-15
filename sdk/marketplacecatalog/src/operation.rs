@@ -5,7 +5,7 @@
 /// [`cancel_change_set`](crate::client::Client::cancel_change_set).
 ///
 /// See [`crate::client::fluent_builders::CancelChangeSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CancelChangeSet {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelChangeSet {
 /// [`describe_change_set`](crate::client::Client::describe_change_set).
 ///
 /// See [`crate::client::fluent_builders::DescribeChangeSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeChangeSet {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeChangeSet {
 /// [`describe_entity`](crate::client::Client::describe_entity).
 ///
 /// See [`crate::client::fluent_builders::DescribeEntity`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeEntity {
     _private: (),
 }
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEntity {
 /// [`list_change_sets`](crate::client::Client::list_change_sets).
 ///
 /// See [`crate::client::fluent_builders::ListChangeSets`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListChangeSets {
     _private: (),
 }
@@ -137,7 +137,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChangeSets {
 /// [`list_entities`](crate::client::Client::list_entities).
 ///
 /// See [`crate::client::fluent_builders::ListEntities`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListEntities {
     _private: (),
 }
@@ -169,7 +169,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEntities {
 /// [`start_change_set`](crate::client::Client::start_change_set).
 ///
 /// See [`crate::client::fluent_builders::StartChangeSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartChangeSet {
     _private: (),
 }

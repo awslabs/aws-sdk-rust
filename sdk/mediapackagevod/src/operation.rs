@@ -5,7 +5,7 @@
 /// [`configure_logs`](crate::client::Client::configure_logs).
 ///
 /// See [`crate::client::fluent_builders::ConfigureLogs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ConfigureLogs {
     _private: (),
 }
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConfigureLogs {
 /// [`create_asset`](crate::client::Client::create_asset).
 ///
 /// See [`crate::client::fluent_builders::CreateAsset`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateAsset {
     _private: (),
 }
@@ -69,7 +69,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAsset {
 /// [`create_packaging_configuration`](crate::client::Client::create_packaging_configuration).
 ///
 /// See [`crate::client::fluent_builders::CreatePackagingConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreatePackagingConfiguration {
     _private: (),
 }
@@ -103,7 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePackagingConfigura
 /// [`create_packaging_group`](crate::client::Client::create_packaging_group).
 ///
 /// See [`crate::client::fluent_builders::CreatePackagingGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreatePackagingGroup {
     _private: (),
 }
@@ -137,7 +137,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePackagingGroup {
 /// [`delete_asset`](crate::client::Client::delete_asset).
 ///
 /// See [`crate::client::fluent_builders::DeleteAsset`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteAsset {
     _private: (),
 }
@@ -169,7 +169,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAsset {
 /// [`delete_packaging_configuration`](crate::client::Client::delete_packaging_configuration).
 ///
 /// See [`crate::client::fluent_builders::DeletePackagingConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeletePackagingConfiguration {
     _private: (),
 }
@@ -203,7 +203,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePackagingConfigura
 /// [`delete_packaging_group`](crate::client::Client::delete_packaging_group).
 ///
 /// See [`crate::client::fluent_builders::DeletePackagingGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeletePackagingGroup {
     _private: (),
 }
@@ -237,7 +237,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePackagingGroup {
 /// [`describe_asset`](crate::client::Client::describe_asset).
 ///
 /// See [`crate::client::fluent_builders::DescribeAsset`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAsset {
     _private: (),
 }
@@ -269,7 +269,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAsset {
 /// [`describe_packaging_configuration`](crate::client::Client::describe_packaging_configuration).
 ///
 /// See [`crate::client::fluent_builders::DescribePackagingConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribePackagingConfiguration {
     _private: (),
 }
@@ -303,7 +303,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePackagingConfigu
 /// [`describe_packaging_group`](crate::client::Client::describe_packaging_group).
 ///
 /// See [`crate::client::fluent_builders::DescribePackagingGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribePackagingGroup {
     _private: (),
 }
@@ -337,7 +337,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePackagingGroup {
 /// [`list_assets`](crate::client::Client::list_assets).
 ///
 /// See [`crate::client::fluent_builders::ListAssets`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAssets {
     _private: (),
 }
@@ -369,7 +369,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAssets {
 /// [`list_packaging_configurations`](crate::client::Client::list_packaging_configurations).
 ///
 /// See [`crate::client::fluent_builders::ListPackagingConfigurations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPackagingConfigurations {
     _private: (),
 }
@@ -403,7 +403,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPackagingConfigurati
 /// [`list_packaging_groups`](crate::client::Client::list_packaging_groups).
 ///
 /// See [`crate::client::fluent_builders::ListPackagingGroups`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPackagingGroups {
     _private: (),
 }
@@ -437,7 +437,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPackagingGroups {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -471,7 +471,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -503,7 +503,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -535,7 +535,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_packaging_group`](crate::client::Client::update_packaging_group).
 ///
 /// See [`crate::client::fluent_builders::UpdatePackagingGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdatePackagingGroup {
     _private: (),
 }

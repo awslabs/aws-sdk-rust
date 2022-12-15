@@ -2,19 +2,13 @@
 
 /// <p>The structure representing the SubmitFeedbackResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubmitFeedbackOutput {}
-impl std::fmt::Debug for SubmitFeedbackOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubmitFeedbackOutput");
-        formatter.finish()
-    }
-}
 /// See [`SubmitFeedbackOutput`](crate::output::SubmitFeedbackOutput).
 pub mod submit_feedback_output {
 
     /// A builder for [`SubmitFeedbackOutput`](crate::output::SubmitFeedbackOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SubmitFeedbackOutput`](crate::output::SubmitFeedbackOutput).
@@ -32,7 +26,7 @@ impl SubmitFeedbackOutput {
 
 /// <p>The structure representing the <code>removePermissionResponse</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemovePermissionOutput {
     /// <p> The JSON-formatted resource-based policy on the profiling group after the specified permissions were removed. </p>
     #[doc(hidden)]
@@ -51,19 +45,11 @@ impl RemovePermissionOutput {
         self.revision_id.as_deref()
     }
 }
-impl std::fmt::Debug for RemovePermissionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemovePermissionOutput");
-        formatter.field("policy", &self.policy);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
-    }
-}
 /// See [`RemovePermissionOutput`](crate::output::RemovePermissionOutput).
 pub mod remove_permission_output {
 
     /// A builder for [`RemovePermissionOutput`](crate::output::RemovePermissionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
         pub(crate) revision_id: std::option::Option<std::string::String>,
@@ -107,7 +93,7 @@ impl RemovePermissionOutput {
 
 /// <p>The structure representing the RemoveNotificationChannelResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveNotificationChannelOutput {
     /// <p>The new notification configuration for this profiling group.</p>
     #[doc(hidden)]
@@ -121,21 +107,11 @@ impl RemoveNotificationChannelOutput {
         self.notification_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for RemoveNotificationChannelOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveNotificationChannelOutput");
-        formatter.field(
-            "notification_configuration",
-            &self.notification_configuration,
-        );
-        formatter.finish()
-    }
-}
 /// See [`RemoveNotificationChannelOutput`](crate::output::RemoveNotificationChannelOutput).
 pub mod remove_notification_channel_output {
 
     /// A builder for [`RemoveNotificationChannelOutput`](crate::output::RemoveNotificationChannelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) notification_configuration:
             std::option::Option<crate::model::NotificationConfiguration>,
@@ -174,7 +150,7 @@ impl RemoveNotificationChannelOutput {
 
 /// <p>The structure representing the <code>putPermissionResponse</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutPermissionOutput {
     /// <p> The JSON-formatted resource-based policy on the profiling group that includes the added permissions. </p>
     #[doc(hidden)]
@@ -193,19 +169,11 @@ impl PutPermissionOutput {
         self.revision_id.as_deref()
     }
 }
-impl std::fmt::Debug for PutPermissionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutPermissionOutput");
-        formatter.field("policy", &self.policy);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
-    }
-}
 /// See [`PutPermissionOutput`](crate::output::PutPermissionOutput).
 pub mod put_permission_output {
 
     /// A builder for [`PutPermissionOutput`](crate::output::PutPermissionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
         pub(crate) revision_id: std::option::Option<std::string::String>,
@@ -249,19 +217,13 @@ impl PutPermissionOutput {
 
 /// <p>The structure representing the postAgentProfileResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PostAgentProfileOutput {}
-impl std::fmt::Debug for PostAgentProfileOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PostAgentProfileOutput");
-        formatter.finish()
-    }
-}
 /// See [`PostAgentProfileOutput`](crate::output::PostAgentProfileOutput).
 pub mod post_agent_profile_output {
 
     /// A builder for [`PostAgentProfileOutput`](crate::output::PostAgentProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PostAgentProfileOutput`](crate::output::PostAgentProfileOutput).
@@ -279,7 +241,7 @@ impl PostAgentProfileOutput {
 
 /// <p>The structure representing the listProfileTimesResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProfileTimesOutput {
     /// <p>The list of start times of the available profiles for the aggregation period in the specified time range. </p>
     #[doc(hidden)]
@@ -298,19 +260,11 @@ impl ListProfileTimesOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListProfileTimesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProfileTimesOutput");
-        formatter.field("profile_times", &self.profile_times);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListProfileTimesOutput`](crate::output::ListProfileTimesOutput).
 pub mod list_profile_times_output {
 
     /// A builder for [`ListProfileTimesOutput`](crate::output::ListProfileTimesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_times: std::option::Option<std::vec::Vec<crate::model::ProfileTime>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -363,7 +317,7 @@ impl ListProfileTimesOutput {
 
 /// <p>The structure representing the ListFindingsReportsResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFindingsReportsOutput {
     /// <p>The list of analysis results summaries.</p>
     #[doc(hidden)]
@@ -385,19 +339,11 @@ impl ListFindingsReportsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListFindingsReportsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFindingsReportsOutput");
-        formatter.field("findings_report_summaries", &self.findings_report_summaries);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListFindingsReportsOutput`](crate::output::ListFindingsReportsOutput).
 pub mod list_findings_reports_output {
 
     /// A builder for [`ListFindingsReportsOutput`](crate::output::ListFindingsReportsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) findings_report_summaries:
             std::option::Option<std::vec::Vec<crate::model::FindingsReportSummary>>,
@@ -454,7 +400,7 @@ impl ListFindingsReportsOutput {
 
 /// <p>The structure representing the GetRecommendationsResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRecommendationsOutput {
     /// <p>The name of the profiling group the analysis data is about.</p>
     #[doc(hidden)]
@@ -494,22 +440,11 @@ impl GetRecommendationsOutput {
         self.anomalies.as_deref()
     }
 }
-impl std::fmt::Debug for GetRecommendationsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRecommendationsOutput");
-        formatter.field("profiling_group_name", &self.profiling_group_name);
-        formatter.field("profile_start_time", &self.profile_start_time);
-        formatter.field("profile_end_time", &self.profile_end_time);
-        formatter.field("recommendations", &self.recommendations);
-        formatter.field("anomalies", &self.anomalies);
-        formatter.finish()
-    }
-}
 /// See [`GetRecommendationsOutput`](crate::output::GetRecommendationsOutput).
 pub mod get_recommendations_output {
 
     /// A builder for [`GetRecommendationsOutput`](crate::output::GetRecommendationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_name: std::option::Option<std::string::String>,
         pub(crate) profile_start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -617,7 +552,7 @@ impl GetRecommendationsOutput {
 
 /// <p>The structure representing the getProfileResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetProfileOutput {
     /// <p>Information about the profile.</p>
     #[doc(hidden)]
@@ -643,20 +578,11 @@ impl GetProfileOutput {
         self.content_encoding.as_deref()
     }
 }
-impl std::fmt::Debug for GetProfileOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetProfileOutput");
-        formatter.field("profile", &self.profile);
-        formatter.field("content_type", &self.content_type);
-        formatter.field("content_encoding", &self.content_encoding);
-        formatter.finish()
-    }
-}
 /// See [`GetProfileOutput`](crate::output::GetProfileOutput).
 pub mod get_profile_output {
 
     /// A builder for [`GetProfileOutput`](crate::output::GetProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) content_type: std::option::Option<std::string::String>,
@@ -715,7 +641,7 @@ impl GetProfileOutput {
 
 /// <p>The structure representing the <code>getPolicyResponse</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPolicyOutput {
     /// <p>The JSON-formatted resource-based policy attached to the <code>ProfilingGroup</code>.</p>
     #[doc(hidden)]
@@ -734,19 +660,11 @@ impl GetPolicyOutput {
         self.revision_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPolicyOutput");
-        formatter.field("policy", &self.policy);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
-    }
-}
 /// See [`GetPolicyOutput`](crate::output::GetPolicyOutput).
 pub mod get_policy_output {
 
     /// A builder for [`GetPolicyOutput`](crate::output::GetPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
         pub(crate) revision_id: std::option::Option<std::string::String>,
@@ -790,7 +708,7 @@ impl GetPolicyOutput {
 
 /// <p>The structure representing the GetNotificationConfigurationResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetNotificationConfigurationOutput {
     /// <p>The current notification configuration for this profiling group.</p>
     #[doc(hidden)]
@@ -804,21 +722,11 @@ impl GetNotificationConfigurationOutput {
         self.notification_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for GetNotificationConfigurationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetNotificationConfigurationOutput");
-        formatter.field(
-            "notification_configuration",
-            &self.notification_configuration,
-        );
-        formatter.finish()
-    }
-}
 /// See [`GetNotificationConfigurationOutput`](crate::output::GetNotificationConfigurationOutput).
 pub mod get_notification_configuration_output {
 
     /// A builder for [`GetNotificationConfigurationOutput`](crate::output::GetNotificationConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) notification_configuration:
             std::option::Option<crate::model::NotificationConfiguration>,
@@ -857,7 +765,7 @@ impl GetNotificationConfigurationOutput {
 
 /// <p>The structure representing the configureAgentResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigureAgentOutput {
     /// <p> An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentConfiguration.html"> <code>AgentConfiguration</code> </a> object that specifies if an agent profiles or not and for how long to return profiling data. </p>
     #[doc(hidden)]
@@ -869,18 +777,11 @@ impl ConfigureAgentOutput {
         self.configuration.as_ref()
     }
 }
-impl std::fmt::Debug for ConfigureAgentOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigureAgentOutput");
-        formatter.field("configuration", &self.configuration);
-        formatter.finish()
-    }
-}
 /// See [`ConfigureAgentOutput`](crate::output::ConfigureAgentOutput).
 pub mod configure_agent_output {
 
     /// A builder for [`ConfigureAgentOutput`](crate::output::ConfigureAgentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration: std::option::Option<crate::model::AgentConfiguration>,
     }
@@ -915,7 +816,7 @@ impl ConfigureAgentOutput {
 
 /// <p>The structure representing the BatchGetFrameMetricDataResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetFrameMetricDataOutput {
     /// <p> The start time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     #[doc(hidden)]
@@ -984,23 +885,11 @@ impl BatchGetFrameMetricDataOutput {
         self.frame_metric_data.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetFrameMetricDataOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetFrameMetricDataOutput");
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("resolution", &self.resolution);
-        formatter.field("end_times", &self.end_times);
-        formatter.field("unprocessed_end_times", &self.unprocessed_end_times);
-        formatter.field("frame_metric_data", &self.frame_metric_data);
-        formatter.finish()
-    }
-}
 /// See [`BatchGetFrameMetricDataOutput`](crate::output::BatchGetFrameMetricDataOutput).
 pub mod batch_get_frame_metric_data_output {
 
     /// A builder for [`BatchGetFrameMetricDataOutput`](crate::output::BatchGetFrameMetricDataOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1153,7 +1042,7 @@ impl BatchGetFrameMetricDataOutput {
 
 /// <p>The structure representing the AddNotificationChannelsResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddNotificationChannelsOutput {
     /// <p>The new notification configuration for this profiling group.</p>
     #[doc(hidden)]
@@ -1167,21 +1056,11 @@ impl AddNotificationChannelsOutput {
         self.notification_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for AddNotificationChannelsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddNotificationChannelsOutput");
-        formatter.field(
-            "notification_configuration",
-            &self.notification_configuration,
-        );
-        formatter.finish()
-    }
-}
 /// See [`AddNotificationChannelsOutput`](crate::output::AddNotificationChannelsOutput).
 pub mod add_notification_channels_output {
 
     /// A builder for [`AddNotificationChannelsOutput`](crate::output::AddNotificationChannelsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) notification_configuration:
             std::option::Option<crate::model::NotificationConfiguration>,
@@ -1220,7 +1099,7 @@ impl AddNotificationChannelsOutput {
 
 /// <p>The structure representing the listProfilingGroupsResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProfilingGroupsOutput {
     /// <p> A returned list of profiling group names. A list of the names is returned only if <code>includeDescription</code> is <code>false</code>, otherwise a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects is returned. </p>
     #[doc(hidden)]
@@ -1249,20 +1128,11 @@ impl ListProfilingGroupsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListProfilingGroupsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProfilingGroupsOutput");
-        formatter.field("profiling_group_names", &self.profiling_group_names);
-        formatter.field("profiling_groups", &self.profiling_groups);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListProfilingGroupsOutput`](crate::output::ListProfilingGroupsOutput).
 pub mod list_profiling_groups_output {
 
     /// A builder for [`ListProfilingGroupsOutput`](crate::output::ListProfilingGroupsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) profiling_groups:
@@ -1337,7 +1207,7 @@ impl ListProfilingGroupsOutput {
 
 /// <p>The structure representing the createProfilingGroupResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateProfilingGroupOutput {
     /// <p> The returned <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> object that contains information about the created profiling group. </p>
     #[doc(hidden)]
@@ -1349,18 +1219,11 @@ impl CreateProfilingGroupOutput {
         self.profiling_group.as_ref()
     }
 }
-impl std::fmt::Debug for CreateProfilingGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateProfilingGroupOutput");
-        formatter.field("profiling_group", &self.profiling_group);
-        formatter.finish()
-    }
-}
 /// See [`CreateProfilingGroupOutput`](crate::output::CreateProfilingGroupOutput).
 pub mod create_profiling_group_output {
 
     /// A builder for [`CreateProfilingGroupOutput`](crate::output::CreateProfilingGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group: std::option::Option<crate::model::ProfilingGroupDescription>,
     }
@@ -1395,19 +1258,13 @@ impl CreateProfilingGroupOutput {
 
 /// <p>The structure representing the deleteProfilingGroupResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProfilingGroupOutput {}
-impl std::fmt::Debug for DeleteProfilingGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteProfilingGroupOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteProfilingGroupOutput`](crate::output::DeleteProfilingGroupOutput).
 pub mod delete_profiling_group_output {
 
     /// A builder for [`DeleteProfilingGroupOutput`](crate::output::DeleteProfilingGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteProfilingGroupOutput`](crate::output::DeleteProfilingGroupOutput).
@@ -1425,7 +1282,7 @@ impl DeleteProfilingGroupOutput {
 
 /// <p>The structure representing the updateProfilingGroupResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateProfilingGroupOutput {
     /// <p> A <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> that contains information about the returned updated profiling group. </p>
     #[doc(hidden)]
@@ -1437,18 +1294,11 @@ impl UpdateProfilingGroupOutput {
         self.profiling_group.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateProfilingGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateProfilingGroupOutput");
-        formatter.field("profiling_group", &self.profiling_group);
-        formatter.finish()
-    }
-}
 /// See [`UpdateProfilingGroupOutput`](crate::output::UpdateProfilingGroupOutput).
 pub mod update_profiling_group_output {
 
     /// A builder for [`UpdateProfilingGroupOutput`](crate::output::UpdateProfilingGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group: std::option::Option<crate::model::ProfilingGroupDescription>,
     }
@@ -1483,7 +1333,7 @@ impl UpdateProfilingGroupOutput {
 
 /// <p>The structure representing the describeProfilingGroupResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeProfilingGroupOutput {
     /// <p> The returned <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> object that contains information about the requested profiling group. </p>
     #[doc(hidden)]
@@ -1495,18 +1345,11 @@ impl DescribeProfilingGroupOutput {
         self.profiling_group.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeProfilingGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeProfilingGroupOutput");
-        formatter.field("profiling_group", &self.profiling_group);
-        formatter.finish()
-    }
-}
 /// See [`DescribeProfilingGroupOutput`](crate::output::DescribeProfilingGroupOutput).
 pub mod describe_profiling_group_output {
 
     /// A builder for [`DescribeProfilingGroupOutput`](crate::output::DescribeProfilingGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group: std::option::Option<crate::model::ProfilingGroupDescription>,
     }
@@ -1541,19 +1384,13 @@ impl DescribeProfilingGroupOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput {}
-impl std::fmt::Debug for UntagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -1571,19 +1408,13 @@ impl UntagResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput {}
-impl std::fmt::Debug for TagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -1601,7 +1432,7 @@ impl TagResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
     /// <p> The list of tags assigned to the specified resource. This is the list of tags returned in the response. </p>
     #[doc(hidden)]
@@ -1617,18 +1448,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceOutput");
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -1675,7 +1499,7 @@ impl ListTagsForResourceOutput {
 
 /// <p>The structure representing the GetFindingsReportAccountSummaryResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFindingsReportAccountSummaryOutput {
     /// <p>The return list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_FindingsReportSummary.html"> <code>FindingsReportSummary</code> </a> objects taht contain summaries of analysis results for all profiling groups in your AWS account.</p>
     #[doc(hidden)]
@@ -1694,19 +1518,11 @@ impl GetFindingsReportAccountSummaryOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetFindingsReportAccountSummaryOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFindingsReportAccountSummaryOutput");
-        formatter.field("report_summaries", &self.report_summaries);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`GetFindingsReportAccountSummaryOutput`](crate::output::GetFindingsReportAccountSummaryOutput).
 pub mod get_findings_report_account_summary_output {
 
     /// A builder for [`GetFindingsReportAccountSummaryOutput`](crate::output::GetFindingsReportAccountSummaryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_summaries:
             std::option::Option<std::vec::Vec<crate::model::FindingsReportSummary>>,

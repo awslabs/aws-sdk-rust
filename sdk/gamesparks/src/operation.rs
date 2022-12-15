@@ -5,7 +5,7 @@
 /// [`create_game`](crate::client::Client::create_game).
 ///
 /// See [`crate::client::fluent_builders::CreateGame`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateGame {
     _private: (),
 }
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGame {
 /// [`create_snapshot`](crate::client::Client::create_snapshot).
 ///
 /// See [`crate::client::fluent_builders::CreateSnapshot`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateSnapshot {
     _private: (),
 }
@@ -69,7 +69,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSnapshot {
 /// [`create_stage`](crate::client::Client::create_stage).
 ///
 /// See [`crate::client::fluent_builders::CreateStage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateStage {
     _private: (),
 }
@@ -101,7 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateStage {
 /// [`delete_game`](crate::client::Client::delete_game).
 ///
 /// See [`crate::client::fluent_builders::DeleteGame`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteGame {
     _private: (),
 }
@@ -133,7 +133,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGame {
 /// [`delete_stage`](crate::client::Client::delete_stage).
 ///
 /// See [`crate::client::fluent_builders::DeleteStage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteStage {
     _private: (),
 }
@@ -165,7 +165,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteStage {
 /// [`disconnect_player`](crate::client::Client::disconnect_player).
 ///
 /// See [`crate::client::fluent_builders::DisconnectPlayer`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisconnectPlayer {
     _private: (),
 }
@@ -199,7 +199,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisconnectPlayer {
 /// [`export_snapshot`](crate::client::Client::export_snapshot).
 ///
 /// See [`crate::client::fluent_builders::ExportSnapshot`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ExportSnapshot {
     _private: (),
 }
@@ -231,7 +231,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportSnapshot {
 /// [`get_extension`](crate::client::Client::get_extension).
 ///
 /// See [`crate::client::fluent_builders::GetExtension`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetExtension {
     _private: (),
 }
@@ -263,7 +263,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetExtension {
 /// [`get_extension_version`](crate::client::Client::get_extension_version).
 ///
 /// See [`crate::client::fluent_builders::GetExtensionVersion`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetExtensionVersion {
     _private: (),
 }
@@ -297,7 +297,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetExtensionVersion {
 /// [`get_game`](crate::client::Client::get_game).
 ///
 /// See [`crate::client::fluent_builders::GetGame`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetGame {
     _private: (),
 }
@@ -328,7 +328,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGame {
 /// [`get_game_configuration`](crate::client::Client::get_game_configuration).
 ///
 /// See [`crate::client::fluent_builders::GetGameConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetGameConfiguration {
     _private: (),
 }
@@ -362,7 +362,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGameConfiguration {
 /// [`get_generated_code_job`](crate::client::Client::get_generated_code_job).
 ///
 /// See [`crate::client::fluent_builders::GetGeneratedCodeJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetGeneratedCodeJob {
     _private: (),
 }
@@ -396,7 +396,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGeneratedCodeJob {
 /// [`get_player_connection_status`](crate::client::Client::get_player_connection_status).
 ///
 /// See [`crate::client::fluent_builders::GetPlayerConnectionStatus`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPlayerConnectionStatus {
     _private: (),
 }
@@ -430,7 +430,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPlayerConnectionStatu
 /// [`get_snapshot`](crate::client::Client::get_snapshot).
 ///
 /// See [`crate::client::fluent_builders::GetSnapshot`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSnapshot {
     _private: (),
 }
@@ -462,7 +462,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSnapshot {
 /// [`get_stage`](crate::client::Client::get_stage).
 ///
 /// See [`crate::client::fluent_builders::GetStage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetStage {
     _private: (),
 }
@@ -493,7 +493,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStage {
 /// [`get_stage_deployment`](crate::client::Client::get_stage_deployment).
 ///
 /// See [`crate::client::fluent_builders::GetStageDeployment`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetStageDeployment {
     _private: (),
 }
@@ -527,7 +527,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStageDeployment {
 /// [`import_game_configuration`](crate::client::Client::import_game_configuration).
 ///
 /// See [`crate::client::fluent_builders::ImportGameConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ImportGameConfiguration {
     _private: (),
 }
@@ -561,7 +561,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportGameConfiguration 
 /// [`list_extensions`](crate::client::Client::list_extensions).
 ///
 /// See [`crate::client::fluent_builders::ListExtensions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListExtensions {
     _private: (),
 }
@@ -593,7 +593,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListExtensions {
 /// [`list_extension_versions`](crate::client::Client::list_extension_versions).
 ///
 /// See [`crate::client::fluent_builders::ListExtensionVersions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListExtensionVersions {
     _private: (),
 }
@@ -627,7 +627,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListExtensionVersions {
 /// [`list_games`](crate::client::Client::list_games).
 ///
 /// See [`crate::client::fluent_builders::ListGames`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListGames {
     _private: (),
 }
@@ -658,7 +658,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGames {
 /// [`list_generated_code_jobs`](crate::client::Client::list_generated_code_jobs).
 ///
 /// See [`crate::client::fluent_builders::ListGeneratedCodeJobs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListGeneratedCodeJobs {
     _private: (),
 }
@@ -692,7 +692,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGeneratedCodeJobs {
 /// [`list_snapshots`](crate::client::Client::list_snapshots).
 ///
 /// See [`crate::client::fluent_builders::ListSnapshots`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSnapshots {
     _private: (),
 }
@@ -724,7 +724,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSnapshots {
 /// [`list_stage_deployments`](crate::client::Client::list_stage_deployments).
 ///
 /// See [`crate::client::fluent_builders::ListStageDeployments`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListStageDeployments {
     _private: (),
 }
@@ -758,7 +758,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStageDeployments {
 /// [`list_stages`](crate::client::Client::list_stages).
 ///
 /// See [`crate::client::fluent_builders::ListStages`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListStages {
     _private: (),
 }
@@ -790,7 +790,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStages {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -824,7 +824,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`start_generated_code_job`](crate::client::Client::start_generated_code_job).
 ///
 /// See [`crate::client::fluent_builders::StartGeneratedCodeJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartGeneratedCodeJob {
     _private: (),
 }
@@ -858,7 +858,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartGeneratedCodeJob {
 /// [`start_stage_deployment`](crate::client::Client::start_stage_deployment).
 ///
 /// See [`crate::client::fluent_builders::StartStageDeployment`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartStageDeployment {
     _private: (),
 }
@@ -892,7 +892,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartStageDeployment {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -924,7 +924,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -956,7 +956,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_game`](crate::client::Client::update_game).
 ///
 /// See [`crate::client::fluent_builders::UpdateGame`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateGame {
     _private: (),
 }
@@ -988,7 +988,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGame {
 /// [`update_game_configuration`](crate::client::Client::update_game_configuration).
 ///
 /// See [`crate::client::fluent_builders::UpdateGameConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateGameConfiguration {
     _private: (),
 }
@@ -1022,7 +1022,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGameConfiguration 
 /// [`update_snapshot`](crate::client::Client::update_snapshot).
 ///
 /// See [`crate::client::fluent_builders::UpdateSnapshot`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateSnapshot {
     _private: (),
 }
@@ -1054,7 +1054,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSnapshot {
 /// [`update_stage`](crate::client::Client::update_stage).
 ///
 /// See [`crate::client::fluent_builders::UpdateStage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateStage {
     _private: (),
 }

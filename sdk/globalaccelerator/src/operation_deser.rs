@@ -30,7 +30,7 @@ pub fn parse_add_custom_routing_endpoints_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddCustomRoutingEndpointsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -48,7 +48,7 @@ pub fn parse_add_custom_routing_endpoints_error(
                         output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddCustomRoutingEndpointsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -68,7 +68,7 @@ pub fn parse_add_custom_routing_endpoints_error(
                         output = crate::json_deser::deser_structure_crate_error_endpoint_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddCustomRoutingEndpointsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -88,7 +88,7 @@ pub fn parse_add_custom_routing_endpoints_error(
                         output = crate::json_deser::deser_structure_crate_error_endpoint_group_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddCustomRoutingEndpointsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -108,7 +108,7 @@ pub fn parse_add_custom_routing_endpoints_error(
                         output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddCustomRoutingEndpointsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -126,7 +126,7 @@ pub fn parse_add_custom_routing_endpoints_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddCustomRoutingEndpointsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -143,7 +143,7 @@ pub fn parse_add_custom_routing_endpoints_error(
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddCustomRoutingEndpointsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -200,7 +200,7 @@ pub fn parse_advertise_byoip_cidr_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdvertiseByoipCidrError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -218,7 +218,7 @@ pub fn parse_advertise_byoip_cidr_error(
                     output = crate::json_deser::deser_structure_crate_error_byoip_cidr_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdvertiseByoipCidrError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -236,7 +236,7 @@ pub fn parse_advertise_byoip_cidr_error(
                     output = crate::json_deser::deser_structure_crate_error_incorrect_cidr_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdvertiseByoipCidrError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -254,7 +254,7 @@ pub fn parse_advertise_byoip_cidr_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdvertiseByoipCidrError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -271,7 +271,7 @@ pub fn parse_advertise_byoip_cidr_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdvertiseByoipCidrError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -334,7 +334,7 @@ pub fn parse_allow_custom_routing_traffic_error(
                         output = crate::json_deser::deser_structure_crate_error_endpoint_group_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllowCustomRoutingTrafficError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -354,7 +354,7 @@ pub fn parse_allow_custom_routing_traffic_error(
                         output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllowCustomRoutingTrafficError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -372,7 +372,7 @@ pub fn parse_allow_custom_routing_traffic_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllowCustomRoutingTrafficError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -423,7 +423,7 @@ pub fn parse_create_accelerator_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAcceleratorError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -440,7 +440,7 @@ pub fn parse_create_accelerator_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAcceleratorError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -457,7 +457,7 @@ pub fn parse_create_accelerator_error(
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAcceleratorError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -512,7 +512,7 @@ pub fn parse_create_custom_routing_accelerator_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomRoutingAcceleratorError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -532,7 +532,7 @@ pub fn parse_create_custom_routing_accelerator_error(
                             output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomRoutingAcceleratorError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -552,7 +552,7 @@ pub fn parse_create_custom_routing_accelerator_error(
                         output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomRoutingAcceleratorError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -570,7 +570,7 @@ pub fn parse_create_custom_routing_accelerator_error(
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomRoutingAcceleratorError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -629,7 +629,7 @@ pub fn parse_create_custom_routing_endpoint_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -643,7 +643,7 @@ pub fn parse_create_custom_routing_endpoint_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -657,7 +657,7 @@ pub fn parse_create_custom_routing_endpoint_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -671,7 +671,7 @@ pub fn parse_create_custom_routing_endpoint_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -685,7 +685,7 @@ pub fn parse_create_custom_routing_endpoint_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -699,7 +699,7 @@ pub fn parse_create_custom_routing_endpoint_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -713,7 +713,7 @@ pub fn parse_create_custom_routing_endpoint_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -727,7 +727,7 @@ pub fn parse_create_custom_routing_endpoint_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -786,7 +786,7 @@ pub fn parse_create_custom_routing_listener_error(
                         output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomRoutingListenerError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -806,7 +806,7 @@ pub fn parse_create_custom_routing_listener_error(
                         output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomRoutingListenerError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -824,7 +824,7 @@ pub fn parse_create_custom_routing_listener_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomRoutingListenerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -841,7 +841,7 @@ pub fn parse_create_custom_routing_listener_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_port_range_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomRoutingListenerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -858,7 +858,7 @@ pub fn parse_create_custom_routing_listener_error(
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomRoutingListenerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -916,7 +916,7 @@ pub fn parse_create_endpoint_group_error(
                     output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEndpointGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -933,7 +933,7 @@ pub fn parse_create_endpoint_group_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEndpointGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -952,7 +952,7 @@ pub fn parse_create_endpoint_group_error(
                                 output = crate::json_deser::deser_structure_crate_error_endpoint_group_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEndpointGroupError::unhandled)?;
                                 output.build()
                             };
-                            if (&tmp.message).is_none() {
+                            if tmp.message.is_none() {
                                 tmp.message = _error_message;
                             }
                             tmp
@@ -972,7 +972,7 @@ pub fn parse_create_endpoint_group_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEndpointGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -989,7 +989,7 @@ pub fn parse_create_endpoint_group_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEndpointGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1006,7 +1006,7 @@ pub fn parse_create_endpoint_group_error(
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEndpointGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1023,7 +1023,7 @@ pub fn parse_create_endpoint_group_error(
                     output = crate::json_deser::deser_structure_crate_error_listener_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEndpointGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1078,7 +1078,7 @@ pub fn parse_create_listener_error(
                     output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateListenerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1096,7 +1096,7 @@ pub fn parse_create_listener_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateListenerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1113,7 +1113,7 @@ pub fn parse_create_listener_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateListenerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1130,7 +1130,7 @@ pub fn parse_create_listener_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_port_range_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateListenerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1147,7 +1147,7 @@ pub fn parse_create_listener_error(
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateListenerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1200,7 +1200,7 @@ pub fn parse_delete_accelerator_error(
                     output = crate::json_deser::deser_structure_crate_error_accelerator_not_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAcceleratorError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1218,7 +1218,7 @@ pub fn parse_delete_accelerator_error(
                     output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAcceleratorError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1236,7 +1236,7 @@ pub fn parse_delete_accelerator_error(
                     output = crate::json_deser::deser_structure_crate_error_associated_listener_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAcceleratorError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1254,7 +1254,7 @@ pub fn parse_delete_accelerator_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAcceleratorError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1271,7 +1271,7 @@ pub fn parse_delete_accelerator_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAcceleratorError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1319,7 +1319,7 @@ pub fn parse_delete_custom_routing_accelerator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1333,7 +1333,7 @@ pub fn parse_delete_custom_routing_accelerator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1347,7 +1347,7 @@ pub fn parse_delete_custom_routing_accelerator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1361,7 +1361,7 @@ pub fn parse_delete_custom_routing_accelerator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1375,7 +1375,7 @@ pub fn parse_delete_custom_routing_accelerator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1427,7 +1427,7 @@ pub fn parse_delete_custom_routing_endpoint_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1441,7 +1441,7 @@ pub fn parse_delete_custom_routing_endpoint_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1455,7 +1455,7 @@ pub fn parse_delete_custom_routing_endpoint_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1509,7 +1509,7 @@ pub fn parse_delete_custom_routing_listener_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1523,7 +1523,7 @@ pub fn parse_delete_custom_routing_listener_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1537,7 +1537,7 @@ pub fn parse_delete_custom_routing_listener_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1551,7 +1551,7 @@ pub fn parse_delete_custom_routing_listener_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1603,7 +1603,7 @@ pub fn parse_delete_endpoint_group_error(
                     output = crate::json_deser::deser_structure_crate_error_endpoint_group_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEndpointGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1621,7 +1621,7 @@ pub fn parse_delete_endpoint_group_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEndpointGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1638,7 +1638,7 @@ pub fn parse_delete_endpoint_group_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEndpointGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1688,7 +1688,7 @@ pub fn parse_delete_listener_error(
                     output = crate::json_deser::deser_structure_crate_error_associated_endpoint_group_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteListenerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1706,7 +1706,7 @@ pub fn parse_delete_listener_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteListenerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1723,7 +1723,7 @@ pub fn parse_delete_listener_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteListenerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1740,7 +1740,7 @@ pub fn parse_delete_listener_error(
                     output = crate::json_deser::deser_structure_crate_error_listener_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteListenerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1795,7 +1795,7 @@ pub fn parse_deny_custom_routing_traffic_error(
                         output = crate::json_deser::deser_structure_crate_error_endpoint_group_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DenyCustomRoutingTrafficError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1814,7 +1814,7 @@ pub fn parse_deny_custom_routing_traffic_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DenyCustomRoutingTrafficError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1831,7 +1831,7 @@ pub fn parse_deny_custom_routing_traffic_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DenyCustomRoutingTrafficError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1883,7 +1883,7 @@ pub fn parse_deprovision_byoip_cidr_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeprovisionByoipCidrError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1901,7 +1901,7 @@ pub fn parse_deprovision_byoip_cidr_error(
                     output = crate::json_deser::deser_structure_crate_error_byoip_cidr_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeprovisionByoipCidrError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1919,7 +1919,7 @@ pub fn parse_deprovision_byoip_cidr_error(
                     output = crate::json_deser::deser_structure_crate_error_incorrect_cidr_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeprovisionByoipCidrError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1937,7 +1937,7 @@ pub fn parse_deprovision_byoip_cidr_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeprovisionByoipCidrError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1954,7 +1954,7 @@ pub fn parse_deprovision_byoip_cidr_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeprovisionByoipCidrError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2012,7 +2012,7 @@ pub fn parse_describe_accelerator_error(
                     output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAcceleratorError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2030,7 +2030,7 @@ pub fn parse_describe_accelerator_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAcceleratorError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2047,7 +2047,7 @@ pub fn parse_describe_accelerator_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAcceleratorError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2111,7 +2111,7 @@ pub fn parse_describe_accelerator_attributes_error(
                             output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAcceleratorAttributesError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -2132,7 +2132,7 @@ pub fn parse_describe_accelerator_attributes_error(
                             output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAcceleratorAttributesError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -2150,7 +2150,7 @@ pub fn parse_describe_accelerator_attributes_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAcceleratorAttributesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2208,7 +2208,7 @@ pub fn parse_describe_custom_routing_accelerator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2222,7 +2222,7 @@ pub fn parse_describe_custom_routing_accelerator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2236,7 +2236,7 @@ pub fn parse_describe_custom_routing_accelerator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2296,7 +2296,7 @@ pub fn parse_describe_custom_routing_accelerator_attributes_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2310,7 +2310,7 @@ pub fn parse_describe_custom_routing_accelerator_attributes_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2324,7 +2324,7 @@ pub fn parse_describe_custom_routing_accelerator_attributes_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2378,7 +2378,7 @@ pub fn parse_describe_custom_routing_endpoint_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2392,7 +2392,7 @@ pub fn parse_describe_custom_routing_endpoint_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2406,7 +2406,7 @@ pub fn parse_describe_custom_routing_endpoint_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2466,7 +2466,7 @@ pub fn parse_describe_custom_routing_listener_error(
                             output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCustomRoutingListenerError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -2484,7 +2484,7 @@ pub fn parse_describe_custom_routing_listener_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCustomRoutingListenerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2503,7 +2503,7 @@ pub fn parse_describe_custom_routing_listener_error(
                         output = crate::json_deser::deser_structure_crate_error_listener_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCustomRoutingListenerError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2563,7 +2563,7 @@ pub fn parse_describe_endpoint_group_error(
                     output = crate::json_deser::deser_structure_crate_error_endpoint_group_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEndpointGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2581,7 +2581,7 @@ pub fn parse_describe_endpoint_group_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEndpointGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2598,7 +2598,7 @@ pub fn parse_describe_endpoint_group_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEndpointGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2654,7 +2654,7 @@ pub fn parse_describe_listener_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeListenerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2671,7 +2671,7 @@ pub fn parse_describe_listener_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeListenerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2688,7 +2688,7 @@ pub fn parse_describe_listener_error(
                     output = crate::json_deser::deser_structure_crate_error_listener_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeListenerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2742,7 +2742,7 @@ pub fn parse_list_accelerators_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAcceleratorsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2759,7 +2759,7 @@ pub fn parse_list_accelerators_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAcceleratorsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2776,7 +2776,7 @@ pub fn parse_list_accelerators_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAcceleratorsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2828,7 +2828,7 @@ pub fn parse_list_byoip_cidrs_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListByoipCidrsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2846,7 +2846,7 @@ pub fn parse_list_byoip_cidrs_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListByoipCidrsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2863,7 +2863,7 @@ pub fn parse_list_byoip_cidrs_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListByoipCidrsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2880,7 +2880,7 @@ pub fn parse_list_byoip_cidrs_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListByoipCidrsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2941,7 +2941,7 @@ pub fn parse_list_custom_routing_accelerators_error(
                             output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingAcceleratorsError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -2959,7 +2959,7 @@ pub fn parse_list_custom_routing_accelerators_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingAcceleratorsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2978,7 +2978,7 @@ pub fn parse_list_custom_routing_accelerators_error(
                         output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingAcceleratorsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -3035,7 +3035,7 @@ pub fn parse_list_custom_routing_endpoint_groups_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3049,7 +3049,7 @@ pub fn parse_list_custom_routing_endpoint_groups_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3063,7 +3063,7 @@ pub fn parse_list_custom_routing_endpoint_groups_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3077,7 +3077,7 @@ pub fn parse_list_custom_routing_endpoint_groups_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3141,7 +3141,7 @@ pub fn parse_list_custom_routing_listeners_error(
                         output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingListenersError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -3161,7 +3161,7 @@ pub fn parse_list_custom_routing_listeners_error(
                         output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingListenersError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -3179,7 +3179,7 @@ pub fn parse_list_custom_routing_listeners_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingListenersError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3196,7 +3196,7 @@ pub fn parse_list_custom_routing_listeners_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingListenersError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3260,7 +3260,7 @@ pub fn parse_list_custom_routing_port_mappings_error(
                             output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingPortMappingsError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -3282,7 +3282,7 @@ pub fn parse_list_custom_routing_port_mappings_error(
                             output = crate::json_deser::deser_structure_crate_error_endpoint_group_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingPortMappingsError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -3303,7 +3303,7 @@ pub fn parse_list_custom_routing_port_mappings_error(
                             output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingPortMappingsError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -3321,7 +3321,7 @@ pub fn parse_list_custom_routing_port_mappings_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingPortMappingsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3340,7 +3340,7 @@ pub fn parse_list_custom_routing_port_mappings_error(
                         output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingPortMappingsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -3402,7 +3402,7 @@ pub fn parse_list_custom_routing_port_mappings_by_destination_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3416,7 +3416,7 @@ pub fn parse_list_custom_routing_port_mappings_by_destination_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3430,7 +3430,7 @@ pub fn parse_list_custom_routing_port_mappings_by_destination_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3444,7 +3444,7 @@ pub fn parse_list_custom_routing_port_mappings_by_destination_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3496,7 +3496,7 @@ pub fn parse_list_endpoint_groups_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEndpointGroupsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3513,7 +3513,7 @@ pub fn parse_list_endpoint_groups_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEndpointGroupsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3530,7 +3530,7 @@ pub fn parse_list_endpoint_groups_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEndpointGroupsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3547,7 +3547,7 @@ pub fn parse_list_endpoint_groups_error(
                     output = crate::json_deser::deser_structure_crate_error_listener_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEndpointGroupsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3602,7 +3602,7 @@ pub fn parse_list_listeners_error(
                     output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListListenersError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3620,7 +3620,7 @@ pub fn parse_list_listeners_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListListenersError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3637,7 +3637,7 @@ pub fn parse_list_listeners_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListListenersError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3654,7 +3654,7 @@ pub fn parse_list_listeners_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListListenersError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3709,7 +3709,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3727,7 +3727,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3744,7 +3744,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3801,7 +3801,7 @@ pub fn parse_provision_byoip_cidr_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ProvisionByoipCidrError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3819,7 +3819,7 @@ pub fn parse_provision_byoip_cidr_error(
                     output = crate::json_deser::deser_structure_crate_error_incorrect_cidr_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ProvisionByoipCidrError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3837,7 +3837,7 @@ pub fn parse_provision_byoip_cidr_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ProvisionByoipCidrError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3854,7 +3854,7 @@ pub fn parse_provision_byoip_cidr_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ProvisionByoipCidrError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3871,7 +3871,7 @@ pub fn parse_provision_byoip_cidr_error(
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ProvisionByoipCidrError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3932,7 +3932,7 @@ pub fn parse_remove_custom_routing_endpoints_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveCustomRoutingEndpointsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3950,7 +3950,7 @@ pub fn parse_remove_custom_routing_endpoints_error(
                         output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveCustomRoutingEndpointsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -3972,7 +3972,7 @@ pub fn parse_remove_custom_routing_endpoints_error(
                             output = crate::json_deser::deser_structure_crate_error_endpoint_group_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveCustomRoutingEndpointsError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -3990,7 +3990,7 @@ pub fn parse_remove_custom_routing_endpoints_error(
                     output = crate::json_deser::deser_structure_crate_error_endpoint_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveCustomRoutingEndpointsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4010,7 +4010,7 @@ pub fn parse_remove_custom_routing_endpoints_error(
                             output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveCustomRoutingEndpointsError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -4028,7 +4028,7 @@ pub fn parse_remove_custom_routing_endpoints_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveCustomRoutingEndpointsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4078,7 +4078,7 @@ pub fn parse_tag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4096,7 +4096,7 @@ pub fn parse_tag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4113,7 +4113,7 @@ pub fn parse_tag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4160,7 +4160,7 @@ pub fn parse_untag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4178,7 +4178,7 @@ pub fn parse_untag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4195,7 +4195,7 @@ pub fn parse_untag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4243,7 +4243,7 @@ pub fn parse_update_accelerator_error(
                     output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAcceleratorError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4260,7 +4260,7 @@ pub fn parse_update_accelerator_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAcceleratorError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4278,7 +4278,7 @@ pub fn parse_update_accelerator_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAcceleratorError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4295,7 +4295,7 @@ pub fn parse_update_accelerator_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAcceleratorError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4356,7 +4356,7 @@ pub fn parse_update_accelerator_attributes_error(
                         output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAcceleratorAttributesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -4374,7 +4374,7 @@ pub fn parse_update_accelerator_attributes_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAcceleratorAttributesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4393,7 +4393,7 @@ pub fn parse_update_accelerator_attributes_error(
                         output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAcceleratorAttributesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -4411,7 +4411,7 @@ pub fn parse_update_accelerator_attributes_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAcceleratorAttributesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4471,7 +4471,7 @@ pub fn parse_update_custom_routing_accelerator_error(
                             output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomRoutingAcceleratorError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -4492,7 +4492,7 @@ pub fn parse_update_custom_routing_accelerator_error(
                             output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomRoutingAcceleratorError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -4512,7 +4512,7 @@ pub fn parse_update_custom_routing_accelerator_error(
                         output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomRoutingAcceleratorError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -4574,7 +4574,7 @@ pub fn parse_update_custom_routing_accelerator_attributes_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4588,7 +4588,7 @@ pub fn parse_update_custom_routing_accelerator_attributes_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4602,7 +4602,7 @@ pub fn parse_update_custom_routing_accelerator_attributes_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4616,7 +4616,7 @@ pub fn parse_update_custom_routing_accelerator_attributes_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4675,7 +4675,7 @@ pub fn parse_update_custom_routing_listener_error(
                         output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomRoutingListenerError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -4693,7 +4693,7 @@ pub fn parse_update_custom_routing_listener_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomRoutingListenerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4710,7 +4710,7 @@ pub fn parse_update_custom_routing_listener_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_port_range_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomRoutingListenerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4727,7 +4727,7 @@ pub fn parse_update_custom_routing_listener_error(
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomRoutingListenerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4744,7 +4744,7 @@ pub fn parse_update_custom_routing_listener_error(
                     output = crate::json_deser::deser_structure_crate_error_listener_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomRoutingListenerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4801,7 +4801,7 @@ pub fn parse_update_endpoint_group_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEndpointGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4819,7 +4819,7 @@ pub fn parse_update_endpoint_group_error(
                     output = crate::json_deser::deser_structure_crate_error_endpoint_group_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEndpointGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4837,7 +4837,7 @@ pub fn parse_update_endpoint_group_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEndpointGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4854,7 +4854,7 @@ pub fn parse_update_endpoint_group_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEndpointGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4871,7 +4871,7 @@ pub fn parse_update_endpoint_group_error(
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEndpointGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4926,7 +4926,7 @@ pub fn parse_update_listener_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateListenerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4943,7 +4943,7 @@ pub fn parse_update_listener_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateListenerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4960,7 +4960,7 @@ pub fn parse_update_listener_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_port_range_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateListenerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4977,7 +4977,7 @@ pub fn parse_update_listener_error(
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateListenerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4994,7 +4994,7 @@ pub fn parse_update_listener_error(
                     output = crate::json_deser::deser_structure_crate_error_listener_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateListenerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5046,7 +5046,7 @@ pub fn parse_withdraw_byoip_cidr_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::WithdrawByoipCidrError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5064,7 +5064,7 @@ pub fn parse_withdraw_byoip_cidr_error(
                     output = crate::json_deser::deser_structure_crate_error_byoip_cidr_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::WithdrawByoipCidrError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5082,7 +5082,7 @@ pub fn parse_withdraw_byoip_cidr_error(
                     output = crate::json_deser::deser_structure_crate_error_incorrect_cidr_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::WithdrawByoipCidrError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5100,7 +5100,7 @@ pub fn parse_withdraw_byoip_cidr_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::WithdrawByoipCidrError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5117,7 +5117,7 @@ pub fn parse_withdraw_byoip_cidr_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::WithdrawByoipCidrError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp

@@ -2,6 +2,6 @@
   "name": "empty-config",
   "docs": "no config was defined",
   "result": {
-    "ErrorContains": "The credential provider was not enabled"
+    "ErrorContains": "the credential provider was not enabled"
   }
 }

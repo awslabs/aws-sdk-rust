@@ -2,22 +2,15 @@
 
 /// <p>The request was denied to limit the frequency of submitted requests.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThrottledException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ThrottledException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThrottledException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ThrottledException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -25,7 +18,9 @@ impl std::fmt::Display for ThrottledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ThrottledException")?;
         if let Some(inner_1) = &self.message {
-            write!(f, ": {}", inner_1)?;
+            {
+                write!(f, ": {}", inner_1)?;
+            }
         }
         Ok(())
     }
@@ -35,7 +30,7 @@ impl std::error::Error for ThrottledException {}
 pub mod throttled_exception {
 
     /// A builder for [`ThrottledException`](crate::error::ThrottledException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -74,22 +69,15 @@ impl ThrottledException {
 /// <li> <p>You can't access the Amazon S3 bucket for report storage. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional Requirements for Organization-wide Tag Compliance Reports</a> in the <i>Organizations User Guide.</i> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidParameterException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidParameterException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidParameterException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -97,7 +85,9 @@ impl std::fmt::Display for InvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidParameterException")?;
         if let Some(inner_2) = &self.message {
-            write!(f, ": {}", inner_2)?;
+            {
+                write!(f, ": {}", inner_2)?;
+            }
         }
         Ok(())
     }
@@ -107,7 +97,7 @@ impl std::error::Error for InvalidParameterException {}
 pub mod invalid_parameter_exception {
 
     /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -139,22 +129,15 @@ impl InvalidParameterException {
 
 /// <p>The request processing failed because of an unknown error, exception, or failure. You can retry the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalServiceException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InternalServiceException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServiceException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InternalServiceException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -162,7 +145,9 @@ impl std::fmt::Display for InternalServiceException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServiceException")?;
         if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+            {
+                write!(f, ": {}", inner_3)?;
+            }
         }
         Ok(())
     }
@@ -172,7 +157,7 @@ impl std::error::Error for InternalServiceException {}
 pub mod internal_service_exception {
 
     /// A builder for [`InternalServiceException`](crate::error::InternalServiceException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -210,22 +195,15 @@ impl InternalServiceException {
 /// <li> <p>You must have a tag policy attached to the organization root, an OU, or an account.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConstraintViolationException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ConstraintViolationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConstraintViolationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ConstraintViolationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -233,7 +211,9 @@ impl std::fmt::Display for ConstraintViolationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConstraintViolationException")?;
         if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+            {
+                write!(f, ": {}", inner_4)?;
+            }
         }
         Ok(())
     }
@@ -243,7 +223,7 @@ impl std::error::Error for ConstraintViolationException {}
 pub mod constraint_violation_exception {
 
     /// A builder for [`ConstraintViolationException`](crate::error::ConstraintViolationException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -275,22 +255,15 @@ impl ConstraintViolationException {
 
 /// <p>The target of the operation is currently being modified by a different request. Try again later.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConcurrentModificationException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ConcurrentModificationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConcurrentModificationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ConcurrentModificationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -298,7 +271,9 @@ impl std::fmt::Display for ConcurrentModificationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConcurrentModificationException")?;
         if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+            {
+                write!(f, ": {}", inner_5)?;
+            }
         }
         Ok(())
     }
@@ -308,7 +283,7 @@ impl std::error::Error for ConcurrentModificationException {}
 pub mod concurrent_modification_exception {
 
     /// A builder for [`ConcurrentModificationException`](crate::error::ConcurrentModificationException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -340,22 +315,15 @@ impl ConcurrentModificationException {
 
 /// <p>A <code>PaginationToken</code> is valid for a maximum of 15 minutes. Your request was denied because the specified <code>PaginationToken</code> has expired.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PaginationTokenExpiredException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for PaginationTokenExpiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PaginationTokenExpiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl PaginationTokenExpiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -363,7 +331,9 @@ impl std::fmt::Display for PaginationTokenExpiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PaginationTokenExpiredException")?;
         if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+            {
+                write!(f, ": {}", inner_6)?;
+            }
         }
         Ok(())
     }
@@ -373,7 +343,7 @@ impl std::error::Error for PaginationTokenExpiredException {}
 pub mod pagination_token_expired_exception {
 
     /// A builder for [`PaginationTokenExpiredException`](crate::error::PaginationTokenExpiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -412,6 +382,14 @@ pub struct DescribeReportCreationError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeReportCreationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeReportCreationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeReportCreation` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -437,8 +415,15 @@ pub enum DescribeReportCreationErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The request was denied to limit the frequency of submitted requests.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeReportCreationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -468,7 +453,9 @@ impl DescribeReportCreationError {
     /// Creates the `DescribeReportCreationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeReportCreationErrorKind::Unhandled(err.into()),
+            kind: DescribeReportCreationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -477,7 +464,9 @@ impl DescribeReportCreationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeReportCreationErrorKind::Unhandled(err.into()),
+            kind: DescribeReportCreationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -537,7 +526,7 @@ impl std::error::Error for DescribeReportCreationError {
             DescribeReportCreationErrorKind::InternalServiceException(_inner) => Some(_inner),
             DescribeReportCreationErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeReportCreationErrorKind::ThrottledException(_inner) => Some(_inner),
-            DescribeReportCreationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeReportCreationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -550,6 +539,14 @@ pub struct GetComplianceSummaryError {
     pub kind: GetComplianceSummaryErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetComplianceSummaryError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetComplianceSummaryErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetComplianceSummary` operation.
 #[non_exhaustive]
@@ -576,8 +573,15 @@ pub enum GetComplianceSummaryErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The request was denied to limit the frequency of submitted requests.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetComplianceSummaryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -607,7 +611,9 @@ impl GetComplianceSummaryError {
     /// Creates the `GetComplianceSummaryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetComplianceSummaryErrorKind::Unhandled(err.into()),
+            kind: GetComplianceSummaryErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -616,7 +622,9 @@ impl GetComplianceSummaryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetComplianceSummaryErrorKind::Unhandled(err.into()),
+            kind: GetComplianceSummaryErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -676,7 +684,7 @@ impl std::error::Error for GetComplianceSummaryError {
             GetComplianceSummaryErrorKind::InternalServiceException(_inner) => Some(_inner),
             GetComplianceSummaryErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GetComplianceSummaryErrorKind::ThrottledException(_inner) => Some(_inner),
-            GetComplianceSummaryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetComplianceSummaryErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -689,6 +697,14 @@ pub struct GetResourcesError {
     pub kind: GetResourcesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetResourcesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetResourcesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetResources` operation.
 #[non_exhaustive]
@@ -709,8 +725,15 @@ pub enum GetResourcesErrorKind {
     PaginationTokenExpiredException(crate::error::PaginationTokenExpiredException),
     /// <p>The request was denied to limit the frequency of submitted requests.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetResourcesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -740,7 +763,7 @@ impl GetResourcesError {
     /// Creates the `GetResourcesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetResourcesErrorKind::Unhandled(err.into()),
+            kind: GetResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -749,7 +772,7 @@ impl GetResourcesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetResourcesErrorKind::Unhandled(err.into()),
+            kind: GetResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -806,7 +829,7 @@ impl std::error::Error for GetResourcesError {
             GetResourcesErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GetResourcesErrorKind::PaginationTokenExpiredException(_inner) => Some(_inner),
             GetResourcesErrorKind::ThrottledException(_inner) => Some(_inner),
-            GetResourcesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetResourcesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -819,6 +842,14 @@ pub struct GetTagKeysError {
     pub kind: GetTagKeysErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetTagKeysError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetTagKeysErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetTagKeys` operation.
 #[non_exhaustive]
@@ -839,8 +870,15 @@ pub enum GetTagKeysErrorKind {
     PaginationTokenExpiredException(crate::error::PaginationTokenExpiredException),
     /// <p>The request was denied to limit the frequency of submitted requests.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetTagKeysError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -870,7 +908,7 @@ impl GetTagKeysError {
     /// Creates the `GetTagKeysError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetTagKeysErrorKind::Unhandled(err.into()),
+            kind: GetTagKeysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -879,7 +917,7 @@ impl GetTagKeysError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetTagKeysErrorKind::Unhandled(err.into()),
+            kind: GetTagKeysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -933,7 +971,7 @@ impl std::error::Error for GetTagKeysError {
             GetTagKeysErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GetTagKeysErrorKind::PaginationTokenExpiredException(_inner) => Some(_inner),
             GetTagKeysErrorKind::ThrottledException(_inner) => Some(_inner),
-            GetTagKeysErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetTagKeysErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -946,6 +984,14 @@ pub struct GetTagValuesError {
     pub kind: GetTagValuesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetTagValuesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetTagValuesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetTagValues` operation.
 #[non_exhaustive]
@@ -966,8 +1012,15 @@ pub enum GetTagValuesErrorKind {
     PaginationTokenExpiredException(crate::error::PaginationTokenExpiredException),
     /// <p>The request was denied to limit the frequency of submitted requests.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetTagValuesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -997,7 +1050,7 @@ impl GetTagValuesError {
     /// Creates the `GetTagValuesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetTagValuesErrorKind::Unhandled(err.into()),
+            kind: GetTagValuesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1006,7 +1059,7 @@ impl GetTagValuesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetTagValuesErrorKind::Unhandled(err.into()),
+            kind: GetTagValuesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1063,7 +1116,7 @@ impl std::error::Error for GetTagValuesError {
             GetTagValuesErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GetTagValuesErrorKind::PaginationTokenExpiredException(_inner) => Some(_inner),
             GetTagValuesErrorKind::ThrottledException(_inner) => Some(_inner),
-            GetTagValuesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetTagValuesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1076,6 +1129,14 @@ pub struct StartReportCreationError {
     pub kind: StartReportCreationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for StartReportCreationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StartReportCreationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `StartReportCreation` operation.
 #[non_exhaustive]
@@ -1104,8 +1165,15 @@ pub enum StartReportCreationErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The request was denied to limit the frequency of submitted requests.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartReportCreationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1136,7 +1204,7 @@ impl StartReportCreationError {
     /// Creates the `StartReportCreationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartReportCreationErrorKind::Unhandled(err.into()),
+            kind: StartReportCreationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1145,7 +1213,7 @@ impl StartReportCreationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartReportCreationErrorKind::Unhandled(err.into()),
+            kind: StartReportCreationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1213,7 +1281,7 @@ impl std::error::Error for StartReportCreationError {
             StartReportCreationErrorKind::InternalServiceException(_inner) => Some(_inner),
             StartReportCreationErrorKind::InvalidParameterException(_inner) => Some(_inner),
             StartReportCreationErrorKind::ThrottledException(_inner) => Some(_inner),
-            StartReportCreationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartReportCreationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1226,6 +1294,14 @@ pub struct TagResourcesError {
     pub kind: TagResourcesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for TagResourcesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: TagResourcesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `TagResources` operation.
 #[non_exhaustive]
@@ -1244,8 +1320,15 @@ pub enum TagResourcesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The request was denied to limit the frequency of submitted requests.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourcesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1274,7 +1357,7 @@ impl TagResourcesError {
     /// Creates the `TagResourcesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourcesErrorKind::Unhandled(err.into()),
+            kind: TagResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1283,7 +1366,7 @@ impl TagResourcesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourcesErrorKind::Unhandled(err.into()),
+            kind: TagResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1332,7 +1415,7 @@ impl std::error::Error for TagResourcesError {
             TagResourcesErrorKind::InternalServiceException(_inner) => Some(_inner),
             TagResourcesErrorKind::InvalidParameterException(_inner) => Some(_inner),
             TagResourcesErrorKind::ThrottledException(_inner) => Some(_inner),
-            TagResourcesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourcesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1345,6 +1428,14 @@ pub struct UntagResourcesError {
     pub kind: UntagResourcesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UntagResourcesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UntagResourcesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UntagResources` operation.
 #[non_exhaustive]
@@ -1363,8 +1454,15 @@ pub enum UntagResourcesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The request was denied to limit the frequency of submitted requests.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourcesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1393,7 +1491,7 @@ impl UntagResourcesError {
     /// Creates the `UntagResourcesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourcesErrorKind::Unhandled(err.into()),
+            kind: UntagResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1402,7 +1500,7 @@ impl UntagResourcesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourcesErrorKind::Unhandled(err.into()),
+            kind: UntagResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1451,7 +1549,35 @@ impl std::error::Error for UntagResourcesError {
             UntagResourcesErrorKind::InternalServiceException(_inner) => Some(_inner),
             UntagResourcesErrorKind::InvalidParameterException(_inner) => Some(_inner),
             UntagResourcesErrorKind::ThrottledException(_inner) => Some(_inner),
-            UntagResourcesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourcesErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+///
+/// When logging an error from the SDK, it is recommended that you either wrap the error in
+/// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+/// error reporter library that visits the error's cause/source chain, or call
+/// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

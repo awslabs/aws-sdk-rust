@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod cancel_change_set_input {
 
     /// A builder for [`CancelChangeSetInput`](crate::input::CancelChangeSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog: std::option::Option<std::string::String>,
         pub(crate) change_set_id: std::option::Option<std::string::String>,
@@ -37,7 +37,7 @@ pub mod cancel_change_set_input {
         /// Consumes the builder and constructs a [`CancelChangeSetInput`](crate::input::CancelChangeSetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CancelChangeSetInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CancelChangeSetInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CancelChangeSetInput {
                 catalog: self.catalog,
@@ -59,35 +59,63 @@ impl CancelChangeSetInput {
             crate::operation::CancelChangeSet,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CancelChangeSetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/CancelChangeSet").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::CancelChangeSetInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_1) = &_input.catalog {
-                    query.push_kv("catalog", &aws_smithy_http::query::fmt_string(&inner_1));
+                let inner_1 = &_input.catalog;
+                let inner_1 = inner_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "catalog",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_1.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "catalog",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_2) = &_input.change_set_id {
-                    query.push_kv("changeSetId", &aws_smithy_http::query::fmt_string(&inner_2));
+                query.push_kv("catalog", &aws_smithy_http::query::fmt_string(&inner_1));
+                let inner_2 = &_input.change_set_id;
+                let inner_2 = inner_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "change_set_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_2.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "change_set_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("changeSetId", &aws_smithy_http::query::fmt_string(&inner_2));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::CancelChangeSetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -158,7 +186,7 @@ impl CancelChangeSetInput {
 pub mod describe_change_set_input {
 
     /// A builder for [`DescribeChangeSetInput`](crate::input::DescribeChangeSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog: std::option::Option<std::string::String>,
         pub(crate) change_set_id: std::option::Option<std::string::String>,
@@ -190,8 +218,10 @@ pub mod describe_change_set_input {
         /// Consumes the builder and constructs a [`DescribeChangeSetInput`](crate::input::DescribeChangeSetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeChangeSetInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeChangeSetInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeChangeSetInput {
                 catalog: self.catalog,
                 change_set_id: self.change_set_id,
@@ -212,35 +242,63 @@ impl DescribeChangeSetInput {
             crate::operation::DescribeChangeSet,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeChangeSetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/DescribeChangeSet").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::DescribeChangeSetInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_3) = &_input.catalog {
-                    query.push_kv("catalog", &aws_smithy_http::query::fmt_string(&inner_3));
+                let inner_3 = &_input.catalog;
+                let inner_3 = inner_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "catalog",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_3.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "catalog",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_4) = &_input.change_set_id {
-                    query.push_kv("changeSetId", &aws_smithy_http::query::fmt_string(&inner_4));
+                query.push_kv("catalog", &aws_smithy_http::query::fmt_string(&inner_3));
+                let inner_4 = &_input.change_set_id;
+                let inner_4 = inner_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "change_set_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_4.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "change_set_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("changeSetId", &aws_smithy_http::query::fmt_string(&inner_4));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::DescribeChangeSetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -311,7 +369,7 @@ impl DescribeChangeSetInput {
 pub mod describe_entity_input {
 
     /// A builder for [`DescribeEntityInput`](crate::input::DescribeEntityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog: std::option::Option<std::string::String>,
         pub(crate) entity_id: std::option::Option<std::string::String>,
@@ -340,7 +398,7 @@ pub mod describe_entity_input {
         /// Consumes the builder and constructs a [`DescribeEntityInput`](crate::input::DescribeEntityInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeEntityInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeEntityInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeEntityInput {
                 catalog: self.catalog,
@@ -362,35 +420,63 @@ impl DescribeEntityInput {
             crate::operation::DescribeEntity,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeEntityInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/DescribeEntity").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::DescribeEntityInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_5) = &_input.catalog {
-                    query.push_kv("catalog", &aws_smithy_http::query::fmt_string(&inner_5));
+                let inner_5 = &_input.catalog;
+                let inner_5 = inner_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "catalog",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_5.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "catalog",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_6) = &_input.entity_id {
-                    query.push_kv("entityId", &aws_smithy_http::query::fmt_string(&inner_6));
+                query.push_kv("catalog", &aws_smithy_http::query::fmt_string(&inner_5));
+                let inner_6 = &_input.entity_id;
+                let inner_6 = inner_6.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "entity_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_6.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "entity_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("entityId", &aws_smithy_http::query::fmt_string(&inner_6));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::DescribeEntityInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -461,7 +547,7 @@ impl DescribeEntityInput {
 pub mod list_change_sets_input {
 
     /// A builder for [`ListChangeSetsInput`](crate::input::ListChangeSetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog: std::option::Option<std::string::String>,
         pub(crate) filter_list: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -532,7 +618,7 @@ pub mod list_change_sets_input {
         /// Consumes the builder and constructs a [`ListChangeSetsInput`](crate::input::ListChangeSetsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListChangeSetsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListChangeSetsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListChangeSetsInput {
                 catalog: self.catalog,
@@ -557,13 +643,13 @@ impl ListChangeSetsInput {
             crate::operation::ListChangeSets,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListChangeSetsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/ListChangeSets").expect("formatting should succeed");
                 Ok(())
             }
@@ -571,8 +657,10 @@ impl ListChangeSetsInput {
             fn update_http_builder(
                 input: &crate::input::ListChangeSetsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -656,7 +744,7 @@ impl ListChangeSetsInput {
 pub mod list_entities_input {
 
     /// A builder for [`ListEntitiesInput`](crate::input::ListEntitiesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog: std::option::Option<std::string::String>,
         pub(crate) entity_type: std::option::Option<std::string::String>,
@@ -738,7 +826,7 @@ pub mod list_entities_input {
         /// Consumes the builder and constructs a [`ListEntitiesInput`](crate::input::ListEntitiesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListEntitiesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListEntitiesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListEntitiesInput {
                 catalog: self.catalog,
@@ -764,13 +852,13 @@ impl ListEntitiesInput {
             crate::operation::ListEntities,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListEntitiesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/ListEntities").expect("formatting should succeed");
                 Ok(())
             }
@@ -778,8 +866,10 @@ impl ListEntitiesInput {
             fn update_http_builder(
                 input: &crate::input::ListEntitiesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -863,7 +953,7 @@ impl ListEntitiesInput {
 pub mod start_change_set_input {
 
     /// A builder for [`StartChangeSetInput`](crate::input::StartChangeSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog: std::option::Option<std::string::String>,
         pub(crate) change_set: std::option::Option<std::vec::Vec<crate::model::Change>>,
@@ -929,7 +1019,7 @@ pub mod start_change_set_input {
         /// Consumes the builder and constructs a [`StartChangeSetInput`](crate::input::StartChangeSetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StartChangeSetInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::StartChangeSetInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::StartChangeSetInput {
                 catalog: self.catalog,
@@ -953,7 +1043,7 @@ impl StartChangeSetInput {
             crate::operation::StartChangeSet,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
@@ -962,7 +1052,7 @@ impl StartChangeSetInput {
             fn uri_base(
                 _input: &crate::input::StartChangeSetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/StartChangeSet").expect("formatting should succeed");
                 Ok(())
             }
@@ -970,8 +1060,10 @@ impl StartChangeSetInput {
             fn update_http_builder(
                 input: &crate::input::StartChangeSetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1053,7 +1145,7 @@ impl StartChangeSetInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartChangeSetInput {
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
     #[doc(hidden)]
@@ -1086,20 +1178,10 @@ impl StartChangeSetInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for StartChangeSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartChangeSetInput");
-        formatter.field("catalog", &self.catalog);
-        formatter.field("change_set", &self.change_set);
-        formatter.field("change_set_name", &self.change_set_name);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEntitiesInput {
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
     #[doc(hidden)]
@@ -1146,22 +1228,10 @@ impl ListEntitiesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListEntitiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEntitiesInput");
-        formatter.field("catalog", &self.catalog);
-        formatter.field("entity_type", &self.entity_type);
-        formatter.field("filter_list", &self.filter_list);
-        formatter.field("sort", &self.sort);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListChangeSetsInput {
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
     #[doc(hidden)]
@@ -1201,21 +1271,10 @@ impl ListChangeSetsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListChangeSetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListChangeSetsInput");
-        formatter.field("catalog", &self.catalog);
-        formatter.field("filter_list", &self.filter_list);
-        formatter.field("sort", &self.sort);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEntityInput {
     /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
     #[doc(hidden)]
@@ -1234,18 +1293,10 @@ impl DescribeEntityInput {
         self.entity_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEntityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEntityInput");
-        formatter.field("catalog", &self.catalog);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeChangeSetInput {
     /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
     #[doc(hidden)]
@@ -1264,18 +1315,10 @@ impl DescribeChangeSetInput {
         self.change_set_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeChangeSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeChangeSetInput");
-        formatter.field("catalog", &self.catalog);
-        formatter.field("change_set_id", &self.change_set_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelChangeSetInput {
     /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>.</p>
     #[doc(hidden)]
@@ -1292,13 +1335,5 @@ impl CancelChangeSetInput {
     /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you want to cancel.</p>
     pub fn change_set_id(&self) -> std::option::Option<&str> {
         self.change_set_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CancelChangeSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelChangeSetInput");
-        formatter.field("catalog", &self.catalog);
-        formatter.field("change_set_id", &self.change_set_id);
-        formatter.finish()
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p>Provides information about your AWS account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountInfo {
     /// <p>The identifier of the AWS account that is assigned to the user.</p>
     #[doc(hidden)]
@@ -28,20 +28,11 @@ impl AccountInfo {
         self.email_address.as_deref()
     }
 }
-impl std::fmt::Debug for AccountInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountInfo");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("account_name", &self.account_name);
-        formatter.field("email_address", &self.email_address);
-        formatter.finish()
-    }
-}
 /// See [`AccountInfo`](crate::model::AccountInfo).
 pub mod account_info {
 
     /// A builder for [`AccountInfo`](crate::model::AccountInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) account_name: std::option::Option<std::string::String>,
@@ -100,7 +91,7 @@ impl AccountInfo {
 
 /// <p>Provides information about the role that is assigned to the user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RoleInfo {
     /// <p>The friendly name of the role that is assigned to the user.</p>
     #[doc(hidden)]
@@ -119,19 +110,11 @@ impl RoleInfo {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for RoleInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RoleInfo");
-        formatter.field("role_name", &self.role_name);
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 /// See [`RoleInfo`](crate::model::RoleInfo).
 pub mod role_info {
 
     /// A builder for [`RoleInfo`](crate::model::RoleInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_name: std::option::Option<std::string::String>,
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -222,7 +205,7 @@ impl std::fmt::Debug for RoleCredentials {
 pub mod role_credentials {
 
     /// A builder for [`RoleCredentials`](crate::model::RoleCredentials).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) access_key_id: std::option::Option<std::string::String>,
         pub(crate) secret_access_key: std::option::Option<std::string::String>,
@@ -287,6 +270,16 @@ pub mod role_credentials {
                 session_token: self.session_token,
                 expiration: self.expiration.unwrap_or_default(),
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("access_key_id", &self.access_key_id);
+            formatter.field("secret_access_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("session_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("expiration", &self.expiration);
+            formatter.finish()
         }
     }
 }

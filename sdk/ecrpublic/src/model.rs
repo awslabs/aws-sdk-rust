@@ -2,7 +2,7 @@
 
 /// <p>The metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>One part of a key-value pair that make up a tag. A <code>key</code> is a general label that acts like a category for more specific tag values.</p>
     #[doc(hidden)]
@@ -21,19 +21,11 @@ impl Tag {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -77,7 +69,7 @@ impl Tag {
 
 /// <p>The catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryCatalogData {
     /// <p>The short description of the repository.</p>
     #[doc(hidden)]
@@ -139,24 +131,11 @@ impl RepositoryCatalogData {
         self.marketplace_certified
     }
 }
-impl std::fmt::Debug for RepositoryCatalogData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryCatalogData");
-        formatter.field("description", &self.description);
-        formatter.field("architectures", &self.architectures);
-        formatter.field("operating_systems", &self.operating_systems);
-        formatter.field("logo_url", &self.logo_url);
-        formatter.field("about_text", &self.about_text);
-        formatter.field("usage_text", &self.usage_text);
-        formatter.field("marketplace_certified", &self.marketplace_certified);
-        formatter.finish()
-    }
-}
 /// See [`RepositoryCatalogData`](crate::model::RepositoryCatalogData).
 pub mod repository_catalog_data {
 
     /// A builder for [`RepositoryCatalogData`](crate::model::RepositoryCatalogData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) architectures: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -286,7 +265,7 @@ impl RepositoryCatalogData {
 
 /// <p>An object containing the catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryCatalogDataInput {
     /// <p>A short description of the contents of the repository. This text appears in both the image details and also when searching for repositories on the Amazon ECR Public Gallery.</p>
     #[doc(hidden)]
@@ -365,23 +344,11 @@ impl RepositoryCatalogDataInput {
         self.usage_text.as_deref()
     }
 }
-impl std::fmt::Debug for RepositoryCatalogDataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryCatalogDataInput");
-        formatter.field("description", &self.description);
-        formatter.field("architectures", &self.architectures);
-        formatter.field("operating_systems", &self.operating_systems);
-        formatter.field("logo_image_blob", &self.logo_image_blob);
-        formatter.field("about_text", &self.about_text);
-        formatter.field("usage_text", &self.usage_text);
-        formatter.finish()
-    }
-}
 /// See [`RepositoryCatalogDataInput`](crate::model::RepositoryCatalogDataInput).
 pub mod repository_catalog_data_input {
 
     /// A builder for [`RepositoryCatalogDataInput`](crate::model::RepositoryCatalogDataInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) architectures: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -526,7 +493,7 @@ impl RepositoryCatalogDataInput {
 
 /// <p>The metadata for a public registry.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegistryCatalogData {
     /// <p>The display name for a public registry. This appears on the Amazon ECR Public Gallery.</p> <important>
     /// <p>Only accounts that have the verified account badge can have a registry display name.</p>
@@ -542,18 +509,11 @@ impl RegistryCatalogData {
         self.display_name.as_deref()
     }
 }
-impl std::fmt::Debug for RegistryCatalogData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegistryCatalogData");
-        formatter.field("display_name", &self.display_name);
-        formatter.finish()
-    }
-}
 /// See [`RegistryCatalogData`](crate::model::RegistryCatalogData).
 pub mod registry_catalog_data {
 
     /// A builder for [`RegistryCatalogData`](crate::model::RegistryCatalogData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) display_name: std::option::Option<std::string::String>,
     }
@@ -589,7 +549,7 @@ impl RegistryCatalogData {
 
 /// <p>An object representing an Amazon ECR image.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Image {
     /// <p>The AWS account ID associated with the registry containing the image.</p>
     #[doc(hidden)]
@@ -629,22 +589,11 @@ impl Image {
         self.image_manifest_media_type.as_deref()
     }
 }
-impl std::fmt::Debug for Image {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Image");
-        formatter.field("registry_id", &self.registry_id);
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("image_id", &self.image_id);
-        formatter.field("image_manifest", &self.image_manifest);
-        formatter.field("image_manifest_media_type", &self.image_manifest_media_type);
-        formatter.finish()
-    }
-}
 /// See [`Image`](crate::model::Image).
 pub mod image {
 
     /// A builder for [`Image`](crate::model::Image).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -736,7 +685,7 @@ impl Image {
 
 /// <p>An object with identifying information for an Amazon ECR image.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageIdentifier {
     /// <p>The <code>sha256</code> digest of the image manifest.</p>
     #[doc(hidden)]
@@ -755,19 +704,11 @@ impl ImageIdentifier {
         self.image_tag.as_deref()
     }
 }
-impl std::fmt::Debug for ImageIdentifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImageIdentifier");
-        formatter.field("image_digest", &self.image_digest);
-        formatter.field("image_tag", &self.image_tag);
-        formatter.finish()
-    }
-}
 /// See [`ImageIdentifier`](crate::model::ImageIdentifier).
 pub mod image_identifier {
 
     /// A builder for [`ImageIdentifier`](crate::model::ImageIdentifier).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_digest: std::option::Option<std::string::String>,
         pub(crate) image_tag: std::option::Option<std::string::String>,
@@ -811,7 +752,7 @@ impl ImageIdentifier {
 
 /// <p>An authorization token data object that corresponds to a public registry.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuthorizationData {
     /// <p>A base64-encoded string that contains authorization data for a public Amazon ECR registry. When the string is decoded, it is presented in the format <code>user:password</code> for public registry authentication using <code>docker login</code>.</p>
     #[doc(hidden)]
@@ -830,19 +771,11 @@ impl AuthorizationData {
         self.expires_at.as_ref()
     }
 }
-impl std::fmt::Debug for AuthorizationData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuthorizationData");
-        formatter.field("authorization_token", &self.authorization_token);
-        formatter.field("expires_at", &self.expires_at);
-        formatter.finish()
-    }
-}
 /// See [`AuthorizationData`](crate::model::AuthorizationData).
 pub mod authorization_data {
 
     /// A builder for [`AuthorizationData`](crate::model::AuthorizationData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authorization_token: std::option::Option<std::string::String>,
         pub(crate) expires_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -892,7 +825,7 @@ impl AuthorizationData {
 
 /// <p>An object representing a repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Repository {
     /// <p>The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the <code>arn:aws:ecr</code> namespace, followed by the region of the repository, AWS account ID of the repository owner, repository namespace, and repository name. For example, <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
     #[doc(hidden)]
@@ -932,22 +865,11 @@ impl Repository {
         self.created_at.as_ref()
     }
 }
-impl std::fmt::Debug for Repository {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Repository");
-        formatter.field("repository_arn", &self.repository_arn);
-        formatter.field("registry_id", &self.registry_id);
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("repository_uri", &self.repository_uri);
-        formatter.field("created_at", &self.created_at);
-        formatter.finish()
-    }
-}
 /// See [`Repository`](crate::model::Repository).
 pub mod repository {
 
     /// A builder for [`Repository`](crate::model::Repository).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_arn: std::option::Option<std::string::String>,
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -1039,7 +961,7 @@ impl Repository {
 
 /// <p>The details of a public registry.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Registry {
     /// <p>The AWS account ID associated with the registry. If you do not specify a registry, the default public registry is assumed.</p>
     #[doc(hidden)]
@@ -1079,22 +1001,11 @@ impl Registry {
         self.aliases.as_deref()
     }
 }
-impl std::fmt::Debug for Registry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Registry");
-        formatter.field("registry_id", &self.registry_id);
-        formatter.field("registry_arn", &self.registry_arn);
-        formatter.field("registry_uri", &self.registry_uri);
-        formatter.field("verified", &self.verified);
-        formatter.field("aliases", &self.aliases);
-        formatter.finish()
-    }
-}
 /// See [`Registry`](crate::model::Registry).
 pub mod registry {
 
     /// A builder for [`Registry`](crate::model::Registry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
         pub(crate) registry_arn: std::option::Option<std::string::String>,
@@ -1183,7 +1094,7 @@ impl Registry {
 
 /// <p>An object representing the aliases for a public registry. A public registry is given an alias upon creation but a custom alias can be set using the Amazon ECR console. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Registries.html">Registries</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegistryAlias {
     /// <p>The name of the registry alias.</p>
     #[doc(hidden)]
@@ -1220,21 +1131,11 @@ impl RegistryAlias {
         self.default_registry_alias
     }
 }
-impl std::fmt::Debug for RegistryAlias {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegistryAlias");
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("primary_registry_alias", &self.primary_registry_alias);
-        formatter.field("default_registry_alias", &self.default_registry_alias);
-        formatter.finish()
-    }
-}
 /// See [`RegistryAlias`](crate::model::RegistryAlias).
 pub mod registry_alias {
 
     /// A builder for [`RegistryAlias`](crate::model::RegistryAlias).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::RegistryAliasStatus>,
@@ -1307,6 +1208,42 @@ impl RegistryAlias {
     }
 }
 
+/// When writing a match expression against `RegistryAliasStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let registryaliasstatus = unimplemented!();
+/// match registryaliasstatus {
+///     RegistryAliasStatus::Active => { /* ... */ },
+///     RegistryAliasStatus::Pending => { /* ... */ },
+///     RegistryAliasStatus::Rejected => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `registryaliasstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RegistryAliasStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RegistryAliasStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RegistryAliasStatus::NewFeature` is defined.
+/// Specifically, when `registryaliasstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RegistryAliasStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1325,8 +1262,8 @@ pub enum RegistryAliasStatus {
     Pending,
     #[allow(missing_docs)] // documentation missing in model
     Rejected,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for RegistryAliasStatus {
     fn from(s: &str) -> Self {
@@ -1334,7 +1271,9 @@ impl std::convert::From<&str> for RegistryAliasStatus {
             "ACTIVE" => RegistryAliasStatus::Active,
             "PENDING" => RegistryAliasStatus::Pending,
             "REJECTED" => RegistryAliasStatus::Rejected,
-            other => RegistryAliasStatus::Unknown(other.to_owned()),
+            other => {
+                RegistryAliasStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -1352,11 +1291,11 @@ impl RegistryAliasStatus {
             RegistryAliasStatus::Active => "ACTIVE",
             RegistryAliasStatus::Pending => "PENDING",
             RegistryAliasStatus::Rejected => "REJECTED",
-            RegistryAliasStatus::Unknown(s) => s.as_ref(),
+            RegistryAliasStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "PENDING", "REJECTED"]
     }
 }
@@ -1368,7 +1307,7 @@ impl AsRef<str> for RegistryAliasStatus {
 
 /// <p>An object representing the image tag details for an image.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageTagDetail {
     /// <p>The tag associated with the image.</p>
     #[doc(hidden)]
@@ -1394,20 +1333,11 @@ impl ImageTagDetail {
         self.image_detail.as_ref()
     }
 }
-impl std::fmt::Debug for ImageTagDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImageTagDetail");
-        formatter.field("image_tag", &self.image_tag);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("image_detail", &self.image_detail);
-        formatter.finish()
-    }
-}
 /// See [`ImageTagDetail`](crate::model::ImageTagDetail).
 pub mod image_tag_detail {
 
     /// A builder for [`ImageTagDetail`](crate::model::ImageTagDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_tag: std::option::Option<std::string::String>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -1469,7 +1399,7 @@ impl ImageTagDetail {
 
 /// <p>An object that describes the image tag details returned by a <code>DescribeImageTags</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReferencedImageDetail {
     /// <p>The <code>sha256</code> digest of the image manifest.</p>
     #[doc(hidden)]
@@ -1515,22 +1445,11 @@ impl ReferencedImageDetail {
         self.artifact_media_type.as_deref()
     }
 }
-impl std::fmt::Debug for ReferencedImageDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReferencedImageDetail");
-        formatter.field("image_digest", &self.image_digest);
-        formatter.field("image_size_in_bytes", &self.image_size_in_bytes);
-        formatter.field("image_pushed_at", &self.image_pushed_at);
-        formatter.field("image_manifest_media_type", &self.image_manifest_media_type);
-        formatter.field("artifact_media_type", &self.artifact_media_type);
-        formatter.finish()
-    }
-}
 /// See [`ReferencedImageDetail`](crate::model::ReferencedImageDetail).
 pub mod referenced_image_detail {
 
     /// A builder for [`ReferencedImageDetail`](crate::model::ReferencedImageDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_digest: std::option::Option<std::string::String>,
         pub(crate) image_size_in_bytes: std::option::Option<i64>,
@@ -1625,7 +1544,7 @@ impl ReferencedImageDetail {
 
 /// <p>An object that describes an image returned by a <code>DescribeImages</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageDetail {
     /// <p>The AWS account ID associated with the public registry to which this image belongs.</p>
     #[doc(hidden)]
@@ -1692,25 +1611,11 @@ impl ImageDetail {
         self.artifact_media_type.as_deref()
     }
 }
-impl std::fmt::Debug for ImageDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImageDetail");
-        formatter.field("registry_id", &self.registry_id);
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("image_digest", &self.image_digest);
-        formatter.field("image_tags", &self.image_tags);
-        formatter.field("image_size_in_bytes", &self.image_size_in_bytes);
-        formatter.field("image_pushed_at", &self.image_pushed_at);
-        formatter.field("image_manifest_media_type", &self.image_manifest_media_type);
-        formatter.field("artifact_media_type", &self.artifact_media_type);
-        formatter.finish()
-    }
-}
 /// See [`ImageDetail`](crate::model::ImageDetail).
 pub mod image_detail {
 
     /// A builder for [`ImageDetail`](crate::model::ImageDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -1853,7 +1758,7 @@ impl ImageDetail {
 
 /// <p>An object representing an Amazon ECR image failure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageFailure {
     /// <p>The image ID associated with the failure.</p>
     #[doc(hidden)]
@@ -1879,20 +1784,11 @@ impl ImageFailure {
         self.failure_reason.as_deref()
     }
 }
-impl std::fmt::Debug for ImageFailure {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImageFailure");
-        formatter.field("image_id", &self.image_id);
-        formatter.field("failure_code", &self.failure_code);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.finish()
-    }
-}
 /// See [`ImageFailure`](crate::model::ImageFailure).
 pub mod image_failure {
 
     /// A builder for [`ImageFailure`](crate::model::ImageFailure).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_id: std::option::Option<crate::model::ImageIdentifier>,
         pub(crate) failure_code: std::option::Option<crate::model::ImageFailureCode>,
@@ -1955,6 +1851,46 @@ impl ImageFailure {
     }
 }
 
+/// When writing a match expression against `ImageFailureCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let imagefailurecode = unimplemented!();
+/// match imagefailurecode {
+///     ImageFailureCode::ImageNotFound => { /* ... */ },
+///     ImageFailureCode::ImageReferencedByManifestList => { /* ... */ },
+///     ImageFailureCode::ImageTagDoesNotMatchDigest => { /* ... */ },
+///     ImageFailureCode::InvalidImageDigest => { /* ... */ },
+///     ImageFailureCode::InvalidImageTag => { /* ... */ },
+///     ImageFailureCode::KmsError => { /* ... */ },
+///     ImageFailureCode::MissingDigestAndTag => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `imagefailurecode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ImageFailureCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ImageFailureCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ImageFailureCode::NewFeature` is defined.
+/// Specifically, when `imagefailurecode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ImageFailureCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1981,8 +1917,8 @@ pub enum ImageFailureCode {
     KmsError,
     #[allow(missing_docs)] // documentation missing in model
     MissingDigestAndTag,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ImageFailureCode {
     fn from(s: &str) -> Self {
@@ -1994,7 +1930,7 @@ impl std::convert::From<&str> for ImageFailureCode {
             "InvalidImageTag" => ImageFailureCode::InvalidImageTag,
             "KmsError" => ImageFailureCode::KmsError,
             "MissingDigestAndTag" => ImageFailureCode::MissingDigestAndTag,
-            other => ImageFailureCode::Unknown(other.to_owned()),
+            other => ImageFailureCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2016,11 +1952,11 @@ impl ImageFailureCode {
             ImageFailureCode::InvalidImageTag => "InvalidImageTag",
             ImageFailureCode::KmsError => "KmsError",
             ImageFailureCode::MissingDigestAndTag => "MissingDigestAndTag",
-            ImageFailureCode::Unknown(s) => s.as_ref(),
+            ImageFailureCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ImageNotFound",
             "ImageReferencedByManifestList",
@@ -2040,7 +1976,7 @@ impl AsRef<str> for ImageFailureCode {
 
 /// <p>An object representing an Amazon ECR image layer failure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LayerFailure {
     /// <p>The layer digest associated with the failure.</p>
     #[doc(hidden)]
@@ -2066,20 +2002,11 @@ impl LayerFailure {
         self.failure_reason.as_deref()
     }
 }
-impl std::fmt::Debug for LayerFailure {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LayerFailure");
-        formatter.field("layer_digest", &self.layer_digest);
-        formatter.field("failure_code", &self.failure_code);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.finish()
-    }
-}
 /// See [`LayerFailure`](crate::model::LayerFailure).
 pub mod layer_failure {
 
     /// A builder for [`LayerFailure`](crate::model::LayerFailure).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) layer_digest: std::option::Option<std::string::String>,
         pub(crate) failure_code: std::option::Option<crate::model::LayerFailureCode>,
@@ -2139,6 +2066,41 @@ impl LayerFailure {
     }
 }
 
+/// When writing a match expression against `LayerFailureCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let layerfailurecode = unimplemented!();
+/// match layerfailurecode {
+///     LayerFailureCode::InvalidLayerDigest => { /* ... */ },
+///     LayerFailureCode::MissingLayerDigest => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `layerfailurecode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `LayerFailureCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `LayerFailureCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `LayerFailureCode::NewFeature` is defined.
+/// Specifically, when `layerfailurecode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `LayerFailureCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2155,15 +2117,15 @@ pub enum LayerFailureCode {
     InvalidLayerDigest,
     #[allow(missing_docs)] // documentation missing in model
     MissingLayerDigest,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for LayerFailureCode {
     fn from(s: &str) -> Self {
         match s {
             "InvalidLayerDigest" => LayerFailureCode::InvalidLayerDigest,
             "MissingLayerDigest" => LayerFailureCode::MissingLayerDigest,
-            other => LayerFailureCode::Unknown(other.to_owned()),
+            other => LayerFailureCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2180,11 +2142,11 @@ impl LayerFailureCode {
         match self {
             LayerFailureCode::InvalidLayerDigest => "InvalidLayerDigest",
             LayerFailureCode::MissingLayerDigest => "MissingLayerDigest",
-            LayerFailureCode::Unknown(s) => s.as_ref(),
+            LayerFailureCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["InvalidLayerDigest", "MissingLayerDigest"]
     }
 }
@@ -2196,7 +2158,7 @@ impl AsRef<str> for LayerFailureCode {
 
 /// <p>An object representing an Amazon ECR image layer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Layer {
     /// <p>The <code>sha256</code> digest of the image layer.</p>
     #[doc(hidden)]
@@ -2229,21 +2191,11 @@ impl Layer {
         self.media_type.as_deref()
     }
 }
-impl std::fmt::Debug for Layer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Layer");
-        formatter.field("layer_digest", &self.layer_digest);
-        formatter.field("layer_availability", &self.layer_availability);
-        formatter.field("layer_size", &self.layer_size);
-        formatter.field("media_type", &self.media_type);
-        formatter.finish()
-    }
-}
 /// See [`Layer`](crate::model::Layer).
 pub mod layer {
 
     /// A builder for [`Layer`](crate::model::Layer).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) layer_digest: std::option::Option<std::string::String>,
         pub(crate) layer_availability: std::option::Option<crate::model::LayerAvailability>,
@@ -2312,6 +2264,41 @@ impl Layer {
     }
 }
 
+/// When writing a match expression against `LayerAvailability`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let layeravailability = unimplemented!();
+/// match layeravailability {
+///     LayerAvailability::Available => { /* ... */ },
+///     LayerAvailability::Unavailable => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `layeravailability` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `LayerAvailability::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `LayerAvailability::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `LayerAvailability::NewFeature` is defined.
+/// Specifically, when `layeravailability` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `LayerAvailability::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2328,15 +2315,17 @@ pub enum LayerAvailability {
     Available,
     #[allow(missing_docs)] // documentation missing in model
     Unavailable,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for LayerAvailability {
     fn from(s: &str) -> Self {
         match s {
             "AVAILABLE" => LayerAvailability::Available,
             "UNAVAILABLE" => LayerAvailability::Unavailable,
-            other => LayerAvailability::Unknown(other.to_owned()),
+            other => {
+                LayerAvailability::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -2353,11 +2342,11 @@ impl LayerAvailability {
         match self {
             LayerAvailability::Available => "AVAILABLE",
             LayerAvailability::Unavailable => "UNAVAILABLE",
-            LayerAvailability::Unknown(s) => s.as_ref(),
+            LayerAvailability::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "UNAVAILABLE"]
     }
 }

@@ -5,7 +5,7 @@
 /// [`create_app_instance`](crate::client::Client::create_app_instance).
 ///
 /// See [`crate::client::fluent_builders::CreateAppInstance`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateAppInstance {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAppInstance {
 /// [`create_app_instance_admin`](crate::client::Client::create_app_instance_admin).
 ///
 /// See [`crate::client::fluent_builders::CreateAppInstanceAdmin`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateAppInstanceAdmin {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAppInstanceAdmin {
 /// [`create_app_instance_user`](crate::client::Client::create_app_instance_user).
 ///
 /// See [`crate::client::fluent_builders::CreateAppInstanceUser`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateAppInstanceUser {
     _private: (),
 }
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAppInstanceUser {
 /// [`delete_app_instance`](crate::client::Client::delete_app_instance).
 ///
 /// See [`crate::client::fluent_builders::DeleteAppInstance`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteAppInstance {
     _private: (),
 }
@@ -141,7 +141,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAppInstance {
 /// [`delete_app_instance_admin`](crate::client::Client::delete_app_instance_admin).
 ///
 /// See [`crate::client::fluent_builders::DeleteAppInstanceAdmin`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteAppInstanceAdmin {
     _private: (),
 }
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAppInstanceAdmin {
 /// [`delete_app_instance_user`](crate::client::Client::delete_app_instance_user).
 ///
 /// See [`crate::client::fluent_builders::DeleteAppInstanceUser`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteAppInstanceUser {
     _private: (),
 }
@@ -209,7 +209,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAppInstanceUser {
 /// [`deregister_app_instance_user_endpoint`](crate::client::Client::deregister_app_instance_user_endpoint).
 ///
 /// See [`crate::client::fluent_builders::DeregisterAppInstanceUserEndpoint`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeregisterAppInstanceUserEndpoint {
     _private: (),
 }
@@ -243,7 +243,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterAppInstanceUse
 /// [`describe_app_instance`](crate::client::Client::describe_app_instance).
 ///
 /// See [`crate::client::fluent_builders::DescribeAppInstance`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAppInstance {
     _private: (),
 }
@@ -277,7 +277,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAppInstance {
 /// [`describe_app_instance_admin`](crate::client::Client::describe_app_instance_admin).
 ///
 /// See [`crate::client::fluent_builders::DescribeAppInstanceAdmin`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAppInstanceAdmin {
     _private: (),
 }
@@ -311,7 +311,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAppInstanceAdmin
 /// [`describe_app_instance_user`](crate::client::Client::describe_app_instance_user).
 ///
 /// See [`crate::client::fluent_builders::DescribeAppInstanceUser`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAppInstanceUser {
     _private: (),
 }
@@ -345,7 +345,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAppInstanceUser 
 /// [`describe_app_instance_user_endpoint`](crate::client::Client::describe_app_instance_user_endpoint).
 ///
 /// See [`crate::client::fluent_builders::DescribeAppInstanceUserEndpoint`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAppInstanceUserEndpoint {
     _private: (),
 }
@@ -379,7 +379,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAppInstanceUserE
 /// [`get_app_instance_retention_settings`](crate::client::Client::get_app_instance_retention_settings).
 ///
 /// See [`crate::client::fluent_builders::GetAppInstanceRetentionSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAppInstanceRetentionSettings {
     _private: (),
 }
@@ -413,7 +413,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAppInstanceRetentionS
 /// [`list_app_instance_admins`](crate::client::Client::list_app_instance_admins).
 ///
 /// See [`crate::client::fluent_builders::ListAppInstanceAdmins`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAppInstanceAdmins {
     _private: (),
 }
@@ -447,7 +447,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAppInstanceAdmins {
 /// [`list_app_instances`](crate::client::Client::list_app_instances).
 ///
 /// See [`crate::client::fluent_builders::ListAppInstances`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAppInstances {
     _private: (),
 }
@@ -481,7 +481,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAppInstances {
 /// [`list_app_instance_user_endpoints`](crate::client::Client::list_app_instance_user_endpoints).
 ///
 /// See [`crate::client::fluent_builders::ListAppInstanceUserEndpoints`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAppInstanceUserEndpoints {
     _private: (),
 }
@@ -515,7 +515,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAppInstanceUserEndpo
 /// [`list_app_instance_users`](crate::client::Client::list_app_instance_users).
 ///
 /// See [`crate::client::fluent_builders::ListAppInstanceUsers`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAppInstanceUsers {
     _private: (),
 }
@@ -549,7 +549,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAppInstanceUsers {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -583,7 +583,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`put_app_instance_retention_settings`](crate::client::Client::put_app_instance_retention_settings).
 ///
 /// See [`crate::client::fluent_builders::PutAppInstanceRetentionSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutAppInstanceRetentionSettings {
     _private: (),
 }
@@ -617,7 +617,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAppInstanceRetentionS
 /// [`register_app_instance_user_endpoint`](crate::client::Client::register_app_instance_user_endpoint).
 ///
 /// See [`crate::client::fluent_builders::RegisterAppInstanceUserEndpoint`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RegisterAppInstanceUserEndpoint {
     _private: (),
 }
@@ -651,7 +651,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterAppInstanceUserE
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -683,7 +683,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -715,7 +715,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_app_instance`](crate::client::Client::update_app_instance).
 ///
 /// See [`crate::client::fluent_builders::UpdateAppInstance`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateAppInstance {
     _private: (),
 }
@@ -749,7 +749,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAppInstance {
 /// [`update_app_instance_user`](crate::client::Client::update_app_instance_user).
 ///
 /// See [`crate::client::fluent_builders::UpdateAppInstanceUser`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateAppInstanceUser {
     _private: (),
 }
@@ -783,7 +783,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAppInstanceUser {
 /// [`update_app_instance_user_endpoint`](crate::client::Client::update_app_instance_user_endpoint).
 ///
 /// See [`crate::client::fluent_builders::UpdateAppInstanceUserEndpoint`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateAppInstanceUserEndpoint {
     _private: (),
 }

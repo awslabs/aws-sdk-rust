@@ -2,7 +2,7 @@
 
 /// <p>A key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with the key-value pair ‘Department’:’Sales’ might be added to a resource to indicate its use by a particular department. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The initial part of a key-value pair that forms a tag associated with a given resource. For instance, if you want to show which resources are used by which departments, you might use “Department” as the key portion of the pair, with multiple possible values such as “sales,” “legal,” and “administration.” </p>
     #[doc(hidden)]
@@ -21,19 +21,11 @@ impl Tag {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -75,6 +67,45 @@ impl Tag {
     }
 }
 
+/// When writing a match expression against `JobStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let jobstatus = unimplemented!();
+/// match jobstatus {
+///     JobStatus::Completed => { /* ... */ },
+///     JobStatus::Failed => { /* ... */ },
+///     JobStatus::InProgress => { /* ... */ },
+///     JobStatus::Stopped => { /* ... */ },
+///     JobStatus::StopRequested => { /* ... */ },
+///     JobStatus::Submitted => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `jobstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `JobStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `JobStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `JobStatus::NewFeature` is defined.
+/// Specifically, when `jobstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `JobStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -99,8 +130,8 @@ pub enum JobStatus {
     StopRequested,
     #[allow(missing_docs)] // documentation missing in model
     Submitted,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for JobStatus {
     fn from(s: &str) -> Self {
@@ -111,7 +142,7 @@ impl std::convert::From<&str> for JobStatus {
             "STOPPED" => JobStatus::Stopped,
             "STOP_REQUESTED" => JobStatus::StopRequested,
             "SUBMITTED" => JobStatus::Submitted,
-            other => JobStatus::Unknown(other.to_owned()),
+            other => JobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -132,11 +163,11 @@ impl JobStatus {
             JobStatus::Stopped => "STOPPED",
             JobStatus::StopRequested => "STOP_REQUESTED",
             JobStatus::Submitted => "SUBMITTED",
-            JobStatus::Unknown(s) => s.as_ref(),
+            JobStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
             "FAILED",
@@ -155,7 +186,7 @@ impl AsRef<str> for JobStatus {
 
 /// <p> Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcConfig {
     /// <p>The ID number for a security group on an instance of your private VPC. Security groups on your VPC function serve as a virtual firewall to control inbound and outbound traffic and provides security for the resources that you’ll be accessing on the VPC. This ID number is preceded by "sg-", for instance: "sg-03b388029b0a285ea". For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups for your VPC</a>. </p>
     #[doc(hidden)]
@@ -174,19 +205,11 @@ impl VpcConfig {
         self.subnets.as_deref()
     }
 }
-impl std::fmt::Debug for VpcConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcConfig");
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("subnets", &self.subnets);
-        formatter.finish()
-    }
-}
 /// See [`VpcConfig`](crate::model::VpcConfig).
 pub mod vpc_config {
 
     /// A builder for [`VpcConfig`](crate::model::VpcConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) subnets: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -249,7 +272,7 @@ impl VpcConfig {
 /// <p>Provides configuration parameters for the output of inference jobs.</p>
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutputDataConfig {
     /// <p>When you use the <code>OutputDataConfig</code> object with asynchronous operations, you specify the Amazon S3 location where you want to write the output data. The URI must be in the same region as the API endpoint that you are calling. The location is used as the prefix for the actual location of the output file.</p>
     /// <p>When the topic detection job is finished, the service creates an output file in a directory specific to the job. The <code>S3Uri</code> field contains the location of the output file, called <code>output.tar.gz</code>. It is a compressed archive that contains the ouput of the operation.</p>
@@ -284,19 +307,11 @@ impl OutputDataConfig {
         self.kms_key_id.as_deref()
     }
 }
-impl std::fmt::Debug for OutputDataConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutputDataConfig");
-        formatter.field("s3_uri", &self.s3_uri);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.finish()
-    }
-}
 /// See [`OutputDataConfig`](crate::model::OutputDataConfig).
 pub mod output_data_config {
 
     /// A builder for [`OutputDataConfig`](crate::model::OutputDataConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_uri: std::option::Option<std::string::String>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
@@ -356,7 +371,7 @@ impl OutputDataConfig {
 
 /// <p>The input properties for an inference job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputDataConfig {
     /// <p>The Amazon S3 URI for the input data. The URI must be in same region as the API endpoint that you are calling. The URI can point to a single input file or it can provide the prefix for a collection of data files. </p>
     /// <p>For example, if you use the URI <code>S3://bucketName/prefix</code>, if the prefix is a single file, Amazon Comprehend uses that file as input. If more than one file begins with the prefix, Amazon Comprehend uses all of them as input.</p>
@@ -396,20 +411,11 @@ impl InputDataConfig {
         self.document_reader_config.as_ref()
     }
 }
-impl std::fmt::Debug for InputDataConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputDataConfig");
-        formatter.field("s3_uri", &self.s3_uri);
-        formatter.field("input_format", &self.input_format);
-        formatter.field("document_reader_config", &self.document_reader_config);
-        formatter.finish()
-    }
-}
 /// See [`InputDataConfig`](crate::model::InputDataConfig).
 pub mod input_data_config {
 
     /// A builder for [`InputDataConfig`](crate::model::InputDataConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_uri: std::option::Option<std::string::String>,
         pub(crate) input_format: std::option::Option<crate::model::InputFormat>,
@@ -483,7 +489,7 @@ impl InputDataConfig {
 
 /// <p>The input properties for a topic detection job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentReaderConfig {
     /// <p>This enum field will start with two values which will apply to PDFs:</p>
     /// <ul>
@@ -525,20 +531,11 @@ impl DocumentReaderConfig {
         self.feature_types.as_deref()
     }
 }
-impl std::fmt::Debug for DocumentReaderConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentReaderConfig");
-        formatter.field("document_read_action", &self.document_read_action);
-        formatter.field("document_read_mode", &self.document_read_mode);
-        formatter.field("feature_types", &self.feature_types);
-        formatter.finish()
-    }
-}
 /// See [`DocumentReaderConfig`](crate::model::DocumentReaderConfig).
 pub mod document_reader_config {
 
     /// A builder for [`DocumentReaderConfig`](crate::model::DocumentReaderConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_read_action: std::option::Option<crate::model::DocumentReadAction>,
         pub(crate) document_read_mode: std::option::Option<crate::model::DocumentReadMode>,
@@ -624,6 +621,41 @@ impl DocumentReaderConfig {
     }
 }
 
+/// When writing a match expression against `DocumentReadFeatureTypes`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let documentreadfeaturetypes = unimplemented!();
+/// match documentreadfeaturetypes {
+///     DocumentReadFeatureTypes::Forms => { /* ... */ },
+///     DocumentReadFeatureTypes::Tables => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `documentreadfeaturetypes` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DocumentReadFeatureTypes::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DocumentReadFeatureTypes::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DocumentReadFeatureTypes::NewFeature` is defined.
+/// Specifically, when `documentreadfeaturetypes` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DocumentReadFeatureTypes::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 /// <p>A list of the types of analyses to perform. This field specifies what feature types
 /// need to be extracted from the document where entity recognition is expected.</p>
 ///
@@ -653,15 +685,17 @@ pub enum DocumentReadFeatureTypes {
     Forms,
     #[allow(missing_docs)] // documentation missing in model
     Tables,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DocumentReadFeatureTypes {
     fn from(s: &str) -> Self {
         match s {
             "FORMS" => DocumentReadFeatureTypes::Forms,
             "TABLES" => DocumentReadFeatureTypes::Tables,
-            other => DocumentReadFeatureTypes::Unknown(other.to_owned()),
+            other => DocumentReadFeatureTypes::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -678,11 +712,11 @@ impl DocumentReadFeatureTypes {
         match self {
             DocumentReadFeatureTypes::Forms => "FORMS",
             DocumentReadFeatureTypes::Tables => "TABLES",
-            DocumentReadFeatureTypes::Unknown(s) => s.as_ref(),
+            DocumentReadFeatureTypes::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FORMS", "TABLES"]
     }
 }
@@ -692,6 +726,41 @@ impl AsRef<str> for DocumentReadFeatureTypes {
     }
 }
 
+/// When writing a match expression against `DocumentReadMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let documentreadmode = unimplemented!();
+/// match documentreadmode {
+///     DocumentReadMode::ForceDocumentReadAction => { /* ... */ },
+///     DocumentReadMode::ServiceDefault => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `documentreadmode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DocumentReadMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DocumentReadMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DocumentReadMode::NewFeature` is defined.
+/// Specifically, when `documentreadmode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DocumentReadMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -708,15 +777,15 @@ pub enum DocumentReadMode {
     ForceDocumentReadAction,
     #[allow(missing_docs)] // documentation missing in model
     ServiceDefault,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DocumentReadMode {
     fn from(s: &str) -> Self {
         match s {
             "FORCE_DOCUMENT_READ_ACTION" => DocumentReadMode::ForceDocumentReadAction,
             "SERVICE_DEFAULT" => DocumentReadMode::ServiceDefault,
-            other => DocumentReadMode::Unknown(other.to_owned()),
+            other => DocumentReadMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -733,11 +802,11 @@ impl DocumentReadMode {
         match self {
             DocumentReadMode::ForceDocumentReadAction => "FORCE_DOCUMENT_READ_ACTION",
             DocumentReadMode::ServiceDefault => "SERVICE_DEFAULT",
-            DocumentReadMode::Unknown(s) => s.as_ref(),
+            DocumentReadMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FORCE_DOCUMENT_READ_ACTION", "SERVICE_DEFAULT"]
     }
 }
@@ -747,6 +816,41 @@ impl AsRef<str> for DocumentReadMode {
     }
 }
 
+/// When writing a match expression against `DocumentReadAction`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let documentreadaction = unimplemented!();
+/// match documentreadaction {
+///     DocumentReadAction::TextractAnalyzeDocument => { /* ... */ },
+///     DocumentReadAction::TextractDetectDocumentText => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `documentreadaction` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DocumentReadAction::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DocumentReadAction::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DocumentReadAction::NewFeature` is defined.
+/// Specifically, when `documentreadaction` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DocumentReadAction::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -763,15 +867,17 @@ pub enum DocumentReadAction {
     TextractAnalyzeDocument,
     #[allow(missing_docs)] // documentation missing in model
     TextractDetectDocumentText,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DocumentReadAction {
     fn from(s: &str) -> Self {
         match s {
             "TEXTRACT_ANALYZE_DOCUMENT" => DocumentReadAction::TextractAnalyzeDocument,
             "TEXTRACT_DETECT_DOCUMENT_TEXT" => DocumentReadAction::TextractDetectDocumentText,
-            other => DocumentReadAction::Unknown(other.to_owned()),
+            other => {
+                DocumentReadAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -788,11 +894,11 @@ impl DocumentReadAction {
         match self {
             DocumentReadAction::TextractAnalyzeDocument => "TEXTRACT_ANALYZE_DOCUMENT",
             DocumentReadAction::TextractDetectDocumentText => "TEXTRACT_DETECT_DOCUMENT_TEXT",
-            DocumentReadAction::Unknown(s) => s.as_ref(),
+            DocumentReadAction::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["TEXTRACT_ANALYZE_DOCUMENT", "TEXTRACT_DETECT_DOCUMENT_TEXT"]
     }
 }
@@ -802,6 +908,41 @@ impl AsRef<str> for DocumentReadAction {
     }
 }
 
+/// When writing a match expression against `InputFormat`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let inputformat = unimplemented!();
+/// match inputformat {
+///     InputFormat::OneDocPerFile => { /* ... */ },
+///     InputFormat::OneDocPerLine => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `inputformat` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `InputFormat::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `InputFormat::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `InputFormat::NewFeature` is defined.
+/// Specifically, when `inputformat` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `InputFormat::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -818,15 +959,15 @@ pub enum InputFormat {
     OneDocPerFile,
     #[allow(missing_docs)] // documentation missing in model
     OneDocPerLine,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for InputFormat {
     fn from(s: &str) -> Self {
         match s {
             "ONE_DOC_PER_FILE" => InputFormat::OneDocPerFile,
             "ONE_DOC_PER_LINE" => InputFormat::OneDocPerLine,
-            other => InputFormat::Unknown(other.to_owned()),
+            other => InputFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -843,11 +984,11 @@ impl InputFormat {
         match self {
             InputFormat::OneDocPerFile => "ONE_DOC_PER_FILE",
             InputFormat::OneDocPerLine => "ONE_DOC_PER_LINE",
-            InputFormat::Unknown(s) => s.as_ref(),
+            InputFormat::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ONE_DOC_PER_FILE", "ONE_DOC_PER_LINE"]
     }
 }
@@ -857,6 +998,51 @@ impl AsRef<str> for InputFormat {
     }
 }
 
+/// When writing a match expression against `LanguageCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let languagecode = unimplemented!();
+/// match languagecode {
+///     LanguageCode::Ar => { /* ... */ },
+///     LanguageCode::De => { /* ... */ },
+///     LanguageCode::En => { /* ... */ },
+///     LanguageCode::Es => { /* ... */ },
+///     LanguageCode::Fr => { /* ... */ },
+///     LanguageCode::Hi => { /* ... */ },
+///     LanguageCode::It => { /* ... */ },
+///     LanguageCode::Ja => { /* ... */ },
+///     LanguageCode::Ko => { /* ... */ },
+///     LanguageCode::Pt => { /* ... */ },
+///     LanguageCode::Zh => { /* ... */ },
+///     LanguageCode::ZhTw => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `languagecode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `LanguageCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `LanguageCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `LanguageCode::NewFeature` is defined.
+/// Specifically, when `languagecode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `LanguageCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -893,8 +1079,8 @@ pub enum LanguageCode {
     Zh,
     #[allow(missing_docs)] // documentation missing in model
     ZhTw,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for LanguageCode {
     fn from(s: &str) -> Self {
@@ -911,7 +1097,7 @@ impl std::convert::From<&str> for LanguageCode {
             "pt" => LanguageCode::Pt,
             "zh" => LanguageCode::Zh,
             "zh-TW" => LanguageCode::ZhTw,
-            other => LanguageCode::Unknown(other.to_owned()),
+            other => LanguageCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -938,11 +1124,11 @@ impl LanguageCode {
             LanguageCode::Pt => "pt",
             LanguageCode::Zh => "zh",
             LanguageCode::ZhTw => "zh-TW",
-            LanguageCode::Unknown(s) => s.as_ref(),
+            LanguageCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ar", "de", "en", "es", "fr", "hi", "it", "ja", "ko", "pt", "zh", "zh-TW",
         ]
@@ -956,7 +1142,7 @@ impl AsRef<str> for LanguageCode {
 
 /// <p>Provides configuration parameters for PII entity redaction.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RedactionConfig {
     /// <p>An array of the types of PII entities that Amazon Comprehend detects in the input text for your request.</p>
     #[doc(hidden)]
@@ -982,20 +1168,11 @@ impl RedactionConfig {
         self.mask_character.as_deref()
     }
 }
-impl std::fmt::Debug for RedactionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RedactionConfig");
-        formatter.field("pii_entity_types", &self.pii_entity_types);
-        formatter.field("mask_mode", &self.mask_mode);
-        formatter.field("mask_character", &self.mask_character);
-        formatter.finish()
-    }
-}
 /// See [`RedactionConfig`](crate::model::RedactionConfig).
 pub mod redaction_config {
 
     /// A builder for [`RedactionConfig`](crate::model::RedactionConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pii_entity_types:
             std::option::Option<std::vec::Vec<crate::model::PiiEntityType>>,
@@ -1065,6 +1242,41 @@ impl RedactionConfig {
     }
 }
 
+/// When writing a match expression against `PiiEntitiesDetectionMaskMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let piientitiesdetectionmaskmode = unimplemented!();
+/// match piientitiesdetectionmaskmode {
+///     PiiEntitiesDetectionMaskMode::Mask => { /* ... */ },
+///     PiiEntitiesDetectionMaskMode::ReplaceWithPiiEntityType => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `piientitiesdetectionmaskmode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PiiEntitiesDetectionMaskMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PiiEntitiesDetectionMaskMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PiiEntitiesDetectionMaskMode::NewFeature` is defined.
+/// Specifically, when `piientitiesdetectionmaskmode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PiiEntitiesDetectionMaskMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1081,8 +1293,8 @@ pub enum PiiEntitiesDetectionMaskMode {
     Mask,
     #[allow(missing_docs)] // documentation missing in model
     ReplaceWithPiiEntityType,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PiiEntitiesDetectionMaskMode {
     fn from(s: &str) -> Self {
@@ -1091,7 +1303,9 @@ impl std::convert::From<&str> for PiiEntitiesDetectionMaskMode {
             "REPLACE_WITH_PII_ENTITY_TYPE" => {
                 PiiEntitiesDetectionMaskMode::ReplaceWithPiiEntityType
             }
-            other => PiiEntitiesDetectionMaskMode::Unknown(other.to_owned()),
+            other => PiiEntitiesDetectionMaskMode::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -1110,11 +1324,11 @@ impl PiiEntitiesDetectionMaskMode {
             PiiEntitiesDetectionMaskMode::ReplaceWithPiiEntityType => {
                 "REPLACE_WITH_PII_ENTITY_TYPE"
             }
-            PiiEntitiesDetectionMaskMode::Unknown(s) => s.as_ref(),
+            PiiEntitiesDetectionMaskMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MASK", "REPLACE_WITH_PII_ENTITY_TYPE"]
     }
 }
@@ -1124,6 +1338,76 @@ impl AsRef<str> for PiiEntitiesDetectionMaskMode {
     }
 }
 
+/// When writing a match expression against `PiiEntityType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let piientitytype = unimplemented!();
+/// match piientitytype {
+///     PiiEntityType::Address => { /* ... */ },
+///     PiiEntityType::Age => { /* ... */ },
+///     PiiEntityType::All => { /* ... */ },
+///     PiiEntityType::AwsAccessKey => { /* ... */ },
+///     PiiEntityType::AwsSecretKey => { /* ... */ },
+///     PiiEntityType::BankAccountNumber => { /* ... */ },
+///     PiiEntityType::BankRouting => { /* ... */ },
+///     PiiEntityType::CaHealthNumber => { /* ... */ },
+///     PiiEntityType::CaSocialInsuranceNumber => { /* ... */ },
+///     PiiEntityType::CreditDebitCvv => { /* ... */ },
+///     PiiEntityType::CreditDebitExpiry => { /* ... */ },
+///     PiiEntityType::CreditDebitNumber => { /* ... */ },
+///     PiiEntityType::DateTime => { /* ... */ },
+///     PiiEntityType::DriverId => { /* ... */ },
+///     PiiEntityType::Email => { /* ... */ },
+///     PiiEntityType::InternationalBankAccountNumber => { /* ... */ },
+///     PiiEntityType::InAadhaar => { /* ... */ },
+///     PiiEntityType::InNrega => { /* ... */ },
+///     PiiEntityType::InPermanentAccountNumber => { /* ... */ },
+///     PiiEntityType::InVoterNumber => { /* ... */ },
+///     PiiEntityType::IpAddress => { /* ... */ },
+///     PiiEntityType::LicensePlate => { /* ... */ },
+///     PiiEntityType::MacAddress => { /* ... */ },
+///     PiiEntityType::Name => { /* ... */ },
+///     PiiEntityType::PassportNumber => { /* ... */ },
+///     PiiEntityType::Password => { /* ... */ },
+///     PiiEntityType::Phone => { /* ... */ },
+///     PiiEntityType::Pin => { /* ... */ },
+///     PiiEntityType::Ssn => { /* ... */ },
+///     PiiEntityType::SwiftCode => { /* ... */ },
+///     PiiEntityType::UkNationalHealthServiceNumber => { /* ... */ },
+///     PiiEntityType::UkNationalInsuranceNumber => { /* ... */ },
+///     PiiEntityType::UkUniqueTaxpayerReferenceNumber => { /* ... */ },
+///     PiiEntityType::Url => { /* ... */ },
+///     PiiEntityType::Username => { /* ... */ },
+///     PiiEntityType::UsIndividualTaxIdentificationNumber => { /* ... */ },
+///     PiiEntityType::VehicleIdentificationNumber => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `piientitytype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PiiEntityType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PiiEntityType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PiiEntityType::NewFeature` is defined.
+/// Specifically, when `piientitytype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PiiEntityType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1210,8 +1494,8 @@ pub enum PiiEntityType {
     UsIndividualTaxIdentificationNumber,
     #[allow(missing_docs)] // documentation missing in model
     VehicleIdentificationNumber,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PiiEntityType {
     fn from(s: &str) -> Self {
@@ -1255,7 +1539,7 @@ impl std::convert::From<&str> for PiiEntityType {
                 PiiEntityType::UsIndividualTaxIdentificationNumber
             }
             "VEHICLE_IDENTIFICATION_NUMBER" => PiiEntityType::VehicleIdentificationNumber,
-            other => PiiEntityType::Unknown(other.to_owned()),
+            other => PiiEntityType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1309,11 +1593,11 @@ impl PiiEntityType {
                 "US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER"
             }
             PiiEntityType::VehicleIdentificationNumber => "VEHICLE_IDENTIFICATION_NUMBER",
-            PiiEntityType::Unknown(s) => s.as_ref(),
+            PiiEntityType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ADDRESS",
             "AGE",
@@ -1361,6 +1645,41 @@ impl AsRef<str> for PiiEntityType {
     }
 }
 
+/// When writing a match expression against `PiiEntitiesDetectionMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let piientitiesdetectionmode = unimplemented!();
+/// match piientitiesdetectionmode {
+///     PiiEntitiesDetectionMode::OnlyOffsets => { /* ... */ },
+///     PiiEntitiesDetectionMode::OnlyRedaction => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `piientitiesdetectionmode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PiiEntitiesDetectionMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PiiEntitiesDetectionMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PiiEntitiesDetectionMode::NewFeature` is defined.
+/// Specifically, when `piientitiesdetectionmode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PiiEntitiesDetectionMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1377,15 +1696,17 @@ pub enum PiiEntitiesDetectionMode {
     OnlyOffsets,
     #[allow(missing_docs)] // documentation missing in model
     OnlyRedaction,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PiiEntitiesDetectionMode {
     fn from(s: &str) -> Self {
         match s {
             "ONLY_OFFSETS" => PiiEntitiesDetectionMode::OnlyOffsets,
             "ONLY_REDACTION" => PiiEntitiesDetectionMode::OnlyRedaction,
-            other => PiiEntitiesDetectionMode::Unknown(other.to_owned()),
+            other => PiiEntitiesDetectionMode::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -1402,11 +1723,11 @@ impl PiiEntitiesDetectionMode {
         match self {
             PiiEntitiesDetectionMode::OnlyOffsets => "ONLY_OFFSETS",
             PiiEntitiesDetectionMode::OnlyRedaction => "ONLY_REDACTION",
-            PiiEntitiesDetectionMode::Unknown(s) => s.as_ref(),
+            PiiEntitiesDetectionMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ONLY_OFFSETS", "ONLY_REDACTION"]
     }
 }
@@ -1418,7 +1739,7 @@ impl AsRef<str> for PiiEntitiesDetectionMode {
 
 /// <p>Provides information about a topic detection job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TopicsDetectionJobProperties {
     /// <p>The identifier assigned to the topic detection job.</p>
     #[doc(hidden)]
@@ -1548,30 +1869,11 @@ impl TopicsDetectionJobProperties {
         self.vpc_config.as_ref()
     }
 }
-impl std::fmt::Debug for TopicsDetectionJobProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TopicsDetectionJobProperties");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("job_arn", &self.job_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("message", &self.message);
-        formatter.field("submit_time", &self.submit_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("number_of_topics", &self.number_of_topics);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.finish()
-    }
-}
 /// See [`TopicsDetectionJobProperties`](crate::model::TopicsDetectionJobProperties).
 pub mod topics_detection_job_properties {
 
     /// A builder for [`TopicsDetectionJobProperties`](crate::model::TopicsDetectionJobProperties).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_arn: std::option::Option<std::string::String>,
@@ -1805,7 +2107,7 @@ impl TopicsDetectionJobProperties {
 
 /// <p>Provides information for filtering topic detection jobs. For more information, see .</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TopicsDetectionJobFilter {
     /// <p></p>
     #[doc(hidden)]
@@ -1838,21 +2140,11 @@ impl TopicsDetectionJobFilter {
         self.submit_time_after.as_ref()
     }
 }
-impl std::fmt::Debug for TopicsDetectionJobFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TopicsDetectionJobFilter");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("submit_time_before", &self.submit_time_before);
-        formatter.field("submit_time_after", &self.submit_time_after);
-        formatter.finish()
-    }
-}
 /// See [`TopicsDetectionJobFilter`](crate::model::TopicsDetectionJobFilter).
 pub mod topics_detection_job_filter {
 
     /// A builder for [`TopicsDetectionJobFilter`](crate::model::TopicsDetectionJobFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
@@ -1929,7 +2221,7 @@ impl TopicsDetectionJobFilter {
 
 /// <p>Provides information about a targeted sentiment detection job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetedSentimentDetectionJobProperties {
     /// <p>The identifier assigned to the targeted sentiment detection job.</p>
     #[doc(hidden)]
@@ -2061,30 +2353,11 @@ impl TargetedSentimentDetectionJobProperties {
         self.vpc_config.as_ref()
     }
 }
-impl std::fmt::Debug for TargetedSentimentDetectionJobProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetedSentimentDetectionJobProperties");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("job_arn", &self.job_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("message", &self.message);
-        formatter.field("submit_time", &self.submit_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.finish()
-    }
-}
 /// See [`TargetedSentimentDetectionJobProperties`](crate::model::TargetedSentimentDetectionJobProperties).
 pub mod targeted_sentiment_detection_job_properties {
 
     /// A builder for [`TargetedSentimentDetectionJobProperties`](crate::model::TargetedSentimentDetectionJobProperties).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_arn: std::option::Option<std::string::String>,
@@ -2323,7 +2596,7 @@ impl TargetedSentimentDetectionJobProperties {
 
 /// <p>Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetedSentimentDetectionJobFilter {
     /// <p>Filters on the name of the job.</p>
     #[doc(hidden)]
@@ -2356,21 +2629,11 @@ impl TargetedSentimentDetectionJobFilter {
         self.submit_time_after.as_ref()
     }
 }
-impl std::fmt::Debug for TargetedSentimentDetectionJobFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetedSentimentDetectionJobFilter");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("submit_time_before", &self.submit_time_before);
-        formatter.field("submit_time_after", &self.submit_time_after);
-        formatter.finish()
-    }
-}
 /// See [`TargetedSentimentDetectionJobFilter`](crate::model::TargetedSentimentDetectionJobFilter).
 pub mod targeted_sentiment_detection_job_filter {
 
     /// A builder for [`TargetedSentimentDetectionJobFilter`](crate::model::TargetedSentimentDetectionJobFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
@@ -2447,7 +2710,7 @@ impl TargetedSentimentDetectionJobFilter {
 
 /// <p>Provides information about a sentiment detection job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SentimentDetectionJobProperties {
     /// <p>The identifier assigned to the sentiment detection job.</p>
     #[doc(hidden)]
@@ -2577,30 +2840,11 @@ impl SentimentDetectionJobProperties {
         self.vpc_config.as_ref()
     }
 }
-impl std::fmt::Debug for SentimentDetectionJobProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SentimentDetectionJobProperties");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("job_arn", &self.job_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("message", &self.message);
-        formatter.field("submit_time", &self.submit_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.finish()
-    }
-}
 /// See [`SentimentDetectionJobProperties`](crate::model::SentimentDetectionJobProperties).
 pub mod sentiment_detection_job_properties {
 
     /// A builder for [`SentimentDetectionJobProperties`](crate::model::SentimentDetectionJobProperties).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_arn: std::option::Option<std::string::String>,
@@ -2837,7 +3081,7 @@ impl SentimentDetectionJobProperties {
 
 /// <p>Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SentimentDetectionJobFilter {
     /// <p>Filters on the name of the job.</p>
     #[doc(hidden)]
@@ -2870,21 +3114,11 @@ impl SentimentDetectionJobFilter {
         self.submit_time_after.as_ref()
     }
 }
-impl std::fmt::Debug for SentimentDetectionJobFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SentimentDetectionJobFilter");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("submit_time_before", &self.submit_time_before);
-        formatter.field("submit_time_after", &self.submit_time_after);
-        formatter.finish()
-    }
-}
 /// See [`SentimentDetectionJobFilter`](crate::model::SentimentDetectionJobFilter).
 pub mod sentiment_detection_job_filter {
 
     /// A builder for [`SentimentDetectionJobFilter`](crate::model::SentimentDetectionJobFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
@@ -2961,7 +3195,7 @@ impl SentimentDetectionJobFilter {
 
 /// <p>Provides information about a PII entities detection job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PiiEntitiesDetectionJobProperties {
     /// <p>The identifier assigned to the PII entities detection job.</p>
     #[doc(hidden)]
@@ -3085,30 +3319,11 @@ impl PiiEntitiesDetectionJobProperties {
         self.mode.as_ref()
     }
 }
-impl std::fmt::Debug for PiiEntitiesDetectionJobProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PiiEntitiesDetectionJobProperties");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("job_arn", &self.job_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("message", &self.message);
-        formatter.field("submit_time", &self.submit_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("redaction_config", &self.redaction_config);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("mode", &self.mode);
-        formatter.finish()
-    }
-}
 /// See [`PiiEntitiesDetectionJobProperties`](crate::model::PiiEntitiesDetectionJobProperties).
 pub mod pii_entities_detection_job_properties {
 
     /// A builder for [`PiiEntitiesDetectionJobProperties`](crate::model::PiiEntitiesDetectionJobProperties).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_arn: std::option::Option<std::string::String>,
@@ -3339,7 +3554,7 @@ impl PiiEntitiesDetectionJobProperties {
 
 /// <p>Provides configuration parameters for the output of PII entity detection jobs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PiiOutputDataConfig {
     /// <p>When you use the <code>PiiOutputDataConfig</code> object with asynchronous operations, you specify the Amazon S3 location where you want to write the output data. </p>
     /// <p> For a PII entity detection job, the output file is plain text, not a compressed archive. The output file name is the same as the input file, with <code>.out</code> appended at the end. </p>
@@ -3360,19 +3575,11 @@ impl PiiOutputDataConfig {
         self.kms_key_id.as_deref()
     }
 }
-impl std::fmt::Debug for PiiOutputDataConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PiiOutputDataConfig");
-        formatter.field("s3_uri", &self.s3_uri);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.finish()
-    }
-}
 /// See [`PiiOutputDataConfig`](crate::model::PiiOutputDataConfig).
 pub mod pii_output_data_config {
 
     /// A builder for [`PiiOutputDataConfig`](crate::model::PiiOutputDataConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_uri: std::option::Option<std::string::String>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
@@ -3418,7 +3625,7 @@ impl PiiOutputDataConfig {
 
 /// <p>Provides information for filtering a list of PII entity detection jobs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PiiEntitiesDetectionJobFilter {
     /// <p>Filters on the name of the job.</p>
     #[doc(hidden)]
@@ -3451,21 +3658,11 @@ impl PiiEntitiesDetectionJobFilter {
         self.submit_time_after.as_ref()
     }
 }
-impl std::fmt::Debug for PiiEntitiesDetectionJobFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PiiEntitiesDetectionJobFilter");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("submit_time_before", &self.submit_time_before);
-        formatter.field("submit_time_after", &self.submit_time_after);
-        formatter.finish()
-    }
-}
 /// See [`PiiEntitiesDetectionJobFilter`](crate::model::PiiEntitiesDetectionJobFilter).
 pub mod pii_entities_detection_job_filter {
 
     /// A builder for [`PiiEntitiesDetectionJobFilter`](crate::model::PiiEntitiesDetectionJobFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
@@ -3542,7 +3739,7 @@ impl PiiEntitiesDetectionJobFilter {
 
 /// <p>Provides information about a key phrases detection job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeyPhrasesDetectionJobProperties {
     /// <p>The identifier assigned to the key phrases detection job.</p>
     #[doc(hidden)]
@@ -3672,30 +3869,11 @@ impl KeyPhrasesDetectionJobProperties {
         self.vpc_config.as_ref()
     }
 }
-impl std::fmt::Debug for KeyPhrasesDetectionJobProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeyPhrasesDetectionJobProperties");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("job_arn", &self.job_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("message", &self.message);
-        formatter.field("submit_time", &self.submit_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.finish()
-    }
-}
 /// See [`KeyPhrasesDetectionJobProperties`](crate::model::KeyPhrasesDetectionJobProperties).
 pub mod key_phrases_detection_job_properties {
 
     /// A builder for [`KeyPhrasesDetectionJobProperties`](crate::model::KeyPhrasesDetectionJobProperties).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_arn: std::option::Option<std::string::String>,
@@ -3932,7 +4110,7 @@ impl KeyPhrasesDetectionJobProperties {
 
 /// <p>Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeyPhrasesDetectionJobFilter {
     /// <p>Filters on the name of the job.</p>
     #[doc(hidden)]
@@ -3965,21 +4143,11 @@ impl KeyPhrasesDetectionJobFilter {
         self.submit_time_after.as_ref()
     }
 }
-impl std::fmt::Debug for KeyPhrasesDetectionJobFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeyPhrasesDetectionJobFilter");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("submit_time_before", &self.submit_time_before);
-        formatter.field("submit_time_after", &self.submit_time_after);
-        formatter.finish()
-    }
-}
 /// See [`KeyPhrasesDetectionJobFilter`](crate::model::KeyPhrasesDetectionJobFilter).
 pub mod key_phrases_detection_job_filter {
 
     /// A builder for [`KeyPhrasesDetectionJobFilter`](crate::model::KeyPhrasesDetectionJobFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
@@ -4056,7 +4224,7 @@ impl KeyPhrasesDetectionJobFilter {
 
 /// <p>Provides information about an events detection job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventsDetectionJobProperties {
     /// <p>The identifier assigned to the events detection job.</p>
     #[doc(hidden)]
@@ -4171,29 +4339,11 @@ impl EventsDetectionJobProperties {
         self.target_event_types.as_deref()
     }
 }
-impl std::fmt::Debug for EventsDetectionJobProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventsDetectionJobProperties");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("job_arn", &self.job_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("message", &self.message);
-        formatter.field("submit_time", &self.submit_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("target_event_types", &self.target_event_types);
-        formatter.finish()
-    }
-}
 /// See [`EventsDetectionJobProperties`](crate::model::EventsDetectionJobProperties).
 pub mod events_detection_job_properties {
 
     /// A builder for [`EventsDetectionJobProperties`](crate::model::EventsDetectionJobProperties).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_arn: std::option::Option<std::string::String>,
@@ -4413,7 +4563,7 @@ impl EventsDetectionJobProperties {
 
 /// <p>Provides information for filtering a list of event detection jobs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventsDetectionJobFilter {
     /// <p>Filters on the name of the events detection job.</p>
     #[doc(hidden)]
@@ -4446,21 +4596,11 @@ impl EventsDetectionJobFilter {
         self.submit_time_after.as_ref()
     }
 }
-impl std::fmt::Debug for EventsDetectionJobFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventsDetectionJobFilter");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("submit_time_before", &self.submit_time_before);
-        formatter.field("submit_time_after", &self.submit_time_after);
-        formatter.finish()
-    }
-}
 /// See [`EventsDetectionJobFilter`](crate::model::EventsDetectionJobFilter).
 pub mod events_detection_job_filter {
 
     /// A builder for [`EventsDetectionJobFilter`](crate::model::EventsDetectionJobFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
@@ -4537,7 +4677,7 @@ impl EventsDetectionJobFilter {
 
 /// <p> Describes the information about an entity recognizer and its versions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntityRecognizerSummary {
     /// <p> The name that you assigned the entity recognizer.</p>
     #[doc(hidden)]
@@ -4577,22 +4717,11 @@ impl EntityRecognizerSummary {
         self.latest_version_status.as_ref()
     }
 }
-impl std::fmt::Debug for EntityRecognizerSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntityRecognizerSummary");
-        formatter.field("recognizer_name", &self.recognizer_name);
-        formatter.field("number_of_versions", &self.number_of_versions);
-        formatter.field("latest_version_created_at", &self.latest_version_created_at);
-        formatter.field("latest_version_name", &self.latest_version_name);
-        formatter.field("latest_version_status", &self.latest_version_status);
-        formatter.finish()
-    }
-}
 /// See [`EntityRecognizerSummary`](crate::model::EntityRecognizerSummary).
 pub mod entity_recognizer_summary {
 
     /// A builder for [`EntityRecognizerSummary`](crate::model::EntityRecognizerSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recognizer_name: std::option::Option<std::string::String>,
         pub(crate) number_of_versions: std::option::Option<i32>,
@@ -4682,6 +4811,46 @@ impl EntityRecognizerSummary {
     }
 }
 
+/// When writing a match expression against `ModelStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let modelstatus = unimplemented!();
+/// match modelstatus {
+///     ModelStatus::Deleting => { /* ... */ },
+///     ModelStatus::InError => { /* ... */ },
+///     ModelStatus::Stopped => { /* ... */ },
+///     ModelStatus::StopRequested => { /* ... */ },
+///     ModelStatus::Submitted => { /* ... */ },
+///     ModelStatus::Trained => { /* ... */ },
+///     ModelStatus::Training => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `modelstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ModelStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ModelStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ModelStatus::NewFeature` is defined.
+/// Specifically, when `modelstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ModelStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -4708,8 +4877,8 @@ pub enum ModelStatus {
     Trained,
     #[allow(missing_docs)] // documentation missing in model
     Training,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ModelStatus {
     fn from(s: &str) -> Self {
@@ -4721,7 +4890,7 @@ impl std::convert::From<&str> for ModelStatus {
             "SUBMITTED" => ModelStatus::Submitted,
             "TRAINED" => ModelStatus::Trained,
             "TRAINING" => ModelStatus::Training,
-            other => ModelStatus::Unknown(other.to_owned()),
+            other => ModelStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -4743,11 +4912,11 @@ impl ModelStatus {
             ModelStatus::Submitted => "SUBMITTED",
             ModelStatus::Trained => "TRAINED",
             ModelStatus::Training => "TRAINING",
-            ModelStatus::Unknown(s) => s.as_ref(),
+            ModelStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DELETING",
             "IN_ERROR",
@@ -4930,7 +5099,7 @@ impl std::fmt::Debug for EntityRecognizerProperties {
 pub mod entity_recognizer_properties {
 
     /// A builder for [`EntityRecognizerProperties`](crate::model::EntityRecognizerProperties).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) entity_recognizer_arn: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
@@ -5194,6 +5363,28 @@ pub mod entity_recognizer_properties {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("entity_recognizer_arn", &self.entity_recognizer_arn);
+            formatter.field("language_code", &self.language_code);
+            formatter.field("status", &self.status);
+            formatter.field("message", &self.message);
+            formatter.field("submit_time", &self.submit_time);
+            formatter.field("end_time", &self.end_time);
+            formatter.field("training_start_time", &self.training_start_time);
+            formatter.field("training_end_time", &self.training_end_time);
+            formatter.field("input_data_config", &self.input_data_config);
+            formatter.field("recognizer_metadata", &"*** Sensitive Data Redacted ***");
+            formatter.field("data_access_role_arn", &self.data_access_role_arn);
+            formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
+            formatter.field("vpc_config", &self.vpc_config);
+            formatter.field("model_kms_key_id", &self.model_kms_key_id);
+            formatter.field("version_name", &self.version_name);
+            formatter.field("source_model_arn", &self.source_model_arn);
+            formatter.finish()
+        }
+    }
 }
 impl EntityRecognizerProperties {
     /// Creates a new builder-style object to manufacture [`EntityRecognizerProperties`](crate::model::EntityRecognizerProperties).
@@ -5260,7 +5451,7 @@ impl std::fmt::Debug for EntityRecognizerMetadata {
 pub mod entity_recognizer_metadata {
 
     /// A builder for [`EntityRecognizerMetadata`](crate::model::EntityRecognizerMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) number_of_trained_documents: std::option::Option<i32>,
         pub(crate) number_of_test_documents: std::option::Option<i32>,
@@ -5341,6 +5532,19 @@ pub mod entity_recognizer_metadata {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field(
+                "number_of_trained_documents",
+                &self.number_of_trained_documents,
+            );
+            formatter.field("number_of_test_documents", &self.number_of_test_documents);
+            formatter.field("evaluation_metrics", &self.evaluation_metrics);
+            formatter.field("entity_types", &self.entity_types);
+            formatter.finish()
+        }
+    }
 }
 impl EntityRecognizerMetadata {
     /// Creates a new builder-style object to manufacture [`EntityRecognizerMetadata`](crate::model::EntityRecognizerMetadata).
@@ -5351,7 +5555,7 @@ impl EntityRecognizerMetadata {
 
 /// <p>Individual item from the list of entity types in the metadata of an entity recognizer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntityRecognizerMetadataEntityTypesListItem {
     /// <p>Type of entity from the list of entity types in the metadata of an entity recognizer. </p>
     #[doc(hidden)]
@@ -5379,20 +5583,11 @@ impl EntityRecognizerMetadataEntityTypesListItem {
         self.number_of_train_mentions
     }
 }
-impl std::fmt::Debug for EntityRecognizerMetadataEntityTypesListItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntityRecognizerMetadataEntityTypesListItem");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("evaluation_metrics", &self.evaluation_metrics);
-        formatter.field("number_of_train_mentions", &self.number_of_train_mentions);
-        formatter.finish()
-    }
-}
 /// See [`EntityRecognizerMetadataEntityTypesListItem`](crate::model::EntityRecognizerMetadataEntityTypesListItem).
 pub mod entity_recognizer_metadata_entity_types_list_item {
 
     /// A builder for [`EntityRecognizerMetadataEntityTypesListItem`](crate::model::EntityRecognizerMetadataEntityTypesListItem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
         pub(crate) evaluation_metrics:
@@ -5455,7 +5650,7 @@ impl EntityRecognizerMetadataEntityTypesListItem {
 
 /// <p>Detailed information about the accuracy of an entity recognizer for a specific entity type. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntityTypesEvaluationMetrics {
     /// <p>A measure of the usefulness of the recognizer results for a specific entity type in the test data. High precision means that the recognizer returned substantially more relevant results than irrelevant ones. </p>
     #[doc(hidden)]
@@ -5481,20 +5676,11 @@ impl EntityTypesEvaluationMetrics {
         self.f1_score
     }
 }
-impl std::fmt::Debug for EntityTypesEvaluationMetrics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntityTypesEvaluationMetrics");
-        formatter.field("precision", &self.precision);
-        formatter.field("recall", &self.recall);
-        formatter.field("f1_score", &self.f1_score);
-        formatter.finish()
-    }
-}
 /// See [`EntityTypesEvaluationMetrics`](crate::model::EntityTypesEvaluationMetrics).
 pub mod entity_types_evaluation_metrics {
 
     /// A builder for [`EntityTypesEvaluationMetrics`](crate::model::EntityTypesEvaluationMetrics).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) precision: std::option::Option<f64>,
         pub(crate) recall: std::option::Option<f64>,
@@ -5550,7 +5736,7 @@ impl EntityTypesEvaluationMetrics {
 
 /// <p>Detailed information about the accuracy of an entity recognizer. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntityRecognizerEvaluationMetrics {
     /// <p>A measure of the usefulness of the recognizer results in the test data. High precision means that the recognizer returned substantially more relevant results than irrelevant ones. </p>
     #[doc(hidden)]
@@ -5576,20 +5762,11 @@ impl EntityRecognizerEvaluationMetrics {
         self.f1_score
     }
 }
-impl std::fmt::Debug for EntityRecognizerEvaluationMetrics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntityRecognizerEvaluationMetrics");
-        formatter.field("precision", &self.precision);
-        formatter.field("recall", &self.recall);
-        formatter.field("f1_score", &self.f1_score);
-        formatter.finish()
-    }
-}
 /// See [`EntityRecognizerEvaluationMetrics`](crate::model::EntityRecognizerEvaluationMetrics).
 pub mod entity_recognizer_evaluation_metrics {
 
     /// A builder for [`EntityRecognizerEvaluationMetrics`](crate::model::EntityRecognizerEvaluationMetrics).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) precision: std::option::Option<f64>,
         pub(crate) recall: std::option::Option<f64>,
@@ -5645,7 +5822,7 @@ impl EntityRecognizerEvaluationMetrics {
 
 /// <p>Specifies the format and location of the input data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntityRecognizerInputDataConfig {
     /// <p>The format of your training data:</p>
     /// <ul>
@@ -5711,23 +5888,11 @@ impl EntityRecognizerInputDataConfig {
         self.augmented_manifests.as_deref()
     }
 }
-impl std::fmt::Debug for EntityRecognizerInputDataConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntityRecognizerInputDataConfig");
-        formatter.field("data_format", &self.data_format);
-        formatter.field("entity_types", &self.entity_types);
-        formatter.field("documents", &self.documents);
-        formatter.field("annotations", &self.annotations);
-        formatter.field("entity_list", &self.entity_list);
-        formatter.field("augmented_manifests", &self.augmented_manifests);
-        formatter.finish()
-    }
-}
 /// See [`EntityRecognizerInputDataConfig`](crate::model::EntityRecognizerInputDataConfig).
 pub mod entity_recognizer_input_data_config {
 
     /// A builder for [`EntityRecognizerInputDataConfig`](crate::model::EntityRecognizerInputDataConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_format: std::option::Option<crate::model::EntityRecognizerDataFormat>,
         pub(crate) entity_types:
@@ -5870,7 +6035,7 @@ impl EntityRecognizerInputDataConfig {
 
 /// <p>An augmented manifest file that provides training data for your custom model. An augmented manifest file is a labeled dataset that is produced by Amazon SageMaker Ground Truth.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AugmentedManifestsListItem {
     /// <p>The Amazon S3 location of the augmented manifest file.</p>
     #[doc(hidden)]
@@ -5935,23 +6100,11 @@ impl AugmentedManifestsListItem {
         self.document_type.as_ref()
     }
 }
-impl std::fmt::Debug for AugmentedManifestsListItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AugmentedManifestsListItem");
-        formatter.field("s3_uri", &self.s3_uri);
-        formatter.field("split", &self.split);
-        formatter.field("attribute_names", &self.attribute_names);
-        formatter.field("annotation_data_s3_uri", &self.annotation_data_s3_uri);
-        formatter.field("source_documents_s3_uri", &self.source_documents_s3_uri);
-        formatter.field("document_type", &self.document_type);
-        formatter.finish()
-    }
-}
 /// See [`AugmentedManifestsListItem`](crate::model::AugmentedManifestsListItem).
 pub mod augmented_manifests_list_item {
 
     /// A builder for [`AugmentedManifestsListItem`](crate::model::AugmentedManifestsListItem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_uri: std::option::Option<std::string::String>,
         pub(crate) split: std::option::Option<crate::model::Split>,
@@ -6079,6 +6232,41 @@ impl AugmentedManifestsListItem {
     }
 }
 
+/// When writing a match expression against `AugmentedManifestsDocumentTypeFormat`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let augmentedmanifestsdocumenttypeformat = unimplemented!();
+/// match augmentedmanifestsdocumenttypeformat {
+///     AugmentedManifestsDocumentTypeFormat::PlainTextDocument => { /* ... */ },
+///     AugmentedManifestsDocumentTypeFormat::SemiStructuredDocument => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `augmentedmanifestsdocumenttypeformat` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `AugmentedManifestsDocumentTypeFormat::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `AugmentedManifestsDocumentTypeFormat::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `AugmentedManifestsDocumentTypeFormat::NewFeature` is defined.
+/// Specifically, when `augmentedmanifestsdocumenttypeformat` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `AugmentedManifestsDocumentTypeFormat::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -6095,8 +6283,8 @@ pub enum AugmentedManifestsDocumentTypeFormat {
     PlainTextDocument,
     #[allow(missing_docs)] // documentation missing in model
     SemiStructuredDocument,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AugmentedManifestsDocumentTypeFormat {
     fn from(s: &str) -> Self {
@@ -6105,7 +6293,9 @@ impl std::convert::From<&str> for AugmentedManifestsDocumentTypeFormat {
             "SEMI_STRUCTURED_DOCUMENT" => {
                 AugmentedManifestsDocumentTypeFormat::SemiStructuredDocument
             }
-            other => AugmentedManifestsDocumentTypeFormat::Unknown(other.to_owned()),
+            other => AugmentedManifestsDocumentTypeFormat::Unknown(
+                crate::types::UnknownVariantValue(other.to_owned()),
+            ),
         }
     }
 }
@@ -6124,11 +6314,11 @@ impl AugmentedManifestsDocumentTypeFormat {
             AugmentedManifestsDocumentTypeFormat::SemiStructuredDocument => {
                 "SEMI_STRUCTURED_DOCUMENT"
             }
-            AugmentedManifestsDocumentTypeFormat::Unknown(s) => s.as_ref(),
+            AugmentedManifestsDocumentTypeFormat::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PLAIN_TEXT_DOCUMENT", "SEMI_STRUCTURED_DOCUMENT"]
     }
 }
@@ -6138,6 +6328,41 @@ impl AsRef<str> for AugmentedManifestsDocumentTypeFormat {
     }
 }
 
+/// When writing a match expression against `Split`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let split = unimplemented!();
+/// match split {
+///     Split::Test => { /* ... */ },
+///     Split::Train => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `split` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Split::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Split::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Split::NewFeature` is defined.
+/// Specifically, when `split` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Split::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -6154,15 +6379,15 @@ pub enum Split {
     Test,
     #[allow(missing_docs)] // documentation missing in model
     Train,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Split {
     fn from(s: &str) -> Self {
         match s {
             "TEST" => Split::Test,
             "TRAIN" => Split::Train,
-            other => Split::Unknown(other.to_owned()),
+            other => Split::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -6179,11 +6404,11 @@ impl Split {
         match self {
             Split::Test => "TEST",
             Split::Train => "TRAIN",
-            Split::Unknown(s) => s.as_ref(),
+            Split::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["TEST", "TRAIN"]
     }
 }
@@ -6195,7 +6420,7 @@ impl AsRef<str> for Split {
 
 /// <p>Describes the entity recognizer submitted with an entity recognizer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntityRecognizerEntityList {
     /// <p>Specifies the Amazon S3 location where the entity list is located. The URI must be in the same region as the API endpoint that you are calling.</p>
     #[doc(hidden)]
@@ -6207,18 +6432,11 @@ impl EntityRecognizerEntityList {
         self.s3_uri.as_deref()
     }
 }
-impl std::fmt::Debug for EntityRecognizerEntityList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntityRecognizerEntityList");
-        formatter.field("s3_uri", &self.s3_uri);
-        formatter.finish()
-    }
-}
 /// See [`EntityRecognizerEntityList`](crate::model::EntityRecognizerEntityList).
 pub mod entity_recognizer_entity_list {
 
     /// A builder for [`EntityRecognizerEntityList`](crate::model::EntityRecognizerEntityList).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_uri: std::option::Option<std::string::String>,
     }
@@ -6250,7 +6468,7 @@ impl EntityRecognizerEntityList {
 
 /// <p>Describes the annotations associated with a entity recognizer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntityRecognizerAnnotations {
     /// <p> Specifies the Amazon S3 location where the annotations for an entity recognizer are located. The URI must be in the same region as the API endpoint that you are calling.</p>
     #[doc(hidden)]
@@ -6269,19 +6487,11 @@ impl EntityRecognizerAnnotations {
         self.test_s3_uri.as_deref()
     }
 }
-impl std::fmt::Debug for EntityRecognizerAnnotations {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntityRecognizerAnnotations");
-        formatter.field("s3_uri", &self.s3_uri);
-        formatter.field("test_s3_uri", &self.test_s3_uri);
-        formatter.finish()
-    }
-}
 /// See [`EntityRecognizerAnnotations`](crate::model::EntityRecognizerAnnotations).
 pub mod entity_recognizer_annotations {
 
     /// A builder for [`EntityRecognizerAnnotations`](crate::model::EntityRecognizerAnnotations).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_uri: std::option::Option<std::string::String>,
         pub(crate) test_s3_uri: std::option::Option<std::string::String>,
@@ -6325,7 +6535,7 @@ impl EntityRecognizerAnnotations {
 
 /// <p>Describes the training documents submitted with an entity recognizer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntityRecognizerDocuments {
     /// <p> Specifies the Amazon S3 location where the training documents for an entity recognizer are located. The URI must be in the same region as the API endpoint that you are calling.</p>
     #[doc(hidden)]
@@ -6351,20 +6561,11 @@ impl EntityRecognizerDocuments {
         self.input_format.as_ref()
     }
 }
-impl std::fmt::Debug for EntityRecognizerDocuments {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntityRecognizerDocuments");
-        formatter.field("s3_uri", &self.s3_uri);
-        formatter.field("test_s3_uri", &self.test_s3_uri);
-        formatter.field("input_format", &self.input_format);
-        formatter.finish()
-    }
-}
 /// See [`EntityRecognizerDocuments`](crate::model::EntityRecognizerDocuments).
 pub mod entity_recognizer_documents {
 
     /// A builder for [`EntityRecognizerDocuments`](crate::model::EntityRecognizerDocuments).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_uri: std::option::Option<std::string::String>,
         pub(crate) test_s3_uri: std::option::Option<std::string::String>,
@@ -6423,7 +6624,7 @@ impl EntityRecognizerDocuments {
 
 /// <p>An entity type within a labeled training dataset that Amazon Comprehend uses to train a custom entity recognizer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntityTypesListItem {
     /// <p>An entity type within a labeled training dataset that Amazon Comprehend uses to train a custom entity recognizer.</p>
     /// <p>Entity types must not contain the following invalid characters: \n (line break), \\n (escaped line break, \r (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab), space, and , (comma).</p>
@@ -6437,18 +6638,11 @@ impl EntityTypesListItem {
         self.r#type.as_deref()
     }
 }
-impl std::fmt::Debug for EntityTypesListItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntityTypesListItem");
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 /// See [`EntityTypesListItem`](crate::model::EntityTypesListItem).
 pub mod entity_types_list_item {
 
     /// A builder for [`EntityTypesListItem`](crate::model::EntityTypesListItem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
     }
@@ -6480,6 +6674,41 @@ impl EntityTypesListItem {
     }
 }
 
+/// When writing a match expression against `EntityRecognizerDataFormat`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let entityrecognizerdataformat = unimplemented!();
+/// match entityrecognizerdataformat {
+///     EntityRecognizerDataFormat::AugmentedManifest => { /* ... */ },
+///     EntityRecognizerDataFormat::ComprehendCsv => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `entityrecognizerdataformat` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EntityRecognizerDataFormat::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EntityRecognizerDataFormat::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EntityRecognizerDataFormat::NewFeature` is defined.
+/// Specifically, when `entityrecognizerdataformat` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EntityRecognizerDataFormat::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -6496,15 +6725,17 @@ pub enum EntityRecognizerDataFormat {
     AugmentedManifest,
     #[allow(missing_docs)] // documentation missing in model
     ComprehendCsv,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EntityRecognizerDataFormat {
     fn from(s: &str) -> Self {
         match s {
             "AUGMENTED_MANIFEST" => EntityRecognizerDataFormat::AugmentedManifest,
             "COMPREHEND_CSV" => EntityRecognizerDataFormat::ComprehendCsv,
-            other => EntityRecognizerDataFormat::Unknown(other.to_owned()),
+            other => EntityRecognizerDataFormat::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -6521,11 +6752,11 @@ impl EntityRecognizerDataFormat {
         match self {
             EntityRecognizerDataFormat::AugmentedManifest => "AUGMENTED_MANIFEST",
             EntityRecognizerDataFormat::ComprehendCsv => "COMPREHEND_CSV",
-            EntityRecognizerDataFormat::Unknown(s) => s.as_ref(),
+            EntityRecognizerDataFormat::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AUGMENTED_MANIFEST", "COMPREHEND_CSV"]
     }
 }
@@ -6537,7 +6768,7 @@ impl AsRef<str> for EntityRecognizerDataFormat {
 
 /// <p>Provides information for filtering a list of entity recognizers. You can only specify one filtering parameter in a request. For more information, see the operation./&gt;</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntityRecognizerFilter {
     /// <p>The status of an entity recognizer.</p>
     #[doc(hidden)]
@@ -6570,21 +6801,11 @@ impl EntityRecognizerFilter {
         self.submit_time_after.as_ref()
     }
 }
-impl std::fmt::Debug for EntityRecognizerFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntityRecognizerFilter");
-        formatter.field("status", &self.status);
-        formatter.field("recognizer_name", &self.recognizer_name);
-        formatter.field("submit_time_before", &self.submit_time_before);
-        formatter.field("submit_time_after", &self.submit_time_after);
-        formatter.finish()
-    }
-}
 /// See [`EntityRecognizerFilter`](crate::model::EntityRecognizerFilter).
 pub mod entity_recognizer_filter {
 
     /// A builder for [`EntityRecognizerFilter`](crate::model::EntityRecognizerFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ModelStatus>,
         pub(crate) recognizer_name: std::option::Option<std::string::String>,
@@ -6661,7 +6882,7 @@ impl EntityRecognizerFilter {
 
 /// <p>Provides information about an entities detection job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntitiesDetectionJobProperties {
     /// <p>The identifier assigned to the entities detection job.</p>
     #[doc(hidden)]
@@ -6798,31 +7019,11 @@ impl EntitiesDetectionJobProperties {
         self.vpc_config.as_ref()
     }
 }
-impl std::fmt::Debug for EntitiesDetectionJobProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntitiesDetectionJobProperties");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("job_arn", &self.job_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("message", &self.message);
-        formatter.field("submit_time", &self.submit_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("entity_recognizer_arn", &self.entity_recognizer_arn);
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.finish()
-    }
-}
 /// See [`EntitiesDetectionJobProperties`](crate::model::EntitiesDetectionJobProperties).
 pub mod entities_detection_job_properties {
 
     /// A builder for [`EntitiesDetectionJobProperties`](crate::model::EntitiesDetectionJobProperties).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_arn: std::option::Option<std::string::String>,
@@ -7074,7 +7275,7 @@ impl EntitiesDetectionJobProperties {
 
 /// <p>Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntitiesDetectionJobFilter {
     /// <p>Filters on the name of the job.</p>
     #[doc(hidden)]
@@ -7107,21 +7308,11 @@ impl EntitiesDetectionJobFilter {
         self.submit_time_after.as_ref()
     }
 }
-impl std::fmt::Debug for EntitiesDetectionJobFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntitiesDetectionJobFilter");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("submit_time_before", &self.submit_time_before);
-        formatter.field("submit_time_after", &self.submit_time_after);
-        formatter.finish()
-    }
-}
 /// See [`EntitiesDetectionJobFilter`](crate::model::EntitiesDetectionJobFilter).
 pub mod entities_detection_job_filter {
 
     /// A builder for [`EntitiesDetectionJobFilter`](crate::model::EntitiesDetectionJobFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
@@ -7198,7 +7389,7 @@ impl EntitiesDetectionJobFilter {
 
 /// <p>Specifies information about the specified endpoint. For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointProperties {
     /// <p>The Amazon Resource Number (ARN) of the endpoint.</p>
     #[doc(hidden)]
@@ -7280,31 +7471,11 @@ impl EndpointProperties {
         self.desired_data_access_role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for EndpointProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointProperties");
-        formatter.field("endpoint_arn", &self.endpoint_arn);
-        formatter.field("status", &self.status);
-        formatter.field("message", &self.message);
-        formatter.field("model_arn", &self.model_arn);
-        formatter.field("desired_model_arn", &self.desired_model_arn);
-        formatter.field("desired_inference_units", &self.desired_inference_units);
-        formatter.field("current_inference_units", &self.current_inference_units);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field(
-            "desired_data_access_role_arn",
-            &self.desired_data_access_role_arn,
-        );
-        formatter.finish()
-    }
-}
 /// See [`EndpointProperties`](crate::model::EndpointProperties).
 pub mod endpoint_properties {
 
     /// A builder for [`EndpointProperties`](crate::model::EndpointProperties).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::EndpointStatus>,
@@ -7475,6 +7646,44 @@ impl EndpointProperties {
     }
 }
 
+/// When writing a match expression against `EndpointStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let endpointstatus = unimplemented!();
+/// match endpointstatus {
+///     EndpointStatus::Creating => { /* ... */ },
+///     EndpointStatus::Deleting => { /* ... */ },
+///     EndpointStatus::Failed => { /* ... */ },
+///     EndpointStatus::InService => { /* ... */ },
+///     EndpointStatus::Updating => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `endpointstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EndpointStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EndpointStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EndpointStatus::NewFeature` is defined.
+/// Specifically, when `endpointstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EndpointStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -7497,8 +7706,8 @@ pub enum EndpointStatus {
     InService,
     #[allow(missing_docs)] // documentation missing in model
     Updating,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EndpointStatus {
     fn from(s: &str) -> Self {
@@ -7508,7 +7717,7 @@ impl std::convert::From<&str> for EndpointStatus {
             "FAILED" => EndpointStatus::Failed,
             "IN_SERVICE" => EndpointStatus::InService,
             "UPDATING" => EndpointStatus::Updating,
-            other => EndpointStatus::Unknown(other.to_owned()),
+            other => EndpointStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -7528,11 +7737,11 @@ impl EndpointStatus {
             EndpointStatus::Failed => "FAILED",
             EndpointStatus::InService => "IN_SERVICE",
             EndpointStatus::Updating => "UPDATING",
-            EndpointStatus::Unknown(s) => s.as_ref(),
+            EndpointStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATING", "DELETING", "FAILED", "IN_SERVICE", "UPDATING"]
     }
 }
@@ -7544,7 +7753,7 @@ impl AsRef<str> for EndpointStatus {
 
 /// <p>The filter used to determine which endpoints are returned. You can filter jobs on their name, model, status, or the date and time that they were created. You can only set one filter at a time. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointFilter {
     /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint is attached.</p>
     #[doc(hidden)]
@@ -7577,21 +7786,11 @@ impl EndpointFilter {
         self.creation_time_after.as_ref()
     }
 }
-impl std::fmt::Debug for EndpointFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointFilter");
-        formatter.field("model_arn", &self.model_arn);
-        formatter.field("status", &self.status);
-        formatter.field("creation_time_before", &self.creation_time_before);
-        formatter.field("creation_time_after", &self.creation_time_after);
-        formatter.finish()
-    }
-}
 /// See [`EndpointFilter`](crate::model::EndpointFilter).
 pub mod endpoint_filter {
 
     /// A builder for [`EndpointFilter`](crate::model::EndpointFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::EndpointStatus>,
@@ -7668,7 +7867,7 @@ impl EndpointFilter {
 
 /// <p>Provides information about a dominant language detection job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DominantLanguageDetectionJobProperties {
     /// <p>The identifier assigned to the dominant language detection job.</p>
     #[doc(hidden)]
@@ -7791,29 +7990,11 @@ impl DominantLanguageDetectionJobProperties {
         self.vpc_config.as_ref()
     }
 }
-impl std::fmt::Debug for DominantLanguageDetectionJobProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DominantLanguageDetectionJobProperties");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("job_arn", &self.job_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("message", &self.message);
-        formatter.field("submit_time", &self.submit_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.finish()
-    }
-}
 /// See [`DominantLanguageDetectionJobProperties`](crate::model::DominantLanguageDetectionJobProperties).
 pub mod dominant_language_detection_job_properties {
 
     /// A builder for [`DominantLanguageDetectionJobProperties`](crate::model::DominantLanguageDetectionJobProperties).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_arn: std::option::Option<std::string::String>,
@@ -8035,7 +8216,7 @@ impl DominantLanguageDetectionJobProperties {
 
 /// <p>Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DominantLanguageDetectionJobFilter {
     /// <p>Filters on the name of the job.</p>
     #[doc(hidden)]
@@ -8068,21 +8249,11 @@ impl DominantLanguageDetectionJobFilter {
         self.submit_time_after.as_ref()
     }
 }
-impl std::fmt::Debug for DominantLanguageDetectionJobFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DominantLanguageDetectionJobFilter");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("submit_time_before", &self.submit_time_before);
-        formatter.field("submit_time_after", &self.submit_time_after);
-        formatter.finish()
-    }
-}
 /// See [`DominantLanguageDetectionJobFilter`](crate::model::DominantLanguageDetectionJobFilter).
 pub mod dominant_language_detection_job_filter {
 
     /// A builder for [`DominantLanguageDetectionJobFilter`](crate::model::DominantLanguageDetectionJobFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
@@ -8159,7 +8330,7 @@ impl DominantLanguageDetectionJobFilter {
 
 /// <p>Describes information about a document classifier and its versions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentClassifierSummary {
     /// <p>The name that you assigned the document classifier.</p>
     #[doc(hidden)]
@@ -8199,22 +8370,11 @@ impl DocumentClassifierSummary {
         self.latest_version_status.as_ref()
     }
 }
-impl std::fmt::Debug for DocumentClassifierSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentClassifierSummary");
-        formatter.field("document_classifier_name", &self.document_classifier_name);
-        formatter.field("number_of_versions", &self.number_of_versions);
-        formatter.field("latest_version_created_at", &self.latest_version_created_at);
-        formatter.field("latest_version_name", &self.latest_version_name);
-        formatter.field("latest_version_status", &self.latest_version_status);
-        formatter.finish()
-    }
-}
 /// See [`DocumentClassifierSummary`](crate::model::DocumentClassifierSummary).
 pub mod document_classifier_summary {
 
     /// A builder for [`DocumentClassifierSummary`](crate::model::DocumentClassifierSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_classifier_name: std::option::Option<std::string::String>,
         pub(crate) number_of_versions: std::option::Option<i32>,
@@ -8485,7 +8645,7 @@ impl std::fmt::Debug for DocumentClassifierProperties {
 pub mod document_classifier_properties {
 
     /// A builder for [`DocumentClassifierProperties`](crate::model::DocumentClassifierProperties).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) document_classifier_arn: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
@@ -8780,6 +8940,30 @@ pub mod document_classifier_properties {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("document_classifier_arn", &self.document_classifier_arn);
+            formatter.field("language_code", &self.language_code);
+            formatter.field("status", &self.status);
+            formatter.field("message", &self.message);
+            formatter.field("submit_time", &self.submit_time);
+            formatter.field("end_time", &self.end_time);
+            formatter.field("training_start_time", &self.training_start_time);
+            formatter.field("training_end_time", &self.training_end_time);
+            formatter.field("input_data_config", &self.input_data_config);
+            formatter.field("output_data_config", &self.output_data_config);
+            formatter.field("classifier_metadata", &"*** Sensitive Data Redacted ***");
+            formatter.field("data_access_role_arn", &self.data_access_role_arn);
+            formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
+            formatter.field("vpc_config", &self.vpc_config);
+            formatter.field("mode", &self.mode);
+            formatter.field("model_kms_key_id", &self.model_kms_key_id);
+            formatter.field("version_name", &self.version_name);
+            formatter.field("source_model_arn", &self.source_model_arn);
+            formatter.finish()
+        }
+    }
 }
 impl DocumentClassifierProperties {
     /// Creates a new builder-style object to manufacture [`DocumentClassifierProperties`](crate::model::DocumentClassifierProperties).
@@ -8788,6 +8972,41 @@ impl DocumentClassifierProperties {
     }
 }
 
+/// When writing a match expression against `DocumentClassifierMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let documentclassifiermode = unimplemented!();
+/// match documentclassifiermode {
+///     DocumentClassifierMode::MultiClass => { /* ... */ },
+///     DocumentClassifierMode::MultiLabel => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `documentclassifiermode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DocumentClassifierMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DocumentClassifierMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DocumentClassifierMode::NewFeature` is defined.
+/// Specifically, when `documentclassifiermode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DocumentClassifierMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -8804,15 +9023,17 @@ pub enum DocumentClassifierMode {
     MultiClass,
     #[allow(missing_docs)] // documentation missing in model
     MultiLabel,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DocumentClassifierMode {
     fn from(s: &str) -> Self {
         match s {
             "MULTI_CLASS" => DocumentClassifierMode::MultiClass,
             "MULTI_LABEL" => DocumentClassifierMode::MultiLabel,
-            other => DocumentClassifierMode::Unknown(other.to_owned()),
+            other => {
+                DocumentClassifierMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -8829,11 +9050,11 @@ impl DocumentClassifierMode {
         match self {
             DocumentClassifierMode::MultiClass => "MULTI_CLASS",
             DocumentClassifierMode::MultiLabel => "MULTI_LABEL",
-            DocumentClassifierMode::Unknown(s) => s.as_ref(),
+            DocumentClassifierMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MULTI_CLASS", "MULTI_LABEL"]
     }
 }
@@ -8897,7 +9118,7 @@ impl std::fmt::Debug for ClassifierMetadata {
 pub mod classifier_metadata {
 
     /// A builder for [`ClassifierMetadata`](crate::model::ClassifierMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) number_of_labels: std::option::Option<i32>,
         pub(crate) number_of_trained_documents: std::option::Option<i32>,
@@ -8962,6 +9183,19 @@ pub mod classifier_metadata {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("number_of_labels", &self.number_of_labels);
+            formatter.field(
+                "number_of_trained_documents",
+                &self.number_of_trained_documents,
+            );
+            formatter.field("number_of_test_documents", &self.number_of_test_documents);
+            formatter.field("evaluation_metrics", &self.evaluation_metrics);
+            formatter.finish()
+        }
+    }
 }
 impl ClassifierMetadata {
     /// Creates a new builder-style object to manufacture [`ClassifierMetadata`](crate::model::ClassifierMetadata).
@@ -8972,7 +9206,7 @@ impl ClassifierMetadata {
 
 /// <p>Describes the result metrics for the test data associated with an documentation classifier.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClassifierEvaluationMetrics {
     /// <p>The fraction of the labels that were correct recognized. It is computed by dividing the number of labels in the test documents that were correctly recognized by the total number of labels in the test documents.</p>
     #[doc(hidden)]
@@ -9033,25 +9267,11 @@ impl ClassifierEvaluationMetrics {
         self.hamming_loss
     }
 }
-impl std::fmt::Debug for ClassifierEvaluationMetrics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClassifierEvaluationMetrics");
-        formatter.field("accuracy", &self.accuracy);
-        formatter.field("precision", &self.precision);
-        formatter.field("recall", &self.recall);
-        formatter.field("f1_score", &self.f1_score);
-        formatter.field("micro_precision", &self.micro_precision);
-        formatter.field("micro_recall", &self.micro_recall);
-        formatter.field("micro_f1_score", &self.micro_f1_score);
-        formatter.field("hamming_loss", &self.hamming_loss);
-        formatter.finish()
-    }
-}
 /// See [`ClassifierEvaluationMetrics`](crate::model::ClassifierEvaluationMetrics).
 pub mod classifier_evaluation_metrics {
 
     /// A builder for [`ClassifierEvaluationMetrics`](crate::model::ClassifierEvaluationMetrics).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accuracy: std::option::Option<f64>,
         pub(crate) precision: std::option::Option<f64>,
@@ -9167,7 +9387,7 @@ impl ClassifierEvaluationMetrics {
 
 /// <p>Provides output results configuration parameters for custom classifier jobs. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentClassifierOutputDataConfig {
     /// <p>When you use the <code>OutputDataConfig</code> object while creating a custom classifier, you specify the Amazon S3 location where you want to write the confusion matrix. The URI must be in the same region as the API endpoint that you are calling. The location is used as the prefix for the actual location of this output file.</p>
     /// <p>When the custom classifier job is finished, the service creates the output file in a directory specific to the job. The <code>S3Uri</code> field contains the location of the output file, called <code>output.tar.gz</code>. It is a compressed archive that contains the confusion matrix.</p>
@@ -9200,19 +9420,11 @@ impl DocumentClassifierOutputDataConfig {
         self.kms_key_id.as_deref()
     }
 }
-impl std::fmt::Debug for DocumentClassifierOutputDataConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentClassifierOutputDataConfig");
-        formatter.field("s3_uri", &self.s3_uri);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.finish()
-    }
-}
 /// See [`DocumentClassifierOutputDataConfig`](crate::model::DocumentClassifierOutputDataConfig).
 pub mod document_classifier_output_data_config {
 
     /// A builder for [`DocumentClassifierOutputDataConfig`](crate::model::DocumentClassifierOutputDataConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_uri: std::option::Option<std::string::String>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
@@ -9271,7 +9483,7 @@ impl DocumentClassifierOutputDataConfig {
 /// <p>The input properties for training a document classifier. </p>
 /// <p>For more information on how the input file is formatted, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/prep-classifier-data.html">Preparing training data</a> in the Comprehend Developer Guide. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentClassifierInputDataConfig {
     /// <p>The format of your training data:</p>
     /// <ul>
@@ -9330,22 +9542,11 @@ impl DocumentClassifierInputDataConfig {
         self.augmented_manifests.as_deref()
     }
 }
-impl std::fmt::Debug for DocumentClassifierInputDataConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentClassifierInputDataConfig");
-        formatter.field("data_format", &self.data_format);
-        formatter.field("s3_uri", &self.s3_uri);
-        formatter.field("test_s3_uri", &self.test_s3_uri);
-        formatter.field("label_delimiter", &self.label_delimiter);
-        formatter.field("augmented_manifests", &self.augmented_manifests);
-        formatter.finish()
-    }
-}
 /// See [`DocumentClassifierInputDataConfig`](crate::model::DocumentClassifierInputDataConfig).
 pub mod document_classifier_input_data_config {
 
     /// A builder for [`DocumentClassifierInputDataConfig`](crate::model::DocumentClassifierInputDataConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_format: std::option::Option<crate::model::DocumentClassifierDataFormat>,
         pub(crate) s3_uri: std::option::Option<std::string::String>,
@@ -9458,6 +9659,41 @@ impl DocumentClassifierInputDataConfig {
     }
 }
 
+/// When writing a match expression against `DocumentClassifierDataFormat`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let documentclassifierdataformat = unimplemented!();
+/// match documentclassifierdataformat {
+///     DocumentClassifierDataFormat::AugmentedManifest => { /* ... */ },
+///     DocumentClassifierDataFormat::ComprehendCsv => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `documentclassifierdataformat` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DocumentClassifierDataFormat::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DocumentClassifierDataFormat::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DocumentClassifierDataFormat::NewFeature` is defined.
+/// Specifically, when `documentclassifierdataformat` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DocumentClassifierDataFormat::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -9474,15 +9710,17 @@ pub enum DocumentClassifierDataFormat {
     AugmentedManifest,
     #[allow(missing_docs)] // documentation missing in model
     ComprehendCsv,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DocumentClassifierDataFormat {
     fn from(s: &str) -> Self {
         match s {
             "AUGMENTED_MANIFEST" => DocumentClassifierDataFormat::AugmentedManifest,
             "COMPREHEND_CSV" => DocumentClassifierDataFormat::ComprehendCsv,
-            other => DocumentClassifierDataFormat::Unknown(other.to_owned()),
+            other => DocumentClassifierDataFormat::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -9499,11 +9737,11 @@ impl DocumentClassifierDataFormat {
         match self {
             DocumentClassifierDataFormat::AugmentedManifest => "AUGMENTED_MANIFEST",
             DocumentClassifierDataFormat::ComprehendCsv => "COMPREHEND_CSV",
-            DocumentClassifierDataFormat::Unknown(s) => s.as_ref(),
+            DocumentClassifierDataFormat::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AUGMENTED_MANIFEST", "COMPREHEND_CSV"]
     }
 }
@@ -9515,7 +9753,7 @@ impl AsRef<str> for DocumentClassifierDataFormat {
 
 /// <p>Provides information for filtering a list of document classifiers. You can only specify one filtering parameter in a request. For more information, see the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentClassifierFilter {
     /// <p>Filters the list of classifiers based on status.</p>
     #[doc(hidden)]
@@ -9548,21 +9786,11 @@ impl DocumentClassifierFilter {
         self.submit_time_after.as_ref()
     }
 }
-impl std::fmt::Debug for DocumentClassifierFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentClassifierFilter");
-        formatter.field("status", &self.status);
-        formatter.field("document_classifier_name", &self.document_classifier_name);
-        formatter.field("submit_time_before", &self.submit_time_before);
-        formatter.field("submit_time_after", &self.submit_time_after);
-        formatter.finish()
-    }
-}
 /// See [`DocumentClassifierFilter`](crate::model::DocumentClassifierFilter).
 pub mod document_classifier_filter {
 
     /// A builder for [`DocumentClassifierFilter`](crate::model::DocumentClassifierFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ModelStatus>,
         pub(crate) document_classifier_name: std::option::Option<std::string::String>,
@@ -9639,7 +9867,7 @@ impl DocumentClassifierFilter {
 
 /// <p>Provides information about a document classification job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentClassificationJobProperties {
     /// <p>The identifier assigned to the document classification job.</p>
     #[doc(hidden)]
@@ -9769,30 +9997,11 @@ impl DocumentClassificationJobProperties {
         self.vpc_config.as_ref()
     }
 }
-impl std::fmt::Debug for DocumentClassificationJobProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentClassificationJobProperties");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("job_arn", &self.job_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("message", &self.message);
-        formatter.field("submit_time", &self.submit_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("document_classifier_arn", &self.document_classifier_arn);
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.finish()
-    }
-}
 /// See [`DocumentClassificationJobProperties`](crate::model::DocumentClassificationJobProperties).
 pub mod document_classification_job_properties {
 
     /// A builder for [`DocumentClassificationJobProperties`](crate::model::DocumentClassificationJobProperties).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_arn: std::option::Option<std::string::String>,
@@ -10029,7 +10238,7 @@ impl DocumentClassificationJobProperties {
 
 /// <p>Provides information for filtering a list of document classification jobs. For more information, see the operation. You can provide only one filter parameter in each request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentClassificationJobFilter {
     /// <p>Filters on the name of the job.</p>
     #[doc(hidden)]
@@ -10062,21 +10271,11 @@ impl DocumentClassificationJobFilter {
         self.submit_time_after.as_ref()
     }
 }
-impl std::fmt::Debug for DocumentClassificationJobFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentClassificationJobFilter");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("submit_time_before", &self.submit_time_before);
-        formatter.field("submit_time_after", &self.submit_time_after);
-        formatter.finish()
-    }
-}
 /// See [`DocumentClassificationJobFilter`](crate::model::DocumentClassificationJobFilter).
 pub mod document_classification_job_filter {
 
     /// A builder for [`DocumentClassificationJobFilter`](crate::model::DocumentClassificationJobFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
@@ -10154,7 +10353,7 @@ impl DocumentClassificationJobFilter {
 /// <p>Information about one of the entities found by targeted sentiment analysis.</p>
 /// <p>For more information about targeted sentiment, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted sentiment</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetedSentimentEntity {
     /// <p>One or more index into the Mentions array that provides the best name for the entity group.</p>
     #[doc(hidden)]
@@ -10173,19 +10372,11 @@ impl TargetedSentimentEntity {
         self.mentions.as_deref()
     }
 }
-impl std::fmt::Debug for TargetedSentimentEntity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetedSentimentEntity");
-        formatter.field("descriptive_mention_index", &self.descriptive_mention_index);
-        formatter.field("mentions", &self.mentions);
-        formatter.finish()
-    }
-}
 /// See [`TargetedSentimentEntity`](crate::model::TargetedSentimentEntity).
 pub mod targeted_sentiment_entity {
 
     /// A builder for [`TargetedSentimentEntity`](crate::model::TargetedSentimentEntity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) descriptive_mention_index: std::option::Option<std::vec::Vec<i32>>,
         pub(crate) mentions:
@@ -10249,7 +10440,7 @@ impl TargetedSentimentEntity {
 /// <p>Information about one mention of an entity. The mention information includes the location of the mention in the text and the sentiment of the mention.</p>
 /// <p>For more information about targeted sentiment, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted sentiment</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetedSentimentMention {
     /// <p>Model confidence that the entity is relevant. Value range is zero to one, where one is highest confidence.</p>
     #[doc(hidden)]
@@ -10303,24 +10494,11 @@ impl TargetedSentimentMention {
         self.end_offset
     }
 }
-impl std::fmt::Debug for TargetedSentimentMention {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetedSentimentMention");
-        formatter.field("score", &self.score);
-        formatter.field("group_score", &self.group_score);
-        formatter.field("text", &self.text);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("mention_sentiment", &self.mention_sentiment);
-        formatter.field("begin_offset", &self.begin_offset);
-        formatter.field("end_offset", &self.end_offset);
-        formatter.finish()
-    }
-}
 /// See [`TargetedSentimentMention`](crate::model::TargetedSentimentMention).
 pub mod targeted_sentiment_mention {
 
     /// A builder for [`TargetedSentimentMention`](crate::model::TargetedSentimentMention).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) score: std::option::Option<f32>,
         pub(crate) group_score: std::option::Option<f32>,
@@ -10431,7 +10609,7 @@ impl TargetedSentimentMention {
 /// <p>Contains the sentiment and sentiment score for one mention of an entity.</p>
 /// <p>For more information about targeted sentiment, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted sentiment</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MentionSentiment {
     /// <p>The sentiment of the mention. </p>
     #[doc(hidden)]
@@ -10450,19 +10628,11 @@ impl MentionSentiment {
         self.sentiment_score.as_ref()
     }
 }
-impl std::fmt::Debug for MentionSentiment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MentionSentiment");
-        formatter.field("sentiment", &self.sentiment);
-        formatter.field("sentiment_score", &self.sentiment_score);
-        formatter.finish()
-    }
-}
 /// See [`MentionSentiment`](crate::model::MentionSentiment).
 pub mod mention_sentiment {
 
     /// A builder for [`MentionSentiment`](crate::model::MentionSentiment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sentiment: std::option::Option<crate::model::SentimentType>,
         pub(crate) sentiment_score: std::option::Option<crate::model::SentimentScore>,
@@ -10512,7 +10682,7 @@ impl MentionSentiment {
 
 /// <p>Describes the level of confidence that Amazon Comprehend has in the accuracy of its detection of sentiments.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SentimentScore {
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>POSITIVE</code> sentiment.</p>
     #[doc(hidden)]
@@ -10545,21 +10715,11 @@ impl SentimentScore {
         self.mixed
     }
 }
-impl std::fmt::Debug for SentimentScore {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SentimentScore");
-        formatter.field("positive", &self.positive);
-        formatter.field("negative", &self.negative);
-        formatter.field("neutral", &self.neutral);
-        formatter.field("mixed", &self.mixed);
-        formatter.finish()
-    }
-}
 /// See [`SentimentScore`](crate::model::SentimentScore).
 pub mod sentiment_score {
 
     /// A builder for [`SentimentScore`](crate::model::SentimentScore).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) positive: std::option::Option<f32>,
         pub(crate) negative: std::option::Option<f32>,
@@ -10625,6 +10785,43 @@ impl SentimentScore {
     }
 }
 
+/// When writing a match expression against `SentimentType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let sentimenttype = unimplemented!();
+/// match sentimenttype {
+///     SentimentType::Mixed => { /* ... */ },
+///     SentimentType::Negative => { /* ... */ },
+///     SentimentType::Neutral => { /* ... */ },
+///     SentimentType::Positive => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `sentimenttype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SentimentType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SentimentType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SentimentType::NewFeature` is defined.
+/// Specifically, when `sentimenttype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SentimentType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -10645,8 +10842,8 @@ pub enum SentimentType {
     Neutral,
     #[allow(missing_docs)] // documentation missing in model
     Positive,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SentimentType {
     fn from(s: &str) -> Self {
@@ -10655,7 +10852,7 @@ impl std::convert::From<&str> for SentimentType {
             "NEGATIVE" => SentimentType::Negative,
             "NEUTRAL" => SentimentType::Neutral,
             "POSITIVE" => SentimentType::Positive,
-            other => SentimentType::Unknown(other.to_owned()),
+            other => SentimentType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -10674,11 +10871,11 @@ impl SentimentType {
             SentimentType::Negative => "NEGATIVE",
             SentimentType::Neutral => "NEUTRAL",
             SentimentType::Positive => "POSITIVE",
-            SentimentType::Unknown(s) => s.as_ref(),
+            SentimentType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MIXED", "NEGATIVE", "NEUTRAL", "POSITIVE"]
     }
 }
@@ -10688,6 +10885,56 @@ impl AsRef<str> for SentimentType {
     }
 }
 
+/// When writing a match expression against `TargetedSentimentEntityType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let targetedsentimententitytype = unimplemented!();
+/// match targetedsentimententitytype {
+///     TargetedSentimentEntityType::Attribute => { /* ... */ },
+///     TargetedSentimentEntityType::Book => { /* ... */ },
+///     TargetedSentimentEntityType::Brand => { /* ... */ },
+///     TargetedSentimentEntityType::CommercialItem => { /* ... */ },
+///     TargetedSentimentEntityType::Date => { /* ... */ },
+///     TargetedSentimentEntityType::Event => { /* ... */ },
+///     TargetedSentimentEntityType::Facility => { /* ... */ },
+///     TargetedSentimentEntityType::Game => { /* ... */ },
+///     TargetedSentimentEntityType::Location => { /* ... */ },
+///     TargetedSentimentEntityType::Movie => { /* ... */ },
+///     TargetedSentimentEntityType::Music => { /* ... */ },
+///     TargetedSentimentEntityType::Organization => { /* ... */ },
+///     TargetedSentimentEntityType::Other => { /* ... */ },
+///     TargetedSentimentEntityType::Person => { /* ... */ },
+///     TargetedSentimentEntityType::PersonalTitle => { /* ... */ },
+///     TargetedSentimentEntityType::Quantity => { /* ... */ },
+///     TargetedSentimentEntityType::Software => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `targetedsentimententitytype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `TargetedSentimentEntityType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `TargetedSentimentEntityType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `TargetedSentimentEntityType::NewFeature` is defined.
+/// Specifically, when `targetedsentimententitytype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `TargetedSentimentEntityType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -10734,8 +10981,8 @@ pub enum TargetedSentimentEntityType {
     Quantity,
     #[allow(missing_docs)] // documentation missing in model
     Software,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TargetedSentimentEntityType {
     fn from(s: &str) -> Self {
@@ -10757,7 +11004,9 @@ impl std::convert::From<&str> for TargetedSentimentEntityType {
             "PERSONAL_TITLE" => TargetedSentimentEntityType::PersonalTitle,
             "QUANTITY" => TargetedSentimentEntityType::Quantity,
             "SOFTWARE" => TargetedSentimentEntityType::Software,
-            other => TargetedSentimentEntityType::Unknown(other.to_owned()),
+            other => TargetedSentimentEntityType::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -10789,11 +11038,11 @@ impl TargetedSentimentEntityType {
             TargetedSentimentEntityType::PersonalTitle => "PERSONAL_TITLE",
             TargetedSentimentEntityType::Quantity => "QUANTITY",
             TargetedSentimentEntityType::Software => "SOFTWARE",
-            TargetedSentimentEntityType::Unknown(s) => s.as_ref(),
+            TargetedSentimentEntityType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ATTRIBUTE",
             "BOOK",
@@ -10823,7 +11072,7 @@ impl AsRef<str> for TargetedSentimentEntityType {
 
 /// <p>Represents a work in the input text that was recognized and assigned a part of speech. There is one syntax token record for each word in the source text.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SyntaxToken {
     /// <p>A unique identifier for a token.</p>
     #[doc(hidden)]
@@ -10863,22 +11112,11 @@ impl SyntaxToken {
         self.part_of_speech.as_ref()
     }
 }
-impl std::fmt::Debug for SyntaxToken {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SyntaxToken");
-        formatter.field("token_id", &self.token_id);
-        formatter.field("text", &self.text);
-        formatter.field("begin_offset", &self.begin_offset);
-        formatter.field("end_offset", &self.end_offset);
-        formatter.field("part_of_speech", &self.part_of_speech);
-        formatter.finish()
-    }
-}
 /// See [`SyntaxToken`](crate::model::SyntaxToken).
 pub mod syntax_token {
 
     /// A builder for [`SyntaxToken`](crate::model::SyntaxToken).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) token_id: std::option::Option<i32>,
         pub(crate) text: std::option::Option<std::string::String>,
@@ -10961,7 +11199,7 @@ impl SyntaxToken {
 
 /// <p>Identifies the part of speech represented by the token and gives the confidence that Amazon Comprehend has that the part of speech was correctly identified. For more information about the parts of speech that Amazon Comprehend can identify, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PartOfSpeechTag {
     /// <p>Identifies the part of speech that the token represents.</p>
     #[doc(hidden)]
@@ -10980,19 +11218,11 @@ impl PartOfSpeechTag {
         self.score
     }
 }
-impl std::fmt::Debug for PartOfSpeechTag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PartOfSpeechTag");
-        formatter.field("tag", &self.tag);
-        formatter.field("score", &self.score);
-        formatter.finish()
-    }
-}
 /// See [`PartOfSpeechTag`](crate::model::PartOfSpeechTag).
 pub mod part_of_speech_tag {
 
     /// A builder for [`PartOfSpeechTag`](crate::model::PartOfSpeechTag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag: std::option::Option<crate::model::PartOfSpeechTagType>,
         pub(crate) score: std::option::Option<f32>,
@@ -11037,6 +11267,57 @@ impl PartOfSpeechTag {
     }
 }
 
+/// When writing a match expression against `PartOfSpeechTagType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let partofspeechtagtype = unimplemented!();
+/// match partofspeechtagtype {
+///     PartOfSpeechTagType::Adj => { /* ... */ },
+///     PartOfSpeechTagType::Adp => { /* ... */ },
+///     PartOfSpeechTagType::Adv => { /* ... */ },
+///     PartOfSpeechTagType::Aux => { /* ... */ },
+///     PartOfSpeechTagType::Cconj => { /* ... */ },
+///     PartOfSpeechTagType::Conj => { /* ... */ },
+///     PartOfSpeechTagType::Det => { /* ... */ },
+///     PartOfSpeechTagType::Intj => { /* ... */ },
+///     PartOfSpeechTagType::Noun => { /* ... */ },
+///     PartOfSpeechTagType::Num => { /* ... */ },
+///     PartOfSpeechTagType::O => { /* ... */ },
+///     PartOfSpeechTagType::Part => { /* ... */ },
+///     PartOfSpeechTagType::Pron => { /* ... */ },
+///     PartOfSpeechTagType::Propn => { /* ... */ },
+///     PartOfSpeechTagType::Punct => { /* ... */ },
+///     PartOfSpeechTagType::Sconj => { /* ... */ },
+///     PartOfSpeechTagType::Sym => { /* ... */ },
+///     PartOfSpeechTagType::Verb => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `partofspeechtagtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PartOfSpeechTagType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PartOfSpeechTagType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PartOfSpeechTagType::NewFeature` is defined.
+/// Specifically, when `partofspeechtagtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PartOfSpeechTagType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -11085,8 +11366,8 @@ pub enum PartOfSpeechTagType {
     Sym,
     #[allow(missing_docs)] // documentation missing in model
     Verb,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PartOfSpeechTagType {
     fn from(s: &str) -> Self {
@@ -11109,7 +11390,9 @@ impl std::convert::From<&str> for PartOfSpeechTagType {
             "SCONJ" => PartOfSpeechTagType::Sconj,
             "SYM" => PartOfSpeechTagType::Sym,
             "VERB" => PartOfSpeechTagType::Verb,
-            other => PartOfSpeechTagType::Unknown(other.to_owned()),
+            other => {
+                PartOfSpeechTagType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -11142,11 +11425,11 @@ impl PartOfSpeechTagType {
             PartOfSpeechTagType::Sconj => "SCONJ",
             PartOfSpeechTagType::Sym => "SYM",
             PartOfSpeechTagType::Verb => "VERB",
-            PartOfSpeechTagType::Unknown(s) => s.as_ref(),
+            PartOfSpeechTagType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ADJ", "ADP", "ADV", "AUX", "CCONJ", "CONJ", "DET", "INTJ", "NOUN", "NUM", "O", "PART",
             "PRON", "PROPN", "PUNCT", "SCONJ", "SYM", "VERB",
@@ -11159,6 +11442,45 @@ impl AsRef<str> for PartOfSpeechTagType {
     }
 }
 
+/// When writing a match expression against `SyntaxLanguageCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let syntaxlanguagecode = unimplemented!();
+/// match syntaxlanguagecode {
+///     SyntaxLanguageCode::De => { /* ... */ },
+///     SyntaxLanguageCode::En => { /* ... */ },
+///     SyntaxLanguageCode::Es => { /* ... */ },
+///     SyntaxLanguageCode::Fr => { /* ... */ },
+///     SyntaxLanguageCode::It => { /* ... */ },
+///     SyntaxLanguageCode::Pt => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `syntaxlanguagecode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SyntaxLanguageCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SyntaxLanguageCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SyntaxLanguageCode::NewFeature` is defined.
+/// Specifically, when `syntaxlanguagecode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SyntaxLanguageCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -11183,8 +11505,8 @@ pub enum SyntaxLanguageCode {
     It,
     #[allow(missing_docs)] // documentation missing in model
     Pt,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SyntaxLanguageCode {
     fn from(s: &str) -> Self {
@@ -11195,7 +11517,9 @@ impl std::convert::From<&str> for SyntaxLanguageCode {
             "fr" => SyntaxLanguageCode::Fr,
             "it" => SyntaxLanguageCode::It,
             "pt" => SyntaxLanguageCode::Pt,
-            other => SyntaxLanguageCode::Unknown(other.to_owned()),
+            other => {
+                SyntaxLanguageCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -11216,11 +11540,11 @@ impl SyntaxLanguageCode {
             SyntaxLanguageCode::Fr => "fr",
             SyntaxLanguageCode::It => "it",
             SyntaxLanguageCode::Pt => "pt",
-            SyntaxLanguageCode::Unknown(s) => s.as_ref(),
+            SyntaxLanguageCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["de", "en", "es", "fr", "it", "pt"]
     }
 }
@@ -11232,7 +11556,7 @@ impl AsRef<str> for SyntaxLanguageCode {
 
 /// <p>Provides information about a PII entity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PiiEntity {
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
     #[doc(hidden)]
@@ -11265,21 +11589,11 @@ impl PiiEntity {
         self.end_offset
     }
 }
-impl std::fmt::Debug for PiiEntity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PiiEntity");
-        formatter.field("score", &self.score);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("begin_offset", &self.begin_offset);
-        formatter.field("end_offset", &self.end_offset);
-        formatter.finish()
-    }
-}
 /// See [`PiiEntity`](crate::model::PiiEntity).
 pub mod pii_entity {
 
     /// A builder for [`PiiEntity`](crate::model::PiiEntity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) score: std::option::Option<f32>,
         pub(crate) r#type: std::option::Option<crate::model::PiiEntityType>,
@@ -11347,7 +11661,7 @@ impl PiiEntity {
 
 /// <p>Describes a key noun phrase.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeyPhrase {
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
     #[doc(hidden)]
@@ -11380,21 +11694,11 @@ impl KeyPhrase {
         self.end_offset
     }
 }
-impl std::fmt::Debug for KeyPhrase {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeyPhrase");
-        formatter.field("score", &self.score);
-        formatter.field("text", &self.text);
-        formatter.field("begin_offset", &self.begin_offset);
-        formatter.field("end_offset", &self.end_offset);
-        formatter.finish()
-    }
-}
 /// See [`KeyPhrase`](crate::model::KeyPhrase).
 pub mod key_phrase {
 
     /// A builder for [`KeyPhrase`](crate::model::KeyPhrase).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) score: std::option::Option<f32>,
         pub(crate) text: std::option::Option<std::string::String>,
@@ -11463,7 +11767,7 @@ impl KeyPhrase {
 /// <p>Provides information about an entity. </p>
 /// <p> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Entity {
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
     #[doc(hidden)]
@@ -11503,22 +11807,11 @@ impl Entity {
         self.end_offset
     }
 }
-impl std::fmt::Debug for Entity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Entity");
-        formatter.field("score", &self.score);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("text", &self.text);
-        formatter.field("begin_offset", &self.begin_offset);
-        formatter.field("end_offset", &self.end_offset);
-        formatter.finish()
-    }
-}
 /// See [`Entity`](crate::model::Entity).
 pub mod entity {
 
     /// A builder for [`Entity`](crate::model::Entity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) score: std::option::Option<f32>,
         pub(crate) r#type: std::option::Option<crate::model::EntityType>,
@@ -11596,6 +11889,48 @@ impl Entity {
     }
 }
 
+/// When writing a match expression against `EntityType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let entitytype = unimplemented!();
+/// match entitytype {
+///     EntityType::CommercialItem => { /* ... */ },
+///     EntityType::Date => { /* ... */ },
+///     EntityType::Event => { /* ... */ },
+///     EntityType::Location => { /* ... */ },
+///     EntityType::Organization => { /* ... */ },
+///     EntityType::Other => { /* ... */ },
+///     EntityType::Person => { /* ... */ },
+///     EntityType::Quantity => { /* ... */ },
+///     EntityType::Title => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `entitytype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EntityType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EntityType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EntityType::NewFeature` is defined.
+/// Specifically, when `entitytype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EntityType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -11626,8 +11961,8 @@ pub enum EntityType {
     Quantity,
     #[allow(missing_docs)] // documentation missing in model
     Title,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EntityType {
     fn from(s: &str) -> Self {
@@ -11641,7 +11976,7 @@ impl std::convert::From<&str> for EntityType {
             "PERSON" => EntityType::Person,
             "QUANTITY" => EntityType::Quantity,
             "TITLE" => EntityType::Title,
-            other => EntityType::Unknown(other.to_owned()),
+            other => EntityType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -11665,11 +12000,11 @@ impl EntityType {
             EntityType::Person => "PERSON",
             EntityType::Quantity => "QUANTITY",
             EntityType::Title => "TITLE",
-            EntityType::Unknown(s) => s.as_ref(),
+            EntityType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "COMMERCIAL_ITEM",
             "DATE",
@@ -11691,7 +12026,7 @@ impl AsRef<str> for EntityType {
 
 /// <p>Returns the code for the dominant language in the input text and the level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DominantLanguage {
     /// <p>The RFC 5646 language code for the dominant language. For more information about RFC 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for Identifying Languages</a> on the <i>IETF Tools</i> web site.</p>
     #[doc(hidden)]
@@ -11710,19 +12045,11 @@ impl DominantLanguage {
         self.score
     }
 }
-impl std::fmt::Debug for DominantLanguage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DominantLanguage");
-        formatter.field("language_code", &self.language_code);
-        formatter.field("score", &self.score);
-        formatter.finish()
-    }
-}
 /// See [`DominantLanguage`](crate::model::DominantLanguage).
 pub mod dominant_language {
 
     /// A builder for [`DominantLanguage`](crate::model::DominantLanguage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) language_code: std::option::Option<std::string::String>,
         pub(crate) score: std::option::Option<f32>,
@@ -11769,7 +12096,7 @@ impl DominantLanguage {
 
 /// <p>Specifies one of the label or labels that categorize the personally identifiable information (PII) entity being analyzed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntityLabel {
     /// <p>The name of the label.</p>
     #[doc(hidden)]
@@ -11788,19 +12115,11 @@ impl EntityLabel {
         self.score
     }
 }
-impl std::fmt::Debug for EntityLabel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntityLabel");
-        formatter.field("name", &self.name);
-        formatter.field("score", &self.score);
-        formatter.finish()
-    }
-}
 /// See [`EntityLabel`](crate::model::EntityLabel).
 pub mod entity_label {
 
     /// A builder for [`EntityLabel`](crate::model::EntityLabel).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::PiiEntityType>,
         pub(crate) score: std::option::Option<f32>,
@@ -11844,7 +12163,7 @@ impl EntityLabel {
 
 /// <p>Specifies one of the label or labels that categorize the document being analyzed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentLabel {
     /// <p>The name of the label.</p>
     #[doc(hidden)]
@@ -11863,19 +12182,11 @@ impl DocumentLabel {
         self.score
     }
 }
-impl std::fmt::Debug for DocumentLabel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentLabel");
-        formatter.field("name", &self.name);
-        formatter.field("score", &self.score);
-        formatter.finish()
-    }
-}
 /// See [`DocumentLabel`](crate::model::DocumentLabel).
 pub mod document_label {
 
     /// A builder for [`DocumentLabel`](crate::model::DocumentLabel).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) score: std::option::Option<f32>,
@@ -11919,7 +12230,7 @@ impl DocumentLabel {
 
 /// <p>Specifies the class that categorizes the document being analyzed</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentClass {
     /// <p>The name of the class.</p>
     #[doc(hidden)]
@@ -11938,19 +12249,11 @@ impl DocumentClass {
         self.score
     }
 }
-impl std::fmt::Debug for DocumentClass {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentClass");
-        formatter.field("name", &self.name);
-        formatter.field("score", &self.score);
-        formatter.finish()
-    }
-}
 /// See [`DocumentClass`](crate::model::DocumentClass).
 pub mod document_class {
 
     /// A builder for [`DocumentClass`](crate::model::DocumentClass).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) score: std::option::Option<f32>,
@@ -11994,7 +12297,7 @@ impl DocumentClass {
 
 /// <p>Describes an error that occurred while processing a document in a batch. The operation returns on <code>BatchItemError</code> object for each document that contained an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchItemError {
     /// <p>The zero-based index of the document in the input list.</p>
     #[doc(hidden)]
@@ -12020,20 +12323,11 @@ impl BatchItemError {
         self.error_message.as_deref()
     }
 }
-impl std::fmt::Debug for BatchItemError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchItemError");
-        formatter.field("index", &self.index);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
-    }
-}
 /// See [`BatchItemError`](crate::model::BatchItemError).
 pub mod batch_item_error {
 
     /// A builder for [`BatchItemError`](crate::model::BatchItemError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index: std::option::Option<i32>,
         pub(crate) error_code: std::option::Option<std::string::String>,
@@ -12092,7 +12386,7 @@ impl BatchItemError {
 
 /// <p>Analysis results for one of the documents in the batch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDetectTargetedSentimentItemResult {
     /// <p>The zero-based index of this result in the input list.</p>
     #[doc(hidden)]
@@ -12111,19 +12405,11 @@ impl BatchDetectTargetedSentimentItemResult {
         self.entities.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDetectTargetedSentimentItemResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDetectTargetedSentimentItemResult");
-        formatter.field("index", &self.index);
-        formatter.field("entities", &self.entities);
-        formatter.finish()
-    }
-}
 /// See [`BatchDetectTargetedSentimentItemResult`](crate::model::BatchDetectTargetedSentimentItemResult).
 pub mod batch_detect_targeted_sentiment_item_result {
 
     /// A builder for [`BatchDetectTargetedSentimentItemResult`](crate::model::BatchDetectTargetedSentimentItemResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index: std::option::Option<i32>,
         pub(crate) entities:
@@ -12177,7 +12463,7 @@ impl BatchDetectTargetedSentimentItemResult {
 
 /// <p>The result of calling the operation. The operation returns one object that is successfully processed by the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDetectSyntaxItemResult {
     /// <p>The zero-based index of the document in the input list.</p>
     #[doc(hidden)]
@@ -12196,19 +12482,11 @@ impl BatchDetectSyntaxItemResult {
         self.syntax_tokens.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDetectSyntaxItemResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDetectSyntaxItemResult");
-        formatter.field("index", &self.index);
-        formatter.field("syntax_tokens", &self.syntax_tokens);
-        formatter.finish()
-    }
-}
 /// See [`BatchDetectSyntaxItemResult`](crate::model::BatchDetectSyntaxItemResult).
 pub mod batch_detect_syntax_item_result {
 
     /// A builder for [`BatchDetectSyntaxItemResult`](crate::model::BatchDetectSyntaxItemResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index: std::option::Option<i32>,
         pub(crate) syntax_tokens: std::option::Option<std::vec::Vec<crate::model::SyntaxToken>>,
@@ -12261,7 +12539,7 @@ impl BatchDetectSyntaxItemResult {
 
 /// <p>The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDetectSentimentItemResult {
     /// <p>The zero-based index of the document in the input list.</p>
     #[doc(hidden)]
@@ -12287,20 +12565,11 @@ impl BatchDetectSentimentItemResult {
         self.sentiment_score.as_ref()
     }
 }
-impl std::fmt::Debug for BatchDetectSentimentItemResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDetectSentimentItemResult");
-        formatter.field("index", &self.index);
-        formatter.field("sentiment", &self.sentiment);
-        formatter.field("sentiment_score", &self.sentiment_score);
-        formatter.finish()
-    }
-}
 /// See [`BatchDetectSentimentItemResult`](crate::model::BatchDetectSentimentItemResult).
 pub mod batch_detect_sentiment_item_result {
 
     /// A builder for [`BatchDetectSentimentItemResult`](crate::model::BatchDetectSentimentItemResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index: std::option::Option<i32>,
         pub(crate) sentiment: std::option::Option<crate::model::SentimentType>,
@@ -12362,7 +12631,7 @@ impl BatchDetectSentimentItemResult {
 
 /// <p>The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDetectKeyPhrasesItemResult {
     /// <p>The zero-based index of the document in the input list.</p>
     #[doc(hidden)]
@@ -12381,19 +12650,11 @@ impl BatchDetectKeyPhrasesItemResult {
         self.key_phrases.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDetectKeyPhrasesItemResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDetectKeyPhrasesItemResult");
-        formatter.field("index", &self.index);
-        formatter.field("key_phrases", &self.key_phrases);
-        formatter.finish()
-    }
-}
 /// See [`BatchDetectKeyPhrasesItemResult`](crate::model::BatchDetectKeyPhrasesItemResult).
 pub mod batch_detect_key_phrases_item_result {
 
     /// A builder for [`BatchDetectKeyPhrasesItemResult`](crate::model::BatchDetectKeyPhrasesItemResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index: std::option::Option<i32>,
         pub(crate) key_phrases: std::option::Option<std::vec::Vec<crate::model::KeyPhrase>>,
@@ -12446,7 +12707,7 @@ impl BatchDetectKeyPhrasesItemResult {
 
 /// <p>The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDetectEntitiesItemResult {
     /// <p>The zero-based index of the document in the input list.</p>
     #[doc(hidden)]
@@ -12465,19 +12726,11 @@ impl BatchDetectEntitiesItemResult {
         self.entities.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDetectEntitiesItemResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDetectEntitiesItemResult");
-        formatter.field("index", &self.index);
-        formatter.field("entities", &self.entities);
-        formatter.finish()
-    }
-}
 /// See [`BatchDetectEntitiesItemResult`](crate::model::BatchDetectEntitiesItemResult).
 pub mod batch_detect_entities_item_result {
 
     /// A builder for [`BatchDetectEntitiesItemResult`](crate::model::BatchDetectEntitiesItemResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index: std::option::Option<i32>,
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
@@ -12530,7 +12783,7 @@ impl BatchDetectEntitiesItemResult {
 
 /// <p>The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDetectDominantLanguageItemResult {
     /// <p>The zero-based index of the document in the input list.</p>
     #[doc(hidden)]
@@ -12549,19 +12802,11 @@ impl BatchDetectDominantLanguageItemResult {
         self.languages.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDetectDominantLanguageItemResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDetectDominantLanguageItemResult");
-        formatter.field("index", &self.index);
-        formatter.field("languages", &self.languages);
-        formatter.finish()
-    }
-}
 /// See [`BatchDetectDominantLanguageItemResult`](crate::model::BatchDetectDominantLanguageItemResult).
 pub mod batch_detect_dominant_language_item_result {
 
     /// A builder for [`BatchDetectDominantLanguageItemResult`](crate::model::BatchDetectDominantLanguageItemResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index: std::option::Option<i32>,
         pub(crate) languages: std::option::Option<std::vec::Vec<crate::model::DominantLanguage>>,

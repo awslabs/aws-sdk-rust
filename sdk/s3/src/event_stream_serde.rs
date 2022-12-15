@@ -24,50 +24,51 @@ impl aws_smithy_eventstream::frame::UnmarshallMessage
         match response_headers.message_type.as_str() {
             "event" => match response_headers.smithy_type.as_str() {
                 "Records" => {
-                    let mut builder = crate::model::RecordsEvent::builder();
+                    let mut builder = crate::model::records_event::Builder::default();
                     let content_type = response_headers.content_type().unwrap_or_default();
                     if content_type != "application/octet-stream" {
-                        return Err(aws_smithy_eventstream::error::Error::Unmarshalling(format!(
+                        return Err(aws_smithy_eventstream::error::Error::unmarshalling(format!(
                                                 "expected :content-type to be 'application/octet-stream', but was '{}'",
                                                 content_type
                                             )));
                     }
-                    builder =
-                        builder.payload(aws_smithy_types::Blob::new(message.payload().as_ref()));
+                    builder = builder.set_payload(Some(aws_smithy_types::Blob::new(
+                        message.payload().as_ref(),
+                    )));
                     Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
                         crate::model::SelectObjectContentEventStream::Records(builder.build()),
                     ))
                 }
                 "Stats" => {
-                    let mut builder = crate::model::StatsEvent::builder();
-                    builder = builder.details(
+                    let mut builder = crate::model::stats_event::Builder::default();
+                    builder = builder.set_details(Some(
                         crate::xml_deser::deser_member_com_amazonaws_s3_stats_event_details(
                             &message.payload()[..],
                         )
                         .map_err(|err| {
-                            aws_smithy_eventstream::error::Error::Unmarshalling(format!(
+                            aws_smithy_eventstream::error::Error::unmarshalling(format!(
                                 "failed to unmarshall details: {}",
                                 err
                             ))
                         })?,
-                    );
+                    ));
                     Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
                         crate::model::SelectObjectContentEventStream::Stats(builder.build()),
                     ))
                 }
                 "Progress" => {
-                    let mut builder = crate::model::ProgressEvent::builder();
-                    builder = builder.details(
+                    let mut builder = crate::model::progress_event::Builder::default();
+                    builder = builder.set_details(Some(
                         crate::xml_deser::deser_member_com_amazonaws_s3_progress_event_details(
                             &message.payload()[..],
                         )
                         .map_err(|err| {
-                            aws_smithy_eventstream::error::Error::Unmarshalling(format!(
+                            aws_smithy_eventstream::error::Error::unmarshalling(format!(
                                 "failed to unmarshall details: {}",
                                 err
                             ))
                         })?,
-                    );
+                    ));
                     Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
                         crate::model::SelectObjectContentEventStream::Progress(builder.build()),
                     ))
@@ -101,7 +102,7 @@ impl aws_smithy_eventstream::frame::UnmarshallMessage
                 ))
             }
             value => {
-                return Err(aws_smithy_eventstream::error::Error::Unmarshalling(
+                return Err(aws_smithy_eventstream::error::Error::unmarshalling(
                     format!("unrecognized :message-type: {}", value),
                 ));
             }

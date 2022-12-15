@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod associate_kms_key_input {
 
     /// A builder for [`AssociateKmsKeyInput`](crate::input::AssociateKmsKeyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
@@ -37,7 +37,7 @@ pub mod associate_kms_key_input {
         /// Consumes the builder and constructs a [`AssociateKmsKeyInput`](crate::input::AssociateKmsKeyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::AssociateKmsKeyInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::AssociateKmsKeyInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::AssociateKmsKeyInput {
                 log_group_name: self.log_group_name,
@@ -59,13 +59,13 @@ impl AssociateKmsKeyInput {
             crate::operation::AssociateKmsKey,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AssociateKmsKeyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -73,8 +73,10 @@ impl AssociateKmsKeyInput {
             fn update_http_builder(
                 input: &crate::input::AssociateKmsKeyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -163,7 +165,7 @@ impl AssociateKmsKeyInput {
 pub mod cancel_export_task_input {
 
     /// A builder for [`CancelExportTaskInput`](crate::input::CancelExportTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_id: std::option::Option<std::string::String>,
     }
@@ -181,8 +183,10 @@ pub mod cancel_export_task_input {
         /// Consumes the builder and constructs a [`CancelExportTaskInput`](crate::input::CancelExportTaskInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CancelExportTaskInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CancelExportTaskInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CancelExportTaskInput {
                 task_id: self.task_id,
             })
@@ -202,13 +206,13 @@ impl CancelExportTaskInput {
             crate::operation::CancelExportTask,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CancelExportTaskInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -216,8 +220,10 @@ impl CancelExportTaskInput {
             fn update_http_builder(
                 input: &crate::input::CancelExportTaskInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -306,7 +312,7 @@ impl CancelExportTaskInput {
 pub mod create_export_task_input {
 
     /// A builder for [`CreateExportTaskInput`](crate::input::CreateExportTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_name: std::option::Option<std::string::String>,
         pub(crate) log_group_name: std::option::Option<std::string::String>,
@@ -399,8 +405,10 @@ pub mod create_export_task_input {
         /// Consumes the builder and constructs a [`CreateExportTaskInput`](crate::input::CreateExportTaskInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateExportTaskInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateExportTaskInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateExportTaskInput {
                 task_name: self.task_name,
                 log_group_name: self.log_group_name,
@@ -426,13 +434,13 @@ impl CreateExportTaskInput {
             crate::operation::CreateExportTask,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateExportTaskInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -440,8 +448,10 @@ impl CreateExportTaskInput {
             fn update_http_builder(
                 input: &crate::input::CreateExportTaskInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -530,7 +540,7 @@ impl CreateExportTaskInput {
 pub mod create_log_group_input {
 
     /// A builder for [`CreateLogGroupInput`](crate::input::CreateLogGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
@@ -592,7 +602,7 @@ pub mod create_log_group_input {
         /// Consumes the builder and constructs a [`CreateLogGroupInput`](crate::input::CreateLogGroupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateLogGroupInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateLogGroupInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateLogGroupInput {
                 log_group_name: self.log_group_name,
@@ -615,13 +625,13 @@ impl CreateLogGroupInput {
             crate::operation::CreateLogGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateLogGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -629,8 +639,10 @@ impl CreateLogGroupInput {
             fn update_http_builder(
                 input: &crate::input::CreateLogGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -719,7 +731,7 @@ impl CreateLogGroupInput {
 pub mod create_log_stream_input {
 
     /// A builder for [`CreateLogStreamInput`](crate::input::CreateLogStreamInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
         pub(crate) log_stream_name: std::option::Option<std::string::String>,
@@ -754,7 +766,7 @@ pub mod create_log_stream_input {
         /// Consumes the builder and constructs a [`CreateLogStreamInput`](crate::input::CreateLogStreamInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateLogStreamInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateLogStreamInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateLogStreamInput {
                 log_group_name: self.log_group_name,
@@ -776,13 +788,13 @@ impl CreateLogStreamInput {
             crate::operation::CreateLogStream,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateLogStreamInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -790,8 +802,10 @@ impl CreateLogStreamInput {
             fn update_http_builder(
                 input: &crate::input::CreateLogStreamInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -880,7 +894,7 @@ impl CreateLogStreamInput {
 pub mod delete_destination_input {
 
     /// A builder for [`DeleteDestinationInput`](crate::input::DeleteDestinationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_name: std::option::Option<std::string::String>,
     }
@@ -901,8 +915,10 @@ pub mod delete_destination_input {
         /// Consumes the builder and constructs a [`DeleteDestinationInput`](crate::input::DeleteDestinationInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteDestinationInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteDestinationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteDestinationInput {
                 destination_name: self.destination_name,
             })
@@ -922,13 +938,13 @@ impl DeleteDestinationInput {
             crate::operation::DeleteDestination,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteDestinationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -936,8 +952,10 @@ impl DeleteDestinationInput {
             fn update_http_builder(
                 input: &crate::input::DeleteDestinationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1026,7 +1044,7 @@ impl DeleteDestinationInput {
 pub mod delete_log_group_input {
 
     /// A builder for [`DeleteLogGroupInput`](crate::input::DeleteLogGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
     }
@@ -1047,7 +1065,7 @@ pub mod delete_log_group_input {
         /// Consumes the builder and constructs a [`DeleteLogGroupInput`](crate::input::DeleteLogGroupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteLogGroupInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteLogGroupInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteLogGroupInput {
                 log_group_name: self.log_group_name,
@@ -1068,13 +1086,13 @@ impl DeleteLogGroupInput {
             crate::operation::DeleteLogGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteLogGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1082,8 +1100,10 @@ impl DeleteLogGroupInput {
             fn update_http_builder(
                 input: &crate::input::DeleteLogGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1172,7 +1192,7 @@ impl DeleteLogGroupInput {
 pub mod delete_log_stream_input {
 
     /// A builder for [`DeleteLogStreamInput`](crate::input::DeleteLogStreamInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
         pub(crate) log_stream_name: std::option::Option<std::string::String>,
@@ -1207,7 +1227,7 @@ pub mod delete_log_stream_input {
         /// Consumes the builder and constructs a [`DeleteLogStreamInput`](crate::input::DeleteLogStreamInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteLogStreamInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteLogStreamInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteLogStreamInput {
                 log_group_name: self.log_group_name,
@@ -1229,13 +1249,13 @@ impl DeleteLogStreamInput {
             crate::operation::DeleteLogStream,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteLogStreamInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1243,8 +1263,10 @@ impl DeleteLogStreamInput {
             fn update_http_builder(
                 input: &crate::input::DeleteLogStreamInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1333,7 +1355,7 @@ impl DeleteLogStreamInput {
 pub mod delete_metric_filter_input {
 
     /// A builder for [`DeleteMetricFilterInput`](crate::input::DeleteMetricFilterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
         pub(crate) filter_name: std::option::Option<std::string::String>,
@@ -1365,8 +1387,10 @@ pub mod delete_metric_filter_input {
         /// Consumes the builder and constructs a [`DeleteMetricFilterInput`](crate::input::DeleteMetricFilterInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteMetricFilterInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteMetricFilterInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteMetricFilterInput {
                 log_group_name: self.log_group_name,
                 filter_name: self.filter_name,
@@ -1387,13 +1411,13 @@ impl DeleteMetricFilterInput {
             crate::operation::DeleteMetricFilter,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteMetricFilterInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1401,8 +1425,10 @@ impl DeleteMetricFilterInput {
             fn update_http_builder(
                 input: &crate::input::DeleteMetricFilterInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1491,7 +1517,7 @@ impl DeleteMetricFilterInput {
 pub mod delete_query_definition_input {
 
     /// A builder for [`DeleteQueryDefinitionInput`](crate::input::DeleteQueryDefinitionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_definition_id: std::option::Option<std::string::String>,
     }
@@ -1512,8 +1538,10 @@ pub mod delete_query_definition_input {
         /// Consumes the builder and constructs a [`DeleteQueryDefinitionInput`](crate::input::DeleteQueryDefinitionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteQueryDefinitionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteQueryDefinitionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteQueryDefinitionInput {
                 query_definition_id: self.query_definition_id,
             })
@@ -1533,13 +1561,13 @@ impl DeleteQueryDefinitionInput {
             crate::operation::DeleteQueryDefinition,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteQueryDefinitionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1547,8 +1575,10 @@ impl DeleteQueryDefinitionInput {
             fn update_http_builder(
                 input: &crate::input::DeleteQueryDefinitionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1639,7 +1669,7 @@ impl DeleteQueryDefinitionInput {
 pub mod delete_resource_policy_input {
 
     /// A builder for [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_name: std::option::Option<std::string::String>,
     }
@@ -1657,8 +1687,10 @@ pub mod delete_resource_policy_input {
         /// Consumes the builder and constructs a [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteResourcePolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteResourcePolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteResourcePolicyInput {
                 policy_name: self.policy_name,
             })
@@ -1678,13 +1710,13 @@ impl DeleteResourcePolicyInput {
             crate::operation::DeleteResourcePolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteResourcePolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1692,8 +1724,10 @@ impl DeleteResourcePolicyInput {
             fn update_http_builder(
                 input: &crate::input::DeleteResourcePolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1784,7 +1818,7 @@ impl DeleteResourcePolicyInput {
 pub mod delete_retention_policy_input {
 
     /// A builder for [`DeleteRetentionPolicyInput`](crate::input::DeleteRetentionPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
     }
@@ -1805,8 +1839,10 @@ pub mod delete_retention_policy_input {
         /// Consumes the builder and constructs a [`DeleteRetentionPolicyInput`](crate::input::DeleteRetentionPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteRetentionPolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteRetentionPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteRetentionPolicyInput {
                 log_group_name: self.log_group_name,
             })
@@ -1826,13 +1862,13 @@ impl DeleteRetentionPolicyInput {
             crate::operation::DeleteRetentionPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteRetentionPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1840,8 +1876,10 @@ impl DeleteRetentionPolicyInput {
             fn update_http_builder(
                 input: &crate::input::DeleteRetentionPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1932,7 +1970,7 @@ impl DeleteRetentionPolicyInput {
 pub mod delete_subscription_filter_input {
 
     /// A builder for [`DeleteSubscriptionFilterInput`](crate::input::DeleteSubscriptionFilterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
         pub(crate) filter_name: std::option::Option<std::string::String>,
@@ -1966,7 +2004,7 @@ pub mod delete_subscription_filter_input {
             self,
         ) -> Result<
             crate::input::DeleteSubscriptionFilterInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteSubscriptionFilterInput {
                 log_group_name: self.log_group_name,
@@ -1988,13 +2026,13 @@ impl DeleteSubscriptionFilterInput {
             crate::operation::DeleteSubscriptionFilter,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteSubscriptionFilterInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2002,8 +2040,10 @@ impl DeleteSubscriptionFilterInput {
             fn update_http_builder(
                 input: &crate::input::DeleteSubscriptionFilterInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2094,7 +2134,7 @@ impl DeleteSubscriptionFilterInput {
 pub mod describe_destinations_input {
 
     /// A builder for [`DescribeDestinationsInput`](crate::input::DescribeDestinationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_name_prefix: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2137,8 +2177,10 @@ pub mod describe_destinations_input {
         /// Consumes the builder and constructs a [`DescribeDestinationsInput`](crate::input::DescribeDestinationsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeDestinationsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeDestinationsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeDestinationsInput {
                 destination_name_prefix: self.destination_name_prefix,
                 next_token: self.next_token,
@@ -2160,13 +2202,13 @@ impl DescribeDestinationsInput {
             crate::operation::DescribeDestinations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeDestinationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2174,8 +2216,10 @@ impl DescribeDestinationsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeDestinationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2264,7 +2308,7 @@ impl DescribeDestinationsInput {
 pub mod describe_export_tasks_input {
 
     /// A builder for [`DescribeExportTasksInput`](crate::input::DescribeExportTasksInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_id: std::option::Option<std::string::String>,
         pub(crate) status_code: std::option::Option<crate::model::ExportTaskStatusCode>,
@@ -2318,8 +2362,10 @@ pub mod describe_export_tasks_input {
         /// Consumes the builder and constructs a [`DescribeExportTasksInput`](crate::input::DescribeExportTasksInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeExportTasksInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeExportTasksInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeExportTasksInput {
                 task_id: self.task_id,
                 status_code: self.status_code,
@@ -2342,13 +2388,13 @@ impl DescribeExportTasksInput {
             crate::operation::DescribeExportTasks,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeExportTasksInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2356,8 +2402,10 @@ impl DescribeExportTasksInput {
             fn update_http_builder(
                 input: &crate::input::DescribeExportTasksInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2446,7 +2494,7 @@ impl DescribeExportTasksInput {
 pub mod describe_log_groups_input {
 
     /// A builder for [`DescribeLogGroupsInput`](crate::input::DescribeLogGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_name_prefix: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2489,8 +2537,10 @@ pub mod describe_log_groups_input {
         /// Consumes the builder and constructs a [`DescribeLogGroupsInput`](crate::input::DescribeLogGroupsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeLogGroupsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeLogGroupsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeLogGroupsInput {
                 log_group_name_prefix: self.log_group_name_prefix,
                 next_token: self.next_token,
@@ -2512,13 +2562,13 @@ impl DescribeLogGroupsInput {
             crate::operation::DescribeLogGroups,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeLogGroupsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2526,8 +2576,10 @@ impl DescribeLogGroupsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeLogGroupsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2616,7 +2668,7 @@ impl DescribeLogGroupsInput {
 pub mod describe_log_streams_input {
 
     /// A builder for [`DescribeLogStreamsInput`](crate::input::DescribeLogStreamsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
         pub(crate) log_stream_name_prefix: std::option::Option<std::string::String>,
@@ -2701,8 +2753,10 @@ pub mod describe_log_streams_input {
         /// Consumes the builder and constructs a [`DescribeLogStreamsInput`](crate::input::DescribeLogStreamsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeLogStreamsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeLogStreamsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeLogStreamsInput {
                 log_group_name: self.log_group_name,
                 log_stream_name_prefix: self.log_stream_name_prefix,
@@ -2727,13 +2781,13 @@ impl DescribeLogStreamsInput {
             crate::operation::DescribeLogStreams,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeLogStreamsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2741,8 +2795,10 @@ impl DescribeLogStreamsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeLogStreamsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2831,7 +2887,7 @@ impl DescribeLogStreamsInput {
 pub mod describe_metric_filters_input {
 
     /// A builder for [`DescribeMetricFiltersInput`](crate::input::DescribeMetricFiltersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
         pub(crate) filter_name_prefix: std::option::Option<std::string::String>,
@@ -2913,8 +2969,10 @@ pub mod describe_metric_filters_input {
         /// Consumes the builder and constructs a [`DescribeMetricFiltersInput`](crate::input::DescribeMetricFiltersInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeMetricFiltersInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeMetricFiltersInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeMetricFiltersInput {
                 log_group_name: self.log_group_name,
                 filter_name_prefix: self.filter_name_prefix,
@@ -2939,13 +2997,13 @@ impl DescribeMetricFiltersInput {
             crate::operation::DescribeMetricFilters,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeMetricFiltersInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2953,8 +3011,10 @@ impl DescribeMetricFiltersInput {
             fn update_http_builder(
                 input: &crate::input::DescribeMetricFiltersInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3045,7 +3105,7 @@ impl DescribeMetricFiltersInput {
 pub mod describe_queries_input {
 
     /// A builder for [`DescribeQueriesInput`](crate::input::DescribeQueriesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::QueryStatus>,
@@ -3099,7 +3159,7 @@ pub mod describe_queries_input {
         /// Consumes the builder and constructs a [`DescribeQueriesInput`](crate::input::DescribeQueriesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeQueriesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeQueriesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeQueriesInput {
                 log_group_name: self.log_group_name,
@@ -3123,13 +3183,13 @@ impl DescribeQueriesInput {
             crate::operation::DescribeQueries,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeQueriesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3137,8 +3197,10 @@ impl DescribeQueriesInput {
             fn update_http_builder(
                 input: &crate::input::DescribeQueriesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3227,7 +3289,7 @@ impl DescribeQueriesInput {
 pub mod describe_query_definitions_input {
 
     /// A builder for [`DescribeQueryDefinitionsInput`](crate::input::DescribeQueryDefinitionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_definition_name_prefix: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3275,7 +3337,7 @@ pub mod describe_query_definitions_input {
             self,
         ) -> Result<
             crate::input::DescribeQueryDefinitionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeQueryDefinitionsInput {
                 query_definition_name_prefix: self.query_definition_name_prefix,
@@ -3298,13 +3360,13 @@ impl DescribeQueryDefinitionsInput {
             crate::operation::DescribeQueryDefinitions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeQueryDefinitionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3312,8 +3374,10 @@ impl DescribeQueryDefinitionsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeQueryDefinitionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3404,7 +3468,7 @@ impl DescribeQueryDefinitionsInput {
 pub mod describe_resource_policies_input {
 
     /// A builder for [`DescribeResourcePoliciesInput`](crate::input::DescribeResourcePoliciesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) limit: std::option::Option<i32>,
@@ -3435,7 +3499,7 @@ pub mod describe_resource_policies_input {
             self,
         ) -> Result<
             crate::input::DescribeResourcePoliciesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeResourcePoliciesInput {
                 next_token: self.next_token,
@@ -3457,13 +3521,13 @@ impl DescribeResourcePoliciesInput {
             crate::operation::DescribeResourcePolicies,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeResourcePoliciesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3471,8 +3535,10 @@ impl DescribeResourcePoliciesInput {
             fn update_http_builder(
                 input: &crate::input::DescribeResourcePoliciesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3563,7 +3629,7 @@ impl DescribeResourcePoliciesInput {
 pub mod describe_subscription_filters_input {
 
     /// A builder for [`DescribeSubscriptionFiltersInput`](crate::input::DescribeSubscriptionFiltersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
         pub(crate) filter_name_prefix: std::option::Option<std::string::String>,
@@ -3622,7 +3688,7 @@ pub mod describe_subscription_filters_input {
             self,
         ) -> Result<
             crate::input::DescribeSubscriptionFiltersInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeSubscriptionFiltersInput {
                 log_group_name: self.log_group_name,
@@ -3646,13 +3712,13 @@ impl DescribeSubscriptionFiltersInput {
             crate::operation::DescribeSubscriptionFilters,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeSubscriptionFiltersInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3660,8 +3726,10 @@ impl DescribeSubscriptionFiltersInput {
             fn update_http_builder(
                 input: &crate::input::DescribeSubscriptionFiltersInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3749,7 +3817,7 @@ impl DescribeSubscriptionFiltersInput {
 pub mod disassociate_kms_key_input {
 
     /// A builder for [`DisassociateKmsKeyInput`](crate::input::DisassociateKmsKeyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
     }
@@ -3770,8 +3838,10 @@ pub mod disassociate_kms_key_input {
         /// Consumes the builder and constructs a [`DisassociateKmsKeyInput`](crate::input::DisassociateKmsKeyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DisassociateKmsKeyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DisassociateKmsKeyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DisassociateKmsKeyInput {
                 log_group_name: self.log_group_name,
             })
@@ -3791,13 +3861,13 @@ impl DisassociateKmsKeyInput {
             crate::operation::DisassociateKmsKey,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisassociateKmsKeyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3805,8 +3875,10 @@ impl DisassociateKmsKeyInput {
             fn update_http_builder(
                 input: &crate::input::DisassociateKmsKeyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3895,7 +3967,7 @@ impl DisassociateKmsKeyInput {
 pub mod filter_log_events_input {
 
     /// A builder for [`FilterLogEventsInput`](crate::input::FilterLogEventsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
         pub(crate) log_stream_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4033,7 +4105,7 @@ pub mod filter_log_events_input {
         /// Consumes the builder and constructs a [`FilterLogEventsInput`](crate::input::FilterLogEventsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::FilterLogEventsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::FilterLogEventsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::FilterLogEventsInput {
                 log_group_name: self.log_group_name,
@@ -4062,13 +4134,13 @@ impl FilterLogEventsInput {
             crate::operation::FilterLogEvents,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::FilterLogEventsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4076,8 +4148,10 @@ impl FilterLogEventsInput {
             fn update_http_builder(
                 input: &crate::input::FilterLogEventsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4166,7 +4240,7 @@ impl FilterLogEventsInput {
 pub mod get_log_events_input {
 
     /// A builder for [`GetLogEventsInput`](crate::input::GetLogEventsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
         pub(crate) log_stream_name: std::option::Option<std::string::String>,
@@ -4258,7 +4332,7 @@ pub mod get_log_events_input {
         /// Consumes the builder and constructs a [`GetLogEventsInput`](crate::input::GetLogEventsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetLogEventsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetLogEventsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetLogEventsInput {
                 log_group_name: self.log_group_name,
@@ -4285,13 +4359,13 @@ impl GetLogEventsInput {
             crate::operation::GetLogEvents,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetLogEventsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4299,8 +4373,10 @@ impl GetLogEventsInput {
             fn update_http_builder(
                 input: &crate::input::GetLogEventsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4389,7 +4465,7 @@ impl GetLogEventsInput {
 pub mod get_log_group_fields_input {
 
     /// A builder for [`GetLogGroupFieldsInput`](crate::input::GetLogGroupFieldsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
         pub(crate) time: std::option::Option<i64>,
@@ -4423,8 +4499,10 @@ pub mod get_log_group_fields_input {
         /// Consumes the builder and constructs a [`GetLogGroupFieldsInput`](crate::input::GetLogGroupFieldsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetLogGroupFieldsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetLogGroupFieldsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetLogGroupFieldsInput {
                 log_group_name: self.log_group_name,
                 time: self.time,
@@ -4445,13 +4523,13 @@ impl GetLogGroupFieldsInput {
             crate::operation::GetLogGroupFields,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetLogGroupFieldsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4459,8 +4537,10 @@ impl GetLogGroupFieldsInput {
             fn update_http_builder(
                 input: &crate::input::GetLogGroupFieldsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4549,7 +4629,7 @@ impl GetLogGroupFieldsInput {
 pub mod get_log_record_input {
 
     /// A builder for [`GetLogRecordInput`](crate::input::GetLogRecordInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_record_pointer: std::option::Option<std::string::String>,
     }
@@ -4570,7 +4650,7 @@ pub mod get_log_record_input {
         /// Consumes the builder and constructs a [`GetLogRecordInput`](crate::input::GetLogRecordInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetLogRecordInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetLogRecordInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetLogRecordInput {
                 log_record_pointer: self.log_record_pointer,
@@ -4591,13 +4671,13 @@ impl GetLogRecordInput {
             crate::operation::GetLogRecord,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetLogRecordInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4605,8 +4685,10 @@ impl GetLogRecordInput {
             fn update_http_builder(
                 input: &crate::input::GetLogRecordInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4695,7 +4777,7 @@ impl GetLogRecordInput {
 pub mod get_query_results_input {
 
     /// A builder for [`GetQueryResultsInput`](crate::input::GetQueryResultsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_id: std::option::Option<std::string::String>,
     }
@@ -4713,7 +4795,7 @@ pub mod get_query_results_input {
         /// Consumes the builder and constructs a [`GetQueryResultsInput`](crate::input::GetQueryResultsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetQueryResultsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetQueryResultsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetQueryResultsInput {
                 query_id: self.query_id,
@@ -4734,13 +4816,13 @@ impl GetQueryResultsInput {
             crate::operation::GetQueryResults,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetQueryResultsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4748,8 +4830,10 @@ impl GetQueryResultsInput {
             fn update_http_builder(
                 input: &crate::input::GetQueryResultsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4838,7 +4922,7 @@ impl GetQueryResultsInput {
 pub mod list_tags_log_group_input {
 
     /// A builder for [`ListTagsLogGroupInput`](crate::input::ListTagsLogGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
     }
@@ -4859,8 +4943,10 @@ pub mod list_tags_log_group_input {
         /// Consumes the builder and constructs a [`ListTagsLogGroupInput`](crate::input::ListTagsLogGroupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsLogGroupInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsLogGroupInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsLogGroupInput {
                 log_group_name: self.log_group_name,
             })
@@ -4880,13 +4966,13 @@ impl ListTagsLogGroupInput {
             crate::operation::ListTagsLogGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsLogGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4894,8 +4980,10 @@ impl ListTagsLogGroupInput {
             fn update_http_builder(
                 input: &crate::input::ListTagsLogGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4984,7 +5072,7 @@ impl ListTagsLogGroupInput {
 pub mod put_destination_input {
 
     /// A builder for [`PutDestinationInput`](crate::input::PutDestinationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_name: std::option::Option<std::string::String>,
         pub(crate) target_arn: std::option::Option<std::string::String>,
@@ -5027,7 +5115,7 @@ pub mod put_destination_input {
         /// Consumes the builder and constructs a [`PutDestinationInput`](crate::input::PutDestinationInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutDestinationInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::PutDestinationInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::PutDestinationInput {
                 destination_name: self.destination_name,
@@ -5050,13 +5138,13 @@ impl PutDestinationInput {
             crate::operation::PutDestination,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutDestinationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5064,8 +5152,10 @@ impl PutDestinationInput {
             fn update_http_builder(
                 input: &crate::input::PutDestinationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5154,7 +5244,7 @@ impl PutDestinationInput {
 pub mod put_destination_policy_input {
 
     /// A builder for [`PutDestinationPolicyInput`](crate::input::PutDestinationPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_name: std::option::Option<std::string::String>,
         pub(crate) access_policy: std::option::Option<std::string::String>,
@@ -5202,8 +5292,10 @@ pub mod put_destination_policy_input {
         /// Consumes the builder and constructs a [`PutDestinationPolicyInput`](crate::input::PutDestinationPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutDestinationPolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutDestinationPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutDestinationPolicyInput {
                 destination_name: self.destination_name,
                 access_policy: self.access_policy,
@@ -5225,13 +5317,13 @@ impl PutDestinationPolicyInput {
             crate::operation::PutDestinationPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutDestinationPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5239,8 +5331,10 @@ impl PutDestinationPolicyInput {
             fn update_http_builder(
                 input: &crate::input::PutDestinationPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5331,7 +5425,7 @@ impl PutDestinationPolicyInput {
 pub mod put_log_events_input {
 
     /// A builder for [`PutLogEventsInput`](crate::input::PutLogEventsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
         pub(crate) log_stream_name: std::option::Option<std::string::String>,
@@ -5400,7 +5494,7 @@ pub mod put_log_events_input {
         /// Consumes the builder and constructs a [`PutLogEventsInput`](crate::input::PutLogEventsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutLogEventsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::PutLogEventsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::PutLogEventsInput {
                 log_group_name: self.log_group_name,
@@ -5424,13 +5518,13 @@ impl PutLogEventsInput {
             crate::operation::PutLogEvents,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutLogEventsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5438,8 +5532,10 @@ impl PutLogEventsInput {
             fn update_http_builder(
                 input: &crate::input::PutLogEventsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5528,7 +5624,7 @@ impl PutLogEventsInput {
 pub mod put_metric_filter_input {
 
     /// A builder for [`PutMetricFilterInput`](crate::input::PutMetricFilterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
         pub(crate) filter_name: std::option::Option<std::string::String>,
@@ -5595,7 +5691,7 @@ pub mod put_metric_filter_input {
         /// Consumes the builder and constructs a [`PutMetricFilterInput`](crate::input::PutMetricFilterInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutMetricFilterInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::PutMetricFilterInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::PutMetricFilterInput {
                 log_group_name: self.log_group_name,
@@ -5619,13 +5715,13 @@ impl PutMetricFilterInput {
             crate::operation::PutMetricFilter,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutMetricFilterInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5633,8 +5729,10 @@ impl PutMetricFilterInput {
             fn update_http_builder(
                 input: &crate::input::PutMetricFilterInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5723,7 +5821,7 @@ impl PutMetricFilterInput {
 pub mod put_query_definition_input {
 
     /// A builder for [`PutQueryDefinitionInput`](crate::input::PutQueryDefinitionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) query_definition_id: std::option::Option<std::string::String>,
@@ -5790,8 +5888,10 @@ pub mod put_query_definition_input {
         /// Consumes the builder and constructs a [`PutQueryDefinitionInput`](crate::input::PutQueryDefinitionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutQueryDefinitionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutQueryDefinitionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutQueryDefinitionInput {
                 name: self.name,
                 query_definition_id: self.query_definition_id,
@@ -5814,13 +5914,13 @@ impl PutQueryDefinitionInput {
             crate::operation::PutQueryDefinition,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutQueryDefinitionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5828,8 +5928,10 @@ impl PutQueryDefinitionInput {
             fn update_http_builder(
                 input: &crate::input::PutQueryDefinitionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5918,7 +6020,7 @@ impl PutQueryDefinitionInput {
 pub mod put_resource_policy_input {
 
     /// A builder for [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_name: std::option::Option<std::string::String>,
         pub(crate) policy_document: std::option::Option<std::string::String>,
@@ -5960,8 +6062,10 @@ pub mod put_resource_policy_input {
         /// Consumes the builder and constructs a [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutResourcePolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutResourcePolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutResourcePolicyInput {
                 policy_name: self.policy_name,
                 policy_document: self.policy_document,
@@ -5982,13 +6086,13 @@ impl PutResourcePolicyInput {
             crate::operation::PutResourcePolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutResourcePolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5996,8 +6100,10 @@ impl PutResourcePolicyInput {
             fn update_http_builder(
                 input: &crate::input::PutResourcePolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6086,7 +6192,7 @@ impl PutResourcePolicyInput {
 pub mod put_retention_policy_input {
 
     /// A builder for [`PutRetentionPolicyInput`](crate::input::PutRetentionPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
         pub(crate) retention_in_days: std::option::Option<i32>,
@@ -6120,8 +6226,10 @@ pub mod put_retention_policy_input {
         /// Consumes the builder and constructs a [`PutRetentionPolicyInput`](crate::input::PutRetentionPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutRetentionPolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutRetentionPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutRetentionPolicyInput {
                 log_group_name: self.log_group_name,
                 retention_in_days: self.retention_in_days,
@@ -6142,13 +6250,13 @@ impl PutRetentionPolicyInput {
             crate::operation::PutRetentionPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutRetentionPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6156,8 +6264,10 @@ impl PutRetentionPolicyInput {
             fn update_http_builder(
                 input: &crate::input::PutRetentionPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6246,7 +6356,7 @@ impl PutRetentionPolicyInput {
 pub mod put_subscription_filter_input {
 
     /// A builder for [`PutSubscriptionFilterInput`](crate::input::PutSubscriptionFilterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
         pub(crate) filter_name: std::option::Option<std::string::String>,
@@ -6343,8 +6453,10 @@ pub mod put_subscription_filter_input {
         /// Consumes the builder and constructs a [`PutSubscriptionFilterInput`](crate::input::PutSubscriptionFilterInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutSubscriptionFilterInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutSubscriptionFilterInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutSubscriptionFilterInput {
                 log_group_name: self.log_group_name,
                 filter_name: self.filter_name,
@@ -6369,13 +6481,13 @@ impl PutSubscriptionFilterInput {
             crate::operation::PutSubscriptionFilter,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutSubscriptionFilterInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6383,8 +6495,10 @@ impl PutSubscriptionFilterInput {
             fn update_http_builder(
                 input: &crate::input::PutSubscriptionFilterInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6475,7 +6589,7 @@ impl PutSubscriptionFilterInput {
 pub mod start_query_input {
 
     /// A builder for [`StartQueryInput`](crate::input::StartQueryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
         pub(crate) log_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6564,7 +6678,8 @@ pub mod start_query_input {
         /// Consumes the builder and constructs a [`StartQueryInput`](crate::input::StartQueryInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StartQueryInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::StartQueryInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::StartQueryInput {
                 log_group_name: self.log_group_name,
                 log_group_names: self.log_group_names,
@@ -6589,13 +6704,13 @@ impl StartQueryInput {
             crate::operation::StartQuery,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StartQueryInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6603,8 +6718,10 @@ impl StartQueryInput {
             fn update_http_builder(
                 input: &crate::input::StartQueryInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6693,7 +6810,7 @@ impl StartQueryInput {
 pub mod stop_query_input {
 
     /// A builder for [`StopQueryInput`](crate::input::StopQueryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_id: std::option::Option<std::string::String>,
     }
@@ -6711,7 +6828,8 @@ pub mod stop_query_input {
         /// Consumes the builder and constructs a [`StopQueryInput`](crate::input::StopQueryInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StopQueryInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::StopQueryInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::StopQueryInput {
                 query_id: self.query_id,
             })
@@ -6731,13 +6849,13 @@ impl StopQueryInput {
             crate::operation::StopQuery,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StopQueryInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6745,8 +6863,10 @@ impl StopQueryInput {
             fn update_http_builder(
                 input: &crate::input::StopQueryInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6833,7 +6953,7 @@ impl StopQueryInput {
 pub mod tag_log_group_input {
 
     /// A builder for [`TagLogGroupInput`](crate::input::TagLogGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -6882,7 +7002,7 @@ pub mod tag_log_group_input {
         /// Consumes the builder and constructs a [`TagLogGroupInput`](crate::input::TagLogGroupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagLogGroupInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagLogGroupInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagLogGroupInput {
                 log_group_name: self.log_group_name,
@@ -6904,13 +7024,13 @@ impl TagLogGroupInput {
             crate::operation::TagLogGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagLogGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6918,8 +7038,10 @@ impl TagLogGroupInput {
             fn update_http_builder(
                 input: &crate::input::TagLogGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7008,7 +7130,7 @@ impl TagLogGroupInput {
 pub mod test_metric_filter_input {
 
     /// A builder for [`TestMetricFilterInput`](crate::input::TestMetricFilterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_pattern: std::option::Option<std::string::String>,
         pub(crate) log_event_messages: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7049,8 +7171,10 @@ pub mod test_metric_filter_input {
         /// Consumes the builder and constructs a [`TestMetricFilterInput`](crate::input::TestMetricFilterInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TestMetricFilterInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::TestMetricFilterInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::TestMetricFilterInput {
                 filter_pattern: self.filter_pattern,
                 log_event_messages: self.log_event_messages,
@@ -7071,13 +7195,13 @@ impl TestMetricFilterInput {
             crate::operation::TestMetricFilter,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TestMetricFilterInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7085,8 +7209,10 @@ impl TestMetricFilterInput {
             fn update_http_builder(
                 input: &crate::input::TestMetricFilterInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7175,7 +7301,7 @@ impl TestMetricFilterInput {
 pub mod untag_log_group_input {
 
     /// A builder for [`UntagLogGroupInput`](crate::input::UntagLogGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7216,7 +7342,7 @@ pub mod untag_log_group_input {
         /// Consumes the builder and constructs a [`UntagLogGroupInput`](crate::input::UntagLogGroupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagLogGroupInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagLogGroupInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagLogGroupInput {
                 log_group_name: self.log_group_name,
@@ -7238,13 +7364,13 @@ impl UntagLogGroupInput {
             crate::operation::UntagLogGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagLogGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7252,8 +7378,10 @@ impl UntagLogGroupInput {
             fn update_http_builder(
                 input: &crate::input::UntagLogGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7340,7 +7468,7 @@ impl UntagLogGroupInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagLogGroupInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -7359,18 +7487,10 @@ impl UntagLogGroupInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for UntagLogGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagLogGroupInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestMetricFilterInput {
     /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.</p>
     #[doc(hidden)]
@@ -7389,18 +7509,10 @@ impl TestMetricFilterInput {
         self.log_event_messages.as_deref()
     }
 }
-impl std::fmt::Debug for TestMetricFilterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestMetricFilterInput");
-        formatter.field("filter_pattern", &self.filter_pattern);
-        formatter.field("log_event_messages", &self.log_event_messages);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagLogGroupInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -7423,18 +7535,10 @@ impl TagLogGroupInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagLogGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagLogGroupInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopQueryInput {
     /// <p>The ID number of the query to stop. To find this ID number, use <code>DescribeQueries</code>.</p>
     #[doc(hidden)]
@@ -7446,17 +7550,10 @@ impl StopQueryInput {
         self.query_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopQueryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopQueryInput");
-        formatter.field("query_id", &self.query_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartQueryInput {
     /// <p>The log group on which to perform the query.</p>
     /// <p>A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a <code>logGroupName</code> parameter, but not both.</p>
@@ -7507,22 +7604,10 @@ impl StartQueryInput {
         self.limit
     }
 }
-impl std::fmt::Debug for StartQueryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartQueryInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("log_group_names", &self.log_group_names);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("query_string", &self.query_string);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutSubscriptionFilterInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -7581,22 +7666,10 @@ impl PutSubscriptionFilterInput {
         self.distribution.as_ref()
     }
 }
-impl std::fmt::Debug for PutSubscriptionFilterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutSubscriptionFilterInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("filter_name", &self.filter_name);
-        formatter.field("filter_pattern", &self.filter_pattern);
-        formatter.field("destination_arn", &self.destination_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("distribution", &self.distribution);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRetentionPolicyInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -7617,18 +7690,10 @@ impl PutRetentionPolicyInput {
         self.retention_in_days
     }
 }
-impl std::fmt::Debug for PutRetentionPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRetentionPolicyInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("retention_in_days", &self.retention_in_days);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutResourcePolicyInput {
     /// <p>Name of the new policy. This parameter is required.</p>
     #[doc(hidden)]
@@ -7657,18 +7722,10 @@ impl PutResourcePolicyInput {
         self.policy_document.as_deref()
     }
 }
-impl std::fmt::Debug for PutResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutResourcePolicyInput");
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("policy_document", &self.policy_document);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutQueryDefinitionInput {
     /// <p>A name for the query definition. If you are saving a lot of query definitions, we recommend that you name them so that you can easily find the ones you want by using the first part of the name as a filter in the <code>queryDefinitionNamePrefix</code> parameter of <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
     #[doc(hidden)]
@@ -7705,20 +7762,10 @@ impl PutQueryDefinitionInput {
         self.query_string.as_deref()
     }
 }
-impl std::fmt::Debug for PutQueryDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutQueryDefinitionInput");
-        formatter.field("name", &self.name);
-        formatter.field("query_definition_id", &self.query_definition_id);
-        formatter.field("log_group_names", &self.log_group_names);
-        formatter.field("query_string", &self.query_string);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutMetricFilterInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -7754,20 +7801,10 @@ impl PutMetricFilterInput {
         self.metric_transformations.as_deref()
     }
 }
-impl std::fmt::Debug for PutMetricFilterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutMetricFilterInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("filter_name", &self.filter_name);
-        formatter.field("filter_pattern", &self.filter_pattern);
-        formatter.field("metric_transformations", &self.metric_transformations);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutLogEventsInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -7800,20 +7837,10 @@ impl PutLogEventsInput {
         self.sequence_token.as_deref()
     }
 }
-impl std::fmt::Debug for PutLogEventsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutLogEventsInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("log_stream_name", &self.log_stream_name);
-        formatter.field("log_events", &self.log_events);
-        formatter.field("sequence_token", &self.sequence_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutDestinationPolicyInput {
     /// <p>A name for an existing destination.</p>
     #[doc(hidden)]
@@ -7841,19 +7868,10 @@ impl PutDestinationPolicyInput {
         self.force_update
     }
 }
-impl std::fmt::Debug for PutDestinationPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutDestinationPolicyInput");
-        formatter.field("destination_name", &self.destination_name);
-        formatter.field("access_policy", &self.access_policy);
-        formatter.field("force_update", &self.force_update);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutDestinationInput {
     /// <p>A name for the destination.</p>
     #[doc(hidden)]
@@ -7879,19 +7897,10 @@ impl PutDestinationInput {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for PutDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutDestinationInput");
-        formatter.field("destination_name", &self.destination_name);
-        formatter.field("target_arn", &self.target_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsLogGroupInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -7903,17 +7912,10 @@ impl ListTagsLogGroupInput {
         self.log_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsLogGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsLogGroupInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetQueryResultsInput {
     /// <p>The ID number of the query.</p>
     #[doc(hidden)]
@@ -7925,17 +7927,10 @@ impl GetQueryResultsInput {
         self.query_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetQueryResultsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetQueryResultsInput");
-        formatter.field("query_id", &self.query_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLogRecordInput {
     /// <p>The pointer corresponding to the log event record you want to retrieve. You get this from the response of a <code>GetQueryResults</code> operation. In that response, the value of the <code>@ptr</code> field for a log event is the value to use as <code>logRecordPointer</code> to retrieve that complete log event record.</p>
     #[doc(hidden)]
@@ -7947,17 +7942,10 @@ impl GetLogRecordInput {
         self.log_record_pointer.as_deref()
     }
 }
-impl std::fmt::Debug for GetLogRecordInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLogRecordInput");
-        formatter.field("log_record_pointer", &self.log_record_pointer);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLogGroupFieldsInput {
     /// <p>The name of the log group to search.</p>
     #[doc(hidden)]
@@ -7978,18 +7966,10 @@ impl GetLogGroupFieldsInput {
         self.time
     }
 }
-impl std::fmt::Debug for GetLogGroupFieldsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLogGroupFieldsInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("time", &self.time);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLogEventsInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -8045,23 +8025,10 @@ impl GetLogEventsInput {
         self.start_from_head
     }
 }
-impl std::fmt::Debug for GetLogEventsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLogEventsInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("log_stream_name", &self.log_stream_name);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.field("start_from_head", &self.start_from_head);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FilterLogEventsInput {
     /// <p>The name of the log group to search.</p>
     #[doc(hidden)]
@@ -8143,25 +8110,10 @@ impl FilterLogEventsInput {
         self.interleaved
     }
 }
-impl std::fmt::Debug for FilterLogEventsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FilterLogEventsInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("log_stream_names", &self.log_stream_names);
-        formatter.field("log_stream_name_prefix", &self.log_stream_name_prefix);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("filter_pattern", &self.filter_pattern);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.field("interleaved", &self.interleaved);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateKmsKeyInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -8173,17 +8125,10 @@ impl DisassociateKmsKeyInput {
         self.log_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateKmsKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateKmsKeyInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSubscriptionFiltersInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -8216,20 +8161,10 @@ impl DescribeSubscriptionFiltersInput {
         self.limit
     }
 }
-impl std::fmt::Debug for DescribeSubscriptionFiltersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSubscriptionFiltersInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("filter_name_prefix", &self.filter_name_prefix);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeResourcePoliciesInput {
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     #[doc(hidden)]
@@ -8248,18 +8183,10 @@ impl DescribeResourcePoliciesInput {
         self.limit
     }
 }
-impl std::fmt::Debug for DescribeResourcePoliciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeResourcePoliciesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeQueryDefinitionsInput {
     /// <p>Use this parameter to filter your results to only the query definitions that have names that start with the prefix you specify.</p>
     #[doc(hidden)]
@@ -8285,22 +8212,10 @@ impl DescribeQueryDefinitionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeQueryDefinitionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeQueryDefinitionsInput");
-        formatter.field(
-            "query_definition_name_prefix",
-            &self.query_definition_name_prefix,
-        );
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeQueriesInput {
     /// <p>Limits the returned queries to only those for the specified log group.</p>
     #[doc(hidden)]
@@ -8333,20 +8248,10 @@ impl DescribeQueriesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeQueriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeQueriesInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("status", &self.status);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMetricFiltersInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -8393,22 +8298,10 @@ impl DescribeMetricFiltersInput {
         self.metric_namespace.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeMetricFiltersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMetricFiltersInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("filter_name_prefix", &self.filter_name_prefix);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("metric_namespace", &self.metric_namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLogStreamsInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -8461,22 +8354,10 @@ impl DescribeLogStreamsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for DescribeLogStreamsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLogStreamsInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("log_stream_name_prefix", &self.log_stream_name_prefix);
-        formatter.field("order_by", &self.order_by);
-        formatter.field("descending", &self.descending);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLogGroupsInput {
     /// <p>The prefix to match.</p>
     #[doc(hidden)]
@@ -8502,19 +8383,10 @@ impl DescribeLogGroupsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for DescribeLogGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLogGroupsInput");
-        formatter.field("log_group_name_prefix", &self.log_group_name_prefix);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeExportTasksInput {
     /// <p>The ID of the export task. Specifying a task ID filters the results to zero or one export tasks.</p>
     #[doc(hidden)]
@@ -8547,20 +8419,10 @@ impl DescribeExportTasksInput {
         self.limit
     }
 }
-impl std::fmt::Debug for DescribeExportTasksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeExportTasksInput");
-        formatter.field("task_id", &self.task_id);
-        formatter.field("status_code", &self.status_code);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDestinationsInput {
     /// <p>The prefix to match. If you don't specify a value, no prefix filter is applied.</p>
     #[doc(hidden)]
@@ -8586,19 +8448,10 @@ impl DescribeDestinationsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for DescribeDestinationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDestinationsInput");
-        formatter.field("destination_name_prefix", &self.destination_name_prefix);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSubscriptionFilterInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -8617,18 +8470,10 @@ impl DeleteSubscriptionFilterInput {
         self.filter_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSubscriptionFilterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSubscriptionFilterInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("filter_name", &self.filter_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRetentionPolicyInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -8640,17 +8485,10 @@ impl DeleteRetentionPolicyInput {
         self.log_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRetentionPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRetentionPolicyInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourcePolicyInput {
     /// <p>The name of the policy to be revoked. This parameter is required.</p>
     #[doc(hidden)]
@@ -8662,17 +8500,10 @@ impl DeleteResourcePolicyInput {
         self.policy_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteResourcePolicyInput");
-        formatter.field("policy_name", &self.policy_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteQueryDefinitionInput {
     /// <p>The ID of the query definition that you want to delete. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.</p>
     #[doc(hidden)]
@@ -8684,17 +8515,10 @@ impl DeleteQueryDefinitionInput {
         self.query_definition_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteQueryDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteQueryDefinitionInput");
-        formatter.field("query_definition_id", &self.query_definition_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMetricFilterInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -8713,18 +8537,10 @@ impl DeleteMetricFilterInput {
         self.filter_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMetricFilterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMetricFilterInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("filter_name", &self.filter_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLogStreamInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -8743,18 +8559,10 @@ impl DeleteLogStreamInput {
         self.log_stream_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLogStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLogStreamInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("log_stream_name", &self.log_stream_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLogGroupInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -8766,17 +8574,10 @@ impl DeleteLogGroupInput {
         self.log_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLogGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLogGroupInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDestinationInput {
     /// <p>The name of the destination.</p>
     #[doc(hidden)]
@@ -8788,17 +8589,10 @@ impl DeleteDestinationInput {
         self.destination_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDestinationInput");
-        formatter.field("destination_name", &self.destination_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLogStreamInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -8817,18 +8611,10 @@ impl CreateLogStreamInput {
         self.log_stream_name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLogStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLogStreamInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("log_stream_name", &self.log_stream_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLogGroupInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -8860,19 +8646,10 @@ impl CreateLogGroupInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateLogGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLogGroupInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateExportTaskInput {
     /// <p>The name of the export task.</p>
     #[doc(hidden)]
@@ -8926,23 +8703,10 @@ impl CreateExportTaskInput {
         self.destination_prefix.as_deref()
     }
 }
-impl std::fmt::Debug for CreateExportTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateExportTaskInput");
-        formatter.field("task_name", &self.task_name);
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("log_stream_name_prefix", &self.log_stream_name_prefix);
-        formatter.field("from", &self.from);
-        formatter.field("to", &self.to);
-        formatter.field("destination", &self.destination);
-        formatter.field("destination_prefix", &self.destination_prefix);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelExportTaskInput {
     /// <p>The ID of the export task.</p>
     #[doc(hidden)]
@@ -8954,17 +8718,10 @@ impl CancelExportTaskInput {
         self.task_id.as_deref()
     }
 }
-impl std::fmt::Debug for CancelExportTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelExportTaskInput");
-        formatter.field("task_id", &self.task_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateKmsKeyInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -8981,13 +8738,5 @@ impl AssociateKmsKeyInput {
     /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. This must be a symmetric CMK. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names - Key Management Service</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and Asymmetric Keys</a>.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateKmsKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateKmsKeyInput");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.finish()
     }
 }

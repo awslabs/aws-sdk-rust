@@ -5,7 +5,7 @@
 /// [`associate_certificate`](crate::client::Client::associate_certificate).
 ///
 /// See [`crate::client::fluent_builders::AssociateCertificate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateCertificate {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateCertificate {
 /// [`cancel_job`](crate::client::Client::cancel_job).
 ///
 /// See [`crate::client::fluent_builders::CancelJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CancelJob {
     _private: (),
 }
@@ -70,7 +70,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelJob {
 /// [`create_job`](crate::client::Client::create_job).
 ///
 /// See [`crate::client::fluent_builders::CreateJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateJob {
     _private: (),
 }
@@ -101,7 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateJob {
 /// [`create_job_template`](crate::client::Client::create_job_template).
 ///
 /// See [`crate::client::fluent_builders::CreateJobTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateJobTemplate {
     _private: (),
 }
@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateJobTemplate {
 /// [`create_preset`](crate::client::Client::create_preset).
 ///
 /// See [`crate::client::fluent_builders::CreatePreset`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreatePreset {
     _private: (),
 }
@@ -167,7 +167,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePreset {
 /// [`create_queue`](crate::client::Client::create_queue).
 ///
 /// See [`crate::client::fluent_builders::CreateQueue`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateQueue {
     _private: (),
 }
@@ -199,7 +199,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateQueue {
 /// [`delete_job_template`](crate::client::Client::delete_job_template).
 ///
 /// See [`crate::client::fluent_builders::DeleteJobTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteJobTemplate {
     _private: (),
 }
@@ -233,7 +233,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteJobTemplate {
 /// [`delete_policy`](crate::client::Client::delete_policy).
 ///
 /// See [`crate::client::fluent_builders::DeletePolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeletePolicy {
     _private: (),
 }
@@ -265,7 +265,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePolicy {
 /// [`delete_preset`](crate::client::Client::delete_preset).
 ///
 /// See [`crate::client::fluent_builders::DeletePreset`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeletePreset {
     _private: (),
 }
@@ -297,7 +297,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePreset {
 /// [`delete_queue`](crate::client::Client::delete_queue).
 ///
 /// See [`crate::client::fluent_builders::DeleteQueue`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteQueue {
     _private: (),
 }
@@ -329,7 +329,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteQueue {
 /// [`describe_endpoints`](crate::client::Client::describe_endpoints).
 ///
 /// See [`crate::client::fluent_builders::DescribeEndpoints`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeEndpoints {
     _private: (),
 }
@@ -363,7 +363,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEndpoints {
 /// [`disassociate_certificate`](crate::client::Client::disassociate_certificate).
 ///
 /// See [`crate::client::fluent_builders::DisassociateCertificate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateCertificate {
     _private: (),
 }
@@ -397,7 +397,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateCertificate 
 /// [`get_job`](crate::client::Client::get_job).
 ///
 /// See [`crate::client::fluent_builders::GetJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetJob {
     _private: (),
 }
@@ -428,7 +428,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetJob {
 /// [`get_job_template`](crate::client::Client::get_job_template).
 ///
 /// See [`crate::client::fluent_builders::GetJobTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetJobTemplate {
     _private: (),
 }
@@ -460,7 +460,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetJobTemplate {
 /// [`get_policy`](crate::client::Client::get_policy).
 ///
 /// See [`crate::client::fluent_builders::GetPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPolicy {
     _private: (),
 }
@@ -491,7 +491,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPolicy {
 /// [`get_preset`](crate::client::Client::get_preset).
 ///
 /// See [`crate::client::fluent_builders::GetPreset`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPreset {
     _private: (),
 }
@@ -522,7 +522,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPreset {
 /// [`get_queue`](crate::client::Client::get_queue).
 ///
 /// See [`crate::client::fluent_builders::GetQueue`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetQueue {
     _private: (),
 }
@@ -553,7 +553,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetQueue {
 /// [`list_jobs`](crate::client::Client::list_jobs).
 ///
 /// See [`crate::client::fluent_builders::ListJobs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListJobs {
     _private: (),
 }
@@ -584,7 +584,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListJobs {
 /// [`list_job_templates`](crate::client::Client::list_job_templates).
 ///
 /// See [`crate::client::fluent_builders::ListJobTemplates`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListJobTemplates {
     _private: (),
 }
@@ -618,7 +618,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListJobTemplates {
 /// [`list_presets`](crate::client::Client::list_presets).
 ///
 /// See [`crate::client::fluent_builders::ListPresets`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPresets {
     _private: (),
 }
@@ -650,7 +650,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPresets {
 /// [`list_queues`](crate::client::Client::list_queues).
 ///
 /// See [`crate::client::fluent_builders::ListQueues`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListQueues {
     _private: (),
 }
@@ -682,7 +682,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListQueues {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -716,7 +716,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`put_policy`](crate::client::Client::put_policy).
 ///
 /// See [`crate::client::fluent_builders::PutPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutPolicy {
     _private: (),
 }
@@ -747,7 +747,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutPolicy {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -779,7 +779,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -811,7 +811,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_job_template`](crate::client::Client::update_job_template).
 ///
 /// See [`crate::client::fluent_builders::UpdateJobTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateJobTemplate {
     _private: (),
 }
@@ -845,7 +845,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateJobTemplate {
 /// [`update_preset`](crate::client::Client::update_preset).
 ///
 /// See [`crate::client::fluent_builders::UpdatePreset`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdatePreset {
     _private: (),
 }
@@ -877,7 +877,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePreset {
 /// [`update_queue`](crate::client::Client::update_queue).
 ///
 /// See [`crate::client::fluent_builders::UpdateQueue`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateQueue {
     _private: (),
 }

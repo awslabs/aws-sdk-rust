@@ -2,7 +2,7 @@
 
 /// <p>The VPC configuration provisioned for the host.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcConfiguration {
     /// <p>The ID of the Amazon VPC connected to the infrastructure where your provider type is installed.</p>
     #[doc(hidden)]
@@ -35,21 +35,11 @@ impl VpcConfiguration {
         self.tls_certificate.as_deref()
     }
 }
-impl std::fmt::Debug for VpcConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcConfiguration");
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("tls_certificate", &self.tls_certificate);
-        formatter.finish()
-    }
-}
 /// See [`VpcConfiguration`](crate::model::VpcConfiguration).
 pub mod vpc_configuration {
 
     /// A builder for [`VpcConfiguration`](crate::model::VpcConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_id: std::option::Option<std::string::String>,
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -139,7 +129,7 @@ impl VpcConfiguration {
 /// <p>A tag is a key-value pair that is used to manage the resource.</p>
 /// <p>This tag is available for use by AWS services that support tags.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The tag's key.</p>
     #[doc(hidden)]
@@ -158,19 +148,11 @@ impl Tag {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -216,7 +198,7 @@ impl Tag {
 /// <p>A host created through the CLI or the SDK is in `PENDING` status by default. You can make its status `AVAILABLE` by setting up the host in the console.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Host {
     /// <p>The name of the host.</p>
     #[doc(hidden)]
@@ -270,24 +252,11 @@ impl Host {
         self.status_message.as_deref()
     }
 }
-impl std::fmt::Debug for Host {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Host");
-        formatter.field("name", &self.name);
-        formatter.field("host_arn", &self.host_arn);
-        formatter.field("provider_type", &self.provider_type);
-        formatter.field("provider_endpoint", &self.provider_endpoint);
-        formatter.field("vpc_configuration", &self.vpc_configuration);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.finish()
-    }
-}
 /// See [`Host`](crate::model::Host).
 pub mod host {
 
     /// A builder for [`Host`](crate::model::Host).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) host_arn: std::option::Option<std::string::String>,
@@ -401,6 +370,42 @@ impl Host {
     }
 }
 
+/// When writing a match expression against `ProviderType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let providertype = unimplemented!();
+/// match providertype {
+///     ProviderType::Bitbucket => { /* ... */ },
+///     ProviderType::Github => { /* ... */ },
+///     ProviderType::GithubEnterpriseServer => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `providertype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ProviderType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ProviderType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ProviderType::NewFeature` is defined.
+/// Specifically, when `providertype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ProviderType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -419,8 +424,8 @@ pub enum ProviderType {
     Github,
     #[allow(missing_docs)] // documentation missing in model
     GithubEnterpriseServer,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ProviderType {
     fn from(s: &str) -> Self {
@@ -428,7 +433,7 @@ impl std::convert::From<&str> for ProviderType {
             "Bitbucket" => ProviderType::Bitbucket,
             "GitHub" => ProviderType::Github,
             "GitHubEnterpriseServer" => ProviderType::GithubEnterpriseServer,
-            other => ProviderType::Unknown(other.to_owned()),
+            other => ProviderType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -446,11 +451,11 @@ impl ProviderType {
             ProviderType::Bitbucket => "Bitbucket",
             ProviderType::Github => "GitHub",
             ProviderType::GithubEnterpriseServer => "GitHubEnterpriseServer",
-            ProviderType::Unknown(s) => s.as_ref(),
+            ProviderType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Bitbucket", "GitHub", "GitHubEnterpriseServer"]
     }
 }
@@ -463,7 +468,7 @@ impl AsRef<str> for ProviderType {
 /// <p>A resource that is used to connect third-party source providers with services like AWS CodePipeline.</p>
 /// <p>Note: A connection created through CloudFormation, the CLI, or the SDK is in `PENDING` status by default. You can make its status `AVAILABLE` by updating the connection in the console.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Connection {
     /// <p>The name of the connection. Connection names must be unique in an AWS user account.</p>
     #[doc(hidden)]
@@ -514,23 +519,11 @@ impl Connection {
         self.host_arn.as_deref()
     }
 }
-impl std::fmt::Debug for Connection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Connection");
-        formatter.field("connection_name", &self.connection_name);
-        formatter.field("connection_arn", &self.connection_arn);
-        formatter.field("provider_type", &self.provider_type);
-        formatter.field("owner_account_id", &self.owner_account_id);
-        formatter.field("connection_status", &self.connection_status);
-        formatter.field("host_arn", &self.host_arn);
-        formatter.finish()
-    }
-}
 /// See [`Connection`](crate::model::Connection).
 pub mod connection {
 
     /// A builder for [`Connection`](crate::model::Connection).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_name: std::option::Option<std::string::String>,
         pub(crate) connection_arn: std::option::Option<std::string::String>,
@@ -639,6 +632,42 @@ impl Connection {
     }
 }
 
+/// When writing a match expression against `ConnectionStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let connectionstatus = unimplemented!();
+/// match connectionstatus {
+///     ConnectionStatus::Available => { /* ... */ },
+///     ConnectionStatus::Error => { /* ... */ },
+///     ConnectionStatus::Pending => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `connectionstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ConnectionStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ConnectionStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ConnectionStatus::NewFeature` is defined.
+/// Specifically, when `connectionstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ConnectionStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -657,8 +686,8 @@ pub enum ConnectionStatus {
     Error,
     #[allow(missing_docs)] // documentation missing in model
     Pending,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ConnectionStatus {
     fn from(s: &str) -> Self {
@@ -666,7 +695,7 @@ impl std::convert::From<&str> for ConnectionStatus {
             "AVAILABLE" => ConnectionStatus::Available,
             "ERROR" => ConnectionStatus::Error,
             "PENDING" => ConnectionStatus::Pending,
-            other => ConnectionStatus::Unknown(other.to_owned()),
+            other => ConnectionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -684,11 +713,11 @@ impl ConnectionStatus {
             ConnectionStatus::Available => "AVAILABLE",
             ConnectionStatus::Error => "ERROR",
             ConnectionStatus::Pending => "PENDING",
-            ConnectionStatus::Unknown(s) => s.as_ref(),
+            ConnectionStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "ERROR", "PENDING"]
     }
 }

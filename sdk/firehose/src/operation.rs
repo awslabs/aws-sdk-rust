@@ -5,7 +5,7 @@
 /// [`create_delivery_stream`](crate::client::Client::create_delivery_stream).
 ///
 /// See [`crate::client::fluent_builders::CreateDeliveryStream`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateDeliveryStream {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDeliveryStream {
 /// [`delete_delivery_stream`](crate::client::Client::delete_delivery_stream).
 ///
 /// See [`crate::client::fluent_builders::DeleteDeliveryStream`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteDeliveryStream {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDeliveryStream {
 /// [`describe_delivery_stream`](crate::client::Client::describe_delivery_stream).
 ///
 /// See [`crate::client::fluent_builders::DescribeDeliveryStream`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDeliveryStream {
     _private: (),
 }
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDeliveryStream {
 /// [`list_delivery_streams`](crate::client::Client::list_delivery_streams).
 ///
 /// See [`crate::client::fluent_builders::ListDeliveryStreams`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDeliveryStreams {
     _private: (),
 }
@@ -141,7 +141,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDeliveryStreams {
 /// [`list_tags_for_delivery_stream`](crate::client::Client::list_tags_for_delivery_stream).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForDeliveryStream`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForDeliveryStream {
     _private: (),
 }
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForDeliveryStrea
 /// [`put_record`](crate::client::Client::put_record).
 ///
 /// See [`crate::client::fluent_builders::PutRecord`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutRecord {
     _private: (),
 }
@@ -206,7 +206,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRecord {
 /// [`put_record_batch`](crate::client::Client::put_record_batch).
 ///
 /// See [`crate::client::fluent_builders::PutRecordBatch`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutRecordBatch {
     _private: (),
 }
@@ -238,7 +238,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRecordBatch {
 /// [`start_delivery_stream_encryption`](crate::client::Client::start_delivery_stream_encryption).
 ///
 /// See [`crate::client::fluent_builders::StartDeliveryStreamEncryption`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartDeliveryStreamEncryption {
     _private: (),
 }
@@ -272,7 +272,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartDeliveryStreamEncry
 /// [`stop_delivery_stream_encryption`](crate::client::Client::stop_delivery_stream_encryption).
 ///
 /// See [`crate::client::fluent_builders::StopDeliveryStreamEncryption`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopDeliveryStreamEncryption {
     _private: (),
 }
@@ -306,7 +306,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopDeliveryStreamEncryp
 /// [`tag_delivery_stream`](crate::client::Client::tag_delivery_stream).
 ///
 /// See [`crate::client::fluent_builders::TagDeliveryStream`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagDeliveryStream {
     _private: (),
 }
@@ -340,7 +340,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagDeliveryStream {
 /// [`untag_delivery_stream`](crate::client::Client::untag_delivery_stream).
 ///
 /// See [`crate::client::fluent_builders::UntagDeliveryStream`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagDeliveryStream {
     _private: (),
 }
@@ -374,7 +374,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagDeliveryStream {
 /// [`update_destination`](crate::client::Client::update_destination).
 ///
 /// See [`crate::client::fluent_builders::UpdateDestination`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateDestination {
     _private: (),
 }

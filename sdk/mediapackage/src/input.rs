@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod configure_logs_input {
 
     /// A builder for [`ConfigureLogsInput`](crate::input::ConfigureLogsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) egress_access_logs: std::option::Option<crate::model::EgressAccessLogs>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -51,7 +51,7 @@ pub mod configure_logs_input {
         /// Consumes the builder and constructs a [`ConfigureLogsInput`](crate::input::ConfigureLogsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ConfigureLogsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ConfigureLogsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ConfigureLogsInput {
                 egress_access_logs: self.egress_access_logs,
@@ -74,26 +74,31 @@ impl ConfigureLogsInput {
             crate::operation::ConfigureLogs,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ConfigureLogsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.id;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_1, false);
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/channels/{Id}/configure_logs", Id = id)
                     .expect("formatting should succeed");
@@ -103,8 +108,10 @@ impl ConfigureLogsInput {
             fn update_http_builder(
                 input: &crate::input::ConfigureLogsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -188,7 +195,7 @@ impl ConfigureLogsInput {
 pub mod create_channel_input {
 
     /// A builder for [`CreateChannelInput`](crate::input::CreateChannelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -245,7 +252,7 @@ pub mod create_channel_input {
         /// Consumes the builder and constructs a [`CreateChannelInput`](crate::input::CreateChannelInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateChannelInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateChannelInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateChannelInput {
                 description: self.description,
@@ -268,13 +275,13 @@ impl CreateChannelInput {
             crate::operation::CreateChannel,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateChannelInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/channels").expect("formatting should succeed");
                 Ok(())
             }
@@ -282,8 +289,10 @@ impl CreateChannelInput {
             fn update_http_builder(
                 input: &crate::input::CreateChannelInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -367,7 +376,7 @@ impl CreateChannelInput {
 pub mod create_harvest_job_input {
 
     /// A builder for [`CreateHarvestJobInput`](crate::input::CreateHarvestJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) end_time: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -435,8 +444,10 @@ pub mod create_harvest_job_input {
         /// Consumes the builder and constructs a [`CreateHarvestJobInput`](crate::input::CreateHarvestJobInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateHarvestJobInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateHarvestJobInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateHarvestJobInput {
                 end_time: self.end_time,
                 id: self.id,
@@ -460,13 +471,13 @@ impl CreateHarvestJobInput {
             crate::operation::CreateHarvestJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateHarvestJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/harvest_jobs").expect("formatting should succeed");
                 Ok(())
             }
@@ -474,8 +485,10 @@ impl CreateHarvestJobInput {
             fn update_http_builder(
                 input: &crate::input::CreateHarvestJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -559,7 +572,7 @@ impl CreateHarvestJobInput {
 pub mod create_origin_endpoint_input {
 
     /// A builder for [`CreateOriginEndpointInput`](crate::input::CreateOriginEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authorization: std::option::Option<crate::model::Authorization>,
         pub(crate) channel_id: std::option::Option<std::string::String>,
@@ -771,8 +784,10 @@ pub mod create_origin_endpoint_input {
         /// Consumes the builder and constructs a [`CreateOriginEndpointInput`](crate::input::CreateOriginEndpointInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateOriginEndpointInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateOriginEndpointInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateOriginEndpointInput {
                 authorization: self.authorization,
                 channel_id: self.channel_id,
@@ -805,13 +820,13 @@ impl CreateOriginEndpointInput {
             crate::operation::CreateOriginEndpoint,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateOriginEndpointInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/origin_endpoints").expect("formatting should succeed");
                 Ok(())
             }
@@ -819,8 +834,10 @@ impl CreateOriginEndpointInput {
             fn update_http_builder(
                 input: &crate::input::CreateOriginEndpointInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -906,7 +923,7 @@ impl CreateOriginEndpointInput {
 pub mod delete_channel_input {
 
     /// A builder for [`DeleteChannelInput`](crate::input::DeleteChannelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -924,7 +941,7 @@ pub mod delete_channel_input {
         /// Consumes the builder and constructs a [`DeleteChannelInput`](crate::input::DeleteChannelInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteChannelInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteChannelInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteChannelInput { id: self.id })
         }
@@ -943,26 +960,31 @@ impl DeleteChannelInput {
             crate::operation::DeleteChannel,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteChannelInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_2 = &_input.id;
-                let input_2 = input_2.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_2, false);
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_2,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/channels/{Id}", Id = id).expect("formatting should succeed");
                 Ok(())
@@ -971,8 +993,10 @@ impl DeleteChannelInput {
             fn update_http_builder(
                 input: &crate::input::DeleteChannelInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1042,7 +1066,7 @@ impl DeleteChannelInput {
 pub mod delete_origin_endpoint_input {
 
     /// A builder for [`DeleteOriginEndpointInput`](crate::input::DeleteOriginEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -1060,8 +1084,10 @@ pub mod delete_origin_endpoint_input {
         /// Consumes the builder and constructs a [`DeleteOriginEndpointInput`](crate::input::DeleteOriginEndpointInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteOriginEndpointInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteOriginEndpointInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteOriginEndpointInput { id: self.id })
         }
     }
@@ -1079,26 +1105,31 @@ impl DeleteOriginEndpointInput {
             crate::operation::DeleteOriginEndpoint,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteOriginEndpointInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_3 = &_input.id;
-                let input_3 = input_3.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_3, false);
+                let input_3 = input_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_3,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/origin_endpoints/{Id}", Id = id)
                     .expect("formatting should succeed");
@@ -1108,8 +1139,10 @@ impl DeleteOriginEndpointInput {
             fn update_http_builder(
                 input: &crate::input::DeleteOriginEndpointInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1179,7 +1212,7 @@ impl DeleteOriginEndpointInput {
 pub mod describe_channel_input {
 
     /// A builder for [`DescribeChannelInput`](crate::input::DescribeChannelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -1197,7 +1230,7 @@ pub mod describe_channel_input {
         /// Consumes the builder and constructs a [`DescribeChannelInput`](crate::input::DescribeChannelInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeChannelInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeChannelInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeChannelInput { id: self.id })
         }
@@ -1216,26 +1249,31 @@ impl DescribeChannelInput {
             crate::operation::DescribeChannel,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeChannelInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_4 = &_input.id;
-                let input_4 = input_4.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_4, false);
+                let input_4 = input_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_4,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/channels/{Id}", Id = id).expect("formatting should succeed");
                 Ok(())
@@ -1244,8 +1282,10 @@ impl DescribeChannelInput {
             fn update_http_builder(
                 input: &crate::input::DescribeChannelInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1315,7 +1355,7 @@ impl DescribeChannelInput {
 pub mod describe_harvest_job_input {
 
     /// A builder for [`DescribeHarvestJobInput`](crate::input::DescribeHarvestJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -1333,8 +1373,10 @@ pub mod describe_harvest_job_input {
         /// Consumes the builder and constructs a [`DescribeHarvestJobInput`](crate::input::DescribeHarvestJobInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeHarvestJobInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeHarvestJobInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeHarvestJobInput { id: self.id })
         }
     }
@@ -1352,26 +1394,31 @@ impl DescribeHarvestJobInput {
             crate::operation::DescribeHarvestJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeHarvestJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_5 = &_input.id;
-                let input_5 = input_5.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_5, false);
+                let input_5 = input_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_5,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/harvest_jobs/{Id}", Id = id).expect("formatting should succeed");
                 Ok(())
@@ -1380,8 +1427,10 @@ impl DescribeHarvestJobInput {
             fn update_http_builder(
                 input: &crate::input::DescribeHarvestJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1451,7 +1500,7 @@ impl DescribeHarvestJobInput {
 pub mod describe_origin_endpoint_input {
 
     /// A builder for [`DescribeOriginEndpointInput`](crate::input::DescribeOriginEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -1469,8 +1518,10 @@ pub mod describe_origin_endpoint_input {
         /// Consumes the builder and constructs a [`DescribeOriginEndpointInput`](crate::input::DescribeOriginEndpointInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeOriginEndpointInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeOriginEndpointInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeOriginEndpointInput { id: self.id })
         }
     }
@@ -1488,26 +1539,31 @@ impl DescribeOriginEndpointInput {
             crate::operation::DescribeOriginEndpoint,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeOriginEndpointInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_6 = &_input.id;
-                let input_6 = input_6.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_6, false);
+                let input_6 = input_6.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_6,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/origin_endpoints/{Id}", Id = id)
                     .expect("formatting should succeed");
@@ -1517,8 +1573,10 @@ impl DescribeOriginEndpointInput {
             fn update_http_builder(
                 input: &crate::input::DescribeOriginEndpointInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1588,7 +1646,7 @@ impl DescribeOriginEndpointInput {
 pub mod list_channels_input {
 
     /// A builder for [`ListChannelsInput`](crate::input::ListChannelsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1617,7 +1675,7 @@ pub mod list_channels_input {
         /// Consumes the builder and constructs a [`ListChannelsInput`](crate::input::ListChannelsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListChannelsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListChannelsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListChannelsInput {
                 max_results: self.max_results.unwrap_or_default(),
@@ -1639,20 +1697,20 @@ impl ListChannelsInput {
             crate::operation::ListChannels,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListChannelsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/channels").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListChannelsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -1661,7 +1719,9 @@ impl ListChannelsInput {
                     );
                 }
                 if let Some(inner_7) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_7));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_7));
+                    }
                 }
                 Ok(())
             }
@@ -1669,8 +1729,10 @@ impl ListChannelsInput {
             fn update_http_builder(
                 input: &crate::input::ListChannelsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1741,7 +1803,7 @@ impl ListChannelsInput {
 pub mod list_harvest_jobs_input {
 
     /// A builder for [`ListHarvestJobsInput`](crate::input::ListHarvestJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) include_channel_id: std::option::Option<std::string::String>,
         pub(crate) include_status: std::option::Option<std::string::String>,
@@ -1798,7 +1860,7 @@ pub mod list_harvest_jobs_input {
         /// Consumes the builder and constructs a [`ListHarvestJobsInput`](crate::input::ListHarvestJobsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListHarvestJobsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListHarvestJobsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListHarvestJobsInput {
                 include_channel_id: self.include_channel_id,
@@ -1822,32 +1884,36 @@ impl ListHarvestJobsInput {
             crate::operation::ListHarvestJobs,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListHarvestJobsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/harvest_jobs").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListHarvestJobsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_8) = &_input.include_channel_id {
-                    query.push_kv(
-                        "includeChannelId",
-                        &aws_smithy_http::query::fmt_string(&inner_8),
-                    );
+                    {
+                        query.push_kv(
+                            "includeChannelId",
+                            &aws_smithy_http::query::fmt_string(&inner_8),
+                        );
+                    }
                 }
                 if let Some(inner_9) = &_input.include_status {
-                    query.push_kv(
-                        "includeStatus",
-                        &aws_smithy_http::query::fmt_string(&inner_9),
-                    );
+                    {
+                        query.push_kv(
+                            "includeStatus",
+                            &aws_smithy_http::query::fmt_string(&inner_9),
+                        );
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -1856,7 +1922,9 @@ impl ListHarvestJobsInput {
                     );
                 }
                 if let Some(inner_10) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_10));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_10));
+                    }
                 }
                 Ok(())
             }
@@ -1864,8 +1932,10 @@ impl ListHarvestJobsInput {
             fn update_http_builder(
                 input: &crate::input::ListHarvestJobsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1936,7 +2006,7 @@ impl ListHarvestJobsInput {
 pub mod list_origin_endpoints_input {
 
     /// A builder for [`ListOriginEndpointsInput`](crate::input::ListOriginEndpointsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -1976,8 +2046,10 @@ pub mod list_origin_endpoints_input {
         /// Consumes the builder and constructs a [`ListOriginEndpointsInput`](crate::input::ListOriginEndpointsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListOriginEndpointsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListOriginEndpointsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListOriginEndpointsInput {
                 channel_id: self.channel_id,
                 max_results: self.max_results.unwrap_or_default(),
@@ -1999,23 +2071,25 @@ impl ListOriginEndpointsInput {
             crate::operation::ListOriginEndpoints,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListOriginEndpointsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/origin_endpoints").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListOriginEndpointsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_11) = &_input.channel_id {
-                    query.push_kv("channelId", &aws_smithy_http::query::fmt_string(&inner_11));
+                    {
+                        query.push_kv("channelId", &aws_smithy_http::query::fmt_string(&inner_11));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -2024,7 +2098,9 @@ impl ListOriginEndpointsInput {
                     );
                 }
                 if let Some(inner_12) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_12));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_12));
+                    }
                 }
                 Ok(())
             }
@@ -2032,8 +2108,10 @@ impl ListOriginEndpointsInput {
             fn update_http_builder(
                 input: &crate::input::ListOriginEndpointsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2104,7 +2182,7 @@ impl ListOriginEndpointsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -2122,8 +2200,10 @@ pub mod list_tags_for_resource_input {
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
             })
@@ -2143,26 +2223,31 @@ impl ListTagsForResourceInput {
             crate::operation::ListTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_13 = &_input.resource_arn;
-                let input_13 = input_13.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_13, false);
+                let input_13 = input_13.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_13,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
                     .expect("formatting should succeed");
@@ -2172,8 +2257,10 @@ impl ListTagsForResourceInput {
             fn update_http_builder(
                 input: &crate::input::ListTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2243,7 +2330,7 @@ impl ListTagsForResourceInput {
 pub mod rotate_channel_credentials_input {
 
     /// A builder for [`RotateChannelCredentialsInput`](crate::input::RotateChannelCredentialsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -2263,7 +2350,7 @@ pub mod rotate_channel_credentials_input {
             self,
         ) -> Result<
             crate::input::RotateChannelCredentialsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::RotateChannelCredentialsInput { id: self.id })
         }
@@ -2282,26 +2369,31 @@ impl RotateChannelCredentialsInput {
             crate::operation::RotateChannelCredentials,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RotateChannelCredentialsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_14 = &_input.id;
-                let input_14 = input_14.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_14, false);
+                let input_14 = input_14.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_14,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/channels/{Id}/credentials", Id = id)
                     .expect("formatting should succeed");
@@ -2311,8 +2403,10 @@ impl RotateChannelCredentialsInput {
             fn update_http_builder(
                 input: &crate::input::RotateChannelCredentialsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -2382,7 +2476,7 @@ impl RotateChannelCredentialsInput {
 pub mod rotate_ingest_endpoint_credentials_input {
 
     /// A builder for [`RotateIngestEndpointCredentialsInput`](crate::input::RotateIngestEndpointCredentialsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) ingest_endpoint_id: std::option::Option<std::string::String>,
@@ -2416,7 +2510,7 @@ pub mod rotate_ingest_endpoint_credentials_input {
             self,
         ) -> Result<
             crate::input::RotateIngestEndpointCredentialsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::RotateIngestEndpointCredentialsInput {
                 id: self.id,
@@ -2438,40 +2532,50 @@ impl RotateIngestEndpointCredentialsInput {
             crate::operation::RotateIngestEndpointCredentials,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RotateIngestEndpointCredentialsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_15 = &_input.id;
-                let input_15 = input_15.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_15, false);
+                let input_15 = input_15.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_15,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_16 = &_input.ingest_endpoint_id;
-                let input_16 = input_16.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "ingest_endpoint_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let ingest_endpoint_id = aws_smithy_http::label::fmt_string(input_16, false);
+                let input_16 = input_16.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "ingest_endpoint_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let ingest_endpoint_id = aws_smithy_http::label::fmt_string(
+                    input_16,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if ingest_endpoint_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "ingest_endpoint_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "ingest_endpoint_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2486,8 +2590,10 @@ impl RotateIngestEndpointCredentialsInput {
             fn update_http_builder(
                 input: &crate::input::RotateIngestEndpointCredentialsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -2557,7 +2663,7 @@ impl RotateIngestEndpointCredentialsInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -2602,7 +2708,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
@@ -2624,26 +2730,31 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_17 = &_input.resource_arn;
-                let input_17 = input_17.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_17, false);
+                let input_17 = input_17.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_17,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
                     .expect("formatting should succeed");
@@ -2653,8 +2764,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2738,7 +2851,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2776,7 +2889,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
@@ -2798,26 +2911,31 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_18 = &_input.resource_arn;
-                let input_18 = input_18.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_18, false);
+                let input_18 = input_18.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_18,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
                     .expect("formatting should succeed");
@@ -2826,12 +2944,17 @@ impl UntagResourceInput {
             fn uri_query(
                 _input: &crate::input::UntagResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_19) = &_input.tag_keys {
-                    for inner_20 in inner_19 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_20));
-                    }
+                let inner_19 = &_input.tag_keys;
+                let inner_19 = inner_19.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_20 in inner_19 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_20));
                 }
                 Ok(())
             }
@@ -2839,8 +2962,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2911,7 +3036,7 @@ impl UntagResourceInput {
 pub mod update_channel_input {
 
     /// A builder for [`UpdateChannelInput`](crate::input::UpdateChannelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2940,7 +3065,7 @@ pub mod update_channel_input {
         /// Consumes the builder and constructs a [`UpdateChannelInput`](crate::input::UpdateChannelInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateChannelInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateChannelInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateChannelInput {
                 description: self.description,
@@ -2962,26 +3087,31 @@ impl UpdateChannelInput {
             crate::operation::UpdateChannel,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateChannelInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_21 = &_input.id;
-                let input_21 = input_21.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_21, false);
+                let input_21 = input_21.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_21,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/channels/{Id}", Id = id).expect("formatting should succeed");
                 Ok(())
@@ -2990,8 +3120,10 @@ impl UpdateChannelInput {
             fn update_http_builder(
                 input: &crate::input::UpdateChannelInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -3075,7 +3207,7 @@ impl UpdateChannelInput {
 pub mod update_origin_endpoint_input {
 
     /// A builder for [`UpdateOriginEndpointInput`](crate::input::UpdateOriginEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authorization: std::option::Option<crate::model::Authorization>,
         pub(crate) cmaf_package:
@@ -3248,8 +3380,10 @@ pub mod update_origin_endpoint_input {
         /// Consumes the builder and constructs a [`UpdateOriginEndpointInput`](crate::input::UpdateOriginEndpointInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateOriginEndpointInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateOriginEndpointInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateOriginEndpointInput {
                 authorization: self.authorization,
                 cmaf_package: self.cmaf_package,
@@ -3280,26 +3414,31 @@ impl UpdateOriginEndpointInput {
             crate::operation::UpdateOriginEndpoint,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateOriginEndpointInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_22 = &_input.id;
-                let input_22 = input_22.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_22, false);
+                let input_22 = input_22.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_22,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/origin_endpoints/{Id}", Id = id)
                     .expect("formatting should succeed");
@@ -3309,8 +3448,10 @@ impl UpdateOriginEndpointInput {
             fn update_http_builder(
                 input: &crate::input::UpdateOriginEndpointInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -3394,7 +3535,7 @@ impl UpdateOriginEndpointInput {
 
 /// Configuration parameters used to update an existing OriginEndpoint.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateOriginEndpointInput {
     /// CDN Authorization credentials
     #[doc(hidden)]
@@ -3485,28 +3626,10 @@ impl UpdateOriginEndpointInput {
         self.whitelist.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateOriginEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateOriginEndpointInput");
-        formatter.field("authorization", &self.authorization);
-        formatter.field("cmaf_package", &self.cmaf_package);
-        formatter.field("dash_package", &self.dash_package);
-        formatter.field("description", &self.description);
-        formatter.field("hls_package", &self.hls_package);
-        formatter.field("id", &self.id);
-        formatter.field("manifest_name", &self.manifest_name);
-        formatter.field("mss_package", &self.mss_package);
-        formatter.field("origination", &self.origination);
-        formatter.field("startover_window_seconds", &self.startover_window_seconds);
-        formatter.field("time_delay_seconds", &self.time_delay_seconds);
-        formatter.field("whitelist", &self.whitelist);
-        formatter.finish()
-    }
-}
 
 /// Configuration parameters used to update the Channel.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateChannelInput {
     /// A short text description of the Channel.
     #[doc(hidden)]
@@ -3525,18 +3648,10 @@ impl UpdateChannelInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateChannelInput");
-        formatter.field("description", &self.description);
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -3555,18 +3670,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -3589,18 +3696,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RotateIngestEndpointCredentialsInput {
     /// The ID of the channel the IngestEndpoint is on.
     #[doc(hidden)]
@@ -3619,19 +3718,11 @@ impl RotateIngestEndpointCredentialsInput {
         self.ingest_endpoint_id.as_deref()
     }
 }
-impl std::fmt::Debug for RotateIngestEndpointCredentialsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RotateIngestEndpointCredentialsInput");
-        formatter.field("id", &self.id);
-        formatter.field("ingest_endpoint_id", &self.ingest_endpoint_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RotateChannelCredentialsInput {
     /// The ID of the channel to update.
     #[doc(hidden)]
@@ -3643,17 +3734,10 @@ impl RotateChannelCredentialsInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for RotateChannelCredentialsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RotateChannelCredentialsInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -3665,17 +3749,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOriginEndpointsInput {
     /// When specified, the request will return only OriginEndpoints associated with the given Channel ID.
     #[doc(hidden)]
@@ -3701,19 +3778,10 @@ impl ListOriginEndpointsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListOriginEndpointsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOriginEndpointsInput");
-        formatter.field("channel_id", &self.channel_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListHarvestJobsInput {
     /// When specified, the request will return only HarvestJobs associated with the given Channel ID.
     #[doc(hidden)]
@@ -3746,20 +3814,10 @@ impl ListHarvestJobsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListHarvestJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListHarvestJobsInput");
-        formatter.field("include_channel_id", &self.include_channel_id);
-        formatter.field("include_status", &self.include_status);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListChannelsInput {
     /// Upper bound on number of records to return.
     #[doc(hidden)]
@@ -3778,18 +3836,10 @@ impl ListChannelsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListChannelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListChannelsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeOriginEndpointInput {
     /// The ID of the OriginEndpoint.
     #[doc(hidden)]
@@ -3801,17 +3851,10 @@ impl DescribeOriginEndpointInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeOriginEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeOriginEndpointInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeHarvestJobInput {
     /// The ID of the HarvestJob.
     #[doc(hidden)]
@@ -3823,17 +3866,10 @@ impl DescribeHarvestJobInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeHarvestJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeHarvestJobInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeChannelInput {
     /// The ID of a Channel.
     #[doc(hidden)]
@@ -3845,17 +3881,10 @@ impl DescribeChannelInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeChannelInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteOriginEndpointInput {
     /// The ID of the OriginEndpoint to delete.
     #[doc(hidden)]
@@ -3867,17 +3896,10 @@ impl DeleteOriginEndpointInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteOriginEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteOriginEndpointInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteChannelInput {
     /// The ID of the Channel to delete.
     #[doc(hidden)]
@@ -3889,17 +3911,10 @@ impl DeleteChannelInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteChannelInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 /// Configuration parameters used to create a new OriginEndpoint.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateOriginEndpointInput {
     /// CDN Authorization credentials
     #[doc(hidden)]
@@ -4008,30 +4023,10 @@ impl CreateOriginEndpointInput {
         self.whitelist.as_deref()
     }
 }
-impl std::fmt::Debug for CreateOriginEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateOriginEndpointInput");
-        formatter.field("authorization", &self.authorization);
-        formatter.field("channel_id", &self.channel_id);
-        formatter.field("cmaf_package", &self.cmaf_package);
-        formatter.field("dash_package", &self.dash_package);
-        formatter.field("description", &self.description);
-        formatter.field("hls_package", &self.hls_package);
-        formatter.field("id", &self.id);
-        formatter.field("manifest_name", &self.manifest_name);
-        formatter.field("mss_package", &self.mss_package);
-        formatter.field("origination", &self.origination);
-        formatter.field("startover_window_seconds", &self.startover_window_seconds);
-        formatter.field("tags", &self.tags);
-        formatter.field("time_delay_seconds", &self.time_delay_seconds);
-        formatter.field("whitelist", &self.whitelist);
-        formatter.finish()
-    }
-}
 
 /// Configuration parameters used to create a new HarvestJob.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateHarvestJobInput {
     /// The end of the time-window which will be harvested
     #[doc(hidden)]
@@ -4071,21 +4066,10 @@ impl CreateHarvestJobInput {
         self.start_time.as_deref()
     }
 }
-impl std::fmt::Debug for CreateHarvestJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateHarvestJobInput");
-        formatter.field("end_time", &self.end_time);
-        formatter.field("id", &self.id);
-        formatter.field("origin_endpoint_id", &self.origin_endpoint_id);
-        formatter.field("s3_destination", &self.s3_destination);
-        formatter.field("start_time", &self.start_time);
-        formatter.finish()
-    }
-}
 
 /// A new Channel configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateChannelInput {
     /// A short text description of the Channel.
     #[doc(hidden)]
@@ -4115,19 +4099,10 @@ impl CreateChannelInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateChannelInput");
-        formatter.field("description", &self.description);
-        formatter.field("id", &self.id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// the option to configure log subscription.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigureLogsInput {
     /// Configure egress access logging.
     #[doc(hidden)]
@@ -4151,14 +4126,5 @@ impl ConfigureLogsInput {
     /// Configure ingress access logging.
     pub fn ingress_access_logs(&self) -> std::option::Option<&crate::model::IngressAccessLogs> {
         self.ingress_access_logs.as_ref()
-    }
-}
-impl std::fmt::Debug for ConfigureLogsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigureLogsInput");
-        formatter.field("egress_access_logs", &self.egress_access_logs);
-        formatter.field("id", &self.id);
-        formatter.field("ingress_access_logs", &self.ingress_access_logs);
-        formatter.finish()
     }
 }

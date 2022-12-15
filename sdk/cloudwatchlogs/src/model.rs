@@ -2,7 +2,7 @@
 
 /// <p>Represents a matched event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricFilterMatchRecord {
     /// <p>The event number.</p>
     #[doc(hidden)]
@@ -32,20 +32,11 @@ impl MetricFilterMatchRecord {
         self.extracted_values.as_ref()
     }
 }
-impl std::fmt::Debug for MetricFilterMatchRecord {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricFilterMatchRecord");
-        formatter.field("event_number", &self.event_number);
-        formatter.field("event_message", &self.event_message);
-        formatter.field("extracted_values", &self.extracted_values);
-        formatter.finish()
-    }
-}
 /// See [`MetricFilterMatchRecord`](crate::model::MetricFilterMatchRecord).
 pub mod metric_filter_match_record {
 
     /// A builder for [`MetricFilterMatchRecord`](crate::model::MetricFilterMatchRecord).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_number: std::option::Option<i64>,
         pub(crate) event_message: std::option::Option<std::string::String>,
@@ -121,7 +112,7 @@ impl MetricFilterMatchRecord {
 
 /// <p>Reserved.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryCompileError {
     /// <p>Reserved.</p>
     #[doc(hidden)]
@@ -140,19 +131,11 @@ impl QueryCompileError {
         self.message.as_deref()
     }
 }
-impl std::fmt::Debug for QueryCompileError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryCompileError");
-        formatter.field("location", &self.location);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 /// See [`QueryCompileError`](crate::model::QueryCompileError).
 pub mod query_compile_error {
 
     /// A builder for [`QueryCompileError`](crate::model::QueryCompileError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location: std::option::Option<crate::model::QueryCompileErrorLocation>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -199,7 +182,7 @@ impl QueryCompileError {
 
 /// <p>Reserved.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryCompileErrorLocation {
     /// <p>Reserved.</p>
     #[doc(hidden)]
@@ -218,19 +201,11 @@ impl QueryCompileErrorLocation {
         self.end_char_offset
     }
 }
-impl std::fmt::Debug for QueryCompileErrorLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryCompileErrorLocation");
-        formatter.field("start_char_offset", &self.start_char_offset);
-        formatter.field("end_char_offset", &self.end_char_offset);
-        formatter.finish()
-    }
-}
 /// See [`QueryCompileErrorLocation`](crate::model::QueryCompileErrorLocation).
 pub mod query_compile_error_location {
 
     /// A builder for [`QueryCompileErrorLocation`](crate::model::QueryCompileErrorLocation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_char_offset: std::option::Option<i32>,
         pub(crate) end_char_offset: std::option::Option<i32>,
@@ -272,6 +247,41 @@ impl QueryCompileErrorLocation {
     }
 }
 
+/// When writing a match expression against `Distribution`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let distribution = unimplemented!();
+/// match distribution {
+///     Distribution::ByLogStream => { /* ... */ },
+///     Distribution::Random => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `distribution` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Distribution::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Distribution::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Distribution::NewFeature` is defined.
+/// Specifically, when `distribution` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Distribution::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 /// <p>The method used to distribute log data to the destination, which can be either
 /// random or grouped by log stream.</p>
 #[non_exhaustive]
@@ -289,15 +299,15 @@ pub enum Distribution {
     ByLogStream,
     #[allow(missing_docs)] // documentation missing in model
     Random,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Distribution {
     fn from(s: &str) -> Self {
         match s {
             "ByLogStream" => Distribution::ByLogStream,
             "Random" => Distribution::Random,
-            other => Distribution::Unknown(other.to_owned()),
+            other => Distribution::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -314,11 +324,11 @@ impl Distribution {
         match self {
             Distribution::ByLogStream => "ByLogStream",
             Distribution::Random => "Random",
-            Distribution::Unknown(s) => s.as_ref(),
+            Distribution::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ByLogStream", "Random"]
     }
 }
@@ -330,7 +340,7 @@ impl AsRef<str> for Distribution {
 
 /// <p>A policy enabling one or more entities to put logs to a log group in this account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourcePolicy {
     /// <p>The name of the resource policy.</p>
     #[doc(hidden)]
@@ -356,20 +366,11 @@ impl ResourcePolicy {
         self.last_updated_time
     }
 }
-impl std::fmt::Debug for ResourcePolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourcePolicy");
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("policy_document", &self.policy_document);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.finish()
-    }
-}
 /// See [`ResourcePolicy`](crate::model::ResourcePolicy).
 pub mod resource_policy {
 
     /// A builder for [`ResourcePolicy`](crate::model::ResourcePolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_name: std::option::Option<std::string::String>,
         pub(crate) policy_document: std::option::Option<std::string::String>,
@@ -428,7 +429,7 @@ impl ResourcePolicy {
 
 /// <p>Indicates how to transform ingested log events to metric data in a CloudWatch metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricTransformation {
     /// <p>The name of the CloudWatch metric.</p>
     #[doc(hidden)]
@@ -487,23 +488,11 @@ impl MetricTransformation {
         self.unit.as_ref()
     }
 }
-impl std::fmt::Debug for MetricTransformation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricTransformation");
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("metric_namespace", &self.metric_namespace);
-        formatter.field("metric_value", &self.metric_value);
-        formatter.field("default_value", &self.default_value);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("unit", &self.unit);
-        formatter.finish()
-    }
-}
 /// See [`MetricTransformation`](crate::model::MetricTransformation).
 pub mod metric_transformation {
 
     /// A builder for [`MetricTransformation`](crate::model::MetricTransformation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_name: std::option::Option<std::string::String>,
         pub(crate) metric_namespace: std::option::Option<std::string::String>,
@@ -621,6 +610,66 @@ impl MetricTransformation {
     }
 }
 
+/// When writing a match expression against `StandardUnit`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let standardunit = unimplemented!();
+/// match standardunit {
+///     StandardUnit::Bits => { /* ... */ },
+///     StandardUnit::BitsSecond => { /* ... */ },
+///     StandardUnit::Bytes => { /* ... */ },
+///     StandardUnit::BytesSecond => { /* ... */ },
+///     StandardUnit::Count => { /* ... */ },
+///     StandardUnit::CountSecond => { /* ... */ },
+///     StandardUnit::Gigabits => { /* ... */ },
+///     StandardUnit::GigabitsSecond => { /* ... */ },
+///     StandardUnit::Gigabytes => { /* ... */ },
+///     StandardUnit::GigabytesSecond => { /* ... */ },
+///     StandardUnit::Kilobits => { /* ... */ },
+///     StandardUnit::KilobitsSecond => { /* ... */ },
+///     StandardUnit::Kilobytes => { /* ... */ },
+///     StandardUnit::KilobytesSecond => { /* ... */ },
+///     StandardUnit::Megabits => { /* ... */ },
+///     StandardUnit::MegabitsSecond => { /* ... */ },
+///     StandardUnit::Megabytes => { /* ... */ },
+///     StandardUnit::MegabytesSecond => { /* ... */ },
+///     StandardUnit::Microseconds => { /* ... */ },
+///     StandardUnit::Milliseconds => { /* ... */ },
+///     StandardUnit::None => { /* ... */ },
+///     StandardUnit::Percent => { /* ... */ },
+///     StandardUnit::Seconds => { /* ... */ },
+///     StandardUnit::Terabits => { /* ... */ },
+///     StandardUnit::TerabitsSecond => { /* ... */ },
+///     StandardUnit::Terabytes => { /* ... */ },
+///     StandardUnit::TerabytesSecond => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `standardunit` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `StandardUnit::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `StandardUnit::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `StandardUnit::NewFeature` is defined.
+/// Specifically, when `standardunit` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `StandardUnit::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -687,8 +736,8 @@ pub enum StandardUnit {
     Terabytes,
     #[allow(missing_docs)] // documentation missing in model
     TerabytesSecond,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for StandardUnit {
     fn from(s: &str) -> Self {
@@ -720,7 +769,7 @@ impl std::convert::From<&str> for StandardUnit {
             "Terabits/Second" => StandardUnit::TerabitsSecond,
             "Terabytes" => StandardUnit::Terabytes,
             "Terabytes/Second" => StandardUnit::TerabytesSecond,
-            other => StandardUnit::Unknown(other.to_owned()),
+            other => StandardUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -762,11 +811,11 @@ impl StandardUnit {
             StandardUnit::TerabitsSecond => "Terabits/Second",
             StandardUnit::Terabytes => "Terabytes",
             StandardUnit::TerabytesSecond => "Terabytes/Second",
-            StandardUnit::Unknown(s) => s.as_ref(),
+            StandardUnit::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Bits",
             "Bits/Second",
@@ -806,7 +855,7 @@ impl AsRef<str> for StandardUnit {
 
 /// <p>Represents the rejected events.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RejectedLogEventsInfo {
     /// <p>The log events that are too new.</p>
     #[doc(hidden)]
@@ -832,29 +881,11 @@ impl RejectedLogEventsInfo {
         self.expired_log_event_end_index
     }
 }
-impl std::fmt::Debug for RejectedLogEventsInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RejectedLogEventsInfo");
-        formatter.field(
-            "too_new_log_event_start_index",
-            &self.too_new_log_event_start_index,
-        );
-        formatter.field(
-            "too_old_log_event_end_index",
-            &self.too_old_log_event_end_index,
-        );
-        formatter.field(
-            "expired_log_event_end_index",
-            &self.expired_log_event_end_index,
-        );
-        formatter.finish()
-    }
-}
 /// See [`RejectedLogEventsInfo`](crate::model::RejectedLogEventsInfo).
 pub mod rejected_log_events_info {
 
     /// A builder for [`RejectedLogEventsInfo`](crate::model::RejectedLogEventsInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) too_new_log_event_start_index: std::option::Option<i32>,
         pub(crate) too_old_log_event_end_index: std::option::Option<i32>,
@@ -913,7 +944,7 @@ impl RejectedLogEventsInfo {
 
 /// <p>Represents a log event, which is a record of activity that was recorded by the application or resource being monitored.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputLogEvent {
     /// <p>The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
     #[doc(hidden)]
@@ -932,19 +963,11 @@ impl InputLogEvent {
         self.message.as_deref()
     }
 }
-impl std::fmt::Debug for InputLogEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputLogEvent");
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 /// See [`InputLogEvent`](crate::model::InputLogEvent).
 pub mod input_log_event {
 
     /// A builder for [`InputLogEvent`](crate::model::InputLogEvent).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp: std::option::Option<i64>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -988,7 +1011,7 @@ impl InputLogEvent {
 
 /// <p>Represents a cross-account destination that receives subscription log events.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Destination {
     /// <p>The name of the destination.</p>
     #[doc(hidden)]
@@ -1035,23 +1058,11 @@ impl Destination {
         self.creation_time
     }
 }
-impl std::fmt::Debug for Destination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Destination");
-        formatter.field("destination_name", &self.destination_name);
-        formatter.field("target_arn", &self.target_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("access_policy", &self.access_policy);
-        formatter.field("arn", &self.arn);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.finish()
-    }
-}
 /// See [`Destination`](crate::model::Destination).
 pub mod destination {
 
     /// A builder for [`Destination`](crate::model::Destination).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_name: std::option::Option<std::string::String>,
         pub(crate) target_arn: std::option::Option<std::string::String>,
@@ -1147,6 +1158,46 @@ impl Destination {
     }
 }
 
+/// When writing a match expression against `QueryStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let querystatus = unimplemented!();
+/// match querystatus {
+///     QueryStatus::Cancelled => { /* ... */ },
+///     QueryStatus::Complete => { /* ... */ },
+///     QueryStatus::Failed => { /* ... */ },
+///     QueryStatus::Running => { /* ... */ },
+///     QueryStatus::Scheduled => { /* ... */ },
+///     QueryStatus::Timeout => { /* ... */ },
+///     QueryStatus::UnknownValue => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `querystatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `QueryStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `QueryStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `QueryStatus::NewFeature` is defined.
+/// Specifically, when `querystatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `QueryStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 /// _Note: `QueryStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
@@ -1173,8 +1224,8 @@ pub enum QueryStatus {
     Timeout,
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for QueryStatus {
     fn from(s: &str) -> Self {
@@ -1186,7 +1237,7 @@ impl std::convert::From<&str> for QueryStatus {
             "Scheduled" => QueryStatus::Scheduled,
             "Timeout" => QueryStatus::Timeout,
             "Unknown" => QueryStatus::UnknownValue,
-            other => QueryStatus::Unknown(other.to_owned()),
+            other => QueryStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1208,11 +1259,11 @@ impl QueryStatus {
             QueryStatus::Scheduled => "Scheduled",
             QueryStatus::Timeout => "Timeout",
             QueryStatus::UnknownValue => "Unknown",
-            QueryStatus::Unknown(s) => s.as_ref(),
+            QueryStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Cancelled",
             "Complete",
@@ -1232,7 +1283,7 @@ impl AsRef<str> for QueryStatus {
 
 /// <p>Contains the number of log events scanned by the query, the number of log events that matched the query criteria, and the total number of bytes in the log events that were scanned.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryStatistics {
     /// <p>The number of log events that matched the query string.</p>
     #[doc(hidden)]
@@ -1258,20 +1309,11 @@ impl QueryStatistics {
         self.bytes_scanned
     }
 }
-impl std::fmt::Debug for QueryStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryStatistics");
-        formatter.field("records_matched", &self.records_matched);
-        formatter.field("records_scanned", &self.records_scanned);
-        formatter.field("bytes_scanned", &self.bytes_scanned);
-        formatter.finish()
-    }
-}
 /// See [`QueryStatistics`](crate::model::QueryStatistics).
 pub mod query_statistics {
 
     /// A builder for [`QueryStatistics`](crate::model::QueryStatistics).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) records_matched: std::option::Option<f64>,
         pub(crate) records_scanned: std::option::Option<f64>,
@@ -1328,7 +1370,7 @@ impl QueryStatistics {
 /// <p>Contains one field from one log event returned by a CloudWatch Logs Insights query, along with the value of that field.</p>
 /// <p>For more information about the fields that are generated by CloudWatch logs, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData-discoverable-fields.html">Supported Logs and Discovered Fields</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResultField {
     /// <p>The log event field.</p>
     #[doc(hidden)]
@@ -1347,19 +1389,11 @@ impl ResultField {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for ResultField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResultField");
-        formatter.field("field", &self.field);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`ResultField`](crate::model::ResultField).
 pub mod result_field {
 
     /// A builder for [`ResultField`](crate::model::ResultField).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -1403,7 +1437,7 @@ impl ResultField {
 
 /// <p>The fields contained in log events found by a <code>GetLogGroupFields</code> operation, along with the percentage of queried log events in which each field appears.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogGroupField {
     /// <p>The name of a log field.</p>
     #[doc(hidden)]
@@ -1422,19 +1456,11 @@ impl LogGroupField {
         self.percent
     }
 }
-impl std::fmt::Debug for LogGroupField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogGroupField");
-        formatter.field("name", &self.name);
-        formatter.field("percent", &self.percent);
-        formatter.finish()
-    }
-}
 /// See [`LogGroupField`](crate::model::LogGroupField).
 pub mod log_group_field {
 
     /// A builder for [`LogGroupField`](crate::model::LogGroupField).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) percent: std::option::Option<i32>,
@@ -1478,7 +1504,7 @@ impl LogGroupField {
 
 /// <p>Represents a log event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutputLogEvent {
     /// <p>The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
     #[doc(hidden)]
@@ -1504,20 +1530,11 @@ impl OutputLogEvent {
         self.ingestion_time
     }
 }
-impl std::fmt::Debug for OutputLogEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutputLogEvent");
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("message", &self.message);
-        formatter.field("ingestion_time", &self.ingestion_time);
-        formatter.finish()
-    }
-}
 /// See [`OutputLogEvent`](crate::model::OutputLogEvent).
 pub mod output_log_event {
 
     /// A builder for [`OutputLogEvent`](crate::model::OutputLogEvent).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp: std::option::Option<i64>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1573,7 +1590,7 @@ impl OutputLogEvent {
 
 /// <p>Represents the search status of a log stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchedLogStream {
     /// <p>The name of the log stream.</p>
     #[doc(hidden)]
@@ -1592,19 +1609,11 @@ impl SearchedLogStream {
         self.searched_completely
     }
 }
-impl std::fmt::Debug for SearchedLogStream {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchedLogStream");
-        formatter.field("log_stream_name", &self.log_stream_name);
-        formatter.field("searched_completely", &self.searched_completely);
-        formatter.finish()
-    }
-}
 /// See [`SearchedLogStream`](crate::model::SearchedLogStream).
 pub mod searched_log_stream {
 
     /// A builder for [`SearchedLogStream`](crate::model::SearchedLogStream).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_stream_name: std::option::Option<std::string::String>,
         pub(crate) searched_completely: std::option::Option<bool>,
@@ -1651,7 +1660,7 @@ impl SearchedLogStream {
 
 /// <p>Represents a matched event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FilteredLogEvent {
     /// <p>The name of the log stream to which this event belongs.</p>
     #[doc(hidden)]
@@ -1691,22 +1700,11 @@ impl FilteredLogEvent {
         self.event_id.as_deref()
     }
 }
-impl std::fmt::Debug for FilteredLogEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FilteredLogEvent");
-        formatter.field("log_stream_name", &self.log_stream_name);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("message", &self.message);
-        formatter.field("ingestion_time", &self.ingestion_time);
-        formatter.field("event_id", &self.event_id);
-        formatter.finish()
-    }
-}
 /// See [`FilteredLogEvent`](crate::model::FilteredLogEvent).
 pub mod filtered_log_event {
 
     /// A builder for [`FilteredLogEvent`](crate::model::FilteredLogEvent).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_stream_name: std::option::Option<std::string::String>,
         pub(crate) timestamp: std::option::Option<i64>,
@@ -1789,7 +1787,7 @@ impl FilteredLogEvent {
 
 /// <p>Represents a subscription filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubscriptionFilter {
     /// <p>The name of the subscription filter.</p>
     #[doc(hidden)]
@@ -1843,24 +1841,11 @@ impl SubscriptionFilter {
         self.creation_time
     }
 }
-impl std::fmt::Debug for SubscriptionFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubscriptionFilter");
-        formatter.field("filter_name", &self.filter_name);
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("filter_pattern", &self.filter_pattern);
-        formatter.field("destination_arn", &self.destination_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("distribution", &self.distribution);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.finish()
-    }
-}
 /// See [`SubscriptionFilter`](crate::model::SubscriptionFilter).
 pub mod subscription_filter {
 
     /// A builder for [`SubscriptionFilter`](crate::model::SubscriptionFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_name: std::option::Option<std::string::String>,
         pub(crate) log_group_name: std::option::Option<std::string::String>,
@@ -1976,7 +1961,7 @@ impl SubscriptionFilter {
 
 /// <p>This structure contains details about a saved CloudWatch Logs Insights query definition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryDefinition {
     /// <p>The unique ID of the query definition.</p>
     #[doc(hidden)]
@@ -2016,22 +2001,11 @@ impl QueryDefinition {
         self.log_group_names.as_deref()
     }
 }
-impl std::fmt::Debug for QueryDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryDefinition");
-        formatter.field("query_definition_id", &self.query_definition_id);
-        formatter.field("name", &self.name);
-        formatter.field("query_string", &self.query_string);
-        formatter.field("last_modified", &self.last_modified);
-        formatter.field("log_group_names", &self.log_group_names);
-        formatter.finish()
-    }
-}
 /// See [`QueryDefinition`](crate::model::QueryDefinition).
 pub mod query_definition {
 
     /// A builder for [`QueryDefinition`](crate::model::QueryDefinition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_definition_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2123,7 +2097,7 @@ impl QueryDefinition {
 
 /// <p>Information about one CloudWatch Logs Insights query that matches the request in a <code>DescribeQueries</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryInfo {
     /// <p>The unique ID number of this query.</p>
     #[doc(hidden)]
@@ -2163,22 +2137,11 @@ impl QueryInfo {
         self.log_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for QueryInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryInfo");
-        formatter.field("query_id", &self.query_id);
-        formatter.field("query_string", &self.query_string);
-        formatter.field("status", &self.status);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.finish()
-    }
-}
 /// See [`QueryInfo`](crate::model::QueryInfo).
 pub mod query_info {
 
     /// A builder for [`QueryInfo`](crate::model::QueryInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_id: std::option::Option<std::string::String>,
         pub(crate) query_string: std::option::Option<std::string::String>,
@@ -2261,7 +2224,7 @@ impl QueryInfo {
 
 /// <p>Metric filters express how CloudWatch Logs would extract metric observations from ingested log events and transform them into metric data in a CloudWatch metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricFilter {
     /// <p>The name of the metric filter.</p>
     #[doc(hidden)]
@@ -2304,22 +2267,11 @@ impl MetricFilter {
         self.log_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for MetricFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricFilter");
-        formatter.field("filter_name", &self.filter_name);
-        formatter.field("filter_pattern", &self.filter_pattern);
-        formatter.field("metric_transformations", &self.metric_transformations);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.finish()
-    }
-}
 /// See [`MetricFilter`](crate::model::MetricFilter).
 pub mod metric_filter {
 
     /// A builder for [`MetricFilter`](crate::model::MetricFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_name: std::option::Option<std::string::String>,
         pub(crate) filter_pattern: std::option::Option<std::string::String>,
@@ -2415,7 +2367,7 @@ impl MetricFilter {
 
 /// <p>Represents a log stream, which is a sequence of log events from a single emitter of logs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogStream {
     /// <p>The name of the log stream.</p>
     #[doc(hidden)]
@@ -2484,25 +2436,11 @@ impl LogStream {
         self.stored_bytes
     }
 }
-impl std::fmt::Debug for LogStream {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogStream");
-        formatter.field("log_stream_name", &self.log_stream_name);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("first_event_timestamp", &self.first_event_timestamp);
-        formatter.field("last_event_timestamp", &self.last_event_timestamp);
-        formatter.field("last_ingestion_time", &self.last_ingestion_time);
-        formatter.field("upload_sequence_token", &self.upload_sequence_token);
-        formatter.field("arn", &self.arn);
-        formatter.field("stored_bytes", &self.stored_bytes);
-        formatter.finish()
-    }
-}
 /// See [`LogStream`](crate::model::LogStream).
 pub mod log_stream {
 
     /// A builder for [`LogStream`](crate::model::LogStream).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_stream_name: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<i64>,
@@ -2630,6 +2568,41 @@ impl LogStream {
     }
 }
 
+/// When writing a match expression against `OrderBy`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let orderby = unimplemented!();
+/// match orderby {
+///     OrderBy::LastEventTime => { /* ... */ },
+///     OrderBy::LogStreamName => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `orderby` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `OrderBy::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `OrderBy::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `OrderBy::NewFeature` is defined.
+/// Specifically, when `orderby` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `OrderBy::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2646,15 +2619,15 @@ pub enum OrderBy {
     LastEventTime,
     #[allow(missing_docs)] // documentation missing in model
     LogStreamName,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for OrderBy {
     fn from(s: &str) -> Self {
         match s {
             "LastEventTime" => OrderBy::LastEventTime,
             "LogStreamName" => OrderBy::LogStreamName,
-            other => OrderBy::Unknown(other.to_owned()),
+            other => OrderBy::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2671,11 +2644,11 @@ impl OrderBy {
         match self {
             OrderBy::LastEventTime => "LastEventTime",
             OrderBy::LogStreamName => "LogStreamName",
-            OrderBy::Unknown(s) => s.as_ref(),
+            OrderBy::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LastEventTime", "LogStreamName"]
     }
 }
@@ -2687,7 +2660,7 @@ impl AsRef<str> for OrderBy {
 
 /// <p>Represents a log group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogGroup {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
@@ -2743,24 +2716,11 @@ impl LogGroup {
         self.kms_key_id.as_deref()
     }
 }
-impl std::fmt::Debug for LogGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogGroup");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("retention_in_days", &self.retention_in_days);
-        formatter.field("metric_filter_count", &self.metric_filter_count);
-        formatter.field("arn", &self.arn);
-        formatter.field("stored_bytes", &self.stored_bytes);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.finish()
-    }
-}
 /// See [`LogGroup`](crate::model::LogGroup).
 pub mod log_group {
 
     /// A builder for [`LogGroup`](crate::model::LogGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<i64>,
@@ -2869,7 +2829,7 @@ impl LogGroup {
 
 /// <p>Represents an export task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportTask {
     /// <p>The ID of the export task.</p>
     #[doc(hidden)]
@@ -2937,26 +2897,11 @@ impl ExportTask {
         self.execution_info.as_ref()
     }
 }
-impl std::fmt::Debug for ExportTask {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportTask");
-        formatter.field("task_id", &self.task_id);
-        formatter.field("task_name", &self.task_name);
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("from", &self.from);
-        formatter.field("to", &self.to);
-        formatter.field("destination", &self.destination);
-        formatter.field("destination_prefix", &self.destination_prefix);
-        formatter.field("status", &self.status);
-        formatter.field("execution_info", &self.execution_info);
-        formatter.finish()
-    }
-}
 /// See [`ExportTask`](crate::model::ExportTask).
 pub mod export_task {
 
     /// A builder for [`ExportTask`](crate::model::ExportTask).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_id: std::option::Option<std::string::String>,
         pub(crate) task_name: std::option::Option<std::string::String>,
@@ -3096,7 +3041,7 @@ impl ExportTask {
 
 /// <p>Represents the status of an export task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportTaskExecutionInfo {
     /// <p>The creation time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
     #[doc(hidden)]
@@ -3115,19 +3060,11 @@ impl ExportTaskExecutionInfo {
         self.completion_time
     }
 }
-impl std::fmt::Debug for ExportTaskExecutionInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportTaskExecutionInfo");
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("completion_time", &self.completion_time);
-        formatter.finish()
-    }
-}
 /// See [`ExportTaskExecutionInfo`](crate::model::ExportTaskExecutionInfo).
 pub mod export_task_execution_info {
 
     /// A builder for [`ExportTaskExecutionInfo`](crate::model::ExportTaskExecutionInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) creation_time: std::option::Option<i64>,
         pub(crate) completion_time: std::option::Option<i64>,
@@ -3171,7 +3108,7 @@ impl ExportTaskExecutionInfo {
 
 /// <p>Represents the status of an export task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportTaskStatus {
     /// <p>The status code of the export task.</p>
     #[doc(hidden)]
@@ -3190,19 +3127,11 @@ impl ExportTaskStatus {
         self.message.as_deref()
     }
 }
-impl std::fmt::Debug for ExportTaskStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportTaskStatus");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 /// See [`ExportTaskStatus`](crate::model::ExportTaskStatus).
 pub mod export_task_status {
 
     /// A builder for [`ExportTaskStatus`](crate::model::ExportTaskStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<crate::model::ExportTaskStatusCode>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3247,6 +3176,45 @@ impl ExportTaskStatus {
     }
 }
 
+/// When writing a match expression against `ExportTaskStatusCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let exporttaskstatuscode = unimplemented!();
+/// match exporttaskstatuscode {
+///     ExportTaskStatusCode::Cancelled => { /* ... */ },
+///     ExportTaskStatusCode::Completed => { /* ... */ },
+///     ExportTaskStatusCode::Failed => { /* ... */ },
+///     ExportTaskStatusCode::Pending => { /* ... */ },
+///     ExportTaskStatusCode::PendingCancel => { /* ... */ },
+///     ExportTaskStatusCode::Running => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `exporttaskstatuscode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ExportTaskStatusCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ExportTaskStatusCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ExportTaskStatusCode::NewFeature` is defined.
+/// Specifically, when `exporttaskstatuscode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ExportTaskStatusCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3271,8 +3239,8 @@ pub enum ExportTaskStatusCode {
     PendingCancel,
     #[allow(missing_docs)] // documentation missing in model
     Running,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ExportTaskStatusCode {
     fn from(s: &str) -> Self {
@@ -3283,7 +3251,9 @@ impl std::convert::From<&str> for ExportTaskStatusCode {
             "PENDING" => ExportTaskStatusCode::Pending,
             "PENDING_CANCEL" => ExportTaskStatusCode::PendingCancel,
             "RUNNING" => ExportTaskStatusCode::Running,
-            other => ExportTaskStatusCode::Unknown(other.to_owned()),
+            other => {
+                ExportTaskStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -3304,11 +3274,11 @@ impl ExportTaskStatusCode {
             ExportTaskStatusCode::Pending => "PENDING",
             ExportTaskStatusCode::PendingCancel => "PENDING_CANCEL",
             ExportTaskStatusCode::Running => "RUNNING",
-            ExportTaskStatusCode::Unknown(s) => s.as_ref(),
+            ExportTaskStatusCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELLED",
             "COMPLETED",

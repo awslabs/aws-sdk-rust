@@ -34,7 +34,7 @@ pub fn parse_accept_reserved_node_exchange_error(
                             output = crate::xml_deser::deser_structure_crate_error_dependent_service_unavailable_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AcceptReservedNodeExchangeError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -54,7 +54,7 @@ pub fn parse_accept_reserved_node_exchange_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_reserved_node_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AcceptReservedNodeExchangeError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -74,7 +74,7 @@ pub fn parse_accept_reserved_node_exchange_error(
                         output = crate::xml_deser::deser_structure_crate_error_reserved_node_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AcceptReservedNodeExchangeError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -93,7 +93,7 @@ pub fn parse_accept_reserved_node_exchange_error(
                             output = crate::xml_deser::deser_structure_crate_error_reserved_node_already_migrated_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AcceptReservedNodeExchangeError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -112,7 +112,7 @@ pub fn parse_accept_reserved_node_exchange_error(
                     output = crate::xml_deser::deser_structure_crate_error_reserved_node_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AcceptReservedNodeExchangeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -130,7 +130,7 @@ pub fn parse_accept_reserved_node_exchange_error(
                             output = crate::xml_deser::deser_structure_crate_error_reserved_node_offering_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AcceptReservedNodeExchangeError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -148,7 +148,7 @@ pub fn parse_accept_reserved_node_exchange_error(
                     output = crate::xml_deser::deser_structure_crate_error_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AcceptReservedNodeExchangeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -202,7 +202,7 @@ pub fn parse_add_partner_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddPartnerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -219,7 +219,7 @@ pub fn parse_add_partner_error(
                     output = crate::xml_deser::deser_structure_crate_error_partner_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddPartnerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -237,7 +237,7 @@ pub fn parse_add_partner_error(
                     output = crate::xml_deser::deser_structure_crate_error_unauthorized_partner_integration_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddPartnerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -295,7 +295,7 @@ pub fn parse_associate_data_share_consumer_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_data_share_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AssociateDataShareConsumerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -312,7 +312,7 @@ pub fn parse_associate_data_share_consumer_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_namespace_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AssociateDataShareConsumerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -369,7 +369,7 @@ pub fn parse_authorize_cluster_security_group_ingress_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -383,7 +383,7 @@ pub fn parse_authorize_cluster_security_group_ingress_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -397,7 +397,7 @@ pub fn parse_authorize_cluster_security_group_ingress_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -411,7 +411,7 @@ pub fn parse_authorize_cluster_security_group_ingress_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -464,7 +464,7 @@ pub fn parse_authorize_data_share_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_data_share_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AuthorizeDataShareError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -523,7 +523,7 @@ pub fn parse_authorize_endpoint_access_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -537,7 +537,7 @@ pub fn parse_authorize_endpoint_access_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -551,7 +551,7 @@ pub fn parse_authorize_endpoint_access_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -565,7 +565,7 @@ pub fn parse_authorize_endpoint_access_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -579,7 +579,7 @@ pub fn parse_authorize_endpoint_access_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -593,7 +593,7 @@ pub fn parse_authorize_endpoint_access_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -651,7 +651,7 @@ pub fn parse_authorize_snapshot_access_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -665,7 +665,7 @@ pub fn parse_authorize_snapshot_access_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -679,7 +679,7 @@ pub fn parse_authorize_snapshot_access_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -693,7 +693,7 @@ pub fn parse_authorize_snapshot_access_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -707,7 +707,7 @@ pub fn parse_authorize_snapshot_access_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -721,7 +721,7 @@ pub fn parse_authorize_snapshot_access_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -735,7 +735,7 @@ pub fn parse_authorize_snapshot_access_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -793,7 +793,7 @@ pub fn parse_batch_delete_cluster_snapshots_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -851,7 +851,7 @@ pub fn parse_batch_modify_cluster_snapshots_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -865,7 +865,7 @@ pub fn parse_batch_modify_cluster_snapshots_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -918,7 +918,7 @@ pub fn parse_cancel_resize_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CancelResizeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -935,7 +935,7 @@ pub fn parse_cancel_resize_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CancelResizeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -952,7 +952,7 @@ pub fn parse_cancel_resize_error(
                     output = crate::xml_deser::deser_structure_crate_error_resize_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CancelResizeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -969,7 +969,7 @@ pub fn parse_cancel_resize_error(
                     output = crate::xml_deser::deser_structure_crate_error_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CancelResizeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1024,7 +1024,7 @@ pub fn parse_copy_cluster_snapshot_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_snapshot_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyClusterSnapshotError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1042,7 +1042,7 @@ pub fn parse_copy_cluster_snapshot_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyClusterSnapshotError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1060,7 +1060,7 @@ pub fn parse_copy_cluster_snapshot_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_snapshot_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyClusterSnapshotError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1078,7 +1078,7 @@ pub fn parse_copy_cluster_snapshot_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_snapshot_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyClusterSnapshotError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1096,7 +1096,7 @@ pub fn parse_copy_cluster_snapshot_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_retention_period_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyClusterSnapshotError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1155,7 +1155,7 @@ pub fn parse_create_authentication_profile_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1169,7 +1169,7 @@ pub fn parse_create_authentication_profile_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1183,7 +1183,7 @@ pub fn parse_create_authentication_profile_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1236,7 +1236,7 @@ pub fn parse_create_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1254,7 +1254,7 @@ pub fn parse_create_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1271,7 +1271,7 @@ pub fn parse_create_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1289,7 +1289,7 @@ pub fn parse_create_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1307,7 +1307,7 @@ pub fn parse_create_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1326,7 +1326,7 @@ pub fn parse_create_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_dependent_service_request_throttling_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1344,7 +1344,7 @@ pub fn parse_create_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_hsm_client_certificate_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1362,7 +1362,7 @@ pub fn parse_create_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_hsm_configuration_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1380,7 +1380,7 @@ pub fn parse_create_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1397,7 +1397,7 @@ pub fn parse_create_cluster_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_subnet_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1415,7 +1415,7 @@ pub fn parse_create_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_track_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1432,7 +1432,7 @@ pub fn parse_create_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_elastic_ip_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1450,7 +1450,7 @@ pub fn parse_create_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_retention_period_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1471,7 +1471,7 @@ pub fn parse_create_cluster_error(
                     .map_err(crate::error::CreateClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1489,7 +1489,7 @@ pub fn parse_create_cluster_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_tag_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1508,7 +1508,7 @@ pub fn parse_create_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1526,7 +1526,7 @@ pub fn parse_create_cluster_error(
                         output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1544,7 +1544,7 @@ pub fn parse_create_cluster_error(
                         output = crate::xml_deser::deser_structure_crate_error_number_of_nodes_per_cluster_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1563,7 +1563,7 @@ pub fn parse_create_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_number_of_nodes_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1581,7 +1581,7 @@ pub fn parse_create_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_snapshot_schedule_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1598,7 +1598,7 @@ pub fn parse_create_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_tag_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1615,7 +1615,7 @@ pub fn parse_create_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_unauthorized_operation_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1671,7 +1671,7 @@ pub fn parse_create_cluster_parameter_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1685,7 +1685,7 @@ pub fn parse_create_cluster_parameter_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1699,7 +1699,7 @@ pub fn parse_create_cluster_parameter_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1713,7 +1713,7 @@ pub fn parse_create_cluster_parameter_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1771,7 +1771,7 @@ pub fn parse_create_cluster_security_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1785,7 +1785,7 @@ pub fn parse_create_cluster_security_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1799,7 +1799,7 @@ pub fn parse_create_cluster_security_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1813,7 +1813,7 @@ pub fn parse_create_cluster_security_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1869,7 +1869,7 @@ pub fn parse_create_cluster_snapshot_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterSnapshotError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1888,7 +1888,7 @@ pub fn parse_create_cluster_snapshot_error(
                         output = crate::xml_deser::deser_structure_crate_error_cluster_snapshot_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterSnapshotError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1908,7 +1908,7 @@ pub fn parse_create_cluster_snapshot_error(
                         output = crate::xml_deser::deser_structure_crate_error_cluster_snapshot_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterSnapshotError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1926,7 +1926,7 @@ pub fn parse_create_cluster_snapshot_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterSnapshotError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1944,7 +1944,7 @@ pub fn parse_create_cluster_snapshot_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_retention_period_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterSnapshotError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1962,7 +1962,7 @@ pub fn parse_create_cluster_snapshot_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_tag_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterSnapshotError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1980,7 +1980,7 @@ pub fn parse_create_cluster_snapshot_error(
                     output = crate::xml_deser::deser_structure_crate_error_tag_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterSnapshotError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2039,7 +2039,7 @@ pub fn parse_create_cluster_subnet_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2053,7 +2053,7 @@ pub fn parse_create_cluster_subnet_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2067,7 +2067,7 @@ pub fn parse_create_cluster_subnet_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2081,7 +2081,7 @@ pub fn parse_create_cluster_subnet_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2095,7 +2095,7 @@ pub fn parse_create_cluster_subnet_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2109,7 +2109,7 @@ pub fn parse_create_cluster_subnet_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2123,7 +2123,7 @@ pub fn parse_create_cluster_subnet_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2137,7 +2137,7 @@ pub fn parse_create_cluster_subnet_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2191,7 +2191,7 @@ pub fn parse_create_endpoint_access_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2205,7 +2205,7 @@ pub fn parse_create_endpoint_access_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2219,7 +2219,7 @@ pub fn parse_create_endpoint_access_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2233,7 +2233,7 @@ pub fn parse_create_endpoint_access_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2247,7 +2247,7 @@ pub fn parse_create_endpoint_access_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2261,7 +2261,7 @@ pub fn parse_create_endpoint_access_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2275,7 +2275,7 @@ pub fn parse_create_endpoint_access_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2289,7 +2289,7 @@ pub fn parse_create_endpoint_access_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2303,7 +2303,7 @@ pub fn parse_create_endpoint_access_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2317,7 +2317,7 @@ pub fn parse_create_endpoint_access_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2378,7 +2378,7 @@ pub fn parse_create_event_subscription_error(
                             output = crate::xml_deser::deser_structure_crate_error_event_subscription_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateEventSubscriptionError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -2397,7 +2397,7 @@ pub fn parse_create_event_subscription_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_tag_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateEventSubscriptionError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2415,7 +2415,7 @@ pub fn parse_create_event_subscription_error(
                     output = crate::xml_deser::deser_structure_crate_error_sns_invalid_topic_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateEventSubscriptionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2432,7 +2432,7 @@ pub fn parse_create_event_subscription_error(
                     output = crate::xml_deser::deser_structure_crate_error_sns_no_authorization_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateEventSubscriptionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2450,7 +2450,7 @@ pub fn parse_create_event_subscription_error(
                     output = crate::xml_deser::deser_structure_crate_error_sns_topic_arn_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateEventSubscriptionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2467,7 +2467,7 @@ pub fn parse_create_event_subscription_error(
                     output = crate::xml_deser::deser_structure_crate_error_source_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateEventSubscriptionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2485,7 +2485,7 @@ pub fn parse_create_event_subscription_error(
                     output = crate::xml_deser::deser_structure_crate_error_subscription_already_exist_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateEventSubscriptionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2504,7 +2504,7 @@ pub fn parse_create_event_subscription_error(
                         output = crate::xml_deser::deser_structure_crate_error_subscription_category_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateEventSubscriptionError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2524,7 +2524,7 @@ pub fn parse_create_event_subscription_error(
                         output = crate::xml_deser::deser_structure_crate_error_subscription_event_id_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateEventSubscriptionError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2544,7 +2544,7 @@ pub fn parse_create_event_subscription_error(
                         output = crate::xml_deser::deser_structure_crate_error_subscription_severity_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateEventSubscriptionError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2562,7 +2562,7 @@ pub fn parse_create_event_subscription_error(
                     output = crate::xml_deser::deser_structure_crate_error_tag_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateEventSubscriptionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2621,7 +2621,7 @@ pub fn parse_create_hsm_client_certificate_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2635,7 +2635,7 @@ pub fn parse_create_hsm_client_certificate_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2649,7 +2649,7 @@ pub fn parse_create_hsm_client_certificate_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2663,7 +2663,7 @@ pub fn parse_create_hsm_client_certificate_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2726,7 +2726,7 @@ pub fn parse_create_hsm_configuration_error(
                         output = crate::xml_deser::deser_structure_crate_error_hsm_configuration_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateHsmConfigurationError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2747,7 +2747,7 @@ pub fn parse_create_hsm_configuration_error(
                         output = crate::xml_deser::deser_structure_crate_error_hsm_configuration_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateHsmConfigurationError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2766,7 +2766,7 @@ pub fn parse_create_hsm_configuration_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_tag_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateHsmConfigurationError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2784,7 +2784,7 @@ pub fn parse_create_hsm_configuration_error(
                     output = crate::xml_deser::deser_structure_crate_error_tag_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateHsmConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2842,7 +2842,7 @@ pub fn parse_create_scheduled_action_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_scheduled_action_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateScheduledActionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2859,7 +2859,7 @@ pub fn parse_create_scheduled_action_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_schedule_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateScheduledActionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2878,7 +2878,7 @@ pub fn parse_create_scheduled_action_error(
                         output = crate::xml_deser::deser_structure_crate_error_scheduled_action_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateScheduledActionError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2898,7 +2898,7 @@ pub fn parse_create_scheduled_action_error(
                         output = crate::xml_deser::deser_structure_crate_error_scheduled_action_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateScheduledActionError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2919,7 +2919,7 @@ pub fn parse_create_scheduled_action_error(
                         output = crate::xml_deser::deser_structure_crate_error_scheduled_action_type_unsupported_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateScheduledActionError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2937,7 +2937,7 @@ pub fn parse_create_scheduled_action_error(
                     output = crate::xml_deser::deser_structure_crate_error_unauthorized_operation_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateScheduledActionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2996,7 +2996,7 @@ pub fn parse_create_snapshot_copy_grant_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3010,7 +3010,7 @@ pub fn parse_create_snapshot_copy_grant_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3024,7 +3024,7 @@ pub fn parse_create_snapshot_copy_grant_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3038,7 +3038,7 @@ pub fn parse_create_snapshot_copy_grant_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3052,7 +3052,7 @@ pub fn parse_create_snapshot_copy_grant_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3066,7 +3066,7 @@ pub fn parse_create_snapshot_copy_grant_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3124,7 +3124,7 @@ pub fn parse_create_snapshot_schedule_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3138,7 +3138,7 @@ pub fn parse_create_snapshot_schedule_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3152,7 +3152,7 @@ pub fn parse_create_snapshot_schedule_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3166,7 +3166,7 @@ pub fn parse_create_snapshot_schedule_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3180,7 +3180,7 @@ pub fn parse_create_snapshot_schedule_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3194,7 +3194,7 @@ pub fn parse_create_snapshot_schedule_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3247,7 +3247,7 @@ pub fn parse_create_tags_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3265,7 +3265,7 @@ pub fn parse_create_tags_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_tag_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTagsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -3283,7 +3283,7 @@ pub fn parse_create_tags_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3300,7 +3300,7 @@ pub fn parse_create_tags_error(
                     output = crate::xml_deser::deser_structure_crate_error_tag_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3347,7 +3347,7 @@ pub fn parse_create_usage_limit_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUsageLimitError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3364,7 +3364,7 @@ pub fn parse_create_usage_limit_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUsageLimitError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3381,7 +3381,7 @@ pub fn parse_create_usage_limit_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_usage_limit_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUsageLimitError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3399,7 +3399,7 @@ pub fn parse_create_usage_limit_error(
                         output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUsageLimitError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -3417,7 +3417,7 @@ pub fn parse_create_usage_limit_error(
                     output = crate::xml_deser::deser_structure_crate_error_tag_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUsageLimitError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3434,7 +3434,7 @@ pub fn parse_create_usage_limit_error(
                     output = crate::xml_deser::deser_structure_crate_error_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUsageLimitError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3452,7 +3452,7 @@ pub fn parse_create_usage_limit_error(
                     output = crate::xml_deser::deser_structure_crate_error_usage_limit_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUsageLimitError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3507,7 +3507,7 @@ pub fn parse_deauthorize_data_share_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_data_share_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeauthorizeDataShareError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3566,7 +3566,7 @@ pub fn parse_delete_authentication_profile_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3580,7 +3580,7 @@ pub fn parse_delete_authentication_profile_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3633,7 +3633,7 @@ pub fn parse_delete_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3651,7 +3651,7 @@ pub fn parse_delete_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_snapshot_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3669,7 +3669,7 @@ pub fn parse_delete_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_snapshot_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3686,7 +3686,7 @@ pub fn parse_delete_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3704,7 +3704,7 @@ pub fn parse_delete_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_retention_period_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3760,7 +3760,7 @@ pub fn parse_delete_cluster_parameter_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3774,7 +3774,7 @@ pub fn parse_delete_cluster_parameter_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3827,7 +3827,7 @@ pub fn parse_delete_cluster_security_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3841,7 +3841,7 @@ pub fn parse_delete_cluster_security_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3893,7 +3893,7 @@ pub fn parse_delete_cluster_snapshot_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteClusterSnapshotError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3911,7 +3911,7 @@ pub fn parse_delete_cluster_snapshot_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_snapshot_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteClusterSnapshotError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3974,7 +3974,7 @@ pub fn parse_delete_cluster_subnet_group_error(
                         output = crate::xml_deser::deser_structure_crate_error_cluster_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteClusterSubnetGroupError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -3993,7 +3993,7 @@ pub fn parse_delete_cluster_subnet_group_error(
                             output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_subnet_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteClusterSubnetGroupError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -4013,7 +4013,7 @@ pub fn parse_delete_cluster_subnet_group_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_subnet_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteClusterSubnetGroupError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -4066,7 +4066,7 @@ pub fn parse_delete_endpoint_access_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteEndpointAccessError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4083,7 +4083,7 @@ pub fn parse_delete_endpoint_access_error(
                     output = crate::xml_deser::deser_structure_crate_error_endpoint_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteEndpointAccessError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4101,7 +4101,7 @@ pub fn parse_delete_endpoint_access_error(
                             output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_security_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteEndpointAccessError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -4119,7 +4119,7 @@ pub fn parse_delete_endpoint_access_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteEndpointAccessError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4136,7 +4136,7 @@ pub fn parse_delete_endpoint_access_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_endpoint_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteEndpointAccessError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4198,7 +4198,7 @@ pub fn parse_delete_event_subscription_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_subscription_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventSubscriptionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4215,7 +4215,7 @@ pub fn parse_delete_event_subscription_error(
                     output = crate::xml_deser::deser_structure_crate_error_subscription_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventSubscriptionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4269,7 +4269,7 @@ pub fn parse_delete_hsm_client_certificate_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4283,7 +4283,7 @@ pub fn parse_delete_hsm_client_certificate_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4339,7 +4339,7 @@ pub fn parse_delete_hsm_configuration_error(
                     output = crate::xml_deser::deser_structure_crate_error_hsm_configuration_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteHsmConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4358,7 +4358,7 @@ pub fn parse_delete_hsm_configuration_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_hsm_configuration_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteHsmConfigurationError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -4408,7 +4408,7 @@ pub fn parse_delete_partner_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePartnerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4425,7 +4425,7 @@ pub fn parse_delete_partner_error(
                     output = crate::xml_deser::deser_structure_crate_error_partner_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePartnerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4443,7 +4443,7 @@ pub fn parse_delete_partner_error(
                     output = crate::xml_deser::deser_structure_crate_error_unauthorized_partner_integration_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePartnerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4498,7 +4498,7 @@ pub fn parse_delete_scheduled_action_error(
                     output = crate::xml_deser::deser_structure_crate_error_scheduled_action_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteScheduledActionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4515,7 +4515,7 @@ pub fn parse_delete_scheduled_action_error(
                     output = crate::xml_deser::deser_structure_crate_error_unauthorized_operation_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteScheduledActionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4572,7 +4572,7 @@ pub fn parse_delete_snapshot_copy_grant_error(
                             output = crate::xml_deser::deser_structure_crate_error_invalid_snapshot_copy_grant_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSnapshotCopyGrantError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -4591,7 +4591,7 @@ pub fn parse_delete_snapshot_copy_grant_error(
                     output = crate::xml_deser::deser_structure_crate_error_snapshot_copy_grant_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSnapshotCopyGrantError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4645,7 +4645,7 @@ pub fn parse_delete_snapshot_schedule_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4659,7 +4659,7 @@ pub fn parse_delete_snapshot_schedule_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4708,7 +4708,7 @@ pub fn parse_delete_tags_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_tag_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteTagsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -4726,7 +4726,7 @@ pub fn parse_delete_tags_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4773,7 +4773,7 @@ pub fn parse_delete_usage_limit_error(
                     output = crate::xml_deser::deser_structure_crate_error_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUsageLimitError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4790,7 +4790,7 @@ pub fn parse_delete_usage_limit_error(
                     output = crate::xml_deser::deser_structure_crate_error_usage_limit_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUsageLimitError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4872,7 +4872,7 @@ pub fn parse_describe_authentication_profiles_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4886,7 +4886,7 @@ pub fn parse_describe_authentication_profiles_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4947,7 +4947,7 @@ pub fn parse_describe_cluster_db_revisions_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeClusterDbRevisionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4964,7 +4964,7 @@ pub fn parse_describe_cluster_db_revisions_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeClusterDbRevisionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5019,7 +5019,7 @@ pub fn parse_describe_cluster_parameter_groups_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5033,7 +5033,7 @@ pub fn parse_describe_cluster_parameter_groups_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5096,7 +5096,7 @@ pub fn parse_describe_cluster_parameters_error(
                             output = crate::xml_deser::deser_structure_crate_error_cluster_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeClusterParametersError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -5152,7 +5152,7 @@ pub fn parse_describe_clusters_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeClustersError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5170,7 +5170,7 @@ pub fn parse_describe_clusters_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_tag_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeClustersError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -5228,7 +5228,7 @@ pub fn parse_describe_cluster_security_groups_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5242,7 +5242,7 @@ pub fn parse_describe_cluster_security_groups_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5303,7 +5303,7 @@ pub fn parse_describe_cluster_snapshots_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeClusterSnapshotsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5321,7 +5321,7 @@ pub fn parse_describe_cluster_snapshots_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeClusterSnapshotsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5339,7 +5339,7 @@ pub fn parse_describe_cluster_snapshots_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_tag_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeClusterSnapshotsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -5357,7 +5357,7 @@ pub fn parse_describe_cluster_snapshots_error(
                     output = crate::xml_deser::deser_structure_crate_error_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeClusterSnapshotsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5419,7 +5419,7 @@ pub fn parse_describe_cluster_subnet_groups_error(
                             output = crate::xml_deser::deser_structure_crate_error_cluster_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeClusterSubnetGroupsError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -5438,7 +5438,7 @@ pub fn parse_describe_cluster_subnet_groups_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_tag_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeClusterSubnetGroupsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -5496,7 +5496,7 @@ pub fn parse_describe_cluster_tracks_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_track_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeClusterTracksError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5513,7 +5513,7 @@ pub fn parse_describe_cluster_tracks_error(
                     output = crate::xml_deser::deser_structure_crate_error_unauthorized_operation_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeClusterTracksError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5602,7 +5602,7 @@ pub fn parse_describe_data_shares_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_data_share_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeDataSharesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5663,7 +5663,7 @@ pub fn parse_describe_data_shares_for_consumer_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_namespace_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeDataSharesForConsumerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5726,7 +5726,7 @@ pub fn parse_describe_data_shares_for_producer_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_namespace_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeDataSharesForProducerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5823,7 +5823,7 @@ pub fn parse_describe_endpoint_access_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEndpointAccessError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5840,7 +5840,7 @@ pub fn parse_describe_endpoint_access_error(
                     output = crate::xml_deser::deser_structure_crate_error_endpoint_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEndpointAccessError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5857,7 +5857,7 @@ pub fn parse_describe_endpoint_access_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEndpointAccessError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5918,7 +5918,7 @@ pub fn parse_describe_endpoint_authorization_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEndpointAuthorizationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5937,7 +5937,7 @@ pub fn parse_describe_endpoint_authorization_error(
                         output = crate::xml_deser::deser_structure_crate_error_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEndpointAuthorizationError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -6058,7 +6058,7 @@ pub fn parse_describe_event_subscriptions_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_tag_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventSubscriptionsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -6076,7 +6076,7 @@ pub fn parse_describe_event_subscriptions_error(
                     output = crate::xml_deser::deser_structure_crate_error_subscription_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventSubscriptionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6135,7 +6135,7 @@ pub fn parse_describe_hsm_client_certificates_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6149,7 +6149,7 @@ pub fn parse_describe_hsm_client_certificates_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6212,7 +6212,7 @@ pub fn parse_describe_hsm_configurations_error(
                         output = crate::xml_deser::deser_structure_crate_error_hsm_configuration_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeHsmConfigurationsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -6231,7 +6231,7 @@ pub fn parse_describe_hsm_configurations_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_tag_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeHsmConfigurationsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -6289,7 +6289,7 @@ pub fn parse_describe_logging_status_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoggingStatusError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6346,7 +6346,7 @@ pub fn parse_describe_node_configuration_options_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6360,7 +6360,7 @@ pub fn parse_describe_node_configuration_options_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6374,7 +6374,7 @@ pub fn parse_describe_node_configuration_options_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6388,7 +6388,7 @@ pub fn parse_describe_node_configuration_options_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6402,7 +6402,7 @@ pub fn parse_describe_node_configuration_options_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6494,7 +6494,7 @@ pub fn parse_describe_partners_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribePartnersError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6512,7 +6512,7 @@ pub fn parse_describe_partners_error(
                     output = crate::xml_deser::deser_structure_crate_error_unauthorized_partner_integration_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribePartnersError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6567,7 +6567,7 @@ pub fn parse_describe_reserved_node_exchange_status_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6581,7 +6581,7 @@ pub fn parse_describe_reserved_node_exchange_status_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6595,7 +6595,7 @@ pub fn parse_describe_reserved_node_exchange_status_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6650,7 +6650,7 @@ pub fn parse_describe_reserved_node_offerings_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6664,7 +6664,7 @@ pub fn parse_describe_reserved_node_offerings_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6678,7 +6678,7 @@ pub fn parse_describe_reserved_node_offerings_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6736,7 +6736,7 @@ pub fn parse_describe_reserved_nodes_error(
                     output = crate::xml_deser::deser_structure_crate_error_dependent_service_unavailable_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedNodesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6754,7 +6754,7 @@ pub fn parse_describe_reserved_nodes_error(
                     output = crate::xml_deser::deser_structure_crate_error_reserved_node_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedNodesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6808,7 +6808,7 @@ pub fn parse_describe_resize_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeResizeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6825,7 +6825,7 @@ pub fn parse_describe_resize_error(
                     output = crate::xml_deser::deser_structure_crate_error_resize_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeResizeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6884,7 +6884,7 @@ pub fn parse_describe_scheduled_actions_error(
                     output = crate::xml_deser::deser_structure_crate_error_scheduled_action_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeScheduledActionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6901,7 +6901,7 @@ pub fn parse_describe_scheduled_actions_error(
                     output = crate::xml_deser::deser_structure_crate_error_unauthorized_operation_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeScheduledActionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6963,7 +6963,7 @@ pub fn parse_describe_snapshot_copy_grants_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_tag_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeSnapshotCopyGrantsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -6983,7 +6983,7 @@ pub fn parse_describe_snapshot_copy_grants_error(
                         output = crate::xml_deser::deser_structure_crate_error_snapshot_copy_grant_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeSnapshotCopyGrantsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -7105,7 +7105,7 @@ pub fn parse_describe_table_restore_status_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeTableRestoreStatusError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7123,7 +7123,7 @@ pub fn parse_describe_table_restore_status_error(
                     output = crate::xml_deser::deser_structure_crate_error_table_restore_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeTableRestoreStatusError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7178,7 +7178,7 @@ pub fn parse_describe_tags_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_tag_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeTagsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -7196,7 +7196,7 @@ pub fn parse_describe_tags_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7250,7 +7250,7 @@ pub fn parse_describe_usage_limits_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeUsageLimitsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7267,7 +7267,7 @@ pub fn parse_describe_usage_limits_error(
                     output = crate::xml_deser::deser_structure_crate_error_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeUsageLimitsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7321,7 +7321,7 @@ pub fn parse_disable_logging_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DisableLoggingError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7338,7 +7338,7 @@ pub fn parse_disable_logging_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DisableLoggingError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7392,7 +7392,7 @@ pub fn parse_disable_snapshot_copy_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DisableSnapshotCopyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7409,7 +7409,7 @@ pub fn parse_disable_snapshot_copy_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DisableSnapshotCopyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7427,7 +7427,7 @@ pub fn parse_disable_snapshot_copy_error(
                     output = crate::xml_deser::deser_structure_crate_error_snapshot_copy_already_disabled_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DisableSnapshotCopyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7444,7 +7444,7 @@ pub fn parse_disable_snapshot_copy_error(
                     output = crate::xml_deser::deser_structure_crate_error_unauthorized_operation_xml_err(response.body().as_ref(), output).map_err(crate::error::DisableSnapshotCopyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7505,7 +7505,7 @@ pub fn parse_disassociate_data_share_consumer_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_data_share_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DisassociateDataShareConsumerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7522,7 +7522,7 @@ pub fn parse_disassociate_data_share_consumer_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_namespace_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DisassociateDataShareConsumerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7577,7 +7577,7 @@ pub fn parse_enable_logging_error(
                     output = crate::xml_deser::deser_structure_crate_error_bucket_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableLoggingError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7594,7 +7594,7 @@ pub fn parse_enable_logging_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableLoggingError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7612,7 +7612,7 @@ pub fn parse_enable_logging_error(
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_s3_bucket_policy_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableLoggingError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7629,7 +7629,7 @@ pub fn parse_enable_logging_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableLoggingError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7646,7 +7646,7 @@ pub fn parse_enable_logging_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_s3_bucket_name_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableLoggingError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7663,7 +7663,7 @@ pub fn parse_enable_logging_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_s3_key_prefix_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableLoggingError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7717,7 +7717,7 @@ pub fn parse_enable_snapshot_copy_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableSnapshotCopyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7735,7 +7735,7 @@ pub fn parse_enable_snapshot_copy_error(
                     output = crate::xml_deser::deser_structure_crate_error_copy_to_region_disabled_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableSnapshotCopyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7752,7 +7752,7 @@ pub fn parse_enable_snapshot_copy_error(
                         output = crate::xml_deser::deser_structure_crate_error_dependent_service_request_throttling_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableSnapshotCopyError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -7771,7 +7771,7 @@ pub fn parse_enable_snapshot_copy_error(
                     output = crate::xml_deser::deser_structure_crate_error_incompatible_orderable_options_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableSnapshotCopyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7788,7 +7788,7 @@ pub fn parse_enable_snapshot_copy_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableSnapshotCopyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7806,7 +7806,7 @@ pub fn parse_enable_snapshot_copy_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_retention_period_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableSnapshotCopyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7824,7 +7824,7 @@ pub fn parse_enable_snapshot_copy_error(
                         output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableSnapshotCopyError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -7843,7 +7843,7 @@ pub fn parse_enable_snapshot_copy_error(
                     output = crate::xml_deser::deser_structure_crate_error_snapshot_copy_already_enabled_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableSnapshotCopyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7861,7 +7861,7 @@ pub fn parse_enable_snapshot_copy_error(
                     output = crate::xml_deser::deser_structure_crate_error_snapshot_copy_grant_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableSnapshotCopyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7878,7 +7878,7 @@ pub fn parse_enable_snapshot_copy_error(
                     output = crate::xml_deser::deser_structure_crate_error_unauthorized_operation_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableSnapshotCopyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7896,7 +7896,7 @@ pub fn parse_enable_snapshot_copy_error(
                     output = crate::xml_deser::deser_structure_crate_error_unknown_snapshot_copy_region_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableSnapshotCopyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7953,7 +7953,7 @@ pub fn parse_get_cluster_credentials_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::GetClusterCredentialsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7970,7 +7970,7 @@ pub fn parse_get_cluster_credentials_error(
                     output = crate::xml_deser::deser_structure_crate_error_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::GetClusterCredentialsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8031,7 +8031,7 @@ pub fn parse_get_cluster_credentials_with_iam_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::GetClusterCredentialsWithIAMError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8048,7 +8048,7 @@ pub fn parse_get_cluster_credentials_with_iam_error(
                     output = crate::xml_deser::deser_structure_crate_error_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::GetClusterCredentialsWithIAMError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8108,7 +8108,7 @@ pub fn parse_get_reserved_node_exchange_configuration_options_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -8122,7 +8122,7 @@ pub fn parse_get_reserved_node_exchange_configuration_options_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -8136,7 +8136,7 @@ pub fn parse_get_reserved_node_exchange_configuration_options_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -8150,7 +8150,7 @@ pub fn parse_get_reserved_node_exchange_configuration_options_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -8164,7 +8164,7 @@ pub fn parse_get_reserved_node_exchange_configuration_options_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -8178,7 +8178,7 @@ pub fn parse_get_reserved_node_exchange_configuration_options_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -8192,7 +8192,7 @@ pub fn parse_get_reserved_node_exchange_configuration_options_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -8206,7 +8206,7 @@ pub fn parse_get_reserved_node_exchange_configuration_options_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -8257,7 +8257,7 @@ pub fn parse_get_reserved_node_exchange_offerings_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -8271,7 +8271,7 @@ pub fn parse_get_reserved_node_exchange_offerings_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -8285,7 +8285,7 @@ pub fn parse_get_reserved_node_exchange_offerings_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -8299,7 +8299,7 @@ pub fn parse_get_reserved_node_exchange_offerings_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -8313,7 +8313,7 @@ pub fn parse_get_reserved_node_exchange_offerings_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -8327,7 +8327,7 @@ pub fn parse_get_reserved_node_exchange_offerings_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -8389,7 +8389,7 @@ pub fn parse_modify_aqua_configuration_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyAquaConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8406,7 +8406,7 @@ pub fn parse_modify_aqua_configuration_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyAquaConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8423,7 +8423,7 @@ pub fn parse_modify_aqua_configuration_error(
                     output = crate::xml_deser::deser_structure_crate_error_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyAquaConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8482,7 +8482,7 @@ pub fn parse_modify_authentication_profile_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -8496,7 +8496,7 @@ pub fn parse_modify_authentication_profile_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -8510,7 +8510,7 @@ pub fn parse_modify_authentication_profile_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -8563,7 +8563,7 @@ pub fn parse_modify_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8580,7 +8580,7 @@ pub fn parse_modify_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8598,7 +8598,7 @@ pub fn parse_modify_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8616,7 +8616,7 @@ pub fn parse_modify_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8635,7 +8635,7 @@ pub fn parse_modify_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_dependent_service_request_throttling_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8653,7 +8653,7 @@ pub fn parse_modify_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_hsm_client_certificate_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8671,7 +8671,7 @@ pub fn parse_modify_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_hsm_configuration_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8689,7 +8689,7 @@ pub fn parse_modify_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8708,7 +8708,7 @@ pub fn parse_modify_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_security_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8725,7 +8725,7 @@ pub fn parse_modify_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8742,7 +8742,7 @@ pub fn parse_modify_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_track_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8759,7 +8759,7 @@ pub fn parse_modify_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_elastic_ip_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8777,7 +8777,7 @@ pub fn parse_modify_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_retention_period_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8795,7 +8795,7 @@ pub fn parse_modify_cluster_error(
                         output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -8813,7 +8813,7 @@ pub fn parse_modify_cluster_error(
                         output = crate::xml_deser::deser_structure_crate_error_number_of_nodes_per_cluster_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -8832,7 +8832,7 @@ pub fn parse_modify_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_number_of_nodes_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8849,7 +8849,7 @@ pub fn parse_modify_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_table_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8866,7 +8866,7 @@ pub fn parse_modify_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_unauthorized_operation_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8883,7 +8883,7 @@ pub fn parse_modify_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_unsupported_option_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8941,7 +8941,7 @@ pub fn parse_modify_cluster_db_revision_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterDbRevisionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8959,7 +8959,7 @@ pub fn parse_modify_cluster_db_revision_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_on_latest_revision_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterDbRevisionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8976,7 +8976,7 @@ pub fn parse_modify_cluster_db_revision_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterDbRevisionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9033,7 +9033,7 @@ pub fn parse_modify_cluster_iam_roles_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterIamRolesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9050,7 +9050,7 @@ pub fn parse_modify_cluster_iam_roles_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterIamRolesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9111,7 +9111,7 @@ pub fn parse_modify_cluster_maintenance_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterMaintenanceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9128,7 +9128,7 @@ pub fn parse_modify_cluster_maintenance_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterMaintenanceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9187,7 +9187,7 @@ pub fn parse_modify_cluster_parameter_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -9201,7 +9201,7 @@ pub fn parse_modify_cluster_parameter_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -9258,7 +9258,7 @@ pub fn parse_modify_cluster_snapshot_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterSnapshotError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9276,7 +9276,7 @@ pub fn parse_modify_cluster_snapshot_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_snapshot_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterSnapshotError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9294,7 +9294,7 @@ pub fn parse_modify_cluster_snapshot_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_retention_period_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterSnapshotError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9353,7 +9353,7 @@ pub fn parse_modify_cluster_snapshot_schedule_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -9367,7 +9367,7 @@ pub fn parse_modify_cluster_snapshot_schedule_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -9381,7 +9381,7 @@ pub fn parse_modify_cluster_snapshot_schedule_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -9434,7 +9434,7 @@ pub fn parse_modify_cluster_subnet_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -9448,7 +9448,7 @@ pub fn parse_modify_cluster_subnet_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -9462,7 +9462,7 @@ pub fn parse_modify_cluster_subnet_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -9476,7 +9476,7 @@ pub fn parse_modify_cluster_subnet_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -9490,7 +9490,7 @@ pub fn parse_modify_cluster_subnet_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -9504,7 +9504,7 @@ pub fn parse_modify_cluster_subnet_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -9560,7 +9560,7 @@ pub fn parse_modify_endpoint_access_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyEndpointAccessError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9577,7 +9577,7 @@ pub fn parse_modify_endpoint_access_error(
                     output = crate::xml_deser::deser_structure_crate_error_endpoint_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyEndpointAccessError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9595,7 +9595,7 @@ pub fn parse_modify_endpoint_access_error(
                             output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_security_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyEndpointAccessError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -9613,7 +9613,7 @@ pub fn parse_modify_endpoint_access_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyEndpointAccessError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9630,7 +9630,7 @@ pub fn parse_modify_endpoint_access_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_endpoint_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyEndpointAccessError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9647,7 +9647,7 @@ pub fn parse_modify_endpoint_access_error(
                     output = crate::xml_deser::deser_structure_crate_error_unauthorized_operation_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyEndpointAccessError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9709,7 +9709,7 @@ pub fn parse_modify_event_subscription_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_subscription_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyEventSubscriptionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9726,7 +9726,7 @@ pub fn parse_modify_event_subscription_error(
                     output = crate::xml_deser::deser_structure_crate_error_sns_invalid_topic_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyEventSubscriptionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9743,7 +9743,7 @@ pub fn parse_modify_event_subscription_error(
                     output = crate::xml_deser::deser_structure_crate_error_sns_no_authorization_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyEventSubscriptionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9761,7 +9761,7 @@ pub fn parse_modify_event_subscription_error(
                     output = crate::xml_deser::deser_structure_crate_error_sns_topic_arn_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyEventSubscriptionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9778,7 +9778,7 @@ pub fn parse_modify_event_subscription_error(
                     output = crate::xml_deser::deser_structure_crate_error_source_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyEventSubscriptionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9797,7 +9797,7 @@ pub fn parse_modify_event_subscription_error(
                         output = crate::xml_deser::deser_structure_crate_error_subscription_category_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyEventSubscriptionError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -9817,7 +9817,7 @@ pub fn parse_modify_event_subscription_error(
                         output = crate::xml_deser::deser_structure_crate_error_subscription_event_id_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyEventSubscriptionError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -9835,7 +9835,7 @@ pub fn parse_modify_event_subscription_error(
                     output = crate::xml_deser::deser_structure_crate_error_subscription_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyEventSubscriptionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9854,7 +9854,7 @@ pub fn parse_modify_event_subscription_error(
                         output = crate::xml_deser::deser_structure_crate_error_subscription_severity_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyEventSubscriptionError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -9913,7 +9913,7 @@ pub fn parse_modify_scheduled_action_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_scheduled_action_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyScheduledActionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9930,7 +9930,7 @@ pub fn parse_modify_scheduled_action_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_schedule_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyScheduledActionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9948,7 +9948,7 @@ pub fn parse_modify_scheduled_action_error(
                     output = crate::xml_deser::deser_structure_crate_error_scheduled_action_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyScheduledActionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9968,7 +9968,7 @@ pub fn parse_modify_scheduled_action_error(
                         output = crate::xml_deser::deser_structure_crate_error_scheduled_action_type_unsupported_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyScheduledActionError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -9986,7 +9986,7 @@ pub fn parse_modify_scheduled_action_error(
                     output = crate::xml_deser::deser_structure_crate_error_unauthorized_operation_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyScheduledActionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10043,7 +10043,7 @@ pub fn parse_modify_snapshot_copy_retention_period_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -10057,7 +10057,7 @@ pub fn parse_modify_snapshot_copy_retention_period_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -10071,7 +10071,7 @@ pub fn parse_modify_snapshot_copy_retention_period_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -10085,7 +10085,7 @@ pub fn parse_modify_snapshot_copy_retention_period_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -10099,7 +10099,7 @@ pub fn parse_modify_snapshot_copy_retention_period_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -10156,7 +10156,7 @@ pub fn parse_modify_snapshot_schedule_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_schedule_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifySnapshotScheduleError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10174,7 +10174,7 @@ pub fn parse_modify_snapshot_schedule_error(
                     output = crate::xml_deser::deser_structure_crate_error_snapshot_schedule_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifySnapshotScheduleError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10192,7 +10192,7 @@ pub fn parse_modify_snapshot_schedule_error(
                             output = crate::xml_deser::deser_structure_crate_error_snapshot_schedule_update_in_progress_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifySnapshotScheduleError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -10248,7 +10248,7 @@ pub fn parse_modify_usage_limit_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_usage_limit_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUsageLimitError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10265,7 +10265,7 @@ pub fn parse_modify_usage_limit_error(
                     output = crate::xml_deser::deser_structure_crate_error_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUsageLimitError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10282,7 +10282,7 @@ pub fn parse_modify_usage_limit_error(
                     output = crate::xml_deser::deser_structure_crate_error_usage_limit_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUsageLimitError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10334,7 +10334,7 @@ pub fn parse_pause_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PauseClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10351,7 +10351,7 @@ pub fn parse_pause_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PauseClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10407,7 +10407,7 @@ pub fn parse_purchase_reserved_node_offering_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -10421,7 +10421,7 @@ pub fn parse_purchase_reserved_node_offering_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -10435,7 +10435,7 @@ pub fn parse_purchase_reserved_node_offering_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -10449,7 +10449,7 @@ pub fn parse_purchase_reserved_node_offering_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -10502,7 +10502,7 @@ pub fn parse_reboot_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RebootClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10519,7 +10519,7 @@ pub fn parse_reboot_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RebootClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10570,7 +10570,7 @@ pub fn parse_reject_data_share_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_data_share_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RejectDataShareError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10626,7 +10626,7 @@ pub fn parse_reset_cluster_parameter_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -10640,7 +10640,7 @@ pub fn parse_reset_cluster_parameter_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -10693,7 +10693,7 @@ pub fn parse_resize_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResizeClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10711,7 +10711,7 @@ pub fn parse_resize_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_dependent_service_unavailable_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResizeClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10729,7 +10729,7 @@ pub fn parse_resize_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResizeClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10746,7 +10746,7 @@ pub fn parse_resize_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResizeClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10764,7 +10764,7 @@ pub fn parse_resize_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_reserved_node_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResizeClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10782,7 +10782,7 @@ pub fn parse_resize_cluster_error(
                         output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResizeClusterError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -10800,7 +10800,7 @@ pub fn parse_resize_cluster_error(
                         output = crate::xml_deser::deser_structure_crate_error_number_of_nodes_per_cluster_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResizeClusterError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -10819,7 +10819,7 @@ pub fn parse_resize_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_number_of_nodes_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResizeClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10837,7 +10837,7 @@ pub fn parse_resize_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_reserved_node_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResizeClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10855,7 +10855,7 @@ pub fn parse_resize_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_reserved_node_already_migrated_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResizeClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10873,7 +10873,7 @@ pub fn parse_resize_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_reserved_node_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResizeClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10891,7 +10891,7 @@ pub fn parse_resize_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_reserved_node_offering_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResizeClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10908,7 +10908,7 @@ pub fn parse_resize_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_unauthorized_operation_xml_err(response.body().as_ref(), output).map_err(crate::error::ResizeClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10925,7 +10925,7 @@ pub fn parse_resize_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResizeClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10942,7 +10942,7 @@ pub fn parse_resize_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_unsupported_option_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResizeClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10998,7 +10998,7 @@ pub fn parse_restore_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11012,7 +11012,7 @@ pub fn parse_restore_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11026,7 +11026,7 @@ pub fn parse_restore_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11040,7 +11040,7 @@ pub fn parse_restore_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11054,7 +11054,7 @@ pub fn parse_restore_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11068,7 +11068,7 @@ pub fn parse_restore_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11082,7 +11082,7 @@ pub fn parse_restore_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11096,7 +11096,7 @@ pub fn parse_restore_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11110,7 +11110,7 @@ pub fn parse_restore_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11124,7 +11124,7 @@ pub fn parse_restore_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11138,7 +11138,7 @@ pub fn parse_restore_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11152,7 +11152,7 @@ pub fn parse_restore_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11166,7 +11166,7 @@ pub fn parse_restore_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11180,7 +11180,7 @@ pub fn parse_restore_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11194,7 +11194,7 @@ pub fn parse_restore_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11208,7 +11208,7 @@ pub fn parse_restore_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11222,7 +11222,7 @@ pub fn parse_restore_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11236,7 +11236,7 @@ pub fn parse_restore_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11250,7 +11250,7 @@ pub fn parse_restore_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11264,7 +11264,7 @@ pub fn parse_restore_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11278,7 +11278,7 @@ pub fn parse_restore_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11292,7 +11292,7 @@ pub fn parse_restore_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11306,7 +11306,7 @@ pub fn parse_restore_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11320,7 +11320,7 @@ pub fn parse_restore_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11334,7 +11334,7 @@ pub fn parse_restore_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11348,7 +11348,7 @@ pub fn parse_restore_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11362,7 +11362,7 @@ pub fn parse_restore_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11376,7 +11376,7 @@ pub fn parse_restore_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11390,7 +11390,7 @@ pub fn parse_restore_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11404,7 +11404,7 @@ pub fn parse_restore_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11418,7 +11418,7 @@ pub fn parse_restore_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11432,7 +11432,7 @@ pub fn parse_restore_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11486,7 +11486,7 @@ pub fn parse_restore_table_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11500,7 +11500,7 @@ pub fn parse_restore_table_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11514,7 +11514,7 @@ pub fn parse_restore_table_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11528,7 +11528,7 @@ pub fn parse_restore_table_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11542,7 +11542,7 @@ pub fn parse_restore_table_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11556,7 +11556,7 @@ pub fn parse_restore_table_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11570,7 +11570,7 @@ pub fn parse_restore_table_from_cluster_snapshot_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11625,7 +11625,7 @@ pub fn parse_resume_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResumeClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11643,7 +11643,7 @@ pub fn parse_resume_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResumeClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11660,7 +11660,7 @@ pub fn parse_resume_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResumeClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11714,7 +11714,7 @@ pub fn parse_revoke_cluster_security_group_ingress_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11728,7 +11728,7 @@ pub fn parse_revoke_cluster_security_group_ingress_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11742,7 +11742,7 @@ pub fn parse_revoke_cluster_security_group_ingress_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -11795,7 +11795,7 @@ pub fn parse_revoke_endpoint_access_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RevokeEndpointAccessError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11814,7 +11814,7 @@ pub fn parse_revoke_endpoint_access_error(
                                 output = crate::xml_deser::deser_structure_crate_error_endpoint_authorization_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RevokeEndpointAccessError::unhandled)?;
                                 output.build()
                             };
-                            if (&tmp.message).is_none() {
+                            if tmp.message.is_none() {
                                 tmp.message = _error_message;
                             }
                             tmp
@@ -11833,7 +11833,7 @@ pub fn parse_revoke_endpoint_access_error(
                     output = crate::xml_deser::deser_structure_crate_error_endpoint_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RevokeEndpointAccessError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11851,7 +11851,7 @@ pub fn parse_revoke_endpoint_access_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_authorization_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RevokeEndpointAccessError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11869,7 +11869,7 @@ pub fn parse_revoke_endpoint_access_error(
                             output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_security_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RevokeEndpointAccessError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -11887,7 +11887,7 @@ pub fn parse_revoke_endpoint_access_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RevokeEndpointAccessError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11904,7 +11904,7 @@ pub fn parse_revoke_endpoint_access_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_endpoint_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RevokeEndpointAccessError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11962,7 +11962,7 @@ pub fn parse_revoke_snapshot_access_error(
                     output = crate::xml_deser::deser_structure_crate_error_access_to_snapshot_denied_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RevokeSnapshotAccessError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11980,7 +11980,7 @@ pub fn parse_revoke_snapshot_access_error(
                     output = crate::xml_deser::deser_structure_crate_error_authorization_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RevokeSnapshotAccessError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11998,7 +11998,7 @@ pub fn parse_revoke_snapshot_access_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RevokeSnapshotAccessError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -12015,7 +12015,7 @@ pub fn parse_revoke_snapshot_access_error(
                     output = crate::xml_deser::deser_structure_crate_error_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RevokeSnapshotAccessError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -12072,7 +12072,7 @@ pub fn parse_rotate_encryption_key_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RotateEncryptionKeyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -12090,7 +12090,7 @@ pub fn parse_rotate_encryption_key_error(
                             output = crate::xml_deser::deser_structure_crate_error_dependent_service_request_throttling_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RotateEncryptionKeyError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -12108,7 +12108,7 @@ pub fn parse_rotate_encryption_key_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RotateEncryptionKeyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -12165,7 +12165,7 @@ pub fn parse_update_partner_status_error(
                     output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdatePartnerStatusError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -12182,7 +12182,7 @@ pub fn parse_update_partner_status_error(
                     output = crate::xml_deser::deser_structure_crate_error_partner_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdatePartnerStatusError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -12201,7 +12201,7 @@ pub fn parse_update_partner_status_error(
                                 output = crate::xml_deser::deser_structure_crate_error_unauthorized_partner_integration_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdatePartnerStatusError::unhandled)?;
                                 output.build()
                             };
-                            if (&tmp.message).is_none() {
+                            if tmp.message.is_none() {
                                 tmp.message = _error_message;
                             }
                             tmp

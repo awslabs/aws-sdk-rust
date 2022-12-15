@@ -28,7 +28,7 @@ pub fn parse_send_serial_console_ssh_public_key_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -42,7 +42,7 @@ pub fn parse_send_serial_console_ssh_public_key_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -56,7 +56,7 @@ pub fn parse_send_serial_console_ssh_public_key_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -70,7 +70,7 @@ pub fn parse_send_serial_console_ssh_public_key_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -84,7 +84,7 @@ pub fn parse_send_serial_console_ssh_public_key_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -98,7 +98,7 @@ pub fn parse_send_serial_console_ssh_public_key_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -112,7 +112,7 @@ pub fn parse_send_serial_console_ssh_public_key_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -126,7 +126,7 @@ pub fn parse_send_serial_console_ssh_public_key_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -140,7 +140,7 @@ pub fn parse_send_serial_console_ssh_public_key_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -154,7 +154,7 @@ pub fn parse_send_serial_console_ssh_public_key_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -168,7 +168,7 @@ pub fn parse_send_serial_console_ssh_public_key_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -229,7 +229,7 @@ pub fn parse_send_ssh_public_key_error(
                         .map_err(crate::error::SendSSHPublicKeyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -247,7 +247,7 @@ pub fn parse_send_ssh_public_key_error(
                     output = crate::json_deser::deser_structure_crate_error_ec2_instance_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendSSHPublicKeyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -265,7 +265,7 @@ pub fn parse_send_ssh_public_key_error(
                     output = crate::json_deser::deser_structure_crate_error_ec2_instance_state_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendSSHPublicKeyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -283,7 +283,7 @@ pub fn parse_send_ssh_public_key_error(
                     output = crate::json_deser::deser_structure_crate_error_ec2_instance_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendSSHPublicKeyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -300,7 +300,7 @@ pub fn parse_send_ssh_public_key_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_args_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendSSHPublicKeyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -318,7 +318,7 @@ pub fn parse_send_ssh_public_key_error(
                         output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendSSHPublicKeyError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -336,7 +336,7 @@ pub fn parse_send_ssh_public_key_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendSSHPublicKeyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp

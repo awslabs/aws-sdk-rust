@@ -2,22 +2,15 @@
 
 /// <p>The specified resource does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ResourceNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ResourceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -25,7 +18,9 @@ impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
         if let Some(inner_1) = &self.message {
-            write!(f, ": {}", inner_1)?;
+            {
+                write!(f, ": {}", inner_1)?;
+            }
         }
         Ok(())
     }
@@ -35,7 +30,7 @@ impl std::error::Error for ResourceNotFoundException {}
 pub mod resource_not_found_exception {
 
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -67,22 +62,15 @@ impl ResourceNotFoundException {
 
 /// <p>The service cannot complete the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceUnavailableException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ServiceUnavailableException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceUnavailableException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ServiceUnavailableException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -90,7 +78,9 @@ impl std::fmt::Display for ServiceUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceUnavailableException")?;
         if let Some(inner_2) = &self.message {
-            write!(f, ": {}", inner_2)?;
+            {
+                write!(f, ": {}", inner_2)?;
+            }
         }
         Ok(())
     }
@@ -100,7 +90,7 @@ impl std::error::Error for ServiceUnavailableException {}
 pub mod service_unavailable_exception {
 
     /// A builder for [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -132,22 +122,15 @@ impl ServiceUnavailableException {
 
 /// <p>A parameter is specified incorrectly.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidParameterException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidParameterException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidParameterException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -155,7 +138,9 @@ impl std::fmt::Display for InvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidParameterException")?;
         if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+            {
+                write!(f, ": {}", inner_3)?;
+            }
         }
         Ok(())
     }
@@ -165,7 +150,7 @@ impl std::error::Error for InvalidParameterException {}
 pub mod invalid_parameter_exception {
 
     /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -198,7 +183,7 @@ impl InvalidParameterException {
 /// <p>The query string is not valid. Details about this error are displayed in a <code>QueryCompileError</code> object. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_QueryCompileError.html">QueryCompileError</a>.</p>
 /// <p>For more information about valid query syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MalformedQueryException {
     /// <p>Reserved.</p>
     #[doc(hidden)]
@@ -213,17 +198,9 @@ impl MalformedQueryException {
         self.query_compile_error.as_ref()
     }
 }
-impl std::fmt::Debug for MalformedQueryException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MalformedQueryException");
-        formatter.field("query_compile_error", &self.query_compile_error);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl MalformedQueryException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -231,7 +208,9 @@ impl std::fmt::Display for MalformedQueryException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MalformedQueryException")?;
         if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+            {
+                write!(f, ": {}", inner_4)?;
+            }
         }
         Ok(())
     }
@@ -241,7 +220,7 @@ impl std::error::Error for MalformedQueryException {}
 pub mod malformed_query_exception {
 
     /// A builder for [`MalformedQueryException`](crate::error::MalformedQueryException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_compile_error: std::option::Option<crate::model::QueryCompileError>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -288,22 +267,15 @@ impl MalformedQueryException {
 
 /// <p>You have reached the maximum number of resources that can be created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for LimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl LimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -311,7 +283,9 @@ impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LimitExceededException")?;
         if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+            {
+                write!(f, ": {}", inner_5)?;
+            }
         }
         Ok(())
     }
@@ -321,7 +295,7 @@ impl std::error::Error for LimitExceededException {}
 pub mod limit_exceeded_exception {
 
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -353,22 +327,15 @@ impl LimitExceededException {
 
 /// <p>Multiple concurrent requests to update the same resource were in conflict.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OperationAbortedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for OperationAbortedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OperationAbortedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl OperationAbortedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -376,7 +343,9 @@ impl std::fmt::Display for OperationAbortedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OperationAbortedException")?;
         if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+            {
+                write!(f, ": {}", inner_6)?;
+            }
         }
         Ok(())
     }
@@ -386,7 +355,7 @@ impl std::error::Error for OperationAbortedException {}
 pub mod operation_aborted_exception {
 
     /// A builder for [`OperationAbortedException`](crate::error::OperationAbortedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -418,22 +387,15 @@ impl OperationAbortedException {
 
 /// <p>The most likely cause is an invalid Amazon Web Services access key ID or secret key.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnrecognizedClientException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for UnrecognizedClientException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnrecognizedClientException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl UnrecognizedClientException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -441,7 +403,9 @@ impl std::fmt::Display for UnrecognizedClientException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnrecognizedClientException")?;
         if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
+            {
+                write!(f, ": {}", inner_7)?;
+            }
         }
         Ok(())
     }
@@ -451,7 +415,7 @@ impl std::error::Error for UnrecognizedClientException {}
 pub mod unrecognized_client_exception {
 
     /// A builder for [`UnrecognizedClientException`](crate::error::UnrecognizedClientException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -483,7 +447,7 @@ impl UnrecognizedClientException {
 
 /// <p>The sequence token is not valid. You can get the correct sequence token in the <code>expectedSequenceToken</code> field in the <code>InvalidSequenceTokenException</code> message. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidSequenceTokenException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -498,17 +462,9 @@ impl InvalidSequenceTokenException {
         self.expected_sequence_token.as_deref()
     }
 }
-impl std::fmt::Debug for InvalidSequenceTokenException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSequenceTokenException");
-        formatter.field("expected_sequence_token", &self.expected_sequence_token);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidSequenceTokenException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -516,7 +472,9 @@ impl std::fmt::Display for InvalidSequenceTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSequenceTokenException")?;
         if let Some(inner_8) = &self.message {
-            write!(f, ": {}", inner_8)?;
+            {
+                write!(f, ": {}", inner_8)?;
+            }
         }
         Ok(())
     }
@@ -526,7 +484,7 @@ impl std::error::Error for InvalidSequenceTokenException {}
 pub mod invalid_sequence_token_exception {
 
     /// A builder for [`InvalidSequenceTokenException`](crate::error::InvalidSequenceTokenException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expected_sequence_token: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -573,7 +531,7 @@ impl InvalidSequenceTokenException {
 
 /// <p>The event was already logged.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataAlreadyAcceptedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -588,17 +546,9 @@ impl DataAlreadyAcceptedException {
         self.expected_sequence_token.as_deref()
     }
 }
-impl std::fmt::Debug for DataAlreadyAcceptedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataAlreadyAcceptedException");
-        formatter.field("expected_sequence_token", &self.expected_sequence_token);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DataAlreadyAcceptedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -606,7 +556,9 @@ impl std::fmt::Display for DataAlreadyAcceptedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DataAlreadyAcceptedException")?;
         if let Some(inner_9) = &self.message {
-            write!(f, ": {}", inner_9)?;
+            {
+                write!(f, ": {}", inner_9)?;
+            }
         }
         Ok(())
     }
@@ -616,7 +568,7 @@ impl std::error::Error for DataAlreadyAcceptedException {}
 pub mod data_already_accepted_exception {
 
     /// A builder for [`DataAlreadyAcceptedException`](crate::error::DataAlreadyAcceptedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expected_sequence_token: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -663,22 +615,15 @@ impl DataAlreadyAcceptedException {
 
 /// <p>The specified resource already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ResourceAlreadyExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceAlreadyExistsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ResourceAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -686,7 +631,9 @@ impl std::fmt::Display for ResourceAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceAlreadyExistsException")?;
         if let Some(inner_10) = &self.message {
-            write!(f, ": {}", inner_10)?;
+            {
+                write!(f, ": {}", inner_10)?;
+            }
         }
         Ok(())
     }
@@ -696,7 +643,7 @@ impl std::error::Error for ResourceAlreadyExistsException {}
 pub mod resource_already_exists_exception {
 
     /// A builder for [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -728,22 +675,15 @@ impl ResourceAlreadyExistsException {
 
 /// <p>The operation is not valid on the specified resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidOperationException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidOperationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidOperationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidOperationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -751,7 +691,9 @@ impl std::fmt::Display for InvalidOperationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidOperationException")?;
         if let Some(inner_11) = &self.message {
-            write!(f, ": {}", inner_11)?;
+            {
+                write!(f, ": {}", inner_11)?;
+            }
         }
         Ok(())
     }
@@ -761,7 +703,7 @@ impl std::error::Error for InvalidOperationException {}
 pub mod invalid_operation_exception {
 
     /// A builder for [`InvalidOperationException`](crate::error::InvalidOperationException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -800,6 +742,14 @@ pub struct AssociateKmsKeyError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for AssociateKmsKeyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AssociateKmsKeyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AssociateKmsKey` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -812,8 +762,15 @@ pub enum AssociateKmsKeyErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateKmsKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -843,7 +800,7 @@ impl AssociateKmsKeyError {
     /// Creates the `AssociateKmsKeyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssociateKmsKeyErrorKind::Unhandled(err.into()),
+            kind: AssociateKmsKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -852,7 +809,7 @@ impl AssociateKmsKeyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssociateKmsKeyErrorKind::Unhandled(err.into()),
+            kind: AssociateKmsKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -912,7 +869,7 @@ impl std::error::Error for AssociateKmsKeyError {
             AssociateKmsKeyErrorKind::OperationAbortedException(_inner) => Some(_inner),
             AssociateKmsKeyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             AssociateKmsKeyErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            AssociateKmsKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AssociateKmsKeyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -926,6 +883,14 @@ pub struct CancelExportTaskError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CancelExportTaskError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CancelExportTaskErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CancelExportTask` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -938,8 +903,15 @@ pub enum CancelExportTaskErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CancelExportTaskError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -969,7 +941,7 @@ impl CancelExportTaskError {
     /// Creates the `CancelExportTaskError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CancelExportTaskErrorKind::Unhandled(err.into()),
+            kind: CancelExportTaskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -978,7 +950,7 @@ impl CancelExportTaskError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CancelExportTaskErrorKind::Unhandled(err.into()),
+            kind: CancelExportTaskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1038,7 +1010,7 @@ impl std::error::Error for CancelExportTaskError {
             CancelExportTaskErrorKind::InvalidParameterException(_inner) => Some(_inner),
             CancelExportTaskErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CancelExportTaskErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            CancelExportTaskErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CancelExportTaskErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1051,6 +1023,14 @@ pub struct CreateExportTaskError {
     pub kind: CreateExportTaskErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateExportTaskError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateExportTaskErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateExportTask` operation.
 #[non_exhaustive]
@@ -1068,8 +1048,15 @@ pub enum CreateExportTaskErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateExportTaskError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1101,7 +1088,7 @@ impl CreateExportTaskError {
     /// Creates the `CreateExportTaskError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateExportTaskErrorKind::Unhandled(err.into()),
+            kind: CreateExportTaskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1110,7 +1097,7 @@ impl CreateExportTaskError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateExportTaskErrorKind::Unhandled(err.into()),
+            kind: CreateExportTaskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1186,7 +1173,7 @@ impl std::error::Error for CreateExportTaskError {
             CreateExportTaskErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
             CreateExportTaskErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateExportTaskErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            CreateExportTaskErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateExportTaskErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1199,6 +1186,14 @@ pub struct CreateLogGroupError {
     pub kind: CreateLogGroupErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateLogGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateLogGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateLogGroup` operation.
 #[non_exhaustive]
@@ -1214,8 +1209,15 @@ pub enum CreateLogGroupErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLogGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1246,7 +1248,7 @@ impl CreateLogGroupError {
     /// Creates the `CreateLogGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateLogGroupErrorKind::Unhandled(err.into()),
+            kind: CreateLogGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1255,7 +1257,7 @@ impl CreateLogGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateLogGroupErrorKind::Unhandled(err.into()),
+            kind: CreateLogGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1323,7 +1325,7 @@ impl std::error::Error for CreateLogGroupError {
             CreateLogGroupErrorKind::OperationAbortedException(_inner) => Some(_inner),
             CreateLogGroupErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
             CreateLogGroupErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            CreateLogGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateLogGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1337,6 +1339,14 @@ pub struct CreateLogStreamError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateLogStreamError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateLogStreamErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateLogStream` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1349,8 +1359,15 @@ pub enum CreateLogStreamErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLogStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1380,7 +1397,7 @@ impl CreateLogStreamError {
     /// Creates the `CreateLogStreamError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateLogStreamErrorKind::Unhandled(err.into()),
+            kind: CreateLogStreamErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1389,7 +1406,7 @@ impl CreateLogStreamError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateLogStreamErrorKind::Unhandled(err.into()),
+            kind: CreateLogStreamErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1449,7 +1466,7 @@ impl std::error::Error for CreateLogStreamError {
             CreateLogStreamErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
             CreateLogStreamErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateLogStreamErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            CreateLogStreamErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateLogStreamErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1463,6 +1480,14 @@ pub struct DeleteDestinationError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteDestinationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteDestinationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteDestination` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1475,8 +1500,15 @@ pub enum DeleteDestinationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDestinationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1506,7 +1538,7 @@ impl DeleteDestinationError {
     /// Creates the `DeleteDestinationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDestinationErrorKind::Unhandled(err.into()),
+            kind: DeleteDestinationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1515,7 +1547,7 @@ impl DeleteDestinationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDestinationErrorKind::Unhandled(err.into()),
+            kind: DeleteDestinationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1575,7 +1607,7 @@ impl std::error::Error for DeleteDestinationError {
             DeleteDestinationErrorKind::OperationAbortedException(_inner) => Some(_inner),
             DeleteDestinationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteDestinationErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteDestinationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDestinationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1589,6 +1621,14 @@ pub struct DeleteLogGroupError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteLogGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteLogGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteLogGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1601,8 +1641,15 @@ pub enum DeleteLogGroupErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteLogGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1632,7 +1679,7 @@ impl DeleteLogGroupError {
     /// Creates the `DeleteLogGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteLogGroupErrorKind::Unhandled(err.into()),
+            kind: DeleteLogGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1641,7 +1688,7 @@ impl DeleteLogGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteLogGroupErrorKind::Unhandled(err.into()),
+            kind: DeleteLogGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1701,7 +1748,7 @@ impl std::error::Error for DeleteLogGroupError {
             DeleteLogGroupErrorKind::OperationAbortedException(_inner) => Some(_inner),
             DeleteLogGroupErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteLogGroupErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteLogGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteLogGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1715,6 +1762,14 @@ pub struct DeleteLogStreamError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteLogStreamError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteLogStreamErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteLogStream` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1727,8 +1782,15 @@ pub enum DeleteLogStreamErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteLogStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1758,7 +1820,7 @@ impl DeleteLogStreamError {
     /// Creates the `DeleteLogStreamError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteLogStreamErrorKind::Unhandled(err.into()),
+            kind: DeleteLogStreamErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1767,7 +1829,7 @@ impl DeleteLogStreamError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteLogStreamErrorKind::Unhandled(err.into()),
+            kind: DeleteLogStreamErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1827,7 +1889,7 @@ impl std::error::Error for DeleteLogStreamError {
             DeleteLogStreamErrorKind::OperationAbortedException(_inner) => Some(_inner),
             DeleteLogStreamErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteLogStreamErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteLogStreamErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteLogStreamErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1841,6 +1903,14 @@ pub struct DeleteMetricFilterError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteMetricFilterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteMetricFilterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteMetricFilter` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1853,8 +1923,15 @@ pub enum DeleteMetricFilterErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteMetricFilterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1884,7 +1961,7 @@ impl DeleteMetricFilterError {
     /// Creates the `DeleteMetricFilterError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteMetricFilterErrorKind::Unhandled(err.into()),
+            kind: DeleteMetricFilterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1893,7 +1970,7 @@ impl DeleteMetricFilterError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteMetricFilterErrorKind::Unhandled(err.into()),
+            kind: DeleteMetricFilterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1953,7 +2030,7 @@ impl std::error::Error for DeleteMetricFilterError {
             DeleteMetricFilterErrorKind::OperationAbortedException(_inner) => Some(_inner),
             DeleteMetricFilterErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteMetricFilterErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteMetricFilterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteMetricFilterErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1967,6 +2044,14 @@ pub struct DeleteQueryDefinitionError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteQueryDefinitionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteQueryDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteQueryDefinition` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1977,8 +2062,15 @@ pub enum DeleteQueryDefinitionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteQueryDefinitionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2007,7 +2099,9 @@ impl DeleteQueryDefinitionError {
     /// Creates the `DeleteQueryDefinitionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteQueryDefinitionErrorKind::Unhandled(err.into()),
+            kind: DeleteQueryDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2016,7 +2110,9 @@ impl DeleteQueryDefinitionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteQueryDefinitionErrorKind::Unhandled(err.into()),
+            kind: DeleteQueryDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2068,7 +2164,7 @@ impl std::error::Error for DeleteQueryDefinitionError {
             DeleteQueryDefinitionErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DeleteQueryDefinitionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteQueryDefinitionErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteQueryDefinitionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteQueryDefinitionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2082,6 +2178,14 @@ pub struct DeleteResourcePolicyError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteResourcePolicyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteResourcePolicy` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2092,8 +2196,15 @@ pub enum DeleteResourcePolicyErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteResourcePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2122,7 +2233,9 @@ impl DeleteResourcePolicyError {
     /// Creates the `DeleteResourcePolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteResourcePolicyErrorKind::Unhandled(err.into()),
+            kind: DeleteResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2131,7 +2244,9 @@ impl DeleteResourcePolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteResourcePolicyErrorKind::Unhandled(err.into()),
+            kind: DeleteResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2183,7 +2298,7 @@ impl std::error::Error for DeleteResourcePolicyError {
             DeleteResourcePolicyErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DeleteResourcePolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteResourcePolicyErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2197,6 +2312,14 @@ pub struct DeleteRetentionPolicyError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteRetentionPolicyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteRetentionPolicyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteRetentionPolicy` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2209,8 +2332,15 @@ pub enum DeleteRetentionPolicyErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteRetentionPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2240,7 +2370,9 @@ impl DeleteRetentionPolicyError {
     /// Creates the `DeleteRetentionPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteRetentionPolicyErrorKind::Unhandled(err.into()),
+            kind: DeleteRetentionPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2249,7 +2381,9 @@ impl DeleteRetentionPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteRetentionPolicyErrorKind::Unhandled(err.into()),
+            kind: DeleteRetentionPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2309,7 +2443,7 @@ impl std::error::Error for DeleteRetentionPolicyError {
             DeleteRetentionPolicyErrorKind::OperationAbortedException(_inner) => Some(_inner),
             DeleteRetentionPolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteRetentionPolicyErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteRetentionPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteRetentionPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2323,6 +2457,16 @@ pub struct DeleteSubscriptionFilterError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteSubscriptionFilterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteSubscriptionFilterErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteSubscriptionFilter` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2335,8 +2479,15 @@ pub enum DeleteSubscriptionFilterErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteSubscriptionFilterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2366,7 +2517,9 @@ impl DeleteSubscriptionFilterError {
     /// Creates the `DeleteSubscriptionFilterError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteSubscriptionFilterErrorKind::Unhandled(err.into()),
+            kind: DeleteSubscriptionFilterErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2375,7 +2528,9 @@ impl DeleteSubscriptionFilterError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteSubscriptionFilterErrorKind::Unhandled(err.into()),
+            kind: DeleteSubscriptionFilterErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2435,7 +2590,7 @@ impl std::error::Error for DeleteSubscriptionFilterError {
             DeleteSubscriptionFilterErrorKind::OperationAbortedException(_inner) => Some(_inner),
             DeleteSubscriptionFilterErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteSubscriptionFilterErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteSubscriptionFilterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteSubscriptionFilterErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2449,6 +2604,14 @@ pub struct DescribeDestinationsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDestinationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDestinationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeDestinations` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2457,8 +2620,15 @@ pub enum DescribeDestinationsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDestinationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2486,7 +2656,9 @@ impl DescribeDestinationsError {
     /// Creates the `DescribeDestinationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDestinationsErrorKind::Unhandled(err.into()),
+            kind: DescribeDestinationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2495,7 +2667,9 @@ impl DescribeDestinationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDestinationsErrorKind::Unhandled(err.into()),
+            kind: DescribeDestinationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2539,7 +2713,7 @@ impl std::error::Error for DescribeDestinationsError {
         match &self.kind {
             DescribeDestinationsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeDestinationsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DescribeDestinationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeDestinationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2553,6 +2727,14 @@ pub struct DescribeExportTasksError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeExportTasksError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeExportTasksErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeExportTasks` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2561,8 +2743,15 @@ pub enum DescribeExportTasksErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeExportTasksError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2590,7 +2779,7 @@ impl DescribeExportTasksError {
     /// Creates the `DescribeExportTasksError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeExportTasksErrorKind::Unhandled(err.into()),
+            kind: DescribeExportTasksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2599,7 +2788,7 @@ impl DescribeExportTasksError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeExportTasksErrorKind::Unhandled(err.into()),
+            kind: DescribeExportTasksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2643,7 +2832,7 @@ impl std::error::Error for DescribeExportTasksError {
         match &self.kind {
             DescribeExportTasksErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeExportTasksErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DescribeExportTasksErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeExportTasksErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2657,6 +2846,14 @@ pub struct DescribeLogGroupsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeLogGroupsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeLogGroupsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeLogGroups` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2665,8 +2862,15 @@ pub enum DescribeLogGroupsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeLogGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2694,7 +2898,7 @@ impl DescribeLogGroupsError {
     /// Creates the `DescribeLogGroupsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeLogGroupsErrorKind::Unhandled(err.into()),
+            kind: DescribeLogGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2703,7 +2907,7 @@ impl DescribeLogGroupsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeLogGroupsErrorKind::Unhandled(err.into()),
+            kind: DescribeLogGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2747,7 +2951,7 @@ impl std::error::Error for DescribeLogGroupsError {
         match &self.kind {
             DescribeLogGroupsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeLogGroupsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DescribeLogGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeLogGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2761,6 +2965,14 @@ pub struct DescribeLogStreamsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeLogStreamsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeLogStreamsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeLogStreams` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2771,8 +2983,15 @@ pub enum DescribeLogStreamsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeLogStreamsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2801,7 +3020,7 @@ impl DescribeLogStreamsError {
     /// Creates the `DescribeLogStreamsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeLogStreamsErrorKind::Unhandled(err.into()),
+            kind: DescribeLogStreamsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2810,7 +3029,7 @@ impl DescribeLogStreamsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeLogStreamsErrorKind::Unhandled(err.into()),
+            kind: DescribeLogStreamsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2862,7 +3081,7 @@ impl std::error::Error for DescribeLogStreamsError {
             DescribeLogStreamsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeLogStreamsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeLogStreamsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DescribeLogStreamsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeLogStreamsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2876,6 +3095,14 @@ pub struct DescribeMetricFiltersError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeMetricFiltersError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeMetricFiltersErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeMetricFilters` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2886,8 +3113,15 @@ pub enum DescribeMetricFiltersErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeMetricFiltersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2916,7 +3150,9 @@ impl DescribeMetricFiltersError {
     /// Creates the `DescribeMetricFiltersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeMetricFiltersErrorKind::Unhandled(err.into()),
+            kind: DescribeMetricFiltersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2925,7 +3161,9 @@ impl DescribeMetricFiltersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeMetricFiltersErrorKind::Unhandled(err.into()),
+            kind: DescribeMetricFiltersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2977,7 +3215,7 @@ impl std::error::Error for DescribeMetricFiltersError {
             DescribeMetricFiltersErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeMetricFiltersErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeMetricFiltersErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DescribeMetricFiltersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeMetricFiltersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2991,6 +3229,14 @@ pub struct DescribeQueriesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeQueriesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeQueriesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeQueries` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3001,8 +3247,15 @@ pub enum DescribeQueriesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeQueriesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3031,7 +3284,7 @@ impl DescribeQueriesError {
     /// Creates the `DescribeQueriesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeQueriesErrorKind::Unhandled(err.into()),
+            kind: DescribeQueriesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3040,7 +3293,7 @@ impl DescribeQueriesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeQueriesErrorKind::Unhandled(err.into()),
+            kind: DescribeQueriesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3092,7 +3345,7 @@ impl std::error::Error for DescribeQueriesError {
             DescribeQueriesErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeQueriesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeQueriesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DescribeQueriesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeQueriesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3106,6 +3359,16 @@ pub struct DescribeQueryDefinitionsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeQueryDefinitionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeQueryDefinitionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeQueryDefinitions` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3114,8 +3377,15 @@ pub enum DescribeQueryDefinitionsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeQueryDefinitionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3143,7 +3413,9 @@ impl DescribeQueryDefinitionsError {
     /// Creates the `DescribeQueryDefinitionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeQueryDefinitionsErrorKind::Unhandled(err.into()),
+            kind: DescribeQueryDefinitionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3152,7 +3424,9 @@ impl DescribeQueryDefinitionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeQueryDefinitionsErrorKind::Unhandled(err.into()),
+            kind: DescribeQueryDefinitionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3196,7 +3470,7 @@ impl std::error::Error for DescribeQueryDefinitionsError {
         match &self.kind {
             DescribeQueryDefinitionsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeQueryDefinitionsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DescribeQueryDefinitionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeQueryDefinitionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3210,6 +3484,16 @@ pub struct DescribeResourcePoliciesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeResourcePoliciesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeResourcePoliciesErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeResourcePolicies` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3218,8 +3502,15 @@ pub enum DescribeResourcePoliciesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeResourcePoliciesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3247,7 +3538,9 @@ impl DescribeResourcePoliciesError {
     /// Creates the `DescribeResourcePoliciesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeResourcePoliciesErrorKind::Unhandled(err.into()),
+            kind: DescribeResourcePoliciesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3256,7 +3549,9 @@ impl DescribeResourcePoliciesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeResourcePoliciesErrorKind::Unhandled(err.into()),
+            kind: DescribeResourcePoliciesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3300,7 +3595,7 @@ impl std::error::Error for DescribeResourcePoliciesError {
         match &self.kind {
             DescribeResourcePoliciesErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeResourcePoliciesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DescribeResourcePoliciesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeResourcePoliciesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3314,6 +3609,16 @@ pub struct DescribeSubscriptionFiltersError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeSubscriptionFiltersError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeSubscriptionFiltersErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeSubscriptionFilters` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3324,8 +3629,15 @@ pub enum DescribeSubscriptionFiltersErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeSubscriptionFiltersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3360,7 +3672,9 @@ impl DescribeSubscriptionFiltersError {
     /// Creates the `DescribeSubscriptionFiltersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeSubscriptionFiltersErrorKind::Unhandled(err.into()),
+            kind: DescribeSubscriptionFiltersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3369,7 +3683,9 @@ impl DescribeSubscriptionFiltersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeSubscriptionFiltersErrorKind::Unhandled(err.into()),
+            kind: DescribeSubscriptionFiltersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3423,7 +3739,7 @@ impl std::error::Error for DescribeSubscriptionFiltersError {
             DescribeSubscriptionFiltersErrorKind::ServiceUnavailableException(_inner) => {
                 Some(_inner)
             }
-            DescribeSubscriptionFiltersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeSubscriptionFiltersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3437,6 +3753,14 @@ pub struct DisassociateKmsKeyError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DisassociateKmsKeyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DisassociateKmsKeyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DisassociateKmsKey` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3449,8 +3773,15 @@ pub enum DisassociateKmsKeyErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateKmsKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3480,7 +3811,7 @@ impl DisassociateKmsKeyError {
     /// Creates the `DisassociateKmsKeyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisassociateKmsKeyErrorKind::Unhandled(err.into()),
+            kind: DisassociateKmsKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3489,7 +3820,7 @@ impl DisassociateKmsKeyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisassociateKmsKeyErrorKind::Unhandled(err.into()),
+            kind: DisassociateKmsKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3549,7 +3880,7 @@ impl std::error::Error for DisassociateKmsKeyError {
             DisassociateKmsKeyErrorKind::OperationAbortedException(_inner) => Some(_inner),
             DisassociateKmsKeyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DisassociateKmsKeyErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DisassociateKmsKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisassociateKmsKeyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3563,6 +3894,14 @@ pub struct FilterLogEventsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for FilterLogEventsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: FilterLogEventsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `FilterLogEvents` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3573,8 +3912,15 @@ pub enum FilterLogEventsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for FilterLogEventsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3603,7 +3949,7 @@ impl FilterLogEventsError {
     /// Creates the `FilterLogEventsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: FilterLogEventsErrorKind::Unhandled(err.into()),
+            kind: FilterLogEventsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3612,7 +3958,7 @@ impl FilterLogEventsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: FilterLogEventsErrorKind::Unhandled(err.into()),
+            kind: FilterLogEventsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3664,7 +4010,7 @@ impl std::error::Error for FilterLogEventsError {
             FilterLogEventsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             FilterLogEventsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             FilterLogEventsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            FilterLogEventsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            FilterLogEventsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3678,6 +4024,14 @@ pub struct GetLogEventsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetLogEventsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetLogEventsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetLogEvents` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3688,8 +4042,15 @@ pub enum GetLogEventsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLogEventsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3718,7 +4079,7 @@ impl GetLogEventsError {
     /// Creates the `GetLogEventsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetLogEventsErrorKind::Unhandled(err.into()),
+            kind: GetLogEventsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3727,7 +4088,7 @@ impl GetLogEventsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetLogEventsErrorKind::Unhandled(err.into()),
+            kind: GetLogEventsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3779,7 +4140,7 @@ impl std::error::Error for GetLogEventsError {
             GetLogEventsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GetLogEventsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetLogEventsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            GetLogEventsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetLogEventsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3793,6 +4154,14 @@ pub struct GetLogGroupFieldsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetLogGroupFieldsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetLogGroupFieldsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetLogGroupFields` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3805,8 +4174,15 @@ pub enum GetLogGroupFieldsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLogGroupFieldsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3836,7 +4212,7 @@ impl GetLogGroupFieldsError {
     /// Creates the `GetLogGroupFieldsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetLogGroupFieldsErrorKind::Unhandled(err.into()),
+            kind: GetLogGroupFieldsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3845,7 +4221,7 @@ impl GetLogGroupFieldsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetLogGroupFieldsErrorKind::Unhandled(err.into()),
+            kind: GetLogGroupFieldsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3905,7 +4281,7 @@ impl std::error::Error for GetLogGroupFieldsError {
             GetLogGroupFieldsErrorKind::LimitExceededException(_inner) => Some(_inner),
             GetLogGroupFieldsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetLogGroupFieldsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            GetLogGroupFieldsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetLogGroupFieldsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3919,6 +4295,14 @@ pub struct GetLogRecordError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetLogRecordError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetLogRecordErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetLogRecord` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3931,8 +4315,15 @@ pub enum GetLogRecordErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLogRecordError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3962,7 +4353,7 @@ impl GetLogRecordError {
     /// Creates the `GetLogRecordError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetLogRecordErrorKind::Unhandled(err.into()),
+            kind: GetLogRecordErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3971,7 +4362,7 @@ impl GetLogRecordError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetLogRecordErrorKind::Unhandled(err.into()),
+            kind: GetLogRecordErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4028,7 +4419,7 @@ impl std::error::Error for GetLogRecordError {
             GetLogRecordErrorKind::LimitExceededException(_inner) => Some(_inner),
             GetLogRecordErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetLogRecordErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            GetLogRecordErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetLogRecordErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4042,6 +4433,14 @@ pub struct GetQueryResultsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetQueryResultsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetQueryResultsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetQueryResults` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4052,8 +4451,15 @@ pub enum GetQueryResultsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetQueryResultsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4082,7 +4488,7 @@ impl GetQueryResultsError {
     /// Creates the `GetQueryResultsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetQueryResultsErrorKind::Unhandled(err.into()),
+            kind: GetQueryResultsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4091,7 +4497,7 @@ impl GetQueryResultsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetQueryResultsErrorKind::Unhandled(err.into()),
+            kind: GetQueryResultsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4143,7 +4549,7 @@ impl std::error::Error for GetQueryResultsError {
             GetQueryResultsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GetQueryResultsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetQueryResultsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            GetQueryResultsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetQueryResultsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4157,6 +4563,14 @@ pub struct ListTagsLogGroupError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListTagsLogGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListTagsLogGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListTagsLogGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4165,8 +4579,15 @@ pub enum ListTagsLogGroupErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsLogGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4194,7 +4615,7 @@ impl ListTagsLogGroupError {
     /// Creates the `ListTagsLogGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsLogGroupErrorKind::Unhandled(err.into()),
+            kind: ListTagsLogGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4203,7 +4624,7 @@ impl ListTagsLogGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsLogGroupErrorKind::Unhandled(err.into()),
+            kind: ListTagsLogGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4247,7 +4668,7 @@ impl std::error::Error for ListTagsLogGroupError {
         match &self.kind {
             ListTagsLogGroupErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTagsLogGroupErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListTagsLogGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsLogGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4261,6 +4682,14 @@ pub struct PutDestinationError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for PutDestinationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PutDestinationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `PutDestination` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4271,8 +4700,15 @@ pub enum PutDestinationErrorKind {
     OperationAbortedException(crate::error::OperationAbortedException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutDestinationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4301,7 +4737,7 @@ impl PutDestinationError {
     /// Creates the `PutDestinationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutDestinationErrorKind::Unhandled(err.into()),
+            kind: PutDestinationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4310,7 +4746,7 @@ impl PutDestinationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutDestinationErrorKind::Unhandled(err.into()),
+            kind: PutDestinationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4362,7 +4798,7 @@ impl std::error::Error for PutDestinationError {
             PutDestinationErrorKind::InvalidParameterException(_inner) => Some(_inner),
             PutDestinationErrorKind::OperationAbortedException(_inner) => Some(_inner),
             PutDestinationErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            PutDestinationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutDestinationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4376,6 +4812,14 @@ pub struct PutDestinationPolicyError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for PutDestinationPolicyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PutDestinationPolicyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `PutDestinationPolicy` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4386,8 +4830,15 @@ pub enum PutDestinationPolicyErrorKind {
     OperationAbortedException(crate::error::OperationAbortedException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutDestinationPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4416,7 +4867,9 @@ impl PutDestinationPolicyError {
     /// Creates the `PutDestinationPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutDestinationPolicyErrorKind::Unhandled(err.into()),
+            kind: PutDestinationPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4425,7 +4878,9 @@ impl PutDestinationPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutDestinationPolicyErrorKind::Unhandled(err.into()),
+            kind: PutDestinationPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4477,7 +4932,7 @@ impl std::error::Error for PutDestinationPolicyError {
             PutDestinationPolicyErrorKind::InvalidParameterException(_inner) => Some(_inner),
             PutDestinationPolicyErrorKind::OperationAbortedException(_inner) => Some(_inner),
             PutDestinationPolicyErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            PutDestinationPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutDestinationPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4490,6 +4945,14 @@ pub struct PutLogEventsError {
     pub kind: PutLogEventsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PutLogEventsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PutLogEventsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `PutLogEvents` operation.
 #[non_exhaustive]
@@ -4507,8 +4970,15 @@ pub enum PutLogEventsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The most likely cause is an invalid Amazon Web Services access key ID or secret key.</p>
     UnrecognizedClientException(crate::error::UnrecognizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutLogEventsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4540,7 +5010,7 @@ impl PutLogEventsError {
     /// Creates the `PutLogEventsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutLogEventsErrorKind::Unhandled(err.into()),
+            kind: PutLogEventsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4549,7 +5019,7 @@ impl PutLogEventsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutLogEventsErrorKind::Unhandled(err.into()),
+            kind: PutLogEventsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4625,7 +5095,7 @@ impl std::error::Error for PutLogEventsError {
             PutLogEventsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             PutLogEventsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             PutLogEventsErrorKind::UnrecognizedClientException(_inner) => Some(_inner),
-            PutLogEventsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutLogEventsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4638,6 +5108,14 @@ pub struct PutMetricFilterError {
     pub kind: PutMetricFilterErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PutMetricFilterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PutMetricFilterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `PutMetricFilter` operation.
 #[non_exhaustive]
@@ -4653,8 +5131,15 @@ pub enum PutMetricFilterErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutMetricFilterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4685,7 +5170,7 @@ impl PutMetricFilterError {
     /// Creates the `PutMetricFilterError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutMetricFilterErrorKind::Unhandled(err.into()),
+            kind: PutMetricFilterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4694,7 +5179,7 @@ impl PutMetricFilterError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutMetricFilterErrorKind::Unhandled(err.into()),
+            kind: PutMetricFilterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4762,7 +5247,7 @@ impl std::error::Error for PutMetricFilterError {
             PutMetricFilterErrorKind::OperationAbortedException(_inner) => Some(_inner),
             PutMetricFilterErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             PutMetricFilterErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            PutMetricFilterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutMetricFilterErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4776,6 +5261,14 @@ pub struct PutQueryDefinitionError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for PutQueryDefinitionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PutQueryDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `PutQueryDefinition` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4788,8 +5281,15 @@ pub enum PutQueryDefinitionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutQueryDefinitionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4819,7 +5319,7 @@ impl PutQueryDefinitionError {
     /// Creates the `PutQueryDefinitionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutQueryDefinitionErrorKind::Unhandled(err.into()),
+            kind: PutQueryDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4828,7 +5328,7 @@ impl PutQueryDefinitionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutQueryDefinitionErrorKind::Unhandled(err.into()),
+            kind: PutQueryDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4888,7 +5388,7 @@ impl std::error::Error for PutQueryDefinitionError {
             PutQueryDefinitionErrorKind::LimitExceededException(_inner) => Some(_inner),
             PutQueryDefinitionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             PutQueryDefinitionErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            PutQueryDefinitionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutQueryDefinitionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4902,6 +5402,14 @@ pub struct PutResourcePolicyError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for PutResourcePolicyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PutResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `PutResourcePolicy` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4912,8 +5420,15 @@ pub enum PutResourcePolicyErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutResourcePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4942,7 +5457,7 @@ impl PutResourcePolicyError {
     /// Creates the `PutResourcePolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutResourcePolicyErrorKind::Unhandled(err.into()),
+            kind: PutResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4951,7 +5466,7 @@ impl PutResourcePolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutResourcePolicyErrorKind::Unhandled(err.into()),
+            kind: PutResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5003,7 +5518,7 @@ impl std::error::Error for PutResourcePolicyError {
             PutResourcePolicyErrorKind::InvalidParameterException(_inner) => Some(_inner),
             PutResourcePolicyErrorKind::LimitExceededException(_inner) => Some(_inner),
             PutResourcePolicyErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            PutResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5017,6 +5532,14 @@ pub struct PutRetentionPolicyError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for PutRetentionPolicyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PutRetentionPolicyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `PutRetentionPolicy` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5029,8 +5552,15 @@ pub enum PutRetentionPolicyErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutRetentionPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5060,7 +5590,7 @@ impl PutRetentionPolicyError {
     /// Creates the `PutRetentionPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutRetentionPolicyErrorKind::Unhandled(err.into()),
+            kind: PutRetentionPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5069,7 +5599,7 @@ impl PutRetentionPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutRetentionPolicyErrorKind::Unhandled(err.into()),
+            kind: PutRetentionPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5129,7 +5659,7 @@ impl std::error::Error for PutRetentionPolicyError {
             PutRetentionPolicyErrorKind::OperationAbortedException(_inner) => Some(_inner),
             PutRetentionPolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             PutRetentionPolicyErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            PutRetentionPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutRetentionPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5142,6 +5672,14 @@ pub struct PutSubscriptionFilterError {
     pub kind: PutSubscriptionFilterErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PutSubscriptionFilterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PutSubscriptionFilterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `PutSubscriptionFilter` operation.
 #[non_exhaustive]
@@ -5157,8 +5695,15 @@ pub enum PutSubscriptionFilterErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutSubscriptionFilterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5189,7 +5734,9 @@ impl PutSubscriptionFilterError {
     /// Creates the `PutSubscriptionFilterError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutSubscriptionFilterErrorKind::Unhandled(err.into()),
+            kind: PutSubscriptionFilterErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5198,7 +5745,9 @@ impl PutSubscriptionFilterError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutSubscriptionFilterErrorKind::Unhandled(err.into()),
+            kind: PutSubscriptionFilterErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5266,7 +5815,7 @@ impl std::error::Error for PutSubscriptionFilterError {
             PutSubscriptionFilterErrorKind::OperationAbortedException(_inner) => Some(_inner),
             PutSubscriptionFilterErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             PutSubscriptionFilterErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            PutSubscriptionFilterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutSubscriptionFilterErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5279,6 +5828,14 @@ pub struct StartQueryError {
     pub kind: StartQueryErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for StartQueryError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StartQueryErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `StartQuery` operation.
 #[non_exhaustive]
@@ -5295,8 +5852,15 @@ pub enum StartQueryErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartQueryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5327,7 +5891,7 @@ impl StartQueryError {
     /// Creates the `StartQueryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartQueryErrorKind::Unhandled(err.into()),
+            kind: StartQueryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5336,7 +5900,7 @@ impl StartQueryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartQueryErrorKind::Unhandled(err.into()),
+            kind: StartQueryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5398,7 +5962,7 @@ impl std::error::Error for StartQueryError {
             StartQueryErrorKind::MalformedQueryException(_inner) => Some(_inner),
             StartQueryErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             StartQueryErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            StartQueryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartQueryErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5412,6 +5976,14 @@ pub struct StopQueryError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for StopQueryError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StopQueryErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `StopQuery` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5422,8 +5994,15 @@ pub enum StopQueryErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StopQueryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5452,7 +6031,7 @@ impl StopQueryError {
     /// Creates the `StopQueryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StopQueryErrorKind::Unhandled(err.into()),
+            kind: StopQueryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5461,7 +6040,7 @@ impl StopQueryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StopQueryErrorKind::Unhandled(err.into()),
+            kind: StopQueryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5507,7 +6086,7 @@ impl std::error::Error for StopQueryError {
             StopQueryErrorKind::InvalidParameterException(_inner) => Some(_inner),
             StopQueryErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             StopQueryErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            StopQueryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StopQueryErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5521,6 +6100,14 @@ pub struct TagLogGroupError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for TagLogGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: TagLogGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `TagLogGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5529,8 +6116,15 @@ pub enum TagLogGroupErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagLogGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5558,7 +6152,7 @@ impl TagLogGroupError {
     /// Creates the `TagLogGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagLogGroupErrorKind::Unhandled(err.into()),
+            kind: TagLogGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5567,7 +6161,7 @@ impl TagLogGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagLogGroupErrorKind::Unhandled(err.into()),
+            kind: TagLogGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5611,7 +6205,7 @@ impl std::error::Error for TagLogGroupError {
         match &self.kind {
             TagLogGroupErrorKind::InvalidParameterException(_inner) => Some(_inner),
             TagLogGroupErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            TagLogGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagLogGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5625,6 +6219,14 @@ pub struct TestMetricFilterError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for TestMetricFilterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: TestMetricFilterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `TestMetricFilter` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5633,8 +6235,15 @@ pub enum TestMetricFilterErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TestMetricFilterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5662,7 +6271,7 @@ impl TestMetricFilterError {
     /// Creates the `TestMetricFilterError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TestMetricFilterErrorKind::Unhandled(err.into()),
+            kind: TestMetricFilterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5671,7 +6280,7 @@ impl TestMetricFilterError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TestMetricFilterErrorKind::Unhandled(err.into()),
+            kind: TestMetricFilterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5715,7 +6324,7 @@ impl std::error::Error for TestMetricFilterError {
         match &self.kind {
             TestMetricFilterErrorKind::InvalidParameterException(_inner) => Some(_inner),
             TestMetricFilterErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            TestMetricFilterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TestMetricFilterErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5729,14 +6338,29 @@ pub struct UntagLogGroupError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UntagLogGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UntagLogGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UntagLogGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagLogGroupErrorKind {
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagLogGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5763,7 +6387,7 @@ impl UntagLogGroupError {
     /// Creates the `UntagLogGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagLogGroupErrorKind::Unhandled(err.into()),
+            kind: UntagLogGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5772,7 +6396,7 @@ impl UntagLogGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagLogGroupErrorKind::Unhandled(err.into()),
+            kind: UntagLogGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5808,7 +6432,35 @@ impl std::error::Error for UntagLogGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UntagLogGroupErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UntagLogGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagLogGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+///
+/// When logging an error from the SDK, it is recommended that you either wrap the error in
+/// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+/// error reporter library that visits the error's cause/source chain, or call
+/// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

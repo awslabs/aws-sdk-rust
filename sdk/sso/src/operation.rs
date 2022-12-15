@@ -5,7 +5,7 @@
 /// [`get_role_credentials`](crate::client::Client::get_role_credentials).
 ///
 /// See [`crate::client::fluent_builders::GetRoleCredentials`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRoleCredentials {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRoleCredentials {
 /// [`list_account_roles`](crate::client::Client::list_account_roles).
 ///
 /// See [`crate::client::fluent_builders::ListAccountRoles`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAccountRoles {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccountRoles {
 /// [`list_accounts`](crate::client::Client::list_accounts).
 ///
 /// See [`crate::client::fluent_builders::ListAccounts`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAccounts {
     _private: (),
 }
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccounts {
 /// [`logout`](crate::client::Client::logout).
 ///
 /// See [`crate::client::fluent_builders::Logout`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct Logout {
     _private: (),
 }

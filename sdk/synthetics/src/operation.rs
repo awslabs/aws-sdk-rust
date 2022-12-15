@@ -5,7 +5,7 @@
 /// [`associate_resource`](crate::client::Client::associate_resource).
 ///
 /// See [`crate::client::fluent_builders::AssociateResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateResource {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateResource {
 /// [`create_canary`](crate::client::Client::create_canary).
 ///
 /// See [`crate::client::fluent_builders::CreateCanary`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateCanary {
     _private: (),
 }
@@ -71,7 +71,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCanary {
 /// [`create_group`](crate::client::Client::create_group).
 ///
 /// See [`crate::client::fluent_builders::CreateGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateGroup {
     _private: (),
 }
@@ -103,7 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGroup {
 /// [`delete_canary`](crate::client::Client::delete_canary).
 ///
 /// See [`crate::client::fluent_builders::DeleteCanary`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteCanary {
     _private: (),
 }
@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCanary {
 /// [`delete_group`](crate::client::Client::delete_group).
 ///
 /// See [`crate::client::fluent_builders::DeleteGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteGroup {
     _private: (),
 }
@@ -167,7 +167,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGroup {
 /// [`describe_canaries`](crate::client::Client::describe_canaries).
 ///
 /// See [`crate::client::fluent_builders::DescribeCanaries`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeCanaries {
     _private: (),
 }
@@ -201,7 +201,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCanaries {
 /// [`describe_canaries_last_run`](crate::client::Client::describe_canaries_last_run).
 ///
 /// See [`crate::client::fluent_builders::DescribeCanariesLastRun`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeCanariesLastRun {
     _private: (),
 }
@@ -235,7 +235,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCanariesLastRun 
 /// [`describe_runtime_versions`](crate::client::Client::describe_runtime_versions).
 ///
 /// See [`crate::client::fluent_builders::DescribeRuntimeVersions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeRuntimeVersions {
     _private: (),
 }
@@ -269,7 +269,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRuntimeVersions 
 /// [`disassociate_resource`](crate::client::Client::disassociate_resource).
 ///
 /// See [`crate::client::fluent_builders::DisassociateResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateResource {
     _private: (),
 }
@@ -303,7 +303,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateResource {
 /// [`get_canary`](crate::client::Client::get_canary).
 ///
 /// See [`crate::client::fluent_builders::GetCanary`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetCanary {
     _private: (),
 }
@@ -334,7 +334,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCanary {
 /// [`get_canary_runs`](crate::client::Client::get_canary_runs).
 ///
 /// See [`crate::client::fluent_builders::GetCanaryRuns`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetCanaryRuns {
     _private: (),
 }
@@ -366,7 +366,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCanaryRuns {
 /// [`get_group`](crate::client::Client::get_group).
 ///
 /// See [`crate::client::fluent_builders::GetGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetGroup {
     _private: (),
 }
@@ -397,7 +397,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGroup {
 /// [`list_associated_groups`](crate::client::Client::list_associated_groups).
 ///
 /// See [`crate::client::fluent_builders::ListAssociatedGroups`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAssociatedGroups {
     _private: (),
 }
@@ -431,7 +431,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAssociatedGroups {
 /// [`list_group_resources`](crate::client::Client::list_group_resources).
 ///
 /// See [`crate::client::fluent_builders::ListGroupResources`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListGroupResources {
     _private: (),
 }
@@ -465,7 +465,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGroupResources {
 /// [`list_groups`](crate::client::Client::list_groups).
 ///
 /// See [`crate::client::fluent_builders::ListGroups`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListGroups {
     _private: (),
 }
@@ -497,7 +497,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGroups {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -531,7 +531,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`start_canary`](crate::client::Client::start_canary).
 ///
 /// See [`crate::client::fluent_builders::StartCanary`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartCanary {
     _private: (),
 }
@@ -563,7 +563,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartCanary {
 /// [`stop_canary`](crate::client::Client::stop_canary).
 ///
 /// See [`crate::client::fluent_builders::StopCanary`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopCanary {
     _private: (),
 }
@@ -595,7 +595,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopCanary {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -627,7 +627,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -659,7 +659,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_canary`](crate::client::Client::update_canary).
 ///
 /// See [`crate::client::fluent_builders::UpdateCanary`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateCanary {
     _private: (),
 }

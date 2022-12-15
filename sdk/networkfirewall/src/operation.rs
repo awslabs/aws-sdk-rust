@@ -5,7 +5,7 @@
 /// [`associate_firewall_policy`](crate::client::Client::associate_firewall_policy).
 ///
 /// See [`crate::client::fluent_builders::AssociateFirewallPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateFirewallPolicy {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateFirewallPolicy 
 /// [`associate_subnets`](crate::client::Client::associate_subnets).
 ///
 /// See [`crate::client::fluent_builders::AssociateSubnets`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateSubnets {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateSubnets {
 /// [`create_firewall`](crate::client::Client::create_firewall).
 ///
 /// See [`crate::client::fluent_builders::CreateFirewall`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateFirewall {
     _private: (),
 }
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFirewall {
 /// [`create_firewall_policy`](crate::client::Client::create_firewall_policy).
 ///
 /// See [`crate::client::fluent_builders::CreateFirewallPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateFirewallPolicy {
     _private: (),
 }
@@ -139,7 +139,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFirewallPolicy {
 /// [`create_rule_group`](crate::client::Client::create_rule_group).
 ///
 /// See [`crate::client::fluent_builders::CreateRuleGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateRuleGroup {
     _private: (),
 }
@@ -173,7 +173,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRuleGroup {
 /// [`delete_firewall`](crate::client::Client::delete_firewall).
 ///
 /// See [`crate::client::fluent_builders::DeleteFirewall`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteFirewall {
     _private: (),
 }
@@ -205,7 +205,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFirewall {
 /// [`delete_firewall_policy`](crate::client::Client::delete_firewall_policy).
 ///
 /// See [`crate::client::fluent_builders::DeleteFirewallPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteFirewallPolicy {
     _private: (),
 }
@@ -239,7 +239,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFirewallPolicy {
 /// [`delete_resource_policy`](crate::client::Client::delete_resource_policy).
 ///
 /// See [`crate::client::fluent_builders::DeleteResourcePolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteResourcePolicy {
     _private: (),
 }
@@ -273,7 +273,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteResourcePolicy {
 /// [`delete_rule_group`](crate::client::Client::delete_rule_group).
 ///
 /// See [`crate::client::fluent_builders::DeleteRuleGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRuleGroup {
     _private: (),
 }
@@ -307,7 +307,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRuleGroup {
 /// [`describe_firewall`](crate::client::Client::describe_firewall).
 ///
 /// See [`crate::client::fluent_builders::DescribeFirewall`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeFirewall {
     _private: (),
 }
@@ -341,7 +341,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFirewall {
 /// [`describe_firewall_policy`](crate::client::Client::describe_firewall_policy).
 ///
 /// See [`crate::client::fluent_builders::DescribeFirewallPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeFirewallPolicy {
     _private: (),
 }
@@ -375,7 +375,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFirewallPolicy {
 /// [`describe_logging_configuration`](crate::client::Client::describe_logging_configuration).
 ///
 /// See [`crate::client::fluent_builders::DescribeLoggingConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeLoggingConfiguration {
     _private: (),
 }
@@ -409,7 +409,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLoggingConfigura
 /// [`describe_resource_policy`](crate::client::Client::describe_resource_policy).
 ///
 /// See [`crate::client::fluent_builders::DescribeResourcePolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeResourcePolicy {
     _private: (),
 }
@@ -443,7 +443,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeResourcePolicy {
 /// [`describe_rule_group`](crate::client::Client::describe_rule_group).
 ///
 /// See [`crate::client::fluent_builders::DescribeRuleGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeRuleGroup {
     _private: (),
 }
@@ -477,7 +477,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRuleGroup {
 /// [`describe_rule_group_metadata`](crate::client::Client::describe_rule_group_metadata).
 ///
 /// See [`crate::client::fluent_builders::DescribeRuleGroupMetadata`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeRuleGroupMetadata {
     _private: (),
 }
@@ -511,7 +511,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRuleGroupMetadat
 /// [`disassociate_subnets`](crate::client::Client::disassociate_subnets).
 ///
 /// See [`crate::client::fluent_builders::DisassociateSubnets`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateSubnets {
     _private: (),
 }
@@ -545,7 +545,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateSubnets {
 /// [`list_firewall_policies`](crate::client::Client::list_firewall_policies).
 ///
 /// See [`crate::client::fluent_builders::ListFirewallPolicies`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListFirewallPolicies {
     _private: (),
 }
@@ -579,7 +579,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFirewallPolicies {
 /// [`list_firewalls`](crate::client::Client::list_firewalls).
 ///
 /// See [`crate::client::fluent_builders::ListFirewalls`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListFirewalls {
     _private: (),
 }
@@ -611,7 +611,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFirewalls {
 /// [`list_rule_groups`](crate::client::Client::list_rule_groups).
 ///
 /// See [`crate::client::fluent_builders::ListRuleGroups`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRuleGroups {
     _private: (),
 }
@@ -643,7 +643,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRuleGroups {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -677,7 +677,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`put_resource_policy`](crate::client::Client::put_resource_policy).
 ///
 /// See [`crate::client::fluent_builders::PutResourcePolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutResourcePolicy {
     _private: (),
 }
@@ -711,7 +711,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutResourcePolicy {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -743,7 +743,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -775,7 +775,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_firewall_delete_protection`](crate::client::Client::update_firewall_delete_protection).
 ///
 /// See [`crate::client::fluent_builders::UpdateFirewallDeleteProtection`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateFirewallDeleteProtection {
     _private: (),
 }
@@ -809,7 +809,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFirewallDeleteProt
 /// [`update_firewall_description`](crate::client::Client::update_firewall_description).
 ///
 /// See [`crate::client::fluent_builders::UpdateFirewallDescription`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateFirewallDescription {
     _private: (),
 }
@@ -843,7 +843,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFirewallDescriptio
 /// [`update_firewall_encryption_configuration`](crate::client::Client::update_firewall_encryption_configuration).
 ///
 /// See [`crate::client::fluent_builders::UpdateFirewallEncryptionConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateFirewallEncryptionConfiguration {
     _private: (),
 }
@@ -879,7 +879,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFirewallEncryption
 /// [`update_firewall_policy`](crate::client::Client::update_firewall_policy).
 ///
 /// See [`crate::client::fluent_builders::UpdateFirewallPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateFirewallPolicy {
     _private: (),
 }
@@ -913,7 +913,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFirewallPolicy {
 /// [`update_firewall_policy_change_protection`](crate::client::Client::update_firewall_policy_change_protection).
 ///
 /// See [`crate::client::fluent_builders::UpdateFirewallPolicyChangeProtection`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateFirewallPolicyChangeProtection {
     _private: (),
 }
@@ -949,7 +949,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFirewallPolicyChan
 /// [`update_logging_configuration`](crate::client::Client::update_logging_configuration).
 ///
 /// See [`crate::client::fluent_builders::UpdateLoggingConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateLoggingConfiguration {
     _private: (),
 }
@@ -983,7 +983,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLoggingConfigurati
 /// [`update_rule_group`](crate::client::Client::update_rule_group).
 ///
 /// See [`crate::client::fluent_builders::UpdateRuleGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateRuleGroup {
     _private: (),
 }
@@ -1017,7 +1017,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRuleGroup {
 /// [`update_subnet_change_protection`](crate::client::Client::update_subnet_change_protection).
 ///
 /// See [`crate::client::fluent_builders::UpdateSubnetChangeProtection`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateSubnetChangeProtection {
     _private: (),
 }

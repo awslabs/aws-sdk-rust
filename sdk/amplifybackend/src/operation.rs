@@ -5,7 +5,7 @@
 /// [`clone_backend`](crate::client::Client::clone_backend).
 ///
 /// See [`crate::client::fluent_builders::CloneBackend`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CloneBackend {
     _private: (),
 }
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CloneBackend {
 /// [`create_backend`](crate::client::Client::create_backend).
 ///
 /// See [`crate::client::fluent_builders::CreateBackend`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateBackend {
     _private: (),
 }
@@ -69,7 +69,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBackend {
 /// [`create_backend_api`](crate::client::Client::create_backend_api).
 ///
 /// See [`crate::client::fluent_builders::CreateBackendAPI`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateBackendAPI {
     _private: (),
 }
@@ -103,7 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBackendAPI {
 /// [`create_backend_auth`](crate::client::Client::create_backend_auth).
 ///
 /// See [`crate::client::fluent_builders::CreateBackendAuth`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateBackendAuth {
     _private: (),
 }
@@ -137,7 +137,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBackendAuth {
 /// [`create_backend_config`](crate::client::Client::create_backend_config).
 ///
 /// See [`crate::client::fluent_builders::CreateBackendConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateBackendConfig {
     _private: (),
 }
@@ -171,7 +171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBackendConfig {
 /// [`create_backend_storage`](crate::client::Client::create_backend_storage).
 ///
 /// See [`crate::client::fluent_builders::CreateBackendStorage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateBackendStorage {
     _private: (),
 }
@@ -205,7 +205,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBackendStorage {
 /// [`create_token`](crate::client::Client::create_token).
 ///
 /// See [`crate::client::fluent_builders::CreateToken`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateToken {
     _private: (),
 }
@@ -237,7 +237,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateToken {
 /// [`delete_backend`](crate::client::Client::delete_backend).
 ///
 /// See [`crate::client::fluent_builders::DeleteBackend`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBackend {
     _private: (),
 }
@@ -269,7 +269,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBackend {
 /// [`delete_backend_api`](crate::client::Client::delete_backend_api).
 ///
 /// See [`crate::client::fluent_builders::DeleteBackendAPI`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBackendAPI {
     _private: (),
 }
@@ -303,7 +303,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBackendAPI {
 /// [`delete_backend_auth`](crate::client::Client::delete_backend_auth).
 ///
 /// See [`crate::client::fluent_builders::DeleteBackendAuth`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBackendAuth {
     _private: (),
 }
@@ -337,7 +337,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBackendAuth {
 /// [`delete_backend_storage`](crate::client::Client::delete_backend_storage).
 ///
 /// See [`crate::client::fluent_builders::DeleteBackendStorage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBackendStorage {
     _private: (),
 }
@@ -371,7 +371,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBackendStorage {
 /// [`delete_token`](crate::client::Client::delete_token).
 ///
 /// See [`crate::client::fluent_builders::DeleteToken`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteToken {
     _private: (),
 }
@@ -403,7 +403,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteToken {
 /// [`generate_backend_api_models`](crate::client::Client::generate_backend_api_models).
 ///
 /// See [`crate::client::fluent_builders::GenerateBackendAPIModels`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GenerateBackendAPIModels {
     _private: (),
 }
@@ -437,7 +437,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GenerateBackendAPIModels
 /// [`get_backend`](crate::client::Client::get_backend).
 ///
 /// See [`crate::client::fluent_builders::GetBackend`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBackend {
     _private: (),
 }
@@ -469,7 +469,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBackend {
 /// [`get_backend_api`](crate::client::Client::get_backend_api).
 ///
 /// See [`crate::client::fluent_builders::GetBackendAPI`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBackendAPI {
     _private: (),
 }
@@ -501,7 +501,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBackendAPI {
 /// [`get_backend_api_models`](crate::client::Client::get_backend_api_models).
 ///
 /// See [`crate::client::fluent_builders::GetBackendAPIModels`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBackendAPIModels {
     _private: (),
 }
@@ -535,7 +535,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBackendAPIModels {
 /// [`get_backend_auth`](crate::client::Client::get_backend_auth).
 ///
 /// See [`crate::client::fluent_builders::GetBackendAuth`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBackendAuth {
     _private: (),
 }
@@ -567,7 +567,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBackendAuth {
 /// [`get_backend_job`](crate::client::Client::get_backend_job).
 ///
 /// See [`crate::client::fluent_builders::GetBackendJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBackendJob {
     _private: (),
 }
@@ -599,7 +599,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBackendJob {
 /// [`get_backend_storage`](crate::client::Client::get_backend_storage).
 ///
 /// See [`crate::client::fluent_builders::GetBackendStorage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBackendStorage {
     _private: (),
 }
@@ -633,7 +633,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBackendStorage {
 /// [`get_token`](crate::client::Client::get_token).
 ///
 /// See [`crate::client::fluent_builders::GetToken`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetToken {
     _private: (),
 }
@@ -664,7 +664,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetToken {
 /// [`import_backend_auth`](crate::client::Client::import_backend_auth).
 ///
 /// See [`crate::client::fluent_builders::ImportBackendAuth`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ImportBackendAuth {
     _private: (),
 }
@@ -698,7 +698,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportBackendAuth {
 /// [`import_backend_storage`](crate::client::Client::import_backend_storage).
 ///
 /// See [`crate::client::fluent_builders::ImportBackendStorage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ImportBackendStorage {
     _private: (),
 }
@@ -732,7 +732,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportBackendStorage {
 /// [`list_backend_jobs`](crate::client::Client::list_backend_jobs).
 ///
 /// See [`crate::client::fluent_builders::ListBackendJobs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListBackendJobs {
     _private: (),
 }
@@ -766,7 +766,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBackendJobs {
 /// [`list_s3_buckets`](crate::client::Client::list_s3_buckets).
 ///
 /// See [`crate::client::fluent_builders::ListS3Buckets`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListS3Buckets {
     _private: (),
 }
@@ -798,7 +798,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListS3Buckets {
 /// [`remove_all_backends`](crate::client::Client::remove_all_backends).
 ///
 /// See [`crate::client::fluent_builders::RemoveAllBackends`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RemoveAllBackends {
     _private: (),
 }
@@ -832,7 +832,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveAllBackends {
 /// [`remove_backend_config`](crate::client::Client::remove_backend_config).
 ///
 /// See [`crate::client::fluent_builders::RemoveBackendConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RemoveBackendConfig {
     _private: (),
 }
@@ -866,7 +866,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveBackendConfig {
 /// [`update_backend_api`](crate::client::Client::update_backend_api).
 ///
 /// See [`crate::client::fluent_builders::UpdateBackendAPI`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateBackendAPI {
     _private: (),
 }
@@ -900,7 +900,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateBackendAPI {
 /// [`update_backend_auth`](crate::client::Client::update_backend_auth).
 ///
 /// See [`crate::client::fluent_builders::UpdateBackendAuth`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateBackendAuth {
     _private: (),
 }
@@ -934,7 +934,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateBackendAuth {
 /// [`update_backend_config`](crate::client::Client::update_backend_config).
 ///
 /// See [`crate::client::fluent_builders::UpdateBackendConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateBackendConfig {
     _private: (),
 }
@@ -968,7 +968,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateBackendConfig {
 /// [`update_backend_job`](crate::client::Client::update_backend_job).
 ///
 /// See [`crate::client::fluent_builders::UpdateBackendJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateBackendJob {
     _private: (),
 }
@@ -1002,7 +1002,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateBackendJob {
 /// [`update_backend_storage`](crate::client::Client::update_backend_storage).
 ///
 /// See [`crate::client::fluent_builders::UpdateBackendStorage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateBackendStorage {
     _private: (),
 }

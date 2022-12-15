@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_create_alert_manager_definition_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateAlertManagerDefinitionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.client_token {
         object.key("clientToken").string(var_1.as_str());
     }
@@ -17,7 +17,7 @@ pub fn serialize_structure_crate_input_create_alert_manager_definition_input(
 pub fn serialize_structure_crate_input_create_logging_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateLoggingConfigurationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_3) = &input.client_token {
         object.key("clientToken").string(var_3.as_str());
     }
@@ -30,7 +30,7 @@ pub fn serialize_structure_crate_input_create_logging_configuration_input(
 pub fn serialize_structure_crate_input_create_rule_groups_namespace_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateRuleGroupsNamespaceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_5) = &input.client_token {
         object.key("clientToken").string(var_5.as_str());
     }
@@ -43,10 +43,11 @@ pub fn serialize_structure_crate_input_create_rule_groups_namespace_input(
         object.key("name").string(var_7.as_str());
     }
     if let Some(var_8) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_9 = object.key("tags").start_object();
         for (key_10, value_11) in var_8 {
             {
-                object_9.key(key_10).string(value_11.as_str());
+                object_9.key(key_10.as_str()).string(value_11.as_str());
             }
         }
         object_9.finish();
@@ -57,7 +58,7 @@ pub fn serialize_structure_crate_input_create_rule_groups_namespace_input(
 pub fn serialize_structure_crate_input_create_workspace_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateWorkspaceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_12) = &input.alias {
         object.key("alias").string(var_12.as_str());
     }
@@ -65,10 +66,11 @@ pub fn serialize_structure_crate_input_create_workspace_input(
         object.key("clientToken").string(var_13.as_str());
     }
     if let Some(var_14) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_15 = object.key("tags").start_object();
         for (key_16, value_17) in var_14 {
             {
-                object_15.key(key_16).string(value_17.as_str());
+                object_15.key(key_16.as_str()).string(value_17.as_str());
             }
         }
         object_15.finish();
@@ -79,7 +81,7 @@ pub fn serialize_structure_crate_input_create_workspace_input(
 pub fn serialize_structure_crate_input_put_alert_manager_definition_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutAlertManagerDefinitionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_18) = &input.client_token {
         object.key("clientToken").string(var_18.as_str());
     }
@@ -94,7 +96,7 @@ pub fn serialize_structure_crate_input_put_alert_manager_definition_input(
 pub fn serialize_structure_crate_input_put_rule_groups_namespace_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutRuleGroupsNamespaceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_20) = &input.client_token {
         object.key("clientToken").string(var_20.as_str());
     }
@@ -109,12 +111,13 @@ pub fn serialize_structure_crate_input_put_rule_groups_namespace_input(
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_22) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_23 = object.key("tags").start_object();
         for (key_24, value_25) in var_22 {
             {
-                object_23.key(key_24).string(value_25.as_str());
+                object_23.key(key_24.as_str()).string(value_25.as_str());
             }
         }
         object_23.finish();
@@ -125,7 +128,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_input_update_logging_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateLoggingConfigurationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_26) = &input.client_token {
         object.key("clientToken").string(var_26.as_str());
     }
@@ -138,7 +141,7 @@ pub fn serialize_structure_crate_input_update_logging_configuration_input(
 pub fn serialize_structure_crate_input_update_workspace_alias_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateWorkspaceAliasInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_28) = &input.alias {
         object.key("alias").string(var_28.as_str());
     }

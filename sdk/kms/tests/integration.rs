@@ -43,8 +43,9 @@ async fn generate_random_cn() {
     let conf = Config::builder()
         .region(Region::new("cn-north-1"))
         .credentials_provider(creds)
+        .http_connector(conn.clone())
         .build();
-    let client = kms::Client::from_conf_conn(conf, conn.clone());
+    let client = kms::Client::from_conf(conf);
     let _ = client
         .generate_random()
         .number_of_bytes(64)
@@ -193,7 +194,7 @@ async fn generate_random_keystore_not_found() {
     let client = Client::new(conn.clone());
     let err = client.call(op).await.expect_err("key store doesn't exist");
     let inner = match err {
-        SdkError::ServiceError { err, .. } => err,
+        SdkError::ServiceError(context) => context.into_err(),
         other => panic!("Incorrect error received: {:}", other),
     };
     assert!(inner.is_custom_key_store_not_found_exception());

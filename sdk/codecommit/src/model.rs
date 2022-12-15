@@ -2,7 +2,7 @@
 
 /// <p>Returns information about a pull request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PullRequest {
     /// <p>The system-generated ID of the pull request. </p>
     #[doc(hidden)]
@@ -84,28 +84,11 @@ impl PullRequest {
         self.approval_rules.as_deref()
     }
 }
-impl std::fmt::Debug for PullRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PullRequest");
-        formatter.field("pull_request_id", &self.pull_request_id);
-        formatter.field("title", &self.title);
-        formatter.field("description", &self.description);
-        formatter.field("last_activity_date", &self.last_activity_date);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("pull_request_status", &self.pull_request_status);
-        formatter.field("author_arn", &self.author_arn);
-        formatter.field("pull_request_targets", &self.pull_request_targets);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.field("approval_rules", &self.approval_rules);
-        formatter.finish()
-    }
-}
 /// See [`PullRequest`](crate::model::PullRequest).
 pub mod pull_request {
 
     /// A builder for [`PullRequest`](crate::model::PullRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request_id: std::option::Option<std::string::String>,
         pub(crate) title: std::option::Option<std::string::String>,
@@ -291,7 +274,7 @@ impl PullRequest {
 
 /// <p>Returns information about an approval rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApprovalRule {
     /// <p>The system-generated ID of the approval rule.</p>
     #[doc(hidden)]
@@ -355,28 +338,11 @@ impl ApprovalRule {
         self.origin_approval_rule_template.as_ref()
     }
 }
-impl std::fmt::Debug for ApprovalRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApprovalRule");
-        formatter.field("approval_rule_id", &self.approval_rule_id);
-        formatter.field("approval_rule_name", &self.approval_rule_name);
-        formatter.field("approval_rule_content", &self.approval_rule_content);
-        formatter.field("rule_content_sha256", &self.rule_content_sha256);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("last_modified_user", &self.last_modified_user);
-        formatter.field(
-            "origin_approval_rule_template",
-            &self.origin_approval_rule_template,
-        );
-        formatter.finish()
-    }
-}
 /// See [`ApprovalRule`](crate::model::ApprovalRule).
 pub mod approval_rule {
 
     /// A builder for [`ApprovalRule`](crate::model::ApprovalRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approval_rule_id: std::option::Option<std::string::String>,
         pub(crate) approval_rule_name: std::option::Option<std::string::String>,
@@ -520,7 +486,7 @@ impl ApprovalRule {
 
 /// <p>Returns information about the template that created the approval rule for a pull request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginApprovalRuleTemplate {
     /// <p>The ID of the template that created the approval rule.</p>
     #[doc(hidden)]
@@ -539,22 +505,11 @@ impl OriginApprovalRuleTemplate {
         self.approval_rule_template_name.as_deref()
     }
 }
-impl std::fmt::Debug for OriginApprovalRuleTemplate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginApprovalRuleTemplate");
-        formatter.field("approval_rule_template_id", &self.approval_rule_template_id);
-        formatter.field(
-            "approval_rule_template_name",
-            &self.approval_rule_template_name,
-        );
-        formatter.finish()
-    }
-}
 /// See [`OriginApprovalRuleTemplate`](crate::model::OriginApprovalRuleTemplate).
 pub mod origin_approval_rule_template {
 
     /// A builder for [`OriginApprovalRuleTemplate`](crate::model::OriginApprovalRuleTemplate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approval_rule_template_id: std::option::Option<std::string::String>,
         pub(crate) approval_rule_template_name: std::option::Option<std::string::String>,
@@ -607,7 +562,7 @@ impl OriginApprovalRuleTemplate {
 
 /// <p>Returns information about a pull request target.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PullRequestTarget {
     /// <p>The name of the repository that contains the pull request source and destination branches.</p>
     #[doc(hidden)]
@@ -661,24 +616,11 @@ impl PullRequestTarget {
         self.merge_metadata.as_ref()
     }
 }
-impl std::fmt::Debug for PullRequestTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PullRequestTarget");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("source_reference", &self.source_reference);
-        formatter.field("destination_reference", &self.destination_reference);
-        formatter.field("destination_commit", &self.destination_commit);
-        formatter.field("source_commit", &self.source_commit);
-        formatter.field("merge_base", &self.merge_base);
-        formatter.field("merge_metadata", &self.merge_metadata);
-        formatter.finish()
-    }
-}
 /// See [`PullRequestTarget`](crate::model::PullRequestTarget).
 pub mod pull_request_target {
 
     /// A builder for [`PullRequestTarget`](crate::model::PullRequestTarget).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
         pub(crate) source_reference: std::option::Option<std::string::String>,
@@ -800,7 +742,7 @@ impl PullRequestTarget {
 
 /// <p>Returns information about a merge or potential merge between a source reference and a destination reference in a pull request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MergeMetadata {
     /// <p>A Boolean value indicating whether the merge has been made.</p>
     #[doc(hidden)]
@@ -833,21 +775,11 @@ impl MergeMetadata {
         self.merge_option.as_ref()
     }
 }
-impl std::fmt::Debug for MergeMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MergeMetadata");
-        formatter.field("is_merged", &self.is_merged);
-        formatter.field("merged_by", &self.merged_by);
-        formatter.field("merge_commit_id", &self.merge_commit_id);
-        formatter.field("merge_option", &self.merge_option);
-        formatter.finish()
-    }
-}
 /// See [`MergeMetadata`](crate::model::MergeMetadata).
 pub mod merge_metadata {
 
     /// A builder for [`MergeMetadata`](crate::model::MergeMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) is_merged: std::option::Option<bool>,
         pub(crate) merged_by: std::option::Option<std::string::String>,
@@ -919,6 +851,42 @@ impl MergeMetadata {
     }
 }
 
+/// When writing a match expression against `MergeOptionTypeEnum`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let mergeoptiontypeenum = unimplemented!();
+/// match mergeoptiontypeenum {
+///     MergeOptionTypeEnum::FastForwardMerge => { /* ... */ },
+///     MergeOptionTypeEnum::SquashMerge => { /* ... */ },
+///     MergeOptionTypeEnum::ThreeWayMerge => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `mergeoptiontypeenum` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `MergeOptionTypeEnum::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `MergeOptionTypeEnum::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `MergeOptionTypeEnum::NewFeature` is defined.
+/// Specifically, when `mergeoptiontypeenum` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `MergeOptionTypeEnum::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -937,8 +905,8 @@ pub enum MergeOptionTypeEnum {
     SquashMerge,
     #[allow(missing_docs)] // documentation missing in model
     ThreeWayMerge,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for MergeOptionTypeEnum {
     fn from(s: &str) -> Self {
@@ -946,7 +914,9 @@ impl std::convert::From<&str> for MergeOptionTypeEnum {
             "FAST_FORWARD_MERGE" => MergeOptionTypeEnum::FastForwardMerge,
             "SQUASH_MERGE" => MergeOptionTypeEnum::SquashMerge,
             "THREE_WAY_MERGE" => MergeOptionTypeEnum::ThreeWayMerge,
-            other => MergeOptionTypeEnum::Unknown(other.to_owned()),
+            other => {
+                MergeOptionTypeEnum::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -964,11 +934,11 @@ impl MergeOptionTypeEnum {
             MergeOptionTypeEnum::FastForwardMerge => "FAST_FORWARD_MERGE",
             MergeOptionTypeEnum::SquashMerge => "SQUASH_MERGE",
             MergeOptionTypeEnum::ThreeWayMerge => "THREE_WAY_MERGE",
-            MergeOptionTypeEnum::Unknown(s) => s.as_ref(),
+            MergeOptionTypeEnum::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAST_FORWARD_MERGE", "SQUASH_MERGE", "THREE_WAY_MERGE"]
     }
 }
@@ -978,6 +948,41 @@ impl AsRef<str> for MergeOptionTypeEnum {
     }
 }
 
+/// When writing a match expression against `PullRequestStatusEnum`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let pullrequeststatusenum = unimplemented!();
+/// match pullrequeststatusenum {
+///     PullRequestStatusEnum::Closed => { /* ... */ },
+///     PullRequestStatusEnum::Open => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `pullrequeststatusenum` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PullRequestStatusEnum::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PullRequestStatusEnum::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PullRequestStatusEnum::NewFeature` is defined.
+/// Specifically, when `pullrequeststatusenum` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PullRequestStatusEnum::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -994,15 +999,17 @@ pub enum PullRequestStatusEnum {
     Closed,
     #[allow(missing_docs)] // documentation missing in model
     Open,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PullRequestStatusEnum {
     fn from(s: &str) -> Self {
         match s {
             "CLOSED" => PullRequestStatusEnum::Closed,
             "OPEN" => PullRequestStatusEnum::Open,
-            other => PullRequestStatusEnum::Unknown(other.to_owned()),
+            other => {
+                PullRequestStatusEnum::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -1019,11 +1026,11 @@ impl PullRequestStatusEnum {
         match self {
             PullRequestStatusEnum::Closed => "CLOSED",
             PullRequestStatusEnum::Open => "OPEN",
-            PullRequestStatusEnum::Unknown(s) => s.as_ref(),
+            PullRequestStatusEnum::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CLOSED", "OPEN"]
     }
 }
@@ -1033,6 +1040,41 @@ impl AsRef<str> for PullRequestStatusEnum {
     }
 }
 
+/// When writing a match expression against `ApprovalState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let approvalstate = unimplemented!();
+/// match approvalstate {
+///     ApprovalState::Approve => { /* ... */ },
+///     ApprovalState::Revoke => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `approvalstate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ApprovalState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ApprovalState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ApprovalState::NewFeature` is defined.
+/// Specifically, when `approvalstate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ApprovalState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1049,15 +1091,15 @@ pub enum ApprovalState {
     Approve,
     #[allow(missing_docs)] // documentation missing in model
     Revoke,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ApprovalState {
     fn from(s: &str) -> Self {
         match s {
             "APPROVE" => ApprovalState::Approve,
             "REVOKE" => ApprovalState::Revoke,
-            other => ApprovalState::Unknown(other.to_owned()),
+            other => ApprovalState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1074,11 +1116,11 @@ impl ApprovalState {
         match self {
             ApprovalState::Approve => "APPROVE",
             ApprovalState::Revoke => "REVOKE",
-            ApprovalState::Unknown(s) => s.as_ref(),
+            ApprovalState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["APPROVE", "REVOKE"]
     }
 }
@@ -1090,7 +1132,7 @@ impl AsRef<str> for ApprovalState {
 
 /// <p>Returns information about a specific comment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Comment {
     /// <p>The system-generated comment ID.</p>
     #[doc(hidden)]
@@ -1167,27 +1209,11 @@ impl Comment {
         self.reaction_counts.as_ref()
     }
 }
-impl std::fmt::Debug for Comment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Comment");
-        formatter.field("comment_id", &self.comment_id);
-        formatter.field("content", &self.content);
-        formatter.field("in_reply_to", &self.in_reply_to);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("author_arn", &self.author_arn);
-        formatter.field("deleted", &self.deleted);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("caller_reactions", &self.caller_reactions);
-        formatter.field("reaction_counts", &self.reaction_counts);
-        formatter.finish()
-    }
-}
 /// See [`Comment`](crate::model::Comment).
 pub mod comment {
 
     /// A builder for [`Comment`](crate::model::Comment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comment_id: std::option::Option<std::string::String>,
         pub(crate) content: std::option::Option<std::string::String>,
@@ -1355,7 +1381,7 @@ impl Comment {
 
 /// <p>Returns information about an approval rule template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApprovalRuleTemplate {
     /// <p>The system-generated ID of the approval rule template.</p>
     #[doc(hidden)]
@@ -1416,34 +1442,11 @@ impl ApprovalRuleTemplate {
         self.last_modified_user.as_deref()
     }
 }
-impl std::fmt::Debug for ApprovalRuleTemplate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApprovalRuleTemplate");
-        formatter.field("approval_rule_template_id", &self.approval_rule_template_id);
-        formatter.field(
-            "approval_rule_template_name",
-            &self.approval_rule_template_name,
-        );
-        formatter.field(
-            "approval_rule_template_description",
-            &self.approval_rule_template_description,
-        );
-        formatter.field(
-            "approval_rule_template_content",
-            &self.approval_rule_template_content,
-        );
-        formatter.field("rule_content_sha256", &self.rule_content_sha256);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("last_modified_user", &self.last_modified_user);
-        formatter.finish()
-    }
-}
 /// See [`ApprovalRuleTemplate`](crate::model::ApprovalRuleTemplate).
 pub mod approval_rule_template {
 
     /// A builder for [`ApprovalRuleTemplate`](crate::model::ApprovalRuleTemplate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approval_rule_template_id: std::option::Option<std::string::String>,
         pub(crate) approval_rule_template_name: std::option::Option<std::string::String>,
@@ -1592,7 +1595,7 @@ impl ApprovalRuleTemplate {
 
 /// <p>A trigger failed to run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryTriggerExecutionFailure {
     /// <p>The name of the trigger that did not run.</p>
     #[doc(hidden)]
@@ -1611,19 +1614,11 @@ impl RepositoryTriggerExecutionFailure {
         self.failure_message.as_deref()
     }
 }
-impl std::fmt::Debug for RepositoryTriggerExecutionFailure {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryTriggerExecutionFailure");
-        formatter.field("trigger", &self.trigger);
-        formatter.field("failure_message", &self.failure_message);
-        formatter.finish()
-    }
-}
 /// See [`RepositoryTriggerExecutionFailure`](crate::model::RepositoryTriggerExecutionFailure).
 pub mod repository_trigger_execution_failure {
 
     /// A builder for [`RepositoryTriggerExecutionFailure`](crate::model::RepositoryTriggerExecutionFailure).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trigger: std::option::Option<std::string::String>,
         pub(crate) failure_message: std::option::Option<std::string::String>,
@@ -1670,7 +1665,7 @@ impl RepositoryTriggerExecutionFailure {
 
 /// <p>Information about a trigger for a repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryTrigger {
     /// <p>The name of the trigger.</p>
     #[doc(hidden)]
@@ -1718,22 +1713,11 @@ impl RepositoryTrigger {
         self.events.as_deref()
     }
 }
-impl std::fmt::Debug for RepositoryTrigger {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryTrigger");
-        formatter.field("name", &self.name);
-        formatter.field("destination_arn", &self.destination_arn);
-        formatter.field("custom_data", &self.custom_data);
-        formatter.field("branches", &self.branches);
-        formatter.field("events", &self.events);
-        formatter.finish()
-    }
-}
 /// See [`RepositoryTrigger`](crate::model::RepositoryTrigger).
 pub mod repository_trigger {
 
     /// A builder for [`RepositoryTrigger`](crate::model::RepositoryTrigger).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) destination_arn: std::option::Option<std::string::String>,
@@ -1841,6 +1825,43 @@ impl RepositoryTrigger {
     }
 }
 
+/// When writing a match expression against `RepositoryTriggerEventEnum`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let repositorytriggereventenum = unimplemented!();
+/// match repositorytriggereventenum {
+///     RepositoryTriggerEventEnum::All => { /* ... */ },
+///     RepositoryTriggerEventEnum::CreateReference => { /* ... */ },
+///     RepositoryTriggerEventEnum::DeleteReference => { /* ... */ },
+///     RepositoryTriggerEventEnum::UpdateReference => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `repositorytriggereventenum` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RepositoryTriggerEventEnum::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RepositoryTriggerEventEnum::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RepositoryTriggerEventEnum::NewFeature` is defined.
+/// Specifically, when `repositorytriggereventenum` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RepositoryTriggerEventEnum::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1861,8 +1882,8 @@ pub enum RepositoryTriggerEventEnum {
     DeleteReference,
     #[allow(missing_docs)] // documentation missing in model
     UpdateReference,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for RepositoryTriggerEventEnum {
     fn from(s: &str) -> Self {
@@ -1871,7 +1892,9 @@ impl std::convert::From<&str> for RepositoryTriggerEventEnum {
             "createReference" => RepositoryTriggerEventEnum::CreateReference,
             "deleteReference" => RepositoryTriggerEventEnum::DeleteReference,
             "updateReference" => RepositoryTriggerEventEnum::UpdateReference,
-            other => RepositoryTriggerEventEnum::Unknown(other.to_owned()),
+            other => RepositoryTriggerEventEnum::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -1890,11 +1913,11 @@ impl RepositoryTriggerEventEnum {
             RepositoryTriggerEventEnum::CreateReference => "createReference",
             RepositoryTriggerEventEnum::DeleteReference => "deleteReference",
             RepositoryTriggerEventEnum::UpdateReference => "updateReference",
-            RepositoryTriggerEventEnum::Unknown(s) => s.as_ref(),
+            RepositoryTriggerEventEnum::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "all",
             "createReference",
@@ -1909,6 +1932,42 @@ impl AsRef<str> for RepositoryTriggerEventEnum {
     }
 }
 
+/// When writing a match expression against `FileModeTypeEnum`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let filemodetypeenum = unimplemented!();
+/// match filemodetypeenum {
+///     FileModeTypeEnum::Executable => { /* ... */ },
+///     FileModeTypeEnum::Normal => { /* ... */ },
+///     FileModeTypeEnum::Symlink => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `filemodetypeenum` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `FileModeTypeEnum::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `FileModeTypeEnum::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `FileModeTypeEnum::NewFeature` is defined.
+/// Specifically, when `filemodetypeenum` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `FileModeTypeEnum::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1927,8 +1986,8 @@ pub enum FileModeTypeEnum {
     Normal,
     #[allow(missing_docs)] // documentation missing in model
     Symlink,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for FileModeTypeEnum {
     fn from(s: &str) -> Self {
@@ -1936,7 +1995,7 @@ impl std::convert::From<&str> for FileModeTypeEnum {
             "EXECUTABLE" => FileModeTypeEnum::Executable,
             "NORMAL" => FileModeTypeEnum::Normal,
             "SYMLINK" => FileModeTypeEnum::Symlink,
-            other => FileModeTypeEnum::Unknown(other.to_owned()),
+            other => FileModeTypeEnum::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1954,11 +2013,11 @@ impl FileModeTypeEnum {
             FileModeTypeEnum::Executable => "EXECUTABLE",
             FileModeTypeEnum::Normal => "NORMAL",
             FileModeTypeEnum::Symlink => "SYMLINK",
-            FileModeTypeEnum::Unknown(s) => s.as_ref(),
+            FileModeTypeEnum::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EXECUTABLE", "NORMAL", "SYMLINK"]
     }
 }
@@ -1970,7 +2029,7 @@ impl AsRef<str> for FileModeTypeEnum {
 
 /// <p>Returns information about the location of a change or comment in the comparison between two commits or a pull request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Location {
     /// <p>The name of the file being compared, including its extension and subdirectory, if any.</p>
     #[doc(hidden)]
@@ -1998,20 +2057,11 @@ impl Location {
         self.relative_file_version.as_ref()
     }
 }
-impl std::fmt::Debug for Location {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Location");
-        formatter.field("file_path", &self.file_path);
-        formatter.field("file_position", &self.file_position);
-        formatter.field("relative_file_version", &self.relative_file_version);
-        formatter.finish()
-    }
-}
 /// See [`Location`](crate::model::Location).
 pub mod location {
 
     /// A builder for [`Location`](crate::model::Location).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_path: std::option::Option<std::string::String>,
         pub(crate) file_position: std::option::Option<i64>,
@@ -2072,6 +2122,41 @@ impl Location {
     }
 }
 
+/// When writing a match expression against `RelativeFileVersionEnum`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let relativefileversionenum = unimplemented!();
+/// match relativefileversionenum {
+///     RelativeFileVersionEnum::After => { /* ... */ },
+///     RelativeFileVersionEnum::Before => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `relativefileversionenum` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RelativeFileVersionEnum::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RelativeFileVersionEnum::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RelativeFileVersionEnum::NewFeature` is defined.
+/// Specifically, when `relativefileversionenum` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RelativeFileVersionEnum::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2088,15 +2173,17 @@ pub enum RelativeFileVersionEnum {
     After,
     #[allow(missing_docs)] // documentation missing in model
     Before,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for RelativeFileVersionEnum {
     fn from(s: &str) -> Self {
         match s {
             "AFTER" => RelativeFileVersionEnum::After,
             "BEFORE" => RelativeFileVersionEnum::Before,
-            other => RelativeFileVersionEnum::Unknown(other.to_owned()),
+            other => RelativeFileVersionEnum::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -2113,11 +2200,11 @@ impl RelativeFileVersionEnum {
         match self {
             RelativeFileVersionEnum::After => "AFTER",
             RelativeFileVersionEnum::Before => "BEFORE",
-            RelativeFileVersionEnum::Unknown(s) => s.as_ref(),
+            RelativeFileVersionEnum::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AFTER", "BEFORE"]
     }
 }
@@ -2127,6 +2214,41 @@ impl AsRef<str> for RelativeFileVersionEnum {
     }
 }
 
+/// When writing a match expression against `OverrideStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let overridestatus = unimplemented!();
+/// match overridestatus {
+///     OverrideStatus::Override => { /* ... */ },
+///     OverrideStatus::Revoke => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `overridestatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `OverrideStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `OverrideStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `OverrideStatus::NewFeature` is defined.
+/// Specifically, when `overridestatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `OverrideStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2143,15 +2265,15 @@ pub enum OverrideStatus {
     Override,
     #[allow(missing_docs)] // documentation missing in model
     Revoke,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for OverrideStatus {
     fn from(s: &str) -> Self {
         match s {
             "OVERRIDE" => OverrideStatus::Override,
             "REVOKE" => OverrideStatus::Revoke,
-            other => OverrideStatus::Unknown(other.to_owned()),
+            other => OverrideStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2168,11 +2290,11 @@ impl OverrideStatus {
         match self {
             OverrideStatus::Override => "OVERRIDE",
             OverrideStatus::Revoke => "REVOKE",
-            OverrideStatus::Unknown(s) => s.as_ref(),
+            OverrideStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OVERRIDE", "REVOKE"]
     }
 }
@@ -2184,7 +2306,7 @@ impl AsRef<str> for OverrideStatus {
 
 /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConflictResolution {
     /// <p>Files to have content replaced as part of the merge conflict resolution.</p>
     #[doc(hidden)]
@@ -2210,20 +2332,11 @@ impl ConflictResolution {
         self.set_file_modes.as_deref()
     }
 }
-impl std::fmt::Debug for ConflictResolution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConflictResolution");
-        formatter.field("replace_contents", &self.replace_contents);
-        formatter.field("delete_files", &self.delete_files);
-        formatter.field("set_file_modes", &self.set_file_modes);
-        formatter.finish()
-    }
-}
 /// See [`ConflictResolution`](crate::model::ConflictResolution).
 pub mod conflict_resolution {
 
     /// A builder for [`ConflictResolution`](crate::model::ConflictResolution).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replace_contents:
             std::option::Option<std::vec::Vec<crate::model::ReplaceContentEntry>>,
@@ -2308,7 +2421,7 @@ impl ConflictResolution {
 
 /// <p>Information about the file mode changes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetFileModeEntry {
     /// <p>The full path to the file, including the name of the file.</p>
     #[doc(hidden)]
@@ -2327,19 +2440,11 @@ impl SetFileModeEntry {
         self.file_mode.as_ref()
     }
 }
-impl std::fmt::Debug for SetFileModeEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetFileModeEntry");
-        formatter.field("file_path", &self.file_path);
-        formatter.field("file_mode", &self.file_mode);
-        formatter.finish()
-    }
-}
 /// See [`SetFileModeEntry`](crate::model::SetFileModeEntry).
 pub mod set_file_mode_entry {
 
     /// A builder for [`SetFileModeEntry`](crate::model::SetFileModeEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_path: std::option::Option<std::string::String>,
         pub(crate) file_mode: std::option::Option<crate::model::FileModeTypeEnum>,
@@ -2386,7 +2491,7 @@ impl SetFileModeEntry {
 
 /// <p>A file that is deleted as part of a commit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFileEntry {
     /// <p>The full path of the file to be deleted, including the name of the file.</p>
     #[doc(hidden)]
@@ -2398,18 +2503,11 @@ impl DeleteFileEntry {
         self.file_path.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFileEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFileEntry");
-        formatter.field("file_path", &self.file_path);
-        formatter.finish()
-    }
-}
 /// See [`DeleteFileEntry`](crate::model::DeleteFileEntry).
 pub mod delete_file_entry {
 
     /// A builder for [`DeleteFileEntry`](crate::model::DeleteFileEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_path: std::option::Option<std::string::String>,
     }
@@ -2441,7 +2539,7 @@ impl DeleteFileEntry {
 
 /// <p>Information about a replacement content entry in the conflict of a merge or pull request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplaceContentEntry {
     /// <p>The path of the conflicting file.</p>
     #[doc(hidden)]
@@ -2474,21 +2572,11 @@ impl ReplaceContentEntry {
         self.file_mode.as_ref()
     }
 }
-impl std::fmt::Debug for ReplaceContentEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplaceContentEntry");
-        formatter.field("file_path", &self.file_path);
-        formatter.field("replacement_type", &self.replacement_type);
-        formatter.field("content", &self.content);
-        formatter.field("file_mode", &self.file_mode);
-        formatter.finish()
-    }
-}
 /// See [`ReplaceContentEntry`](crate::model::ReplaceContentEntry).
 pub mod replace_content_entry {
 
     /// A builder for [`ReplaceContentEntry`](crate::model::ReplaceContentEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_path: std::option::Option<std::string::String>,
         pub(crate) replacement_type: std::option::Option<crate::model::ReplacementTypeEnum>,
@@ -2560,6 +2648,43 @@ impl ReplaceContentEntry {
     }
 }
 
+/// When writing a match expression against `ReplacementTypeEnum`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let replacementtypeenum = unimplemented!();
+/// match replacementtypeenum {
+///     ReplacementTypeEnum::KeepBase => { /* ... */ },
+///     ReplacementTypeEnum::KeepDestination => { /* ... */ },
+///     ReplacementTypeEnum::KeepSource => { /* ... */ },
+///     ReplacementTypeEnum::UseNewContent => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `replacementtypeenum` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ReplacementTypeEnum::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ReplacementTypeEnum::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ReplacementTypeEnum::NewFeature` is defined.
+/// Specifically, when `replacementtypeenum` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ReplacementTypeEnum::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2580,8 +2705,8 @@ pub enum ReplacementTypeEnum {
     KeepSource,
     #[allow(missing_docs)] // documentation missing in model
     UseNewContent,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ReplacementTypeEnum {
     fn from(s: &str) -> Self {
@@ -2590,7 +2715,9 @@ impl std::convert::From<&str> for ReplacementTypeEnum {
             "KEEP_DESTINATION" => ReplacementTypeEnum::KeepDestination,
             "KEEP_SOURCE" => ReplacementTypeEnum::KeepSource,
             "USE_NEW_CONTENT" => ReplacementTypeEnum::UseNewContent,
-            other => ReplacementTypeEnum::Unknown(other.to_owned()),
+            other => {
+                ReplacementTypeEnum::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -2609,11 +2736,11 @@ impl ReplacementTypeEnum {
             ReplacementTypeEnum::KeepDestination => "KEEP_DESTINATION",
             ReplacementTypeEnum::KeepSource => "KEEP_SOURCE",
             ReplacementTypeEnum::UseNewContent => "USE_NEW_CONTENT",
-            ReplacementTypeEnum::Unknown(s) => s.as_ref(),
+            ReplacementTypeEnum::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "KEEP_BASE",
             "KEEP_DESTINATION",
@@ -2628,6 +2755,43 @@ impl AsRef<str> for ReplacementTypeEnum {
     }
 }
 
+/// When writing a match expression against `ConflictResolutionStrategyTypeEnum`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let conflictresolutionstrategytypeenum = unimplemented!();
+/// match conflictresolutionstrategytypeenum {
+///     ConflictResolutionStrategyTypeEnum::AcceptDestination => { /* ... */ },
+///     ConflictResolutionStrategyTypeEnum::AcceptSource => { /* ... */ },
+///     ConflictResolutionStrategyTypeEnum::Automerge => { /* ... */ },
+///     ConflictResolutionStrategyTypeEnum::None => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `conflictresolutionstrategytypeenum` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ConflictResolutionStrategyTypeEnum::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ConflictResolutionStrategyTypeEnum::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ConflictResolutionStrategyTypeEnum::NewFeature` is defined.
+/// Specifically, when `conflictresolutionstrategytypeenum` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ConflictResolutionStrategyTypeEnum::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2648,8 +2812,8 @@ pub enum ConflictResolutionStrategyTypeEnum {
     Automerge,
     #[allow(missing_docs)] // documentation missing in model
     None,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ConflictResolutionStrategyTypeEnum {
     fn from(s: &str) -> Self {
@@ -2658,7 +2822,9 @@ impl std::convert::From<&str> for ConflictResolutionStrategyTypeEnum {
             "ACCEPT_SOURCE" => ConflictResolutionStrategyTypeEnum::AcceptSource,
             "AUTOMERGE" => ConflictResolutionStrategyTypeEnum::Automerge,
             "NONE" => ConflictResolutionStrategyTypeEnum::None,
-            other => ConflictResolutionStrategyTypeEnum::Unknown(other.to_owned()),
+            other => ConflictResolutionStrategyTypeEnum::Unknown(
+                crate::types::UnknownVariantValue(other.to_owned()),
+            ),
         }
     }
 }
@@ -2677,11 +2843,11 @@ impl ConflictResolutionStrategyTypeEnum {
             ConflictResolutionStrategyTypeEnum::AcceptSource => "ACCEPT_SOURCE",
             ConflictResolutionStrategyTypeEnum::Automerge => "AUTOMERGE",
             ConflictResolutionStrategyTypeEnum::None => "NONE",
-            ConflictResolutionStrategyTypeEnum::Unknown(s) => s.as_ref(),
+            ConflictResolutionStrategyTypeEnum::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACCEPT_DESTINATION", "ACCEPT_SOURCE", "AUTOMERGE", "NONE"]
     }
 }
@@ -2691,6 +2857,41 @@ impl AsRef<str> for ConflictResolutionStrategyTypeEnum {
     }
 }
 
+/// When writing a match expression against `ConflictDetailLevelTypeEnum`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let conflictdetailleveltypeenum = unimplemented!();
+/// match conflictdetailleveltypeenum {
+///     ConflictDetailLevelTypeEnum::FileLevel => { /* ... */ },
+///     ConflictDetailLevelTypeEnum::LineLevel => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `conflictdetailleveltypeenum` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ConflictDetailLevelTypeEnum::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ConflictDetailLevelTypeEnum::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ConflictDetailLevelTypeEnum::NewFeature` is defined.
+/// Specifically, when `conflictdetailleveltypeenum` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ConflictDetailLevelTypeEnum::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2707,15 +2908,17 @@ pub enum ConflictDetailLevelTypeEnum {
     FileLevel,
     #[allow(missing_docs)] // documentation missing in model
     LineLevel,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ConflictDetailLevelTypeEnum {
     fn from(s: &str) -> Self {
         match s {
             "FILE_LEVEL" => ConflictDetailLevelTypeEnum::FileLevel,
             "LINE_LEVEL" => ConflictDetailLevelTypeEnum::LineLevel,
-            other => ConflictDetailLevelTypeEnum::Unknown(other.to_owned()),
+            other => ConflictDetailLevelTypeEnum::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -2732,11 +2935,11 @@ impl ConflictDetailLevelTypeEnum {
         match self {
             ConflictDetailLevelTypeEnum::FileLevel => "FILE_LEVEL",
             ConflictDetailLevelTypeEnum::LineLevel => "LINE_LEVEL",
-            ConflictDetailLevelTypeEnum::Unknown(s) => s.as_ref(),
+            ConflictDetailLevelTypeEnum::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FILE_LEVEL", "LINE_LEVEL"]
     }
 }
@@ -2748,7 +2951,7 @@ impl AsRef<str> for ConflictDetailLevelTypeEnum {
 
 /// <p>Information about a repository name and ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryNameIdPair {
     /// <p>The name associated with the repository.</p>
     #[doc(hidden)]
@@ -2767,19 +2970,11 @@ impl RepositoryNameIdPair {
         self.repository_id.as_deref()
     }
 }
-impl std::fmt::Debug for RepositoryNameIdPair {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryNameIdPair");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("repository_id", &self.repository_id);
-        formatter.finish()
-    }
-}
 /// See [`RepositoryNameIdPair`](crate::model::RepositoryNameIdPair).
 pub mod repository_name_id_pair {
 
     /// A builder for [`RepositoryNameIdPair`](crate::model::RepositoryNameIdPair).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
         pub(crate) repository_id: std::option::Option<std::string::String>,
@@ -2827,6 +3022,41 @@ impl RepositoryNameIdPair {
     }
 }
 
+/// When writing a match expression against `OrderEnum`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let orderenum = unimplemented!();
+/// match orderenum {
+///     OrderEnum::Ascending => { /* ... */ },
+///     OrderEnum::Descending => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `orderenum` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `OrderEnum::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `OrderEnum::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `OrderEnum::NewFeature` is defined.
+/// Specifically, when `orderenum` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `OrderEnum::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2843,15 +3073,15 @@ pub enum OrderEnum {
     Ascending,
     #[allow(missing_docs)] // documentation missing in model
     Descending,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for OrderEnum {
     fn from(s: &str) -> Self {
         match s {
             "ascending" => OrderEnum::Ascending,
             "descending" => OrderEnum::Descending,
-            other => OrderEnum::Unknown(other.to_owned()),
+            other => OrderEnum::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2868,11 +3098,11 @@ impl OrderEnum {
         match self {
             OrderEnum::Ascending => "ascending",
             OrderEnum::Descending => "descending",
-            OrderEnum::Unknown(s) => s.as_ref(),
+            OrderEnum::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ascending", "descending"]
     }
 }
@@ -2882,6 +3112,41 @@ impl AsRef<str> for OrderEnum {
     }
 }
 
+/// When writing a match expression against `SortByEnum`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let sortbyenum = unimplemented!();
+/// match sortbyenum {
+///     SortByEnum::ModifiedDate => { /* ... */ },
+///     SortByEnum::RepositoryName => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `sortbyenum` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SortByEnum::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SortByEnum::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SortByEnum::NewFeature` is defined.
+/// Specifically, when `sortbyenum` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SortByEnum::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2898,15 +3163,15 @@ pub enum SortByEnum {
     ModifiedDate,
     #[allow(missing_docs)] // documentation missing in model
     RepositoryName,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SortByEnum {
     fn from(s: &str) -> Self {
         match s {
             "lastModifiedDate" => SortByEnum::ModifiedDate,
             "repositoryName" => SortByEnum::RepositoryName,
-            other => SortByEnum::Unknown(other.to_owned()),
+            other => SortByEnum::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2923,11 +3188,11 @@ impl SortByEnum {
         match self {
             SortByEnum::ModifiedDate => "lastModifiedDate",
             SortByEnum::RepositoryName => "repositoryName",
-            SortByEnum::Unknown(s) => s.as_ref(),
+            SortByEnum::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["lastModifiedDate", "repositoryName"]
     }
 }
@@ -2939,7 +3204,7 @@ impl AsRef<str> for SortByEnum {
 
 /// <p>Information about a repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryMetadata {
     /// <p>The ID of the AWS account associated with the repository.</p>
     #[doc(hidden)]
@@ -3014,27 +3279,11 @@ impl RepositoryMetadata {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for RepositoryMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryMetadata");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("repository_id", &self.repository_id);
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("repository_description", &self.repository_description);
-        formatter.field("default_branch", &self.default_branch);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("clone_url_http", &self.clone_url_http);
-        formatter.field("clone_url_ssh", &self.clone_url_ssh);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 /// See [`RepositoryMetadata`](crate::model::RepositoryMetadata).
 pub mod repository_metadata {
 
     /// A builder for [`RepositoryMetadata`](crate::model::RepositoryMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) repository_id: std::option::Option<std::string::String>,
@@ -3198,7 +3447,7 @@ impl RepositoryMetadata {
 
 /// <p>Returns information about a specific approval on a pull request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Approval {
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
     #[doc(hidden)]
@@ -3217,19 +3466,11 @@ impl Approval {
         self.approval_state.as_ref()
     }
 }
-impl std::fmt::Debug for Approval {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Approval");
-        formatter.field("user_arn", &self.user_arn);
-        formatter.field("approval_state", &self.approval_state);
-        formatter.finish()
-    }
-}
 /// See [`Approval`](crate::model::Approval).
 pub mod approval {
 
     /// A builder for [`Approval`](crate::model::Approval).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_arn: std::option::Option<std::string::String>,
         pub(crate) approval_state: std::option::Option<crate::model::ApprovalState>,
@@ -3276,7 +3517,7 @@ impl Approval {
 
 /// <p>Information about the metadata for a conflict in a merge operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConflictMetadata {
     /// <p>The path of the file that contains conflicts.</p>
     #[doc(hidden)]
@@ -3351,27 +3592,11 @@ impl ConflictMetadata {
         self.merge_operations.as_ref()
     }
 }
-impl std::fmt::Debug for ConflictMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConflictMetadata");
-        formatter.field("file_path", &self.file_path);
-        formatter.field("file_sizes", &self.file_sizes);
-        formatter.field("file_modes", &self.file_modes);
-        formatter.field("object_types", &self.object_types);
-        formatter.field("number_of_conflicts", &self.number_of_conflicts);
-        formatter.field("is_binary_file", &self.is_binary_file);
-        formatter.field("content_conflict", &self.content_conflict);
-        formatter.field("file_mode_conflict", &self.file_mode_conflict);
-        formatter.field("object_type_conflict", &self.object_type_conflict);
-        formatter.field("merge_operations", &self.merge_operations);
-        formatter.finish()
-    }
-}
 /// See [`ConflictMetadata`](crate::model::ConflictMetadata).
 pub mod conflict_metadata {
 
     /// A builder for [`ConflictMetadata`](crate::model::ConflictMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_path: std::option::Option<std::string::String>,
         pub(crate) file_sizes: std::option::Option<crate::model::FileSizes>,
@@ -3526,7 +3751,7 @@ impl ConflictMetadata {
 
 /// <p>Information about the file operation conflicts in a merge operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MergeOperations {
     /// <p>The operation (add, modify, or delete) on a file in the source of a merge or pull request.</p>
     #[doc(hidden)]
@@ -3545,19 +3770,11 @@ impl MergeOperations {
         self.destination.as_ref()
     }
 }
-impl std::fmt::Debug for MergeOperations {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MergeOperations");
-        formatter.field("source", &self.source);
-        formatter.field("destination", &self.destination);
-        formatter.finish()
-    }
-}
 /// See [`MergeOperations`](crate::model::MergeOperations).
 pub mod merge_operations {
 
     /// A builder for [`MergeOperations`](crate::model::MergeOperations).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<crate::model::ChangeTypeEnum>,
         pub(crate) destination: std::option::Option<crate::model::ChangeTypeEnum>,
@@ -3605,6 +3822,42 @@ impl MergeOperations {
     }
 }
 
+/// When writing a match expression against `ChangeTypeEnum`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let changetypeenum = unimplemented!();
+/// match changetypeenum {
+///     ChangeTypeEnum::Added => { /* ... */ },
+///     ChangeTypeEnum::Deleted => { /* ... */ },
+///     ChangeTypeEnum::Modified => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `changetypeenum` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ChangeTypeEnum::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ChangeTypeEnum::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ChangeTypeEnum::NewFeature` is defined.
+/// Specifically, when `changetypeenum` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ChangeTypeEnum::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3623,8 +3876,8 @@ pub enum ChangeTypeEnum {
     Deleted,
     #[allow(missing_docs)] // documentation missing in model
     Modified,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ChangeTypeEnum {
     fn from(s: &str) -> Self {
@@ -3632,7 +3885,7 @@ impl std::convert::From<&str> for ChangeTypeEnum {
             "A" => ChangeTypeEnum::Added,
             "D" => ChangeTypeEnum::Deleted,
             "M" => ChangeTypeEnum::Modified,
-            other => ChangeTypeEnum::Unknown(other.to_owned()),
+            other => ChangeTypeEnum::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -3650,11 +3903,11 @@ impl ChangeTypeEnum {
             ChangeTypeEnum::Added => "A",
             ChangeTypeEnum::Deleted => "D",
             ChangeTypeEnum::Modified => "M",
-            ChangeTypeEnum::Unknown(s) => s.as_ref(),
+            ChangeTypeEnum::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["A", "D", "M"]
     }
 }
@@ -3666,7 +3919,7 @@ impl AsRef<str> for ChangeTypeEnum {
 
 /// <p>Information about whether a file is binary or textual in a merge or pull request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IsBinaryFile {
     /// <p>The binary or non-binary status of file in the source of a merge or pull request.</p>
     #[doc(hidden)]
@@ -3692,20 +3945,11 @@ impl IsBinaryFile {
         self.base
     }
 }
-impl std::fmt::Debug for IsBinaryFile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IsBinaryFile");
-        formatter.field("source", &self.source);
-        formatter.field("destination", &self.destination);
-        formatter.field("base", &self.base);
-        formatter.finish()
-    }
-}
 /// See [`IsBinaryFile`](crate::model::IsBinaryFile).
 pub mod is_binary_file {
 
     /// A builder for [`IsBinaryFile`](crate::model::IsBinaryFile).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<bool>,
         pub(crate) destination: std::option::Option<bool>,
@@ -3761,7 +4005,7 @@ impl IsBinaryFile {
 
 /// <p>Information about the type of an object in a merge operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ObjectTypes {
     /// <p>The type of the object in the source branch.</p>
     #[doc(hidden)]
@@ -3787,20 +4031,11 @@ impl ObjectTypes {
         self.base.as_ref()
     }
 }
-impl std::fmt::Debug for ObjectTypes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ObjectTypes");
-        formatter.field("source", &self.source);
-        formatter.field("destination", &self.destination);
-        formatter.field("base", &self.base);
-        formatter.finish()
-    }
-}
 /// See [`ObjectTypes`](crate::model::ObjectTypes).
 pub mod object_types {
 
     /// A builder for [`ObjectTypes`](crate::model::ObjectTypes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<crate::model::ObjectTypeEnum>,
         pub(crate) destination: std::option::Option<crate::model::ObjectTypeEnum>,
@@ -3863,6 +4098,43 @@ impl ObjectTypes {
     }
 }
 
+/// When writing a match expression against `ObjectTypeEnum`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let objecttypeenum = unimplemented!();
+/// match objecttypeenum {
+///     ObjectTypeEnum::Directory => { /* ... */ },
+///     ObjectTypeEnum::File => { /* ... */ },
+///     ObjectTypeEnum::GitLink => { /* ... */ },
+///     ObjectTypeEnum::SymbolicLink => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `objecttypeenum` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ObjectTypeEnum::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ObjectTypeEnum::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ObjectTypeEnum::NewFeature` is defined.
+/// Specifically, when `objecttypeenum` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ObjectTypeEnum::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3883,8 +4155,8 @@ pub enum ObjectTypeEnum {
     GitLink,
     #[allow(missing_docs)] // documentation missing in model
     SymbolicLink,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ObjectTypeEnum {
     fn from(s: &str) -> Self {
@@ -3893,7 +4165,7 @@ impl std::convert::From<&str> for ObjectTypeEnum {
             "FILE" => ObjectTypeEnum::File,
             "GIT_LINK" => ObjectTypeEnum::GitLink,
             "SYMBOLIC_LINK" => ObjectTypeEnum::SymbolicLink,
-            other => ObjectTypeEnum::Unknown(other.to_owned()),
+            other => ObjectTypeEnum::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -3912,11 +4184,11 @@ impl ObjectTypeEnum {
             ObjectTypeEnum::File => "FILE",
             ObjectTypeEnum::GitLink => "GIT_LINK",
             ObjectTypeEnum::SymbolicLink => "SYMBOLIC_LINK",
-            ObjectTypeEnum::Unknown(s) => s.as_ref(),
+            ObjectTypeEnum::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DIRECTORY", "FILE", "GIT_LINK", "SYMBOLIC_LINK"]
     }
 }
@@ -3928,7 +4200,7 @@ impl AsRef<str> for ObjectTypeEnum {
 
 /// <p>Information about file modes in a merge or pull request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileModes {
     /// <p>The file mode of a file in the source of a merge or pull request.</p>
     #[doc(hidden)]
@@ -3954,20 +4226,11 @@ impl FileModes {
         self.base.as_ref()
     }
 }
-impl std::fmt::Debug for FileModes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileModes");
-        formatter.field("source", &self.source);
-        formatter.field("destination", &self.destination);
-        formatter.field("base", &self.base);
-        formatter.finish()
-    }
-}
 /// See [`FileModes`](crate::model::FileModes).
 pub mod file_modes {
 
     /// A builder for [`FileModes`](crate::model::FileModes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<crate::model::FileModeTypeEnum>,
         pub(crate) destination: std::option::Option<crate::model::FileModeTypeEnum>,
@@ -4032,7 +4295,7 @@ impl FileModes {
 
 /// <p>Information about the size of files in a merge or pull request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileSizes {
     /// <p>The size of a file in the source of a merge or pull request.</p>
     #[doc(hidden)]
@@ -4058,20 +4321,11 @@ impl FileSizes {
         self.base
     }
 }
-impl std::fmt::Debug for FileSizes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileSizes");
-        formatter.field("source", &self.source);
-        formatter.field("destination", &self.destination);
-        formatter.field("base", &self.base);
-        formatter.finish()
-    }
-}
 /// See [`FileSizes`](crate::model::FileSizes).
 pub mod file_sizes {
 
     /// A builder for [`FileSizes`](crate::model::FileSizes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<i64>,
         pub(crate) destination: std::option::Option<i64>,
@@ -4127,7 +4381,7 @@ impl FileSizes {
 
 /// <p>Returns information about a submodule reference in a repository folder.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubModule {
     /// <p>The commit ID that contains the reference to the submodule.</p>
     #[doc(hidden)]
@@ -4153,20 +4407,11 @@ impl SubModule {
         self.relative_path.as_deref()
     }
 }
-impl std::fmt::Debug for SubModule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubModule");
-        formatter.field("commit_id", &self.commit_id);
-        formatter.field("absolute_path", &self.absolute_path);
-        formatter.field("relative_path", &self.relative_path);
-        formatter.finish()
-    }
-}
 /// See [`SubModule`](crate::model::SubModule).
 pub mod sub_module {
 
     /// A builder for [`SubModule`](crate::model::SubModule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) commit_id: std::option::Option<std::string::String>,
         pub(crate) absolute_path: std::option::Option<std::string::String>,
@@ -4228,7 +4473,7 @@ impl SubModule {
 
 /// <p>Returns information about a symbolic link in a repository folder.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SymbolicLink {
     /// <p>The blob ID that contains the information about the symbolic link.</p>
     #[doc(hidden)]
@@ -4261,21 +4506,11 @@ impl SymbolicLink {
         self.file_mode.as_ref()
     }
 }
-impl std::fmt::Debug for SymbolicLink {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SymbolicLink");
-        formatter.field("blob_id", &self.blob_id);
-        formatter.field("absolute_path", &self.absolute_path);
-        formatter.field("relative_path", &self.relative_path);
-        formatter.field("file_mode", &self.file_mode);
-        formatter.finish()
-    }
-}
 /// See [`SymbolicLink`](crate::model::SymbolicLink).
 pub mod symbolic_link {
 
     /// A builder for [`SymbolicLink`](crate::model::SymbolicLink).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) blob_id: std::option::Option<std::string::String>,
         pub(crate) absolute_path: std::option::Option<std::string::String>,
@@ -4352,7 +4587,7 @@ impl SymbolicLink {
 
 /// <p>Returns information about a file in a repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct File {
     /// <p>The blob ID that contains the file information.</p>
     #[doc(hidden)]
@@ -4385,21 +4620,11 @@ impl File {
         self.file_mode.as_ref()
     }
 }
-impl std::fmt::Debug for File {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("File");
-        formatter.field("blob_id", &self.blob_id);
-        formatter.field("absolute_path", &self.absolute_path);
-        formatter.field("relative_path", &self.relative_path);
-        formatter.field("file_mode", &self.file_mode);
-        formatter.finish()
-    }
-}
 /// See [`File`](crate::model::File).
 pub mod file {
 
     /// A builder for [`File`](crate::model::File).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) blob_id: std::option::Option<std::string::String>,
         pub(crate) absolute_path: std::option::Option<std::string::String>,
@@ -4476,7 +4701,7 @@ impl File {
 
 /// <p>Returns information about a folder in a repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Folder {
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the folder.</p>
     #[doc(hidden)]
@@ -4502,20 +4727,11 @@ impl Folder {
         self.relative_path.as_deref()
     }
 }
-impl std::fmt::Debug for Folder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Folder");
-        formatter.field("tree_id", &self.tree_id);
-        formatter.field("absolute_path", &self.absolute_path);
-        formatter.field("relative_path", &self.relative_path);
-        formatter.finish()
-    }
-}
 /// See [`Folder`](crate::model::Folder).
 pub mod folder {
 
     /// A builder for [`Folder`](crate::model::Folder).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tree_id: std::option::Option<std::string::String>,
         pub(crate) absolute_path: std::option::Option<std::string::String>,
@@ -4577,7 +4793,7 @@ impl Folder {
 
 /// <p>Returns information about a set of differences for a commit specifier.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Difference {
     /// <p>Information about a <code>beforeBlob</code> data type object, including the ID, the file mode permission code, and the path.</p>
     #[doc(hidden)]
@@ -4603,20 +4819,11 @@ impl Difference {
         self.change_type.as_ref()
     }
 }
-impl std::fmt::Debug for Difference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Difference");
-        formatter.field("before_blob", &self.before_blob);
-        formatter.field("after_blob", &self.after_blob);
-        formatter.field("change_type", &self.change_type);
-        formatter.finish()
-    }
-}
 /// See [`Difference`](crate::model::Difference).
 pub mod difference {
 
     /// A builder for [`Difference`](crate::model::Difference).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) before_blob: std::option::Option<crate::model::BlobMetadata>,
         pub(crate) after_blob: std::option::Option<crate::model::BlobMetadata>,
@@ -4681,7 +4888,7 @@ impl Difference {
 
 /// <p>Returns information about a specific Git blob object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BlobMetadata {
     /// <p>The full ID of the blob.</p>
     #[doc(hidden)]
@@ -4719,20 +4926,11 @@ impl BlobMetadata {
         self.mode.as_deref()
     }
 }
-impl std::fmt::Debug for BlobMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BlobMetadata");
-        formatter.field("blob_id", &self.blob_id);
-        formatter.field("path", &self.path);
-        formatter.field("mode", &self.mode);
-        formatter.finish()
-    }
-}
 /// See [`BlobMetadata`](crate::model::BlobMetadata).
 pub mod blob_metadata {
 
     /// A builder for [`BlobMetadata`](crate::model::BlobMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) blob_id: std::option::Option<std::string::String>,
         pub(crate) path: std::option::Option<std::string::String>,
@@ -4800,7 +4998,7 @@ impl BlobMetadata {
 
 /// <p>Returns information about a specific commit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Commit {
     /// <p>The full SHA ID of the specified commit. </p>
     #[doc(hidden)]
@@ -4856,24 +5054,11 @@ impl Commit {
         self.additional_data.as_deref()
     }
 }
-impl std::fmt::Debug for Commit {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Commit");
-        formatter.field("commit_id", &self.commit_id);
-        formatter.field("tree_id", &self.tree_id);
-        formatter.field("parents", &self.parents);
-        formatter.field("message", &self.message);
-        formatter.field("author", &self.author);
-        formatter.field("committer", &self.committer);
-        formatter.field("additional_data", &self.additional_data);
-        formatter.finish()
-    }
-}
 /// See [`Commit`](crate::model::Commit).
 pub mod commit {
 
     /// A builder for [`Commit`](crate::model::Commit).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) commit_id: std::option::Option<std::string::String>,
         pub(crate) tree_id: std::option::Option<std::string::String>,
@@ -4991,7 +5176,7 @@ impl Commit {
 
 /// <p>Information about the user who made a specified commit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserInfo {
     /// <p>The name of the user who made the specified commit.</p>
     #[doc(hidden)]
@@ -5017,20 +5202,11 @@ impl UserInfo {
         self.date.as_deref()
     }
 }
-impl std::fmt::Debug for UserInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserInfo");
-        formatter.field("name", &self.name);
-        formatter.field("email", &self.email);
-        formatter.field("date", &self.date);
-        formatter.finish()
-    }
-}
 /// See [`UserInfo`](crate::model::UserInfo).
 pub mod user_info {
 
     /// A builder for [`UserInfo`](crate::model::UserInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) email: std::option::Option<std::string::String>,
@@ -5086,7 +5262,7 @@ impl UserInfo {
 
 /// <p>Returns information about comments on a pull request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommentsForPullRequest {
     /// <p>The system-generated ID of the pull request.</p>
     #[doc(hidden)]
@@ -5147,25 +5323,11 @@ impl CommentsForPullRequest {
         self.comments.as_deref()
     }
 }
-impl std::fmt::Debug for CommentsForPullRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommentsForPullRequest");
-        formatter.field("pull_request_id", &self.pull_request_id);
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("before_commit_id", &self.before_commit_id);
-        formatter.field("after_commit_id", &self.after_commit_id);
-        formatter.field("before_blob_id", &self.before_blob_id);
-        formatter.field("after_blob_id", &self.after_blob_id);
-        formatter.field("location", &self.location);
-        formatter.field("comments", &self.comments);
-        formatter.finish()
-    }
-}
 /// See [`CommentsForPullRequest`](crate::model::CommentsForPullRequest).
 pub mod comments_for_pull_request {
 
     /// A builder for [`CommentsForPullRequest`](crate::model::CommentsForPullRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request_id: std::option::Option<std::string::String>,
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -5308,7 +5470,7 @@ impl CommentsForPullRequest {
 
 /// <p>Returns information about comments on the comparison between two commits.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommentsForComparedCommit {
     /// <p>The name of the repository that contains the compared commits.</p>
     #[doc(hidden)]
@@ -5362,24 +5524,11 @@ impl CommentsForComparedCommit {
         self.comments.as_deref()
     }
 }
-impl std::fmt::Debug for CommentsForComparedCommit {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommentsForComparedCommit");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("before_commit_id", &self.before_commit_id);
-        formatter.field("after_commit_id", &self.after_commit_id);
-        formatter.field("before_blob_id", &self.before_blob_id);
-        formatter.field("after_blob_id", &self.after_blob_id);
-        formatter.field("location", &self.location);
-        formatter.field("comments", &self.comments);
-        formatter.finish()
-    }
-}
 /// See [`CommentsForComparedCommit`](crate::model::CommentsForComparedCommit).
 pub mod comments_for_compared_commit {
 
     /// A builder for [`CommentsForComparedCommit`](crate::model::CommentsForComparedCommit).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
         pub(crate) before_commit_id: std::option::Option<std::string::String>,
@@ -5507,7 +5656,7 @@ impl CommentsForComparedCommit {
 
 /// <p>Information about the reaction values provided by users on a comment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReactionForComment {
     /// <p>The reaction for a specified comment.</p>
     #[doc(hidden)]
@@ -5533,23 +5682,11 @@ impl ReactionForComment {
         self.reactions_from_deleted_users_count
     }
 }
-impl std::fmt::Debug for ReactionForComment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReactionForComment");
-        formatter.field("reaction", &self.reaction);
-        formatter.field("reaction_users", &self.reaction_users);
-        formatter.field(
-            "reactions_from_deleted_users_count",
-            &self.reactions_from_deleted_users_count,
-        );
-        formatter.finish()
-    }
-}
 /// See [`ReactionForComment`](crate::model::ReactionForComment).
 pub mod reaction_for_comment {
 
     /// A builder for [`ReactionForComment`](crate::model::ReactionForComment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reaction: std::option::Option<crate::model::ReactionValueFormats>,
         pub(crate) reaction_users: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5620,7 +5757,7 @@ impl ReactionForComment {
 
 /// <p>Information about the values for reactions to a comment. AWS CodeCommit supports a limited set of reactions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReactionValueFormats {
     /// <p>The Emoji Version 1.0 graphic of the reaction. These graphics are interpreted slightly differently on different operating systems.</p>
     #[doc(hidden)]
@@ -5646,20 +5783,11 @@ impl ReactionValueFormats {
         self.unicode.as_deref()
     }
 }
-impl std::fmt::Debug for ReactionValueFormats {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReactionValueFormats");
-        formatter.field("emoji", &self.emoji);
-        formatter.field("short_code", &self.short_code);
-        formatter.field("unicode", &self.unicode);
-        formatter.finish()
-    }
-}
 /// See [`ReactionValueFormats`](crate::model::ReactionValueFormats).
 pub mod reaction_value_formats {
 
     /// A builder for [`ReactionValueFormats`](crate::model::ReactionValueFormats).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) emoji: std::option::Option<std::string::String>,
         pub(crate) short_code: std::option::Option<std::string::String>,
@@ -5715,7 +5843,7 @@ impl ReactionValueFormats {
 
 /// <p>Returns information about a branch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BranchInfo {
     /// <p>The name of the branch.</p>
     #[doc(hidden)]
@@ -5734,19 +5862,11 @@ impl BranchInfo {
         self.commit_id.as_deref()
     }
 }
-impl std::fmt::Debug for BranchInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BranchInfo");
-        formatter.field("branch_name", &self.branch_name);
-        formatter.field("commit_id", &self.commit_id);
-        formatter.finish()
-    }
-}
 /// See [`BranchInfo`](crate::model::BranchInfo).
 pub mod branch_info {
 
     /// A builder for [`BranchInfo`](crate::model::BranchInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) branch_name: std::option::Option<std::string::String>,
         pub(crate) commit_id: std::option::Option<std::string::String>,
@@ -5790,7 +5910,7 @@ impl BranchInfo {
 
 /// <p>Returns information about the approval rules applied to a pull request and whether conditions have been met.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Evaluation {
     /// <p>Whether the state of the pull request is approved.</p>
     #[doc(hidden)]
@@ -5823,24 +5943,11 @@ impl Evaluation {
         self.approval_rules_not_satisfied.as_deref()
     }
 }
-impl std::fmt::Debug for Evaluation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Evaluation");
-        formatter.field("approved", &self.approved);
-        formatter.field("overridden", &self.overridden);
-        formatter.field("approval_rules_satisfied", &self.approval_rules_satisfied);
-        formatter.field(
-            "approval_rules_not_satisfied",
-            &self.approval_rules_not_satisfied,
-        );
-        formatter.finish()
-    }
-}
 /// See [`Evaluation`](crate::model::Evaluation).
 pub mod evaluation {
 
     /// A builder for [`Evaluation`](crate::model::Evaluation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approved: std::option::Option<bool>,
         pub(crate) overridden: std::option::Option<bool>,
@@ -5931,7 +6038,7 @@ impl Evaluation {
 
 /// <p>Returns information about a pull request event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PullRequestEvent {
     /// <p>The system-generated ID of the pull request.</p>
     #[doc(hidden)]
@@ -6037,49 +6144,11 @@ impl PullRequestEvent {
         self.approval_rule_overridden_event_metadata.as_ref()
     }
 }
-impl std::fmt::Debug for PullRequestEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PullRequestEvent");
-        formatter.field("pull_request_id", &self.pull_request_id);
-        formatter.field("event_date", &self.event_date);
-        formatter.field("pull_request_event_type", &self.pull_request_event_type);
-        formatter.field("actor_arn", &self.actor_arn);
-        formatter.field(
-            "pull_request_created_event_metadata",
-            &self.pull_request_created_event_metadata,
-        );
-        formatter.field(
-            "pull_request_status_changed_event_metadata",
-            &self.pull_request_status_changed_event_metadata,
-        );
-        formatter.field(
-            "pull_request_source_reference_updated_event_metadata",
-            &self.pull_request_source_reference_updated_event_metadata,
-        );
-        formatter.field(
-            "pull_request_merged_state_changed_event_metadata",
-            &self.pull_request_merged_state_changed_event_metadata,
-        );
-        formatter.field(
-            "approval_rule_event_metadata",
-            &self.approval_rule_event_metadata,
-        );
-        formatter.field(
-            "approval_state_changed_event_metadata",
-            &self.approval_state_changed_event_metadata,
-        );
-        formatter.field(
-            "approval_rule_overridden_event_metadata",
-            &self.approval_rule_overridden_event_metadata,
-        );
-        formatter.finish()
-    }
-}
 /// See [`PullRequestEvent`](crate::model::PullRequestEvent).
 pub mod pull_request_event {
 
     /// A builder for [`PullRequestEvent`](crate::model::PullRequestEvent).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request_id: std::option::Option<std::string::String>,
         pub(crate) event_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -6298,7 +6367,7 @@ impl PullRequestEvent {
 
 /// <p>Returns information about an override event for approval rules for a pull request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApprovalRuleOverriddenEventMetadata {
     /// <p>The revision ID of the pull request when the override event occurred.</p>
     #[doc(hidden)]
@@ -6317,19 +6386,11 @@ impl ApprovalRuleOverriddenEventMetadata {
         self.override_status.as_ref()
     }
 }
-impl std::fmt::Debug for ApprovalRuleOverriddenEventMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApprovalRuleOverriddenEventMetadata");
-        formatter.field("revision_id", &self.revision_id);
-        formatter.field("override_status", &self.override_status);
-        formatter.finish()
-    }
-}
 /// See [`ApprovalRuleOverriddenEventMetadata`](crate::model::ApprovalRuleOverriddenEventMetadata).
 pub mod approval_rule_overridden_event_metadata {
 
     /// A builder for [`ApprovalRuleOverriddenEventMetadata`](crate::model::ApprovalRuleOverriddenEventMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) revision_id: std::option::Option<std::string::String>,
         pub(crate) override_status: std::option::Option<crate::model::OverrideStatus>,
@@ -6376,7 +6437,7 @@ impl ApprovalRuleOverriddenEventMetadata {
 
 /// <p>Returns information about a change in the approval state for a pull request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApprovalStateChangedEventMetadata {
     /// <p>The revision ID of the pull request when the approval state changed.</p>
     #[doc(hidden)]
@@ -6395,19 +6456,11 @@ impl ApprovalStateChangedEventMetadata {
         self.approval_status.as_ref()
     }
 }
-impl std::fmt::Debug for ApprovalStateChangedEventMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApprovalStateChangedEventMetadata");
-        formatter.field("revision_id", &self.revision_id);
-        formatter.field("approval_status", &self.approval_status);
-        formatter.finish()
-    }
-}
 /// See [`ApprovalStateChangedEventMetadata`](crate::model::ApprovalStateChangedEventMetadata).
 pub mod approval_state_changed_event_metadata {
 
     /// A builder for [`ApprovalStateChangedEventMetadata`](crate::model::ApprovalStateChangedEventMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) revision_id: std::option::Option<std::string::String>,
         pub(crate) approval_status: std::option::Option<crate::model::ApprovalState>,
@@ -6454,7 +6507,7 @@ impl ApprovalStateChangedEventMetadata {
 
 /// <p>Returns information about an event for an approval rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApprovalRuleEventMetadata {
     /// <p>The name of the approval rule.</p>
     #[doc(hidden)]
@@ -6480,20 +6533,11 @@ impl ApprovalRuleEventMetadata {
         self.approval_rule_content.as_deref()
     }
 }
-impl std::fmt::Debug for ApprovalRuleEventMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApprovalRuleEventMetadata");
-        formatter.field("approval_rule_name", &self.approval_rule_name);
-        formatter.field("approval_rule_id", &self.approval_rule_id);
-        formatter.field("approval_rule_content", &self.approval_rule_content);
-        formatter.finish()
-    }
-}
 /// See [`ApprovalRuleEventMetadata`](crate::model::ApprovalRuleEventMetadata).
 pub mod approval_rule_event_metadata {
 
     /// A builder for [`ApprovalRuleEventMetadata`](crate::model::ApprovalRuleEventMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approval_rule_name: std::option::Option<std::string::String>,
         pub(crate) approval_rule_id: std::option::Option<std::string::String>,
@@ -6558,7 +6602,7 @@ impl ApprovalRuleEventMetadata {
 
 /// <p>Returns information about the change in the merge state for a pull request event. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PullRequestMergedStateChangedEventMetadata {
     /// <p>The name of the repository where the pull request was created.</p>
     #[doc(hidden)]
@@ -6584,20 +6628,11 @@ impl PullRequestMergedStateChangedEventMetadata {
         self.merge_metadata.as_ref()
     }
 }
-impl std::fmt::Debug for PullRequestMergedStateChangedEventMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PullRequestMergedStateChangedEventMetadata");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("destination_reference", &self.destination_reference);
-        formatter.field("merge_metadata", &self.merge_metadata);
-        formatter.finish()
-    }
-}
 /// See [`PullRequestMergedStateChangedEventMetadata`](crate::model::PullRequestMergedStateChangedEventMetadata).
 pub mod pull_request_merged_state_changed_event_metadata {
 
     /// A builder for [`PullRequestMergedStateChangedEventMetadata`](crate::model::PullRequestMergedStateChangedEventMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
         pub(crate) destination_reference: std::option::Option<std::string::String>,
@@ -6662,7 +6697,7 @@ impl PullRequestMergedStateChangedEventMetadata {
 
 /// <p>Information about an update to the source branch of a pull request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PullRequestSourceReferenceUpdatedEventMetadata {
     /// <p>The name of the repository where the pull request was updated.</p>
     #[doc(hidden)]
@@ -6695,21 +6730,11 @@ impl PullRequestSourceReferenceUpdatedEventMetadata {
         self.merge_base.as_deref()
     }
 }
-impl std::fmt::Debug for PullRequestSourceReferenceUpdatedEventMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PullRequestSourceReferenceUpdatedEventMetadata");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("before_commit_id", &self.before_commit_id);
-        formatter.field("after_commit_id", &self.after_commit_id);
-        formatter.field("merge_base", &self.merge_base);
-        formatter.finish()
-    }
-}
 /// See [`PullRequestSourceReferenceUpdatedEventMetadata`](crate::model::PullRequestSourceReferenceUpdatedEventMetadata).
 pub mod pull_request_source_reference_updated_event_metadata {
 
     /// A builder for [`PullRequestSourceReferenceUpdatedEventMetadata`](crate::model::PullRequestSourceReferenceUpdatedEventMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
         pub(crate) before_commit_id: std::option::Option<std::string::String>,
@@ -6787,7 +6812,7 @@ impl PullRequestSourceReferenceUpdatedEventMetadata {
 
 /// <p>Information about a change to the status of a pull request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PullRequestStatusChangedEventMetadata {
     /// <p>The changed status of the pull request.</p>
     #[doc(hidden)]
@@ -6799,18 +6824,11 @@ impl PullRequestStatusChangedEventMetadata {
         self.pull_request_status.as_ref()
     }
 }
-impl std::fmt::Debug for PullRequestStatusChangedEventMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PullRequestStatusChangedEventMetadata");
-        formatter.field("pull_request_status", &self.pull_request_status);
-        formatter.finish()
-    }
-}
 /// See [`PullRequestStatusChangedEventMetadata`](crate::model::PullRequestStatusChangedEventMetadata).
 pub mod pull_request_status_changed_event_metadata {
 
     /// A builder for [`PullRequestStatusChangedEventMetadata`](crate::model::PullRequestStatusChangedEventMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request_status: std::option::Option<crate::model::PullRequestStatusEnum>,
     }
@@ -6845,7 +6863,7 @@ impl PullRequestStatusChangedEventMetadata {
 
 /// <p>Metadata about the pull request that is used when comparing the pull request source with its destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PullRequestCreatedEventMetadata {
     /// <p>The name of the repository where the pull request was created.</p>
     #[doc(hidden)]
@@ -6878,21 +6896,11 @@ impl PullRequestCreatedEventMetadata {
         self.merge_base.as_deref()
     }
 }
-impl std::fmt::Debug for PullRequestCreatedEventMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PullRequestCreatedEventMetadata");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("source_commit_id", &self.source_commit_id);
-        formatter.field("destination_commit_id", &self.destination_commit_id);
-        formatter.field("merge_base", &self.merge_base);
-        formatter.finish()
-    }
-}
 /// See [`PullRequestCreatedEventMetadata`](crate::model::PullRequestCreatedEventMetadata).
 pub mod pull_request_created_event_metadata {
 
     /// A builder for [`PullRequestCreatedEventMetadata`](crate::model::PullRequestCreatedEventMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
         pub(crate) source_commit_id: std::option::Option<std::string::String>,
@@ -6967,6 +6975,48 @@ impl PullRequestCreatedEventMetadata {
     }
 }
 
+/// When writing a match expression against `PullRequestEventType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let pullrequesteventtype = unimplemented!();
+/// match pullrequesteventtype {
+///     PullRequestEventType::PullRequestApprovalRuleCreated => { /* ... */ },
+///     PullRequestEventType::PullRequestApprovalRuleDeleted => { /* ... */ },
+///     PullRequestEventType::PullRequestApprovalRuleOverridden => { /* ... */ },
+///     PullRequestEventType::PullRequestApprovalRuleUpdated => { /* ... */ },
+///     PullRequestEventType::PullRequestApprovalStateChanged => { /* ... */ },
+///     PullRequestEventType::PullRequestCreated => { /* ... */ },
+///     PullRequestEventType::PullRequestMergeStateChanged => { /* ... */ },
+///     PullRequestEventType::PullRequestSourceReferenceUpdated => { /* ... */ },
+///     PullRequestEventType::PullRequestStatusChanged => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `pullrequesteventtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PullRequestEventType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PullRequestEventType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PullRequestEventType::NewFeature` is defined.
+/// Specifically, when `pullrequesteventtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PullRequestEventType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -6997,8 +7047,8 @@ pub enum PullRequestEventType {
     PullRequestSourceReferenceUpdated,
     #[allow(missing_docs)] // documentation missing in model
     PullRequestStatusChanged,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PullRequestEventType {
     fn from(s: &str) -> Self {
@@ -7026,7 +7076,9 @@ impl std::convert::From<&str> for PullRequestEventType {
                 PullRequestEventType::PullRequestSourceReferenceUpdated
             }
             "PULL_REQUEST_STATUS_CHANGED" => PullRequestEventType::PullRequestStatusChanged,
-            other => PullRequestEventType::Unknown(other.to_owned()),
+            other => {
+                PullRequestEventType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -7064,11 +7116,11 @@ impl PullRequestEventType {
                 "PULL_REQUEST_SOURCE_REFERENCE_UPDATED"
             }
             PullRequestEventType::PullRequestStatusChanged => "PULL_REQUEST_STATUS_CHANGED",
-            PullRequestEventType::Unknown(s) => s.as_ref(),
+            PullRequestEventType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "PULL_REQUEST_APPROVAL_RULE_CREATED",
             "PULL_REQUEST_APPROVAL_RULE_DELETED",
@@ -7090,7 +7142,7 @@ impl AsRef<str> for PullRequestEventType {
 
 /// <p>Information about merge hunks in a merge or pull request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MergeHunk {
     /// <p>A Boolean value indicating whether a combination of hunks contains a conflict. Conflicts occur when the same file or the same lines in a file were modified in both the source and destination of a merge or pull request. Valid values include true, false, and null. True when the hunk represents a conflict and one or more files contains a line conflict. File mode conflicts in a merge do not set this to true.</p>
     #[doc(hidden)]
@@ -7123,21 +7175,11 @@ impl MergeHunk {
         self.base.as_ref()
     }
 }
-impl std::fmt::Debug for MergeHunk {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MergeHunk");
-        formatter.field("is_conflict", &self.is_conflict);
-        formatter.field("source", &self.source);
-        formatter.field("destination", &self.destination);
-        formatter.field("base", &self.base);
-        formatter.finish()
-    }
-}
 /// See [`MergeHunk`](crate::model::MergeHunk).
 pub mod merge_hunk {
 
     /// A builder for [`MergeHunk`](crate::model::MergeHunk).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) is_conflict: std::option::Option<bool>,
         pub(crate) source: std::option::Option<crate::model::MergeHunkDetail>,
@@ -7214,7 +7256,7 @@ impl MergeHunk {
 
 /// <p>Information about the details of a merge hunk that contains a conflict in a merge or pull request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MergeHunkDetail {
     /// <p>The start position of the hunk in the merge result.</p>
     #[doc(hidden)]
@@ -7240,20 +7282,11 @@ impl MergeHunkDetail {
         self.hunk_content.as_deref()
     }
 }
-impl std::fmt::Debug for MergeHunkDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MergeHunkDetail");
-        formatter.field("start_line", &self.start_line);
-        formatter.field("end_line", &self.end_line);
-        formatter.field("hunk_content", &self.hunk_content);
-        formatter.finish()
-    }
-}
 /// See [`MergeHunkDetail`](crate::model::MergeHunkDetail).
 pub mod merge_hunk_detail {
 
     /// A builder for [`MergeHunkDetail`](crate::model::MergeHunkDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_line: std::option::Option<i32>,
         pub(crate) end_line: std::option::Option<i32>,
@@ -7309,7 +7342,7 @@ impl MergeHunkDetail {
 
 /// <p>Returns information about a target for a pull request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Target {
     /// <p>The name of the repository that contains the pull request.</p>
     #[doc(hidden)]
@@ -7335,20 +7368,11 @@ impl Target {
         self.destination_reference.as_deref()
     }
 }
-impl std::fmt::Debug for Target {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Target");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("source_reference", &self.source_reference);
-        formatter.field("destination_reference", &self.destination_reference);
-        formatter.finish()
-    }
-}
 /// See [`Target`](crate::model::Target).
 pub mod target {
 
     /// A builder for [`Target`](crate::model::Target).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
         pub(crate) source_reference: std::option::Option<std::string::String>,
@@ -7413,7 +7437,7 @@ impl Target {
 
 /// <p>A file to be added, updated, or deleted as part of a commit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileMetadata {
     /// <p>The full path to the file to be added or updated, including the name of the file.</p>
     #[doc(hidden)]
@@ -7439,20 +7463,11 @@ impl FileMetadata {
         self.file_mode.as_ref()
     }
 }
-impl std::fmt::Debug for FileMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileMetadata");
-        formatter.field("absolute_path", &self.absolute_path);
-        formatter.field("blob_id", &self.blob_id);
-        formatter.field("file_mode", &self.file_mode);
-        formatter.finish()
-    }
-}
 /// See [`FileMetadata`](crate::model::FileMetadata).
 pub mod file_metadata {
 
     /// A builder for [`FileMetadata`](crate::model::FileMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) absolute_path: std::option::Option<std::string::String>,
         pub(crate) blob_id: std::option::Option<std::string::String>,
@@ -7514,7 +7529,7 @@ impl FileMetadata {
 
 /// <p>Information about a file added or updated as part of a commit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutFileEntry {
     /// <p>The full path to the file in the repository, including the name of the file.</p>
     #[doc(hidden)]
@@ -7547,21 +7562,11 @@ impl PutFileEntry {
         self.source_file.as_ref()
     }
 }
-impl std::fmt::Debug for PutFileEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutFileEntry");
-        formatter.field("file_path", &self.file_path);
-        formatter.field("file_mode", &self.file_mode);
-        formatter.field("file_content", &self.file_content);
-        formatter.field("source_file", &self.source_file);
-        formatter.finish()
-    }
-}
 /// See [`PutFileEntry`](crate::model::PutFileEntry).
 pub mod put_file_entry {
 
     /// A builder for [`PutFileEntry`](crate::model::PutFileEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_path: std::option::Option<std::string::String>,
         pub(crate) file_mode: std::option::Option<crate::model::FileModeTypeEnum>,
@@ -7638,7 +7643,7 @@ impl PutFileEntry {
 
 /// <p>Information about a source file that is part of changes made in a commit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceFileSpecifier {
     /// <p>The full path to the file, including the name of the file.</p>
     #[doc(hidden)]
@@ -7657,19 +7662,11 @@ impl SourceFileSpecifier {
         self.is_move
     }
 }
-impl std::fmt::Debug for SourceFileSpecifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceFileSpecifier");
-        formatter.field("file_path", &self.file_path);
-        formatter.field("is_move", &self.is_move);
-        formatter.finish()
-    }
-}
 /// See [`SourceFileSpecifier`](crate::model::SourceFileSpecifier).
 pub mod source_file_specifier {
 
     /// A builder for [`SourceFileSpecifier`](crate::model::SourceFileSpecifier).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_path: std::option::Option<std::string::String>,
         pub(crate) is_move: std::option::Option<bool>,
@@ -7713,7 +7710,7 @@ impl SourceFileSpecifier {
 
 /// <p>Returns information about errors in a BatchGetCommits operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetCommitsError {
     /// <p>A commit ID that either could not be found or was not in a valid format.</p>
     #[doc(hidden)]
@@ -7739,20 +7736,11 @@ impl BatchGetCommitsError {
         self.error_message.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetCommitsError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetCommitsError");
-        formatter.field("commit_id", &self.commit_id);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
-    }
-}
 /// See [`BatchGetCommitsError`](crate::model::BatchGetCommitsError).
 pub mod batch_get_commits_error {
 
     /// A builder for [`BatchGetCommitsError`](crate::model::BatchGetCommitsError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) commit_id: std::option::Option<std::string::String>,
         pub(crate) error_code: std::option::Option<std::string::String>,
@@ -7811,7 +7799,7 @@ impl BatchGetCommitsError {
 
 /// <p>Returns information about errors in a BatchDisassociateApprovalRuleTemplateFromRepositories operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
     /// <p>The name of the repository where the association with the template was not able to be removed.</p>
     #[doc(hidden)]
@@ -7837,21 +7825,11 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
         self.error_message.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("BatchDisassociateApprovalRuleTemplateFromRepositoriesError");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
-    }
-}
 /// See [`BatchDisassociateApprovalRuleTemplateFromRepositoriesError`](crate::model::BatchDisassociateApprovalRuleTemplateFromRepositoriesError).
 pub mod batch_disassociate_approval_rule_template_from_repositories_error {
 
     /// A builder for [`BatchDisassociateApprovalRuleTemplateFromRepositoriesError`](crate::model::BatchDisassociateApprovalRuleTemplateFromRepositoriesError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
         pub(crate) error_code: std::option::Option<std::string::String>,
@@ -7917,7 +7895,7 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
 
 /// <p>Returns information about errors in a BatchDescribeMergeConflicts operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDescribeMergeConflictsError {
     /// <p>The path to the file.</p>
     #[doc(hidden)]
@@ -7943,20 +7921,11 @@ impl BatchDescribeMergeConflictsError {
         self.message.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDescribeMergeConflictsError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDescribeMergeConflictsError");
-        formatter.field("file_path", &self.file_path);
-        formatter.field("exception_name", &self.exception_name);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 /// See [`BatchDescribeMergeConflictsError`](crate::model::BatchDescribeMergeConflictsError).
 pub mod batch_describe_merge_conflicts_error {
 
     /// A builder for [`BatchDescribeMergeConflictsError`](crate::model::BatchDescribeMergeConflictsError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_path: std::option::Option<std::string::String>,
         pub(crate) exception_name: std::option::Option<std::string::String>,
@@ -8015,7 +7984,7 @@ impl BatchDescribeMergeConflictsError {
 
 /// <p>Information about conflicts in a merge operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Conflict {
     /// <p>Metadata about a conflict in a merge operation.</p>
     #[doc(hidden)]
@@ -8034,19 +8003,11 @@ impl Conflict {
         self.merge_hunks.as_deref()
     }
 }
-impl std::fmt::Debug for Conflict {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Conflict");
-        formatter.field("conflict_metadata", &self.conflict_metadata);
-        formatter.field("merge_hunks", &self.merge_hunks);
-        formatter.finish()
-    }
-}
 /// See [`Conflict`](crate::model::Conflict).
 pub mod conflict {
 
     /// A builder for [`Conflict`](crate::model::Conflict).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) conflict_metadata: std::option::Option<crate::model::ConflictMetadata>,
         pub(crate) merge_hunks: std::option::Option<std::vec::Vec<crate::model::MergeHunk>>,
@@ -8102,7 +8063,7 @@ impl Conflict {
 
 /// <p>Returns information about errors in a BatchAssociateApprovalRuleTemplateWithRepositories operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchAssociateApprovalRuleTemplateWithRepositoriesError {
     /// <p>The name of the repository where the association was not made.</p>
     #[doc(hidden)]
@@ -8128,21 +8089,11 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesError {
         self.error_message.as_deref()
     }
 }
-impl std::fmt::Debug for BatchAssociateApprovalRuleTemplateWithRepositoriesError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("BatchAssociateApprovalRuleTemplateWithRepositoriesError");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
-    }
-}
 /// See [`BatchAssociateApprovalRuleTemplateWithRepositoriesError`](crate::model::BatchAssociateApprovalRuleTemplateWithRepositoriesError).
 pub mod batch_associate_approval_rule_template_with_repositories_error {
 
     /// A builder for [`BatchAssociateApprovalRuleTemplateWithRepositoriesError`](crate::model::BatchAssociateApprovalRuleTemplateWithRepositoriesError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
         pub(crate) error_code: std::option::Option<std::string::String>,

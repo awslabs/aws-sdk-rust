@@ -11,7 +11,7 @@ use std::future::Future;
 use std::pin::Pin;
 use std::task::{Context, Poll};
 use tower::{Layer, Service};
-use tracing::trace;
+use tracing::{debug_span, trace, Instrument};
 
 /// Connects Operation driven middleware to an HTTP implementation.
 ///
@@ -44,13 +44,14 @@ where
         let (req, property_bag) = req.into_parts();
         let mut inner = self.inner.clone();
         let future = async move {
-            trace!(request = ?req);
+            trace!(request = ?req, "dispatching request");
             inner
                 .call(req)
                 .await
                 .map(|resp| operation::Response::from_parts(resp, property_bag))
                 .map_err(|e| SendOperationError::RequestDispatchError(e.into()))
-        };
+        }
+        .instrument(debug_span!("dispatch"));
         Box::pin(future)
     }
 }

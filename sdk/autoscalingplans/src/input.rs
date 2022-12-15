@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_scaling_plan_input {
 
     /// A builder for [`CreateScalingPlanInput`](crate::input::CreateScalingPlanInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scaling_plan_name: std::option::Option<std::string::String>,
         pub(crate) application_source: std::option::Option<crate::model::ApplicationSource>,
@@ -65,8 +65,10 @@ pub mod create_scaling_plan_input {
         /// Consumes the builder and constructs a [`CreateScalingPlanInput`](crate::input::CreateScalingPlanInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateScalingPlanInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateScalingPlanInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateScalingPlanInput {
                 scaling_plan_name: self.scaling_plan_name,
                 application_source: self.application_source,
@@ -88,13 +90,13 @@ impl CreateScalingPlanInput {
             crate::operation::CreateScalingPlan,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateScalingPlanInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -102,8 +104,10 @@ impl CreateScalingPlanInput {
             fn update_http_builder(
                 input: &crate::input::CreateScalingPlanInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -192,7 +196,7 @@ impl CreateScalingPlanInput {
 pub mod delete_scaling_plan_input {
 
     /// A builder for [`DeleteScalingPlanInput`](crate::input::DeleteScalingPlanInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scaling_plan_name: std::option::Option<std::string::String>,
         pub(crate) scaling_plan_version: std::option::Option<i64>,
@@ -224,8 +228,10 @@ pub mod delete_scaling_plan_input {
         /// Consumes the builder and constructs a [`DeleteScalingPlanInput`](crate::input::DeleteScalingPlanInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteScalingPlanInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteScalingPlanInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteScalingPlanInput {
                 scaling_plan_name: self.scaling_plan_name,
                 scaling_plan_version: self.scaling_plan_version,
@@ -246,13 +252,13 @@ impl DeleteScalingPlanInput {
             crate::operation::DeleteScalingPlan,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteScalingPlanInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -260,8 +266,10 @@ impl DeleteScalingPlanInput {
             fn update_http_builder(
                 input: &crate::input::DeleteScalingPlanInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -350,7 +358,7 @@ impl DeleteScalingPlanInput {
 pub mod describe_scaling_plan_resources_input {
 
     /// A builder for [`DescribeScalingPlanResourcesInput`](crate::input::DescribeScalingPlanResourcesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scaling_plan_name: std::option::Option<std::string::String>,
         pub(crate) scaling_plan_version: std::option::Option<i64>,
@@ -406,7 +414,7 @@ pub mod describe_scaling_plan_resources_input {
             self,
         ) -> Result<
             crate::input::DescribeScalingPlanResourcesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeScalingPlanResourcesInput {
                 scaling_plan_name: self.scaling_plan_name,
@@ -430,13 +438,13 @@ impl DescribeScalingPlanResourcesInput {
             crate::operation::DescribeScalingPlanResources,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeScalingPlanResourcesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -444,8 +452,10 @@ impl DescribeScalingPlanResourcesInput {
             fn update_http_builder(
                 input: &crate::input::DescribeScalingPlanResourcesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -533,7 +543,7 @@ impl DescribeScalingPlanResourcesInput {
 pub mod describe_scaling_plans_input {
 
     /// A builder for [`DescribeScalingPlansInput`](crate::input::DescribeScalingPlansInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scaling_plan_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) scaling_plan_version: std::option::Option<i64>,
@@ -618,8 +628,10 @@ pub mod describe_scaling_plans_input {
         /// Consumes the builder and constructs a [`DescribeScalingPlansInput`](crate::input::DescribeScalingPlansInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeScalingPlansInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeScalingPlansInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeScalingPlansInput {
                 scaling_plan_names: self.scaling_plan_names,
                 scaling_plan_version: self.scaling_plan_version,
@@ -643,13 +655,13 @@ impl DescribeScalingPlansInput {
             crate::operation::DescribeScalingPlans,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeScalingPlansInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -657,8 +669,10 @@ impl DescribeScalingPlansInput {
             fn update_http_builder(
                 input: &crate::input::DescribeScalingPlansInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -749,7 +763,7 @@ impl DescribeScalingPlansInput {
 pub mod get_scaling_plan_resource_forecast_data_input {
 
     /// A builder for [`GetScalingPlanResourceForecastDataInput`](crate::input::GetScalingPlanResourceForecastDataInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scaling_plan_name: std::option::Option<std::string::String>,
         pub(crate) scaling_plan_version: std::option::Option<i64>,
@@ -878,7 +892,7 @@ pub mod get_scaling_plan_resource_forecast_data_input {
             self,
         ) -> Result<
             crate::input::GetScalingPlanResourceForecastDataInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetScalingPlanResourceForecastDataInput {
                 scaling_plan_name: self.scaling_plan_name,
@@ -906,13 +920,13 @@ impl GetScalingPlanResourceForecastDataInput {
             crate::operation::GetScalingPlanResourceForecastData,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetScalingPlanResourceForecastDataInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -920,8 +934,10 @@ impl GetScalingPlanResourceForecastDataInput {
             fn update_http_builder(
                 input: &crate::input::GetScalingPlanResourceForecastDataInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1009,7 +1025,7 @@ impl GetScalingPlanResourceForecastDataInput {
 pub mod update_scaling_plan_input {
 
     /// A builder for [`UpdateScalingPlanInput`](crate::input::UpdateScalingPlanInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scaling_plan_name: std::option::Option<std::string::String>,
         pub(crate) scaling_plan_version: std::option::Option<i64>,
@@ -1080,8 +1096,10 @@ pub mod update_scaling_plan_input {
         /// Consumes the builder and constructs a [`UpdateScalingPlanInput`](crate::input::UpdateScalingPlanInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateScalingPlanInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateScalingPlanInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateScalingPlanInput {
                 scaling_plan_name: self.scaling_plan_name,
                 scaling_plan_version: self.scaling_plan_version,
@@ -1104,13 +1122,13 @@ impl UpdateScalingPlanInput {
             crate::operation::UpdateScalingPlan,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateScalingPlanInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1118,8 +1136,10 @@ impl UpdateScalingPlanInput {
             fn update_http_builder(
                 input: &crate::input::UpdateScalingPlanInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1206,7 +1226,7 @@ impl UpdateScalingPlanInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateScalingPlanInput {
     /// <p>The name of the scaling plan.</p>
     #[doc(hidden)]
@@ -1243,20 +1263,10 @@ impl UpdateScalingPlanInput {
         self.scaling_instructions.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateScalingPlanInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateScalingPlanInput");
-        formatter.field("scaling_plan_name", &self.scaling_plan_name);
-        formatter.field("scaling_plan_version", &self.scaling_plan_version);
-        formatter.field("application_source", &self.application_source);
-        formatter.field("scaling_instructions", &self.scaling_instructions);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetScalingPlanResourceForecastDataInput {
     /// <p>The name of the scaling plan.</p>
     #[doc(hidden)]
@@ -1331,24 +1341,10 @@ impl GetScalingPlanResourceForecastDataInput {
         self.end_time.as_ref()
     }
 }
-impl std::fmt::Debug for GetScalingPlanResourceForecastDataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetScalingPlanResourceForecastDataInput");
-        formatter.field("scaling_plan_name", &self.scaling_plan_name);
-        formatter.field("scaling_plan_version", &self.scaling_plan_version);
-        formatter.field("service_namespace", &self.service_namespace);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("scalable_dimension", &self.scalable_dimension);
-        formatter.field("forecast_data_type", &self.forecast_data_type);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeScalingPlansInput {
     /// <p>The names of the scaling plans (up to 10). If you specify application sources, you cannot specify scaling plan names.</p>
     #[doc(hidden)]
@@ -1392,21 +1388,10 @@ impl DescribeScalingPlansInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeScalingPlansInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeScalingPlansInput");
-        formatter.field("scaling_plan_names", &self.scaling_plan_names);
-        formatter.field("scaling_plan_version", &self.scaling_plan_version);
-        formatter.field("application_sources", &self.application_sources);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeScalingPlanResourcesInput {
     /// <p>The name of the scaling plan.</p>
     #[doc(hidden)]
@@ -1439,20 +1424,10 @@ impl DescribeScalingPlanResourcesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeScalingPlanResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeScalingPlanResourcesInput");
-        formatter.field("scaling_plan_name", &self.scaling_plan_name);
-        formatter.field("scaling_plan_version", &self.scaling_plan_version);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteScalingPlanInput {
     /// <p>The name of the scaling plan.</p>
     #[doc(hidden)]
@@ -1471,18 +1446,10 @@ impl DeleteScalingPlanInput {
         self.scaling_plan_version
     }
 }
-impl std::fmt::Debug for DeleteScalingPlanInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteScalingPlanInput");
-        formatter.field("scaling_plan_name", &self.scaling_plan_name);
-        formatter.field("scaling_plan_version", &self.scaling_plan_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateScalingPlanInput {
     /// <p>The name of the scaling plan. Names cannot contain vertical bars, colons, or forward slashes.</p>
     #[doc(hidden)]
@@ -1510,14 +1477,5 @@ impl CreateScalingPlanInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
     pub fn scaling_instructions(&self) -> std::option::Option<&[crate::model::ScalingInstruction]> {
         self.scaling_instructions.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateScalingPlanInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateScalingPlanInput");
-        formatter.field("scaling_plan_name", &self.scaling_plan_name);
-        formatter.field("application_source", &self.application_source);
-        formatter.field("scaling_instructions", &self.scaling_instructions);
-        formatter.finish()
     }
 }

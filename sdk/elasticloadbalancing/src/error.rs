@@ -2,22 +2,15 @@
 
 /// <p>One or more of the specified policies do not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for PolicyNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl PolicyNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -25,7 +18,9 @@ impl std::fmt::Display for PolicyNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PolicyNotFoundException")?;
         if let Some(inner_1) = &self.message {
-            write!(f, ": {}", inner_1)?;
+            {
+                write!(f, ": {}", inner_1)?;
+            }
         }
         Ok(())
     }
@@ -35,7 +30,7 @@ impl std::error::Error for PolicyNotFoundException {}
 pub mod policy_not_found_exception {
 
     /// A builder for [`PolicyNotFoundException`](crate::error::PolicyNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -67,22 +62,15 @@ impl PolicyNotFoundException {
 
 /// <p>The load balancer does not have a listener configured at the specified port.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListenerNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ListenerNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListenerNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ListenerNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -90,7 +78,9 @@ impl std::fmt::Display for ListenerNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ListenerNotFoundException")?;
         if let Some(inner_2) = &self.message {
-            write!(f, ": {}", inner_2)?;
+            {
+                write!(f, ": {}", inner_2)?;
+            }
         }
         Ok(())
     }
@@ -100,7 +90,7 @@ impl std::error::Error for ListenerNotFoundException {}
 pub mod listener_not_found_exception {
 
     /// A builder for [`ListenerNotFoundException`](crate::error::ListenerNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -132,22 +122,15 @@ impl ListenerNotFoundException {
 
 /// <p>The requested configuration change is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidConfigurationRequestException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidConfigurationRequestException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidConfigurationRequestException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidConfigurationRequestException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -155,7 +138,9 @@ impl std::fmt::Display for InvalidConfigurationRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidConfigurationRequestException")?;
         if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+            {
+                write!(f, ": {}", inner_3)?;
+            }
         }
         Ok(())
     }
@@ -165,7 +150,7 @@ impl std::error::Error for InvalidConfigurationRequestException {}
 pub mod invalid_configuration_request_exception {
 
     /// A builder for [`InvalidConfigurationRequestException`](crate::error::InvalidConfigurationRequestException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -197,22 +182,15 @@ impl InvalidConfigurationRequestException {
 
 /// <p>The specified load balancer does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessPointNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for AccessPointNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessPointNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl AccessPointNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -220,7 +198,9 @@ impl std::fmt::Display for AccessPointNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessPointNotFoundException")?;
         if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+            {
+                write!(f, ": {}", inner_4)?;
+            }
         }
         Ok(())
     }
@@ -230,7 +210,7 @@ impl std::error::Error for AccessPointNotFoundException {}
 pub mod access_point_not_found_exception {
 
     /// A builder for [`AccessPointNotFoundException`](crate::error::AccessPointNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -262,22 +242,15 @@ impl AccessPointNotFoundException {
 
 /// <p>The specified protocol or signature version is not supported.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnsupportedProtocolException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for UnsupportedProtocolException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedProtocolException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl UnsupportedProtocolException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -285,7 +258,9 @@ impl std::fmt::Display for UnsupportedProtocolException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnsupportedProtocolException")?;
         if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+            {
+                write!(f, ": {}", inner_5)?;
+            }
         }
         Ok(())
     }
@@ -295,7 +270,7 @@ impl std::error::Error for UnsupportedProtocolException {}
 pub mod unsupported_protocol_exception {
 
     /// A builder for [`UnsupportedProtocolException`](crate::error::UnsupportedProtocolException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -327,22 +302,15 @@ impl UnsupportedProtocolException {
 
 /// <p>The specified ARN does not refer to a valid SSL certificate in AWS Identity and Access Management (IAM) or AWS Certificate Manager (ACM). Note that if you recently uploaded the certificate to IAM, this error might indicate that the certificate is not fully available yet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CertificateNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CertificateNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CertificateNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl CertificateNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -350,7 +318,9 @@ impl std::fmt::Display for CertificateNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CertificateNotFoundException")?;
         if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+            {
+                write!(f, ": {}", inner_6)?;
+            }
         }
         Ok(())
     }
@@ -360,7 +330,7 @@ impl std::error::Error for CertificateNotFoundException {}
 pub mod certificate_not_found_exception {
 
     /// A builder for [`CertificateNotFoundException`](crate::error::CertificateNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -392,22 +362,15 @@ impl CertificateNotFoundException {
 
 /// <p>The specified endpoint is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidEndPointException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidEndPointException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidEndPointException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidEndPointException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -415,7 +378,9 @@ impl std::fmt::Display for InvalidEndPointException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidEndPointException")?;
         if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
+            {
+                write!(f, ": {}", inner_7)?;
+            }
         }
         Ok(())
     }
@@ -425,7 +390,7 @@ impl std::error::Error for InvalidEndPointException {}
 pub mod invalid_end_point_exception {
 
     /// A builder for [`InvalidEndPointException`](crate::error::InvalidEndPointException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -457,22 +422,15 @@ impl InvalidEndPointException {
 
 /// <p>The specified load balancer attribute does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoadBalancerAttributeNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for LoadBalancerAttributeNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoadBalancerAttributeNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl LoadBalancerAttributeNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -480,7 +438,9 @@ impl std::fmt::Display for LoadBalancerAttributeNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LoadBalancerAttributeNotFoundException")?;
         if let Some(inner_8) = &self.message {
-            write!(f, ": {}", inner_8)?;
+            {
+                write!(f, ": {}", inner_8)?;
+            }
         }
         Ok(())
     }
@@ -490,7 +450,7 @@ impl std::error::Error for LoadBalancerAttributeNotFoundException {}
 pub mod load_balancer_attribute_not_found_exception {
 
     /// A builder for [`LoadBalancerAttributeNotFoundException`](crate::error::LoadBalancerAttributeNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -522,22 +482,15 @@ impl LoadBalancerAttributeNotFoundException {
 
 /// <p>A request made by Elastic Load Balancing to another service exceeds the maximum request rate permitted for your account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DependencyThrottleException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DependencyThrottleException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DependencyThrottleException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DependencyThrottleException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -545,7 +498,9 @@ impl std::fmt::Display for DependencyThrottleException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DependencyThrottleException")?;
         if let Some(inner_9) = &self.message {
-            write!(f, ": {}", inner_9)?;
+            {
+                write!(f, ": {}", inner_9)?;
+            }
         }
         Ok(())
     }
@@ -555,7 +510,7 @@ impl std::error::Error for DependencyThrottleException {}
 pub mod dependency_throttle_exception {
 
     /// A builder for [`DependencyThrottleException`](crate::error::DependencyThrottleException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -587,22 +542,15 @@ impl DependencyThrottleException {
 
 /// <p>One or more of the specified policy types do not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyTypeNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for PolicyTypeNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyTypeNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl PolicyTypeNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -610,7 +558,9 @@ impl std::fmt::Display for PolicyTypeNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PolicyTypeNotFoundException")?;
         if let Some(inner_10) = &self.message {
-            write!(f, ": {}", inner_10)?;
+            {
+                write!(f, ": {}", inner_10)?;
+            }
         }
         Ok(())
     }
@@ -620,7 +570,7 @@ impl std::error::Error for PolicyTypeNotFoundException {}
 pub mod policy_type_not_found_exception {
 
     /// A builder for [`PolicyTypeNotFoundException`](crate::error::PolicyTypeNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -652,22 +602,15 @@ impl PolicyTypeNotFoundException {
 
 /// <p>The quota for the number of policies for this load balancer has been reached.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyPoliciesException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TooManyPoliciesException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyPoliciesException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl TooManyPoliciesException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -675,7 +618,9 @@ impl std::fmt::Display for TooManyPoliciesException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyPoliciesException")?;
         if let Some(inner_11) = &self.message {
-            write!(f, ": {}", inner_11)?;
+            {
+                write!(f, ": {}", inner_11)?;
+            }
         }
         Ok(())
     }
@@ -685,7 +630,7 @@ impl std::error::Error for TooManyPoliciesException {}
 pub mod too_many_policies_exception {
 
     /// A builder for [`TooManyPoliciesException`](crate::error::TooManyPoliciesException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -717,22 +662,15 @@ impl TooManyPoliciesException {
 
 /// <p>A policy with the specified name already exists for this load balancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DuplicatePolicyNameException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DuplicatePolicyNameException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DuplicatePolicyNameException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DuplicatePolicyNameException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -740,7 +678,9 @@ impl std::fmt::Display for DuplicatePolicyNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DuplicatePolicyNameException")?;
         if let Some(inner_12) = &self.message {
-            write!(f, ": {}", inner_12)?;
+            {
+                write!(f, ": {}", inner_12)?;
+            }
         }
         Ok(())
     }
@@ -750,7 +690,7 @@ impl std::error::Error for DuplicatePolicyNameException {}
 pub mod duplicate_policy_name_exception {
 
     /// A builder for [`DuplicatePolicyNameException`](crate::error::DuplicatePolicyNameException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -782,22 +722,15 @@ impl DuplicatePolicyNameException {
 
 /// <p>A listener already exists for the specified load balancer name and port, but with a different instance port, protocol, or SSL certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DuplicateListenerException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DuplicateListenerException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DuplicateListenerException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DuplicateListenerException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -805,7 +738,9 @@ impl std::fmt::Display for DuplicateListenerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DuplicateListenerException")?;
         if let Some(inner_13) = &self.message {
-            write!(f, ": {}", inner_13)?;
+            {
+                write!(f, ": {}", inner_13)?;
+            }
         }
         Ok(())
     }
@@ -815,7 +750,7 @@ impl std::error::Error for DuplicateListenerException {}
 pub mod duplicate_listener_exception {
 
     /// A builder for [`DuplicateListenerException`](crate::error::DuplicateListenerException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -847,22 +782,15 @@ impl DuplicateListenerException {
 
 /// <p>The quota for the number of tags that can be assigned to a load balancer has been reached.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyTagsException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TooManyTagsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyTagsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl TooManyTagsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -870,7 +798,9 @@ impl std::fmt::Display for TooManyTagsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyTagsException")?;
         if let Some(inner_14) = &self.message {
-            write!(f, ": {}", inner_14)?;
+            {
+                write!(f, ": {}", inner_14)?;
+            }
         }
         Ok(())
     }
@@ -880,7 +810,7 @@ impl std::error::Error for TooManyTagsException {}
 pub mod too_many_tags_exception {
 
     /// A builder for [`TooManyTagsException`](crate::error::TooManyTagsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -912,22 +842,15 @@ impl TooManyTagsException {
 
 /// <p>The quota for the number of load balancers has been reached.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyAccessPointsException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TooManyAccessPointsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyAccessPointsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl TooManyAccessPointsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -935,7 +858,9 @@ impl std::fmt::Display for TooManyAccessPointsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyAccessPointsException")?;
         if let Some(inner_15) = &self.message {
-            write!(f, ": {}", inner_15)?;
+            {
+                write!(f, ": {}", inner_15)?;
+            }
         }
         Ok(())
     }
@@ -945,7 +870,7 @@ impl std::error::Error for TooManyAccessPointsException {}
 pub mod too_many_access_points_exception {
 
     /// A builder for [`TooManyAccessPointsException`](crate::error::TooManyAccessPointsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -977,22 +902,15 @@ impl TooManyAccessPointsException {
 
 /// <p>One or more of the specified subnets do not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubnetNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for SubnetNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubnetNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl SubnetNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1000,7 +918,9 @@ impl std::fmt::Display for SubnetNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubnetNotFoundException")?;
         if let Some(inner_16) = &self.message {
-            write!(f, ": {}", inner_16)?;
+            {
+                write!(f, ": {}", inner_16)?;
+            }
         }
         Ok(())
     }
@@ -1010,7 +930,7 @@ impl std::error::Error for SubnetNotFoundException {}
 pub mod subnet_not_found_exception {
 
     /// A builder for [`SubnetNotFoundException`](crate::error::SubnetNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1042,22 +962,15 @@ impl SubnetNotFoundException {
 
 /// <p>This operation is not allowed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OperationNotPermittedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for OperationNotPermittedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OperationNotPermittedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl OperationNotPermittedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1065,7 +978,9 @@ impl std::fmt::Display for OperationNotPermittedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OperationNotPermittedException")?;
         if let Some(inner_17) = &self.message {
-            write!(f, ": {}", inner_17)?;
+            {
+                write!(f, ": {}", inner_17)?;
+            }
         }
         Ok(())
     }
@@ -1075,7 +990,7 @@ impl std::error::Error for OperationNotPermittedException {}
 pub mod operation_not_permitted_exception {
 
     /// A builder for [`OperationNotPermittedException`](crate::error::OperationNotPermittedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1107,22 +1022,15 @@ impl OperationNotPermittedException {
 
 /// <p>The specified VPC has no associated Internet gateway.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidSubnetException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidSubnetException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSubnetException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidSubnetException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1130,7 +1038,9 @@ impl std::fmt::Display for InvalidSubnetException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSubnetException")?;
         if let Some(inner_18) = &self.message {
-            write!(f, ": {}", inner_18)?;
+            {
+                write!(f, ": {}", inner_18)?;
+            }
         }
         Ok(())
     }
@@ -1140,7 +1050,7 @@ impl std::error::Error for InvalidSubnetException {}
 pub mod invalid_subnet_exception {
 
     /// A builder for [`InvalidSubnetException`](crate::error::InvalidSubnetException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1172,22 +1082,15 @@ impl InvalidSubnetException {
 
 /// <p>One or more of the specified security groups do not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidSecurityGroupException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidSecurityGroupException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSecurityGroupException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidSecurityGroupException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1195,7 +1098,9 @@ impl std::fmt::Display for InvalidSecurityGroupException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSecurityGroupException")?;
         if let Some(inner_19) = &self.message {
-            write!(f, ": {}", inner_19)?;
+            {
+                write!(f, ": {}", inner_19)?;
+            }
         }
         Ok(())
     }
@@ -1205,7 +1110,7 @@ impl std::error::Error for InvalidSecurityGroupException {}
 pub mod invalid_security_group_exception {
 
     /// A builder for [`InvalidSecurityGroupException`](crate::error::InvalidSecurityGroupException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1237,22 +1142,15 @@ impl InvalidSecurityGroupException {
 
 /// <p>The specified value for the schema is not valid. You can only specify a scheme for load balancers in a VPC.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidSchemeException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidSchemeException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSchemeException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidSchemeException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1260,7 +1158,9 @@ impl std::fmt::Display for InvalidSchemeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSchemeException")?;
         if let Some(inner_20) = &self.message {
-            write!(f, ": {}", inner_20)?;
+            {
+                write!(f, ": {}", inner_20)?;
+            }
         }
         Ok(())
     }
@@ -1270,7 +1170,7 @@ impl std::error::Error for InvalidSchemeException {}
 pub mod invalid_scheme_exception {
 
     /// A builder for [`InvalidSchemeException`](crate::error::InvalidSchemeException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1302,22 +1202,15 @@ impl InvalidSchemeException {
 
 /// <p>A tag key was specified more than once.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DuplicateTagKeysException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DuplicateTagKeysException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DuplicateTagKeysException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DuplicateTagKeysException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1325,7 +1218,9 @@ impl std::fmt::Display for DuplicateTagKeysException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DuplicateTagKeysException")?;
         if let Some(inner_21) = &self.message {
-            write!(f, ": {}", inner_21)?;
+            {
+                write!(f, ": {}", inner_21)?;
+            }
         }
         Ok(())
     }
@@ -1335,7 +1230,7 @@ impl std::error::Error for DuplicateTagKeysException {}
 pub mod duplicate_tag_keys_exception {
 
     /// A builder for [`DuplicateTagKeysException`](crate::error::DuplicateTagKeysException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1367,22 +1262,15 @@ impl DuplicateTagKeysException {
 
 /// <p>The specified load balancer name already exists for this account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DuplicateAccessPointNameException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DuplicateAccessPointNameException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DuplicateAccessPointNameException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DuplicateAccessPointNameException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1390,7 +1278,9 @@ impl std::fmt::Display for DuplicateAccessPointNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DuplicateAccessPointNameException")?;
         if let Some(inner_22) = &self.message {
-            write!(f, ": {}", inner_22)?;
+            {
+                write!(f, ": {}", inner_22)?;
+            }
         }
         Ok(())
     }
@@ -1400,7 +1290,7 @@ impl std::error::Error for DuplicateAccessPointNameException {}
 pub mod duplicate_access_point_name_exception {
 
     /// A builder for [`DuplicateAccessPointNameException`](crate::error::DuplicateAccessPointNameException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1439,6 +1329,14 @@ pub struct AddTagsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for AddTagsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AddTagsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AddTags` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1449,8 +1347,15 @@ pub enum AddTagsErrorKind {
     DuplicateTagKeysException(crate::error::DuplicateTagKeysException),
     /// <p>The quota for the number of tags that can be assigned to a load balancer has been reached.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AddTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1479,7 +1384,7 @@ impl AddTagsError {
     /// Creates the `AddTagsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AddTagsErrorKind::Unhandled(err.into()),
+            kind: AddTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1488,7 +1393,7 @@ impl AddTagsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AddTagsErrorKind::Unhandled(err.into()),
+            kind: AddTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1534,7 +1439,7 @@ impl std::error::Error for AddTagsError {
             AddTagsErrorKind::AccessPointNotFoundException(_inner) => Some(_inner),
             AddTagsErrorKind::DuplicateTagKeysException(_inner) => Some(_inner),
             AddTagsErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            AddTagsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AddTagsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1548,6 +1453,16 @@ pub struct ApplySecurityGroupsToLoadBalancerError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ApplySecurityGroupsToLoadBalancerError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ApplySecurityGroupsToLoadBalancerErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ApplySecurityGroupsToLoadBalancer` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1558,8 +1473,15 @@ pub enum ApplySecurityGroupsToLoadBalancerErrorKind {
     InvalidConfigurationRequestException(crate::error::InvalidConfigurationRequestException),
     /// <p>One or more of the specified security groups do not exist.</p>
     InvalidSecurityGroupException(crate::error::InvalidSecurityGroupException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ApplySecurityGroupsToLoadBalancerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1597,7 +1519,9 @@ impl ApplySecurityGroupsToLoadBalancerError {
     /// Creates the `ApplySecurityGroupsToLoadBalancerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ApplySecurityGroupsToLoadBalancerErrorKind::Unhandled(err.into()),
+            kind: ApplySecurityGroupsToLoadBalancerErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1606,7 +1530,9 @@ impl ApplySecurityGroupsToLoadBalancerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ApplySecurityGroupsToLoadBalancerErrorKind::Unhandled(err.into()),
+            kind: ApplySecurityGroupsToLoadBalancerErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1664,7 +1590,7 @@ impl std::error::Error for ApplySecurityGroupsToLoadBalancerError {
             ApplySecurityGroupsToLoadBalancerErrorKind::InvalidSecurityGroupException(_inner) => {
                 Some(_inner)
             }
-            ApplySecurityGroupsToLoadBalancerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ApplySecurityGroupsToLoadBalancerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1678,6 +1604,16 @@ pub struct AttachLoadBalancerToSubnetsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for AttachLoadBalancerToSubnetsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AttachLoadBalancerToSubnetsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AttachLoadBalancerToSubnets` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1690,8 +1626,15 @@ pub enum AttachLoadBalancerToSubnetsErrorKind {
     InvalidSubnetException(crate::error::InvalidSubnetException),
     /// <p>One or more of the specified subnets do not exist.</p>
     SubnetNotFoundException(crate::error::SubnetNotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AttachLoadBalancerToSubnetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1725,7 +1668,9 @@ impl AttachLoadBalancerToSubnetsError {
     /// Creates the `AttachLoadBalancerToSubnetsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AttachLoadBalancerToSubnetsErrorKind::Unhandled(err.into()),
+            kind: AttachLoadBalancerToSubnetsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1734,7 +1679,9 @@ impl AttachLoadBalancerToSubnetsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AttachLoadBalancerToSubnetsErrorKind::Unhandled(err.into()),
+            kind: AttachLoadBalancerToSubnetsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1798,7 +1745,7 @@ impl std::error::Error for AttachLoadBalancerToSubnetsError {
             }
             AttachLoadBalancerToSubnetsErrorKind::InvalidSubnetException(_inner) => Some(_inner),
             AttachLoadBalancerToSubnetsErrorKind::SubnetNotFoundException(_inner) => Some(_inner),
-            AttachLoadBalancerToSubnetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AttachLoadBalancerToSubnetsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1812,14 +1759,29 @@ pub struct ConfigureHealthCheckError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ConfigureHealthCheckError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ConfigureHealthCheckErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ConfigureHealthCheck` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ConfigureHealthCheckErrorKind {
     /// <p>The specified load balancer does not exist.</p>
     AccessPointNotFoundException(crate::error::AccessPointNotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ConfigureHealthCheckError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1846,7 +1808,9 @@ impl ConfigureHealthCheckError {
     /// Creates the `ConfigureHealthCheckError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ConfigureHealthCheckErrorKind::Unhandled(err.into()),
+            kind: ConfigureHealthCheckErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1855,7 +1819,9 @@ impl ConfigureHealthCheckError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ConfigureHealthCheckErrorKind::Unhandled(err.into()),
+            kind: ConfigureHealthCheckErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1891,7 +1857,7 @@ impl std::error::Error for ConfigureHealthCheckError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ConfigureHealthCheckErrorKind::AccessPointNotFoundException(_inner) => Some(_inner),
-            ConfigureHealthCheckErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ConfigureHealthCheckErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1905,6 +1871,16 @@ pub struct CreateAppCookieStickinessPolicyError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateAppCookieStickinessPolicyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateAppCookieStickinessPolicyErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateAppCookieStickinessPolicy` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1917,8 +1893,15 @@ pub enum CreateAppCookieStickinessPolicyErrorKind {
     InvalidConfigurationRequestException(crate::error::InvalidConfigurationRequestException),
     /// <p>The quota for the number of policies for this load balancer has been reached.</p>
     TooManyPoliciesException(crate::error::TooManyPoliciesException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateAppCookieStickinessPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1959,7 +1942,9 @@ impl CreateAppCookieStickinessPolicyError {
     /// Creates the `CreateAppCookieStickinessPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateAppCookieStickinessPolicyErrorKind::Unhandled(err.into()),
+            kind: CreateAppCookieStickinessPolicyErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1968,7 +1953,9 @@ impl CreateAppCookieStickinessPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateAppCookieStickinessPolicyErrorKind::Unhandled(err.into()),
+            kind: CreateAppCookieStickinessPolicyErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2036,7 +2023,7 @@ impl std::error::Error for CreateAppCookieStickinessPolicyError {
             CreateAppCookieStickinessPolicyErrorKind::TooManyPoliciesException(_inner) => {
                 Some(_inner)
             }
-            CreateAppCookieStickinessPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateAppCookieStickinessPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2050,6 +2037,16 @@ pub struct CreateLBCookieStickinessPolicyError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateLBCookieStickinessPolicyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateLBCookieStickinessPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateLBCookieStickinessPolicy` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2062,8 +2059,15 @@ pub enum CreateLBCookieStickinessPolicyErrorKind {
     InvalidConfigurationRequestException(crate::error::InvalidConfigurationRequestException),
     /// <p>The quota for the number of policies for this load balancer has been reached.</p>
     TooManyPoliciesException(crate::error::TooManyPoliciesException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLBCookieStickinessPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2104,7 +2108,9 @@ impl CreateLBCookieStickinessPolicyError {
     /// Creates the `CreateLBCookieStickinessPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateLBCookieStickinessPolicyErrorKind::Unhandled(err.into()),
+            kind: CreateLBCookieStickinessPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2113,7 +2119,9 @@ impl CreateLBCookieStickinessPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateLBCookieStickinessPolicyErrorKind::Unhandled(err.into()),
+            kind: CreateLBCookieStickinessPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2181,7 +2189,7 @@ impl std::error::Error for CreateLBCookieStickinessPolicyError {
             CreateLBCookieStickinessPolicyErrorKind::TooManyPoliciesException(_inner) => {
                 Some(_inner)
             }
-            CreateLBCookieStickinessPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateLBCookieStickinessPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2194,6 +2202,14 @@ pub struct CreateLoadBalancerError {
     pub kind: CreateLoadBalancerErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateLoadBalancerError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateLoadBalancerErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateLoadBalancer` operation.
 #[non_exhaustive]
@@ -2223,8 +2239,15 @@ pub enum CreateLoadBalancerErrorKind {
     TooManyTagsException(crate::error::TooManyTagsException),
     /// <p>The specified protocol or signature version is not supported.</p>
     UnsupportedProtocolException(crate::error::UnsupportedProtocolException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLoadBalancerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2264,7 +2287,7 @@ impl CreateLoadBalancerError {
     /// Creates the `CreateLoadBalancerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateLoadBalancerErrorKind::Unhandled(err.into()),
+            kind: CreateLoadBalancerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2273,7 +2296,7 @@ impl CreateLoadBalancerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateLoadBalancerErrorKind::Unhandled(err.into()),
+            kind: CreateLoadBalancerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2399,7 +2422,7 @@ impl std::error::Error for CreateLoadBalancerError {
             CreateLoadBalancerErrorKind::TooManyAccessPointsException(_inner) => Some(_inner),
             CreateLoadBalancerErrorKind::TooManyTagsException(_inner) => Some(_inner),
             CreateLoadBalancerErrorKind::UnsupportedProtocolException(_inner) => Some(_inner),
-            CreateLoadBalancerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateLoadBalancerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2412,6 +2435,16 @@ pub struct CreateLoadBalancerListenersError {
     pub kind: CreateLoadBalancerListenersErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateLoadBalancerListenersError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateLoadBalancerListenersErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateLoadBalancerListeners` operation.
 #[non_exhaustive]
@@ -2427,8 +2460,15 @@ pub enum CreateLoadBalancerListenersErrorKind {
     InvalidConfigurationRequestException(crate::error::InvalidConfigurationRequestException),
     /// <p>The specified protocol or signature version is not supported.</p>
     UnsupportedProtocolException(crate::error::UnsupportedProtocolException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLoadBalancerListenersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2469,7 +2509,9 @@ impl CreateLoadBalancerListenersError {
     /// Creates the `CreateLoadBalancerListenersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateLoadBalancerListenersErrorKind::Unhandled(err.into()),
+            kind: CreateLoadBalancerListenersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2478,7 +2520,9 @@ impl CreateLoadBalancerListenersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateLoadBalancerListenersErrorKind::Unhandled(err.into()),
+            kind: CreateLoadBalancerListenersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2556,7 +2600,7 @@ impl std::error::Error for CreateLoadBalancerListenersError {
             CreateLoadBalancerListenersErrorKind::UnsupportedProtocolException(_inner) => {
                 Some(_inner)
             }
-            CreateLoadBalancerListenersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateLoadBalancerListenersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2569,6 +2613,16 @@ pub struct CreateLoadBalancerPolicyError {
     pub kind: CreateLoadBalancerPolicyErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateLoadBalancerPolicyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateLoadBalancerPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateLoadBalancerPolicy` operation.
 #[non_exhaustive]
@@ -2584,8 +2638,15 @@ pub enum CreateLoadBalancerPolicyErrorKind {
     PolicyTypeNotFoundException(crate::error::PolicyTypeNotFoundException),
     /// <p>The quota for the number of policies for this load balancer has been reached.</p>
     TooManyPoliciesException(crate::error::TooManyPoliciesException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLoadBalancerPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2622,7 +2683,9 @@ impl CreateLoadBalancerPolicyError {
     /// Creates the `CreateLoadBalancerPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateLoadBalancerPolicyErrorKind::Unhandled(err.into()),
+            kind: CreateLoadBalancerPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2631,7 +2694,9 @@ impl CreateLoadBalancerPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateLoadBalancerPolicyErrorKind::Unhandled(err.into()),
+            kind: CreateLoadBalancerPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2701,7 +2766,7 @@ impl std::error::Error for CreateLoadBalancerPolicyError {
             }
             CreateLoadBalancerPolicyErrorKind::PolicyTypeNotFoundException(_inner) => Some(_inner),
             CreateLoadBalancerPolicyErrorKind::TooManyPoliciesException(_inner) => Some(_inner),
-            CreateLoadBalancerPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateLoadBalancerPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2715,12 +2780,27 @@ pub struct DeleteLoadBalancerError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteLoadBalancerError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteLoadBalancerErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteLoadBalancer` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteLoadBalancerErrorKind {
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteLoadBalancerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2746,7 +2826,7 @@ impl DeleteLoadBalancerError {
     /// Creates the `DeleteLoadBalancerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteLoadBalancerErrorKind::Unhandled(err.into()),
+            kind: DeleteLoadBalancerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2755,7 +2835,7 @@ impl DeleteLoadBalancerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteLoadBalancerErrorKind::Unhandled(err.into()),
+            kind: DeleteLoadBalancerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2783,7 +2863,7 @@ impl DeleteLoadBalancerError {
 impl std::error::Error for DeleteLoadBalancerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteLoadBalancerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteLoadBalancerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2797,14 +2877,31 @@ pub struct DeleteLoadBalancerListenersError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteLoadBalancerListenersError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteLoadBalancerListenersErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteLoadBalancerListeners` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteLoadBalancerListenersErrorKind {
     /// <p>The specified load balancer does not exist.</p>
     AccessPointNotFoundException(crate::error::AccessPointNotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteLoadBalancerListenersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2833,7 +2930,9 @@ impl DeleteLoadBalancerListenersError {
     /// Creates the `DeleteLoadBalancerListenersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteLoadBalancerListenersErrorKind::Unhandled(err.into()),
+            kind: DeleteLoadBalancerListenersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2842,7 +2941,9 @@ impl DeleteLoadBalancerListenersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteLoadBalancerListenersErrorKind::Unhandled(err.into()),
+            kind: DeleteLoadBalancerListenersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2880,7 +2981,7 @@ impl std::error::Error for DeleteLoadBalancerListenersError {
             DeleteLoadBalancerListenersErrorKind::AccessPointNotFoundException(_inner) => {
                 Some(_inner)
             }
-            DeleteLoadBalancerListenersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteLoadBalancerListenersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2894,6 +2995,16 @@ pub struct DeleteLoadBalancerPolicyError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteLoadBalancerPolicyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteLoadBalancerPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteLoadBalancerPolicy` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2902,8 +3013,15 @@ pub enum DeleteLoadBalancerPolicyErrorKind {
     AccessPointNotFoundException(crate::error::AccessPointNotFoundException),
     /// <p>The requested configuration change is not valid.</p>
     InvalidConfigurationRequestException(crate::error::InvalidConfigurationRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteLoadBalancerPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2935,7 +3053,9 @@ impl DeleteLoadBalancerPolicyError {
     /// Creates the `DeleteLoadBalancerPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteLoadBalancerPolicyErrorKind::Unhandled(err.into()),
+            kind: DeleteLoadBalancerPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2944,7 +3064,9 @@ impl DeleteLoadBalancerPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteLoadBalancerPolicyErrorKind::Unhandled(err.into()),
+            kind: DeleteLoadBalancerPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2990,7 +3112,7 @@ impl std::error::Error for DeleteLoadBalancerPolicyError {
             DeleteLoadBalancerPolicyErrorKind::InvalidConfigurationRequestException(_inner) => {
                 Some(_inner)
             }
-            DeleteLoadBalancerPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteLoadBalancerPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3004,6 +3126,16 @@ pub struct DeregisterInstancesFromLoadBalancerError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeregisterInstancesFromLoadBalancerError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeregisterInstancesFromLoadBalancerErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeregisterInstancesFromLoadBalancer` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3012,8 +3144,15 @@ pub enum DeregisterInstancesFromLoadBalancerErrorKind {
     AccessPointNotFoundException(crate::error::AccessPointNotFoundException),
     /// <p>The specified endpoint is not valid.</p>
     InvalidEndPointException(crate::error::InvalidEndPointException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeregisterInstancesFromLoadBalancerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3048,7 +3187,9 @@ impl DeregisterInstancesFromLoadBalancerError {
     /// Creates the `DeregisterInstancesFromLoadBalancerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeregisterInstancesFromLoadBalancerErrorKind::Unhandled(err.into()),
+            kind: DeregisterInstancesFromLoadBalancerErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3057,7 +3198,9 @@ impl DeregisterInstancesFromLoadBalancerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeregisterInstancesFromLoadBalancerErrorKind::Unhandled(err.into()),
+            kind: DeregisterInstancesFromLoadBalancerErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3105,9 +3248,7 @@ impl std::error::Error for DeregisterInstancesFromLoadBalancerError {
             DeregisterInstancesFromLoadBalancerErrorKind::InvalidEndPointException(_inner) => {
                 Some(_inner)
             }
-            DeregisterInstancesFromLoadBalancerErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DeregisterInstancesFromLoadBalancerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3121,12 +3262,27 @@ pub struct DescribeAccountLimitsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeAccountLimitsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeAccountLimitsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeAccountLimits` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAccountLimitsErrorKind {
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAccountLimitsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3152,7 +3308,9 @@ impl DescribeAccountLimitsError {
     /// Creates the `DescribeAccountLimitsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAccountLimitsErrorKind::Unhandled(err.into()),
+            kind: DescribeAccountLimitsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3161,7 +3319,9 @@ impl DescribeAccountLimitsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAccountLimitsErrorKind::Unhandled(err.into()),
+            kind: DescribeAccountLimitsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3189,7 +3349,7 @@ impl DescribeAccountLimitsError {
 impl std::error::Error for DescribeAccountLimitsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeAccountLimitsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAccountLimitsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3203,6 +3363,14 @@ pub struct DescribeInstanceHealthError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeInstanceHealthError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeInstanceHealthErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeInstanceHealth` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3211,8 +3379,15 @@ pub enum DescribeInstanceHealthErrorKind {
     AccessPointNotFoundException(crate::error::AccessPointNotFoundException),
     /// <p>The specified endpoint is not valid.</p>
     InvalidEndPointException(crate::error::InvalidEndPointException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeInstanceHealthError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3240,7 +3415,9 @@ impl DescribeInstanceHealthError {
     /// Creates the `DescribeInstanceHealthError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeInstanceHealthErrorKind::Unhandled(err.into()),
+            kind: DescribeInstanceHealthErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3249,7 +3426,9 @@ impl DescribeInstanceHealthError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeInstanceHealthErrorKind::Unhandled(err.into()),
+            kind: DescribeInstanceHealthErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3293,7 +3472,7 @@ impl std::error::Error for DescribeInstanceHealthError {
         match &self.kind {
             DescribeInstanceHealthErrorKind::AccessPointNotFoundException(_inner) => Some(_inner),
             DescribeInstanceHealthErrorKind::InvalidEndPointException(_inner) => Some(_inner),
-            DescribeInstanceHealthErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeInstanceHealthErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3307,6 +3486,16 @@ pub struct DescribeLoadBalancerAttributesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeLoadBalancerAttributesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeLoadBalancerAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeLoadBalancerAttributes` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3315,8 +3504,15 @@ pub enum DescribeLoadBalancerAttributesErrorKind {
     AccessPointNotFoundException(crate::error::AccessPointNotFoundException),
     /// <p>The specified load balancer attribute does not exist.</p>
     LoadBalancerAttributeNotFoundException(crate::error::LoadBalancerAttributeNotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeLoadBalancerAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3351,7 +3547,9 @@ impl DescribeLoadBalancerAttributesError {
     /// Creates the `DescribeLoadBalancerAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeLoadBalancerAttributesErrorKind::Unhandled(err.into()),
+            kind: DescribeLoadBalancerAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3360,7 +3558,9 @@ impl DescribeLoadBalancerAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeLoadBalancerAttributesErrorKind::Unhandled(err.into()),
+            kind: DescribeLoadBalancerAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3408,7 +3608,7 @@ impl std::error::Error for DescribeLoadBalancerAttributesError {
             DescribeLoadBalancerAttributesErrorKind::LoadBalancerAttributeNotFoundException(
                 _inner,
             ) => Some(_inner),
-            DescribeLoadBalancerAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeLoadBalancerAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3422,6 +3622,16 @@ pub struct DescribeLoadBalancerPoliciesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeLoadBalancerPoliciesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeLoadBalancerPoliciesErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeLoadBalancerPolicies` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3430,8 +3640,15 @@ pub enum DescribeLoadBalancerPoliciesErrorKind {
     AccessPointNotFoundException(crate::error::AccessPointNotFoundException),
     /// <p>One or more of the specified policies do not exist.</p>
     PolicyNotFoundException(crate::error::PolicyNotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeLoadBalancerPoliciesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3461,7 +3678,9 @@ impl DescribeLoadBalancerPoliciesError {
     /// Creates the `DescribeLoadBalancerPoliciesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeLoadBalancerPoliciesErrorKind::Unhandled(err.into()),
+            kind: DescribeLoadBalancerPoliciesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3470,7 +3689,9 @@ impl DescribeLoadBalancerPoliciesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeLoadBalancerPoliciesErrorKind::Unhandled(err.into()),
+            kind: DescribeLoadBalancerPoliciesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3516,7 +3737,7 @@ impl std::error::Error for DescribeLoadBalancerPoliciesError {
                 Some(_inner)
             }
             DescribeLoadBalancerPoliciesErrorKind::PolicyNotFoundException(_inner) => Some(_inner),
-            DescribeLoadBalancerPoliciesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeLoadBalancerPoliciesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3530,14 +3751,31 @@ pub struct DescribeLoadBalancerPolicyTypesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeLoadBalancerPolicyTypesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeLoadBalancerPolicyTypesErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeLoadBalancerPolicyTypes` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeLoadBalancerPolicyTypesErrorKind {
     /// <p>One or more of the specified policy types do not exist.</p>
     PolicyTypeNotFoundException(crate::error::PolicyTypeNotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeLoadBalancerPolicyTypesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3569,7 +3807,9 @@ impl DescribeLoadBalancerPolicyTypesError {
     /// Creates the `DescribeLoadBalancerPolicyTypesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeLoadBalancerPolicyTypesErrorKind::Unhandled(err.into()),
+            kind: DescribeLoadBalancerPolicyTypesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3578,7 +3818,9 @@ impl DescribeLoadBalancerPolicyTypesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeLoadBalancerPolicyTypesErrorKind::Unhandled(err.into()),
+            kind: DescribeLoadBalancerPolicyTypesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3616,7 +3858,7 @@ impl std::error::Error for DescribeLoadBalancerPolicyTypesError {
             DescribeLoadBalancerPolicyTypesErrorKind::PolicyTypeNotFoundException(_inner) => {
                 Some(_inner)
             }
-            DescribeLoadBalancerPolicyTypesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeLoadBalancerPolicyTypesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3630,6 +3872,14 @@ pub struct DescribeLoadBalancersError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeLoadBalancersError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeLoadBalancersErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeLoadBalancers` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3638,8 +3888,15 @@ pub enum DescribeLoadBalancersErrorKind {
     AccessPointNotFoundException(crate::error::AccessPointNotFoundException),
     /// <p>A request made by Elastic Load Balancing to another service exceeds the maximum request rate permitted for your account.</p>
     DependencyThrottleException(crate::error::DependencyThrottleException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeLoadBalancersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3667,7 +3924,9 @@ impl DescribeLoadBalancersError {
     /// Creates the `DescribeLoadBalancersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeLoadBalancersErrorKind::Unhandled(err.into()),
+            kind: DescribeLoadBalancersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3676,7 +3935,9 @@ impl DescribeLoadBalancersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeLoadBalancersErrorKind::Unhandled(err.into()),
+            kind: DescribeLoadBalancersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3720,7 +3981,7 @@ impl std::error::Error for DescribeLoadBalancersError {
         match &self.kind {
             DescribeLoadBalancersErrorKind::AccessPointNotFoundException(_inner) => Some(_inner),
             DescribeLoadBalancersErrorKind::DependencyThrottleException(_inner) => Some(_inner),
-            DescribeLoadBalancersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeLoadBalancersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3734,14 +3995,29 @@ pub struct DescribeTagsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeTagsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeTagsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeTags` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTagsErrorKind {
     /// <p>The specified load balancer does not exist.</p>
     AccessPointNotFoundException(crate::error::AccessPointNotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3768,7 +4044,7 @@ impl DescribeTagsError {
     /// Creates the `DescribeTagsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeTagsErrorKind::Unhandled(err.into()),
+            kind: DescribeTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3777,7 +4053,7 @@ impl DescribeTagsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeTagsErrorKind::Unhandled(err.into()),
+            kind: DescribeTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3813,7 +4089,7 @@ impl std::error::Error for DescribeTagsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeTagsErrorKind::AccessPointNotFoundException(_inner) => Some(_inner),
-            DescribeTagsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeTagsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3827,6 +4103,16 @@ pub struct DetachLoadBalancerFromSubnetsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DetachLoadBalancerFromSubnetsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DetachLoadBalancerFromSubnetsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DetachLoadBalancerFromSubnets` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3835,8 +4121,15 @@ pub enum DetachLoadBalancerFromSubnetsErrorKind {
     AccessPointNotFoundException(crate::error::AccessPointNotFoundException),
     /// <p>The requested configuration change is not valid.</p>
     InvalidConfigurationRequestException(crate::error::InvalidConfigurationRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DetachLoadBalancerFromSubnetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3871,7 +4164,9 @@ impl DetachLoadBalancerFromSubnetsError {
     /// Creates the `DetachLoadBalancerFromSubnetsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DetachLoadBalancerFromSubnetsErrorKind::Unhandled(err.into()),
+            kind: DetachLoadBalancerFromSubnetsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3880,7 +4175,9 @@ impl DetachLoadBalancerFromSubnetsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DetachLoadBalancerFromSubnetsErrorKind::Unhandled(err.into()),
+            kind: DetachLoadBalancerFromSubnetsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3928,7 +4225,7 @@ impl std::error::Error for DetachLoadBalancerFromSubnetsError {
             DetachLoadBalancerFromSubnetsErrorKind::InvalidConfigurationRequestException(
                 _inner,
             ) => Some(_inner),
-            DetachLoadBalancerFromSubnetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DetachLoadBalancerFromSubnetsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3942,6 +4239,18 @@ pub struct DisableAvailabilityZonesForLoadBalancerError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError
+    for DisableAvailabilityZonesForLoadBalancerError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DisableAvailabilityZonesForLoadBalancerErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DisableAvailabilityZonesForLoadBalancer` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3950,8 +4259,15 @@ pub enum DisableAvailabilityZonesForLoadBalancerErrorKind {
     AccessPointNotFoundException(crate::error::AccessPointNotFoundException),
     /// <p>The requested configuration change is not valid.</p>
     InvalidConfigurationRequestException(crate::error::InvalidConfigurationRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisableAvailabilityZonesForLoadBalancerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3988,7 +4304,9 @@ impl DisableAvailabilityZonesForLoadBalancerError {
     /// Creates the `DisableAvailabilityZonesForLoadBalancerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisableAvailabilityZonesForLoadBalancerErrorKind::Unhandled(err.into()),
+            kind: DisableAvailabilityZonesForLoadBalancerErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3997,7 +4315,9 @@ impl DisableAvailabilityZonesForLoadBalancerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisableAvailabilityZonesForLoadBalancerErrorKind::Unhandled(err.into()),
+            kind: DisableAvailabilityZonesForLoadBalancerErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -4048,7 +4368,7 @@ impl std::error::Error for DisableAvailabilityZonesForLoadBalancerError {
             Some(_inner)
             ,
             DisableAvailabilityZonesForLoadBalancerErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -4063,14 +4383,31 @@ pub struct EnableAvailabilityZonesForLoadBalancerError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for EnableAvailabilityZonesForLoadBalancerError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: EnableAvailabilityZonesForLoadBalancerErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `EnableAvailabilityZonesForLoadBalancer` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EnableAvailabilityZonesForLoadBalancerErrorKind {
     /// <p>The specified load balancer does not exist.</p>
     AccessPointNotFoundException(crate::error::AccessPointNotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for EnableAvailabilityZonesForLoadBalancerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4102,7 +4439,9 @@ impl EnableAvailabilityZonesForLoadBalancerError {
     /// Creates the `EnableAvailabilityZonesForLoadBalancerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: EnableAvailabilityZonesForLoadBalancerErrorKind::Unhandled(err.into()),
+            kind: EnableAvailabilityZonesForLoadBalancerErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -4111,7 +4450,9 @@ impl EnableAvailabilityZonesForLoadBalancerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: EnableAvailabilityZonesForLoadBalancerErrorKind::Unhandled(err.into()),
+            kind: EnableAvailabilityZonesForLoadBalancerErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -4149,9 +4490,7 @@ impl std::error::Error for EnableAvailabilityZonesForLoadBalancerError {
             EnableAvailabilityZonesForLoadBalancerErrorKind::AccessPointNotFoundException(
                 _inner,
             ) => Some(_inner),
-            EnableAvailabilityZonesForLoadBalancerErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            EnableAvailabilityZonesForLoadBalancerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4165,6 +4504,16 @@ pub struct ModifyLoadBalancerAttributesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ModifyLoadBalancerAttributesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ModifyLoadBalancerAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ModifyLoadBalancerAttributes` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4175,8 +4524,15 @@ pub enum ModifyLoadBalancerAttributesErrorKind {
     InvalidConfigurationRequestException(crate::error::InvalidConfigurationRequestException),
     /// <p>The specified load balancer attribute does not exist.</p>
     LoadBalancerAttributeNotFoundException(crate::error::LoadBalancerAttributeNotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ModifyLoadBalancerAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4211,7 +4567,9 @@ impl ModifyLoadBalancerAttributesError {
     /// Creates the `ModifyLoadBalancerAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ModifyLoadBalancerAttributesErrorKind::Unhandled(err.into()),
+            kind: ModifyLoadBalancerAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4220,7 +4578,9 @@ impl ModifyLoadBalancerAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ModifyLoadBalancerAttributesErrorKind::Unhandled(err.into()),
+            kind: ModifyLoadBalancerAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4278,7 +4638,7 @@ impl std::error::Error for ModifyLoadBalancerAttributesError {
             ModifyLoadBalancerAttributesErrorKind::LoadBalancerAttributeNotFoundException(
                 _inner,
             ) => Some(_inner),
-            ModifyLoadBalancerAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ModifyLoadBalancerAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4292,6 +4652,16 @@ pub struct RegisterInstancesWithLoadBalancerError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for RegisterInstancesWithLoadBalancerError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RegisterInstancesWithLoadBalancerErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `RegisterInstancesWithLoadBalancer` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4300,8 +4670,15 @@ pub enum RegisterInstancesWithLoadBalancerErrorKind {
     AccessPointNotFoundException(crate::error::AccessPointNotFoundException),
     /// <p>The specified endpoint is not valid.</p>
     InvalidEndPointException(crate::error::InvalidEndPointException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RegisterInstancesWithLoadBalancerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4336,7 +4713,9 @@ impl RegisterInstancesWithLoadBalancerError {
     /// Creates the `RegisterInstancesWithLoadBalancerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RegisterInstancesWithLoadBalancerErrorKind::Unhandled(err.into()),
+            kind: RegisterInstancesWithLoadBalancerErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -4345,7 +4724,9 @@ impl RegisterInstancesWithLoadBalancerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RegisterInstancesWithLoadBalancerErrorKind::Unhandled(err.into()),
+            kind: RegisterInstancesWithLoadBalancerErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -4393,7 +4774,7 @@ impl std::error::Error for RegisterInstancesWithLoadBalancerError {
             RegisterInstancesWithLoadBalancerErrorKind::InvalidEndPointException(_inner) => {
                 Some(_inner)
             }
-            RegisterInstancesWithLoadBalancerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RegisterInstancesWithLoadBalancerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4407,14 +4788,29 @@ pub struct RemoveTagsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for RemoveTagsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RemoveTagsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `RemoveTags` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemoveTagsErrorKind {
     /// <p>The specified load balancer does not exist.</p>
     AccessPointNotFoundException(crate::error::AccessPointNotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RemoveTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4441,7 +4837,7 @@ impl RemoveTagsError {
     /// Creates the `RemoveTagsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RemoveTagsErrorKind::Unhandled(err.into()),
+            kind: RemoveTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4450,7 +4846,7 @@ impl RemoveTagsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RemoveTagsErrorKind::Unhandled(err.into()),
+            kind: RemoveTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4486,7 +4882,7 @@ impl std::error::Error for RemoveTagsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             RemoveTagsErrorKind::AccessPointNotFoundException(_inner) => Some(_inner),
-            RemoveTagsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RemoveTagsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4499,6 +4895,16 @@ pub struct SetLoadBalancerListenerSSLCertificateError {
     pub kind: SetLoadBalancerListenerSSLCertificateErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for SetLoadBalancerListenerSSLCertificateError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: SetLoadBalancerListenerSSLCertificateErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `SetLoadBalancerListenerSSLCertificate` operation.
 #[non_exhaustive]
@@ -4514,8 +4920,15 @@ pub enum SetLoadBalancerListenerSSLCertificateErrorKind {
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
     /// <p>The specified protocol or signature version is not supported.</p>
     UnsupportedProtocolException(crate::error::UnsupportedProtocolException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SetLoadBalancerListenerSSLCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4561,7 +4974,9 @@ impl SetLoadBalancerListenerSSLCertificateError {
     /// Creates the `SetLoadBalancerListenerSSLCertificateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SetLoadBalancerListenerSSLCertificateErrorKind::Unhandled(err.into()),
+            kind: SetLoadBalancerListenerSSLCertificateErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -4570,7 +4985,9 @@ impl SetLoadBalancerListenerSSLCertificateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SetLoadBalancerListenerSSLCertificateErrorKind::Unhandled(err.into()),
+            kind: SetLoadBalancerListenerSSLCertificateErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -4649,7 +5066,7 @@ impl std::error::Error for SetLoadBalancerListenerSSLCertificateError {
             Some(_inner)
             ,
             SetLoadBalancerListenerSSLCertificateErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -4664,6 +5081,18 @@ pub struct SetLoadBalancerPoliciesForBackendServerError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError
+    for SetLoadBalancerPoliciesForBackendServerError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: SetLoadBalancerPoliciesForBackendServerErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `SetLoadBalancerPoliciesForBackendServer` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4674,8 +5103,15 @@ pub enum SetLoadBalancerPoliciesForBackendServerErrorKind {
     InvalidConfigurationRequestException(crate::error::InvalidConfigurationRequestException),
     /// <p>One or more of the specified policies do not exist.</p>
     PolicyNotFoundException(crate::error::PolicyNotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SetLoadBalancerPoliciesForBackendServerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4715,7 +5151,9 @@ impl SetLoadBalancerPoliciesForBackendServerError {
     /// Creates the `SetLoadBalancerPoliciesForBackendServerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SetLoadBalancerPoliciesForBackendServerErrorKind::Unhandled(err.into()),
+            kind: SetLoadBalancerPoliciesForBackendServerErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -4724,7 +5162,9 @@ impl SetLoadBalancerPoliciesForBackendServerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SetLoadBalancerPoliciesForBackendServerErrorKind::Unhandled(err.into()),
+            kind: SetLoadBalancerPoliciesForBackendServerErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -4785,7 +5225,7 @@ impl std::error::Error for SetLoadBalancerPoliciesForBackendServerError {
             Some(_inner)
             ,
             SetLoadBalancerPoliciesForBackendServerErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -4800,6 +5240,16 @@ pub struct SetLoadBalancerPoliciesOfListenerError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for SetLoadBalancerPoliciesOfListenerError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: SetLoadBalancerPoliciesOfListenerErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `SetLoadBalancerPoliciesOfListener` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4812,8 +5262,15 @@ pub enum SetLoadBalancerPoliciesOfListenerErrorKind {
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
     /// <p>One or more of the specified policies do not exist.</p>
     PolicyNotFoundException(crate::error::PolicyNotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SetLoadBalancerPoliciesOfListenerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4854,7 +5311,9 @@ impl SetLoadBalancerPoliciesOfListenerError {
     /// Creates the `SetLoadBalancerPoliciesOfListenerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SetLoadBalancerPoliciesOfListenerErrorKind::Unhandled(err.into()),
+            kind: SetLoadBalancerPoliciesOfListenerErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -4863,7 +5322,9 @@ impl SetLoadBalancerPoliciesOfListenerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SetLoadBalancerPoliciesOfListenerErrorKind::Unhandled(err.into()),
+            kind: SetLoadBalancerPoliciesOfListenerErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -4931,7 +5392,35 @@ impl std::error::Error for SetLoadBalancerPoliciesOfListenerError {
             SetLoadBalancerPoliciesOfListenerErrorKind::PolicyNotFoundException(_inner) => {
                 Some(_inner)
             }
-            SetLoadBalancerPoliciesOfListenerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SetLoadBalancerPoliciesOfListenerErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+///
+/// When logging an error from the SDK, it is recommended that you either wrap the error in
+/// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+/// error reporter library that visits the error's cause/source chain, or call
+/// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

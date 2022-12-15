@@ -26,7 +26,7 @@ pub fn parse_clone_receipt_rule_set_error(
                     output = crate::xml_deser::deser_structure_crate_error_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CloneReceiptRuleSetError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -43,7 +43,7 @@ pub fn parse_clone_receipt_rule_set_error(
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CloneReceiptRuleSetError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -61,7 +61,7 @@ pub fn parse_clone_receipt_rule_set_error(
                     output = crate::xml_deser::deser_structure_crate_error_rule_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CloneReceiptRuleSetError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -115,7 +115,7 @@ pub fn parse_create_configuration_set_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -129,7 +129,7 @@ pub fn parse_create_configuration_set_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -143,7 +143,7 @@ pub fn parse_create_configuration_set_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -196,7 +196,7 @@ pub fn parse_create_configuration_set_event_destination_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -210,7 +210,7 @@ pub fn parse_create_configuration_set_event_destination_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -224,7 +224,7 @@ pub fn parse_create_configuration_set_event_destination_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -238,7 +238,7 @@ pub fn parse_create_configuration_set_event_destination_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -252,7 +252,7 @@ pub fn parse_create_configuration_set_event_destination_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -266,7 +266,7 @@ pub fn parse_create_configuration_set_event_destination_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -320,7 +320,7 @@ pub fn parse_create_configuration_set_tracking_options_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -334,7 +334,7 @@ pub fn parse_create_configuration_set_tracking_options_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -348,7 +348,7 @@ pub fn parse_create_configuration_set_tracking_options_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -402,7 +402,7 @@ pub fn parse_create_custom_verification_email_template_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -416,7 +416,7 @@ pub fn parse_create_custom_verification_email_template_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -430,7 +430,7 @@ pub fn parse_create_custom_verification_email_template_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -444,7 +444,7 @@ pub fn parse_create_custom_verification_email_template_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -496,7 +496,7 @@ pub fn parse_create_receipt_filter_error(
                     output = crate::xml_deser::deser_structure_crate_error_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReceiptFilterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -513,7 +513,7 @@ pub fn parse_create_receipt_filter_error(
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReceiptFilterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -563,7 +563,7 @@ pub fn parse_create_receipt_rule_error(
                     output = crate::xml_deser::deser_structure_crate_error_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReceiptRuleError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -581,7 +581,7 @@ pub fn parse_create_receipt_rule_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_lambda_function_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReceiptRuleError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -599,7 +599,7 @@ pub fn parse_create_receipt_rule_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_s3_configuration_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReceiptRuleError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -616,7 +616,7 @@ pub fn parse_create_receipt_rule_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_sns_topic_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReceiptRuleError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -633,7 +633,7 @@ pub fn parse_create_receipt_rule_error(
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReceiptRuleError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -651,7 +651,7 @@ pub fn parse_create_receipt_rule_error(
                     output = crate::xml_deser::deser_structure_crate_error_rule_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReceiptRuleError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -669,7 +669,7 @@ pub fn parse_create_receipt_rule_error(
                     output = crate::xml_deser::deser_structure_crate_error_rule_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReceiptRuleError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -719,7 +719,7 @@ pub fn parse_create_receipt_rule_set_error(
                     output = crate::xml_deser::deser_structure_crate_error_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReceiptRuleSetError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -736,7 +736,7 @@ pub fn parse_create_receipt_rule_set_error(
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReceiptRuleSetError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -785,7 +785,7 @@ pub fn parse_create_template_error(
                     output = crate::xml_deser::deser_structure_crate_error_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTemplateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -802,7 +802,7 @@ pub fn parse_create_template_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_template_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTemplateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -819,7 +819,7 @@ pub fn parse_create_template_error(
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTemplateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -873,7 +873,7 @@ pub fn parse_delete_configuration_set_error(
                             output = crate::xml_deser::deser_structure_crate_error_configuration_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteConfigurationSetError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -928,7 +928,7 @@ pub fn parse_delete_configuration_set_event_destination_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -942,7 +942,7 @@ pub fn parse_delete_configuration_set_event_destination_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -996,7 +996,7 @@ pub fn parse_delete_configuration_set_tracking_options_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1010,7 +1010,7 @@ pub fn parse_delete_configuration_set_tracking_options_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1164,7 +1164,7 @@ pub fn parse_delete_receipt_rule_error(
                     output = crate::xml_deser::deser_structure_crate_error_rule_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteReceiptRuleError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1214,7 +1214,7 @@ pub fn parse_delete_receipt_rule_set_error(
                     output = crate::xml_deser::deser_structure_crate_error_cannot_delete_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteReceiptRuleSetError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1353,7 +1353,7 @@ pub fn parse_describe_configuration_set_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1410,7 +1410,7 @@ pub fn parse_describe_receipt_rule_error(
                     output = crate::xml_deser::deser_structure_crate_error_rule_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReceiptRuleError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1428,7 +1428,7 @@ pub fn parse_describe_receipt_rule_error(
                     output = crate::xml_deser::deser_structure_crate_error_rule_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReceiptRuleError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1490,7 +1490,7 @@ pub fn parse_describe_receipt_rule_set_error(
                     output = crate::xml_deser::deser_structure_crate_error_rule_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReceiptRuleSetError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1581,7 +1581,7 @@ pub fn parse_get_custom_verification_email_template_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1849,7 +1849,7 @@ pub fn parse_get_template_error(
                     output = crate::xml_deser::deser_structure_crate_error_template_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetTemplateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2146,7 +2146,7 @@ pub fn parse_put_configuration_set_delivery_options_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2160,7 +2160,7 @@ pub fn parse_put_configuration_set_delivery_options_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2210,7 +2210,7 @@ pub fn parse_put_identity_policy_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_policy_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutIdentityPolicyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2261,7 +2261,7 @@ pub fn parse_reorder_receipt_rule_set_error(
                     output = crate::xml_deser::deser_structure_crate_error_rule_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ReorderReceiptRuleSetError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2279,7 +2279,7 @@ pub fn parse_reorder_receipt_rule_set_error(
                     output = crate::xml_deser::deser_structure_crate_error_rule_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ReorderReceiptRuleSetError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2333,7 +2333,7 @@ pub fn parse_send_bounce_error(
                         .map_err(crate::error::SendBounceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2389,7 +2389,7 @@ pub fn parse_send_bulk_templated_email_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2403,7 +2403,7 @@ pub fn parse_send_bulk_templated_email_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2417,7 +2417,7 @@ pub fn parse_send_bulk_templated_email_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2431,7 +2431,7 @@ pub fn parse_send_bulk_templated_email_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2445,7 +2445,7 @@ pub fn parse_send_bulk_templated_email_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2459,7 +2459,7 @@ pub fn parse_send_bulk_templated_email_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2517,7 +2517,7 @@ pub fn parse_send_custom_verification_email_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2531,7 +2531,7 @@ pub fn parse_send_custom_verification_email_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2545,7 +2545,7 @@ pub fn parse_send_custom_verification_email_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2559,7 +2559,7 @@ pub fn parse_send_custom_verification_email_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2573,7 +2573,7 @@ pub fn parse_send_custom_verification_email_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2627,7 +2627,7 @@ pub fn parse_send_email_error(
                     output = crate::xml_deser::deser_structure_crate_error_account_sending_paused_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendEmailError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2644,7 +2644,7 @@ pub fn parse_send_email_error(
                         output = crate::xml_deser::deser_structure_crate_error_configuration_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendEmailError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2662,7 +2662,7 @@ pub fn parse_send_email_error(
                         output = crate::xml_deser::deser_structure_crate_error_configuration_set_sending_paused_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendEmailError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2681,7 +2681,7 @@ pub fn parse_send_email_error(
                     output = crate::xml_deser::deser_structure_crate_error_mail_from_domain_not_verified_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendEmailError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2703,7 +2703,7 @@ pub fn parse_send_email_error(
                         .map_err(crate::error::SendEmailError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2755,7 +2755,7 @@ pub fn parse_send_raw_email_error(
                     output = crate::xml_deser::deser_structure_crate_error_account_sending_paused_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendRawEmailError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2772,7 +2772,7 @@ pub fn parse_send_raw_email_error(
                         output = crate::xml_deser::deser_structure_crate_error_configuration_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendRawEmailError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2792,7 +2792,7 @@ pub fn parse_send_raw_email_error(
                     output = crate::xml_deser::deser_structure_crate_error_configuration_set_sending_paused_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendRawEmailError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2810,7 +2810,7 @@ pub fn parse_send_raw_email_error(
                     output = crate::xml_deser::deser_structure_crate_error_mail_from_domain_not_verified_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendRawEmailError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2832,7 +2832,7 @@ pub fn parse_send_raw_email_error(
                         .map_err(crate::error::SendRawEmailError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2887,7 +2887,7 @@ pub fn parse_send_templated_email_error(
                     output = crate::xml_deser::deser_structure_crate_error_account_sending_paused_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendTemplatedEmailError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2904,7 +2904,7 @@ pub fn parse_send_templated_email_error(
                         output = crate::xml_deser::deser_structure_crate_error_configuration_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendTemplatedEmailError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2922,7 +2922,7 @@ pub fn parse_send_templated_email_error(
                         output = crate::xml_deser::deser_structure_crate_error_configuration_set_sending_paused_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendTemplatedEmailError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2941,7 +2941,7 @@ pub fn parse_send_templated_email_error(
                     output = crate::xml_deser::deser_structure_crate_error_mail_from_domain_not_verified_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendTemplatedEmailError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2963,7 +2963,7 @@ pub fn parse_send_templated_email_error(
                         .map_err(crate::error::SendTemplatedEmailError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2981,7 +2981,7 @@ pub fn parse_send_templated_email_error(
                     output = crate::xml_deser::deser_structure_crate_error_template_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendTemplatedEmailError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3043,7 +3043,7 @@ pub fn parse_set_active_receipt_rule_set_error(
                     output = crate::xml_deser::deser_structure_crate_error_rule_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetActiveReceiptRuleSetError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3241,7 +3241,7 @@ pub fn parse_set_receipt_rule_position_error(
                     output = crate::xml_deser::deser_structure_crate_error_rule_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetReceiptRulePositionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3259,7 +3259,7 @@ pub fn parse_set_receipt_rule_position_error(
                     output = crate::xml_deser::deser_structure_crate_error_rule_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetReceiptRulePositionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3312,7 +3312,7 @@ pub fn parse_test_render_template_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_rendering_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TestRenderTemplateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3330,7 +3330,7 @@ pub fn parse_test_render_template_error(
                     output = crate::xml_deser::deser_structure_crate_error_missing_rendering_attribute_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TestRenderTemplateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3348,7 +3348,7 @@ pub fn parse_test_render_template_error(
                     output = crate::xml_deser::deser_structure_crate_error_template_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TestRenderTemplateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3436,7 +3436,7 @@ pub fn parse_update_configuration_set_event_destination_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3450,7 +3450,7 @@ pub fn parse_update_configuration_set_event_destination_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3464,7 +3464,7 @@ pub fn parse_update_configuration_set_event_destination_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3478,7 +3478,7 @@ pub fn parse_update_configuration_set_event_destination_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3492,7 +3492,7 @@ pub fn parse_update_configuration_set_event_destination_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3548,7 +3548,7 @@ pub fn parse_update_configuration_set_reputation_metrics_enabled_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3598,7 +3598,7 @@ pub fn parse_update_configuration_set_sending_enabled_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3652,7 +3652,7 @@ pub fn parse_update_configuration_set_tracking_options_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3666,7 +3666,7 @@ pub fn parse_update_configuration_set_tracking_options_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3680,7 +3680,7 @@ pub fn parse_update_configuration_set_tracking_options_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3734,7 +3734,7 @@ pub fn parse_update_custom_verification_email_template_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3748,7 +3748,7 @@ pub fn parse_update_custom_verification_email_template_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3762,7 +3762,7 @@ pub fn parse_update_custom_verification_email_template_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3813,7 +3813,7 @@ pub fn parse_update_receipt_rule_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_lambda_function_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateReceiptRuleError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3831,7 +3831,7 @@ pub fn parse_update_receipt_rule_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_s3_configuration_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateReceiptRuleError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3848,7 +3848,7 @@ pub fn parse_update_receipt_rule_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_sns_topic_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateReceiptRuleError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3865,7 +3865,7 @@ pub fn parse_update_receipt_rule_error(
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateReceiptRuleError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3883,7 +3883,7 @@ pub fn parse_update_receipt_rule_error(
                     output = crate::xml_deser::deser_structure_crate_error_rule_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateReceiptRuleError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3901,7 +3901,7 @@ pub fn parse_update_receipt_rule_error(
                     output = crate::xml_deser::deser_structure_crate_error_rule_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateReceiptRuleError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3948,7 +3948,7 @@ pub fn parse_update_template_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_template_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateTemplateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3966,7 +3966,7 @@ pub fn parse_update_template_error(
                     output = crate::xml_deser::deser_structure_crate_error_template_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateTemplateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp

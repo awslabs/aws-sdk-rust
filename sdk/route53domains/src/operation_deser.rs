@@ -28,7 +28,7 @@ pub fn parse_accept_domain_transfer_from_another_aws_account_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -42,7 +42,7 @@ pub fn parse_accept_domain_transfer_from_another_aws_account_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -56,7 +56,7 @@ pub fn parse_accept_domain_transfer_from_another_aws_account_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -70,7 +70,7 @@ pub fn parse_accept_domain_transfer_from_another_aws_account_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -126,7 +126,7 @@ pub fn parse_cancel_domain_transfer_to_another_aws_account_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -140,7 +140,7 @@ pub fn parse_cancel_domain_transfer_to_another_aws_account_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -154,7 +154,7 @@ pub fn parse_cancel_domain_transfer_to_another_aws_account_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -215,7 +215,7 @@ pub fn parse_check_domain_availability_error(
                     .map_err(crate::error::CheckDomainAvailabilityError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -233,7 +233,7 @@ pub fn parse_check_domain_availability_error(
                         output = crate::json_deser::deser_structure_crate_error_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::error::CheckDomainAvailabilityError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -299,7 +299,7 @@ pub fn parse_check_domain_transferability_error(
                     .map_err(crate::error::CheckDomainTransferabilityError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -317,7 +317,7 @@ pub fn parse_check_domain_transferability_error(
                         output = crate::json_deser::deser_structure_crate_error_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::error::CheckDomainTransferabilityError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -373,7 +373,7 @@ pub fn parse_delete_domain_error(
                         output = crate::json_deser::deser_structure_crate_error_duplicate_request_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDomainError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -395,7 +395,7 @@ pub fn parse_delete_domain_error(
                     .map_err(crate::error::DeleteDomainError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -412,7 +412,7 @@ pub fn parse_delete_domain_error(
                     output = crate::json_deser::deser_structure_crate_error_tld_rules_violation_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDomainError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -430,7 +430,7 @@ pub fn parse_delete_domain_error(
                         output = crate::json_deser::deser_structure_crate_error_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDomainError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -489,7 +489,7 @@ pub fn parse_delete_tags_for_domain_error(
                     .map_err(crate::error::DeleteTagsForDomainError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -506,7 +506,7 @@ pub fn parse_delete_tags_for_domain_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTagsForDomainError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -524,7 +524,7 @@ pub fn parse_delete_tags_for_domain_error(
                         output = crate::json_deser::deser_structure_crate_error_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTagsForDomainError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -585,7 +585,7 @@ pub fn parse_disable_domain_auto_renew_error(
                     .map_err(crate::error::DisableDomainAutoRenewError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -603,7 +603,7 @@ pub fn parse_disable_domain_auto_renew_error(
                         output = crate::json_deser::deser_structure_crate_error_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::error::DisableDomainAutoRenewError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -661,7 +661,7 @@ pub fn parse_disable_domain_transfer_lock_error(
                         output = crate::json_deser::deser_structure_crate_error_duplicate_request_json_err(response.body().as_ref(), output).map_err(crate::error::DisableDomainTransferLockError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -683,7 +683,7 @@ pub fn parse_disable_domain_transfer_lock_error(
                     .map_err(crate::error::DisableDomainTransferLockError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -700,7 +700,7 @@ pub fn parse_disable_domain_transfer_lock_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::DisableDomainTransferLockError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -717,7 +717,7 @@ pub fn parse_disable_domain_transfer_lock_error(
                     output = crate::json_deser::deser_structure_crate_error_tld_rules_violation_json_err(response.body().as_ref(), output).map_err(crate::error::DisableDomainTransferLockError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -735,7 +735,7 @@ pub fn parse_disable_domain_transfer_lock_error(
                         output = crate::json_deser::deser_structure_crate_error_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::error::DisableDomainTransferLockError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -797,7 +797,7 @@ pub fn parse_enable_domain_auto_renew_error(
                     .map_err(crate::error::EnableDomainAutoRenewError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -814,7 +814,7 @@ pub fn parse_enable_domain_auto_renew_error(
                     output = crate::json_deser::deser_structure_crate_error_tld_rules_violation_json_err(response.body().as_ref(), output).map_err(crate::error::EnableDomainAutoRenewError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -832,7 +832,7 @@ pub fn parse_enable_domain_auto_renew_error(
                         output = crate::json_deser::deser_structure_crate_error_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::error::EnableDomainAutoRenewError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -890,7 +890,7 @@ pub fn parse_enable_domain_transfer_lock_error(
                         output = crate::json_deser::deser_structure_crate_error_duplicate_request_json_err(response.body().as_ref(), output).map_err(crate::error::EnableDomainTransferLockError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -912,7 +912,7 @@ pub fn parse_enable_domain_transfer_lock_error(
                     .map_err(crate::error::EnableDomainTransferLockError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -929,7 +929,7 @@ pub fn parse_enable_domain_transfer_lock_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::EnableDomainTransferLockError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -946,7 +946,7 @@ pub fn parse_enable_domain_transfer_lock_error(
                     output = crate::json_deser::deser_structure_crate_error_tld_rules_violation_json_err(response.body().as_ref(), output).map_err(crate::error::EnableDomainTransferLockError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -964,7 +964,7 @@ pub fn parse_enable_domain_transfer_lock_error(
                         output = crate::json_deser::deser_structure_crate_error_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::error::EnableDomainTransferLockError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1030,7 +1030,7 @@ pub fn parse_get_contact_reachability_status_error(
                     .map_err(crate::error::GetContactReachabilityStatusError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1047,7 +1047,7 @@ pub fn parse_get_contact_reachability_status_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::GetContactReachabilityStatusError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1065,7 +1065,7 @@ pub fn parse_get_contact_reachability_status_error(
                         output = crate::json_deser::deser_structure_crate_error_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::error::GetContactReachabilityStatusError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1125,7 +1125,7 @@ pub fn parse_get_domain_detail_error(
                     .map_err(crate::error::GetDomainDetailError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1143,7 +1143,7 @@ pub fn parse_get_domain_detail_error(
                         output = crate::json_deser::deser_structure_crate_error_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::error::GetDomainDetailError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1202,7 +1202,7 @@ pub fn parse_get_domain_suggestions_error(
                     .map_err(crate::error::GetDomainSuggestionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1220,7 +1220,7 @@ pub fn parse_get_domain_suggestions_error(
                         output = crate::json_deser::deser_structure_crate_error_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::error::GetDomainSuggestionsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1282,7 +1282,7 @@ pub fn parse_get_operation_detail_error(
                     .map_err(crate::error::GetOperationDetailError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1340,7 +1340,7 @@ pub fn parse_list_domains_error(
                     .map_err(crate::error::ListDomainsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1395,7 +1395,7 @@ pub fn parse_list_operations_error(
                     .map_err(crate::error::ListOperationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1450,7 +1450,7 @@ pub fn parse_list_prices_error(
                     .map_err(crate::error::ListPricesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1468,7 +1468,7 @@ pub fn parse_list_prices_error(
                         output = crate::json_deser::deser_structure_crate_error_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::error::ListPricesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1525,7 +1525,7 @@ pub fn parse_list_tags_for_domain_error(
                     .map_err(crate::error::ListTagsForDomainError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1542,7 +1542,7 @@ pub fn parse_list_tags_for_domain_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForDomainError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1560,7 +1560,7 @@ pub fn parse_list_tags_for_domain_error(
                         output = crate::json_deser::deser_structure_crate_error_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForDomainError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1613,7 +1613,7 @@ pub fn parse_register_domain_error(
                     output = crate::json_deser::deser_structure_crate_error_domain_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterDomainError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1631,7 +1631,7 @@ pub fn parse_register_domain_error(
                         output = crate::json_deser::deser_structure_crate_error_duplicate_request_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterDomainError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1653,7 +1653,7 @@ pub fn parse_register_domain_error(
                     .map_err(crate::error::RegisterDomainError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1670,7 +1670,7 @@ pub fn parse_register_domain_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterDomainError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1687,7 +1687,7 @@ pub fn parse_register_domain_error(
                     output = crate::json_deser::deser_structure_crate_error_tld_rules_violation_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterDomainError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1705,7 +1705,7 @@ pub fn parse_register_domain_error(
                         output = crate::json_deser::deser_structure_crate_error_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterDomainError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1762,7 +1762,7 @@ pub fn parse_reject_domain_transfer_from_another_aws_account_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1776,7 +1776,7 @@ pub fn parse_reject_domain_transfer_from_another_aws_account_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1790,7 +1790,7 @@ pub fn parse_reject_domain_transfer_from_another_aws_account_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1842,7 +1842,7 @@ pub fn parse_renew_domain_error(
                         output = crate::json_deser::deser_structure_crate_error_duplicate_request_json_err(response.body().as_ref(), output).map_err(crate::error::RenewDomainError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1864,7 +1864,7 @@ pub fn parse_renew_domain_error(
                     .map_err(crate::error::RenewDomainError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1881,7 +1881,7 @@ pub fn parse_renew_domain_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::RenewDomainError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1898,7 +1898,7 @@ pub fn parse_renew_domain_error(
                     output = crate::json_deser::deser_structure_crate_error_tld_rules_violation_json_err(response.body().as_ref(), output).map_err(crate::error::RenewDomainError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1916,7 +1916,7 @@ pub fn parse_renew_domain_error(
                         output = crate::json_deser::deser_structure_crate_error_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::error::RenewDomainError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1975,7 +1975,7 @@ pub fn parse_resend_contact_reachability_email_error(
                     .map_err(crate::error::ResendContactReachabilityEmailError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1992,7 +1992,7 @@ pub fn parse_resend_contact_reachability_email_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::ResendContactReachabilityEmailError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2010,7 +2010,7 @@ pub fn parse_resend_contact_reachability_email_error(
                         output = crate::json_deser::deser_structure_crate_error_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::error::ResendContactReachabilityEmailError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2078,7 +2078,7 @@ pub fn parse_retrieve_domain_auth_code_error(
                     .map_err(crate::error::RetrieveDomainAuthCodeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2096,7 +2096,7 @@ pub fn parse_retrieve_domain_auth_code_error(
                         output = crate::json_deser::deser_structure_crate_error_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::error::RetrieveDomainAuthCodeError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2151,7 +2151,7 @@ pub fn parse_transfer_domain_error(
                     output = crate::json_deser::deser_structure_crate_error_domain_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::TransferDomainError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2169,7 +2169,7 @@ pub fn parse_transfer_domain_error(
                         output = crate::json_deser::deser_structure_crate_error_duplicate_request_json_err(response.body().as_ref(), output).map_err(crate::error::TransferDomainError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2191,7 +2191,7 @@ pub fn parse_transfer_domain_error(
                     .map_err(crate::error::TransferDomainError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2208,7 +2208,7 @@ pub fn parse_transfer_domain_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::TransferDomainError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2225,7 +2225,7 @@ pub fn parse_transfer_domain_error(
                     output = crate::json_deser::deser_structure_crate_error_tld_rules_violation_json_err(response.body().as_ref(), output).map_err(crate::error::TransferDomainError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2243,7 +2243,7 @@ pub fn parse_transfer_domain_error(
                         output = crate::json_deser::deser_structure_crate_error_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::error::TransferDomainError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2301,7 +2301,7 @@ pub fn parse_transfer_domain_to_another_aws_account_error(
                         output = crate::json_deser::deser_structure_crate_error_duplicate_request_json_err(response.body().as_ref(), output).map_err(crate::error::TransferDomainToAnotherAwsAccountError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2323,7 +2323,7 @@ pub fn parse_transfer_domain_to_another_aws_account_error(
                     .map_err(crate::error::TransferDomainToAnotherAwsAccountError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2341,7 +2341,7 @@ pub fn parse_transfer_domain_to_another_aws_account_error(
                         output = crate::json_deser::deser_structure_crate_error_operation_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::TransferDomainToAnotherAwsAccountError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2360,7 +2360,7 @@ pub fn parse_transfer_domain_to_another_aws_account_error(
                         output = crate::json_deser::deser_structure_crate_error_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::error::TransferDomainToAnotherAwsAccountError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2416,7 +2416,7 @@ pub fn parse_update_domain_contact_error(
                         output = crate::json_deser::deser_structure_crate_error_duplicate_request_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDomainContactError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2438,7 +2438,7 @@ pub fn parse_update_domain_contact_error(
                     .map_err(crate::error::UpdateDomainContactError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2455,7 +2455,7 @@ pub fn parse_update_domain_contact_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDomainContactError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2472,7 +2472,7 @@ pub fn parse_update_domain_contact_error(
                     output = crate::json_deser::deser_structure_crate_error_tld_rules_violation_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDomainContactError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2490,7 +2490,7 @@ pub fn parse_update_domain_contact_error(
                         output = crate::json_deser::deser_structure_crate_error_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDomainContactError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2553,7 +2553,7 @@ pub fn parse_update_domain_contact_privacy_error(
                         output = crate::json_deser::deser_structure_crate_error_duplicate_request_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDomainContactPrivacyError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2575,7 +2575,7 @@ pub fn parse_update_domain_contact_privacy_error(
                     .map_err(crate::error::UpdateDomainContactPrivacyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2592,7 +2592,7 @@ pub fn parse_update_domain_contact_privacy_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDomainContactPrivacyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2609,7 +2609,7 @@ pub fn parse_update_domain_contact_privacy_error(
                     output = crate::json_deser::deser_structure_crate_error_tld_rules_violation_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDomainContactPrivacyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2627,7 +2627,7 @@ pub fn parse_update_domain_contact_privacy_error(
                         output = crate::json_deser::deser_structure_crate_error_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDomainContactPrivacyError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2690,7 +2690,7 @@ pub fn parse_update_domain_nameservers_error(
                         output = crate::json_deser::deser_structure_crate_error_duplicate_request_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDomainNameserversError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2712,7 +2712,7 @@ pub fn parse_update_domain_nameservers_error(
                     .map_err(crate::error::UpdateDomainNameserversError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2729,7 +2729,7 @@ pub fn parse_update_domain_nameservers_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDomainNameserversError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2746,7 +2746,7 @@ pub fn parse_update_domain_nameservers_error(
                     output = crate::json_deser::deser_structure_crate_error_tld_rules_violation_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDomainNameserversError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2764,7 +2764,7 @@ pub fn parse_update_domain_nameservers_error(
                         output = crate::json_deser::deser_structure_crate_error_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDomainNameserversError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2826,7 +2826,7 @@ pub fn parse_update_tags_for_domain_error(
                     .map_err(crate::error::UpdateTagsForDomainError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2843,7 +2843,7 @@ pub fn parse_update_tags_for_domain_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTagsForDomainError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2861,7 +2861,7 @@ pub fn parse_update_tags_for_domain_error(
                         output = crate::json_deser::deser_structure_crate_error_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTagsForDomainError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2915,7 +2915,7 @@ pub fn parse_view_billing_error(
                     .map_err(crate::error::ViewBillingError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp

@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_game_input {
 
     /// A builder for [`CreateGameInput`](crate::input::CreateGameInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -73,7 +73,8 @@ pub mod create_game_input {
         /// Consumes the builder and constructs a [`CreateGameInput`](crate::input::CreateGameInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateGameInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::CreateGameInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::CreateGameInput {
                 game_name: self.game_name,
                 description: self.description,
@@ -96,13 +97,13 @@ impl CreateGameInput {
             crate::operation::CreateGame,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateGameInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/game").expect("formatting should succeed");
                 Ok(())
             }
@@ -110,8 +111,10 @@ impl CreateGameInput {
             fn update_http_builder(
                 input: &crate::input::CreateGameInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -195,7 +198,7 @@ impl CreateGameInput {
 pub mod create_snapshot_input {
 
     /// A builder for [`CreateSnapshotInput`](crate::input::CreateSnapshotInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -224,7 +227,7 @@ pub mod create_snapshot_input {
         /// Consumes the builder and constructs a [`CreateSnapshotInput`](crate::input::CreateSnapshotInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateSnapshotInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateSnapshotInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateSnapshotInput {
                 game_name: self.game_name,
@@ -246,26 +249,31 @@ impl CreateSnapshotInput {
             crate::operation::CreateSnapshot,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateSnapshotInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.game_name;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let game_name = aws_smithy_http::label::fmt_string(input_1, false);
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "game_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let game_name = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if game_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "game_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/game/{GameName}/snapshot", GameName = game_name)
                     .expect("formatting should succeed");
@@ -275,8 +283,10 @@ impl CreateSnapshotInput {
             fn update_http_builder(
                 input: &crate::input::CreateSnapshotInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -360,7 +370,7 @@ impl CreateSnapshotInput {
 pub mod create_stage_input {
 
     /// A builder for [`CreateStageInput`](crate::input::CreateStageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
         pub(crate) stage_name: std::option::Option<std::string::String>,
@@ -450,7 +460,7 @@ pub mod create_stage_input {
         /// Consumes the builder and constructs a [`CreateStageInput`](crate::input::CreateStageInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateStageInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateStageInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateStageInput {
                 game_name: self.game_name,
@@ -476,26 +486,31 @@ impl CreateStageInput {
             crate::operation::CreateStage,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateStageInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_2 = &_input.game_name;
-                let input_2 = input_2.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let game_name = aws_smithy_http::label::fmt_string(input_2, false);
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "game_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let game_name = aws_smithy_http::label::fmt_string(
+                    input_2,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if game_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "game_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/game/{GameName}/stage", GameName = game_name)
                     .expect("formatting should succeed");
@@ -505,8 +520,10 @@ impl CreateStageInput {
             fn update_http_builder(
                 input: &crate::input::CreateStageInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -590,7 +607,7 @@ impl CreateStageInput {
 pub mod delete_game_input {
 
     /// A builder for [`DeleteGameInput`](crate::input::DeleteGameInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
     }
@@ -608,7 +625,8 @@ pub mod delete_game_input {
         /// Consumes the builder and constructs a [`DeleteGameInput`](crate::input::DeleteGameInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteGameInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::DeleteGameInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::DeleteGameInput {
                 game_name: self.game_name,
             })
@@ -628,26 +646,31 @@ impl DeleteGameInput {
             crate::operation::DeleteGame,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteGameInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_3 = &_input.game_name;
-                let input_3 = input_3.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let game_name = aws_smithy_http::label::fmt_string(input_3, false);
+                let input_3 = input_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "game_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let game_name = aws_smithy_http::label::fmt_string(
+                    input_3,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if game_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "game_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/game/{GameName}", GameName = game_name)
                     .expect("formatting should succeed");
@@ -657,8 +680,10 @@ impl DeleteGameInput {
             fn update_http_builder(
                 input: &crate::input::DeleteGameInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -728,7 +753,7 @@ impl DeleteGameInput {
 pub mod delete_stage_input {
 
     /// A builder for [`DeleteStageInput`](crate::input::DeleteStageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
         pub(crate) stage_name: std::option::Option<std::string::String>,
@@ -757,7 +782,7 @@ pub mod delete_stage_input {
         /// Consumes the builder and constructs a [`DeleteStageInput`](crate::input::DeleteStageInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteStageInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteStageInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteStageInput {
                 game_name: self.game_name,
@@ -779,40 +804,50 @@ impl DeleteStageInput {
             crate::operation::DeleteStage,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteStageInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_4 = &_input.game_name;
-                let input_4 = input_4.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let game_name = aws_smithy_http::label::fmt_string(input_4, false);
+                let input_4 = input_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "game_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let game_name = aws_smithy_http::label::fmt_string(
+                    input_4,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if game_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "game_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_5 = &_input.stage_name;
-                let input_5 = input_5.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "stage_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let stage_name = aws_smithy_http::label::fmt_string(input_5, false);
+                let input_5 = input_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "stage_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let stage_name = aws_smithy_http::label::fmt_string(
+                    input_5,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if stage_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "stage_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "stage_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -827,8 +862,10 @@ impl DeleteStageInput {
             fn update_http_builder(
                 input: &crate::input::DeleteStageInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -898,7 +935,7 @@ impl DeleteStageInput {
 pub mod disconnect_player_input {
 
     /// A builder for [`DisconnectPlayerInput`](crate::input::DisconnectPlayerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) player_id: std::option::Option<std::string::String>,
         pub(crate) game_name: std::option::Option<std::string::String>,
@@ -938,8 +975,10 @@ pub mod disconnect_player_input {
         /// Consumes the builder and constructs a [`DisconnectPlayerInput`](crate::input::DisconnectPlayerInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DisconnectPlayerInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DisconnectPlayerInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DisconnectPlayerInput {
                 player_id: self.player_id,
                 game_name: self.game_name,
@@ -961,54 +1000,69 @@ impl DisconnectPlayerInput {
             crate::operation::DisconnectPlayer,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisconnectPlayerInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_6 = &_input.game_name;
-                let input_6 = input_6.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let game_name = aws_smithy_http::label::fmt_string(input_6, false);
+                let input_6 = input_6.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "game_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let game_name = aws_smithy_http::label::fmt_string(
+                    input_6,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if game_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "game_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_7 = &_input.stage_name;
-                let input_7 = input_7.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "stage_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let stage_name = aws_smithy_http::label::fmt_string(input_7, false);
+                let input_7 = input_7.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "stage_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let stage_name = aws_smithy_http::label::fmt_string(
+                    input_7,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if stage_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "stage_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "stage_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_8 = &_input.player_id;
-                let input_8 = input_8.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "player_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let player_id = aws_smithy_http::label::fmt_string(input_8, false);
+                let input_8 = input_8.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "player_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let player_id = aws_smithy_http::label::fmt_string(
+                    input_8,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if player_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "player_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "player_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1024,8 +1078,10 @@ impl DisconnectPlayerInput {
             fn update_http_builder(
                 input: &crate::input::DisconnectPlayerInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1095,7 +1151,7 @@ impl DisconnectPlayerInput {
 pub mod export_snapshot_input {
 
     /// A builder for [`ExportSnapshotInput`](crate::input::ExportSnapshotInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
         pub(crate) snapshot_id: std::option::Option<std::string::String>,
@@ -1124,7 +1180,7 @@ pub mod export_snapshot_input {
         /// Consumes the builder and constructs a [`ExportSnapshotInput`](crate::input::ExportSnapshotInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ExportSnapshotInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ExportSnapshotInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ExportSnapshotInput {
                 game_name: self.game_name,
@@ -1146,40 +1202,50 @@ impl ExportSnapshotInput {
             crate::operation::ExportSnapshot,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ExportSnapshotInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_9 = &_input.game_name;
-                let input_9 = input_9.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let game_name = aws_smithy_http::label::fmt_string(input_9, false);
+                let input_9 = input_9.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "game_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let game_name = aws_smithy_http::label::fmt_string(
+                    input_9,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if game_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "game_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_10 = &_input.snapshot_id;
-                let input_10 = input_10.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "snapshot_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let snapshot_id = aws_smithy_http::label::fmt_string(input_10, false);
+                let input_10 = input_10.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "snapshot_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let snapshot_id = aws_smithy_http::label::fmt_string(
+                    input_10,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if snapshot_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "snapshot_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "snapshot_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1194,8 +1260,10 @@ impl ExportSnapshotInput {
             fn update_http_builder(
                 input: &crate::input::ExportSnapshotInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1265,7 +1333,7 @@ impl ExportSnapshotInput {
 pub mod get_extension_input {
 
     /// A builder for [`GetExtensionInput`](crate::input::GetExtensionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1294,7 +1362,7 @@ pub mod get_extension_input {
         /// Consumes the builder and constructs a [`GetExtensionInput`](crate::input::GetExtensionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetExtensionInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetExtensionInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetExtensionInput {
                 namespace: self.namespace,
@@ -1316,40 +1384,50 @@ impl GetExtensionInput {
             crate::operation::GetExtension,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetExtensionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_11 = &_input.namespace;
-                let input_11 = input_11.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let namespace = aws_smithy_http::label::fmt_string(input_11, false);
+                let input_11 = input_11.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "namespace",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let namespace = aws_smithy_http::label::fmt_string(
+                    input_11,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if namespace.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "namespace",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_12 = &_input.name;
-                let input_12 = input_12.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_12, false);
+                let input_12 = input_12.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_12,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1364,8 +1442,10 @@ impl GetExtensionInput {
             fn update_http_builder(
                 input: &crate::input::GetExtensionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1435,7 +1515,7 @@ impl GetExtensionInput {
 pub mod get_extension_version_input {
 
     /// A builder for [`GetExtensionVersionInput`](crate::input::GetExtensionVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1478,8 +1558,10 @@ pub mod get_extension_version_input {
         /// Consumes the builder and constructs a [`GetExtensionVersionInput`](crate::input::GetExtensionVersionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetExtensionVersionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetExtensionVersionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetExtensionVersionInput {
                 namespace: self.namespace,
                 name: self.name,
@@ -1501,54 +1583,69 @@ impl GetExtensionVersionInput {
             crate::operation::GetExtensionVersion,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetExtensionVersionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_13 = &_input.namespace;
-                let input_13 = input_13.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let namespace = aws_smithy_http::label::fmt_string(input_13, false);
+                let input_13 = input_13.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "namespace",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let namespace = aws_smithy_http::label::fmt_string(
+                    input_13,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if namespace.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "namespace",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_14 = &_input.name;
-                let input_14 = input_14.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_14, false);
+                let input_14 = input_14.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_14,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_15 = &_input.extension_version;
-                let input_15 = input_15.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "extension_version",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let extension_version = aws_smithy_http::label::fmt_string(input_15, false);
+                let input_15 = input_15.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "extension_version",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let extension_version = aws_smithy_http::label::fmt_string(
+                    input_15,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if extension_version.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "extension_version",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "extension_version",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1564,8 +1661,10 @@ impl GetExtensionVersionInput {
             fn update_http_builder(
                 input: &crate::input::GetExtensionVersionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1635,7 +1734,7 @@ impl GetExtensionVersionInput {
 pub mod get_game_input {
 
     /// A builder for [`GetGameInput`](crate::input::GetGameInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
     }
@@ -1653,7 +1752,8 @@ pub mod get_game_input {
         /// Consumes the builder and constructs a [`GetGameInput`](crate::input::GetGameInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetGameInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::GetGameInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::GetGameInput {
                 game_name: self.game_name,
             })
@@ -1673,26 +1773,31 @@ impl GetGameInput {
             crate::operation::GetGame,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetGameInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_16 = &_input.game_name;
-                let input_16 = input_16.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let game_name = aws_smithy_http::label::fmt_string(input_16, false);
+                let input_16 = input_16.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "game_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let game_name = aws_smithy_http::label::fmt_string(
+                    input_16,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if game_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "game_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/game/{GameName}", GameName = game_name)
                     .expect("formatting should succeed");
@@ -1702,8 +1807,10 @@ impl GetGameInput {
             fn update_http_builder(
                 input: &crate::input::GetGameInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1771,7 +1878,7 @@ impl GetGameInput {
 pub mod get_game_configuration_input {
 
     /// A builder for [`GetGameConfigurationInput`](crate::input::GetGameConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
         pub(crate) sections: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1809,8 +1916,10 @@ pub mod get_game_configuration_input {
         /// Consumes the builder and constructs a [`GetGameConfigurationInput`](crate::input::GetGameConfigurationInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetGameConfigurationInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetGameConfigurationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetGameConfigurationInput {
                 game_name: self.game_name,
                 sections: self.sections,
@@ -1831,26 +1940,31 @@ impl GetGameConfigurationInput {
             crate::operation::GetGameConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetGameConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_17 = &_input.game_name;
-                let input_17 = input_17.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let game_name = aws_smithy_http::label::fmt_string(input_17, false);
+                let input_17 = input_17.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "game_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let game_name = aws_smithy_http::label::fmt_string(
+                    input_17,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if game_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "game_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1863,11 +1977,16 @@ impl GetGameConfigurationInput {
             fn uri_query(
                 _input: &crate::input::GetGameConfigurationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_18) = &_input.sections {
-                    for inner_19 in inner_18 {
-                        query.push_kv("Sections", &aws_smithy_http::query::fmt_string(&inner_19));
+                    {
+                        for inner_19 in inner_18 {
+                            query.push_kv(
+                                "Sections",
+                                &aws_smithy_http::query::fmt_string(&inner_19),
+                            );
+                        }
                     }
                 }
                 Ok(())
@@ -1876,8 +1995,10 @@ impl GetGameConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::GetGameConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1948,7 +2069,7 @@ impl GetGameConfigurationInput {
 pub mod get_generated_code_job_input {
 
     /// A builder for [`GetGeneratedCodeJobInput`](crate::input::GetGeneratedCodeJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
         pub(crate) snapshot_id: std::option::Option<std::string::String>,
@@ -1988,8 +2109,10 @@ pub mod get_generated_code_job_input {
         /// Consumes the builder and constructs a [`GetGeneratedCodeJobInput`](crate::input::GetGeneratedCodeJobInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetGeneratedCodeJobInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetGeneratedCodeJobInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetGeneratedCodeJobInput {
                 game_name: self.game_name,
                 snapshot_id: self.snapshot_id,
@@ -2011,54 +2134,69 @@ impl GetGeneratedCodeJobInput {
             crate::operation::GetGeneratedCodeJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetGeneratedCodeJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_20 = &_input.game_name;
-                let input_20 = input_20.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let game_name = aws_smithy_http::label::fmt_string(input_20, false);
+                let input_20 = input_20.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "game_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let game_name = aws_smithy_http::label::fmt_string(
+                    input_20,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if game_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "game_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_21 = &_input.snapshot_id;
-                let input_21 = input_21.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "snapshot_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let snapshot_id = aws_smithy_http::label::fmt_string(input_21, false);
+                let input_21 = input_21.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "snapshot_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let snapshot_id = aws_smithy_http::label::fmt_string(
+                    input_21,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if snapshot_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "snapshot_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "snapshot_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_22 = &_input.job_id;
-                let input_22 = input_22.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let job_id = aws_smithy_http::label::fmt_string(input_22, false);
+                let input_22 = input_22.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "job_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let job_id = aws_smithy_http::label::fmt_string(
+                    input_22,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if job_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "job_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2074,8 +2212,10 @@ impl GetGeneratedCodeJobInput {
             fn update_http_builder(
                 input: &crate::input::GetGeneratedCodeJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2145,7 +2285,7 @@ impl GetGeneratedCodeJobInput {
 pub mod get_player_connection_status_input {
 
     /// A builder for [`GetPlayerConnectionStatusInput`](crate::input::GetPlayerConnectionStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) player_id: std::option::Option<std::string::String>,
         pub(crate) game_name: std::option::Option<std::string::String>,
@@ -2187,7 +2327,7 @@ pub mod get_player_connection_status_input {
             self,
         ) -> Result<
             crate::input::GetPlayerConnectionStatusInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetPlayerConnectionStatusInput {
                 player_id: self.player_id,
@@ -2210,54 +2350,69 @@ impl GetPlayerConnectionStatusInput {
             crate::operation::GetPlayerConnectionStatus,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetPlayerConnectionStatusInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_23 = &_input.game_name;
-                let input_23 = input_23.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let game_name = aws_smithy_http::label::fmt_string(input_23, false);
+                let input_23 = input_23.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "game_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let game_name = aws_smithy_http::label::fmt_string(
+                    input_23,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if game_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "game_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_24 = &_input.stage_name;
-                let input_24 = input_24.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "stage_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let stage_name = aws_smithy_http::label::fmt_string(input_24, false);
+                let input_24 = input_24.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "stage_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let stage_name = aws_smithy_http::label::fmt_string(
+                    input_24,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if stage_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "stage_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "stage_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_25 = &_input.player_id;
-                let input_25 = input_25.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "player_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let player_id = aws_smithy_http::label::fmt_string(input_25, false);
+                let input_25 = input_25.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "player_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let player_id = aws_smithy_http::label::fmt_string(
+                    input_25,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if player_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "player_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "player_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2273,8 +2428,10 @@ impl GetPlayerConnectionStatusInput {
             fn update_http_builder(
                 input: &crate::input::GetPlayerConnectionStatusInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2344,7 +2501,7 @@ impl GetPlayerConnectionStatusInput {
 pub mod get_snapshot_input {
 
     /// A builder for [`GetSnapshotInput`](crate::input::GetSnapshotInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
         pub(crate) snapshot_id: std::option::Option<std::string::String>,
@@ -2393,7 +2550,7 @@ pub mod get_snapshot_input {
         /// Consumes the builder and constructs a [`GetSnapshotInput`](crate::input::GetSnapshotInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetSnapshotInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetSnapshotInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetSnapshotInput {
                 game_name: self.game_name,
@@ -2416,40 +2573,50 @@ impl GetSnapshotInput {
             crate::operation::GetSnapshot,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetSnapshotInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_26 = &_input.game_name;
-                let input_26 = input_26.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let game_name = aws_smithy_http::label::fmt_string(input_26, false);
+                let input_26 = input_26.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "game_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let game_name = aws_smithy_http::label::fmt_string(
+                    input_26,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if game_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "game_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_27 = &_input.snapshot_id;
-                let input_27 = input_27.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "snapshot_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let snapshot_id = aws_smithy_http::label::fmt_string(input_27, false);
+                let input_27 = input_27.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "snapshot_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let snapshot_id = aws_smithy_http::label::fmt_string(
+                    input_27,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if snapshot_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "snapshot_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "snapshot_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2463,11 +2630,16 @@ impl GetSnapshotInput {
             fn uri_query(
                 _input: &crate::input::GetSnapshotInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_28) = &_input.sections {
-                    for inner_29 in inner_28 {
-                        query.push_kv("Sections", &aws_smithy_http::query::fmt_string(&inner_29));
+                    {
+                        for inner_29 in inner_28 {
+                            query.push_kv(
+                                "Sections",
+                                &aws_smithy_http::query::fmt_string(&inner_29),
+                            );
+                        }
                     }
                 }
                 Ok(())
@@ -2476,8 +2648,10 @@ impl GetSnapshotInput {
             fn update_http_builder(
                 input: &crate::input::GetSnapshotInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2548,7 +2722,7 @@ impl GetSnapshotInput {
 pub mod get_stage_input {
 
     /// A builder for [`GetStageInput`](crate::input::GetStageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
         pub(crate) stage_name: std::option::Option<std::string::String>,
@@ -2577,7 +2751,8 @@ pub mod get_stage_input {
         /// Consumes the builder and constructs a [`GetStageInput`](crate::input::GetStageInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetStageInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::GetStageInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::GetStageInput {
                 game_name: self.game_name,
                 stage_name: self.stage_name,
@@ -2598,40 +2773,50 @@ impl GetStageInput {
             crate::operation::GetStage,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetStageInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_30 = &_input.game_name;
-                let input_30 = input_30.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let game_name = aws_smithy_http::label::fmt_string(input_30, false);
+                let input_30 = input_30.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "game_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let game_name = aws_smithy_http::label::fmt_string(
+                    input_30,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if game_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "game_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_31 = &_input.stage_name;
-                let input_31 = input_31.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "stage_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let stage_name = aws_smithy_http::label::fmt_string(input_31, false);
+                let input_31 = input_31.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "stage_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let stage_name = aws_smithy_http::label::fmt_string(
+                    input_31,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if stage_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "stage_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "stage_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2646,8 +2831,10 @@ impl GetStageInput {
             fn update_http_builder(
                 input: &crate::input::GetStageInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2715,7 +2902,7 @@ impl GetStageInput {
 pub mod get_stage_deployment_input {
 
     /// A builder for [`GetStageDeploymentInput`](crate::input::GetStageDeploymentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
         pub(crate) stage_name: std::option::Option<std::string::String>,
@@ -2758,8 +2945,10 @@ pub mod get_stage_deployment_input {
         /// Consumes the builder and constructs a [`GetStageDeploymentInput`](crate::input::GetStageDeploymentInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetStageDeploymentInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetStageDeploymentInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetStageDeploymentInput {
                 game_name: self.game_name,
                 stage_name: self.stage_name,
@@ -2781,40 +2970,50 @@ impl GetStageDeploymentInput {
             crate::operation::GetStageDeployment,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetStageDeploymentInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_32 = &_input.game_name;
-                let input_32 = input_32.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let game_name = aws_smithy_http::label::fmt_string(input_32, false);
+                let input_32 = input_32.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "game_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let game_name = aws_smithy_http::label::fmt_string(
+                    input_32,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if game_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "game_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_33 = &_input.stage_name;
-                let input_33 = input_33.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "stage_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let stage_name = aws_smithy_http::label::fmt_string(input_33, false);
+                let input_33 = input_33.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "stage_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let stage_name = aws_smithy_http::label::fmt_string(
+                    input_33,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if stage_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "stage_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "stage_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2828,13 +3027,15 @@ impl GetStageDeploymentInput {
             fn uri_query(
                 _input: &crate::input::GetStageDeploymentInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_34) = &_input.deployment_id {
-                    query.push_kv(
-                        "DeploymentId",
-                        &aws_smithy_http::query::fmt_string(&inner_34),
-                    );
+                    {
+                        query.push_kv(
+                            "DeploymentId",
+                            &aws_smithy_http::query::fmt_string(&inner_34),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -2842,8 +3043,10 @@ impl GetStageDeploymentInput {
             fn update_http_builder(
                 input: &crate::input::GetStageDeploymentInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2914,7 +3117,7 @@ impl GetStageDeploymentInput {
 pub mod import_game_configuration_input {
 
     /// A builder for [`ImportGameConfigurationInput`](crate::input::ImportGameConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
         pub(crate) import_source: std::option::Option<crate::model::ImportGameConfigurationSource>,
@@ -2948,7 +3151,7 @@ pub mod import_game_configuration_input {
             self,
         ) -> Result<
             crate::input::ImportGameConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ImportGameConfigurationInput {
                 game_name: self.game_name,
@@ -2970,26 +3173,31 @@ impl ImportGameConfigurationInput {
             crate::operation::ImportGameConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ImportGameConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_35 = &_input.game_name;
-                let input_35 = input_35.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let game_name = aws_smithy_http::label::fmt_string(input_35, false);
+                let input_35 = input_35.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "game_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let game_name = aws_smithy_http::label::fmt_string(
+                    input_35,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if game_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "game_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3003,8 +3211,10 @@ impl ImportGameConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::ImportGameConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -3090,7 +3300,7 @@ impl ImportGameConfigurationInput {
 pub mod list_extensions_input {
 
     /// A builder for [`ListExtensionsInput`](crate::input::ListExtensionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3123,7 +3333,7 @@ pub mod list_extensions_input {
         /// Consumes the builder and constructs a [`ListExtensionsInput`](crate::input::ListExtensionsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListExtensionsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListExtensionsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListExtensionsInput {
                 max_results: self.max_results,
@@ -3145,29 +3355,33 @@ impl ListExtensionsInput {
             crate::operation::ListExtensions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListExtensionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/extension").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListExtensionsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_36) = &_input.max_results {
-                    query.push_kv(
-                        "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_36).encode(),
-                    );
+                    if *inner_36 != 0 {
+                        query.push_kv(
+                            "MaxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_36).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_37) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_37));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_37));
+                    }
                 }
                 Ok(())
             }
@@ -3175,8 +3389,10 @@ impl ListExtensionsInput {
             fn update_http_builder(
                 input: &crate::input::ListExtensionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3247,7 +3463,7 @@ impl ListExtensionsInput {
 pub mod list_extension_versions_input {
 
     /// A builder for [`ListExtensionVersionsInput`](crate::input::ListExtensionVersionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3302,8 +3518,10 @@ pub mod list_extension_versions_input {
         /// Consumes the builder and constructs a [`ListExtensionVersionsInput`](crate::input::ListExtensionVersionsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListExtensionVersionsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListExtensionVersionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListExtensionVersionsInput {
                 namespace: self.namespace,
                 name: self.name,
@@ -3326,40 +3544,50 @@ impl ListExtensionVersionsInput {
             crate::operation::ListExtensionVersions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListExtensionVersionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_38 = &_input.namespace;
-                let input_38 = input_38.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let namespace = aws_smithy_http::label::fmt_string(input_38, false);
+                let input_38 = input_38.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "namespace",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let namespace = aws_smithy_http::label::fmt_string(
+                    input_38,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if namespace.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "namespace",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_39 = &_input.name;
-                let input_39 = input_39.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_39, false);
+                let input_39 = input_39.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_39,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3373,16 +3601,20 @@ impl ListExtensionVersionsInput {
             fn uri_query(
                 _input: &crate::input::ListExtensionVersionsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_40) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_40));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_40));
+                    }
                 }
                 if let Some(inner_41) = &_input.max_results {
-                    query.push_kv(
-                        "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_41).encode(),
-                    );
+                    if *inner_41 != 0 {
+                        query.push_kv(
+                            "MaxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_41).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -3390,8 +3622,10 @@ impl ListExtensionVersionsInput {
             fn update_http_builder(
                 input: &crate::input::ListExtensionVersionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3462,7 +3696,7 @@ impl ListExtensionVersionsInput {
 pub mod list_games_input {
 
     /// A builder for [`ListGamesInput`](crate::input::ListGamesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3495,7 +3729,8 @@ pub mod list_games_input {
         /// Consumes the builder and constructs a [`ListGamesInput`](crate::input::ListGamesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListGamesInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ListGamesInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ListGamesInput {
                 max_results: self.max_results,
                 next_token: self.next_token,
@@ -3516,29 +3751,33 @@ impl ListGamesInput {
             crate::operation::ListGames,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListGamesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/game").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListGamesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_42) = &_input.max_results {
-                    query.push_kv(
-                        "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_42).encode(),
-                    );
+                    if *inner_42 != 0 {
+                        query.push_kv(
+                            "MaxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_42).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_43) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_43));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_43));
+                    }
                 }
                 Ok(())
             }
@@ -3546,8 +3785,10 @@ impl ListGamesInput {
             fn update_http_builder(
                 input: &crate::input::ListGamesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3616,7 +3857,7 @@ impl ListGamesInput {
 pub mod list_generated_code_jobs_input {
 
     /// A builder for [`ListGeneratedCodeJobsInput`](crate::input::ListGeneratedCodeJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
         pub(crate) snapshot_id: std::option::Option<std::string::String>,
@@ -3671,8 +3912,10 @@ pub mod list_generated_code_jobs_input {
         /// Consumes the builder and constructs a [`ListGeneratedCodeJobsInput`](crate::input::ListGeneratedCodeJobsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListGeneratedCodeJobsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListGeneratedCodeJobsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListGeneratedCodeJobsInput {
                 game_name: self.game_name,
                 snapshot_id: self.snapshot_id,
@@ -3695,40 +3938,50 @@ impl ListGeneratedCodeJobsInput {
             crate::operation::ListGeneratedCodeJobs,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListGeneratedCodeJobsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_44 = &_input.game_name;
-                let input_44 = input_44.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let game_name = aws_smithy_http::label::fmt_string(input_44, false);
+                let input_44 = input_44.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "game_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let game_name = aws_smithy_http::label::fmt_string(
+                    input_44,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if game_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "game_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_45 = &_input.snapshot_id;
-                let input_45 = input_45.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "snapshot_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let snapshot_id = aws_smithy_http::label::fmt_string(input_45, false);
+                let input_45 = input_45.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "snapshot_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let snapshot_id = aws_smithy_http::label::fmt_string(
+                    input_45,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if snapshot_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "snapshot_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "snapshot_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3742,16 +3995,20 @@ impl ListGeneratedCodeJobsInput {
             fn uri_query(
                 _input: &crate::input::ListGeneratedCodeJobsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_46) = &_input.max_results {
-                    query.push_kv(
-                        "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_46).encode(),
-                    );
+                    if *inner_46 != 0 {
+                        query.push_kv(
+                            "MaxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_46).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_47) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_47));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_47));
+                    }
                 }
                 Ok(())
             }
@@ -3759,8 +4016,10 @@ impl ListGeneratedCodeJobsInput {
             fn update_http_builder(
                 input: &crate::input::ListGeneratedCodeJobsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3831,7 +4090,7 @@ impl ListGeneratedCodeJobsInput {
 pub mod list_snapshots_input {
 
     /// A builder for [`ListSnapshotsInput`](crate::input::ListSnapshotsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3875,7 +4134,7 @@ pub mod list_snapshots_input {
         /// Consumes the builder and constructs a [`ListSnapshotsInput`](crate::input::ListSnapshotsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListSnapshotsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListSnapshotsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListSnapshotsInput {
                 game_name: self.game_name,
@@ -3898,26 +4157,31 @@ impl ListSnapshotsInput {
             crate::operation::ListSnapshots,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListSnapshotsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_48 = &_input.game_name;
-                let input_48 = input_48.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let game_name = aws_smithy_http::label::fmt_string(input_48, false);
+                let input_48 = input_48.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "game_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let game_name = aws_smithy_http::label::fmt_string(
+                    input_48,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if game_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "game_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/game/{GameName}/snapshot", GameName = game_name)
                     .expect("formatting should succeed");
@@ -3926,16 +4190,20 @@ impl ListSnapshotsInput {
             fn uri_query(
                 _input: &crate::input::ListSnapshotsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_49) = &_input.max_results {
-                    query.push_kv(
-                        "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_49).encode(),
-                    );
+                    if *inner_49 != 0 {
+                        query.push_kv(
+                            "MaxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_49).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_50) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_50));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_50));
+                    }
                 }
                 Ok(())
             }
@@ -3943,8 +4211,10 @@ impl ListSnapshotsInput {
             fn update_http_builder(
                 input: &crate::input::ListSnapshotsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4015,7 +4285,7 @@ impl ListSnapshotsInput {
 pub mod list_stage_deployments_input {
 
     /// A builder for [`ListStageDeploymentsInput`](crate::input::ListStageDeploymentsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
         pub(crate) stage_name: std::option::Option<std::string::String>,
@@ -4070,8 +4340,10 @@ pub mod list_stage_deployments_input {
         /// Consumes the builder and constructs a [`ListStageDeploymentsInput`](crate::input::ListStageDeploymentsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListStageDeploymentsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListStageDeploymentsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListStageDeploymentsInput {
                 game_name: self.game_name,
                 stage_name: self.stage_name,
@@ -4094,40 +4366,50 @@ impl ListStageDeploymentsInput {
             crate::operation::ListStageDeployments,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListStageDeploymentsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_51 = &_input.game_name;
-                let input_51 = input_51.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let game_name = aws_smithy_http::label::fmt_string(input_51, false);
+                let input_51 = input_51.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "game_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let game_name = aws_smithy_http::label::fmt_string(
+                    input_51,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if game_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "game_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_52 = &_input.stage_name;
-                let input_52 = input_52.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "stage_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let stage_name = aws_smithy_http::label::fmt_string(input_52, false);
+                let input_52 = input_52.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "stage_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let stage_name = aws_smithy_http::label::fmt_string(
+                    input_52,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if stage_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "stage_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "stage_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4141,16 +4423,20 @@ impl ListStageDeploymentsInput {
             fn uri_query(
                 _input: &crate::input::ListStageDeploymentsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_53) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_53));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_53));
+                    }
                 }
                 if let Some(inner_54) = &_input.max_results {
-                    query.push_kv(
-                        "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_54).encode(),
-                    );
+                    if *inner_54 != 0 {
+                        query.push_kv(
+                            "MaxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_54).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -4158,8 +4444,10 @@ impl ListStageDeploymentsInput {
             fn update_http_builder(
                 input: &crate::input::ListStageDeploymentsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4230,7 +4518,7 @@ impl ListStageDeploymentsInput {
 pub mod list_stages_input {
 
     /// A builder for [`ListStagesInput`](crate::input::ListStagesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4274,7 +4562,8 @@ pub mod list_stages_input {
         /// Consumes the builder and constructs a [`ListStagesInput`](crate::input::ListStagesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListStagesInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ListStagesInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ListStagesInput {
                 game_name: self.game_name,
                 max_results: self.max_results,
@@ -4296,26 +4585,31 @@ impl ListStagesInput {
             crate::operation::ListStages,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListStagesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_55 = &_input.game_name;
-                let input_55 = input_55.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let game_name = aws_smithy_http::label::fmt_string(input_55, false);
+                let input_55 = input_55.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "game_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let game_name = aws_smithy_http::label::fmt_string(
+                    input_55,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if game_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "game_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/game/{GameName}/stage", GameName = game_name)
                     .expect("formatting should succeed");
@@ -4324,16 +4618,20 @@ impl ListStagesInput {
             fn uri_query(
                 _input: &crate::input::ListStagesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_56) = &_input.max_results {
-                    query.push_kv(
-                        "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_56).encode(),
-                    );
+                    if *inner_56 != 0 {
+                        query.push_kv(
+                            "MaxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_56).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_57) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_57));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_57));
+                    }
                 }
                 Ok(())
             }
@@ -4341,8 +4639,10 @@ impl ListStagesInput {
             fn update_http_builder(
                 input: &crate::input::ListStagesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4413,7 +4713,7 @@ impl ListStagesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -4431,8 +4731,10 @@ pub mod list_tags_for_resource_input {
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
             })
@@ -4452,26 +4754,31 @@ impl ListTagsForResourceInput {
             crate::operation::ListTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_58 = &_input.resource_arn;
-                let input_58 = input_58.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_58, false);
+                let input_58 = input_58.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_58,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
                     .expect("formatting should succeed");
@@ -4481,8 +4788,10 @@ impl ListTagsForResourceInput {
             fn update_http_builder(
                 input: &crate::input::ListTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -4552,7 +4861,7 @@ impl ListTagsForResourceInput {
 pub mod start_generated_code_job_input {
 
     /// A builder for [`StartGeneratedCodeJobInput`](crate::input::StartGeneratedCodeJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
         pub(crate) snapshot_id: std::option::Option<std::string::String>,
@@ -4595,8 +4904,10 @@ pub mod start_generated_code_job_input {
         /// Consumes the builder and constructs a [`StartGeneratedCodeJobInput`](crate::input::StartGeneratedCodeJobInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StartGeneratedCodeJobInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::StartGeneratedCodeJobInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::StartGeneratedCodeJobInput {
                 game_name: self.game_name,
                 snapshot_id: self.snapshot_id,
@@ -4618,40 +4929,50 @@ impl StartGeneratedCodeJobInput {
             crate::operation::StartGeneratedCodeJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StartGeneratedCodeJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_59 = &_input.game_name;
-                let input_59 = input_59.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let game_name = aws_smithy_http::label::fmt_string(input_59, false);
+                let input_59 = input_59.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "game_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let game_name = aws_smithy_http::label::fmt_string(
+                    input_59,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if game_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "game_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_60 = &_input.snapshot_id;
-                let input_60 = input_60.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "snapshot_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let snapshot_id = aws_smithy_http::label::fmt_string(input_60, false);
+                let input_60 = input_60.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "snapshot_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let snapshot_id = aws_smithy_http::label::fmt_string(
+                    input_60,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if snapshot_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "snapshot_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "snapshot_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4666,8 +4987,10 @@ impl StartGeneratedCodeJobInput {
             fn update_http_builder(
                 input: &crate::input::StartGeneratedCodeJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4753,7 +5076,7 @@ impl StartGeneratedCodeJobInput {
 pub mod start_stage_deployment_input {
 
     /// A builder for [`StartStageDeploymentInput`](crate::input::StartStageDeploymentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
         pub(crate) stage_name: std::option::Option<std::string::String>,
@@ -4804,8 +5127,10 @@ pub mod start_stage_deployment_input {
         /// Consumes the builder and constructs a [`StartStageDeploymentInput`](crate::input::StartStageDeploymentInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StartStageDeploymentInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::StartStageDeploymentInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::StartStageDeploymentInput {
                 game_name: self.game_name,
                 stage_name: self.stage_name,
@@ -4828,40 +5153,50 @@ impl StartStageDeploymentInput {
             crate::operation::StartStageDeployment,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StartStageDeploymentInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_61 = &_input.game_name;
-                let input_61 = input_61.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let game_name = aws_smithy_http::label::fmt_string(input_61, false);
+                let input_61 = input_61.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "game_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let game_name = aws_smithy_http::label::fmt_string(
+                    input_61,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if game_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "game_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_62 = &_input.stage_name;
-                let input_62 = input_62.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "stage_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let stage_name = aws_smithy_http::label::fmt_string(input_62, false);
+                let input_62 = input_62.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "stage_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let stage_name = aws_smithy_http::label::fmt_string(
+                    input_62,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if stage_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "stage_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "stage_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4876,8 +5211,10 @@ impl StartStageDeploymentInput {
             fn update_http_builder(
                 input: &crate::input::StartStageDeploymentInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4963,7 +5300,7 @@ impl StartStageDeploymentInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -5009,7 +5346,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
@@ -5031,26 +5368,31 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_63 = &_input.resource_arn;
-                let input_63 = input_63.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_63, false);
+                let input_63 = input_63.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_63,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
                     .expect("formatting should succeed");
@@ -5060,8 +5402,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5145,7 +5489,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5183,7 +5527,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
@@ -5205,26 +5549,31 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_64 = &_input.resource_arn;
-                let input_64 = input_64.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_64, false);
+                let input_64 = input_64.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_64,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
                     .expect("formatting should succeed");
@@ -5233,12 +5582,17 @@ impl UntagResourceInput {
             fn uri_query(
                 _input: &crate::input::UntagResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_65) = &_input.tag_keys {
-                    for inner_66 in inner_65 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_66));
-                    }
+                let inner_65 = &_input.tag_keys;
+                let inner_65 = inner_65.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_66 in inner_65 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_66));
                 }
                 Ok(())
             }
@@ -5246,8 +5600,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5318,7 +5674,7 @@ impl UntagResourceInput {
 pub mod update_game_input {
 
     /// A builder for [`UpdateGameInput`](crate::input::UpdateGameInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -5347,7 +5703,8 @@ pub mod update_game_input {
         /// Consumes the builder and constructs a [`UpdateGameInput`](crate::input::UpdateGameInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateGameInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::UpdateGameInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::UpdateGameInput {
                 game_name: self.game_name,
                 description: self.description,
@@ -5368,26 +5725,31 @@ impl UpdateGameInput {
             crate::operation::UpdateGame,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateGameInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_67 = &_input.game_name;
-                let input_67 = input_67.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let game_name = aws_smithy_http::label::fmt_string(input_67, false);
+                let input_67 = input_67.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "game_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let game_name = aws_smithy_http::label::fmt_string(
+                    input_67,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if game_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "game_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/game/{GameName}", GameName = game_name)
                     .expect("formatting should succeed");
@@ -5397,8 +5759,10 @@ impl UpdateGameInput {
             fn update_http_builder(
                 input: &crate::input::UpdateGameInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PATCH").uri(uri))
@@ -5482,7 +5846,7 @@ impl UpdateGameInput {
 pub mod update_game_configuration_input {
 
     /// A builder for [`UpdateGameConfigurationInput`](crate::input::UpdateGameConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
         pub(crate) modifications:
@@ -5523,7 +5887,7 @@ pub mod update_game_configuration_input {
             self,
         ) -> Result<
             crate::input::UpdateGameConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateGameConfigurationInput {
                 game_name: self.game_name,
@@ -5545,26 +5909,31 @@ impl UpdateGameConfigurationInput {
             crate::operation::UpdateGameConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateGameConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_68 = &_input.game_name;
-                let input_68 = input_68.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let game_name = aws_smithy_http::label::fmt_string(input_68, false);
+                let input_68 = input_68.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "game_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let game_name = aws_smithy_http::label::fmt_string(
+                    input_68,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if game_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "game_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5578,8 +5947,10 @@ impl UpdateGameConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::UpdateGameConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PATCH").uri(uri))
@@ -5665,7 +6036,7 @@ impl UpdateGameConfigurationInput {
 pub mod update_snapshot_input {
 
     /// A builder for [`UpdateSnapshotInput`](crate::input::UpdateSnapshotInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
         pub(crate) snapshot_id: std::option::Option<std::string::String>,
@@ -5705,7 +6076,7 @@ pub mod update_snapshot_input {
         /// Consumes the builder and constructs a [`UpdateSnapshotInput`](crate::input::UpdateSnapshotInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateSnapshotInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateSnapshotInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateSnapshotInput {
                 game_name: self.game_name,
@@ -5728,40 +6099,50 @@ impl UpdateSnapshotInput {
             crate::operation::UpdateSnapshot,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateSnapshotInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_69 = &_input.game_name;
-                let input_69 = input_69.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let game_name = aws_smithy_http::label::fmt_string(input_69, false);
+                let input_69 = input_69.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "game_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let game_name = aws_smithy_http::label::fmt_string(
+                    input_69,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if game_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "game_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_70 = &_input.snapshot_id;
-                let input_70 = input_70.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "snapshot_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let snapshot_id = aws_smithy_http::label::fmt_string(input_70, false);
+                let input_70 = input_70.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "snapshot_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let snapshot_id = aws_smithy_http::label::fmt_string(
+                    input_70,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if snapshot_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "snapshot_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "snapshot_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5776,8 +6157,10 @@ impl UpdateSnapshotInput {
             fn update_http_builder(
                 input: &crate::input::UpdateSnapshotInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PATCH").uri(uri))
@@ -5861,7 +6244,7 @@ impl UpdateSnapshotInput {
 pub mod update_stage_input {
 
     /// A builder for [`UpdateStageInput`](crate::input::UpdateStageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
         pub(crate) stage_name: std::option::Option<std::string::String>,
@@ -5912,7 +6295,7 @@ pub mod update_stage_input {
         /// Consumes the builder and constructs a [`UpdateStageInput`](crate::input::UpdateStageInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateStageInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateStageInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateStageInput {
                 game_name: self.game_name,
@@ -5936,40 +6319,50 @@ impl UpdateStageInput {
             crate::operation::UpdateStage,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateStageInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_71 = &_input.game_name;
-                let input_71 = input_71.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let game_name = aws_smithy_http::label::fmt_string(input_71, false);
+                let input_71 = input_71.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "game_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let game_name = aws_smithy_http::label::fmt_string(
+                    input_71,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if game_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "game_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "game_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_72 = &_input.stage_name;
-                let input_72 = input_72.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "stage_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let stage_name = aws_smithy_http::label::fmt_string(input_72, false);
+                let input_72 = input_72.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "stage_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let stage_name = aws_smithy_http::label::fmt_string(
+                    input_72,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if stage_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "stage_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "stage_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5984,8 +6377,10 @@ impl UpdateStageInput {
             fn update_http_builder(
                 input: &crate::input::UpdateStageInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PATCH").uri(uri))
@@ -6067,7 +6462,7 @@ impl UpdateStageInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateStageInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -6100,20 +6495,10 @@ impl UpdateStageInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateStageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateStageInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.field("role", &self.role);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSnapshotInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -6139,19 +6524,10 @@ impl UpdateSnapshotInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateSnapshotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSnapshotInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGameConfigurationInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -6170,18 +6546,10 @@ impl UpdateGameConfigurationInput {
         self.modifications.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateGameConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGameConfigurationInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("modifications", &self.modifications);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGameInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -6200,18 +6568,10 @@ impl UpdateGameInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateGameInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGameInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to remove the tags from.</p>
     #[doc(hidden)]
@@ -6230,18 +6590,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to add the tags to.</p>
     #[doc(hidden)]
@@ -6264,18 +6616,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartStageDeploymentInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -6308,20 +6652,10 @@ impl StartStageDeploymentInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for StartStageDeploymentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartStageDeploymentInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartGeneratedCodeJobInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -6347,19 +6681,10 @@ impl StartGeneratedCodeJobInput {
         self.generator.as_ref()
     }
 }
-impl std::fmt::Debug for StartGeneratedCodeJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartGeneratedCodeJobInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.field("generator", &self.generator);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the GameSparks resource.</p>
     #[doc(hidden)]
@@ -6371,17 +6696,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStagesInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -6411,19 +6729,10 @@ impl ListStagesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListStagesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStagesInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStageDeploymentsInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -6460,20 +6769,10 @@ impl ListStageDeploymentsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListStageDeploymentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStageDeploymentsInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSnapshotsInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -6503,19 +6802,10 @@ impl ListSnapshotsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListSnapshotsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSnapshotsInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGeneratedCodeJobsInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -6552,20 +6842,10 @@ impl ListGeneratedCodeJobsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListGeneratedCodeJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGeneratedCodeJobsInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGamesInput {
     /// <p>The maximum number of results to return.</p>
     /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
@@ -6588,18 +6868,10 @@ impl ListGamesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListGamesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGamesInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListExtensionVersionsInput {
     /// <p>The namespace (qualifier) of the extension.</p>
     #[doc(hidden)]
@@ -6636,20 +6908,10 @@ impl ListExtensionVersionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListExtensionVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListExtensionVersionsInput");
-        formatter.field("namespace", &self.namespace);
-        formatter.field("name", &self.name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListExtensionsInput {
     /// <p>The maximum number of results to return.</p>
     /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
@@ -6672,18 +6934,10 @@ impl ListExtensionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListExtensionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListExtensionsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportGameConfigurationInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -6704,18 +6958,10 @@ impl ImportGameConfigurationInput {
         self.import_source.as_ref()
     }
 }
-impl std::fmt::Debug for ImportGameConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportGameConfigurationInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("import_source", &self.import_source);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetStageDeploymentInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -6741,19 +6987,10 @@ impl GetStageDeploymentInput {
         self.deployment_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetStageDeploymentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStageDeploymentInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetStageInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -6772,18 +7009,10 @@ impl GetStageInput {
         self.stage_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetStageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStageInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSnapshotInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -6809,19 +7038,10 @@ impl GetSnapshotInput {
         self.sections.as_deref()
     }
 }
-impl std::fmt::Debug for GetSnapshotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSnapshotInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.field("sections", &self.sections);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPlayerConnectionStatusInput {
     /// <p>The unique identifier representing a player.</p>
     #[doc(hidden)]
@@ -6847,19 +7067,10 @@ impl GetPlayerConnectionStatusInput {
         self.stage_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetPlayerConnectionStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPlayerConnectionStatusInput");
-        formatter.field("player_id", &self.player_id);
-        formatter.field("game_name", &self.game_name);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGeneratedCodeJobInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -6885,19 +7096,10 @@ impl GetGeneratedCodeJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetGeneratedCodeJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGeneratedCodeJobInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGameConfigurationInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -6916,18 +7118,10 @@ impl GetGameConfigurationInput {
         self.sections.as_deref()
     }
 }
-impl std::fmt::Debug for GetGameConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGameConfigurationInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("sections", &self.sections);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGameInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -6939,17 +7133,10 @@ impl GetGameInput {
         self.game_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetGameInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGameInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetExtensionVersionInput {
     /// <p>The namespace (qualifier) of the extension.</p>
     #[doc(hidden)]
@@ -6975,19 +7162,10 @@ impl GetExtensionVersionInput {
         self.extension_version.as_deref()
     }
 }
-impl std::fmt::Debug for GetExtensionVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetExtensionVersionInput");
-        formatter.field("namespace", &self.namespace);
-        formatter.field("name", &self.name);
-        formatter.field("extension_version", &self.extension_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetExtensionInput {
     /// <p>The namespace (qualifier) of the extension.</p>
     #[doc(hidden)]
@@ -7006,18 +7184,10 @@ impl GetExtensionInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetExtensionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetExtensionInput");
-        formatter.field("namespace", &self.namespace);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportSnapshotInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -7036,18 +7206,10 @@ impl ExportSnapshotInput {
         self.snapshot_id.as_deref()
     }
 }
-impl std::fmt::Debug for ExportSnapshotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportSnapshotInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisconnectPlayerInput {
     /// <p>The unique identifier representing a player.</p>
     #[doc(hidden)]
@@ -7073,19 +7235,10 @@ impl DisconnectPlayerInput {
         self.stage_name.as_deref()
     }
 }
-impl std::fmt::Debug for DisconnectPlayerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisconnectPlayerInput");
-        formatter.field("player_id", &self.player_id);
-        formatter.field("game_name", &self.game_name);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStageInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -7104,18 +7257,10 @@ impl DeleteStageInput {
         self.stage_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteStageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStageInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGameInput {
     /// <p>The name of the game to delete.</p>
     #[doc(hidden)]
@@ -7127,17 +7272,10 @@ impl DeleteGameInput {
         self.game_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteGameInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGameInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateStageInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -7188,22 +7326,10 @@ impl CreateStageInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateStageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStageInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.field("role", &self.role);
-        formatter.field("description", &self.description);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSnapshotInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -7222,18 +7348,10 @@ impl CreateSnapshotInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for CreateSnapshotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSnapshotInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGameInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
@@ -7268,15 +7386,5 @@ impl CreateGameInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateGameInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGameInput");
-        formatter.field("game_name", &self.game_name);
-        formatter.field("description", &self.description);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }

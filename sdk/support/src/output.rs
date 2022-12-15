@@ -2,7 +2,7 @@
 
 /// <p>The status of the case returned by the <code>ResolveCase</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResolveCaseOutput {
     /// <p>The status of the case when the <code>ResolveCase</code> request was sent.</p>
     #[doc(hidden)]
@@ -21,19 +21,11 @@ impl ResolveCaseOutput {
         self.final_case_status.as_deref()
     }
 }
-impl std::fmt::Debug for ResolveCaseOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResolveCaseOutput");
-        formatter.field("initial_case_status", &self.initial_case_status);
-        formatter.field("final_case_status", &self.final_case_status);
-        formatter.finish()
-    }
-}
 /// See [`ResolveCaseOutput`](crate::output::ResolveCaseOutput).
 pub mod resolve_case_output {
 
     /// A builder for [`ResolveCaseOutput`](crate::output::ResolveCaseOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) initial_case_status: std::option::Option<std::string::String>,
         pub(crate) final_case_status: std::option::Option<std::string::String>,
@@ -83,7 +75,7 @@ impl ResolveCaseOutput {
 
 /// <p>The current refresh status of a Trusted Advisor check.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RefreshTrustedAdvisorCheckOutput {
     /// <p>The current refresh status for a check, including the amount of time until the check is eligible for refresh.</p>
     #[doc(hidden)]
@@ -95,18 +87,11 @@ impl RefreshTrustedAdvisorCheckOutput {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for RefreshTrustedAdvisorCheckOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RefreshTrustedAdvisorCheckOutput");
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 /// See [`RefreshTrustedAdvisorCheckOutput`](crate::output::RefreshTrustedAdvisorCheckOutput).
 pub mod refresh_trusted_advisor_check_output {
 
     /// A builder for [`RefreshTrustedAdvisorCheckOutput`](crate::output::RefreshTrustedAdvisorCheckOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::TrustedAdvisorCheckRefreshStatus>,
     }
@@ -141,7 +126,7 @@ impl RefreshTrustedAdvisorCheckOutput {
 
 /// <p>The summaries of the Trusted Advisor checks returned by the <code>DescribeTrustedAdvisorCheckSummaries</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTrustedAdvisorCheckSummariesOutput {
     /// <p>The summary information for the requested Trusted Advisor checks.</p>
     #[doc(hidden)]
@@ -153,18 +138,11 @@ impl DescribeTrustedAdvisorCheckSummariesOutput {
         self.summaries.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTrustedAdvisorCheckSummariesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTrustedAdvisorCheckSummariesOutput");
-        formatter.field("summaries", &self.summaries);
-        formatter.finish()
-    }
-}
 /// See [`DescribeTrustedAdvisorCheckSummariesOutput`](crate::output::DescribeTrustedAdvisorCheckSummariesOutput).
 pub mod describe_trusted_advisor_check_summaries_output {
 
     /// A builder for [`DescribeTrustedAdvisorCheckSummariesOutput`](crate::output::DescribeTrustedAdvisorCheckSummariesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summaries:
             std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckSummary>>,
@@ -206,7 +184,7 @@ impl DescribeTrustedAdvisorCheckSummariesOutput {
 
 /// <p>Information about the Trusted Advisor checks returned by the <code>DescribeTrustedAdvisorChecks</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTrustedAdvisorChecksOutput {
     /// <p>Information about all available Trusted Advisor checks.</p>
     #[doc(hidden)]
@@ -218,18 +196,11 @@ impl DescribeTrustedAdvisorChecksOutput {
         self.checks.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTrustedAdvisorChecksOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTrustedAdvisorChecksOutput");
-        formatter.field("checks", &self.checks);
-        formatter.finish()
-    }
-}
 /// See [`DescribeTrustedAdvisorChecksOutput`](crate::output::DescribeTrustedAdvisorChecksOutput).
 pub mod describe_trusted_advisor_checks_output {
 
     /// A builder for [`DescribeTrustedAdvisorChecksOutput`](crate::output::DescribeTrustedAdvisorChecksOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) checks:
             std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckDescription>>,
@@ -271,7 +242,7 @@ impl DescribeTrustedAdvisorChecksOutput {
 
 /// <p>The result of the Trusted Advisor check returned by the <code>DescribeTrustedAdvisorCheckResult</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTrustedAdvisorCheckResultOutput {
     /// <p>The detailed results of the Trusted Advisor check.</p>
     #[doc(hidden)]
@@ -283,18 +254,11 @@ impl DescribeTrustedAdvisorCheckResultOutput {
         self.result.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeTrustedAdvisorCheckResultOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTrustedAdvisorCheckResultOutput");
-        formatter.field("result", &self.result);
-        formatter.finish()
-    }
-}
 /// See [`DescribeTrustedAdvisorCheckResultOutput`](crate::output::DescribeTrustedAdvisorCheckResultOutput).
 pub mod describe_trusted_advisor_check_result_output {
 
     /// A builder for [`DescribeTrustedAdvisorCheckResultOutput`](crate::output::DescribeTrustedAdvisorCheckResultOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) result: std::option::Option<crate::model::TrustedAdvisorCheckResult>,
     }
@@ -329,7 +293,7 @@ impl DescribeTrustedAdvisorCheckResultOutput {
 
 /// <p>The statuses of the Trusted Advisor checks returned by the <code>DescribeTrustedAdvisorCheckRefreshStatuses</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTrustedAdvisorCheckRefreshStatusesOutput {
     /// <p>The refresh status of the specified Trusted Advisor checks.</p>
     #[doc(hidden)]
@@ -344,18 +308,11 @@ impl DescribeTrustedAdvisorCheckRefreshStatusesOutput {
         self.statuses.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTrustedAdvisorCheckRefreshStatusesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTrustedAdvisorCheckRefreshStatusesOutput");
-        formatter.field("statuses", &self.statuses);
-        formatter.finish()
-    }
-}
 /// See [`DescribeTrustedAdvisorCheckRefreshStatusesOutput`](crate::output::DescribeTrustedAdvisorCheckRefreshStatusesOutput).
 pub mod describe_trusted_advisor_check_refresh_statuses_output {
 
     /// A builder for [`DescribeTrustedAdvisorCheckRefreshStatusesOutput`](crate::output::DescribeTrustedAdvisorCheckRefreshStatusesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) statuses:
             std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckRefreshStatus>>,
@@ -400,7 +357,7 @@ impl DescribeTrustedAdvisorCheckRefreshStatusesOutput {
 
 /// <p>The list of severity levels returned by the <code>DescribeSeverityLevels</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSeverityLevelsOutput {
     /// <p>The available severity levels for the support case. Available severity levels are defined by your service level agreement with Amazon Web Services.</p>
     #[doc(hidden)]
@@ -412,18 +369,11 @@ impl DescribeSeverityLevelsOutput {
         self.severity_levels.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeSeverityLevelsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSeverityLevelsOutput");
-        formatter.field("severity_levels", &self.severity_levels);
-        formatter.finish()
-    }
-}
 /// See [`DescribeSeverityLevelsOutput`](crate::output::DescribeSeverityLevelsOutput).
 pub mod describe_severity_levels_output {
 
     /// A builder for [`DescribeSeverityLevelsOutput`](crate::output::DescribeSeverityLevelsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) severity_levels: std::option::Option<std::vec::Vec<crate::model::SeverityLevel>>,
     }
@@ -464,7 +414,7 @@ impl DescribeSeverityLevelsOutput {
 
 /// <p>The list of Amazon Web Services services returned by the <code>DescribeServices</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeServicesOutput {
     /// <p>A JSON-formatted list of Amazon Web Services services.</p>
     #[doc(hidden)]
@@ -476,18 +426,11 @@ impl DescribeServicesOutput {
         self.services.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeServicesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeServicesOutput");
-        formatter.field("services", &self.services);
-        formatter.finish()
-    }
-}
 /// See [`DescribeServicesOutput`](crate::output::DescribeServicesOutput).
 pub mod describe_services_output {
 
     /// A builder for [`DescribeServicesOutput`](crate::output::DescribeServicesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) services: std::option::Option<std::vec::Vec<crate::model::Service>>,
     }
@@ -528,7 +471,7 @@ impl DescribeServicesOutput {
 
 /// <p>The communications returned by the <code>DescribeCommunications</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCommunicationsOutput {
     /// <p>The communications for the case.</p>
     #[doc(hidden)]
@@ -547,19 +490,11 @@ impl DescribeCommunicationsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeCommunicationsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCommunicationsOutput");
-        formatter.field("communications", &self.communications);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`DescribeCommunicationsOutput`](crate::output::DescribeCommunicationsOutput).
 pub mod describe_communications_output {
 
     /// A builder for [`DescribeCommunicationsOutput`](crate::output::DescribeCommunicationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) communications: std::option::Option<std::vec::Vec<crate::model::Communication>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -612,7 +547,7 @@ impl DescribeCommunicationsOutput {
 
 /// <p>Returns an array of <a href="https://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html">CaseDetails</a> objects and a <code>nextToken</code> that defines a point for pagination in the result set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCasesOutput {
     /// <p>The details for the cases that match the request.</p>
     #[doc(hidden)]
@@ -631,19 +566,11 @@ impl DescribeCasesOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeCasesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCasesOutput");
-        formatter.field("cases", &self.cases);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`DescribeCasesOutput`](crate::output::DescribeCasesOutput).
 pub mod describe_cases_output {
 
     /// A builder for [`DescribeCasesOutput`](crate::output::DescribeCasesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cases: std::option::Option<std::vec::Vec<crate::model::CaseDetails>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -696,7 +623,7 @@ impl DescribeCasesOutput {
 
 /// <p>The content and file name of the attachment returned by the <code>DescribeAttachment</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAttachmentOutput {
     /// <p>This object includes the attachment content and file name.</p>
     /// <p>In the previous response syntax, the value for the <code>data</code> parameter appears as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
@@ -710,18 +637,11 @@ impl DescribeAttachmentOutput {
         self.attachment.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeAttachmentOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAttachmentOutput");
-        formatter.field("attachment", &self.attachment);
-        formatter.finish()
-    }
-}
 /// See [`DescribeAttachmentOutput`](crate::output::DescribeAttachmentOutput).
 pub mod describe_attachment_output {
 
     /// A builder for [`DescribeAttachmentOutput`](crate::output::DescribeAttachmentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attachment: std::option::Option<crate::model::Attachment>,
     }
@@ -758,7 +678,7 @@ impl DescribeAttachmentOutput {
 
 /// <p>The support case ID returned by a successful completion of the <code>CreateCase</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCaseOutput {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string in the following format: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
     #[doc(hidden)]
@@ -770,18 +690,11 @@ impl CreateCaseOutput {
         self.case_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateCaseOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCaseOutput");
-        formatter.field("case_id", &self.case_id);
-        formatter.finish()
-    }
-}
 /// See [`CreateCaseOutput`](crate::output::CreateCaseOutput).
 pub mod create_case_output {
 
     /// A builder for [`CreateCaseOutput`](crate::output::CreateCaseOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) case_id: std::option::Option<std::string::String>,
     }
@@ -813,7 +726,7 @@ impl CreateCaseOutput {
 
 /// <p>The result of the <code>AddCommunicationToCase</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddCommunicationToCaseOutput {
     /// <p>True if <code>AddCommunicationToCase</code> succeeds. Otherwise, returns an error.</p>
     #[doc(hidden)]
@@ -825,18 +738,11 @@ impl AddCommunicationToCaseOutput {
         self.result
     }
 }
-impl std::fmt::Debug for AddCommunicationToCaseOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddCommunicationToCaseOutput");
-        formatter.field("result", &self.result);
-        formatter.finish()
-    }
-}
 /// See [`AddCommunicationToCaseOutput`](crate::output::AddCommunicationToCaseOutput).
 pub mod add_communication_to_case_output {
 
     /// A builder for [`AddCommunicationToCaseOutput`](crate::output::AddCommunicationToCaseOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) result: std::option::Option<bool>,
     }
@@ -868,7 +774,7 @@ impl AddCommunicationToCaseOutput {
 
 /// <p>The ID and expiry time of the attachment set returned by the <code>AddAttachmentsToSet</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddAttachmentsToSetOutput {
     /// <p>The ID of the attachment set. If an <code>attachmentSetId</code> was not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> was specified, the attachments are added to the specified set, if it exists.</p>
     #[doc(hidden)]
@@ -887,19 +793,11 @@ impl AddAttachmentsToSetOutput {
         self.expiry_time.as_deref()
     }
 }
-impl std::fmt::Debug for AddAttachmentsToSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddAttachmentsToSetOutput");
-        formatter.field("attachment_set_id", &self.attachment_set_id);
-        formatter.field("expiry_time", &self.expiry_time);
-        formatter.finish()
-    }
-}
 /// See [`AddAttachmentsToSetOutput`](crate::output::AddAttachmentsToSetOutput).
 pub mod add_attachments_to_set_output {
 
     /// A builder for [`AddAttachmentsToSetOutput`](crate::output::AddAttachmentsToSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attachment_set_id: std::option::Option<std::string::String>,
         pub(crate) expiry_time: std::option::Option<std::string::String>,

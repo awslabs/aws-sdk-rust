@@ -2,7 +2,7 @@
 
 /// <p>The input doesn't match with the constraints specified by Amazon Web Services services.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -24,18 +24,9 @@ impl ValidationException {
         self.fields.as_deref()
     }
 }
-impl std::fmt::Debug for ValidationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationException");
-        formatter.field("message", &self.message);
-        formatter.field("reason", &self.reason);
-        formatter.field("fields", &self.fields);
-        formatter.finish()
-    }
-}
 impl ValidationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -43,7 +34,9 @@ impl std::fmt::Display for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ValidationException")?;
         if let Some(inner_1) = &self.message {
-            write!(f, ": {}", inner_1)?;
+            {
+                write!(f, ": {}", inner_1)?;
+            }
         }
         Ok(())
     }
@@ -53,7 +46,7 @@ impl std::error::Error for ValidationException {}
 pub mod validation_exception {
 
     /// A builder for [`ValidationException`](crate::error::ValidationException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) reason: std::option::Option<crate::model::ValidationExceptionReason>,
@@ -122,7 +115,7 @@ impl ValidationException {
 
 /// <p>The request was denied due to request throttling. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -137,17 +130,9 @@ impl ThrottlingException {
         self.retry_after_seconds
     }
 }
-impl std::fmt::Debug for ThrottlingException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThrottlingException");
-        formatter.field("message", &self.message);
-        formatter.field("retry_after_seconds", &self.retry_after_seconds);
-        formatter.finish()
-    }
-}
 impl ThrottlingException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -155,7 +140,9 @@ impl std::fmt::Display for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ThrottlingException")?;
         if let Some(inner_2) = &self.message {
-            write!(f, ": {}", inner_2)?;
+            {
+                write!(f, ": {}", inner_2)?;
+            }
         }
         Ok(())
     }
@@ -165,7 +152,7 @@ impl std::error::Error for ThrottlingException {}
 pub mod throttling_exception {
 
     /// A builder for [`ThrottlingException`](crate::error::ThrottlingException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) retry_after_seconds: std::option::Option<i32>,
@@ -209,7 +196,7 @@ impl ThrottlingException {
 
 /// <p>The request references a resource that doesn't exist. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -231,18 +218,9 @@ impl ResourceNotFoundException {
         self.resource_type.as_deref()
     }
 }
-impl std::fmt::Debug for ResourceNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
-    }
-}
 impl ResourceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -250,7 +228,9 @@ impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
         if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+            {
+                write!(f, ": {}", inner_3)?;
+            }
         }
         Ok(())
     }
@@ -260,7 +240,7 @@ impl std::error::Error for ResourceNotFoundException {}
 pub mod resource_not_found_exception {
 
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -319,7 +299,7 @@ impl ResourceNotFoundException {
 
 /// <p>An unexpected error occurred while processing a request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalServerException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -334,17 +314,9 @@ impl InternalServerException {
         self.retry_after_seconds
     }
 }
-impl std::fmt::Debug for InternalServerException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerException");
-        formatter.field("message", &self.message);
-        formatter.field("retry_after_seconds", &self.retry_after_seconds);
-        formatter.finish()
-    }
-}
 impl InternalServerException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -352,7 +324,9 @@ impl std::fmt::Display for InternalServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServerException")?;
         if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+            {
+                write!(f, ": {}", inner_4)?;
+            }
         }
         Ok(())
     }
@@ -362,7 +336,7 @@ impl std::error::Error for InternalServerException {}
 pub mod internal_server_exception {
 
     /// A builder for [`InternalServerException`](crate::error::InternalServerException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) retry_after_seconds: std::option::Option<i32>,
@@ -406,22 +380,15 @@ impl InternalServerException {
 
 /// <p>You do not have sufficient access to perform this action. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for AccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessDeniedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl AccessDeniedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -429,7 +396,9 @@ impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
         if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+            {
+                write!(f, ": {}", inner_5)?;
+            }
         }
         Ok(())
     }
@@ -439,7 +408,7 @@ impl std::error::Error for AccessDeniedException {}
 pub mod access_denied_exception {
 
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -471,7 +440,7 @@ impl AccessDeniedException {
 
 /// <p>The request would cause a service limit to exceed. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -507,20 +476,9 @@ impl ServiceLimitExceededException {
         self.service_code.as_deref()
     }
 }
-impl std::fmt::Debug for ServiceLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("limit_code", &self.limit_code);
-        formatter.field("service_code", &self.service_code);
-        formatter.finish()
-    }
-}
 impl ServiceLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -528,7 +486,9 @@ impl std::fmt::Display for ServiceLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceLimitExceededException")?;
         if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+            {
+                write!(f, ": {}", inner_6)?;
+            }
         }
         Ok(())
     }
@@ -538,7 +498,7 @@ impl std::error::Error for ServiceLimitExceededException {}
 pub mod service_limit_exceeded_exception {
 
     /// A builder for [`ServiceLimitExceededException`](crate::error::ServiceLimitExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -621,7 +581,7 @@ impl ServiceLimitExceededException {
 
 /// <p>You can cause an inconsistent state by updating or deleting a resource. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -643,18 +603,9 @@ impl ConflictException {
         self.resource_type.as_deref()
     }
 }
-impl std::fmt::Debug for ConflictException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConflictException");
-        formatter.field("message", &self.message);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
-    }
-}
 impl ConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -662,7 +613,9 @@ impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
         if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
+            {
+                write!(f, ": {}", inner_7)?;
+            }
         }
         Ok(())
     }
@@ -672,7 +625,7 @@ impl std::error::Error for ConflictException {}
 pub mod conflict_exception {
 
     /// A builder for [`ConflictException`](crate::error::ConflictException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -738,6 +691,14 @@ pub struct AssociateAccountsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for AssociateAccountsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AssociateAccountsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AssociateAccounts` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -756,8 +717,15 @@ pub enum AssociateAccountsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input doesn't match with the constraints specified by Amazon Web Services services.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateAccountsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -790,7 +758,7 @@ impl AssociateAccountsError {
     /// Creates the `AssociateAccountsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssociateAccountsErrorKind::Unhandled(err.into()),
+            kind: AssociateAccountsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -799,7 +767,7 @@ impl AssociateAccountsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssociateAccountsErrorKind::Unhandled(err.into()),
+            kind: AssociateAccountsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -880,7 +848,7 @@ impl std::error::Error for AssociateAccountsError {
             AssociateAccountsErrorKind::ServiceLimitExceededException(_inner) => Some(_inner),
             AssociateAccountsErrorKind::ThrottlingException(_inner) => Some(_inner),
             AssociateAccountsErrorKind::ValidationException(_inner) => Some(_inner),
-            AssociateAccountsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AssociateAccountsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -893,6 +861,14 @@ pub struct AssociatePricingRulesError {
     pub kind: AssociatePricingRulesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for AssociatePricingRulesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AssociatePricingRulesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `AssociatePricingRules` operation.
 #[non_exhaustive]
@@ -912,8 +888,15 @@ pub enum AssociatePricingRulesErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input doesn't match with the constraints specified by Amazon Web Services services.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociatePricingRulesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -946,7 +929,9 @@ impl AssociatePricingRulesError {
     /// Creates the `AssociatePricingRulesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssociatePricingRulesErrorKind::Unhandled(err.into()),
+            kind: AssociatePricingRulesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -955,7 +940,9 @@ impl AssociatePricingRulesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssociatePricingRulesErrorKind::Unhandled(err.into()),
+            kind: AssociatePricingRulesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1039,7 +1026,7 @@ impl std::error::Error for AssociatePricingRulesError {
             AssociatePricingRulesErrorKind::ServiceLimitExceededException(_inner) => Some(_inner),
             AssociatePricingRulesErrorKind::ThrottlingException(_inner) => Some(_inner),
             AssociatePricingRulesErrorKind::ValidationException(_inner) => Some(_inner),
-            AssociatePricingRulesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AssociatePricingRulesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1052,6 +1039,18 @@ pub struct BatchAssociateResourcesToCustomLineItemError {
     pub kind: BatchAssociateResourcesToCustomLineItemErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for BatchAssociateResourcesToCustomLineItemError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: BatchAssociateResourcesToCustomLineItemErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `BatchAssociateResourcesToCustomLineItem` operation.
 #[non_exhaustive]
@@ -1071,8 +1070,15 @@ pub enum BatchAssociateResourcesToCustomLineItemErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input doesn't match with the constraints specified by Amazon Web Services services.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchAssociateResourcesToCustomLineItemError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1122,7 +1128,9 @@ impl BatchAssociateResourcesToCustomLineItemError {
     /// Creates the `BatchAssociateResourcesToCustomLineItemError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchAssociateResourcesToCustomLineItemErrorKind::Unhandled(err.into()),
+            kind: BatchAssociateResourcesToCustomLineItemErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1131,7 +1139,9 @@ impl BatchAssociateResourcesToCustomLineItemError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchAssociateResourcesToCustomLineItemErrorKind::Unhandled(err.into()),
+            kind: BatchAssociateResourcesToCustomLineItemErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1229,9 +1239,7 @@ impl std::error::Error for BatchAssociateResourcesToCustomLineItemError {
             BatchAssociateResourcesToCustomLineItemErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            BatchAssociateResourcesToCustomLineItemErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            BatchAssociateResourcesToCustomLineItemErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1244,6 +1252,18 @@ pub struct BatchDisassociateResourcesFromCustomLineItemError {
     pub kind: BatchDisassociateResourcesFromCustomLineItemErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for BatchDisassociateResourcesFromCustomLineItemError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: BatchDisassociateResourcesFromCustomLineItemErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `BatchDisassociateResourcesFromCustomLineItem` operation.
 #[non_exhaustive]
@@ -1261,8 +1281,15 @@ pub enum BatchDisassociateResourcesFromCustomLineItemErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input doesn't match with the constraints specified by Amazon Web Services services.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchDisassociateResourcesFromCustomLineItemError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1313,7 +1340,9 @@ impl BatchDisassociateResourcesFromCustomLineItemError {
     /// Creates the `BatchDisassociateResourcesFromCustomLineItemError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchDisassociateResourcesFromCustomLineItemErrorKind::Unhandled(err.into()),
+            kind: BatchDisassociateResourcesFromCustomLineItemErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1322,7 +1351,9 @@ impl BatchDisassociateResourcesFromCustomLineItemError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchDisassociateResourcesFromCustomLineItemErrorKind::Unhandled(err.into()),
+            kind: BatchDisassociateResourcesFromCustomLineItemErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1411,7 +1442,7 @@ impl std::error::Error for BatchDisassociateResourcesFromCustomLineItemError {
                 Some(_inner)
             }
             BatchDisassociateResourcesFromCustomLineItemErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -1425,6 +1456,14 @@ pub struct CreateBillingGroupError {
     pub kind: CreateBillingGroupErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateBillingGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateBillingGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateBillingGroup` operation.
 #[non_exhaustive]
@@ -1442,8 +1481,15 @@ pub enum CreateBillingGroupErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input doesn't match with the constraints specified by Amazon Web Services services.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateBillingGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1475,7 +1521,7 @@ impl CreateBillingGroupError {
     /// Creates the `CreateBillingGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateBillingGroupErrorKind::Unhandled(err.into()),
+            kind: CreateBillingGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1484,7 +1530,7 @@ impl CreateBillingGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateBillingGroupErrorKind::Unhandled(err.into()),
+            kind: CreateBillingGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1560,7 +1606,7 @@ impl std::error::Error for CreateBillingGroupError {
             CreateBillingGroupErrorKind::ServiceLimitExceededException(_inner) => Some(_inner),
             CreateBillingGroupErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateBillingGroupErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateBillingGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateBillingGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1573,6 +1619,14 @@ pub struct CreateCustomLineItemError {
     pub kind: CreateCustomLineItemErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateCustomLineItemError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateCustomLineItemErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateCustomLineItem` operation.
 #[non_exhaustive]
@@ -1590,8 +1644,15 @@ pub enum CreateCustomLineItemErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input doesn't match with the constraints specified by Amazon Web Services services.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateCustomLineItemError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1623,7 +1684,9 @@ impl CreateCustomLineItemError {
     /// Creates the `CreateCustomLineItemError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateCustomLineItemErrorKind::Unhandled(err.into()),
+            kind: CreateCustomLineItemErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1632,7 +1695,9 @@ impl CreateCustomLineItemError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateCustomLineItemErrorKind::Unhandled(err.into()),
+            kind: CreateCustomLineItemErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1708,7 +1773,7 @@ impl std::error::Error for CreateCustomLineItemError {
             CreateCustomLineItemErrorKind::ServiceLimitExceededException(_inner) => Some(_inner),
             CreateCustomLineItemErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateCustomLineItemErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateCustomLineItemErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateCustomLineItemErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1721,6 +1786,14 @@ pub struct CreatePricingPlanError {
     pub kind: CreatePricingPlanErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreatePricingPlanError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreatePricingPlanErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreatePricingPlan` operation.
 #[non_exhaustive]
@@ -1740,8 +1813,15 @@ pub enum CreatePricingPlanErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input doesn't match with the constraints specified by Amazon Web Services services.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreatePricingPlanError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1774,7 +1854,7 @@ impl CreatePricingPlanError {
     /// Creates the `CreatePricingPlanError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreatePricingPlanErrorKind::Unhandled(err.into()),
+            kind: CreatePricingPlanErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1783,7 +1863,7 @@ impl CreatePricingPlanError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreatePricingPlanErrorKind::Unhandled(err.into()),
+            kind: CreatePricingPlanErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1864,7 +1944,7 @@ impl std::error::Error for CreatePricingPlanError {
             CreatePricingPlanErrorKind::ServiceLimitExceededException(_inner) => Some(_inner),
             CreatePricingPlanErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreatePricingPlanErrorKind::ValidationException(_inner) => Some(_inner),
-            CreatePricingPlanErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreatePricingPlanErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1877,6 +1957,14 @@ pub struct CreatePricingRuleError {
     pub kind: CreatePricingRuleErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreatePricingRuleError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreatePricingRuleErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreatePricingRule` operation.
 #[non_exhaustive]
@@ -1894,8 +1982,15 @@ pub enum CreatePricingRuleErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input doesn't match with the constraints specified by Amazon Web Services services.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreatePricingRuleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1927,7 +2022,7 @@ impl CreatePricingRuleError {
     /// Creates the `CreatePricingRuleError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreatePricingRuleErrorKind::Unhandled(err.into()),
+            kind: CreatePricingRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1936,7 +2031,7 @@ impl CreatePricingRuleError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreatePricingRuleErrorKind::Unhandled(err.into()),
+            kind: CreatePricingRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2009,7 +2104,7 @@ impl std::error::Error for CreatePricingRuleError {
             CreatePricingRuleErrorKind::ServiceLimitExceededException(_inner) => Some(_inner),
             CreatePricingRuleErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreatePricingRuleErrorKind::ValidationException(_inner) => Some(_inner),
-            CreatePricingRuleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreatePricingRuleErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2023,6 +2118,14 @@ pub struct DeleteBillingGroupError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteBillingGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteBillingGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteBillingGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2035,8 +2138,15 @@ pub enum DeleteBillingGroupErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input doesn't match with the constraints specified by Amazon Web Services services.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteBillingGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2066,7 +2176,7 @@ impl DeleteBillingGroupError {
     /// Creates the `DeleteBillingGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteBillingGroupErrorKind::Unhandled(err.into()),
+            kind: DeleteBillingGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2075,7 +2185,7 @@ impl DeleteBillingGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteBillingGroupErrorKind::Unhandled(err.into()),
+            kind: DeleteBillingGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2135,7 +2245,7 @@ impl std::error::Error for DeleteBillingGroupError {
             DeleteBillingGroupErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteBillingGroupErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteBillingGroupErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteBillingGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteBillingGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2148,6 +2258,14 @@ pub struct DeleteCustomLineItemError {
     pub kind: DeleteCustomLineItemErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteCustomLineItemError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteCustomLineItemErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteCustomLineItem` operation.
 #[non_exhaustive]
@@ -2163,8 +2281,15 @@ pub enum DeleteCustomLineItemErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input doesn't match with the constraints specified by Amazon Web Services services.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteCustomLineItemError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2195,7 +2320,9 @@ impl DeleteCustomLineItemError {
     /// Creates the `DeleteCustomLineItemError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteCustomLineItemErrorKind::Unhandled(err.into()),
+            kind: DeleteCustomLineItemErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2204,7 +2331,9 @@ impl DeleteCustomLineItemError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteCustomLineItemErrorKind::Unhandled(err.into()),
+            kind: DeleteCustomLineItemErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2272,7 +2401,7 @@ impl std::error::Error for DeleteCustomLineItemError {
             DeleteCustomLineItemErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteCustomLineItemErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteCustomLineItemErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteCustomLineItemErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteCustomLineItemErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2285,6 +2414,14 @@ pub struct DeletePricingPlanError {
     pub kind: DeletePricingPlanErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeletePricingPlanError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeletePricingPlanErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeletePricingPlan` operation.
 #[non_exhaustive]
@@ -2300,8 +2437,15 @@ pub enum DeletePricingPlanErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input doesn't match with the constraints specified by Amazon Web Services services.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeletePricingPlanError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2332,7 +2476,7 @@ impl DeletePricingPlanError {
     /// Creates the `DeletePricingPlanError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeletePricingPlanErrorKind::Unhandled(err.into()),
+            kind: DeletePricingPlanErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2341,7 +2485,7 @@ impl DeletePricingPlanError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeletePricingPlanErrorKind::Unhandled(err.into()),
+            kind: DeletePricingPlanErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2406,7 +2550,7 @@ impl std::error::Error for DeletePricingPlanError {
             DeletePricingPlanErrorKind::InternalServerException(_inner) => Some(_inner),
             DeletePricingPlanErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeletePricingPlanErrorKind::ValidationException(_inner) => Some(_inner),
-            DeletePricingPlanErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeletePricingPlanErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2419,6 +2563,14 @@ pub struct DeletePricingRuleError {
     pub kind: DeletePricingRuleErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeletePricingRuleError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeletePricingRuleErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeletePricingRule` operation.
 #[non_exhaustive]
@@ -2434,8 +2586,15 @@ pub enum DeletePricingRuleErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input doesn't match with the constraints specified by Amazon Web Services services.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeletePricingRuleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2466,7 +2625,7 @@ impl DeletePricingRuleError {
     /// Creates the `DeletePricingRuleError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeletePricingRuleErrorKind::Unhandled(err.into()),
+            kind: DeletePricingRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2475,7 +2634,7 @@ impl DeletePricingRuleError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeletePricingRuleErrorKind::Unhandled(err.into()),
+            kind: DeletePricingRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2540,7 +2699,7 @@ impl std::error::Error for DeletePricingRuleError {
             DeletePricingRuleErrorKind::InternalServerException(_inner) => Some(_inner),
             DeletePricingRuleErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeletePricingRuleErrorKind::ValidationException(_inner) => Some(_inner),
-            DeletePricingRuleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeletePricingRuleErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2553,6 +2712,14 @@ pub struct DisassociateAccountsError {
     pub kind: DisassociateAccountsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DisassociateAccountsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DisassociateAccountsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DisassociateAccounts` operation.
 #[non_exhaustive]
@@ -2570,8 +2737,15 @@ pub enum DisassociateAccountsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input doesn't match with the constraints specified by Amazon Web Services services.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateAccountsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2603,7 +2777,9 @@ impl DisassociateAccountsError {
     /// Creates the `DisassociateAccountsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisassociateAccountsErrorKind::Unhandled(err.into()),
+            kind: DisassociateAccountsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2612,7 +2788,9 @@ impl DisassociateAccountsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisassociateAccountsErrorKind::Unhandled(err.into()),
+            kind: DisassociateAccountsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2688,7 +2866,7 @@ impl std::error::Error for DisassociateAccountsError {
             DisassociateAccountsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DisassociateAccountsErrorKind::ThrottlingException(_inner) => Some(_inner),
             DisassociateAccountsErrorKind::ValidationException(_inner) => Some(_inner),
-            DisassociateAccountsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisassociateAccountsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2701,6 +2879,16 @@ pub struct DisassociatePricingRulesError {
     pub kind: DisassociatePricingRulesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DisassociatePricingRulesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DisassociatePricingRulesErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DisassociatePricingRules` operation.
 #[non_exhaustive]
@@ -2718,8 +2906,15 @@ pub enum DisassociatePricingRulesErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input doesn't match with the constraints specified by Amazon Web Services services.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociatePricingRulesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2751,7 +2946,9 @@ impl DisassociatePricingRulesError {
     /// Creates the `DisassociatePricingRulesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisassociatePricingRulesErrorKind::Unhandled(err.into()),
+            kind: DisassociatePricingRulesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2760,7 +2957,9 @@ impl DisassociatePricingRulesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisassociatePricingRulesErrorKind::Unhandled(err.into()),
+            kind: DisassociatePricingRulesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2836,7 +3035,7 @@ impl std::error::Error for DisassociatePricingRulesError {
             DisassociatePricingRulesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DisassociatePricingRulesErrorKind::ThrottlingException(_inner) => Some(_inner),
             DisassociatePricingRulesErrorKind::ValidationException(_inner) => Some(_inner),
-            DisassociatePricingRulesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisassociatePricingRulesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2849,6 +3048,14 @@ pub struct ListAccountAssociationsError {
     pub kind: ListAccountAssociationsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListAccountAssociationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListAccountAssociationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListAccountAssociations` operation.
 #[non_exhaustive]
@@ -2864,8 +3071,15 @@ pub enum ListAccountAssociationsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input doesn't match with the constraints specified by Amazon Web Services services.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAccountAssociationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2896,7 +3110,9 @@ impl ListAccountAssociationsError {
     /// Creates the `ListAccountAssociationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAccountAssociationsErrorKind::Unhandled(err.into()),
+            kind: ListAccountAssociationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2905,7 +3121,9 @@ impl ListAccountAssociationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAccountAssociationsErrorKind::Unhandled(err.into()),
+            kind: ListAccountAssociationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2973,7 +3191,7 @@ impl std::error::Error for ListAccountAssociationsError {
             ListAccountAssociationsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListAccountAssociationsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListAccountAssociationsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListAccountAssociationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAccountAssociationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2986,6 +3204,16 @@ pub struct ListBillingGroupCostReportsError {
     pub kind: ListBillingGroupCostReportsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListBillingGroupCostReportsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListBillingGroupCostReportsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListBillingGroupCostReports` operation.
 #[non_exhaustive]
@@ -3001,8 +3229,15 @@ pub enum ListBillingGroupCostReportsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input doesn't match with the constraints specified by Amazon Web Services services.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListBillingGroupCostReportsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3035,7 +3270,9 @@ impl ListBillingGroupCostReportsError {
     /// Creates the `ListBillingGroupCostReportsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListBillingGroupCostReportsErrorKind::Unhandled(err.into()),
+            kind: ListBillingGroupCostReportsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3044,7 +3281,9 @@ impl ListBillingGroupCostReportsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListBillingGroupCostReportsErrorKind::Unhandled(err.into()),
+            kind: ListBillingGroupCostReportsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3112,7 +3351,7 @@ impl std::error::Error for ListBillingGroupCostReportsError {
             ListBillingGroupCostReportsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListBillingGroupCostReportsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListBillingGroupCostReportsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListBillingGroupCostReportsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListBillingGroupCostReportsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3125,6 +3364,14 @@ pub struct ListBillingGroupsError {
     pub kind: ListBillingGroupsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListBillingGroupsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListBillingGroupsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListBillingGroups` operation.
 #[non_exhaustive]
@@ -3140,8 +3387,15 @@ pub enum ListBillingGroupsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input doesn't match with the constraints specified by Amazon Web Services services.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListBillingGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3172,7 +3426,7 @@ impl ListBillingGroupsError {
     /// Creates the `ListBillingGroupsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListBillingGroupsErrorKind::Unhandled(err.into()),
+            kind: ListBillingGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3181,7 +3435,7 @@ impl ListBillingGroupsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListBillingGroupsErrorKind::Unhandled(err.into()),
+            kind: ListBillingGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3249,7 +3503,7 @@ impl std::error::Error for ListBillingGroupsError {
             ListBillingGroupsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListBillingGroupsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListBillingGroupsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListBillingGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListBillingGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3262,6 +3516,14 @@ pub struct ListCustomLineItemsError {
     pub kind: ListCustomLineItemsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListCustomLineItemsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListCustomLineItemsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListCustomLineItems` operation.
 #[non_exhaustive]
@@ -3277,8 +3539,15 @@ pub enum ListCustomLineItemsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input doesn't match with the constraints specified by Amazon Web Services services.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListCustomLineItemsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3309,7 +3578,7 @@ impl ListCustomLineItemsError {
     /// Creates the `ListCustomLineItemsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListCustomLineItemsErrorKind::Unhandled(err.into()),
+            kind: ListCustomLineItemsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3318,7 +3587,7 @@ impl ListCustomLineItemsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListCustomLineItemsErrorKind::Unhandled(err.into()),
+            kind: ListCustomLineItemsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3386,7 +3655,7 @@ impl std::error::Error for ListCustomLineItemsError {
             ListCustomLineItemsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListCustomLineItemsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListCustomLineItemsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListCustomLineItemsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListCustomLineItemsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3400,6 +3669,14 @@ pub struct ListPricingPlansError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListPricingPlansError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListPricingPlansErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListPricingPlans` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3412,8 +3689,15 @@ pub enum ListPricingPlansErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input doesn't match with the constraints specified by Amazon Web Services services.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListPricingPlansError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3443,7 +3727,7 @@ impl ListPricingPlansError {
     /// Creates the `ListPricingPlansError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListPricingPlansErrorKind::Unhandled(err.into()),
+            kind: ListPricingPlansErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3452,7 +3736,7 @@ impl ListPricingPlansError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListPricingPlansErrorKind::Unhandled(err.into()),
+            kind: ListPricingPlansErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3512,7 +3796,7 @@ impl std::error::Error for ListPricingPlansError {
             ListPricingPlansErrorKind::InternalServerException(_inner) => Some(_inner),
             ListPricingPlansErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListPricingPlansErrorKind::ValidationException(_inner) => Some(_inner),
-            ListPricingPlansErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListPricingPlansErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3525,6 +3809,18 @@ pub struct ListPricingPlansAssociatedWithPricingRuleError {
     pub kind: ListPricingPlansAssociatedWithPricingRuleErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for ListPricingPlansAssociatedWithPricingRuleError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListPricingPlansAssociatedWithPricingRuleErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListPricingPlansAssociatedWithPricingRule` operation.
 #[non_exhaustive]
@@ -3540,8 +3836,15 @@ pub enum ListPricingPlansAssociatedWithPricingRuleErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input doesn't match with the constraints specified by Amazon Web Services services.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListPricingPlansAssociatedWithPricingRuleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3585,7 +3888,9 @@ impl ListPricingPlansAssociatedWithPricingRuleError {
     /// Creates the `ListPricingPlansAssociatedWithPricingRuleError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListPricingPlansAssociatedWithPricingRuleErrorKind::Unhandled(err.into()),
+            kind: ListPricingPlansAssociatedWithPricingRuleErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3594,7 +3899,9 @@ impl ListPricingPlansAssociatedWithPricingRuleError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListPricingPlansAssociatedWithPricingRuleErrorKind::Unhandled(err.into()),
+            kind: ListPricingPlansAssociatedWithPricingRuleErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3672,9 +3979,7 @@ impl std::error::Error for ListPricingPlansAssociatedWithPricingRuleError {
             ListPricingPlansAssociatedWithPricingRuleErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            ListPricingPlansAssociatedWithPricingRuleErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            ListPricingPlansAssociatedWithPricingRuleErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3688,6 +3993,14 @@ pub struct ListPricingRulesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListPricingRulesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListPricingRulesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListPricingRules` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3700,8 +4013,15 @@ pub enum ListPricingRulesErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input doesn't match with the constraints specified by Amazon Web Services services.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListPricingRulesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3731,7 +4051,7 @@ impl ListPricingRulesError {
     /// Creates the `ListPricingRulesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListPricingRulesErrorKind::Unhandled(err.into()),
+            kind: ListPricingRulesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3740,7 +4060,7 @@ impl ListPricingRulesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListPricingRulesErrorKind::Unhandled(err.into()),
+            kind: ListPricingRulesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3800,7 +4120,7 @@ impl std::error::Error for ListPricingRulesError {
             ListPricingRulesErrorKind::InternalServerException(_inner) => Some(_inner),
             ListPricingRulesErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListPricingRulesErrorKind::ValidationException(_inner) => Some(_inner),
-            ListPricingRulesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListPricingRulesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3813,6 +4133,18 @@ pub struct ListPricingRulesAssociatedToPricingPlanError {
     pub kind: ListPricingRulesAssociatedToPricingPlanErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for ListPricingRulesAssociatedToPricingPlanError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListPricingRulesAssociatedToPricingPlanErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListPricingRulesAssociatedToPricingPlan` operation.
 #[non_exhaustive]
@@ -3828,8 +4160,15 @@ pub enum ListPricingRulesAssociatedToPricingPlanErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input doesn't match with the constraints specified by Amazon Web Services services.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListPricingRulesAssociatedToPricingPlanError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3873,7 +4212,9 @@ impl ListPricingRulesAssociatedToPricingPlanError {
     /// Creates the `ListPricingRulesAssociatedToPricingPlanError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListPricingRulesAssociatedToPricingPlanErrorKind::Unhandled(err.into()),
+            kind: ListPricingRulesAssociatedToPricingPlanErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3882,7 +4223,9 @@ impl ListPricingRulesAssociatedToPricingPlanError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListPricingRulesAssociatedToPricingPlanErrorKind::Unhandled(err.into()),
+            kind: ListPricingRulesAssociatedToPricingPlanErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3960,9 +4303,7 @@ impl std::error::Error for ListPricingRulesAssociatedToPricingPlanError {
             ListPricingRulesAssociatedToPricingPlanErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            ListPricingRulesAssociatedToPricingPlanErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            ListPricingRulesAssociatedToPricingPlanErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3975,6 +4316,18 @@ pub struct ListResourcesAssociatedToCustomLineItemError {
     pub kind: ListResourcesAssociatedToCustomLineItemErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for ListResourcesAssociatedToCustomLineItemError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListResourcesAssociatedToCustomLineItemErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListResourcesAssociatedToCustomLineItem` operation.
 #[non_exhaustive]
@@ -3990,8 +4343,15 @@ pub enum ListResourcesAssociatedToCustomLineItemErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input doesn't match with the constraints specified by Amazon Web Services services.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListResourcesAssociatedToCustomLineItemError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4035,7 +4395,9 @@ impl ListResourcesAssociatedToCustomLineItemError {
     /// Creates the `ListResourcesAssociatedToCustomLineItemError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListResourcesAssociatedToCustomLineItemErrorKind::Unhandled(err.into()),
+            kind: ListResourcesAssociatedToCustomLineItemErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -4044,7 +4406,9 @@ impl ListResourcesAssociatedToCustomLineItemError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListResourcesAssociatedToCustomLineItemErrorKind::Unhandled(err.into()),
+            kind: ListResourcesAssociatedToCustomLineItemErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -4122,9 +4486,7 @@ impl std::error::Error for ListResourcesAssociatedToCustomLineItemError {
             ListResourcesAssociatedToCustomLineItemErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            ListResourcesAssociatedToCustomLineItemErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            ListResourcesAssociatedToCustomLineItemErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4137,6 +4499,14 @@ pub struct ListTagsForResourceError {
     pub kind: ListTagsForResourceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListTagsForResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListTagsForResource` operation.
 #[non_exhaustive]
@@ -4152,8 +4522,15 @@ pub enum ListTagsForResourceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input doesn't match with the constraints specified by Amazon Web Services services.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4184,7 +4561,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4193,7 +4570,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4261,7 +4638,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4274,6 +4651,14 @@ pub struct TagResourceError {
     pub kind: TagResourceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for TagResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `TagResource` operation.
 #[non_exhaustive]
@@ -4289,8 +4674,15 @@ pub enum TagResourceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input doesn't match with the constraints specified by Amazon Web Services services.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4321,7 +4713,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4330,7 +4722,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4386,7 +4778,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
             TagResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4399,6 +4791,14 @@ pub struct UntagResourceError {
     pub kind: UntagResourceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UntagResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UntagResource` operation.
 #[non_exhaustive]
@@ -4414,8 +4814,15 @@ pub enum UntagResourceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input doesn't match with the constraints specified by Amazon Web Services services.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4446,7 +4853,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4455,7 +4862,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4514,7 +4921,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
             UntagResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4527,6 +4934,14 @@ pub struct UpdateBillingGroupError {
     pub kind: UpdateBillingGroupErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateBillingGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateBillingGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateBillingGroup` operation.
 #[non_exhaustive]
@@ -4544,8 +4959,15 @@ pub enum UpdateBillingGroupErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input doesn't match with the constraints specified by Amazon Web Services services.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateBillingGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4577,7 +4999,7 @@ impl UpdateBillingGroupError {
     /// Creates the `UpdateBillingGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateBillingGroupErrorKind::Unhandled(err.into()),
+            kind: UpdateBillingGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4586,7 +5008,7 @@ impl UpdateBillingGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateBillingGroupErrorKind::Unhandled(err.into()),
+            kind: UpdateBillingGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4662,7 +5084,7 @@ impl std::error::Error for UpdateBillingGroupError {
             UpdateBillingGroupErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateBillingGroupErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateBillingGroupErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateBillingGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateBillingGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4675,6 +5097,14 @@ pub struct UpdateCustomLineItemError {
     pub kind: UpdateCustomLineItemErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateCustomLineItemError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateCustomLineItemErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateCustomLineItem` operation.
 #[non_exhaustive]
@@ -4690,8 +5120,15 @@ pub enum UpdateCustomLineItemErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input doesn't match with the constraints specified by Amazon Web Services services.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateCustomLineItemError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4722,7 +5159,9 @@ impl UpdateCustomLineItemError {
     /// Creates the `UpdateCustomLineItemError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateCustomLineItemErrorKind::Unhandled(err.into()),
+            kind: UpdateCustomLineItemErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4731,7 +5170,9 @@ impl UpdateCustomLineItemError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateCustomLineItemErrorKind::Unhandled(err.into()),
+            kind: UpdateCustomLineItemErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4799,7 +5240,7 @@ impl std::error::Error for UpdateCustomLineItemError {
             UpdateCustomLineItemErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateCustomLineItemErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateCustomLineItemErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateCustomLineItemErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateCustomLineItemErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4812,6 +5253,14 @@ pub struct UpdatePricingPlanError {
     pub kind: UpdatePricingPlanErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdatePricingPlanError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdatePricingPlanErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdatePricingPlan` operation.
 #[non_exhaustive]
@@ -4829,8 +5278,15 @@ pub enum UpdatePricingPlanErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input doesn't match with the constraints specified by Amazon Web Services services.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdatePricingPlanError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4862,7 +5318,7 @@ impl UpdatePricingPlanError {
     /// Creates the `UpdatePricingPlanError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdatePricingPlanErrorKind::Unhandled(err.into()),
+            kind: UpdatePricingPlanErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4871,7 +5327,7 @@ impl UpdatePricingPlanError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdatePricingPlanErrorKind::Unhandled(err.into()),
+            kind: UpdatePricingPlanErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4944,7 +5400,7 @@ impl std::error::Error for UpdatePricingPlanError {
             UpdatePricingPlanErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdatePricingPlanErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdatePricingPlanErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdatePricingPlanErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdatePricingPlanErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4957,6 +5413,14 @@ pub struct UpdatePricingRuleError {
     pub kind: UpdatePricingRuleErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdatePricingRuleError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdatePricingRuleErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdatePricingRule` operation.
 #[non_exhaustive]
@@ -4974,8 +5438,15 @@ pub enum UpdatePricingRuleErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input doesn't match with the constraints specified by Amazon Web Services services.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdatePricingRuleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5007,7 +5478,7 @@ impl UpdatePricingRuleError {
     /// Creates the `UpdatePricingRuleError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdatePricingRuleErrorKind::Unhandled(err.into()),
+            kind: UpdatePricingRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5016,7 +5487,7 @@ impl UpdatePricingRuleError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdatePricingRuleErrorKind::Unhandled(err.into()),
+            kind: UpdatePricingRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5089,7 +5560,35 @@ impl std::error::Error for UpdatePricingRuleError {
             UpdatePricingRuleErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdatePricingRuleErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdatePricingRuleErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdatePricingRuleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdatePricingRuleErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+///
+/// When logging an error from the SDK, it is recommended that you either wrap the error in
+/// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+/// error reporter library that visits the error's cause/source chain, or call
+/// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p>An API Gateway VPC link for a RestApi to access resources in an Amazon Virtual Private Cloud (VPC).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateVpcLinkOutput {
     /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
     #[doc(hidden)]
@@ -60,24 +60,11 @@ impl UpdateVpcLinkOutput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateVpcLinkOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateVpcLinkOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("target_arns", &self.target_arns);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`UpdateVpcLinkOutput`](crate::output::UpdateVpcLinkOutput).
 pub mod update_vpc_link_output {
 
     /// A builder for [`UpdateVpcLinkOutput`](crate::output::UpdateVpcLinkOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -213,7 +200,7 @@ impl UpdateVpcLinkOutput {
 
 /// <p>Represents a usage plan used to specify who can assess associated API stages. Optionally, target request rate and quota limits can be set. In some cases clients can exceed the targets that you set. Don’t rely on usage plans to control costs. Consider using <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html">Amazon Web Services Budgets</a> to monitor costs and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF</a> to manage API requests.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateUsagePlanOutput {
     /// <p>The identifier of a UsagePlan resource.</p>
     #[doc(hidden)]
@@ -278,25 +265,11 @@ impl UpdateUsagePlanOutput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateUsagePlanOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateUsagePlanOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("api_stages", &self.api_stages);
-        formatter.field("throttle", &self.throttle);
-        formatter.field("quota", &self.quota);
-        formatter.field("product_code", &self.product_code);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`UpdateUsagePlanOutput`](crate::output::UpdateUsagePlanOutput).
 pub mod update_usage_plan_output {
 
     /// A builder for [`UpdateUsagePlanOutput`](crate::output::UpdateUsagePlanOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -444,7 +417,7 @@ impl UpdateUsagePlanOutput {
 
 /// <p>Represents the usage data of a usage plan.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateUsageOutput {
     /// <p>The plan Id associated with this usage data.</p>
     #[doc(hidden)]
@@ -490,22 +463,11 @@ impl UpdateUsageOutput {
         self.position.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateUsageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateUsageOutput");
-        formatter.field("usage_plan_id", &self.usage_plan_id);
-        formatter.field("start_date", &self.start_date);
-        formatter.field("end_date", &self.end_date);
-        formatter.field("items", &self.items);
-        formatter.field("position", &self.position);
-        formatter.finish()
-    }
-}
 /// See [`UpdateUsageOutput`](crate::output::UpdateUsageOutput).
 pub mod update_usage_output {
 
     /// A builder for [`UpdateUsageOutput`](crate::output::UpdateUsageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) usage_plan_id: std::option::Option<std::string::String>,
         pub(crate) start_date: std::option::Option<std::string::String>,
@@ -605,7 +567,7 @@ impl UpdateUsageOutput {
 
 /// <p>Represents a unique identifier for a version of a deployed RestApi that is callable by users.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateStageOutput {
     /// <p>The identifier of the Deployment that the stage points to.</p>
     #[doc(hidden)]
@@ -743,34 +705,11 @@ impl UpdateStageOutput {
         self.last_updated_date.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateStageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateStageOutput");
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("client_certificate_id", &self.client_certificate_id);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.field("description", &self.description);
-        formatter.field("cache_cluster_enabled", &self.cache_cluster_enabled);
-        formatter.field("cache_cluster_size", &self.cache_cluster_size);
-        formatter.field("cache_cluster_status", &self.cache_cluster_status);
-        formatter.field("method_settings", &self.method_settings);
-        formatter.field("variables", &self.variables);
-        formatter.field("documentation_version", &self.documentation_version);
-        formatter.field("access_log_settings", &self.access_log_settings);
-        formatter.field("canary_settings", &self.canary_settings);
-        formatter.field("tracing_enabled", &self.tracing_enabled);
-        formatter.field("web_acl_arn", &self.web_acl_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("last_updated_date", &self.last_updated_date);
-        formatter.finish()
-    }
-}
 /// See [`UpdateStageOutput`](crate::output::UpdateStageOutput).
 pub mod update_stage_output {
 
     /// A builder for [`UpdateStageOutput`](crate::output::UpdateStageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_id: std::option::Option<std::string::String>,
         pub(crate) client_certificate_id: std::option::Option<std::string::String>,
@@ -1072,7 +1011,7 @@ impl UpdateStageOutput {
 
 /// <p>Represents a REST API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRestApiOutput {
     /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
     #[doc(hidden)]
@@ -1174,33 +1113,11 @@ impl UpdateRestApiOutput {
         self.disable_execute_api_endpoint
     }
 }
-impl std::fmt::Debug for UpdateRestApiOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRestApiOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("version", &self.version);
-        formatter.field("warnings", &self.warnings);
-        formatter.field("binary_media_types", &self.binary_media_types);
-        formatter.field("minimum_compression_size", &self.minimum_compression_size);
-        formatter.field("api_key_source", &self.api_key_source);
-        formatter.field("endpoint_configuration", &self.endpoint_configuration);
-        formatter.field("policy", &self.policy);
-        formatter.field("tags", &self.tags);
-        formatter.field(
-            "disable_execute_api_endpoint",
-            &self.disable_execute_api_endpoint,
-        );
-        formatter.finish()
-    }
-}
 /// See [`UpdateRestApiOutput`](crate::output::UpdateRestApiOutput).
 pub mod update_rest_api_output {
 
     /// A builder for [`UpdateRestApiOutput`](crate::output::UpdateRestApiOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1426,7 +1343,7 @@ impl UpdateRestApiOutput {
 
 /// <p>Represents an API resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateResourceOutput {
     /// <p>The resource's identifier.</p>
     #[doc(hidden)]
@@ -1470,22 +1387,11 @@ impl UpdateResourceOutput {
         self.resource_methods.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateResourceOutput");
-        formatter.field("id", &self.id);
-        formatter.field("parent_id", &self.parent_id);
-        formatter.field("path_part", &self.path_part);
-        formatter.field("path", &self.path);
-        formatter.field("resource_methods", &self.resource_methods);
-        formatter.finish()
-    }
-}
 /// See [`UpdateResourceOutput`](crate::output::UpdateResourceOutput).
 pub mod update_resource_output {
 
     /// A builder for [`UpdateResourceOutput`](crate::output::UpdateResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) parent_id: std::option::Option<std::string::String>,
@@ -1582,7 +1488,7 @@ impl UpdateResourceOutput {
 
 /// <p>A set of validation rules for incoming Method requests.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRequestValidatorOutput {
     /// <p>The identifier of this RequestValidator.</p>
     #[doc(hidden)]
@@ -1615,24 +1521,11 @@ impl UpdateRequestValidatorOutput {
         self.validate_request_parameters
     }
 }
-impl std::fmt::Debug for UpdateRequestValidatorOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRequestValidatorOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("validate_request_body", &self.validate_request_body);
-        formatter.field(
-            "validate_request_parameters",
-            &self.validate_request_parameters,
-        );
-        formatter.finish()
-    }
-}
 /// See [`UpdateRequestValidatorOutput`](crate::output::UpdateRequestValidatorOutput).
 pub mod update_request_validator_output {
 
     /// A builder for [`UpdateRequestValidatorOutput`](crate::output::UpdateRequestValidatorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1700,7 +1593,7 @@ impl UpdateRequestValidatorOutput {
 
 /// <p>Represents the data structure of a method's request or response payload.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateModelOutput {
     /// <p>The identifier for the model resource.</p>
     #[doc(hidden)]
@@ -1740,22 +1633,11 @@ impl UpdateModelOutput {
         self.content_type.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateModelOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateModelOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("schema", &self.schema);
-        formatter.field("content_type", &self.content_type);
-        formatter.finish()
-    }
-}
 /// See [`UpdateModelOutput`](crate::output::UpdateModelOutput).
 pub mod update_model_output {
 
     /// A builder for [`UpdateModelOutput`](crate::output::UpdateModelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1835,7 +1717,7 @@ impl UpdateModelOutput {
 
 /// <p>Represents a method response of a given HTTP status code returned to the client. The method response is passed from the back end through the associated integration response that can be transformed using a mapping template. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateMethodResponseOutput {
     /// <p>The method response's status code.</p>
     #[doc(hidden)]
@@ -1868,20 +1750,11 @@ impl UpdateMethodResponseOutput {
         self.response_models.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateMethodResponseOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateMethodResponseOutput");
-        formatter.field("status_code", &self.status_code);
-        formatter.field("response_parameters", &self.response_parameters);
-        formatter.field("response_models", &self.response_models);
-        formatter.finish()
-    }
-}
 /// See [`UpdateMethodResponseOutput`](crate::output::UpdateMethodResponseOutput).
 pub mod update_method_response_output {
 
     /// A builder for [`UpdateMethodResponseOutput`](crate::output::UpdateMethodResponseOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status_code: std::option::Option<std::string::String>,
         pub(crate) response_parameters:
@@ -1964,7 +1837,7 @@ impl UpdateMethodResponseOutput {
 
 /// <p> Represents a client-facing interface by which the client calls the API to access back-end resources. A Method resource is integrated with an Integration resource. Both consist of a request and one or more responses. The method request takes the client input that is passed to the back end through the integration request. A method response returns the output from the back end to the client through an integration response. A method request is embodied in a Method resource, whereas an integration request is embodied in an Integration resource. On the other hand, a method response is represented by a MethodResponse resource, whereas an integration response is represented by an IntegrationResponse resource. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateMethodOutput {
     /// <p>The method's HTTP verb.</p>
     #[doc(hidden)]
@@ -2059,28 +1932,11 @@ impl UpdateMethodOutput {
         self.authorization_scopes.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateMethodOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateMethodOutput");
-        formatter.field("http_method", &self.http_method);
-        formatter.field("authorization_type", &self.authorization_type);
-        formatter.field("authorizer_id", &self.authorizer_id);
-        formatter.field("api_key_required", &self.api_key_required);
-        formatter.field("request_validator_id", &self.request_validator_id);
-        formatter.field("operation_name", &self.operation_name);
-        formatter.field("request_parameters", &self.request_parameters);
-        formatter.field("request_models", &self.request_models);
-        formatter.field("method_responses", &self.method_responses);
-        formatter.field("method_integration", &self.method_integration);
-        formatter.field("authorization_scopes", &self.authorization_scopes);
-        formatter.finish()
-    }
-}
 /// See [`UpdateMethodOutput`](crate::output::UpdateMethodOutput).
 pub mod update_method_output {
 
     /// A builder for [`UpdateMethodOutput`](crate::output::UpdateMethodOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) http_method: std::option::Option<std::string::String>,
         pub(crate) authorization_type: std::option::Option<std::string::String>,
@@ -2300,7 +2156,7 @@ impl UpdateMethodOutput {
 
 /// <p>Represents an integration response. The status code must map to an existing MethodResponse, and parameters and templates can be used to transform the back-end response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateIntegrationResponseOutput {
     /// <p>Specifies the status code that is used to map the integration response to an existing MethodResponse.</p>
     #[doc(hidden)]
@@ -2350,22 +2206,11 @@ impl UpdateIntegrationResponseOutput {
         self.content_handling.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateIntegrationResponseOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateIntegrationResponseOutput");
-        formatter.field("status_code", &self.status_code);
-        formatter.field("selection_pattern", &self.selection_pattern);
-        formatter.field("response_parameters", &self.response_parameters);
-        formatter.field("response_templates", &self.response_templates);
-        formatter.field("content_handling", &self.content_handling);
-        formatter.finish()
-    }
-}
 /// See [`UpdateIntegrationResponseOutput`](crate::output::UpdateIntegrationResponseOutput).
 pub mod update_integration_response_output {
 
     /// A builder for [`UpdateIntegrationResponseOutput`](crate::output::UpdateIntegrationResponseOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status_code: std::option::Option<std::string::String>,
         pub(crate) selection_pattern: std::option::Option<std::string::String>,
@@ -2487,7 +2332,7 @@ impl UpdateIntegrationResponseOutput {
 
 /// <p>Represents an HTTP, HTTP_PROXY, AWS, AWS_PROXY, or Mock integration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateIntegrationOutput {
     /// <p>Specifies an API method integration type. The valid value is one of the following:</p>
     /// <p>For the HTTP and HTTP proxy integrations, each integration can specify a protocol (<code>http/https</code>), port and path. Standard 80 and 443 ports are supported as well as custom ports above 1024. An HTTP or HTTP proxy integration with a <code>connectionType</code> of <code>VPC_LINK</code> is referred to as a private integration and uses a VpcLink to connect API Gateway to a network load balancer of a VPC.</p>
@@ -2617,32 +2462,11 @@ impl UpdateIntegrationOutput {
         self.tls_config.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateIntegrationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateIntegrationOutput");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("http_method", &self.http_method);
-        formatter.field("uri", &self.uri);
-        formatter.field("connection_type", &self.connection_type);
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("credentials", &self.credentials);
-        formatter.field("request_parameters", &self.request_parameters);
-        formatter.field("request_templates", &self.request_templates);
-        formatter.field("passthrough_behavior", &self.passthrough_behavior);
-        formatter.field("content_handling", &self.content_handling);
-        formatter.field("timeout_in_millis", &self.timeout_in_millis);
-        formatter.field("cache_namespace", &self.cache_namespace);
-        formatter.field("cache_key_parameters", &self.cache_key_parameters);
-        formatter.field("integration_responses", &self.integration_responses);
-        formatter.field("tls_config", &self.tls_config);
-        formatter.finish()
-    }
-}
 /// See [`UpdateIntegrationOutput`](crate::output::UpdateIntegrationOutput).
 pub mod update_integration_output {
 
     /// A builder for [`UpdateIntegrationOutput`](crate::output::UpdateIntegrationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::IntegrationType>,
         pub(crate) http_method: std::option::Option<std::string::String>,
@@ -2929,7 +2753,7 @@ impl UpdateIntegrationOutput {
 
 /// <p>A gateway response of a given response type and status code, with optional response parameters and mapping templates.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGatewayResponseOutput {
     /// <p>The response type of the associated GatewayResponse.</p>
     #[doc(hidden)]
@@ -2977,22 +2801,11 @@ impl UpdateGatewayResponseOutput {
         self.default_response
     }
 }
-impl std::fmt::Debug for UpdateGatewayResponseOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGatewayResponseOutput");
-        formatter.field("response_type", &self.response_type);
-        formatter.field("status_code", &self.status_code);
-        formatter.field("response_parameters", &self.response_parameters);
-        formatter.field("response_templates", &self.response_templates);
-        formatter.field("default_response", &self.default_response);
-        formatter.finish()
-    }
-}
 /// See [`UpdateGatewayResponseOutput`](crate::output::UpdateGatewayResponseOutput).
 pub mod update_gateway_response_output {
 
     /// A builder for [`UpdateGatewayResponseOutput`](crate::output::UpdateGatewayResponseOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) response_type: std::option::Option<crate::model::GatewayResponseType>,
         pub(crate) status_code: std::option::Option<std::string::String>,
@@ -3109,7 +2922,7 @@ impl UpdateGatewayResponseOutput {
 
 /// <p>Represents a custom domain name as a user-friendly host name of an API (RestApi).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDomainNameOutput {
     /// <p>The custom domain name as an API host name, for example, <code>my-api.example.com</code>.</p>
     #[doc(hidden)]
@@ -3241,43 +3054,11 @@ impl UpdateDomainNameOutput {
         self.ownership_verification_certificate_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDomainNameOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDomainNameOutput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("certificate_name", &self.certificate_name);
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.field("certificate_upload_date", &self.certificate_upload_date);
-        formatter.field("regional_domain_name", &self.regional_domain_name);
-        formatter.field("regional_hosted_zone_id", &self.regional_hosted_zone_id);
-        formatter.field("regional_certificate_name", &self.regional_certificate_name);
-        formatter.field("regional_certificate_arn", &self.regional_certificate_arn);
-        formatter.field("distribution_domain_name", &self.distribution_domain_name);
-        formatter.field(
-            "distribution_hosted_zone_id",
-            &self.distribution_hosted_zone_id,
-        );
-        formatter.field("endpoint_configuration", &self.endpoint_configuration);
-        formatter.field("domain_name_status", &self.domain_name_status);
-        formatter.field(
-            "domain_name_status_message",
-            &self.domain_name_status_message,
-        );
-        formatter.field("security_policy", &self.security_policy);
-        formatter.field("tags", &self.tags);
-        formatter.field("mutual_tls_authentication", &self.mutual_tls_authentication);
-        formatter.field(
-            "ownership_verification_certificate_arn",
-            &self.ownership_verification_certificate_arn,
-        );
-        formatter.finish()
-    }
-}
 /// See [`UpdateDomainNameOutput`](crate::output::UpdateDomainNameOutput).
 pub mod update_domain_name_output {
 
     /// A builder for [`UpdateDomainNameOutput`](crate::output::UpdateDomainNameOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) certificate_name: std::option::Option<std::string::String>,
@@ -3576,7 +3357,7 @@ impl UpdateDomainNameOutput {
 
 /// <p>A snapshot of the documentation of an API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDocumentationVersionOutput {
     /// <p>The version identifier of the API documentation snapshot.</p>
     #[doc(hidden)]
@@ -3602,20 +3383,11 @@ impl UpdateDocumentationVersionOutput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDocumentationVersionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDocumentationVersionOutput");
-        formatter.field("version", &self.version);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 /// See [`UpdateDocumentationVersionOutput`](crate::output::UpdateDocumentationVersionOutput).
 pub mod update_documentation_version_output {
 
     /// A builder for [`UpdateDocumentationVersionOutput`](crate::output::UpdateDocumentationVersionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -3674,7 +3446,7 @@ impl UpdateDocumentationVersionOutput {
 
 /// <p>A documentation part for a targeted API entity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDocumentationPartOutput {
     /// <p>The DocumentationPart identifier, generated by API Gateway when the <code>DocumentationPart</code> is created.</p>
     #[doc(hidden)]
@@ -3700,20 +3472,11 @@ impl UpdateDocumentationPartOutput {
         self.properties.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDocumentationPartOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDocumentationPartOutput");
-        formatter.field("id", &self.id);
-        formatter.field("location", &self.location);
-        formatter.field("properties", &self.properties);
-        formatter.finish()
-    }
-}
 /// See [`UpdateDocumentationPartOutput`](crate::output::UpdateDocumentationPartOutput).
 pub mod update_documentation_part_output {
 
     /// A builder for [`UpdateDocumentationPartOutput`](crate::output::UpdateDocumentationPartOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) location: std::option::Option<crate::model::DocumentationPartLocation>,
@@ -3772,7 +3535,7 @@ impl UpdateDocumentationPartOutput {
 
 /// <p>An immutable representation of a RestApi resource that can be called by users using Stages. A deployment must be associated with a Stage for it to be callable over the Internet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDeploymentOutput {
     /// <p>The identifier for the deployment resource.</p>
     #[doc(hidden)]
@@ -3817,21 +3580,11 @@ impl UpdateDeploymentOutput {
         self.api_summary.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateDeploymentOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDeploymentOutput");
-        formatter.field("id", &self.id);
-        formatter.field("description", &self.description);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("api_summary", &self.api_summary);
-        formatter.finish()
-    }
-}
 /// See [`UpdateDeploymentOutput`](crate::output::UpdateDeploymentOutput).
 pub mod update_deployment_output {
 
     /// A builder for [`UpdateDeploymentOutput`](crate::output::UpdateDeploymentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -3925,7 +3678,7 @@ impl UpdateDeploymentOutput {
 
 /// <p>Represents a client certificate used to configure client-side SSL authentication while sending requests to the integration endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateClientCertificateOutput {
     /// <p>The identifier of the client certificate.</p>
     #[doc(hidden)]
@@ -3976,23 +3729,11 @@ impl UpdateClientCertificateOutput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateClientCertificateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateClientCertificateOutput");
-        formatter.field("client_certificate_id", &self.client_certificate_id);
-        formatter.field("description", &self.description);
-        formatter.field("pem_encoded_certificate", &self.pem_encoded_certificate);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("expiration_date", &self.expiration_date);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`UpdateClientCertificateOutput`](crate::output::UpdateClientCertificateOutput).
 pub mod update_client_certificate_output {
 
     /// A builder for [`UpdateClientCertificateOutput`](crate::output::UpdateClientCertificateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_certificate_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -4113,7 +3854,7 @@ impl UpdateClientCertificateOutput {
 
 /// <p>Represents the base path that callers of the API must provide as part of the URL after the domain name.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBasePathMappingOutput {
     /// <p>The base path name that callers of the API must provide as part of the URL after the domain name.</p>
     #[doc(hidden)]
@@ -4139,20 +3880,11 @@ impl UpdateBasePathMappingOutput {
         self.stage.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateBasePathMappingOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBasePathMappingOutput");
-        formatter.field("base_path", &self.base_path);
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("stage", &self.stage);
-        formatter.finish()
-    }
-}
 /// See [`UpdateBasePathMappingOutput`](crate::output::UpdateBasePathMappingOutput).
 pub mod update_base_path_mapping_output {
 
     /// A builder for [`UpdateBasePathMappingOutput`](crate::output::UpdateBasePathMappingOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) base_path: std::option::Option<std::string::String>,
         pub(crate) rest_api_id: std::option::Option<std::string::String>,
@@ -4208,7 +3940,7 @@ impl UpdateBasePathMappingOutput {
 
 /// <p>Represents an authorization layer for methods. If enabled on a method, API Gateway will activate the authorizer when a client calls the method.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAuthorizerOutput {
     /// <p>The identifier for the authorizer resource.</p>
     #[doc(hidden)]
@@ -4283,33 +4015,11 @@ impl UpdateAuthorizerOutput {
         self.authorizer_result_ttl_in_seconds
     }
 }
-impl std::fmt::Debug for UpdateAuthorizerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAuthorizerOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("provider_ar_ns", &self.provider_ar_ns);
-        formatter.field("auth_type", &self.auth_type);
-        formatter.field("authorizer_uri", &self.authorizer_uri);
-        formatter.field("authorizer_credentials", &self.authorizer_credentials);
-        formatter.field("identity_source", &self.identity_source);
-        formatter.field(
-            "identity_validation_expression",
-            &self.identity_validation_expression,
-        );
-        formatter.field(
-            "authorizer_result_ttl_in_seconds",
-            &self.authorizer_result_ttl_in_seconds,
-        );
-        formatter.finish()
-    }
-}
 /// See [`UpdateAuthorizerOutput`](crate::output::UpdateAuthorizerOutput).
 pub mod update_authorizer_output {
 
     /// A builder for [`UpdateAuthorizerOutput`](crate::output::UpdateAuthorizerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4479,7 +4189,7 @@ impl UpdateAuthorizerOutput {
 
 /// <p>A resource that can be distributed to callers for executing Method resources that require an API key. API keys can be mapped to any Stage on any RestApi, which indicates that the callers with the API key can make requests to that stage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApiKeyOutput {
     /// <p>The identifier of the API Key.</p>
     #[doc(hidden)]
@@ -4558,27 +4268,11 @@ impl UpdateApiKeyOutput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateApiKeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateApiKeyOutput");
-        formatter.field("id", &self.id);
-        formatter.field("value", &self.value);
-        formatter.field("name", &self.name);
-        formatter.field("customer_id", &self.customer_id);
-        formatter.field("description", &self.description);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("last_updated_date", &self.last_updated_date);
-        formatter.field("stage_keys", &self.stage_keys);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`UpdateApiKeyOutput`](crate::output::UpdateApiKeyOutput).
 pub mod update_api_key_output {
 
     /// A builder for [`UpdateApiKeyOutput`](crate::output::UpdateApiKeyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -4750,7 +4444,7 @@ impl UpdateApiKeyOutput {
 
 /// <p>Represents an AWS account that is associated with API Gateway.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAccountOutput {
     /// <p>The ARN of an Amazon CloudWatch role for the current Account. </p>
     #[doc(hidden)]
@@ -4783,21 +4477,11 @@ impl UpdateAccountOutput {
         self.api_key_version.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAccountOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAccountOutput");
-        formatter.field("cloudwatch_role_arn", &self.cloudwatch_role_arn);
-        formatter.field("throttle_settings", &self.throttle_settings);
-        formatter.field("features", &self.features);
-        formatter.field("api_key_version", &self.api_key_version);
-        formatter.finish()
-    }
-}
 /// See [`UpdateAccountOutput`](crate::output::UpdateAccountOutput).
 pub mod update_account_output {
 
     /// A builder for [`UpdateAccountOutput`](crate::output::UpdateAccountOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloudwatch_role_arn: std::option::Option<std::string::String>,
         pub(crate) throttle_settings: std::option::Option<crate::model::ThrottleSettings>,
@@ -4883,19 +4567,13 @@ impl UpdateAccountOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput {}
-impl std::fmt::Debug for UntagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -4913,7 +4591,7 @@ impl UntagResourceOutput {
 
 /// <p>Represents the response of the test invoke request in the HTTP method.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestInvokeMethodOutput {
     /// <p>The HTTP status code.</p>
     #[doc(hidden)]
@@ -4970,23 +4648,11 @@ impl TestInvokeMethodOutput {
         self.latency
     }
 }
-impl std::fmt::Debug for TestInvokeMethodOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestInvokeMethodOutput");
-        formatter.field("status", &self.status);
-        formatter.field("body", &self.body);
-        formatter.field("headers", &self.headers);
-        formatter.field("multi_value_headers", &self.multi_value_headers);
-        formatter.field("log", &self.log);
-        formatter.field("latency", &self.latency);
-        formatter.finish()
-    }
-}
 /// See [`TestInvokeMethodOutput`](crate::output::TestInvokeMethodOutput).
 pub mod test_invoke_method_output {
 
     /// A builder for [`TestInvokeMethodOutput`](crate::output::TestInvokeMethodOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<i32>,
         pub(crate) body: std::option::Option<std::string::String>,
@@ -5112,7 +4778,7 @@ impl TestInvokeMethodOutput {
 
 /// <p>Represents the response of the test invoke request for a custom Authorizer</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestInvokeAuthorizerOutput {
     /// <p>The HTTP status code that the client would have received. Value is 0 if the authorizer succeeded.</p>
     #[doc(hidden)]
@@ -5176,24 +4842,11 @@ impl TestInvokeAuthorizerOutput {
         self.claims.as_ref()
     }
 }
-impl std::fmt::Debug for TestInvokeAuthorizerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestInvokeAuthorizerOutput");
-        formatter.field("client_status", &self.client_status);
-        formatter.field("log", &self.log);
-        formatter.field("latency", &self.latency);
-        formatter.field("principal_id", &self.principal_id);
-        formatter.field("policy", &self.policy);
-        formatter.field("authorization", &self.authorization);
-        formatter.field("claims", &self.claims);
-        formatter.finish()
-    }
-}
 /// See [`TestInvokeAuthorizerOutput`](crate::output::TestInvokeAuthorizerOutput).
 pub mod test_invoke_authorizer_output {
 
     /// A builder for [`TestInvokeAuthorizerOutput`](crate::output::TestInvokeAuthorizerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_status: std::option::Option<i32>,
         pub(crate) log: std::option::Option<std::string::String>,
@@ -5331,19 +4984,13 @@ impl TestInvokeAuthorizerOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput {}
-impl std::fmt::Debug for TagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -5361,7 +5008,7 @@ impl TagResourceOutput {
 
 /// <p>Represents a REST API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRestApiOutput {
     /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
     #[doc(hidden)]
@@ -5463,33 +5110,11 @@ impl PutRestApiOutput {
         self.disable_execute_api_endpoint
     }
 }
-impl std::fmt::Debug for PutRestApiOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRestApiOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("version", &self.version);
-        formatter.field("warnings", &self.warnings);
-        formatter.field("binary_media_types", &self.binary_media_types);
-        formatter.field("minimum_compression_size", &self.minimum_compression_size);
-        formatter.field("api_key_source", &self.api_key_source);
-        formatter.field("endpoint_configuration", &self.endpoint_configuration);
-        formatter.field("policy", &self.policy);
-        formatter.field("tags", &self.tags);
-        formatter.field(
-            "disable_execute_api_endpoint",
-            &self.disable_execute_api_endpoint,
-        );
-        formatter.finish()
-    }
-}
 /// See [`PutRestApiOutput`](crate::output::PutRestApiOutput).
 pub mod put_rest_api_output {
 
     /// A builder for [`PutRestApiOutput`](crate::output::PutRestApiOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5715,7 +5340,7 @@ impl PutRestApiOutput {
 
 /// <p>Represents a method response of a given HTTP status code returned to the client. The method response is passed from the back end through the associated integration response that can be transformed using a mapping template. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutMethodResponseOutput {
     /// <p>The method response's status code.</p>
     #[doc(hidden)]
@@ -5748,20 +5373,11 @@ impl PutMethodResponseOutput {
         self.response_models.as_ref()
     }
 }
-impl std::fmt::Debug for PutMethodResponseOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutMethodResponseOutput");
-        formatter.field("status_code", &self.status_code);
-        formatter.field("response_parameters", &self.response_parameters);
-        formatter.field("response_models", &self.response_models);
-        formatter.finish()
-    }
-}
 /// See [`PutMethodResponseOutput`](crate::output::PutMethodResponseOutput).
 pub mod put_method_response_output {
 
     /// A builder for [`PutMethodResponseOutput`](crate::output::PutMethodResponseOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status_code: std::option::Option<std::string::String>,
         pub(crate) response_parameters:
@@ -5844,7 +5460,7 @@ impl PutMethodResponseOutput {
 
 /// <p> Represents a client-facing interface by which the client calls the API to access back-end resources. A Method resource is integrated with an Integration resource. Both consist of a request and one or more responses. The method request takes the client input that is passed to the back end through the integration request. A method response returns the output from the back end to the client through an integration response. A method request is embodied in a Method resource, whereas an integration request is embodied in an Integration resource. On the other hand, a method response is represented by a MethodResponse resource, whereas an integration response is represented by an IntegrationResponse resource. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutMethodOutput {
     /// <p>The method's HTTP verb.</p>
     #[doc(hidden)]
@@ -5939,28 +5555,11 @@ impl PutMethodOutput {
         self.authorization_scopes.as_deref()
     }
 }
-impl std::fmt::Debug for PutMethodOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutMethodOutput");
-        formatter.field("http_method", &self.http_method);
-        formatter.field("authorization_type", &self.authorization_type);
-        formatter.field("authorizer_id", &self.authorizer_id);
-        formatter.field("api_key_required", &self.api_key_required);
-        formatter.field("request_validator_id", &self.request_validator_id);
-        formatter.field("operation_name", &self.operation_name);
-        formatter.field("request_parameters", &self.request_parameters);
-        formatter.field("request_models", &self.request_models);
-        formatter.field("method_responses", &self.method_responses);
-        formatter.field("method_integration", &self.method_integration);
-        formatter.field("authorization_scopes", &self.authorization_scopes);
-        formatter.finish()
-    }
-}
 /// See [`PutMethodOutput`](crate::output::PutMethodOutput).
 pub mod put_method_output {
 
     /// A builder for [`PutMethodOutput`](crate::output::PutMethodOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) http_method: std::option::Option<std::string::String>,
         pub(crate) authorization_type: std::option::Option<std::string::String>,
@@ -6180,7 +5779,7 @@ impl PutMethodOutput {
 
 /// <p>Represents an integration response. The status code must map to an existing MethodResponse, and parameters and templates can be used to transform the back-end response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutIntegrationResponseOutput {
     /// <p>Specifies the status code that is used to map the integration response to an existing MethodResponse.</p>
     #[doc(hidden)]
@@ -6230,22 +5829,11 @@ impl PutIntegrationResponseOutput {
         self.content_handling.as_ref()
     }
 }
-impl std::fmt::Debug for PutIntegrationResponseOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutIntegrationResponseOutput");
-        formatter.field("status_code", &self.status_code);
-        formatter.field("selection_pattern", &self.selection_pattern);
-        formatter.field("response_parameters", &self.response_parameters);
-        formatter.field("response_templates", &self.response_templates);
-        formatter.field("content_handling", &self.content_handling);
-        formatter.finish()
-    }
-}
 /// See [`PutIntegrationResponseOutput`](crate::output::PutIntegrationResponseOutput).
 pub mod put_integration_response_output {
 
     /// A builder for [`PutIntegrationResponseOutput`](crate::output::PutIntegrationResponseOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status_code: std::option::Option<std::string::String>,
         pub(crate) selection_pattern: std::option::Option<std::string::String>,
@@ -6367,7 +5955,7 @@ impl PutIntegrationResponseOutput {
 
 /// <p>Represents an HTTP, HTTP_PROXY, AWS, AWS_PROXY, or Mock integration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutIntegrationOutput {
     /// <p>Specifies an API method integration type. The valid value is one of the following:</p>
     /// <p>For the HTTP and HTTP proxy integrations, each integration can specify a protocol (<code>http/https</code>), port and path. Standard 80 and 443 ports are supported as well as custom ports above 1024. An HTTP or HTTP proxy integration with a <code>connectionType</code> of <code>VPC_LINK</code> is referred to as a private integration and uses a VpcLink to connect API Gateway to a network load balancer of a VPC.</p>
@@ -6497,32 +6085,11 @@ impl PutIntegrationOutput {
         self.tls_config.as_ref()
     }
 }
-impl std::fmt::Debug for PutIntegrationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutIntegrationOutput");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("http_method", &self.http_method);
-        formatter.field("uri", &self.uri);
-        formatter.field("connection_type", &self.connection_type);
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("credentials", &self.credentials);
-        formatter.field("request_parameters", &self.request_parameters);
-        formatter.field("request_templates", &self.request_templates);
-        formatter.field("passthrough_behavior", &self.passthrough_behavior);
-        formatter.field("content_handling", &self.content_handling);
-        formatter.field("timeout_in_millis", &self.timeout_in_millis);
-        formatter.field("cache_namespace", &self.cache_namespace);
-        formatter.field("cache_key_parameters", &self.cache_key_parameters);
-        formatter.field("integration_responses", &self.integration_responses);
-        formatter.field("tls_config", &self.tls_config);
-        formatter.finish()
-    }
-}
 /// See [`PutIntegrationOutput`](crate::output::PutIntegrationOutput).
 pub mod put_integration_output {
 
     /// A builder for [`PutIntegrationOutput`](crate::output::PutIntegrationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::IntegrationType>,
         pub(crate) http_method: std::option::Option<std::string::String>,
@@ -6809,7 +6376,7 @@ impl PutIntegrationOutput {
 
 /// <p>A gateway response of a given response type and status code, with optional response parameters and mapping templates.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutGatewayResponseOutput {
     /// <p>The response type of the associated GatewayResponse.</p>
     #[doc(hidden)]
@@ -6857,22 +6424,11 @@ impl PutGatewayResponseOutput {
         self.default_response
     }
 }
-impl std::fmt::Debug for PutGatewayResponseOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutGatewayResponseOutput");
-        formatter.field("response_type", &self.response_type);
-        formatter.field("status_code", &self.status_code);
-        formatter.field("response_parameters", &self.response_parameters);
-        formatter.field("response_templates", &self.response_templates);
-        formatter.field("default_response", &self.default_response);
-        formatter.finish()
-    }
-}
 /// See [`PutGatewayResponseOutput`](crate::output::PutGatewayResponseOutput).
 pub mod put_gateway_response_output {
 
     /// A builder for [`PutGatewayResponseOutput`](crate::output::PutGatewayResponseOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) response_type: std::option::Option<crate::model::GatewayResponseType>,
         pub(crate) status_code: std::option::Option<std::string::String>,
@@ -6989,7 +6545,7 @@ impl PutGatewayResponseOutput {
 
 /// <p>Represents a REST API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportRestApiOutput {
     /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
     #[doc(hidden)]
@@ -7091,33 +6647,11 @@ impl ImportRestApiOutput {
         self.disable_execute_api_endpoint
     }
 }
-impl std::fmt::Debug for ImportRestApiOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportRestApiOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("version", &self.version);
-        formatter.field("warnings", &self.warnings);
-        formatter.field("binary_media_types", &self.binary_media_types);
-        formatter.field("minimum_compression_size", &self.minimum_compression_size);
-        formatter.field("api_key_source", &self.api_key_source);
-        formatter.field("endpoint_configuration", &self.endpoint_configuration);
-        formatter.field("policy", &self.policy);
-        formatter.field("tags", &self.tags);
-        formatter.field(
-            "disable_execute_api_endpoint",
-            &self.disable_execute_api_endpoint,
-        );
-        formatter.finish()
-    }
-}
 /// See [`ImportRestApiOutput`](crate::output::ImportRestApiOutput).
 pub mod import_rest_api_output {
 
     /// A builder for [`ImportRestApiOutput`](crate::output::ImportRestApiOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -7343,7 +6877,7 @@ impl ImportRestApiOutput {
 
 /// <p>A collection of the imported DocumentationPart identifiers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportDocumentationPartsOutput {
     /// <p>A list of the returned documentation part identifiers.</p>
     #[doc(hidden)]
@@ -7362,19 +6896,11 @@ impl ImportDocumentationPartsOutput {
         self.warnings.as_deref()
     }
 }
-impl std::fmt::Debug for ImportDocumentationPartsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportDocumentationPartsOutput");
-        formatter.field("ids", &self.ids);
-        formatter.field("warnings", &self.warnings);
-        formatter.finish()
-    }
-}
 /// See [`ImportDocumentationPartsOutput`](crate::output::ImportDocumentationPartsOutput).
 pub mod import_documentation_parts_output {
 
     /// A builder for [`ImportDocumentationPartsOutput`](crate::output::ImportDocumentationPartsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) warnings: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7436,7 +6962,7 @@ impl ImportDocumentationPartsOutput {
 
 /// <p>The identifier of an ApiKey used in a UsagePlan.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportApiKeysOutput {
     /// <p>A list of all the ApiKey identifiers.</p>
     #[doc(hidden)]
@@ -7455,19 +6981,11 @@ impl ImportApiKeysOutput {
         self.warnings.as_deref()
     }
 }
-impl std::fmt::Debug for ImportApiKeysOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportApiKeysOutput");
-        formatter.field("ids", &self.ids);
-        formatter.field("warnings", &self.warnings);
-        formatter.finish()
-    }
-}
 /// See [`ImportApiKeysOutput`](crate::output::ImportApiKeysOutput).
 pub mod import_api_keys_output {
 
     /// A builder for [`ImportApiKeysOutput`](crate::output::ImportApiKeysOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) warnings: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7529,7 +7047,7 @@ impl ImportApiKeysOutput {
 
 /// <p>The collection of VPC links under the caller's account in a region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetVpcLinksOutput {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
@@ -7548,19 +7066,11 @@ impl GetVpcLinksOutput {
         self.position.as_deref()
     }
 }
-impl std::fmt::Debug for GetVpcLinksOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetVpcLinksOutput");
-        formatter.field("items", &self.items);
-        formatter.field("position", &self.position);
-        formatter.finish()
-    }
-}
 /// See [`GetVpcLinksOutput`](crate::output::GetVpcLinksOutput).
 pub mod get_vpc_links_output {
 
     /// A builder for [`GetVpcLinksOutput`](crate::output::GetVpcLinksOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::VpcLink>>,
         pub(crate) position: std::option::Option<std::string::String>,
@@ -7613,7 +7123,7 @@ impl GetVpcLinksOutput {
 
 /// <p>An API Gateway VPC link for a RestApi to access resources in an Amazon Virtual Private Cloud (VPC).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetVpcLinkOutput {
     /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
     #[doc(hidden)]
@@ -7671,24 +7181,11 @@ impl GetVpcLinkOutput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for GetVpcLinkOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetVpcLinkOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("target_arns", &self.target_arns);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`GetVpcLinkOutput`](crate::output::GetVpcLinkOutput).
 pub mod get_vpc_link_output {
 
     /// A builder for [`GetVpcLinkOutput`](crate::output::GetVpcLinkOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -7824,7 +7321,7 @@ impl GetVpcLinkOutput {
 
 /// <p>Represents a collection of usage plans for an AWS account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUsagePlansOutput {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
@@ -7843,19 +7340,11 @@ impl GetUsagePlansOutput {
         self.position.as_deref()
     }
 }
-impl std::fmt::Debug for GetUsagePlansOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUsagePlansOutput");
-        formatter.field("items", &self.items);
-        formatter.field("position", &self.position);
-        formatter.finish()
-    }
-}
 /// See [`GetUsagePlansOutput`](crate::output::GetUsagePlansOutput).
 pub mod get_usage_plans_output {
 
     /// A builder for [`GetUsagePlansOutput`](crate::output::GetUsagePlansOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::UsagePlan>>,
         pub(crate) position: std::option::Option<std::string::String>,
@@ -7908,7 +7397,7 @@ impl GetUsagePlansOutput {
 
 /// <p>Represents the collection of usage plan keys added to usage plans for the associated API keys and, possibly, other types of keys.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUsagePlanKeysOutput {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
@@ -7927,19 +7416,11 @@ impl GetUsagePlanKeysOutput {
         self.position.as_deref()
     }
 }
-impl std::fmt::Debug for GetUsagePlanKeysOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUsagePlanKeysOutput");
-        formatter.field("items", &self.items);
-        formatter.field("position", &self.position);
-        formatter.finish()
-    }
-}
 /// See [`GetUsagePlanKeysOutput`](crate::output::GetUsagePlanKeysOutput).
 pub mod get_usage_plan_keys_output {
 
     /// A builder for [`GetUsagePlanKeysOutput`](crate::output::GetUsagePlanKeysOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::UsagePlanKey>>,
         pub(crate) position: std::option::Option<std::string::String>,
@@ -7992,7 +7473,7 @@ impl GetUsagePlanKeysOutput {
 
 /// <p>Represents a usage plan key to identify a plan customer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUsagePlanKeyOutput {
     /// <p>The Id of a usage plan key.</p>
     #[doc(hidden)]
@@ -8025,21 +7506,11 @@ impl GetUsagePlanKeyOutput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetUsagePlanKeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUsagePlanKeyOutput");
-        formatter.field("id", &self.id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("value", &self.value);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 /// See [`GetUsagePlanKeyOutput`](crate::output::GetUsagePlanKeyOutput).
 pub mod get_usage_plan_key_output {
 
     /// A builder for [`GetUsagePlanKeyOutput`](crate::output::GetUsagePlanKeyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -8107,7 +7578,7 @@ impl GetUsagePlanKeyOutput {
 
 /// <p>Represents a usage plan used to specify who can assess associated API stages. Optionally, target request rate and quota limits can be set. In some cases clients can exceed the targets that you set. Don’t rely on usage plans to control costs. Consider using <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html">Amazon Web Services Budgets</a> to monitor costs and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF</a> to manage API requests.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUsagePlanOutput {
     /// <p>The identifier of a UsagePlan resource.</p>
     #[doc(hidden)]
@@ -8172,25 +7643,11 @@ impl GetUsagePlanOutput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for GetUsagePlanOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUsagePlanOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("api_stages", &self.api_stages);
-        formatter.field("throttle", &self.throttle);
-        formatter.field("quota", &self.quota);
-        formatter.field("product_code", &self.product_code);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`GetUsagePlanOutput`](crate::output::GetUsagePlanOutput).
 pub mod get_usage_plan_output {
 
     /// A builder for [`GetUsagePlanOutput`](crate::output::GetUsagePlanOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -8338,7 +7795,7 @@ impl GetUsagePlanOutput {
 
 /// <p>Represents the usage data of a usage plan.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUsageOutput {
     /// <p>The plan Id associated with this usage data.</p>
     #[doc(hidden)]
@@ -8384,22 +7841,11 @@ impl GetUsageOutput {
         self.position.as_deref()
     }
 }
-impl std::fmt::Debug for GetUsageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUsageOutput");
-        formatter.field("usage_plan_id", &self.usage_plan_id);
-        formatter.field("start_date", &self.start_date);
-        formatter.field("end_date", &self.end_date);
-        formatter.field("items", &self.items);
-        formatter.field("position", &self.position);
-        formatter.finish()
-    }
-}
 /// See [`GetUsageOutput`](crate::output::GetUsageOutput).
 pub mod get_usage_output {
 
     /// A builder for [`GetUsageOutput`](crate::output::GetUsageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) usage_plan_id: std::option::Option<std::string::String>,
         pub(crate) start_date: std::option::Option<std::string::String>,
@@ -8499,7 +7945,7 @@ impl GetUsageOutput {
 
 /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTagsOutput {
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     #[doc(hidden)]
@@ -8515,18 +7961,11 @@ impl GetTagsOutput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for GetTagsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTagsOutput");
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`GetTagsOutput`](crate::output::GetTagsOutput).
 pub mod get_tags_output {
 
     /// A builder for [`GetTagsOutput`](crate::output::GetTagsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -8573,7 +8012,7 @@ impl GetTagsOutput {
 
 /// <p>A list of Stage resources that are associated with the ApiKey resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetStagesOutput {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
@@ -8585,18 +8024,11 @@ impl GetStagesOutput {
         self.item.as_deref()
     }
 }
-impl std::fmt::Debug for GetStagesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStagesOutput");
-        formatter.field("item", &self.item);
-        formatter.finish()
-    }
-}
 /// See [`GetStagesOutput`](crate::output::GetStagesOutput).
 pub mod get_stages_output {
 
     /// A builder for [`GetStagesOutput`](crate::output::GetStagesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) item: std::option::Option<std::vec::Vec<crate::model::Stage>>,
     }
@@ -8635,7 +8067,7 @@ impl GetStagesOutput {
 
 /// <p>Represents a unique identifier for a version of a deployed RestApi that is callable by users.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetStageOutput {
     /// <p>The identifier of the Deployment that the stage points to.</p>
     #[doc(hidden)]
@@ -8773,34 +8205,11 @@ impl GetStageOutput {
         self.last_updated_date.as_ref()
     }
 }
-impl std::fmt::Debug for GetStageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStageOutput");
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("client_certificate_id", &self.client_certificate_id);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.field("description", &self.description);
-        formatter.field("cache_cluster_enabled", &self.cache_cluster_enabled);
-        formatter.field("cache_cluster_size", &self.cache_cluster_size);
-        formatter.field("cache_cluster_status", &self.cache_cluster_status);
-        formatter.field("method_settings", &self.method_settings);
-        formatter.field("variables", &self.variables);
-        formatter.field("documentation_version", &self.documentation_version);
-        formatter.field("access_log_settings", &self.access_log_settings);
-        formatter.field("canary_settings", &self.canary_settings);
-        formatter.field("tracing_enabled", &self.tracing_enabled);
-        formatter.field("web_acl_arn", &self.web_acl_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("last_updated_date", &self.last_updated_date);
-        formatter.finish()
-    }
-}
 /// See [`GetStageOutput`](crate::output::GetStageOutput).
 pub mod get_stage_output {
 
     /// A builder for [`GetStageOutput`](crate::output::GetStageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_id: std::option::Option<std::string::String>,
         pub(crate) client_certificate_id: std::option::Option<std::string::String>,
@@ -9102,7 +8511,7 @@ impl GetStageOutput {
 
 /// <p>The collection of SdkType instances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSdkTypesOutput {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
@@ -9114,18 +8523,11 @@ impl GetSdkTypesOutput {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for GetSdkTypesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSdkTypesOutput");
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`GetSdkTypesOutput`](crate::output::GetSdkTypesOutput).
 pub mod get_sdk_types_output {
 
     /// A builder for [`GetSdkTypesOutput`](crate::output::GetSdkTypesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::SdkType>>,
     }
@@ -9164,7 +8566,7 @@ impl GetSdkTypesOutput {
 
 /// <p>A type of SDK that API Gateway can generate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSdkTypeOutput {
     /// <p>The identifier of an SdkType instance.</p>
     #[doc(hidden)]
@@ -9200,21 +8602,11 @@ impl GetSdkTypeOutput {
         self.configuration_properties.as_deref()
     }
 }
-impl std::fmt::Debug for GetSdkTypeOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSdkTypeOutput");
-        formatter.field("id", &self.id);
-        formatter.field("friendly_name", &self.friendly_name);
-        formatter.field("description", &self.description);
-        formatter.field("configuration_properties", &self.configuration_properties);
-        formatter.finish()
-    }
-}
 /// See [`GetSdkTypeOutput`](crate::output::GetSdkTypeOutput).
 pub mod get_sdk_type_output {
 
     /// A builder for [`GetSdkTypeOutput`](crate::output::GetSdkTypeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) friendly_name: std::option::Option<std::string::String>,
@@ -9298,7 +8690,7 @@ impl GetSdkTypeOutput {
 
 /// <p>The binary blob response to GetSdk, which contains the generated SDK.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSdkOutput {
     /// <p>The content-type header value in the HTTP response.</p>
     #[doc(hidden)]
@@ -9324,20 +8716,11 @@ impl GetSdkOutput {
         self.body.as_ref()
     }
 }
-impl std::fmt::Debug for GetSdkOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSdkOutput");
-        formatter.field("content_type", &self.content_type);
-        formatter.field("content_disposition", &self.content_disposition);
-        formatter.field("body", &self.body);
-        formatter.finish()
-    }
-}
 /// See [`GetSdkOutput`](crate::output::GetSdkOutput).
 pub mod get_sdk_output {
 
     /// A builder for [`GetSdkOutput`](crate::output::GetSdkOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_type: std::option::Option<std::string::String>,
         pub(crate) content_disposition: std::option::Option<std::string::String>,
@@ -9396,7 +8779,7 @@ impl GetSdkOutput {
 
 /// <p>Contains references to your APIs and links that guide you in how to interact with your collection. A collection offers a paginated view of your APIs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRestApisOutput {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
@@ -9415,19 +8798,11 @@ impl GetRestApisOutput {
         self.position.as_deref()
     }
 }
-impl std::fmt::Debug for GetRestApisOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRestApisOutput");
-        formatter.field("items", &self.items);
-        formatter.field("position", &self.position);
-        formatter.finish()
-    }
-}
 /// See [`GetRestApisOutput`](crate::output::GetRestApisOutput).
 pub mod get_rest_apis_output {
 
     /// A builder for [`GetRestApisOutput`](crate::output::GetRestApisOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::RestApi>>,
         pub(crate) position: std::option::Option<std::string::String>,
@@ -9480,7 +8855,7 @@ impl GetRestApisOutput {
 
 /// <p>Represents a REST API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRestApiOutput {
     /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
     #[doc(hidden)]
@@ -9582,33 +8957,11 @@ impl GetRestApiOutput {
         self.disable_execute_api_endpoint
     }
 }
-impl std::fmt::Debug for GetRestApiOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRestApiOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("version", &self.version);
-        formatter.field("warnings", &self.warnings);
-        formatter.field("binary_media_types", &self.binary_media_types);
-        formatter.field("minimum_compression_size", &self.minimum_compression_size);
-        formatter.field("api_key_source", &self.api_key_source);
-        formatter.field("endpoint_configuration", &self.endpoint_configuration);
-        formatter.field("policy", &self.policy);
-        formatter.field("tags", &self.tags);
-        formatter.field(
-            "disable_execute_api_endpoint",
-            &self.disable_execute_api_endpoint,
-        );
-        formatter.finish()
-    }
-}
 /// See [`GetRestApiOutput`](crate::output::GetRestApiOutput).
 pub mod get_rest_api_output {
 
     /// A builder for [`GetRestApiOutput`](crate::output::GetRestApiOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -9834,7 +9187,7 @@ impl GetRestApiOutput {
 
 /// <p>Represents a collection of Resource resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourcesOutput {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
@@ -9853,19 +9206,11 @@ impl GetResourcesOutput {
         self.position.as_deref()
     }
 }
-impl std::fmt::Debug for GetResourcesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourcesOutput");
-        formatter.field("items", &self.items);
-        formatter.field("position", &self.position);
-        formatter.finish()
-    }
-}
 /// See [`GetResourcesOutput`](crate::output::GetResourcesOutput).
 pub mod get_resources_output {
 
     /// A builder for [`GetResourcesOutput`](crate::output::GetResourcesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Resource>>,
         pub(crate) position: std::option::Option<std::string::String>,
@@ -9918,7 +9263,7 @@ impl GetResourcesOutput {
 
 /// <p>Represents an API resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourceOutput {
     /// <p>The resource's identifier.</p>
     #[doc(hidden)]
@@ -9962,22 +9307,11 @@ impl GetResourceOutput {
         self.resource_methods.as_ref()
     }
 }
-impl std::fmt::Debug for GetResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourceOutput");
-        formatter.field("id", &self.id);
-        formatter.field("parent_id", &self.parent_id);
-        formatter.field("path_part", &self.path_part);
-        formatter.field("path", &self.path);
-        formatter.field("resource_methods", &self.resource_methods);
-        formatter.finish()
-    }
-}
 /// See [`GetResourceOutput`](crate::output::GetResourceOutput).
 pub mod get_resource_output {
 
     /// A builder for [`GetResourceOutput`](crate::output::GetResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) parent_id: std::option::Option<std::string::String>,
@@ -10074,7 +9408,7 @@ impl GetResourceOutput {
 
 /// <p>A collection of RequestValidator resources of a given RestApi.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRequestValidatorsOutput {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
@@ -10093,19 +9427,11 @@ impl GetRequestValidatorsOutput {
         self.position.as_deref()
     }
 }
-impl std::fmt::Debug for GetRequestValidatorsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRequestValidatorsOutput");
-        formatter.field("items", &self.items);
-        formatter.field("position", &self.position);
-        formatter.finish()
-    }
-}
 /// See [`GetRequestValidatorsOutput`](crate::output::GetRequestValidatorsOutput).
 pub mod get_request_validators_output {
 
     /// A builder for [`GetRequestValidatorsOutput`](crate::output::GetRequestValidatorsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::RequestValidator>>,
         pub(crate) position: std::option::Option<std::string::String>,
@@ -10158,7 +9484,7 @@ impl GetRequestValidatorsOutput {
 
 /// <p>A set of validation rules for incoming Method requests.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRequestValidatorOutput {
     /// <p>The identifier of this RequestValidator.</p>
     #[doc(hidden)]
@@ -10191,24 +9517,11 @@ impl GetRequestValidatorOutput {
         self.validate_request_parameters
     }
 }
-impl std::fmt::Debug for GetRequestValidatorOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRequestValidatorOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("validate_request_body", &self.validate_request_body);
-        formatter.field(
-            "validate_request_parameters",
-            &self.validate_request_parameters,
-        );
-        formatter.finish()
-    }
-}
 /// See [`GetRequestValidatorOutput`](crate::output::GetRequestValidatorOutput).
 pub mod get_request_validator_output {
 
     /// A builder for [`GetRequestValidatorOutput`](crate::output::GetRequestValidatorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -10276,7 +9589,7 @@ impl GetRequestValidatorOutput {
 
 /// <p>Represents a mapping template used to transform a payload.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetModelTemplateOutput {
     /// <p>The Apache Velocity Template Language (VTL) template content used for the template resource.</p>
     #[doc(hidden)]
@@ -10288,18 +9601,11 @@ impl GetModelTemplateOutput {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for GetModelTemplateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetModelTemplateOutput");
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`GetModelTemplateOutput`](crate::output::GetModelTemplateOutput).
 pub mod get_model_template_output {
 
     /// A builder for [`GetModelTemplateOutput`](crate::output::GetModelTemplateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
     }
@@ -10329,7 +9635,7 @@ impl GetModelTemplateOutput {
 
 /// <p>Represents a collection of Model resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetModelsOutput {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
@@ -10348,19 +9654,11 @@ impl GetModelsOutput {
         self.position.as_deref()
     }
 }
-impl std::fmt::Debug for GetModelsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetModelsOutput");
-        formatter.field("items", &self.items);
-        formatter.field("position", &self.position);
-        formatter.finish()
-    }
-}
 /// See [`GetModelsOutput`](crate::output::GetModelsOutput).
 pub mod get_models_output {
 
     /// A builder for [`GetModelsOutput`](crate::output::GetModelsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Model>>,
         pub(crate) position: std::option::Option<std::string::String>,
@@ -10413,7 +9711,7 @@ impl GetModelsOutput {
 
 /// <p>Represents the data structure of a method's request or response payload.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetModelOutput {
     /// <p>The identifier for the model resource.</p>
     #[doc(hidden)]
@@ -10453,22 +9751,11 @@ impl GetModelOutput {
         self.content_type.as_deref()
     }
 }
-impl std::fmt::Debug for GetModelOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetModelOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("schema", &self.schema);
-        formatter.field("content_type", &self.content_type);
-        formatter.finish()
-    }
-}
 /// See [`GetModelOutput`](crate::output::GetModelOutput).
 pub mod get_model_output {
 
     /// A builder for [`GetModelOutput`](crate::output::GetModelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -10548,7 +9835,7 @@ impl GetModelOutput {
 
 /// <p>Represents a method response of a given HTTP status code returned to the client. The method response is passed from the back end through the associated integration response that can be transformed using a mapping template. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMethodResponseOutput {
     /// <p>The method response's status code.</p>
     #[doc(hidden)]
@@ -10581,20 +9868,11 @@ impl GetMethodResponseOutput {
         self.response_models.as_ref()
     }
 }
-impl std::fmt::Debug for GetMethodResponseOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMethodResponseOutput");
-        formatter.field("status_code", &self.status_code);
-        formatter.field("response_parameters", &self.response_parameters);
-        formatter.field("response_models", &self.response_models);
-        formatter.finish()
-    }
-}
 /// See [`GetMethodResponseOutput`](crate::output::GetMethodResponseOutput).
 pub mod get_method_response_output {
 
     /// A builder for [`GetMethodResponseOutput`](crate::output::GetMethodResponseOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status_code: std::option::Option<std::string::String>,
         pub(crate) response_parameters:
@@ -10677,7 +9955,7 @@ impl GetMethodResponseOutput {
 
 /// <p> Represents a client-facing interface by which the client calls the API to access back-end resources. A Method resource is integrated with an Integration resource. Both consist of a request and one or more responses. The method request takes the client input that is passed to the back end through the integration request. A method response returns the output from the back end to the client through an integration response. A method request is embodied in a Method resource, whereas an integration request is embodied in an Integration resource. On the other hand, a method response is represented by a MethodResponse resource, whereas an integration response is represented by an IntegrationResponse resource. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMethodOutput {
     /// <p>The method's HTTP verb.</p>
     #[doc(hidden)]
@@ -10772,28 +10050,11 @@ impl GetMethodOutput {
         self.authorization_scopes.as_deref()
     }
 }
-impl std::fmt::Debug for GetMethodOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMethodOutput");
-        formatter.field("http_method", &self.http_method);
-        formatter.field("authorization_type", &self.authorization_type);
-        formatter.field("authorizer_id", &self.authorizer_id);
-        formatter.field("api_key_required", &self.api_key_required);
-        formatter.field("request_validator_id", &self.request_validator_id);
-        formatter.field("operation_name", &self.operation_name);
-        formatter.field("request_parameters", &self.request_parameters);
-        formatter.field("request_models", &self.request_models);
-        formatter.field("method_responses", &self.method_responses);
-        formatter.field("method_integration", &self.method_integration);
-        formatter.field("authorization_scopes", &self.authorization_scopes);
-        formatter.finish()
-    }
-}
 /// See [`GetMethodOutput`](crate::output::GetMethodOutput).
 pub mod get_method_output {
 
     /// A builder for [`GetMethodOutput`](crate::output::GetMethodOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) http_method: std::option::Option<std::string::String>,
         pub(crate) authorization_type: std::option::Option<std::string::String>,
@@ -11013,7 +10274,7 @@ impl GetMethodOutput {
 
 /// <p>Represents an integration response. The status code must map to an existing MethodResponse, and parameters and templates can be used to transform the back-end response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIntegrationResponseOutput {
     /// <p>Specifies the status code that is used to map the integration response to an existing MethodResponse.</p>
     #[doc(hidden)]
@@ -11063,22 +10324,11 @@ impl GetIntegrationResponseOutput {
         self.content_handling.as_ref()
     }
 }
-impl std::fmt::Debug for GetIntegrationResponseOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIntegrationResponseOutput");
-        formatter.field("status_code", &self.status_code);
-        formatter.field("selection_pattern", &self.selection_pattern);
-        formatter.field("response_parameters", &self.response_parameters);
-        formatter.field("response_templates", &self.response_templates);
-        formatter.field("content_handling", &self.content_handling);
-        formatter.finish()
-    }
-}
 /// See [`GetIntegrationResponseOutput`](crate::output::GetIntegrationResponseOutput).
 pub mod get_integration_response_output {
 
     /// A builder for [`GetIntegrationResponseOutput`](crate::output::GetIntegrationResponseOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status_code: std::option::Option<std::string::String>,
         pub(crate) selection_pattern: std::option::Option<std::string::String>,
@@ -11200,7 +10450,7 @@ impl GetIntegrationResponseOutput {
 
 /// <p>Represents an HTTP, HTTP_PROXY, AWS, AWS_PROXY, or Mock integration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIntegrationOutput {
     /// <p>Specifies an API method integration type. The valid value is one of the following:</p>
     /// <p>For the HTTP and HTTP proxy integrations, each integration can specify a protocol (<code>http/https</code>), port and path. Standard 80 and 443 ports are supported as well as custom ports above 1024. An HTTP or HTTP proxy integration with a <code>connectionType</code> of <code>VPC_LINK</code> is referred to as a private integration and uses a VpcLink to connect API Gateway to a network load balancer of a VPC.</p>
@@ -11330,32 +10580,11 @@ impl GetIntegrationOutput {
         self.tls_config.as_ref()
     }
 }
-impl std::fmt::Debug for GetIntegrationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIntegrationOutput");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("http_method", &self.http_method);
-        formatter.field("uri", &self.uri);
-        formatter.field("connection_type", &self.connection_type);
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("credentials", &self.credentials);
-        formatter.field("request_parameters", &self.request_parameters);
-        formatter.field("request_templates", &self.request_templates);
-        formatter.field("passthrough_behavior", &self.passthrough_behavior);
-        formatter.field("content_handling", &self.content_handling);
-        formatter.field("timeout_in_millis", &self.timeout_in_millis);
-        formatter.field("cache_namespace", &self.cache_namespace);
-        formatter.field("cache_key_parameters", &self.cache_key_parameters);
-        formatter.field("integration_responses", &self.integration_responses);
-        formatter.field("tls_config", &self.tls_config);
-        formatter.finish()
-    }
-}
 /// See [`GetIntegrationOutput`](crate::output::GetIntegrationOutput).
 pub mod get_integration_output {
 
     /// A builder for [`GetIntegrationOutput`](crate::output::GetIntegrationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::IntegrationType>,
         pub(crate) http_method: std::option::Option<std::string::String>,
@@ -11642,7 +10871,7 @@ impl GetIntegrationOutput {
 
 /// <p>The collection of the GatewayResponse instances of a RestApi as a <code>responseType</code>-to-GatewayResponse object map of key-value pairs. As such, pagination is not supported for querying this collection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGatewayResponsesOutput {
     /// <p>Returns the entire collection, because of no pagination support.</p>
     #[doc(hidden)]
@@ -11661,19 +10890,11 @@ impl GetGatewayResponsesOutput {
         self.position.as_deref()
     }
 }
-impl std::fmt::Debug for GetGatewayResponsesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGatewayResponsesOutput");
-        formatter.field("items", &self.items);
-        formatter.field("position", &self.position);
-        formatter.finish()
-    }
-}
 /// See [`GetGatewayResponsesOutput`](crate::output::GetGatewayResponsesOutput).
 pub mod get_gateway_responses_output {
 
     /// A builder for [`GetGatewayResponsesOutput`](crate::output::GetGatewayResponsesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::GatewayResponse>>,
         pub(crate) position: std::option::Option<std::string::String>,
@@ -11726,7 +10947,7 @@ impl GetGatewayResponsesOutput {
 
 /// <p>A gateway response of a given response type and status code, with optional response parameters and mapping templates.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGatewayResponseOutput {
     /// <p>The response type of the associated GatewayResponse.</p>
     #[doc(hidden)]
@@ -11774,22 +10995,11 @@ impl GetGatewayResponseOutput {
         self.default_response
     }
 }
-impl std::fmt::Debug for GetGatewayResponseOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGatewayResponseOutput");
-        formatter.field("response_type", &self.response_type);
-        formatter.field("status_code", &self.status_code);
-        formatter.field("response_parameters", &self.response_parameters);
-        formatter.field("response_templates", &self.response_templates);
-        formatter.field("default_response", &self.default_response);
-        formatter.finish()
-    }
-}
 /// See [`GetGatewayResponseOutput`](crate::output::GetGatewayResponseOutput).
 pub mod get_gateway_response_output {
 
     /// A builder for [`GetGatewayResponseOutput`](crate::output::GetGatewayResponseOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) response_type: std::option::Option<crate::model::GatewayResponseType>,
         pub(crate) status_code: std::option::Option<std::string::String>,
@@ -11906,7 +11116,7 @@ impl GetGatewayResponseOutput {
 
 /// <p>The binary blob response to GetExport, which contains the generated SDK.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetExportOutput {
     /// <p>The content-type header value in the HTTP response. This will correspond to a valid 'accept' type in the request.</p>
     #[doc(hidden)]
@@ -11932,20 +11142,11 @@ impl GetExportOutput {
         self.body.as_ref()
     }
 }
-impl std::fmt::Debug for GetExportOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetExportOutput");
-        formatter.field("content_type", &self.content_type);
-        formatter.field("content_disposition", &self.content_disposition);
-        formatter.field("body", &self.body);
-        formatter.finish()
-    }
-}
 /// See [`GetExportOutput`](crate::output::GetExportOutput).
 pub mod get_export_output {
 
     /// A builder for [`GetExportOutput`](crate::output::GetExportOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_type: std::option::Option<std::string::String>,
         pub(crate) content_disposition: std::option::Option<std::string::String>,
@@ -12004,7 +11205,7 @@ impl GetExportOutput {
 
 /// <p>Represents a collection of DomainName resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDomainNamesOutput {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
@@ -12023,19 +11224,11 @@ impl GetDomainNamesOutput {
         self.position.as_deref()
     }
 }
-impl std::fmt::Debug for GetDomainNamesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDomainNamesOutput");
-        formatter.field("items", &self.items);
-        formatter.field("position", &self.position);
-        formatter.finish()
-    }
-}
 /// See [`GetDomainNamesOutput`](crate::output::GetDomainNamesOutput).
 pub mod get_domain_names_output {
 
     /// A builder for [`GetDomainNamesOutput`](crate::output::GetDomainNamesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::DomainName>>,
         pub(crate) position: std::option::Option<std::string::String>,
@@ -12088,7 +11281,7 @@ impl GetDomainNamesOutput {
 
 /// <p>Represents a custom domain name as a user-friendly host name of an API (RestApi).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDomainNameOutput {
     /// <p>The custom domain name as an API host name, for example, <code>my-api.example.com</code>.</p>
     #[doc(hidden)]
@@ -12220,43 +11413,11 @@ impl GetDomainNameOutput {
         self.ownership_verification_certificate_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetDomainNameOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDomainNameOutput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("certificate_name", &self.certificate_name);
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.field("certificate_upload_date", &self.certificate_upload_date);
-        formatter.field("regional_domain_name", &self.regional_domain_name);
-        formatter.field("regional_hosted_zone_id", &self.regional_hosted_zone_id);
-        formatter.field("regional_certificate_name", &self.regional_certificate_name);
-        formatter.field("regional_certificate_arn", &self.regional_certificate_arn);
-        formatter.field("distribution_domain_name", &self.distribution_domain_name);
-        formatter.field(
-            "distribution_hosted_zone_id",
-            &self.distribution_hosted_zone_id,
-        );
-        formatter.field("endpoint_configuration", &self.endpoint_configuration);
-        formatter.field("domain_name_status", &self.domain_name_status);
-        formatter.field(
-            "domain_name_status_message",
-            &self.domain_name_status_message,
-        );
-        formatter.field("security_policy", &self.security_policy);
-        formatter.field("tags", &self.tags);
-        formatter.field("mutual_tls_authentication", &self.mutual_tls_authentication);
-        formatter.field(
-            "ownership_verification_certificate_arn",
-            &self.ownership_verification_certificate_arn,
-        );
-        formatter.finish()
-    }
-}
 /// See [`GetDomainNameOutput`](crate::output::GetDomainNameOutput).
 pub mod get_domain_name_output {
 
     /// A builder for [`GetDomainNameOutput`](crate::output::GetDomainNameOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) certificate_name: std::option::Option<std::string::String>,
@@ -12555,7 +11716,7 @@ impl GetDomainNameOutput {
 
 /// <p>The collection of documentation snapshots of an API. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDocumentationVersionsOutput {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
@@ -12574,19 +11735,11 @@ impl GetDocumentationVersionsOutput {
         self.position.as_deref()
     }
 }
-impl std::fmt::Debug for GetDocumentationVersionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDocumentationVersionsOutput");
-        formatter.field("items", &self.items);
-        formatter.field("position", &self.position);
-        formatter.finish()
-    }
-}
 /// See [`GetDocumentationVersionsOutput`](crate::output::GetDocumentationVersionsOutput).
 pub mod get_documentation_versions_output {
 
     /// A builder for [`GetDocumentationVersionsOutput`](crate::output::GetDocumentationVersionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::DocumentationVersion>>,
         pub(crate) position: std::option::Option<std::string::String>,
@@ -12639,7 +11792,7 @@ impl GetDocumentationVersionsOutput {
 
 /// <p>A snapshot of the documentation of an API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDocumentationVersionOutput {
     /// <p>The version identifier of the API documentation snapshot.</p>
     #[doc(hidden)]
@@ -12665,20 +11818,11 @@ impl GetDocumentationVersionOutput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for GetDocumentationVersionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDocumentationVersionOutput");
-        formatter.field("version", &self.version);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 /// See [`GetDocumentationVersionOutput`](crate::output::GetDocumentationVersionOutput).
 pub mod get_documentation_version_output {
 
     /// A builder for [`GetDocumentationVersionOutput`](crate::output::GetDocumentationVersionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -12737,7 +11881,7 @@ impl GetDocumentationVersionOutput {
 
 /// <p>The collection of documentation parts of an API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDocumentationPartsOutput {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
@@ -12756,19 +11900,11 @@ impl GetDocumentationPartsOutput {
         self.position.as_deref()
     }
 }
-impl std::fmt::Debug for GetDocumentationPartsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDocumentationPartsOutput");
-        formatter.field("items", &self.items);
-        formatter.field("position", &self.position);
-        formatter.finish()
-    }
-}
 /// See [`GetDocumentationPartsOutput`](crate::output::GetDocumentationPartsOutput).
 pub mod get_documentation_parts_output {
 
     /// A builder for [`GetDocumentationPartsOutput`](crate::output::GetDocumentationPartsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::DocumentationPart>>,
         pub(crate) position: std::option::Option<std::string::String>,
@@ -12821,7 +11957,7 @@ impl GetDocumentationPartsOutput {
 
 /// <p>A documentation part for a targeted API entity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDocumentationPartOutput {
     /// <p>The DocumentationPart identifier, generated by API Gateway when the <code>DocumentationPart</code> is created.</p>
     #[doc(hidden)]
@@ -12847,20 +11983,11 @@ impl GetDocumentationPartOutput {
         self.properties.as_deref()
     }
 }
-impl std::fmt::Debug for GetDocumentationPartOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDocumentationPartOutput");
-        formatter.field("id", &self.id);
-        formatter.field("location", &self.location);
-        formatter.field("properties", &self.properties);
-        formatter.finish()
-    }
-}
 /// See [`GetDocumentationPartOutput`](crate::output::GetDocumentationPartOutput).
 pub mod get_documentation_part_output {
 
     /// A builder for [`GetDocumentationPartOutput`](crate::output::GetDocumentationPartOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) location: std::option::Option<crate::model::DocumentationPartLocation>,
@@ -12919,7 +12046,7 @@ impl GetDocumentationPartOutput {
 
 /// <p>Represents a collection resource that contains zero or more references to your existing deployments, and links that guide you on how to interact with your collection. The collection offers a paginated view of the contained deployments.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeploymentsOutput {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
@@ -12938,19 +12065,11 @@ impl GetDeploymentsOutput {
         self.position.as_deref()
     }
 }
-impl std::fmt::Debug for GetDeploymentsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeploymentsOutput");
-        formatter.field("items", &self.items);
-        formatter.field("position", &self.position);
-        formatter.finish()
-    }
-}
 /// See [`GetDeploymentsOutput`](crate::output::GetDeploymentsOutput).
 pub mod get_deployments_output {
 
     /// A builder for [`GetDeploymentsOutput`](crate::output::GetDeploymentsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Deployment>>,
         pub(crate) position: std::option::Option<std::string::String>,
@@ -13003,7 +12122,7 @@ impl GetDeploymentsOutput {
 
 /// <p>An immutable representation of a RestApi resource that can be called by users using Stages. A deployment must be associated with a Stage for it to be callable over the Internet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeploymentOutput {
     /// <p>The identifier for the deployment resource.</p>
     #[doc(hidden)]
@@ -13048,21 +12167,11 @@ impl GetDeploymentOutput {
         self.api_summary.as_ref()
     }
 }
-impl std::fmt::Debug for GetDeploymentOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeploymentOutput");
-        formatter.field("id", &self.id);
-        formatter.field("description", &self.description);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("api_summary", &self.api_summary);
-        formatter.finish()
-    }
-}
 /// See [`GetDeploymentOutput`](crate::output::GetDeploymentOutput).
 pub mod get_deployment_output {
 
     /// A builder for [`GetDeploymentOutput`](crate::output::GetDeploymentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -13156,7 +12265,7 @@ impl GetDeploymentOutput {
 
 /// <p>Represents a collection of ClientCertificate resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetClientCertificatesOutput {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
@@ -13175,19 +12284,11 @@ impl GetClientCertificatesOutput {
         self.position.as_deref()
     }
 }
-impl std::fmt::Debug for GetClientCertificatesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetClientCertificatesOutput");
-        formatter.field("items", &self.items);
-        formatter.field("position", &self.position);
-        formatter.finish()
-    }
-}
 /// See [`GetClientCertificatesOutput`](crate::output::GetClientCertificatesOutput).
 pub mod get_client_certificates_output {
 
     /// A builder for [`GetClientCertificatesOutput`](crate::output::GetClientCertificatesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ClientCertificate>>,
         pub(crate) position: std::option::Option<std::string::String>,
@@ -13240,7 +12341,7 @@ impl GetClientCertificatesOutput {
 
 /// <p>Represents a client certificate used to configure client-side SSL authentication while sending requests to the integration endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetClientCertificateOutput {
     /// <p>The identifier of the client certificate.</p>
     #[doc(hidden)]
@@ -13291,23 +12392,11 @@ impl GetClientCertificateOutput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for GetClientCertificateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetClientCertificateOutput");
-        formatter.field("client_certificate_id", &self.client_certificate_id);
-        formatter.field("description", &self.description);
-        formatter.field("pem_encoded_certificate", &self.pem_encoded_certificate);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("expiration_date", &self.expiration_date);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`GetClientCertificateOutput`](crate::output::GetClientCertificateOutput).
 pub mod get_client_certificate_output {
 
     /// A builder for [`GetClientCertificateOutput`](crate::output::GetClientCertificateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_certificate_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -13428,7 +12517,7 @@ impl GetClientCertificateOutput {
 
 /// <p>Represents a collection of BasePathMapping resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBasePathMappingsOutput {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
@@ -13447,19 +12536,11 @@ impl GetBasePathMappingsOutput {
         self.position.as_deref()
     }
 }
-impl std::fmt::Debug for GetBasePathMappingsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBasePathMappingsOutput");
-        formatter.field("items", &self.items);
-        formatter.field("position", &self.position);
-        formatter.finish()
-    }
-}
 /// See [`GetBasePathMappingsOutput`](crate::output::GetBasePathMappingsOutput).
 pub mod get_base_path_mappings_output {
 
     /// A builder for [`GetBasePathMappingsOutput`](crate::output::GetBasePathMappingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::BasePathMapping>>,
         pub(crate) position: std::option::Option<std::string::String>,
@@ -13512,7 +12593,7 @@ impl GetBasePathMappingsOutput {
 
 /// <p>Represents the base path that callers of the API must provide as part of the URL after the domain name.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBasePathMappingOutput {
     /// <p>The base path name that callers of the API must provide as part of the URL after the domain name.</p>
     #[doc(hidden)]
@@ -13538,20 +12619,11 @@ impl GetBasePathMappingOutput {
         self.stage.as_deref()
     }
 }
-impl std::fmt::Debug for GetBasePathMappingOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBasePathMappingOutput");
-        formatter.field("base_path", &self.base_path);
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("stage", &self.stage);
-        formatter.finish()
-    }
-}
 /// See [`GetBasePathMappingOutput`](crate::output::GetBasePathMappingOutput).
 pub mod get_base_path_mapping_output {
 
     /// A builder for [`GetBasePathMappingOutput`](crate::output::GetBasePathMappingOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) base_path: std::option::Option<std::string::String>,
         pub(crate) rest_api_id: std::option::Option<std::string::String>,
@@ -13607,7 +12679,7 @@ impl GetBasePathMappingOutput {
 
 /// <p>Represents a collection of Authorizer resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAuthorizersOutput {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
@@ -13626,19 +12698,11 @@ impl GetAuthorizersOutput {
         self.position.as_deref()
     }
 }
-impl std::fmt::Debug for GetAuthorizersOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAuthorizersOutput");
-        formatter.field("items", &self.items);
-        formatter.field("position", &self.position);
-        formatter.finish()
-    }
-}
 /// See [`GetAuthorizersOutput`](crate::output::GetAuthorizersOutput).
 pub mod get_authorizers_output {
 
     /// A builder for [`GetAuthorizersOutput`](crate::output::GetAuthorizersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Authorizer>>,
         pub(crate) position: std::option::Option<std::string::String>,
@@ -13691,7 +12755,7 @@ impl GetAuthorizersOutput {
 
 /// <p>Represents an authorization layer for methods. If enabled on a method, API Gateway will activate the authorizer when a client calls the method.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAuthorizerOutput {
     /// <p>The identifier for the authorizer resource.</p>
     #[doc(hidden)]
@@ -13766,33 +12830,11 @@ impl GetAuthorizerOutput {
         self.authorizer_result_ttl_in_seconds
     }
 }
-impl std::fmt::Debug for GetAuthorizerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAuthorizerOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("provider_ar_ns", &self.provider_ar_ns);
-        formatter.field("auth_type", &self.auth_type);
-        formatter.field("authorizer_uri", &self.authorizer_uri);
-        formatter.field("authorizer_credentials", &self.authorizer_credentials);
-        formatter.field("identity_source", &self.identity_source);
-        formatter.field(
-            "identity_validation_expression",
-            &self.identity_validation_expression,
-        );
-        formatter.field(
-            "authorizer_result_ttl_in_seconds",
-            &self.authorizer_result_ttl_in_seconds,
-        );
-        formatter.finish()
-    }
-}
 /// See [`GetAuthorizerOutput`](crate::output::GetAuthorizerOutput).
 pub mod get_authorizer_output {
 
     /// A builder for [`GetAuthorizerOutput`](crate::output::GetAuthorizerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -13962,7 +13004,7 @@ impl GetAuthorizerOutput {
 
 /// <p>Represents a collection of API keys as represented by an ApiKeys resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetApiKeysOutput {
     /// <p>A list of warning messages logged during the import of API keys when the <code>failOnWarnings</code> option is set to true.</p>
     #[doc(hidden)]
@@ -13988,20 +13030,11 @@ impl GetApiKeysOutput {
         self.position.as_deref()
     }
 }
-impl std::fmt::Debug for GetApiKeysOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetApiKeysOutput");
-        formatter.field("warnings", &self.warnings);
-        formatter.field("items", &self.items);
-        formatter.field("position", &self.position);
-        formatter.finish()
-    }
-}
 /// See [`GetApiKeysOutput`](crate::output::GetApiKeysOutput).
 pub mod get_api_keys_output {
 
     /// A builder for [`GetApiKeysOutput`](crate::output::GetApiKeysOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) warnings: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ApiKey>>,
@@ -14075,7 +13108,7 @@ impl GetApiKeysOutput {
 
 /// <p>A resource that can be distributed to callers for executing Method resources that require an API key. API keys can be mapped to any Stage on any RestApi, which indicates that the callers with the API key can make requests to that stage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetApiKeyOutput {
     /// <p>The identifier of the API Key.</p>
     #[doc(hidden)]
@@ -14154,27 +13187,11 @@ impl GetApiKeyOutput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for GetApiKeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetApiKeyOutput");
-        formatter.field("id", &self.id);
-        formatter.field("value", &self.value);
-        formatter.field("name", &self.name);
-        formatter.field("customer_id", &self.customer_id);
-        formatter.field("description", &self.description);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("last_updated_date", &self.last_updated_date);
-        formatter.field("stage_keys", &self.stage_keys);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`GetApiKeyOutput`](crate::output::GetApiKeyOutput).
 pub mod get_api_key_output {
 
     /// A builder for [`GetApiKeyOutput`](crate::output::GetApiKeyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -14346,7 +13363,7 @@ impl GetApiKeyOutput {
 
 /// <p>Represents an AWS account that is associated with API Gateway.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccountOutput {
     /// <p>The ARN of an Amazon CloudWatch role for the current Account. </p>
     #[doc(hidden)]
@@ -14379,21 +13396,11 @@ impl GetAccountOutput {
         self.api_key_version.as_deref()
     }
 }
-impl std::fmt::Debug for GetAccountOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccountOutput");
-        formatter.field("cloudwatch_role_arn", &self.cloudwatch_role_arn);
-        formatter.field("throttle_settings", &self.throttle_settings);
-        formatter.field("features", &self.features);
-        formatter.field("api_key_version", &self.api_key_version);
-        formatter.finish()
-    }
-}
 /// See [`GetAccountOutput`](crate::output::GetAccountOutput).
 pub mod get_account_output {
 
     /// A builder for [`GetAccountOutput`](crate::output::GetAccountOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloudwatch_role_arn: std::option::Option<std::string::String>,
         pub(crate) throttle_settings: std::option::Option<crate::model::ThrottleSettings>,
@@ -14479,7 +13486,7 @@ impl GetAccountOutput {
 
 /// <p>Represents a client certificate used to configure client-side SSL authentication while sending requests to the integration endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GenerateClientCertificateOutput {
     /// <p>The identifier of the client certificate.</p>
     #[doc(hidden)]
@@ -14530,23 +13537,11 @@ impl GenerateClientCertificateOutput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for GenerateClientCertificateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GenerateClientCertificateOutput");
-        formatter.field("client_certificate_id", &self.client_certificate_id);
-        formatter.field("description", &self.description);
-        formatter.field("pem_encoded_certificate", &self.pem_encoded_certificate);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("expiration_date", &self.expiration_date);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`GenerateClientCertificateOutput`](crate::output::GenerateClientCertificateOutput).
 pub mod generate_client_certificate_output {
 
     /// A builder for [`GenerateClientCertificateOutput`](crate::output::GenerateClientCertificateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_certificate_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -14667,19 +13662,13 @@ impl GenerateClientCertificateOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FlushStageCacheOutput {}
-impl std::fmt::Debug for FlushStageCacheOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FlushStageCacheOutput");
-        formatter.finish()
-    }
-}
 /// See [`FlushStageCacheOutput`](crate::output::FlushStageCacheOutput).
 pub mod flush_stage_cache_output {
 
     /// A builder for [`FlushStageCacheOutput`](crate::output::FlushStageCacheOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`FlushStageCacheOutput`](crate::output::FlushStageCacheOutput).
@@ -14697,19 +13686,13 @@ impl FlushStageCacheOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FlushStageAuthorizersCacheOutput {}
-impl std::fmt::Debug for FlushStageAuthorizersCacheOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FlushStageAuthorizersCacheOutput");
-        formatter.finish()
-    }
-}
 /// See [`FlushStageAuthorizersCacheOutput`](crate::output::FlushStageAuthorizersCacheOutput).
 pub mod flush_stage_authorizers_cache_output {
 
     /// A builder for [`FlushStageAuthorizersCacheOutput`](crate::output::FlushStageAuthorizersCacheOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`FlushStageAuthorizersCacheOutput`](crate::output::FlushStageAuthorizersCacheOutput).
@@ -14727,19 +13710,13 @@ impl FlushStageAuthorizersCacheOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVpcLinkOutput {}
-impl std::fmt::Debug for DeleteVpcLinkOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVpcLinkOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteVpcLinkOutput`](crate::output::DeleteVpcLinkOutput).
 pub mod delete_vpc_link_output {
 
     /// A builder for [`DeleteVpcLinkOutput`](crate::output::DeleteVpcLinkOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteVpcLinkOutput`](crate::output::DeleteVpcLinkOutput).
@@ -14757,19 +13734,13 @@ impl DeleteVpcLinkOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUsagePlanKeyOutput {}
-impl std::fmt::Debug for DeleteUsagePlanKeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteUsagePlanKeyOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteUsagePlanKeyOutput`](crate::output::DeleteUsagePlanKeyOutput).
 pub mod delete_usage_plan_key_output {
 
     /// A builder for [`DeleteUsagePlanKeyOutput`](crate::output::DeleteUsagePlanKeyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteUsagePlanKeyOutput`](crate::output::DeleteUsagePlanKeyOutput).
@@ -14787,19 +13758,13 @@ impl DeleteUsagePlanKeyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUsagePlanOutput {}
-impl std::fmt::Debug for DeleteUsagePlanOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteUsagePlanOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteUsagePlanOutput`](crate::output::DeleteUsagePlanOutput).
 pub mod delete_usage_plan_output {
 
     /// A builder for [`DeleteUsagePlanOutput`](crate::output::DeleteUsagePlanOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteUsagePlanOutput`](crate::output::DeleteUsagePlanOutput).
@@ -14817,19 +13782,13 @@ impl DeleteUsagePlanOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStageOutput {}
-impl std::fmt::Debug for DeleteStageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStageOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteStageOutput`](crate::output::DeleteStageOutput).
 pub mod delete_stage_output {
 
     /// A builder for [`DeleteStageOutput`](crate::output::DeleteStageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteStageOutput`](crate::output::DeleteStageOutput).
@@ -14847,19 +13806,13 @@ impl DeleteStageOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRestApiOutput {}
-impl std::fmt::Debug for DeleteRestApiOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRestApiOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteRestApiOutput`](crate::output::DeleteRestApiOutput).
 pub mod delete_rest_api_output {
 
     /// A builder for [`DeleteRestApiOutput`](crate::output::DeleteRestApiOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteRestApiOutput`](crate::output::DeleteRestApiOutput).
@@ -14877,19 +13830,13 @@ impl DeleteRestApiOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourceOutput {}
-impl std::fmt::Debug for DeleteResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteResourceOutput`](crate::output::DeleteResourceOutput).
 pub mod delete_resource_output {
 
     /// A builder for [`DeleteResourceOutput`](crate::output::DeleteResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteResourceOutput`](crate::output::DeleteResourceOutput).
@@ -14907,19 +13854,13 @@ impl DeleteResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRequestValidatorOutput {}
-impl std::fmt::Debug for DeleteRequestValidatorOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRequestValidatorOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteRequestValidatorOutput`](crate::output::DeleteRequestValidatorOutput).
 pub mod delete_request_validator_output {
 
     /// A builder for [`DeleteRequestValidatorOutput`](crate::output::DeleteRequestValidatorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteRequestValidatorOutput`](crate::output::DeleteRequestValidatorOutput).
@@ -14937,19 +13878,13 @@ impl DeleteRequestValidatorOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteModelOutput {}
-impl std::fmt::Debug for DeleteModelOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteModelOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteModelOutput`](crate::output::DeleteModelOutput).
 pub mod delete_model_output {
 
     /// A builder for [`DeleteModelOutput`](crate::output::DeleteModelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteModelOutput`](crate::output::DeleteModelOutput).
@@ -14967,19 +13902,13 @@ impl DeleteModelOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMethodResponseOutput {}
-impl std::fmt::Debug for DeleteMethodResponseOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMethodResponseOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteMethodResponseOutput`](crate::output::DeleteMethodResponseOutput).
 pub mod delete_method_response_output {
 
     /// A builder for [`DeleteMethodResponseOutput`](crate::output::DeleteMethodResponseOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteMethodResponseOutput`](crate::output::DeleteMethodResponseOutput).
@@ -14997,19 +13926,13 @@ impl DeleteMethodResponseOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMethodOutput {}
-impl std::fmt::Debug for DeleteMethodOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMethodOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteMethodOutput`](crate::output::DeleteMethodOutput).
 pub mod delete_method_output {
 
     /// A builder for [`DeleteMethodOutput`](crate::output::DeleteMethodOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteMethodOutput`](crate::output::DeleteMethodOutput).
@@ -15027,19 +13950,13 @@ impl DeleteMethodOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteIntegrationResponseOutput {}
-impl std::fmt::Debug for DeleteIntegrationResponseOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteIntegrationResponseOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteIntegrationResponseOutput`](crate::output::DeleteIntegrationResponseOutput).
 pub mod delete_integration_response_output {
 
     /// A builder for [`DeleteIntegrationResponseOutput`](crate::output::DeleteIntegrationResponseOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteIntegrationResponseOutput`](crate::output::DeleteIntegrationResponseOutput).
@@ -15057,19 +13974,13 @@ impl DeleteIntegrationResponseOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteIntegrationOutput {}
-impl std::fmt::Debug for DeleteIntegrationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteIntegrationOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteIntegrationOutput`](crate::output::DeleteIntegrationOutput).
 pub mod delete_integration_output {
 
     /// A builder for [`DeleteIntegrationOutput`](crate::output::DeleteIntegrationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteIntegrationOutput`](crate::output::DeleteIntegrationOutput).
@@ -15087,19 +13998,13 @@ impl DeleteIntegrationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGatewayResponseOutput {}
-impl std::fmt::Debug for DeleteGatewayResponseOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGatewayResponseOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteGatewayResponseOutput`](crate::output::DeleteGatewayResponseOutput).
 pub mod delete_gateway_response_output {
 
     /// A builder for [`DeleteGatewayResponseOutput`](crate::output::DeleteGatewayResponseOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteGatewayResponseOutput`](crate::output::DeleteGatewayResponseOutput).
@@ -15117,19 +14022,13 @@ impl DeleteGatewayResponseOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDomainNameOutput {}
-impl std::fmt::Debug for DeleteDomainNameOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDomainNameOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteDomainNameOutput`](crate::output::DeleteDomainNameOutput).
 pub mod delete_domain_name_output {
 
     /// A builder for [`DeleteDomainNameOutput`](crate::output::DeleteDomainNameOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDomainNameOutput`](crate::output::DeleteDomainNameOutput).
@@ -15147,19 +14046,13 @@ impl DeleteDomainNameOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDocumentationVersionOutput {}
-impl std::fmt::Debug for DeleteDocumentationVersionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDocumentationVersionOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteDocumentationVersionOutput`](crate::output::DeleteDocumentationVersionOutput).
 pub mod delete_documentation_version_output {
 
     /// A builder for [`DeleteDocumentationVersionOutput`](crate::output::DeleteDocumentationVersionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDocumentationVersionOutput`](crate::output::DeleteDocumentationVersionOutput).
@@ -15177,19 +14070,13 @@ impl DeleteDocumentationVersionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDocumentationPartOutput {}
-impl std::fmt::Debug for DeleteDocumentationPartOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDocumentationPartOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteDocumentationPartOutput`](crate::output::DeleteDocumentationPartOutput).
 pub mod delete_documentation_part_output {
 
     /// A builder for [`DeleteDocumentationPartOutput`](crate::output::DeleteDocumentationPartOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDocumentationPartOutput`](crate::output::DeleteDocumentationPartOutput).
@@ -15207,19 +14094,13 @@ impl DeleteDocumentationPartOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDeploymentOutput {}
-impl std::fmt::Debug for DeleteDeploymentOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDeploymentOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteDeploymentOutput`](crate::output::DeleteDeploymentOutput).
 pub mod delete_deployment_output {
 
     /// A builder for [`DeleteDeploymentOutput`](crate::output::DeleteDeploymentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDeploymentOutput`](crate::output::DeleteDeploymentOutput).
@@ -15237,19 +14118,13 @@ impl DeleteDeploymentOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteClientCertificateOutput {}
-impl std::fmt::Debug for DeleteClientCertificateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteClientCertificateOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteClientCertificateOutput`](crate::output::DeleteClientCertificateOutput).
 pub mod delete_client_certificate_output {
 
     /// A builder for [`DeleteClientCertificateOutput`](crate::output::DeleteClientCertificateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteClientCertificateOutput`](crate::output::DeleteClientCertificateOutput).
@@ -15267,19 +14142,13 @@ impl DeleteClientCertificateOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBasePathMappingOutput {}
-impl std::fmt::Debug for DeleteBasePathMappingOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBasePathMappingOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteBasePathMappingOutput`](crate::output::DeleteBasePathMappingOutput).
 pub mod delete_base_path_mapping_output {
 
     /// A builder for [`DeleteBasePathMappingOutput`](crate::output::DeleteBasePathMappingOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteBasePathMappingOutput`](crate::output::DeleteBasePathMappingOutput).
@@ -15297,19 +14166,13 @@ impl DeleteBasePathMappingOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAuthorizerOutput {}
-impl std::fmt::Debug for DeleteAuthorizerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAuthorizerOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteAuthorizerOutput`](crate::output::DeleteAuthorizerOutput).
 pub mod delete_authorizer_output {
 
     /// A builder for [`DeleteAuthorizerOutput`](crate::output::DeleteAuthorizerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAuthorizerOutput`](crate::output::DeleteAuthorizerOutput).
@@ -15327,19 +14190,13 @@ impl DeleteAuthorizerOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApiKeyOutput {}
-impl std::fmt::Debug for DeleteApiKeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApiKeyOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteApiKeyOutput`](crate::output::DeleteApiKeyOutput).
 pub mod delete_api_key_output {
 
     /// A builder for [`DeleteApiKeyOutput`](crate::output::DeleteApiKeyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteApiKeyOutput`](crate::output::DeleteApiKeyOutput).
@@ -15357,7 +14214,7 @@ impl DeleteApiKeyOutput {
 
 /// <p>An API Gateway VPC link for a RestApi to access resources in an Amazon Virtual Private Cloud (VPC).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVpcLinkOutput {
     /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
     #[doc(hidden)]
@@ -15415,24 +14272,11 @@ impl CreateVpcLinkOutput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateVpcLinkOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVpcLinkOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("target_arns", &self.target_arns);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`CreateVpcLinkOutput`](crate::output::CreateVpcLinkOutput).
 pub mod create_vpc_link_output {
 
     /// A builder for [`CreateVpcLinkOutput`](crate::output::CreateVpcLinkOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -15568,7 +14412,7 @@ impl CreateVpcLinkOutput {
 
 /// <p>Represents a usage plan key to identify a plan customer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateUsagePlanKeyOutput {
     /// <p>The Id of a usage plan key.</p>
     #[doc(hidden)]
@@ -15601,21 +14445,11 @@ impl CreateUsagePlanKeyOutput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateUsagePlanKeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateUsagePlanKeyOutput");
-        formatter.field("id", &self.id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("value", &self.value);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 /// See [`CreateUsagePlanKeyOutput`](crate::output::CreateUsagePlanKeyOutput).
 pub mod create_usage_plan_key_output {
 
     /// A builder for [`CreateUsagePlanKeyOutput`](crate::output::CreateUsagePlanKeyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -15683,7 +14517,7 @@ impl CreateUsagePlanKeyOutput {
 
 /// <p>Represents a usage plan used to specify who can assess associated API stages. Optionally, target request rate and quota limits can be set. In some cases clients can exceed the targets that you set. Don’t rely on usage plans to control costs. Consider using <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html">Amazon Web Services Budgets</a> to monitor costs and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF</a> to manage API requests.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateUsagePlanOutput {
     /// <p>The identifier of a UsagePlan resource.</p>
     #[doc(hidden)]
@@ -15748,25 +14582,11 @@ impl CreateUsagePlanOutput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateUsagePlanOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateUsagePlanOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("api_stages", &self.api_stages);
-        formatter.field("throttle", &self.throttle);
-        formatter.field("quota", &self.quota);
-        formatter.field("product_code", &self.product_code);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`CreateUsagePlanOutput`](crate::output::CreateUsagePlanOutput).
 pub mod create_usage_plan_output {
 
     /// A builder for [`CreateUsagePlanOutput`](crate::output::CreateUsagePlanOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -15914,7 +14734,7 @@ impl CreateUsagePlanOutput {
 
 /// <p>Represents a unique identifier for a version of a deployed RestApi that is callable by users.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateStageOutput {
     /// <p>The identifier of the Deployment that the stage points to.</p>
     #[doc(hidden)]
@@ -16052,34 +14872,11 @@ impl CreateStageOutput {
         self.last_updated_date.as_ref()
     }
 }
-impl std::fmt::Debug for CreateStageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStageOutput");
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.field("client_certificate_id", &self.client_certificate_id);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.field("description", &self.description);
-        formatter.field("cache_cluster_enabled", &self.cache_cluster_enabled);
-        formatter.field("cache_cluster_size", &self.cache_cluster_size);
-        formatter.field("cache_cluster_status", &self.cache_cluster_status);
-        formatter.field("method_settings", &self.method_settings);
-        formatter.field("variables", &self.variables);
-        formatter.field("documentation_version", &self.documentation_version);
-        formatter.field("access_log_settings", &self.access_log_settings);
-        formatter.field("canary_settings", &self.canary_settings);
-        formatter.field("tracing_enabled", &self.tracing_enabled);
-        formatter.field("web_acl_arn", &self.web_acl_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("last_updated_date", &self.last_updated_date);
-        formatter.finish()
-    }
-}
 /// See [`CreateStageOutput`](crate::output::CreateStageOutput).
 pub mod create_stage_output {
 
     /// A builder for [`CreateStageOutput`](crate::output::CreateStageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_id: std::option::Option<std::string::String>,
         pub(crate) client_certificate_id: std::option::Option<std::string::String>,
@@ -16381,7 +15178,7 @@ impl CreateStageOutput {
 
 /// <p>Represents a REST API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRestApiOutput {
     /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
     #[doc(hidden)]
@@ -16483,33 +15280,11 @@ impl CreateRestApiOutput {
         self.disable_execute_api_endpoint
     }
 }
-impl std::fmt::Debug for CreateRestApiOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRestApiOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("version", &self.version);
-        formatter.field("warnings", &self.warnings);
-        formatter.field("binary_media_types", &self.binary_media_types);
-        formatter.field("minimum_compression_size", &self.minimum_compression_size);
-        formatter.field("api_key_source", &self.api_key_source);
-        formatter.field("endpoint_configuration", &self.endpoint_configuration);
-        formatter.field("policy", &self.policy);
-        formatter.field("tags", &self.tags);
-        formatter.field(
-            "disable_execute_api_endpoint",
-            &self.disable_execute_api_endpoint,
-        );
-        formatter.finish()
-    }
-}
 /// See [`CreateRestApiOutput`](crate::output::CreateRestApiOutput).
 pub mod create_rest_api_output {
 
     /// A builder for [`CreateRestApiOutput`](crate::output::CreateRestApiOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -16735,7 +15510,7 @@ impl CreateRestApiOutput {
 
 /// <p>Represents an API resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateResourceOutput {
     /// <p>The resource's identifier.</p>
     #[doc(hidden)]
@@ -16779,22 +15554,11 @@ impl CreateResourceOutput {
         self.resource_methods.as_ref()
     }
 }
-impl std::fmt::Debug for CreateResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateResourceOutput");
-        formatter.field("id", &self.id);
-        formatter.field("parent_id", &self.parent_id);
-        formatter.field("path_part", &self.path_part);
-        formatter.field("path", &self.path);
-        formatter.field("resource_methods", &self.resource_methods);
-        formatter.finish()
-    }
-}
 /// See [`CreateResourceOutput`](crate::output::CreateResourceOutput).
 pub mod create_resource_output {
 
     /// A builder for [`CreateResourceOutput`](crate::output::CreateResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) parent_id: std::option::Option<std::string::String>,
@@ -16891,7 +15655,7 @@ impl CreateResourceOutput {
 
 /// <p>A set of validation rules for incoming Method requests.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRequestValidatorOutput {
     /// <p>The identifier of this RequestValidator.</p>
     #[doc(hidden)]
@@ -16924,24 +15688,11 @@ impl CreateRequestValidatorOutput {
         self.validate_request_parameters
     }
 }
-impl std::fmt::Debug for CreateRequestValidatorOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRequestValidatorOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("validate_request_body", &self.validate_request_body);
-        formatter.field(
-            "validate_request_parameters",
-            &self.validate_request_parameters,
-        );
-        formatter.finish()
-    }
-}
 /// See [`CreateRequestValidatorOutput`](crate::output::CreateRequestValidatorOutput).
 pub mod create_request_validator_output {
 
     /// A builder for [`CreateRequestValidatorOutput`](crate::output::CreateRequestValidatorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -17009,7 +15760,7 @@ impl CreateRequestValidatorOutput {
 
 /// <p>Represents the data structure of a method's request or response payload.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateModelOutput {
     /// <p>The identifier for the model resource.</p>
     #[doc(hidden)]
@@ -17049,22 +15800,11 @@ impl CreateModelOutput {
         self.content_type.as_deref()
     }
 }
-impl std::fmt::Debug for CreateModelOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateModelOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("schema", &self.schema);
-        formatter.field("content_type", &self.content_type);
-        formatter.finish()
-    }
-}
 /// See [`CreateModelOutput`](crate::output::CreateModelOutput).
 pub mod create_model_output {
 
     /// A builder for [`CreateModelOutput`](crate::output::CreateModelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -17144,7 +15884,7 @@ impl CreateModelOutput {
 
 /// <p>Represents a custom domain name as a user-friendly host name of an API (RestApi).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDomainNameOutput {
     /// <p>The custom domain name as an API host name, for example, <code>my-api.example.com</code>.</p>
     #[doc(hidden)]
@@ -17276,43 +16016,11 @@ impl CreateDomainNameOutput {
         self.ownership_verification_certificate_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDomainNameOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDomainNameOutput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("certificate_name", &self.certificate_name);
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.field("certificate_upload_date", &self.certificate_upload_date);
-        formatter.field("regional_domain_name", &self.regional_domain_name);
-        formatter.field("regional_hosted_zone_id", &self.regional_hosted_zone_id);
-        formatter.field("regional_certificate_name", &self.regional_certificate_name);
-        formatter.field("regional_certificate_arn", &self.regional_certificate_arn);
-        formatter.field("distribution_domain_name", &self.distribution_domain_name);
-        formatter.field(
-            "distribution_hosted_zone_id",
-            &self.distribution_hosted_zone_id,
-        );
-        formatter.field("endpoint_configuration", &self.endpoint_configuration);
-        formatter.field("domain_name_status", &self.domain_name_status);
-        formatter.field(
-            "domain_name_status_message",
-            &self.domain_name_status_message,
-        );
-        formatter.field("security_policy", &self.security_policy);
-        formatter.field("tags", &self.tags);
-        formatter.field("mutual_tls_authentication", &self.mutual_tls_authentication);
-        formatter.field(
-            "ownership_verification_certificate_arn",
-            &self.ownership_verification_certificate_arn,
-        );
-        formatter.finish()
-    }
-}
 /// See [`CreateDomainNameOutput`](crate::output::CreateDomainNameOutput).
 pub mod create_domain_name_output {
 
     /// A builder for [`CreateDomainNameOutput`](crate::output::CreateDomainNameOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) certificate_name: std::option::Option<std::string::String>,
@@ -17611,7 +16319,7 @@ impl CreateDomainNameOutput {
 
 /// <p>A snapshot of the documentation of an API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDocumentationVersionOutput {
     /// <p>The version identifier of the API documentation snapshot.</p>
     #[doc(hidden)]
@@ -17637,20 +16345,11 @@ impl CreateDocumentationVersionOutput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDocumentationVersionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDocumentationVersionOutput");
-        formatter.field("version", &self.version);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 /// See [`CreateDocumentationVersionOutput`](crate::output::CreateDocumentationVersionOutput).
 pub mod create_documentation_version_output {
 
     /// A builder for [`CreateDocumentationVersionOutput`](crate::output::CreateDocumentationVersionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -17709,7 +16408,7 @@ impl CreateDocumentationVersionOutput {
 
 /// <p>A documentation part for a targeted API entity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDocumentationPartOutput {
     /// <p>The DocumentationPart identifier, generated by API Gateway when the <code>DocumentationPart</code> is created.</p>
     #[doc(hidden)]
@@ -17735,20 +16434,11 @@ impl CreateDocumentationPartOutput {
         self.properties.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDocumentationPartOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDocumentationPartOutput");
-        formatter.field("id", &self.id);
-        formatter.field("location", &self.location);
-        formatter.field("properties", &self.properties);
-        formatter.finish()
-    }
-}
 /// See [`CreateDocumentationPartOutput`](crate::output::CreateDocumentationPartOutput).
 pub mod create_documentation_part_output {
 
     /// A builder for [`CreateDocumentationPartOutput`](crate::output::CreateDocumentationPartOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) location: std::option::Option<crate::model::DocumentationPartLocation>,
@@ -17807,7 +16497,7 @@ impl CreateDocumentationPartOutput {
 
 /// <p>An immutable representation of a RestApi resource that can be called by users using Stages. A deployment must be associated with a Stage for it to be callable over the Internet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDeploymentOutput {
     /// <p>The identifier for the deployment resource.</p>
     #[doc(hidden)]
@@ -17852,21 +16542,11 @@ impl CreateDeploymentOutput {
         self.api_summary.as_ref()
     }
 }
-impl std::fmt::Debug for CreateDeploymentOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDeploymentOutput");
-        formatter.field("id", &self.id);
-        formatter.field("description", &self.description);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("api_summary", &self.api_summary);
-        formatter.finish()
-    }
-}
 /// See [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput).
 pub mod create_deployment_output {
 
     /// A builder for [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -17960,7 +16640,7 @@ impl CreateDeploymentOutput {
 
 /// <p>Represents the base path that callers of the API must provide as part of the URL after the domain name.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBasePathMappingOutput {
     /// <p>The base path name that callers of the API must provide as part of the URL after the domain name.</p>
     #[doc(hidden)]
@@ -17986,20 +16666,11 @@ impl CreateBasePathMappingOutput {
         self.stage.as_deref()
     }
 }
-impl std::fmt::Debug for CreateBasePathMappingOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBasePathMappingOutput");
-        formatter.field("base_path", &self.base_path);
-        formatter.field("rest_api_id", &self.rest_api_id);
-        formatter.field("stage", &self.stage);
-        formatter.finish()
-    }
-}
 /// See [`CreateBasePathMappingOutput`](crate::output::CreateBasePathMappingOutput).
 pub mod create_base_path_mapping_output {
 
     /// A builder for [`CreateBasePathMappingOutput`](crate::output::CreateBasePathMappingOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) base_path: std::option::Option<std::string::String>,
         pub(crate) rest_api_id: std::option::Option<std::string::String>,
@@ -18055,7 +16726,7 @@ impl CreateBasePathMappingOutput {
 
 /// <p>Represents an authorization layer for methods. If enabled on a method, API Gateway will activate the authorizer when a client calls the method.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAuthorizerOutput {
     /// <p>The identifier for the authorizer resource.</p>
     #[doc(hidden)]
@@ -18130,33 +16801,11 @@ impl CreateAuthorizerOutput {
         self.authorizer_result_ttl_in_seconds
     }
 }
-impl std::fmt::Debug for CreateAuthorizerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAuthorizerOutput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("provider_ar_ns", &self.provider_ar_ns);
-        formatter.field("auth_type", &self.auth_type);
-        formatter.field("authorizer_uri", &self.authorizer_uri);
-        formatter.field("authorizer_credentials", &self.authorizer_credentials);
-        formatter.field("identity_source", &self.identity_source);
-        formatter.field(
-            "identity_validation_expression",
-            &self.identity_validation_expression,
-        );
-        formatter.field(
-            "authorizer_result_ttl_in_seconds",
-            &self.authorizer_result_ttl_in_seconds,
-        );
-        formatter.finish()
-    }
-}
 /// See [`CreateAuthorizerOutput`](crate::output::CreateAuthorizerOutput).
 pub mod create_authorizer_output {
 
     /// A builder for [`CreateAuthorizerOutput`](crate::output::CreateAuthorizerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -18326,7 +16975,7 @@ impl CreateAuthorizerOutput {
 
 /// <p>A resource that can be distributed to callers for executing Method resources that require an API key. API keys can be mapped to any Stage on any RestApi, which indicates that the callers with the API key can make requests to that stage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateApiKeyOutput {
     /// <p>The identifier of the API Key.</p>
     #[doc(hidden)]
@@ -18405,27 +17054,11 @@ impl CreateApiKeyOutput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateApiKeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateApiKeyOutput");
-        formatter.field("id", &self.id);
-        formatter.field("value", &self.value);
-        formatter.field("name", &self.name);
-        formatter.field("customer_id", &self.customer_id);
-        formatter.field("description", &self.description);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("last_updated_date", &self.last_updated_date);
-        formatter.field("stage_keys", &self.stage_keys);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`CreateApiKeyOutput`](crate::output::CreateApiKeyOutput).
 pub mod create_api_key_output {
 
     /// A builder for [`CreateApiKeyOutput`](crate::output::CreateApiKeyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,

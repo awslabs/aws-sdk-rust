@@ -5,7 +5,7 @@
 /// [`create_container`](crate::client::Client::create_container).
 ///
 /// See [`crate::client::fluent_builders::CreateContainer`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateContainer {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateContainer {
 /// [`delete_container`](crate::client::Client::delete_container).
 ///
 /// See [`crate::client::fluent_builders::DeleteContainer`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteContainer {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteContainer {
 /// [`delete_container_policy`](crate::client::Client::delete_container_policy).
 ///
 /// See [`crate::client::fluent_builders::DeleteContainerPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteContainerPolicy {
     _private: (),
 }
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteContainerPolicy {
 /// [`delete_cors_policy`](crate::client::Client::delete_cors_policy).
 ///
 /// See [`crate::client::fluent_builders::DeleteCorsPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteCorsPolicy {
     _private: (),
 }
@@ -141,7 +141,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCorsPolicy {
 /// [`delete_lifecycle_policy`](crate::client::Client::delete_lifecycle_policy).
 ///
 /// See [`crate::client::fluent_builders::DeleteLifecyclePolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteLifecyclePolicy {
     _private: (),
 }
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLifecyclePolicy {
 /// [`delete_metric_policy`](crate::client::Client::delete_metric_policy).
 ///
 /// See [`crate::client::fluent_builders::DeleteMetricPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteMetricPolicy {
     _private: (),
 }
@@ -209,7 +209,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMetricPolicy {
 /// [`describe_container`](crate::client::Client::describe_container).
 ///
 /// See [`crate::client::fluent_builders::DescribeContainer`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeContainer {
     _private: (),
 }
@@ -243,7 +243,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeContainer {
 /// [`get_container_policy`](crate::client::Client::get_container_policy).
 ///
 /// See [`crate::client::fluent_builders::GetContainerPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetContainerPolicy {
     _private: (),
 }
@@ -277,7 +277,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetContainerPolicy {
 /// [`get_cors_policy`](crate::client::Client::get_cors_policy).
 ///
 /// See [`crate::client::fluent_builders::GetCorsPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetCorsPolicy {
     _private: (),
 }
@@ -309,7 +309,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCorsPolicy {
 /// [`get_lifecycle_policy`](crate::client::Client::get_lifecycle_policy).
 ///
 /// See [`crate::client::fluent_builders::GetLifecyclePolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetLifecyclePolicy {
     _private: (),
 }
@@ -343,7 +343,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLifecyclePolicy {
 /// [`get_metric_policy`](crate::client::Client::get_metric_policy).
 ///
 /// See [`crate::client::fluent_builders::GetMetricPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetMetricPolicy {
     _private: (),
 }
@@ -377,7 +377,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMetricPolicy {
 /// [`list_containers`](crate::client::Client::list_containers).
 ///
 /// See [`crate::client::fluent_builders::ListContainers`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListContainers {
     _private: (),
 }
@@ -409,7 +409,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListContainers {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -443,7 +443,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`put_container_policy`](crate::client::Client::put_container_policy).
 ///
 /// See [`crate::client::fluent_builders::PutContainerPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutContainerPolicy {
     _private: (),
 }
@@ -477,7 +477,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutContainerPolicy {
 /// [`put_cors_policy`](crate::client::Client::put_cors_policy).
 ///
 /// See [`crate::client::fluent_builders::PutCorsPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutCorsPolicy {
     _private: (),
 }
@@ -509,7 +509,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutCorsPolicy {
 /// [`put_lifecycle_policy`](crate::client::Client::put_lifecycle_policy).
 ///
 /// See [`crate::client::fluent_builders::PutLifecyclePolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutLifecyclePolicy {
     _private: (),
 }
@@ -543,7 +543,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutLifecyclePolicy {
 /// [`put_metric_policy`](crate::client::Client::put_metric_policy).
 ///
 /// See [`crate::client::fluent_builders::PutMetricPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutMetricPolicy {
     _private: (),
 }
@@ -577,7 +577,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutMetricPolicy {
 /// [`start_access_logging`](crate::client::Client::start_access_logging).
 ///
 /// See [`crate::client::fluent_builders::StartAccessLogging`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartAccessLogging {
     _private: (),
 }
@@ -611,7 +611,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartAccessLogging {
 /// [`stop_access_logging`](crate::client::Client::stop_access_logging).
 ///
 /// See [`crate::client::fluent_builders::StopAccessLogging`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopAccessLogging {
     _private: (),
 }
@@ -645,7 +645,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopAccessLogging {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -677,7 +677,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }

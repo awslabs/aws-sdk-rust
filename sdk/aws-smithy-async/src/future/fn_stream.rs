@@ -43,7 +43,7 @@ pin_project! {
         #[pin]
         rx: rendezvous::Receiver<Item>,
         #[pin]
-        generator: F,
+        generator: Option<F>,
     }
 }
 
@@ -58,7 +58,7 @@ impl<Item, F> FnStream<Item, F> {
         let (tx, rx) = rendezvous::channel::<Item>();
         Self {
             rx,
-            generator: generator(tx),
+            generator: Some(generator(tx)),
         }
     }
 }
@@ -74,7 +74,13 @@ where
         match me.rx.poll_recv(cx) {
             Poll::Ready(item) => Poll::Ready(item),
             Poll::Pending => {
-                let _ = me.generator.poll(cx);
+                if let Some(generator) = me.generator.as_mut().as_pin_mut() {
+                    if generator.poll(cx).is_ready() {
+                        // if the generator returned ready we MUST NOT poll it again—doing so
+                        // will cause a panic.
+                        me.generator.set(None);
+                    }
+                }
                 Poll::Pending
             }
         }
@@ -165,6 +171,24 @@ mod test {
         assert_eq!(out, vec!["1", "2", "3"]);
     }
 
+    // smithy-rs#1902: there was a bug where we could continue to poll the generator after it
+    // had returned Poll::Ready. This test case leaks the tx half so that the channel stays open
+    // but the send side generator completes. By calling `poll` multiple times on the resulting future,
+    // we can trigger the bug and validate the fix.
+    #[tokio::test]
+    async fn fn_stream_doesnt_poll_after_done() {
+        let mut stream = FnStream::new(|tx| {
+            Box::pin(async move {
+                assert!(tx.send("blah").await.is_ok());
+                Box::leak(Box::new(tx));
+            })
+        });
+        assert_eq!(stream.next().await, Some("blah"));
+        let mut test_stream = tokio_test::task::spawn(stream);
+        assert!(test_stream.poll_next().is_pending());
+        assert!(test_stream.poll_next().is_pending());
+    }
+
     /// Tests that the generator will not advance until demand exists
     #[tokio::test]
     async fn waits_for_reader() {
@@ -200,7 +224,7 @@ mod test {
             Box::pin(async move {
                 for i in 0..5 {
                     if i != 2 {
-                        if let Err(_) = tx.send(Ok(i)).await {
+                        if tx.send(Ok(i)).await.is_err() {
                             return;
                         }
                     } else {

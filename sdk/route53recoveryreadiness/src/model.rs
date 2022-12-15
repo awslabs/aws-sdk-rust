@@ -2,7 +2,7 @@
 
 /// <p>The resource element of a resource set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Resource {
     /// <p>The component identifier of the resource, generated when DNS target resource is used.</p>
     #[doc(hidden)]
@@ -35,21 +35,11 @@ impl Resource {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for Resource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Resource");
-        formatter.field("component_id", &self.component_id);
-        formatter.field("dns_target_resource", &self.dns_target_resource);
-        formatter.field("readiness_scopes", &self.readiness_scopes);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 /// See [`Resource`](crate::model::Resource).
 pub mod resource {
 
     /// A builder for [`Resource`](crate::model::Resource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component_id: std::option::Option<std::string::String>,
         pub(crate) dns_target_resource: std::option::Option<crate::model::DnsTargetResource>,
@@ -129,7 +119,7 @@ impl Resource {
 
 /// <p>A component for DNS/routing control readiness checks and architecture checks.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DnsTargetResource {
     /// <p>The domain name that acts as an ingress point to a portion of the customer application.</p>
     #[doc(hidden)]
@@ -169,22 +159,11 @@ impl DnsTargetResource {
         self.target_resource.as_ref()
     }
 }
-impl std::fmt::Debug for DnsTargetResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DnsTargetResource");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("hosted_zone_arn", &self.hosted_zone_arn);
-        formatter.field("record_set_id", &self.record_set_id);
-        formatter.field("record_type", &self.record_type);
-        formatter.field("target_resource", &self.target_resource);
-        formatter.finish()
-    }
-}
 /// See [`DnsTargetResource`](crate::model::DnsTargetResource).
 pub mod dns_target_resource {
 
     /// A builder for [`DnsTargetResource`](crate::model::DnsTargetResource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) hosted_zone_arn: std::option::Option<std::string::String>,
@@ -273,7 +252,7 @@ impl DnsTargetResource {
 
 /// <p>The target resource that the Route 53 record points to.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetResource {
     /// <p>The Network Load Balancer Resource.</p>
     #[doc(hidden)]
@@ -292,19 +271,11 @@ impl TargetResource {
         self.r53_resource.as_ref()
     }
 }
-impl std::fmt::Debug for TargetResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetResource");
-        formatter.field("nlb_resource", &self.nlb_resource);
-        formatter.field("r53_resource", &self.r53_resource);
-        formatter.finish()
-    }
-}
 /// See [`TargetResource`](crate::model::TargetResource).
 pub mod target_resource {
 
     /// A builder for [`TargetResource`](crate::model::TargetResource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) nlb_resource: std::option::Option<crate::model::NlbResource>,
         pub(crate) r53_resource: std::option::Option<crate::model::R53ResourceRecord>,
@@ -354,7 +325,7 @@ impl TargetResource {
 
 /// <p>The Route 53 resource that a DNS target resource record points to.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct R53ResourceRecord {
     /// <p>The DNS target domain name.</p>
     #[doc(hidden)]
@@ -373,19 +344,11 @@ impl R53ResourceRecord {
         self.record_set_id.as_deref()
     }
 }
-impl std::fmt::Debug for R53ResourceRecord {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("R53ResourceRecord");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("record_set_id", &self.record_set_id);
-        formatter.finish()
-    }
-}
 /// See [`R53ResourceRecord`](crate::model::R53ResourceRecord).
 pub mod r53_resource_record {
 
     /// A builder for [`R53ResourceRecord`](crate::model::R53ResourceRecord).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) record_set_id: std::option::Option<std::string::String>,
@@ -432,7 +395,7 @@ impl R53ResourceRecord {
 
 /// <p>The Network Load Balancer resource that a DNS target resource points to.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NlbResource {
     /// <p>The Network Load Balancer resource Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -444,18 +407,11 @@ impl NlbResource {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for NlbResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NlbResource");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 /// See [`NlbResource`](crate::model::NlbResource).
 pub mod nlb_resource {
 
     /// A builder for [`NlbResource`](crate::model::NlbResource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
@@ -485,7 +441,7 @@ impl NlbResource {
 
 /// <p>Readiness rule information, including the resource type, rule ID, and rule description.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRulesOutput {
     /// <p>The resource type that the readiness rule applies to.</p>
     #[doc(hidden)]
@@ -511,20 +467,11 @@ impl ListRulesOutput {
         self.rule_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListRulesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRulesOutput");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("rule_description", &self.rule_description);
-        formatter.field("rule_id", &self.rule_id);
-        formatter.finish()
-    }
-}
 /// See [`ListRulesOutput`](crate::model::ListRulesOutput).
 pub mod list_rules_output {
 
     /// A builder for [`ListRulesOutput`](crate::model::ListRulesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) rule_description: std::option::Option<std::string::String>,
@@ -586,7 +533,7 @@ impl ListRulesOutput {
 
 /// <p>A collection of resources of the same type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceSetOutput {
     /// <p>The Amazon Resource Name (ARN) for the resource set.</p>
     #[doc(hidden)]
@@ -632,22 +579,11 @@ impl ResourceSetOutput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for ResourceSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceSetOutput");
-        formatter.field("resource_set_arn", &self.resource_set_arn);
-        formatter.field("resource_set_name", &self.resource_set_name);
-        formatter.field("resource_set_type", &self.resource_set_type);
-        formatter.field("resources", &self.resources);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`ResourceSetOutput`](crate::model::ResourceSetOutput).
 pub mod resource_set_output {
 
     /// A builder for [`ResourceSetOutput`](crate::model::ResourceSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_set_arn: std::option::Option<std::string::String>,
         pub(crate) resource_set_name: std::option::Option<std::string::String>,
@@ -764,7 +700,7 @@ impl ResourceSetOutput {
 
 /// <p>A representation of the application, typically containing multiple cells.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecoveryGroupOutput {
     /// <p>A list of a cell's Amazon Resource Names (ARNs).</p>
     #[doc(hidden)]
@@ -801,21 +737,11 @@ impl RecoveryGroupOutput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for RecoveryGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecoveryGroupOutput");
-        formatter.field("cells", &self.cells);
-        formatter.field("recovery_group_arn", &self.recovery_group_arn);
-        formatter.field("recovery_group_name", &self.recovery_group_name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`RecoveryGroupOutput`](crate::model::RecoveryGroupOutput).
 pub mod recovery_group_output {
 
     /// A builder for [`RecoveryGroupOutput`](crate::model::RecoveryGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cells: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) recovery_group_arn: std::option::Option<std::string::String>,
@@ -915,7 +841,7 @@ impl RecoveryGroupOutput {
 
 /// <p>A readiness check.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReadinessCheckOutput {
     /// <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
     #[doc(hidden)]
@@ -952,21 +878,11 @@ impl ReadinessCheckOutput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for ReadinessCheckOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReadinessCheckOutput");
-        formatter.field("readiness_check_arn", &self.readiness_check_arn);
-        formatter.field("readiness_check_name", &self.readiness_check_name);
-        formatter.field("resource_set", &self.resource_set);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`ReadinessCheckOutput`](crate::model::ReadinessCheckOutput).
 pub mod readiness_check_output {
 
     /// A builder for [`ReadinessCheckOutput`](crate::model::ReadinessCheckOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) readiness_check_arn: std::option::Option<std::string::String>,
         pub(crate) readiness_check_name: std::option::Option<std::string::String>,
@@ -1057,7 +973,7 @@ impl ReadinessCheckOutput {
 
 /// <p>Information about a cell.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CellOutput {
     /// <p>The Amazon Resource Name (ARN) for the cell.</p>
     #[doc(hidden)]
@@ -1101,22 +1017,11 @@ impl CellOutput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CellOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CellOutput");
-        formatter.field("cell_arn", &self.cell_arn);
-        formatter.field("cell_name", &self.cell_name);
-        formatter.field("cells", &self.cells);
-        formatter.field("parent_readiness_scopes", &self.parent_readiness_scopes);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`CellOutput`](crate::model::CellOutput).
 pub mod cell_output {
 
     /// A builder for [`CellOutput`](crate::model::CellOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cell_arn: std::option::Option<std::string::String>,
         pub(crate) cell_name: std::option::Option<std::string::String>,
@@ -1231,7 +1136,7 @@ impl CellOutput {
 
 /// <p>Summary of all readiness check statuses in a recovery group, paginated in GetRecoveryGroupReadinessSummary and GetCellReadinessSummary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReadinessCheckSummary {
     /// <p>The readiness status of this readiness check.</p>
     #[doc(hidden)]
@@ -1250,19 +1155,11 @@ impl ReadinessCheckSummary {
         self.readiness_check_name.as_deref()
     }
 }
-impl std::fmt::Debug for ReadinessCheckSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReadinessCheckSummary");
-        formatter.field("readiness", &self.readiness);
-        formatter.field("readiness_check_name", &self.readiness_check_name);
-        formatter.finish()
-    }
-}
 /// See [`ReadinessCheckSummary`](crate::model::ReadinessCheckSummary).
 pub mod readiness_check_summary {
 
     /// A builder for [`ReadinessCheckSummary`](crate::model::ReadinessCheckSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) readiness: std::option::Option<crate::model::Readiness>,
         pub(crate) readiness_check_name: std::option::Option<std::string::String>,
@@ -1310,6 +1207,43 @@ impl ReadinessCheckSummary {
     }
 }
 
+/// When writing a match expression against `Readiness`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let readiness = unimplemented!();
+/// match readiness {
+///     Readiness::NotAuthorized => { /* ... */ },
+///     Readiness::NotReady => { /* ... */ },
+///     Readiness::Ready => { /* ... */ },
+///     Readiness::UnknownValue => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `readiness` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Readiness::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Readiness::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Readiness::NewFeature` is defined.
+/// Specifically, when `readiness` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Readiness::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 /// <p>The readiness status.</p>
 ///
 /// _Note: `Readiness::Unknown` has been renamed to `::UnknownValue`._
@@ -1332,8 +1266,8 @@ pub enum Readiness {
     Ready,
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Readiness {
     fn from(s: &str) -> Self {
@@ -1342,7 +1276,7 @@ impl std::convert::From<&str> for Readiness {
             "NOT_READY" => Readiness::NotReady,
             "READY" => Readiness::Ready,
             "UNKNOWN" => Readiness::UnknownValue,
-            other => Readiness::Unknown(other.to_owned()),
+            other => Readiness::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1361,11 +1295,11 @@ impl Readiness {
             Readiness::NotReady => "NOT_READY",
             Readiness::Ready => "READY",
             Readiness::UnknownValue => "UNKNOWN",
-            Readiness::Unknown(s) => s.as_ref(),
+            Readiness::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NOT_AUTHORIZED", "NOT_READY", "READY", "UNKNOWN"]
     }
 }
@@ -1377,7 +1311,7 @@ impl AsRef<str> for Readiness {
 
 /// <p>The result of a successful Resource request, with status for an individual resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceResult {
     /// <p>The component id of the resource.</p>
     #[doc(hidden)]
@@ -1410,21 +1344,11 @@ impl ResourceResult {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ResourceResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceResult");
-        formatter.field("component_id", &self.component_id);
-        formatter.field("last_checked_timestamp", &self.last_checked_timestamp);
-        formatter.field("readiness", &self.readiness);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 /// See [`ResourceResult`](crate::model::ResourceResult).
 pub mod resource_result {
 
     /// A builder for [`ResourceResult`](crate::model::ResourceResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component_id: std::option::Option<std::string::String>,
         pub(crate) last_checked_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -1498,7 +1422,7 @@ impl ResourceResult {
 
 /// <p>Information relating to readiness check status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Message {
     /// <p>The text of a readiness check message.</p>
     #[doc(hidden)]
@@ -1510,18 +1434,11 @@ impl Message {
         self.message_text.as_deref()
     }
 }
-impl std::fmt::Debug for Message {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Message");
-        formatter.field("message_text", &self.message_text);
-        formatter.finish()
-    }
-}
 /// See [`Message`](crate::model::Message).
 pub mod message {
 
     /// A builder for [`Message`](crate::model::Message).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_text: std::option::Option<std::string::String>,
     }
@@ -1553,7 +1470,7 @@ impl Message {
 
 /// <p>The result of a successful Rule request, with status for an individual rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuleResult {
     /// <p>The time the resource was last checked for readiness, in ISO-8601 format, UTC.</p>
     #[doc(hidden)]
@@ -1586,21 +1503,11 @@ impl RuleResult {
         self.rule_id.as_deref()
     }
 }
-impl std::fmt::Debug for RuleResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuleResult");
-        formatter.field("last_checked_timestamp", &self.last_checked_timestamp);
-        formatter.field("messages", &self.messages);
-        formatter.field("readiness", &self.readiness);
-        formatter.field("rule_id", &self.rule_id);
-        formatter.finish()
-    }
-}
 /// See [`RuleResult`](crate::model::RuleResult).
 pub mod rule_result {
 
     /// A builder for [`RuleResult`](crate::model::RuleResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) last_checked_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) messages: std::option::Option<std::vec::Vec<crate::model::Message>>,
@@ -1683,7 +1590,7 @@ impl RuleResult {
 
 /// <p>Recommendations that are provided to make an application more recovery resilient.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Recommendation {
     /// <p>Text of the recommendations that are provided to make an application more recovery resilient.</p>
     #[doc(hidden)]
@@ -1695,18 +1602,11 @@ impl Recommendation {
         self.recommendation_text.as_deref()
     }
 }
-impl std::fmt::Debug for Recommendation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Recommendation");
-        formatter.field("recommendation_text", &self.recommendation_text);
-        formatter.finish()
-    }
-}
 /// See [`Recommendation`](crate::model::Recommendation).
 pub mod recommendation {
 
     /// A builder for [`Recommendation`](crate::model::Recommendation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommendation_text: std::option::Option<std::string::String>,
     }

@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod abort_environment_update_input {
 
     /// A builder for [`AbortEnvironmentUpdateInput`](crate::input::AbortEnvironmentUpdateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_id: std::option::Option<std::string::String>,
         pub(crate) environment_name: std::option::Option<std::string::String>,
@@ -40,8 +40,10 @@ pub mod abort_environment_update_input {
         /// Consumes the builder and constructs a [`AbortEnvironmentUpdateInput`](crate::input::AbortEnvironmentUpdateInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::AbortEnvironmentUpdateInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::AbortEnvironmentUpdateInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::AbortEnvironmentUpdateInput {
                 environment_id: self.environment_id,
                 environment_name: self.environment_name,
@@ -62,13 +64,13 @@ impl AbortEnvironmentUpdateInput {
             crate::operation::AbortEnvironmentUpdate,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AbortEnvironmentUpdateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -76,8 +78,10 @@ impl AbortEnvironmentUpdateInput {
             fn update_http_builder(
                 input: &crate::input::AbortEnvironmentUpdateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -163,7 +167,7 @@ impl AbortEnvironmentUpdateInput {
 pub mod apply_environment_managed_action_input {
 
     /// A builder for [`ApplyEnvironmentManagedActionInput`](crate::input::ApplyEnvironmentManagedActionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_name: std::option::Option<std::string::String>,
         pub(crate) environment_id: std::option::Option<std::string::String>,
@@ -211,7 +215,7 @@ pub mod apply_environment_managed_action_input {
             self,
         ) -> Result<
             crate::input::ApplyEnvironmentManagedActionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ApplyEnvironmentManagedActionInput {
                 environment_name: self.environment_name,
@@ -234,13 +238,13 @@ impl ApplyEnvironmentManagedActionInput {
             crate::operation::ApplyEnvironmentManagedAction,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ApplyEnvironmentManagedActionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -248,8 +252,10 @@ impl ApplyEnvironmentManagedActionInput {
             fn update_http_builder(
                 input: &crate::input::ApplyEnvironmentManagedActionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -332,7 +338,7 @@ impl ApplyEnvironmentManagedActionInput {
 pub mod associate_environment_operations_role_input {
 
     /// A builder for [`AssociateEnvironmentOperationsRoleInput`](crate::input::AssociateEnvironmentOperationsRoleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_name: std::option::Option<std::string::String>,
         pub(crate) operations_role: std::option::Option<std::string::String>,
@@ -369,7 +375,7 @@ pub mod associate_environment_operations_role_input {
             self,
         ) -> Result<
             crate::input::AssociateEnvironmentOperationsRoleInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::AssociateEnvironmentOperationsRoleInput {
                 environment_name: self.environment_name,
@@ -391,13 +397,13 @@ impl AssociateEnvironmentOperationsRoleInput {
             crate::operation::AssociateEnvironmentOperationsRole,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AssociateEnvironmentOperationsRoleInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -405,8 +411,10 @@ impl AssociateEnvironmentOperationsRoleInput {
             fn update_http_builder(
                 input: &crate::input::AssociateEnvironmentOperationsRoleInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -489,7 +497,7 @@ impl AssociateEnvironmentOperationsRoleInput {
 pub mod check_dns_availability_input {
 
     /// A builder for [`CheckDnsAvailabilityInput`](crate::input::CheckDnsAvailabilityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cname_prefix: std::option::Option<std::string::String>,
     }
@@ -507,8 +515,10 @@ pub mod check_dns_availability_input {
         /// Consumes the builder and constructs a [`CheckDnsAvailabilityInput`](crate::input::CheckDnsAvailabilityInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CheckDnsAvailabilityInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CheckDnsAvailabilityInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CheckDnsAvailabilityInput {
                 cname_prefix: self.cname_prefix,
             })
@@ -528,13 +538,13 @@ impl CheckDnsAvailabilityInput {
             crate::operation::CheckDNSAvailability,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CheckDnsAvailabilityInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -542,8 +552,10 @@ impl CheckDnsAvailabilityInput {
             fn update_http_builder(
                 input: &crate::input::CheckDnsAvailabilityInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -629,7 +641,7 @@ impl CheckDnsAvailabilityInput {
 pub mod compose_environments_input {
 
     /// A builder for [`ComposeEnvironmentsInput`](crate::input::ComposeEnvironmentsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -681,8 +693,10 @@ pub mod compose_environments_input {
         /// Consumes the builder and constructs a [`ComposeEnvironmentsInput`](crate::input::ComposeEnvironmentsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ComposeEnvironmentsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ComposeEnvironmentsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ComposeEnvironmentsInput {
                 application_name: self.application_name,
                 group_name: self.group_name,
@@ -704,13 +718,13 @@ impl ComposeEnvironmentsInput {
             crate::operation::ComposeEnvironments,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ComposeEnvironmentsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -718,8 +732,10 @@ impl ComposeEnvironmentsInput {
             fn update_http_builder(
                 input: &crate::input::ComposeEnvironmentsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -803,7 +819,7 @@ impl ComposeEnvironmentsInput {
 pub mod create_application_input {
 
     /// A builder for [`CreateApplicationInput`](crate::input::CreateApplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -875,8 +891,10 @@ pub mod create_application_input {
         /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::input::CreateApplicationInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateApplicationInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateApplicationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateApplicationInput {
                 application_name: self.application_name,
                 description: self.description,
@@ -899,13 +917,13 @@ impl CreateApplicationInput {
             crate::operation::CreateApplication,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateApplicationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -913,8 +931,10 @@ impl CreateApplicationInput {
             fn update_http_builder(
                 input: &crate::input::CreateApplicationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -998,7 +1018,7 @@ impl CreateApplicationInput {
 pub mod create_application_version_input {
 
     /// A builder for [`CreateApplicationVersionInput`](crate::input::CreateApplicationVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) version_label: std::option::Option<std::string::String>,
@@ -1150,7 +1170,7 @@ pub mod create_application_version_input {
             self,
         ) -> Result<
             crate::input::CreateApplicationVersionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateApplicationVersionInput {
                 application_name: self.application_name,
@@ -1179,13 +1199,13 @@ impl CreateApplicationVersionInput {
             crate::operation::CreateApplicationVersion,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateApplicationVersionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1193,8 +1213,10 @@ impl CreateApplicationVersionInput {
             fn update_http_builder(
                 input: &crate::input::CreateApplicationVersionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1280,7 +1302,7 @@ impl CreateApplicationVersionInput {
 pub mod create_configuration_template_input {
 
     /// A builder for [`CreateConfigurationTemplateInput`](crate::input::CreateConfigurationTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -1438,7 +1460,7 @@ pub mod create_configuration_template_input {
             self,
         ) -> Result<
             crate::input::CreateConfigurationTemplateInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateConfigurationTemplateInput {
                 application_name: self.application_name,
@@ -1467,13 +1489,13 @@ impl CreateConfigurationTemplateInput {
             crate::operation::CreateConfigurationTemplate,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateConfigurationTemplateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1481,8 +1503,10 @@ impl CreateConfigurationTemplateInput {
             fn update_http_builder(
                 input: &crate::input::CreateConfigurationTemplateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1565,7 +1589,7 @@ impl CreateConfigurationTemplateInput {
 pub mod create_environment_input {
 
     /// A builder for [`CreateEnvironmentInput`](crate::input::CreateEnvironmentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) environment_name: std::option::Option<std::string::String>,
@@ -1794,8 +1818,10 @@ pub mod create_environment_input {
         /// Consumes the builder and constructs a [`CreateEnvironmentInput`](crate::input::CreateEnvironmentInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateEnvironmentInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateEnvironmentInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateEnvironmentInput {
                 application_name: self.application_name,
                 environment_name: self.environment_name,
@@ -1828,13 +1854,13 @@ impl CreateEnvironmentInput {
             crate::operation::CreateEnvironment,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateEnvironmentInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1842,8 +1868,10 @@ impl CreateEnvironmentInput {
             fn update_http_builder(
                 input: &crate::input::CreateEnvironmentInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1927,7 +1955,7 @@ impl CreateEnvironmentInput {
 pub mod create_platform_version_input {
 
     /// A builder for [`CreatePlatformVersionInput`](crate::input::CreatePlatformVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) platform_name: std::option::Option<std::string::String>,
         pub(crate) platform_version: std::option::Option<std::string::String>,
@@ -2033,8 +2061,10 @@ pub mod create_platform_version_input {
         /// Consumes the builder and constructs a [`CreatePlatformVersionInput`](crate::input::CreatePlatformVersionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreatePlatformVersionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreatePlatformVersionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreatePlatformVersionInput {
                 platform_name: self.platform_name,
                 platform_version: self.platform_version,
@@ -2059,13 +2089,13 @@ impl CreatePlatformVersionInput {
             crate::operation::CreatePlatformVersion,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreatePlatformVersionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2073,8 +2103,10 @@ impl CreatePlatformVersionInput {
             fn update_http_builder(
                 input: &crate::input::CreatePlatformVersionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2160,14 +2192,16 @@ impl CreatePlatformVersionInput {
 pub mod create_storage_location_input {
 
     /// A builder for [`CreateStorageLocationInput`](crate::input::CreateStorageLocationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CreateStorageLocationInput`](crate::input::CreateStorageLocationInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateStorageLocationInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateStorageLocationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateStorageLocationInput {})
         }
     }
@@ -2185,13 +2219,13 @@ impl CreateStorageLocationInput {
             crate::operation::CreateStorageLocation,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateStorageLocationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2199,8 +2233,10 @@ impl CreateStorageLocationInput {
             fn update_http_builder(
                 input: &crate::input::CreateStorageLocationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2279,7 +2315,7 @@ impl CreateStorageLocationInput {
 pub mod delete_application_input {
 
     /// A builder for [`DeleteApplicationInput`](crate::input::DeleteApplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) terminate_env_by_force: std::option::Option<bool>,
@@ -2311,8 +2347,10 @@ pub mod delete_application_input {
         /// Consumes the builder and constructs a [`DeleteApplicationInput`](crate::input::DeleteApplicationInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteApplicationInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteApplicationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteApplicationInput {
                 application_name: self.application_name,
                 terminate_env_by_force: self.terminate_env_by_force,
@@ -2333,13 +2371,13 @@ impl DeleteApplicationInput {
             crate::operation::DeleteApplication,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteApplicationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2347,8 +2385,10 @@ impl DeleteApplicationInput {
             fn update_http_builder(
                 input: &crate::input::DeleteApplicationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2432,7 +2472,7 @@ impl DeleteApplicationInput {
 pub mod delete_application_version_input {
 
     /// A builder for [`DeleteApplicationVersionInput`](crate::input::DeleteApplicationVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) version_label: std::option::Option<std::string::String>,
@@ -2480,7 +2520,7 @@ pub mod delete_application_version_input {
             self,
         ) -> Result<
             crate::input::DeleteApplicationVersionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteApplicationVersionInput {
                 application_name: self.application_name,
@@ -2503,13 +2543,13 @@ impl DeleteApplicationVersionInput {
             crate::operation::DeleteApplicationVersion,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteApplicationVersionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2517,8 +2557,10 @@ impl DeleteApplicationVersionInput {
             fn update_http_builder(
                 input: &crate::input::DeleteApplicationVersionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2604,7 +2646,7 @@ impl DeleteApplicationVersionInput {
 pub mod delete_configuration_template_input {
 
     /// A builder for [`DeleteConfigurationTemplateInput`](crate::input::DeleteConfigurationTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -2641,7 +2683,7 @@ pub mod delete_configuration_template_input {
             self,
         ) -> Result<
             crate::input::DeleteConfigurationTemplateInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteConfigurationTemplateInput {
                 application_name: self.application_name,
@@ -2663,13 +2705,13 @@ impl DeleteConfigurationTemplateInput {
             crate::operation::DeleteConfigurationTemplate,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteConfigurationTemplateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2677,8 +2719,10 @@ impl DeleteConfigurationTemplateInput {
             fn update_http_builder(
                 input: &crate::input::DeleteConfigurationTemplateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2761,7 +2805,7 @@ impl DeleteConfigurationTemplateInput {
 pub mod delete_environment_configuration_input {
 
     /// A builder for [`DeleteEnvironmentConfigurationInput`](crate::input::DeleteEnvironmentConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) environment_name: std::option::Option<std::string::String>,
@@ -2798,7 +2842,7 @@ pub mod delete_environment_configuration_input {
             self,
         ) -> Result<
             crate::input::DeleteEnvironmentConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteEnvironmentConfigurationInput {
                 application_name: self.application_name,
@@ -2820,13 +2864,13 @@ impl DeleteEnvironmentConfigurationInput {
             crate::operation::DeleteEnvironmentConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteEnvironmentConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2834,8 +2878,10 @@ impl DeleteEnvironmentConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::DeleteEnvironmentConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2918,7 +2964,7 @@ impl DeleteEnvironmentConfigurationInput {
 pub mod delete_platform_version_input {
 
     /// A builder for [`DeletePlatformVersionInput`](crate::input::DeletePlatformVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) platform_arn: std::option::Option<std::string::String>,
     }
@@ -2936,8 +2982,10 @@ pub mod delete_platform_version_input {
         /// Consumes the builder and constructs a [`DeletePlatformVersionInput`](crate::input::DeletePlatformVersionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeletePlatformVersionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeletePlatformVersionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeletePlatformVersionInput {
                 platform_arn: self.platform_arn,
             })
@@ -2957,13 +3005,13 @@ impl DeletePlatformVersionInput {
             crate::operation::DeletePlatformVersion,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeletePlatformVersionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2971,8 +3019,10 @@ impl DeletePlatformVersionInput {
             fn update_http_builder(
                 input: &crate::input::DeletePlatformVersionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3058,7 +3108,7 @@ impl DeletePlatformVersionInput {
 pub mod describe_account_attributes_input {
 
     /// A builder for [`DescribeAccountAttributesInput`](crate::input::DescribeAccountAttributesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DescribeAccountAttributesInput`](crate::input::DescribeAccountAttributesInput).
@@ -3066,7 +3116,7 @@ pub mod describe_account_attributes_input {
             self,
         ) -> Result<
             crate::input::DescribeAccountAttributesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeAccountAttributesInput {})
         }
@@ -3085,13 +3135,13 @@ impl DescribeAccountAttributesInput {
             crate::operation::DescribeAccountAttributes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeAccountAttributesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3099,8 +3149,10 @@ impl DescribeAccountAttributesInput {
             fn update_http_builder(
                 input: &crate::input::DescribeAccountAttributesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3179,7 +3231,7 @@ impl DescribeAccountAttributesInput {
 pub mod describe_applications_input {
 
     /// A builder for [`DescribeApplicationsInput`](crate::input::DescribeApplicationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -3206,8 +3258,10 @@ pub mod describe_applications_input {
         /// Consumes the builder and constructs a [`DescribeApplicationsInput`](crate::input::DescribeApplicationsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeApplicationsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeApplicationsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeApplicationsInput {
                 application_names: self.application_names,
             })
@@ -3227,13 +3281,13 @@ impl DescribeApplicationsInput {
             crate::operation::DescribeApplications,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeApplicationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3241,8 +3295,10 @@ impl DescribeApplicationsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeApplicationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3326,7 +3382,7 @@ impl DescribeApplicationsInput {
 pub mod describe_application_versions_input {
 
     /// A builder for [`DescribeApplicationVersionsInput`](crate::input::DescribeApplicationVersionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) version_labels: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3395,7 +3451,7 @@ pub mod describe_application_versions_input {
             self,
         ) -> Result<
             crate::input::DescribeApplicationVersionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeApplicationVersionsInput {
                 application_name: self.application_name,
@@ -3419,13 +3475,13 @@ impl DescribeApplicationVersionsInput {
             crate::operation::DescribeApplicationVersions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeApplicationVersionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3433,8 +3489,10 @@ impl DescribeApplicationVersionsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeApplicationVersionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3517,7 +3575,7 @@ impl DescribeApplicationVersionsInput {
 pub mod describe_configuration_options_input {
 
     /// A builder for [`DescribeConfigurationOptionsInput`](crate::input::DescribeConfigurationOptionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -3613,7 +3671,7 @@ pub mod describe_configuration_options_input {
             self,
         ) -> Result<
             crate::input::DescribeConfigurationOptionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeConfigurationOptionsInput {
                 application_name: self.application_name,
@@ -3639,13 +3697,13 @@ impl DescribeConfigurationOptionsInput {
             crate::operation::DescribeConfigurationOptions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeConfigurationOptionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3653,8 +3711,10 @@ impl DescribeConfigurationOptionsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeConfigurationOptionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3737,7 +3797,7 @@ impl DescribeConfigurationOptionsInput {
 pub mod describe_configuration_settings_input {
 
     /// A builder for [`DescribeConfigurationSettingsInput`](crate::input::DescribeConfigurationSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -3792,7 +3852,7 @@ pub mod describe_configuration_settings_input {
             self,
         ) -> Result<
             crate::input::DescribeConfigurationSettingsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeConfigurationSettingsInput {
                 application_name: self.application_name,
@@ -3815,13 +3875,13 @@ impl DescribeConfigurationSettingsInput {
             crate::operation::DescribeConfigurationSettings,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeConfigurationSettingsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3829,8 +3889,10 @@ impl DescribeConfigurationSettingsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeConfigurationSettingsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3913,7 +3975,7 @@ impl DescribeConfigurationSettingsInput {
 pub mod describe_environment_health_input {
 
     /// A builder for [`DescribeEnvironmentHealthInput`](crate::input::DescribeEnvironmentHealthInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_name: std::option::Option<std::string::String>,
         pub(crate) environment_id: std::option::Option<std::string::String>,
@@ -3975,7 +4037,7 @@ pub mod describe_environment_health_input {
             self,
         ) -> Result<
             crate::input::DescribeEnvironmentHealthInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeEnvironmentHealthInput {
                 environment_name: self.environment_name,
@@ -3998,13 +4060,13 @@ impl DescribeEnvironmentHealthInput {
             crate::operation::DescribeEnvironmentHealth,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeEnvironmentHealthInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4012,8 +4074,10 @@ impl DescribeEnvironmentHealthInput {
             fn update_http_builder(
                 input: &crate::input::DescribeEnvironmentHealthInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4099,7 +4163,7 @@ impl DescribeEnvironmentHealthInput {
 pub mod describe_environment_managed_action_history_input {
 
     /// A builder for [`DescribeEnvironmentManagedActionHistoryInput`](crate::input::DescribeEnvironmentManagedActionHistoryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_id: std::option::Option<std::string::String>,
         pub(crate) environment_name: std::option::Option<std::string::String>,
@@ -4158,7 +4222,7 @@ pub mod describe_environment_managed_action_history_input {
             self,
         ) -> Result<
             crate::input::DescribeEnvironmentManagedActionHistoryInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeEnvironmentManagedActionHistoryInput {
                 environment_id: self.environment_id,
@@ -4182,13 +4246,13 @@ impl DescribeEnvironmentManagedActionHistoryInput {
             crate::operation::DescribeEnvironmentManagedActionHistory,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeEnvironmentManagedActionHistoryInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4196,8 +4260,10 @@ impl DescribeEnvironmentManagedActionHistoryInput {
             fn update_http_builder(
                 input: &crate::input::DescribeEnvironmentManagedActionHistoryInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4280,7 +4346,7 @@ impl DescribeEnvironmentManagedActionHistoryInput {
 pub mod describe_environment_managed_actions_input {
 
     /// A builder for [`DescribeEnvironmentManagedActionsInput`](crate::input::DescribeEnvironmentManagedActionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_name: std::option::Option<std::string::String>,
         pub(crate) environment_id: std::option::Option<std::string::String>,
@@ -4331,7 +4397,7 @@ pub mod describe_environment_managed_actions_input {
             self,
         ) -> Result<
             crate::input::DescribeEnvironmentManagedActionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeEnvironmentManagedActionsInput {
                 environment_name: self.environment_name,
@@ -4354,13 +4420,13 @@ impl DescribeEnvironmentManagedActionsInput {
             crate::operation::DescribeEnvironmentManagedActions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeEnvironmentManagedActionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4368,8 +4434,10 @@ impl DescribeEnvironmentManagedActionsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeEnvironmentManagedActionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4452,7 +4520,7 @@ impl DescribeEnvironmentManagedActionsInput {
 pub mod describe_environment_resources_input {
 
     /// A builder for [`DescribeEnvironmentResourcesInput`](crate::input::DescribeEnvironmentResourcesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_id: std::option::Option<std::string::String>,
         pub(crate) environment_name: std::option::Option<std::string::String>,
@@ -4493,7 +4561,7 @@ pub mod describe_environment_resources_input {
             self,
         ) -> Result<
             crate::input::DescribeEnvironmentResourcesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeEnvironmentResourcesInput {
                 environment_id: self.environment_id,
@@ -4515,13 +4583,13 @@ impl DescribeEnvironmentResourcesInput {
             crate::operation::DescribeEnvironmentResources,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeEnvironmentResourcesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4529,8 +4597,10 @@ impl DescribeEnvironmentResourcesInput {
             fn update_http_builder(
                 input: &crate::input::DescribeEnvironmentResourcesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4613,7 +4683,7 @@ impl DescribeEnvironmentResourcesInput {
 pub mod describe_environments_input {
 
     /// A builder for [`DescribeEnvironmentsInput`](crate::input::DescribeEnvironmentsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) version_label: std::option::Option<std::string::String>,
@@ -4743,8 +4813,10 @@ pub mod describe_environments_input {
         /// Consumes the builder and constructs a [`DescribeEnvironmentsInput`](crate::input::DescribeEnvironmentsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeEnvironmentsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeEnvironmentsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeEnvironmentsInput {
                 application_name: self.application_name,
                 version_label: self.version_label,
@@ -4771,13 +4843,13 @@ impl DescribeEnvironmentsInput {
             crate::operation::DescribeEnvironments,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeEnvironmentsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4785,8 +4857,10 @@ impl DescribeEnvironmentsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeEnvironmentsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4870,7 +4944,7 @@ impl DescribeEnvironmentsInput {
 pub mod describe_events_input {
 
     /// A builder for [`DescribeEventsInput`](crate::input::DescribeEventsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) version_label: std::option::Option<std::string::String>,
@@ -5033,7 +5107,7 @@ pub mod describe_events_input {
         /// Consumes the builder and constructs a [`DescribeEventsInput`](crate::input::DescribeEventsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeEventsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeEventsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeEventsInput {
                 application_name: self.application_name,
@@ -5065,13 +5139,13 @@ impl DescribeEventsInput {
             crate::operation::DescribeEvents,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeEventsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5079,8 +5153,10 @@ impl DescribeEventsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeEventsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5164,7 +5240,7 @@ impl DescribeEventsInput {
 pub mod describe_instances_health_input {
 
     /// A builder for [`DescribeInstancesHealthInput`](crate::input::DescribeInstancesHealthInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_name: std::option::Option<std::string::String>,
         pub(crate) environment_id: std::option::Option<std::string::String>,
@@ -5233,7 +5309,7 @@ pub mod describe_instances_health_input {
             self,
         ) -> Result<
             crate::input::DescribeInstancesHealthInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeInstancesHealthInput {
                 environment_name: self.environment_name,
@@ -5257,13 +5333,13 @@ impl DescribeInstancesHealthInput {
             crate::operation::DescribeInstancesHealth,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeInstancesHealthInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5271,8 +5347,10 @@ impl DescribeInstancesHealthInput {
             fn update_http_builder(
                 input: &crate::input::DescribeInstancesHealthInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5358,7 +5436,7 @@ impl DescribeInstancesHealthInput {
 pub mod describe_platform_version_input {
 
     /// A builder for [`DescribePlatformVersionInput`](crate::input::DescribePlatformVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) platform_arn: std::option::Option<std::string::String>,
     }
@@ -5378,7 +5456,7 @@ pub mod describe_platform_version_input {
             self,
         ) -> Result<
             crate::input::DescribePlatformVersionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribePlatformVersionInput {
                 platform_arn: self.platform_arn,
@@ -5399,13 +5477,13 @@ impl DescribePlatformVersionInput {
             crate::operation::DescribePlatformVersion,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribePlatformVersionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5413,8 +5491,10 @@ impl DescribePlatformVersionInput {
             fn update_http_builder(
                 input: &crate::input::DescribePlatformVersionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5500,7 +5580,7 @@ impl DescribePlatformVersionInput {
 pub mod disassociate_environment_operations_role_input {
 
     /// A builder for [`DisassociateEnvironmentOperationsRoleInput`](crate::input::DisassociateEnvironmentOperationsRoleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_name: std::option::Option<std::string::String>,
     }
@@ -5523,7 +5603,7 @@ pub mod disassociate_environment_operations_role_input {
             self,
         ) -> Result<
             crate::input::DisassociateEnvironmentOperationsRoleInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DisassociateEnvironmentOperationsRoleInput {
                 environment_name: self.environment_name,
@@ -5544,13 +5624,13 @@ impl DisassociateEnvironmentOperationsRoleInput {
             crate::operation::DisassociateEnvironmentOperationsRole,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisassociateEnvironmentOperationsRoleInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5558,8 +5638,10 @@ impl DisassociateEnvironmentOperationsRoleInput {
             fn update_http_builder(
                 input: &crate::input::DisassociateEnvironmentOperationsRoleInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5642,7 +5724,7 @@ impl DisassociateEnvironmentOperationsRoleInput {
 pub mod list_available_solution_stacks_input {
 
     /// A builder for [`ListAvailableSolutionStacksInput`](crate::input::ListAvailableSolutionStacksInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`ListAvailableSolutionStacksInput`](crate::input::ListAvailableSolutionStacksInput).
@@ -5650,7 +5732,7 @@ pub mod list_available_solution_stacks_input {
             self,
         ) -> Result<
             crate::input::ListAvailableSolutionStacksInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListAvailableSolutionStacksInput {})
         }
@@ -5669,13 +5751,13 @@ impl ListAvailableSolutionStacksInput {
             crate::operation::ListAvailableSolutionStacks,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListAvailableSolutionStacksInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5683,8 +5765,10 @@ impl ListAvailableSolutionStacksInput {
             fn update_http_builder(
                 input: &crate::input::ListAvailableSolutionStacksInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5760,7 +5844,7 @@ impl ListAvailableSolutionStacksInput {
 pub mod list_platform_branches_input {
 
     /// A builder for [`ListPlatformBranchesInput`](crate::input::ListPlatformBranchesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::SearchFilter>>,
         pub(crate) max_records: std::option::Option<i32>,
@@ -5857,8 +5941,10 @@ pub mod list_platform_branches_input {
         /// Consumes the builder and constructs a [`ListPlatformBranchesInput`](crate::input::ListPlatformBranchesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListPlatformBranchesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListPlatformBranchesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListPlatformBranchesInput {
                 filters: self.filters,
                 max_records: self.max_records,
@@ -5880,13 +5966,13 @@ impl ListPlatformBranchesInput {
             crate::operation::ListPlatformBranches,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListPlatformBranchesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5894,8 +5980,10 @@ impl ListPlatformBranchesInput {
             fn update_http_builder(
                 input: &crate::input::ListPlatformBranchesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5981,7 +6069,7 @@ impl ListPlatformBranchesInput {
 pub mod list_platform_versions_input {
 
     /// A builder for [`ListPlatformVersionsInput`](crate::input::ListPlatformVersionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::PlatformFilter>>,
         pub(crate) max_records: std::option::Option<i32>,
@@ -6032,8 +6120,10 @@ pub mod list_platform_versions_input {
         /// Consumes the builder and constructs a [`ListPlatformVersionsInput`](crate::input::ListPlatformVersionsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListPlatformVersionsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListPlatformVersionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListPlatformVersionsInput {
                 filters: self.filters,
                 max_records: self.max_records,
@@ -6055,13 +6145,13 @@ impl ListPlatformVersionsInput {
             crate::operation::ListPlatformVersions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListPlatformVersionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6069,8 +6159,10 @@ impl ListPlatformVersionsInput {
             fn update_http_builder(
                 input: &crate::input::ListPlatformVersionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6156,7 +6248,7 @@ impl ListPlatformVersionsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -6176,8 +6268,10 @@ pub mod list_tags_for_resource_input {
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
             })
@@ -6197,13 +6291,13 @@ impl ListTagsForResourceInput {
             crate::operation::ListTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6211,8 +6305,10 @@ impl ListTagsForResourceInput {
             fn update_http_builder(
                 input: &crate::input::ListTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6298,7 +6394,7 @@ impl ListTagsForResourceInput {
 pub mod rebuild_environment_input {
 
     /// A builder for [`RebuildEnvironmentInput`](crate::input::RebuildEnvironmentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_id: std::option::Option<std::string::String>,
         pub(crate) environment_name: std::option::Option<std::string::String>,
@@ -6337,8 +6433,10 @@ pub mod rebuild_environment_input {
         /// Consumes the builder and constructs a [`RebuildEnvironmentInput`](crate::input::RebuildEnvironmentInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::RebuildEnvironmentInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::RebuildEnvironmentInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::RebuildEnvironmentInput {
                 environment_id: self.environment_id,
                 environment_name: self.environment_name,
@@ -6359,13 +6457,13 @@ impl RebuildEnvironmentInput {
             crate::operation::RebuildEnvironment,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RebuildEnvironmentInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6373,8 +6471,10 @@ impl RebuildEnvironmentInput {
             fn update_http_builder(
                 input: &crate::input::RebuildEnvironmentInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6458,7 +6558,7 @@ impl RebuildEnvironmentInput {
 pub mod request_environment_info_input {
 
     /// A builder for [`RequestEnvironmentInfoInput`](crate::input::RequestEnvironmentInfoInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_id: std::option::Option<std::string::String>,
         pub(crate) environment_name: std::option::Option<std::string::String>,
@@ -6515,8 +6615,10 @@ pub mod request_environment_info_input {
         /// Consumes the builder and constructs a [`RequestEnvironmentInfoInput`](crate::input::RequestEnvironmentInfoInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::RequestEnvironmentInfoInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::RequestEnvironmentInfoInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::RequestEnvironmentInfoInput {
                 environment_id: self.environment_id,
                 environment_name: self.environment_name,
@@ -6538,13 +6640,13 @@ impl RequestEnvironmentInfoInput {
             crate::operation::RequestEnvironmentInfo,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RequestEnvironmentInfoInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6552,8 +6654,10 @@ impl RequestEnvironmentInfoInput {
             fn update_http_builder(
                 input: &crate::input::RequestEnvironmentInfoInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6639,7 +6743,7 @@ impl RequestEnvironmentInfoInput {
 pub mod restart_app_server_input {
 
     /// A builder for [`RestartAppServerInput`](crate::input::RestartAppServerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_id: std::option::Option<std::string::String>,
         pub(crate) environment_name: std::option::Option<std::string::String>,
@@ -6678,8 +6782,10 @@ pub mod restart_app_server_input {
         /// Consumes the builder and constructs a [`RestartAppServerInput`](crate::input::RestartAppServerInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::RestartAppServerInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::RestartAppServerInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::RestartAppServerInput {
                 environment_id: self.environment_id,
                 environment_name: self.environment_name,
@@ -6700,13 +6806,13 @@ impl RestartAppServerInput {
             crate::operation::RestartAppServer,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RestartAppServerInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6714,8 +6820,10 @@ impl RestartAppServerInput {
             fn update_http_builder(
                 input: &crate::input::RestartAppServerInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6799,7 +6907,7 @@ impl RestartAppServerInput {
 pub mod retrieve_environment_info_input {
 
     /// A builder for [`RetrieveEnvironmentInfoInput`](crate::input::RetrieveEnvironmentInfoInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_id: std::option::Option<std::string::String>,
         pub(crate) environment_name: std::option::Option<std::string::String>,
@@ -6858,7 +6966,7 @@ pub mod retrieve_environment_info_input {
             self,
         ) -> Result<
             crate::input::RetrieveEnvironmentInfoInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::RetrieveEnvironmentInfoInput {
                 environment_id: self.environment_id,
@@ -6881,13 +6989,13 @@ impl RetrieveEnvironmentInfoInput {
             crate::operation::RetrieveEnvironmentInfo,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RetrieveEnvironmentInfoInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6895,8 +7003,10 @@ impl RetrieveEnvironmentInfoInput {
             fn update_http_builder(
                 input: &crate::input::RetrieveEnvironmentInfoInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6982,7 +7092,7 @@ impl RetrieveEnvironmentInfoInput {
 pub mod swap_environment_cnam_es_input {
 
     /// A builder for [`SwapEnvironmentCnamEsInput`](crate::input::SwapEnvironmentCnamEsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_environment_id: std::option::Option<std::string::String>,
         pub(crate) source_environment_name: std::option::Option<std::string::String>,
@@ -7056,8 +7166,10 @@ pub mod swap_environment_cnam_es_input {
         /// Consumes the builder and constructs a [`SwapEnvironmentCnamEsInput`](crate::input::SwapEnvironmentCnamEsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SwapEnvironmentCnamEsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::SwapEnvironmentCnamEsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::SwapEnvironmentCnamEsInput {
                 source_environment_id: self.source_environment_id,
                 source_environment_name: self.source_environment_name,
@@ -7080,13 +7192,13 @@ impl SwapEnvironmentCnamEsInput {
             crate::operation::SwapEnvironmentCNAMEs,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SwapEnvironmentCnamEsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7094,8 +7206,10 @@ impl SwapEnvironmentCnamEsInput {
             fn update_http_builder(
                 input: &crate::input::SwapEnvironmentCnamEsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7181,7 +7295,7 @@ impl SwapEnvironmentCnamEsInput {
 pub mod terminate_environment_input {
 
     /// A builder for [`TerminateEnvironmentInput`](crate::input::TerminateEnvironmentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_id: std::option::Option<std::string::String>,
         pub(crate) environment_name: std::option::Option<std::string::String>,
@@ -7256,8 +7370,10 @@ pub mod terminate_environment_input {
         /// Consumes the builder and constructs a [`TerminateEnvironmentInput`](crate::input::TerminateEnvironmentInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TerminateEnvironmentInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::TerminateEnvironmentInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::TerminateEnvironmentInput {
                 environment_id: self.environment_id,
                 environment_name: self.environment_name,
@@ -7280,13 +7396,13 @@ impl TerminateEnvironmentInput {
             crate::operation::TerminateEnvironment,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TerminateEnvironmentInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7294,8 +7410,10 @@ impl TerminateEnvironmentInput {
             fn update_http_builder(
                 input: &crate::input::TerminateEnvironmentInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7379,7 +7497,7 @@ impl TerminateEnvironmentInput {
 pub mod update_application_input {
 
     /// A builder for [`UpdateApplicationInput`](crate::input::UpdateApplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -7413,8 +7531,10 @@ pub mod update_application_input {
         /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::input::UpdateApplicationInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateApplicationInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateApplicationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateApplicationInput {
                 application_name: self.application_name,
                 description: self.description,
@@ -7435,13 +7555,13 @@ impl UpdateApplicationInput {
             crate::operation::UpdateApplication,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateApplicationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7449,8 +7569,10 @@ impl UpdateApplicationInput {
             fn update_http_builder(
                 input: &crate::input::UpdateApplicationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7534,7 +7656,7 @@ impl UpdateApplicationInput {
 pub mod update_application_resource_lifecycle_input {
 
     /// A builder for [`UpdateApplicationResourceLifecycleInput`](crate::input::UpdateApplicationResourceLifecycleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) resource_lifecycle_config:
@@ -7575,7 +7697,7 @@ pub mod update_application_resource_lifecycle_input {
             self,
         ) -> Result<
             crate::input::UpdateApplicationResourceLifecycleInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateApplicationResourceLifecycleInput {
                 application_name: self.application_name,
@@ -7597,13 +7719,13 @@ impl UpdateApplicationResourceLifecycleInput {
             crate::operation::UpdateApplicationResourceLifecycle,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateApplicationResourceLifecycleInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7611,8 +7733,10 @@ impl UpdateApplicationResourceLifecycleInput {
             fn update_http_builder(
                 input: &crate::input::UpdateApplicationResourceLifecycleInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7695,7 +7819,7 @@ impl UpdateApplicationResourceLifecycleInput {
 pub mod update_application_version_input {
 
     /// A builder for [`UpdateApplicationVersionInput`](crate::input::UpdateApplicationVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) version_label: std::option::Option<std::string::String>,
@@ -7747,7 +7871,7 @@ pub mod update_application_version_input {
             self,
         ) -> Result<
             crate::input::UpdateApplicationVersionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateApplicationVersionInput {
                 application_name: self.application_name,
@@ -7770,13 +7894,13 @@ impl UpdateApplicationVersionInput {
             crate::operation::UpdateApplicationVersion,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateApplicationVersionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7784,8 +7908,10 @@ impl UpdateApplicationVersionInput {
             fn update_http_builder(
                 input: &crate::input::UpdateApplicationVersionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7871,7 +7997,7 @@ impl UpdateApplicationVersionInput {
 pub mod update_configuration_template_input {
 
     /// A builder for [`UpdateConfigurationTemplateInput`](crate::input::UpdateConfigurationTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -7967,7 +8093,7 @@ pub mod update_configuration_template_input {
             self,
         ) -> Result<
             crate::input::UpdateConfigurationTemplateInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateConfigurationTemplateInput {
                 application_name: self.application_name,
@@ -7992,13 +8118,13 @@ impl UpdateConfigurationTemplateInput {
             crate::operation::UpdateConfigurationTemplate,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateConfigurationTemplateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -8006,8 +8132,10 @@ impl UpdateConfigurationTemplateInput {
             fn update_http_builder(
                 input: &crate::input::UpdateConfigurationTemplateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8090,7 +8218,7 @@ impl UpdateConfigurationTemplateInput {
 pub mod update_environment_input {
 
     /// A builder for [`UpdateEnvironmentInput`](crate::input::UpdateEnvironmentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) environment_id: std::option::Option<std::string::String>,
@@ -8278,8 +8406,10 @@ pub mod update_environment_input {
         /// Consumes the builder and constructs a [`UpdateEnvironmentInput`](crate::input::UpdateEnvironmentInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateEnvironmentInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateEnvironmentInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateEnvironmentInput {
                 application_name: self.application_name,
                 environment_id: self.environment_id,
@@ -8310,13 +8440,13 @@ impl UpdateEnvironmentInput {
             crate::operation::UpdateEnvironment,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateEnvironmentInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -8324,8 +8454,10 @@ impl UpdateEnvironmentInput {
             fn update_http_builder(
                 input: &crate::input::UpdateEnvironmentInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8409,7 +8541,7 @@ impl UpdateEnvironmentInput {
 pub mod update_tags_for_resource_input {
 
     /// A builder for [`UpdateTagsForResourceInput`](crate::input::UpdateTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags_to_add: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -8473,8 +8605,10 @@ pub mod update_tags_for_resource_input {
         /// Consumes the builder and constructs a [`UpdateTagsForResourceInput`](crate::input::UpdateTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateTagsForResourceInput {
                 resource_arn: self.resource_arn,
                 tags_to_add: self.tags_to_add,
@@ -8496,13 +8630,13 @@ impl UpdateTagsForResourceInput {
             crate::operation::UpdateTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -8510,8 +8644,10 @@ impl UpdateTagsForResourceInput {
             fn update_http_builder(
                 input: &crate::input::UpdateTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8597,7 +8733,7 @@ impl UpdateTagsForResourceInput {
 pub mod validate_configuration_settings_input {
 
     /// A builder for [`ValidateConfigurationSettingsInput`](crate::input::ValidateConfigurationSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -8673,7 +8809,7 @@ pub mod validate_configuration_settings_input {
             self,
         ) -> Result<
             crate::input::ValidateConfigurationSettingsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ValidateConfigurationSettingsInput {
                 application_name: self.application_name,
@@ -8697,13 +8833,13 @@ impl ValidateConfigurationSettingsInput {
             crate::operation::ValidateConfigurationSettings,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ValidateConfigurationSettingsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -8711,8 +8847,10 @@ impl ValidateConfigurationSettingsInput {
             fn update_http_builder(
                 input: &crate::input::ValidateConfigurationSettingsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8793,7 +8931,7 @@ impl ValidateConfigurationSettingsInput {
 
 /// <p>A list of validation messages for a specified configuration template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidateConfigurationSettingsInput {
     /// <p>The name of the application that the configuration template or environment belongs to.</p>
     #[doc(hidden)]
@@ -8833,20 +8971,10 @@ impl ValidateConfigurationSettingsInput {
         self.option_settings.as_deref()
     }
 }
-impl std::fmt::Debug for ValidateConfigurationSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidateConfigurationSettingsInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("option_settings", &self.option_settings);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resouce to be updated.</p>
     /// <p>Must be the ARN of an Elastic Beanstalk resource.</p>
@@ -8878,19 +9006,10 @@ impl UpdateTagsForResourceInput {
         self.tags_to_remove.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags_to_add", &self.tags_to_add);
-        formatter.field("tags_to_remove", &self.tags_to_remove);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to update an environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEnvironmentInput {
     /// <p>The name of the application with which the environment is associated.</p>
     #[doc(hidden)]
@@ -8990,28 +9109,10 @@ impl UpdateEnvironmentInput {
         self.options_to_remove.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateEnvironmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateEnvironmentInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("group_name", &self.group_name);
-        formatter.field("description", &self.description);
-        formatter.field("tier", &self.tier);
-        formatter.field("version_label", &self.version_label);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("solution_stack_name", &self.solution_stack_name);
-        formatter.field("platform_arn", &self.platform_arn);
-        formatter.field("option_settings", &self.option_settings);
-        formatter.field("options_to_remove", &self.options_to_remove);
-        formatter.finish()
-    }
-}
 
 /// <p>The result message containing the options for the specified solution stack.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConfigurationTemplateInput {
     /// <p>The name of the application associated with the configuration template to update.</p>
     /// <p> If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
@@ -9060,21 +9161,10 @@ impl UpdateConfigurationTemplateInput {
         self.options_to_remove.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateConfigurationTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConfigurationTemplateInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("description", &self.description);
-        formatter.field("option_settings", &self.option_settings);
-        formatter.field("options_to_remove", &self.options_to_remove);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApplicationVersionInput {
     /// <p>The name of the application associated with this version.</p>
     /// <p> If no application is found with this name, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error.</p>
@@ -9104,19 +9194,10 @@ impl UpdateApplicationVersionInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateApplicationVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateApplicationVersionInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("version_label", &self.version_label);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApplicationResourceLifecycleInput {
     /// <p>The name of the application.</p>
     #[doc(hidden)]
@@ -9138,18 +9219,10 @@ impl UpdateApplicationResourceLifecycleInput {
         self.resource_lifecycle_config.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateApplicationResourceLifecycleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateApplicationResourceLifecycleInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("resource_lifecycle_config", &self.resource_lifecycle_config);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to update an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApplicationInput {
     /// <p>The name of the application to update. If no such application is found, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </p>
     #[doc(hidden)]
@@ -9170,18 +9243,10 @@ impl UpdateApplicationInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateApplicationInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to terminate an environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TerminateEnvironmentInput {
     /// <p>The ID of the environment to terminate.</p>
     /// <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
@@ -9232,20 +9297,10 @@ impl TerminateEnvironmentInput {
         self.force_terminate
     }
 }
-impl std::fmt::Debug for TerminateEnvironmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TerminateEnvironmentInput");
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("terminate_resources", &self.terminate_resources);
-        formatter.field("force_terminate", &self.force_terminate);
-        formatter.finish()
-    }
-}
 
 /// <p>Swaps the CNAMEs of two environments.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SwapEnvironmentCnamEsInput {
     /// <p>The ID of the source environment.</p>
     /// <p> Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentId</code>, you must specify the <code>DestinationEnvironmentId</code>. </p>
@@ -9286,26 +9341,10 @@ impl SwapEnvironmentCnamEsInput {
         self.destination_environment_name.as_deref()
     }
 }
-impl std::fmt::Debug for SwapEnvironmentCnamEsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SwapEnvironmentCnamEsInput");
-        formatter.field("source_environment_id", &self.source_environment_id);
-        formatter.field("source_environment_name", &self.source_environment_name);
-        formatter.field(
-            "destination_environment_id",
-            &self.destination_environment_id,
-        );
-        formatter.field(
-            "destination_environment_name",
-            &self.destination_environment_name,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>Request to download logs retrieved with <code>RequestEnvironmentInfo</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RetrieveEnvironmentInfoInput {
     /// <p>The ID of the data's environment.</p>
     /// <p>If no such environment is found, returns an <code>InvalidParameterValue</code> error.</p>
@@ -9339,19 +9378,10 @@ impl RetrieveEnvironmentInfoInput {
         self.info_type.as_ref()
     }
 }
-impl std::fmt::Debug for RetrieveEnvironmentInfoInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RetrieveEnvironmentInfoInput");
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("info_type", &self.info_type);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestartAppServerInput {
     /// <p>The ID of the environment to restart the server for.</p>
     /// <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
@@ -9374,18 +9404,10 @@ impl RestartAppServerInput {
         self.environment_name.as_deref()
     }
 }
-impl std::fmt::Debug for RestartAppServerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestartAppServerInput");
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to retrieve logs from an environment and store them in your Elastic Beanstalk storage bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequestEnvironmentInfoInput {
     /// <p>The ID of the environment of the requested data.</p>
     /// <p>If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code> error. </p>
@@ -9419,19 +9441,10 @@ impl RequestEnvironmentInfoInput {
         self.info_type.as_ref()
     }
 }
-impl std::fmt::Debug for RequestEnvironmentInfoInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RequestEnvironmentInfoInput");
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("info_type", &self.info_type);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RebuildEnvironmentInput {
     /// <p>The ID of the environment to rebuild.</p>
     /// <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
@@ -9454,18 +9467,10 @@ impl RebuildEnvironmentInput {
         self.environment_name.as_deref()
     }
 }
-impl std::fmt::Debug for RebuildEnvironmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RebuildEnvironmentInput");
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resouce for which a tag list is requested.</p>
     /// <p>Must be the ARN of an Elastic Beanstalk resource.</p>
@@ -9479,17 +9484,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPlatformVersionsInput {
     /// <p>Criteria for restricting the resulting list of platform versions. The filter is interpreted as a logical conjunction (AND) of the separate <code>PlatformFilter</code> terms.</p>
     #[doc(hidden)]
@@ -9517,19 +9515,10 @@ impl ListPlatformVersionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPlatformVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPlatformVersionsInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPlatformBranchesInput {
     /// <p>Criteria for restricting the resulting list of platform branches. The filter is evaluated as a logical conjunction (AND) of the separate <code>SearchFilter</code> terms.</p>
     /// <p>The following list shows valid attribute values for each of the <code>SearchFilter</code> terms. Most operators take a single value. The <code>in</code> and <code>not_in</code> operators can take multiple values.</p>
@@ -9603,30 +9592,15 @@ impl ListPlatformBranchesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPlatformBranchesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPlatformBranchesInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAvailableSolutionStacksInput {}
-impl std::fmt::Debug for ListAvailableSolutionStacksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAvailableSolutionStacksInput");
-        formatter.finish()
-    }
-}
 
 /// <p>Request to disassociate the operations role from an environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateEnvironmentOperationsRoleInput {
     /// <p>The name of the environment from which to disassociate the operations role.</p>
     #[doc(hidden)]
@@ -9638,17 +9612,10 @@ impl DisassociateEnvironmentOperationsRoleInput {
         self.environment_name.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateEnvironmentOperationsRoleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateEnvironmentOperationsRoleInput");
-        formatter.field("environment_name", &self.environment_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePlatformVersionInput {
     /// <p>The ARN of the platform version.</p>
     #[doc(hidden)]
@@ -9660,17 +9627,10 @@ impl DescribePlatformVersionInput {
         self.platform_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePlatformVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePlatformVersionInput");
-        formatter.field("platform_arn", &self.platform_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Parameters for a call to <code>DescribeInstancesHealth</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInstancesHealthInput {
     /// <p>Specify the AWS Elastic Beanstalk environment by name.</p>
     #[doc(hidden)]
@@ -9705,20 +9665,10 @@ impl DescribeInstancesHealthInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeInstancesHealthInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInstancesHealthInput");
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("attribute_names", &self.attribute_names);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to retrieve a list of events for an environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEventsInput {
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those associated with this application.</p>
     #[doc(hidden)]
@@ -9807,28 +9757,10 @@ impl DescribeEventsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEventsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEventsInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("version_label", &self.version_label);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("platform_arn", &self.platform_arn);
-        formatter.field("request_id", &self.request_id);
-        formatter.field("severity", &self.severity);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to describe one or more environments.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEnvironmentsInput {
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application.</p>
     #[doc(hidden)]
@@ -9897,24 +9829,10 @@ impl DescribeEnvironmentsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEnvironmentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEnvironmentsInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("version_label", &self.version_label);
-        formatter.field("environment_ids", &self.environment_ids);
-        formatter.field("environment_names", &self.environment_names);
-        formatter.field("include_deleted", &self.include_deleted);
-        formatter.field("included_deleted_back_to", &self.included_deleted_back_to);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to describe the resources in an environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEnvironmentResourcesInput {
     /// <p>The ID of the environment to retrieve AWS resource usage data.</p>
     /// <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
@@ -9937,18 +9855,10 @@ impl DescribeEnvironmentResourcesInput {
         self.environment_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEnvironmentResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEnvironmentResourcesInput");
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to list an environment's upcoming and in-progress managed actions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEnvironmentManagedActionsInput {
     /// <p>The name of the target environment.</p>
     #[doc(hidden)]
@@ -9974,19 +9884,10 @@ impl DescribeEnvironmentManagedActionsInput {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeEnvironmentManagedActionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEnvironmentManagedActionsInput");
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to list completed and failed managed actions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEnvironmentManagedActionHistoryInput {
     /// <p>The environment ID of the target environment.</p>
     #[doc(hidden)]
@@ -10019,20 +9920,10 @@ impl DescribeEnvironmentManagedActionHistoryInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for DescribeEnvironmentManagedActionHistoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEnvironmentManagedActionHistoryInput");
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 /// <p>See the example below to learn how to create a request body.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEnvironmentHealthInput {
     /// <p>Specify the environment by name.</p>
     /// <p>You must specify either this or an EnvironmentName, or both.</p>
@@ -10065,19 +9956,10 @@ impl DescribeEnvironmentHealthInput {
         self.attribute_names.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEnvironmentHealthInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEnvironmentHealthInput");
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("attribute_names", &self.attribute_names);
-        formatter.finish()
-    }
-}
 
 /// <p>Result message containing all of the configuration settings for a specified solution stack or configuration template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConfigurationSettingsInput {
     /// <p>The application for the environment or configuration template.</p>
     #[doc(hidden)]
@@ -10107,19 +9989,10 @@ impl DescribeConfigurationSettingsInput {
         self.environment_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeConfigurationSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConfigurationSettingsInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Result message containing a list of application version descriptions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConfigurationOptionsInput {
     /// <p>The name of the application associated with the configuration template or environment. Only needed if you want to describe the configuration options associated with either the configuration template or environment.</p>
     #[doc(hidden)]
@@ -10166,22 +10039,10 @@ impl DescribeConfigurationOptionsInput {
         self.options.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeConfigurationOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConfigurationOptionsInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("solution_stack_name", &self.solution_stack_name);
-        formatter.field("platform_arn", &self.platform_arn);
-        formatter.field("options", &self.options);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to describe application versions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeApplicationVersionsInput {
     /// <p>Specify an application name to show only application versions for that application.</p>
     #[doc(hidden)]
@@ -10218,20 +10079,10 @@ impl DescribeApplicationVersionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeApplicationVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeApplicationVersionsInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("version_labels", &self.version_labels);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to describe one or more applications.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeApplicationsInput {
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include those with the specified names.</p>
     #[doc(hidden)]
@@ -10243,28 +10094,15 @@ impl DescribeApplicationsInput {
         self.application_names.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeApplicationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeApplicationsInput");
-        formatter.field("application_names", &self.application_names);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAccountAttributesInput {}
-impl std::fmt::Debug for DescribeAccountAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAccountAttributesInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePlatformVersionInput {
     /// <p>The ARN of the version of the custom platform.</p>
     #[doc(hidden)]
@@ -10276,17 +10114,10 @@ impl DeletePlatformVersionInput {
         self.platform_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePlatformVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePlatformVersionInput");
-        formatter.field("platform_arn", &self.platform_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to delete a draft environment configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEnvironmentConfigurationInput {
     /// <p>The name of the application the environment is associated with.</p>
     #[doc(hidden)]
@@ -10305,18 +10136,10 @@ impl DeleteEnvironmentConfigurationInput {
         self.environment_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEnvironmentConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEnvironmentConfigurationInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to delete a configuration template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConfigurationTemplateInput {
     /// <p>The name of the application to delete the configuration template from.</p>
     #[doc(hidden)]
@@ -10335,18 +10158,10 @@ impl DeleteConfigurationTemplateInput {
         self.template_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteConfigurationTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConfigurationTemplateInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("template_name", &self.template_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to delete an application version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApplicationVersionInput {
     /// <p>The name of the application to which the version belongs.</p>
     #[doc(hidden)]
@@ -10372,19 +10187,10 @@ impl DeleteApplicationVersionInput {
         self.delete_source_bundle
     }
 }
-impl std::fmt::Debug for DeleteApplicationVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApplicationVersionInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("version_label", &self.version_label);
-        formatter.field("delete_source_bundle", &self.delete_source_bundle);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to delete an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApplicationInput {
     /// <p>The name of the application to delete.</p>
     #[doc(hidden)]
@@ -10403,29 +10209,15 @@ impl DeleteApplicationInput {
         self.terminate_env_by_force
     }
 }
-impl std::fmt::Debug for DeleteApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApplicationInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("terminate_env_by_force", &self.terminate_env_by_force);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateStorageLocationInput {}
-impl std::fmt::Debug for CreateStorageLocationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStorageLocationInput");
-        formatter.finish()
-    }
-}
 
 /// <p>Request to create a new platform version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePlatformVersionInput {
     /// <p>The name of your custom platform.</p>
     #[doc(hidden)]
@@ -10477,25 +10269,10 @@ impl CreatePlatformVersionInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreatePlatformVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePlatformVersionInput");
-        formatter.field("platform_name", &self.platform_name);
-        formatter.field("platform_version", &self.platform_version);
-        formatter.field(
-            "platform_definition_bundle",
-            &self.platform_definition_bundle,
-        );
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("option_settings", &self.option_settings);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateEnvironmentInput {
     /// <p>The name of the application that is associated with this environment.</p>
     #[doc(hidden)]
@@ -10619,30 +10396,10 @@ impl CreateEnvironmentInput {
         self.operations_role.as_deref()
     }
 }
-impl std::fmt::Debug for CreateEnvironmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateEnvironmentInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("group_name", &self.group_name);
-        formatter.field("description", &self.description);
-        formatter.field("cname_prefix", &self.cname_prefix);
-        formatter.field("tier", &self.tier);
-        formatter.field("tags", &self.tags);
-        formatter.field("version_label", &self.version_label);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("solution_stack_name", &self.solution_stack_name);
-        formatter.field("platform_arn", &self.platform_arn);
-        formatter.field("option_settings", &self.option_settings);
-        formatter.field("options_to_remove", &self.options_to_remove);
-        formatter.field("operations_role", &self.operations_role);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to create a configuration template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConfigurationTemplateInput {
     /// <p>The name of the Elastic Beanstalk application to associate with this configuration template.</p>
     #[doc(hidden)]
@@ -10729,25 +10486,10 @@ impl CreateConfigurationTemplateInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateConfigurationTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConfigurationTemplateInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("solution_stack_name", &self.solution_stack_name);
-        formatter.field("platform_arn", &self.platform_arn);
-        formatter.field("source_configuration", &self.source_configuration);
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("description", &self.description);
-        formatter.field("option_settings", &self.option_settings);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateApplicationVersionInput {
     /// <p> The name of the application. If no application is found with this name, and <code>AutoCreateApplication</code> is <code>false</code>, returns an <code>InvalidParameterValue</code> error. </p>
     #[doc(hidden)]
@@ -10833,25 +10575,10 @@ impl CreateApplicationVersionInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateApplicationVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateApplicationVersionInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("version_label", &self.version_label);
-        formatter.field("description", &self.description);
-        formatter.field("source_build_information", &self.source_build_information);
-        formatter.field("source_bundle", &self.source_bundle);
-        formatter.field("build_configuration", &self.build_configuration);
-        formatter.field("auto_create_application", &self.auto_create_application);
-        formatter.field("process", &self.process);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to create an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateApplicationInput {
     /// <p>The name of the application. Must be unique within your account.</p>
     #[doc(hidden)]
@@ -10889,20 +10616,10 @@ impl CreateApplicationInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateApplicationInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("description", &self.description);
-        formatter.field("resource_lifecycle_config", &self.resource_lifecycle_config);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to create or update a group of environments.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComposeEnvironmentsInput {
     /// <p>The name of the application to which the specified source bundles belong.</p>
     #[doc(hidden)]
@@ -10928,19 +10645,10 @@ impl ComposeEnvironmentsInput {
         self.version_labels.as_deref()
     }
 }
-impl std::fmt::Debug for ComposeEnvironmentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComposeEnvironmentsInput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("group_name", &self.group_name);
-        formatter.field("version_labels", &self.version_labels);
-        formatter.finish()
-    }
-}
 
 /// <p>Results message indicating whether a CNAME is available.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CheckDnsAvailabilityInput {
     /// <p>The prefix used when this CNAME is reserved.</p>
     #[doc(hidden)]
@@ -10952,17 +10660,10 @@ impl CheckDnsAvailabilityInput {
         self.cname_prefix.as_deref()
     }
 }
-impl std::fmt::Debug for CheckDnsAvailabilityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CheckDnsAvailabilityInput");
-        formatter.field("cname_prefix", &self.cname_prefix);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to add or change the operations role used by an environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateEnvironmentOperationsRoleInput {
     /// <p>The name of the environment to which to set the operations role.</p>
     #[doc(hidden)]
@@ -10981,18 +10682,10 @@ impl AssociateEnvironmentOperationsRoleInput {
         self.operations_role.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateEnvironmentOperationsRoleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateEnvironmentOperationsRoleInput");
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("operations_role", &self.operations_role);
-        formatter.finish()
-    }
-}
 
 /// <p>Request to execute a scheduled managed action immediately.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplyEnvironmentManagedActionInput {
     /// <p>The name of the target environment.</p>
     #[doc(hidden)]
@@ -11018,19 +10711,10 @@ impl ApplyEnvironmentManagedActionInput {
         self.action_id.as_deref()
     }
 }
-impl std::fmt::Debug for ApplyEnvironmentManagedActionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplyEnvironmentManagedActionInput");
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("action_id", &self.action_id);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AbortEnvironmentUpdateInput {
     /// <p>This specifies the ID of the environment with the in-progress update that you want to cancel.</p>
     #[doc(hidden)]
@@ -11047,13 +10731,5 @@ impl AbortEnvironmentUpdateInput {
     /// <p>This specifies the name of the environment with the in-progress update that you want to cancel.</p>
     pub fn environment_name(&self) -> std::option::Option<&str> {
         self.environment_name.as_deref()
-    }
-}
-impl std::fmt::Debug for AbortEnvironmentUpdateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AbortEnvironmentUpdateInput");
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.finish()
     }
 }

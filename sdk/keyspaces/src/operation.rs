@@ -5,7 +5,7 @@
 /// [`create_keyspace`](crate::client::Client::create_keyspace).
 ///
 /// See [`crate::client::fluent_builders::CreateKeyspace`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateKeyspace {
     _private: (),
 }
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateKeyspace {
 /// [`create_table`](crate::client::Client::create_table).
 ///
 /// See [`crate::client::fluent_builders::CreateTable`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateTable {
     _private: (),
 }
@@ -69,7 +69,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTable {
 /// [`delete_keyspace`](crate::client::Client::delete_keyspace).
 ///
 /// See [`crate::client::fluent_builders::DeleteKeyspace`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteKeyspace {
     _private: (),
 }
@@ -101,7 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteKeyspace {
 /// [`delete_table`](crate::client::Client::delete_table).
 ///
 /// See [`crate::client::fluent_builders::DeleteTable`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteTable {
     _private: (),
 }
@@ -133,7 +133,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTable {
 /// [`get_keyspace`](crate::client::Client::get_keyspace).
 ///
 /// See [`crate::client::fluent_builders::GetKeyspace`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetKeyspace {
     _private: (),
 }
@@ -165,7 +165,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetKeyspace {
 /// [`get_table`](crate::client::Client::get_table).
 ///
 /// See [`crate::client::fluent_builders::GetTable`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetTable {
     _private: (),
 }
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTable {
 /// [`list_keyspaces`](crate::client::Client::list_keyspaces).
 ///
 /// See [`crate::client::fluent_builders::ListKeyspaces`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListKeyspaces {
     _private: (),
 }
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListKeyspaces {
 /// [`list_tables`](crate::client::Client::list_tables).
 ///
 /// See [`crate::client::fluent_builders::ListTables`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTables {
     _private: (),
 }
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTables {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -294,7 +294,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`restore_table`](crate::client::Client::restore_table).
 ///
 /// See [`crate::client::fluent_builders::RestoreTable`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RestoreTable {
     _private: (),
 }
@@ -326,7 +326,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreTable {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -358,7 +358,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -390,7 +390,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_table`](crate::client::Client::update_table).
 ///
 /// See [`crate::client::fluent_builders::UpdateTable`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateTable {
     _private: (),
 }

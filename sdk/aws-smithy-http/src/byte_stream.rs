@@ -2,6 +2,7 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0
  */
+
 //! ByteStream Abstractions
 //!
 //! When the SDK returns streaming binary data, the inner Http Body is wrapped in [ByteStream](crate::byte_stream::ByteStream). ByteStream provides misuse-resistant
@@ -121,14 +122,12 @@
 //! ```
 
 use crate::body::SdkBody;
-use crate::callback::BodyCallback;
+use crate::byte_stream::error::Error;
 use bytes::Buf;
 use bytes::Bytes;
 use bytes_utils::SegmentedBuf;
 use http_body::Body;
 use pin_project_lite::pin_project;
-use std::error::Error as StdError;
-use std::fmt::{Debug, Formatter};
 use std::io::IoSlice;
 use std::pin::Pin;
 use std::task::{Context, Poll};
@@ -137,6 +136,8 @@ use std::task::{Context, Poll};
 mod bytestream_util;
 #[cfg(feature = "rt-tokio")]
 pub use bytestream_util::Length;
+
+pub mod error;
 
 #[cfg(feature = "rt-tokio")]
 pub use self::bytestream_util::FsBuilder;
@@ -180,7 +181,7 @@ pin_project! {
     ///     #       pub fn finish(&self) -> u64 { 6 }
     ///     #   }
     ///     # }
-    ///     use aws_smithy_http::byte_stream::{ByteStream, AggregatedBytes, Error};
+    ///     use aws_smithy_http::byte_stream::{ByteStream, AggregatedBytes, error::Error};
     ///     use aws_smithy_http::body::SdkBody;
     ///     use tokio_stream::StreamExt;
     ///
@@ -291,14 +292,14 @@ impl ByteStream {
     /// use bytes::Bytes;
     /// use aws_smithy_http::body;
     /// use aws_smithy_http::body::SdkBody;
-    /// use aws_smithy_http::byte_stream::{ByteStream, Error};
+    /// use aws_smithy_http::byte_stream::{ByteStream, error::Error};
     /// async fn get_data() {
     ///     let stream = ByteStream::new(SdkBody::from("hello!"));
     ///     let data: Result<Bytes, Error> = stream.collect().await.map(|data| data.into_bytes());
     /// }
     /// ```
     pub async fn collect(self) -> Result<AggregatedBytes, Error> {
-        self.inner.collect().await.map_err(|err| Error(err))
+        self.inner.collect().await.map_err(Error::streaming)
     }
 
     /// Returns a [`FsBuilder`](crate::byte_stream::FsBuilder), allowing you to build a `ByteStream` with
@@ -372,14 +373,6 @@ impl ByteStream {
         FsBuilder::new().file(file).build().await
     }
 
-    /// Set a callback on this `ByteStream`. The callback's methods will be called at various points
-    /// throughout this `ByteStream`'s life cycle. See the [`BodyCallback`](BodyCallback) trait for
-    /// more information.
-    pub fn with_body_callback(&mut self, body_callback: Box<dyn BodyCallback>) -> &mut Self {
-        self.inner.with_body_callback(body_callback);
-        self
-    }
-
     #[cfg(feature = "rt-tokio")]
     /// Convert this `ByteStream` into a struct that implements [`AsyncRead`](tokio::io::AsyncRead).
     ///
@@ -445,32 +438,11 @@ impl From<hyper::Body> for ByteStream {
     }
 }
 
-#[derive(Debug)]
-pub struct Error(Box<dyn StdError + Send + Sync + 'static>);
-
-impl std::fmt::Display for Error {
-    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
-        write!(f, "{}", self.0)
-    }
-}
-
-impl StdError for Error {
-    fn source(&self) -> Option<&(dyn StdError + 'static)> {
-        Some(self.0.as_ref() as _)
-    }
-}
-
-impl From<Error> for std::io::Error {
-    fn from(err: Error) -> Self {
-        std::io::Error::new(std::io::ErrorKind::Other, err)
-    }
-}
-
 impl futures_core::stream::Stream for ByteStream {
     type Item = Result<Bytes, Error>;
 
     fn poll_next(self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Option<Self::Item>> {
-        self.project().inner.poll_next(cx).map_err(|e| Error(e))
+        self.project().inner.poll_next(cx).map_err(Error::streaming)
     }
 
     fn size_hint(&self) -> (usize, Option<usize>) {
@@ -499,6 +471,15 @@ impl AggregatedBytes {
     /// directly on `AggregatedBytes`.
     pub fn into_bytes(mut self) -> Bytes {
         self.0.copy_to_bytes(self.0.remaining())
+    }
+
+    /// Convert this buffer into a `Vec<u8>`
+    pub fn to_vec(self) -> Vec<u8> {
+        self.0
+            .into_inner()
+            .into_iter()
+            .flat_map(|b| b.to_vec())
+            .collect()
     }
 }
 
@@ -544,18 +525,11 @@ impl<B> Inner<B> {
     {
         let mut output = SegmentedBuf::new();
         let body = self.body;
-        crate::pin_mut!(body);
+        pin_utils::pin_mut!(body);
         while let Some(buf) = body.data().await {
             output.push(buf?);
         }
         Ok(AggregatedBytes(output))
-    }
-}
-
-impl Inner<SdkBody> {
-    fn with_body_callback(&mut self, body_callback: Box<dyn BodyCallback>) -> &mut Self {
-        self.body.with_callback(body_callback);
-        self
     }
 }
 

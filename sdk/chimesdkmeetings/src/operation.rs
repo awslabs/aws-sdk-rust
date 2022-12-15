@@ -5,7 +5,7 @@
 /// [`batch_create_attendee`](crate::client::Client::batch_create_attendee).
 ///
 /// See [`crate::client::fluent_builders::BatchCreateAttendee`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchCreateAttendee {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchCreateAttendee {
 /// [`batch_update_attendee_capabilities_except`](crate::client::Client::batch_update_attendee_capabilities_except).
 ///
 /// See [`crate::client::fluent_builders::BatchUpdateAttendeeCapabilitiesExcept`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchUpdateAttendeeCapabilitiesExcept {
     _private: (),
 }
@@ -75,7 +75,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchUpdateAttendeeCapab
 /// [`create_attendee`](crate::client::Client::create_attendee).
 ///
 /// See [`crate::client::fluent_builders::CreateAttendee`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateAttendee {
     _private: (),
 }
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAttendee {
 /// [`create_meeting`](crate::client::Client::create_meeting).
 ///
 /// See [`crate::client::fluent_builders::CreateMeeting`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateMeeting {
     _private: (),
 }
@@ -139,7 +139,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMeeting {
 /// [`create_meeting_with_attendees`](crate::client::Client::create_meeting_with_attendees).
 ///
 /// See [`crate::client::fluent_builders::CreateMeetingWithAttendees`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateMeetingWithAttendees {
     _private: (),
 }
@@ -173,7 +173,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMeetingWithAttende
 /// [`delete_attendee`](crate::client::Client::delete_attendee).
 ///
 /// See [`crate::client::fluent_builders::DeleteAttendee`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteAttendee {
     _private: (),
 }
@@ -205,7 +205,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAttendee {
 /// [`delete_meeting`](crate::client::Client::delete_meeting).
 ///
 /// See [`crate::client::fluent_builders::DeleteMeeting`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteMeeting {
     _private: (),
 }
@@ -237,7 +237,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMeeting {
 /// [`get_attendee`](crate::client::Client::get_attendee).
 ///
 /// See [`crate::client::fluent_builders::GetAttendee`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAttendee {
     _private: (),
 }
@@ -269,7 +269,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAttendee {
 /// [`get_meeting`](crate::client::Client::get_meeting).
 ///
 /// See [`crate::client::fluent_builders::GetMeeting`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetMeeting {
     _private: (),
 }
@@ -301,7 +301,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMeeting {
 /// [`list_attendees`](crate::client::Client::list_attendees).
 ///
 /// See [`crate::client::fluent_builders::ListAttendees`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAttendees {
     _private: (),
 }
@@ -333,7 +333,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAttendees {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -367,7 +367,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`start_meeting_transcription`](crate::client::Client::start_meeting_transcription).
 ///
 /// See [`crate::client::fluent_builders::StartMeetingTranscription`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartMeetingTranscription {
     _private: (),
 }
@@ -401,7 +401,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartMeetingTranscriptio
 /// [`stop_meeting_transcription`](crate::client::Client::stop_meeting_transcription).
 ///
 /// See [`crate::client::fluent_builders::StopMeetingTranscription`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopMeetingTranscription {
     _private: (),
 }
@@ -435,7 +435,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopMeetingTranscription
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -467,7 +467,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -499,7 +499,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_attendee_capabilities`](crate::client::Client::update_attendee_capabilities).
 ///
 /// See [`crate::client::fluent_builders::UpdateAttendeeCapabilities`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateAttendeeCapabilities {
     _private: (),
 }

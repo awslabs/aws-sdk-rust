@@ -2,7 +2,7 @@
 
 /// Returned for a successful UpdateRecordsRequest.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRecordsOutput {
     /// A list of records that have been updated.
     #[doc(hidden)]
@@ -14,18 +14,11 @@ impl UpdateRecordsOutput {
         self.records.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRecordsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRecordsOutput");
-        formatter.field("records", &self.records);
-        formatter.finish()
-    }
-}
 /// See [`UpdateRecordsOutput`](crate::output::UpdateRecordsOutput).
 pub mod update_records_output {
 
     /// A builder for [`UpdateRecordsOutput`](crate::output::UpdateRecordsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) records: std::option::Option<std::vec::Vec<crate::model::Record>>,
     }
@@ -66,19 +59,13 @@ impl UpdateRecordsOutput {
 
 /// <p>Response to an UnsubscribeFromDataset request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnsubscribeFromDatasetOutput {}
-impl std::fmt::Debug for UnsubscribeFromDatasetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsubscribeFromDatasetOutput");
-        formatter.finish()
-    }
-}
 /// See [`UnsubscribeFromDatasetOutput`](crate::output::UnsubscribeFromDatasetOutput).
 pub mod unsubscribe_from_dataset_output {
 
     /// A builder for [`UnsubscribeFromDatasetOutput`](crate::output::UnsubscribeFromDatasetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UnsubscribeFromDatasetOutput`](crate::output::UnsubscribeFromDatasetOutput).
@@ -96,19 +83,13 @@ impl UnsubscribeFromDatasetOutput {
 
 /// <p>Response to a SubscribeToDataset request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubscribeToDatasetOutput {}
-impl std::fmt::Debug for SubscribeToDatasetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubscribeToDatasetOutput");
-        formatter.finish()
-    }
-}
 /// See [`SubscribeToDatasetOutput`](crate::output::SubscribeToDatasetOutput).
 pub mod subscribe_to_dataset_output {
 
     /// A builder for [`SubscribeToDatasetOutput`](crate::output::SubscribeToDatasetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SubscribeToDatasetOutput`](crate::output::SubscribeToDatasetOutput).
@@ -126,7 +107,7 @@ impl SubscribeToDatasetOutput {
 
 /// <p>The output for the SetIdentityPoolConfiguration operation</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetIdentityPoolConfigurationOutput {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.</p>
     #[doc(hidden)]
@@ -152,20 +133,11 @@ impl SetIdentityPoolConfigurationOutput {
         self.cognito_streams.as_ref()
     }
 }
-impl std::fmt::Debug for SetIdentityPoolConfigurationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetIdentityPoolConfigurationOutput");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("push_sync", &self.push_sync);
-        formatter.field("cognito_streams", &self.cognito_streams);
-        formatter.finish()
-    }
-}
 /// See [`SetIdentityPoolConfigurationOutput`](crate::output::SetIdentityPoolConfigurationOutput).
 pub mod set_identity_pool_configuration_output {
 
     /// A builder for [`SetIdentityPoolConfigurationOutput`](crate::output::SetIdentityPoolConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
         pub(crate) push_sync: std::option::Option<crate::model::PushSync>,
@@ -227,19 +199,13 @@ impl SetIdentityPoolConfigurationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetCognitoEventsOutput {}
-impl std::fmt::Debug for SetCognitoEventsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetCognitoEventsOutput");
-        formatter.finish()
-    }
-}
 /// See [`SetCognitoEventsOutput`](crate::output::SetCognitoEventsOutput).
 pub mod set_cognito_events_output {
 
     /// A builder for [`SetCognitoEventsOutput`](crate::output::SetCognitoEventsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SetCognitoEventsOutput`](crate::output::SetCognitoEventsOutput).
@@ -257,7 +223,7 @@ impl SetCognitoEventsOutput {
 
 /// <p>Response to a RegisterDevice request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterDeviceOutput {
     /// <p>The unique ID generated for this device by Cognito.</p>
     #[doc(hidden)]
@@ -269,18 +235,11 @@ impl RegisterDeviceOutput {
         self.device_id.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterDeviceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterDeviceOutput");
-        formatter.field("device_id", &self.device_id);
-        formatter.finish()
-    }
-}
 /// See [`RegisterDeviceOutput`](crate::output::RegisterDeviceOutput).
 pub mod register_device_output {
 
     /// A builder for [`RegisterDeviceOutput`](crate::output::RegisterDeviceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
     }
@@ -312,7 +271,7 @@ impl RegisterDeviceOutput {
 
 /// Returned for a successful ListRecordsRequest.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRecordsOutput {
     /// A list of all records.
     #[doc(hidden)]
@@ -380,29 +339,11 @@ impl ListRecordsOutput {
         self.sync_session_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListRecordsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRecordsOutput");
-        formatter.field("records", &self.records);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("count", &self.count);
-        formatter.field("dataset_sync_count", &self.dataset_sync_count);
-        formatter.field("last_modified_by", &self.last_modified_by);
-        formatter.field("merged_dataset_names", &self.merged_dataset_names);
-        formatter.field("dataset_exists", &self.dataset_exists);
-        formatter.field(
-            "dataset_deleted_after_requested_sync_count",
-            &self.dataset_deleted_after_requested_sync_count,
-        );
-        formatter.field("sync_session_token", &self.sync_session_token);
-        formatter.finish()
-    }
-}
 /// See [`ListRecordsOutput`](crate::output::ListRecordsOutput).
 pub mod list_records_output {
 
     /// A builder for [`ListRecordsOutput`](crate::output::ListRecordsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) records: std::option::Option<std::vec::Vec<crate::model::Record>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -559,7 +500,7 @@ impl ListRecordsOutput {
 
 /// Returned for a successful ListIdentityPoolUsage request.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListIdentityPoolUsageOutput {
     /// Usage information for the identity pools.
     #[doc(hidden)]
@@ -592,21 +533,11 @@ impl ListIdentityPoolUsageOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListIdentityPoolUsageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListIdentityPoolUsageOutput");
-        formatter.field("identity_pool_usages", &self.identity_pool_usages);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("count", &self.count);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListIdentityPoolUsageOutput`](crate::output::ListIdentityPoolUsageOutput).
 pub mod list_identity_pool_usage_output {
 
     /// A builder for [`ListIdentityPoolUsageOutput`](crate::output::ListIdentityPoolUsageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_usages:
             std::option::Option<std::vec::Vec<crate::model::IdentityPoolUsage>>,
@@ -684,7 +615,7 @@ impl ListIdentityPoolUsageOutput {
 
 /// Returned for a successful ListDatasets request.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDatasetsOutput {
     /// A set of datasets.
     #[doc(hidden)]
@@ -710,20 +641,11 @@ impl ListDatasetsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListDatasetsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDatasetsOutput");
-        formatter.field("datasets", &self.datasets);
-        formatter.field("count", &self.count);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListDatasetsOutput`](crate::output::ListDatasetsOutput).
 pub mod list_datasets_output {
 
     /// A builder for [`ListDatasetsOutput`](crate::output::ListDatasetsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) datasets: std::option::Option<std::vec::Vec<crate::model::Dataset>>,
         pub(crate) count: std::option::Option<i32>,
@@ -788,7 +710,7 @@ impl ListDatasetsOutput {
 
 /// <p>The output for the GetIdentityPoolConfiguration operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIdentityPoolConfigurationOutput {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.</p>
     #[doc(hidden)]
@@ -814,20 +736,11 @@ impl GetIdentityPoolConfigurationOutput {
         self.cognito_streams.as_ref()
     }
 }
-impl std::fmt::Debug for GetIdentityPoolConfigurationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIdentityPoolConfigurationOutput");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("push_sync", &self.push_sync);
-        formatter.field("cognito_streams", &self.cognito_streams);
-        formatter.finish()
-    }
-}
 /// See [`GetIdentityPoolConfigurationOutput`](crate::output::GetIdentityPoolConfigurationOutput).
 pub mod get_identity_pool_configuration_output {
 
     /// A builder for [`GetIdentityPoolConfigurationOutput`](crate::output::GetIdentityPoolConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
         pub(crate) push_sync: std::option::Option<crate::model::PushSync>,
@@ -889,7 +802,7 @@ impl GetIdentityPoolConfigurationOutput {
 
 /// <p>The response from the GetCognitoEvents request</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCognitoEventsOutput {
     /// <p>The Cognito Events returned from the GetCognitoEvents request</p>
     #[doc(hidden)]
@@ -905,18 +818,11 @@ impl GetCognitoEventsOutput {
         self.events.as_ref()
     }
 }
-impl std::fmt::Debug for GetCognitoEventsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCognitoEventsOutput");
-        formatter.field("events", &self.events);
-        formatter.finish()
-    }
-}
 /// See [`GetCognitoEventsOutput`](crate::output::GetCognitoEventsOutput).
 pub mod get_cognito_events_output {
 
     /// A builder for [`GetCognitoEventsOutput`](crate::output::GetCognitoEventsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -965,7 +871,7 @@ impl GetCognitoEventsOutput {
 
 /// The output for the GetBulkPublishDetails operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBulkPublishDetailsOutput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     #[doc(hidden)]
@@ -1013,25 +919,11 @@ impl GetBulkPublishDetailsOutput {
         self.failure_message.as_deref()
     }
 }
-impl std::fmt::Debug for GetBulkPublishDetailsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBulkPublishDetailsOutput");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("bulk_publish_start_time", &self.bulk_publish_start_time);
-        formatter.field(
-            "bulk_publish_complete_time",
-            &self.bulk_publish_complete_time,
-        );
-        formatter.field("bulk_publish_status", &self.bulk_publish_status);
-        formatter.field("failure_message", &self.failure_message);
-        formatter.finish()
-    }
-}
 /// See [`GetBulkPublishDetailsOutput`](crate::output::GetBulkPublishDetailsOutput).
 pub mod get_bulk_publish_details_output {
 
     /// A builder for [`GetBulkPublishDetailsOutput`](crate::output::GetBulkPublishDetailsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
         pub(crate) bulk_publish_start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1134,7 +1026,7 @@ impl GetBulkPublishDetailsOutput {
 
 /// The response to a successful DescribeIdentityUsage request.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeIdentityUsageOutput {
     /// Usage information for the identity.
     #[doc(hidden)]
@@ -1146,18 +1038,11 @@ impl DescribeIdentityUsageOutput {
         self.identity_usage.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeIdentityUsageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeIdentityUsageOutput");
-        formatter.field("identity_usage", &self.identity_usage);
-        formatter.finish()
-    }
-}
 /// See [`DescribeIdentityUsageOutput`](crate::output::DescribeIdentityUsageOutput).
 pub mod describe_identity_usage_output {
 
     /// A builder for [`DescribeIdentityUsageOutput`](crate::output::DescribeIdentityUsageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_usage: std::option::Option<crate::model::IdentityUsage>,
     }
@@ -1192,7 +1077,7 @@ impl DescribeIdentityUsageOutput {
 
 /// Response to a successful DescribeIdentityPoolUsage request.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeIdentityPoolUsageOutput {
     /// Information about the usage of the identity pool.
     #[doc(hidden)]
@@ -1204,18 +1089,11 @@ impl DescribeIdentityPoolUsageOutput {
         self.identity_pool_usage.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeIdentityPoolUsageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeIdentityPoolUsageOutput");
-        formatter.field("identity_pool_usage", &self.identity_pool_usage);
-        formatter.finish()
-    }
-}
 /// See [`DescribeIdentityPoolUsageOutput`](crate::output::DescribeIdentityPoolUsageOutput).
 pub mod describe_identity_pool_usage_output {
 
     /// A builder for [`DescribeIdentityPoolUsageOutput`](crate::output::DescribeIdentityPoolUsageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_usage: std::option::Option<crate::model::IdentityPoolUsage>,
     }
@@ -1250,7 +1128,7 @@ impl DescribeIdentityPoolUsageOutput {
 
 /// Response to a successful DescribeDataset request.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDatasetOutput {
     /// Meta data for a collection of data for an identity. An identity can have multiple datasets. A dataset can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.
     #[doc(hidden)]
@@ -1262,18 +1140,11 @@ impl DescribeDatasetOutput {
         self.dataset.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeDatasetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDatasetOutput");
-        formatter.field("dataset", &self.dataset);
-        formatter.finish()
-    }
-}
 /// See [`DescribeDatasetOutput`](crate::output::DescribeDatasetOutput).
 pub mod describe_dataset_output {
 
     /// A builder for [`DescribeDatasetOutput`](crate::output::DescribeDatasetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset: std::option::Option<crate::model::Dataset>,
     }
@@ -1305,7 +1176,7 @@ impl DescribeDatasetOutput {
 
 /// Response to a successful DeleteDataset request.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDatasetOutput {
     /// A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.
     #[doc(hidden)]
@@ -1317,18 +1188,11 @@ impl DeleteDatasetOutput {
         self.dataset.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteDatasetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDatasetOutput");
-        formatter.field("dataset", &self.dataset);
-        formatter.finish()
-    }
-}
 /// See [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput).
 pub mod delete_dataset_output {
 
     /// A builder for [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset: std::option::Option<crate::model::Dataset>,
     }
@@ -1360,7 +1224,7 @@ impl DeleteDatasetOutput {
 
 /// The output for the BulkPublish operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BulkPublishOutput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     #[doc(hidden)]
@@ -1372,18 +1236,11 @@ impl BulkPublishOutput {
         self.identity_pool_id.as_deref()
     }
 }
-impl std::fmt::Debug for BulkPublishOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BulkPublishOutput");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.finish()
-    }
-}
 /// See [`BulkPublishOutput`](crate::output::BulkPublishOutput).
 pub mod bulk_publish_output {
 
     /// A builder for [`BulkPublishOutput`](crate::output::BulkPublishOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
     }

@@ -2,7 +2,7 @@
 
 /// <p>Provides a list of validation messages.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidateConfigurationSettingsOutput {
     /// <p> A list of <code>ValidationMessage</code>. </p>
     #[doc(hidden)]
@@ -14,18 +14,11 @@ impl ValidateConfigurationSettingsOutput {
         self.messages.as_deref()
     }
 }
-impl std::fmt::Debug for ValidateConfigurationSettingsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidateConfigurationSettingsOutput");
-        formatter.field("messages", &self.messages);
-        formatter.finish()
-    }
-}
 /// See [`ValidateConfigurationSettingsOutput`](crate::output::ValidateConfigurationSettingsOutput).
 pub mod validate_configuration_settings_output {
 
     /// A builder for [`ValidateConfigurationSettingsOutput`](crate::output::ValidateConfigurationSettingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) messages: std::option::Option<std::vec::Vec<crate::model::ValidationMessage>>,
     }
@@ -66,19 +59,13 @@ impl ValidateConfigurationSettingsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTagsForResourceOutput {}
-impl std::fmt::Debug for UpdateTagsForResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTagsForResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateTagsForResourceOutput`](crate::output::UpdateTagsForResourceOutput).
 pub mod update_tags_for_resource_output {
 
     /// A builder for [`UpdateTagsForResourceOutput`](crate::output::UpdateTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateTagsForResourceOutput`](crate::output::UpdateTagsForResourceOutput).
@@ -96,7 +83,7 @@ impl UpdateTagsForResourceOutput {
 
 /// <p>Describes the properties of an environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEnvironmentOutput {
     /// <p>The name of this environment.</p>
     #[doc(hidden)]
@@ -280,41 +267,11 @@ impl UpdateEnvironmentOutput {
         self.operations_role.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateEnvironmentOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateEnvironmentOutput");
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("application_name", &self.application_name);
-        formatter.field("version_label", &self.version_label);
-        formatter.field("solution_stack_name", &self.solution_stack_name);
-        formatter.field("platform_arn", &self.platform_arn);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("description", &self.description);
-        formatter.field("endpoint_url", &self.endpoint_url);
-        formatter.field("cname", &self.cname);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("date_updated", &self.date_updated);
-        formatter.field("status", &self.status);
-        formatter.field(
-            "abortable_operation_in_progress",
-            &self.abortable_operation_in_progress,
-        );
-        formatter.field("health", &self.health);
-        formatter.field("health_status", &self.health_status);
-        formatter.field("resources", &self.resources);
-        formatter.field("tier", &self.tier);
-        formatter.field("environment_links", &self.environment_links);
-        formatter.field("environment_arn", &self.environment_arn);
-        formatter.field("operations_role", &self.operations_role);
-        formatter.finish()
-    }
-}
 /// See [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput).
 pub mod update_environment_output {
 
     /// A builder for [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_name: std::option::Option<std::string::String>,
         pub(crate) environment_id: std::option::Option<std::string::String>,
@@ -676,7 +633,7 @@ impl UpdateEnvironmentOutput {
 
 /// <p>Describes the settings for a configuration set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConfigurationTemplateOutput {
     /// <p>The name of the solution stack this configuration set uses.</p>
     #[doc(hidden)]
@@ -768,27 +725,11 @@ impl UpdateConfigurationTemplateOutput {
         self.option_settings.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateConfigurationTemplateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConfigurationTemplateOutput");
-        formatter.field("solution_stack_name", &self.solution_stack_name);
-        formatter.field("platform_arn", &self.platform_arn);
-        formatter.field("application_name", &self.application_name);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("description", &self.description);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("deployment_status", &self.deployment_status);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("date_updated", &self.date_updated);
-        formatter.field("option_settings", &self.option_settings);
-        formatter.finish()
-    }
-}
 /// See [`UpdateConfigurationTemplateOutput`](crate::output::UpdateConfigurationTemplateOutput).
 pub mod update_configuration_template_output {
 
     /// A builder for [`UpdateConfigurationTemplateOutput`](crate::output::UpdateConfigurationTemplateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) solution_stack_name: std::option::Option<std::string::String>,
         pub(crate) platform_arn: std::option::Option<std::string::String>,
@@ -975,7 +916,7 @@ impl UpdateConfigurationTemplateOutput {
 
 /// <p>Result message wrapping a single description of an application version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApplicationVersionOutput {
     /// <p> The <code>ApplicationVersionDescription</code> of the application version. </p>
     #[doc(hidden)]
@@ -989,18 +930,11 @@ impl UpdateApplicationVersionOutput {
         self.application_version.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateApplicationVersionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateApplicationVersionOutput");
-        formatter.field("application_version", &self.application_version);
-        formatter.finish()
-    }
-}
 /// See [`UpdateApplicationVersionOutput`](crate::output::UpdateApplicationVersionOutput).
 pub mod update_application_version_output {
 
     /// A builder for [`UpdateApplicationVersionOutput`](crate::output::UpdateApplicationVersionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_version:
             std::option::Option<crate::model::ApplicationVersionDescription>,
@@ -1039,7 +973,7 @@ impl UpdateApplicationVersionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApplicationResourceLifecycleOutput {
     /// <p>The name of the application.</p>
     #[doc(hidden)]
@@ -1061,19 +995,11 @@ impl UpdateApplicationResourceLifecycleOutput {
         self.resource_lifecycle_config.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateApplicationResourceLifecycleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateApplicationResourceLifecycleOutput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("resource_lifecycle_config", &self.resource_lifecycle_config);
-        formatter.finish()
-    }
-}
 /// See [`UpdateApplicationResourceLifecycleOutput`](crate::output::UpdateApplicationResourceLifecycleOutput).
 pub mod update_application_resource_lifecycle_output {
 
     /// A builder for [`UpdateApplicationResourceLifecycleOutput`](crate::output::UpdateApplicationResourceLifecycleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) resource_lifecycle_config:
@@ -1127,7 +1053,7 @@ impl UpdateApplicationResourceLifecycleOutput {
 
 /// <p>Result message containing a single description of an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApplicationOutput {
     /// <p> The <code>ApplicationDescription</code> of the application. </p>
     #[doc(hidden)]
@@ -1139,18 +1065,11 @@ impl UpdateApplicationOutput {
         self.application.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateApplicationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateApplicationOutput");
-        formatter.field("application", &self.application);
-        formatter.finish()
-    }
-}
 /// See [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
 pub mod update_application_output {
 
     /// A builder for [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<crate::model::ApplicationDescription>,
     }
@@ -1185,7 +1104,7 @@ impl UpdateApplicationOutput {
 
 /// <p>Describes the properties of an environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TerminateEnvironmentOutput {
     /// <p>The name of this environment.</p>
     #[doc(hidden)]
@@ -1369,41 +1288,11 @@ impl TerminateEnvironmentOutput {
         self.operations_role.as_deref()
     }
 }
-impl std::fmt::Debug for TerminateEnvironmentOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TerminateEnvironmentOutput");
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("application_name", &self.application_name);
-        formatter.field("version_label", &self.version_label);
-        formatter.field("solution_stack_name", &self.solution_stack_name);
-        formatter.field("platform_arn", &self.platform_arn);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("description", &self.description);
-        formatter.field("endpoint_url", &self.endpoint_url);
-        formatter.field("cname", &self.cname);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("date_updated", &self.date_updated);
-        formatter.field("status", &self.status);
-        formatter.field(
-            "abortable_operation_in_progress",
-            &self.abortable_operation_in_progress,
-        );
-        formatter.field("health", &self.health);
-        formatter.field("health_status", &self.health_status);
-        formatter.field("resources", &self.resources);
-        formatter.field("tier", &self.tier);
-        formatter.field("environment_links", &self.environment_links);
-        formatter.field("environment_arn", &self.environment_arn);
-        formatter.field("operations_role", &self.operations_role);
-        formatter.finish()
-    }
-}
 /// See [`TerminateEnvironmentOutput`](crate::output::TerminateEnvironmentOutput).
 pub mod terminate_environment_output {
 
     /// A builder for [`TerminateEnvironmentOutput`](crate::output::TerminateEnvironmentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_name: std::option::Option<std::string::String>,
         pub(crate) environment_id: std::option::Option<std::string::String>,
@@ -1765,19 +1654,13 @@ impl TerminateEnvironmentOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SwapEnvironmentCnamEsOutput {}
-impl std::fmt::Debug for SwapEnvironmentCnamEsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SwapEnvironmentCnamEsOutput");
-        formatter.finish()
-    }
-}
 /// See [`SwapEnvironmentCnamEsOutput`](crate::output::SwapEnvironmentCnamEsOutput).
 pub mod swap_environment_cnam_es_output {
 
     /// A builder for [`SwapEnvironmentCnamEsOutput`](crate::output::SwapEnvironmentCnamEsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SwapEnvironmentCnamEsOutput`](crate::output::SwapEnvironmentCnamEsOutput).
@@ -1795,7 +1678,7 @@ impl SwapEnvironmentCnamEsOutput {
 
 /// <p>Result message containing a description of the requested environment info.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RetrieveEnvironmentInfoOutput {
     /// <p> The <code>EnvironmentInfoDescription</code> of the environment. </p>
     #[doc(hidden)]
@@ -1810,18 +1693,11 @@ impl RetrieveEnvironmentInfoOutput {
         self.environment_info.as_deref()
     }
 }
-impl std::fmt::Debug for RetrieveEnvironmentInfoOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RetrieveEnvironmentInfoOutput");
-        formatter.field("environment_info", &self.environment_info);
-        formatter.finish()
-    }
-}
 /// See [`RetrieveEnvironmentInfoOutput`](crate::output::RetrieveEnvironmentInfoOutput).
 pub mod retrieve_environment_info_output {
 
     /// A builder for [`RetrieveEnvironmentInfoOutput`](crate::output::RetrieveEnvironmentInfoOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_info:
             std::option::Option<std::vec::Vec<crate::model::EnvironmentInfoDescription>>,
@@ -1863,19 +1739,13 @@ impl RetrieveEnvironmentInfoOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestartAppServerOutput {}
-impl std::fmt::Debug for RestartAppServerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestartAppServerOutput");
-        formatter.finish()
-    }
-}
 /// See [`RestartAppServerOutput`](crate::output::RestartAppServerOutput).
 pub mod restart_app_server_output {
 
     /// A builder for [`RestartAppServerOutput`](crate::output::RestartAppServerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RestartAppServerOutput`](crate::output::RestartAppServerOutput).
@@ -1893,19 +1763,13 @@ impl RestartAppServerOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequestEnvironmentInfoOutput {}
-impl std::fmt::Debug for RequestEnvironmentInfoOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RequestEnvironmentInfoOutput");
-        formatter.finish()
-    }
-}
 /// See [`RequestEnvironmentInfoOutput`](crate::output::RequestEnvironmentInfoOutput).
 pub mod request_environment_info_output {
 
     /// A builder for [`RequestEnvironmentInfoOutput`](crate::output::RequestEnvironmentInfoOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RequestEnvironmentInfoOutput`](crate::output::RequestEnvironmentInfoOutput).
@@ -1923,19 +1787,13 @@ impl RequestEnvironmentInfoOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RebuildEnvironmentOutput {}
-impl std::fmt::Debug for RebuildEnvironmentOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RebuildEnvironmentOutput");
-        formatter.finish()
-    }
-}
 /// See [`RebuildEnvironmentOutput`](crate::output::RebuildEnvironmentOutput).
 pub mod rebuild_environment_output {
 
     /// A builder for [`RebuildEnvironmentOutput`](crate::output::RebuildEnvironmentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RebuildEnvironmentOutput`](crate::output::RebuildEnvironmentOutput).
@@ -1953,7 +1811,7 @@ impl RebuildEnvironmentOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the resource for which a tag list was requested.</p>
     #[doc(hidden)]
@@ -1972,19 +1830,11 @@ impl ListTagsForResourceOutput {
         self.resource_tags.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceOutput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("resource_tags", &self.resource_tags);
-        formatter.finish()
-    }
-}
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) resource_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2037,7 +1887,7 @@ impl ListTagsForResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPlatformVersionsOutput {
     /// <p>Summary information about the platform versions.</p>
     #[doc(hidden)]
@@ -2056,19 +1906,11 @@ impl ListPlatformVersionsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPlatformVersionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPlatformVersionsOutput");
-        formatter.field("platform_summary_list", &self.platform_summary_list);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListPlatformVersionsOutput`](crate::output::ListPlatformVersionsOutput).
 pub mod list_platform_versions_output {
 
     /// A builder for [`ListPlatformVersionsOutput`](crate::output::ListPlatformVersionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) platform_summary_list:
             std::option::Option<std::vec::Vec<crate::model::PlatformSummary>>,
@@ -2122,7 +1964,7 @@ impl ListPlatformVersionsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPlatformBranchesOutput {
     /// <p>Summary information about the platform branches.</p>
     #[doc(hidden)]
@@ -2144,22 +1986,11 @@ impl ListPlatformBranchesOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPlatformBranchesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPlatformBranchesOutput");
-        formatter.field(
-            "platform_branch_summary_list",
-            &self.platform_branch_summary_list,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListPlatformBranchesOutput`](crate::output::ListPlatformBranchesOutput).
 pub mod list_platform_branches_output {
 
     /// A builder for [`ListPlatformBranchesOutput`](crate::output::ListPlatformBranchesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) platform_branch_summary_list:
             std::option::Option<std::vec::Vec<crate::model::PlatformBranchSummary>>,
@@ -2216,7 +2047,7 @@ impl ListPlatformBranchesOutput {
 
 /// <p>A list of available AWS Elastic Beanstalk solution stacks.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAvailableSolutionStacksOutput {
     /// <p>A list of available solution stacks.</p>
     #[doc(hidden)]
@@ -2238,19 +2069,11 @@ impl ListAvailableSolutionStacksOutput {
         self.solution_stack_details.as_deref()
     }
 }
-impl std::fmt::Debug for ListAvailableSolutionStacksOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAvailableSolutionStacksOutput");
-        formatter.field("solution_stacks", &self.solution_stacks);
-        formatter.field("solution_stack_details", &self.solution_stack_details);
-        formatter.finish()
-    }
-}
 /// See [`ListAvailableSolutionStacksOutput`](crate::output::ListAvailableSolutionStacksOutput).
 pub mod list_available_solution_stacks_output {
 
     /// A builder for [`ListAvailableSolutionStacksOutput`](crate::output::ListAvailableSolutionStacksOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) solution_stacks: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) solution_stack_details:
@@ -2316,19 +2139,13 @@ impl ListAvailableSolutionStacksOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateEnvironmentOperationsRoleOutput {}
-impl std::fmt::Debug for DisassociateEnvironmentOperationsRoleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateEnvironmentOperationsRoleOutput");
-        formatter.finish()
-    }
-}
 /// See [`DisassociateEnvironmentOperationsRoleOutput`](crate::output::DisassociateEnvironmentOperationsRoleOutput).
 pub mod disassociate_environment_operations_role_output {
 
     /// A builder for [`DisassociateEnvironmentOperationsRoleOutput`](crate::output::DisassociateEnvironmentOperationsRoleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateEnvironmentOperationsRoleOutput`](crate::output::DisassociateEnvironmentOperationsRoleOutput).
@@ -2346,7 +2163,7 @@ impl DisassociateEnvironmentOperationsRoleOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePlatformVersionOutput {
     /// <p>Detailed information about the platform version.</p>
     #[doc(hidden)]
@@ -2358,18 +2175,11 @@ impl DescribePlatformVersionOutput {
         self.platform_description.as_ref()
     }
 }
-impl std::fmt::Debug for DescribePlatformVersionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePlatformVersionOutput");
-        formatter.field("platform_description", &self.platform_description);
-        formatter.finish()
-    }
-}
 /// See [`DescribePlatformVersionOutput`](crate::output::DescribePlatformVersionOutput).
 pub mod describe_platform_version_output {
 
     /// A builder for [`DescribePlatformVersionOutput`](crate::output::DescribePlatformVersionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) platform_description: std::option::Option<crate::model::PlatformDescription>,
     }
@@ -2404,7 +2214,7 @@ impl DescribePlatformVersionOutput {
 
 /// <p>Detailed health information about the Amazon EC2 instances in an AWS Elastic Beanstalk environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInstancesHealthOutput {
     /// <p>Detailed health information about each instance.</p>
     /// <p>The output differs slightly between Linux and Windows environments. There is a difference in the members that are supported under the <code>
@@ -2437,20 +2247,11 @@ impl DescribeInstancesHealthOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeInstancesHealthOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInstancesHealthOutput");
-        formatter.field("instance_health_list", &self.instance_health_list);
-        formatter.field("refreshed_at", &self.refreshed_at);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`DescribeInstancesHealthOutput`](crate::output::DescribeInstancesHealthOutput).
 pub mod describe_instances_health_output {
 
     /// A builder for [`DescribeInstancesHealthOutput`](crate::output::DescribeInstancesHealthOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_health_list:
             std::option::Option<std::vec::Vec<crate::model::SingleInstanceHealth>>,
@@ -2523,7 +2324,7 @@ impl DescribeInstancesHealthOutput {
 
 /// <p>Result message wrapping a list of event descriptions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEventsOutput {
     /// <p> A list of <code>EventDescription</code>. </p>
     #[doc(hidden)]
@@ -2542,19 +2343,11 @@ impl DescribeEventsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEventsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEventsOutput");
-        formatter.field("events", &self.events);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
 pub mod describe_events_output {
 
     /// A builder for [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::EventDescription>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2607,7 +2400,7 @@ impl DescribeEventsOutput {
 
 /// <p>Result message containing a list of environment descriptions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEnvironmentsOutput {
     /// <p> Returns an <code>EnvironmentDescription</code> list. </p>
     #[doc(hidden)]
@@ -2626,19 +2419,11 @@ impl DescribeEnvironmentsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEnvironmentsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEnvironmentsOutput");
-        formatter.field("environments", &self.environments);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`DescribeEnvironmentsOutput`](crate::output::DescribeEnvironmentsOutput).
 pub mod describe_environments_output {
 
     /// A builder for [`DescribeEnvironmentsOutput`](crate::output::DescribeEnvironmentsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environments:
             std::option::Option<std::vec::Vec<crate::model::EnvironmentDescription>>,
@@ -2692,7 +2477,7 @@ impl DescribeEnvironmentsOutput {
 
 /// <p>Result message containing a list of environment resource descriptions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEnvironmentResourcesOutput {
     /// <p> A list of <code>EnvironmentResourceDescription</code>. </p>
     #[doc(hidden)]
@@ -2706,18 +2491,11 @@ impl DescribeEnvironmentResourcesOutput {
         self.environment_resources.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeEnvironmentResourcesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEnvironmentResourcesOutput");
-        formatter.field("environment_resources", &self.environment_resources);
-        formatter.finish()
-    }
-}
 /// See [`DescribeEnvironmentResourcesOutput`](crate::output::DescribeEnvironmentResourcesOutput).
 pub mod describe_environment_resources_output {
 
     /// A builder for [`DescribeEnvironmentResourcesOutput`](crate::output::DescribeEnvironmentResourcesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_resources:
             std::option::Option<crate::model::EnvironmentResourceDescription>,
@@ -2756,7 +2534,7 @@ impl DescribeEnvironmentResourcesOutput {
 
 /// <p>The result message containing a list of managed actions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEnvironmentManagedActionsOutput {
     /// <p>A list of upcoming and in-progress managed actions.</p>
     #[doc(hidden)]
@@ -2768,18 +2546,11 @@ impl DescribeEnvironmentManagedActionsOutput {
         self.managed_actions.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEnvironmentManagedActionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEnvironmentManagedActionsOutput");
-        formatter.field("managed_actions", &self.managed_actions);
-        formatter.finish()
-    }
-}
 /// See [`DescribeEnvironmentManagedActionsOutput`](crate::output::DescribeEnvironmentManagedActionsOutput).
 pub mod describe_environment_managed_actions_output {
 
     /// A builder for [`DescribeEnvironmentManagedActionsOutput`](crate::output::DescribeEnvironmentManagedActionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) managed_actions: std::option::Option<std::vec::Vec<crate::model::ManagedAction>>,
     }
@@ -2820,7 +2591,7 @@ impl DescribeEnvironmentManagedActionsOutput {
 
 /// <p>A result message containing a list of completed and failed managed actions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEnvironmentManagedActionHistoryOutput {
     /// <p>A list of completed and failed managed actions.</p>
     #[doc(hidden)]
@@ -2842,22 +2613,11 @@ impl DescribeEnvironmentManagedActionHistoryOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEnvironmentManagedActionHistoryOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEnvironmentManagedActionHistoryOutput");
-        formatter.field(
-            "managed_action_history_items",
-            &self.managed_action_history_items,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`DescribeEnvironmentManagedActionHistoryOutput`](crate::output::DescribeEnvironmentManagedActionHistoryOutput).
 pub mod describe_environment_managed_action_history_output {
 
     /// A builder for [`DescribeEnvironmentManagedActionHistoryOutput`](crate::output::DescribeEnvironmentManagedActionHistoryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) managed_action_history_items:
             std::option::Option<std::vec::Vec<crate::model::ManagedActionHistoryItem>>,
@@ -2914,7 +2674,7 @@ impl DescribeEnvironmentManagedActionHistoryOutput {
 
 /// <p>Health details for an AWS Elastic Beanstalk environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEnvironmentHealthOutput {
     /// <p>The environment's name.</p>
     #[doc(hidden)]
@@ -2975,25 +2735,11 @@ impl DescribeEnvironmentHealthOutput {
         self.refreshed_at.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeEnvironmentHealthOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEnvironmentHealthOutput");
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("health_status", &self.health_status);
-        formatter.field("status", &self.status);
-        formatter.field("color", &self.color);
-        formatter.field("causes", &self.causes);
-        formatter.field("application_metrics", &self.application_metrics);
-        formatter.field("instances_health", &self.instances_health);
-        formatter.field("refreshed_at", &self.refreshed_at);
-        formatter.finish()
-    }
-}
 /// See [`DescribeEnvironmentHealthOutput`](crate::output::DescribeEnvironmentHealthOutput).
 pub mod describe_environment_health_output {
 
     /// A builder for [`DescribeEnvironmentHealthOutput`](crate::output::DescribeEnvironmentHealthOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_name: std::option::Option<std::string::String>,
         pub(crate) health_status: std::option::Option<std::string::String>,
@@ -3136,7 +2882,7 @@ impl DescribeEnvironmentHealthOutput {
 
 /// <p>The results from a request to change the configuration settings of an environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConfigurationSettingsOutput {
     /// <p> A list of <code>ConfigurationSettingsDescription</code>. </p>
     #[doc(hidden)]
@@ -3151,18 +2897,11 @@ impl DescribeConfigurationSettingsOutput {
         self.configuration_settings.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeConfigurationSettingsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConfigurationSettingsOutput");
-        formatter.field("configuration_settings", &self.configuration_settings);
-        formatter.finish()
-    }
-}
 /// See [`DescribeConfigurationSettingsOutput`](crate::output::DescribeConfigurationSettingsOutput).
 pub mod describe_configuration_settings_output {
 
     /// A builder for [`DescribeConfigurationSettingsOutput`](crate::output::DescribeConfigurationSettingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_settings:
             std::option::Option<std::vec::Vec<crate::model::ConfigurationSettingsDescription>>,
@@ -3209,7 +2948,7 @@ impl DescribeConfigurationSettingsOutput {
 
 /// <p>Describes the settings for a specified configuration set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConfigurationOptionsOutput {
     /// <p>The name of the solution stack these configuration options belong to.</p>
     #[doc(hidden)]
@@ -3235,20 +2974,11 @@ impl DescribeConfigurationOptionsOutput {
         self.options.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeConfigurationOptionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConfigurationOptionsOutput");
-        formatter.field("solution_stack_name", &self.solution_stack_name);
-        formatter.field("platform_arn", &self.platform_arn);
-        formatter.field("options", &self.options);
-        formatter.finish()
-    }
-}
 /// See [`DescribeConfigurationOptionsOutput`](crate::output::DescribeConfigurationOptionsOutput).
 pub mod describe_configuration_options_output {
 
     /// A builder for [`DescribeConfigurationOptionsOutput`](crate::output::DescribeConfigurationOptionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) solution_stack_name: std::option::Option<std::string::String>,
         pub(crate) platform_arn: std::option::Option<std::string::String>,
@@ -3317,7 +3047,7 @@ impl DescribeConfigurationOptionsOutput {
 
 /// <p>Result message wrapping a list of application version descriptions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeApplicationVersionsOutput {
     /// <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of creation.</p>
     #[doc(hidden)]
@@ -3339,19 +3069,11 @@ impl DescribeApplicationVersionsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeApplicationVersionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeApplicationVersionsOutput");
-        formatter.field("application_versions", &self.application_versions);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`DescribeApplicationVersionsOutput`](crate::output::DescribeApplicationVersionsOutput).
 pub mod describe_application_versions_output {
 
     /// A builder for [`DescribeApplicationVersionsOutput`](crate::output::DescribeApplicationVersionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_versions:
             std::option::Option<std::vec::Vec<crate::model::ApplicationVersionDescription>>,
@@ -3408,7 +3130,7 @@ impl DescribeApplicationVersionsOutput {
 
 /// <p>Result message containing a list of application descriptions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeApplicationsOutput {
     /// <p>This parameter contains a list of <code>ApplicationDescription</code>.</p>
     #[doc(hidden)]
@@ -3420,18 +3142,11 @@ impl DescribeApplicationsOutput {
         self.applications.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeApplicationsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeApplicationsOutput");
-        formatter.field("applications", &self.applications);
-        formatter.finish()
-    }
-}
 /// See [`DescribeApplicationsOutput`](crate::output::DescribeApplicationsOutput).
 pub mod describe_applications_output {
 
     /// A builder for [`DescribeApplicationsOutput`](crate::output::DescribeApplicationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) applications:
             std::option::Option<std::vec::Vec<crate::model::ApplicationDescription>>,
@@ -3473,7 +3188,7 @@ impl DescribeApplicationsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAccountAttributesOutput {
     /// <p>The Elastic Beanstalk resource quotas associated with the calling AWS account.</p>
     #[doc(hidden)]
@@ -3485,18 +3200,11 @@ impl DescribeAccountAttributesOutput {
         self.resource_quotas.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeAccountAttributesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAccountAttributesOutput");
-        formatter.field("resource_quotas", &self.resource_quotas);
-        formatter.finish()
-    }
-}
 /// See [`DescribeAccountAttributesOutput`](crate::output::DescribeAccountAttributesOutput).
 pub mod describe_account_attributes_output {
 
     /// A builder for [`DescribeAccountAttributesOutput`](crate::output::DescribeAccountAttributesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_quotas: std::option::Option<crate::model::ResourceQuotas>,
     }
@@ -3531,7 +3239,7 @@ impl DescribeAccountAttributesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePlatformVersionOutput {
     /// <p>Detailed information about the version of the custom platform.</p>
     #[doc(hidden)]
@@ -3543,18 +3251,11 @@ impl DeletePlatformVersionOutput {
         self.platform_summary.as_ref()
     }
 }
-impl std::fmt::Debug for DeletePlatformVersionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePlatformVersionOutput");
-        formatter.field("platform_summary", &self.platform_summary);
-        formatter.finish()
-    }
-}
 /// See [`DeletePlatformVersionOutput`](crate::output::DeletePlatformVersionOutput).
 pub mod delete_platform_version_output {
 
     /// A builder for [`DeletePlatformVersionOutput`](crate::output::DeletePlatformVersionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) platform_summary: std::option::Option<crate::model::PlatformSummary>,
     }
@@ -3589,19 +3290,13 @@ impl DeletePlatformVersionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEnvironmentConfigurationOutput {}
-impl std::fmt::Debug for DeleteEnvironmentConfigurationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEnvironmentConfigurationOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteEnvironmentConfigurationOutput`](crate::output::DeleteEnvironmentConfigurationOutput).
 pub mod delete_environment_configuration_output {
 
     /// A builder for [`DeleteEnvironmentConfigurationOutput`](crate::output::DeleteEnvironmentConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteEnvironmentConfigurationOutput`](crate::output::DeleteEnvironmentConfigurationOutput).
@@ -3619,19 +3314,13 @@ impl DeleteEnvironmentConfigurationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConfigurationTemplateOutput {}
-impl std::fmt::Debug for DeleteConfigurationTemplateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConfigurationTemplateOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteConfigurationTemplateOutput`](crate::output::DeleteConfigurationTemplateOutput).
 pub mod delete_configuration_template_output {
 
     /// A builder for [`DeleteConfigurationTemplateOutput`](crate::output::DeleteConfigurationTemplateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteConfigurationTemplateOutput`](crate::output::DeleteConfigurationTemplateOutput).
@@ -3649,19 +3338,13 @@ impl DeleteConfigurationTemplateOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApplicationVersionOutput {}
-impl std::fmt::Debug for DeleteApplicationVersionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApplicationVersionOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteApplicationVersionOutput`](crate::output::DeleteApplicationVersionOutput).
 pub mod delete_application_version_output {
 
     /// A builder for [`DeleteApplicationVersionOutput`](crate::output::DeleteApplicationVersionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteApplicationVersionOutput`](crate::output::DeleteApplicationVersionOutput).
@@ -3679,19 +3362,13 @@ impl DeleteApplicationVersionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApplicationOutput {}
-impl std::fmt::Debug for DeleteApplicationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApplicationOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
 pub mod delete_application_output {
 
     /// A builder for [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
@@ -3709,7 +3386,7 @@ impl DeleteApplicationOutput {
 
 /// <p>Results of a <code>CreateStorageLocationResult</code> call.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateStorageLocationOutput {
     /// <p>The name of the Amazon S3 bucket created.</p>
     #[doc(hidden)]
@@ -3721,18 +3398,11 @@ impl CreateStorageLocationOutput {
         self.s3_bucket.as_deref()
     }
 }
-impl std::fmt::Debug for CreateStorageLocationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStorageLocationOutput");
-        formatter.field("s3_bucket", &self.s3_bucket);
-        formatter.finish()
-    }
-}
 /// See [`CreateStorageLocationOutput`](crate::output::CreateStorageLocationOutput).
 pub mod create_storage_location_output {
 
     /// A builder for [`CreateStorageLocationOutput`](crate::output::CreateStorageLocationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_bucket: std::option::Option<std::string::String>,
     }
@@ -3764,7 +3434,7 @@ impl CreateStorageLocationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePlatformVersionOutput {
     /// <p>Detailed information about the new version of the custom platform.</p>
     #[doc(hidden)]
@@ -3787,19 +3457,11 @@ impl CreatePlatformVersionOutput {
         self.builder_value.as_ref()
     }
 }
-impl std::fmt::Debug for CreatePlatformVersionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePlatformVersionOutput");
-        formatter.field("platform_summary", &self.platform_summary);
-        formatter.field("builder_value", &self.builder_value);
-        formatter.finish()
-    }
-}
 /// See [`CreatePlatformVersionOutput`](crate::output::CreatePlatformVersionOutput).
 pub mod create_platform_version_output {
 
     /// A builder for [`CreatePlatformVersionOutput`](crate::output::CreatePlatformVersionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) platform_summary: std::option::Option<crate::model::PlatformSummary>,
         pub(crate) builder_value: std::option::Option<crate::model::Builder>,
@@ -3846,7 +3508,7 @@ impl CreatePlatformVersionOutput {
 
 /// <p>Describes the properties of an environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateEnvironmentOutput {
     /// <p>The name of this environment.</p>
     #[doc(hidden)]
@@ -4030,41 +3692,11 @@ impl CreateEnvironmentOutput {
         self.operations_role.as_deref()
     }
 }
-impl std::fmt::Debug for CreateEnvironmentOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateEnvironmentOutput");
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("application_name", &self.application_name);
-        formatter.field("version_label", &self.version_label);
-        formatter.field("solution_stack_name", &self.solution_stack_name);
-        formatter.field("platform_arn", &self.platform_arn);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("description", &self.description);
-        formatter.field("endpoint_url", &self.endpoint_url);
-        formatter.field("cname", &self.cname);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("date_updated", &self.date_updated);
-        formatter.field("status", &self.status);
-        formatter.field(
-            "abortable_operation_in_progress",
-            &self.abortable_operation_in_progress,
-        );
-        formatter.field("health", &self.health);
-        formatter.field("health_status", &self.health_status);
-        formatter.field("resources", &self.resources);
-        formatter.field("tier", &self.tier);
-        formatter.field("environment_links", &self.environment_links);
-        formatter.field("environment_arn", &self.environment_arn);
-        formatter.field("operations_role", &self.operations_role);
-        formatter.finish()
-    }
-}
 /// See [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput).
 pub mod create_environment_output {
 
     /// A builder for [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_name: std::option::Option<std::string::String>,
         pub(crate) environment_id: std::option::Option<std::string::String>,
@@ -4426,7 +4058,7 @@ impl CreateEnvironmentOutput {
 
 /// <p>Describes the settings for a configuration set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConfigurationTemplateOutput {
     /// <p>The name of the solution stack this configuration set uses.</p>
     #[doc(hidden)]
@@ -4518,27 +4150,11 @@ impl CreateConfigurationTemplateOutput {
         self.option_settings.as_deref()
     }
 }
-impl std::fmt::Debug for CreateConfigurationTemplateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConfigurationTemplateOutput");
-        formatter.field("solution_stack_name", &self.solution_stack_name);
-        formatter.field("platform_arn", &self.platform_arn);
-        formatter.field("application_name", &self.application_name);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("description", &self.description);
-        formatter.field("environment_name", &self.environment_name);
-        formatter.field("deployment_status", &self.deployment_status);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("date_updated", &self.date_updated);
-        formatter.field("option_settings", &self.option_settings);
-        formatter.finish()
-    }
-}
 /// See [`CreateConfigurationTemplateOutput`](crate::output::CreateConfigurationTemplateOutput).
 pub mod create_configuration_template_output {
 
     /// A builder for [`CreateConfigurationTemplateOutput`](crate::output::CreateConfigurationTemplateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) solution_stack_name: std::option::Option<std::string::String>,
         pub(crate) platform_arn: std::option::Option<std::string::String>,
@@ -4725,7 +4341,7 @@ impl CreateConfigurationTemplateOutput {
 
 /// <p>Result message wrapping a single description of an application version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateApplicationVersionOutput {
     /// <p> The <code>ApplicationVersionDescription</code> of the application version. </p>
     #[doc(hidden)]
@@ -4739,18 +4355,11 @@ impl CreateApplicationVersionOutput {
         self.application_version.as_ref()
     }
 }
-impl std::fmt::Debug for CreateApplicationVersionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateApplicationVersionOutput");
-        formatter.field("application_version", &self.application_version);
-        formatter.finish()
-    }
-}
 /// See [`CreateApplicationVersionOutput`](crate::output::CreateApplicationVersionOutput).
 pub mod create_application_version_output {
 
     /// A builder for [`CreateApplicationVersionOutput`](crate::output::CreateApplicationVersionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_version:
             std::option::Option<crate::model::ApplicationVersionDescription>,
@@ -4789,7 +4398,7 @@ impl CreateApplicationVersionOutput {
 
 /// <p>Result message containing a single description of an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateApplicationOutput {
     /// <p> The <code>ApplicationDescription</code> of the application. </p>
     #[doc(hidden)]
@@ -4801,18 +4410,11 @@ impl CreateApplicationOutput {
         self.application.as_ref()
     }
 }
-impl std::fmt::Debug for CreateApplicationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateApplicationOutput");
-        formatter.field("application", &self.application);
-        formatter.finish()
-    }
-}
 /// See [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
 pub mod create_application_output {
 
     /// A builder for [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<crate::model::ApplicationDescription>,
     }
@@ -4847,7 +4449,7 @@ impl CreateApplicationOutput {
 
 /// <p>Result message containing a list of environment descriptions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComposeEnvironmentsOutput {
     /// <p> Returns an <code>EnvironmentDescription</code> list. </p>
     #[doc(hidden)]
@@ -4866,19 +4468,11 @@ impl ComposeEnvironmentsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ComposeEnvironmentsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComposeEnvironmentsOutput");
-        formatter.field("environments", &self.environments);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ComposeEnvironmentsOutput`](crate::output::ComposeEnvironmentsOutput).
 pub mod compose_environments_output {
 
     /// A builder for [`ComposeEnvironmentsOutput`](crate::output::ComposeEnvironmentsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environments:
             std::option::Option<std::vec::Vec<crate::model::EnvironmentDescription>>,
@@ -4932,7 +4526,7 @@ impl ComposeEnvironmentsOutput {
 
 /// <p>Indicates if the specified CNAME is available.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CheckDnsAvailabilityOutput {
     /// <p>Indicates if the specified CNAME is available:</p>
     /// <ul>
@@ -4959,19 +4553,11 @@ impl CheckDnsAvailabilityOutput {
         self.fully_qualified_cname.as_deref()
     }
 }
-impl std::fmt::Debug for CheckDnsAvailabilityOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CheckDnsAvailabilityOutput");
-        formatter.field("available", &self.available);
-        formatter.field("fully_qualified_cname", &self.fully_qualified_cname);
-        formatter.finish()
-    }
-}
 /// See [`CheckDnsAvailabilityOutput`](crate::output::CheckDnsAvailabilityOutput).
 pub mod check_dns_availability_output {
 
     /// A builder for [`CheckDnsAvailabilityOutput`](crate::output::CheckDnsAvailabilityOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) available: std::option::Option<bool>,
         pub(crate) fully_qualified_cname: std::option::Option<std::string::String>,
@@ -5026,19 +4612,13 @@ impl CheckDnsAvailabilityOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateEnvironmentOperationsRoleOutput {}
-impl std::fmt::Debug for AssociateEnvironmentOperationsRoleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateEnvironmentOperationsRoleOutput");
-        formatter.finish()
-    }
-}
 /// See [`AssociateEnvironmentOperationsRoleOutput`](crate::output::AssociateEnvironmentOperationsRoleOutput).
 pub mod associate_environment_operations_role_output {
 
     /// A builder for [`AssociateEnvironmentOperationsRoleOutput`](crate::output::AssociateEnvironmentOperationsRoleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateEnvironmentOperationsRoleOutput`](crate::output::AssociateEnvironmentOperationsRoleOutput).
@@ -5056,7 +4636,7 @@ impl AssociateEnvironmentOperationsRoleOutput {
 
 /// <p>The result message containing information about the managed action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplyEnvironmentManagedActionOutput {
     /// <p>The action ID of the managed action.</p>
     #[doc(hidden)]
@@ -5089,21 +4669,11 @@ impl ApplyEnvironmentManagedActionOutput {
         self.status.as_deref()
     }
 }
-impl std::fmt::Debug for ApplyEnvironmentManagedActionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplyEnvironmentManagedActionOutput");
-        formatter.field("action_id", &self.action_id);
-        formatter.field("action_description", &self.action_description);
-        formatter.field("action_type", &self.action_type);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 /// See [`ApplyEnvironmentManagedActionOutput`](crate::output::ApplyEnvironmentManagedActionOutput).
 pub mod apply_environment_managed_action_output {
 
     /// A builder for [`ApplyEnvironmentManagedActionOutput`](crate::output::ApplyEnvironmentManagedActionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_id: std::option::Option<std::string::String>,
         pub(crate) action_description: std::option::Option<std::string::String>,
@@ -5177,19 +4747,13 @@ impl ApplyEnvironmentManagedActionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AbortEnvironmentUpdateOutput {}
-impl std::fmt::Debug for AbortEnvironmentUpdateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AbortEnvironmentUpdateOutput");
-        formatter.finish()
-    }
-}
 /// See [`AbortEnvironmentUpdateOutput`](crate::output::AbortEnvironmentUpdateOutput).
 pub mod abort_environment_update_output {
 
     /// A builder for [`AbortEnvironmentUpdateOutput`](crate::output::AbortEnvironmentUpdateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AbortEnvironmentUpdateOutput`](crate::output::AbortEnvironmentUpdateOutput).

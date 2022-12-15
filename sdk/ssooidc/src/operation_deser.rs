@@ -23,7 +23,7 @@ pub fn parse_create_token_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -41,7 +41,7 @@ pub fn parse_create_token_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_pending_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -58,7 +58,7 @@ pub fn parse_create_token_error(
                     output = crate::json_deser::deser_structure_crate_error_expired_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -75,7 +75,7 @@ pub fn parse_create_token_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -92,7 +92,7 @@ pub fn parse_create_token_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -109,7 +109,7 @@ pub fn parse_create_token_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_grant_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -126,7 +126,7 @@ pub fn parse_create_token_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -143,7 +143,7 @@ pub fn parse_create_token_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_scope_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -160,7 +160,7 @@ pub fn parse_create_token_error(
                     output = crate::json_deser::deser_structure_crate_error_slow_down_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -178,7 +178,7 @@ pub fn parse_create_token_error(
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -196,7 +196,7 @@ pub fn parse_create_token_error(
                     output = crate::json_deser::deser_structure_crate_error_unsupported_grant_type_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -247,7 +247,7 @@ pub fn parse_register_client_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterClientError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -265,7 +265,7 @@ pub fn parse_register_client_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_client_metadata_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterClientError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -282,7 +282,7 @@ pub fn parse_register_client_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterClientError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -299,7 +299,7 @@ pub fn parse_register_client_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_scope_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterClientError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -357,7 +357,7 @@ pub fn parse_start_device_authorization_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartDeviceAuthorizationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -374,7 +374,7 @@ pub fn parse_start_device_authorization_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartDeviceAuthorizationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -391,7 +391,7 @@ pub fn parse_start_device_authorization_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartDeviceAuthorizationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -408,7 +408,7 @@ pub fn parse_start_device_authorization_error(
                     output = crate::json_deser::deser_structure_crate_error_slow_down_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartDeviceAuthorizationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -426,7 +426,7 @@ pub fn parse_start_device_authorization_error(
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartDeviceAuthorizationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp

@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod associate_user_to_permission_group_input {
 
     /// A builder for [`AssociateUserToPermissionGroupInput`](crate::input::AssociateUserToPermissionGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permission_group_id: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -50,7 +50,7 @@ pub mod associate_user_to_permission_group_input {
             self,
         ) -> Result<
             crate::input::AssociateUserToPermissionGroupInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::AssociateUserToPermissionGroupInput {
                 permission_group_id: self.permission_group_id,
@@ -73,7 +73,7 @@ impl AssociateUserToPermissionGroupInput {
             crate::operation::AssociateUserToPermissionGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -82,34 +82,44 @@ impl AssociateUserToPermissionGroupInput {
             fn uri_base(
                 _input: &crate::input::AssociateUserToPermissionGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.permission_group_id;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "permission_group_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let permission_group_id = aws_smithy_http::label::fmt_string(input_1, false);
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "permission_group_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let permission_group_id = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if permission_group_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "permission_group_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "permission_group_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_2 = &_input.user_id;
-                let input_2 = input_2.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "user_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let user_id = aws_smithy_http::label::fmt_string(input_2, false);
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "user_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let user_id = aws_smithy_http::label::fmt_string(
+                    input_2,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if user_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "user_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "user_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -124,8 +134,10 @@ impl AssociateUserToPermissionGroupInput {
             fn update_http_builder(
                 input: &crate::input::AssociateUserToPermissionGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -208,7 +220,7 @@ impl AssociateUserToPermissionGroupInput {
 pub mod create_changeset_input {
 
     /// A builder for [`CreateChangesetInput`](crate::input::CreateChangesetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) dataset_id: std::option::Option<std::string::String>,
@@ -349,7 +361,7 @@ pub mod create_changeset_input {
         /// Consumes the builder and constructs a [`CreateChangesetInput`](crate::input::CreateChangesetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateChangesetInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateChangesetInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateChangesetInput {
                 client_token: self.client_token,
@@ -374,7 +386,7 @@ impl CreateChangesetInput {
             crate::operation::CreateChangeset,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -383,20 +395,25 @@ impl CreateChangesetInput {
             fn uri_base(
                 _input: &crate::input::CreateChangesetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_3 = &_input.dataset_id;
-                let input_3 = input_3.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dataset_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let dataset_id = aws_smithy_http::label::fmt_string(input_3, false);
+                let input_3 = input_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "dataset_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let dataset_id = aws_smithy_http::label::fmt_string(
+                    input_3,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if dataset_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dataset_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "dataset_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -410,8 +427,10 @@ impl CreateChangesetInput {
             fn update_http_builder(
                 input: &crate::input::CreateChangesetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -495,7 +514,7 @@ impl CreateChangesetInput {
 pub mod create_dataset_input {
 
     /// A builder for [`CreateDatasetInput`](crate::input::CreateDatasetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) dataset_title: std::option::Option<std::string::String>,
@@ -617,7 +636,7 @@ pub mod create_dataset_input {
         /// Consumes the builder and constructs a [`CreateDatasetInput`](crate::input::CreateDatasetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateDatasetInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateDatasetInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateDatasetInput {
                 client_token: self.client_token,
@@ -645,7 +664,7 @@ impl CreateDatasetInput {
             crate::operation::CreateDataset,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -654,7 +673,7 @@ impl CreateDatasetInput {
             fn uri_base(
                 _input: &crate::input::CreateDatasetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/datasetsv2").expect("formatting should succeed");
                 Ok(())
             }
@@ -662,8 +681,10 @@ impl CreateDatasetInput {
             fn update_http_builder(
                 input: &crate::input::CreateDatasetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -747,7 +768,7 @@ impl CreateDatasetInput {
 pub mod create_data_view_input {
 
     /// A builder for [`CreateDataViewInput`](crate::input::CreateDataViewInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) dataset_id: std::option::Option<std::string::String>,
@@ -856,7 +877,7 @@ pub mod create_data_view_input {
         /// Consumes the builder and constructs a [`CreateDataViewInput`](crate::input::CreateDataViewInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateDataViewInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateDataViewInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateDataViewInput {
                 client_token: self.client_token,
@@ -883,7 +904,7 @@ impl CreateDataViewInput {
             crate::operation::CreateDataView,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -892,20 +913,25 @@ impl CreateDataViewInput {
             fn uri_base(
                 _input: &crate::input::CreateDataViewInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_4 = &_input.dataset_id;
-                let input_4 = input_4.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dataset_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let dataset_id = aws_smithy_http::label::fmt_string(input_4, false);
+                let input_4 = input_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "dataset_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let dataset_id = aws_smithy_http::label::fmt_string(
+                    input_4,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if dataset_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dataset_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "dataset_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -919,8 +945,10 @@ impl CreateDataViewInput {
             fn update_http_builder(
                 input: &crate::input::CreateDataViewInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1004,7 +1032,7 @@ impl CreateDataViewInput {
 pub mod create_permission_group_input {
 
     /// A builder for [`CreatePermissionGroupInput`](crate::input::CreatePermissionGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1090,14 +1118,26 @@ pub mod create_permission_group_input {
         /// Consumes the builder and constructs a [`CreatePermissionGroupInput`](crate::input::CreatePermissionGroupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreatePermissionGroupInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreatePermissionGroupInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreatePermissionGroupInput {
                 name: self.name,
                 description: self.description,
                 application_permissions: self.application_permissions,
                 client_token: self.client_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("application_permissions", &self.application_permissions);
+            formatter.field("client_token", &self.client_token);
+            formatter.finish()
         }
     }
 }
@@ -1114,7 +1154,7 @@ impl CreatePermissionGroupInput {
             crate::operation::CreatePermissionGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -1123,7 +1163,7 @@ impl CreatePermissionGroupInput {
             fn uri_base(
                 _input: &crate::input::CreatePermissionGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/permission-group").expect("formatting should succeed");
                 Ok(())
             }
@@ -1131,8 +1171,10 @@ impl CreatePermissionGroupInput {
             fn update_http_builder(
                 input: &crate::input::CreatePermissionGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1218,7 +1260,7 @@ impl CreatePermissionGroupInput {
 pub mod create_user_input {
 
     /// A builder for [`CreateUserInput`](crate::input::CreateUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) email_address: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::UserType>,
@@ -1327,7 +1369,8 @@ pub mod create_user_input {
         /// Consumes the builder and constructs a [`CreateUserInput`](crate::input::CreateUserInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateUserInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::CreateUserInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::CreateUserInput {
                 email_address: self.email_address,
                 r#type: self.r#type,
@@ -1337,6 +1380,19 @@ pub mod create_user_input {
                 api_access_principal_arn: self.api_access_principal_arn,
                 client_token: self.client_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("email_address", &"*** Sensitive Data Redacted ***");
+            formatter.field("r#type", &self.r#type);
+            formatter.field("first_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("last_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("api_access", &self.api_access);
+            formatter.field("api_access_principal_arn", &self.api_access_principal_arn);
+            formatter.field("client_token", &self.client_token);
+            formatter.finish()
         }
     }
 }
@@ -1353,7 +1409,7 @@ impl CreateUserInput {
             crate::operation::CreateUser,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -1362,7 +1418,7 @@ impl CreateUserInput {
             fn uri_base(
                 _input: &crate::input::CreateUserInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/user").expect("formatting should succeed");
                 Ok(())
             }
@@ -1370,8 +1426,10 @@ impl CreateUserInput {
             fn update_http_builder(
                 input: &crate::input::CreateUserInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1455,7 +1513,7 @@ impl CreateUserInput {
 pub mod delete_dataset_input {
 
     /// A builder for [`DeleteDatasetInput`](crate::input::DeleteDatasetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) dataset_id: std::option::Option<std::string::String>,
@@ -1484,7 +1542,7 @@ pub mod delete_dataset_input {
         /// Consumes the builder and constructs a [`DeleteDatasetInput`](crate::input::DeleteDatasetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteDatasetInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteDatasetInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteDatasetInput {
                 client_token: self.client_token,
@@ -1506,7 +1564,7 @@ impl DeleteDatasetInput {
             crate::operation::DeleteDataset,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -1515,20 +1573,25 @@ impl DeleteDatasetInput {
             fn uri_base(
                 _input: &crate::input::DeleteDatasetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_5 = &_input.dataset_id;
-                let input_5 = input_5.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dataset_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let dataset_id = aws_smithy_http::label::fmt_string(input_5, false);
+                let input_5 = input_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "dataset_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let dataset_id = aws_smithy_http::label::fmt_string(
+                    input_5,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if dataset_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dataset_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "dataset_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/datasetsv2/{datasetId}", datasetId = dataset_id)
                     .expect("formatting should succeed");
@@ -1537,10 +1600,12 @@ impl DeleteDatasetInput {
             fn uri_query(
                 _input: &crate::input::DeleteDatasetInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_6) = &_input.client_token {
-                    query.push_kv("clientToken", &aws_smithy_http::query::fmt_string(&inner_6));
+                    {
+                        query.push_kv("clientToken", &aws_smithy_http::query::fmt_string(&inner_6));
+                    }
                 }
                 Ok(())
             }
@@ -1548,8 +1613,10 @@ impl DeleteDatasetInput {
             fn update_http_builder(
                 input: &crate::input::DeleteDatasetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1620,7 +1687,7 @@ impl DeleteDatasetInput {
 pub mod delete_permission_group_input {
 
     /// A builder for [`DeletePermissionGroupInput`](crate::input::DeletePermissionGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permission_group_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -1652,8 +1719,10 @@ pub mod delete_permission_group_input {
         /// Consumes the builder and constructs a [`DeletePermissionGroupInput`](crate::input::DeletePermissionGroupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeletePermissionGroupInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeletePermissionGroupInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeletePermissionGroupInput {
                 permission_group_id: self.permission_group_id,
                 client_token: self.client_token,
@@ -1674,7 +1743,7 @@ impl DeletePermissionGroupInput {
             crate::operation::DeletePermissionGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -1683,20 +1752,25 @@ impl DeletePermissionGroupInput {
             fn uri_base(
                 _input: &crate::input::DeletePermissionGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_7 = &_input.permission_group_id;
-                let input_7 = input_7.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "permission_group_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let permission_group_id = aws_smithy_http::label::fmt_string(input_7, false);
+                let input_7 = input_7.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "permission_group_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let permission_group_id = aws_smithy_http::label::fmt_string(
+                    input_7,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if permission_group_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "permission_group_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "permission_group_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1709,10 +1783,12 @@ impl DeletePermissionGroupInput {
             fn uri_query(
                 _input: &crate::input::DeletePermissionGroupInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_8) = &_input.client_token {
-                    query.push_kv("clientToken", &aws_smithy_http::query::fmt_string(&inner_8));
+                    {
+                        query.push_kv("clientToken", &aws_smithy_http::query::fmt_string(&inner_8));
+                    }
                 }
                 Ok(())
             }
@@ -1720,8 +1796,10 @@ impl DeletePermissionGroupInput {
             fn update_http_builder(
                 input: &crate::input::DeletePermissionGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1792,7 +1870,7 @@ impl DeletePermissionGroupInput {
 pub mod disable_user_input {
 
     /// A builder for [`DisableUserInput`](crate::input::DisableUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -1821,7 +1899,7 @@ pub mod disable_user_input {
         /// Consumes the builder and constructs a [`DisableUserInput`](crate::input::DisableUserInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DisableUserInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DisableUserInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DisableUserInput {
                 user_id: self.user_id,
@@ -1843,7 +1921,7 @@ impl DisableUserInput {
             crate::operation::DisableUser,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -1852,20 +1930,25 @@ impl DisableUserInput {
             fn uri_base(
                 _input: &crate::input::DisableUserInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_9 = &_input.user_id;
-                let input_9 = input_9.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "user_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let user_id = aws_smithy_http::label::fmt_string(input_9, false);
+                let input_9 = input_9.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "user_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let user_id = aws_smithy_http::label::fmt_string(
+                    input_9,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if user_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "user_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "user_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/user/{userId}/disable", userId = user_id)
                     .expect("formatting should succeed");
@@ -1875,8 +1958,10 @@ impl DisableUserInput {
             fn update_http_builder(
                 input: &crate::input::DisableUserInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1960,7 +2045,7 @@ impl DisableUserInput {
 pub mod disassociate_user_from_permission_group_input {
 
     /// A builder for [`DisassociateUserFromPermissionGroupInput`](crate::input::DisassociateUserFromPermissionGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permission_group_id: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -2005,7 +2090,7 @@ pub mod disassociate_user_from_permission_group_input {
             self,
         ) -> Result<
             crate::input::DisassociateUserFromPermissionGroupInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DisassociateUserFromPermissionGroupInput {
                 permission_group_id: self.permission_group_id,
@@ -2028,7 +2113,7 @@ impl DisassociateUserFromPermissionGroupInput {
             crate::operation::DisassociateUserFromPermissionGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -2037,34 +2122,44 @@ impl DisassociateUserFromPermissionGroupInput {
             fn uri_base(
                 _input: &crate::input::DisassociateUserFromPermissionGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_10 = &_input.permission_group_id;
-                let input_10 = input_10.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "permission_group_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let permission_group_id = aws_smithy_http::label::fmt_string(input_10, false);
+                let input_10 = input_10.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "permission_group_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let permission_group_id = aws_smithy_http::label::fmt_string(
+                    input_10,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if permission_group_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "permission_group_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "permission_group_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_11 = &_input.user_id;
-                let input_11 = input_11.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "user_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let user_id = aws_smithy_http::label::fmt_string(input_11, false);
+                let input_11 = input_11.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "user_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let user_id = aws_smithy_http::label::fmt_string(
+                    input_11,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if user_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "user_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "user_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2078,13 +2173,15 @@ impl DisassociateUserFromPermissionGroupInput {
             fn uri_query(
                 _input: &crate::input::DisassociateUserFromPermissionGroupInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_12) = &_input.client_token {
-                    query.push_kv(
-                        "clientToken",
-                        &aws_smithy_http::query::fmt_string(&inner_12),
-                    );
+                    {
+                        query.push_kv(
+                            "clientToken",
+                            &aws_smithy_http::query::fmt_string(&inner_12),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -2092,8 +2189,10 @@ impl DisassociateUserFromPermissionGroupInput {
             fn update_http_builder(
                 input: &crate::input::DisassociateUserFromPermissionGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2164,7 +2263,7 @@ impl DisassociateUserFromPermissionGroupInput {
 pub mod enable_user_input {
 
     /// A builder for [`EnableUserInput`](crate::input::EnableUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -2193,7 +2292,8 @@ pub mod enable_user_input {
         /// Consumes the builder and constructs a [`EnableUserInput`](crate::input::EnableUserInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::EnableUserInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::EnableUserInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::EnableUserInput {
                 user_id: self.user_id,
                 client_token: self.client_token,
@@ -2214,7 +2314,7 @@ impl EnableUserInput {
             crate::operation::EnableUser,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -2223,20 +2323,25 @@ impl EnableUserInput {
             fn uri_base(
                 _input: &crate::input::EnableUserInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_13 = &_input.user_id;
-                let input_13 = input_13.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "user_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let user_id = aws_smithy_http::label::fmt_string(input_13, false);
+                let input_13 = input_13.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "user_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let user_id = aws_smithy_http::label::fmt_string(
+                    input_13,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if user_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "user_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "user_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/user/{userId}/enable", userId = user_id)
                     .expect("formatting should succeed");
@@ -2246,8 +2351,10 @@ impl EnableUserInput {
             fn update_http_builder(
                 input: &crate::input::EnableUserInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2331,7 +2438,7 @@ impl EnableUserInput {
 pub mod get_changeset_input {
 
     /// A builder for [`GetChangesetInput`](crate::input::GetChangesetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_id: std::option::Option<std::string::String>,
         pub(crate) changeset_id: std::option::Option<std::string::String>,
@@ -2360,7 +2467,7 @@ pub mod get_changeset_input {
         /// Consumes the builder and constructs a [`GetChangesetInput`](crate::input::GetChangesetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetChangesetInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetChangesetInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetChangesetInput {
                 dataset_id: self.dataset_id,
@@ -2382,40 +2489,50 @@ impl GetChangesetInput {
             crate::operation::GetChangeset,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetChangesetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_14 = &_input.dataset_id;
-                let input_14 = input_14.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dataset_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let dataset_id = aws_smithy_http::label::fmt_string(input_14, false);
+                let input_14 = input_14.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "dataset_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let dataset_id = aws_smithy_http::label::fmt_string(
+                    input_14,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if dataset_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dataset_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "dataset_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_15 = &_input.changeset_id;
-                let input_15 = input_15.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "changeset_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let changeset_id = aws_smithy_http::label::fmt_string(input_15, false);
+                let input_15 = input_15.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "changeset_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let changeset_id = aws_smithy_http::label::fmt_string(
+                    input_15,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if changeset_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "changeset_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "changeset_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2430,8 +2547,10 @@ impl GetChangesetInput {
             fn update_http_builder(
                 input: &crate::input::GetChangesetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2501,7 +2620,7 @@ impl GetChangesetInput {
 pub mod get_dataset_input {
 
     /// A builder for [`GetDatasetInput`](crate::input::GetDatasetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_id: std::option::Option<std::string::String>,
     }
@@ -2519,7 +2638,8 @@ pub mod get_dataset_input {
         /// Consumes the builder and constructs a [`GetDatasetInput`](crate::input::GetDatasetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetDatasetInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::GetDatasetInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::GetDatasetInput {
                 dataset_id: self.dataset_id,
             })
@@ -2539,26 +2659,31 @@ impl GetDatasetInput {
             crate::operation::GetDataset,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetDatasetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_16 = &_input.dataset_id;
-                let input_16 = input_16.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dataset_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let dataset_id = aws_smithy_http::label::fmt_string(input_16, false);
+                let input_16 = input_16.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "dataset_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let dataset_id = aws_smithy_http::label::fmt_string(
+                    input_16,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if dataset_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dataset_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "dataset_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/datasetsv2/{datasetId}", datasetId = dataset_id)
                     .expect("formatting should succeed");
@@ -2568,8 +2693,10 @@ impl GetDatasetInput {
             fn update_http_builder(
                 input: &crate::input::GetDatasetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2639,7 +2766,7 @@ impl GetDatasetInput {
 pub mod get_data_view_input {
 
     /// A builder for [`GetDataViewInput`](crate::input::GetDataViewInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_view_id: std::option::Option<std::string::String>,
         pub(crate) dataset_id: std::option::Option<std::string::String>,
@@ -2668,7 +2795,7 @@ pub mod get_data_view_input {
         /// Consumes the builder and constructs a [`GetDataViewInput`](crate::input::GetDataViewInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetDataViewInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetDataViewInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetDataViewInput {
                 data_view_id: self.data_view_id,
@@ -2690,40 +2817,50 @@ impl GetDataViewInput {
             crate::operation::GetDataView,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetDataViewInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_17 = &_input.dataset_id;
-                let input_17 = input_17.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dataset_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let dataset_id = aws_smithy_http::label::fmt_string(input_17, false);
+                let input_17 = input_17.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "dataset_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let dataset_id = aws_smithy_http::label::fmt_string(
+                    input_17,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if dataset_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dataset_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "dataset_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_18 = &_input.data_view_id;
-                let input_18 = input_18.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "data_view_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let data_view_id = aws_smithy_http::label::fmt_string(input_18, false);
+                let input_18 = input_18.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "data_view_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let data_view_id = aws_smithy_http::label::fmt_string(
+                    input_18,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if data_view_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "data_view_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "data_view_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2738,8 +2875,10 @@ impl GetDataViewInput {
             fn update_http_builder(
                 input: &crate::input::GetDataViewInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2809,7 +2948,7 @@ impl GetDataViewInput {
 pub mod get_external_data_view_access_details_input {
 
     /// A builder for [`GetExternalDataViewAccessDetailsInput`](crate::input::GetExternalDataViewAccessDetailsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_view_id: std::option::Option<std::string::String>,
         pub(crate) dataset_id: std::option::Option<std::string::String>,
@@ -2840,7 +2979,7 @@ pub mod get_external_data_view_access_details_input {
             self,
         ) -> Result<
             crate::input::GetExternalDataViewAccessDetailsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetExternalDataViewAccessDetailsInput {
                 data_view_id: self.data_view_id,
@@ -2862,40 +3001,50 @@ impl GetExternalDataViewAccessDetailsInput {
             crate::operation::GetExternalDataViewAccessDetails,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetExternalDataViewAccessDetailsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_19 = &_input.dataset_id;
-                let input_19 = input_19.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dataset_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let dataset_id = aws_smithy_http::label::fmt_string(input_19, false);
+                let input_19 = input_19.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "dataset_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let dataset_id = aws_smithy_http::label::fmt_string(
+                    input_19,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if dataset_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dataset_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "dataset_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_20 = &_input.data_view_id;
-                let input_20 = input_20.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "data_view_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let data_view_id = aws_smithy_http::label::fmt_string(input_20, false);
+                let input_20 = input_20.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "data_view_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let data_view_id = aws_smithy_http::label::fmt_string(
+                    input_20,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if data_view_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "data_view_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "data_view_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2910,8 +3059,10 @@ impl GetExternalDataViewAccessDetailsInput {
             fn update_http_builder(
                 input: &crate::input::GetExternalDataViewAccessDetailsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2981,7 +3132,7 @@ impl GetExternalDataViewAccessDetailsInput {
 pub mod get_permission_group_input {
 
     /// A builder for [`GetPermissionGroupInput`](crate::input::GetPermissionGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permission_group_id: std::option::Option<std::string::String>,
     }
@@ -3002,8 +3153,10 @@ pub mod get_permission_group_input {
         /// Consumes the builder and constructs a [`GetPermissionGroupInput`](crate::input::GetPermissionGroupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetPermissionGroupInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetPermissionGroupInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetPermissionGroupInput {
                 permission_group_id: self.permission_group_id,
             })
@@ -3023,26 +3176,31 @@ impl GetPermissionGroupInput {
             crate::operation::GetPermissionGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetPermissionGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_21 = &_input.permission_group_id;
-                let input_21 = input_21.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "permission_group_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let permission_group_id = aws_smithy_http::label::fmt_string(input_21, false);
+                let input_21 = input_21.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "permission_group_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let permission_group_id = aws_smithy_http::label::fmt_string(
+                    input_21,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if permission_group_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "permission_group_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "permission_group_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3056,8 +3214,10 @@ impl GetPermissionGroupInput {
             fn update_http_builder(
                 input: &crate::input::GetPermissionGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -3127,7 +3287,7 @@ impl GetPermissionGroupInput {
 pub mod get_programmatic_access_credentials_input {
 
     /// A builder for [`GetProgrammaticAccessCredentialsInput`](crate::input::GetProgrammaticAccessCredentialsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) duration_in_minutes: std::option::Option<i64>,
         pub(crate) environment_id: std::option::Option<std::string::String>,
@@ -3161,7 +3321,7 @@ pub mod get_programmatic_access_credentials_input {
             self,
         ) -> Result<
             crate::input::GetProgrammaticAccessCredentialsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetProgrammaticAccessCredentialsInput {
                 duration_in_minutes: self.duration_in_minutes.unwrap_or_default(),
@@ -3183,20 +3343,20 @@ impl GetProgrammaticAccessCredentialsInput {
             crate::operation::GetProgrammaticAccessCredentials,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetProgrammaticAccessCredentialsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/credentials/programmatic").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::GetProgrammaticAccessCredentialsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if _input.duration_in_minutes != 0 {
                     query.push_kv(
@@ -3205,20 +3365,35 @@ impl GetProgrammaticAccessCredentialsInput {
                             .encode(),
                     );
                 }
-                if let Some(inner_22) = &_input.environment_id {
-                    query.push_kv(
-                        "environmentId",
-                        &aws_smithy_http::query::fmt_string(&inner_22),
+                let inner_22 = &_input.environment_id;
+                let inner_22 = inner_22.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "environment_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_22.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "environment_id",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "environmentId",
+                    &aws_smithy_http::query::fmt_string(&inner_22),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::GetProgrammaticAccessCredentialsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3289,7 +3464,7 @@ impl GetProgrammaticAccessCredentialsInput {
 pub mod get_user_input {
 
     /// A builder for [`GetUserInput`](crate::input::GetUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
     }
@@ -3307,7 +3482,8 @@ pub mod get_user_input {
         /// Consumes the builder and constructs a [`GetUserInput`](crate::input::GetUserInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetUserInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::GetUserInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::GetUserInput {
                 user_id: self.user_id,
             })
@@ -3327,26 +3503,31 @@ impl GetUserInput {
             crate::operation::GetUser,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetUserInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_23 = &_input.user_id;
-                let input_23 = input_23.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "user_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let user_id = aws_smithy_http::label::fmt_string(input_23, false);
+                let input_23 = input_23.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "user_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let user_id = aws_smithy_http::label::fmt_string(
+                    input_23,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if user_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "user_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "user_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/user/{userId}", userId = user_id)
                     .expect("formatting should succeed");
@@ -3356,8 +3537,10 @@ impl GetUserInput {
             fn update_http_builder(
                 input: &crate::input::GetUserInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -3425,7 +3608,7 @@ impl GetUserInput {
 pub mod get_working_location_input {
 
     /// A builder for [`GetWorkingLocationInput`](crate::input::GetWorkingLocationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_type: std::option::Option<crate::model::LocationType>,
     }
@@ -3454,8 +3637,10 @@ pub mod get_working_location_input {
         /// Consumes the builder and constructs a [`GetWorkingLocationInput`](crate::input::GetWorkingLocationInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetWorkingLocationInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetWorkingLocationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetWorkingLocationInput {
                 location_type: self.location_type,
             })
@@ -3475,13 +3660,13 @@ impl GetWorkingLocationInput {
             crate::operation::GetWorkingLocation,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetWorkingLocationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/workingLocationV1").expect("formatting should succeed");
                 Ok(())
             }
@@ -3489,8 +3674,10 @@ impl GetWorkingLocationInput {
             fn update_http_builder(
                 input: &crate::input::GetWorkingLocationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3574,7 +3761,7 @@ impl GetWorkingLocationInput {
 pub mod list_changesets_input {
 
     /// A builder for [`ListChangesetsInput`](crate::input::ListChangesetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3614,7 +3801,7 @@ pub mod list_changesets_input {
         /// Consumes the builder and constructs a [`ListChangesetsInput`](crate::input::ListChangesetsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListChangesetsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListChangesetsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListChangesetsInput {
                 dataset_id: self.dataset_id,
@@ -3637,26 +3824,31 @@ impl ListChangesetsInput {
             crate::operation::ListChangesets,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListChangesetsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_24 = &_input.dataset_id;
-                let input_24 = input_24.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dataset_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let dataset_id = aws_smithy_http::label::fmt_string(input_24, false);
+                let input_24 = input_24.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "dataset_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let dataset_id = aws_smithy_http::label::fmt_string(
+                    input_24,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if dataset_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dataset_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "dataset_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3669,16 +3861,20 @@ impl ListChangesetsInput {
             fn uri_query(
                 _input: &crate::input::ListChangesetsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_25) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_25).encode(),
-                    );
+                    if *inner_25 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_25).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_26) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_26));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_26));
+                    }
                 }
                 Ok(())
             }
@@ -3686,8 +3882,10 @@ impl ListChangesetsInput {
             fn update_http_builder(
                 input: &crate::input::ListChangesetsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3758,7 +3956,7 @@ impl ListChangesetsInput {
 pub mod list_datasets_input {
 
     /// A builder for [`ListDatasetsInput`](crate::input::ListDatasetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3787,7 +3985,7 @@ pub mod list_datasets_input {
         /// Consumes the builder and constructs a [`ListDatasetsInput`](crate::input::ListDatasetsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListDatasetsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListDatasetsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListDatasetsInput {
                 next_token: self.next_token,
@@ -3809,29 +4007,33 @@ impl ListDatasetsInput {
             crate::operation::ListDatasets,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListDatasetsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/datasetsv2").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListDatasetsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_27) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_27));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_27));
+                    }
                 }
                 if let Some(inner_28) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_28).encode(),
-                    );
+                    if *inner_28 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_28).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -3839,8 +4041,10 @@ impl ListDatasetsInput {
             fn update_http_builder(
                 input: &crate::input::ListDatasetsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3911,7 +4115,7 @@ impl ListDatasetsInput {
 pub mod list_data_views_input {
 
     /// A builder for [`ListDataViewsInput`](crate::input::ListDataViewsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3951,7 +4155,7 @@ pub mod list_data_views_input {
         /// Consumes the builder and constructs a [`ListDataViewsInput`](crate::input::ListDataViewsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListDataViewsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListDataViewsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListDataViewsInput {
                 dataset_id: self.dataset_id,
@@ -3974,26 +4178,31 @@ impl ListDataViewsInput {
             crate::operation::ListDataViews,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListDataViewsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_29 = &_input.dataset_id;
-                let input_29 = input_29.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dataset_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let dataset_id = aws_smithy_http::label::fmt_string(input_29, false);
+                let input_29 = input_29.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "dataset_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let dataset_id = aws_smithy_http::label::fmt_string(
+                    input_29,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if dataset_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dataset_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "dataset_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4006,16 +4215,20 @@ impl ListDataViewsInput {
             fn uri_query(
                 _input: &crate::input::ListDataViewsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_30) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_30));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_30));
+                    }
                 }
                 if let Some(inner_31) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_31).encode(),
-                    );
+                    if *inner_31 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_31).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -4023,8 +4236,10 @@ impl ListDataViewsInput {
             fn update_http_builder(
                 input: &crate::input::ListDataViewsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4095,7 +4310,7 @@ impl ListDataViewsInput {
 pub mod list_permission_groups_input {
 
     /// A builder for [`ListPermissionGroupsInput`](crate::input::ListPermissionGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4124,8 +4339,10 @@ pub mod list_permission_groups_input {
         /// Consumes the builder and constructs a [`ListPermissionGroupsInput`](crate::input::ListPermissionGroupsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListPermissionGroupsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListPermissionGroupsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListPermissionGroupsInput {
                 next_token: self.next_token,
                 max_results: self.max_results.unwrap_or_default(),
@@ -4146,38 +4363,41 @@ impl ListPermissionGroupsInput {
             crate::operation::ListPermissionGroups,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListPermissionGroupsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/permission-group").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListPermissionGroupsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_32) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_32));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_32));
+                    }
                 }
-                if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
-                }
+                let inner_33 = &_input.max_results;
+                query.push_kv(
+                    "maxResults",
+                    aws_smithy_types::primitive::Encoder::from(*inner_33).encode(),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::ListPermissionGroupsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4248,7 +4468,7 @@ impl ListPermissionGroupsInput {
 pub mod list_permission_groups_by_user_input {
 
     /// A builder for [`ListPermissionGroupsByUserInput`](crate::input::ListPermissionGroupsByUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4290,7 +4510,7 @@ pub mod list_permission_groups_by_user_input {
             self,
         ) -> Result<
             crate::input::ListPermissionGroupsByUserInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListPermissionGroupsByUserInput {
                 user_id: self.user_id,
@@ -4313,26 +4533,31 @@ impl ListPermissionGroupsByUserInput {
             crate::operation::ListPermissionGroupsByUser,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListPermissionGroupsByUserInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_33 = &_input.user_id;
-                let input_33 = input_33.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "user_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let user_id = aws_smithy_http::label::fmt_string(input_33, false);
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_34 = &_input.user_id;
+                let input_34 = input_34.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "user_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let user_id = aws_smithy_http::label::fmt_string(
+                    input_34,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if user_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "user_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "user_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/user/{userId}/permission-groups", userId = user_id)
                     .expect("formatting should succeed");
@@ -4341,25 +4566,28 @@ impl ListPermissionGroupsByUserInput {
             fn uri_query(
                 _input: &crate::input::ListPermissionGroupsByUserInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_34) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_34));
+                if let Some(inner_35) = &_input.next_token {
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_35));
+                    }
                 }
-                if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
-                }
+                let inner_36 = &_input.max_results;
+                query.push_kv(
+                    "maxResults",
+                    aws_smithy_types::primitive::Encoder::from(*inner_36).encode(),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::ListPermissionGroupsByUserInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4430,7 +4658,7 @@ impl ListPermissionGroupsByUserInput {
 pub mod list_users_input {
 
     /// A builder for [`ListUsersInput`](crate::input::ListUsersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4459,7 +4687,8 @@ pub mod list_users_input {
         /// Consumes the builder and constructs a [`ListUsersInput`](crate::input::ListUsersInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListUsersInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ListUsersInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ListUsersInput {
                 next_token: self.next_token,
                 max_results: self.max_results.unwrap_or_default(),
@@ -4480,38 +4709,41 @@ impl ListUsersInput {
             crate::operation::ListUsers,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListUsersInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/user").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListUsersInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_35) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_35));
+                if let Some(inner_37) = &_input.next_token {
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_37));
+                    }
                 }
-                if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
-                }
+                let inner_38 = &_input.max_results;
+                query.push_kv(
+                    "maxResults",
+                    aws_smithy_types::primitive::Encoder::from(*inner_38).encode(),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::ListUsersInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4580,7 +4812,7 @@ impl ListUsersInput {
 pub mod list_users_by_permission_group_input {
 
     /// A builder for [`ListUsersByPermissionGroupInput`](crate::input::ListUsersByPermissionGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permission_group_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4625,7 +4857,7 @@ pub mod list_users_by_permission_group_input {
             self,
         ) -> Result<
             crate::input::ListUsersByPermissionGroupInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListUsersByPermissionGroupInput {
                 permission_group_id: self.permission_group_id,
@@ -4648,26 +4880,31 @@ impl ListUsersByPermissionGroupInput {
             crate::operation::ListUsersByPermissionGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListUsersByPermissionGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_36 = &_input.permission_group_id;
-                let input_36 = input_36.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "permission_group_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let permission_group_id = aws_smithy_http::label::fmt_string(input_36, false);
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_39 = &_input.permission_group_id;
+                let input_39 = input_39.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "permission_group_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let permission_group_id = aws_smithy_http::label::fmt_string(
+                    input_39,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if permission_group_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "permission_group_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "permission_group_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4680,25 +4917,28 @@ impl ListUsersByPermissionGroupInput {
             fn uri_query(
                 _input: &crate::input::ListUsersByPermissionGroupInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_37) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_37));
+                if let Some(inner_40) = &_input.next_token {
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_40));
+                    }
                 }
-                if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
-                }
+                let inner_41 = &_input.max_results;
+                query.push_kv(
+                    "maxResults",
+                    aws_smithy_types::primitive::Encoder::from(*inner_41).encode(),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::ListUsersByPermissionGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4769,7 +5009,7 @@ impl ListUsersByPermissionGroupInput {
 pub mod reset_user_password_input {
 
     /// A builder for [`ResetUserPasswordInput`](crate::input::ResetUserPasswordInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -4798,8 +5038,10 @@ pub mod reset_user_password_input {
         /// Consumes the builder and constructs a [`ResetUserPasswordInput`](crate::input::ResetUserPasswordInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ResetUserPasswordInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ResetUserPasswordInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ResetUserPasswordInput {
                 user_id: self.user_id,
                 client_token: self.client_token,
@@ -4820,7 +5062,7 @@ impl ResetUserPasswordInput {
             crate::operation::ResetUserPassword,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -4829,20 +5071,25 @@ impl ResetUserPasswordInput {
             fn uri_base(
                 _input: &crate::input::ResetUserPasswordInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_38 = &_input.user_id;
-                let input_38 = input_38.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "user_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let user_id = aws_smithy_http::label::fmt_string(input_38, false);
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_42 = &_input.user_id;
+                let input_42 = input_42.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "user_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let user_id = aws_smithy_http::label::fmt_string(
+                    input_42,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if user_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "user_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "user_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/user/{userId}/password", userId = user_id)
                     .expect("formatting should succeed");
@@ -4852,8 +5099,10 @@ impl ResetUserPasswordInput {
             fn update_http_builder(
                 input: &crate::input::ResetUserPasswordInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4937,7 +5186,7 @@ impl ResetUserPasswordInput {
 pub mod update_changeset_input {
 
     /// A builder for [`UpdateChangesetInput`](crate::input::UpdateChangesetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) dataset_id: std::option::Option<std::string::String>,
@@ -5065,7 +5314,7 @@ pub mod update_changeset_input {
         /// Consumes the builder and constructs a [`UpdateChangesetInput`](crate::input::UpdateChangesetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateChangesetInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateChangesetInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateChangesetInput {
                 client_token: self.client_token,
@@ -5090,7 +5339,7 @@ impl UpdateChangesetInput {
             crate::operation::UpdateChangeset,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -5099,34 +5348,44 @@ impl UpdateChangesetInput {
             fn uri_base(
                 _input: &crate::input::UpdateChangesetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_39 = &_input.dataset_id;
-                let input_39 = input_39.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dataset_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let dataset_id = aws_smithy_http::label::fmt_string(input_39, false);
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_43 = &_input.dataset_id;
+                let input_43 = input_43.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "dataset_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let dataset_id = aws_smithy_http::label::fmt_string(
+                    input_43,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if dataset_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dataset_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "dataset_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                let input_40 = &_input.changeset_id;
-                let input_40 = input_40.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "changeset_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let changeset_id = aws_smithy_http::label::fmt_string(input_40, false);
+                let input_44 = &_input.changeset_id;
+                let input_44 = input_44.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "changeset_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let changeset_id = aws_smithy_http::label::fmt_string(
+                    input_44,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if changeset_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "changeset_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "changeset_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5141,8 +5400,10 @@ impl UpdateChangesetInput {
             fn update_http_builder(
                 input: &crate::input::UpdateChangesetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -5226,7 +5487,7 @@ impl UpdateChangesetInput {
 pub mod update_dataset_input {
 
     /// A builder for [`UpdateDatasetInput`](crate::input::UpdateDatasetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) dataset_id: std::option::Option<std::string::String>,
@@ -5327,7 +5588,7 @@ pub mod update_dataset_input {
         /// Consumes the builder and constructs a [`UpdateDatasetInput`](crate::input::UpdateDatasetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateDatasetInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateDatasetInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateDatasetInput {
                 client_token: self.client_token,
@@ -5354,7 +5615,7 @@ impl UpdateDatasetInput {
             crate::operation::UpdateDataset,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -5363,20 +5624,25 @@ impl UpdateDatasetInput {
             fn uri_base(
                 _input: &crate::input::UpdateDatasetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_41 = &_input.dataset_id;
-                let input_41 = input_41.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dataset_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let dataset_id = aws_smithy_http::label::fmt_string(input_41, false);
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_45 = &_input.dataset_id;
+                let input_45 = input_45.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "dataset_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let dataset_id = aws_smithy_http::label::fmt_string(
+                    input_45,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if dataset_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dataset_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "dataset_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/datasetsv2/{datasetId}", datasetId = dataset_id)
                     .expect("formatting should succeed");
@@ -5386,8 +5652,10 @@ impl UpdateDatasetInput {
             fn update_http_builder(
                 input: &crate::input::UpdateDatasetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -5471,7 +5739,7 @@ impl UpdateDatasetInput {
 pub mod update_permission_group_input {
 
     /// A builder for [`UpdatePermissionGroupInput`](crate::input::UpdatePermissionGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) permission_group_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5571,8 +5839,10 @@ pub mod update_permission_group_input {
         /// Consumes the builder and constructs a [`UpdatePermissionGroupInput`](crate::input::UpdatePermissionGroupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdatePermissionGroupInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdatePermissionGroupInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdatePermissionGroupInput {
                 permission_group_id: self.permission_group_id,
                 name: self.name,
@@ -5580,6 +5850,17 @@ pub mod update_permission_group_input {
                 application_permissions: self.application_permissions,
                 client_token: self.client_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("permission_group_id", &self.permission_group_id);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("application_permissions", &self.application_permissions);
+            formatter.field("client_token", &self.client_token);
+            formatter.finish()
         }
     }
 }
@@ -5596,7 +5877,7 @@ impl UpdatePermissionGroupInput {
             crate::operation::UpdatePermissionGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -5605,20 +5886,25 @@ impl UpdatePermissionGroupInput {
             fn uri_base(
                 _input: &crate::input::UpdatePermissionGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_42 = &_input.permission_group_id;
-                let input_42 = input_42.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "permission_group_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let permission_group_id = aws_smithy_http::label::fmt_string(input_42, false);
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_46 = &_input.permission_group_id;
+                let input_46 = input_46.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "permission_group_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let permission_group_id = aws_smithy_http::label::fmt_string(
+                    input_46,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if permission_group_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "permission_group_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "permission_group_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5632,8 +5918,10 @@ impl UpdatePermissionGroupInput {
             fn update_http_builder(
                 input: &crate::input::UpdatePermissionGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -5719,7 +6007,7 @@ impl UpdatePermissionGroupInput {
 pub mod update_user_input {
 
     /// A builder for [`UpdateUserInput`](crate::input::UpdateUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::UserType>,
@@ -5825,7 +6113,8 @@ pub mod update_user_input {
         /// Consumes the builder and constructs a [`UpdateUserInput`](crate::input::UpdateUserInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateUserInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::UpdateUserInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::UpdateUserInput {
                 user_id: self.user_id,
                 r#type: self.r#type,
@@ -5835,6 +6124,19 @@ pub mod update_user_input {
                 api_access_principal_arn: self.api_access_principal_arn,
                 client_token: self.client_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_id", &self.user_id);
+            formatter.field("r#type", &self.r#type);
+            formatter.field("first_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("last_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("api_access", &self.api_access);
+            formatter.field("api_access_principal_arn", &self.api_access_principal_arn);
+            formatter.field("client_token", &self.client_token);
+            formatter.finish()
         }
     }
 }
@@ -5851,7 +6153,7 @@ impl UpdateUserInput {
             crate::operation::UpdateUser,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -5860,20 +6162,25 @@ impl UpdateUserInput {
             fn uri_base(
                 _input: &crate::input::UpdateUserInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_43 = &_input.user_id;
-                let input_43 = input_43.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "user_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let user_id = aws_smithy_http::label::fmt_string(input_43, false);
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_47 = &_input.user_id;
+                let input_47 = input_47.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "user_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let user_id = aws_smithy_http::label::fmt_string(
+                    input_47,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if user_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "user_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "user_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/user/{userId}", userId = user_id)
                     .expect("formatting should succeed");
@@ -5883,8 +6190,10 @@ impl UpdateUserInput {
             fn update_http_builder(
                 input: &crate::input::UpdateUserInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -6131,7 +6440,7 @@ impl std::fmt::Debug for UpdatePermissionGroupInput {
 
 /// The request for an UpdateDataset operation
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDatasetInput {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     #[doc(hidden)]
@@ -6193,23 +6502,10 @@ impl UpdateDatasetInput {
         self.schema_definition.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateDatasetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDatasetInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("dataset_id", &self.dataset_id);
-        formatter.field("dataset_title", &self.dataset_title);
-        formatter.field("kind", &self.kind);
-        formatter.field("dataset_description", &self.dataset_description);
-        formatter.field("alias", &self.alias);
-        formatter.field("schema_definition", &self.schema_definition);
-        formatter.finish()
-    }
-}
 
 /// Request to update an existing changeset.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateChangesetInput {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     #[doc(hidden)]
@@ -6289,21 +6585,10 @@ impl UpdateChangesetInput {
         self.format_params.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateChangesetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateChangesetInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("dataset_id", &self.dataset_id);
-        formatter.field("changeset_id", &self.changeset_id);
-        formatter.field("source_params", &self.source_params);
-        formatter.field("format_params", &self.format_params);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResetUserPasswordInput {
     /// <p>The unique identifier of the user that a temporary password is requested for.</p>
     #[doc(hidden)]
@@ -6322,18 +6607,10 @@ impl ResetUserPasswordInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for ResetUserPasswordInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResetUserPasswordInput");
-        formatter.field("user_id", &self.user_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUsersByPermissionGroupInput {
     /// <p>The unique identifier for the permission group.</p>
     #[doc(hidden)]
@@ -6359,19 +6636,10 @@ impl ListUsersByPermissionGroupInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListUsersByPermissionGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUsersByPermissionGroupInput");
-        formatter.field("permission_group_id", &self.permission_group_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUsersInput {
     /// <p>A token that indicates where a results page should begin.</p>
     #[doc(hidden)]
@@ -6390,18 +6658,10 @@ impl ListUsersInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListUsersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUsersInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPermissionGroupsByUserInput {
     /// <p>The unique identifier for the user.</p>
     #[doc(hidden)]
@@ -6427,19 +6687,10 @@ impl ListPermissionGroupsByUserInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListPermissionGroupsByUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPermissionGroupsByUserInput");
-        formatter.field("user_id", &self.user_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPermissionGroupsInput {
     /// <p>A token that indicates where a results page should begin.</p>
     #[doc(hidden)]
@@ -6458,18 +6709,10 @@ impl ListPermissionGroupsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListPermissionGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPermissionGroupsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// Request for a list data views.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDataViewsInput {
     /// <p>The unique identifier of the Dataset for which to retrieve Dataviews.</p>
     #[doc(hidden)]
@@ -6495,19 +6738,10 @@ impl ListDataViewsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDataViewsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDataViewsInput");
-        formatter.field("dataset_id", &self.dataset_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// Request for the ListDatasets operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDatasetsInput {
     /// <p>A token that indicates where a results page should begin.</p>
     #[doc(hidden)]
@@ -6526,18 +6760,10 @@ impl ListDatasetsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDatasetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDatasetsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// Request to ListChangesetsRequest. It exposes minimal query filters.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListChangesetsInput {
     /// <p>The unique identifier for the FinSpace Dataset to which the Changeset belongs.</p>
     #[doc(hidden)]
@@ -6563,19 +6789,10 @@ impl ListChangesetsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListChangesetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListChangesetsInput");
-        formatter.field("dataset_id", &self.dataset_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWorkingLocationInput {
     /// <p>Specify the type of the working location.</p>
     /// <ul>
@@ -6595,17 +6812,10 @@ impl GetWorkingLocationInput {
         self.location_type.as_ref()
     }
 }
-impl std::fmt::Debug for GetWorkingLocationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWorkingLocationInput");
-        formatter.field("location_type", &self.location_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUserInput {
     /// <p>The unique identifier of the user to get data for.</p>
     #[doc(hidden)]
@@ -6617,17 +6827,10 @@ impl GetUserInput {
         self.user_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUserInput");
-        formatter.field("user_id", &self.user_id);
-        formatter.finish()
-    }
-}
 
 /// Request for GetProgrammaticAccessCredentials operation
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetProgrammaticAccessCredentialsInput {
     /// <p>The time duration in which the credentials remain valid. </p>
     #[doc(hidden)]
@@ -6646,18 +6849,10 @@ impl GetProgrammaticAccessCredentialsInput {
         self.environment_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetProgrammaticAccessCredentialsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetProgrammaticAccessCredentialsInput");
-        formatter.field("duration_in_minutes", &self.duration_in_minutes);
-        formatter.field("environment_id", &self.environment_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPermissionGroupInput {
     /// <p>The unique identifier for the permission group.</p>
     #[doc(hidden)]
@@ -6669,17 +6864,10 @@ impl GetPermissionGroupInput {
         self.permission_group_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetPermissionGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPermissionGroupInput");
-        formatter.field("permission_group_id", &self.permission_group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetExternalDataViewAccessDetailsInput {
     /// <p>The unique identifier for the Dataview that you want to access.</p>
     #[doc(hidden)]
@@ -6698,18 +6886,10 @@ impl GetExternalDataViewAccessDetailsInput {
         self.dataset_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetExternalDataViewAccessDetailsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetExternalDataViewAccessDetailsInput");
-        formatter.field("data_view_id", &self.data_view_id);
-        formatter.field("dataset_id", &self.dataset_id);
-        formatter.finish()
-    }
-}
 
 /// Request for retrieving a data view detail. Grouped / accessible within a dataset by its dataset id.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDataViewInput {
     /// <p>The unique identifier for the Dataview.</p>
     #[doc(hidden)]
@@ -6728,18 +6908,10 @@ impl GetDataViewInput {
         self.dataset_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetDataViewInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDataViewInput");
-        formatter.field("data_view_id", &self.data_view_id);
-        formatter.field("dataset_id", &self.dataset_id);
-        formatter.finish()
-    }
-}
 
 /// Request for the GetDataset operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDatasetInput {
     /// <p>The unique identifier for a Dataset.</p>
     #[doc(hidden)]
@@ -6751,17 +6923,10 @@ impl GetDatasetInput {
         self.dataset_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetDatasetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDatasetInput");
-        formatter.field("dataset_id", &self.dataset_id);
-        formatter.finish()
-    }
-}
 
 /// Request to describe a changeset.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetChangesetInput {
     /// <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
     #[doc(hidden)]
@@ -6780,18 +6945,10 @@ impl GetChangesetInput {
         self.changeset_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetChangesetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetChangesetInput");
-        formatter.field("dataset_id", &self.dataset_id);
-        formatter.field("changeset_id", &self.changeset_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableUserInput {
     /// <p>The unique identifier for the user account that you want to enable.</p>
     #[doc(hidden)]
@@ -6810,18 +6967,10 @@ impl EnableUserInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for EnableUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableUserInput");
-        formatter.field("user_id", &self.user_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateUserFromPermissionGroupInput {
     /// <p>The unique identifier for the permission group.</p>
     #[doc(hidden)]
@@ -6847,19 +6996,10 @@ impl DisassociateUserFromPermissionGroupInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateUserFromPermissionGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateUserFromPermissionGroupInput");
-        formatter.field("permission_group_id", &self.permission_group_id);
-        formatter.field("user_id", &self.user_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableUserInput {
     /// <p>The unique identifier for the user account that you want to disable.</p>
     #[doc(hidden)]
@@ -6878,18 +7018,10 @@ impl DisableUserInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DisableUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableUserInput");
-        formatter.field("user_id", &self.user_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePermissionGroupInput {
     /// <p>The unique identifier for the permission group that you want to delete.</p>
     #[doc(hidden)]
@@ -6908,18 +7040,10 @@ impl DeletePermissionGroupInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePermissionGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePermissionGroupInput");
-        formatter.field("permission_group_id", &self.permission_group_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 /// The request for a DeleteDataset operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDatasetInput {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     #[doc(hidden)]
@@ -6936,14 +7060,6 @@ impl DeleteDatasetInput {
     /// <p>The unique identifier of the Dataset to be deleted.</p>
     pub fn dataset_id(&self) -> std::option::Option<&str> {
         self.dataset_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteDatasetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDatasetInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("dataset_id", &self.dataset_id);
-        formatter.finish()
     }
 }
 
@@ -7106,7 +7222,7 @@ impl std::fmt::Debug for CreatePermissionGroupInput {
 
 /// Request for creating a data view.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDataViewInput {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     #[doc(hidden)]
@@ -7162,23 +7278,10 @@ impl CreateDataViewInput {
         self.destination_type_params.as_ref()
     }
 }
-impl std::fmt::Debug for CreateDataViewInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDataViewInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("dataset_id", &self.dataset_id);
-        formatter.field("auto_update", &self.auto_update);
-        formatter.field("sort_columns", &self.sort_columns);
-        formatter.field("partition_columns", &self.partition_columns);
-        formatter.field("as_of_timestamp", &self.as_of_timestamp);
-        formatter.field("destination_type_params", &self.destination_type_params);
-        formatter.finish()
-    }
-}
 
 /// The request for a CreateDataset operation
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDatasetInput {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     #[doc(hidden)]
@@ -7249,24 +7352,10 @@ impl CreateDatasetInput {
         self.schema_definition.as_ref()
     }
 }
-impl std::fmt::Debug for CreateDatasetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDatasetInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("dataset_title", &self.dataset_title);
-        formatter.field("kind", &self.kind);
-        formatter.field("dataset_description", &self.dataset_description);
-        formatter.field("owner_info", &self.owner_info);
-        formatter.field("permission_group_params", &self.permission_group_params);
-        formatter.field("alias", &self.alias);
-        formatter.field("schema_definition", &self.schema_definition);
-        formatter.finish()
-    }
-}
 
 /// The request for a CreateChangeset operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateChangesetInput {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     #[doc(hidden)]
@@ -7356,21 +7445,10 @@ impl CreateChangesetInput {
         self.format_params.as_ref()
     }
 }
-impl std::fmt::Debug for CreateChangesetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateChangesetInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("dataset_id", &self.dataset_id);
-        formatter.field("change_type", &self.change_type);
-        formatter.field("source_params", &self.source_params);
-        formatter.field("format_params", &self.format_params);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateUserToPermissionGroupInput {
     /// <p>The unique identifier for the permission group.</p>
     #[doc(hidden)]
@@ -7394,14 +7472,5 @@ impl AssociateUserToPermissionGroupInput {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateUserToPermissionGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateUserToPermissionGroupInput");
-        formatter.field("permission_group_id", &self.permission_group_id);
-        formatter.field("user_id", &self.user_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
     }
 }

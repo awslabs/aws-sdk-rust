@@ -4,7 +4,8 @@ allowed_external_types = [
     "aws_smithy_client::http_connector::HttpConnector",
     "aws_smithy_http::endpoint::Endpoint",
     "aws_smithy_http::endpoint::EndpointPrefix",
+    "aws_smithy_http::endpoint::error::InvalidEndpointError",
     "aws_smithy_types::retry::RetryConfig",
-    "aws_smithy_types::timeout::config::TimeoutConfig",
+    "aws_smithy_types::timeout::TimeoutConfig",
     "http::uri::Uri",
 ]

@@ -2,7 +2,7 @@
 
 /// <p>Represents the output of a <code>ListStreams</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStreamsOutput {
     /// <p>A list of stream descriptors associated with the current account and endpoint.</p>
     #[doc(hidden)]
@@ -25,19 +25,11 @@ impl ListStreamsOutput {
         self.last_evaluated_stream_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListStreamsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStreamsOutput");
-        formatter.field("streams", &self.streams);
-        formatter.field("last_evaluated_stream_arn", &self.last_evaluated_stream_arn);
-        formatter.finish()
-    }
-}
 /// See [`ListStreamsOutput`](crate::output::ListStreamsOutput).
 pub mod list_streams_output {
 
     /// A builder for [`ListStreamsOutput`](crate::output::ListStreamsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) streams: std::option::Option<std::vec::Vec<crate::model::Stream>>,
         pub(crate) last_evaluated_stream_arn: std::option::Option<std::string::String>,
@@ -97,7 +89,7 @@ impl ListStreamsOutput {
 
 /// <p>Represents the output of a <code>GetShardIterator</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetShardIteratorOutput {
     /// <p>The position in the shard from which to start reading stream records sequentially. A shard iterator specifies this position using the sequence number of a stream record in a shard.</p>
     #[doc(hidden)]
@@ -109,18 +101,11 @@ impl GetShardIteratorOutput {
         self.shard_iterator.as_deref()
     }
 }
-impl std::fmt::Debug for GetShardIteratorOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetShardIteratorOutput");
-        formatter.field("shard_iterator", &self.shard_iterator);
-        formatter.finish()
-    }
-}
 /// See [`GetShardIteratorOutput`](crate::output::GetShardIteratorOutput).
 pub mod get_shard_iterator_output {
 
     /// A builder for [`GetShardIteratorOutput`](crate::output::GetShardIteratorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) shard_iterator: std::option::Option<std::string::String>,
     }
@@ -155,7 +140,7 @@ impl GetShardIteratorOutput {
 
 /// <p>Represents the output of a <code>GetRecords</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRecordsOutput {
     /// <p>The stream records from the shard, which were retrieved using the shard iterator.</p>
     #[doc(hidden)]
@@ -174,19 +159,11 @@ impl GetRecordsOutput {
         self.next_shard_iterator.as_deref()
     }
 }
-impl std::fmt::Debug for GetRecordsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRecordsOutput");
-        formatter.field("records", &self.records);
-        formatter.field("next_shard_iterator", &self.next_shard_iterator);
-        formatter.finish()
-    }
-}
 /// See [`GetRecordsOutput`](crate::output::GetRecordsOutput).
 pub mod get_records_output {
 
     /// A builder for [`GetRecordsOutput`](crate::output::GetRecordsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) records: std::option::Option<std::vec::Vec<crate::model::Record>>,
         pub(crate) next_shard_iterator: std::option::Option<std::string::String>,
@@ -242,7 +219,7 @@ impl GetRecordsOutput {
 
 /// <p>Represents the output of a <code>DescribeStream</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeStreamOutput {
     /// <p>A complete description of the stream, including its creation date and time, the DynamoDB table associated with the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream records within the shards.</p>
     #[doc(hidden)]
@@ -254,18 +231,11 @@ impl DescribeStreamOutput {
         self.stream_description.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeStreamOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeStreamOutput");
-        formatter.field("stream_description", &self.stream_description);
-        formatter.finish()
-    }
-}
 /// See [`DescribeStreamOutput`](crate::output::DescribeStreamOutput).
 pub mod describe_stream_output {
 
     /// A builder for [`DescribeStreamOutput`](crate::output::DescribeStreamOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_description: std::option::Option<crate::model::StreamDescription>,
     }

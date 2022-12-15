@@ -2,7 +2,7 @@
 
 /// <p>Defines a validation warning. Validation warnings do not prevent pipeline activation. The set of validation warnings that can be returned are defined by AWS Data Pipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationWarning {
     /// <p>The identifier of the object that contains the validation warning.</p>
     #[doc(hidden)]
@@ -21,19 +21,11 @@ impl ValidationWarning {
         self.warnings.as_deref()
     }
 }
-impl std::fmt::Debug for ValidationWarning {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationWarning");
-        formatter.field("id", &self.id);
-        formatter.field("warnings", &self.warnings);
-        formatter.finish()
-    }
-}
 /// See [`ValidationWarning`](crate::model::ValidationWarning).
 pub mod validation_warning {
 
     /// A builder for [`ValidationWarning`](crate::model::ValidationWarning).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) warnings: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -86,7 +78,7 @@ impl ValidationWarning {
 
 /// <p>Defines a validation error. Validation errors prevent pipeline activation. The set of validation errors that can be returned are defined by AWS Data Pipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationError {
     /// <p>The identifier of the object that contains the validation error.</p>
     #[doc(hidden)]
@@ -105,19 +97,11 @@ impl ValidationError {
         self.errors.as_deref()
     }
 }
-impl std::fmt::Debug for ValidationError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationError");
-        formatter.field("id", &self.id);
-        formatter.field("errors", &self.errors);
-        formatter.finish()
-    }
-}
 /// See [`ValidationError`](crate::model::ValidationError).
 pub mod validation_error {
 
     /// A builder for [`ValidationError`](crate::model::ValidationError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) errors: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -170,7 +154,7 @@ impl ValidationError {
 
 /// <p>A value or list of parameter values. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParameterValue {
     /// <p>The ID of the parameter value.</p>
     #[doc(hidden)]
@@ -189,19 +173,11 @@ impl ParameterValue {
         self.string_value.as_deref()
     }
 }
-impl std::fmt::Debug for ParameterValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParameterValue");
-        formatter.field("id", &self.id);
-        formatter.field("string_value", &self.string_value);
-        formatter.finish()
-    }
-}
 /// See [`ParameterValue`](crate::model::ParameterValue).
 pub mod parameter_value {
 
     /// A builder for [`ParameterValue`](crate::model::ParameterValue).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) string_value: std::option::Option<std::string::String>,
@@ -245,7 +221,7 @@ impl ParameterValue {
 
 /// <p>Contains information about a parameter object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParameterObject {
     /// <p>The ID of the parameter object. </p>
     #[doc(hidden)]
@@ -264,19 +240,11 @@ impl ParameterObject {
         self.attributes.as_deref()
     }
 }
-impl std::fmt::Debug for ParameterObject {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParameterObject");
-        formatter.field("id", &self.id);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
 /// See [`ParameterObject`](crate::model::ParameterObject).
 pub mod parameter_object {
 
     /// A builder for [`ParameterObject`](crate::model::ParameterObject).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) attributes: std::option::Option<std::vec::Vec<crate::model::ParameterAttribute>>,
@@ -329,7 +297,7 @@ impl ParameterObject {
 
 /// <p>The attributes allowed or specified with a parameter object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParameterAttribute {
     /// <p>The field identifier.</p>
     #[doc(hidden)]
@@ -348,19 +316,11 @@ impl ParameterAttribute {
         self.string_value.as_deref()
     }
 }
-impl std::fmt::Debug for ParameterAttribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParameterAttribute");
-        formatter.field("key", &self.key);
-        formatter.field("string_value", &self.string_value);
-        formatter.finish()
-    }
-}
 /// See [`ParameterAttribute`](crate::model::ParameterAttribute).
 pub mod parameter_attribute {
 
     /// A builder for [`ParameterAttribute`](crate::model::ParameterAttribute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) string_value: std::option::Option<std::string::String>,
@@ -404,7 +364,7 @@ impl ParameterAttribute {
 
 /// <p>Contains information about a pipeline object. This can be a logical, physical, or physical attempt pipeline object. The complete set of components of a pipeline defines the pipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PipelineObject {
     /// <p>The ID of the object.</p>
     #[doc(hidden)]
@@ -430,20 +390,11 @@ impl PipelineObject {
         self.fields.as_deref()
     }
 }
-impl std::fmt::Debug for PipelineObject {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PipelineObject");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("fields", &self.fields);
-        formatter.finish()
-    }
-}
 /// See [`PipelineObject`](crate::model::PipelineObject).
 pub mod pipeline_object {
 
     /// A builder for [`PipelineObject`](crate::model::PipelineObject).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -508,7 +459,7 @@ impl PipelineObject {
 
 /// <p>A key-value pair that describes a property of a pipeline object. The value is specified as either a string value (<code>StringValue</code>) or a reference to another object (<code>RefValue</code>) but not as both.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Field {
     /// <p>The field identifier.</p>
     #[doc(hidden)]
@@ -534,20 +485,11 @@ impl Field {
         self.ref_value.as_deref()
     }
 }
-impl std::fmt::Debug for Field {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Field");
-        formatter.field("key", &self.key);
-        formatter.field("string_value", &self.string_value);
-        formatter.field("ref_value", &self.ref_value);
-        formatter.finish()
-    }
-}
 /// See [`Field`](crate::model::Field).
 pub mod field {
 
     /// A builder for [`Field`](crate::model::Field).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) string_value: std::option::Option<std::string::String>,
@@ -601,6 +543,42 @@ impl Field {
     }
 }
 
+/// When writing a match expression against `TaskStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let taskstatus = unimplemented!();
+/// match taskstatus {
+///     TaskStatus::Failed => { /* ... */ },
+///     TaskStatus::False => { /* ... */ },
+///     TaskStatus::Finished => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `taskstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `TaskStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `TaskStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `TaskStatus::NewFeature` is defined.
+/// Specifically, when `taskstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `TaskStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -619,8 +597,8 @@ pub enum TaskStatus {
     False,
     #[allow(missing_docs)] // documentation missing in model
     Finished,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TaskStatus {
     fn from(s: &str) -> Self {
@@ -628,7 +606,7 @@ impl std::convert::From<&str> for TaskStatus {
             "FAILED" => TaskStatus::Failed,
             "FALSE" => TaskStatus::False,
             "FINISHED" => TaskStatus::Finished,
-            other => TaskStatus::Unknown(other.to_owned()),
+            other => TaskStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -646,11 +624,11 @@ impl TaskStatus {
             TaskStatus::Failed => "FAILED",
             TaskStatus::False => "FALSE",
             TaskStatus::Finished => "FINISHED",
-            TaskStatus::Unknown(s) => s.as_ref(),
+            TaskStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "FALSE", "FINISHED"]
     }
 }
@@ -662,7 +640,7 @@ impl AsRef<str> for TaskStatus {
 
 /// <p>Defines the query to run against an object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Query {
     /// <p>List of selectors that define the query. An object must satisfy all of the selectors to match the query.</p>
     #[doc(hidden)]
@@ -674,18 +652,11 @@ impl Query {
         self.selectors.as_deref()
     }
 }
-impl std::fmt::Debug for Query {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Query");
-        formatter.field("selectors", &self.selectors);
-        formatter.finish()
-    }
-}
 /// See [`Query`](crate::model::Query).
 pub mod query {
 
     /// A builder for [`Query`](crate::model::Query).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) selectors: std::option::Option<std::vec::Vec<crate::model::Selector>>,
     }
@@ -726,7 +697,7 @@ impl Query {
 
 /// <p>A comparision that is used to determine whether a query should return this object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Selector {
     /// <p>The name of the field that the operator will be applied to. The field name is the "key" portion of the field definition in the pipeline definition syntax that is used by the AWS Data Pipeline API. If the field is not set on the object, the condition fails.</p>
     #[doc(hidden)]
@@ -745,19 +716,11 @@ impl Selector {
         self.operator.as_ref()
     }
 }
-impl std::fmt::Debug for Selector {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Selector");
-        formatter.field("field_name", &self.field_name);
-        formatter.field("operator", &self.operator);
-        formatter.finish()
-    }
-}
 /// See [`Selector`](crate::model::Selector).
 pub mod selector {
 
     /// A builder for [`Selector`](crate::model::Selector).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_name: std::option::Option<std::string::String>,
         pub(crate) operator: std::option::Option<crate::model::Operator>,
@@ -801,7 +764,7 @@ impl Selector {
 
 /// <p>Contains a logical operation for comparing the value of a field with a specified value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Operator {
     /// <p> The logical operation to be performed: equal (<code>EQ</code>), equal reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>), greater than or equal (<code>GE</code>), or between (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be used only with reference fields. The other comparison types can be used only with String fields. The comparison types you can use apply only to certain object fields, as detailed below. </p>
     /// <p> The comparison operators EQ and REF_EQ act on the following fields: </p>
@@ -862,19 +825,11 @@ impl Operator {
         self.values.as_deref()
     }
 }
-impl std::fmt::Debug for Operator {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Operator");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("values", &self.values);
-        formatter.finish()
-    }
-}
 /// See [`Operator`](crate::model::Operator).
 pub mod operator {
 
     /// A builder for [`Operator`](crate::model::Operator).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::OperatorType>,
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -967,6 +922,44 @@ impl Operator {
     }
 }
 
+/// When writing a match expression against `OperatorType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let operatortype = unimplemented!();
+/// match operatortype {
+///     OperatorType::Between => { /* ... */ },
+///     OperatorType::Equal => { /* ... */ },
+///     OperatorType::GreaterThanOrEqual => { /* ... */ },
+///     OperatorType::LessThanOrEqual => { /* ... */ },
+///     OperatorType::ReferenceEqual => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `operatortype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `OperatorType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `OperatorType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `OperatorType::NewFeature` is defined.
+/// Specifically, when `operatortype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `OperatorType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -989,8 +982,8 @@ pub enum OperatorType {
     LessThanOrEqual,
     #[allow(missing_docs)] // documentation missing in model
     ReferenceEqual,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for OperatorType {
     fn from(s: &str) -> Self {
@@ -1000,7 +993,7 @@ impl std::convert::From<&str> for OperatorType {
             "GE" => OperatorType::GreaterThanOrEqual,
             "LE" => OperatorType::LessThanOrEqual,
             "REF_EQ" => OperatorType::ReferenceEqual,
-            other => OperatorType::Unknown(other.to_owned()),
+            other => OperatorType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1020,11 +1013,11 @@ impl OperatorType {
             OperatorType::GreaterThanOrEqual => "GE",
             OperatorType::LessThanOrEqual => "LE",
             OperatorType::ReferenceEqual => "REF_EQ",
-            OperatorType::Unknown(s) => s.as_ref(),
+            OperatorType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BETWEEN", "EQ", "GE", "LE", "REF_EQ"]
     }
 }
@@ -1036,7 +1029,7 @@ impl AsRef<str> for OperatorType {
 
 /// <p>Contains information about a pipeline task that is assigned to a task runner.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TaskObject {
     /// <p>An internal identifier for the task. This ID is passed to the <code>SetTaskStatus</code> and <code>ReportTaskProgress</code> actions.</p>
     #[doc(hidden)]
@@ -1075,21 +1068,11 @@ impl TaskObject {
         self.objects.as_ref()
     }
 }
-impl std::fmt::Debug for TaskObject {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TaskObject");
-        formatter.field("task_id", &self.task_id);
-        formatter.field("pipeline_id", &self.pipeline_id);
-        formatter.field("attempt_id", &self.attempt_id);
-        formatter.field("objects", &self.objects);
-        formatter.finish()
-    }
-}
 /// See [`TaskObject`](crate::model::TaskObject).
 pub mod task_object {
 
     /// A builder for [`TaskObject`](crate::model::TaskObject).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_id: std::option::Option<std::string::String>,
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
@@ -1176,7 +1159,7 @@ impl TaskObject {
 /// <p>Identity information for the EC2 instance that is hosting the task runner. You can get this value by calling a metadata URI from the EC2 instance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.</p>
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceIdentity {
     /// <p>A description of an EC2 instance that is generated when the instance is launched and exposed to the instance via the instance metadata service in the form of a JSON representation of an object.</p>
     #[doc(hidden)]
@@ -1195,19 +1178,11 @@ impl InstanceIdentity {
         self.signature.as_deref()
     }
 }
-impl std::fmt::Debug for InstanceIdentity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceIdentity");
-        formatter.field("document", &self.document);
-        formatter.field("signature", &self.signature);
-        formatter.finish()
-    }
-}
 /// See [`InstanceIdentity`](crate::model::InstanceIdentity).
 pub mod instance_identity {
 
     /// A builder for [`InstanceIdentity`](crate::model::InstanceIdentity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document: std::option::Option<std::string::String>,
         pub(crate) signature: std::option::Option<std::string::String>,
@@ -1251,7 +1226,7 @@ impl InstanceIdentity {
 
 /// <p>Contains the name and identifier of a pipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PipelineIdName {
     /// <p>The ID of the pipeline that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
     #[doc(hidden)]
@@ -1270,19 +1245,11 @@ impl PipelineIdName {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for PipelineIdName {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PipelineIdName");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 /// See [`PipelineIdName`](crate::model::PipelineIdName).
 pub mod pipeline_id_name {
 
     /// A builder for [`PipelineIdName`](crate::model::PipelineIdName).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1326,7 +1293,7 @@ impl PipelineIdName {
 
 /// <p>Contains pipeline metadata.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PipelineDescription {
     /// <p>The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
     #[doc(hidden)]
@@ -1366,22 +1333,11 @@ impl PipelineDescription {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for PipelineDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PipelineDescription");
-        formatter.field("pipeline_id", &self.pipeline_id);
-        formatter.field("name", &self.name);
-        formatter.field("fields", &self.fields);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`PipelineDescription`](crate::model::PipelineDescription).
 pub mod pipeline_description {
 
     /// A builder for [`PipelineDescription`](crate::model::PipelineDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1479,7 +1435,7 @@ impl PipelineDescription {
 
 /// <p>Tags are key/value pairs defined by a user and associated with a pipeline to control access. AWS Data Pipeline allows you to associate ten tags per pipeline. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key name of a tag defined by a user. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
     #[doc(hidden)]
@@ -1498,19 +1454,11 @@ impl Tag {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,

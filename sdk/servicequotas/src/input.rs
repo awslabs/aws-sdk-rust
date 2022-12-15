@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod associate_service_quota_template_input {
 
     /// A builder for [`AssociateServiceQuotaTemplateInput`](crate::input::AssociateServiceQuotaTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateServiceQuotaTemplateInput`](crate::input::AssociateServiceQuotaTemplateInput).
@@ -13,7 +13,7 @@ pub mod associate_service_quota_template_input {
             self,
         ) -> Result<
             crate::input::AssociateServiceQuotaTemplateInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::AssociateServiceQuotaTemplateInput {})
         }
@@ -32,13 +32,13 @@ impl AssociateServiceQuotaTemplateInput {
             crate::operation::AssociateServiceQuotaTemplate,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AssociateServiceQuotaTemplateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -46,8 +46,10 @@ impl AssociateServiceQuotaTemplateInput {
             fn update_http_builder(
                 input: &crate::input::AssociateServiceQuotaTemplateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -128,7 +130,7 @@ impl AssociateServiceQuotaTemplateInput {
 pub mod delete_service_quota_increase_request_from_template_input {
 
     /// A builder for [`DeleteServiceQuotaIncreaseRequestFromTemplateInput`](crate::input::DeleteServiceQuotaIncreaseRequestFromTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
         pub(crate) quota_code: std::option::Option<std::string::String>,
@@ -170,7 +172,7 @@ pub mod delete_service_quota_increase_request_from_template_input {
             self,
         ) -> Result<
             crate::input::DeleteServiceQuotaIncreaseRequestFromTemplateInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(
                 crate::input::DeleteServiceQuotaIncreaseRequestFromTemplateInput {
@@ -195,13 +197,13 @@ impl DeleteServiceQuotaIncreaseRequestFromTemplateInput {
             crate::operation::DeleteServiceQuotaIncreaseRequestFromTemplate,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteServiceQuotaIncreaseRequestFromTemplateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -209,8 +211,10 @@ impl DeleteServiceQuotaIncreaseRequestFromTemplateInput {
             fn update_http_builder(
                 input: &crate::input::DeleteServiceQuotaIncreaseRequestFromTemplateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -299,7 +303,7 @@ impl DeleteServiceQuotaIncreaseRequestFromTemplateInput {
 pub mod disassociate_service_quota_template_input {
 
     /// A builder for [`DisassociateServiceQuotaTemplateInput`](crate::input::DisassociateServiceQuotaTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateServiceQuotaTemplateInput`](crate::input::DisassociateServiceQuotaTemplateInput).
@@ -307,7 +311,7 @@ pub mod disassociate_service_quota_template_input {
             self,
         ) -> Result<
             crate::input::DisassociateServiceQuotaTemplateInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DisassociateServiceQuotaTemplateInput {})
         }
@@ -326,13 +330,13 @@ impl DisassociateServiceQuotaTemplateInput {
             crate::operation::DisassociateServiceQuotaTemplate,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisassociateServiceQuotaTemplateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -340,8 +344,10 @@ impl DisassociateServiceQuotaTemplateInput {
             fn update_http_builder(
                 input: &crate::input::DisassociateServiceQuotaTemplateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -422,7 +428,7 @@ impl DisassociateServiceQuotaTemplateInput {
 pub mod get_association_for_service_quota_template_input {
 
     /// A builder for [`GetAssociationForServiceQuotaTemplateInput`](crate::input::GetAssociationForServiceQuotaTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetAssociationForServiceQuotaTemplateInput`](crate::input::GetAssociationForServiceQuotaTemplateInput).
@@ -430,7 +436,7 @@ pub mod get_association_for_service_quota_template_input {
             self,
         ) -> Result<
             crate::input::GetAssociationForServiceQuotaTemplateInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetAssociationForServiceQuotaTemplateInput {})
         }
@@ -449,13 +455,13 @@ impl GetAssociationForServiceQuotaTemplateInput {
             crate::operation::GetAssociationForServiceQuotaTemplate,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetAssociationForServiceQuotaTemplateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -463,8 +469,10 @@ impl GetAssociationForServiceQuotaTemplateInput {
             fn update_http_builder(
                 input: &crate::input::GetAssociationForServiceQuotaTemplateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -545,7 +553,7 @@ impl GetAssociationForServiceQuotaTemplateInput {
 pub mod get_aws_default_service_quota_input {
 
     /// A builder for [`GetAwsDefaultServiceQuotaInput`](crate::input::GetAwsDefaultServiceQuotaInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
         pub(crate) quota_code: std::option::Option<std::string::String>,
@@ -576,7 +584,7 @@ pub mod get_aws_default_service_quota_input {
             self,
         ) -> Result<
             crate::input::GetAwsDefaultServiceQuotaInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetAwsDefaultServiceQuotaInput {
                 service_code: self.service_code,
@@ -598,13 +606,13 @@ impl GetAwsDefaultServiceQuotaInput {
             crate::operation::GetAWSDefaultServiceQuota,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetAwsDefaultServiceQuotaInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -612,8 +620,10 @@ impl GetAwsDefaultServiceQuotaInput {
             fn update_http_builder(
                 input: &crate::input::GetAwsDefaultServiceQuotaInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -701,7 +711,7 @@ impl GetAwsDefaultServiceQuotaInput {
 pub mod get_requested_service_quota_change_input {
 
     /// A builder for [`GetRequestedServiceQuotaChangeInput`](crate::input::GetRequestedServiceQuotaChangeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
     }
@@ -721,7 +731,7 @@ pub mod get_requested_service_quota_change_input {
             self,
         ) -> Result<
             crate::input::GetRequestedServiceQuotaChangeInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetRequestedServiceQuotaChangeInput {
                 request_id: self.request_id,
@@ -742,13 +752,13 @@ impl GetRequestedServiceQuotaChangeInput {
             crate::operation::GetRequestedServiceQuotaChange,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetRequestedServiceQuotaChangeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -756,8 +766,10 @@ impl GetRequestedServiceQuotaChangeInput {
             fn update_http_builder(
                 input: &crate::input::GetRequestedServiceQuotaChangeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -845,7 +857,7 @@ impl GetRequestedServiceQuotaChangeInput {
 pub mod get_service_quota_input {
 
     /// A builder for [`GetServiceQuotaInput`](crate::input::GetServiceQuotaInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
         pub(crate) quota_code: std::option::Option<std::string::String>,
@@ -874,7 +886,7 @@ pub mod get_service_quota_input {
         /// Consumes the builder and constructs a [`GetServiceQuotaInput`](crate::input::GetServiceQuotaInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetServiceQuotaInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetServiceQuotaInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetServiceQuotaInput {
                 service_code: self.service_code,
@@ -896,13 +908,13 @@ impl GetServiceQuotaInput {
             crate::operation::GetServiceQuota,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetServiceQuotaInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -910,8 +922,10 @@ impl GetServiceQuotaInput {
             fn update_http_builder(
                 input: &crate::input::GetServiceQuotaInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1000,7 +1014,7 @@ impl GetServiceQuotaInput {
 pub mod get_service_quota_increase_request_from_template_input {
 
     /// A builder for [`GetServiceQuotaIncreaseRequestFromTemplateInput`](crate::input::GetServiceQuotaIncreaseRequestFromTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
         pub(crate) quota_code: std::option::Option<std::string::String>,
@@ -1042,7 +1056,7 @@ pub mod get_service_quota_increase_request_from_template_input {
             self,
         ) -> Result<
             crate::input::GetServiceQuotaIncreaseRequestFromTemplateInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(
                 crate::input::GetServiceQuotaIncreaseRequestFromTemplateInput {
@@ -1067,13 +1081,13 @@ impl GetServiceQuotaIncreaseRequestFromTemplateInput {
             crate::operation::GetServiceQuotaIncreaseRequestFromTemplate,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetServiceQuotaIncreaseRequestFromTemplateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1081,8 +1095,10 @@ impl GetServiceQuotaIncreaseRequestFromTemplateInput {
             fn update_http_builder(
                 input: &crate::input::GetServiceQuotaIncreaseRequestFromTemplateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1171,7 +1187,7 @@ impl GetServiceQuotaIncreaseRequestFromTemplateInput {
 pub mod list_aws_default_service_quotas_input {
 
     /// A builder for [`ListAwsDefaultServiceQuotasInput`](crate::input::ListAwsDefaultServiceQuotasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1213,7 +1229,7 @@ pub mod list_aws_default_service_quotas_input {
             self,
         ) -> Result<
             crate::input::ListAwsDefaultServiceQuotasInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListAwsDefaultServiceQuotasInput {
                 service_code: self.service_code,
@@ -1236,13 +1252,13 @@ impl ListAwsDefaultServiceQuotasInput {
             crate::operation::ListAWSDefaultServiceQuotas,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListAwsDefaultServiceQuotasInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1250,8 +1266,10 @@ impl ListAwsDefaultServiceQuotasInput {
             fn update_http_builder(
                 input: &crate::input::ListAwsDefaultServiceQuotasInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1339,7 +1357,7 @@ impl ListAwsDefaultServiceQuotasInput {
 pub mod list_requested_service_quota_change_history_input {
 
     /// A builder for [`ListRequestedServiceQuotaChangeHistoryInput`](crate::input::ListRequestedServiceQuotaChangeHistoryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::RequestStatus>,
@@ -1395,7 +1413,7 @@ pub mod list_requested_service_quota_change_history_input {
             self,
         ) -> Result<
             crate::input::ListRequestedServiceQuotaChangeHistoryInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListRequestedServiceQuotaChangeHistoryInput {
                 service_code: self.service_code,
@@ -1419,13 +1437,13 @@ impl ListRequestedServiceQuotaChangeHistoryInput {
             crate::operation::ListRequestedServiceQuotaChangeHistory,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListRequestedServiceQuotaChangeHistoryInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1433,8 +1451,10 @@ impl ListRequestedServiceQuotaChangeHistoryInput {
             fn update_http_builder(
                 input: &crate::input::ListRequestedServiceQuotaChangeHistoryInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1522,7 +1542,7 @@ impl ListRequestedServiceQuotaChangeHistoryInput {
 pub mod list_requested_service_quota_change_history_by_quota_input {
 
     /// A builder for [`ListRequestedServiceQuotaChangeHistoryByQuotaInput`](crate::input::ListRequestedServiceQuotaChangeHistoryByQuotaInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
         pub(crate) quota_code: std::option::Option<std::string::String>,
@@ -1589,7 +1609,7 @@ pub mod list_requested_service_quota_change_history_by_quota_input {
             self,
         ) -> Result<
             crate::input::ListRequestedServiceQuotaChangeHistoryByQuotaInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(
                 crate::input::ListRequestedServiceQuotaChangeHistoryByQuotaInput {
@@ -1616,13 +1636,13 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaInput {
             crate::operation::ListRequestedServiceQuotaChangeHistoryByQuota,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListRequestedServiceQuotaChangeHistoryByQuotaInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1630,8 +1650,10 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaInput {
             fn update_http_builder(
                 input: &crate::input::ListRequestedServiceQuotaChangeHistoryByQuotaInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1720,7 +1742,7 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaInput {
 pub mod list_service_quota_increase_requests_in_template_input {
 
     /// A builder for [`ListServiceQuotaIncreaseRequestsInTemplateInput`](crate::input::ListServiceQuotaIncreaseRequestsInTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
         pub(crate) aws_region: std::option::Option<std::string::String>,
@@ -1773,7 +1795,7 @@ pub mod list_service_quota_increase_requests_in_template_input {
             self,
         ) -> Result<
             crate::input::ListServiceQuotaIncreaseRequestsInTemplateInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(
                 crate::input::ListServiceQuotaIncreaseRequestsInTemplateInput {
@@ -1799,13 +1821,13 @@ impl ListServiceQuotaIncreaseRequestsInTemplateInput {
             crate::operation::ListServiceQuotaIncreaseRequestsInTemplate,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListServiceQuotaIncreaseRequestsInTemplateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1813,8 +1835,10 @@ impl ListServiceQuotaIncreaseRequestsInTemplateInput {
             fn update_http_builder(
                 input: &crate::input::ListServiceQuotaIncreaseRequestsInTemplateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1903,7 +1927,7 @@ impl ListServiceQuotaIncreaseRequestsInTemplateInput {
 pub mod list_service_quotas_input {
 
     /// A builder for [`ListServiceQuotasInput`](crate::input::ListServiceQuotasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1943,8 +1967,10 @@ pub mod list_service_quotas_input {
         /// Consumes the builder and constructs a [`ListServiceQuotasInput`](crate::input::ListServiceQuotasInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListServiceQuotasInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListServiceQuotasInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListServiceQuotasInput {
                 service_code: self.service_code,
                 next_token: self.next_token,
@@ -1966,13 +1992,13 @@ impl ListServiceQuotasInput {
             crate::operation::ListServiceQuotas,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListServiceQuotasInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1980,8 +2006,10 @@ impl ListServiceQuotasInput {
             fn update_http_builder(
                 input: &crate::input::ListServiceQuotasInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2070,7 +2098,7 @@ impl ListServiceQuotasInput {
 pub mod list_services_input {
 
     /// A builder for [`ListServicesInput`](crate::input::ListServicesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2099,7 +2127,7 @@ pub mod list_services_input {
         /// Consumes the builder and constructs a [`ListServicesInput`](crate::input::ListServicesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListServicesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListServicesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListServicesInput {
                 next_token: self.next_token,
@@ -2121,13 +2149,13 @@ impl ListServicesInput {
             crate::operation::ListServices,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListServicesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2135,8 +2163,10 @@ impl ListServicesInput {
             fn update_http_builder(
                 input: &crate::input::ListServicesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2225,7 +2255,7 @@ impl ListServicesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -2243,8 +2273,10 @@ pub mod list_tags_for_resource_input {
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
             })
@@ -2264,13 +2296,13 @@ impl ListTagsForResourceInput {
             crate::operation::ListTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2278,8 +2310,10 @@ impl ListTagsForResourceInput {
             fn update_http_builder(
                 input: &crate::input::ListTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2370,7 +2404,7 @@ impl ListTagsForResourceInput {
 pub mod put_service_quota_increase_request_into_template_input {
 
     /// A builder for [`PutServiceQuotaIncreaseRequestIntoTemplateInput`](crate::input::PutServiceQuotaIncreaseRequestIntoTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quota_code: std::option::Option<std::string::String>,
         pub(crate) service_code: std::option::Option<std::string::String>,
@@ -2423,7 +2457,7 @@ pub mod put_service_quota_increase_request_into_template_input {
             self,
         ) -> Result<
             crate::input::PutServiceQuotaIncreaseRequestIntoTemplateInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(
                 crate::input::PutServiceQuotaIncreaseRequestIntoTemplateInput {
@@ -2449,13 +2483,13 @@ impl PutServiceQuotaIncreaseRequestIntoTemplateInput {
             crate::operation::PutServiceQuotaIncreaseRequestIntoTemplate,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutServiceQuotaIncreaseRequestIntoTemplateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2463,8 +2497,10 @@ impl PutServiceQuotaIncreaseRequestIntoTemplateInput {
             fn update_http_builder(
                 input: &crate::input::PutServiceQuotaIncreaseRequestIntoTemplateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2553,7 +2589,7 @@ impl PutServiceQuotaIncreaseRequestIntoTemplateInput {
 pub mod request_service_quota_increase_input {
 
     /// A builder for [`RequestServiceQuotaIncreaseInput`](crate::input::RequestServiceQuotaIncreaseInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
         pub(crate) quota_code: std::option::Option<std::string::String>,
@@ -2595,7 +2631,7 @@ pub mod request_service_quota_increase_input {
             self,
         ) -> Result<
             crate::input::RequestServiceQuotaIncreaseInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::RequestServiceQuotaIncreaseInput {
                 service_code: self.service_code,
@@ -2618,13 +2654,13 @@ impl RequestServiceQuotaIncreaseInput {
             crate::operation::RequestServiceQuotaIncrease,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RequestServiceQuotaIncreaseInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2632,8 +2668,10 @@ impl RequestServiceQuotaIncreaseInput {
             fn update_http_builder(
                 input: &crate::input::RequestServiceQuotaIncreaseInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2721,7 +2759,7 @@ impl RequestServiceQuotaIncreaseInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2759,7 +2797,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
@@ -2781,13 +2819,13 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2795,8 +2833,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2885,7 +2925,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2923,7 +2963,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
@@ -2945,13 +2985,13 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2959,8 +2999,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3047,7 +3089,7 @@ impl UntagResourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the applied quota that you want to untag. You can get this information by using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
     #[doc(hidden)]
@@ -3066,18 +3108,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the applied quota. You can get this information by using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
     #[doc(hidden)]
@@ -3096,18 +3130,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequestServiceQuotaIncreaseInput {
     /// <p>The service identifier.</p>
     #[doc(hidden)]
@@ -3133,19 +3159,10 @@ impl RequestServiceQuotaIncreaseInput {
         self.desired_value
     }
 }
-impl std::fmt::Debug for RequestServiceQuotaIncreaseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RequestServiceQuotaIncreaseInput");
-        formatter.field("service_code", &self.service_code);
-        formatter.field("quota_code", &self.quota_code);
-        formatter.field("desired_value", &self.desired_value);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutServiceQuotaIncreaseRequestIntoTemplateInput {
     /// <p>The quota identifier.</p>
     #[doc(hidden)]
@@ -3178,20 +3195,10 @@ impl PutServiceQuotaIncreaseRequestIntoTemplateInput {
         self.desired_value
     }
 }
-impl std::fmt::Debug for PutServiceQuotaIncreaseRequestIntoTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutServiceQuotaIncreaseRequestIntoTemplateInput");
-        formatter.field("quota_code", &self.quota_code);
-        formatter.field("service_code", &self.service_code);
-        formatter.field("aws_region", &self.aws_region);
-        formatter.field("desired_value", &self.desired_value);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the applied quota for which you want to list tags. You can get this information by using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
     #[doc(hidden)]
@@ -3203,17 +3210,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListServicesInput {
     /// <p>The token for the next page of results.</p>
     #[doc(hidden)]
@@ -3232,18 +3232,10 @@ impl ListServicesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListServicesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListServicesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListServiceQuotasInput {
     /// <p>The service identifier.</p>
     #[doc(hidden)]
@@ -3269,19 +3261,10 @@ impl ListServiceQuotasInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListServiceQuotasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListServiceQuotasInput");
-        formatter.field("service_code", &self.service_code);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListServiceQuotaIncreaseRequestsInTemplateInput {
     /// <p>The service identifier.</p>
     #[doc(hidden)]
@@ -3314,20 +3297,10 @@ impl ListServiceQuotaIncreaseRequestsInTemplateInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListServiceQuotaIncreaseRequestsInTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListServiceQuotaIncreaseRequestsInTemplateInput");
-        formatter.field("service_code", &self.service_code);
-        formatter.field("aws_region", &self.aws_region);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRequestedServiceQuotaChangeHistoryByQuotaInput {
     /// <p>The service identifier.</p>
     #[doc(hidden)]
@@ -3367,21 +3340,10 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListRequestedServiceQuotaChangeHistoryByQuotaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRequestedServiceQuotaChangeHistoryByQuotaInput");
-        formatter.field("service_code", &self.service_code);
-        formatter.field("quota_code", &self.quota_code);
-        formatter.field("status", &self.status);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRequestedServiceQuotaChangeHistoryInput {
     /// <p>The service identifier.</p>
     #[doc(hidden)]
@@ -3414,20 +3376,10 @@ impl ListRequestedServiceQuotaChangeHistoryInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListRequestedServiceQuotaChangeHistoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRequestedServiceQuotaChangeHistoryInput");
-        formatter.field("service_code", &self.service_code);
-        formatter.field("status", &self.status);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAwsDefaultServiceQuotasInput {
     /// <p>The service identifier.</p>
     #[doc(hidden)]
@@ -3453,19 +3405,10 @@ impl ListAwsDefaultServiceQuotasInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAwsDefaultServiceQuotasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAwsDefaultServiceQuotasInput");
-        formatter.field("service_code", &self.service_code);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetServiceQuotaIncreaseRequestFromTemplateInput {
     /// <p>The service identifier.</p>
     #[doc(hidden)]
@@ -3491,19 +3434,10 @@ impl GetServiceQuotaIncreaseRequestFromTemplateInput {
         self.aws_region.as_deref()
     }
 }
-impl std::fmt::Debug for GetServiceQuotaIncreaseRequestFromTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetServiceQuotaIncreaseRequestFromTemplateInput");
-        formatter.field("service_code", &self.service_code);
-        formatter.field("quota_code", &self.quota_code);
-        formatter.field("aws_region", &self.aws_region);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetServiceQuotaInput {
     /// <p>The service identifier.</p>
     #[doc(hidden)]
@@ -3522,18 +3456,10 @@ impl GetServiceQuotaInput {
         self.quota_code.as_deref()
     }
 }
-impl std::fmt::Debug for GetServiceQuotaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetServiceQuotaInput");
-        formatter.field("service_code", &self.service_code);
-        formatter.field("quota_code", &self.quota_code);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRequestedServiceQuotaChangeInput {
     /// <p>The ID of the quota increase request.</p>
     #[doc(hidden)]
@@ -3545,17 +3471,10 @@ impl GetRequestedServiceQuotaChangeInput {
         self.request_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetRequestedServiceQuotaChangeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRequestedServiceQuotaChangeInput");
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAwsDefaultServiceQuotaInput {
     /// <p>The service identifier.</p>
     #[doc(hidden)]
@@ -3574,40 +3493,20 @@ impl GetAwsDefaultServiceQuotaInput {
         self.quota_code.as_deref()
     }
 }
-impl std::fmt::Debug for GetAwsDefaultServiceQuotaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAwsDefaultServiceQuotaInput");
-        formatter.field("service_code", &self.service_code);
-        formatter.field("quota_code", &self.quota_code);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAssociationForServiceQuotaTemplateInput {}
-impl std::fmt::Debug for GetAssociationForServiceQuotaTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAssociationForServiceQuotaTemplateInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateServiceQuotaTemplateInput {}
-impl std::fmt::Debug for DisassociateServiceQuotaTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateServiceQuotaTemplateInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteServiceQuotaIncreaseRequestFromTemplateInput {
     /// <p>The service identifier.</p>
     #[doc(hidden)]
@@ -3633,23 +3532,8 @@ impl DeleteServiceQuotaIncreaseRequestFromTemplateInput {
         self.aws_region.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteServiceQuotaIncreaseRequestFromTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteServiceQuotaIncreaseRequestFromTemplateInput");
-        formatter.field("service_code", &self.service_code);
-        formatter.field("quota_code", &self.quota_code);
-        formatter.field("aws_region", &self.aws_region);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateServiceQuotaTemplateInput {}
-impl std::fmt::Debug for AssociateServiceQuotaTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateServiceQuotaTemplateInput");
-        formatter.finish()
-    }
-}

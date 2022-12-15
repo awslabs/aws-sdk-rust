@@ -26,7 +26,7 @@ pub fn parse_add_attachments_to_set_error(
                     output = crate::json_deser::deser_structure_crate_error_attachment_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::AddAttachmentsToSetError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -43,7 +43,7 @@ pub fn parse_add_attachments_to_set_error(
                     output = crate::json_deser::deser_structure_crate_error_attachment_set_expired_json_err(response.body().as_ref(), output).map_err(crate::error::AddAttachmentsToSetError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -60,7 +60,7 @@ pub fn parse_add_attachments_to_set_error(
                     output = crate::json_deser::deser_structure_crate_error_attachment_set_id_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::AddAttachmentsToSetError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -78,7 +78,7 @@ pub fn parse_add_attachments_to_set_error(
                     output = crate::json_deser::deser_structure_crate_error_attachment_set_size_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::AddAttachmentsToSetError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -95,7 +95,7 @@ pub fn parse_add_attachments_to_set_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::AddAttachmentsToSetError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -156,7 +156,7 @@ pub fn parse_add_communication_to_case_error(
                     output = crate::json_deser::deser_structure_crate_error_attachment_set_expired_json_err(response.body().as_ref(), output).map_err(crate::error::AddCommunicationToCaseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -173,7 +173,7 @@ pub fn parse_add_communication_to_case_error(
                     output = crate::json_deser::deser_structure_crate_error_attachment_set_id_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::AddCommunicationToCaseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -191,7 +191,7 @@ pub fn parse_add_communication_to_case_error(
                         output = crate::json_deser::deser_structure_crate_error_case_id_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::AddCommunicationToCaseError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -209,7 +209,7 @@ pub fn parse_add_communication_to_case_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::AddCommunicationToCaseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -263,7 +263,7 @@ pub fn parse_create_case_error(
                     output = crate::json_deser::deser_structure_crate_error_attachment_set_expired_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCaseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -280,7 +280,7 @@ pub fn parse_create_case_error(
                     output = crate::json_deser::deser_structure_crate_error_attachment_set_id_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCaseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -297,7 +297,7 @@ pub fn parse_create_case_error(
                     output = crate::json_deser::deser_structure_crate_error_case_creation_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCaseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -314,7 +314,7 @@ pub fn parse_create_case_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCaseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -368,7 +368,7 @@ pub fn parse_describe_attachment_error(
                     output = crate::json_deser::deser_structure_crate_error_attachment_id_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAttachmentError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -386,7 +386,7 @@ pub fn parse_describe_attachment_error(
                     output = crate::json_deser::deser_structure_crate_error_describe_attachment_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAttachmentError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -403,7 +403,7 @@ pub fn parse_describe_attachment_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAttachmentError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -458,7 +458,7 @@ pub fn parse_describe_cases_error(
                         output = crate::json_deser::deser_structure_crate_error_case_id_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCasesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -476,7 +476,7 @@ pub fn parse_describe_cases_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCasesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -535,7 +535,7 @@ pub fn parse_describe_communications_error(
                         output = crate::json_deser::deser_structure_crate_error_case_id_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCommunicationsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -553,7 +553,7 @@ pub fn parse_describe_communications_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCommunicationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -608,7 +608,7 @@ pub fn parse_describe_services_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeServicesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -667,7 +667,7 @@ pub fn parse_describe_severity_levels_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeSeverityLevelsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -726,7 +726,7 @@ pub fn parse_describe_trusted_advisor_check_refresh_statuses_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -782,7 +782,7 @@ pub fn parse_describe_trusted_advisor_check_result_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTrustedAdvisorCheckResultError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -840,7 +840,7 @@ pub fn parse_describe_trusted_advisor_checks_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTrustedAdvisorChecksError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -901,7 +901,7 @@ pub fn parse_describe_trusted_advisor_check_summaries_error(
                         output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTrustedAdvisorCheckSummariesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -960,7 +960,7 @@ pub fn parse_refresh_trusted_advisor_check_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::RefreshTrustedAdvisorCheckError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1015,7 +1015,7 @@ pub fn parse_resolve_case_error(
                         output = crate::json_deser::deser_structure_crate_error_case_id_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::ResolveCaseError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1033,7 +1033,7 @@ pub fn parse_resolve_case_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::ResolveCaseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp

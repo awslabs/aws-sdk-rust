@@ -5,7 +5,7 @@
 /// [`create_home_region_control`](crate::client::Client::create_home_region_control).
 ///
 /// See [`crate::client::fluent_builders::CreateHomeRegionControl`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateHomeRegionControl {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateHomeRegionControl 
 /// [`describe_home_region_controls`](crate::client::Client::describe_home_region_controls).
 ///
 /// See [`crate::client::fluent_builders::DescribeHomeRegionControls`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeHomeRegionControls {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeHomeRegionContro
 /// [`get_home_region`](crate::client::Client::get_home_region).
 ///
 /// See [`crate::client::fluent_builders::GetHomeRegion`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetHomeRegion {
     _private: (),
 }

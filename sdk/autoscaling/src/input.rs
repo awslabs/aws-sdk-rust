@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod attach_instances_input {
 
     /// A builder for [`AttachInstancesInput`](crate::input::AttachInstancesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -46,7 +46,7 @@ pub mod attach_instances_input {
         /// Consumes the builder and constructs a [`AttachInstancesInput`](crate::input::AttachInstancesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::AttachInstancesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::AttachInstancesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::AttachInstancesInput {
                 instance_ids: self.instance_ids,
@@ -68,13 +68,13 @@ impl AttachInstancesInput {
             crate::operation::AttachInstances,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AttachInstancesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -82,8 +82,10 @@ impl AttachInstancesInput {
             fn update_http_builder(
                 input: &crate::input::AttachInstancesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -167,7 +169,7 @@ impl AttachInstancesInput {
 pub mod attach_load_balancers_input {
 
     /// A builder for [`AttachLoadBalancersInput`](crate::input::AttachLoadBalancersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) load_balancer_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -208,8 +210,10 @@ pub mod attach_load_balancers_input {
         /// Consumes the builder and constructs a [`AttachLoadBalancersInput`](crate::input::AttachLoadBalancersInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::AttachLoadBalancersInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::AttachLoadBalancersInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::AttachLoadBalancersInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
                 load_balancer_names: self.load_balancer_names,
@@ -230,13 +234,13 @@ impl AttachLoadBalancersInput {
             crate::operation::AttachLoadBalancers,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AttachLoadBalancersInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -244,8 +248,10 @@ impl AttachLoadBalancersInput {
             fn update_http_builder(
                 input: &crate::input::AttachLoadBalancersInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -329,7 +335,7 @@ impl AttachLoadBalancersInput {
 pub mod attach_load_balancer_target_groups_input {
 
     /// A builder for [`AttachLoadBalancerTargetGroupsInput`](crate::input::AttachLoadBalancerTargetGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) target_group_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -372,7 +378,7 @@ pub mod attach_load_balancer_target_groups_input {
             self,
         ) -> Result<
             crate::input::AttachLoadBalancerTargetGroupsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::AttachLoadBalancerTargetGroupsInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -394,13 +400,13 @@ impl AttachLoadBalancerTargetGroupsInput {
             crate::operation::AttachLoadBalancerTargetGroups,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AttachLoadBalancerTargetGroupsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -408,8 +414,10 @@ impl AttachLoadBalancerTargetGroupsInput {
             fn update_http_builder(
                 input: &crate::input::AttachLoadBalancerTargetGroupsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -492,7 +500,7 @@ impl AttachLoadBalancerTargetGroupsInput {
 pub mod batch_delete_scheduled_action_input {
 
     /// A builder for [`BatchDeleteScheduledActionInput`](crate::input::BatchDeleteScheduledActionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) scheduled_action_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -535,7 +543,7 @@ pub mod batch_delete_scheduled_action_input {
             self,
         ) -> Result<
             crate::input::BatchDeleteScheduledActionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::BatchDeleteScheduledActionInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -557,13 +565,13 @@ impl BatchDeleteScheduledActionInput {
             crate::operation::BatchDeleteScheduledAction,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::BatchDeleteScheduledActionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -571,8 +579,10 @@ impl BatchDeleteScheduledActionInput {
             fn update_http_builder(
                 input: &crate::input::BatchDeleteScheduledActionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -655,7 +665,7 @@ impl BatchDeleteScheduledActionInput {
 pub mod batch_put_scheduled_update_group_action_input {
 
     /// A builder for [`BatchPutScheduledUpdateGroupActionInput`](crate::input::BatchPutScheduledUpdateGroupActionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) scheduled_update_group_actions:
@@ -704,7 +714,7 @@ pub mod batch_put_scheduled_update_group_action_input {
             self,
         ) -> Result<
             crate::input::BatchPutScheduledUpdateGroupActionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::BatchPutScheduledUpdateGroupActionInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -726,13 +736,13 @@ impl BatchPutScheduledUpdateGroupActionInput {
             crate::operation::BatchPutScheduledUpdateGroupAction,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::BatchPutScheduledUpdateGroupActionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -740,8 +750,10 @@ impl BatchPutScheduledUpdateGroupActionInput {
             fn update_http_builder(
                 input: &crate::input::BatchPutScheduledUpdateGroupActionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -824,7 +836,7 @@ impl BatchPutScheduledUpdateGroupActionInput {
 pub mod cancel_instance_refresh_input {
 
     /// A builder for [`CancelInstanceRefreshInput`](crate::input::CancelInstanceRefreshInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
     }
@@ -845,8 +857,10 @@ pub mod cancel_instance_refresh_input {
         /// Consumes the builder and constructs a [`CancelInstanceRefreshInput`](crate::input::CancelInstanceRefreshInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CancelInstanceRefreshInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CancelInstanceRefreshInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CancelInstanceRefreshInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
             })
@@ -866,13 +880,13 @@ impl CancelInstanceRefreshInput {
             crate::operation::CancelInstanceRefresh,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CancelInstanceRefreshInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -880,8 +894,10 @@ impl CancelInstanceRefreshInput {
             fn update_http_builder(
                 input: &crate::input::CancelInstanceRefreshInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -967,7 +983,7 @@ impl CancelInstanceRefreshInput {
 pub mod complete_lifecycle_action_input {
 
     /// A builder for [`CompleteLifecycleActionInput`](crate::input::CompleteLifecycleActionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lifecycle_hook_name: std::option::Option<std::string::String>,
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -1043,7 +1059,7 @@ pub mod complete_lifecycle_action_input {
             self,
         ) -> Result<
             crate::input::CompleteLifecycleActionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CompleteLifecycleActionInput {
                 lifecycle_hook_name: self.lifecycle_hook_name,
@@ -1068,13 +1084,13 @@ impl CompleteLifecycleActionInput {
             crate::operation::CompleteLifecycleAction,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CompleteLifecycleActionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1082,8 +1098,10 @@ impl CompleteLifecycleActionInput {
             fn update_http_builder(
                 input: &crate::input::CompleteLifecycleActionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1169,7 +1187,7 @@ impl CompleteLifecycleActionInput {
 pub mod create_auto_scaling_group_input {
 
     /// A builder for [`CreateAutoScalingGroupInput`](crate::input::CreateAutoScalingGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) launch_configuration_name: std::option::Option<std::string::String>,
@@ -1588,8 +1606,10 @@ pub mod create_auto_scaling_group_input {
         /// Consumes the builder and constructs a [`CreateAutoScalingGroupInput`](crate::input::CreateAutoScalingGroupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateAutoScalingGroupInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateAutoScalingGroupInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateAutoScalingGroupInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
                 launch_configuration_name: self.launch_configuration_name,
@@ -1634,13 +1654,13 @@ impl CreateAutoScalingGroupInput {
             crate::operation::CreateAutoScalingGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateAutoScalingGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1648,8 +1668,10 @@ impl CreateAutoScalingGroupInput {
             fn update_http_builder(
                 input: &crate::input::CreateAutoScalingGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1735,7 +1757,7 @@ impl CreateAutoScalingGroupInput {
 pub mod create_launch_configuration_input {
 
     /// A builder for [`CreateLaunchConfigurationInput`](crate::input::CreateLaunchConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) launch_configuration_name: std::option::Option<std::string::String>,
         pub(crate) image_id: std::option::Option<std::string::String>,
@@ -2050,7 +2072,7 @@ pub mod create_launch_configuration_input {
             self,
         ) -> Result<
             crate::input::CreateLaunchConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateLaunchConfigurationInput {
                 launch_configuration_name: self.launch_configuration_name,
@@ -2089,13 +2111,13 @@ impl CreateLaunchConfigurationInput {
             crate::operation::CreateLaunchConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateLaunchConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2103,8 +2125,10 @@ impl CreateLaunchConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::CreateLaunchConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2190,7 +2214,7 @@ impl CreateLaunchConfigurationInput {
 pub mod create_or_update_tags_input {
 
     /// A builder for [`CreateOrUpdateTagsInput`](crate::input::CreateOrUpdateTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -2217,8 +2241,10 @@ pub mod create_or_update_tags_input {
         /// Consumes the builder and constructs a [`CreateOrUpdateTagsInput`](crate::input::CreateOrUpdateTagsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateOrUpdateTagsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateOrUpdateTagsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateOrUpdateTagsInput { tags: self.tags })
         }
     }
@@ -2236,13 +2262,13 @@ impl CreateOrUpdateTagsInput {
             crate::operation::CreateOrUpdateTags,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateOrUpdateTagsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2250,8 +2276,10 @@ impl CreateOrUpdateTagsInput {
             fn update_http_builder(
                 input: &crate::input::CreateOrUpdateTagsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2335,7 +2363,7 @@ impl CreateOrUpdateTagsInput {
 pub mod delete_auto_scaling_group_input {
 
     /// A builder for [`DeleteAutoScalingGroupInput`](crate::input::DeleteAutoScalingGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) force_delete: std::option::Option<bool>,
@@ -2367,8 +2395,10 @@ pub mod delete_auto_scaling_group_input {
         /// Consumes the builder and constructs a [`DeleteAutoScalingGroupInput`](crate::input::DeleteAutoScalingGroupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteAutoScalingGroupInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteAutoScalingGroupInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteAutoScalingGroupInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
                 force_delete: self.force_delete,
@@ -2389,13 +2419,13 @@ impl DeleteAutoScalingGroupInput {
             crate::operation::DeleteAutoScalingGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteAutoScalingGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2403,8 +2433,10 @@ impl DeleteAutoScalingGroupInput {
             fn update_http_builder(
                 input: &crate::input::DeleteAutoScalingGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2490,7 +2522,7 @@ impl DeleteAutoScalingGroupInput {
 pub mod delete_launch_configuration_input {
 
     /// A builder for [`DeleteLaunchConfigurationInput`](crate::input::DeleteLaunchConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) launch_configuration_name: std::option::Option<std::string::String>,
     }
@@ -2513,7 +2545,7 @@ pub mod delete_launch_configuration_input {
             self,
         ) -> Result<
             crate::input::DeleteLaunchConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteLaunchConfigurationInput {
                 launch_configuration_name: self.launch_configuration_name,
@@ -2534,13 +2566,13 @@ impl DeleteLaunchConfigurationInput {
             crate::operation::DeleteLaunchConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteLaunchConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2548,8 +2580,10 @@ impl DeleteLaunchConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::DeleteLaunchConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2635,7 +2669,7 @@ impl DeleteLaunchConfigurationInput {
 pub mod delete_lifecycle_hook_input {
 
     /// A builder for [`DeleteLifecycleHookInput`](crate::input::DeleteLifecycleHookInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lifecycle_hook_name: std::option::Option<std::string::String>,
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -2670,8 +2704,10 @@ pub mod delete_lifecycle_hook_input {
         /// Consumes the builder and constructs a [`DeleteLifecycleHookInput`](crate::input::DeleteLifecycleHookInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteLifecycleHookInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteLifecycleHookInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteLifecycleHookInput {
                 lifecycle_hook_name: self.lifecycle_hook_name,
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -2692,13 +2728,13 @@ impl DeleteLifecycleHookInput {
             crate::operation::DeleteLifecycleHook,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteLifecycleHookInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2706,8 +2742,10 @@ impl DeleteLifecycleHookInput {
             fn update_http_builder(
                 input: &crate::input::DeleteLifecycleHookInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2791,7 +2829,7 @@ impl DeleteLifecycleHookInput {
 pub mod delete_notification_configuration_input {
 
     /// A builder for [`DeleteNotificationConfigurationInput`](crate::input::DeleteNotificationConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) topic_arn: std::option::Option<std::string::String>,
@@ -2825,7 +2863,7 @@ pub mod delete_notification_configuration_input {
             self,
         ) -> Result<
             crate::input::DeleteNotificationConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteNotificationConfigurationInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -2847,13 +2885,13 @@ impl DeleteNotificationConfigurationInput {
             crate::operation::DeleteNotificationConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteNotificationConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2861,8 +2899,10 @@ impl DeleteNotificationConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::DeleteNotificationConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2945,7 +2985,7 @@ impl DeleteNotificationConfigurationInput {
 pub mod delete_policy_input {
 
     /// A builder for [`DeletePolicyInput`](crate::input::DeletePolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -2977,7 +3017,7 @@ pub mod delete_policy_input {
         /// Consumes the builder and constructs a [`DeletePolicyInput`](crate::input::DeletePolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeletePolicyInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeletePolicyInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeletePolicyInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -2999,13 +3039,13 @@ impl DeletePolicyInput {
             crate::operation::DeletePolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeletePolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3013,8 +3053,10 @@ impl DeletePolicyInput {
             fn update_http_builder(
                 input: &crate::input::DeletePolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3098,7 +3140,7 @@ impl DeletePolicyInput {
 pub mod delete_scheduled_action_input {
 
     /// A builder for [`DeleteScheduledActionInput`](crate::input::DeleteScheduledActionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) scheduled_action_name: std::option::Option<std::string::String>,
@@ -3133,8 +3175,10 @@ pub mod delete_scheduled_action_input {
         /// Consumes the builder and constructs a [`DeleteScheduledActionInput`](crate::input::DeleteScheduledActionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteScheduledActionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteScheduledActionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteScheduledActionInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
                 scheduled_action_name: self.scheduled_action_name,
@@ -3155,13 +3199,13 @@ impl DeleteScheduledActionInput {
             crate::operation::DeleteScheduledAction,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteScheduledActionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3169,8 +3213,10 @@ impl DeleteScheduledActionInput {
             fn update_http_builder(
                 input: &crate::input::DeleteScheduledActionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3256,7 +3302,7 @@ impl DeleteScheduledActionInput {
 pub mod delete_tags_input {
 
     /// A builder for [`DeleteTagsInput`](crate::input::DeleteTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -3283,7 +3329,8 @@ pub mod delete_tags_input {
         /// Consumes the builder and constructs a [`DeleteTagsInput`](crate::input::DeleteTagsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteTagsInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::DeleteTagsInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::DeleteTagsInput { tags: self.tags })
         }
     }
@@ -3301,13 +3348,13 @@ impl DeleteTagsInput {
             crate::operation::DeleteTags,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteTagsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3315,8 +3362,10 @@ impl DeleteTagsInput {
             fn update_http_builder(
                 input: &crate::input::DeleteTagsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3400,7 +3449,7 @@ impl DeleteTagsInput {
 pub mod delete_warm_pool_input {
 
     /// A builder for [`DeleteWarmPoolInput`](crate::input::DeleteWarmPoolInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) force_delete: std::option::Option<bool>,
@@ -3432,7 +3481,7 @@ pub mod delete_warm_pool_input {
         /// Consumes the builder and constructs a [`DeleteWarmPoolInput`](crate::input::DeleteWarmPoolInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteWarmPoolInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteWarmPoolInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteWarmPoolInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -3454,13 +3503,13 @@ impl DeleteWarmPoolInput {
             crate::operation::DeleteWarmPool,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteWarmPoolInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3468,8 +3517,10 @@ impl DeleteWarmPoolInput {
             fn update_http_builder(
                 input: &crate::input::DeleteWarmPoolInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3553,14 +3604,16 @@ impl DeleteWarmPoolInput {
 pub mod describe_account_limits_input {
 
     /// A builder for [`DescribeAccountLimitsInput`](crate::input::DescribeAccountLimitsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DescribeAccountLimitsInput`](crate::input::DescribeAccountLimitsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeAccountLimitsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeAccountLimitsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeAccountLimitsInput {})
         }
     }
@@ -3578,13 +3631,13 @@ impl DescribeAccountLimitsInput {
             crate::operation::DescribeAccountLimits,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeAccountLimitsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3592,8 +3645,10 @@ impl DescribeAccountLimitsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeAccountLimitsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3672,7 +3727,7 @@ impl DescribeAccountLimitsInput {
 pub mod describe_adjustment_types_input {
 
     /// A builder for [`DescribeAdjustmentTypesInput`](crate::input::DescribeAdjustmentTypesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DescribeAdjustmentTypesInput`](crate::input::DescribeAdjustmentTypesInput).
@@ -3680,7 +3735,7 @@ pub mod describe_adjustment_types_input {
             self,
         ) -> Result<
             crate::input::DescribeAdjustmentTypesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeAdjustmentTypesInput {})
         }
@@ -3699,13 +3754,13 @@ impl DescribeAdjustmentTypesInput {
             crate::operation::DescribeAdjustmentTypes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeAdjustmentTypesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3713,8 +3768,10 @@ impl DescribeAdjustmentTypesInput {
             fn update_http_builder(
                 input: &crate::input::DescribeAdjustmentTypesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3793,7 +3850,7 @@ impl DescribeAdjustmentTypesInput {
 pub mod describe_auto_scaling_groups_input {
 
     /// A builder for [`DescribeAutoScalingGroupsInput`](crate::input::DescribeAutoScalingGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_names:
             std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3867,7 +3924,7 @@ pub mod describe_auto_scaling_groups_input {
             self,
         ) -> Result<
             crate::input::DescribeAutoScalingGroupsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeAutoScalingGroupsInput {
                 auto_scaling_group_names: self.auto_scaling_group_names,
@@ -3891,13 +3948,13 @@ impl DescribeAutoScalingGroupsInput {
             crate::operation::DescribeAutoScalingGroups,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeAutoScalingGroupsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3905,8 +3962,10 @@ impl DescribeAutoScalingGroupsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeAutoScalingGroupsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3992,7 +4051,7 @@ impl DescribeAutoScalingGroupsInput {
 pub mod describe_auto_scaling_instances_input {
 
     /// A builder for [`DescribeAutoScalingInstancesInput`](crate::input::DescribeAutoScalingInstancesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) max_records: std::option::Option<i32>,
@@ -4045,7 +4104,7 @@ pub mod describe_auto_scaling_instances_input {
             self,
         ) -> Result<
             crate::input::DescribeAutoScalingInstancesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeAutoScalingInstancesInput {
                 instance_ids: self.instance_ids,
@@ -4068,13 +4127,13 @@ impl DescribeAutoScalingInstancesInput {
             crate::operation::DescribeAutoScalingInstances,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeAutoScalingInstancesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4082,8 +4141,10 @@ impl DescribeAutoScalingInstancesInput {
             fn update_http_builder(
                 input: &crate::input::DescribeAutoScalingInstancesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4166,7 +4227,7 @@ impl DescribeAutoScalingInstancesInput {
 pub mod describe_auto_scaling_notification_types_input {
 
     /// A builder for [`DescribeAutoScalingNotificationTypesInput`](crate::input::DescribeAutoScalingNotificationTypesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DescribeAutoScalingNotificationTypesInput`](crate::input::DescribeAutoScalingNotificationTypesInput).
@@ -4174,7 +4235,7 @@ pub mod describe_auto_scaling_notification_types_input {
             self,
         ) -> Result<
             crate::input::DescribeAutoScalingNotificationTypesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeAutoScalingNotificationTypesInput {})
         }
@@ -4193,13 +4254,13 @@ impl DescribeAutoScalingNotificationTypesInput {
             crate::operation::DescribeAutoScalingNotificationTypes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeAutoScalingNotificationTypesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4207,8 +4268,10 @@ impl DescribeAutoScalingNotificationTypesInput {
             fn update_http_builder(
                 input: &crate::input::DescribeAutoScalingNotificationTypesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4284,7 +4347,7 @@ impl DescribeAutoScalingNotificationTypesInput {
 pub mod describe_instance_refreshes_input {
 
     /// A builder for [`DescribeInstanceRefreshesInput`](crate::input::DescribeInstanceRefreshesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) instance_refresh_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4349,7 +4412,7 @@ pub mod describe_instance_refreshes_input {
             self,
         ) -> Result<
             crate::input::DescribeInstanceRefreshesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeInstanceRefreshesInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -4373,13 +4436,13 @@ impl DescribeInstanceRefreshesInput {
             crate::operation::DescribeInstanceRefreshes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeInstanceRefreshesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4387,8 +4450,10 @@ impl DescribeInstanceRefreshesInput {
             fn update_http_builder(
                 input: &crate::input::DescribeInstanceRefreshesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4474,7 +4539,7 @@ impl DescribeInstanceRefreshesInput {
 pub mod describe_launch_configurations_input {
 
     /// A builder for [`DescribeLaunchConfigurationsInput`](crate::input::DescribeLaunchConfigurationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) launch_configuration_names:
             std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4528,7 +4593,7 @@ pub mod describe_launch_configurations_input {
             self,
         ) -> Result<
             crate::input::DescribeLaunchConfigurationsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeLaunchConfigurationsInput {
                 launch_configuration_names: self.launch_configuration_names,
@@ -4551,13 +4616,13 @@ impl DescribeLaunchConfigurationsInput {
             crate::operation::DescribeLaunchConfigurations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeLaunchConfigurationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4565,8 +4630,10 @@ impl DescribeLaunchConfigurationsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeLaunchConfigurationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4649,7 +4716,7 @@ impl DescribeLaunchConfigurationsInput {
 pub mod describe_lifecycle_hooks_input {
 
     /// A builder for [`DescribeLifecycleHooksInput`](crate::input::DescribeLifecycleHooksInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) lifecycle_hook_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4690,8 +4757,10 @@ pub mod describe_lifecycle_hooks_input {
         /// Consumes the builder and constructs a [`DescribeLifecycleHooksInput`](crate::input::DescribeLifecycleHooksInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeLifecycleHooksInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeLifecycleHooksInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeLifecycleHooksInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
                 lifecycle_hook_names: self.lifecycle_hook_names,
@@ -4712,13 +4781,13 @@ impl DescribeLifecycleHooksInput {
             crate::operation::DescribeLifecycleHooks,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeLifecycleHooksInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4726,8 +4795,10 @@ impl DescribeLifecycleHooksInput {
             fn update_http_builder(
                 input: &crate::input::DescribeLifecycleHooksInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4813,7 +4884,7 @@ impl DescribeLifecycleHooksInput {
 pub mod describe_lifecycle_hook_types_input {
 
     /// A builder for [`DescribeLifecycleHookTypesInput`](crate::input::DescribeLifecycleHookTypesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DescribeLifecycleHookTypesInput`](crate::input::DescribeLifecycleHookTypesInput).
@@ -4821,7 +4892,7 @@ pub mod describe_lifecycle_hook_types_input {
             self,
         ) -> Result<
             crate::input::DescribeLifecycleHookTypesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeLifecycleHookTypesInput {})
         }
@@ -4840,13 +4911,13 @@ impl DescribeLifecycleHookTypesInput {
             crate::operation::DescribeLifecycleHookTypes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeLifecycleHookTypesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4854,8 +4925,10 @@ impl DescribeLifecycleHookTypesInput {
             fn update_http_builder(
                 input: &crate::input::DescribeLifecycleHookTypesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4931,7 +5004,7 @@ impl DescribeLifecycleHookTypesInput {
 pub mod describe_load_balancers_input {
 
     /// A builder for [`DescribeLoadBalancersInput`](crate::input::DescribeLoadBalancersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4974,8 +5047,10 @@ pub mod describe_load_balancers_input {
         /// Consumes the builder and constructs a [`DescribeLoadBalancersInput`](crate::input::DescribeLoadBalancersInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeLoadBalancersInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeLoadBalancersInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeLoadBalancersInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
                 next_token: self.next_token,
@@ -4997,13 +5072,13 @@ impl DescribeLoadBalancersInput {
             crate::operation::DescribeLoadBalancers,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeLoadBalancersInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5011,8 +5086,10 @@ impl DescribeLoadBalancersInput {
             fn update_http_builder(
                 input: &crate::input::DescribeLoadBalancersInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5098,7 +5175,7 @@ impl DescribeLoadBalancersInput {
 pub mod describe_load_balancer_target_groups_input {
 
     /// A builder for [`DescribeLoadBalancerTargetGroupsInput`](crate::input::DescribeLoadBalancerTargetGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5143,7 +5220,7 @@ pub mod describe_load_balancer_target_groups_input {
             self,
         ) -> Result<
             crate::input::DescribeLoadBalancerTargetGroupsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeLoadBalancerTargetGroupsInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -5166,13 +5243,13 @@ impl DescribeLoadBalancerTargetGroupsInput {
             crate::operation::DescribeLoadBalancerTargetGroups,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeLoadBalancerTargetGroupsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5180,8 +5257,10 @@ impl DescribeLoadBalancerTargetGroupsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeLoadBalancerTargetGroupsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5264,7 +5343,7 @@ impl DescribeLoadBalancerTargetGroupsInput {
 pub mod describe_metric_collection_types_input {
 
     /// A builder for [`DescribeMetricCollectionTypesInput`](crate::input::DescribeMetricCollectionTypesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DescribeMetricCollectionTypesInput`](crate::input::DescribeMetricCollectionTypesInput).
@@ -5272,7 +5351,7 @@ pub mod describe_metric_collection_types_input {
             self,
         ) -> Result<
             crate::input::DescribeMetricCollectionTypesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeMetricCollectionTypesInput {})
         }
@@ -5291,13 +5370,13 @@ impl DescribeMetricCollectionTypesInput {
             crate::operation::DescribeMetricCollectionTypes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeMetricCollectionTypesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5305,8 +5384,10 @@ impl DescribeMetricCollectionTypesInput {
             fn update_http_builder(
                 input: &crate::input::DescribeMetricCollectionTypesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5382,7 +5463,7 @@ impl DescribeMetricCollectionTypesInput {
 pub mod describe_notification_configurations_input {
 
     /// A builder for [`DescribeNotificationConfigurationsInput`](crate::input::DescribeNotificationConfigurationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_names:
             std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5434,7 +5515,7 @@ pub mod describe_notification_configurations_input {
             self,
         ) -> Result<
             crate::input::DescribeNotificationConfigurationsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeNotificationConfigurationsInput {
                 auto_scaling_group_names: self.auto_scaling_group_names,
@@ -5457,13 +5538,13 @@ impl DescribeNotificationConfigurationsInput {
             crate::operation::DescribeNotificationConfigurations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeNotificationConfigurationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5471,8 +5552,10 @@ impl DescribeNotificationConfigurationsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeNotificationConfigurationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5555,7 +5638,7 @@ impl DescribeNotificationConfigurationsInput {
 pub mod describe_policies_input {
 
     /// A builder for [`DescribePoliciesInput`](crate::input::DescribePoliciesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5640,8 +5723,10 @@ pub mod describe_policies_input {
         /// Consumes the builder and constructs a [`DescribePoliciesInput`](crate::input::DescribePoliciesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribePoliciesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribePoliciesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribePoliciesInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
                 policy_names: self.policy_names,
@@ -5665,13 +5750,13 @@ impl DescribePoliciesInput {
             crate::operation::DescribePolicies,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribePoliciesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5679,8 +5764,10 @@ impl DescribePoliciesInput {
             fn update_http_builder(
                 input: &crate::input::DescribePoliciesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5764,7 +5851,7 @@ impl DescribePoliciesInput {
 pub mod describe_scaling_activities_input {
 
     /// A builder for [`DescribeScalingActivitiesInput`](crate::input::DescribeScalingActivitiesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activity_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -5842,7 +5929,7 @@ pub mod describe_scaling_activities_input {
             self,
         ) -> Result<
             crate::input::DescribeScalingActivitiesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeScalingActivitiesInput {
                 activity_ids: self.activity_ids,
@@ -5867,13 +5954,13 @@ impl DescribeScalingActivitiesInput {
             crate::operation::DescribeScalingActivities,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeScalingActivitiesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5881,8 +5968,10 @@ impl DescribeScalingActivitiesInput {
             fn update_http_builder(
                 input: &crate::input::DescribeScalingActivitiesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5968,7 +6057,7 @@ impl DescribeScalingActivitiesInput {
 pub mod describe_scaling_process_types_input {
 
     /// A builder for [`DescribeScalingProcessTypesInput`](crate::input::DescribeScalingProcessTypesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DescribeScalingProcessTypesInput`](crate::input::DescribeScalingProcessTypesInput).
@@ -5976,7 +6065,7 @@ pub mod describe_scaling_process_types_input {
             self,
         ) -> Result<
             crate::input::DescribeScalingProcessTypesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeScalingProcessTypesInput {})
         }
@@ -5995,13 +6084,13 @@ impl DescribeScalingProcessTypesInput {
             crate::operation::DescribeScalingProcessTypes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeScalingProcessTypesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6009,8 +6098,10 @@ impl DescribeScalingProcessTypesInput {
             fn update_http_builder(
                 input: &crate::input::DescribeScalingProcessTypesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6086,7 +6177,7 @@ impl DescribeScalingProcessTypesInput {
 pub mod describe_scheduled_actions_input {
 
     /// A builder for [`DescribeScheduledActionsInput`](crate::input::DescribeScheduledActionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) scheduled_action_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6181,7 +6272,7 @@ pub mod describe_scheduled_actions_input {
             self,
         ) -> Result<
             crate::input::DescribeScheduledActionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeScheduledActionsInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -6207,13 +6298,13 @@ impl DescribeScheduledActionsInput {
             crate::operation::DescribeScheduledActions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeScheduledActionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6221,8 +6312,10 @@ impl DescribeScheduledActionsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeScheduledActionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6308,7 +6401,7 @@ impl DescribeScheduledActionsInput {
 pub mod describe_tags_input {
 
     /// A builder for [`DescribeTagsInput`](crate::input::DescribeTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -6357,7 +6450,7 @@ pub mod describe_tags_input {
         /// Consumes the builder and constructs a [`DescribeTagsInput`](crate::input::DescribeTagsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeTagsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeTagsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeTagsInput {
                 filters: self.filters,
@@ -6380,13 +6473,13 @@ impl DescribeTagsInput {
             crate::operation::DescribeTags,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeTagsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6394,8 +6487,10 @@ impl DescribeTagsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeTagsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6479,7 +6574,7 @@ impl DescribeTagsInput {
 pub mod describe_termination_policy_types_input {
 
     /// A builder for [`DescribeTerminationPolicyTypesInput`](crate::input::DescribeTerminationPolicyTypesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DescribeTerminationPolicyTypesInput`](crate::input::DescribeTerminationPolicyTypesInput).
@@ -6487,7 +6582,7 @@ pub mod describe_termination_policy_types_input {
             self,
         ) -> Result<
             crate::input::DescribeTerminationPolicyTypesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeTerminationPolicyTypesInput {})
         }
@@ -6506,13 +6601,13 @@ impl DescribeTerminationPolicyTypesInput {
             crate::operation::DescribeTerminationPolicyTypes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeTerminationPolicyTypesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6520,8 +6615,10 @@ impl DescribeTerminationPolicyTypesInput {
             fn update_http_builder(
                 input: &crate::input::DescribeTerminationPolicyTypesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6597,7 +6694,7 @@ impl DescribeTerminationPolicyTypesInput {
 pub mod describe_warm_pool_input {
 
     /// A builder for [`DescribeWarmPoolInput`](crate::input::DescribeWarmPoolInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) max_records: std::option::Option<i32>,
@@ -6640,8 +6737,10 @@ pub mod describe_warm_pool_input {
         /// Consumes the builder and constructs a [`DescribeWarmPoolInput`](crate::input::DescribeWarmPoolInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeWarmPoolInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeWarmPoolInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeWarmPoolInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
                 max_records: self.max_records,
@@ -6663,13 +6762,13 @@ impl DescribeWarmPoolInput {
             crate::operation::DescribeWarmPool,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeWarmPoolInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6677,8 +6776,10 @@ impl DescribeWarmPoolInput {
             fn update_http_builder(
                 input: &crate::input::DescribeWarmPoolInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6762,7 +6863,7 @@ impl DescribeWarmPoolInput {
 pub mod detach_instances_input {
 
     /// A builder for [`DetachInstancesInput`](crate::input::DetachInstancesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -6817,7 +6918,7 @@ pub mod detach_instances_input {
         /// Consumes the builder and constructs a [`DetachInstancesInput`](crate::input::DetachInstancesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DetachInstancesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DetachInstancesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DetachInstancesInput {
                 instance_ids: self.instance_ids,
@@ -6840,13 +6941,13 @@ impl DetachInstancesInput {
             crate::operation::DetachInstances,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DetachInstancesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6854,8 +6955,10 @@ impl DetachInstancesInput {
             fn update_http_builder(
                 input: &crate::input::DetachInstancesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6939,7 +7042,7 @@ impl DetachInstancesInput {
 pub mod detach_load_balancers_input {
 
     /// A builder for [`DetachLoadBalancersInput`](crate::input::DetachLoadBalancersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) load_balancer_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6980,8 +7083,10 @@ pub mod detach_load_balancers_input {
         /// Consumes the builder and constructs a [`DetachLoadBalancersInput`](crate::input::DetachLoadBalancersInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DetachLoadBalancersInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DetachLoadBalancersInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DetachLoadBalancersInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
                 load_balancer_names: self.load_balancer_names,
@@ -7002,13 +7107,13 @@ impl DetachLoadBalancersInput {
             crate::operation::DetachLoadBalancers,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DetachLoadBalancersInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7016,8 +7121,10 @@ impl DetachLoadBalancersInput {
             fn update_http_builder(
                 input: &crate::input::DetachLoadBalancersInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7101,7 +7208,7 @@ impl DetachLoadBalancersInput {
 pub mod detach_load_balancer_target_groups_input {
 
     /// A builder for [`DetachLoadBalancerTargetGroupsInput`](crate::input::DetachLoadBalancerTargetGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) target_group_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7144,7 +7251,7 @@ pub mod detach_load_balancer_target_groups_input {
             self,
         ) -> Result<
             crate::input::DetachLoadBalancerTargetGroupsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DetachLoadBalancerTargetGroupsInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -7166,13 +7273,13 @@ impl DetachLoadBalancerTargetGroupsInput {
             crate::operation::DetachLoadBalancerTargetGroups,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DetachLoadBalancerTargetGroupsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7180,8 +7287,10 @@ impl DetachLoadBalancerTargetGroupsInput {
             fn update_http_builder(
                 input: &crate::input::DetachLoadBalancerTargetGroupsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7264,7 +7373,7 @@ impl DetachLoadBalancerTargetGroupsInput {
 pub mod disable_metrics_collection_input {
 
     /// A builder for [`DisableMetricsCollectionInput`](crate::input::DisableMetricsCollectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) metrics: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7357,7 +7466,7 @@ pub mod disable_metrics_collection_input {
             self,
         ) -> Result<
             crate::input::DisableMetricsCollectionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DisableMetricsCollectionInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -7379,13 +7488,13 @@ impl DisableMetricsCollectionInput {
             crate::operation::DisableMetricsCollection,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisableMetricsCollectionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7393,8 +7502,10 @@ impl DisableMetricsCollectionInput {
             fn update_http_builder(
                 input: &crate::input::DisableMetricsCollectionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7480,7 +7591,7 @@ impl DisableMetricsCollectionInput {
 pub mod enable_metrics_collection_input {
 
     /// A builder for [`EnableMetricsCollectionInput`](crate::input::EnableMetricsCollectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) metrics: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7584,7 +7695,7 @@ pub mod enable_metrics_collection_input {
             self,
         ) -> Result<
             crate::input::EnableMetricsCollectionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::EnableMetricsCollectionInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -7607,13 +7718,13 @@ impl EnableMetricsCollectionInput {
             crate::operation::EnableMetricsCollection,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::EnableMetricsCollectionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7621,8 +7732,10 @@ impl EnableMetricsCollectionInput {
             fn update_http_builder(
                 input: &crate::input::EnableMetricsCollectionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7708,7 +7821,7 @@ impl EnableMetricsCollectionInput {
 pub mod enter_standby_input {
 
     /// A builder for [`EnterStandbyInput`](crate::input::EnterStandbyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -7763,7 +7876,7 @@ pub mod enter_standby_input {
         /// Consumes the builder and constructs a [`EnterStandbyInput`](crate::input::EnterStandbyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::EnterStandbyInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::EnterStandbyInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::EnterStandbyInput {
                 instance_ids: self.instance_ids,
@@ -7786,13 +7899,13 @@ impl EnterStandbyInput {
             crate::operation::EnterStandby,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::EnterStandbyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7800,8 +7913,10 @@ impl EnterStandbyInput {
             fn update_http_builder(
                 input: &crate::input::EnterStandbyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7885,7 +8000,7 @@ impl EnterStandbyInput {
 pub mod execute_policy_input {
 
     /// A builder for [`ExecutePolicyInput`](crate::input::ExecutePolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -7958,7 +8073,7 @@ pub mod execute_policy_input {
         /// Consumes the builder and constructs a [`ExecutePolicyInput`](crate::input::ExecutePolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ExecutePolicyInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ExecutePolicyInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ExecutePolicyInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -7983,13 +8098,13 @@ impl ExecutePolicyInput {
             crate::operation::ExecutePolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ExecutePolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7997,8 +8112,10 @@ impl ExecutePolicyInput {
             fn update_http_builder(
                 input: &crate::input::ExecutePolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8082,7 +8199,7 @@ impl ExecutePolicyInput {
 pub mod exit_standby_input {
 
     /// A builder for [`ExitStandbyInput`](crate::input::ExitStandbyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -8123,7 +8240,7 @@ pub mod exit_standby_input {
         /// Consumes the builder and constructs a [`ExitStandbyInput`](crate::input::ExitStandbyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ExitStandbyInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ExitStandbyInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ExitStandbyInput {
                 instance_ids: self.instance_ids,
@@ -8145,13 +8262,13 @@ impl ExitStandbyInput {
             crate::operation::ExitStandby,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ExitStandbyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -8159,8 +8276,10 @@ impl ExitStandbyInput {
             fn update_http_builder(
                 input: &crate::input::ExitStandbyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8244,7 +8363,7 @@ impl ExitStandbyInput {
 pub mod get_predictive_scaling_forecast_input {
 
     /// A builder for [`GetPredictiveScalingForecastInput`](crate::input::GetPredictiveScalingForecastInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -8308,7 +8427,7 @@ pub mod get_predictive_scaling_forecast_input {
             self,
         ) -> Result<
             crate::input::GetPredictiveScalingForecastInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetPredictiveScalingForecastInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -8332,13 +8451,13 @@ impl GetPredictiveScalingForecastInput {
             crate::operation::GetPredictiveScalingForecast,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetPredictiveScalingForecastInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -8346,8 +8465,10 @@ impl GetPredictiveScalingForecastInput {
             fn update_http_builder(
                 input: &crate::input::GetPredictiveScalingForecastInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8430,7 +8551,7 @@ impl GetPredictiveScalingForecastInput {
 pub mod put_lifecycle_hook_input {
 
     /// A builder for [`PutLifecycleHookInput`](crate::input::PutLifecycleHookInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lifecycle_hook_name: std::option::Option<std::string::String>,
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -8563,8 +8684,10 @@ pub mod put_lifecycle_hook_input {
         /// Consumes the builder and constructs a [`PutLifecycleHookInput`](crate::input::PutLifecycleHookInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutLifecycleHookInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutLifecycleHookInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutLifecycleHookInput {
                 lifecycle_hook_name: self.lifecycle_hook_name,
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -8591,13 +8714,13 @@ impl PutLifecycleHookInput {
             crate::operation::PutLifecycleHook,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutLifecycleHookInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -8605,8 +8728,10 @@ impl PutLifecycleHookInput {
             fn update_http_builder(
                 input: &crate::input::PutLifecycleHookInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8690,7 +8815,7 @@ impl PutLifecycleHookInput {
 pub mod put_notification_configuration_input {
 
     /// A builder for [`PutNotificationConfigurationInput`](crate::input::PutNotificationConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) topic_arn: std::option::Option<std::string::String>,
@@ -8744,7 +8869,7 @@ pub mod put_notification_configuration_input {
             self,
         ) -> Result<
             crate::input::PutNotificationConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::PutNotificationConfigurationInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -8767,13 +8892,13 @@ impl PutNotificationConfigurationInput {
             crate::operation::PutNotificationConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutNotificationConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -8781,8 +8906,10 @@ impl PutNotificationConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::PutNotificationConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8865,7 +8992,7 @@ impl PutNotificationConfigurationInput {
 pub mod put_scaling_policy_input {
 
     /// A builder for [`PutScalingPolicyInput`](crate::input::PutScalingPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -9123,8 +9250,10 @@ pub mod put_scaling_policy_input {
         /// Consumes the builder and constructs a [`PutScalingPolicyInput`](crate::input::PutScalingPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutScalingPolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutScalingPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutScalingPolicyInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
                 policy_name: self.policy_name,
@@ -9157,13 +9286,13 @@ impl PutScalingPolicyInput {
             crate::operation::PutScalingPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutScalingPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -9171,8 +9300,10 @@ impl PutScalingPolicyInput {
             fn update_http_builder(
                 input: &crate::input::PutScalingPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -9256,7 +9387,7 @@ impl PutScalingPolicyInput {
 pub mod put_scheduled_update_group_action_input {
 
     /// A builder for [`PutScheduledUpdateGroupActionInput`](crate::input::PutScheduledUpdateGroupActionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) scheduled_action_name: std::option::Option<std::string::String>,
@@ -9399,7 +9530,7 @@ pub mod put_scheduled_update_group_action_input {
             self,
         ) -> Result<
             crate::input::PutScheduledUpdateGroupActionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::PutScheduledUpdateGroupActionInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -9429,13 +9560,13 @@ impl PutScheduledUpdateGroupActionInput {
             crate::operation::PutScheduledUpdateGroupAction,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutScheduledUpdateGroupActionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -9443,8 +9574,10 @@ impl PutScheduledUpdateGroupActionInput {
             fn update_http_builder(
                 input: &crate::input::PutScheduledUpdateGroupActionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -9527,7 +9660,7 @@ impl PutScheduledUpdateGroupActionInput {
 pub mod put_warm_pool_input {
 
     /// A builder for [`PutWarmPoolInput`](crate::input::PutWarmPoolInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) max_group_prepared_capacity: std::option::Option<i32>,
@@ -9606,7 +9739,7 @@ pub mod put_warm_pool_input {
         /// Consumes the builder and constructs a [`PutWarmPoolInput`](crate::input::PutWarmPoolInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutWarmPoolInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::PutWarmPoolInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::PutWarmPoolInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -9631,13 +9764,13 @@ impl PutWarmPoolInput {
             crate::operation::PutWarmPool,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutWarmPoolInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -9645,8 +9778,10 @@ impl PutWarmPoolInput {
             fn update_http_builder(
                 input: &crate::input::PutWarmPoolInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -9730,7 +9865,7 @@ impl PutWarmPoolInput {
 pub mod record_lifecycle_action_heartbeat_input {
 
     /// A builder for [`RecordLifecycleActionHeartbeatInput`](crate::input::RecordLifecycleActionHeartbeatInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lifecycle_hook_name: std::option::Option<std::string::String>,
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -9792,7 +9927,7 @@ pub mod record_lifecycle_action_heartbeat_input {
             self,
         ) -> Result<
             crate::input::RecordLifecycleActionHeartbeatInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::RecordLifecycleActionHeartbeatInput {
                 lifecycle_hook_name: self.lifecycle_hook_name,
@@ -9816,13 +9951,13 @@ impl RecordLifecycleActionHeartbeatInput {
             crate::operation::RecordLifecycleActionHeartbeat,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RecordLifecycleActionHeartbeatInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -9830,8 +9965,10 @@ impl RecordLifecycleActionHeartbeatInput {
             fn update_http_builder(
                 input: &crate::input::RecordLifecycleActionHeartbeatInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -9914,7 +10051,7 @@ impl RecordLifecycleActionHeartbeatInput {
 pub mod resume_processes_input {
 
     /// A builder for [`ResumeProcessesInput`](crate::input::ResumeProcessesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) scaling_processes: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9979,7 +10116,7 @@ pub mod resume_processes_input {
         /// Consumes the builder and constructs a [`ResumeProcessesInput`](crate::input::ResumeProcessesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ResumeProcessesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ResumeProcessesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ResumeProcessesInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -10001,13 +10138,13 @@ impl ResumeProcessesInput {
             crate::operation::ResumeProcesses,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ResumeProcessesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -10015,8 +10152,10 @@ impl ResumeProcessesInput {
             fn update_http_builder(
                 input: &crate::input::ResumeProcessesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -10100,7 +10239,7 @@ impl ResumeProcessesInput {
 pub mod set_desired_capacity_input {
 
     /// A builder for [`SetDesiredCapacityInput`](crate::input::SetDesiredCapacityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) desired_capacity: std::option::Option<i32>,
@@ -10143,8 +10282,10 @@ pub mod set_desired_capacity_input {
         /// Consumes the builder and constructs a [`SetDesiredCapacityInput`](crate::input::SetDesiredCapacityInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SetDesiredCapacityInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::SetDesiredCapacityInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::SetDesiredCapacityInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
                 desired_capacity: self.desired_capacity,
@@ -10166,13 +10307,13 @@ impl SetDesiredCapacityInput {
             crate::operation::SetDesiredCapacity,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SetDesiredCapacityInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -10180,8 +10321,10 @@ impl SetDesiredCapacityInput {
             fn update_http_builder(
                 input: &crate::input::SetDesiredCapacityInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -10265,7 +10408,7 @@ impl SetDesiredCapacityInput {
 pub mod set_instance_health_input {
 
     /// A builder for [`SetInstanceHealthInput`](crate::input::SetInstanceHealthInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
         pub(crate) health_status: std::option::Option<std::string::String>,
@@ -10310,8 +10453,10 @@ pub mod set_instance_health_input {
         /// Consumes the builder and constructs a [`SetInstanceHealthInput`](crate::input::SetInstanceHealthInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SetInstanceHealthInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::SetInstanceHealthInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::SetInstanceHealthInput {
                 instance_id: self.instance_id,
                 health_status: self.health_status,
@@ -10333,13 +10478,13 @@ impl SetInstanceHealthInput {
             crate::operation::SetInstanceHealth,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SetInstanceHealthInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -10347,8 +10492,10 @@ impl SetInstanceHealthInput {
             fn update_http_builder(
                 input: &crate::input::SetInstanceHealthInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -10432,7 +10579,7 @@ impl SetInstanceHealthInput {
 pub mod set_instance_protection_input {
 
     /// A builder for [`SetInstanceProtectionInput`](crate::input::SetInstanceProtectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -10484,8 +10631,10 @@ pub mod set_instance_protection_input {
         /// Consumes the builder and constructs a [`SetInstanceProtectionInput`](crate::input::SetInstanceProtectionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SetInstanceProtectionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::SetInstanceProtectionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::SetInstanceProtectionInput {
                 instance_ids: self.instance_ids,
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -10507,13 +10656,13 @@ impl SetInstanceProtectionInput {
             crate::operation::SetInstanceProtection,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SetInstanceProtectionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -10521,8 +10670,10 @@ impl SetInstanceProtectionInput {
             fn update_http_builder(
                 input: &crate::input::SetInstanceProtectionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -10608,7 +10759,7 @@ impl SetInstanceProtectionInput {
 pub mod start_instance_refresh_input {
 
     /// A builder for [`StartInstanceRefreshInput`](crate::input::StartInstanceRefreshInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) strategy: std::option::Option<crate::model::RefreshStrategy>,
@@ -10679,8 +10830,10 @@ pub mod start_instance_refresh_input {
         /// Consumes the builder and constructs a [`StartInstanceRefreshInput`](crate::input::StartInstanceRefreshInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StartInstanceRefreshInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::StartInstanceRefreshInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::StartInstanceRefreshInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
                 strategy: self.strategy,
@@ -10703,13 +10856,13 @@ impl StartInstanceRefreshInput {
             crate::operation::StartInstanceRefresh,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StartInstanceRefreshInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -10717,8 +10870,10 @@ impl StartInstanceRefreshInput {
             fn update_http_builder(
                 input: &crate::input::StartInstanceRefreshInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -10804,7 +10959,7 @@ impl StartInstanceRefreshInput {
 pub mod suspend_processes_input {
 
     /// A builder for [`SuspendProcessesInput`](crate::input::SuspendProcessesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) scaling_processes: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10869,8 +11024,10 @@ pub mod suspend_processes_input {
         /// Consumes the builder and constructs a [`SuspendProcessesInput`](crate::input::SuspendProcessesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SuspendProcessesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::SuspendProcessesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::SuspendProcessesInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
                 scaling_processes: self.scaling_processes,
@@ -10891,13 +11048,13 @@ impl SuspendProcessesInput {
             crate::operation::SuspendProcesses,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SuspendProcessesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -10905,8 +11062,10 @@ impl SuspendProcessesInput {
             fn update_http_builder(
                 input: &crate::input::SuspendProcessesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -10990,7 +11149,7 @@ impl SuspendProcessesInput {
 pub mod terminate_instance_in_auto_scaling_group_input {
 
     /// A builder for [`TerminateInstanceInAutoScalingGroupInput`](crate::input::TerminateInstanceInAutoScalingGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
         pub(crate) should_decrement_desired_capacity: std::option::Option<bool>,
@@ -11024,7 +11183,7 @@ pub mod terminate_instance_in_auto_scaling_group_input {
             self,
         ) -> Result<
             crate::input::TerminateInstanceInAutoScalingGroupInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::TerminateInstanceInAutoScalingGroupInput {
                 instance_id: self.instance_id,
@@ -11046,13 +11205,13 @@ impl TerminateInstanceInAutoScalingGroupInput {
             crate::operation::TerminateInstanceInAutoScalingGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TerminateInstanceInAutoScalingGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -11060,8 +11219,10 @@ impl TerminateInstanceInAutoScalingGroupInput {
             fn update_http_builder(
                 input: &crate::input::TerminateInstanceInAutoScalingGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -11144,7 +11305,7 @@ impl TerminateInstanceInAutoScalingGroupInput {
 pub mod update_auto_scaling_group_input {
 
     /// A builder for [`UpdateAutoScalingGroupInput`](crate::input::UpdateAutoScalingGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) launch_configuration_name: std::option::Option<std::string::String>,
@@ -11452,8 +11613,10 @@ pub mod update_auto_scaling_group_input {
         /// Consumes the builder and constructs a [`UpdateAutoScalingGroupInput`](crate::input::UpdateAutoScalingGroupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateAutoScalingGroupInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateAutoScalingGroupInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateAutoScalingGroupInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
                 launch_configuration_name: self.launch_configuration_name,
@@ -11493,13 +11656,13 @@ impl UpdateAutoScalingGroupInput {
             crate::operation::UpdateAutoScalingGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateAutoScalingGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -11507,8 +11670,10 @@ impl UpdateAutoScalingGroupInput {
             fn update_http_builder(
                 input: &crate::input::UpdateAutoScalingGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -11592,7 +11757,7 @@ impl UpdateAutoScalingGroupInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAutoScalingGroupInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -11770,40 +11935,10 @@ impl UpdateAutoScalingGroupInput {
         self.default_instance_warmup
     }
 }
-impl std::fmt::Debug for UpdateAutoScalingGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAutoScalingGroupInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("launch_configuration_name", &self.launch_configuration_name);
-        formatter.field("launch_template", &self.launch_template);
-        formatter.field("mixed_instances_policy", &self.mixed_instances_policy);
-        formatter.field("min_size", &self.min_size);
-        formatter.field("max_size", &self.max_size);
-        formatter.field("desired_capacity", &self.desired_capacity);
-        formatter.field("default_cooldown", &self.default_cooldown);
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.field("health_check_type", &self.health_check_type);
-        formatter.field("health_check_grace_period", &self.health_check_grace_period);
-        formatter.field("placement_group", &self.placement_group);
-        formatter.field("vpc_zone_identifier", &self.vpc_zone_identifier);
-        formatter.field("termination_policies", &self.termination_policies);
-        formatter.field(
-            "new_instances_protected_from_scale_in",
-            &self.new_instances_protected_from_scale_in,
-        );
-        formatter.field("service_linked_role_arn", &self.service_linked_role_arn);
-        formatter.field("max_instance_lifetime", &self.max_instance_lifetime);
-        formatter.field("capacity_rebalance", &self.capacity_rebalance);
-        formatter.field("context", &self.context);
-        formatter.field("desired_capacity_type", &self.desired_capacity_type);
-        formatter.field("default_instance_warmup", &self.default_instance_warmup);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TerminateInstanceInAutoScalingGroupInput {
     /// <p>The ID of the instance.</p>
     #[doc(hidden)]
@@ -11822,21 +11957,10 @@ impl TerminateInstanceInAutoScalingGroupInput {
         self.should_decrement_desired_capacity
     }
 }
-impl std::fmt::Debug for TerminateInstanceInAutoScalingGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TerminateInstanceInAutoScalingGroupInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field(
-            "should_decrement_desired_capacity",
-            &self.should_decrement_desired_capacity,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SuspendProcessesInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -11879,18 +12003,10 @@ impl SuspendProcessesInput {
         self.scaling_processes.as_deref()
     }
 }
-impl std::fmt::Debug for SuspendProcessesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SuspendProcessesInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("scaling_processes", &self.scaling_processes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartInstanceRefreshInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -11933,20 +12049,10 @@ impl StartInstanceRefreshInput {
         self.preferences.as_ref()
     }
 }
-impl std::fmt::Debug for StartInstanceRefreshInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartInstanceRefreshInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("strategy", &self.strategy);
-        formatter.field("desired_configuration", &self.desired_configuration);
-        formatter.field("preferences", &self.preferences);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetInstanceProtectionInput {
     /// <p>One or more instance IDs. You can specify up to 50 instances.</p>
     #[doc(hidden)]
@@ -11972,19 +12078,10 @@ impl SetInstanceProtectionInput {
         self.protected_from_scale_in
     }
 }
-impl std::fmt::Debug for SetInstanceProtectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetInstanceProtectionInput");
-        formatter.field("instance_ids", &self.instance_ids);
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("protected_from_scale_in", &self.protected_from_scale_in);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetInstanceHealthInput {
     /// <p>The ID of the instance.</p>
     #[doc(hidden)]
@@ -12012,22 +12109,10 @@ impl SetInstanceHealthInput {
         self.should_respect_grace_period
     }
 }
-impl std::fmt::Debug for SetInstanceHealthInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetInstanceHealthInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("health_status", &self.health_status);
-        formatter.field(
-            "should_respect_grace_period",
-            &self.should_respect_grace_period,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetDesiredCapacityInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -12053,19 +12138,10 @@ impl SetDesiredCapacityInput {
         self.honor_cooldown
     }
 }
-impl std::fmt::Debug for SetDesiredCapacityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetDesiredCapacityInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("desired_capacity", &self.desired_capacity);
-        formatter.field("honor_cooldown", &self.honor_cooldown);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResumeProcessesInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -12108,18 +12184,10 @@ impl ResumeProcessesInput {
         self.scaling_processes.as_deref()
     }
 }
-impl std::fmt::Debug for ResumeProcessesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResumeProcessesInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("scaling_processes", &self.scaling_processes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecordLifecycleActionHeartbeatInput {
     /// <p>The name of the lifecycle hook.</p>
     #[doc(hidden)]
@@ -12152,20 +12220,10 @@ impl RecordLifecycleActionHeartbeatInput {
         self.instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for RecordLifecycleActionHeartbeatInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecordLifecycleActionHeartbeatInput");
-        formatter.field("lifecycle_hook_name", &self.lifecycle_hook_name);
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("lifecycle_action_token", &self.lifecycle_action_token);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutWarmPoolInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -12213,24 +12271,10 @@ impl PutWarmPoolInput {
         self.instance_reuse_policy.as_ref()
     }
 }
-impl std::fmt::Debug for PutWarmPoolInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutWarmPoolInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field(
-            "max_group_prepared_capacity",
-            &self.max_group_prepared_capacity,
-        );
-        formatter.field("min_size", &self.min_size);
-        formatter.field("pool_state", &self.pool_state);
-        formatter.field("instance_reuse_policy", &self.instance_reuse_policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutScheduledUpdateGroupActionInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -12317,26 +12361,10 @@ impl PutScheduledUpdateGroupActionInput {
         self.time_zone.as_deref()
     }
 }
-impl std::fmt::Debug for PutScheduledUpdateGroupActionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutScheduledUpdateGroupActionInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("scheduled_action_name", &self.scheduled_action_name);
-        formatter.field("time", &self.time);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("recurrence", &self.recurrence);
-        formatter.field("min_size", &self.min_size);
-        formatter.field("max_size", &self.max_size);
-        formatter.field("desired_capacity", &self.desired_capacity);
-        formatter.field("time_zone", &self.time_zone);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutScalingPolicyInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -12509,36 +12537,10 @@ impl PutScalingPolicyInput {
         self.predictive_scaling_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for PutScalingPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutScalingPolicyInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("policy_type", &self.policy_type);
-        formatter.field("adjustment_type", &self.adjustment_type);
-        formatter.field("min_adjustment_step", &self.min_adjustment_step);
-        formatter.field("min_adjustment_magnitude", &self.min_adjustment_magnitude);
-        formatter.field("scaling_adjustment", &self.scaling_adjustment);
-        formatter.field("cooldown", &self.cooldown);
-        formatter.field("metric_aggregation_type", &self.metric_aggregation_type);
-        formatter.field("step_adjustments", &self.step_adjustments);
-        formatter.field("estimated_instance_warmup", &self.estimated_instance_warmup);
-        formatter.field(
-            "target_tracking_configuration",
-            &self.target_tracking_configuration,
-        );
-        formatter.field("enabled", &self.enabled);
-        formatter.field(
-            "predictive_scaling_configuration",
-            &self.predictive_scaling_configuration,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutNotificationConfigurationInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -12564,19 +12566,10 @@ impl PutNotificationConfigurationInput {
         self.notification_types.as_deref()
     }
 }
-impl std::fmt::Debug for PutNotificationConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutNotificationConfigurationInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("topic_arn", &self.topic_arn);
-        formatter.field("notification_types", &self.notification_types);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutLifecycleHookInput {
     /// <p>The name of the lifecycle hook.</p>
     #[doc(hidden)]
@@ -12657,24 +12650,10 @@ impl PutLifecycleHookInput {
         self.default_result.as_deref()
     }
 }
-impl std::fmt::Debug for PutLifecycleHookInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutLifecycleHookInput");
-        formatter.field("lifecycle_hook_name", &self.lifecycle_hook_name);
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("lifecycle_transition", &self.lifecycle_transition);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("notification_target_arn", &self.notification_target_arn);
-        formatter.field("notification_metadata", &self.notification_metadata);
-        formatter.field("heartbeat_timeout", &self.heartbeat_timeout);
-        formatter.field("default_result", &self.default_result);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPredictiveScalingForecastInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -12709,20 +12688,10 @@ impl GetPredictiveScalingForecastInput {
         self.end_time.as_ref()
     }
 }
-impl std::fmt::Debug for GetPredictiveScalingForecastInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPredictiveScalingForecastInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExitStandbyInput {
     /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
     #[doc(hidden)]
@@ -12741,18 +12710,10 @@ impl ExitStandbyInput {
         self.auto_scaling_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for ExitStandbyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExitStandbyInput");
-        formatter.field("instance_ids", &self.instance_ids);
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecutePolicyInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -12800,21 +12761,10 @@ impl ExecutePolicyInput {
         self.breach_threshold
     }
 }
-impl std::fmt::Debug for ExecutePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecutePolicyInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("honor_cooldown", &self.honor_cooldown);
-        formatter.field("metric_value", &self.metric_value);
-        formatter.field("breach_threshold", &self.breach_threshold);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnterStandbyInput {
     /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
     #[doc(hidden)]
@@ -12840,22 +12790,10 @@ impl EnterStandbyInput {
         self.should_decrement_desired_capacity
     }
 }
-impl std::fmt::Debug for EnterStandbyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnterStandbyInput");
-        formatter.field("instance_ids", &self.instance_ids);
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field(
-            "should_decrement_desired_capacity",
-            &self.should_decrement_desired_capacity,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableMetricsCollectionInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -12931,19 +12869,10 @@ impl EnableMetricsCollectionInput {
         self.granularity.as_deref()
     }
 }
-impl std::fmt::Debug for EnableMetricsCollectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableMetricsCollectionInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("metrics", &self.metrics);
-        formatter.field("granularity", &self.granularity);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableMetricsCollectionInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -13012,18 +12941,10 @@ impl DisableMetricsCollectionInput {
         self.metrics.as_deref()
     }
 }
-impl std::fmt::Debug for DisableMetricsCollectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableMetricsCollectionInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("metrics", &self.metrics);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetachLoadBalancerTargetGroupsInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -13042,18 +12963,10 @@ impl DetachLoadBalancerTargetGroupsInput {
         self.target_group_ar_ns.as_deref()
     }
 }
-impl std::fmt::Debug for DetachLoadBalancerTargetGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetachLoadBalancerTargetGroupsInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("target_group_ar_ns", &self.target_group_ar_ns);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetachLoadBalancersInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -13072,18 +12985,10 @@ impl DetachLoadBalancersInput {
         self.load_balancer_names.as_deref()
     }
 }
-impl std::fmt::Debug for DetachLoadBalancersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetachLoadBalancersInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("load_balancer_names", &self.load_balancer_names);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetachInstancesInput {
     /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
     #[doc(hidden)]
@@ -13109,22 +13014,10 @@ impl DetachInstancesInput {
         self.should_decrement_desired_capacity
     }
 }
-impl std::fmt::Debug for DetachInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetachInstancesInput");
-        formatter.field("instance_ids", &self.instance_ids);
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field(
-            "should_decrement_desired_capacity",
-            &self.should_decrement_desired_capacity,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeWarmPoolInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -13150,30 +13043,15 @@ impl DescribeWarmPoolInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeWarmPoolInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeWarmPoolInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTerminationPolicyTypesInput {}
-impl std::fmt::Debug for DescribeTerminationPolicyTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTerminationPolicyTypesInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTagsInput {
     /// <p>One or more filters to scope the tags to return. The maximum number of filters per filter type (for example, <code>auto-scaling-group</code>) is 1000.</p>
     #[doc(hidden)]
@@ -13199,19 +13077,10 @@ impl DescribeTagsInput {
         self.max_records
     }
 }
-impl std::fmt::Debug for DescribeTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTagsInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_records", &self.max_records);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeScheduledActionsInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -13260,33 +13129,15 @@ impl DescribeScheduledActionsInput {
         self.max_records
     }
 }
-impl std::fmt::Debug for DescribeScheduledActionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeScheduledActionsInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("scheduled_action_names", &self.scheduled_action_names);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_records", &self.max_records);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeScalingProcessTypesInput {}
-impl std::fmt::Debug for DescribeScalingProcessTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeScalingProcessTypesInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeScalingActivitiesInput {
     /// <p>The activity IDs of the desired scaling activities. If you omit this property, all activities for the past six weeks are described. If unknown activities are requested, they are ignored with no error. If you specify an Auto Scaling group, the results are limited to that group.</p>
     /// <p>Array Members: Maximum number of 50 IDs.</p>
@@ -13328,21 +13179,10 @@ impl DescribeScalingActivitiesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeScalingActivitiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeScalingActivitiesInput");
-        formatter.field("activity_ids", &self.activity_ids);
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("include_deleted_groups", &self.include_deleted_groups);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePoliciesInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -13384,21 +13224,10 @@ impl DescribePoliciesInput {
         self.max_records
     }
 }
-impl std::fmt::Debug for DescribePoliciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePoliciesInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("policy_names", &self.policy_names);
-        formatter.field("policy_types", &self.policy_types);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_records", &self.max_records);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeNotificationConfigurationsInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -13424,30 +13253,15 @@ impl DescribeNotificationConfigurationsInput {
         self.max_records
     }
 }
-impl std::fmt::Debug for DescribeNotificationConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeNotificationConfigurationsInput");
-        formatter.field("auto_scaling_group_names", &self.auto_scaling_group_names);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_records", &self.max_records);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMetricCollectionTypesInput {}
-impl std::fmt::Debug for DescribeMetricCollectionTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMetricCollectionTypesInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLoadBalancerTargetGroupsInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -13473,19 +13287,10 @@ impl DescribeLoadBalancerTargetGroupsInput {
         self.max_records
     }
 }
-impl std::fmt::Debug for DescribeLoadBalancerTargetGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLoadBalancerTargetGroupsInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_records", &self.max_records);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLoadBalancersInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -13511,30 +13316,15 @@ impl DescribeLoadBalancersInput {
         self.max_records
     }
 }
-impl std::fmt::Debug for DescribeLoadBalancersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLoadBalancersInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_records", &self.max_records);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLifecycleHookTypesInput {}
-impl std::fmt::Debug for DescribeLifecycleHookTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLifecycleHookTypesInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLifecycleHooksInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -13553,18 +13343,10 @@ impl DescribeLifecycleHooksInput {
         self.lifecycle_hook_names.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLifecycleHooksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLifecycleHooksInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("lifecycle_hook_names", &self.lifecycle_hook_names);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLaunchConfigurationsInput {
     /// <p>The launch configuration names. If you omit this property, all launch configurations are described.</p>
     /// <p>Array Members: Maximum number of 50 items.</p>
@@ -13592,22 +13374,10 @@ impl DescribeLaunchConfigurationsInput {
         self.max_records
     }
 }
-impl std::fmt::Debug for DescribeLaunchConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLaunchConfigurationsInput");
-        formatter.field(
-            "launch_configuration_names",
-            &self.launch_configuration_names,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_records", &self.max_records);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInstanceRefreshesInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -13640,31 +13410,15 @@ impl DescribeInstanceRefreshesInput {
         self.max_records
     }
 }
-impl std::fmt::Debug for DescribeInstanceRefreshesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInstanceRefreshesInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("instance_refresh_ids", &self.instance_refresh_ids);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_records", &self.max_records);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAutoScalingNotificationTypesInput {}
-impl std::fmt::Debug for DescribeAutoScalingNotificationTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAutoScalingNotificationTypesInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAutoScalingInstancesInput {
     /// <p>The IDs of the instances. If you omit this property, all Auto Scaling instances are described. If you specify an ID that does not exist, it is ignored with no error.</p>
     /// <p>Array Members: Maximum number of 50 items.</p>
@@ -13692,19 +13446,10 @@ impl DescribeAutoScalingInstancesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAutoScalingInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAutoScalingInstancesInput");
-        formatter.field("instance_ids", &self.instance_ids);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAutoScalingGroupsInput {
     /// <p>The names of the Auto Scaling groups. By default, you can only specify up to 50 names. You can optionally increase this limit using the <code>MaxRecords</code> property.</p>
     /// <p>If you omit this property, all Auto Scaling groups are described.</p>
@@ -13739,42 +13484,20 @@ impl DescribeAutoScalingGroupsInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAutoScalingGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAutoScalingGroupsInput");
-        formatter.field("auto_scaling_group_names", &self.auto_scaling_group_names);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAdjustmentTypesInput {}
-impl std::fmt::Debug for DescribeAdjustmentTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAdjustmentTypesInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAccountLimitsInput {}
-impl std::fmt::Debug for DescribeAccountLimitsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAccountLimitsInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWarmPoolInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -13793,18 +13516,10 @@ impl DeleteWarmPoolInput {
         self.force_delete
     }
 }
-impl std::fmt::Debug for DeleteWarmPoolInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWarmPoolInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("force_delete", &self.force_delete);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTagsInput {
     /// <p>One or more tags.</p>
     #[doc(hidden)]
@@ -13816,17 +13531,10 @@ impl DeleteTagsInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTagsInput");
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteScheduledActionInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -13845,18 +13553,10 @@ impl DeleteScheduledActionInput {
         self.scheduled_action_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteScheduledActionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteScheduledActionInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("scheduled_action_name", &self.scheduled_action_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePolicyInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -13875,18 +13575,10 @@ impl DeletePolicyInput {
         self.policy_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePolicyInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("policy_name", &self.policy_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteNotificationConfigurationInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -13905,18 +13597,10 @@ impl DeleteNotificationConfigurationInput {
         self.topic_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteNotificationConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteNotificationConfigurationInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("topic_arn", &self.topic_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLifecycleHookInput {
     /// <p>The name of the lifecycle hook.</p>
     #[doc(hidden)]
@@ -13935,18 +13619,10 @@ impl DeleteLifecycleHookInput {
         self.auto_scaling_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLifecycleHookInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLifecycleHookInput");
-        formatter.field("lifecycle_hook_name", &self.lifecycle_hook_name);
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLaunchConfigurationInput {
     /// <p>The name of the launch configuration.</p>
     #[doc(hidden)]
@@ -13958,17 +13634,10 @@ impl DeleteLaunchConfigurationInput {
         self.launch_configuration_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLaunchConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLaunchConfigurationInput");
-        formatter.field("launch_configuration_name", &self.launch_configuration_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAutoScalingGroupInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -13987,18 +13656,10 @@ impl DeleteAutoScalingGroupInput {
         self.force_delete
     }
 }
-impl std::fmt::Debug for DeleteAutoScalingGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAutoScalingGroupInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("force_delete", &self.force_delete);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateOrUpdateTagsInput {
     /// <p>One or more tags.</p>
     #[doc(hidden)]
@@ -14010,17 +13671,10 @@ impl CreateOrUpdateTagsInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateOrUpdateTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateOrUpdateTagsInput");
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLaunchConfigurationInput {
     /// <p>The name of the launch configuration. This name must be unique per Region per account.</p>
     #[doc(hidden)]
@@ -14204,41 +13858,10 @@ impl CreateLaunchConfigurationInput {
         self.metadata_options.as_ref()
     }
 }
-impl std::fmt::Debug for CreateLaunchConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLaunchConfigurationInput");
-        formatter.field("launch_configuration_name", &self.launch_configuration_name);
-        formatter.field("image_id", &self.image_id);
-        formatter.field("key_name", &self.key_name);
-        formatter.field("security_groups", &self.security_groups);
-        formatter.field("classic_link_vpc_id", &self.classic_link_vpc_id);
-        formatter.field(
-            "classic_link_vpc_security_groups",
-            &self.classic_link_vpc_security_groups,
-        );
-        formatter.field("user_data", &self.user_data);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("kernel_id", &self.kernel_id);
-        formatter.field("ramdisk_id", &self.ramdisk_id);
-        formatter.field("block_device_mappings", &self.block_device_mappings);
-        formatter.field("instance_monitoring", &self.instance_monitoring);
-        formatter.field("spot_price", &self.spot_price);
-        formatter.field("iam_instance_profile", &self.iam_instance_profile);
-        formatter.field("ebs_optimized", &self.ebs_optimized);
-        formatter.field(
-            "associate_public_ip_address",
-            &self.associate_public_ip_address,
-        );
-        formatter.field("placement_tenancy", &self.placement_tenancy);
-        formatter.field("metadata_options", &self.metadata_options);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAutoScalingGroupInput {
     /// <p>The name of the Auto Scaling group. This name must be unique per Region per account.</p>
     #[doc(hidden)]
@@ -14470,48 +14093,10 @@ impl CreateAutoScalingGroupInput {
         self.default_instance_warmup
     }
 }
-impl std::fmt::Debug for CreateAutoScalingGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAutoScalingGroupInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("launch_configuration_name", &self.launch_configuration_name);
-        formatter.field("launch_template", &self.launch_template);
-        formatter.field("mixed_instances_policy", &self.mixed_instances_policy);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("min_size", &self.min_size);
-        formatter.field("max_size", &self.max_size);
-        formatter.field("desired_capacity", &self.desired_capacity);
-        formatter.field("default_cooldown", &self.default_cooldown);
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.field("load_balancer_names", &self.load_balancer_names);
-        formatter.field("target_group_ar_ns", &self.target_group_ar_ns);
-        formatter.field("health_check_type", &self.health_check_type);
-        formatter.field("health_check_grace_period", &self.health_check_grace_period);
-        formatter.field("placement_group", &self.placement_group);
-        formatter.field("vpc_zone_identifier", &self.vpc_zone_identifier);
-        formatter.field("termination_policies", &self.termination_policies);
-        formatter.field(
-            "new_instances_protected_from_scale_in",
-            &self.new_instances_protected_from_scale_in,
-        );
-        formatter.field("capacity_rebalance", &self.capacity_rebalance);
-        formatter.field(
-            "lifecycle_hook_specification_list",
-            &self.lifecycle_hook_specification_list,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.field("service_linked_role_arn", &self.service_linked_role_arn);
-        formatter.field("max_instance_lifetime", &self.max_instance_lifetime);
-        formatter.field("context", &self.context);
-        formatter.field("desired_capacity_type", &self.desired_capacity_type);
-        formatter.field("default_instance_warmup", &self.default_instance_warmup);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CompleteLifecycleActionInput {
     /// <p>The name of the lifecycle hook.</p>
     #[doc(hidden)]
@@ -14551,21 +14136,10 @@ impl CompleteLifecycleActionInput {
         self.instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for CompleteLifecycleActionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CompleteLifecycleActionInput");
-        formatter.field("lifecycle_hook_name", &self.lifecycle_hook_name);
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("lifecycle_action_token", &self.lifecycle_action_token);
-        formatter.field("lifecycle_action_result", &self.lifecycle_action_result);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelInstanceRefreshInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -14577,17 +14151,10 @@ impl CancelInstanceRefreshInput {
         self.auto_scaling_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for CancelInstanceRefreshInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelInstanceRefreshInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchPutScheduledUpdateGroupActionInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -14609,21 +14176,10 @@ impl BatchPutScheduledUpdateGroupActionInput {
         self.scheduled_update_group_actions.as_deref()
     }
 }
-impl std::fmt::Debug for BatchPutScheduledUpdateGroupActionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchPutScheduledUpdateGroupActionInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field(
-            "scheduled_update_group_actions",
-            &self.scheduled_update_group_actions,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDeleteScheduledActionInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -14642,18 +14198,10 @@ impl BatchDeleteScheduledActionInput {
         self.scheduled_action_names.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDeleteScheduledActionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDeleteScheduledActionInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("scheduled_action_names", &self.scheduled_action_names);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachLoadBalancerTargetGroupsInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -14672,18 +14220,10 @@ impl AttachLoadBalancerTargetGroupsInput {
         self.target_group_ar_ns.as_deref()
     }
 }
-impl std::fmt::Debug for AttachLoadBalancerTargetGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachLoadBalancerTargetGroupsInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("target_group_ar_ns", &self.target_group_ar_ns);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachLoadBalancersInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -14702,18 +14242,10 @@ impl AttachLoadBalancersInput {
         self.load_balancer_names.as_deref()
     }
 }
-impl std::fmt::Debug for AttachLoadBalancersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachLoadBalancersInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("load_balancer_names", &self.load_balancer_names);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachInstancesInput {
     /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
     #[doc(hidden)]
@@ -14730,13 +14262,5 @@ impl AttachInstancesInput {
     /// <p>The name of the Auto Scaling group.</p>
     pub fn auto_scaling_group_name(&self) -> std::option::Option<&str> {
         self.auto_scaling_group_name.as_deref()
-    }
-}
-impl std::fmt::Debug for AttachInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachInstancesInput");
-        formatter.field("instance_ids", &self.instance_ids);
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.finish()
     }
 }

@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod analyze_document_input {
 
     /// A builder for [`AnalyzeDocumentInput`](crate::input::AnalyzeDocumentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document: std::option::Option<crate::model::Document>,
         pub(crate) feature_types: std::option::Option<std::vec::Vec<crate::model::FeatureType>>,
@@ -73,7 +73,7 @@ pub mod analyze_document_input {
         /// Consumes the builder and constructs a [`AnalyzeDocumentInput`](crate::input::AnalyzeDocumentInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::AnalyzeDocumentInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::AnalyzeDocumentInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::AnalyzeDocumentInput {
                 document: self.document,
@@ -97,13 +97,13 @@ impl AnalyzeDocumentInput {
             crate::operation::AnalyzeDocument,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AnalyzeDocumentInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -111,8 +111,10 @@ impl AnalyzeDocumentInput {
             fn update_http_builder(
                 input: &crate::input::AnalyzeDocumentInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -201,7 +203,7 @@ impl AnalyzeDocumentInput {
 pub mod analyze_expense_input {
 
     /// A builder for [`AnalyzeExpenseInput`](crate::input::AnalyzeExpenseInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document: std::option::Option<crate::model::Document>,
     }
@@ -229,7 +231,7 @@ pub mod analyze_expense_input {
         /// Consumes the builder and constructs a [`AnalyzeExpenseInput`](crate::input::AnalyzeExpenseInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::AnalyzeExpenseInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::AnalyzeExpenseInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::AnalyzeExpenseInput {
                 document: self.document,
@@ -250,13 +252,13 @@ impl AnalyzeExpenseInput {
             crate::operation::AnalyzeExpense,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AnalyzeExpenseInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -264,8 +266,10 @@ impl AnalyzeExpenseInput {
             fn update_http_builder(
                 input: &crate::input::AnalyzeExpenseInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -354,7 +358,7 @@ impl AnalyzeExpenseInput {
 pub mod analyze_id_input {
 
     /// A builder for [`AnalyzeIdInput`](crate::input::AnalyzeIdInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_pages: std::option::Option<std::vec::Vec<crate::model::Document>>,
     }
@@ -381,7 +385,8 @@ pub mod analyze_id_input {
         /// Consumes the builder and constructs a [`AnalyzeIdInput`](crate::input::AnalyzeIdInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::AnalyzeIdInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::AnalyzeIdInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::AnalyzeIdInput {
                 document_pages: self.document_pages,
             })
@@ -401,13 +406,13 @@ impl AnalyzeIdInput {
             crate::operation::AnalyzeID,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AnalyzeIdInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -415,8 +420,10 @@ impl AnalyzeIdInput {
             fn update_http_builder(
                 input: &crate::input::AnalyzeIdInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -503,7 +510,7 @@ impl AnalyzeIdInput {
 pub mod detect_document_text_input {
 
     /// A builder for [`DetectDocumentTextInput`](crate::input::DetectDocumentTextInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document: std::option::Option<crate::model::Document>,
     }
@@ -523,8 +530,10 @@ pub mod detect_document_text_input {
         /// Consumes the builder and constructs a [`DetectDocumentTextInput`](crate::input::DetectDocumentTextInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DetectDocumentTextInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DetectDocumentTextInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DetectDocumentTextInput {
                 document: self.document,
             })
@@ -544,13 +553,13 @@ impl DetectDocumentTextInput {
             crate::operation::DetectDocumentText,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DetectDocumentTextInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -558,8 +567,10 @@ impl DetectDocumentTextInput {
             fn update_http_builder(
                 input: &crate::input::DetectDocumentTextInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -648,7 +659,7 @@ impl DetectDocumentTextInput {
 pub mod get_document_analysis_input {
 
     /// A builder for [`GetDocumentAnalysisInput`](crate::input::GetDocumentAnalysisInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -688,8 +699,10 @@ pub mod get_document_analysis_input {
         /// Consumes the builder and constructs a [`GetDocumentAnalysisInput`](crate::input::GetDocumentAnalysisInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetDocumentAnalysisInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetDocumentAnalysisInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetDocumentAnalysisInput {
                 job_id: self.job_id,
                 max_results: self.max_results,
@@ -711,13 +724,13 @@ impl GetDocumentAnalysisInput {
             crate::operation::GetDocumentAnalysis,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetDocumentAnalysisInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -725,8 +738,10 @@ impl GetDocumentAnalysisInput {
             fn update_http_builder(
                 input: &crate::input::GetDocumentAnalysisInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -815,7 +830,7 @@ impl GetDocumentAnalysisInput {
 pub mod get_document_text_detection_input {
 
     /// A builder for [`GetDocumentTextDetectionInput`](crate::input::GetDocumentTextDetectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -857,7 +872,7 @@ pub mod get_document_text_detection_input {
             self,
         ) -> Result<
             crate::input::GetDocumentTextDetectionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetDocumentTextDetectionInput {
                 job_id: self.job_id,
@@ -880,13 +895,13 @@ impl GetDocumentTextDetectionInput {
             crate::operation::GetDocumentTextDetection,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetDocumentTextDetectionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -894,8 +909,10 @@ impl GetDocumentTextDetectionInput {
             fn update_http_builder(
                 input: &crate::input::GetDocumentTextDetectionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -986,7 +1003,7 @@ impl GetDocumentTextDetectionInput {
 pub mod get_expense_analysis_input {
 
     /// A builder for [`GetExpenseAnalysisInput`](crate::input::GetExpenseAnalysisInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -1026,8 +1043,10 @@ pub mod get_expense_analysis_input {
         /// Consumes the builder and constructs a [`GetExpenseAnalysisInput`](crate::input::GetExpenseAnalysisInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetExpenseAnalysisInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetExpenseAnalysisInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetExpenseAnalysisInput {
                 job_id: self.job_id,
                 max_results: self.max_results,
@@ -1049,13 +1068,13 @@ impl GetExpenseAnalysisInput {
             crate::operation::GetExpenseAnalysis,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetExpenseAnalysisInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1063,8 +1082,10 @@ impl GetExpenseAnalysisInput {
             fn update_http_builder(
                 input: &crate::input::GetExpenseAnalysisInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1153,7 +1174,7 @@ impl GetExpenseAnalysisInput {
 pub mod start_document_analysis_input {
 
     /// A builder for [`StartDocumentAnalysisInput`](crate::input::StartDocumentAnalysisInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_location: std::option::Option<crate::model::DocumentLocation>,
         pub(crate) feature_types: std::option::Option<std::vec::Vec<crate::model::FeatureType>>,
@@ -1272,8 +1293,10 @@ pub mod start_document_analysis_input {
         /// Consumes the builder and constructs a [`StartDocumentAnalysisInput`](crate::input::StartDocumentAnalysisInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StartDocumentAnalysisInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::StartDocumentAnalysisInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::StartDocumentAnalysisInput {
                 document_location: self.document_location,
                 feature_types: self.feature_types,
@@ -1300,13 +1323,13 @@ impl StartDocumentAnalysisInput {
             crate::operation::StartDocumentAnalysis,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StartDocumentAnalysisInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1314,8 +1337,10 @@ impl StartDocumentAnalysisInput {
             fn update_http_builder(
                 input: &crate::input::StartDocumentAnalysisInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1406,7 +1431,7 @@ impl StartDocumentAnalysisInput {
 pub mod start_document_text_detection_input {
 
     /// A builder for [`StartDocumentTextDetectionInput`](crate::input::StartDocumentTextDetectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_location: std::option::Option<crate::model::DocumentLocation>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -1493,7 +1518,7 @@ pub mod start_document_text_detection_input {
             self,
         ) -> Result<
             crate::input::StartDocumentTextDetectionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::StartDocumentTextDetectionInput {
                 document_location: self.document_location,
@@ -1519,13 +1544,13 @@ impl StartDocumentTextDetectionInput {
             crate::operation::StartDocumentTextDetection,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StartDocumentTextDetectionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1533,8 +1558,10 @@ impl StartDocumentTextDetectionInput {
             fn update_http_builder(
                 input: &crate::input::StartDocumentTextDetectionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1622,7 +1649,7 @@ impl StartDocumentTextDetectionInput {
 pub mod start_expense_analysis_input {
 
     /// A builder for [`StartExpenseAnalysisInput`](crate::input::StartExpenseAnalysisInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_location: std::option::Option<crate::model::DocumentLocation>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -1707,8 +1734,10 @@ pub mod start_expense_analysis_input {
         /// Consumes the builder and constructs a [`StartExpenseAnalysisInput`](crate::input::StartExpenseAnalysisInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StartExpenseAnalysisInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::StartExpenseAnalysisInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::StartExpenseAnalysisInput {
                 document_location: self.document_location,
                 client_request_token: self.client_request_token,
@@ -1733,13 +1762,13 @@ impl StartExpenseAnalysisInput {
             crate::operation::StartExpenseAnalysis,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StartExpenseAnalysisInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1747,8 +1776,10 @@ impl StartExpenseAnalysisInput {
             fn update_http_builder(
                 input: &crate::input::StartExpenseAnalysisInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1837,7 +1868,7 @@ impl StartExpenseAnalysisInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartExpenseAnalysisInput {
     /// <p>The location of the document to be processed.</p>
     #[doc(hidden)]
@@ -1884,22 +1915,10 @@ impl StartExpenseAnalysisInput {
         self.kms_key_id.as_deref()
     }
 }
-impl std::fmt::Debug for StartExpenseAnalysisInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartExpenseAnalysisInput");
-        formatter.field("document_location", &self.document_location);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("job_tag", &self.job_tag);
-        formatter.field("notification_channel", &self.notification_channel);
-        formatter.field("output_config", &self.output_config);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartDocumentTextDetectionInput {
     /// <p>The location of the document to be processed.</p>
     #[doc(hidden)]
@@ -1946,22 +1965,10 @@ impl StartDocumentTextDetectionInput {
         self.kms_key_id.as_deref()
     }
 }
-impl std::fmt::Debug for StartDocumentTextDetectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartDocumentTextDetectionInput");
-        formatter.field("document_location", &self.document_location);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("job_tag", &self.job_tag);
-        formatter.field("notification_channel", &self.notification_channel);
-        formatter.field("output_config", &self.output_config);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartDocumentAnalysisInput {
     /// <p>The location of the document to be processed.</p>
     #[doc(hidden)]
@@ -2022,24 +2029,10 @@ impl StartDocumentAnalysisInput {
         self.queries_config.as_ref()
     }
 }
-impl std::fmt::Debug for StartDocumentAnalysisInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartDocumentAnalysisInput");
-        formatter.field("document_location", &self.document_location);
-        formatter.field("feature_types", &self.feature_types);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("job_tag", &self.job_tag);
-        formatter.field("notification_channel", &self.notification_channel);
-        formatter.field("output_config", &self.output_config);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("queries_config", &self.queries_config);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetExpenseAnalysisInput {
     /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
     #[doc(hidden)]
@@ -2065,19 +2058,10 @@ impl GetExpenseAnalysisInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetExpenseAnalysisInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetExpenseAnalysisInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDocumentTextDetectionInput {
     /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from <code>StartDocumentTextDetection</code>. A <code>JobId</code> value is only valid for 7 days.</p>
     #[doc(hidden)]
@@ -2103,19 +2087,10 @@ impl GetDocumentTextDetectionInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetDocumentTextDetectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDocumentTextDetectionInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDocumentAnalysisInput {
     /// <p>A unique identifier for the text-detection job. The <code>JobId</code> is returned from <code>StartDocumentAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
     #[doc(hidden)]
@@ -2141,19 +2116,10 @@ impl GetDocumentAnalysisInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetDocumentAnalysisInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDocumentAnalysisInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectDocumentTextInput {
     /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG or PNG format.</p>
     /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field. </p>
@@ -2167,17 +2133,10 @@ impl DetectDocumentTextInput {
         self.document.as_ref()
     }
 }
-impl std::fmt::Debug for DetectDocumentTextInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectDocumentTextInput");
-        formatter.field("document", &self.document);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnalyzeIdInput {
     /// <p>The document being passed to AnalyzeID.</p>
     #[doc(hidden)]
@@ -2189,17 +2148,10 @@ impl AnalyzeIdInput {
         self.document_pages.as_deref()
     }
 }
-impl std::fmt::Debug for AnalyzeIdInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnalyzeIdInput");
-        formatter.field("document_pages", &self.document_pages);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnalyzeExpenseInput {
     /// <p>The input document, either as bytes or as an S3 object.</p>
     /// <p>You pass image bytes to an Amazon Textract API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass a document loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64 encoded. Your code might not need to encode document file bytes if you're using an AWS SDK to call Amazon Textract API operations. </p>
@@ -2221,17 +2173,10 @@ impl AnalyzeExpenseInput {
         self.document.as_ref()
     }
 }
-impl std::fmt::Debug for AnalyzeExpenseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnalyzeExpenseInput");
-        formatter.field("document", &self.document);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnalyzeDocumentInput {
     /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG, PNG, PDF, or TIFF format.</p>
     /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field. </p>
@@ -2264,15 +2209,5 @@ impl AnalyzeDocumentInput {
     /// <p>Contains Queries and the alias for those Queries, as determined by the input. </p>
     pub fn queries_config(&self) -> std::option::Option<&crate::model::QueriesConfig> {
         self.queries_config.as_ref()
-    }
-}
-impl std::fmt::Debug for AnalyzeDocumentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnalyzeDocumentInput");
-        formatter.field("document", &self.document);
-        formatter.field("feature_types", &self.feature_types);
-        formatter.field("human_loop_config", &self.human_loop_config);
-        formatter.field("queries_config", &self.queries_config);
-        formatter.finish()
     }
 }

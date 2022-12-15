@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod associate_firewall_policy_input {
 
     /// A builder for [`AssociateFirewallPolicyInput`](crate::input::AssociateFirewallPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -72,7 +72,7 @@ pub mod associate_firewall_policy_input {
             self,
         ) -> Result<
             crate::input::AssociateFirewallPolicyInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::AssociateFirewallPolicyInput {
                 update_token: self.update_token,
@@ -96,13 +96,13 @@ impl AssociateFirewallPolicyInput {
             crate::operation::AssociateFirewallPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AssociateFirewallPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -110,8 +110,10 @@ impl AssociateFirewallPolicyInput {
             fn update_http_builder(
                 input: &crate::input::AssociateFirewallPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -202,7 +204,7 @@ impl AssociateFirewallPolicyInput {
 pub mod associate_subnets_input {
 
     /// A builder for [`AssociateSubnetsInput`](crate::input::AssociateSubnetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -273,8 +275,10 @@ pub mod associate_subnets_input {
         /// Consumes the builder and constructs a [`AssociateSubnetsInput`](crate::input::AssociateSubnetsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::AssociateSubnetsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::AssociateSubnetsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::AssociateSubnetsInput {
                 update_token: self.update_token,
                 firewall_arn: self.firewall_arn,
@@ -297,13 +301,13 @@ impl AssociateSubnetsInput {
             crate::operation::AssociateSubnets,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AssociateSubnetsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -311,8 +315,10 @@ impl AssociateSubnetsInput {
             fn update_http_builder(
                 input: &crate::input::AssociateSubnetsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -401,7 +407,7 @@ impl AssociateSubnetsInput {
 pub mod create_firewall_input {
 
     /// A builder for [`CreateFirewallInput`](crate::input::CreateFirewallInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_name: std::option::Option<std::string::String>,
         pub(crate) firewall_policy_arn: std::option::Option<std::string::String>,
@@ -554,7 +560,7 @@ pub mod create_firewall_input {
         /// Consumes the builder and constructs a [`CreateFirewallInput`](crate::input::CreateFirewallInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateFirewallInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateFirewallInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateFirewallInput {
                 firewall_name: self.firewall_name,
@@ -586,13 +592,13 @@ impl CreateFirewallInput {
             crate::operation::CreateFirewall,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateFirewallInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -600,8 +606,10 @@ impl CreateFirewallInput {
             fn update_http_builder(
                 input: &crate::input::CreateFirewallInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -690,7 +698,7 @@ impl CreateFirewallInput {
 pub mod create_firewall_policy_input {
 
     /// A builder for [`CreateFirewallPolicyInput`](crate::input::CreateFirewallPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_policy_name: std::option::Option<std::string::String>,
         pub(crate) firewall_policy: std::option::Option<crate::model::FirewallPolicy>,
@@ -789,8 +797,10 @@ pub mod create_firewall_policy_input {
         /// Consumes the builder and constructs a [`CreateFirewallPolicyInput`](crate::input::CreateFirewallPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateFirewallPolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateFirewallPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateFirewallPolicyInput {
                 firewall_policy_name: self.firewall_policy_name,
                 firewall_policy: self.firewall_policy,
@@ -815,13 +825,13 @@ impl CreateFirewallPolicyInput {
             crate::operation::CreateFirewallPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateFirewallPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -829,8 +839,10 @@ impl CreateFirewallPolicyInput {
             fn update_http_builder(
                 input: &crate::input::CreateFirewallPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -921,7 +933,7 @@ impl CreateFirewallPolicyInput {
 pub mod create_rule_group_input {
 
     /// A builder for [`CreateRuleGroupInput`](crate::input::CreateRuleGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_group_name: std::option::Option<std::string::String>,
         pub(crate) rule_group: std::option::Option<crate::model::RuleGroup>,
@@ -1105,7 +1117,7 @@ pub mod create_rule_group_input {
         /// Consumes the builder and constructs a [`CreateRuleGroupInput`](crate::input::CreateRuleGroupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateRuleGroupInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateRuleGroupInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateRuleGroupInput {
                 rule_group_name: self.rule_group_name,
@@ -1135,13 +1147,13 @@ impl CreateRuleGroupInput {
             crate::operation::CreateRuleGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateRuleGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1149,8 +1161,10 @@ impl CreateRuleGroupInput {
             fn update_http_builder(
                 input: &crate::input::CreateRuleGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1239,7 +1253,7 @@ impl CreateRuleGroupInput {
 pub mod delete_firewall_input {
 
     /// A builder for [`DeleteFirewallInput`](crate::input::DeleteFirewallInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_name: std::option::Option<std::string::String>,
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -1275,7 +1289,7 @@ pub mod delete_firewall_input {
         /// Consumes the builder and constructs a [`DeleteFirewallInput`](crate::input::DeleteFirewallInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteFirewallInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteFirewallInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteFirewallInput {
                 firewall_name: self.firewall_name,
@@ -1297,13 +1311,13 @@ impl DeleteFirewallInput {
             crate::operation::DeleteFirewall,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteFirewallInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1311,8 +1325,10 @@ impl DeleteFirewallInput {
             fn update_http_builder(
                 input: &crate::input::DeleteFirewallInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1401,7 +1417,7 @@ impl DeleteFirewallInput {
 pub mod delete_firewall_policy_input {
 
     /// A builder for [`DeleteFirewallPolicyInput`](crate::input::DeleteFirewallPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_policy_name: std::option::Option<std::string::String>,
         pub(crate) firewall_policy_arn: std::option::Option<std::string::String>,
@@ -1440,8 +1456,10 @@ pub mod delete_firewall_policy_input {
         /// Consumes the builder and constructs a [`DeleteFirewallPolicyInput`](crate::input::DeleteFirewallPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteFirewallPolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteFirewallPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteFirewallPolicyInput {
                 firewall_policy_name: self.firewall_policy_name,
                 firewall_policy_arn: self.firewall_policy_arn,
@@ -1462,13 +1480,13 @@ impl DeleteFirewallPolicyInput {
             crate::operation::DeleteFirewallPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteFirewallPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1476,8 +1494,10 @@ impl DeleteFirewallPolicyInput {
             fn update_http_builder(
                 input: &crate::input::DeleteFirewallPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1568,7 +1588,7 @@ impl DeleteFirewallPolicyInput {
 pub mod delete_resource_policy_input {
 
     /// A builder for [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -1586,8 +1606,10 @@ pub mod delete_resource_policy_input {
         /// Consumes the builder and constructs a [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteResourcePolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteResourcePolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteResourcePolicyInput {
                 resource_arn: self.resource_arn,
             })
@@ -1607,13 +1629,13 @@ impl DeleteResourcePolicyInput {
             crate::operation::DeleteResourcePolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteResourcePolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1621,8 +1643,10 @@ impl DeleteResourcePolicyInput {
             fn update_http_builder(
                 input: &crate::input::DeleteResourcePolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1713,7 +1737,7 @@ impl DeleteResourcePolicyInput {
 pub mod delete_rule_group_input {
 
     /// A builder for [`DeleteRuleGroupInput`](crate::input::DeleteRuleGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_group_name: std::option::Option<std::string::String>,
         pub(crate) rule_group_arn: std::option::Option<std::string::String>,
@@ -1767,7 +1791,7 @@ pub mod delete_rule_group_input {
         /// Consumes the builder and constructs a [`DeleteRuleGroupInput`](crate::input::DeleteRuleGroupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteRuleGroupInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteRuleGroupInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteRuleGroupInput {
                 rule_group_name: self.rule_group_name,
@@ -1790,13 +1814,13 @@ impl DeleteRuleGroupInput {
             crate::operation::DeleteRuleGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteRuleGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1804,8 +1828,10 @@ impl DeleteRuleGroupInput {
             fn update_http_builder(
                 input: &crate::input::DeleteRuleGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1894,7 +1920,7 @@ impl DeleteRuleGroupInput {
 pub mod describe_firewall_input {
 
     /// A builder for [`DescribeFirewallInput`](crate::input::DescribeFirewallInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_name: std::option::Option<std::string::String>,
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -1930,8 +1956,10 @@ pub mod describe_firewall_input {
         /// Consumes the builder and constructs a [`DescribeFirewallInput`](crate::input::DescribeFirewallInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeFirewallInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeFirewallInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeFirewallInput {
                 firewall_name: self.firewall_name,
                 firewall_arn: self.firewall_arn,
@@ -1952,13 +1980,13 @@ impl DescribeFirewallInput {
             crate::operation::DescribeFirewall,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeFirewallInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1966,8 +1994,10 @@ impl DescribeFirewallInput {
             fn update_http_builder(
                 input: &crate::input::DescribeFirewallInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2056,7 +2086,7 @@ impl DescribeFirewallInput {
 pub mod describe_firewall_policy_input {
 
     /// A builder for [`DescribeFirewallPolicyInput`](crate::input::DescribeFirewallPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_policy_name: std::option::Option<std::string::String>,
         pub(crate) firewall_policy_arn: std::option::Option<std::string::String>,
@@ -2095,8 +2125,10 @@ pub mod describe_firewall_policy_input {
         /// Consumes the builder and constructs a [`DescribeFirewallPolicyInput`](crate::input::DescribeFirewallPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeFirewallPolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeFirewallPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeFirewallPolicyInput {
                 firewall_policy_name: self.firewall_policy_name,
                 firewall_policy_arn: self.firewall_policy_arn,
@@ -2117,13 +2149,13 @@ impl DescribeFirewallPolicyInput {
             crate::operation::DescribeFirewallPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeFirewallPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2131,8 +2163,10 @@ impl DescribeFirewallPolicyInput {
             fn update_http_builder(
                 input: &crate::input::DescribeFirewallPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2223,7 +2257,7 @@ impl DescribeFirewallPolicyInput {
 pub mod describe_logging_configuration_input {
 
     /// A builder for [`DescribeLoggingConfigurationInput`](crate::input::DescribeLoggingConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
         pub(crate) firewall_name: std::option::Option<std::string::String>,
@@ -2261,7 +2295,7 @@ pub mod describe_logging_configuration_input {
             self,
         ) -> Result<
             crate::input::DescribeLoggingConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeLoggingConfigurationInput {
                 firewall_arn: self.firewall_arn,
@@ -2283,13 +2317,13 @@ impl DescribeLoggingConfigurationInput {
             crate::operation::DescribeLoggingConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeLoggingConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2297,8 +2331,10 @@ impl DescribeLoggingConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::DescribeLoggingConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2386,7 +2422,7 @@ impl DescribeLoggingConfigurationInput {
 pub mod describe_resource_policy_input {
 
     /// A builder for [`DescribeResourcePolicyInput`](crate::input::DescribeResourcePolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -2404,8 +2440,10 @@ pub mod describe_resource_policy_input {
         /// Consumes the builder and constructs a [`DescribeResourcePolicyInput`](crate::input::DescribeResourcePolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeResourcePolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeResourcePolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeResourcePolicyInput {
                 resource_arn: self.resource_arn,
             })
@@ -2425,13 +2463,13 @@ impl DescribeResourcePolicyInput {
             crate::operation::DescribeResourcePolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeResourcePolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2439,8 +2477,10 @@ impl DescribeResourcePolicyInput {
             fn update_http_builder(
                 input: &crate::input::DescribeResourcePolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2531,7 +2571,7 @@ impl DescribeResourcePolicyInput {
 pub mod describe_rule_group_input {
 
     /// A builder for [`DescribeRuleGroupInput`](crate::input::DescribeRuleGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_group_name: std::option::Option<std::string::String>,
         pub(crate) rule_group_arn: std::option::Option<std::string::String>,
@@ -2585,8 +2625,10 @@ pub mod describe_rule_group_input {
         /// Consumes the builder and constructs a [`DescribeRuleGroupInput`](crate::input::DescribeRuleGroupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeRuleGroupInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeRuleGroupInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeRuleGroupInput {
                 rule_group_name: self.rule_group_name,
                 rule_group_arn: self.rule_group_arn,
@@ -2608,13 +2650,13 @@ impl DescribeRuleGroupInput {
             crate::operation::DescribeRuleGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeRuleGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2622,8 +2664,10 @@ impl DescribeRuleGroupInput {
             fn update_http_builder(
                 input: &crate::input::DescribeRuleGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2712,7 +2756,7 @@ impl DescribeRuleGroupInput {
 pub mod describe_rule_group_metadata_input {
 
     /// A builder for [`DescribeRuleGroupMetadataInput`](crate::input::DescribeRuleGroupMetadataInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_group_name: std::option::Option<std::string::String>,
         pub(crate) rule_group_arn: std::option::Option<std::string::String>,
@@ -2768,7 +2812,7 @@ pub mod describe_rule_group_metadata_input {
             self,
         ) -> Result<
             crate::input::DescribeRuleGroupMetadataInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeRuleGroupMetadataInput {
                 rule_group_name: self.rule_group_name,
@@ -2791,13 +2835,13 @@ impl DescribeRuleGroupMetadataInput {
             crate::operation::DescribeRuleGroupMetadata,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeRuleGroupMetadataInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2805,8 +2849,10 @@ impl DescribeRuleGroupMetadataInput {
             fn update_http_builder(
                 input: &crate::input::DescribeRuleGroupMetadataInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2897,7 +2943,7 @@ impl DescribeRuleGroupMetadataInput {
 pub mod disassociate_subnets_input {
 
     /// A builder for [`DisassociateSubnetsInput`](crate::input::DisassociateSubnetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -2968,8 +3014,10 @@ pub mod disassociate_subnets_input {
         /// Consumes the builder and constructs a [`DisassociateSubnetsInput`](crate::input::DisassociateSubnetsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DisassociateSubnetsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DisassociateSubnetsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DisassociateSubnetsInput {
                 update_token: self.update_token,
                 firewall_arn: self.firewall_arn,
@@ -2992,13 +3040,13 @@ impl DisassociateSubnetsInput {
             crate::operation::DisassociateSubnets,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisassociateSubnetsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3006,8 +3054,10 @@ impl DisassociateSubnetsInput {
             fn update_http_builder(
                 input: &crate::input::DisassociateSubnetsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3096,7 +3146,7 @@ impl DisassociateSubnetsInput {
 pub mod list_firewall_policies_input {
 
     /// A builder for [`ListFirewallPoliciesInput`](crate::input::ListFirewallPoliciesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3125,8 +3175,10 @@ pub mod list_firewall_policies_input {
         /// Consumes the builder and constructs a [`ListFirewallPoliciesInput`](crate::input::ListFirewallPoliciesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListFirewallPoliciesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListFirewallPoliciesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListFirewallPoliciesInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
@@ -3147,13 +3199,13 @@ impl ListFirewallPoliciesInput {
             crate::operation::ListFirewallPolicies,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListFirewallPoliciesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3161,8 +3213,10 @@ impl ListFirewallPoliciesInput {
             fn update_http_builder(
                 input: &crate::input::ListFirewallPoliciesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3253,7 +3307,7 @@ impl ListFirewallPoliciesInput {
 pub mod list_firewalls_input {
 
     /// A builder for [`ListFirewallsInput`](crate::input::ListFirewallsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) vpc_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3302,7 +3356,7 @@ pub mod list_firewalls_input {
         /// Consumes the builder and constructs a [`ListFirewallsInput`](crate::input::ListFirewallsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListFirewallsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListFirewallsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListFirewallsInput {
                 next_token: self.next_token,
@@ -3325,13 +3379,13 @@ impl ListFirewallsInput {
             crate::operation::ListFirewalls,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListFirewallsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3339,8 +3393,10 @@ impl ListFirewallsInput {
             fn update_http_builder(
                 input: &crate::input::ListFirewallsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3429,7 +3485,7 @@ impl ListFirewallsInput {
 pub mod list_rule_groups_input {
 
     /// A builder for [`ListRuleGroupsInput`](crate::input::ListRuleGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3497,7 +3553,7 @@ pub mod list_rule_groups_input {
         /// Consumes the builder and constructs a [`ListRuleGroupsInput`](crate::input::ListRuleGroupsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListRuleGroupsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListRuleGroupsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListRuleGroupsInput {
                 next_token: self.next_token,
@@ -3522,13 +3578,13 @@ impl ListRuleGroupsInput {
             crate::operation::ListRuleGroups,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListRuleGroupsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3536,8 +3592,10 @@ impl ListRuleGroupsInput {
             fn update_http_builder(
                 input: &crate::input::ListRuleGroupsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3626,7 +3684,7 @@ impl ListRuleGroupsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3666,8 +3724,10 @@ pub mod list_tags_for_resource_input {
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
@@ -3689,13 +3749,13 @@ impl ListTagsForResourceInput {
             crate::operation::ListTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3703,8 +3763,10 @@ impl ListTagsForResourceInput {
             fn update_http_builder(
                 input: &crate::input::ListTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3795,7 +3857,7 @@ impl ListTagsForResourceInput {
 pub mod put_resource_policy_input {
 
     /// A builder for [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -3852,8 +3914,10 @@ pub mod put_resource_policy_input {
         /// Consumes the builder and constructs a [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutResourcePolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutResourcePolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutResourcePolicyInput {
                 resource_arn: self.resource_arn,
                 policy: self.policy,
@@ -3874,13 +3938,13 @@ impl PutResourcePolicyInput {
             crate::operation::PutResourcePolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutResourcePolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3888,8 +3952,10 @@ impl PutResourcePolicyInput {
             fn update_http_builder(
                 input: &crate::input::PutResourcePolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3978,7 +4044,7 @@ impl PutResourcePolicyInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4016,7 +4082,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
@@ -4038,13 +4104,13 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4052,8 +4118,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4142,7 +4210,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4180,7 +4248,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
@@ -4202,13 +4270,13 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4216,8 +4284,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4306,7 +4376,7 @@ impl UntagResourceInput {
 pub mod update_firewall_delete_protection_input {
 
     /// A builder for [`UpdateFirewallDeleteProtectionInput`](crate::input::UpdateFirewallDeleteProtectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -4370,7 +4440,7 @@ pub mod update_firewall_delete_protection_input {
             self,
         ) -> Result<
             crate::input::UpdateFirewallDeleteProtectionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateFirewallDeleteProtectionInput {
                 update_token: self.update_token,
@@ -4394,13 +4464,13 @@ impl UpdateFirewallDeleteProtectionInput {
             crate::operation::UpdateFirewallDeleteProtection,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateFirewallDeleteProtectionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4408,8 +4478,10 @@ impl UpdateFirewallDeleteProtectionInput {
             fn update_http_builder(
                 input: &crate::input::UpdateFirewallDeleteProtectionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4497,7 +4569,7 @@ impl UpdateFirewallDeleteProtectionInput {
 pub mod update_firewall_description_input {
 
     /// A builder for [`UpdateFirewallDescriptionInput`](crate::input::UpdateFirewallDescriptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -4561,7 +4633,7 @@ pub mod update_firewall_description_input {
             self,
         ) -> Result<
             crate::input::UpdateFirewallDescriptionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateFirewallDescriptionInput {
                 update_token: self.update_token,
@@ -4585,13 +4657,13 @@ impl UpdateFirewallDescriptionInput {
             crate::operation::UpdateFirewallDescription,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateFirewallDescriptionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4599,8 +4671,10 @@ impl UpdateFirewallDescriptionInput {
             fn update_http_builder(
                 input: &crate::input::UpdateFirewallDescriptionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4691,7 +4765,7 @@ impl UpdateFirewallDescriptionInput {
 pub mod update_firewall_encryption_configuration_input {
 
     /// A builder for [`UpdateFirewallEncryptionConfigurationInput`](crate::input::UpdateFirewallEncryptionConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -4758,7 +4832,7 @@ pub mod update_firewall_encryption_configuration_input {
             self,
         ) -> Result<
             crate::input::UpdateFirewallEncryptionConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateFirewallEncryptionConfigurationInput {
                 update_token: self.update_token,
@@ -4782,13 +4856,13 @@ impl UpdateFirewallEncryptionConfigurationInput {
             crate::operation::UpdateFirewallEncryptionConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateFirewallEncryptionConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4796,8 +4870,10 @@ impl UpdateFirewallEncryptionConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::UpdateFirewallEncryptionConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4885,7 +4961,7 @@ impl UpdateFirewallEncryptionConfigurationInput {
 pub mod update_firewall_policy_input {
 
     /// A builder for [`UpdateFirewallPolicyInput`](crate::input::UpdateFirewallPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) firewall_policy_arn: std::option::Option<std::string::String>,
@@ -4995,8 +5071,10 @@ pub mod update_firewall_policy_input {
         /// Consumes the builder and constructs a [`UpdateFirewallPolicyInput`](crate::input::UpdateFirewallPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateFirewallPolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateFirewallPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateFirewallPolicyInput {
                 update_token: self.update_token,
                 firewall_policy_arn: self.firewall_policy_arn,
@@ -5022,13 +5100,13 @@ impl UpdateFirewallPolicyInput {
             crate::operation::UpdateFirewallPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateFirewallPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5036,8 +5114,10 @@ impl UpdateFirewallPolicyInput {
             fn update_http_builder(
                 input: &crate::input::UpdateFirewallPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5128,7 +5208,7 @@ impl UpdateFirewallPolicyInput {
 pub mod update_firewall_policy_change_protection_input {
 
     /// A builder for [`UpdateFirewallPolicyChangeProtectionInput`](crate::input::UpdateFirewallPolicyChangeProtectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -5195,7 +5275,7 @@ pub mod update_firewall_policy_change_protection_input {
             self,
         ) -> Result<
             crate::input::UpdateFirewallPolicyChangeProtectionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateFirewallPolicyChangeProtectionInput {
                 update_token: self.update_token,
@@ -5221,13 +5301,13 @@ impl UpdateFirewallPolicyChangeProtectionInput {
             crate::operation::UpdateFirewallPolicyChangeProtection,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateFirewallPolicyChangeProtectionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5235,8 +5315,10 @@ impl UpdateFirewallPolicyChangeProtectionInput {
             fn update_http_builder(
                 input: &crate::input::UpdateFirewallPolicyChangeProtectionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5324,7 +5406,7 @@ impl UpdateFirewallPolicyChangeProtectionInput {
 pub mod update_logging_configuration_input {
 
     /// A builder for [`UpdateLoggingConfigurationInput`](crate::input::UpdateLoggingConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
         pub(crate) firewall_name: std::option::Option<std::string::String>,
@@ -5376,7 +5458,7 @@ pub mod update_logging_configuration_input {
             self,
         ) -> Result<
             crate::input::UpdateLoggingConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateLoggingConfigurationInput {
                 firewall_arn: self.firewall_arn,
@@ -5399,13 +5481,13 @@ impl UpdateLoggingConfigurationInput {
             crate::operation::UpdateLoggingConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateLoggingConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5413,8 +5495,10 @@ impl UpdateLoggingConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::UpdateLoggingConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5505,7 +5589,7 @@ impl UpdateLoggingConfigurationInput {
 pub mod update_rule_group_input {
 
     /// A builder for [`UpdateRuleGroupInput`](crate::input::UpdateRuleGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) rule_group_arn: std::option::Option<std::string::String>,
@@ -5665,7 +5749,7 @@ pub mod update_rule_group_input {
         /// Consumes the builder and constructs a [`UpdateRuleGroupInput`](crate::input::UpdateRuleGroupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateRuleGroupInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateRuleGroupInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateRuleGroupInput {
                 update_token: self.update_token,
@@ -5695,13 +5779,13 @@ impl UpdateRuleGroupInput {
             crate::operation::UpdateRuleGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateRuleGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5709,8 +5793,10 @@ impl UpdateRuleGroupInput {
             fn update_http_builder(
                 input: &crate::input::UpdateRuleGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5799,7 +5885,7 @@ impl UpdateRuleGroupInput {
 pub mod update_subnet_change_protection_input {
 
     /// A builder for [`UpdateSubnetChangeProtectionInput`](crate::input::UpdateSubnetChangeProtectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -5863,7 +5949,7 @@ pub mod update_subnet_change_protection_input {
             self,
         ) -> Result<
             crate::input::UpdateSubnetChangeProtectionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateSubnetChangeProtectionInput {
                 update_token: self.update_token,
@@ -5887,13 +5973,13 @@ impl UpdateSubnetChangeProtectionInput {
             crate::operation::UpdateSubnetChangeProtection,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateSubnetChangeProtectionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5901,8 +5987,10 @@ impl UpdateSubnetChangeProtectionInput {
             fn update_http_builder(
                 input: &crate::input::UpdateSubnetChangeProtectionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5988,7 +6076,7 @@ impl UpdateSubnetChangeProtectionInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSubnetChangeProtectionInput {
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
@@ -6029,20 +6117,10 @@ impl UpdateSubnetChangeProtectionInput {
         self.subnet_change_protection
     }
 }
-impl std::fmt::Debug for UpdateSubnetChangeProtectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSubnetChangeProtectionInput");
-        formatter.field("update_token", &self.update_token);
-        formatter.field("firewall_arn", &self.firewall_arn);
-        formatter.field("firewall_name", &self.firewall_name);
-        formatter.field("subnet_change_protection", &self.subnet_change_protection);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRuleGroupInput {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p>
     /// <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token. </p>
@@ -6143,26 +6221,10 @@ impl UpdateRuleGroupInput {
         self.source_metadata.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateRuleGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRuleGroupInput");
-        formatter.field("update_token", &self.update_token);
-        formatter.field("rule_group_arn", &self.rule_group_arn);
-        formatter.field("rule_group_name", &self.rule_group_name);
-        formatter.field("rule_group", &self.rule_group);
-        formatter.field("rules", &self.rules);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("description", &self.description);
-        formatter.field("dry_run", &self.dry_run);
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.field("source_metadata", &self.source_metadata);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLoggingConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
@@ -6194,19 +6256,10 @@ impl UpdateLoggingConfigurationInput {
         self.logging_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateLoggingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLoggingConfigurationInput");
-        formatter.field("firewall_arn", &self.firewall_arn);
-        formatter.field("firewall_name", &self.firewall_name);
-        formatter.field("logging_configuration", &self.logging_configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFirewallPolicyChangeProtectionInput {
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
@@ -6247,23 +6300,10 @@ impl UpdateFirewallPolicyChangeProtectionInput {
         self.firewall_policy_change_protection
     }
 }
-impl std::fmt::Debug for UpdateFirewallPolicyChangeProtectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFirewallPolicyChangeProtectionInput");
-        formatter.field("update_token", &self.update_token);
-        formatter.field("firewall_arn", &self.firewall_arn);
-        formatter.field("firewall_name", &self.firewall_name);
-        formatter.field(
-            "firewall_policy_change_protection",
-            &self.firewall_policy_change_protection,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFirewallPolicyInput {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p>
     /// <p>To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token. </p>
@@ -6329,23 +6369,10 @@ impl UpdateFirewallPolicyInput {
         self.encryption_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateFirewallPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFirewallPolicyInput");
-        formatter.field("update_token", &self.update_token);
-        formatter.field("firewall_policy_arn", &self.firewall_policy_arn);
-        formatter.field("firewall_policy_name", &self.firewall_policy_name);
-        formatter.field("firewall_policy", &self.firewall_policy);
-        formatter.field("description", &self.description);
-        formatter.field("dry_run", &self.dry_run);
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFirewallEncryptionConfigurationInput {
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
@@ -6384,20 +6411,10 @@ impl UpdateFirewallEncryptionConfigurationInput {
         self.encryption_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateFirewallEncryptionConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFirewallEncryptionConfigurationInput");
-        formatter.field("update_token", &self.update_token);
-        formatter.field("firewall_arn", &self.firewall_arn);
-        formatter.field("firewall_name", &self.firewall_name);
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFirewallDescriptionInput {
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
@@ -6438,20 +6455,10 @@ impl UpdateFirewallDescriptionInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateFirewallDescriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFirewallDescriptionInput");
-        formatter.field("update_token", &self.update_token);
-        formatter.field("firewall_arn", &self.firewall_arn);
-        formatter.field("firewall_name", &self.firewall_name);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFirewallDeleteProtectionInput {
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
@@ -6492,20 +6499,10 @@ impl UpdateFirewallDeleteProtectionInput {
         self.delete_protection
     }
 }
-impl std::fmt::Debug for UpdateFirewallDeleteProtectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFirewallDeleteProtectionInput");
-        formatter.field("update_token", &self.update_token);
-        formatter.field("firewall_arn", &self.firewall_arn);
-        formatter.field("firewall_name", &self.firewall_name);
-        formatter.field("delete_protection", &self.delete_protection);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -6524,18 +6521,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -6554,18 +6543,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the account that you want to share rule groups and firewall policies with.</p>
     #[doc(hidden)]
@@ -6612,18 +6593,10 @@ impl PutResourcePolicyInput {
         self.policy.as_deref()
     }
 }
-impl std::fmt::Debug for PutResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutResourcePolicyInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("policy", &self.policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     #[doc(hidden)]
@@ -6649,19 +6622,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRuleGroupsInput {
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     #[doc(hidden)]
@@ -6701,21 +6665,10 @@ impl ListRuleGroupsInput {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for ListRuleGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRuleGroupsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("scope", &self.scope);
-        formatter.field("managed_type", &self.managed_type);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFirewallsInput {
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     #[doc(hidden)]
@@ -6741,19 +6694,10 @@ impl ListFirewallsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListFirewallsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFirewallsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("vpc_ids", &self.vpc_ids);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFirewallPoliciesInput {
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     #[doc(hidden)]
@@ -6772,18 +6716,10 @@ impl ListFirewallPoliciesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListFirewallPoliciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFirewallPoliciesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateSubnetsInput {
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
@@ -6824,20 +6760,10 @@ impl DisassociateSubnetsInput {
         self.subnet_ids.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateSubnetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateSubnetsInput");
-        formatter.field("update_token", &self.update_token);
-        formatter.field("firewall_arn", &self.firewall_arn);
-        formatter.field("firewall_name", &self.firewall_name);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRuleGroupMetadataInput {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
@@ -6871,19 +6797,10 @@ impl DescribeRuleGroupMetadataInput {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeRuleGroupMetadataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRuleGroupMetadataInput");
-        formatter.field("rule_group_name", &self.rule_group_name);
-        formatter.field("rule_group_arn", &self.rule_group_arn);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRuleGroupInput {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
@@ -6917,19 +6834,10 @@ impl DescribeRuleGroupInput {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeRuleGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRuleGroupInput");
-        formatter.field("rule_group_name", &self.rule_group_name);
-        formatter.field("rule_group_arn", &self.rule_group_arn);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to retrieve. </p>
     #[doc(hidden)]
@@ -6941,17 +6849,10 @@ impl DescribeResourcePolicyInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeResourcePolicyInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLoggingConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
@@ -6974,18 +6875,10 @@ impl DescribeLoggingConfigurationInput {
         self.firewall_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLoggingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLoggingConfigurationInput");
-        formatter.field("firewall_arn", &self.firewall_arn);
-        formatter.field("firewall_name", &self.firewall_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFirewallPolicyInput {
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
@@ -7008,18 +6901,10 @@ impl DescribeFirewallPolicyInput {
         self.firewall_policy_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFirewallPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFirewallPolicyInput");
-        formatter.field("firewall_policy_name", &self.firewall_policy_name);
-        formatter.field("firewall_policy_arn", &self.firewall_policy_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFirewallInput {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
@@ -7042,18 +6927,10 @@ impl DescribeFirewallInput {
         self.firewall_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFirewallInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFirewallInput");
-        formatter.field("firewall_name", &self.firewall_name);
-        formatter.field("firewall_arn", &self.firewall_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRuleGroupInput {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
@@ -7087,19 +6964,10 @@ impl DeleteRuleGroupInput {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteRuleGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRuleGroupInput");
-        formatter.field("rule_group_name", &self.rule_group_name);
-        formatter.field("rule_group_arn", &self.rule_group_arn);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to delete. </p>
     #[doc(hidden)]
@@ -7111,17 +6979,10 @@ impl DeleteResourcePolicyInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteResourcePolicyInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFirewallPolicyInput {
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
@@ -7144,18 +7005,10 @@ impl DeleteFirewallPolicyInput {
         self.firewall_policy_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFirewallPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFirewallPolicyInput");
-        formatter.field("firewall_policy_name", &self.firewall_policy_name);
-        formatter.field("firewall_policy_arn", &self.firewall_policy_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFirewallInput {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
@@ -7178,18 +7031,10 @@ impl DeleteFirewallInput {
         self.firewall_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFirewallInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFirewallInput");
-        formatter.field("firewall_name", &self.firewall_name);
-        formatter.field("firewall_arn", &self.firewall_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRuleGroupInput {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     #[doc(hidden)]
@@ -7308,26 +7153,10 @@ impl CreateRuleGroupInput {
         self.source_metadata.as_ref()
     }
 }
-impl std::fmt::Debug for CreateRuleGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRuleGroupInput");
-        formatter.field("rule_group_name", &self.rule_group_name);
-        formatter.field("rule_group", &self.rule_group);
-        formatter.field("rules", &self.rules);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("description", &self.description);
-        formatter.field("capacity", &self.capacity);
-        formatter.field("tags", &self.tags);
-        formatter.field("dry_run", &self.dry_run);
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.field("source_metadata", &self.source_metadata);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFirewallPolicyInput {
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
     #[doc(hidden)]
@@ -7380,22 +7209,10 @@ impl CreateFirewallPolicyInput {
         self.encryption_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for CreateFirewallPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFirewallPolicyInput");
-        formatter.field("firewall_policy_name", &self.firewall_policy_name);
-        formatter.field("firewall_policy", &self.firewall_policy);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.field("dry_run", &self.dry_run);
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFirewallInput {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     #[doc(hidden)]
@@ -7474,29 +7291,10 @@ impl CreateFirewallInput {
         self.encryption_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for CreateFirewallInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFirewallInput");
-        formatter.field("firewall_name", &self.firewall_name);
-        formatter.field("firewall_policy_arn", &self.firewall_policy_arn);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("subnet_mappings", &self.subnet_mappings);
-        formatter.field("delete_protection", &self.delete_protection);
-        formatter.field("subnet_change_protection", &self.subnet_change_protection);
-        formatter.field(
-            "firewall_policy_change_protection",
-            &self.firewall_policy_change_protection,
-        );
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateSubnetsInput {
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
@@ -7537,20 +7335,10 @@ impl AssociateSubnetsInput {
         self.subnet_mappings.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateSubnetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateSubnetsInput");
-        formatter.field("update_token", &self.update_token);
-        formatter.field("firewall_arn", &self.firewall_arn);
-        formatter.field("firewall_name", &self.firewall_name);
-        formatter.field("subnet_mappings", &self.subnet_mappings);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateFirewallPolicyInput {
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
@@ -7589,15 +7377,5 @@ impl AssociateFirewallPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     pub fn firewall_policy_arn(&self) -> std::option::Option<&str> {
         self.firewall_policy_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateFirewallPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateFirewallPolicyInput");
-        formatter.field("update_token", &self.update_token);
-        formatter.field("firewall_arn", &self.firewall_arn);
-        formatter.field("firewall_name", &self.firewall_name);
-        formatter.field("firewall_policy_arn", &self.firewall_policy_arn);
-        formatter.finish()
     }
 }

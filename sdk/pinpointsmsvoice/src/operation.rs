@@ -5,7 +5,7 @@
 /// [`create_configuration_set`](crate::client::Client::create_configuration_set).
 ///
 /// See [`crate::client::fluent_builders::CreateConfigurationSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateConfigurationSet {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateConfigurationSet {
 /// [`create_configuration_set_event_destination`](crate::client::Client::create_configuration_set_event_destination).
 ///
 /// See [`crate::client::fluent_builders::CreateConfigurationSetEventDestination`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateConfigurationSetEventDestination {
     _private: (),
 }
@@ -75,7 +75,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateConfigurationSetEv
 /// [`delete_configuration_set`](crate::client::Client::delete_configuration_set).
 ///
 /// See [`crate::client::fluent_builders::DeleteConfigurationSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteConfigurationSet {
     _private: (),
 }
@@ -109,7 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConfigurationSet {
 /// [`delete_configuration_set_event_destination`](crate::client::Client::delete_configuration_set_event_destination).
 ///
 /// See [`crate::client::fluent_builders::DeleteConfigurationSetEventDestination`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteConfigurationSetEventDestination {
     _private: (),
 }
@@ -145,7 +145,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConfigurationSetEv
 /// [`get_configuration_set_event_destinations`](crate::client::Client::get_configuration_set_event_destinations).
 ///
 /// See [`crate::client::fluent_builders::GetConfigurationSetEventDestinations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetConfigurationSetEventDestinations {
     _private: (),
 }
@@ -181,7 +181,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConfigurationSetEvent
 /// [`list_configuration_sets`](crate::client::Client::list_configuration_sets).
 ///
 /// See [`crate::client::fluent_builders::ListConfigurationSets`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListConfigurationSets {
     _private: (),
 }
@@ -215,7 +215,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListConfigurationSets {
 /// [`send_voice_message`](crate::client::Client::send_voice_message).
 ///
 /// See [`crate::client::fluent_builders::SendVoiceMessage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SendVoiceMessage {
     _private: (),
 }
@@ -249,7 +249,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendVoiceMessage {
 /// [`update_configuration_set_event_destination`](crate::client::Client::update_configuration_set_event_destination).
 ///
 /// See [`crate::client::fluent_builders::UpdateConfigurationSetEventDestination`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateConfigurationSetEventDestination {
     _private: (),
 }

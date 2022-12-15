@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_home_region_control_input {
 
     /// A builder for [`CreateHomeRegionControlInput`](crate::input::CreateHomeRegionControlInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) home_region: std::option::Option<std::string::String>,
         pub(crate) target: std::option::Option<crate::model::Target>,
@@ -47,7 +47,7 @@ pub mod create_home_region_control_input {
             self,
         ) -> Result<
             crate::input::CreateHomeRegionControlInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateHomeRegionControlInput {
                 home_region: self.home_region,
@@ -70,13 +70,13 @@ impl CreateHomeRegionControlInput {
             crate::operation::CreateHomeRegionControl,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateHomeRegionControlInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -84,8 +84,10 @@ impl CreateHomeRegionControlInput {
             fn update_http_builder(
                 input: &crate::input::CreateHomeRegionControlInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -176,7 +178,7 @@ impl CreateHomeRegionControlInput {
 pub mod describe_home_region_controls_input {
 
     /// A builder for [`DescribeHomeRegionControlsInput`](crate::input::DescribeHomeRegionControlsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_id: std::option::Option<std::string::String>,
         pub(crate) home_region: std::option::Option<std::string::String>,
@@ -240,7 +242,7 @@ pub mod describe_home_region_controls_input {
             self,
         ) -> Result<
             crate::input::DescribeHomeRegionControlsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeHomeRegionControlsInput {
                 control_id: self.control_id,
@@ -265,13 +267,13 @@ impl DescribeHomeRegionControlsInput {
             crate::operation::DescribeHomeRegionControls,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeHomeRegionControlsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -279,8 +281,10 @@ impl DescribeHomeRegionControlsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeHomeRegionControlsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -368,13 +372,13 @@ impl DescribeHomeRegionControlsInput {
 pub mod get_home_region_input {
 
     /// A builder for [`GetHomeRegionInput`](crate::input::GetHomeRegionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetHomeRegionInput`](crate::input::GetHomeRegionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetHomeRegionInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetHomeRegionInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetHomeRegionInput {})
         }
@@ -393,13 +397,13 @@ impl GetHomeRegionInput {
             crate::operation::GetHomeRegion,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetHomeRegionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -407,8 +411,10 @@ impl GetHomeRegionInput {
             fn update_http_builder(
                 input: &crate::input::GetHomeRegionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -488,18 +494,12 @@ impl GetHomeRegionInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetHomeRegionInput {}
-impl std::fmt::Debug for GetHomeRegionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetHomeRegionInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeHomeRegionControlsInput {
     /// <p>The <code>ControlID</code> is a unique identifier string of your <code>HomeRegionControl</code> object.</p>
     #[doc(hidden)]
@@ -539,21 +539,10 @@ impl DescribeHomeRegionControlsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeHomeRegionControlsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeHomeRegionControlsInput");
-        formatter.field("control_id", &self.control_id);
-        formatter.field("home_region", &self.home_region);
-        formatter.field("target", &self.target);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateHomeRegionControlInput {
     /// <p>The name of the home region of the calling account.</p>
     #[doc(hidden)]
@@ -577,14 +566,5 @@ impl CreateHomeRegionControlInput {
     /// <p>Optional Boolean flag to indicate whether any effect should take place. It tests whether the caller has permission to make the call.</p>
     pub fn dry_run(&self) -> bool {
         self.dry_run
-    }
-}
-impl std::fmt::Debug for CreateHomeRegionControlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateHomeRegionControlInput");
-        formatter.field("home_region", &self.home_region);
-        formatter.field("target", &self.target);
-        formatter.field("dry_run", &self.dry_run);
-        formatter.finish()
     }
 }

@@ -32,7 +32,7 @@ impl std::fmt::Debug for UpdateAppInstanceUserEndpointOutput {
 pub mod update_app_instance_user_endpoint_output {
 
     /// A builder for [`UpdateAppInstanceUserEndpointOutput`](crate::output::UpdateAppInstanceUserEndpointOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
         pub(crate) endpoint_id: std::option::Option<std::string::String>,
@@ -69,6 +69,14 @@ pub mod update_app_instance_user_endpoint_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("app_instance_user_arn", &"*** Sensitive Data Redacted ***");
+            formatter.field("endpoint_id", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl UpdateAppInstanceUserEndpointOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAppInstanceUserEndpointOutput`](crate::output::UpdateAppInstanceUserEndpointOutput).
@@ -79,7 +87,7 @@ impl UpdateAppInstanceUserEndpointOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAppInstanceUserOutput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     #[doc(hidden)]
@@ -91,18 +99,11 @@ impl UpdateAppInstanceUserOutput {
         self.app_instance_user_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAppInstanceUserOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAppInstanceUserOutput");
-        formatter.field("app_instance_user_arn", &self.app_instance_user_arn);
-        formatter.finish()
-    }
-}
 /// See [`UpdateAppInstanceUserOutput`](crate::output::UpdateAppInstanceUserOutput).
 pub mod update_app_instance_user_output {
 
     /// A builder for [`UpdateAppInstanceUserOutput`](crate::output::UpdateAppInstanceUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
     }
@@ -137,7 +138,7 @@ impl UpdateAppInstanceUserOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAppInstanceOutput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     #[doc(hidden)]
@@ -149,18 +150,11 @@ impl UpdateAppInstanceOutput {
         self.app_instance_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAppInstanceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAppInstanceOutput");
-        formatter.field("app_instance_arn", &self.app_instance_arn);
-        formatter.finish()
-    }
-}
 /// See [`UpdateAppInstanceOutput`](crate::output::UpdateAppInstanceOutput).
 pub mod update_app_instance_output {
 
     /// A builder for [`UpdateAppInstanceOutput`](crate::output::UpdateAppInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
     }
@@ -195,19 +189,13 @@ impl UpdateAppInstanceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput {}
-impl std::fmt::Debug for UntagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -225,19 +213,13 @@ impl UntagResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput {}
-impl std::fmt::Debug for TagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -286,7 +268,7 @@ impl std::fmt::Debug for RegisterAppInstanceUserEndpointOutput {
 pub mod register_app_instance_user_endpoint_output {
 
     /// A builder for [`RegisterAppInstanceUserEndpointOutput`](crate::output::RegisterAppInstanceUserEndpointOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
         pub(crate) endpoint_id: std::option::Option<std::string::String>,
@@ -323,6 +305,14 @@ pub mod register_app_instance_user_endpoint_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("app_instance_user_arn", &"*** Sensitive Data Redacted ***");
+            formatter.field("endpoint_id", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl RegisterAppInstanceUserEndpointOutput {
     /// Creates a new builder-style object to manufacture [`RegisterAppInstanceUserEndpointOutput`](crate::output::RegisterAppInstanceUserEndpointOutput).
@@ -333,7 +323,7 @@ impl RegisterAppInstanceUserEndpointOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutAppInstanceRetentionSettingsOutput {
     /// <p>The time in days to retain data. Data type: number.</p>
     #[doc(hidden)]
@@ -355,25 +345,11 @@ impl PutAppInstanceRetentionSettingsOutput {
         self.initiate_deletion_timestamp.as_ref()
     }
 }
-impl std::fmt::Debug for PutAppInstanceRetentionSettingsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutAppInstanceRetentionSettingsOutput");
-        formatter.field(
-            "app_instance_retention_settings",
-            &self.app_instance_retention_settings,
-        );
-        formatter.field(
-            "initiate_deletion_timestamp",
-            &self.initiate_deletion_timestamp,
-        );
-        formatter.finish()
-    }
-}
 /// See [`PutAppInstanceRetentionSettingsOutput`](crate::output::PutAppInstanceRetentionSettingsOutput).
 pub mod put_app_instance_retention_settings_output {
 
     /// A builder for [`PutAppInstanceRetentionSettingsOutput`](crate::output::PutAppInstanceRetentionSettingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_retention_settings:
             std::option::Option<crate::model::AppInstanceRetentionSettings>,
@@ -427,7 +403,7 @@ impl PutAppInstanceRetentionSettingsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tag key-value pairs.</p>
     #[doc(hidden)]
@@ -439,18 +415,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceOutput");
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -531,7 +500,7 @@ impl std::fmt::Debug for ListAppInstanceUsersOutput {
 pub mod list_app_instance_users_output {
 
     /// A builder for [`ListAppInstanceUsersOutput`](crate::output::ListAppInstanceUsersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
         pub(crate) app_instance_users:
@@ -590,6 +559,15 @@ pub mod list_app_instance_users_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("app_instance_arn", &self.app_instance_arn);
+            formatter.field("app_instance_users", &self.app_instance_users);
+            formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl ListAppInstanceUsersOutput {
     /// Creates a new builder-style object to manufacture [`ListAppInstanceUsersOutput`](crate::output::ListAppInstanceUsersOutput).
@@ -637,7 +615,7 @@ impl std::fmt::Debug for ListAppInstanceUserEndpointsOutput {
 pub mod list_app_instance_user_endpoints_output {
 
     /// A builder for [`ListAppInstanceUserEndpointsOutput`](crate::output::ListAppInstanceUserEndpointsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instance_user_endpoints:
             std::option::Option<std::vec::Vec<crate::model::AppInstanceUserEndpointSummary>>,
@@ -684,6 +662,17 @@ pub mod list_app_instance_user_endpoints_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field(
+                "app_instance_user_endpoints",
+                &self.app_instance_user_endpoints,
+            );
+            formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl ListAppInstanceUserEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`ListAppInstanceUserEndpointsOutput`](crate::output::ListAppInstanceUserEndpointsOutput).
@@ -725,7 +714,7 @@ impl std::fmt::Debug for ListAppInstancesOutput {
 pub mod list_app_instances_output {
 
     /// A builder for [`ListAppInstancesOutput`](crate::output::ListAppInstancesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instances:
             std::option::Option<std::vec::Vec<crate::model::AppInstanceSummary>>,
@@ -767,6 +756,14 @@ pub mod list_app_instances_output {
                 app_instances: self.app_instances,
                 next_token: self.next_token,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("app_instances", &self.app_instances);
+            formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -821,7 +818,7 @@ impl std::fmt::Debug for ListAppInstanceAdminsOutput {
 pub mod list_app_instance_admins_output {
 
     /// A builder for [`ListAppInstanceAdminsOutput`](crate::output::ListAppInstanceAdminsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
         pub(crate) app_instance_admins:
@@ -880,6 +877,15 @@ pub mod list_app_instance_admins_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("app_instance_arn", &self.app_instance_arn);
+            formatter.field("app_instance_admins", &self.app_instance_admins);
+            formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl ListAppInstanceAdminsOutput {
     /// Creates a new builder-style object to manufacture [`ListAppInstanceAdminsOutput`](crate::output::ListAppInstanceAdminsOutput).
@@ -890,7 +896,7 @@ impl ListAppInstanceAdminsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAppInstanceRetentionSettingsOutput {
     /// <p>The retention settings for the <code>AppInstance</code>.</p>
     #[doc(hidden)]
@@ -912,25 +918,11 @@ impl GetAppInstanceRetentionSettingsOutput {
         self.initiate_deletion_timestamp.as_ref()
     }
 }
-impl std::fmt::Debug for GetAppInstanceRetentionSettingsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAppInstanceRetentionSettingsOutput");
-        formatter.field(
-            "app_instance_retention_settings",
-            &self.app_instance_retention_settings,
-        );
-        formatter.field(
-            "initiate_deletion_timestamp",
-            &self.initiate_deletion_timestamp,
-        );
-        formatter.finish()
-    }
-}
 /// See [`GetAppInstanceRetentionSettingsOutput`](crate::output::GetAppInstanceRetentionSettingsOutput).
 pub mod get_app_instance_retention_settings_output {
 
     /// A builder for [`GetAppInstanceRetentionSettingsOutput`](crate::output::GetAppInstanceRetentionSettingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_retention_settings:
             std::option::Option<crate::model::AppInstanceRetentionSettings>,
@@ -984,7 +976,7 @@ impl GetAppInstanceRetentionSettingsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAppInstanceUserEndpointOutput {
     /// <p>The full details of an <code>AppInstanceUserEndpoint</code>: the <code>AppInstanceUserArn</code>, ID, name, type, resource ARN, attributes, allow messages, state, and created and last updated timestamps. All timestamps use epoch milliseconds.</p>
     #[doc(hidden)]
@@ -998,21 +990,11 @@ impl DescribeAppInstanceUserEndpointOutput {
         self.app_instance_user_endpoint.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeAppInstanceUserEndpointOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAppInstanceUserEndpointOutput");
-        formatter.field(
-            "app_instance_user_endpoint",
-            &self.app_instance_user_endpoint,
-        );
-        formatter.finish()
-    }
-}
 /// See [`DescribeAppInstanceUserEndpointOutput`](crate::output::DescribeAppInstanceUserEndpointOutput).
 pub mod describe_app_instance_user_endpoint_output {
 
     /// A builder for [`DescribeAppInstanceUserEndpointOutput`](crate::output::DescribeAppInstanceUserEndpointOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_user_endpoint:
             std::option::Option<crate::model::AppInstanceUserEndpoint>,
@@ -1051,7 +1033,7 @@ impl DescribeAppInstanceUserEndpointOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAppInstanceUserOutput {
     /// <p>The name of the <code>AppInstanceUser</code>.</p>
     #[doc(hidden)]
@@ -1063,18 +1045,11 @@ impl DescribeAppInstanceUserOutput {
         self.app_instance_user.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeAppInstanceUserOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAppInstanceUserOutput");
-        formatter.field("app_instance_user", &self.app_instance_user);
-        formatter.finish()
-    }
-}
 /// See [`DescribeAppInstanceUserOutput`](crate::output::DescribeAppInstanceUserOutput).
 pub mod describe_app_instance_user_output {
 
     /// A builder for [`DescribeAppInstanceUserOutput`](crate::output::DescribeAppInstanceUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_user: std::option::Option<crate::model::AppInstanceUser>,
     }
@@ -1109,7 +1084,7 @@ impl DescribeAppInstanceUserOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAppInstanceAdminOutput {
     /// <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps use epoch milliseconds.</p>
     #[doc(hidden)]
@@ -1121,18 +1096,11 @@ impl DescribeAppInstanceAdminOutput {
         self.app_instance_admin.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeAppInstanceAdminOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAppInstanceAdminOutput");
-        formatter.field("app_instance_admin", &self.app_instance_admin);
-        formatter.finish()
-    }
-}
 /// See [`DescribeAppInstanceAdminOutput`](crate::output::DescribeAppInstanceAdminOutput).
 pub mod describe_app_instance_admin_output {
 
     /// A builder for [`DescribeAppInstanceAdminOutput`](crate::output::DescribeAppInstanceAdminOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_admin: std::option::Option<crate::model::AppInstanceAdmin>,
     }
@@ -1167,7 +1135,7 @@ impl DescribeAppInstanceAdminOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAppInstanceOutput {
     /// <p>The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>. All timestamps use epoch milliseconds.</p>
     #[doc(hidden)]
@@ -1179,18 +1147,11 @@ impl DescribeAppInstanceOutput {
         self.app_instance.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeAppInstanceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAppInstanceOutput");
-        formatter.field("app_instance", &self.app_instance);
-        formatter.finish()
-    }
-}
 /// See [`DescribeAppInstanceOutput`](crate::output::DescribeAppInstanceOutput).
 pub mod describe_app_instance_output {
 
     /// A builder for [`DescribeAppInstanceOutput`](crate::output::DescribeAppInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance: std::option::Option<crate::model::AppInstance>,
     }
@@ -1225,19 +1186,13 @@ impl DescribeAppInstanceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterAppInstanceUserEndpointOutput {}
-impl std::fmt::Debug for DeregisterAppInstanceUserEndpointOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterAppInstanceUserEndpointOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeregisterAppInstanceUserEndpointOutput`](crate::output::DeregisterAppInstanceUserEndpointOutput).
 pub mod deregister_app_instance_user_endpoint_output {
 
     /// A builder for [`DeregisterAppInstanceUserEndpointOutput`](crate::output::DeregisterAppInstanceUserEndpointOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeregisterAppInstanceUserEndpointOutput`](crate::output::DeregisterAppInstanceUserEndpointOutput).
@@ -1255,19 +1210,13 @@ impl DeregisterAppInstanceUserEndpointOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAppInstanceUserOutput {}
-impl std::fmt::Debug for DeleteAppInstanceUserOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAppInstanceUserOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteAppInstanceUserOutput`](crate::output::DeleteAppInstanceUserOutput).
 pub mod delete_app_instance_user_output {
 
     /// A builder for [`DeleteAppInstanceUserOutput`](crate::output::DeleteAppInstanceUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAppInstanceUserOutput`](crate::output::DeleteAppInstanceUserOutput).
@@ -1285,19 +1234,13 @@ impl DeleteAppInstanceUserOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAppInstanceAdminOutput {}
-impl std::fmt::Debug for DeleteAppInstanceAdminOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAppInstanceAdminOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteAppInstanceAdminOutput`](crate::output::DeleteAppInstanceAdminOutput).
 pub mod delete_app_instance_admin_output {
 
     /// A builder for [`DeleteAppInstanceAdminOutput`](crate::output::DeleteAppInstanceAdminOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAppInstanceAdminOutput`](crate::output::DeleteAppInstanceAdminOutput).
@@ -1315,19 +1258,13 @@ impl DeleteAppInstanceAdminOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAppInstanceOutput {}
-impl std::fmt::Debug for DeleteAppInstanceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAppInstanceOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteAppInstanceOutput`](crate::output::DeleteAppInstanceOutput).
 pub mod delete_app_instance_output {
 
     /// A builder for [`DeleteAppInstanceOutput`](crate::output::DeleteAppInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAppInstanceOutput`](crate::output::DeleteAppInstanceOutput).
@@ -1345,7 +1282,7 @@ impl DeleteAppInstanceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAppInstanceUserOutput {
     /// <p>The user's ARN.</p>
     #[doc(hidden)]
@@ -1357,18 +1294,11 @@ impl CreateAppInstanceUserOutput {
         self.app_instance_user_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAppInstanceUserOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAppInstanceUserOutput");
-        formatter.field("app_instance_user_arn", &self.app_instance_user_arn);
-        formatter.finish()
-    }
-}
 /// See [`CreateAppInstanceUserOutput`](crate::output::CreateAppInstanceUserOutput).
 pub mod create_app_instance_user_output {
 
     /// A builder for [`CreateAppInstanceUserOutput`](crate::output::CreateAppInstanceUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
     }
@@ -1403,7 +1333,7 @@ impl CreateAppInstanceUserOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAppInstanceAdminOutput {
     /// <p>The name and ARN of the admin for the <code>AppInstance</code>.</p>
     #[doc(hidden)]
@@ -1422,19 +1352,11 @@ impl CreateAppInstanceAdminOutput {
         self.app_instance_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAppInstanceAdminOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAppInstanceAdminOutput");
-        formatter.field("app_instance_admin", &self.app_instance_admin);
-        formatter.field("app_instance_arn", &self.app_instance_arn);
-        formatter.finish()
-    }
-}
 /// See [`CreateAppInstanceAdminOutput`](crate::output::CreateAppInstanceAdminOutput).
 pub mod create_app_instance_admin_output {
 
     /// A builder for [`CreateAppInstanceAdminOutput`](crate::output::CreateAppInstanceAdminOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_admin: std::option::Option<crate::model::Identity>,
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
@@ -1484,7 +1406,7 @@ impl CreateAppInstanceAdminOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAppInstanceOutput {
     /// <p>The Amazon Resource Number (ARN) of the <code>AppInstance</code>.</p>
     #[doc(hidden)]
@@ -1496,18 +1418,11 @@ impl CreateAppInstanceOutput {
         self.app_instance_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAppInstanceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAppInstanceOutput");
-        formatter.field("app_instance_arn", &self.app_instance_arn);
-        formatter.finish()
-    }
-}
 /// See [`CreateAppInstanceOutput`](crate::output::CreateAppInstanceOutput).
 pub mod create_app_instance_output {
 
     /// A builder for [`CreateAppInstanceOutput`](crate::output::CreateAppInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
     }

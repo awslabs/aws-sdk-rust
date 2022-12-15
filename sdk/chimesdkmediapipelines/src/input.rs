@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_media_capture_pipeline_input {
 
     /// A builder for [`CreateMediaCapturePipelineInput`](crate::input::CreateMediaCapturePipelineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) source_type: std::option::Option<crate::model::MediaPipelineSourceType>,
         pub(crate) source_arn: std::option::Option<std::string::String>,
@@ -116,7 +116,7 @@ pub mod create_media_capture_pipeline_input {
             self,
         ) -> Result<
             crate::input::CreateMediaCapturePipelineInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateMediaCapturePipelineInput {
                 source_type: self.source_type,
@@ -127,6 +127,22 @@ pub mod create_media_capture_pipeline_input {
                 chime_sdk_meeting_configuration: self.chime_sdk_meeting_configuration,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("source_type", &self.source_type);
+            formatter.field("source_arn", &"*** Sensitive Data Redacted ***");
+            formatter.field("sink_type", &self.sink_type);
+            formatter.field("sink_arn", &"*** Sensitive Data Redacted ***");
+            formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
+            formatter.field(
+                "chime_sdk_meeting_configuration",
+                &self.chime_sdk_meeting_configuration,
+            );
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -143,7 +159,7 @@ impl CreateMediaCapturePipelineInput {
             crate::operation::CreateMediaCapturePipeline,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
@@ -152,7 +168,7 @@ impl CreateMediaCapturePipelineInput {
             fn uri_base(
                 _input: &crate::input::CreateMediaCapturePipelineInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/sdk-media-capture-pipelines").expect("formatting should succeed");
                 Ok(())
             }
@@ -160,8 +176,10 @@ impl CreateMediaCapturePipelineInput {
             fn update_http_builder(
                 input: &crate::input::CreateMediaCapturePipelineInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -244,7 +262,7 @@ impl CreateMediaCapturePipelineInput {
 pub mod create_media_concatenation_pipeline_input {
 
     /// A builder for [`CreateMediaConcatenationPipelineInput`](crate::input::CreateMediaConcatenationPipelineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) sources: std::option::Option<std::vec::Vec<crate::model::ConcatenationSource>>,
         pub(crate) sinks: std::option::Option<std::vec::Vec<crate::model::ConcatenationSink>>,
@@ -327,7 +345,7 @@ pub mod create_media_concatenation_pipeline_input {
             self,
         ) -> Result<
             crate::input::CreateMediaConcatenationPipelineInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateMediaConcatenationPipelineInput {
                 sources: self.sources,
@@ -335,6 +353,16 @@ pub mod create_media_concatenation_pipeline_input {
                 client_request_token: self.client_request_token,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("sources", &self.sources);
+            formatter.field("sinks", &self.sinks);
+            formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -351,7 +379,7 @@ impl CreateMediaConcatenationPipelineInput {
             crate::operation::CreateMediaConcatenationPipeline,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
@@ -360,7 +388,7 @@ impl CreateMediaConcatenationPipelineInput {
             fn uri_base(
                 _input: &crate::input::CreateMediaConcatenationPipelineInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/sdk-media-concatenation-pipelines")
                     .expect("formatting should succeed");
                 Ok(())
@@ -369,8 +397,10 @@ impl CreateMediaConcatenationPipelineInput {
             fn update_http_builder(
                 input: &crate::input::CreateMediaConcatenationPipelineInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -453,7 +483,7 @@ impl CreateMediaConcatenationPipelineInput {
 pub mod create_media_live_connector_pipeline_input {
 
     /// A builder for [`CreateMediaLiveConnectorPipelineInput`](crate::input::CreateMediaLiveConnectorPipelineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) sources:
             std::option::Option<std::vec::Vec<crate::model::LiveConnectorSourceConfiguration>>,
@@ -540,7 +570,7 @@ pub mod create_media_live_connector_pipeline_input {
             self,
         ) -> Result<
             crate::input::CreateMediaLiveConnectorPipelineInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateMediaLiveConnectorPipelineInput {
                 sources: self.sources,
@@ -548,6 +578,16 @@ pub mod create_media_live_connector_pipeline_input {
                 client_request_token: self.client_request_token,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("sources", &self.sources);
+            formatter.field("sinks", &self.sinks);
+            formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -564,7 +604,7 @@ impl CreateMediaLiveConnectorPipelineInput {
             crate::operation::CreateMediaLiveConnectorPipeline,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
@@ -573,7 +613,7 @@ impl CreateMediaLiveConnectorPipelineInput {
             fn uri_base(
                 _input: &crate::input::CreateMediaLiveConnectorPipelineInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/sdk-media-live-connector-pipelines")
                     .expect("formatting should succeed");
                 Ok(())
@@ -582,8 +622,10 @@ impl CreateMediaLiveConnectorPipelineInput {
             fn update_http_builder(
                 input: &crate::input::CreateMediaLiveConnectorPipelineInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -666,7 +708,7 @@ impl CreateMediaLiveConnectorPipelineInput {
 pub mod delete_media_capture_pipeline_input {
 
     /// A builder for [`DeleteMediaCapturePipelineInput`](crate::input::DeleteMediaCapturePipelineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) media_pipeline_id: std::option::Option<std::string::String>,
     }
@@ -689,7 +731,7 @@ pub mod delete_media_capture_pipeline_input {
             self,
         ) -> Result<
             crate::input::DeleteMediaCapturePipelineInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteMediaCapturePipelineInput {
                 media_pipeline_id: self.media_pipeline_id,
@@ -710,26 +752,31 @@ impl DeleteMediaCapturePipelineInput {
             crate::operation::DeleteMediaCapturePipeline,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteMediaCapturePipelineInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.media_pipeline_id;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "media_pipeline_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let media_pipeline_id = aws_smithy_http::label::fmt_string(input_1, false);
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "media_pipeline_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let media_pipeline_id = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if media_pipeline_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "media_pipeline_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "media_pipeline_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -743,8 +790,10 @@ impl DeleteMediaCapturePipelineInput {
             fn update_http_builder(
                 input: &crate::input::DeleteMediaCapturePipelineInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -814,7 +863,7 @@ impl DeleteMediaCapturePipelineInput {
 pub mod delete_media_pipeline_input {
 
     /// A builder for [`DeleteMediaPipelineInput`](crate::input::DeleteMediaPipelineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) media_pipeline_id: std::option::Option<std::string::String>,
     }
@@ -835,8 +884,10 @@ pub mod delete_media_pipeline_input {
         /// Consumes the builder and constructs a [`DeleteMediaPipelineInput`](crate::input::DeleteMediaPipelineInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteMediaPipelineInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteMediaPipelineInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteMediaPipelineInput {
                 media_pipeline_id: self.media_pipeline_id,
             })
@@ -856,26 +907,31 @@ impl DeleteMediaPipelineInput {
             crate::operation::DeleteMediaPipeline,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteMediaPipelineInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_2 = &_input.media_pipeline_id;
-                let input_2 = input_2.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "media_pipeline_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let media_pipeline_id = aws_smithy_http::label::fmt_string(input_2, false);
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "media_pipeline_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let media_pipeline_id = aws_smithy_http::label::fmt_string(
+                    input_2,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if media_pipeline_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "media_pipeline_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "media_pipeline_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -889,8 +945,10 @@ impl DeleteMediaPipelineInput {
             fn update_http_builder(
                 input: &crate::input::DeleteMediaPipelineInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -960,7 +1018,7 @@ impl DeleteMediaPipelineInput {
 pub mod get_media_capture_pipeline_input {
 
     /// A builder for [`GetMediaCapturePipelineInput`](crate::input::GetMediaCapturePipelineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) media_pipeline_id: std::option::Option<std::string::String>,
     }
@@ -983,7 +1041,7 @@ pub mod get_media_capture_pipeline_input {
             self,
         ) -> Result<
             crate::input::GetMediaCapturePipelineInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetMediaCapturePipelineInput {
                 media_pipeline_id: self.media_pipeline_id,
@@ -1004,26 +1062,31 @@ impl GetMediaCapturePipelineInput {
             crate::operation::GetMediaCapturePipeline,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetMediaCapturePipelineInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_3 = &_input.media_pipeline_id;
-                let input_3 = input_3.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "media_pipeline_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let media_pipeline_id = aws_smithy_http::label::fmt_string(input_3, false);
+                let input_3 = input_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "media_pipeline_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let media_pipeline_id = aws_smithy_http::label::fmt_string(
+                    input_3,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if media_pipeline_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "media_pipeline_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "media_pipeline_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1037,8 +1100,10 @@ impl GetMediaCapturePipelineInput {
             fn update_http_builder(
                 input: &crate::input::GetMediaCapturePipelineInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1108,7 +1173,7 @@ impl GetMediaCapturePipelineInput {
 pub mod get_media_pipeline_input {
 
     /// A builder for [`GetMediaPipelineInput`](crate::input::GetMediaPipelineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) media_pipeline_id: std::option::Option<std::string::String>,
     }
@@ -1129,8 +1194,10 @@ pub mod get_media_pipeline_input {
         /// Consumes the builder and constructs a [`GetMediaPipelineInput`](crate::input::GetMediaPipelineInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetMediaPipelineInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetMediaPipelineInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetMediaPipelineInput {
                 media_pipeline_id: self.media_pipeline_id,
             })
@@ -1150,26 +1217,31 @@ impl GetMediaPipelineInput {
             crate::operation::GetMediaPipeline,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetMediaPipelineInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_4 = &_input.media_pipeline_id;
-                let input_4 = input_4.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "media_pipeline_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let media_pipeline_id = aws_smithy_http::label::fmt_string(input_4, false);
+                let input_4 = input_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "media_pipeline_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let media_pipeline_id = aws_smithy_http::label::fmt_string(
+                    input_4,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if media_pipeline_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "media_pipeline_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "media_pipeline_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1183,8 +1255,10 @@ impl GetMediaPipelineInput {
             fn update_http_builder(
                 input: &crate::input::GetMediaPipelineInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1254,7 +1328,7 @@ impl GetMediaPipelineInput {
 pub mod list_media_capture_pipelines_input {
 
     /// A builder for [`ListMediaCapturePipelinesInput`](crate::input::ListMediaCapturePipelinesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -1285,7 +1359,7 @@ pub mod list_media_capture_pipelines_input {
             self,
         ) -> Result<
             crate::input::ListMediaCapturePipelinesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListMediaCapturePipelinesInput {
                 next_token: self.next_token,
@@ -1307,29 +1381,33 @@ impl ListMediaCapturePipelinesInput {
             crate::operation::ListMediaCapturePipelines,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListMediaCapturePipelinesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/sdk-media-capture-pipelines").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListMediaCapturePipelinesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_5) = &_input.next_token {
-                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_5));
+                    {
+                        query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_5));
+                    }
                 }
                 if let Some(inner_6) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_6).encode(),
-                    );
+                    if *inner_6 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_6).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -1337,8 +1415,10 @@ impl ListMediaCapturePipelinesInput {
             fn update_http_builder(
                 input: &crate::input::ListMediaCapturePipelinesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1409,7 +1489,7 @@ impl ListMediaCapturePipelinesInput {
 pub mod list_media_pipelines_input {
 
     /// A builder for [`ListMediaPipelinesInput`](crate::input::ListMediaPipelinesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -1438,8 +1518,10 @@ pub mod list_media_pipelines_input {
         /// Consumes the builder and constructs a [`ListMediaPipelinesInput`](crate::input::ListMediaPipelinesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListMediaPipelinesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListMediaPipelinesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListMediaPipelinesInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
@@ -1460,29 +1542,33 @@ impl ListMediaPipelinesInput {
             crate::operation::ListMediaPipelines,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListMediaPipelinesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/sdk-media-pipelines").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListMediaPipelinesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_7) = &_input.next_token {
-                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_7));
+                    {
+                        query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_7));
+                    }
                 }
                 if let Some(inner_8) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_8).encode(),
-                    );
+                    if *inner_8 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_8).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -1490,8 +1576,10 @@ impl ListMediaPipelinesInput {
             fn update_http_builder(
                 input: &crate::input::ListMediaPipelinesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1562,7 +1650,7 @@ impl ListMediaPipelinesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -1580,8 +1668,10 @@ pub mod list_tags_for_resource_input {
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
             })
@@ -1601,32 +1691,47 @@ impl ListTagsForResourceInput {
             crate::operation::ListTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/tags").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListTagsForResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_9) = &_input.resource_arn {
-                    query.push_kv("arn", &aws_smithy_http::query::fmt_string(&inner_9));
+                let inner_9 = &_input.resource_arn;
+                let inner_9 = inner_9.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_9.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("arn", &aws_smithy_http::query::fmt_string(&inner_9));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::ListTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1697,7 +1802,7 @@ impl ListTagsForResourceInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1735,7 +1840,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
@@ -1757,20 +1862,20 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/tags").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::TagResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("operation", "tag-resource");
                 Ok(())
@@ -1779,8 +1884,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1865,7 +1972,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1903,7 +2010,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
@@ -1925,20 +2032,20 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/tags").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::UntagResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("operation", "untag-resource");
                 Ok(())
@@ -1947,8 +2054,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2031,7 +2140,7 @@ impl UntagResourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the pipeline that you want to untag.</p>
     #[doc(hidden)]
@@ -2050,18 +2159,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline's endpoint region, resource ID, and pipeline ID.</p>
     #[doc(hidden)]
@@ -2080,18 +2181,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline's region, resource ID, and pipeline ID.</p>
     #[doc(hidden)]
@@ -2103,17 +2196,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMediaPipelinesInput {
     /// <p>The token used to retrieve the next page of results.</p>
     #[doc(hidden)]
@@ -2132,18 +2218,10 @@ impl ListMediaPipelinesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListMediaPipelinesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMediaPipelinesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMediaCapturePipelinesInput {
     /// <p>The token used to retrieve the next page of results.</p>
     #[doc(hidden)]
@@ -2162,18 +2240,10 @@ impl ListMediaCapturePipelinesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListMediaCapturePipelinesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMediaCapturePipelinesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMediaPipelineInput {
     /// <p>The ID of the pipeline that you want to get.</p>
     #[doc(hidden)]
@@ -2185,17 +2255,10 @@ impl GetMediaPipelineInput {
         self.media_pipeline_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetMediaPipelineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMediaPipelineInput");
-        formatter.field("media_pipeline_id", &self.media_pipeline_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMediaCapturePipelineInput {
     /// <p>The ID of the pipeline that you want to get.</p>
     #[doc(hidden)]
@@ -2207,17 +2270,10 @@ impl GetMediaCapturePipelineInput {
         self.media_pipeline_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetMediaCapturePipelineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMediaCapturePipelineInput");
-        formatter.field("media_pipeline_id", &self.media_pipeline_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMediaPipelineInput {
     /// <p>The ID of the media pipeline to delete.</p>
     #[doc(hidden)]
@@ -2229,17 +2285,10 @@ impl DeleteMediaPipelineInput {
         self.media_pipeline_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMediaPipelineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMediaPipelineInput");
-        formatter.field("media_pipeline_id", &self.media_pipeline_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMediaCapturePipelineInput {
     /// <p>The ID of the media pipeline being deleted. </p>
     #[doc(hidden)]
@@ -2249,13 +2298,6 @@ impl DeleteMediaCapturePipelineInput {
     /// <p>The ID of the media pipeline being deleted. </p>
     pub fn media_pipeline_id(&self) -> std::option::Option<&str> {
         self.media_pipeline_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteMediaCapturePipelineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMediaCapturePipelineInput");
-        formatter.field("media_pipeline_id", &self.media_pipeline_id);
-        formatter.finish()
     }
 }
 

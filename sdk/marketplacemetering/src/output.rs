@@ -2,7 +2,7 @@
 
 /// <p>The result of the <code>ResolveCustomer</code> operation. Contains the <code>CustomerIdentifier</code> along with the <code>CustomerAWSAccountId</code> and <code>ProductCode</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResolveCustomerOutput {
     /// <p>The <code>CustomerIdentifier</code> is used to identify an individual customer in your application. Calls to <code>BatchMeterUsage</code> require <code>CustomerIdentifiers</code> for each <code>UsageRecord</code>.</p>
     #[doc(hidden)]
@@ -28,20 +28,11 @@ impl ResolveCustomerOutput {
         self.customer_aws_account_id.as_deref()
     }
 }
-impl std::fmt::Debug for ResolveCustomerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResolveCustomerOutput");
-        formatter.field("customer_identifier", &self.customer_identifier);
-        formatter.field("product_code", &self.product_code);
-        formatter.field("customer_aws_account_id", &self.customer_aws_account_id);
-        formatter.finish()
-    }
-}
 /// See [`ResolveCustomerOutput`](crate::output::ResolveCustomerOutput).
 pub mod resolve_customer_output {
 
     /// A builder for [`ResolveCustomerOutput`](crate::output::ResolveCustomerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) customer_identifier: std::option::Option<std::string::String>,
         pub(crate) product_code: std::option::Option<std::string::String>,
@@ -103,7 +94,7 @@ impl ResolveCustomerOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterUsageOutput {
     /// <p>(Optional) Only included when public key version has expired</p>
     #[doc(hidden)]
@@ -124,22 +115,11 @@ impl RegisterUsageOutput {
         self.signature.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterUsageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterUsageOutput");
-        formatter.field(
-            "public_key_rotation_timestamp",
-            &self.public_key_rotation_timestamp,
-        );
-        formatter.field("signature", &self.signature);
-        formatter.finish()
-    }
-}
 /// See [`RegisterUsageOutput`](crate::output::RegisterUsageOutput).
 pub mod register_usage_output {
 
     /// A builder for [`RegisterUsageOutput`](crate::output::RegisterUsageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) public_key_rotation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) signature: std::option::Option<std::string::String>,
@@ -186,7 +166,7 @@ impl RegisterUsageOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MeterUsageOutput {
     /// <p>Metering record id.</p>
     #[doc(hidden)]
@@ -198,18 +178,11 @@ impl MeterUsageOutput {
         self.metering_record_id.as_deref()
     }
 }
-impl std::fmt::Debug for MeterUsageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MeterUsageOutput");
-        formatter.field("metering_record_id", &self.metering_record_id);
-        formatter.finish()
-    }
-}
 /// See [`MeterUsageOutput`](crate::output::MeterUsageOutput).
 pub mod meter_usage_output {
 
     /// A builder for [`MeterUsageOutput`](crate::output::MeterUsageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metering_record_id: std::option::Option<std::string::String>,
     }
@@ -244,7 +217,7 @@ impl MeterUsageOutput {
 
 /// <p>Contains the <code>UsageRecords</code> processed by <code>BatchMeterUsage</code> and any records that have failed due to transient error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchMeterUsageOutput {
     /// <p>Contains all <code>UsageRecords</code> processed by <code>BatchMeterUsage</code>. These records were either honored by AWS Marketplace Metering Service or were invalid. Invalid records should be fixed before being resubmitted.</p>
     #[doc(hidden)]
@@ -263,19 +236,11 @@ impl BatchMeterUsageOutput {
         self.unprocessed_records.as_deref()
     }
 }
-impl std::fmt::Debug for BatchMeterUsageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchMeterUsageOutput");
-        formatter.field("results", &self.results);
-        formatter.field("unprocessed_records", &self.unprocessed_records);
-        formatter.finish()
-    }
-}
 /// See [`BatchMeterUsageOutput`](crate::output::BatchMeterUsageOutput).
 pub mod batch_meter_usage_output {
 
     /// A builder for [`BatchMeterUsageOutput`](crate::output::BatchMeterUsageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) results: std::option::Option<std::vec::Vec<crate::model::UsageRecordResult>>,
         pub(crate) unprocessed_records:

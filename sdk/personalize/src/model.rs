@@ -2,7 +2,7 @@
 
 /// <p>The configuration details of the recommender.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecommenderConfig {
     /// <p>Specifies the exploration configuration hyperparameters, including <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount of item exploration Amazon Personalize uses when recommending items. Provide <code>itemExplorationConfig</code> data only if your recommenders generate personalized recommendations for a user (not popular items or similar items).</p>
     #[doc(hidden)]
@@ -25,22 +25,11 @@ impl RecommenderConfig {
         self.min_recommendation_requests_per_second
     }
 }
-impl std::fmt::Debug for RecommenderConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecommenderConfig");
-        formatter.field("item_exploration_config", &self.item_exploration_config);
-        formatter.field(
-            "min_recommendation_requests_per_second",
-            &self.min_recommendation_requests_per_second,
-        );
-        formatter.finish()
-    }
-}
 /// See [`RecommenderConfig`](crate::model::RecommenderConfig).
 pub mod recommender_config {
 
     /// A builder for [`RecommenderConfig`](crate::model::RecommenderConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) item_exploration_config: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -104,7 +93,7 @@ impl RecommenderConfig {
 
 /// <p>The configuration details of a campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CampaignConfig {
     /// <p>Specifies the exploration configuration hyperparameters, including <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount of item exploration Amazon Personalize uses when recommending items. Provide <code>itemExplorationConfig</code> data only if your solution uses the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe.</p>
     #[doc(hidden)]
@@ -120,18 +109,11 @@ impl CampaignConfig {
         self.item_exploration_config.as_ref()
     }
 }
-impl std::fmt::Debug for CampaignConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CampaignConfig");
-        formatter.field("item_exploration_config", &self.item_exploration_config);
-        formatter.finish()
-    }
-}
 /// See [`CampaignConfig`](crate::model::CampaignConfig).
 pub mod campaign_config {
 
     /// A builder for [`CampaignConfig`](crate::model::CampaignConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) item_exploration_config: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -180,7 +162,7 @@ impl CampaignConfig {
 
 /// <p>The optional metadata that you apply to resources to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">Tagging Personalize resources</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
     #[doc(hidden)]
@@ -199,19 +181,11 @@ impl Tag {
         self.tag_value.as_deref()
     }
 }
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("tag_key", &self.tag_key);
-        formatter.field("tag_value", &self.tag_value);
-        formatter.finish()
-    }
-}
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_key: std::option::Option<std::string::String>,
         pub(crate) tag_value: std::option::Option<std::string::String>,
@@ -255,7 +229,7 @@ impl Tag {
 
 /// <p>Provides a summary of the properties of a solution version. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html">DescribeSolutionVersion</a> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SolutionVersionSummary {
     /// <p>The Amazon Resource Name (ARN) of the solution version.</p>
     #[doc(hidden)]
@@ -303,22 +277,11 @@ impl SolutionVersionSummary {
         self.failure_reason.as_deref()
     }
 }
-impl std::fmt::Debug for SolutionVersionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SolutionVersionSummary");
-        formatter.field("solution_version_arn", &self.solution_version_arn);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.finish()
-    }
-}
 /// See [`SolutionVersionSummary`](crate::model::SolutionVersionSummary).
 pub mod solution_version_summary {
 
     /// A builder for [`SolutionVersionSummary`](crate::model::SolutionVersionSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) solution_version_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
@@ -418,7 +381,7 @@ impl SolutionVersionSummary {
 
 /// <p>Provides a summary of the properties of a solution. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html">DescribeSolution</a> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SolutionSummary {
     /// <p>The name of the solution.</p>
     #[doc(hidden)]
@@ -468,22 +431,11 @@ impl SolutionSummary {
         self.last_updated_date_time.as_ref()
     }
 }
-impl std::fmt::Debug for SolutionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SolutionSummary");
-        formatter.field("name", &self.name);
-        formatter.field("solution_arn", &self.solution_arn);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.finish()
-    }
-}
 /// See [`SolutionSummary`](crate::model::SolutionSummary).
 pub mod solution_summary {
 
     /// A builder for [`SolutionSummary`](crate::model::SolutionSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) solution_arn: std::option::Option<std::string::String>,
@@ -579,7 +531,7 @@ impl SolutionSummary {
 
 /// <p>Provides a summary of the properties of a dataset schema. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSchema.html">DescribeSchema</a> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetSchemaSummary {
     /// <p>The name of the schema.</p>
     #[doc(hidden)]
@@ -619,22 +571,11 @@ impl DatasetSchemaSummary {
         self.domain.as_ref()
     }
 }
-impl std::fmt::Debug for DatasetSchemaSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetSchemaSummary");
-        formatter.field("name", &self.name);
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("domain", &self.domain);
-        formatter.finish()
-    }
-}
 /// See [`DatasetSchemaSummary`](crate::model::DatasetSchemaSummary).
 pub mod dataset_schema_summary {
 
     /// A builder for [`DatasetSchemaSummary`](crate::model::DatasetSchemaSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) schema_arn: std::option::Option<std::string::String>,
@@ -718,6 +659,41 @@ impl DatasetSchemaSummary {
     }
 }
 
+/// When writing a match expression against `Domain`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let domain = unimplemented!();
+/// match domain {
+///     Domain::Ecommerce => { /* ... */ },
+///     Domain::VideoOnDemand => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `domain` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Domain::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Domain::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Domain::NewFeature` is defined.
+/// Specifically, when `domain` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Domain::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -734,15 +710,15 @@ pub enum Domain {
     Ecommerce,
     #[allow(missing_docs)] // documentation missing in model
     VideoOnDemand,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Domain {
     fn from(s: &str) -> Self {
         match s {
             "ECOMMERCE" => Domain::Ecommerce,
             "VIDEO_ON_DEMAND" => Domain::VideoOnDemand,
-            other => Domain::Unknown(other.to_owned()),
+            other => Domain::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -759,11 +735,11 @@ impl Domain {
         match self {
             Domain::Ecommerce => "ECOMMERCE",
             Domain::VideoOnDemand => "VIDEO_ON_DEMAND",
-            Domain::Unknown(s) => s.as_ref(),
+            Domain::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ECOMMERCE", "VIDEO_ON_DEMAND"]
     }
 }
@@ -775,7 +751,7 @@ impl AsRef<str> for Domain {
 
 /// <p>Provides a summary of the properties of the recommender.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecommenderSummary {
     /// <p>The name of the recommender.</p>
     #[doc(hidden)]
@@ -846,25 +822,11 @@ impl RecommenderSummary {
         self.last_updated_date_time.as_ref()
     }
 }
-impl std::fmt::Debug for RecommenderSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecommenderSummary");
-        formatter.field("name", &self.name);
-        formatter.field("recommender_arn", &self.recommender_arn);
-        formatter.field("dataset_group_arn", &self.dataset_group_arn);
-        formatter.field("recipe_arn", &self.recipe_arn);
-        formatter.field("recommender_config", &self.recommender_config);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.finish()
-    }
-}
 /// See [`RecommenderSummary`](crate::model::RecommenderSummary).
 pub mod recommender_summary {
 
     /// A builder for [`RecommenderSummary`](crate::model::RecommenderSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) recommender_arn: std::option::Option<std::string::String>,
@@ -1005,7 +967,7 @@ impl RecommenderSummary {
 
 /// <p>Provides a summary of the properties of a recipe. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecipe.html">DescribeRecipe</a> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecipeSummary {
     /// <p>The name of the recipe.</p>
     #[doc(hidden)]
@@ -1052,23 +1014,11 @@ impl RecipeSummary {
         self.domain.as_ref()
     }
 }
-impl std::fmt::Debug for RecipeSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecipeSummary");
-        formatter.field("name", &self.name);
-        formatter.field("recipe_arn", &self.recipe_arn);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("domain", &self.domain);
-        formatter.finish()
-    }
-}
 /// See [`RecipeSummary`](crate::model::RecipeSummary).
 pub mod recipe_summary {
 
     /// A builder for [`RecipeSummary`](crate::model::RecipeSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) recipe_arn: std::option::Option<std::string::String>,
@@ -1164,6 +1114,40 @@ impl RecipeSummary {
     }
 }
 
+/// When writing a match expression against `RecipeProvider`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let recipeprovider = unimplemented!();
+/// match recipeprovider {
+///     RecipeProvider::Service => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `recipeprovider` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RecipeProvider::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RecipeProvider::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RecipeProvider::NewFeature` is defined.
+/// Specifically, when `recipeprovider` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RecipeProvider::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1178,14 +1162,14 @@ impl RecipeSummary {
 pub enum RecipeProvider {
     #[allow(missing_docs)] // documentation missing in model
     Service,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for RecipeProvider {
     fn from(s: &str) -> Self {
         match s {
             "SERVICE" => RecipeProvider::Service,
-            other => RecipeProvider::Unknown(other.to_owned()),
+            other => RecipeProvider::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1201,11 +1185,11 @@ impl RecipeProvider {
     pub fn as_str(&self) -> &str {
         match self {
             RecipeProvider::Service => "SERVICE",
-            RecipeProvider::Unknown(s) => s.as_ref(),
+            RecipeProvider::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SERVICE"]
     }
 }
@@ -1217,7 +1201,7 @@ impl AsRef<str> for RecipeProvider {
 
 /// <p>A short summary of a filter's attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FilterSummary {
     /// <p>The name of the filter.</p>
     #[doc(hidden)]
@@ -1271,24 +1255,11 @@ impl FilterSummary {
         self.status.as_deref()
     }
 }
-impl std::fmt::Debug for FilterSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FilterSummary");
-        formatter.field("name", &self.name);
-        formatter.field("filter_arn", &self.filter_arn);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("dataset_group_arn", &self.dataset_group_arn);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 /// See [`FilterSummary`](crate::model::FilterSummary).
 pub mod filter_summary {
 
     /// A builder for [`FilterSummary`](crate::model::FilterSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) filter_arn: std::option::Option<std::string::String>,
@@ -1404,7 +1375,7 @@ impl FilterSummary {
 
 /// <p>Provides a summary of the properties of an event tracker. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeEventTracker.html">DescribeEventTracker</a> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventTrackerSummary {
     /// <p>The name of the event tracker.</p>
     #[doc(hidden)]
@@ -1454,22 +1425,11 @@ impl EventTrackerSummary {
         self.last_updated_date_time.as_ref()
     }
 }
-impl std::fmt::Debug for EventTrackerSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventTrackerSummary");
-        formatter.field("name", &self.name);
-        formatter.field("event_tracker_arn", &self.event_tracker_arn);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.finish()
-    }
-}
 /// See [`EventTrackerSummary`](crate::model::EventTrackerSummary).
 pub mod event_tracker_summary {
 
     /// A builder for [`EventTrackerSummary`](crate::model::EventTrackerSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) event_tracker_arn: std::option::Option<std::string::String>,
@@ -1568,7 +1528,7 @@ impl EventTrackerSummary {
 
 /// <p>Provides a summary of the properties of a dataset. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDataset.html">DescribeDataset</a> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetSummary {
     /// <p>The name of the dataset.</p>
     #[doc(hidden)]
@@ -1637,23 +1597,11 @@ impl DatasetSummary {
         self.last_updated_date_time.as_ref()
     }
 }
-impl std::fmt::Debug for DatasetSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetSummary");
-        formatter.field("name", &self.name);
-        formatter.field("dataset_arn", &self.dataset_arn);
-        formatter.field("dataset_type", &self.dataset_type);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.finish()
-    }
-}
 /// See [`DatasetSummary`](crate::model::DatasetSummary).
 pub mod dataset_summary {
 
     /// A builder for [`DatasetSummary`](crate::model::DatasetSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) dataset_arn: std::option::Option<std::string::String>,
@@ -1773,7 +1721,7 @@ impl DatasetSummary {
 
 /// <p>Provides a summary of the properties of a dataset import job. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetImportJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
     #[doc(hidden)]
@@ -1835,24 +1783,11 @@ impl DatasetImportJobSummary {
         self.import_mode.as_ref()
     }
 }
-impl std::fmt::Debug for DatasetImportJobSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetImportJobSummary");
-        formatter.field("dataset_import_job_arn", &self.dataset_import_job_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("import_mode", &self.import_mode);
-        formatter.finish()
-    }
-}
 /// See [`DatasetImportJobSummary`](crate::model::DatasetImportJobSummary).
 pub mod dataset_import_job_summary {
 
     /// A builder for [`DatasetImportJobSummary`](crate::model::DatasetImportJobSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_import_job_arn: std::option::Option<std::string::String>,
         pub(crate) job_name: std::option::Option<std::string::String>,
@@ -1977,6 +1912,41 @@ impl DatasetImportJobSummary {
     }
 }
 
+/// When writing a match expression against `ImportMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let importmode = unimplemented!();
+/// match importmode {
+///     ImportMode::Full => { /* ... */ },
+///     ImportMode::Incremental => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `importmode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ImportMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ImportMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ImportMode::NewFeature` is defined.
+/// Specifically, when `importmode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ImportMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1993,15 +1963,15 @@ pub enum ImportMode {
     Full,
     #[allow(missing_docs)] // documentation missing in model
     Incremental,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ImportMode {
     fn from(s: &str) -> Self {
         match s {
             "FULL" => ImportMode::Full,
             "INCREMENTAL" => ImportMode::Incremental,
-            other => ImportMode::Unknown(other.to_owned()),
+            other => ImportMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2018,11 +1988,11 @@ impl ImportMode {
         match self {
             ImportMode::Full => "FULL",
             ImportMode::Incremental => "INCREMENTAL",
-            ImportMode::Unknown(s) => s.as_ref(),
+            ImportMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FULL", "INCREMENTAL"]
     }
 }
@@ -2034,7 +2004,7 @@ impl AsRef<str> for ImportMode {
 
 /// <p>Provides a summary of the properties of a dataset group. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetGroupSummary {
     /// <p>The name of the dataset group.</p>
     #[doc(hidden)]
@@ -2098,24 +2068,11 @@ impl DatasetGroupSummary {
         self.domain.as_ref()
     }
 }
-impl std::fmt::Debug for DatasetGroupSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetGroupSummary");
-        formatter.field("name", &self.name);
-        formatter.field("dataset_group_arn", &self.dataset_group_arn);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("domain", &self.domain);
-        formatter.finish()
-    }
-}
 /// See [`DatasetGroupSummary`](crate::model::DatasetGroupSummary).
 pub mod dataset_group_summary {
 
     /// A builder for [`DatasetGroupSummary`](crate::model::DatasetGroupSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) dataset_group_arn: std::option::Option<std::string::String>,
@@ -2241,7 +2198,7 @@ impl DatasetGroupSummary {
 
 /// <p>Provides a summary of the properties of a dataset export job. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetExportJob.html">DescribeDatasetExportJob</a> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetExportJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
     #[doc(hidden)]
@@ -2296,23 +2253,11 @@ impl DatasetExportJobSummary {
         self.failure_reason.as_deref()
     }
 }
-impl std::fmt::Debug for DatasetExportJobSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetExportJobSummary");
-        formatter.field("dataset_export_job_arn", &self.dataset_export_job_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.finish()
-    }
-}
 /// See [`DatasetExportJobSummary`](crate::model::DatasetExportJobSummary).
 pub mod dataset_export_job_summary {
 
     /// A builder for [`DatasetExportJobSummary`](crate::model::DatasetExportJobSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_export_job_arn: std::option::Option<std::string::String>,
         pub(crate) job_name: std::option::Option<std::string::String>,
@@ -2424,7 +2369,7 @@ impl DatasetExportJobSummary {
 
 /// <p>Provides a summary of the properties of a campaign. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CampaignSummary {
     /// <p>The name of the campaign.</p>
     #[doc(hidden)]
@@ -2481,23 +2426,11 @@ impl CampaignSummary {
         self.failure_reason.as_deref()
     }
 }
-impl std::fmt::Debug for CampaignSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CampaignSummary");
-        formatter.field("name", &self.name);
-        formatter.field("campaign_arn", &self.campaign_arn);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.finish()
-    }
-}
 /// See [`CampaignSummary`](crate::model::CampaignSummary).
 pub mod campaign_summary {
 
     /// A builder for [`CampaignSummary`](crate::model::CampaignSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) campaign_arn: std::option::Option<std::string::String>,
@@ -2608,7 +2541,7 @@ impl CampaignSummary {
 
 /// <p>A truncated version of the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_BatchSegmentJob.html">BatchSegmentJob</a> datatype. <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListBatchSegmentJobs.html">ListBatchSegmentJobs</a> operation returns a list of batch segment job summaries.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchSegmentJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the batch segment job.</p>
     #[doc(hidden)]
@@ -2674,24 +2607,11 @@ impl BatchSegmentJobSummary {
         self.solution_version_arn.as_deref()
     }
 }
-impl std::fmt::Debug for BatchSegmentJobSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchSegmentJobSummary");
-        formatter.field("batch_segment_job_arn", &self.batch_segment_job_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("solution_version_arn", &self.solution_version_arn);
-        formatter.finish()
-    }
-}
 /// See [`BatchSegmentJobSummary`](crate::model::BatchSegmentJobSummary).
 pub mod batch_segment_job_summary {
 
     /// A builder for [`BatchSegmentJobSummary`](crate::model::BatchSegmentJobSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_segment_job_arn: std::option::Option<std::string::String>,
         pub(crate) job_name: std::option::Option<std::string::String>,
@@ -2822,7 +2742,7 @@ impl BatchSegmentJobSummary {
 
 /// <p>A truncated version of the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_BatchInferenceJob.html">BatchInferenceJob</a>. The <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListBatchInferenceJobs.html">ListBatchInferenceJobs</a> operation returns a list of batch inference job summaries.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchInferenceJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the batch inference job.</p>
     #[doc(hidden)]
@@ -2888,24 +2808,11 @@ impl BatchInferenceJobSummary {
         self.solution_version_arn.as_deref()
     }
 }
-impl std::fmt::Debug for BatchInferenceJobSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchInferenceJobSummary");
-        formatter.field("batch_inference_job_arn", &self.batch_inference_job_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("solution_version_arn", &self.solution_version_arn);
-        formatter.finish()
-    }
-}
 /// See [`BatchInferenceJobSummary`](crate::model::BatchInferenceJobSummary).
 pub mod batch_inference_job_summary {
 
     /// A builder for [`BatchInferenceJobSummary`](crate::model::BatchInferenceJobSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_inference_job_arn: std::option::Option<std::string::String>,
         pub(crate) job_name: std::option::Option<std::string::String>,
@@ -3036,7 +2943,7 @@ impl BatchInferenceJobSummary {
 
 /// <p>An object that provides information about a specific version of a <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_Solution.html">Solution</a> in a Custom dataset group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SolutionVersion {
     /// <p>The ARN of the solution version.</p>
     #[doc(hidden)]
@@ -3168,32 +3075,11 @@ impl SolutionVersion {
         self.last_updated_date_time.as_ref()
     }
 }
-impl std::fmt::Debug for SolutionVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SolutionVersion");
-        formatter.field("solution_version_arn", &self.solution_version_arn);
-        formatter.field("solution_arn", &self.solution_arn);
-        formatter.field("perform_hpo", &self.perform_hpo);
-        formatter.field("perform_auto_ml", &self.perform_auto_ml);
-        formatter.field("recipe_arn", &self.recipe_arn);
-        formatter.field("event_type", &self.event_type);
-        formatter.field("dataset_group_arn", &self.dataset_group_arn);
-        formatter.field("solution_config", &self.solution_config);
-        formatter.field("training_hours", &self.training_hours);
-        formatter.field("training_mode", &self.training_mode);
-        formatter.field("tuned_hpo_params", &self.tuned_hpo_params);
-        formatter.field("status", &self.status);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.finish()
-    }
-}
 /// See [`SolutionVersion`](crate::model::SolutionVersion).
 pub mod solution_version {
 
     /// A builder for [`SolutionVersion`](crate::model::SolutionVersion).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) solution_version_arn: std::option::Option<std::string::String>,
         pub(crate) solution_arn: std::option::Option<std::string::String>,
@@ -3439,7 +3325,7 @@ impl SolutionVersion {
 
 /// <p>If hyperparameter optimization (HPO) was performed, contains the hyperparameter values of the best performing model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TunedHpoParams {
     /// <p>A list of the hyperparameter values of the best performing model.</p>
     #[doc(hidden)]
@@ -3455,21 +3341,11 @@ impl TunedHpoParams {
         self.algorithm_hyper_parameters.as_ref()
     }
 }
-impl std::fmt::Debug for TunedHpoParams {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TunedHpoParams");
-        formatter.field(
-            "algorithm_hyper_parameters",
-            &self.algorithm_hyper_parameters,
-        );
-        formatter.finish()
-    }
-}
 /// See [`TunedHpoParams`](crate::model::TunedHpoParams).
 pub mod tuned_hpo_params {
 
     /// A builder for [`TunedHpoParams`](crate::model::TunedHpoParams).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) algorithm_hyper_parameters: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -3516,6 +3392,41 @@ impl TunedHpoParams {
     }
 }
 
+/// When writing a match expression against `TrainingMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let trainingmode = unimplemented!();
+/// match trainingmode {
+///     TrainingMode::Full => { /* ... */ },
+///     TrainingMode::Update => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `trainingmode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `TrainingMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `TrainingMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `TrainingMode::NewFeature` is defined.
+/// Specifically, when `trainingmode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `TrainingMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3532,15 +3443,15 @@ pub enum TrainingMode {
     Full,
     #[allow(missing_docs)] // documentation missing in model
     Update,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TrainingMode {
     fn from(s: &str) -> Self {
         match s {
             "FULL" => TrainingMode::Full,
             "UPDATE" => TrainingMode::Update,
-            other => TrainingMode::Unknown(other.to_owned()),
+            other => TrainingMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -3557,11 +3468,11 @@ impl TrainingMode {
         match self {
             TrainingMode::Full => "FULL",
             TrainingMode::Update => "UPDATE",
-            TrainingMode::Unknown(s) => s.as_ref(),
+            TrainingMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FULL", "UPDATE"]
     }
 }
@@ -3573,7 +3484,7 @@ impl AsRef<str> for TrainingMode {
 
 /// <p>Describes the configuration properties for the solution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SolutionConfig {
     /// <p>Only events with a value greater than or equal to this threshold are used for training a model.</p>
     #[doc(hidden)]
@@ -3630,29 +3541,11 @@ impl SolutionConfig {
         self.optimization_objective.as_ref()
     }
 }
-impl std::fmt::Debug for SolutionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SolutionConfig");
-        formatter.field("event_value_threshold", &self.event_value_threshold);
-        formatter.field("hpo_config", &self.hpo_config);
-        formatter.field(
-            "algorithm_hyper_parameters",
-            &self.algorithm_hyper_parameters,
-        );
-        formatter.field(
-            "feature_transformation_parameters",
-            &self.feature_transformation_parameters,
-        );
-        formatter.field("auto_ml_config", &self.auto_ml_config);
-        formatter.field("optimization_objective", &self.optimization_objective);
-        formatter.finish()
-    }
-}
 /// See [`SolutionConfig`](crate::model::SolutionConfig).
 pub mod solution_config {
 
     /// A builder for [`SolutionConfig`](crate::model::SolutionConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_value_threshold: std::option::Option<std::string::String>,
         pub(crate) hpo_config: std::option::Option<crate::model::HpoConfig>,
@@ -3793,7 +3686,7 @@ impl SolutionConfig {
 
 /// <p>Describes the additional objective for the solution, such as maximizing streaming minutes or increasing revenue. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing a solution</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OptimizationObjective {
     /// <p>The numerical metadata column in an Items dataset related to the optimization objective. For example, VIDEO_LENGTH (to maximize streaming minutes), or PRICE (to maximize revenue).</p>
     #[doc(hidden)]
@@ -3814,19 +3707,11 @@ impl OptimizationObjective {
         self.objective_sensitivity.as_ref()
     }
 }
-impl std::fmt::Debug for OptimizationObjective {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OptimizationObjective");
-        formatter.field("item_attribute", &self.item_attribute);
-        formatter.field("objective_sensitivity", &self.objective_sensitivity);
-        formatter.finish()
-    }
-}
 /// See [`OptimizationObjective`](crate::model::OptimizationObjective).
 pub mod optimization_objective {
 
     /// A builder for [`OptimizationObjective`](crate::model::OptimizationObjective).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) item_attribute: std::option::Option<std::string::String>,
         pub(crate) objective_sensitivity: std::option::Option<crate::model::ObjectiveSensitivity>,
@@ -3874,6 +3759,43 @@ impl OptimizationObjective {
     }
 }
 
+/// When writing a match expression against `ObjectiveSensitivity`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let objectivesensitivity = unimplemented!();
+/// match objectivesensitivity {
+///     ObjectiveSensitivity::High => { /* ... */ },
+///     ObjectiveSensitivity::Low => { /* ... */ },
+///     ObjectiveSensitivity::Medium => { /* ... */ },
+///     ObjectiveSensitivity::Off => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `objectivesensitivity` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ObjectiveSensitivity::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ObjectiveSensitivity::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ObjectiveSensitivity::NewFeature` is defined.
+/// Specifically, when `objectivesensitivity` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ObjectiveSensitivity::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3894,8 +3816,8 @@ pub enum ObjectiveSensitivity {
     Medium,
     #[allow(missing_docs)] // documentation missing in model
     Off,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ObjectiveSensitivity {
     fn from(s: &str) -> Self {
@@ -3904,7 +3826,9 @@ impl std::convert::From<&str> for ObjectiveSensitivity {
             "LOW" => ObjectiveSensitivity::Low,
             "MEDIUM" => ObjectiveSensitivity::Medium,
             "OFF" => ObjectiveSensitivity::Off,
-            other => ObjectiveSensitivity::Unknown(other.to_owned()),
+            other => {
+                ObjectiveSensitivity::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -3923,11 +3847,11 @@ impl ObjectiveSensitivity {
             ObjectiveSensitivity::Low => "LOW",
             ObjectiveSensitivity::Medium => "MEDIUM",
             ObjectiveSensitivity::Off => "OFF",
-            ObjectiveSensitivity::Unknown(s) => s.as_ref(),
+            ObjectiveSensitivity::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HIGH", "LOW", "MEDIUM", "OFF"]
     }
 }
@@ -3939,7 +3863,7 @@ impl AsRef<str> for ObjectiveSensitivity {
 
 /// <p>When the solution performs AutoML (<code>performAutoML</code> is true in <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>), Amazon Personalize determines which recipe, from the specified list, optimizes the given metric. Amazon Personalize then uses that recipe for the solution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoMlConfig {
     /// <p>The metric to optimize.</p>
     #[doc(hidden)]
@@ -3958,19 +3882,11 @@ impl AutoMlConfig {
         self.recipe_list.as_deref()
     }
 }
-impl std::fmt::Debug for AutoMlConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoMlConfig");
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("recipe_list", &self.recipe_list);
-        formatter.finish()
-    }
-}
 /// See [`AutoMlConfig`](crate::model::AutoMlConfig).
 pub mod auto_ml_config {
 
     /// A builder for [`AutoMlConfig`](crate::model::AutoMlConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_name: std::option::Option<std::string::String>,
         pub(crate) recipe_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4023,7 +3939,7 @@ impl AutoMlConfig {
 
 /// <p>Describes the properties for hyperparameter optimization (HPO).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HpoConfig {
     /// <p>The metric to optimize during HPO.</p> <note>
     /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p>
@@ -4055,23 +3971,11 @@ impl HpoConfig {
         self.algorithm_hyper_parameter_ranges.as_ref()
     }
 }
-impl std::fmt::Debug for HpoConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HpoConfig");
-        formatter.field("hpo_objective", &self.hpo_objective);
-        formatter.field("hpo_resource_config", &self.hpo_resource_config);
-        formatter.field(
-            "algorithm_hyper_parameter_ranges",
-            &self.algorithm_hyper_parameter_ranges,
-        );
-        formatter.finish()
-    }
-}
 /// See [`HpoConfig`](crate::model::HpoConfig).
 pub mod hpo_config {
 
     /// A builder for [`HpoConfig`](crate::model::HpoConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hpo_objective: std::option::Option<crate::model::HpoObjective>,
         pub(crate) hpo_resource_config: std::option::Option<crate::model::HpoResourceConfig>,
@@ -4144,7 +4048,7 @@ impl HpoConfig {
 
 /// <p>Specifies the hyperparameters and their ranges. Hyperparameters can be categorical, continuous, or integer-valued.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HyperParameterRanges {
     /// <p>The integer-valued hyperparameters and their ranges.</p>
     #[doc(hidden)]
@@ -4179,29 +4083,11 @@ impl HyperParameterRanges {
         self.categorical_hyper_parameter_ranges.as_deref()
     }
 }
-impl std::fmt::Debug for HyperParameterRanges {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HyperParameterRanges");
-        formatter.field(
-            "integer_hyper_parameter_ranges",
-            &self.integer_hyper_parameter_ranges,
-        );
-        formatter.field(
-            "continuous_hyper_parameter_ranges",
-            &self.continuous_hyper_parameter_ranges,
-        );
-        formatter.field(
-            "categorical_hyper_parameter_ranges",
-            &self.categorical_hyper_parameter_ranges,
-        );
-        formatter.finish()
-    }
-}
 /// See [`HyperParameterRanges`](crate::model::HyperParameterRanges).
 pub mod hyper_parameter_ranges {
 
     /// A builder for [`HyperParameterRanges`](crate::model::HyperParameterRanges).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) integer_hyper_parameter_ranges:
             std::option::Option<std::vec::Vec<crate::model::IntegerHyperParameterRange>>,
@@ -4296,7 +4182,7 @@ impl HyperParameterRanges {
 
 /// <p>Provides the name and range of a categorical hyperparameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CategoricalHyperParameterRange {
     /// <p>The name of the hyperparameter.</p>
     #[doc(hidden)]
@@ -4315,19 +4201,11 @@ impl CategoricalHyperParameterRange {
         self.values.as_deref()
     }
 }
-impl std::fmt::Debug for CategoricalHyperParameterRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CategoricalHyperParameterRange");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
-    }
-}
 /// See [`CategoricalHyperParameterRange`](crate::model::CategoricalHyperParameterRange).
 pub mod categorical_hyper_parameter_range {
 
     /// A builder for [`CategoricalHyperParameterRange`](crate::model::CategoricalHyperParameterRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4380,7 +4258,7 @@ impl CategoricalHyperParameterRange {
 
 /// <p>Provides the name and range of a continuous hyperparameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContinuousHyperParameterRange {
     /// <p>The name of the hyperparameter.</p>
     #[doc(hidden)]
@@ -4406,20 +4284,11 @@ impl ContinuousHyperParameterRange {
         self.max_value
     }
 }
-impl std::fmt::Debug for ContinuousHyperParameterRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContinuousHyperParameterRange");
-        formatter.field("name", &self.name);
-        formatter.field("min_value", &self.min_value);
-        formatter.field("max_value", &self.max_value);
-        formatter.finish()
-    }
-}
 /// See [`ContinuousHyperParameterRange`](crate::model::ContinuousHyperParameterRange).
 pub mod continuous_hyper_parameter_range {
 
     /// A builder for [`ContinuousHyperParameterRange`](crate::model::ContinuousHyperParameterRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) min_value: std::option::Option<f64>,
@@ -4475,7 +4344,7 @@ impl ContinuousHyperParameterRange {
 
 /// <p>Provides the name and range of an integer-valued hyperparameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IntegerHyperParameterRange {
     /// <p>The name of the hyperparameter.</p>
     #[doc(hidden)]
@@ -4501,20 +4370,11 @@ impl IntegerHyperParameterRange {
         self.max_value
     }
 }
-impl std::fmt::Debug for IntegerHyperParameterRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IntegerHyperParameterRange");
-        formatter.field("name", &self.name);
-        formatter.field("min_value", &self.min_value);
-        formatter.field("max_value", &self.max_value);
-        formatter.finish()
-    }
-}
 /// See [`IntegerHyperParameterRange`](crate::model::IntegerHyperParameterRange).
 pub mod integer_hyper_parameter_range {
 
     /// A builder for [`IntegerHyperParameterRange`](crate::model::IntegerHyperParameterRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) min_value: std::option::Option<i32>,
@@ -4570,7 +4430,7 @@ impl IntegerHyperParameterRange {
 
 /// <p>Describes the resource configuration for hyperparameter optimization (HPO).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HpoResourceConfig {
     /// <p>The maximum number of training jobs when you create a solution version. The maximum value for <code>maxNumberOfTrainingJobs</code> is <code>40</code>.</p>
     #[doc(hidden)]
@@ -4589,25 +4449,11 @@ impl HpoResourceConfig {
         self.max_parallel_training_jobs.as_deref()
     }
 }
-impl std::fmt::Debug for HpoResourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HpoResourceConfig");
-        formatter.field(
-            "max_number_of_training_jobs",
-            &self.max_number_of_training_jobs,
-        );
-        formatter.field(
-            "max_parallel_training_jobs",
-            &self.max_parallel_training_jobs,
-        );
-        formatter.finish()
-    }
-}
 /// See [`HpoResourceConfig`](crate::model::HpoResourceConfig).
 pub mod hpo_resource_config {
 
     /// A builder for [`HpoResourceConfig`](crate::model::HpoResourceConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_number_of_training_jobs: std::option::Option<std::string::String>,
         pub(crate) max_parallel_training_jobs: std::option::Option<std::string::String>,
@@ -4662,7 +4508,7 @@ impl HpoResourceConfig {
 /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HpoObjective {
     /// <p>The type of the metric. Valid values are <code>Maximize</code> and <code>Minimize</code>.</p>
     #[doc(hidden)]
@@ -4688,20 +4534,11 @@ impl HpoObjective {
         self.metric_regex.as_deref()
     }
 }
-impl std::fmt::Debug for HpoObjective {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HpoObjective");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("metric_regex", &self.metric_regex);
-        formatter.finish()
-    }
-}
 /// See [`HpoObjective`](crate::model::HpoObjective).
 pub mod hpo_objective {
 
     /// A builder for [`HpoObjective`](crate::model::HpoObjective).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
         pub(crate) metric_name: std::option::Option<std::string::String>,
@@ -4757,7 +4594,7 @@ impl HpoObjective {
 
 /// <p>An object that provides information about a solution. A solution is a trained model that can be deployed as a campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Solution {
     /// <p>The name of the solution.</p>
     #[doc(hidden)]
@@ -4865,30 +4702,11 @@ impl Solution {
         self.latest_solution_version.as_ref()
     }
 }
-impl std::fmt::Debug for Solution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Solution");
-        formatter.field("name", &self.name);
-        formatter.field("solution_arn", &self.solution_arn);
-        formatter.field("perform_hpo", &self.perform_hpo);
-        formatter.field("perform_auto_ml", &self.perform_auto_ml);
-        formatter.field("recipe_arn", &self.recipe_arn);
-        formatter.field("dataset_group_arn", &self.dataset_group_arn);
-        formatter.field("event_type", &self.event_type);
-        formatter.field("solution_config", &self.solution_config);
-        formatter.field("auto_ml_result", &self.auto_ml_result);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("latest_solution_version", &self.latest_solution_version);
-        formatter.finish()
-    }
-}
 /// See [`Solution`](crate::model::Solution).
 pub mod solution {
 
     /// A builder for [`Solution`](crate::model::Solution).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) solution_arn: std::option::Option<std::string::String>,
@@ -5096,7 +4914,7 @@ impl Solution {
 
 /// <p>When the solution performs AutoML (<code>performAutoML</code> is true in <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>), specifies the recipe that best optimized the specified metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoMlResult {
     /// <p>The Amazon Resource Name (ARN) of the best recipe.</p>
     #[doc(hidden)]
@@ -5108,18 +4926,11 @@ impl AutoMlResult {
         self.best_recipe_arn.as_deref()
     }
 }
-impl std::fmt::Debug for AutoMlResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoMlResult");
-        formatter.field("best_recipe_arn", &self.best_recipe_arn);
-        formatter.finish()
-    }
-}
 /// See [`AutoMlResult`](crate::model::AutoMlResult).
 pub mod auto_ml_result {
 
     /// A builder for [`AutoMlResult`](crate::model::AutoMlResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) best_recipe_arn: std::option::Option<std::string::String>,
     }
@@ -5154,7 +4965,7 @@ impl AutoMlResult {
 
 /// <p>Describes the schema for a dataset. For more information on schemas, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSchema.html">CreateSchema</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetSchema {
     /// <p>The name of the schema.</p>
     #[doc(hidden)]
@@ -5201,23 +5012,11 @@ impl DatasetSchema {
         self.domain.as_ref()
     }
 }
-impl std::fmt::Debug for DatasetSchema {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetSchema");
-        formatter.field("name", &self.name);
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.field("schema", &self.schema);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("domain", &self.domain);
-        formatter.finish()
-    }
-}
 /// See [`DatasetSchema`](crate::model::DatasetSchema).
 pub mod dataset_schema {
 
     /// A builder for [`DatasetSchema`](crate::model::DatasetSchema).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) schema_arn: std::option::Option<std::string::String>,
@@ -5315,7 +5114,7 @@ impl DatasetSchema {
 
 /// <p>Describes a recommendation generator for a Domain dataset group. You create a recommender in a Domain dataset group for a specific domain use case (domain recipe), and specify the recommender in a <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Recommender {
     /// <p>The Amazon Resource Name (ARN) of the recommender.</p>
     #[doc(hidden)]
@@ -5413,28 +5212,11 @@ impl Recommender {
         self.model_metrics.as_ref()
     }
 }
-impl std::fmt::Debug for Recommender {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Recommender");
-        formatter.field("recommender_arn", &self.recommender_arn);
-        formatter.field("dataset_group_arn", &self.dataset_group_arn);
-        formatter.field("name", &self.name);
-        formatter.field("recipe_arn", &self.recipe_arn);
-        formatter.field("recommender_config", &self.recommender_config);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("status", &self.status);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("latest_recommender_update", &self.latest_recommender_update);
-        formatter.field("model_metrics", &self.model_metrics);
-        formatter.finish()
-    }
-}
 /// See [`Recommender`](crate::model::Recommender).
 pub mod recommender {
 
     /// A builder for [`Recommender`](crate::model::Recommender).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommender_arn: std::option::Option<std::string::String>,
         pub(crate) dataset_group_arn: std::option::Option<std::string::String>,
@@ -5633,7 +5415,7 @@ impl Recommender {
 
 /// <p>Provides a summary of the properties of a recommender update. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecommender.html">DescribeRecommender</a> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecommenderUpdateSummary {
     /// <p>The configuration details of the recommender update.</p>
     #[doc(hidden)]
@@ -5685,22 +5467,11 @@ impl RecommenderUpdateSummary {
         self.failure_reason.as_deref()
     }
 }
-impl std::fmt::Debug for RecommenderUpdateSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecommenderUpdateSummary");
-        formatter.field("recommender_config", &self.recommender_config);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("status", &self.status);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.finish()
-    }
-}
 /// See [`RecommenderUpdateSummary`](crate::model::RecommenderUpdateSummary).
 pub mod recommender_update_summary {
 
     /// A builder for [`RecommenderUpdateSummary`](crate::model::RecommenderUpdateSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommender_config: std::option::Option<crate::model::RecommenderConfig>,
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -5804,7 +5575,7 @@ impl RecommenderUpdateSummary {
 
 /// <p>Provides information about a recipe. Each recipe provides an algorithm that Amazon Personalize uses in model training when you use the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Recipe {
     /// <p>The name of the recipe.</p>
     #[doc(hidden)]
@@ -5882,29 +5653,11 @@ impl Recipe {
         self.last_updated_date_time.as_ref()
     }
 }
-impl std::fmt::Debug for Recipe {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Recipe");
-        formatter.field("name", &self.name);
-        formatter.field("recipe_arn", &self.recipe_arn);
-        formatter.field("algorithm_arn", &self.algorithm_arn);
-        formatter.field(
-            "feature_transformation_arn",
-            &self.feature_transformation_arn,
-        );
-        formatter.field("status", &self.status);
-        formatter.field("description", &self.description);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("recipe_type", &self.recipe_type);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.finish()
-    }
-}
 /// See [`Recipe`](crate::model::Recipe).
 pub mod recipe {
 
     /// A builder for [`Recipe`](crate::model::Recipe).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) recipe_arn: std::option::Option<std::string::String>,
@@ -6133,7 +5886,7 @@ impl std::fmt::Debug for Filter {
 pub mod filter {
 
     /// A builder for [`Filter`](crate::model::Filter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) filter_arn: std::option::Option<std::string::String>,
@@ -6254,6 +6007,20 @@ pub mod filter {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("filter_arn", &self.filter_arn);
+            formatter.field("creation_date_time", &self.creation_date_time);
+            formatter.field("last_updated_date_time", &self.last_updated_date_time);
+            formatter.field("dataset_group_arn", &self.dataset_group_arn);
+            formatter.field("failure_reason", &self.failure_reason);
+            formatter.field("filter_expression", &"*** Sensitive Data Redacted ***");
+            formatter.field("status", &self.status);
+            formatter.finish()
+        }
+    }
 }
 impl Filter {
     /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
@@ -6264,7 +6031,7 @@ impl Filter {
 
 /// <p>Provides feature transformation information. Feature transformation is the process of modifying raw input data into a form more suitable for model training.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FeatureTransformation {
     /// <p>The name of the feature transformation.</p>
     #[doc(hidden)]
@@ -6323,26 +6090,11 @@ impl FeatureTransformation {
         self.status.as_deref()
     }
 }
-impl std::fmt::Debug for FeatureTransformation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FeatureTransformation");
-        formatter.field("name", &self.name);
-        formatter.field(
-            "feature_transformation_arn",
-            &self.feature_transformation_arn,
-        );
-        formatter.field("default_parameters", &self.default_parameters);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 /// See [`FeatureTransformation`](crate::model::FeatureTransformation).
 pub mod feature_transformation {
 
     /// A builder for [`FeatureTransformation`](crate::model::FeatureTransformation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) feature_transformation_arn: std::option::Option<std::string::String>,
@@ -6468,7 +6220,7 @@ impl FeatureTransformation {
 
 /// <p>Provides information about an event tracker.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventTracker {
     /// <p>The name of the event tracker.</p>
     #[doc(hidden)]
@@ -6539,25 +6291,11 @@ impl EventTracker {
         self.last_updated_date_time.as_ref()
     }
 }
-impl std::fmt::Debug for EventTracker {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventTracker");
-        formatter.field("name", &self.name);
-        formatter.field("event_tracker_arn", &self.event_tracker_arn);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("tracking_id", &self.tracking_id);
-        formatter.field("dataset_group_arn", &self.dataset_group_arn);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.finish()
-    }
-}
 /// See [`EventTracker`](crate::model::EventTracker).
 pub mod event_tracker {
 
     /// A builder for [`EventTracker`](crate::model::EventTracker).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) event_tracker_arn: std::option::Option<std::string::String>,
@@ -6699,7 +6437,7 @@ impl EventTracker {
 /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetImportJob {
     /// <p>The name of the import job.</p>
     #[doc(hidden)]
@@ -6782,27 +6520,11 @@ impl DatasetImportJob {
         self.import_mode.as_ref()
     }
 }
-impl std::fmt::Debug for DatasetImportJob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetImportJob");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("dataset_import_job_arn", &self.dataset_import_job_arn);
-        formatter.field("dataset_arn", &self.dataset_arn);
-        formatter.field("data_source", &self.data_source);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("import_mode", &self.import_mode);
-        formatter.finish()
-    }
-}
 /// See [`DatasetImportJob`](crate::model::DatasetImportJob).
 pub mod dataset_import_job {
 
     /// A builder for [`DatasetImportJob`](crate::model::DatasetImportJob).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) dataset_import_job_arn: std::option::Option<std::string::String>,
@@ -6968,7 +6690,7 @@ impl DatasetImportJob {
 
 /// <p>Describes the data source that contains the data to upload to a dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataSource {
     /// <p>The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For example: </p>
     /// <p> <code>s3://bucket-name/folder-name/</code> </p>
@@ -6982,18 +6704,11 @@ impl DataSource {
         self.data_location.as_deref()
     }
 }
-impl std::fmt::Debug for DataSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSource");
-        formatter.field("data_location", &self.data_location);
-        formatter.finish()
-    }
-}
 /// See [`DataSource`](crate::model::DataSource).
 pub mod data_source {
 
     /// A builder for [`DataSource`](crate::model::DataSource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_location: std::option::Option<std::string::String>,
     }
@@ -7031,7 +6746,7 @@ impl DataSource {
 /// <p>A dataset group is a collection of related datasets (Interactions, User, and Item). You create a dataset group by calling <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>. You then create a dataset and add it to a dataset group by calling <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>. The dataset group is used to create and train a solution by calling <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>. A dataset group can contain only one of each type of dataset.</p>
 /// <p>You can specify an Key Management Service (KMS) key to encrypt the datasets in the group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetGroup {
     /// <p>The name of the dataset group.</p>
     #[doc(hidden)]
@@ -7109,26 +6824,11 @@ impl DatasetGroup {
         self.domain.as_ref()
     }
 }
-impl std::fmt::Debug for DatasetGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetGroup");
-        formatter.field("name", &self.name);
-        formatter.field("dataset_group_arn", &self.dataset_group_arn);
-        formatter.field("status", &self.status);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("domain", &self.domain);
-        formatter.finish()
-    }
-}
 /// See [`DatasetGroup`](crate::model::DatasetGroup).
 pub mod dataset_group {
 
     /// A builder for [`DatasetGroup`](crate::model::DatasetGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) dataset_group_arn: std::option::Option<std::string::String>,
@@ -7282,7 +6982,7 @@ impl DatasetGroup {
 /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetExportJob {
     /// <p>The name of the export job.</p>
     #[doc(hidden)]
@@ -7367,27 +7067,11 @@ impl DatasetExportJob {
         self.failure_reason.as_deref()
     }
 }
-impl std::fmt::Debug for DatasetExportJob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetExportJob");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("dataset_export_job_arn", &self.dataset_export_job_arn);
-        formatter.field("dataset_arn", &self.dataset_arn);
-        formatter.field("ingestion_mode", &self.ingestion_mode);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("status", &self.status);
-        formatter.field("job_output", &self.job_output);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.finish()
-    }
-}
 /// See [`DatasetExportJob`](crate::model::DatasetExportJob).
 pub mod dataset_export_job {
 
     /// A builder for [`DatasetExportJob`](crate::model::DatasetExportJob).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) dataset_export_job_arn: std::option::Option<std::string::String>,
@@ -7555,7 +7239,7 @@ impl DatasetExportJob {
 
 /// <p>The output configuration parameters of a dataset export job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetExportJobOutput {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
     #[doc(hidden)]
@@ -7567,18 +7251,11 @@ impl DatasetExportJobOutput {
         self.s3_data_destination.as_ref()
     }
 }
-impl std::fmt::Debug for DatasetExportJobOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetExportJobOutput");
-        formatter.field("s3_data_destination", &self.s3_data_destination);
-        formatter.finish()
-    }
-}
 /// See [`DatasetExportJobOutput`](crate::model::DatasetExportJobOutput).
 pub mod dataset_export_job_output {
 
     /// A builder for [`DatasetExportJobOutput`](crate::model::DatasetExportJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_data_destination: std::option::Option<crate::model::S3DataConfig>,
     }
@@ -7613,7 +7290,7 @@ impl DatasetExportJobOutput {
 
 /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3DataConfig {
     /// <p>The file path of the Amazon S3 bucket.</p>
     #[doc(hidden)]
@@ -7632,19 +7309,11 @@ impl S3DataConfig {
         self.kms_key_arn.as_deref()
     }
 }
-impl std::fmt::Debug for S3DataConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3DataConfig");
-        formatter.field("path", &self.path);
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.finish()
-    }
-}
 /// See [`S3DataConfig`](crate::model::S3DataConfig).
 pub mod s3_data_config {
 
     /// A builder for [`S3DataConfig`](crate::model::S3DataConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
         pub(crate) kms_key_arn: std::option::Option<std::string::String>,
@@ -7686,6 +7355,42 @@ impl S3DataConfig {
     }
 }
 
+/// When writing a match expression against `IngestionMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let ingestionmode = unimplemented!();
+/// match ingestionmode {
+///     IngestionMode::All => { /* ... */ },
+///     IngestionMode::Bulk => { /* ... */ },
+///     IngestionMode::Put => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `ingestionmode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `IngestionMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `IngestionMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `IngestionMode::NewFeature` is defined.
+/// Specifically, when `ingestionmode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `IngestionMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -7704,8 +7409,8 @@ pub enum IngestionMode {
     Bulk,
     #[allow(missing_docs)] // documentation missing in model
     Put,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for IngestionMode {
     fn from(s: &str) -> Self {
@@ -7713,7 +7418,7 @@ impl std::convert::From<&str> for IngestionMode {
             "ALL" => IngestionMode::All,
             "BULK" => IngestionMode::Bulk,
             "PUT" => IngestionMode::Put,
-            other => IngestionMode::Unknown(other.to_owned()),
+            other => IngestionMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -7731,11 +7436,11 @@ impl IngestionMode {
             IngestionMode::All => "ALL",
             IngestionMode::Bulk => "BULK",
             IngestionMode::Put => "PUT",
-            IngestionMode::Unknown(s) => s.as_ref(),
+            IngestionMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "BULK", "PUT"]
     }
 }
@@ -7747,7 +7452,7 @@ impl AsRef<str> for IngestionMode {
 
 /// <p>Provides metadata for a dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Dataset {
     /// <p>The name of the dataset.</p>
     #[doc(hidden)]
@@ -7828,25 +7533,11 @@ impl Dataset {
         self.last_updated_date_time.as_ref()
     }
 }
-impl std::fmt::Debug for Dataset {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Dataset");
-        formatter.field("name", &self.name);
-        formatter.field("dataset_arn", &self.dataset_arn);
-        formatter.field("dataset_group_arn", &self.dataset_group_arn);
-        formatter.field("dataset_type", &self.dataset_type);
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.finish()
-    }
-}
 /// See [`Dataset`](crate::model::Dataset).
 pub mod dataset {
 
     /// A builder for [`Dataset`](crate::model::Dataset).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) dataset_arn: std::option::Option<std::string::String>,
@@ -7991,7 +7682,7 @@ impl Dataset {
 
 /// <p>An object that describes the deployment of a solution version. For more information on campaigns, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Campaign {
     /// <p>The name of the campaign.</p>
     #[doc(hidden)]
@@ -8078,27 +7769,11 @@ impl Campaign {
         self.latest_campaign_update.as_ref()
     }
 }
-impl std::fmt::Debug for Campaign {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Campaign");
-        formatter.field("name", &self.name);
-        formatter.field("campaign_arn", &self.campaign_arn);
-        formatter.field("solution_version_arn", &self.solution_version_arn);
-        formatter.field("min_provisioned_tps", &self.min_provisioned_tps);
-        formatter.field("campaign_config", &self.campaign_config);
-        formatter.field("status", &self.status);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("latest_campaign_update", &self.latest_campaign_update);
-        formatter.finish()
-    }
-}
 /// See [`Campaign`](crate::model::Campaign).
 pub mod campaign {
 
     /// A builder for [`Campaign`](crate::model::Campaign).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) campaign_arn: std::option::Option<std::string::String>,
@@ -8269,7 +7944,7 @@ impl Campaign {
 
 /// <p>Provides a summary of the properties of a campaign update. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CampaignUpdateSummary {
     /// <p>The Amazon Resource Name (ARN) of the deployed solution version.</p>
     #[doc(hidden)]
@@ -8333,24 +8008,11 @@ impl CampaignUpdateSummary {
         self.last_updated_date_time.as_ref()
     }
 }
-impl std::fmt::Debug for CampaignUpdateSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CampaignUpdateSummary");
-        formatter.field("solution_version_arn", &self.solution_version_arn);
-        formatter.field("min_provisioned_tps", &self.min_provisioned_tps);
-        formatter.field("campaign_config", &self.campaign_config);
-        formatter.field("status", &self.status);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.finish()
-    }
-}
 /// See [`CampaignUpdateSummary`](crate::model::CampaignUpdateSummary).
 pub mod campaign_update_summary {
 
     /// A builder for [`CampaignUpdateSummary`](crate::model::CampaignUpdateSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) solution_version_arn: std::option::Option<std::string::String>,
         pub(crate) min_provisioned_tps: std::option::Option<i32>,
@@ -8479,7 +8141,7 @@ impl CampaignUpdateSummary {
 
 /// <p>Contains information on a batch segment job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchSegmentJob {
     /// <p>The name of the batch segment job.</p>
     #[doc(hidden)]
@@ -8580,29 +8242,11 @@ impl BatchSegmentJob {
         self.last_updated_date_time.as_ref()
     }
 }
-impl std::fmt::Debug for BatchSegmentJob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchSegmentJob");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("batch_segment_job_arn", &self.batch_segment_job_arn);
-        formatter.field("filter_arn", &self.filter_arn);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("solution_version_arn", &self.solution_version_arn);
-        formatter.field("num_results", &self.num_results);
-        formatter.field("job_input", &self.job_input);
-        formatter.field("job_output", &self.job_output);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.finish()
-    }
-}
 /// See [`BatchSegmentJob`](crate::model::BatchSegmentJob).
 pub mod batch_segment_job {
 
     /// A builder for [`BatchSegmentJob`](crate::model::BatchSegmentJob).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) batch_segment_job_arn: std::option::Option<std::string::String>,
@@ -8799,7 +8443,7 @@ impl BatchSegmentJob {
 
 /// <p>The output configuration parameters of a batch segment job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchSegmentJobOutput {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
     #[doc(hidden)]
@@ -8811,18 +8455,11 @@ impl BatchSegmentJobOutput {
         self.s3_data_destination.as_ref()
     }
 }
-impl std::fmt::Debug for BatchSegmentJobOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchSegmentJobOutput");
-        formatter.field("s3_data_destination", &self.s3_data_destination);
-        formatter.finish()
-    }
-}
 /// See [`BatchSegmentJobOutput`](crate::model::BatchSegmentJobOutput).
 pub mod batch_segment_job_output {
 
     /// A builder for [`BatchSegmentJobOutput`](crate::model::BatchSegmentJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_data_destination: std::option::Option<crate::model::S3DataConfig>,
     }
@@ -8857,7 +8494,7 @@ impl BatchSegmentJobOutput {
 
 /// <p>The input configuration of a batch segment job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchSegmentJobInput {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
     #[doc(hidden)]
@@ -8869,18 +8506,11 @@ impl BatchSegmentJobInput {
         self.s3_data_source.as_ref()
     }
 }
-impl std::fmt::Debug for BatchSegmentJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchSegmentJobInput");
-        formatter.field("s3_data_source", &self.s3_data_source);
-        formatter.finish()
-    }
-}
 /// See [`BatchSegmentJobInput`](crate::model::BatchSegmentJobInput).
 pub mod batch_segment_job_input {
 
     /// A builder for [`BatchSegmentJobInput`](crate::model::BatchSegmentJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_data_source: std::option::Option<crate::model::S3DataConfig>,
     }
@@ -8915,7 +8545,7 @@ impl BatchSegmentJobInput {
 
 /// <p>Contains information on a batch inference job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchInferenceJob {
     /// <p>The name of the batch inference job.</p>
     #[doc(hidden)]
@@ -9025,33 +8655,11 @@ impl BatchInferenceJob {
         self.last_updated_date_time.as_ref()
     }
 }
-impl std::fmt::Debug for BatchInferenceJob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchInferenceJob");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("batch_inference_job_arn", &self.batch_inference_job_arn);
-        formatter.field("filter_arn", &self.filter_arn);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("solution_version_arn", &self.solution_version_arn);
-        formatter.field("num_results", &self.num_results);
-        formatter.field("job_input", &self.job_input);
-        formatter.field("job_output", &self.job_output);
-        formatter.field(
-            "batch_inference_job_config",
-            &self.batch_inference_job_config,
-        );
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("status", &self.status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.finish()
-    }
-}
 /// See [`BatchInferenceJob`](crate::model::BatchInferenceJob).
 pub mod batch_inference_job {
 
     /// A builder for [`BatchInferenceJob`](crate::model::BatchInferenceJob).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) batch_inference_job_arn: std::option::Option<std::string::String>,
@@ -9267,7 +8875,7 @@ impl BatchInferenceJob {
 
 /// <p>The configuration details of a batch inference job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchInferenceJobConfig {
     /// <p>A string to string map specifying the exploration configuration hyperparameters, including <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount of item exploration Amazon Personalize uses when recommending items. See <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>.</p>
     #[doc(hidden)]
@@ -9283,18 +8891,11 @@ impl BatchInferenceJobConfig {
         self.item_exploration_config.as_ref()
     }
 }
-impl std::fmt::Debug for BatchInferenceJobConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchInferenceJobConfig");
-        formatter.field("item_exploration_config", &self.item_exploration_config);
-        formatter.finish()
-    }
-}
 /// See [`BatchInferenceJobConfig`](crate::model::BatchInferenceJobConfig).
 pub mod batch_inference_job_config {
 
     /// A builder for [`BatchInferenceJobConfig`](crate::model::BatchInferenceJobConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) item_exploration_config: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -9343,7 +8944,7 @@ impl BatchInferenceJobConfig {
 
 /// <p>The output configuration parameters of a batch inference job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchInferenceJobOutput {
     /// <p>Information on the Amazon S3 bucket in which the batch inference job's output is stored.</p>
     #[doc(hidden)]
@@ -9355,18 +8956,11 @@ impl BatchInferenceJobOutput {
         self.s3_data_destination.as_ref()
     }
 }
-impl std::fmt::Debug for BatchInferenceJobOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchInferenceJobOutput");
-        formatter.field("s3_data_destination", &self.s3_data_destination);
-        formatter.finish()
-    }
-}
 /// See [`BatchInferenceJobOutput`](crate::model::BatchInferenceJobOutput).
 pub mod batch_inference_job_output {
 
     /// A builder for [`BatchInferenceJobOutput`](crate::model::BatchInferenceJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_data_destination: std::option::Option<crate::model::S3DataConfig>,
     }
@@ -9401,7 +8995,7 @@ impl BatchInferenceJobOutput {
 
 /// <p>The input configuration of a batch inference job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchInferenceJobInput {
     /// <p>The URI of the Amazon S3 location that contains your input data. The Amazon S3 bucket must be in the same region as the API endpoint you are calling.</p>
     #[doc(hidden)]
@@ -9413,18 +9007,11 @@ impl BatchInferenceJobInput {
         self.s3_data_source.as_ref()
     }
 }
-impl std::fmt::Debug for BatchInferenceJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchInferenceJobInput");
-        formatter.field("s3_data_source", &self.s3_data_source);
-        formatter.finish()
-    }
-}
 /// See [`BatchInferenceJobInput`](crate::model::BatchInferenceJobInput).
 pub mod batch_inference_job_input {
 
     /// A builder for [`BatchInferenceJobInput`](crate::model::BatchInferenceJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_data_source: std::option::Option<crate::model::S3DataConfig>,
     }
@@ -9459,7 +9046,7 @@ impl BatchInferenceJobInput {
 
 /// <p>Describes a custom algorithm.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Algorithm {
     /// <p>The name of the algorithm.</p>
     #[doc(hidden)]
@@ -9545,30 +9132,11 @@ impl Algorithm {
         self.last_updated_date_time.as_ref()
     }
 }
-impl std::fmt::Debug for Algorithm {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Algorithm");
-        formatter.field("name", &self.name);
-        formatter.field("algorithm_arn", &self.algorithm_arn);
-        formatter.field("algorithm_image", &self.algorithm_image);
-        formatter.field("default_hyper_parameters", &self.default_hyper_parameters);
-        formatter.field(
-            "default_hyper_parameter_ranges",
-            &self.default_hyper_parameter_ranges,
-        );
-        formatter.field("default_resource_config", &self.default_resource_config);
-        formatter.field("training_input_mode", &self.training_input_mode);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.finish()
-    }
-}
 /// See [`Algorithm`](crate::model::Algorithm).
 pub mod algorithm {
 
     /// A builder for [`Algorithm`](crate::model::Algorithm).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) algorithm_arn: std::option::Option<std::string::String>,
@@ -9764,7 +9332,7 @@ impl Algorithm {
 
 /// <p>Specifies the hyperparameters and their default ranges. Hyperparameters can be categorical, continuous, or integer-valued.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefaultHyperParameterRanges {
     /// <p>The integer-valued hyperparameters and their default ranges.</p>
     #[doc(hidden)]
@@ -9799,29 +9367,11 @@ impl DefaultHyperParameterRanges {
         self.categorical_hyper_parameter_ranges.as_deref()
     }
 }
-impl std::fmt::Debug for DefaultHyperParameterRanges {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefaultHyperParameterRanges");
-        formatter.field(
-            "integer_hyper_parameter_ranges",
-            &self.integer_hyper_parameter_ranges,
-        );
-        formatter.field(
-            "continuous_hyper_parameter_ranges",
-            &self.continuous_hyper_parameter_ranges,
-        );
-        formatter.field(
-            "categorical_hyper_parameter_ranges",
-            &self.categorical_hyper_parameter_ranges,
-        );
-        formatter.finish()
-    }
-}
 /// See [`DefaultHyperParameterRanges`](crate::model::DefaultHyperParameterRanges).
 pub mod default_hyper_parameter_ranges {
 
     /// A builder for [`DefaultHyperParameterRanges`](crate::model::DefaultHyperParameterRanges).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) integer_hyper_parameter_ranges:
             std::option::Option<std::vec::Vec<crate::model::DefaultIntegerHyperParameterRange>>,
@@ -9922,7 +9472,7 @@ impl DefaultHyperParameterRanges {
 
 /// <p>Provides the name and default range of a categorical hyperparameter and whether the hyperparameter is tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefaultCategoricalHyperParameterRange {
     /// <p>The name of the hyperparameter.</p>
     #[doc(hidden)]
@@ -9948,20 +9498,11 @@ impl DefaultCategoricalHyperParameterRange {
         self.is_tunable
     }
 }
-impl std::fmt::Debug for DefaultCategoricalHyperParameterRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefaultCategoricalHyperParameterRange");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.field("is_tunable", &self.is_tunable);
-        formatter.finish()
-    }
-}
 /// See [`DefaultCategoricalHyperParameterRange`](crate::model::DefaultCategoricalHyperParameterRange).
 pub mod default_categorical_hyper_parameter_range {
 
     /// A builder for [`DefaultCategoricalHyperParameterRange`](crate::model::DefaultCategoricalHyperParameterRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10026,7 +9567,7 @@ impl DefaultCategoricalHyperParameterRange {
 
 /// <p>Provides the name and default range of a continuous hyperparameter and whether the hyperparameter is tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefaultContinuousHyperParameterRange {
     /// <p>The name of the hyperparameter.</p>
     #[doc(hidden)]
@@ -10059,21 +9600,11 @@ impl DefaultContinuousHyperParameterRange {
         self.is_tunable
     }
 }
-impl std::fmt::Debug for DefaultContinuousHyperParameterRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefaultContinuousHyperParameterRange");
-        formatter.field("name", &self.name);
-        formatter.field("min_value", &self.min_value);
-        formatter.field("max_value", &self.max_value);
-        formatter.field("is_tunable", &self.is_tunable);
-        formatter.finish()
-    }
-}
 /// See [`DefaultContinuousHyperParameterRange`](crate::model::DefaultContinuousHyperParameterRange).
 pub mod default_continuous_hyper_parameter_range {
 
     /// A builder for [`DefaultContinuousHyperParameterRange`](crate::model::DefaultContinuousHyperParameterRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) min_value: std::option::Option<f64>,
@@ -10141,7 +9672,7 @@ impl DefaultContinuousHyperParameterRange {
 
 /// <p>Provides the name and default range of a integer-valued hyperparameter and whether the hyperparameter is tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefaultIntegerHyperParameterRange {
     /// <p>The name of the hyperparameter.</p>
     #[doc(hidden)]
@@ -10174,21 +9705,11 @@ impl DefaultIntegerHyperParameterRange {
         self.is_tunable
     }
 }
-impl std::fmt::Debug for DefaultIntegerHyperParameterRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefaultIntegerHyperParameterRange");
-        formatter.field("name", &self.name);
-        formatter.field("min_value", &self.min_value);
-        formatter.field("max_value", &self.max_value);
-        formatter.field("is_tunable", &self.is_tunable);
-        formatter.finish()
-    }
-}
 /// See [`DefaultIntegerHyperParameterRange`](crate::model::DefaultIntegerHyperParameterRange).
 pub mod default_integer_hyper_parameter_range {
 
     /// A builder for [`DefaultIntegerHyperParameterRange`](crate::model::DefaultIntegerHyperParameterRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) min_value: std::option::Option<i32>,
@@ -10256,7 +9777,7 @@ impl DefaultIntegerHyperParameterRange {
 
 /// <p>Describes an algorithm image.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AlgorithmImage {
     /// <p>The name of the algorithm image.</p>
     #[doc(hidden)]
@@ -10275,19 +9796,11 @@ impl AlgorithmImage {
         self.docker_uri.as_deref()
     }
 }
-impl std::fmt::Debug for AlgorithmImage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AlgorithmImage");
-        formatter.field("name", &self.name);
-        formatter.field("docker_uri", &self.docker_uri);
-        formatter.finish()
-    }
-}
 /// See [`AlgorithmImage`](crate::model::AlgorithmImage).
 pub mod algorithm_image {
 
     /// A builder for [`AlgorithmImage`](crate::model::AlgorithmImage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) docker_uri: std::option::Option<std::string::String>,

@@ -2,7 +2,7 @@
 
 /// <p>A complex type that contains information about the resource record sets that Amazon Route 53 created based on a specified traffic policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTrafficPolicyInstanceOutput {
     /// <p>A complex type that contains settings for the updated traffic policy instance.</p>
     #[doc(hidden)]
@@ -16,18 +16,11 @@ impl UpdateTrafficPolicyInstanceOutput {
         self.traffic_policy_instance.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateTrafficPolicyInstanceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTrafficPolicyInstanceOutput");
-        formatter.field("traffic_policy_instance", &self.traffic_policy_instance);
-        formatter.finish()
-    }
-}
 /// See [`UpdateTrafficPolicyInstanceOutput`](crate::output::UpdateTrafficPolicyInstanceOutput).
 pub mod update_traffic_policy_instance_output {
 
     /// A builder for [`UpdateTrafficPolicyInstanceOutput`](crate::output::UpdateTrafficPolicyInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) traffic_policy_instance:
             std::option::Option<crate::model::TrafficPolicyInstance>,
@@ -66,7 +59,7 @@ impl UpdateTrafficPolicyInstanceOutput {
 
 /// <p>A complex type that contains the response information for the traffic policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTrafficPolicyCommentOutput {
     /// <p>A complex type that contains settings for the specified traffic policy.</p>
     #[doc(hidden)]
@@ -78,18 +71,11 @@ impl UpdateTrafficPolicyCommentOutput {
         self.traffic_policy.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateTrafficPolicyCommentOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTrafficPolicyCommentOutput");
-        formatter.field("traffic_policy", &self.traffic_policy);
-        formatter.finish()
-    }
-}
 /// See [`UpdateTrafficPolicyCommentOutput`](crate::output::UpdateTrafficPolicyCommentOutput).
 pub mod update_traffic_policy_comment_output {
 
     /// A builder for [`UpdateTrafficPolicyCommentOutput`](crate::output::UpdateTrafficPolicyCommentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) traffic_policy: std::option::Option<crate::model::TrafficPolicy>,
     }
@@ -124,7 +110,7 @@ impl UpdateTrafficPolicyCommentOutput {
 
 /// <p>A complex type that contains the response to the <code>UpdateHostedZoneComment</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateHostedZoneCommentOutput {
     /// <p>A complex type that contains the response to the <code>UpdateHostedZoneComment</code> request.</p>
     #[doc(hidden)]
@@ -136,18 +122,11 @@ impl UpdateHostedZoneCommentOutput {
         self.hosted_zone.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateHostedZoneCommentOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateHostedZoneCommentOutput");
-        formatter.field("hosted_zone", &self.hosted_zone);
-        formatter.finish()
-    }
-}
 /// See [`UpdateHostedZoneCommentOutput`](crate::output::UpdateHostedZoneCommentOutput).
 pub mod update_hosted_zone_comment_output {
 
     /// A builder for [`UpdateHostedZoneCommentOutput`](crate::output::UpdateHostedZoneCommentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosted_zone: std::option::Option<crate::model::HostedZone>,
     }
@@ -182,7 +161,7 @@ impl UpdateHostedZoneCommentOutput {
 
 /// <p>A complex type that contains the response to the <code>UpdateHealthCheck</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateHealthCheckOutput {
     /// <p>A complex type that contains the response to an <code>UpdateHealthCheck</code> request.</p>
     #[doc(hidden)]
@@ -194,18 +173,11 @@ impl UpdateHealthCheckOutput {
         self.health_check.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateHealthCheckOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateHealthCheckOutput");
-        formatter.field("health_check", &self.health_check);
-        formatter.finish()
-    }
-}
 /// See [`UpdateHealthCheckOutput`](crate::output::UpdateHealthCheckOutput).
 pub mod update_health_check_output {
 
     /// A builder for [`UpdateHealthCheckOutput`](crate::output::UpdateHealthCheckOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) health_check: std::option::Option<crate::model::HealthCheck>,
     }
@@ -240,7 +212,7 @@ impl UpdateHealthCheckOutput {
 
 /// <p>A complex type that contains the response to a <code>TestDNSAnswer</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestDnsAnswerOutput {
     /// <p>The Amazon Route 53 name server used to respond to the request.</p>
     #[doc(hidden)]
@@ -287,23 +259,11 @@ impl TestDnsAnswerOutput {
         self.protocol.as_deref()
     }
 }
-impl std::fmt::Debug for TestDnsAnswerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestDnsAnswerOutput");
-        formatter.field("nameserver", &self.nameserver);
-        formatter.field("record_name", &self.record_name);
-        formatter.field("record_type", &self.record_type);
-        formatter.field("record_data", &self.record_data);
-        formatter.field("response_code", &self.response_code);
-        formatter.field("protocol", &self.protocol);
-        formatter.finish()
-    }
-}
 /// See [`TestDnsAnswerOutput`](crate::output::TestDnsAnswerOutput).
 pub mod test_dns_answer_output {
 
     /// A builder for [`TestDnsAnswerOutput`](crate::output::TestDnsAnswerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) nameserver: std::option::Option<std::string::String>,
         pub(crate) record_name: std::option::Option<std::string::String>,
@@ -407,7 +367,7 @@ impl TestDnsAnswerOutput {
 
 /// <p>A complex type that contains the response information for the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVpcAssociationAuthorizationsOutput {
     /// <p>The ID of the hosted zone that you can associate the listed VPCs with.</p>
     #[doc(hidden)]
@@ -433,20 +393,11 @@ impl ListVpcAssociationAuthorizationsOutput {
         self.vp_cs.as_deref()
     }
 }
-impl std::fmt::Debug for ListVpcAssociationAuthorizationsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVpcAssociationAuthorizationsOutput");
-        formatter.field("hosted_zone_id", &self.hosted_zone_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("vp_cs", &self.vp_cs);
-        formatter.finish()
-    }
-}
 /// See [`ListVpcAssociationAuthorizationsOutput`](crate::output::ListVpcAssociationAuthorizationsOutput).
 pub mod list_vpc_association_authorizations_output {
 
     /// A builder for [`ListVpcAssociationAuthorizationsOutput`](crate::output::ListVpcAssociationAuthorizationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -514,7 +465,7 @@ impl ListVpcAssociationAuthorizationsOutput {
 
 /// <p>A complex type that contains the response information for the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTrafficPolicyVersionsOutput {
     /// <p>A list that contains one <code>TrafficPolicy</code> element for each traffic policy version that is associated with the specified traffic policy.</p>
     #[doc(hidden)]
@@ -549,24 +500,11 @@ impl ListTrafficPolicyVersionsOutput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListTrafficPolicyVersionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTrafficPolicyVersionsOutput");
-        formatter.field("traffic_policies", &self.traffic_policies);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field(
-            "traffic_policy_version_marker",
-            &self.traffic_policy_version_marker,
-        );
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 /// See [`ListTrafficPolicyVersionsOutput`](crate::output::ListTrafficPolicyVersionsOutput).
 pub mod list_traffic_policy_versions_output {
 
     /// A builder for [`ListTrafficPolicyVersionsOutput`](crate::output::ListTrafficPolicyVersionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) traffic_policies:
             std::option::Option<std::vec::Vec<crate::model::TrafficPolicy>>,
@@ -652,7 +590,7 @@ impl ListTrafficPolicyVersionsOutput {
 
 /// <p>A complex type that contains the response information for the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTrafficPolicyInstancesByPolicyOutput {
     /// <p>A list that contains one <code>TrafficPolicyInstance</code> element for each traffic policy instance that matches the elements in the request.</p>
     #[doc(hidden)]
@@ -704,29 +642,11 @@ impl ListTrafficPolicyInstancesByPolicyOutput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListTrafficPolicyInstancesByPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTrafficPolicyInstancesByPolicyOutput");
-        formatter.field("traffic_policy_instances", &self.traffic_policy_instances);
-        formatter.field("hosted_zone_id_marker", &self.hosted_zone_id_marker);
-        formatter.field(
-            "traffic_policy_instance_name_marker",
-            &self.traffic_policy_instance_name_marker,
-        );
-        formatter.field(
-            "traffic_policy_instance_type_marker",
-            &self.traffic_policy_instance_type_marker,
-        );
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 /// See [`ListTrafficPolicyInstancesByPolicyOutput`](crate::output::ListTrafficPolicyInstancesByPolicyOutput).
 pub mod list_traffic_policy_instances_by_policy_output {
 
     /// A builder for [`ListTrafficPolicyInstancesByPolicyOutput`](crate::output::ListTrafficPolicyInstancesByPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) traffic_policy_instances:
             std::option::Option<std::vec::Vec<crate::model::TrafficPolicyInstance>>,
@@ -843,7 +763,7 @@ impl ListTrafficPolicyInstancesByPolicyOutput {
 
 /// <p>A complex type that contains the response information for the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTrafficPolicyInstancesByHostedZoneOutput {
     /// <p>A list that contains one <code>TrafficPolicyInstance</code> element for each traffic policy instance that matches the elements in the request. </p>
     #[doc(hidden)]
@@ -888,28 +808,11 @@ impl ListTrafficPolicyInstancesByHostedZoneOutput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListTrafficPolicyInstancesByHostedZoneOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTrafficPolicyInstancesByHostedZoneOutput");
-        formatter.field("traffic_policy_instances", &self.traffic_policy_instances);
-        formatter.field(
-            "traffic_policy_instance_name_marker",
-            &self.traffic_policy_instance_name_marker,
-        );
-        formatter.field(
-            "traffic_policy_instance_type_marker",
-            &self.traffic_policy_instance_type_marker,
-        );
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 /// See [`ListTrafficPolicyInstancesByHostedZoneOutput`](crate::output::ListTrafficPolicyInstancesByHostedZoneOutput).
 pub mod list_traffic_policy_instances_by_hosted_zone_output {
 
     /// A builder for [`ListTrafficPolicyInstancesByHostedZoneOutput`](crate::output::ListTrafficPolicyInstancesByHostedZoneOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) traffic_policy_instances:
             std::option::Option<std::vec::Vec<crate::model::TrafficPolicyInstance>>,
@@ -1012,7 +915,7 @@ impl ListTrafficPolicyInstancesByHostedZoneOutput {
 
 /// <p>A complex type that contains the response information for the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTrafficPolicyInstancesOutput {
     /// <p>A list that contains one <code>TrafficPolicyInstance</code> element for each traffic policy instance that matches the elements in the request.</p>
     #[doc(hidden)]
@@ -1064,29 +967,11 @@ impl ListTrafficPolicyInstancesOutput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListTrafficPolicyInstancesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTrafficPolicyInstancesOutput");
-        formatter.field("traffic_policy_instances", &self.traffic_policy_instances);
-        formatter.field("hosted_zone_id_marker", &self.hosted_zone_id_marker);
-        formatter.field(
-            "traffic_policy_instance_name_marker",
-            &self.traffic_policy_instance_name_marker,
-        );
-        formatter.field(
-            "traffic_policy_instance_type_marker",
-            &self.traffic_policy_instance_type_marker,
-        );
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 /// See [`ListTrafficPolicyInstancesOutput`](crate::output::ListTrafficPolicyInstancesOutput).
 pub mod list_traffic_policy_instances_output {
 
     /// A builder for [`ListTrafficPolicyInstancesOutput`](crate::output::ListTrafficPolicyInstancesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) traffic_policy_instances:
             std::option::Option<std::vec::Vec<crate::model::TrafficPolicyInstance>>,
@@ -1203,7 +1088,7 @@ impl ListTrafficPolicyInstancesOutput {
 
 /// <p>A complex type that contains the response information for the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTrafficPoliciesOutput {
     /// <p>A list that contains one <code>TrafficPolicySummary</code> element for each traffic policy that was created by the current Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -1239,21 +1124,11 @@ impl ListTrafficPoliciesOutput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListTrafficPoliciesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTrafficPoliciesOutput");
-        formatter.field("traffic_policy_summaries", &self.traffic_policy_summaries);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("traffic_policy_id_marker", &self.traffic_policy_id_marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 /// See [`ListTrafficPoliciesOutput`](crate::output::ListTrafficPoliciesOutput).
 pub mod list_traffic_policies_output {
 
     /// A builder for [`ListTrafficPoliciesOutput`](crate::output::ListTrafficPoliciesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) traffic_policy_summaries:
             std::option::Option<std::vec::Vec<crate::model::TrafficPolicySummary>>,
@@ -1337,7 +1212,7 @@ impl ListTrafficPoliciesOutput {
 
 /// <p>A complex type containing tags for the specified resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourcesOutput {
     /// <p>A list of <code>ResourceTagSet</code>s containing tags associated with the specified resources.</p>
     #[doc(hidden)]
@@ -1349,18 +1224,11 @@ impl ListTagsForResourcesOutput {
         self.resource_tag_sets.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourcesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourcesOutput");
-        formatter.field("resource_tag_sets", &self.resource_tag_sets);
-        formatter.finish()
-    }
-}
 /// See [`ListTagsForResourcesOutput`](crate::output::ListTagsForResourcesOutput).
 pub mod list_tags_for_resources_output {
 
     /// A builder for [`ListTagsForResourcesOutput`](crate::output::ListTagsForResourcesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_tag_sets:
             std::option::Option<std::vec::Vec<crate::model::ResourceTagSet>>,
@@ -1402,7 +1270,7 @@ impl ListTagsForResourcesOutput {
 
 /// <p>A complex type that contains information about the health checks or hosted zones for which you want to list tags.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
     /// <p>A <code>ResourceTagSet</code> containing tags associated with the specified resource.</p>
     #[doc(hidden)]
@@ -1414,18 +1282,11 @@ impl ListTagsForResourceOutput {
         self.resource_tag_set.as_ref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceOutput");
-        formatter.field("resource_tag_set", &self.resource_tag_set);
-        formatter.finish()
-    }
-}
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_tag_set: std::option::Option<crate::model::ResourceTagSet>,
     }
@@ -1460,7 +1321,7 @@ impl ListTagsForResourceOutput {
 
 /// <p>A complex type that contains information about the reusable delegation sets that are associated with the current Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListReusableDelegationSetsOutput {
     /// <p>A complex type that contains one <code>DelegationSet</code> element for each reusable delegation set that was created by the current Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -1500,22 +1361,11 @@ impl ListReusableDelegationSetsOutput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListReusableDelegationSetsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListReusableDelegationSetsOutput");
-        formatter.field("delegation_sets", &self.delegation_sets);
-        formatter.field("marker", &self.marker);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 /// See [`ListReusableDelegationSetsOutput`](crate::output::ListReusableDelegationSetsOutput).
 pub mod list_reusable_delegation_sets_output {
 
     /// A builder for [`ListReusableDelegationSetsOutput`](crate::output::ListReusableDelegationSetsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delegation_sets: std::option::Option<std::vec::Vec<crate::model::DelegationSet>>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -1604,7 +1454,7 @@ impl ListReusableDelegationSetsOutput {
 
 /// <p>A complex type that contains list information for the resource record set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResourceRecordSetsOutput {
     /// <p>Information about multiple resource record sets.</p>
     #[doc(hidden)]
@@ -1657,23 +1507,11 @@ impl ListResourceRecordSetsOutput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListResourceRecordSetsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResourceRecordSetsOutput");
-        formatter.field("resource_record_sets", &self.resource_record_sets);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("next_record_name", &self.next_record_name);
-        formatter.field("next_record_type", &self.next_record_type);
-        formatter.field("next_record_identifier", &self.next_record_identifier);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 /// See [`ListResourceRecordSetsOutput`](crate::output::ListResourceRecordSetsOutput).
 pub mod list_resource_record_sets_output {
 
     /// A builder for [`ListResourceRecordSetsOutput`](crate::output::ListResourceRecordSetsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_record_sets:
             std::option::Option<std::vec::Vec<crate::model::ResourceRecordSet>>,
@@ -1790,7 +1628,7 @@ impl ListResourceRecordSetsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListQueryLoggingConfigsOutput {
     /// <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_QueryLoggingConfig.html">QueryLoggingConfig</a> element for each configuration for DNS query logging that is associated with the current Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -1813,19 +1651,11 @@ impl ListQueryLoggingConfigsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListQueryLoggingConfigsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListQueryLoggingConfigsOutput");
-        formatter.field("query_logging_configs", &self.query_logging_configs);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListQueryLoggingConfigsOutput`](crate::output::ListQueryLoggingConfigsOutput).
 pub mod list_query_logging_configs_output {
 
     /// A builder for [`ListQueryLoggingConfigsOutput`](crate::output::ListQueryLoggingConfigsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_logging_configs:
             std::option::Option<std::vec::Vec<crate::model::QueryLoggingConfig>>,
@@ -1881,7 +1711,7 @@ impl ListQueryLoggingConfigsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListHostedZonesByVpcOutput {
     /// <p>A list that contains one <code>HostedZoneSummary</code> element for each hosted zone that the specified Amazon VPC is associated with. Each <code>HostedZoneSummary</code> element contains the hosted zone name and ID, and information about who owns the hosted zone.</p>
     #[doc(hidden)]
@@ -1907,20 +1737,11 @@ impl ListHostedZonesByVpcOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListHostedZonesByVpcOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListHostedZonesByVpcOutput");
-        formatter.field("hosted_zone_summaries", &self.hosted_zone_summaries);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListHostedZonesByVpcOutput`](crate::output::ListHostedZonesByVpcOutput).
 pub mod list_hosted_zones_by_vpc_output {
 
     /// A builder for [`ListHostedZonesByVpcOutput`](crate::output::ListHostedZonesByVpcOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosted_zone_summaries:
             std::option::Option<std::vec::Vec<crate::model::HostedZoneSummary>>,
@@ -1986,7 +1807,7 @@ impl ListHostedZonesByVpcOutput {
 
 /// <p>A complex type that contains the response information for the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListHostedZonesByNameOutput {
     /// <p>A complex type that contains general information about the hosted zone.</p>
     #[doc(hidden)]
@@ -2044,24 +1865,11 @@ impl ListHostedZonesByNameOutput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListHostedZonesByNameOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListHostedZonesByNameOutput");
-        formatter.field("hosted_zones", &self.hosted_zones);
-        formatter.field("dns_name", &self.dns_name);
-        formatter.field("hosted_zone_id", &self.hosted_zone_id);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("next_dns_name", &self.next_dns_name);
-        formatter.field("next_hosted_zone_id", &self.next_hosted_zone_id);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 /// See [`ListHostedZonesByNameOutput`](crate::output::ListHostedZonesByNameOutput).
 pub mod list_hosted_zones_by_name_output {
 
     /// A builder for [`ListHostedZonesByNameOutput`](crate::output::ListHostedZonesByNameOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosted_zones: std::option::Option<std::vec::Vec<crate::model::HostedZone>>,
         pub(crate) dns_name: std::option::Option<std::string::String>,
@@ -2187,7 +1995,7 @@ impl ListHostedZonesByNameOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListHostedZonesOutput {
     /// <p>A complex type that contains general information about the hosted zone.</p>
     #[doc(hidden)]
@@ -2229,22 +2037,11 @@ impl ListHostedZonesOutput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListHostedZonesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListHostedZonesOutput");
-        formatter.field("hosted_zones", &self.hosted_zones);
-        formatter.field("marker", &self.marker);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 /// See [`ListHostedZonesOutput`](crate::output::ListHostedZonesOutput).
 pub mod list_hosted_zones_output {
 
     /// A builder for [`ListHostedZonesOutput`](crate::output::ListHostedZonesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosted_zones: std::option::Option<std::vec::Vec<crate::model::HostedZone>>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -2335,7 +2132,7 @@ impl ListHostedZonesOutput {
 
 /// <p>A complex type that contains the response to a <code>ListHealthChecks</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListHealthChecksOutput {
     /// <p>A complex type that contains one <code>HealthCheck</code> element for each health check that is associated with the current Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -2375,22 +2172,11 @@ impl ListHealthChecksOutput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListHealthChecksOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListHealthChecksOutput");
-        formatter.field("health_checks", &self.health_checks);
-        formatter.field("marker", &self.marker);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 /// See [`ListHealthChecksOutput`](crate::output::ListHealthChecksOutput).
 pub mod list_health_checks_output {
 
     /// A builder for [`ListHealthChecksOutput`](crate::output::ListHealthChecksOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) health_checks: std::option::Option<std::vec::Vec<crate::model::HealthCheck>>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -2479,7 +2265,7 @@ impl ListHealthChecksOutput {
 
 /// <p>A complex type containing the response information for the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGeoLocationsOutput {
     /// <p>A complex type that contains one <code>GeoLocationDetails</code> element for each location that Amazon Route 53 supports for geolocation.</p>
     #[doc(hidden)]
@@ -2529,23 +2315,11 @@ impl ListGeoLocationsOutput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListGeoLocationsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGeoLocationsOutput");
-        formatter.field("geo_location_details_list", &self.geo_location_details_list);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("next_continent_code", &self.next_continent_code);
-        formatter.field("next_country_code", &self.next_country_code);
-        formatter.field("next_subdivision_code", &self.next_subdivision_code);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 /// See [`ListGeoLocationsOutput`](crate::output::ListGeoLocationsOutput).
 pub mod list_geo_locations_output {
 
     /// A builder for [`ListGeoLocationsOutput`](crate::output::ListGeoLocationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) geo_location_details_list:
             std::option::Option<std::vec::Vec<crate::model::GeoLocationDetails>>,
@@ -2659,7 +2433,7 @@ impl ListGeoLocationsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCidrLocationsOutput {
     /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
     /// <p>If no value is provided, the listing of results starts from the beginning.</p>
@@ -2680,19 +2454,11 @@ impl ListCidrLocationsOutput {
         self.cidr_locations.as_deref()
     }
 }
-impl std::fmt::Debug for ListCidrLocationsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCidrLocationsOutput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("cidr_locations", &self.cidr_locations);
-        formatter.finish()
-    }
-}
 /// See [`ListCidrLocationsOutput`](crate::output::ListCidrLocationsOutput).
 pub mod list_cidr_locations_output {
 
     /// A builder for [`ListCidrLocationsOutput`](crate::output::ListCidrLocationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) cidr_locations:
@@ -2748,7 +2514,7 @@ impl ListCidrLocationsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCidrCollectionsOutput {
     /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
     /// <p>If no value is provided, the listing of results starts from the beginning.</p>
@@ -2769,19 +2535,11 @@ impl ListCidrCollectionsOutput {
         self.cidr_collections.as_deref()
     }
 }
-impl std::fmt::Debug for ListCidrCollectionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCidrCollectionsOutput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("cidr_collections", &self.cidr_collections);
-        formatter.finish()
-    }
-}
 /// See [`ListCidrCollectionsOutput`](crate::output::ListCidrCollectionsOutput).
 pub mod list_cidr_collections_output {
 
     /// A builder for [`ListCidrCollectionsOutput`](crate::output::ListCidrCollectionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) cidr_collections:
@@ -2837,7 +2595,7 @@ impl ListCidrCollectionsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCidrBlocksOutput {
     /// <p>An opaque pagination token to indicate where the service is to begin enumerating results. </p>
     /// <p>If no value is provided, the listing of results starts from the beginning.</p>
@@ -2858,19 +2616,11 @@ impl ListCidrBlocksOutput {
         self.cidr_blocks.as_deref()
     }
 }
-impl std::fmt::Debug for ListCidrBlocksOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCidrBlocksOutput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("cidr_blocks", &self.cidr_blocks);
-        formatter.finish()
-    }
-}
 /// See [`ListCidrBlocksOutput`](crate::output::ListCidrBlocksOutput).
 pub mod list_cidr_blocks_output {
 
     /// A builder for [`ListCidrBlocksOutput`](crate::output::ListCidrBlocksOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) cidr_blocks: std::option::Option<std::vec::Vec<crate::model::CidrBlockSummary>>,
@@ -2925,7 +2675,7 @@ impl ListCidrBlocksOutput {
 
 /// <p>A complex type that contains information about the resource record sets that Amazon Route 53 created based on a specified traffic policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTrafficPolicyInstanceCountOutput {
     /// <p>The number of traffic policy instances that are associated with the current Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -2937,21 +2687,11 @@ impl GetTrafficPolicyInstanceCountOutput {
         self.traffic_policy_instance_count
     }
 }
-impl std::fmt::Debug for GetTrafficPolicyInstanceCountOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTrafficPolicyInstanceCountOutput");
-        formatter.field(
-            "traffic_policy_instance_count",
-            &self.traffic_policy_instance_count,
-        );
-        formatter.finish()
-    }
-}
 /// See [`GetTrafficPolicyInstanceCountOutput`](crate::output::GetTrafficPolicyInstanceCountOutput).
 pub mod get_traffic_policy_instance_count_output {
 
     /// A builder for [`GetTrafficPolicyInstanceCountOutput`](crate::output::GetTrafficPolicyInstanceCountOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) traffic_policy_instance_count: std::option::Option<i32>,
     }
@@ -2986,7 +2726,7 @@ impl GetTrafficPolicyInstanceCountOutput {
 
 /// <p>A complex type that contains information about the resource record sets that Amazon Route 53 created based on a specified traffic policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTrafficPolicyInstanceOutput {
     /// <p>A complex type that contains settings for the traffic policy instance.</p>
     #[doc(hidden)]
@@ -3000,18 +2740,11 @@ impl GetTrafficPolicyInstanceOutput {
         self.traffic_policy_instance.as_ref()
     }
 }
-impl std::fmt::Debug for GetTrafficPolicyInstanceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTrafficPolicyInstanceOutput");
-        formatter.field("traffic_policy_instance", &self.traffic_policy_instance);
-        formatter.finish()
-    }
-}
 /// See [`GetTrafficPolicyInstanceOutput`](crate::output::GetTrafficPolicyInstanceOutput).
 pub mod get_traffic_policy_instance_output {
 
     /// A builder for [`GetTrafficPolicyInstanceOutput`](crate::output::GetTrafficPolicyInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) traffic_policy_instance:
             std::option::Option<crate::model::TrafficPolicyInstance>,
@@ -3050,7 +2783,7 @@ impl GetTrafficPolicyInstanceOutput {
 
 /// <p>A complex type that contains the response information for the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTrafficPolicyOutput {
     /// <p>A complex type that contains settings for the specified traffic policy.</p>
     #[doc(hidden)]
@@ -3062,18 +2795,11 @@ impl GetTrafficPolicyOutput {
         self.traffic_policy.as_ref()
     }
 }
-impl std::fmt::Debug for GetTrafficPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTrafficPolicyOutput");
-        formatter.field("traffic_policy", &self.traffic_policy);
-        formatter.finish()
-    }
-}
 /// See [`GetTrafficPolicyOutput`](crate::output::GetTrafficPolicyOutput).
 pub mod get_traffic_policy_output {
 
     /// A builder for [`GetTrafficPolicyOutput`](crate::output::GetTrafficPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) traffic_policy: std::option::Option<crate::model::TrafficPolicy>,
     }
@@ -3108,7 +2834,7 @@ impl GetTrafficPolicyOutput {
 
 /// <p>A complex type that contains the requested limit. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetReusableDelegationSetLimitOutput {
     /// <p>The current setting for the limit on hosted zones that you can associate with the specified reusable delegation set.</p>
     #[doc(hidden)]
@@ -3127,19 +2853,11 @@ impl GetReusableDelegationSetLimitOutput {
         self.count
     }
 }
-impl std::fmt::Debug for GetReusableDelegationSetLimitOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetReusableDelegationSetLimitOutput");
-        formatter.field("limit", &self.limit);
-        formatter.field("count", &self.count);
-        formatter.finish()
-    }
-}
 /// See [`GetReusableDelegationSetLimitOutput`](crate::output::GetReusableDelegationSetLimitOutput).
 pub mod get_reusable_delegation_set_limit_output {
 
     /// A builder for [`GetReusableDelegationSetLimitOutput`](crate::output::GetReusableDelegationSetLimitOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) limit: std::option::Option<crate::model::ReusableDelegationSetLimit>,
         pub(crate) count: std::option::Option<i64>,
@@ -3186,7 +2904,7 @@ impl GetReusableDelegationSetLimitOutput {
 
 /// <p>A complex type that contains the response to the <code>GetReusableDelegationSet</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetReusableDelegationSetOutput {
     /// <p>A complex type that contains information about the reusable delegation set.</p>
     #[doc(hidden)]
@@ -3198,18 +2916,11 @@ impl GetReusableDelegationSetOutput {
         self.delegation_set.as_ref()
     }
 }
-impl std::fmt::Debug for GetReusableDelegationSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetReusableDelegationSetOutput");
-        formatter.field("delegation_set", &self.delegation_set);
-        formatter.finish()
-    }
-}
 /// See [`GetReusableDelegationSetOutput`](crate::output::GetReusableDelegationSetOutput).
 pub mod get_reusable_delegation_set_output {
 
     /// A builder for [`GetReusableDelegationSetOutput`](crate::output::GetReusableDelegationSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delegation_set: std::option::Option<crate::model::DelegationSet>,
     }
@@ -3244,7 +2955,7 @@ impl GetReusableDelegationSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetQueryLoggingConfigOutput {
     /// <p>A complex type that contains information about the query logging configuration that you specified in a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetQueryLoggingConfig.html">GetQueryLoggingConfig</a> request.</p>
     #[doc(hidden)]
@@ -3256,18 +2967,11 @@ impl GetQueryLoggingConfigOutput {
         self.query_logging_config.as_ref()
     }
 }
-impl std::fmt::Debug for GetQueryLoggingConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetQueryLoggingConfigOutput");
-        formatter.field("query_logging_config", &self.query_logging_config);
-        formatter.finish()
-    }
-}
 /// See [`GetQueryLoggingConfigOutput`](crate::output::GetQueryLoggingConfigOutput).
 pub mod get_query_logging_config_output {
 
     /// A builder for [`GetQueryLoggingConfigOutput`](crate::output::GetQueryLoggingConfigOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_logging_config: std::option::Option<crate::model::QueryLoggingConfig>,
     }
@@ -3302,7 +3006,7 @@ impl GetQueryLoggingConfigOutput {
 
 /// <p>A complex type that contains the requested limit. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetHostedZoneLimitOutput {
     /// <p>The current setting for the specified limit. For example, if you specified <code>MAX_RRSETS_BY_ZONE</code> for the value of <code>Type</code> in the request, the value of <code>Limit</code> is the maximum number of records that you can create in the specified hosted zone.</p>
     #[doc(hidden)]
@@ -3321,19 +3025,11 @@ impl GetHostedZoneLimitOutput {
         self.count
     }
 }
-impl std::fmt::Debug for GetHostedZoneLimitOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetHostedZoneLimitOutput");
-        formatter.field("limit", &self.limit);
-        formatter.field("count", &self.count);
-        formatter.finish()
-    }
-}
 /// See [`GetHostedZoneLimitOutput`](crate::output::GetHostedZoneLimitOutput).
 pub mod get_hosted_zone_limit_output {
 
     /// A builder for [`GetHostedZoneLimitOutput`](crate::output::GetHostedZoneLimitOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) limit: std::option::Option<crate::model::HostedZoneLimit>,
         pub(crate) count: std::option::Option<i64>,
@@ -3380,7 +3076,7 @@ impl GetHostedZoneLimitOutput {
 
 /// <p>A complex type that contains the response to a <code>GetHostedZoneCount</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetHostedZoneCountOutput {
     /// <p>The total number of public and private hosted zones that are associated with the current Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -3392,18 +3088,11 @@ impl GetHostedZoneCountOutput {
         self.hosted_zone_count
     }
 }
-impl std::fmt::Debug for GetHostedZoneCountOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetHostedZoneCountOutput");
-        formatter.field("hosted_zone_count", &self.hosted_zone_count);
-        formatter.finish()
-    }
-}
 /// See [`GetHostedZoneCountOutput`](crate::output::GetHostedZoneCountOutput).
 pub mod get_hosted_zone_count_output {
 
     /// A builder for [`GetHostedZoneCountOutput`](crate::output::GetHostedZoneCountOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosted_zone_count: std::option::Option<i64>,
     }
@@ -3435,7 +3124,7 @@ impl GetHostedZoneCountOutput {
 
 /// <p>A complex type that contain the response to a <code>GetHostedZone</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetHostedZoneOutput {
     /// <p>A complex type that contains general information about the specified hosted zone.</p>
     #[doc(hidden)]
@@ -3461,20 +3150,11 @@ impl GetHostedZoneOutput {
         self.vp_cs.as_deref()
     }
 }
-impl std::fmt::Debug for GetHostedZoneOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetHostedZoneOutput");
-        formatter.field("hosted_zone", &self.hosted_zone);
-        formatter.field("delegation_set", &self.delegation_set);
-        formatter.field("vp_cs", &self.vp_cs);
-        formatter.finish()
-    }
-}
 /// See [`GetHostedZoneOutput`](crate::output::GetHostedZoneOutput).
 pub mod get_hosted_zone_output {
 
     /// A builder for [`GetHostedZoneOutput`](crate::output::GetHostedZoneOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosted_zone: std::option::Option<crate::model::HostedZone>,
         pub(crate) delegation_set: std::option::Option<crate::model::DelegationSet>,
@@ -3545,7 +3225,7 @@ impl GetHostedZoneOutput {
 
 /// <p>A complex type that contains the response to a <code>GetHealthCheck</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetHealthCheckStatusOutput {
     /// <p>A list that contains one <code>HealthCheckObservation</code> element for each Amazon Route 53 health checker that is reporting a status about the health check endpoint.</p>
     #[doc(hidden)]
@@ -3560,18 +3240,11 @@ impl GetHealthCheckStatusOutput {
         self.health_check_observations.as_deref()
     }
 }
-impl std::fmt::Debug for GetHealthCheckStatusOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetHealthCheckStatusOutput");
-        formatter.field("health_check_observations", &self.health_check_observations);
-        formatter.finish()
-    }
-}
 /// See [`GetHealthCheckStatusOutput`](crate::output::GetHealthCheckStatusOutput).
 pub mod get_health_check_status_output {
 
     /// A builder for [`GetHealthCheckStatusOutput`](crate::output::GetHealthCheckStatusOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) health_check_observations:
             std::option::Option<std::vec::Vec<crate::model::HealthCheckObservation>>,
@@ -3616,7 +3289,7 @@ impl GetHealthCheckStatusOutput {
 
 /// <p>A complex type that contains the response to a <code>GetHealthCheckLastFailureReason</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetHealthCheckLastFailureReasonOutput {
     /// <p>A list that contains one <code>Observation</code> element for each Amazon Route 53 health checker that is reporting a last failure reason. </p>
     #[doc(hidden)]
@@ -3631,18 +3304,11 @@ impl GetHealthCheckLastFailureReasonOutput {
         self.health_check_observations.as_deref()
     }
 }
-impl std::fmt::Debug for GetHealthCheckLastFailureReasonOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetHealthCheckLastFailureReasonOutput");
-        formatter.field("health_check_observations", &self.health_check_observations);
-        formatter.finish()
-    }
-}
 /// See [`GetHealthCheckLastFailureReasonOutput`](crate::output::GetHealthCheckLastFailureReasonOutput).
 pub mod get_health_check_last_failure_reason_output {
 
     /// A builder for [`GetHealthCheckLastFailureReasonOutput`](crate::output::GetHealthCheckLastFailureReasonOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) health_check_observations:
             std::option::Option<std::vec::Vec<crate::model::HealthCheckObservation>>,
@@ -3687,7 +3353,7 @@ impl GetHealthCheckLastFailureReasonOutput {
 
 /// <p>A complex type that contains the response to a <code>GetHealthCheckCount</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetHealthCheckCountOutput {
     /// <p>The number of health checks associated with the current Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -3699,18 +3365,11 @@ impl GetHealthCheckCountOutput {
         self.health_check_count
     }
 }
-impl std::fmt::Debug for GetHealthCheckCountOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetHealthCheckCountOutput");
-        formatter.field("health_check_count", &self.health_check_count);
-        formatter.finish()
-    }
-}
 /// See [`GetHealthCheckCountOutput`](crate::output::GetHealthCheckCountOutput).
 pub mod get_health_check_count_output {
 
     /// A builder for [`GetHealthCheckCountOutput`](crate::output::GetHealthCheckCountOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) health_check_count: std::option::Option<i64>,
     }
@@ -3742,7 +3401,7 @@ impl GetHealthCheckCountOutput {
 
 /// <p>A complex type that contains the response to a <code>GetHealthCheck</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetHealthCheckOutput {
     /// <p>A complex type that contains information about one health check that is associated with the current Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -3754,18 +3413,11 @@ impl GetHealthCheckOutput {
         self.health_check.as_ref()
     }
 }
-impl std::fmt::Debug for GetHealthCheckOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetHealthCheckOutput");
-        formatter.field("health_check", &self.health_check);
-        formatter.finish()
-    }
-}
 /// See [`GetHealthCheckOutput`](crate::output::GetHealthCheckOutput).
 pub mod get_health_check_output {
 
     /// A builder for [`GetHealthCheckOutput`](crate::output::GetHealthCheckOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) health_check: std::option::Option<crate::model::HealthCheck>,
     }
@@ -3800,7 +3452,7 @@ impl GetHealthCheckOutput {
 
 /// <p>A complex type that contains the response information for the specified geolocation code.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGeoLocationOutput {
     /// <p>A complex type that contains the codes and full continent, country, and subdivision names for the specified geolocation code.</p>
     #[doc(hidden)]
@@ -3812,18 +3464,11 @@ impl GetGeoLocationOutput {
         self.geo_location_details.as_ref()
     }
 }
-impl std::fmt::Debug for GetGeoLocationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGeoLocationOutput");
-        formatter.field("geo_location_details", &self.geo_location_details);
-        formatter.finish()
-    }
-}
 /// See [`GetGeoLocationOutput`](crate::output::GetGeoLocationOutput).
 pub mod get_geo_location_output {
 
     /// A builder for [`GetGeoLocationOutput`](crate::output::GetGeoLocationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) geo_location_details: std::option::Option<crate::model::GeoLocationDetails>,
     }
@@ -3858,7 +3503,7 @@ impl GetGeoLocationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDnssecOutput {
     /// <p>A string repesenting the status of DNSSEC.</p>
     #[doc(hidden)]
@@ -3877,19 +3522,11 @@ impl GetDnssecOutput {
         self.key_signing_keys.as_deref()
     }
 }
-impl std::fmt::Debug for GetDnssecOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDnssecOutput");
-        formatter.field("status", &self.status);
-        formatter.field("key_signing_keys", &self.key_signing_keys);
-        formatter.finish()
-    }
-}
 /// See [`GetDnssecOutput`](crate::output::GetDnssecOutput).
 pub mod get_dnssec_output {
 
     /// A builder for [`GetDnssecOutput`](crate::output::GetDnssecOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::DnssecStatus>,
         pub(crate) key_signing_keys:
@@ -3946,7 +3583,7 @@ impl GetDnssecOutput {
 
 /// <p>A complex type that contains the <code>CheckerIpRanges</code> element.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCheckerIpRangesOutput {
     /// <p>A complex type that contains sorted list of IP ranges in CIDR format for Amazon Route 53 health checkers.</p>
     #[doc(hidden)]
@@ -3958,18 +3595,11 @@ impl GetCheckerIpRangesOutput {
         self.checker_ip_ranges.as_deref()
     }
 }
-impl std::fmt::Debug for GetCheckerIpRangesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCheckerIpRangesOutput");
-        formatter.field("checker_ip_ranges", &self.checker_ip_ranges);
-        formatter.finish()
-    }
-}
 /// See [`GetCheckerIpRangesOutput`](crate::output::GetCheckerIpRangesOutput).
 pub mod get_checker_ip_ranges_output {
 
     /// A builder for [`GetCheckerIpRangesOutput`](crate::output::GetCheckerIpRangesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) checker_ip_ranges: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -4010,7 +3640,7 @@ impl GetCheckerIpRangesOutput {
 
 /// <p>A complex type that contains the <code>ChangeInfo</code> element.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetChangeOutput {
     /// <p>A complex type that contains information about the specified change batch.</p>
     #[doc(hidden)]
@@ -4022,18 +3652,11 @@ impl GetChangeOutput {
         self.change_info.as_ref()
     }
 }
-impl std::fmt::Debug for GetChangeOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetChangeOutput");
-        formatter.field("change_info", &self.change_info);
-        formatter.finish()
-    }
-}
 /// See [`GetChangeOutput`](crate::output::GetChangeOutput).
 pub mod get_change_output {
 
     /// A builder for [`GetChangeOutput`](crate::output::GetChangeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_info: std::option::Option<crate::model::ChangeInfo>,
     }
@@ -4068,7 +3691,7 @@ impl GetChangeOutput {
 
 /// <p>A complex type that contains the requested limit. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccountLimitOutput {
     /// <p>The current setting for the specified limit. For example, if you specified <code>MAX_HEALTH_CHECKS_BY_OWNER</code> for the value of <code>Type</code> in the request, the value of <code>Limit</code> is the maximum number of health checks that you can create using the current account.</p>
     #[doc(hidden)]
@@ -4087,19 +3710,11 @@ impl GetAccountLimitOutput {
         self.count
     }
 }
-impl std::fmt::Debug for GetAccountLimitOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccountLimitOutput");
-        formatter.field("limit", &self.limit);
-        formatter.field("count", &self.count);
-        formatter.finish()
-    }
-}
 /// See [`GetAccountLimitOutput`](crate::output::GetAccountLimitOutput).
 pub mod get_account_limit_output {
 
     /// A builder for [`GetAccountLimitOutput`](crate::output::GetAccountLimitOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) limit: std::option::Option<crate::model::AccountLimit>,
         pub(crate) count: std::option::Option<i64>,
@@ -4143,7 +3758,7 @@ impl GetAccountLimitOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableHostedZoneDnssecOutput {
     /// <p>A complex type that describes change information about changes made to your hosted zone.</p>
     #[doc(hidden)]
@@ -4155,18 +3770,11 @@ impl EnableHostedZoneDnssecOutput {
         self.change_info.as_ref()
     }
 }
-impl std::fmt::Debug for EnableHostedZoneDnssecOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableHostedZoneDnssecOutput");
-        formatter.field("change_info", &self.change_info);
-        formatter.finish()
-    }
-}
 /// See [`EnableHostedZoneDnssecOutput`](crate::output::EnableHostedZoneDnssecOutput).
 pub mod enable_hosted_zone_dnssec_output {
 
     /// A builder for [`EnableHostedZoneDnssecOutput`](crate::output::EnableHostedZoneDnssecOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_info: std::option::Option<crate::model::ChangeInfo>,
     }
@@ -4201,7 +3809,7 @@ impl EnableHostedZoneDnssecOutput {
 
 /// <p>A complex type that contains the response information for the disassociate request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateVpcFromHostedZoneOutput {
     /// <p>A complex type that describes the changes made to the specified private hosted zone.</p>
     #[doc(hidden)]
@@ -4213,18 +3821,11 @@ impl DisassociateVpcFromHostedZoneOutput {
         self.change_info.as_ref()
     }
 }
-impl std::fmt::Debug for DisassociateVpcFromHostedZoneOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateVpcFromHostedZoneOutput");
-        formatter.field("change_info", &self.change_info);
-        formatter.finish()
-    }
-}
 /// See [`DisassociateVpcFromHostedZoneOutput`](crate::output::DisassociateVpcFromHostedZoneOutput).
 pub mod disassociate_vpc_from_hosted_zone_output {
 
     /// A builder for [`DisassociateVpcFromHostedZoneOutput`](crate::output::DisassociateVpcFromHostedZoneOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_info: std::option::Option<crate::model::ChangeInfo>,
     }
@@ -4259,7 +3860,7 @@ impl DisassociateVpcFromHostedZoneOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableHostedZoneDnssecOutput {
     /// <p>A complex type that describes change information about changes made to your hosted zone.</p>
     #[doc(hidden)]
@@ -4271,18 +3872,11 @@ impl DisableHostedZoneDnssecOutput {
         self.change_info.as_ref()
     }
 }
-impl std::fmt::Debug for DisableHostedZoneDnssecOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableHostedZoneDnssecOutput");
-        formatter.field("change_info", &self.change_info);
-        formatter.finish()
-    }
-}
 /// See [`DisableHostedZoneDnssecOutput`](crate::output::DisableHostedZoneDnssecOutput).
 pub mod disable_hosted_zone_dnssec_output {
 
     /// A builder for [`DisableHostedZoneDnssecOutput`](crate::output::DisableHostedZoneDnssecOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_info: std::option::Option<crate::model::ChangeInfo>,
     }
@@ -4317,19 +3911,13 @@ impl DisableHostedZoneDnssecOutput {
 
 /// <p>Empty response for the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVpcAssociationAuthorizationOutput {}
-impl std::fmt::Debug for DeleteVpcAssociationAuthorizationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVpcAssociationAuthorizationOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteVpcAssociationAuthorizationOutput`](crate::output::DeleteVpcAssociationAuthorizationOutput).
 pub mod delete_vpc_association_authorization_output {
 
     /// A builder for [`DeleteVpcAssociationAuthorizationOutput`](crate::output::DeleteVpcAssociationAuthorizationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteVpcAssociationAuthorizationOutput`](crate::output::DeleteVpcAssociationAuthorizationOutput).
@@ -4347,19 +3935,13 @@ impl DeleteVpcAssociationAuthorizationOutput {
 
 /// <p>An empty element.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTrafficPolicyInstanceOutput {}
-impl std::fmt::Debug for DeleteTrafficPolicyInstanceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTrafficPolicyInstanceOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteTrafficPolicyInstanceOutput`](crate::output::DeleteTrafficPolicyInstanceOutput).
 pub mod delete_traffic_policy_instance_output {
 
     /// A builder for [`DeleteTrafficPolicyInstanceOutput`](crate::output::DeleteTrafficPolicyInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteTrafficPolicyInstanceOutput`](crate::output::DeleteTrafficPolicyInstanceOutput).
@@ -4377,19 +3959,13 @@ impl DeleteTrafficPolicyInstanceOutput {
 
 /// <p>An empty element.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTrafficPolicyOutput {}
-impl std::fmt::Debug for DeleteTrafficPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTrafficPolicyOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteTrafficPolicyOutput`](crate::output::DeleteTrafficPolicyOutput).
 pub mod delete_traffic_policy_output {
 
     /// A builder for [`DeleteTrafficPolicyOutput`](crate::output::DeleteTrafficPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteTrafficPolicyOutput`](crate::output::DeleteTrafficPolicyOutput).
@@ -4407,19 +3983,13 @@ impl DeleteTrafficPolicyOutput {
 
 /// <p>An empty element.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteReusableDelegationSetOutput {}
-impl std::fmt::Debug for DeleteReusableDelegationSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteReusableDelegationSetOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteReusableDelegationSetOutput`](crate::output::DeleteReusableDelegationSetOutput).
 pub mod delete_reusable_delegation_set_output {
 
     /// A builder for [`DeleteReusableDelegationSetOutput`](crate::output::DeleteReusableDelegationSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteReusableDelegationSetOutput`](crate::output::DeleteReusableDelegationSetOutput).
@@ -4437,19 +4007,13 @@ impl DeleteReusableDelegationSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteQueryLoggingConfigOutput {}
-impl std::fmt::Debug for DeleteQueryLoggingConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteQueryLoggingConfigOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteQueryLoggingConfigOutput`](crate::output::DeleteQueryLoggingConfigOutput).
 pub mod delete_query_logging_config_output {
 
     /// A builder for [`DeleteQueryLoggingConfigOutput`](crate::output::DeleteQueryLoggingConfigOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteQueryLoggingConfigOutput`](crate::output::DeleteQueryLoggingConfigOutput).
@@ -4467,7 +4031,7 @@ impl DeleteQueryLoggingConfigOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteKeySigningKeyOutput {
     /// <p>A complex type that describes change information about changes made to your hosted zone.</p>
     #[doc(hidden)]
@@ -4479,18 +4043,11 @@ impl DeleteKeySigningKeyOutput {
         self.change_info.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteKeySigningKeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteKeySigningKeyOutput");
-        formatter.field("change_info", &self.change_info);
-        formatter.finish()
-    }
-}
 /// See [`DeleteKeySigningKeyOutput`](crate::output::DeleteKeySigningKeyOutput).
 pub mod delete_key_signing_key_output {
 
     /// A builder for [`DeleteKeySigningKeyOutput`](crate::output::DeleteKeySigningKeyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_info: std::option::Option<crate::model::ChangeInfo>,
     }
@@ -4525,7 +4082,7 @@ impl DeleteKeySigningKeyOutput {
 
 /// <p>A complex type that contains the response to a <code>DeleteHostedZone</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteHostedZoneOutput {
     /// <p>A complex type that contains the ID, the status, and the date and time of a request to delete a hosted zone.</p>
     #[doc(hidden)]
@@ -4537,18 +4094,11 @@ impl DeleteHostedZoneOutput {
         self.change_info.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteHostedZoneOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteHostedZoneOutput");
-        formatter.field("change_info", &self.change_info);
-        formatter.finish()
-    }
-}
 /// See [`DeleteHostedZoneOutput`](crate::output::DeleteHostedZoneOutput).
 pub mod delete_hosted_zone_output {
 
     /// A builder for [`DeleteHostedZoneOutput`](crate::output::DeleteHostedZoneOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_info: std::option::Option<crate::model::ChangeInfo>,
     }
@@ -4583,19 +4133,13 @@ impl DeleteHostedZoneOutput {
 
 /// <p>An empty element.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteHealthCheckOutput {}
-impl std::fmt::Debug for DeleteHealthCheckOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteHealthCheckOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteHealthCheckOutput`](crate::output::DeleteHealthCheckOutput).
 pub mod delete_health_check_output {
 
     /// A builder for [`DeleteHealthCheckOutput`](crate::output::DeleteHealthCheckOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteHealthCheckOutput`](crate::output::DeleteHealthCheckOutput).
@@ -4613,19 +4157,13 @@ impl DeleteHealthCheckOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCidrCollectionOutput {}
-impl std::fmt::Debug for DeleteCidrCollectionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCidrCollectionOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteCidrCollectionOutput`](crate::output::DeleteCidrCollectionOutput).
 pub mod delete_cidr_collection_output {
 
     /// A builder for [`DeleteCidrCollectionOutput`](crate::output::DeleteCidrCollectionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteCidrCollectionOutput`](crate::output::DeleteCidrCollectionOutput).
@@ -4643,7 +4181,7 @@ impl DeleteCidrCollectionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeactivateKeySigningKeyOutput {
     /// <p>A complex type that describes change information about changes made to your hosted zone.</p>
     #[doc(hidden)]
@@ -4655,18 +4193,11 @@ impl DeactivateKeySigningKeyOutput {
         self.change_info.as_ref()
     }
 }
-impl std::fmt::Debug for DeactivateKeySigningKeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeactivateKeySigningKeyOutput");
-        formatter.field("change_info", &self.change_info);
-        formatter.finish()
-    }
-}
 /// See [`DeactivateKeySigningKeyOutput`](crate::output::DeactivateKeySigningKeyOutput).
 pub mod deactivate_key_signing_key_output {
 
     /// A builder for [`DeactivateKeySigningKeyOutput`](crate::output::DeactivateKeySigningKeyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_info: std::option::Option<crate::model::ChangeInfo>,
     }
@@ -4701,7 +4232,7 @@ impl DeactivateKeySigningKeyOutput {
 
 /// <p>A complex type that contains the response information from a <code>CreateVPCAssociationAuthorization</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVpcAssociationAuthorizationOutput {
     /// <p>The ID of the hosted zone that you authorized associating a VPC with.</p>
     #[doc(hidden)]
@@ -4720,19 +4251,11 @@ impl CreateVpcAssociationAuthorizationOutput {
         self.vpc.as_ref()
     }
 }
-impl std::fmt::Debug for CreateVpcAssociationAuthorizationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVpcAssociationAuthorizationOutput");
-        formatter.field("hosted_zone_id", &self.hosted_zone_id);
-        formatter.field("vpc", &self.vpc);
-        formatter.finish()
-    }
-}
 /// See [`CreateVpcAssociationAuthorizationOutput`](crate::output::CreateVpcAssociationAuthorizationOutput).
 pub mod create_vpc_association_authorization_output {
 
     /// A builder for [`CreateVpcAssociationAuthorizationOutput`](crate::output::CreateVpcAssociationAuthorizationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
         pub(crate) vpc: std::option::Option<crate::model::Vpc>,
@@ -4779,7 +4302,7 @@ impl CreateVpcAssociationAuthorizationOutput {
 
 /// <p>A complex type that contains the response information for the <code>CreateTrafficPolicyVersion</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTrafficPolicyVersionOutput {
     /// <p>A complex type that contains settings for the new version of the traffic policy.</p>
     #[doc(hidden)]
@@ -4798,19 +4321,11 @@ impl CreateTrafficPolicyVersionOutput {
         self.location.as_deref()
     }
 }
-impl std::fmt::Debug for CreateTrafficPolicyVersionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTrafficPolicyVersionOutput");
-        formatter.field("traffic_policy", &self.traffic_policy);
-        formatter.field("location", &self.location);
-        formatter.finish()
-    }
-}
 /// See [`CreateTrafficPolicyVersionOutput`](crate::output::CreateTrafficPolicyVersionOutput).
 pub mod create_traffic_policy_version_output {
 
     /// A builder for [`CreateTrafficPolicyVersionOutput`](crate::output::CreateTrafficPolicyVersionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) traffic_policy: std::option::Option<crate::model::TrafficPolicy>,
         pub(crate) location: std::option::Option<std::string::String>,
@@ -4857,7 +4372,7 @@ impl CreateTrafficPolicyVersionOutput {
 
 /// <p>A complex type that contains the response information for the <code>CreateTrafficPolicyInstance</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTrafficPolicyInstanceOutput {
     /// <p>A complex type that contains settings for the new traffic policy instance.</p>
     #[doc(hidden)]
@@ -4878,19 +4393,11 @@ impl CreateTrafficPolicyInstanceOutput {
         self.location.as_deref()
     }
 }
-impl std::fmt::Debug for CreateTrafficPolicyInstanceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTrafficPolicyInstanceOutput");
-        formatter.field("traffic_policy_instance", &self.traffic_policy_instance);
-        formatter.field("location", &self.location);
-        formatter.finish()
-    }
-}
 /// See [`CreateTrafficPolicyInstanceOutput`](crate::output::CreateTrafficPolicyInstanceOutput).
 pub mod create_traffic_policy_instance_output {
 
     /// A builder for [`CreateTrafficPolicyInstanceOutput`](crate::output::CreateTrafficPolicyInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) traffic_policy_instance:
             std::option::Option<crate::model::TrafficPolicyInstance>,
@@ -4941,7 +4448,7 @@ impl CreateTrafficPolicyInstanceOutput {
 
 /// <p>A complex type that contains the response information for the <code>CreateTrafficPolicy</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTrafficPolicyOutput {
     /// <p>A complex type that contains settings for the new traffic policy.</p>
     #[doc(hidden)]
@@ -4960,19 +4467,11 @@ impl CreateTrafficPolicyOutput {
         self.location.as_deref()
     }
 }
-impl std::fmt::Debug for CreateTrafficPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTrafficPolicyOutput");
-        formatter.field("traffic_policy", &self.traffic_policy);
-        formatter.field("location", &self.location);
-        formatter.finish()
-    }
-}
 /// See [`CreateTrafficPolicyOutput`](crate::output::CreateTrafficPolicyOutput).
 pub mod create_traffic_policy_output {
 
     /// A builder for [`CreateTrafficPolicyOutput`](crate::output::CreateTrafficPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) traffic_policy: std::option::Option<crate::model::TrafficPolicy>,
         pub(crate) location: std::option::Option<std::string::String>,
@@ -5019,7 +4518,7 @@ impl CreateTrafficPolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateReusableDelegationSetOutput {
     /// <p>A complex type that contains name server information.</p>
     #[doc(hidden)]
@@ -5038,19 +4537,11 @@ impl CreateReusableDelegationSetOutput {
         self.location.as_deref()
     }
 }
-impl std::fmt::Debug for CreateReusableDelegationSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateReusableDelegationSetOutput");
-        formatter.field("delegation_set", &self.delegation_set);
-        formatter.field("location", &self.location);
-        formatter.finish()
-    }
-}
 /// See [`CreateReusableDelegationSetOutput`](crate::output::CreateReusableDelegationSetOutput).
 pub mod create_reusable_delegation_set_output {
 
     /// A builder for [`CreateReusableDelegationSetOutput`](crate::output::CreateReusableDelegationSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delegation_set: std::option::Option<crate::model::DelegationSet>,
         pub(crate) location: std::option::Option<std::string::String>,
@@ -5097,7 +4588,7 @@ impl CreateReusableDelegationSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateQueryLoggingConfigOutput {
     /// <p>A complex type that contains the ID for a query logging configuration, the ID of the hosted zone that you want to log queries for, and the ARN for the log group that you want Amazon Route 53 to send query logs to.</p>
     #[doc(hidden)]
@@ -5116,19 +4607,11 @@ impl CreateQueryLoggingConfigOutput {
         self.location.as_deref()
     }
 }
-impl std::fmt::Debug for CreateQueryLoggingConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateQueryLoggingConfigOutput");
-        formatter.field("query_logging_config", &self.query_logging_config);
-        formatter.field("location", &self.location);
-        formatter.finish()
-    }
-}
 /// See [`CreateQueryLoggingConfigOutput`](crate::output::CreateQueryLoggingConfigOutput).
 pub mod create_query_logging_config_output {
 
     /// A builder for [`CreateQueryLoggingConfigOutput`](crate::output::CreateQueryLoggingConfigOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_logging_config: std::option::Option<crate::model::QueryLoggingConfig>,
         pub(crate) location: std::option::Option<std::string::String>,
@@ -5175,7 +4658,7 @@ impl CreateQueryLoggingConfigOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateKeySigningKeyOutput {
     /// <p>A complex type that describes change information about changes made to your hosted zone.</p>
     #[doc(hidden)]
@@ -5201,20 +4684,11 @@ impl CreateKeySigningKeyOutput {
         self.location.as_deref()
     }
 }
-impl std::fmt::Debug for CreateKeySigningKeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateKeySigningKeyOutput");
-        formatter.field("change_info", &self.change_info);
-        formatter.field("key_signing_key", &self.key_signing_key);
-        formatter.field("location", &self.location);
-        formatter.finish()
-    }
-}
 /// See [`CreateKeySigningKeyOutput`](crate::output::CreateKeySigningKeyOutput).
 pub mod create_key_signing_key_output {
 
     /// A builder for [`CreateKeySigningKeyOutput`](crate::output::CreateKeySigningKeyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_info: std::option::Option<crate::model::ChangeInfo>,
         pub(crate) key_signing_key: std::option::Option<crate::model::KeySigningKey>,
@@ -5276,7 +4750,7 @@ impl CreateKeySigningKeyOutput {
 
 /// <p>A complex type containing the response information for the hosted zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateHostedZoneOutput {
     /// <p>A complex type that contains general information about the hosted zone.</p>
     #[doc(hidden)]
@@ -5316,22 +4790,11 @@ impl CreateHostedZoneOutput {
         self.location.as_deref()
     }
 }
-impl std::fmt::Debug for CreateHostedZoneOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateHostedZoneOutput");
-        formatter.field("hosted_zone", &self.hosted_zone);
-        formatter.field("change_info", &self.change_info);
-        formatter.field("delegation_set", &self.delegation_set);
-        formatter.field("vpc", &self.vpc);
-        formatter.field("location", &self.location);
-        formatter.finish()
-    }
-}
 /// See [`CreateHostedZoneOutput`](crate::output::CreateHostedZoneOutput).
 pub mod create_hosted_zone_output {
 
     /// A builder for [`CreateHostedZoneOutput`](crate::output::CreateHostedZoneOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosted_zone: std::option::Option<crate::model::HostedZone>,
         pub(crate) change_info: std::option::Option<crate::model::ChangeInfo>,
@@ -5420,7 +4883,7 @@ impl CreateHostedZoneOutput {
 
 /// <p>A complex type containing the response information for the new health check.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateHealthCheckOutput {
     /// <p>A complex type that contains identifying information about the health check.</p>
     #[doc(hidden)]
@@ -5439,19 +4902,11 @@ impl CreateHealthCheckOutput {
         self.location.as_deref()
     }
 }
-impl std::fmt::Debug for CreateHealthCheckOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateHealthCheckOutput");
-        formatter.field("health_check", &self.health_check);
-        formatter.field("location", &self.location);
-        formatter.finish()
-    }
-}
 /// See [`CreateHealthCheckOutput`](crate::output::CreateHealthCheckOutput).
 pub mod create_health_check_output {
 
     /// A builder for [`CreateHealthCheckOutput`](crate::output::CreateHealthCheckOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) health_check: std::option::Option<crate::model::HealthCheck>,
         pub(crate) location: std::option::Option<std::string::String>,
@@ -5498,7 +4953,7 @@ impl CreateHealthCheckOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCidrCollectionOutput {
     /// <p>A complex type that contains information about the CIDR collection.</p>
     #[doc(hidden)]
@@ -5517,19 +4972,11 @@ impl CreateCidrCollectionOutput {
         self.location.as_deref()
     }
 }
-impl std::fmt::Debug for CreateCidrCollectionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCidrCollectionOutput");
-        formatter.field("collection", &self.collection);
-        formatter.field("location", &self.location);
-        formatter.finish()
-    }
-}
 /// See [`CreateCidrCollectionOutput`](crate::output::CreateCidrCollectionOutput).
 pub mod create_cidr_collection_output {
 
     /// A builder for [`CreateCidrCollectionOutput`](crate::output::CreateCidrCollectionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collection: std::option::Option<crate::model::CidrCollection>,
         pub(crate) location: std::option::Option<std::string::String>,
@@ -5576,19 +5023,13 @@ impl CreateCidrCollectionOutput {
 
 /// <p>Empty response for the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChangeTagsForResourceOutput {}
-impl std::fmt::Debug for ChangeTagsForResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChangeTagsForResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`ChangeTagsForResourceOutput`](crate::output::ChangeTagsForResourceOutput).
 pub mod change_tags_for_resource_output {
 
     /// A builder for [`ChangeTagsForResourceOutput`](crate::output::ChangeTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`ChangeTagsForResourceOutput`](crate::output::ChangeTagsForResourceOutput).
@@ -5606,7 +5047,7 @@ impl ChangeTagsForResourceOutput {
 
 /// <p>A complex type containing the response for the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChangeResourceRecordSetsOutput {
     /// <p>A complex type that contains information about changes made to your hosted zone.</p>
     /// <p>This element contains an ID that you use when performing a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to get detailed information about the change.</p>
@@ -5620,18 +5061,11 @@ impl ChangeResourceRecordSetsOutput {
         self.change_info.as_ref()
     }
 }
-impl std::fmt::Debug for ChangeResourceRecordSetsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChangeResourceRecordSetsOutput");
-        formatter.field("change_info", &self.change_info);
-        formatter.finish()
-    }
-}
 /// See [`ChangeResourceRecordSetsOutput`](crate::output::ChangeResourceRecordSetsOutput).
 pub mod change_resource_record_sets_output {
 
     /// A builder for [`ChangeResourceRecordSetsOutput`](crate::output::ChangeResourceRecordSetsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_info: std::option::Option<crate::model::ChangeInfo>,
     }
@@ -5668,7 +5102,7 @@ impl ChangeResourceRecordSetsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChangeCidrCollectionOutput {
     /// <p>The ID that is returned by <code>ChangeCidrCollection</code>. You can use it as input to <code>GetChange</code> to see if a CIDR collection change has propagated or not.</p>
     #[doc(hidden)]
@@ -5680,18 +5114,11 @@ impl ChangeCidrCollectionOutput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for ChangeCidrCollectionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChangeCidrCollectionOutput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 /// See [`ChangeCidrCollectionOutput`](crate::output::ChangeCidrCollectionOutput).
 pub mod change_cidr_collection_output {
 
     /// A builder for [`ChangeCidrCollectionOutput`](crate::output::ChangeCidrCollectionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -5721,7 +5148,7 @@ impl ChangeCidrCollectionOutput {
 
 /// <p>A complex type that contains the response information for the <code>AssociateVPCWithHostedZone</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateVpcWithHostedZoneOutput {
     /// <p>A complex type that describes the changes made to your hosted zone.</p>
     #[doc(hidden)]
@@ -5733,18 +5160,11 @@ impl AssociateVpcWithHostedZoneOutput {
         self.change_info.as_ref()
     }
 }
-impl std::fmt::Debug for AssociateVpcWithHostedZoneOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateVpcWithHostedZoneOutput");
-        formatter.field("change_info", &self.change_info);
-        formatter.finish()
-    }
-}
 /// See [`AssociateVpcWithHostedZoneOutput`](crate::output::AssociateVpcWithHostedZoneOutput).
 pub mod associate_vpc_with_hosted_zone_output {
 
     /// A builder for [`AssociateVpcWithHostedZoneOutput`](crate::output::AssociateVpcWithHostedZoneOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_info: std::option::Option<crate::model::ChangeInfo>,
     }
@@ -5779,7 +5199,7 @@ impl AssociateVpcWithHostedZoneOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivateKeySigningKeyOutput {
     /// <p>A complex type that describes change information about changes made to your hosted zone.</p>
     #[doc(hidden)]
@@ -5791,18 +5211,11 @@ impl ActivateKeySigningKeyOutput {
         self.change_info.as_ref()
     }
 }
-impl std::fmt::Debug for ActivateKeySigningKeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivateKeySigningKeyOutput");
-        formatter.field("change_info", &self.change_info);
-        formatter.finish()
-    }
-}
 /// See [`ActivateKeySigningKeyOutput`](crate::output::ActivateKeySigningKeyOutput).
 pub mod activate_key_signing_key_output {
 
     /// A builder for [`ActivateKeySigningKeyOutput`](crate::output::ActivateKeySigningKeyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_info: std::option::Option<crate::model::ChangeInfo>,
     }

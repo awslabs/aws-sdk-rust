@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_create_app_instance_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateAppInstanceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.client_request_token {
         object.key("ClientRequestToken").string(var_1.as_str());
     }
@@ -16,6 +16,7 @@ pub fn serialize_structure_crate_input_create_app_instance_input(
         let mut array_5 = object.key("Tags").start_array();
         for item_6 in var_4 {
             {
+                #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_7, item_6)?;
                 object_7.finish();
@@ -29,7 +30,7 @@ pub fn serialize_structure_crate_input_create_app_instance_input(
 pub fn serialize_structure_crate_input_create_app_instance_admin_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateAppInstanceAdminInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_8) = &input.app_instance_admin_arn {
         object.key("AppInstanceAdminArn").string(var_8.as_str());
     }
@@ -39,7 +40,7 @@ pub fn serialize_structure_crate_input_create_app_instance_admin_input(
 pub fn serialize_structure_crate_input_create_app_instance_user_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateAppInstanceUserInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_9) = &input.app_instance_arn {
         object.key("AppInstanceArn").string(var_9.as_str());
     }
@@ -59,6 +60,7 @@ pub fn serialize_structure_crate_input_create_app_instance_user_input(
         let mut array_15 = object.key("Tags").start_array();
         for item_16 in var_14 {
             {
+                #[allow(unused_mut)]
                 let mut object_17 = array_15.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_17, item_16)?;
                 object_17.finish();
@@ -72,8 +74,9 @@ pub fn serialize_structure_crate_input_create_app_instance_user_input(
 pub fn serialize_structure_crate_input_put_app_instance_retention_settings_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutAppInstanceRetentionSettingsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_18) = &input.app_instance_retention_settings {
+        #[allow(unused_mut)]
         let mut object_19 = object.key("AppInstanceRetentionSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_app_instance_retention_settings(
             &mut object_19,
@@ -87,7 +90,7 @@ pub fn serialize_structure_crate_input_put_app_instance_retention_settings_input
 pub fn serialize_structure_crate_input_register_app_instance_user_endpoint_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RegisterAppInstanceUserEndpointInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_20) = &input.allow_messages {
         object.key("AllowMessages").string(var_20.as_str());
     }
@@ -95,6 +98,7 @@ pub fn serialize_structure_crate_input_register_app_instance_user_endpoint_input
         object.key("ClientRequestToken").string(var_21.as_str());
     }
     if let Some(var_22) = &input.endpoint_attributes {
+        #[allow(unused_mut)]
         let mut object_23 = object.key("EndpointAttributes").start_object();
         crate::json_ser::serialize_structure_crate_model_endpoint_attributes(
             &mut object_23,
@@ -117,7 +121,7 @@ pub fn serialize_structure_crate_input_register_app_instance_user_endpoint_input
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_27) = &input.resource_arn {
         object.key("ResourceARN").string(var_27.as_str());
     }
@@ -125,6 +129,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_29 = object.key("Tags").start_array();
         for item_30 in var_28 {
             {
+                #[allow(unused_mut)]
                 let mut object_31 = array_29.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_31, item_30)?;
                 object_31.finish();
@@ -138,7 +143,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_input_untag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UntagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_32) = &input.resource_arn {
         object.key("ResourceARN").string(var_32.as_str());
     }
@@ -157,7 +162,7 @@ pub fn serialize_structure_crate_input_untag_resource_input(
 pub fn serialize_structure_crate_input_update_app_instance_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateAppInstanceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_36) = &input.metadata {
         object.key("Metadata").string(var_36.as_str());
     }
@@ -170,7 +175,7 @@ pub fn serialize_structure_crate_input_update_app_instance_input(
 pub fn serialize_structure_crate_input_update_app_instance_user_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateAppInstanceUserInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_38) = &input.metadata {
         object.key("Metadata").string(var_38.as_str());
     }
@@ -183,7 +188,7 @@ pub fn serialize_structure_crate_input_update_app_instance_user_input(
 pub fn serialize_structure_crate_input_update_app_instance_user_endpoint_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateAppInstanceUserEndpointInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_40) = &input.allow_messages {
         object.key("AllowMessages").string(var_40.as_str());
     }
@@ -196,7 +201,7 @@ pub fn serialize_structure_crate_input_update_app_instance_user_endpoint_input(
 pub fn serialize_structure_crate_model_tag(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Tag,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_42) = &input.key {
         object.key("Key").string(var_42.as_str());
     }
@@ -209,8 +214,9 @@ pub fn serialize_structure_crate_model_tag(
 pub fn serialize_structure_crate_model_app_instance_retention_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AppInstanceRetentionSettings,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_44) = &input.channel_retention_settings {
+        #[allow(unused_mut)]
         let mut object_45 = object.key("ChannelRetentionSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_channel_retention_settings(
             &mut object_45,
@@ -224,7 +230,7 @@ pub fn serialize_structure_crate_model_app_instance_retention_settings(
 pub fn serialize_structure_crate_model_endpoint_attributes(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::EndpointAttributes,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_46) = &input.device_token {
         object.key("DeviceToken").string(var_46.as_str());
     }
@@ -237,7 +243,7 @@ pub fn serialize_structure_crate_model_endpoint_attributes(
 pub fn serialize_structure_crate_model_channel_retention_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ChannelRetentionSettings,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_48) = &input.retention_days {
         object.key("RetentionDays").number(
             #[allow(clippy::useless_conversion)]

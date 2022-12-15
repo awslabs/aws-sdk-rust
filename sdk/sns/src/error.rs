@@ -2,7 +2,7 @@
 
 /// <p>Indicates that the one-time password (OTP) used for verification is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VerificationException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -17,17 +17,9 @@ impl VerificationException {
         self.status.as_deref()
     }
 }
-impl std::fmt::Debug for VerificationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VerificationException");
-        formatter.field("message", &self.message);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 impl VerificationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -35,7 +27,9 @@ impl std::fmt::Display for VerificationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "VerificationException")?;
         if let Some(inner_1) = &self.message {
-            write!(f, ": {}", inner_1)?;
+            {
+                write!(f, ": {}", inner_1)?;
+            }
         }
         Ok(())
     }
@@ -45,7 +39,7 @@ impl std::error::Error for VerificationException {}
 pub mod verification_exception {
 
     /// A builder for [`VerificationException`](crate::error::VerificationException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
@@ -89,22 +83,15 @@ impl VerificationException {
 
 /// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThrottledException {
     /// <p>Throttled request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ThrottledException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThrottledException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ThrottledException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -112,7 +99,9 @@ impl std::fmt::Display for ThrottledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ThrottledException")?;
         if let Some(inner_2) = &self.message {
-            write!(f, ": {}", inner_2)?;
+            {
+                write!(f, ": {}", inner_2)?;
+            }
         }
         Ok(())
     }
@@ -122,7 +111,7 @@ impl std::error::Error for ThrottledException {}
 pub mod throttled_exception {
 
     /// A builder for [`ThrottledException`](crate::error::ThrottledException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -154,22 +143,15 @@ impl ThrottledException {
 
 /// <p>Can’t perform the action on the specified resource. Make sure that the resource exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ResourceNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ResourceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -177,7 +159,9 @@ impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
         if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+            {
+                write!(f, ": {}", inner_3)?;
+            }
         }
         Ok(())
     }
@@ -187,7 +171,7 @@ impl std::error::Error for ResourceNotFoundException {}
 pub mod resource_not_found_exception {
 
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -219,22 +203,15 @@ impl ResourceNotFoundException {
 
 /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidParameterException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidParameterException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidParameterException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -242,7 +219,9 @@ impl std::fmt::Display for InvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidParameterException")?;
         if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+            {
+                write!(f, ": {}", inner_4)?;
+            }
         }
         Ok(())
     }
@@ -252,7 +231,7 @@ impl std::error::Error for InvalidParameterException {}
 pub mod invalid_parameter_exception {
 
     /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -284,22 +263,15 @@ impl InvalidParameterException {
 
 /// <p>Indicates an internal service error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalErrorException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InternalErrorException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalErrorException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InternalErrorException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -307,7 +279,9 @@ impl std::fmt::Display for InternalErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalErrorException")?;
         if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+            {
+                write!(f, ": {}", inner_5)?;
+            }
         }
         Ok(())
     }
@@ -317,7 +291,7 @@ impl std::error::Error for InternalErrorException {}
 pub mod internal_error_exception {
 
     /// A builder for [`InternalErrorException`](crate::error::InternalErrorException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -349,22 +323,15 @@ impl InternalErrorException {
 
 /// <p>Indicates that the user has been denied access to the requested resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuthorizationErrorException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for AuthorizationErrorException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuthorizationErrorException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl AuthorizationErrorException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -372,7 +339,9 @@ impl std::fmt::Display for AuthorizationErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AuthorizationErrorException")?;
         if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+            {
+                write!(f, ": {}", inner_6)?;
+            }
         }
         Ok(())
     }
@@ -382,7 +351,7 @@ impl std::error::Error for AuthorizationErrorException {}
 pub mod authorization_error_exception {
 
     /// A builder for [`AuthorizationErrorException`](crate::error::AuthorizationErrorException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -414,22 +383,15 @@ impl AuthorizationErrorException {
 
 /// <p>The request doesn't comply with the IAM tag policy. Correct your request and then retry it.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagPolicyException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TagPolicyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagPolicyException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl TagPolicyException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -437,7 +399,9 @@ impl std::fmt::Display for TagPolicyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TagPolicyException")?;
         if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
+            {
+                write!(f, ": {}", inner_7)?;
+            }
         }
         Ok(())
     }
@@ -447,7 +411,7 @@ impl std::error::Error for TagPolicyException {}
 pub mod tag_policy_exception {
 
     /// A builder for [`TagPolicyException`](crate::error::TagPolicyException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -479,22 +443,15 @@ impl TagPolicyException {
 
 /// <p>Can't add more than 50 tags to a topic.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TagLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl TagLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -502,7 +459,9 @@ impl std::fmt::Display for TagLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TagLimitExceededException")?;
         if let Some(inner_8) = &self.message {
-            write!(f, ": {}", inner_8)?;
+            {
+                write!(f, ": {}", inner_8)?;
+            }
         }
         Ok(())
     }
@@ -512,7 +471,7 @@ impl std::error::Error for TagLimitExceededException {}
 pub mod tag_limit_exceeded_exception {
 
     /// A builder for [`TagLimitExceededException`](crate::error::TagLimitExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -544,22 +503,15 @@ impl TagLimitExceededException {
 
 /// <p>A tag has been added to a resource with the same ARN as a deleted resource. Wait a short while and then retry the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StaleTagException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for StaleTagException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StaleTagException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl StaleTagException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -567,7 +519,9 @@ impl std::fmt::Display for StaleTagException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "StaleTagException")?;
         if let Some(inner_9) = &self.message {
-            write!(f, ": {}", inner_9)?;
+            {
+                write!(f, ": {}", inner_9)?;
+            }
         }
         Ok(())
     }
@@ -577,7 +531,7 @@ impl std::error::Error for StaleTagException {}
 pub mod stale_tag_exception {
 
     /// A builder for [`StaleTagException`](crate::error::StaleTagException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -609,22 +563,15 @@ impl StaleTagException {
 
 /// <p>Can't perform multiple operations on a tag simultaneously. Perform the operations sequentially.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConcurrentAccessException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ConcurrentAccessException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConcurrentAccessException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ConcurrentAccessException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -632,7 +579,9 @@ impl std::fmt::Display for ConcurrentAccessException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConcurrentAccessException")?;
         if let Some(inner_10) = &self.message {
-            write!(f, ": {}", inner_10)?;
+            {
+                write!(f, ": {}", inner_10)?;
+            }
         }
         Ok(())
     }
@@ -642,7 +591,7 @@ impl std::error::Error for ConcurrentAccessException {}
 pub mod concurrent_access_exception {
 
     /// A builder for [`ConcurrentAccessException`](crate::error::ConcurrentAccessException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -674,22 +623,15 @@ impl ConcurrentAccessException {
 
 /// <p>Indicates that the requested resource does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for NotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl NotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -697,7 +639,9 @@ impl std::fmt::Display for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NotFoundException")?;
         if let Some(inner_11) = &self.message {
-            write!(f, ": {}", inner_11)?;
+            {
+                write!(f, ": {}", inner_11)?;
+            }
         }
         Ok(())
     }
@@ -707,7 +651,7 @@ impl std::error::Error for NotFoundException {}
 pub mod not_found_exception {
 
     /// A builder for [`NotFoundException`](crate::error::NotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -739,22 +683,15 @@ impl NotFoundException {
 
 /// <p>The credential signature isn't valid. You must use an HTTPS endpoint and sign your request using Signature Version 4.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidSecurityException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidSecurityException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSecurityException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidSecurityException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -762,7 +699,9 @@ impl std::fmt::Display for InvalidSecurityException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSecurityException")?;
         if let Some(inner_12) = &self.message {
-            write!(f, ": {}", inner_12)?;
+            {
+                write!(f, ": {}", inner_12)?;
+            }
         }
         Ok(())
     }
@@ -772,7 +711,7 @@ impl std::error::Error for InvalidSecurityException {}
 pub mod invalid_security_exception {
 
     /// A builder for [`InvalidSecurityException`](crate::error::InvalidSecurityException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -804,22 +743,15 @@ impl InvalidSecurityException {
 
 /// <p>Indicates that the customer already owns the maximum allowed number of subscriptions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubscriptionLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for SubscriptionLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubscriptionLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl SubscriptionLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -827,7 +759,9 @@ impl std::fmt::Display for SubscriptionLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubscriptionLimitExceededException")?;
         if let Some(inner_13) = &self.message {
-            write!(f, ": {}", inner_13)?;
+            {
+                write!(f, ": {}", inner_13)?;
+            }
         }
         Ok(())
     }
@@ -837,7 +771,7 @@ impl std::error::Error for SubscriptionLimitExceededException {}
 pub mod subscription_limit_exceeded_exception {
 
     /// A builder for [`SubscriptionLimitExceededException`](crate::error::SubscriptionLimitExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -869,22 +803,15 @@ impl SubscriptionLimitExceededException {
 
 /// <p>Indicates that the number of filter polices in your Amazon Web Services account exceeds the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in the Amazon Web Services Support Center.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FilterPolicyLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for FilterPolicyLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FilterPolicyLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl FilterPolicyLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -892,7 +819,9 @@ impl std::fmt::Display for FilterPolicyLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FilterPolicyLimitExceededException")?;
         if let Some(inner_14) = &self.message {
-            write!(f, ": {}", inner_14)?;
+            {
+                write!(f, ": {}", inner_14)?;
+            }
         }
         Ok(())
     }
@@ -902,7 +831,7 @@ impl std::error::Error for FilterPolicyLimitExceededException {}
 pub mod filter_policy_limit_exceeded_exception {
 
     /// A builder for [`FilterPolicyLimitExceededException`](crate::error::FilterPolicyLimitExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -934,22 +863,15 @@ impl FilterPolicyLimitExceededException {
 
 /// <p>Indicates that a parameter in the request is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ValidationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ValidationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -957,7 +879,9 @@ impl std::fmt::Display for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ValidationException")?;
         if let Some(inner_15) = &self.message {
-            write!(f, ": {}", inner_15)?;
+            {
+                write!(f, ": {}", inner_15)?;
+            }
         }
         Ok(())
     }
@@ -967,7 +891,7 @@ impl std::error::Error for ValidationException {}
 pub mod validation_exception {
 
     /// A builder for [`ValidationException`](crate::error::ValidationException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -999,22 +923,15 @@ impl ValidationException {
 
 /// <p>The batch request contains more entries than permissible.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyEntriesInBatchRequestException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TooManyEntriesInBatchRequestException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyEntriesInBatchRequestException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl TooManyEntriesInBatchRequestException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1022,7 +939,9 @@ impl std::fmt::Display for TooManyEntriesInBatchRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyEntriesInBatchRequestException")?;
         if let Some(inner_16) = &self.message {
-            write!(f, ": {}", inner_16)?;
+            {
+                write!(f, ": {}", inner_16)?;
+            }
         }
         Ok(())
     }
@@ -1032,7 +951,7 @@ impl std::error::Error for TooManyEntriesInBatchRequestException {}
 pub mod too_many_entries_in_batch_request_exception {
 
     /// A builder for [`TooManyEntriesInBatchRequestException`](crate::error::TooManyEntriesInBatchRequestException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1064,22 +983,15 @@ impl TooManyEntriesInBatchRequestException {
 
 /// <p>Exception error indicating platform application disabled.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PlatformApplicationDisabledException {
     /// <p>Message for platform application disabled.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for PlatformApplicationDisabledException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PlatformApplicationDisabledException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl PlatformApplicationDisabledException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1087,7 +999,9 @@ impl std::fmt::Display for PlatformApplicationDisabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PlatformApplicationDisabledException")?;
         if let Some(inner_17) = &self.message {
-            write!(f, ": {}", inner_17)?;
+            {
+                write!(f, ": {}", inner_17)?;
+            }
         }
         Ok(())
     }
@@ -1097,7 +1011,7 @@ impl std::error::Error for PlatformApplicationDisabledException {}
 pub mod platform_application_disabled_exception {
 
     /// A builder for [`PlatformApplicationDisabledException`](crate::error::PlatformApplicationDisabledException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1129,22 +1043,15 @@ impl PlatformApplicationDisabledException {
 
 /// <p>The request was denied due to request throttling. For more information about throttling, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in the <i>Key Management Service Developer Guide.</i> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KmsThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for KmsThrottlingException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KmsThrottlingException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl KmsThrottlingException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1152,7 +1059,9 @@ impl std::fmt::Display for KmsThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsThrottlingException [KMSThrottlingException]")?;
         if let Some(inner_18) = &self.message {
-            write!(f, ": {}", inner_18)?;
+            {
+                write!(f, ": {}", inner_18)?;
+            }
         }
         Ok(())
     }
@@ -1162,7 +1071,7 @@ impl std::error::Error for KmsThrottlingException {}
 pub mod kms_throttling_exception {
 
     /// A builder for [`KmsThrottlingException`](crate::error::KmsThrottlingException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1194,22 +1103,15 @@ impl KmsThrottlingException {
 
 /// <p>The Amazon Web Services access key ID needs a subscription for the service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KmsOptInRequired {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for KmsOptInRequired {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KmsOptInRequired");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl KmsOptInRequired {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1217,7 +1119,9 @@ impl std::fmt::Display for KmsOptInRequired {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsOptInRequired [KMSOptInRequired]")?;
         if let Some(inner_19) = &self.message {
-            write!(f, ": {}", inner_19)?;
+            {
+                write!(f, ": {}", inner_19)?;
+            }
         }
         Ok(())
     }
@@ -1227,7 +1131,7 @@ impl std::error::Error for KmsOptInRequired {}
 pub mod kms_opt_in_required {
 
     /// A builder for [`KmsOptInRequired`](crate::error::KmsOptInRequired).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1259,22 +1163,15 @@ impl KmsOptInRequired {
 
 /// <p>The request was rejected because the specified entity or resource can't be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KmsNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for KmsNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KmsNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl KmsNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1282,7 +1179,9 @@ impl std::fmt::Display for KmsNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsNotFoundException [KMSNotFoundException]")?;
         if let Some(inner_20) = &self.message {
-            write!(f, ": {}", inner_20)?;
+            {
+                write!(f, ": {}", inner_20)?;
+            }
         }
         Ok(())
     }
@@ -1292,7 +1191,7 @@ impl std::error::Error for KmsNotFoundException {}
 pub mod kms_not_found_exception {
 
     /// A builder for [`KmsNotFoundException`](crate::error::KmsNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1324,22 +1223,15 @@ impl KmsNotFoundException {
 
 /// <p>The request was rejected because the state of the specified resource isn't valid for this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a Customer Master Key</a> in the <i>Key Management Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KmsInvalidStateException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for KmsInvalidStateException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KmsInvalidStateException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl KmsInvalidStateException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1347,7 +1239,9 @@ impl std::fmt::Display for KmsInvalidStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsInvalidStateException [KMSInvalidStateException]")?;
         if let Some(inner_21) = &self.message {
-            write!(f, ": {}", inner_21)?;
+            {
+                write!(f, ": {}", inner_21)?;
+            }
         }
         Ok(())
     }
@@ -1357,7 +1251,7 @@ impl std::error::Error for KmsInvalidStateException {}
 pub mod kms_invalid_state_exception {
 
     /// A builder for [`KmsInvalidStateException`](crate::error::KmsInvalidStateException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1389,22 +1283,15 @@ impl KmsInvalidStateException {
 
 /// <p>The request was rejected because the specified customer master key (CMK) isn't enabled.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KmsDisabledException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for KmsDisabledException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KmsDisabledException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl KmsDisabledException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1412,7 +1299,9 @@ impl std::fmt::Display for KmsDisabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsDisabledException [KMSDisabledException]")?;
         if let Some(inner_22) = &self.message {
-            write!(f, ": {}", inner_22)?;
+            {
+                write!(f, ": {}", inner_22)?;
+            }
         }
         Ok(())
     }
@@ -1422,7 +1311,7 @@ impl std::error::Error for KmsDisabledException {}
 pub mod kms_disabled_exception {
 
     /// A builder for [`KmsDisabledException`](crate::error::KmsDisabledException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1454,22 +1343,15 @@ impl KmsDisabledException {
 
 /// <p>The ciphertext references a key that doesn't exist or that you don't have access to.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KmsAccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for KmsAccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KmsAccessDeniedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl KmsAccessDeniedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1477,7 +1359,9 @@ impl std::fmt::Display for KmsAccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsAccessDeniedException [KMSAccessDeniedException]")?;
         if let Some(inner_23) = &self.message {
-            write!(f, ": {}", inner_23)?;
+            {
+                write!(f, ": {}", inner_23)?;
+            }
         }
         Ok(())
     }
@@ -1487,7 +1371,7 @@ impl std::error::Error for KmsAccessDeniedException {}
 pub mod kms_access_denied_exception {
 
     /// A builder for [`KmsAccessDeniedException`](crate::error::KmsAccessDeniedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1519,22 +1403,15 @@ impl KmsAccessDeniedException {
 
 /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidParameterValueException {
     /// <p>The parameter of an entry in a request doesn't abide by the specification. </p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidParameterValueException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidParameterValueException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidParameterValueException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1542,7 +1419,9 @@ impl std::fmt::Display for InvalidParameterValueException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidParameterValueException")?;
         if let Some(inner_24) = &self.message {
-            write!(f, ": {}", inner_24)?;
+            {
+                write!(f, ": {}", inner_24)?;
+            }
         }
         Ok(())
     }
@@ -1552,7 +1431,7 @@ impl std::error::Error for InvalidParameterValueException {}
 pub mod invalid_parameter_value_exception {
 
     /// A builder for [`InvalidParameterValueException`](crate::error::InvalidParameterValueException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1584,22 +1463,15 @@ impl InvalidParameterValueException {
 
 /// <p>The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidBatchEntryIdException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidBatchEntryIdException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidBatchEntryIdException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidBatchEntryIdException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1607,7 +1479,9 @@ impl std::fmt::Display for InvalidBatchEntryIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidBatchEntryIdException")?;
         if let Some(inner_25) = &self.message {
-            write!(f, ": {}", inner_25)?;
+            {
+                write!(f, ": {}", inner_25)?;
+            }
         }
         Ok(())
     }
@@ -1617,7 +1491,7 @@ impl std::error::Error for InvalidBatchEntryIdException {}
 pub mod invalid_batch_entry_id_exception {
 
     /// A builder for [`InvalidBatchEntryIdException`](crate::error::InvalidBatchEntryIdException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1649,22 +1523,15 @@ impl InvalidBatchEntryIdException {
 
 /// <p>Exception error indicating endpoint disabled.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointDisabledException {
     /// <p>Message for endpoint disabled.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for EndpointDisabledException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointDisabledException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl EndpointDisabledException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1672,7 +1539,9 @@ impl std::fmt::Display for EndpointDisabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EndpointDisabledException")?;
         if let Some(inner_26) = &self.message {
-            write!(f, ": {}", inner_26)?;
+            {
+                write!(f, ": {}", inner_26)?;
+            }
         }
         Ok(())
     }
@@ -1682,7 +1551,7 @@ impl std::error::Error for EndpointDisabledException {}
 pub mod endpoint_disabled_exception {
 
     /// A builder for [`EndpointDisabledException`](crate::error::EndpointDisabledException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1714,22 +1583,15 @@ impl EndpointDisabledException {
 
 /// <p>The batch request doesn't contain any entries.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EmptyBatchRequestException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for EmptyBatchRequestException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EmptyBatchRequestException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl EmptyBatchRequestException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1737,7 +1599,9 @@ impl std::fmt::Display for EmptyBatchRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EmptyBatchRequestException")?;
         if let Some(inner_27) = &self.message {
-            write!(f, ": {}", inner_27)?;
+            {
+                write!(f, ": {}", inner_27)?;
+            }
         }
         Ok(())
     }
@@ -1747,7 +1611,7 @@ impl std::error::Error for EmptyBatchRequestException {}
 pub mod empty_batch_request_exception {
 
     /// A builder for [`EmptyBatchRequestException`](crate::error::EmptyBatchRequestException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1779,22 +1643,15 @@ impl EmptyBatchRequestException {
 
 /// <p>The length of all the batch messages put together is more than the limit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchRequestTooLongException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for BatchRequestTooLongException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchRequestTooLongException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl BatchRequestTooLongException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1802,7 +1659,9 @@ impl std::fmt::Display for BatchRequestTooLongException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BatchRequestTooLongException")?;
         if let Some(inner_28) = &self.message {
-            write!(f, ": {}", inner_28)?;
+            {
+                write!(f, ": {}", inner_28)?;
+            }
         }
         Ok(())
     }
@@ -1812,7 +1671,7 @@ impl std::error::Error for BatchRequestTooLongException {}
 pub mod batch_request_too_long_exception {
 
     /// A builder for [`BatchRequestTooLongException`](crate::error::BatchRequestTooLongException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1844,22 +1703,15 @@ impl BatchRequestTooLongException {
 
 /// <p>Two or more batch entries in the request have the same <code>Id</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchEntryIdsNotDistinctException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for BatchEntryIdsNotDistinctException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchEntryIdsNotDistinctException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl BatchEntryIdsNotDistinctException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1867,7 +1719,9 @@ impl std::fmt::Display for BatchEntryIdsNotDistinctException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BatchEntryIdsNotDistinctException")?;
         if let Some(inner_29) = &self.message {
-            write!(f, ": {}", inner_29)?;
+            {
+                write!(f, ": {}", inner_29)?;
+            }
         }
         Ok(())
     }
@@ -1877,7 +1731,7 @@ impl std::error::Error for BatchEntryIdsNotDistinctException {}
 pub mod batch_entry_ids_not_distinct_exception {
 
     /// A builder for [`BatchEntryIdsNotDistinctException`](crate::error::BatchEntryIdsNotDistinctException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1909,22 +1763,15 @@ impl BatchEntryIdsNotDistinctException {
 
 /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserErrorException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for UserErrorException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserErrorException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl UserErrorException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1932,7 +1779,9 @@ impl std::fmt::Display for UserErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UserErrorException")?;
         if let Some(inner_30) = &self.message {
-            write!(f, ": {}", inner_30)?;
+            {
+                write!(f, ": {}", inner_30)?;
+            }
         }
         Ok(())
     }
@@ -1942,7 +1791,7 @@ impl std::error::Error for UserErrorException {}
 pub mod user_error_exception {
 
     /// A builder for [`UserErrorException`](crate::error::UserErrorException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1974,22 +1823,15 @@ impl UserErrorException {
 
 /// <p>Indicates that the customer already owns the maximum allowed number of topics.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TopicLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TopicLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TopicLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl TopicLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1997,7 +1839,9 @@ impl std::fmt::Display for TopicLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TopicLimitExceededException")?;
         if let Some(inner_31) = &self.message {
-            write!(f, ": {}", inner_31)?;
+            {
+                write!(f, ": {}", inner_31)?;
+            }
         }
         Ok(())
     }
@@ -2007,7 +1851,7 @@ impl std::error::Error for TopicLimitExceededException {}
 pub mod topic_limit_exceeded_exception {
 
     /// A builder for [`TopicLimitExceededException`](crate::error::TopicLimitExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2039,22 +1883,15 @@ impl TopicLimitExceededException {
 
 /// <p>Indicates that the specified phone number opted out of receiving SMS messages from your Amazon Web Services account. You can't send SMS messages to phone numbers that opt out.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OptedOutException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for OptedOutException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OptedOutException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl OptedOutException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2062,7 +1899,9 @@ impl std::fmt::Display for OptedOutException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OptedOutException")?;
         if let Some(inner_32) = &self.message {
-            write!(f, ": {}", inner_32)?;
+            {
+                write!(f, ": {}", inner_32)?;
+            }
         }
         Ok(())
     }
@@ -2072,7 +1911,7 @@ impl std::error::Error for OptedOutException {}
 pub mod opted_out_exception {
 
     /// A builder for [`OptedOutException`](crate::error::OptedOutException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2111,6 +1950,14 @@ pub struct AddPermissionError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for AddPermissionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AddPermissionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AddPermission` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2123,8 +1970,15 @@ pub enum AddPermissionErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AddPermissionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2154,7 +2008,7 @@ impl AddPermissionError {
     /// Creates the `AddPermissionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AddPermissionErrorKind::Unhandled(err.into()),
+            kind: AddPermissionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2163,7 +2017,7 @@ impl AddPermissionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AddPermissionErrorKind::Unhandled(err.into()),
+            kind: AddPermissionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2220,7 +2074,7 @@ impl std::error::Error for AddPermissionError {
             AddPermissionErrorKind::InternalErrorException(_inner) => Some(_inner),
             AddPermissionErrorKind::InvalidParameterException(_inner) => Some(_inner),
             AddPermissionErrorKind::NotFoundException(_inner) => Some(_inner),
-            AddPermissionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AddPermissionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2234,6 +2088,16 @@ pub struct CheckIfPhoneNumberIsOptedOutError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CheckIfPhoneNumberIsOptedOutError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CheckIfPhoneNumberIsOptedOutErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CheckIfPhoneNumberIsOptedOut` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2246,8 +2110,15 @@ pub enum CheckIfPhoneNumberIsOptedOutErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CheckIfPhoneNumberIsOptedOutError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2281,7 +2152,9 @@ impl CheckIfPhoneNumberIsOptedOutError {
     /// Creates the `CheckIfPhoneNumberIsOptedOutError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CheckIfPhoneNumberIsOptedOutErrorKind::Unhandled(err.into()),
+            kind: CheckIfPhoneNumberIsOptedOutErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2290,7 +2163,9 @@ impl CheckIfPhoneNumberIsOptedOutError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CheckIfPhoneNumberIsOptedOutErrorKind::Unhandled(err.into()),
+            kind: CheckIfPhoneNumberIsOptedOutErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2354,7 +2229,7 @@ impl std::error::Error for CheckIfPhoneNumberIsOptedOutError {
                 Some(_inner)
             }
             CheckIfPhoneNumberIsOptedOutErrorKind::ThrottledException(_inner) => Some(_inner),
-            CheckIfPhoneNumberIsOptedOutErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CheckIfPhoneNumberIsOptedOutErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2367,6 +2242,14 @@ pub struct ConfirmSubscriptionError {
     pub kind: ConfirmSubscriptionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ConfirmSubscriptionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ConfirmSubscriptionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ConfirmSubscription` operation.
 #[non_exhaustive]
@@ -2384,8 +2267,15 @@ pub enum ConfirmSubscriptionErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Indicates that the customer already owns the maximum allowed number of subscriptions.</p>
     SubscriptionLimitExceededException(crate::error::SubscriptionLimitExceededException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ConfirmSubscriptionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2421,7 +2311,7 @@ impl ConfirmSubscriptionError {
     /// Creates the `ConfirmSubscriptionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ConfirmSubscriptionErrorKind::Unhandled(err.into()),
+            kind: ConfirmSubscriptionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2430,7 +2320,7 @@ impl ConfirmSubscriptionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ConfirmSubscriptionErrorKind::Unhandled(err.into()),
+            kind: ConfirmSubscriptionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2510,7 +2400,7 @@ impl std::error::Error for ConfirmSubscriptionError {
             ConfirmSubscriptionErrorKind::SubscriptionLimitExceededException(_inner) => {
                 Some(_inner)
             }
-            ConfirmSubscriptionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ConfirmSubscriptionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2524,6 +2414,16 @@ pub struct CreatePlatformApplicationError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreatePlatformApplicationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreatePlatformApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreatePlatformApplication` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2534,8 +2434,15 @@ pub enum CreatePlatformApplicationErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreatePlatformApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2566,7 +2473,9 @@ impl CreatePlatformApplicationError {
     /// Creates the `CreatePlatformApplicationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreatePlatformApplicationErrorKind::Unhandled(err.into()),
+            kind: CreatePlatformApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2575,7 +2484,9 @@ impl CreatePlatformApplicationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreatePlatformApplicationErrorKind::Unhandled(err.into()),
+            kind: CreatePlatformApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2627,7 +2538,7 @@ impl std::error::Error for CreatePlatformApplicationError {
             CreatePlatformApplicationErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
             CreatePlatformApplicationErrorKind::InternalErrorException(_inner) => Some(_inner),
             CreatePlatformApplicationErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            CreatePlatformApplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreatePlatformApplicationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2641,6 +2552,14 @@ pub struct CreatePlatformEndpointError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreatePlatformEndpointError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreatePlatformEndpointErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreatePlatformEndpoint` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2653,8 +2572,15 @@ pub enum CreatePlatformEndpointErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreatePlatformEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2684,7 +2610,9 @@ impl CreatePlatformEndpointError {
     /// Creates the `CreatePlatformEndpointError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreatePlatformEndpointErrorKind::Unhandled(err.into()),
+            kind: CreatePlatformEndpointErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2693,7 +2621,9 @@ impl CreatePlatformEndpointError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreatePlatformEndpointErrorKind::Unhandled(err.into()),
+            kind: CreatePlatformEndpointErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2753,7 +2683,7 @@ impl std::error::Error for CreatePlatformEndpointError {
             CreatePlatformEndpointErrorKind::InternalErrorException(_inner) => Some(_inner),
             CreatePlatformEndpointErrorKind::InvalidParameterException(_inner) => Some(_inner),
             CreatePlatformEndpointErrorKind::NotFoundException(_inner) => Some(_inner),
-            CreatePlatformEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreatePlatformEndpointErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2766,6 +2696,16 @@ pub struct CreateSMSSandboxPhoneNumberError {
     pub kind: CreateSMSSandboxPhoneNumberErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateSMSSandboxPhoneNumberError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateSMSSandboxPhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateSMSSandboxPhoneNumber` operation.
 #[non_exhaustive]
@@ -2783,8 +2723,15 @@ pub enum CreateSMSSandboxPhoneNumberErrorKind {
     ThrottledException(crate::error::ThrottledException),
     /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     UserErrorException(crate::error::UserErrorException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateSMSSandboxPhoneNumberError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2820,7 +2767,9 @@ impl CreateSMSSandboxPhoneNumberError {
     /// Creates the `CreateSMSSandboxPhoneNumberError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateSMSSandboxPhoneNumberErrorKind::Unhandled(err.into()),
+            kind: CreateSMSSandboxPhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2829,7 +2778,9 @@ impl CreateSMSSandboxPhoneNumberError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateSMSSandboxPhoneNumberErrorKind::Unhandled(err.into()),
+            kind: CreateSMSSandboxPhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2907,7 +2858,7 @@ impl std::error::Error for CreateSMSSandboxPhoneNumberError {
             CreateSMSSandboxPhoneNumberErrorKind::OptedOutException(_inner) => Some(_inner),
             CreateSMSSandboxPhoneNumberErrorKind::ThrottledException(_inner) => Some(_inner),
             CreateSMSSandboxPhoneNumberErrorKind::UserErrorException(_inner) => Some(_inner),
-            CreateSMSSandboxPhoneNumberErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateSMSSandboxPhoneNumberErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2920,6 +2871,14 @@ pub struct CreateTopicError {
     pub kind: CreateTopicErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateTopicError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateTopicErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateTopic` operation.
 #[non_exhaustive]
@@ -2943,8 +2902,15 @@ pub enum CreateTopicErrorKind {
     TagPolicyException(crate::error::TagPolicyException),
     /// <p>Indicates that the customer already owns the maximum allowed number of topics.</p>
     TopicLimitExceededException(crate::error::TopicLimitExceededException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateTopicError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2979,7 +2945,7 @@ impl CreateTopicError {
     /// Creates the `CreateTopicError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateTopicErrorKind::Unhandled(err.into()),
+            kind: CreateTopicErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2988,7 +2954,7 @@ impl CreateTopicError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateTopicErrorKind::Unhandled(err.into()),
+            kind: CreateTopicErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3079,7 +3045,7 @@ impl std::error::Error for CreateTopicError {
             CreateTopicErrorKind::TagLimitExceededException(_inner) => Some(_inner),
             CreateTopicErrorKind::TagPolicyException(_inner) => Some(_inner),
             CreateTopicErrorKind::TopicLimitExceededException(_inner) => Some(_inner),
-            CreateTopicErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateTopicErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3093,6 +3059,14 @@ pub struct DeleteEndpointError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteEndpointError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteEndpointErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteEndpoint` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3103,8 +3077,15 @@ pub enum DeleteEndpointErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3133,7 +3114,7 @@ impl DeleteEndpointError {
     /// Creates the `DeleteEndpointError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteEndpointErrorKind::Unhandled(err.into()),
+            kind: DeleteEndpointErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3142,7 +3123,7 @@ impl DeleteEndpointError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteEndpointErrorKind::Unhandled(err.into()),
+            kind: DeleteEndpointErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3194,7 +3175,7 @@ impl std::error::Error for DeleteEndpointError {
             DeleteEndpointErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
             DeleteEndpointErrorKind::InternalErrorException(_inner) => Some(_inner),
             DeleteEndpointErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            DeleteEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteEndpointErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3208,6 +3189,16 @@ pub struct DeletePlatformApplicationError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeletePlatformApplicationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeletePlatformApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeletePlatformApplication` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3218,8 +3209,15 @@ pub enum DeletePlatformApplicationErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeletePlatformApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3250,7 +3248,9 @@ impl DeletePlatformApplicationError {
     /// Creates the `DeletePlatformApplicationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeletePlatformApplicationErrorKind::Unhandled(err.into()),
+            kind: DeletePlatformApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3259,7 +3259,9 @@ impl DeletePlatformApplicationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeletePlatformApplicationErrorKind::Unhandled(err.into()),
+            kind: DeletePlatformApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3311,7 +3313,7 @@ impl std::error::Error for DeletePlatformApplicationError {
             DeletePlatformApplicationErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
             DeletePlatformApplicationErrorKind::InternalErrorException(_inner) => Some(_inner),
             DeletePlatformApplicationErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            DeletePlatformApplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeletePlatformApplicationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3324,6 +3326,16 @@ pub struct DeleteSMSSandboxPhoneNumberError {
     pub kind: DeleteSMSSandboxPhoneNumberErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteSMSSandboxPhoneNumberError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteSMSSandboxPhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteSMSSandboxPhoneNumber` operation.
 #[non_exhaustive]
@@ -3341,8 +3353,15 @@ pub enum DeleteSMSSandboxPhoneNumberErrorKind {
     ThrottledException(crate::error::ThrottledException),
     /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     UserErrorException(crate::error::UserErrorException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteSMSSandboxPhoneNumberError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3380,7 +3399,9 @@ impl DeleteSMSSandboxPhoneNumberError {
     /// Creates the `DeleteSMSSandboxPhoneNumberError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteSMSSandboxPhoneNumberErrorKind::Unhandled(err.into()),
+            kind: DeleteSMSSandboxPhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3389,7 +3410,9 @@ impl DeleteSMSSandboxPhoneNumberError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteSMSSandboxPhoneNumberErrorKind::Unhandled(err.into()),
+            kind: DeleteSMSSandboxPhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3467,7 +3490,7 @@ impl std::error::Error for DeleteSMSSandboxPhoneNumberError {
             DeleteSMSSandboxPhoneNumberErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteSMSSandboxPhoneNumberErrorKind::ThrottledException(_inner) => Some(_inner),
             DeleteSMSSandboxPhoneNumberErrorKind::UserErrorException(_inner) => Some(_inner),
-            DeleteSMSSandboxPhoneNumberErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteSMSSandboxPhoneNumberErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3480,6 +3503,14 @@ pub struct DeleteTopicError {
     pub kind: DeleteTopicErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteTopicError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteTopicErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteTopic` operation.
 #[non_exhaustive]
@@ -3499,8 +3530,15 @@ pub enum DeleteTopicErrorKind {
     StaleTagException(crate::error::StaleTagException),
     /// <p>The request doesn't comply with the IAM tag policy. Correct your request and then retry it.</p>
     TagPolicyException(crate::error::TagPolicyException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteTopicError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3533,7 +3571,7 @@ impl DeleteTopicError {
     /// Creates the `DeleteTopicError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteTopicErrorKind::Unhandled(err.into()),
+            kind: DeleteTopicErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3542,7 +3580,7 @@ impl DeleteTopicError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteTopicErrorKind::Unhandled(err.into()),
+            kind: DeleteTopicErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3614,7 +3652,7 @@ impl std::error::Error for DeleteTopicError {
             DeleteTopicErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteTopicErrorKind::StaleTagException(_inner) => Some(_inner),
             DeleteTopicErrorKind::TagPolicyException(_inner) => Some(_inner),
-            DeleteTopicErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteTopicErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3627,6 +3665,14 @@ pub struct GetDataProtectionPolicyError {
     pub kind: GetDataProtectionPolicyErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetDataProtectionPolicyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetDataProtectionPolicyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetDataProtectionPolicy` operation.
 #[non_exhaustive]
@@ -3642,8 +3688,15 @@ pub enum GetDataProtectionPolicyErrorKind {
     InvalidSecurityException(crate::error::InvalidSecurityException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDataProtectionPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3674,7 +3727,9 @@ impl GetDataProtectionPolicyError {
     /// Creates the `GetDataProtectionPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDataProtectionPolicyErrorKind::Unhandled(err.into()),
+            kind: GetDataProtectionPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3683,7 +3738,9 @@ impl GetDataProtectionPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDataProtectionPolicyErrorKind::Unhandled(err.into()),
+            kind: GetDataProtectionPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3751,7 +3808,7 @@ impl std::error::Error for GetDataProtectionPolicyError {
             GetDataProtectionPolicyErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GetDataProtectionPolicyErrorKind::InvalidSecurityException(_inner) => Some(_inner),
             GetDataProtectionPolicyErrorKind::NotFoundException(_inner) => Some(_inner),
-            GetDataProtectionPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDataProtectionPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3765,6 +3822,14 @@ pub struct GetEndpointAttributesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetEndpointAttributesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetEndpointAttributesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetEndpointAttributes` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3777,8 +3842,15 @@ pub enum GetEndpointAttributesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetEndpointAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3808,7 +3880,9 @@ impl GetEndpointAttributesError {
     /// Creates the `GetEndpointAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetEndpointAttributesErrorKind::Unhandled(err.into()),
+            kind: GetEndpointAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3817,7 +3891,9 @@ impl GetEndpointAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetEndpointAttributesErrorKind::Unhandled(err.into()),
+            kind: GetEndpointAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3877,7 +3953,7 @@ impl std::error::Error for GetEndpointAttributesError {
             GetEndpointAttributesErrorKind::InternalErrorException(_inner) => Some(_inner),
             GetEndpointAttributesErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GetEndpointAttributesErrorKind::NotFoundException(_inner) => Some(_inner),
-            GetEndpointAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetEndpointAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3891,6 +3967,16 @@ pub struct GetPlatformApplicationAttributesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetPlatformApplicationAttributesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetPlatformApplicationAttributesErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetPlatformApplicationAttributes` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3903,8 +3989,15 @@ pub enum GetPlatformApplicationAttributesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetPlatformApplicationAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3943,7 +4036,9 @@ impl GetPlatformApplicationAttributesError {
     /// Creates the `GetPlatformApplicationAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetPlatformApplicationAttributesErrorKind::Unhandled(err.into()),
+            kind: GetPlatformApplicationAttributesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3952,7 +4047,9 @@ impl GetPlatformApplicationAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetPlatformApplicationAttributesErrorKind::Unhandled(err.into()),
+            kind: GetPlatformApplicationAttributesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -4018,7 +4115,7 @@ impl std::error::Error for GetPlatformApplicationAttributesError {
                 Some(_inner)
             }
             GetPlatformApplicationAttributesErrorKind::NotFoundException(_inner) => Some(_inner),
-            GetPlatformApplicationAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetPlatformApplicationAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4032,6 +4129,14 @@ pub struct GetSMSAttributesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetSMSAttributesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetSMSAttributesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetSMSAttributes` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4044,8 +4149,15 @@ pub enum GetSMSAttributesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSMSAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4075,7 +4187,7 @@ impl GetSMSAttributesError {
     /// Creates the `GetSMSAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetSMSAttributesErrorKind::Unhandled(err.into()),
+            kind: GetSMSAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4084,7 +4196,7 @@ impl GetSMSAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetSMSAttributesErrorKind::Unhandled(err.into()),
+            kind: GetSMSAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4141,7 +4253,7 @@ impl std::error::Error for GetSMSAttributesError {
             GetSMSAttributesErrorKind::InternalErrorException(_inner) => Some(_inner),
             GetSMSAttributesErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GetSMSAttributesErrorKind::ThrottledException(_inner) => Some(_inner),
-            GetSMSAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetSMSAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4155,6 +4267,16 @@ pub struct GetSMSSandboxAccountStatusError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetSMSSandboxAccountStatusError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetSMSSandboxAccountStatusErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetSMSSandboxAccountStatus` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4165,8 +4287,15 @@ pub enum GetSMSSandboxAccountStatusErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSMSSandboxAccountStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4197,7 +4326,9 @@ impl GetSMSSandboxAccountStatusError {
     /// Creates the `GetSMSSandboxAccountStatusError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetSMSSandboxAccountStatusErrorKind::Unhandled(err.into()),
+            kind: GetSMSSandboxAccountStatusErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4206,7 +4337,9 @@ impl GetSMSSandboxAccountStatusError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetSMSSandboxAccountStatusErrorKind::Unhandled(err.into()),
+            kind: GetSMSSandboxAccountStatusErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4260,7 +4393,7 @@ impl std::error::Error for GetSMSSandboxAccountStatusError {
             }
             GetSMSSandboxAccountStatusErrorKind::InternalErrorException(_inner) => Some(_inner),
             GetSMSSandboxAccountStatusErrorKind::ThrottledException(_inner) => Some(_inner),
-            GetSMSSandboxAccountStatusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetSMSSandboxAccountStatusErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4274,6 +4407,16 @@ pub struct GetSubscriptionAttributesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetSubscriptionAttributesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetSubscriptionAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetSubscriptionAttributes` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4286,8 +4429,15 @@ pub enum GetSubscriptionAttributesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSubscriptionAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4319,7 +4469,9 @@ impl GetSubscriptionAttributesError {
     /// Creates the `GetSubscriptionAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetSubscriptionAttributesErrorKind::Unhandled(err.into()),
+            kind: GetSubscriptionAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4328,7 +4480,9 @@ impl GetSubscriptionAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetSubscriptionAttributesErrorKind::Unhandled(err.into()),
+            kind: GetSubscriptionAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4388,7 +4542,7 @@ impl std::error::Error for GetSubscriptionAttributesError {
             GetSubscriptionAttributesErrorKind::InternalErrorException(_inner) => Some(_inner),
             GetSubscriptionAttributesErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GetSubscriptionAttributesErrorKind::NotFoundException(_inner) => Some(_inner),
-            GetSubscriptionAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetSubscriptionAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4401,6 +4555,14 @@ pub struct GetTopicAttributesError {
     pub kind: GetTopicAttributesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetTopicAttributesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetTopicAttributesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetTopicAttributes` operation.
 #[non_exhaustive]
@@ -4416,8 +4578,15 @@ pub enum GetTopicAttributesErrorKind {
     InvalidSecurityException(crate::error::InvalidSecurityException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetTopicAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4448,7 +4617,7 @@ impl GetTopicAttributesError {
     /// Creates the `GetTopicAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetTopicAttributesErrorKind::Unhandled(err.into()),
+            kind: GetTopicAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4457,7 +4626,7 @@ impl GetTopicAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetTopicAttributesErrorKind::Unhandled(err.into()),
+            kind: GetTopicAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4525,7 +4694,7 @@ impl std::error::Error for GetTopicAttributesError {
             GetTopicAttributesErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GetTopicAttributesErrorKind::InvalidSecurityException(_inner) => Some(_inner),
             GetTopicAttributesErrorKind::NotFoundException(_inner) => Some(_inner),
-            GetTopicAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetTopicAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4539,6 +4708,16 @@ pub struct ListEndpointsByPlatformApplicationError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListEndpointsByPlatformApplicationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListEndpointsByPlatformApplicationErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListEndpointsByPlatformApplication` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4551,8 +4730,15 @@ pub enum ListEndpointsByPlatformApplicationErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListEndpointsByPlatformApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4591,7 +4777,9 @@ impl ListEndpointsByPlatformApplicationError {
     /// Creates the `ListEndpointsByPlatformApplicationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListEndpointsByPlatformApplicationErrorKind::Unhandled(err.into()),
+            kind: ListEndpointsByPlatformApplicationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -4600,7 +4788,9 @@ impl ListEndpointsByPlatformApplicationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListEndpointsByPlatformApplicationErrorKind::Unhandled(err.into()),
+            kind: ListEndpointsByPlatformApplicationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -4666,7 +4856,7 @@ impl std::error::Error for ListEndpointsByPlatformApplicationError {
                 Some(_inner)
             }
             ListEndpointsByPlatformApplicationErrorKind::NotFoundException(_inner) => Some(_inner),
-            ListEndpointsByPlatformApplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListEndpointsByPlatformApplicationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4679,6 +4869,14 @@ pub struct ListOriginationNumbersError {
     pub kind: ListOriginationNumbersErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListOriginationNumbersError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListOriginationNumbersErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListOriginationNumbers` operation.
 #[non_exhaustive]
@@ -4694,8 +4892,15 @@ pub enum ListOriginationNumbersErrorKind {
     ThrottledException(crate::error::ThrottledException),
     /// <p>Indicates that a parameter in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListOriginationNumbersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4726,7 +4931,9 @@ impl ListOriginationNumbersError {
     /// Creates the `ListOriginationNumbersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListOriginationNumbersErrorKind::Unhandled(err.into()),
+            kind: ListOriginationNumbersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4735,7 +4942,9 @@ impl ListOriginationNumbersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListOriginationNumbersErrorKind::Unhandled(err.into()),
+            kind: ListOriginationNumbersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4803,7 +5012,7 @@ impl std::error::Error for ListOriginationNumbersError {
             ListOriginationNumbersErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListOriginationNumbersErrorKind::ThrottledException(_inner) => Some(_inner),
             ListOriginationNumbersErrorKind::ValidationException(_inner) => Some(_inner),
-            ListOriginationNumbersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListOriginationNumbersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4817,6 +5026,16 @@ pub struct ListPhoneNumbersOptedOutError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListPhoneNumbersOptedOutError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListPhoneNumbersOptedOutErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListPhoneNumbersOptedOut` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4829,8 +5048,15 @@ pub enum ListPhoneNumbersOptedOutErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListPhoneNumbersOptedOutError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4860,7 +5086,9 @@ impl ListPhoneNumbersOptedOutError {
     /// Creates the `ListPhoneNumbersOptedOutError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListPhoneNumbersOptedOutErrorKind::Unhandled(err.into()),
+            kind: ListPhoneNumbersOptedOutErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4869,7 +5097,9 @@ impl ListPhoneNumbersOptedOutError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListPhoneNumbersOptedOutErrorKind::Unhandled(err.into()),
+            kind: ListPhoneNumbersOptedOutErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4929,7 +5159,7 @@ impl std::error::Error for ListPhoneNumbersOptedOutError {
             ListPhoneNumbersOptedOutErrorKind::InternalErrorException(_inner) => Some(_inner),
             ListPhoneNumbersOptedOutErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListPhoneNumbersOptedOutErrorKind::ThrottledException(_inner) => Some(_inner),
-            ListPhoneNumbersOptedOutErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListPhoneNumbersOptedOutErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4943,6 +5173,16 @@ pub struct ListPlatformApplicationsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListPlatformApplicationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListPlatformApplicationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListPlatformApplications` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4953,8 +5193,15 @@ pub enum ListPlatformApplicationsErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListPlatformApplicationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4983,7 +5230,9 @@ impl ListPlatformApplicationsError {
     /// Creates the `ListPlatformApplicationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListPlatformApplicationsErrorKind::Unhandled(err.into()),
+            kind: ListPlatformApplicationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4992,7 +5241,9 @@ impl ListPlatformApplicationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListPlatformApplicationsErrorKind::Unhandled(err.into()),
+            kind: ListPlatformApplicationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5044,7 +5295,7 @@ impl std::error::Error for ListPlatformApplicationsError {
             ListPlatformApplicationsErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
             ListPlatformApplicationsErrorKind::InternalErrorException(_inner) => Some(_inner),
             ListPlatformApplicationsErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            ListPlatformApplicationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListPlatformApplicationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5057,6 +5308,16 @@ pub struct ListSMSSandboxPhoneNumbersError {
     pub kind: ListSMSSandboxPhoneNumbersErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListSMSSandboxPhoneNumbersError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListSMSSandboxPhoneNumbersErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListSMSSandboxPhoneNumbers` operation.
 #[non_exhaustive]
@@ -5072,8 +5333,15 @@ pub enum ListSMSSandboxPhoneNumbersErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSMSSandboxPhoneNumbersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5106,7 +5374,9 @@ impl ListSMSSandboxPhoneNumbersError {
     /// Creates the `ListSMSSandboxPhoneNumbersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListSMSSandboxPhoneNumbersErrorKind::Unhandled(err.into()),
+            kind: ListSMSSandboxPhoneNumbersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5115,7 +5385,9 @@ impl ListSMSSandboxPhoneNumbersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListSMSSandboxPhoneNumbersErrorKind::Unhandled(err.into()),
+            kind: ListSMSSandboxPhoneNumbersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5185,7 +5457,7 @@ impl std::error::Error for ListSMSSandboxPhoneNumbersError {
             ListSMSSandboxPhoneNumbersErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListSMSSandboxPhoneNumbersErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListSMSSandboxPhoneNumbersErrorKind::ThrottledException(_inner) => Some(_inner),
-            ListSMSSandboxPhoneNumbersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListSMSSandboxPhoneNumbersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5199,6 +5471,14 @@ pub struct ListSubscriptionsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListSubscriptionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListSubscriptionsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListSubscriptions` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5209,8 +5489,15 @@ pub enum ListSubscriptionsErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSubscriptionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5239,7 +5526,7 @@ impl ListSubscriptionsError {
     /// Creates the `ListSubscriptionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListSubscriptionsErrorKind::Unhandled(err.into()),
+            kind: ListSubscriptionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5248,7 +5535,7 @@ impl ListSubscriptionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListSubscriptionsErrorKind::Unhandled(err.into()),
+            kind: ListSubscriptionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5300,7 +5587,7 @@ impl std::error::Error for ListSubscriptionsError {
             ListSubscriptionsErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
             ListSubscriptionsErrorKind::InternalErrorException(_inner) => Some(_inner),
             ListSubscriptionsErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            ListSubscriptionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListSubscriptionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5314,6 +5601,16 @@ pub struct ListSubscriptionsByTopicError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListSubscriptionsByTopicError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListSubscriptionsByTopicErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListSubscriptionsByTopic` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5326,8 +5623,15 @@ pub enum ListSubscriptionsByTopicErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSubscriptionsByTopicError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5357,7 +5661,9 @@ impl ListSubscriptionsByTopicError {
     /// Creates the `ListSubscriptionsByTopicError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListSubscriptionsByTopicErrorKind::Unhandled(err.into()),
+            kind: ListSubscriptionsByTopicErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5366,7 +5672,9 @@ impl ListSubscriptionsByTopicError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListSubscriptionsByTopicErrorKind::Unhandled(err.into()),
+            kind: ListSubscriptionsByTopicErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5426,7 +5734,7 @@ impl std::error::Error for ListSubscriptionsByTopicError {
             ListSubscriptionsByTopicErrorKind::InternalErrorException(_inner) => Some(_inner),
             ListSubscriptionsByTopicErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListSubscriptionsByTopicErrorKind::NotFoundException(_inner) => Some(_inner),
-            ListSubscriptionsByTopicErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListSubscriptionsByTopicErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5439,6 +5747,14 @@ pub struct ListTagsForResourceError {
     pub kind: ListTagsForResourceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListTagsForResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListTagsForResource` operation.
 #[non_exhaustive]
@@ -5454,8 +5770,15 @@ pub enum ListTagsForResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request doesn't comply with the IAM tag policy. Correct your request and then retry it.</p>
     TagPolicyException(crate::error::TagPolicyException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5486,7 +5809,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5495,7 +5818,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5563,7 +5886,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::TagPolicyException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5577,6 +5900,14 @@ pub struct ListTopicsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListTopicsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListTopicsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListTopics` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5587,8 +5918,15 @@ pub enum ListTopicsErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTopicsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5617,7 +5955,7 @@ impl ListTopicsError {
     /// Creates the `ListTopicsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTopicsErrorKind::Unhandled(err.into()),
+            kind: ListTopicsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5626,7 +5964,7 @@ impl ListTopicsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTopicsErrorKind::Unhandled(err.into()),
+            kind: ListTopicsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5675,7 +6013,7 @@ impl std::error::Error for ListTopicsError {
             ListTopicsErrorKind::AuthorizationErrorException(_inner) => Some(_inner),
             ListTopicsErrorKind::InternalErrorException(_inner) => Some(_inner),
             ListTopicsErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            ListTopicsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTopicsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5689,6 +6027,14 @@ pub struct OptInPhoneNumberError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for OptInPhoneNumberError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: OptInPhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `OptInPhoneNumber` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5701,8 +6047,15 @@ pub enum OptInPhoneNumberErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for OptInPhoneNumberError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5732,7 +6085,7 @@ impl OptInPhoneNumberError {
     /// Creates the `OptInPhoneNumberError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: OptInPhoneNumberErrorKind::Unhandled(err.into()),
+            kind: OptInPhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5741,7 +6094,7 @@ impl OptInPhoneNumberError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: OptInPhoneNumberErrorKind::Unhandled(err.into()),
+            kind: OptInPhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5798,7 +6151,7 @@ impl std::error::Error for OptInPhoneNumberError {
             OptInPhoneNumberErrorKind::InternalErrorException(_inner) => Some(_inner),
             OptInPhoneNumberErrorKind::InvalidParameterException(_inner) => Some(_inner),
             OptInPhoneNumberErrorKind::ThrottledException(_inner) => Some(_inner),
-            OptInPhoneNumberErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            OptInPhoneNumberErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5811,6 +6164,14 @@ pub struct PublishError {
     pub kind: PublishErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PublishError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PublishErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `Publish` operation.
 #[non_exhaustive]
@@ -5846,8 +6207,15 @@ pub enum PublishErrorKind {
     PlatformApplicationDisabledException(crate::error::PlatformApplicationDisabledException),
     /// <p>Indicates that a parameter in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PublishError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5888,7 +6256,7 @@ impl PublishError {
     /// Creates the `PublishError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PublishErrorKind::Unhandled(err.into()),
+            kind: PublishErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5897,7 +6265,7 @@ impl PublishError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PublishErrorKind::Unhandled(err.into()),
+            kind: PublishErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6006,7 +6374,7 @@ impl std::error::Error for PublishError {
             PublishErrorKind::NotFoundException(_inner) => Some(_inner),
             PublishErrorKind::PlatformApplicationDisabledException(_inner) => Some(_inner),
             PublishErrorKind::ValidationException(_inner) => Some(_inner),
-            PublishErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PublishErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6019,6 +6387,14 @@ pub struct PublishBatchError {
     pub kind: PublishBatchErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PublishBatchError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PublishBatchErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `PublishBatch` operation.
 #[non_exhaustive]
@@ -6064,8 +6440,15 @@ pub enum PublishBatchErrorKind {
     TooManyEntriesInBatchRequestException(crate::error::TooManyEntriesInBatchRequestException),
     /// <p>Indicates that a parameter in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PublishBatchError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6111,7 +6494,7 @@ impl PublishBatchError {
     /// Creates the `PublishBatchError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PublishBatchErrorKind::Unhandled(err.into()),
+            kind: PublishBatchErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6120,7 +6503,7 @@ impl PublishBatchError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PublishBatchErrorKind::Unhandled(err.into()),
+            kind: PublishBatchErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6287,7 +6670,7 @@ impl std::error::Error for PublishBatchError {
             PublishBatchErrorKind::PlatformApplicationDisabledException(_inner) => Some(_inner),
             PublishBatchErrorKind::TooManyEntriesInBatchRequestException(_inner) => Some(_inner),
             PublishBatchErrorKind::ValidationException(_inner) => Some(_inner),
-            PublishBatchErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PublishBatchErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6300,6 +6683,14 @@ pub struct PutDataProtectionPolicyError {
     pub kind: PutDataProtectionPolicyErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PutDataProtectionPolicyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PutDataProtectionPolicyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `PutDataProtectionPolicy` operation.
 #[non_exhaustive]
@@ -6315,8 +6706,15 @@ pub enum PutDataProtectionPolicyErrorKind {
     InvalidSecurityException(crate::error::InvalidSecurityException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutDataProtectionPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6347,7 +6745,9 @@ impl PutDataProtectionPolicyError {
     /// Creates the `PutDataProtectionPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutDataProtectionPolicyErrorKind::Unhandled(err.into()),
+            kind: PutDataProtectionPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6356,7 +6756,9 @@ impl PutDataProtectionPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutDataProtectionPolicyErrorKind::Unhandled(err.into()),
+            kind: PutDataProtectionPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6424,7 +6826,7 @@ impl std::error::Error for PutDataProtectionPolicyError {
             PutDataProtectionPolicyErrorKind::InvalidParameterException(_inner) => Some(_inner),
             PutDataProtectionPolicyErrorKind::InvalidSecurityException(_inner) => Some(_inner),
             PutDataProtectionPolicyErrorKind::NotFoundException(_inner) => Some(_inner),
-            PutDataProtectionPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutDataProtectionPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6438,6 +6840,14 @@ pub struct RemovePermissionError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for RemovePermissionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RemovePermissionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `RemovePermission` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6450,8 +6860,15 @@ pub enum RemovePermissionErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RemovePermissionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6481,7 +6898,7 @@ impl RemovePermissionError {
     /// Creates the `RemovePermissionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RemovePermissionErrorKind::Unhandled(err.into()),
+            kind: RemovePermissionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6490,7 +6907,7 @@ impl RemovePermissionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RemovePermissionErrorKind::Unhandled(err.into()),
+            kind: RemovePermissionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6547,7 +6964,7 @@ impl std::error::Error for RemovePermissionError {
             RemovePermissionErrorKind::InternalErrorException(_inner) => Some(_inner),
             RemovePermissionErrorKind::InvalidParameterException(_inner) => Some(_inner),
             RemovePermissionErrorKind::NotFoundException(_inner) => Some(_inner),
-            RemovePermissionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RemovePermissionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6561,6 +6978,14 @@ pub struct SetEndpointAttributesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for SetEndpointAttributesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: SetEndpointAttributesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `SetEndpointAttributes` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6573,8 +6998,15 @@ pub enum SetEndpointAttributesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SetEndpointAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6604,7 +7036,9 @@ impl SetEndpointAttributesError {
     /// Creates the `SetEndpointAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SetEndpointAttributesErrorKind::Unhandled(err.into()),
+            kind: SetEndpointAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6613,7 +7047,9 @@ impl SetEndpointAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SetEndpointAttributesErrorKind::Unhandled(err.into()),
+            kind: SetEndpointAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6673,7 +7109,7 @@ impl std::error::Error for SetEndpointAttributesError {
             SetEndpointAttributesErrorKind::InternalErrorException(_inner) => Some(_inner),
             SetEndpointAttributesErrorKind::InvalidParameterException(_inner) => Some(_inner),
             SetEndpointAttributesErrorKind::NotFoundException(_inner) => Some(_inner),
-            SetEndpointAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SetEndpointAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6687,6 +7123,16 @@ pub struct SetPlatformApplicationAttributesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for SetPlatformApplicationAttributesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: SetPlatformApplicationAttributesErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `SetPlatformApplicationAttributes` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6699,8 +7145,15 @@ pub enum SetPlatformApplicationAttributesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SetPlatformApplicationAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6739,7 +7192,9 @@ impl SetPlatformApplicationAttributesError {
     /// Creates the `SetPlatformApplicationAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SetPlatformApplicationAttributesErrorKind::Unhandled(err.into()),
+            kind: SetPlatformApplicationAttributesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -6748,7 +7203,9 @@ impl SetPlatformApplicationAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SetPlatformApplicationAttributesErrorKind::Unhandled(err.into()),
+            kind: SetPlatformApplicationAttributesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -6814,7 +7271,7 @@ impl std::error::Error for SetPlatformApplicationAttributesError {
                 Some(_inner)
             }
             SetPlatformApplicationAttributesErrorKind::NotFoundException(_inner) => Some(_inner),
-            SetPlatformApplicationAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SetPlatformApplicationAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6828,6 +7285,14 @@ pub struct SetSMSAttributesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for SetSMSAttributesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: SetSMSAttributesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `SetSMSAttributes` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6840,8 +7305,15 @@ pub enum SetSMSAttributesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SetSMSAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6871,7 +7343,7 @@ impl SetSMSAttributesError {
     /// Creates the `SetSMSAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SetSMSAttributesErrorKind::Unhandled(err.into()),
+            kind: SetSMSAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6880,7 +7352,7 @@ impl SetSMSAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SetSMSAttributesErrorKind::Unhandled(err.into()),
+            kind: SetSMSAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6937,7 +7409,7 @@ impl std::error::Error for SetSMSAttributesError {
             SetSMSAttributesErrorKind::InternalErrorException(_inner) => Some(_inner),
             SetSMSAttributesErrorKind::InvalidParameterException(_inner) => Some(_inner),
             SetSMSAttributesErrorKind::ThrottledException(_inner) => Some(_inner),
-            SetSMSAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SetSMSAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6950,6 +7422,16 @@ pub struct SetSubscriptionAttributesError {
     pub kind: SetSubscriptionAttributesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for SetSubscriptionAttributesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: SetSubscriptionAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `SetSubscriptionAttributes` operation.
 #[non_exhaustive]
@@ -6965,8 +7447,15 @@ pub enum SetSubscriptionAttributesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SetSubscriptionAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7001,7 +7490,9 @@ impl SetSubscriptionAttributesError {
     /// Creates the `SetSubscriptionAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SetSubscriptionAttributesErrorKind::Unhandled(err.into()),
+            kind: SetSubscriptionAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7010,7 +7501,9 @@ impl SetSubscriptionAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SetSubscriptionAttributesErrorKind::Unhandled(err.into()),
+            kind: SetSubscriptionAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7080,7 +7573,7 @@ impl std::error::Error for SetSubscriptionAttributesError {
             SetSubscriptionAttributesErrorKind::InternalErrorException(_inner) => Some(_inner),
             SetSubscriptionAttributesErrorKind::InvalidParameterException(_inner) => Some(_inner),
             SetSubscriptionAttributesErrorKind::NotFoundException(_inner) => Some(_inner),
-            SetSubscriptionAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SetSubscriptionAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7093,6 +7586,14 @@ pub struct SetTopicAttributesError {
     pub kind: SetTopicAttributesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for SetTopicAttributesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: SetTopicAttributesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `SetTopicAttributes` operation.
 #[non_exhaustive]
@@ -7108,8 +7609,15 @@ pub enum SetTopicAttributesErrorKind {
     InvalidSecurityException(crate::error::InvalidSecurityException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SetTopicAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7140,7 +7648,7 @@ impl SetTopicAttributesError {
     /// Creates the `SetTopicAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SetTopicAttributesErrorKind::Unhandled(err.into()),
+            kind: SetTopicAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7149,7 +7657,7 @@ impl SetTopicAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SetTopicAttributesErrorKind::Unhandled(err.into()),
+            kind: SetTopicAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7217,7 +7725,7 @@ impl std::error::Error for SetTopicAttributesError {
             SetTopicAttributesErrorKind::InvalidParameterException(_inner) => Some(_inner),
             SetTopicAttributesErrorKind::InvalidSecurityException(_inner) => Some(_inner),
             SetTopicAttributesErrorKind::NotFoundException(_inner) => Some(_inner),
-            SetTopicAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SetTopicAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7230,6 +7738,14 @@ pub struct SubscribeError {
     pub kind: SubscribeErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for SubscribeError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: SubscribeErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `Subscribe` operation.
 #[non_exhaustive]
@@ -7249,8 +7765,15 @@ pub enum SubscribeErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Indicates that the customer already owns the maximum allowed number of subscriptions.</p>
     SubscriptionLimitExceededException(crate::error::SubscriptionLimitExceededException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SubscribeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7283,7 +7806,7 @@ impl SubscribeError {
     /// Creates the `SubscribeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SubscribeErrorKind::Unhandled(err.into()),
+            kind: SubscribeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7292,7 +7815,7 @@ impl SubscribeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SubscribeErrorKind::Unhandled(err.into()),
+            kind: SubscribeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7364,7 +7887,7 @@ impl std::error::Error for SubscribeError {
             SubscribeErrorKind::InvalidSecurityException(_inner) => Some(_inner),
             SubscribeErrorKind::NotFoundException(_inner) => Some(_inner),
             SubscribeErrorKind::SubscriptionLimitExceededException(_inner) => Some(_inner),
-            SubscribeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SubscribeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7377,6 +7900,14 @@ pub struct TagResourceError {
     pub kind: TagResourceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for TagResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `TagResource` operation.
 #[non_exhaustive]
@@ -7396,8 +7927,15 @@ pub enum TagResourceErrorKind {
     TagLimitExceededException(crate::error::TagLimitExceededException),
     /// <p>The request doesn't comply with the IAM tag policy. Correct your request and then retry it.</p>
     TagPolicyException(crate::error::TagPolicyException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7430,7 +7968,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7439,7 +7977,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7517,7 +8055,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::StaleTagException(_inner) => Some(_inner),
             TagResourceErrorKind::TagLimitExceededException(_inner) => Some(_inner),
             TagResourceErrorKind::TagPolicyException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7530,6 +8068,14 @@ pub struct UnsubscribeError {
     pub kind: UnsubscribeErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UnsubscribeError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UnsubscribeErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `Unsubscribe` operation.
 #[non_exhaustive]
@@ -7545,8 +8091,15 @@ pub enum UnsubscribeErrorKind {
     InvalidSecurityException(crate::error::InvalidSecurityException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UnsubscribeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7577,7 +8130,7 @@ impl UnsubscribeError {
     /// Creates the `UnsubscribeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UnsubscribeErrorKind::Unhandled(err.into()),
+            kind: UnsubscribeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7586,7 +8139,7 @@ impl UnsubscribeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UnsubscribeErrorKind::Unhandled(err.into()),
+            kind: UnsubscribeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7648,7 +8201,7 @@ impl std::error::Error for UnsubscribeError {
             UnsubscribeErrorKind::InvalidParameterException(_inner) => Some(_inner),
             UnsubscribeErrorKind::InvalidSecurityException(_inner) => Some(_inner),
             UnsubscribeErrorKind::NotFoundException(_inner) => Some(_inner),
-            UnsubscribeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UnsubscribeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7661,6 +8214,14 @@ pub struct UntagResourceError {
     pub kind: UntagResourceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UntagResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UntagResource` operation.
 #[non_exhaustive]
@@ -7680,8 +8241,15 @@ pub enum UntagResourceErrorKind {
     TagLimitExceededException(crate::error::TagLimitExceededException),
     /// <p>The request doesn't comply with the IAM tag policy. Correct your request and then retry it.</p>
     TagPolicyException(crate::error::TagPolicyException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7714,7 +8282,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7723,7 +8291,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7801,7 +8369,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::StaleTagException(_inner) => Some(_inner),
             UntagResourceErrorKind::TagLimitExceededException(_inner) => Some(_inner),
             UntagResourceErrorKind::TagPolicyException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7814,6 +8382,16 @@ pub struct VerifySMSSandboxPhoneNumberError {
     pub kind: VerifySMSSandboxPhoneNumberErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for VerifySMSSandboxPhoneNumberError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: VerifySMSSandboxPhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `VerifySMSSandboxPhoneNumber` operation.
 #[non_exhaustive]
@@ -7831,8 +8409,15 @@ pub enum VerifySMSSandboxPhoneNumberErrorKind {
     ThrottledException(crate::error::ThrottledException),
     /// <p>Indicates that the one-time password (OTP) used for verification is invalid.</p>
     VerificationException(crate::error::VerificationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for VerifySMSSandboxPhoneNumberError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7870,7 +8455,9 @@ impl VerifySMSSandboxPhoneNumberError {
     /// Creates the `VerifySMSSandboxPhoneNumberError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: VerifySMSSandboxPhoneNumberErrorKind::Unhandled(err.into()),
+            kind: VerifySMSSandboxPhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7879,7 +8466,9 @@ impl VerifySMSSandboxPhoneNumberError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: VerifySMSSandboxPhoneNumberErrorKind::Unhandled(err.into()),
+            kind: VerifySMSSandboxPhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7957,7 +8546,35 @@ impl std::error::Error for VerifySMSSandboxPhoneNumberError {
             VerifySMSSandboxPhoneNumberErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             VerifySMSSandboxPhoneNumberErrorKind::ThrottledException(_inner) => Some(_inner),
             VerifySMSSandboxPhoneNumberErrorKind::VerificationException(_inner) => Some(_inner),
-            VerifySMSSandboxPhoneNumberErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            VerifySMSSandboxPhoneNumberErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+///
+/// When logging an error from the SDK, it is recommended that you either wrap the error in
+/// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+/// error reporter library that visits the error's cause/source chain, or call
+/// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

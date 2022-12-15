@@ -2,7 +2,7 @@
 
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UploadMultipartPartOutput {
     /// <p>The SHA256 tree hash that Amazon S3 Glacier computed for the uploaded part.</p>
     #[doc(hidden)]
@@ -14,18 +14,11 @@ impl UploadMultipartPartOutput {
         self.checksum.as_deref()
     }
 }
-impl std::fmt::Debug for UploadMultipartPartOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UploadMultipartPartOutput");
-        formatter.field("checksum", &self.checksum);
-        formatter.finish()
-    }
-}
 /// See [`UploadMultipartPartOutput`](crate::output::UploadMultipartPartOutput).
 pub mod upload_multipart_part_output {
 
     /// A builder for [`UploadMultipartPartOutput`](crate::output::UploadMultipartPartOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) checksum: std::option::Option<std::string::String>,
     }
@@ -58,7 +51,7 @@ impl UploadMultipartPartOutput {
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 /// <p>For information about the underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">Upload Archive</a>. For conceptual information, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working with Archives in Amazon S3 Glacier</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UploadArchiveOutput {
     /// <p>The relative URI path of the newly added archive resource.</p>
     #[doc(hidden)]
@@ -84,20 +77,11 @@ impl UploadArchiveOutput {
         self.archive_id.as_deref()
     }
 }
-impl std::fmt::Debug for UploadArchiveOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UploadArchiveOutput");
-        formatter.field("location", &self.location);
-        formatter.field("checksum", &self.checksum);
-        formatter.field("archive_id", &self.archive_id);
-        formatter.finish()
-    }
-}
 /// See [`UploadArchiveOutput`](crate::output::UploadArchiveOutput).
 pub mod upload_archive_output {
 
     /// A builder for [`UploadArchiveOutput`](crate::output::UploadArchiveOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location: std::option::Option<std::string::String>,
         pub(crate) checksum: std::option::Option<std::string::String>,
@@ -153,19 +137,13 @@ impl UploadArchiveOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetVaultNotificationsOutput {}
-impl std::fmt::Debug for SetVaultNotificationsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetVaultNotificationsOutput");
-        formatter.finish()
-    }
-}
 /// See [`SetVaultNotificationsOutput`](crate::output::SetVaultNotificationsOutput).
 pub mod set_vault_notifications_output {
 
     /// A builder for [`SetVaultNotificationsOutput`](crate::output::SetVaultNotificationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SetVaultNotificationsOutput`](crate::output::SetVaultNotificationsOutput).
@@ -183,19 +161,13 @@ impl SetVaultNotificationsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetVaultAccessPolicyOutput {}
-impl std::fmt::Debug for SetVaultAccessPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetVaultAccessPolicyOutput");
-        formatter.finish()
-    }
-}
 /// See [`SetVaultAccessPolicyOutput`](crate::output::SetVaultAccessPolicyOutput).
 pub mod set_vault_access_policy_output {
 
     /// A builder for [`SetVaultAccessPolicyOutput`](crate::output::SetVaultAccessPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SetVaultAccessPolicyOutput`](crate::output::SetVaultAccessPolicyOutput).
@@ -213,19 +185,13 @@ impl SetVaultAccessPolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetDataRetrievalPolicyOutput {}
-impl std::fmt::Debug for SetDataRetrievalPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetDataRetrievalPolicyOutput");
-        formatter.finish()
-    }
-}
 /// See [`SetDataRetrievalPolicyOutput`](crate::output::SetDataRetrievalPolicyOutput).
 pub mod set_data_retrieval_policy_output {
 
     /// A builder for [`SetDataRetrievalPolicyOutput`](crate::output::SetDataRetrievalPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SetDataRetrievalPolicyOutput`](crate::output::SetDataRetrievalPolicyOutput).
@@ -243,19 +209,13 @@ impl SetDataRetrievalPolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveTagsFromVaultOutput {}
-impl std::fmt::Debug for RemoveTagsFromVaultOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveTagsFromVaultOutput");
-        formatter.finish()
-    }
-}
 /// See [`RemoveTagsFromVaultOutput`](crate::output::RemoveTagsFromVaultOutput).
 pub mod remove_tags_from_vault_output {
 
     /// A builder for [`RemoveTagsFromVaultOutput`](crate::output::RemoveTagsFromVaultOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveTagsFromVaultOutput`](crate::output::RemoveTagsFromVaultOutput).
@@ -273,7 +233,7 @@ impl RemoveTagsFromVaultOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PurchaseProvisionedCapacityOutput {
     /// <p>The ID that identifies the provisioned capacity unit.</p>
     #[doc(hidden)]
@@ -285,18 +245,11 @@ impl PurchaseProvisionedCapacityOutput {
         self.capacity_id.as_deref()
     }
 }
-impl std::fmt::Debug for PurchaseProvisionedCapacityOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PurchaseProvisionedCapacityOutput");
-        formatter.field("capacity_id", &self.capacity_id);
-        formatter.finish()
-    }
-}
 /// See [`PurchaseProvisionedCapacityOutput`](crate::output::PurchaseProvisionedCapacityOutput).
 pub mod purchase_provisioned_capacity_output {
 
     /// A builder for [`PurchaseProvisionedCapacityOutput`](crate::output::PurchaseProvisionedCapacityOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) capacity_id: std::option::Option<std::string::String>,
     }
@@ -328,7 +281,7 @@ impl PurchaseProvisionedCapacityOutput {
 
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVaultsOutput {
     /// <p>List of vaults.</p>
     #[doc(hidden)]
@@ -347,19 +300,11 @@ impl ListVaultsOutput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for ListVaultsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVaultsOutput");
-        formatter.field("vault_list", &self.vault_list);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 /// See [`ListVaultsOutput`](crate::output::ListVaultsOutput).
 pub mod list_vaults_output {
 
     /// A builder for [`ListVaultsOutput`](crate::output::ListVaultsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vault_list:
             std::option::Option<std::vec::Vec<crate::model::DescribeVaultOutput>>,
@@ -413,7 +358,7 @@ impl ListVaultsOutput {
 
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForVaultOutput {
     /// <p>The tags attached to the vault. Each tag is composed of a key and a value.</p>
     #[doc(hidden)]
@@ -429,18 +374,11 @@ impl ListTagsForVaultOutput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for ListTagsForVaultOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForVaultOutput");
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`ListTagsForVaultOutput`](crate::output::ListTagsForVaultOutput).
 pub mod list_tags_for_vault_output {
 
     /// A builder for [`ListTagsForVaultOutput`](crate::output::ListTagsForVaultOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -487,7 +425,7 @@ impl ListTagsForVaultOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProvisionedCapacityOutput {
     /// <p>The response body contains the following JSON fields.</p>
     #[doc(hidden)]
@@ -502,18 +440,11 @@ impl ListProvisionedCapacityOutput {
         self.provisioned_capacity_list.as_deref()
     }
 }
-impl std::fmt::Debug for ListProvisionedCapacityOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProvisionedCapacityOutput");
-        formatter.field("provisioned_capacity_list", &self.provisioned_capacity_list);
-        formatter.finish()
-    }
-}
 /// See [`ListProvisionedCapacityOutput`](crate::output::ListProvisionedCapacityOutput).
 pub mod list_provisioned_capacity_output {
 
     /// A builder for [`ListProvisionedCapacityOutput`](crate::output::ListProvisionedCapacityOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) provisioned_capacity_list:
             std::option::Option<std::vec::Vec<crate::model::ProvisionedCapacityDescription>>,
@@ -558,7 +489,7 @@ impl ListProvisionedCapacityOutput {
 
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPartsOutput {
     /// <p>The ID of the upload to which the parts are associated.</p>
     #[doc(hidden)]
@@ -612,24 +543,11 @@ impl ListPartsOutput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for ListPartsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPartsOutput");
-        formatter.field("multipart_upload_id", &self.multipart_upload_id);
-        formatter.field("vault_arn", &self.vault_arn);
-        formatter.field("archive_description", &self.archive_description);
-        formatter.field("part_size_in_bytes", &self.part_size_in_bytes);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("parts", &self.parts);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 /// See [`ListPartsOutput`](crate::output::ListPartsOutput).
 pub mod list_parts_output {
 
     /// A builder for [`ListPartsOutput`](crate::output::ListPartsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) multipart_upload_id: std::option::Option<std::string::String>,
         pub(crate) vault_arn: std::option::Option<std::string::String>,
@@ -751,7 +669,7 @@ impl ListPartsOutput {
 
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMultipartUploadsOutput {
     /// <p>A list of in-progress multipart uploads.</p>
     #[doc(hidden)]
@@ -770,19 +688,11 @@ impl ListMultipartUploadsOutput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for ListMultipartUploadsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMultipartUploadsOutput");
-        formatter.field("uploads_list", &self.uploads_list);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 /// See [`ListMultipartUploadsOutput`](crate::output::ListMultipartUploadsOutput).
 pub mod list_multipart_uploads_output {
 
     /// A builder for [`ListMultipartUploadsOutput`](crate::output::ListMultipartUploadsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) uploads_list:
             std::option::Option<std::vec::Vec<crate::model::UploadListElement>>,
@@ -836,7 +746,7 @@ impl ListMultipartUploadsOutput {
 
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListJobsOutput {
     /// <p>A list of job objects. Each job object contains metadata describing the job.</p>
     #[doc(hidden)]
@@ -855,19 +765,11 @@ impl ListJobsOutput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for ListJobsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListJobsOutput");
-        formatter.field("job_list", &self.job_list);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 /// See [`ListJobsOutput`](crate::output::ListJobsOutput).
 pub mod list_jobs_output {
 
     /// A builder for [`ListJobsOutput`](crate::output::ListJobsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_list:
             std::option::Option<std::vec::Vec<crate::model::GlacierJobDescription>>,
@@ -921,7 +823,7 @@ impl ListJobsOutput {
 
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InitiateVaultLockOutput {
     /// <p>The lock ID, which is used to complete the vault locking process.</p>
     #[doc(hidden)]
@@ -933,18 +835,11 @@ impl InitiateVaultLockOutput {
         self.lock_id.as_deref()
     }
 }
-impl std::fmt::Debug for InitiateVaultLockOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InitiateVaultLockOutput");
-        formatter.field("lock_id", &self.lock_id);
-        formatter.finish()
-    }
-}
 /// See [`InitiateVaultLockOutput`](crate::output::InitiateVaultLockOutput).
 pub mod initiate_vault_lock_output {
 
     /// A builder for [`InitiateVaultLockOutput`](crate::output::InitiateVaultLockOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lock_id: std::option::Option<std::string::String>,
     }
@@ -976,7 +871,7 @@ impl InitiateVaultLockOutput {
 
 /// <p>The Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InitiateMultipartUploadOutput {
     /// <p>The relative URI path of the multipart upload ID Amazon S3 Glacier created.</p>
     #[doc(hidden)]
@@ -995,19 +890,11 @@ impl InitiateMultipartUploadOutput {
         self.upload_id.as_deref()
     }
 }
-impl std::fmt::Debug for InitiateMultipartUploadOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InitiateMultipartUploadOutput");
-        formatter.field("location", &self.location);
-        formatter.field("upload_id", &self.upload_id);
-        formatter.finish()
-    }
-}
 /// See [`InitiateMultipartUploadOutput`](crate::output::InitiateMultipartUploadOutput).
 pub mod initiate_multipart_upload_output {
 
     /// A builder for [`InitiateMultipartUploadOutput`](crate::output::InitiateMultipartUploadOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location: std::option::Option<std::string::String>,
         pub(crate) upload_id: std::option::Option<std::string::String>,
@@ -1051,7 +938,7 @@ impl InitiateMultipartUploadOutput {
 
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InitiateJobOutput {
     /// <p>The relative URI path of the job.</p>
     #[doc(hidden)]
@@ -1077,20 +964,11 @@ impl InitiateJobOutput {
         self.job_output_path.as_deref()
     }
 }
-impl std::fmt::Debug for InitiateJobOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InitiateJobOutput");
-        formatter.field("location", &self.location);
-        formatter.field("job_id", &self.job_id);
-        formatter.field("job_output_path", &self.job_output_path);
-        formatter.finish()
-    }
-}
 /// See [`InitiateJobOutput`](crate::output::InitiateJobOutput).
 pub mod initiate_job_output {
 
     /// A builder for [`InitiateJobOutput`](crate::output::InitiateJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location: std::option::Option<std::string::String>,
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -1149,7 +1027,7 @@ impl InitiateJobOutput {
 
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetVaultNotificationsOutput {
     /// <p>Returns the notification configuration set on the vault.</p>
     #[doc(hidden)]
@@ -1163,18 +1041,11 @@ impl GetVaultNotificationsOutput {
         self.vault_notification_config.as_ref()
     }
 }
-impl std::fmt::Debug for GetVaultNotificationsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetVaultNotificationsOutput");
-        formatter.field("vault_notification_config", &self.vault_notification_config);
-        formatter.finish()
-    }
-}
 /// See [`GetVaultNotificationsOutput`](crate::output::GetVaultNotificationsOutput).
 pub mod get_vault_notifications_output {
 
     /// A builder for [`GetVaultNotificationsOutput`](crate::output::GetVaultNotificationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vault_notification_config:
             std::option::Option<crate::model::VaultNotificationConfig>,
@@ -1213,7 +1084,7 @@ impl GetVaultNotificationsOutput {
 
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetVaultLockOutput {
     /// <p>The vault lock policy as a JSON string, which uses "\" as an escape character.</p>
     #[doc(hidden)]
@@ -1246,21 +1117,11 @@ impl GetVaultLockOutput {
         self.creation_date.as_deref()
     }
 }
-impl std::fmt::Debug for GetVaultLockOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetVaultLockOutput");
-        formatter.field("policy", &self.policy);
-        formatter.field("state", &self.state);
-        formatter.field("expiration_date", &self.expiration_date);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.finish()
-    }
-}
 /// See [`GetVaultLockOutput`](crate::output::GetVaultLockOutput).
 pub mod get_vault_lock_output {
 
     /// A builder for [`GetVaultLockOutput`](crate::output::GetVaultLockOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<std::string::String>,
@@ -1334,7 +1195,7 @@ impl GetVaultLockOutput {
 
 /// <p>Output for GetVaultAccessPolicy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetVaultAccessPolicyOutput {
     /// <p>Contains the returned vault access policy as a JSON string.</p>
     #[doc(hidden)]
@@ -1346,18 +1207,11 @@ impl GetVaultAccessPolicyOutput {
         self.policy.as_ref()
     }
 }
-impl std::fmt::Debug for GetVaultAccessPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetVaultAccessPolicyOutput");
-        formatter.field("policy", &self.policy);
-        formatter.finish()
-    }
-}
 /// See [`GetVaultAccessPolicyOutput`](crate::output::GetVaultAccessPolicyOutput).
 pub mod get_vault_access_policy_output {
 
     /// A builder for [`GetVaultAccessPolicyOutput`](crate::output::GetVaultAccessPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<crate::model::VaultAccessPolicy>,
     }
@@ -1392,6 +1246,7 @@ impl GetVaultAccessPolicyOutput {
 
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct GetJobOutputOutput {
     /// <p>The job data, either archive data or inventory data.</p>
     pub body: aws_smithy_http::byte_stream::ByteStream,
@@ -1452,19 +1307,6 @@ impl GetJobOutputOutput {
     /// <p>The description of an archive.</p>
     pub fn archive_description(&self) -> std::option::Option<&str> {
         self.archive_description.as_deref()
-    }
-}
-impl std::fmt::Debug for GetJobOutputOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetJobOutputOutput");
-        formatter.field("body", &self.body);
-        formatter.field("checksum", &self.checksum);
-        formatter.field("status", &self.status);
-        formatter.field("content_range", &self.content_range);
-        formatter.field("accept_ranges", &self.accept_ranges);
-        formatter.field("content_type", &self.content_type);
-        formatter.field("archive_description", &self.archive_description);
-        formatter.finish()
     }
 }
 /// See [`GetJobOutputOutput`](crate::output::GetJobOutputOutput).
@@ -1597,7 +1439,7 @@ impl GetJobOutputOutput {
 
 /// <p>Contains the Amazon S3 Glacier response to the <code>GetDataRetrievalPolicy</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDataRetrievalPolicyOutput {
     /// <p>Contains the returned data retrieval policy in JSON format.</p>
     #[doc(hidden)]
@@ -1609,18 +1451,11 @@ impl GetDataRetrievalPolicyOutput {
         self.policy.as_ref()
     }
 }
-impl std::fmt::Debug for GetDataRetrievalPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDataRetrievalPolicyOutput");
-        formatter.field("policy", &self.policy);
-        formatter.finish()
-    }
-}
 /// See [`GetDataRetrievalPolicyOutput`](crate::output::GetDataRetrievalPolicyOutput).
 pub mod get_data_retrieval_policy_output {
 
     /// A builder for [`GetDataRetrievalPolicyOutput`](crate::output::GetDataRetrievalPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<crate::model::DataRetrievalPolicy>,
     }
@@ -1655,7 +1490,7 @@ impl GetDataRetrievalPolicyOutput {
 
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeVaultOutput {
     /// <p>The Amazon Resource Name (ARN) of the vault.</p>
     #[doc(hidden)]
@@ -1702,23 +1537,11 @@ impl DescribeVaultOutput {
         self.size_in_bytes
     }
 }
-impl std::fmt::Debug for DescribeVaultOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeVaultOutput");
-        formatter.field("vault_arn", &self.vault_arn);
-        formatter.field("vault_name", &self.vault_name);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("last_inventory_date", &self.last_inventory_date);
-        formatter.field("number_of_archives", &self.number_of_archives);
-        formatter.field("size_in_bytes", &self.size_in_bytes);
-        formatter.finish()
-    }
-}
 /// See [`DescribeVaultOutput`](crate::output::DescribeVaultOutput).
 pub mod describe_vault_output {
 
     /// A builder for [`DescribeVaultOutput`](crate::output::DescribeVaultOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vault_arn: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -1816,7 +1639,7 @@ impl DescribeVaultOutput {
 
 /// <p>Contains the description of an Amazon S3 Glacier job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeJobOutput {
     /// <p>An opaque string that identifies an Amazon S3 Glacier job.</p>
     #[doc(hidden)]
@@ -1997,41 +1820,11 @@ impl DescribeJobOutput {
         self.output_location.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeJobOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeJobOutput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("job_description", &self.job_description);
-        formatter.field("action", &self.action);
-        formatter.field("archive_id", &self.archive_id);
-        formatter.field("vault_arn", &self.vault_arn);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("completed", &self.completed);
-        formatter.field("status_code", &self.status_code);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("archive_size_in_bytes", &self.archive_size_in_bytes);
-        formatter.field("inventory_size_in_bytes", &self.inventory_size_in_bytes);
-        formatter.field("sns_topic", &self.sns_topic);
-        formatter.field("completion_date", &self.completion_date);
-        formatter.field("sha256_tree_hash", &self.sha256_tree_hash);
-        formatter.field("archive_sha256_tree_hash", &self.archive_sha256_tree_hash);
-        formatter.field("retrieval_byte_range", &self.retrieval_byte_range);
-        formatter.field("tier", &self.tier);
-        formatter.field(
-            "inventory_retrieval_parameters",
-            &self.inventory_retrieval_parameters,
-        );
-        formatter.field("job_output_path", &self.job_output_path);
-        formatter.field("select_parameters", &self.select_parameters);
-        formatter.field("output_location", &self.output_location);
-        formatter.finish()
-    }
-}
 /// See [`DescribeJobOutput`](crate::output::DescribeJobOutput).
 pub mod describe_job_output {
 
     /// A builder for [`DescribeJobOutput`](crate::output::DescribeJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_description: std::option::Option<std::string::String>,
@@ -2369,19 +2162,13 @@ impl DescribeJobOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVaultNotificationsOutput {}
-impl std::fmt::Debug for DeleteVaultNotificationsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVaultNotificationsOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteVaultNotificationsOutput`](crate::output::DeleteVaultNotificationsOutput).
 pub mod delete_vault_notifications_output {
 
     /// A builder for [`DeleteVaultNotificationsOutput`](crate::output::DeleteVaultNotificationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteVaultNotificationsOutput`](crate::output::DeleteVaultNotificationsOutput).
@@ -2399,19 +2186,13 @@ impl DeleteVaultNotificationsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVaultAccessPolicyOutput {}
-impl std::fmt::Debug for DeleteVaultAccessPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVaultAccessPolicyOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteVaultAccessPolicyOutput`](crate::output::DeleteVaultAccessPolicyOutput).
 pub mod delete_vault_access_policy_output {
 
     /// A builder for [`DeleteVaultAccessPolicyOutput`](crate::output::DeleteVaultAccessPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteVaultAccessPolicyOutput`](crate::output::DeleteVaultAccessPolicyOutput).
@@ -2429,19 +2210,13 @@ impl DeleteVaultAccessPolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVaultOutput {}
-impl std::fmt::Debug for DeleteVaultOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVaultOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteVaultOutput`](crate::output::DeleteVaultOutput).
 pub mod delete_vault_output {
 
     /// A builder for [`DeleteVaultOutput`](crate::output::DeleteVaultOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteVaultOutput`](crate::output::DeleteVaultOutput).
@@ -2459,19 +2234,13 @@ impl DeleteVaultOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteArchiveOutput {}
-impl std::fmt::Debug for DeleteArchiveOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteArchiveOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteArchiveOutput`](crate::output::DeleteArchiveOutput).
 pub mod delete_archive_output {
 
     /// A builder for [`DeleteArchiveOutput`](crate::output::DeleteArchiveOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteArchiveOutput`](crate::output::DeleteArchiveOutput).
@@ -2489,7 +2258,7 @@ impl DeleteArchiveOutput {
 
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVaultOutput {
     /// <p>The URI of the vault that was created.</p>
     #[doc(hidden)]
@@ -2501,18 +2270,11 @@ impl CreateVaultOutput {
         self.location.as_deref()
     }
 }
-impl std::fmt::Debug for CreateVaultOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVaultOutput");
-        formatter.field("location", &self.location);
-        formatter.finish()
-    }
-}
 /// See [`CreateVaultOutput`](crate::output::CreateVaultOutput).
 pub mod create_vault_output {
 
     /// A builder for [`CreateVaultOutput`](crate::output::CreateVaultOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location: std::option::Option<std::string::String>,
     }
@@ -2544,19 +2306,13 @@ impl CreateVaultOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CompleteVaultLockOutput {}
-impl std::fmt::Debug for CompleteVaultLockOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CompleteVaultLockOutput");
-        formatter.finish()
-    }
-}
 /// See [`CompleteVaultLockOutput`](crate::output::CompleteVaultLockOutput).
 pub mod complete_vault_lock_output {
 
     /// A builder for [`CompleteVaultLockOutput`](crate::output::CompleteVaultLockOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CompleteVaultLockOutput`](crate::output::CompleteVaultLockOutput).
@@ -2575,7 +2331,7 @@ impl CompleteVaultLockOutput {
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 /// <p>For information about the underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">Upload Archive</a>. For conceptual information, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working with Archives in Amazon S3 Glacier</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CompleteMultipartUploadOutput {
     /// <p>The relative URI path of the newly added archive resource.</p>
     #[doc(hidden)]
@@ -2601,20 +2357,11 @@ impl CompleteMultipartUploadOutput {
         self.archive_id.as_deref()
     }
 }
-impl std::fmt::Debug for CompleteMultipartUploadOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CompleteMultipartUploadOutput");
-        formatter.field("location", &self.location);
-        formatter.field("checksum", &self.checksum);
-        formatter.field("archive_id", &self.archive_id);
-        formatter.finish()
-    }
-}
 /// See [`CompleteMultipartUploadOutput`](crate::output::CompleteMultipartUploadOutput).
 pub mod complete_multipart_upload_output {
 
     /// A builder for [`CompleteMultipartUploadOutput`](crate::output::CompleteMultipartUploadOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location: std::option::Option<std::string::String>,
         pub(crate) checksum: std::option::Option<std::string::String>,
@@ -2670,19 +2417,13 @@ impl CompleteMultipartUploadOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddTagsToVaultOutput {}
-impl std::fmt::Debug for AddTagsToVaultOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddTagsToVaultOutput");
-        formatter.finish()
-    }
-}
 /// See [`AddTagsToVaultOutput`](crate::output::AddTagsToVaultOutput).
 pub mod add_tags_to_vault_output {
 
     /// A builder for [`AddTagsToVaultOutput`](crate::output::AddTagsToVaultOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AddTagsToVaultOutput`](crate::output::AddTagsToVaultOutput).
@@ -2700,19 +2441,13 @@ impl AddTagsToVaultOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AbortVaultLockOutput {}
-impl std::fmt::Debug for AbortVaultLockOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AbortVaultLockOutput");
-        formatter.finish()
-    }
-}
 /// See [`AbortVaultLockOutput`](crate::output::AbortVaultLockOutput).
 pub mod abort_vault_lock_output {
 
     /// A builder for [`AbortVaultLockOutput`](crate::output::AbortVaultLockOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AbortVaultLockOutput`](crate::output::AbortVaultLockOutput).
@@ -2730,19 +2465,13 @@ impl AbortVaultLockOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AbortMultipartUploadOutput {}
-impl std::fmt::Debug for AbortMultipartUploadOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AbortMultipartUploadOutput");
-        formatter.finish()
-    }
-}
 /// See [`AbortMultipartUploadOutput`](crate::output::AbortMultipartUploadOutput).
 pub mod abort_multipart_upload_output {
 
     /// A builder for [`AbortMultipartUploadOutput`](crate::output::AbortMultipartUploadOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AbortMultipartUploadOutput`](crate::output::AbortMultipartUploadOutput).

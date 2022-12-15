@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod get_latest_configuration_input {
 
     /// A builder for [`GetLatestConfigurationInput`](crate::input::GetLatestConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_token: std::option::Option<std::string::String>,
     }
@@ -26,8 +26,10 @@ pub mod get_latest_configuration_input {
         /// Consumes the builder and constructs a [`GetLatestConfigurationInput`](crate::input::GetLatestConfigurationInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetLatestConfigurationInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetLatestConfigurationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetLatestConfigurationInput {
                 configuration_token: self.configuration_token,
             })
@@ -47,35 +49,50 @@ impl GetLatestConfigurationInput {
             crate::operation::GetLatestConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetLatestConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/configuration").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::GetLatestConfigurationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_1) = &_input.configuration_token {
-                    query.push_kv(
+                let inner_1 = &_input.configuration_token;
+                let inner_1 = inner_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
                         "configuration_token",
-                        &aws_smithy_http::query::fmt_string(&inner_1),
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_1.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "configuration_token",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "configuration_token",
+                    &aws_smithy_http::query::fmt_string(&inner_1),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::GetLatestConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -146,7 +163,7 @@ impl GetLatestConfigurationInput {
 pub mod start_configuration_session_input {
 
     /// A builder for [`StartConfigurationSessionInput`](crate::input::StartConfigurationSessionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_identifier: std::option::Option<std::string::String>,
         pub(crate) environment_identifier: std::option::Option<std::string::String>,
@@ -214,7 +231,7 @@ pub mod start_configuration_session_input {
             self,
         ) -> Result<
             crate::input::StartConfigurationSessionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::StartConfigurationSessionInput {
                 application_identifier: self.application_identifier,
@@ -239,13 +256,13 @@ impl StartConfigurationSessionInput {
             crate::operation::StartConfigurationSession,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StartConfigurationSessionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/configurationsessions").expect("formatting should succeed");
                 Ok(())
             }
@@ -253,8 +270,10 @@ impl StartConfigurationSessionInput {
             fn update_http_builder(
                 input: &crate::input::StartConfigurationSessionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -338,7 +357,7 @@ impl StartConfigurationSessionInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartConfigurationSessionInput {
     /// <p>The application ID or the application name.</p>
     #[doc(hidden)]
@@ -371,26 +390,10 @@ impl StartConfigurationSessionInput {
         self.required_minimum_poll_interval_in_seconds
     }
 }
-impl std::fmt::Debug for StartConfigurationSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartConfigurationSessionInput");
-        formatter.field("application_identifier", &self.application_identifier);
-        formatter.field("environment_identifier", &self.environment_identifier);
-        formatter.field(
-            "configuration_profile_identifier",
-            &self.configuration_profile_identifier,
-        );
-        formatter.field(
-            "required_minimum_poll_interval_in_seconds",
-            &self.required_minimum_poll_interval_in_seconds,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLatestConfigurationInput {
     /// <p>Token describing the current state of the configuration session. To obtain a token, first call the <code>StartConfigurationSession</code> API. Note that every call to <code>GetLatestConfiguration</code> will return a new <code>ConfigurationToken</code> (<code>NextPollConfigurationToken</code> in the response) and MUST be provided to subsequent <code>GetLatestConfiguration</code> API calls.</p>
     #[doc(hidden)]
@@ -400,12 +403,5 @@ impl GetLatestConfigurationInput {
     /// <p>Token describing the current state of the configuration session. To obtain a token, first call the <code>StartConfigurationSession</code> API. Note that every call to <code>GetLatestConfiguration</code> will return a new <code>ConfigurationToken</code> (<code>NextPollConfigurationToken</code> in the response) and MUST be provided to subsequent <code>GetLatestConfiguration</code> API calls.</p>
     pub fn configuration_token(&self) -> std::option::Option<&str> {
         self.configuration_token.as_deref()
-    }
-}
-impl std::fmt::Debug for GetLatestConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLatestConfigurationInput");
-        formatter.field("configuration_token", &self.configuration_token);
-        formatter.finish()
     }
 }

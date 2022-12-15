@@ -5,7 +5,7 @@
 /// [`add_draft_app_version_resource_mappings`](crate::client::Client::add_draft_app_version_resource_mappings).
 ///
 /// See [`crate::client::fluent_builders::AddDraftAppVersionResourceMappings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AddDraftAppVersionResourceMappings {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddDraftAppVersionResour
 /// [`create_app`](crate::client::Client::create_app).
 ///
 /// See [`crate::client::fluent_builders::CreateApp`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateApp {
     _private: (),
 }
@@ -70,7 +70,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateApp {
 /// [`create_recommendation_template`](crate::client::Client::create_recommendation_template).
 ///
 /// See [`crate::client::fluent_builders::CreateRecommendationTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateRecommendationTemplate {
     _private: (),
 }
@@ -104,7 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRecommendationTemp
 /// [`create_resiliency_policy`](crate::client::Client::create_resiliency_policy).
 ///
 /// See [`crate::client::fluent_builders::CreateResiliencyPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateResiliencyPolicy {
     _private: (),
 }
@@ -138,7 +138,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateResiliencyPolicy {
 /// [`delete_app`](crate::client::Client::delete_app).
 ///
 /// See [`crate::client::fluent_builders::DeleteApp`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteApp {
     _private: (),
 }
@@ -169,7 +169,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteApp {
 /// [`delete_app_assessment`](crate::client::Client::delete_app_assessment).
 ///
 /// See [`crate::client::fluent_builders::DeleteAppAssessment`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteAppAssessment {
     _private: (),
 }
@@ -203,7 +203,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAppAssessment {
 /// [`delete_recommendation_template`](crate::client::Client::delete_recommendation_template).
 ///
 /// See [`crate::client::fluent_builders::DeleteRecommendationTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRecommendationTemplate {
     _private: (),
 }
@@ -237,7 +237,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRecommendationTemp
 /// [`delete_resiliency_policy`](crate::client::Client::delete_resiliency_policy).
 ///
 /// See [`crate::client::fluent_builders::DeleteResiliencyPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteResiliencyPolicy {
     _private: (),
 }
@@ -271,7 +271,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteResiliencyPolicy {
 /// [`describe_app`](crate::client::Client::describe_app).
 ///
 /// See [`crate::client::fluent_builders::DescribeApp`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeApp {
     _private: (),
 }
@@ -303,7 +303,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeApp {
 /// [`describe_app_assessment`](crate::client::Client::describe_app_assessment).
 ///
 /// See [`crate::client::fluent_builders::DescribeAppAssessment`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAppAssessment {
     _private: (),
 }
@@ -337,7 +337,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAppAssessment {
 /// [`describe_app_version_resources_resolution_status`](crate::client::Client::describe_app_version_resources_resolution_status).
 ///
 /// See [`crate::client::fluent_builders::DescribeAppVersionResourcesResolutionStatus`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAppVersionResourcesResolutionStatus {
     _private: (),
 }
@@ -378,7 +378,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// [`describe_app_version_template`](crate::client::Client::describe_app_version_template).
 ///
 /// See [`crate::client::fluent_builders::DescribeAppVersionTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAppVersionTemplate {
     _private: (),
 }
@@ -412,7 +412,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAppVersionTempla
 /// [`describe_draft_app_version_resources_import_status`](crate::client::Client::describe_draft_app_version_resources_import_status).
 ///
 /// See [`crate::client::fluent_builders::DescribeDraftAppVersionResourcesImportStatus`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDraftAppVersionResourcesImportStatus {
     _private: (),
 }
@@ -451,7 +451,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// [`describe_resiliency_policy`](crate::client::Client::describe_resiliency_policy).
 ///
 /// See [`crate::client::fluent_builders::DescribeResiliencyPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeResiliencyPolicy {
     _private: (),
 }
@@ -485,7 +485,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeResiliencyPolicy
 /// [`import_resources_to_draft_app_version`](crate::client::Client::import_resources_to_draft_app_version).
 ///
 /// See [`crate::client::fluent_builders::ImportResourcesToDraftAppVersion`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ImportResourcesToDraftAppVersion {
     _private: (),
 }
@@ -519,7 +519,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportResourcesToDraftAp
 /// [`list_alarm_recommendations`](crate::client::Client::list_alarm_recommendations).
 ///
 /// See [`crate::client::fluent_builders::ListAlarmRecommendations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAlarmRecommendations {
     _private: (),
 }
@@ -553,7 +553,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAlarmRecommendations
 /// [`list_app_assessments`](crate::client::Client::list_app_assessments).
 ///
 /// See [`crate::client::fluent_builders::ListAppAssessments`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAppAssessments {
     _private: (),
 }
@@ -587,7 +587,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAppAssessments {
 /// [`list_app_component_compliances`](crate::client::Client::list_app_component_compliances).
 ///
 /// See [`crate::client::fluent_builders::ListAppComponentCompliances`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAppComponentCompliances {
     _private: (),
 }
@@ -621,7 +621,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAppComponentComplian
 /// [`list_app_component_recommendations`](crate::client::Client::list_app_component_recommendations).
 ///
 /// See [`crate::client::fluent_builders::ListAppComponentRecommendations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAppComponentRecommendations {
     _private: (),
 }
@@ -655,7 +655,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAppComponentRecommen
 /// [`list_apps`](crate::client::Client::list_apps).
 ///
 /// See [`crate::client::fluent_builders::ListApps`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListApps {
     _private: (),
 }
@@ -686,7 +686,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListApps {
 /// [`list_app_version_resource_mappings`](crate::client::Client::list_app_version_resource_mappings).
 ///
 /// See [`crate::client::fluent_builders::ListAppVersionResourceMappings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAppVersionResourceMappings {
     _private: (),
 }
@@ -720,7 +720,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAppVersionResourceMa
 /// [`list_app_version_resources`](crate::client::Client::list_app_version_resources).
 ///
 /// See [`crate::client::fluent_builders::ListAppVersionResources`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAppVersionResources {
     _private: (),
 }
@@ -754,7 +754,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAppVersionResources 
 /// [`list_app_versions`](crate::client::Client::list_app_versions).
 ///
 /// See [`crate::client::fluent_builders::ListAppVersions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAppVersions {
     _private: (),
 }
@@ -788,7 +788,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAppVersions {
 /// [`list_recommendation_templates`](crate::client::Client::list_recommendation_templates).
 ///
 /// See [`crate::client::fluent_builders::ListRecommendationTemplates`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRecommendationTemplates {
     _private: (),
 }
@@ -822,7 +822,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRecommendationTempla
 /// [`list_resiliency_policies`](crate::client::Client::list_resiliency_policies).
 ///
 /// See [`crate::client::fluent_builders::ListResiliencyPolicies`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListResiliencyPolicies {
     _private: (),
 }
@@ -856,7 +856,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResiliencyPolicies {
 /// [`list_sop_recommendations`](crate::client::Client::list_sop_recommendations).
 ///
 /// See [`crate::client::fluent_builders::ListSopRecommendations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSopRecommendations {
     _private: (),
 }
@@ -890,7 +890,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSopRecommendations {
 /// [`list_suggested_resiliency_policies`](crate::client::Client::list_suggested_resiliency_policies).
 ///
 /// See [`crate::client::fluent_builders::ListSuggestedResiliencyPolicies`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSuggestedResiliencyPolicies {
     _private: (),
 }
@@ -924,7 +924,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSuggestedResiliencyP
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -958,7 +958,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`list_test_recommendations`](crate::client::Client::list_test_recommendations).
 ///
 /// See [`crate::client::fluent_builders::ListTestRecommendations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTestRecommendations {
     _private: (),
 }
@@ -992,7 +992,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTestRecommendations 
 /// [`list_unsupported_app_version_resources`](crate::client::Client::list_unsupported_app_version_resources).
 ///
 /// See [`crate::client::fluent_builders::ListUnsupportedAppVersionResources`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListUnsupportedAppVersionResources {
     _private: (),
 }
@@ -1026,7 +1026,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListUnsupportedAppVersio
 /// [`publish_app_version`](crate::client::Client::publish_app_version).
 ///
 /// See [`crate::client::fluent_builders::PublishAppVersion`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PublishAppVersion {
     _private: (),
 }
@@ -1060,7 +1060,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PublishAppVersion {
 /// [`put_draft_app_version_template`](crate::client::Client::put_draft_app_version_template).
 ///
 /// See [`crate::client::fluent_builders::PutDraftAppVersionTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutDraftAppVersionTemplate {
     _private: (),
 }
@@ -1094,7 +1094,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutDraftAppVersionTempla
 /// [`remove_draft_app_version_resource_mappings`](crate::client::Client::remove_draft_app_version_resource_mappings).
 ///
 /// See [`crate::client::fluent_builders::RemoveDraftAppVersionResourceMappings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RemoveDraftAppVersionResourceMappings {
     _private: (),
 }
@@ -1130,7 +1130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveDraftAppVersionRes
 /// [`resolve_app_version_resources`](crate::client::Client::resolve_app_version_resources).
 ///
 /// See [`crate::client::fluent_builders::ResolveAppVersionResources`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ResolveAppVersionResources {
     _private: (),
 }
@@ -1164,7 +1164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResolveAppVersionResourc
 /// [`start_app_assessment`](crate::client::Client::start_app_assessment).
 ///
 /// See [`crate::client::fluent_builders::StartAppAssessment`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartAppAssessment {
     _private: (),
 }
@@ -1198,7 +1198,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartAppAssessment {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -1230,7 +1230,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -1262,7 +1262,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_app`](crate::client::Client::update_app).
 ///
 /// See [`crate::client::fluent_builders::UpdateApp`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateApp {
     _private: (),
 }
@@ -1293,7 +1293,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateApp {
 /// [`update_resiliency_policy`](crate::client::Client::update_resiliency_policy).
 ///
 /// See [`crate::client::fluent_builders::UpdateResiliencyPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateResiliencyPolicy {
     _private: (),
 }

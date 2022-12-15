@@ -4,147 +4,173 @@
  */
 
 use crate::Credentials;
-use std::error::Error;
-use std::fmt::{self, Debug, Display, Formatter};
 use std::sync::Arc;
-use std::time::Duration;
 
-/// Error returned when credentials failed to load.
-#[derive(Debug)]
-#[non_exhaustive]
-pub enum CredentialsError {
-    /// No credentials were available for this provider
-    #[non_exhaustive]
-    CredentialsNotLoaded {
-        /// Underlying cause of the error.
-        context: Box<dyn Error + Send + Sync + 'static>,
-    },
+/// Credentials provider errors
+pub mod error {
+    use std::error::Error;
+    use std::fmt;
+    use std::time::Duration;
 
-    /// Loading credentials from this provider exceeded the maximum allowed duration
-    #[non_exhaustive]
-    ProviderTimedOut(Duration),
+    /// Details for [`CredentialsError::CredentialsNotLoaded`]
+    #[derive(Debug)]
+    pub struct CredentialsNotLoaded {
+        source: Box<dyn Error + Send + Sync + 'static>,
+    }
 
-    /// The provider was given an invalid configuration
-    ///
-    /// For example:
-    /// - syntax error in ~/.aws/config
-    /// - assume role profile that forms an infinite loop
-    #[non_exhaustive]
-    InvalidConfiguration {
-        /// Underlying cause of the error.
-        cause: Box<dyn Error + Send + Sync + 'static>,
-    },
+    /// Details for [`CredentialsError::ProviderTimedOut`]
+    #[derive(Debug)]
+    pub struct ProviderTimedOut {
+        timeout_duration: Duration,
+    }
 
-    /// The provider experienced an error during credential resolution
-    ///
-    /// This may include errors like a 503 from STS or a file system error when attempting to
-    /// read a configuration file.
-    #[non_exhaustive]
-    ProviderError {
-        /// Underlying cause of the error.
-        cause: Box<dyn Error + Send + Sync + 'static>,
-    },
-
-    /// An unexpected error occurred during credential resolution
-    ///
-    /// If the error is something that can occur during expected usage of a provider, `ProviderError`
-    /// should be returned instead. Unhandled is reserved for exceptional cases, for example:
-    /// - Returned data not UTF-8
-    /// - A provider returns data that is missing required fields
-    #[non_exhaustive]
-    Unhandled {
-        /// Underlying cause of the error.
-        cause: Box<dyn Error + Send + Sync + 'static>,
-    },
-}
-
-impl CredentialsError {
-    /// The credentials provider did not provide credentials
-    ///
-    /// This error indicates the credentials provider was not enable or no configuration was set.
-    /// This contrasts with [`invalid_configuration`](CredentialsError::InvalidConfiguration), indicating
-    /// that the provider was configured in some way, but certain settings were invalid.
-    pub fn not_loaded(context: impl Into<Box<dyn Error + Send + Sync + 'static>>) -> Self {
-        CredentialsError::CredentialsNotLoaded {
-            context: context.into(),
+    impl ProviderTimedOut {
+        /// Returns the maximum allowed timeout duration that was exceeded
+        pub fn timeout_duration(&self) -> Duration {
+            self.timeout_duration
         }
     }
 
-    /// An unexpected error occurred loading credentials from this provider
-    ///
-    /// Unhandled errors should not occur during normal operation and should be reserved for exceptional
-    /// cases, such as a JSON API returning an output that was not parseable as JSON.
-    pub fn unhandled(cause: impl Into<Box<dyn Error + Send + Sync + 'static>>) -> Self {
-        Self::Unhandled {
-            cause: cause.into(),
+    /// Details for [`CredentialsError::InvalidConfiguration`]
+    #[derive(Debug)]
+    pub struct InvalidConfiguration {
+        source: Box<dyn Error + Send + Sync + 'static>,
+    }
+
+    /// Details for [`CredentialsError::ProviderError`]
+    #[derive(Debug)]
+    pub struct ProviderError {
+        source: Box<dyn Error + Send + Sync + 'static>,
+    }
+
+    /// Details for [`CredentialsError::Unhandled`]
+    #[derive(Debug)]
+    pub struct Unhandled {
+        source: Box<dyn Error + Send + Sync + 'static>,
+    }
+
+    /// Error returned when credentials failed to load.
+    #[derive(Debug)]
+    #[non_exhaustive]
+    pub enum CredentialsError {
+        /// No credentials were available for this provider
+        CredentialsNotLoaded(CredentialsNotLoaded),
+
+        /// Loading credentials from this provider exceeded the maximum allowed duration
+        ProviderTimedOut(ProviderTimedOut),
+
+        /// The provider was given an invalid configuration
+        ///
+        /// For example:
+        /// - syntax error in ~/.aws/config
+        /// - assume role profile that forms an infinite loop
+        InvalidConfiguration(InvalidConfiguration),
+
+        /// The provider experienced an error during credential resolution
+        ///
+        /// This may include errors like a 503 from STS or a file system error when attempting to
+        /// read a configuration file.
+        ProviderError(ProviderError),
+
+        /// An unexpected error occurred during credential resolution
+        ///
+        /// If the error is something that can occur during expected usage of a provider, `ProviderError`
+        /// should be returned instead. Unhandled is reserved for exceptional cases, for example:
+        /// - Returned data not UTF-8
+        /// - A provider returns data that is missing required fields
+        Unhandled(Unhandled),
+    }
+
+    impl CredentialsError {
+        /// The credentials provider did not provide credentials
+        ///
+        /// This error indicates the credentials provider was not enable or no configuration was set.
+        /// This contrasts with [`invalid_configuration`](CredentialsError::InvalidConfiguration), indicating
+        /// that the provider was configured in some way, but certain settings were invalid.
+        pub fn not_loaded(source: impl Into<Box<dyn Error + Send + Sync + 'static>>) -> Self {
+            CredentialsError::CredentialsNotLoaded(CredentialsNotLoaded {
+                source: source.into(),
+            })
+        }
+
+        /// An unexpected error occurred loading credentials from this provider
+        ///
+        /// Unhandled errors should not occur during normal operation and should be reserved for exceptional
+        /// cases, such as a JSON API returning an output that was not parseable as JSON.
+        pub fn unhandled(source: impl Into<Box<dyn Error + Send + Sync + 'static>>) -> Self {
+            Self::Unhandled(Unhandled {
+                source: source.into(),
+            })
+        }
+
+        /// The credentials provider returned an error
+        ///
+        /// Provider errors may occur during normal use of a credentials provider, e.g. a 503 when
+        /// retrieving credentials from IMDS.
+        pub fn provider_error(source: impl Into<Box<dyn Error + Send + Sync + 'static>>) -> Self {
+            Self::ProviderError(ProviderError {
+                source: source.into(),
+            })
+        }
+
+        /// The provided configuration for a provider was invalid
+        pub fn invalid_configuration(
+            source: impl Into<Box<dyn Error + Send + Sync + 'static>>,
+        ) -> Self {
+            Self::InvalidConfiguration(InvalidConfiguration {
+                source: source.into(),
+            })
+        }
+
+        /// The credentials provider did not provide credentials within an allotted duration
+        pub fn provider_timed_out(timeout_duration: Duration) -> Self {
+            Self::ProviderTimedOut(ProviderTimedOut { timeout_duration })
         }
     }
 
-    /// The credentials provider returned an error
-    ///
-    /// Provider errors may occur during normal use of a credentials provider, e.g. a 503 when
-    /// retrieving credentials from IMDS.
-    pub fn provider_error(cause: impl Into<Box<dyn Error + Send + Sync + 'static>>) -> Self {
-        Self::ProviderError {
-            cause: cause.into(),
-        }
-    }
-
-    /// The provided configuration for a provider was invalid
-    pub fn invalid_configuration(cause: impl Into<Box<dyn Error + Send + Sync + 'static>>) -> Self {
-        Self::InvalidConfiguration {
-            cause: cause.into(),
-        }
-    }
-
-    /// The credentials provider did not provide credentials within an allotted duration
-    pub fn provider_timed_out(context: Duration) -> Self {
-        Self::ProviderTimedOut(context)
-    }
-}
-
-impl Display for CredentialsError {
-    fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
-        match self {
-            CredentialsError::CredentialsNotLoaded { context } => {
-                write!(f, "The credential provider was not enabled: {}", context)
-            }
-            CredentialsError::ProviderTimedOut(d) => write!(
-                f,
-                "Credentials provider timed out after {} seconds",
-                d.as_secs()
-            ),
-            CredentialsError::Unhandled { cause } => {
-                write!(f, "Unexpected credentials error: {}", cause)
-            }
-            CredentialsError::InvalidConfiguration { cause } => {
-                write!(
+    impl fmt::Display for CredentialsError {
+        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+            match self {
+                CredentialsError::CredentialsNotLoaded(_) => {
+                    write!(f, "the credential provider was not enabled")
+                }
+                CredentialsError::ProviderTimedOut(details) => write!(
                     f,
-                    "The credentials provider was not properly configured: {}",
-                    cause
-                )
-            }
-            CredentialsError::ProviderError { cause } => {
-                write!(f, "An error occurred while loading credentials: {}", cause)
+                    "credentials provider timed out after {} seconds",
+                    details.timeout_duration.as_secs()
+                ),
+                CredentialsError::InvalidConfiguration(_) => {
+                    write!(f, "the credentials provider was not properly configured")
+                }
+                CredentialsError::ProviderError(_) => {
+                    write!(f, "an error occurred while loading credentials")
+                }
+                CredentialsError::Unhandled(_) => {
+                    write!(f, "unexpected credentials error")
+                }
             }
         }
     }
-}
 
-impl Error for CredentialsError {
-    fn source(&self) -> Option<&(dyn Error + 'static)> {
-        match self {
-            CredentialsError::Unhandled { cause }
-            | CredentialsError::ProviderError { cause }
-            | CredentialsError::InvalidConfiguration { cause } => Some(cause.as_ref() as _),
-            CredentialsError::CredentialsNotLoaded { context } => Some(context.as_ref() as _),
-            _ => None,
+    impl Error for CredentialsError {
+        fn source(&self) -> Option<&(dyn Error + 'static)> {
+            match self {
+                CredentialsError::CredentialsNotLoaded(details) => {
+                    Some(details.source.as_ref() as _)
+                }
+                CredentialsError::ProviderTimedOut(_) => None,
+                CredentialsError::InvalidConfiguration(details) => {
+                    Some(details.source.as_ref() as _)
+                }
+                CredentialsError::ProviderError(details) => Some(details.source.as_ref() as _),
+                CredentialsError::Unhandled(details) => Some(details.source.as_ref() as _),
+            }
         }
     }
 }
 
 /// Result type for credential providers.
-pub type Result = std::result::Result<Credentials, CredentialsError>;
+pub type Result = std::result::Result<Credentials, error::CredentialsError>;
 
 /// Convenience `ProvideCredentials` struct that implements the `ProvideCredentials` trait.
 pub mod future {
@@ -181,7 +207,7 @@ pub mod future {
 }
 
 /// Asynchronous Credentials Provider
-pub trait ProvideCredentials: Send + Sync + Debug {
+pub trait ProvideCredentials: Send + Sync + std::fmt::Debug {
     /// Returns a future that provides credentials.
     fn provide_credentials<'a>(&'a self) -> future::ProvideCredentials<'a>
     where

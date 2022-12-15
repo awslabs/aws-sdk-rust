@@ -2,7 +2,7 @@
 
 /// <p>An activity that performs a transformation on a message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PipelineActivity {
     /// <p>Determines the source of the messages to be processed.</p>
     #[doc(hidden)]
@@ -85,27 +85,11 @@ impl PipelineActivity {
         self.device_shadow_enrich.as_ref()
     }
 }
-impl std::fmt::Debug for PipelineActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PipelineActivity");
-        formatter.field("channel", &self.channel);
-        formatter.field("lambda", &self.lambda);
-        formatter.field("datastore", &self.datastore);
-        formatter.field("add_attributes", &self.add_attributes);
-        formatter.field("remove_attributes", &self.remove_attributes);
-        formatter.field("select_attributes", &self.select_attributes);
-        formatter.field("filter", &self.filter);
-        formatter.field("math", &self.math);
-        formatter.field("device_registry_enrich", &self.device_registry_enrich);
-        formatter.field("device_shadow_enrich", &self.device_shadow_enrich);
-        formatter.finish()
-    }
-}
 /// See [`PipelineActivity`](crate::model::PipelineActivity).
 pub mod pipeline_activity {
 
     /// A builder for [`PipelineActivity`](crate::model::PipelineActivity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel: std::option::Option<crate::model::ChannelActivity>,
         pub(crate) lambda: std::option::Option<crate::model::LambdaActivity>,
@@ -280,7 +264,7 @@ impl PipelineActivity {
 
 /// <p>An activity that adds information from the IoT Device Shadow service to a message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeviceShadowEnrichActivity {
     /// <p>The name of the <code>deviceShadowEnrich</code> activity.</p>
     #[doc(hidden)]
@@ -320,22 +304,11 @@ impl DeviceShadowEnrichActivity {
         self.next.as_deref()
     }
 }
-impl std::fmt::Debug for DeviceShadowEnrichActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeviceShadowEnrichActivity");
-        formatter.field("name", &self.name);
-        formatter.field("attribute", &self.attribute);
-        formatter.field("thing_name", &self.thing_name);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("next", &self.next);
-        formatter.finish()
-    }
-}
 /// See [`DeviceShadowEnrichActivity`](crate::model::DeviceShadowEnrichActivity).
 pub mod device_shadow_enrich_activity {
 
     /// A builder for [`DeviceShadowEnrichActivity`](crate::model::DeviceShadowEnrichActivity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) attribute: std::option::Option<std::string::String>,
@@ -415,7 +388,7 @@ impl DeviceShadowEnrichActivity {
 
 /// <p>An activity that adds data from the IoT device registry to your message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeviceRegistryEnrichActivity {
     /// <p>The name of the <code>deviceRegistryEnrich</code> activity.</p>
     #[doc(hidden)]
@@ -455,22 +428,11 @@ impl DeviceRegistryEnrichActivity {
         self.next.as_deref()
     }
 }
-impl std::fmt::Debug for DeviceRegistryEnrichActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeviceRegistryEnrichActivity");
-        formatter.field("name", &self.name);
-        formatter.field("attribute", &self.attribute);
-        formatter.field("thing_name", &self.thing_name);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("next", &self.next);
-        formatter.finish()
-    }
-}
 /// See [`DeviceRegistryEnrichActivity`](crate::model::DeviceRegistryEnrichActivity).
 pub mod device_registry_enrich_activity {
 
     /// A builder for [`DeviceRegistryEnrichActivity`](crate::model::DeviceRegistryEnrichActivity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) attribute: std::option::Option<std::string::String>,
@@ -550,7 +512,7 @@ impl DeviceRegistryEnrichActivity {
 
 /// <p>An activity that computes an arithmetic expression using the message's attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MathActivity {
     /// <p>The name of the math activity.</p>
     #[doc(hidden)]
@@ -583,21 +545,11 @@ impl MathActivity {
         self.next.as_deref()
     }
 }
-impl std::fmt::Debug for MathActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MathActivity");
-        formatter.field("name", &self.name);
-        formatter.field("attribute", &self.attribute);
-        formatter.field("math", &self.math);
-        formatter.field("next", &self.next);
-        formatter.finish()
-    }
-}
 /// See [`MathActivity`](crate::model::MathActivity).
 pub mod math_activity {
 
     /// A builder for [`MathActivity`](crate::model::MathActivity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) attribute: std::option::Option<std::string::String>,
@@ -665,7 +617,7 @@ impl MathActivity {
 
 /// <p>An activity that filters a message based on its attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FilterActivity {
     /// <p>The name of the filter activity.</p>
     #[doc(hidden)]
@@ -691,20 +643,11 @@ impl FilterActivity {
         self.next.as_deref()
     }
 }
-impl std::fmt::Debug for FilterActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FilterActivity");
-        formatter.field("name", &self.name);
-        formatter.field("filter", &self.filter);
-        formatter.field("next", &self.next);
-        formatter.finish()
-    }
-}
 /// See [`FilterActivity`](crate::model::FilterActivity).
 pub mod filter_activity {
 
     /// A builder for [`FilterActivity`](crate::model::FilterActivity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) filter: std::option::Option<std::string::String>,
@@ -760,7 +703,7 @@ impl FilterActivity {
 
 /// <p>Used to create a new message using only the specified attributes from the original message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SelectAttributesActivity {
     /// <p>The name of the <code>selectAttributes</code> activity.</p>
     #[doc(hidden)]
@@ -786,20 +729,11 @@ impl SelectAttributesActivity {
         self.next.as_deref()
     }
 }
-impl std::fmt::Debug for SelectAttributesActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SelectAttributesActivity");
-        formatter.field("name", &self.name);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("next", &self.next);
-        formatter.finish()
-    }
-}
 /// See [`SelectAttributesActivity`](crate::model::SelectAttributesActivity).
 pub mod select_attributes_activity {
 
     /// A builder for [`SelectAttributesActivity`](crate::model::SelectAttributesActivity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) attributes: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -864,7 +798,7 @@ impl SelectAttributesActivity {
 
 /// <p>An activity that removes attributes from a message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveAttributesActivity {
     /// <p>The name of the <code>removeAttributes</code> activity.</p>
     #[doc(hidden)]
@@ -890,20 +824,11 @@ impl RemoveAttributesActivity {
         self.next.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveAttributesActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveAttributesActivity");
-        formatter.field("name", &self.name);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("next", &self.next);
-        formatter.finish()
-    }
-}
 /// See [`RemoveAttributesActivity`](crate::model::RemoveAttributesActivity).
 pub mod remove_attributes_activity {
 
     /// A builder for [`RemoveAttributesActivity`](crate::model::RemoveAttributesActivity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) attributes: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -968,7 +893,7 @@ impl RemoveAttributesActivity {
 
 /// <p>An activity that adds other attributes based on existing attributes in the message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddAttributesActivity {
     /// <p>The name of the addAttributes activity.</p>
     #[doc(hidden)]
@@ -1002,20 +927,11 @@ impl AddAttributesActivity {
         self.next.as_deref()
     }
 }
-impl std::fmt::Debug for AddAttributesActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddAttributesActivity");
-        formatter.field("name", &self.name);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("next", &self.next);
-        formatter.finish()
-    }
-}
 /// See [`AddAttributesActivity`](crate::model::AddAttributesActivity).
 pub mod add_attributes_activity {
 
     /// A builder for [`AddAttributesActivity`](crate::model::AddAttributesActivity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) attributes: std::option::Option<
@@ -1092,7 +1008,7 @@ impl AddAttributesActivity {
 
 /// <p>The datastore activity that specifies where to store the processed data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatastoreActivity {
     /// <p>The name of the datastore activity.</p>
     #[doc(hidden)]
@@ -1111,19 +1027,11 @@ impl DatastoreActivity {
         self.datastore_name.as_deref()
     }
 }
-impl std::fmt::Debug for DatastoreActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatastoreActivity");
-        formatter.field("name", &self.name);
-        formatter.field("datastore_name", &self.datastore_name);
-        formatter.finish()
-    }
-}
 /// See [`DatastoreActivity`](crate::model::DatastoreActivity).
 pub mod datastore_activity {
 
     /// A builder for [`DatastoreActivity`](crate::model::DatastoreActivity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) datastore_name: std::option::Option<std::string::String>,
@@ -1170,7 +1078,7 @@ impl DatastoreActivity {
 
 /// <p>An activity that runs a Lambda function to modify the message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaActivity {
     /// <p>The name of the lambda activity.</p>
     #[doc(hidden)]
@@ -1205,21 +1113,11 @@ impl LambdaActivity {
         self.next.as_deref()
     }
 }
-impl std::fmt::Debug for LambdaActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaActivity");
-        formatter.field("name", &self.name);
-        formatter.field("lambda_name", &self.lambda_name);
-        formatter.field("batch_size", &self.batch_size);
-        formatter.field("next", &self.next);
-        formatter.finish()
-    }
-}
 /// See [`LambdaActivity`](crate::model::LambdaActivity).
 pub mod lambda_activity {
 
     /// A builder for [`LambdaActivity`](crate::model::LambdaActivity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) lambda_name: std::option::Option<std::string::String>,
@@ -1289,7 +1187,7 @@ impl LambdaActivity {
 
 /// <p>The activity that determines the source of the messages to be processed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelActivity {
     /// <p>The name of the channel activity.</p>
     #[doc(hidden)]
@@ -1315,20 +1213,11 @@ impl ChannelActivity {
         self.next.as_deref()
     }
 }
-impl std::fmt::Debug for ChannelActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelActivity");
-        formatter.field("name", &self.name);
-        formatter.field("channel_name", &self.channel_name);
-        formatter.field("next", &self.next);
-        formatter.finish()
-    }
-}
 /// See [`ChannelActivity`](crate::model::ChannelActivity).
 pub mod channel_activity {
 
     /// A builder for [`ChannelActivity`](crate::model::ChannelActivity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) channel_name: std::option::Option<std::string::String>,
@@ -1386,7 +1275,7 @@ impl ChannelActivity {
 /// <p>The default file format is JSON. You can specify only one format.</p>
 /// <p>You can't change the file format after you create the data store.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileFormatConfiguration {
     /// <p>Contains the configuration information of the JSON format.</p>
     #[doc(hidden)]
@@ -1407,19 +1296,11 @@ impl FileFormatConfiguration {
         self.parquet_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for FileFormatConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileFormatConfiguration");
-        formatter.field("json_configuration", &self.json_configuration);
-        formatter.field("parquet_configuration", &self.parquet_configuration);
-        formatter.finish()
-    }
-}
 /// See [`FileFormatConfiguration`](crate::model::FileFormatConfiguration).
 pub mod file_format_configuration {
 
     /// A builder for [`FileFormatConfiguration`](crate::model::FileFormatConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) json_configuration: std::option::Option<crate::model::JsonConfiguration>,
         pub(crate) parquet_configuration: std::option::Option<crate::model::ParquetConfiguration>,
@@ -1469,7 +1350,7 @@ impl FileFormatConfiguration {
 
 /// <p>Contains the configuration information of the Parquet format.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParquetConfiguration {
     /// <p>Information needed to define a schema.</p>
     #[doc(hidden)]
@@ -1481,18 +1362,11 @@ impl ParquetConfiguration {
         self.schema_definition.as_ref()
     }
 }
-impl std::fmt::Debug for ParquetConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParquetConfiguration");
-        formatter.field("schema_definition", &self.schema_definition);
-        formatter.finish()
-    }
-}
 /// See [`ParquetConfiguration`](crate::model::ParquetConfiguration).
 pub mod parquet_configuration {
 
     /// A builder for [`ParquetConfiguration`](crate::model::ParquetConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_definition: std::option::Option<crate::model::SchemaDefinition>,
     }
@@ -1527,7 +1401,7 @@ impl ParquetConfiguration {
 
 /// <p>Information needed to define a schema.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SchemaDefinition {
     /// <p>Specifies one or more columns that store your data.</p>
     /// <p>Each schema can have up to 100 columns. Each column can have up to 100 nested types.</p>
@@ -1541,18 +1415,11 @@ impl SchemaDefinition {
         self.columns.as_deref()
     }
 }
-impl std::fmt::Debug for SchemaDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SchemaDefinition");
-        formatter.field("columns", &self.columns);
-        formatter.finish()
-    }
-}
 /// See [`SchemaDefinition`](crate::model::SchemaDefinition).
 pub mod schema_definition {
 
     /// A builder for [`SchemaDefinition`](crate::model::SchemaDefinition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) columns: std::option::Option<std::vec::Vec<crate::model::Column>>,
     }
@@ -1595,7 +1462,7 @@ impl SchemaDefinition {
 
 /// <p>Contains information about a column that stores your data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Column {
     /// <p>The name of the column.</p>
     #[doc(hidden)]
@@ -1614,19 +1481,11 @@ impl Column {
         self.r#type.as_deref()
     }
 }
-impl std::fmt::Debug for Column {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Column");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 /// See [`Column`](crate::model::Column).
 pub mod column {
 
     /// A builder for [`Column`](crate::model::Column).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -1670,19 +1529,13 @@ impl Column {
 
 /// <p>Contains the configuration information of the JSON format.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JsonConfiguration {}
-impl std::fmt::Debug for JsonConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JsonConfiguration");
-        formatter.finish()
-    }
-}
 /// See [`JsonConfiguration`](crate::model::JsonConfiguration).
 pub mod json_configuration {
 
     /// A builder for [`JsonConfiguration`](crate::model::JsonConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`JsonConfiguration`](crate::model::JsonConfiguration).
@@ -1772,7 +1625,7 @@ impl DatastoreStorage {
 
 /// <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. You can't change the choice of Amazon S3 storage after your data store is created. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatastoreIotSiteWiseMultiLayerStorage {
     /// <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. </p>
     #[doc(hidden)]
@@ -1787,21 +1640,11 @@ impl DatastoreIotSiteWiseMultiLayerStorage {
         self.customer_managed_s3_storage.as_ref()
     }
 }
-impl std::fmt::Debug for DatastoreIotSiteWiseMultiLayerStorage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatastoreIotSiteWiseMultiLayerStorage");
-        formatter.field(
-            "customer_managed_s3_storage",
-            &self.customer_managed_s3_storage,
-        );
-        formatter.finish()
-    }
-}
 /// See [`DatastoreIotSiteWiseMultiLayerStorage`](crate::model::DatastoreIotSiteWiseMultiLayerStorage).
 pub mod datastore_iot_site_wise_multi_layer_storage {
 
     /// A builder for [`DatastoreIotSiteWiseMultiLayerStorage`](crate::model::DatastoreIotSiteWiseMultiLayerStorage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) customer_managed_s3_storage:
             std::option::Option<crate::model::IotSiteWiseCustomerManagedDatastoreS3Storage>,
@@ -1840,7 +1683,7 @@ impl DatastoreIotSiteWiseMultiLayerStorage {
 
 /// <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. You can't change the choice of Amazon S3 storage after your data store is created. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IotSiteWiseCustomerManagedDatastoreS3Storage {
     /// <p> The name of the Amazon S3 bucket where your data is stored. </p>
     #[doc(hidden)]
@@ -1859,19 +1702,11 @@ impl IotSiteWiseCustomerManagedDatastoreS3Storage {
         self.key_prefix.as_deref()
     }
 }
-impl std::fmt::Debug for IotSiteWiseCustomerManagedDatastoreS3Storage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IotSiteWiseCustomerManagedDatastoreS3Storage");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key_prefix", &self.key_prefix);
-        formatter.finish()
-    }
-}
 /// See [`IotSiteWiseCustomerManagedDatastoreS3Storage`](crate::model::IotSiteWiseCustomerManagedDatastoreS3Storage).
 pub mod iot_site_wise_customer_managed_datastore_s3_storage {
 
     /// A builder for [`IotSiteWiseCustomerManagedDatastoreS3Storage`](crate::model::IotSiteWiseCustomerManagedDatastoreS3Storage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) key_prefix: std::option::Option<std::string::String>,
@@ -1915,7 +1750,7 @@ impl IotSiteWiseCustomerManagedDatastoreS3Storage {
 
 /// <p>S3-customer-managed; When you choose customer-managed storage, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice of Amazon S3 storage after your data store is created. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomerManagedDatastoreS3Storage {
     /// <p>The name of the Amazon S3 bucket where your data is stored.</p>
     #[doc(hidden)]
@@ -1941,20 +1776,11 @@ impl CustomerManagedDatastoreS3Storage {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CustomerManagedDatastoreS3Storage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomerManagedDatastoreS3Storage");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key_prefix", &self.key_prefix);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 /// See [`CustomerManagedDatastoreS3Storage`](crate::model::CustomerManagedDatastoreS3Storage).
 pub mod customer_managed_datastore_s3_storage {
 
     /// A builder for [`CustomerManagedDatastoreS3Storage`](crate::model::CustomerManagedDatastoreS3Storage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) key_prefix: std::option::Option<std::string::String>,
@@ -2010,19 +1836,13 @@ impl CustomerManagedDatastoreS3Storage {
 
 /// <p>Used to store data in an Amazon S3 bucket managed by IoT Analytics. You can't change the choice of Amazon S3 storage after your data store is created. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceManagedDatastoreS3Storage {}
-impl std::fmt::Debug for ServiceManagedDatastoreS3Storage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceManagedDatastoreS3Storage");
-        formatter.finish()
-    }
-}
 /// See [`ServiceManagedDatastoreS3Storage`](crate::model::ServiceManagedDatastoreS3Storage).
 pub mod service_managed_datastore_s3_storage {
 
     /// A builder for [`ServiceManagedDatastoreS3Storage`](crate::model::ServiceManagedDatastoreS3Storage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`ServiceManagedDatastoreS3Storage`](crate::model::ServiceManagedDatastoreS3Storage).
@@ -2040,7 +1860,7 @@ impl ServiceManagedDatastoreS3Storage {
 
 /// <p>How long, in days, message data is kept.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RetentionPeriod {
     /// <p>If true, message data is kept indefinitely.</p>
     #[doc(hidden)]
@@ -2059,19 +1879,11 @@ impl RetentionPeriod {
         self.number_of_days
     }
 }
-impl std::fmt::Debug for RetentionPeriod {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RetentionPeriod");
-        formatter.field("unlimited", &self.unlimited);
-        formatter.field("number_of_days", &self.number_of_days);
-        formatter.finish()
-    }
-}
 /// See [`RetentionPeriod`](crate::model::RetentionPeriod).
 pub mod retention_period {
 
     /// A builder for [`RetentionPeriod`](crate::model::RetentionPeriod).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) unlimited: std::option::Option<bool>,
         pub(crate) number_of_days: std::option::Option<i32>,
@@ -2115,7 +1927,7 @@ impl RetentionPeriod {
 
 /// <p>A structure that contains the name and configuration information of a late data rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LateDataRule {
     /// <p>The name of the late data rule.</p>
     #[doc(hidden)]
@@ -2136,19 +1948,11 @@ impl LateDataRule {
         self.rule_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for LateDataRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LateDataRule");
-        formatter.field("rule_name", &self.rule_name);
-        formatter.field("rule_configuration", &self.rule_configuration);
-        formatter.finish()
-    }
-}
 /// See [`LateDataRule`](crate::model::LateDataRule).
 pub mod late_data_rule {
 
     /// A builder for [`LateDataRule`](crate::model::LateDataRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_name: std::option::Option<std::string::String>,
         pub(crate) rule_configuration: std::option::Option<crate::model::LateDataRuleConfiguration>,
@@ -2198,7 +2002,7 @@ impl LateDataRule {
 
 /// <p>The information needed to configure a delta time session window.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LateDataRuleConfiguration {
     /// <p>The information needed to configure a delta time session window.</p>
     #[doc(hidden)]
@@ -2213,21 +2017,11 @@ impl LateDataRuleConfiguration {
         self.delta_time_session_window_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for LateDataRuleConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LateDataRuleConfiguration");
-        formatter.field(
-            "delta_time_session_window_configuration",
-            &self.delta_time_session_window_configuration,
-        );
-        formatter.finish()
-    }
-}
 /// See [`LateDataRuleConfiguration`](crate::model::LateDataRuleConfiguration).
 pub mod late_data_rule_configuration {
 
     /// A builder for [`LateDataRuleConfiguration`](crate::model::LateDataRuleConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delta_time_session_window_configuration:
             std::option::Option<crate::model::DeltaTimeSessionWindowConfiguration>,
@@ -2268,7 +2062,7 @@ impl LateDataRuleConfiguration {
 /// <p>A structure that contains the configuration information of a delta time session window.</p>
 /// <p> <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html"> <code>DeltaTime</code> </a> specifies a time interval. You can use <code>DeltaTime</code> to create dataset contents with data that has arrived in the data store since the last execution. For an example of <code>DeltaTime</code>, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/automate-create-dataset.html#automate-example6"> Creating a SQL dataset with a delta window (CLI)</a> in the <i>IoT Analytics User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeltaTimeSessionWindowConfiguration {
     /// <p>A time interval. You can use <code>timeoutInMinutes</code> so that IoT Analytics can batch up late data notifications that have been generated since the last execution. IoT Analytics sends one batch of notifications to Amazon CloudWatch Events at one time.</p>
     /// <p>For more information about how to write a timestamp expression, see <a href="https://prestodb.io/docs/0.172/functions/datetime.html">Date and Time Functions and Operators</a>, in the <i>Presto 0.172 Documentation</i>.</p>
@@ -2282,18 +2076,11 @@ impl DeltaTimeSessionWindowConfiguration {
         self.timeout_in_minutes
     }
 }
-impl std::fmt::Debug for DeltaTimeSessionWindowConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeltaTimeSessionWindowConfiguration");
-        formatter.field("timeout_in_minutes", &self.timeout_in_minutes);
-        formatter.finish()
-    }
-}
 /// See [`DeltaTimeSessionWindowConfiguration`](crate::model::DeltaTimeSessionWindowConfiguration).
 pub mod delta_time_session_window_configuration {
 
     /// A builder for [`DeltaTimeSessionWindowConfiguration`](crate::model::DeltaTimeSessionWindowConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timeout_in_minutes: std::option::Option<i32>,
     }
@@ -2327,7 +2114,7 @@ impl DeltaTimeSessionWindowConfiguration {
 
 /// <p>Information about the versioning of dataset contents.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VersioningConfiguration {
     /// <p>If true, unlimited versions of dataset contents are kept.</p>
     #[doc(hidden)]
@@ -2346,19 +2133,11 @@ impl VersioningConfiguration {
         self.max_versions
     }
 }
-impl std::fmt::Debug for VersioningConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VersioningConfiguration");
-        formatter.field("unlimited", &self.unlimited);
-        formatter.field("max_versions", &self.max_versions);
-        formatter.finish()
-    }
-}
 /// See [`VersioningConfiguration`](crate::model::VersioningConfiguration).
 pub mod versioning_configuration {
 
     /// A builder for [`VersioningConfiguration`](crate::model::VersioningConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) unlimited: std::option::Option<bool>,
         pub(crate) max_versions: std::option::Option<i32>,
@@ -2402,7 +2181,7 @@ impl VersioningConfiguration {
 
 /// <p>When dataset contents are created, they are delivered to destination specified here.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetContentDeliveryRule {
     /// <p>The name of the dataset content delivery rules entry.</p>
     #[doc(hidden)]
@@ -2423,19 +2202,11 @@ impl DatasetContentDeliveryRule {
         self.destination.as_ref()
     }
 }
-impl std::fmt::Debug for DatasetContentDeliveryRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetContentDeliveryRule");
-        formatter.field("entry_name", &self.entry_name);
-        formatter.field("destination", &self.destination);
-        formatter.finish()
-    }
-}
 /// See [`DatasetContentDeliveryRule`](crate::model::DatasetContentDeliveryRule).
 pub mod dataset_content_delivery_rule {
 
     /// A builder for [`DatasetContentDeliveryRule`](crate::model::DatasetContentDeliveryRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entry_name: std::option::Option<std::string::String>,
         pub(crate) destination:
@@ -2486,7 +2257,7 @@ impl DatasetContentDeliveryRule {
 
 /// <p>The destination to which dataset contents are delivered.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetContentDeliveryDestination {
     /// <p>Configuration information for delivery of dataset contents to IoT Events.</p>
     #[doc(hidden)]
@@ -2510,25 +2281,11 @@ impl DatasetContentDeliveryDestination {
         self.s3_destination_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for DatasetContentDeliveryDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetContentDeliveryDestination");
-        formatter.field(
-            "iot_events_destination_configuration",
-            &self.iot_events_destination_configuration,
-        );
-        formatter.field(
-            "s3_destination_configuration",
-            &self.s3_destination_configuration,
-        );
-        formatter.finish()
-    }
-}
 /// See [`DatasetContentDeliveryDestination`](crate::model::DatasetContentDeliveryDestination).
 pub mod dataset_content_delivery_destination {
 
     /// A builder for [`DatasetContentDeliveryDestination`](crate::model::DatasetContentDeliveryDestination).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) iot_events_destination_configuration:
             std::option::Option<crate::model::IotEventsDestinationConfiguration>,
@@ -2586,7 +2343,7 @@ impl DatasetContentDeliveryDestination {
 
 /// <p>Configuration information for delivery of dataset contents to Amazon Simple Storage Service (Amazon S3).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3DestinationConfiguration {
     /// <p>The name of the S3 bucket to which dataset contents are delivered.</p>
     #[doc(hidden)]
@@ -2637,21 +2394,11 @@ impl S3DestinationConfiguration {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for S3DestinationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3DestinationConfiguration");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("glue_configuration", &self.glue_configuration);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 /// See [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
 pub mod s3_destination_configuration {
 
     /// A builder for [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
@@ -2740,7 +2487,7 @@ impl S3DestinationConfiguration {
 
 /// <p>Configuration information for coordination with Glue, a fully managed extract, transform and load (ETL) service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GlueConfiguration {
     /// <p>The name of the table in your Glue Data Catalog that is used to perform the ETL operations. An Glue Data Catalog table contains partitioned data and descriptions of data sources and targets.</p>
     #[doc(hidden)]
@@ -2759,19 +2506,11 @@ impl GlueConfiguration {
         self.database_name.as_deref()
     }
 }
-impl std::fmt::Debug for GlueConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GlueConfiguration");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("database_name", &self.database_name);
-        formatter.finish()
-    }
-}
 /// See [`GlueConfiguration`](crate::model::GlueConfiguration).
 pub mod glue_configuration {
 
     /// A builder for [`GlueConfiguration`](crate::model::GlueConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
         pub(crate) database_name: std::option::Option<std::string::String>,
@@ -2818,7 +2557,7 @@ impl GlueConfiguration {
 
 /// <p>Configuration information for delivery of dataset contents to IoT Events.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IotEventsDestinationConfiguration {
     /// <p>The name of the IoT Events input to which dataset contents are delivered.</p>
     #[doc(hidden)]
@@ -2837,19 +2576,11 @@ impl IotEventsDestinationConfiguration {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for IotEventsDestinationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IotEventsDestinationConfiguration");
-        formatter.field("input_name", &self.input_name);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 /// See [`IotEventsDestinationConfiguration`](crate::model::IotEventsDestinationConfiguration).
 pub mod iot_events_destination_configuration {
 
     /// A builder for [`IotEventsDestinationConfiguration`](crate::model::IotEventsDestinationConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_name: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -2893,7 +2624,7 @@ impl IotEventsDestinationConfiguration {
 
 /// <p>The <code>DatasetTrigger</code> that specifies when the dataset is automatically updated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetTrigger {
     /// <p>The Schedule when the trigger is initiated.</p>
     #[doc(hidden)]
@@ -2912,19 +2643,11 @@ impl DatasetTrigger {
         self.dataset.as_ref()
     }
 }
-impl std::fmt::Debug for DatasetTrigger {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetTrigger");
-        formatter.field("schedule", &self.schedule);
-        formatter.field("dataset", &self.dataset);
-        formatter.finish()
-    }
-}
 /// See [`DatasetTrigger`](crate::model::DatasetTrigger).
 pub mod dataset_trigger {
 
     /// A builder for [`DatasetTrigger`](crate::model::DatasetTrigger).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schedule: std::option::Option<crate::model::Schedule>,
         pub(crate) dataset: std::option::Option<crate::model::TriggeringDataset>,
@@ -2971,7 +2694,7 @@ impl DatasetTrigger {
 
 /// <p>Information about the dataset whose content generation triggers the new dataset content generation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TriggeringDataset {
     /// <p>The name of the dataset whose content generation triggers the new dataset content generation.</p>
     #[doc(hidden)]
@@ -2983,18 +2706,11 @@ impl TriggeringDataset {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for TriggeringDataset {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TriggeringDataset");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 /// See [`TriggeringDataset`](crate::model::TriggeringDataset).
 pub mod triggering_dataset {
 
     /// A builder for [`TriggeringDataset`](crate::model::TriggeringDataset).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -3024,7 +2740,7 @@ impl TriggeringDataset {
 
 /// <p>The schedule for when to trigger an update.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Schedule {
     /// <p>The expression that defines when to trigger an update. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
     #[doc(hidden)]
@@ -3036,18 +2752,11 @@ impl Schedule {
         self.expression.as_deref()
     }
 }
-impl std::fmt::Debug for Schedule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Schedule");
-        formatter.field("expression", &self.expression);
-        formatter.finish()
-    }
-}
 /// See [`Schedule`](crate::model::Schedule).
 pub mod schedule {
 
     /// A builder for [`Schedule`](crate::model::Schedule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expression: std::option::Option<std::string::String>,
     }
@@ -3079,7 +2788,7 @@ impl Schedule {
 
 /// <p>A <code>DatasetAction</code> object that specifies how dataset contents are automatically created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetAction {
     /// <p>The name of the dataset action by which dataset contents are automatically created.</p>
     #[doc(hidden)]
@@ -3105,20 +2814,11 @@ impl DatasetAction {
         self.container_action.as_ref()
     }
 }
-impl std::fmt::Debug for DatasetAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetAction");
-        formatter.field("action_name", &self.action_name);
-        formatter.field("query_action", &self.query_action);
-        formatter.field("container_action", &self.container_action);
-        formatter.finish()
-    }
-}
 /// See [`DatasetAction`](crate::model::DatasetAction).
 pub mod dataset_action {
 
     /// A builder for [`DatasetAction`](crate::model::DatasetAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_name: std::option::Option<std::string::String>,
         pub(crate) query_action: std::option::Option<crate::model::SqlQueryDatasetAction>,
@@ -3180,7 +2880,7 @@ impl DatasetAction {
 
 /// <p>Information required to run the <code>containerAction</code> to produce dataset contents.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContainerDatasetAction {
     /// <p>The ARN of the Docker container stored in your account. The Docker container contains an application and required support libraries and is used to generate dataset contents.</p>
     #[doc(hidden)]
@@ -3215,21 +2915,11 @@ impl ContainerDatasetAction {
         self.variables.as_deref()
     }
 }
-impl std::fmt::Debug for ContainerDatasetAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContainerDatasetAction");
-        formatter.field("image", &self.image);
-        formatter.field("execution_role_arn", &self.execution_role_arn);
-        formatter.field("resource_configuration", &self.resource_configuration);
-        formatter.field("variables", &self.variables);
-        formatter.finish()
-    }
-}
 /// See [`ContainerDatasetAction`](crate::model::ContainerDatasetAction).
 pub mod container_dataset_action {
 
     /// A builder for [`ContainerDatasetAction`](crate::model::ContainerDatasetAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image: std::option::Option<std::string::String>,
         pub(crate) execution_role_arn: std::option::Option<std::string::String>,
@@ -3315,7 +3005,7 @@ impl ContainerDatasetAction {
 
 /// <p>An instance of a variable to be passed to the <code>containerAction</code> execution. Each variable must have a name and a value given by one of <code>stringValue</code>, <code>datasetContentVersionValue</code>, or <code>outputFileUriValue</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Variable {
     /// <p>The name of the variable.</p>
     #[doc(hidden)]
@@ -3358,25 +3048,11 @@ impl Variable {
         self.output_file_uri_value.as_ref()
     }
 }
-impl std::fmt::Debug for Variable {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Variable");
-        formatter.field("name", &self.name);
-        formatter.field("string_value", &self.string_value);
-        formatter.field("double_value", &self.double_value);
-        formatter.field(
-            "dataset_content_version_value",
-            &self.dataset_content_version_value,
-        );
-        formatter.field("output_file_uri_value", &self.output_file_uri_value);
-        formatter.finish()
-    }
-}
 /// See [`Variable`](crate::model::Variable).
 pub mod variable {
 
     /// A builder for [`Variable`](crate::model::Variable).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) string_value: std::option::Option<std::string::String>,
@@ -3466,7 +3142,7 @@ impl Variable {
 
 /// <p>The value of the variable as a structure that specifies an output file URI.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutputFileUriValue {
     /// <p>The URI of the location where dataset contents are stored, usually the URI of a file in an S3 bucket.</p>
     #[doc(hidden)]
@@ -3478,18 +3154,11 @@ impl OutputFileUriValue {
         self.file_name.as_deref()
     }
 }
-impl std::fmt::Debug for OutputFileUriValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutputFileUriValue");
-        formatter.field("file_name", &self.file_name);
-        formatter.finish()
-    }
-}
 /// See [`OutputFileUriValue`](crate::model::OutputFileUriValue).
 pub mod output_file_uri_value {
 
     /// A builder for [`OutputFileUriValue`](crate::model::OutputFileUriValue).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_name: std::option::Option<std::string::String>,
     }
@@ -3521,7 +3190,7 @@ impl OutputFileUriValue {
 
 /// <p>The dataset whose latest contents are used as input to the notebook or application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetContentVersionValue {
     /// <p>The name of the dataset whose latest contents are used as input to the notebook or application.</p>
     #[doc(hidden)]
@@ -3533,18 +3202,11 @@ impl DatasetContentVersionValue {
         self.dataset_name.as_deref()
     }
 }
-impl std::fmt::Debug for DatasetContentVersionValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetContentVersionValue");
-        formatter.field("dataset_name", &self.dataset_name);
-        formatter.finish()
-    }
-}
 /// See [`DatasetContentVersionValue`](crate::model::DatasetContentVersionValue).
 pub mod dataset_content_version_value {
 
     /// A builder for [`DatasetContentVersionValue`](crate::model::DatasetContentVersionValue).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
     }
@@ -3576,7 +3238,7 @@ impl DatasetContentVersionValue {
 
 /// <p>The configuration of the resource used to execute the <code>containerAction</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceConfiguration {
     /// <p>The type of the compute resource used to execute the <code>containerAction</code>. Possible values are: <code>ACU_1</code> (vCPU=4, memory=16 GiB) or <code>ACU_2</code> (vCPU=8, memory=32 GiB).</p>
     #[doc(hidden)]
@@ -3595,19 +3257,11 @@ impl ResourceConfiguration {
         self.volume_size_in_gb
     }
 }
-impl std::fmt::Debug for ResourceConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceConfiguration");
-        formatter.field("compute_type", &self.compute_type);
-        formatter.field("volume_size_in_gb", &self.volume_size_in_gb);
-        formatter.finish()
-    }
-}
 /// See [`ResourceConfiguration`](crate::model::ResourceConfiguration).
 pub mod resource_configuration {
 
     /// A builder for [`ResourceConfiguration`](crate::model::ResourceConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compute_type: std::option::Option<crate::model::ComputeType>,
         pub(crate) volume_size_in_gb: std::option::Option<i32>,
@@ -3652,6 +3306,41 @@ impl ResourceConfiguration {
     }
 }
 
+/// When writing a match expression against `ComputeType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let computetype = unimplemented!();
+/// match computetype {
+///     ComputeType::Acu1 => { /* ... */ },
+///     ComputeType::Acu2 => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `computetype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ComputeType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ComputeType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ComputeType::NewFeature` is defined.
+/// Specifically, when `computetype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ComputeType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3668,15 +3357,15 @@ pub enum ComputeType {
     Acu1,
     #[allow(missing_docs)] // documentation missing in model
     Acu2,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ComputeType {
     fn from(s: &str) -> Self {
         match s {
             "ACU_1" => ComputeType::Acu1,
             "ACU_2" => ComputeType::Acu2,
-            other => ComputeType::Unknown(other.to_owned()),
+            other => ComputeType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -3693,11 +3382,11 @@ impl ComputeType {
         match self {
             ComputeType::Acu1 => "ACU_1",
             ComputeType::Acu2 => "ACU_2",
-            ComputeType::Unknown(s) => s.as_ref(),
+            ComputeType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACU_1", "ACU_2"]
     }
 }
@@ -3709,7 +3398,7 @@ impl AsRef<str> for ComputeType {
 
 /// <p>The SQL query to modify the message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SqlQueryDatasetAction {
     /// <p>A SQL query string.</p>
     #[doc(hidden)]
@@ -3728,19 +3417,11 @@ impl SqlQueryDatasetAction {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for SqlQueryDatasetAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SqlQueryDatasetAction");
-        formatter.field("sql_query", &self.sql_query);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 /// See [`SqlQueryDatasetAction`](crate::model::SqlQueryDatasetAction).
 pub mod sql_query_dataset_action {
 
     /// A builder for [`SqlQueryDatasetAction`](crate::model::SqlQueryDatasetAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sql_query: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::QueryFilter>>,
@@ -3793,7 +3474,7 @@ impl SqlQueryDatasetAction {
 
 /// <p>Information that is used to filter message data, to segregate it according to the timeframe in which it arrives.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryFilter {
     /// <p>Used to limit data to that which has arrived since the last execution of the action.</p>
     #[doc(hidden)]
@@ -3805,18 +3486,11 @@ impl QueryFilter {
         self.delta_time.as_ref()
     }
 }
-impl std::fmt::Debug for QueryFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryFilter");
-        formatter.field("delta_time", &self.delta_time);
-        formatter.finish()
-    }
-}
 /// See [`QueryFilter`](crate::model::QueryFilter).
 pub mod query_filter {
 
     /// A builder for [`QueryFilter`](crate::model::QueryFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delta_time: std::option::Option<crate::model::DeltaTime>,
     }
@@ -3851,7 +3525,7 @@ impl QueryFilter {
 
 /// <p>Used to limit data to that which has arrived since the last execution of the action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeltaTime {
     /// <p>The number of seconds of estimated in-flight lag time of message data. When you create dataset contents using message data from a specified timeframe, some message data might still be in flight when processing begins, and so do not arrive in time to be processed. Use this field to make allowances for the in flight time of your message data, so that data not processed from a previous timeframe is included with the next timeframe. Otherwise, missed message data would be excluded from processing during the next timeframe too, because its timestamp places it within the previous timeframe.</p>
     #[doc(hidden)]
@@ -3870,19 +3544,11 @@ impl DeltaTime {
         self.time_expression.as_deref()
     }
 }
-impl std::fmt::Debug for DeltaTime {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeltaTime");
-        formatter.field("offset_seconds", &self.offset_seconds);
-        formatter.field("time_expression", &self.time_expression);
-        formatter.finish()
-    }
-}
 /// See [`DeltaTime`](crate::model::DeltaTime).
 pub mod delta_time {
 
     /// A builder for [`DeltaTime`](crate::model::DeltaTime).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) offset_seconds: std::option::Option<i32>,
         pub(crate) time_expression: std::option::Option<std::string::String>,
@@ -3929,7 +3595,7 @@ impl DeltaTime {
 
 /// <p>Where channel data is stored. You may choose one of <code>serviceManagedS3</code>, <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. This can't be changed after creation of the channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelStorage {
     /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics. You can't change the choice of S3 storage after the data store is created.</p>
     #[doc(hidden)]
@@ -3952,19 +3618,11 @@ impl ChannelStorage {
         self.customer_managed_s3.as_ref()
     }
 }
-impl std::fmt::Debug for ChannelStorage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelStorage");
-        formatter.field("service_managed_s3", &self.service_managed_s3);
-        formatter.field("customer_managed_s3", &self.customer_managed_s3);
-        formatter.finish()
-    }
-}
 /// See [`ChannelStorage`](crate::model::ChannelStorage).
 pub mod channel_storage {
 
     /// A builder for [`ChannelStorage`](crate::model::ChannelStorage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_managed_s3:
             std::option::Option<crate::model::ServiceManagedChannelS3Storage>,
@@ -4022,7 +3680,7 @@ impl ChannelStorage {
 
 /// <p>Used to store channel data in an S3 bucket that you manage. If customer-managed storage is selected, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice of S3 storage after the data store is created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomerManagedChannelS3Storage {
     /// <p>The name of the S3 bucket in which channel data is stored.</p>
     #[doc(hidden)]
@@ -4048,20 +3706,11 @@ impl CustomerManagedChannelS3Storage {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CustomerManagedChannelS3Storage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomerManagedChannelS3Storage");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key_prefix", &self.key_prefix);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 /// See [`CustomerManagedChannelS3Storage`](crate::model::CustomerManagedChannelS3Storage).
 pub mod customer_managed_channel_s3_storage {
 
     /// A builder for [`CustomerManagedChannelS3Storage`](crate::model::CustomerManagedChannelS3Storage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) key_prefix: std::option::Option<std::string::String>,
@@ -4117,19 +3766,13 @@ impl CustomerManagedChannelS3Storage {
 
 /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics. You can't change the choice of S3 storage after the data store is created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceManagedChannelS3Storage {}
-impl std::fmt::Debug for ServiceManagedChannelS3Storage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceManagedChannelS3Storage");
-        formatter.finish()
-    }
-}
 /// See [`ServiceManagedChannelS3Storage`](crate::model::ServiceManagedChannelS3Storage).
 pub mod service_managed_channel_s3_storage {
 
     /// A builder for [`ServiceManagedChannelS3Storage`](crate::model::ServiceManagedChannelS3Storage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`ServiceManagedChannelS3Storage`](crate::model::ServiceManagedChannelS3Storage).
@@ -4147,7 +3790,7 @@ impl ServiceManagedChannelS3Storage {
 
 /// <p>A set of key-value pairs that are used to manage the resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The tag's key.</p>
     #[doc(hidden)]
@@ -4166,19 +3809,11 @@ impl Tag {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -4222,7 +3857,7 @@ impl Tag {
 
 /// <p>Specifies one or more sets of channel messages.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelMessages {
     /// <p>Specifies one or more keys that identify the Amazon Simple Storage Service (Amazon S3) objects that save your channel messages.</p>
     /// <p>You must use the full path for the key.</p>
@@ -4238,18 +3873,11 @@ impl ChannelMessages {
         self.s3_paths.as_deref()
     }
 }
-impl std::fmt::Debug for ChannelMessages {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelMessages");
-        formatter.field("s3_paths", &self.s3_paths);
-        formatter.finish()
-    }
-}
 /// See [`ChannelMessages`](crate::model::ChannelMessages).
 pub mod channel_messages {
 
     /// A builder for [`ChannelMessages`](crate::model::ChannelMessages).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_paths: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -4294,7 +3922,7 @@ impl ChannelMessages {
 
 /// <p>Information about logging options.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoggingOptions {
     /// <p>The ARN of the role that grants permission to IoT Analytics to perform logging.</p>
     #[doc(hidden)]
@@ -4320,20 +3948,11 @@ impl LoggingOptions {
         self.enabled
     }
 }
-impl std::fmt::Debug for LoggingOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoggingOptions");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("level", &self.level);
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
-    }
-}
 /// See [`LoggingOptions`](crate::model::LoggingOptions).
 pub mod logging_options {
 
     /// A builder for [`LoggingOptions`](crate::model::LoggingOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) level: std::option::Option<crate::model::LoggingLevel>,
@@ -4387,6 +4006,40 @@ impl LoggingOptions {
     }
 }
 
+/// When writing a match expression against `LoggingLevel`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let logginglevel = unimplemented!();
+/// match logginglevel {
+///     LoggingLevel::Error => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `logginglevel` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `LoggingLevel::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `LoggingLevel::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `LoggingLevel::NewFeature` is defined.
+/// Specifically, when `logginglevel` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `LoggingLevel::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -4401,14 +4054,14 @@ impl LoggingOptions {
 pub enum LoggingLevel {
     #[allow(missing_docs)] // documentation missing in model
     Error,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for LoggingLevel {
     fn from(s: &str) -> Self {
         match s {
             "ERROR" => LoggingLevel::Error,
-            other => LoggingLevel::Unknown(other.to_owned()),
+            other => LoggingLevel::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -4424,11 +4077,11 @@ impl LoggingLevel {
     pub fn as_str(&self) -> &str {
         match self {
             LoggingLevel::Error => "ERROR",
-            LoggingLevel::Unknown(s) => s.as_ref(),
+            LoggingLevel::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ERROR"]
     }
 }
@@ -4440,7 +4093,7 @@ impl AsRef<str> for LoggingLevel {
 
 /// <p>A summary of information about a pipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PipelineSummary {
     /// <p>The name of the pipeline.</p>
     #[doc(hidden)]
@@ -4476,21 +4129,11 @@ impl PipelineSummary {
         self.last_update_time.as_ref()
     }
 }
-impl std::fmt::Debug for PipelineSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PipelineSummary");
-        formatter.field("pipeline_name", &self.pipeline_name);
-        formatter.field("reprocessing_summaries", &self.reprocessing_summaries);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.finish()
-    }
-}
 /// See [`PipelineSummary`](crate::model::PipelineSummary).
 pub mod pipeline_summary {
 
     /// A builder for [`PipelineSummary`](crate::model::PipelineSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_name: std::option::Option<std::string::String>,
         pub(crate) reprocessing_summaries:
@@ -4577,7 +4220,7 @@ impl PipelineSummary {
 
 /// <p>Information about pipeline reprocessing.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReprocessingSummary {
     /// <p>The <code>reprocessingId</code> returned by <code>StartPipelineReprocessing</code>.</p>
     #[doc(hidden)]
@@ -4603,20 +4246,11 @@ impl ReprocessingSummary {
         self.creation_time.as_ref()
     }
 }
-impl std::fmt::Debug for ReprocessingSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReprocessingSummary");
-        formatter.field("id", &self.id);
-        formatter.field("status", &self.status);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.finish()
-    }
-}
 /// See [`ReprocessingSummary`](crate::model::ReprocessingSummary).
 pub mod reprocessing_summary {
 
     /// A builder for [`ReprocessingSummary`](crate::model::ReprocessingSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ReprocessingStatus>,
@@ -4676,6 +4310,43 @@ impl ReprocessingSummary {
     }
 }
 
+/// When writing a match expression against `ReprocessingStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let reprocessingstatus = unimplemented!();
+/// match reprocessingstatus {
+///     ReprocessingStatus::Cancelled => { /* ... */ },
+///     ReprocessingStatus::Failed => { /* ... */ },
+///     ReprocessingStatus::Running => { /* ... */ },
+///     ReprocessingStatus::Succeeded => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `reprocessingstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ReprocessingStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ReprocessingStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ReprocessingStatus::NewFeature` is defined.
+/// Specifically, when `reprocessingstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ReprocessingStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -4696,8 +4367,8 @@ pub enum ReprocessingStatus {
     Running,
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ReprocessingStatus {
     fn from(s: &str) -> Self {
@@ -4706,7 +4377,9 @@ impl std::convert::From<&str> for ReprocessingStatus {
             "FAILED" => ReprocessingStatus::Failed,
             "RUNNING" => ReprocessingStatus::Running,
             "SUCCEEDED" => ReprocessingStatus::Succeeded,
-            other => ReprocessingStatus::Unknown(other.to_owned()),
+            other => {
+                ReprocessingStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -4725,11 +4398,11 @@ impl ReprocessingStatus {
             ReprocessingStatus::Failed => "FAILED",
             ReprocessingStatus::Running => "RUNNING",
             ReprocessingStatus::Succeeded => "SUCCEEDED",
-            ReprocessingStatus::Unknown(s) => s.as_ref(),
+            ReprocessingStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CANCELLED", "FAILED", "RUNNING", "SUCCEEDED"]
     }
 }
@@ -4741,7 +4414,7 @@ impl AsRef<str> for ReprocessingStatus {
 
 /// <p>A summary of information about a data store.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatastoreSummary {
     /// <p>The name of the data store.</p>
     #[doc(hidden)]
@@ -4806,25 +4479,11 @@ impl DatastoreSummary {
         self.datastore_partitions.as_ref()
     }
 }
-impl std::fmt::Debug for DatastoreSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatastoreSummary");
-        formatter.field("datastore_name", &self.datastore_name);
-        formatter.field("datastore_storage", &self.datastore_storage);
-        formatter.field("status", &self.status);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.field("last_message_arrival_time", &self.last_message_arrival_time);
-        formatter.field("file_format_type", &self.file_format_type);
-        formatter.field("datastore_partitions", &self.datastore_partitions);
-        formatter.finish()
-    }
-}
 /// See [`DatastoreSummary`](crate::model::DatastoreSummary).
 pub mod datastore_summary {
 
     /// A builder for [`DatastoreSummary`](crate::model::DatastoreSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) datastore_name: std::option::Option<std::string::String>,
         pub(crate) datastore_storage: std::option::Option<crate::model::DatastoreStorageSummary>,
@@ -4968,7 +4627,7 @@ impl DatastoreSummary {
 
 /// <p> Contains information about the partition dimensions in a data store. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatastorePartitions {
     /// <p> A list of partition dimensions in a data store. </p>
     #[doc(hidden)]
@@ -4980,18 +4639,11 @@ impl DatastorePartitions {
         self.partitions.as_deref()
     }
 }
-impl std::fmt::Debug for DatastorePartitions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatastorePartitions");
-        formatter.field("partitions", &self.partitions);
-        formatter.finish()
-    }
-}
 /// See [`DatastorePartitions`](crate::model::DatastorePartitions).
 pub mod datastore_partitions {
 
     /// A builder for [`DatastorePartitions`](crate::model::DatastorePartitions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) partitions: std::option::Option<std::vec::Vec<crate::model::DatastorePartition>>,
     }
@@ -5032,7 +4684,7 @@ impl DatastorePartitions {
 
 /// <p> A single dimension to partition a data store. The dimension must be an <code>AttributePartition</code> or a <code>TimestampPartition</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatastorePartition {
     /// <p> A partition dimension defined by an <code>attributeName</code>. </p>
     #[doc(hidden)]
@@ -5051,19 +4703,11 @@ impl DatastorePartition {
         self.timestamp_partition.as_ref()
     }
 }
-impl std::fmt::Debug for DatastorePartition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatastorePartition");
-        formatter.field("attribute_partition", &self.attribute_partition);
-        formatter.field("timestamp_partition", &self.timestamp_partition);
-        formatter.finish()
-    }
-}
 /// See [`DatastorePartition`](crate::model::DatastorePartition).
 pub mod datastore_partition {
 
     /// A builder for [`DatastorePartition`](crate::model::DatastorePartition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_partition: std::option::Option<crate::model::Partition>,
         pub(crate) timestamp_partition: std::option::Option<crate::model::TimestampPartition>,
@@ -5113,7 +4757,7 @@ impl DatastorePartition {
 
 /// <p> A partition dimension defined by a timestamp attribute. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimestampPartition {
     /// <p> The attribute name of the partition defined by a timestamp. </p>
     #[doc(hidden)]
@@ -5132,19 +4776,11 @@ impl TimestampPartition {
         self.timestamp_format.as_deref()
     }
 }
-impl std::fmt::Debug for TimestampPartition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimestampPartition");
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("timestamp_format", &self.timestamp_format);
-        formatter.finish()
-    }
-}
 /// See [`TimestampPartition`](crate::model::TimestampPartition).
 pub mod timestamp_partition {
 
     /// A builder for [`TimestampPartition`](crate::model::TimestampPartition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_name: std::option::Option<std::string::String>,
         pub(crate) timestamp_format: std::option::Option<std::string::String>,
@@ -5194,7 +4830,7 @@ impl TimestampPartition {
 
 /// <p> A partition dimension defined by an attribute. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Partition {
     /// <p> The name of the attribute that defines a partition dimension. </p>
     #[doc(hidden)]
@@ -5206,18 +4842,11 @@ impl Partition {
         self.attribute_name.as_deref()
     }
 }
-impl std::fmt::Debug for Partition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Partition");
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.finish()
-    }
-}
 /// See [`Partition`](crate::model::Partition).
 pub mod partition {
 
     /// A builder for [`Partition`](crate::model::Partition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_name: std::option::Option<std::string::String>,
     }
@@ -5250,6 +4879,41 @@ impl Partition {
     }
 }
 
+/// When writing a match expression against `FileFormatType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let fileformattype = unimplemented!();
+/// match fileformattype {
+///     FileFormatType::Json => { /* ... */ },
+///     FileFormatType::Parquet => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `fileformattype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `FileFormatType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `FileFormatType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `FileFormatType::NewFeature` is defined.
+/// Specifically, when `fileformattype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `FileFormatType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -5266,15 +4930,15 @@ pub enum FileFormatType {
     Json,
     #[allow(missing_docs)] // documentation missing in model
     Parquet,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for FileFormatType {
     fn from(s: &str) -> Self {
         match s {
             "JSON" => FileFormatType::Json,
             "PARQUET" => FileFormatType::Parquet,
-            other => FileFormatType::Unknown(other.to_owned()),
+            other => FileFormatType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -5291,11 +4955,11 @@ impl FileFormatType {
         match self {
             FileFormatType::Json => "JSON",
             FileFormatType::Parquet => "PARQUET",
-            FileFormatType::Unknown(s) => s.as_ref(),
+            FileFormatType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["JSON", "PARQUET"]
     }
 }
@@ -5305,6 +4969,42 @@ impl AsRef<str> for FileFormatType {
     }
 }
 
+/// When writing a match expression against `DatastoreStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let datastorestatus = unimplemented!();
+/// match datastorestatus {
+///     DatastoreStatus::Active => { /* ... */ },
+///     DatastoreStatus::Creating => { /* ... */ },
+///     DatastoreStatus::Deleting => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `datastorestatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DatastoreStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DatastoreStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DatastoreStatus::NewFeature` is defined.
+/// Specifically, when `datastorestatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DatastoreStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -5323,8 +5023,8 @@ pub enum DatastoreStatus {
     Creating,
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DatastoreStatus {
     fn from(s: &str) -> Self {
@@ -5332,7 +5032,7 @@ impl std::convert::From<&str> for DatastoreStatus {
             "ACTIVE" => DatastoreStatus::Active,
             "CREATING" => DatastoreStatus::Creating,
             "DELETING" => DatastoreStatus::Deleting,
-            other => DatastoreStatus::Unknown(other.to_owned()),
+            other => DatastoreStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -5350,11 +5050,11 @@ impl DatastoreStatus {
             DatastoreStatus::Active => "ACTIVE",
             DatastoreStatus::Creating => "CREATING",
             DatastoreStatus::Deleting => "DELETING",
-            DatastoreStatus::Unknown(s) => s.as_ref(),
+            DatastoreStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETING"]
     }
 }
@@ -5366,7 +5066,7 @@ impl AsRef<str> for DatastoreStatus {
 
 /// <p>Contains information about your data store.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatastoreStorageSummary {
     /// <p>Used to store data in an Amazon S3 bucket managed by IoT Analytics.</p>
     #[doc(hidden)]
@@ -5401,23 +5101,11 @@ impl DatastoreStorageSummary {
         self.iot_site_wise_multi_layer_storage.as_ref()
     }
 }
-impl std::fmt::Debug for DatastoreStorageSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatastoreStorageSummary");
-        formatter.field("service_managed_s3", &self.service_managed_s3);
-        formatter.field("customer_managed_s3", &self.customer_managed_s3);
-        formatter.field(
-            "iot_site_wise_multi_layer_storage",
-            &self.iot_site_wise_multi_layer_storage,
-        );
-        formatter.finish()
-    }
-}
 /// See [`DatastoreStorageSummary`](crate::model::DatastoreStorageSummary).
 pub mod datastore_storage_summary {
 
     /// A builder for [`DatastoreStorageSummary`](crate::model::DatastoreStorageSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_managed_s3:
             std::option::Option<crate::model::ServiceManagedDatastoreS3StorageSummary>,
@@ -5494,7 +5182,7 @@ impl DatastoreStorageSummary {
 
 /// <p> Contains information about the data store that you manage, which stores data used by IoT SiteWise. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatastoreIotSiteWiseMultiLayerStorageSummary {
     /// <p>Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage.</p>
     #[doc(hidden)]
@@ -5510,21 +5198,11 @@ impl DatastoreIotSiteWiseMultiLayerStorageSummary {
         self.customer_managed_s3_storage.as_ref()
     }
 }
-impl std::fmt::Debug for DatastoreIotSiteWiseMultiLayerStorageSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatastoreIotSiteWiseMultiLayerStorageSummary");
-        formatter.field(
-            "customer_managed_s3_storage",
-            &self.customer_managed_s3_storage,
-        );
-        formatter.finish()
-    }
-}
 /// See [`DatastoreIotSiteWiseMultiLayerStorageSummary`](crate::model::DatastoreIotSiteWiseMultiLayerStorageSummary).
 pub mod datastore_iot_site_wise_multi_layer_storage_summary {
 
     /// A builder for [`DatastoreIotSiteWiseMultiLayerStorageSummary`](crate::model::DatastoreIotSiteWiseMultiLayerStorageSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) customer_managed_s3_storage:
             std::option::Option<crate::model::IotSiteWiseCustomerManagedDatastoreS3StorageSummary>,
@@ -5565,7 +5243,7 @@ impl DatastoreIotSiteWiseMultiLayerStorageSummary {
 
 /// <p> Contains information about the data store that you manage, which stores data used by IoT SiteWise. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IotSiteWiseCustomerManagedDatastoreS3StorageSummary {
     /// <p> The name of the Amazon S3 bucket where your data is stored. </p>
     #[doc(hidden)]
@@ -5584,19 +5262,11 @@ impl IotSiteWiseCustomerManagedDatastoreS3StorageSummary {
         self.key_prefix.as_deref()
     }
 }
-impl std::fmt::Debug for IotSiteWiseCustomerManagedDatastoreS3StorageSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IotSiteWiseCustomerManagedDatastoreS3StorageSummary");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key_prefix", &self.key_prefix);
-        formatter.finish()
-    }
-}
 /// See [`IotSiteWiseCustomerManagedDatastoreS3StorageSummary`](crate::model::IotSiteWiseCustomerManagedDatastoreS3StorageSummary).
 pub mod iot_site_wise_customer_managed_datastore_s3_storage_summary {
 
     /// A builder for [`IotSiteWiseCustomerManagedDatastoreS3StorageSummary`](crate::model::IotSiteWiseCustomerManagedDatastoreS3StorageSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) key_prefix: std::option::Option<std::string::String>,
@@ -5642,7 +5312,7 @@ impl IotSiteWiseCustomerManagedDatastoreS3StorageSummary {
 
 /// <p>Contains information about the data store that you manage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomerManagedDatastoreS3StorageSummary {
     /// <p>The name of the Amazon S3 bucket where your data is stored.</p>
     #[doc(hidden)]
@@ -5668,20 +5338,11 @@ impl CustomerManagedDatastoreS3StorageSummary {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CustomerManagedDatastoreS3StorageSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomerManagedDatastoreS3StorageSummary");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key_prefix", &self.key_prefix);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 /// See [`CustomerManagedDatastoreS3StorageSummary`](crate::model::CustomerManagedDatastoreS3StorageSummary).
 pub mod customer_managed_datastore_s3_storage_summary {
 
     /// A builder for [`CustomerManagedDatastoreS3StorageSummary`](crate::model::CustomerManagedDatastoreS3StorageSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) key_prefix: std::option::Option<std::string::String>,
@@ -5737,19 +5398,13 @@ impl CustomerManagedDatastoreS3StorageSummary {
 
 /// <p>Contains information about the data store that is managed by IoT Analytics.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceManagedDatastoreS3StorageSummary {}
-impl std::fmt::Debug for ServiceManagedDatastoreS3StorageSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceManagedDatastoreS3StorageSummary");
-        formatter.finish()
-    }
-}
 /// See [`ServiceManagedDatastoreS3StorageSummary`](crate::model::ServiceManagedDatastoreS3StorageSummary).
 pub mod service_managed_datastore_s3_storage_summary {
 
     /// A builder for [`ServiceManagedDatastoreS3StorageSummary`](crate::model::ServiceManagedDatastoreS3StorageSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`ServiceManagedDatastoreS3StorageSummary`](crate::model::ServiceManagedDatastoreS3StorageSummary).
@@ -5767,7 +5422,7 @@ impl ServiceManagedDatastoreS3StorageSummary {
 
 /// <p>A summary of information about a dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetSummary {
     /// <p>The name of the dataset.</p>
     #[doc(hidden)]
@@ -5814,23 +5469,11 @@ impl DatasetSummary {
         self.actions.as_deref()
     }
 }
-impl std::fmt::Debug for DatasetSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetSummary");
-        formatter.field("dataset_name", &self.dataset_name);
-        formatter.field("status", &self.status);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.field("triggers", &self.triggers);
-        formatter.field("actions", &self.actions);
-        formatter.finish()
-    }
-}
 /// See [`DatasetSummary`](crate::model::DatasetSummary).
 pub mod dataset_summary {
 
     /// A builder for [`DatasetSummary`](crate::model::DatasetSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::DatasetStatus>,
@@ -5949,7 +5592,7 @@ impl DatasetSummary {
 
 /// <p>Information about the action that automatically creates the dataset's contents.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetActionSummary {
     /// <p>The name of the action that automatically creates the dataset's contents.</p>
     #[doc(hidden)]
@@ -5968,19 +5611,11 @@ impl DatasetActionSummary {
         self.action_type.as_ref()
     }
 }
-impl std::fmt::Debug for DatasetActionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetActionSummary");
-        formatter.field("action_name", &self.action_name);
-        formatter.field("action_type", &self.action_type);
-        formatter.finish()
-    }
-}
 /// See [`DatasetActionSummary`](crate::model::DatasetActionSummary).
 pub mod dataset_action_summary {
 
     /// A builder for [`DatasetActionSummary`](crate::model::DatasetActionSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_name: std::option::Option<std::string::String>,
         pub(crate) action_type: std::option::Option<crate::model::DatasetActionType>,
@@ -6025,6 +5660,41 @@ impl DatasetActionSummary {
     }
 }
 
+/// When writing a match expression against `DatasetActionType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let datasetactiontype = unimplemented!();
+/// match datasetactiontype {
+///     DatasetActionType::Container => { /* ... */ },
+///     DatasetActionType::Query => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `datasetactiontype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DatasetActionType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DatasetActionType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DatasetActionType::NewFeature` is defined.
+/// Specifically, when `datasetactiontype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DatasetActionType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -6041,15 +5711,17 @@ pub enum DatasetActionType {
     Container,
     #[allow(missing_docs)] // documentation missing in model
     Query,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DatasetActionType {
     fn from(s: &str) -> Self {
         match s {
             "CONTAINER" => DatasetActionType::Container,
             "QUERY" => DatasetActionType::Query,
-            other => DatasetActionType::Unknown(other.to_owned()),
+            other => {
+                DatasetActionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -6066,11 +5738,11 @@ impl DatasetActionType {
         match self {
             DatasetActionType::Container => "CONTAINER",
             DatasetActionType::Query => "QUERY",
-            DatasetActionType::Unknown(s) => s.as_ref(),
+            DatasetActionType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONTAINER", "QUERY"]
     }
 }
@@ -6080,6 +5752,42 @@ impl AsRef<str> for DatasetActionType {
     }
 }
 
+/// When writing a match expression against `DatasetStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let datasetstatus = unimplemented!();
+/// match datasetstatus {
+///     DatasetStatus::Active => { /* ... */ },
+///     DatasetStatus::Creating => { /* ... */ },
+///     DatasetStatus::Deleting => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `datasetstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DatasetStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DatasetStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DatasetStatus::NewFeature` is defined.
+/// Specifically, when `datasetstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DatasetStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -6098,8 +5806,8 @@ pub enum DatasetStatus {
     Creating,
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DatasetStatus {
     fn from(s: &str) -> Self {
@@ -6107,7 +5815,7 @@ impl std::convert::From<&str> for DatasetStatus {
             "ACTIVE" => DatasetStatus::Active,
             "CREATING" => DatasetStatus::Creating,
             "DELETING" => DatasetStatus::Deleting,
-            other => DatasetStatus::Unknown(other.to_owned()),
+            other => DatasetStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -6125,11 +5833,11 @@ impl DatasetStatus {
             DatasetStatus::Active => "ACTIVE",
             DatasetStatus::Creating => "CREATING",
             DatasetStatus::Deleting => "DELETING",
-            DatasetStatus::Unknown(s) => s.as_ref(),
+            DatasetStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETING"]
     }
 }
@@ -6141,7 +5849,7 @@ impl AsRef<str> for DatasetStatus {
 
 /// <p>Summary information about dataset contents.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetContentSummary {
     /// <p>The version of the dataset contents.</p>
     #[doc(hidden)]
@@ -6181,22 +5889,11 @@ impl DatasetContentSummary {
         self.completion_time.as_ref()
     }
 }
-impl std::fmt::Debug for DatasetContentSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetContentSummary");
-        formatter.field("version", &self.version);
-        formatter.field("status", &self.status);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("schedule_time", &self.schedule_time);
-        formatter.field("completion_time", &self.completion_time);
-        formatter.finish()
-    }
-}
 /// See [`DatasetContentSummary`](crate::model::DatasetContentSummary).
 pub mod dataset_content_summary {
 
     /// A builder for [`DatasetContentSummary`](crate::model::DatasetContentSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::DatasetContentStatus>,
@@ -6288,7 +5985,7 @@ impl DatasetContentSummary {
 
 /// <p>The state of the dataset contents and the reason they are in this state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetContentStatus {
     /// <p>The state of the dataset contents. Can be one of READY, CREATING, SUCCEEDED, or FAILED.</p>
     #[doc(hidden)]
@@ -6307,19 +6004,11 @@ impl DatasetContentStatus {
         self.reason.as_deref()
     }
 }
-impl std::fmt::Debug for DatasetContentStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetContentStatus");
-        formatter.field("state", &self.state);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
-    }
-}
 /// See [`DatasetContentStatus`](crate::model::DatasetContentStatus).
 pub mod dataset_content_status {
 
     /// A builder for [`DatasetContentStatus`](crate::model::DatasetContentStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::DatasetContentState>,
         pub(crate) reason: std::option::Option<std::string::String>,
@@ -6364,6 +6053,42 @@ impl DatasetContentStatus {
     }
 }
 
+/// When writing a match expression against `DatasetContentState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let datasetcontentstate = unimplemented!();
+/// match datasetcontentstate {
+///     DatasetContentState::Creating => { /* ... */ },
+///     DatasetContentState::Failed => { /* ... */ },
+///     DatasetContentState::Succeeded => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `datasetcontentstate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DatasetContentState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DatasetContentState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DatasetContentState::NewFeature` is defined.
+/// Specifically, when `datasetcontentstate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DatasetContentState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -6382,8 +6107,8 @@ pub enum DatasetContentState {
     Failed,
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DatasetContentState {
     fn from(s: &str) -> Self {
@@ -6391,7 +6116,9 @@ impl std::convert::From<&str> for DatasetContentState {
             "CREATING" => DatasetContentState::Creating,
             "FAILED" => DatasetContentState::Failed,
             "SUCCEEDED" => DatasetContentState::Succeeded,
-            other => DatasetContentState::Unknown(other.to_owned()),
+            other => {
+                DatasetContentState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -6409,11 +6136,11 @@ impl DatasetContentState {
             DatasetContentState::Creating => "CREATING",
             DatasetContentState::Failed => "FAILED",
             DatasetContentState::Succeeded => "SUCCEEDED",
-            DatasetContentState::Unknown(s) => s.as_ref(),
+            DatasetContentState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATING", "FAILED", "SUCCEEDED"]
     }
 }
@@ -6425,7 +6152,7 @@ impl AsRef<str> for DatasetContentState {
 
 /// <p>A summary of information about a channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelSummary {
     /// <p>The name of the channel.</p>
     #[doc(hidden)]
@@ -6476,23 +6203,11 @@ impl ChannelSummary {
         self.last_message_arrival_time.as_ref()
     }
 }
-impl std::fmt::Debug for ChannelSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelSummary");
-        formatter.field("channel_name", &self.channel_name);
-        formatter.field("channel_storage", &self.channel_storage);
-        formatter.field("status", &self.status);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.field("last_message_arrival_time", &self.last_message_arrival_time);
-        formatter.finish()
-    }
-}
 /// See [`ChannelSummary`](crate::model::ChannelSummary).
 pub mod channel_summary {
 
     /// A builder for [`ChannelSummary`](crate::model::ChannelSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_name: std::option::Option<std::string::String>,
         pub(crate) channel_storage: std::option::Option<crate::model::ChannelStorageSummary>,
@@ -6601,6 +6316,42 @@ impl ChannelSummary {
     }
 }
 
+/// When writing a match expression against `ChannelStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let channelstatus = unimplemented!();
+/// match channelstatus {
+///     ChannelStatus::Active => { /* ... */ },
+///     ChannelStatus::Creating => { /* ... */ },
+///     ChannelStatus::Deleting => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `channelstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ChannelStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ChannelStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ChannelStatus::NewFeature` is defined.
+/// Specifically, when `channelstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ChannelStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -6619,8 +6370,8 @@ pub enum ChannelStatus {
     Creating,
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ChannelStatus {
     fn from(s: &str) -> Self {
@@ -6628,7 +6379,7 @@ impl std::convert::From<&str> for ChannelStatus {
             "ACTIVE" => ChannelStatus::Active,
             "CREATING" => ChannelStatus::Creating,
             "DELETING" => ChannelStatus::Deleting,
-            other => ChannelStatus::Unknown(other.to_owned()),
+            other => ChannelStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -6646,11 +6397,11 @@ impl ChannelStatus {
             ChannelStatus::Active => "ACTIVE",
             ChannelStatus::Creating => "CREATING",
             ChannelStatus::Deleting => "DELETING",
-            ChannelStatus::Unknown(s) => s.as_ref(),
+            ChannelStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETING"]
     }
 }
@@ -6662,7 +6413,7 @@ impl AsRef<str> for ChannelStatus {
 
 /// <p>Where channel data is stored.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelStorageSummary {
     /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics.</p>
     #[doc(hidden)]
@@ -6687,19 +6438,11 @@ impl ChannelStorageSummary {
         self.customer_managed_s3.as_ref()
     }
 }
-impl std::fmt::Debug for ChannelStorageSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelStorageSummary");
-        formatter.field("service_managed_s3", &self.service_managed_s3);
-        formatter.field("customer_managed_s3", &self.customer_managed_s3);
-        formatter.finish()
-    }
-}
 /// See [`ChannelStorageSummary`](crate::model::ChannelStorageSummary).
 pub mod channel_storage_summary {
 
     /// A builder for [`ChannelStorageSummary`](crate::model::ChannelStorageSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_managed_s3:
             std::option::Option<crate::model::ServiceManagedChannelS3StorageSummary>,
@@ -6757,7 +6500,7 @@ impl ChannelStorageSummary {
 
 /// <p>Used to store channel data in an S3 bucket that you manage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomerManagedChannelS3StorageSummary {
     /// <p>The name of the S3 bucket in which channel data is stored.</p>
     #[doc(hidden)]
@@ -6783,20 +6526,11 @@ impl CustomerManagedChannelS3StorageSummary {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CustomerManagedChannelS3StorageSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomerManagedChannelS3StorageSummary");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key_prefix", &self.key_prefix);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 /// See [`CustomerManagedChannelS3StorageSummary`](crate::model::CustomerManagedChannelS3StorageSummary).
 pub mod customer_managed_channel_s3_storage_summary {
 
     /// A builder for [`CustomerManagedChannelS3StorageSummary`](crate::model::CustomerManagedChannelS3StorageSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) key_prefix: std::option::Option<std::string::String>,
@@ -6852,19 +6586,13 @@ impl CustomerManagedChannelS3StorageSummary {
 
 /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceManagedChannelS3StorageSummary {}
-impl std::fmt::Debug for ServiceManagedChannelS3StorageSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceManagedChannelS3StorageSummary");
-        formatter.finish()
-    }
-}
 /// See [`ServiceManagedChannelS3StorageSummary`](crate::model::ServiceManagedChannelS3StorageSummary).
 pub mod service_managed_channel_s3_storage_summary {
 
     /// A builder for [`ServiceManagedChannelS3StorageSummary`](crate::model::ServiceManagedChannelS3StorageSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`ServiceManagedChannelS3StorageSummary`](crate::model::ServiceManagedChannelS3StorageSummary).
@@ -6882,7 +6610,7 @@ impl ServiceManagedChannelS3StorageSummary {
 
 /// <p>The reference to a dataset entry.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatasetEntry {
     /// <p>The name of the dataset item.</p>
     #[doc(hidden)]
@@ -6901,19 +6629,11 @@ impl DatasetEntry {
         self.data_uri.as_deref()
     }
 }
-impl std::fmt::Debug for DatasetEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatasetEntry");
-        formatter.field("entry_name", &self.entry_name);
-        formatter.field("data_uri", &self.data_uri);
-        formatter.finish()
-    }
-}
 /// See [`DatasetEntry`](crate::model::DatasetEntry).
 pub mod dataset_entry {
 
     /// A builder for [`DatasetEntry`](crate::model::DatasetEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entry_name: std::option::Option<std::string::String>,
         pub(crate) data_uri: std::option::Option<std::string::String>,
@@ -6957,7 +6677,7 @@ impl DatasetEntry {
 
 /// <p>Contains information about a pipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Pipeline {
     /// <p>The name of the pipeline.</p>
     #[doc(hidden)]
@@ -7007,23 +6727,11 @@ impl Pipeline {
         self.last_update_time.as_ref()
     }
 }
-impl std::fmt::Debug for Pipeline {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Pipeline");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("activities", &self.activities);
-        formatter.field("reprocessing_summaries", &self.reprocessing_summaries);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.finish()
-    }
-}
 /// See [`Pipeline`](crate::model::Pipeline).
 pub mod pipeline {
 
     /// A builder for [`Pipeline`](crate::model::Pipeline).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -7140,7 +6848,7 @@ impl Pipeline {
 
 /// <p>Statistical information about the data store.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatastoreStatistics {
     /// <p>The estimated size of the data store.</p>
     #[doc(hidden)]
@@ -7152,18 +6860,11 @@ impl DatastoreStatistics {
         self.size.as_ref()
     }
 }
-impl std::fmt::Debug for DatastoreStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatastoreStatistics");
-        formatter.field("size", &self.size);
-        formatter.finish()
-    }
-}
 /// See [`DatastoreStatistics`](crate::model::DatastoreStatistics).
 pub mod datastore_statistics {
 
     /// A builder for [`DatastoreStatistics`](crate::model::DatastoreStatistics).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) size: std::option::Option<crate::model::EstimatedResourceSize>,
     }
@@ -7196,7 +6897,7 @@ impl DatastoreStatistics {
 
 /// <p>The estimated size of the resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EstimatedResourceSize {
     /// <p>The estimated size of the resource, in bytes.</p>
     #[doc(hidden)]
@@ -7215,19 +6916,11 @@ impl EstimatedResourceSize {
         self.estimated_on.as_ref()
     }
 }
-impl std::fmt::Debug for EstimatedResourceSize {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EstimatedResourceSize");
-        formatter.field("estimated_size_in_bytes", &self.estimated_size_in_bytes);
-        formatter.field("estimated_on", &self.estimated_on);
-        formatter.finish()
-    }
-}
 /// See [`EstimatedResourceSize`](crate::model::EstimatedResourceSize).
 pub mod estimated_resource_size {
 
     /// A builder for [`EstimatedResourceSize`](crate::model::EstimatedResourceSize).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) estimated_size_in_bytes: std::option::Option<f64>,
         pub(crate) estimated_on: std::option::Option<aws_smithy_types::DateTime>,
@@ -7274,7 +6967,7 @@ impl EstimatedResourceSize {
 
 /// <p>Information about a data store.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Datastore {
     /// <p>The name of the data store.</p>
     #[doc(hidden)]
@@ -7399,27 +7092,11 @@ impl Datastore {
         self.datastore_partitions.as_ref()
     }
 }
-impl std::fmt::Debug for Datastore {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Datastore");
-        formatter.field("name", &self.name);
-        formatter.field("storage", &self.storage);
-        formatter.field("arn", &self.arn);
-        formatter.field("status", &self.status);
-        formatter.field("retention_period", &self.retention_period);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.field("last_message_arrival_time", &self.last_message_arrival_time);
-        formatter.field("file_format_configuration", &self.file_format_configuration);
-        formatter.field("datastore_partitions", &self.datastore_partitions);
-        formatter.finish()
-    }
-}
 /// See [`Datastore`](crate::model::Datastore).
 pub mod datastore {
 
     /// A builder for [`Datastore`](crate::model::Datastore).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) storage: std::option::Option<crate::model::DatastoreStorage>,
@@ -7635,7 +7312,7 @@ impl Datastore {
 
 /// <p>Information about a dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Dataset {
     /// <p>The name of the dataset.</p>
     #[doc(hidden)]
@@ -7722,28 +7399,11 @@ impl Dataset {
         self.late_data_rules.as_deref()
     }
 }
-impl std::fmt::Debug for Dataset {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Dataset");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("actions", &self.actions);
-        formatter.field("triggers", &self.triggers);
-        formatter.field("content_delivery_rules", &self.content_delivery_rules);
-        formatter.field("status", &self.status);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.field("retention_period", &self.retention_period);
-        formatter.field("versioning_configuration", &self.versioning_configuration);
-        formatter.field("late_data_rules", &self.late_data_rules);
-        formatter.finish()
-    }
-}
 /// See [`Dataset`](crate::model::Dataset).
 pub mod dataset {
 
     /// A builder for [`Dataset`](crate::model::Dataset).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -7954,7 +7614,7 @@ impl Dataset {
 
 /// <p>Statistics information about the channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelStatistics {
     /// <p>The estimated size of the channel.</p>
     #[doc(hidden)]
@@ -7966,18 +7626,11 @@ impl ChannelStatistics {
         self.size.as_ref()
     }
 }
-impl std::fmt::Debug for ChannelStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelStatistics");
-        formatter.field("size", &self.size);
-        formatter.finish()
-    }
-}
 /// See [`ChannelStatistics`](crate::model::ChannelStatistics).
 pub mod channel_statistics {
 
     /// A builder for [`ChannelStatistics`](crate::model::ChannelStatistics).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) size: std::option::Option<crate::model::EstimatedResourceSize>,
     }
@@ -8010,7 +7663,7 @@ impl ChannelStatistics {
 
 /// <p>A collection of data from an MQTT topic. Channels archive the raw, unprocessed messages before publishing the data to a pipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Channel {
     /// <p>The name of the channel.</p>
     #[doc(hidden)]
@@ -8075,25 +7728,11 @@ impl Channel {
         self.last_message_arrival_time.as_ref()
     }
 }
-impl std::fmt::Debug for Channel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Channel");
-        formatter.field("name", &self.name);
-        formatter.field("storage", &self.storage);
-        formatter.field("arn", &self.arn);
-        formatter.field("status", &self.status);
-        formatter.field("retention_period", &self.retention_period);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.field("last_message_arrival_time", &self.last_message_arrival_time);
-        formatter.finish()
-    }
-}
 /// See [`Channel`](crate::model::Channel).
 pub mod channel {
 
     /// A builder for [`Channel`](crate::model::Channel).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) storage: std::option::Option<crate::model::ChannelStorage>,
@@ -8231,7 +7870,7 @@ impl Channel {
 
 /// <p>Contains informations about errors.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchPutMessageErrorEntry {
     /// <p>The ID of the message that caused the error. See the value corresponding to the <code>messageId</code> key in the message object.</p>
     #[doc(hidden)]
@@ -8257,20 +7896,11 @@ impl BatchPutMessageErrorEntry {
         self.error_message.as_deref()
     }
 }
-impl std::fmt::Debug for BatchPutMessageErrorEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchPutMessageErrorEntry");
-        formatter.field("message_id", &self.message_id);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
-    }
-}
 /// See [`BatchPutMessageErrorEntry`](crate::model::BatchPutMessageErrorEntry).
 pub mod batch_put_message_error_entry {
 
     /// A builder for [`BatchPutMessageErrorEntry`](crate::model::BatchPutMessageErrorEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
         pub(crate) error_code: std::option::Option<std::string::String>,
@@ -8329,7 +7959,7 @@ impl BatchPutMessageErrorEntry {
 
 /// <p>Information about a message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Message {
     /// <p>The ID you want to assign to the message. Each <code>messageId</code> must be unique within each batch sent.</p>
     #[doc(hidden)]
@@ -8348,19 +7978,11 @@ impl Message {
         self.payload.as_ref()
     }
 }
-impl std::fmt::Debug for Message {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Message");
-        formatter.field("message_id", &self.message_id);
-        formatter.field("payload", &self.payload);
-        formatter.finish()
-    }
-}
 /// See [`Message`](crate::model::Message).
 pub mod message {
 
     /// A builder for [`Message`](crate::model::Message).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
         pub(crate) payload: std::option::Option<aws_smithy_types::Blob>,

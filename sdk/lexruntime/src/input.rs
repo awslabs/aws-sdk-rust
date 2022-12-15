@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod delete_session_input {
 
     /// A builder for [`DeleteSessionInput`](crate::input::DeleteSessionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot_name: std::option::Option<std::string::String>,
         pub(crate) bot_alias: std::option::Option<std::string::String>,
@@ -45,7 +45,7 @@ pub mod delete_session_input {
         /// Consumes the builder and constructs a [`DeleteSessionInput`](crate::input::DeleteSessionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteSessionInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteSessionInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteSessionInput {
                 bot_name: self.bot_name,
@@ -68,54 +68,69 @@ impl DeleteSessionInput {
             crate::operation::DeleteSession,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteSessionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.bot_name;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bot_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bot_name = aws_smithy_http::label::fmt_string(input_1, false);
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bot_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bot_name = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bot_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bot_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bot_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_2 = &_input.bot_alias;
-                let input_2 = input_2.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bot_alias",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bot_alias = aws_smithy_http::label::fmt_string(input_2, false);
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bot_alias",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bot_alias = aws_smithy_http::label::fmt_string(
+                    input_2,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bot_alias.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bot_alias",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bot_alias",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_3 = &_input.user_id;
-                let input_3 = input_3.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "user_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let user_id = aws_smithy_http::label::fmt_string(input_3, false);
+                let input_3 = input_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "user_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let user_id = aws_smithy_http::label::fmt_string(
+                    input_3,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if user_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "user_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "user_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -131,8 +146,10 @@ impl DeleteSessionInput {
             fn update_http_builder(
                 input: &crate::input::DeleteSessionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -202,7 +219,7 @@ impl DeleteSessionInput {
 pub mod get_session_input {
 
     /// A builder for [`GetSessionInput`](crate::input::GetSessionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot_name: std::option::Option<std::string::String>,
         pub(crate) bot_alias: std::option::Option<std::string::String>,
@@ -258,7 +275,8 @@ pub mod get_session_input {
         /// Consumes the builder and constructs a [`GetSessionInput`](crate::input::GetSessionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetSessionInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::GetSessionInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::GetSessionInput {
                 bot_name: self.bot_name,
                 bot_alias: self.bot_alias,
@@ -281,54 +299,69 @@ impl GetSessionInput {
             crate::operation::GetSession,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetSessionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_4 = &_input.bot_name;
-                let input_4 = input_4.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bot_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bot_name = aws_smithy_http::label::fmt_string(input_4, false);
+                let input_4 = input_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bot_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bot_name = aws_smithy_http::label::fmt_string(
+                    input_4,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bot_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bot_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bot_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_5 = &_input.bot_alias;
-                let input_5 = input_5.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bot_alias",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bot_alias = aws_smithy_http::label::fmt_string(input_5, false);
+                let input_5 = input_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bot_alias",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bot_alias = aws_smithy_http::label::fmt_string(
+                    input_5,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bot_alias.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bot_alias",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bot_alias",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_6 = &_input.user_id;
-                let input_6 = input_6.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "user_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let user_id = aws_smithy_http::label::fmt_string(input_6, false);
+                let input_6 = input_6.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "user_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let user_id = aws_smithy_http::label::fmt_string(
+                    input_6,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if user_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "user_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "user_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -343,13 +376,15 @@ impl GetSessionInput {
             fn uri_query(
                 _input: &crate::input::GetSessionInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_7) = &_input.checkpoint_label_filter {
-                    query.push_kv(
-                        "checkpointLabelFilter",
-                        &aws_smithy_http::query::fmt_string(&inner_7),
-                    );
+                    {
+                        query.push_kv(
+                            "checkpointLabelFilter",
+                            &aws_smithy_http::query::fmt_string(&inner_7),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -357,8 +392,10 @@ impl GetSessionInput {
             fn update_http_builder(
                 input: &crate::input::GetSessionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -429,7 +466,7 @@ impl GetSessionInput {
 pub mod post_content_input {
 
     /// A builder for [`PostContentInput`](crate::input::PostContentInput).
-    #[derive(std::default::Default, std::fmt::Debug)]
+    #[derive(std::default::Default)]
     pub struct Builder {
         pub(crate) bot_name: std::option::Option<std::string::String>,
         pub(crate) bot_alias: std::option::Option<std::string::String>,
@@ -637,7 +674,7 @@ pub mod post_content_input {
         /// Consumes the builder and constructs a [`PostContentInput`](crate::input::PostContentInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PostContentInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::PostContentInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::PostContentInput {
                 bot_name: self.bot_name,
@@ -650,6 +687,21 @@ pub mod post_content_input {
                 input_stream: self.input_stream.unwrap_or_default(),
                 active_contexts: self.active_contexts,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("bot_name", &self.bot_name);
+            formatter.field("bot_alias", &self.bot_alias);
+            formatter.field("user_id", &self.user_id);
+            formatter.field("session_attributes", &"*** Sensitive Data Redacted ***");
+            formatter.field("request_attributes", &"*** Sensitive Data Redacted ***");
+            formatter.field("content_type", &self.content_type);
+            formatter.field("accept", &self.accept);
+            formatter.field("input_stream", &self.input_stream);
+            formatter.field("active_contexts", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -666,54 +718,69 @@ impl PostContentInput {
             crate::operation::PostContent,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PostContentInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_8 = &_input.bot_name;
-                let input_8 = input_8.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bot_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bot_name = aws_smithy_http::label::fmt_string(input_8, false);
+                let input_8 = input_8.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bot_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bot_name = aws_smithy_http::label::fmt_string(
+                    input_8,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bot_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bot_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bot_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_9 = &_input.bot_alias;
-                let input_9 = input_9.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bot_alias",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bot_alias = aws_smithy_http::label::fmt_string(input_9, false);
+                let input_9 = input_9.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bot_alias",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bot_alias = aws_smithy_http::label::fmt_string(
+                    input_9,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bot_alias.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bot_alias",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bot_alias",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_10 = &_input.user_id;
-                let input_10 = input_10.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "user_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let user_id = aws_smithy_http::label::fmt_string(input_10, false);
+                let input_10 = input_10.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "user_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let user_id = aws_smithy_http::label::fmt_string(
+                    input_10,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if user_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "user_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "user_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -729,8 +796,10 @@ impl PostContentInput {
             fn update_http_builder(
                 input: &crate::input::PostContentInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_post_content(input, builder)?;
@@ -820,7 +889,7 @@ impl PostContentInput {
 pub mod post_text_input {
 
     /// A builder for [`PostTextInput`](crate::input::PostTextInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) bot_name: std::option::Option<std::string::String>,
         pub(crate) bot_alias: std::option::Option<std::string::String>,
@@ -969,7 +1038,8 @@ pub mod post_text_input {
         /// Consumes the builder and constructs a [`PostTextInput`](crate::input::PostTextInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PostTextInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::PostTextInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::PostTextInput {
                 bot_name: self.bot_name,
                 bot_alias: self.bot_alias,
@@ -979,6 +1049,19 @@ pub mod post_text_input {
                 input_text: self.input_text,
                 active_contexts: self.active_contexts,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("bot_name", &self.bot_name);
+            formatter.field("bot_alias", &self.bot_alias);
+            formatter.field("user_id", &self.user_id);
+            formatter.field("session_attributes", &"*** Sensitive Data Redacted ***");
+            formatter.field("request_attributes", &"*** Sensitive Data Redacted ***");
+            formatter.field("input_text", &"*** Sensitive Data Redacted ***");
+            formatter.field("active_contexts", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -995,54 +1078,69 @@ impl PostTextInput {
             crate::operation::PostText,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PostTextInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_11 = &_input.bot_name;
-                let input_11 = input_11.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bot_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bot_name = aws_smithy_http::label::fmt_string(input_11, false);
+                let input_11 = input_11.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bot_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bot_name = aws_smithy_http::label::fmt_string(
+                    input_11,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bot_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bot_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bot_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_12 = &_input.bot_alias;
-                let input_12 = input_12.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bot_alias",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bot_alias = aws_smithy_http::label::fmt_string(input_12, false);
+                let input_12 = input_12.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bot_alias",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bot_alias = aws_smithy_http::label::fmt_string(
+                    input_12,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bot_alias.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bot_alias",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bot_alias",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_13 = &_input.user_id;
-                let input_13 = input_13.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "user_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let user_id = aws_smithy_http::label::fmt_string(input_13, false);
+                let input_13 = input_13.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "user_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let user_id = aws_smithy_http::label::fmt_string(
+                    input_13,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if user_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "user_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "user_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1058,8 +1156,10 @@ impl PostTextInput {
             fn update_http_builder(
                 input: &crate::input::PostTextInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1141,7 +1241,7 @@ impl PostTextInput {
 pub mod put_session_input {
 
     /// A builder for [`PutSessionInput`](crate::input::PutSessionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) bot_name: std::option::Option<std::string::String>,
         pub(crate) bot_alias: std::option::Option<std::string::String>,
@@ -1317,7 +1417,8 @@ pub mod put_session_input {
         /// Consumes the builder and constructs a [`PutSessionInput`](crate::input::PutSessionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutSessionInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::PutSessionInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::PutSessionInput {
                 bot_name: self.bot_name,
                 bot_alias: self.bot_alias,
@@ -1328,6 +1429,23 @@ pub mod put_session_input {
                 accept: self.accept,
                 active_contexts: self.active_contexts,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("bot_name", &self.bot_name);
+            formatter.field("bot_alias", &self.bot_alias);
+            formatter.field("user_id", &self.user_id);
+            formatter.field("session_attributes", &"*** Sensitive Data Redacted ***");
+            formatter.field("dialog_action", &self.dialog_action);
+            formatter.field(
+                "recent_intent_summary_view",
+                &self.recent_intent_summary_view,
+            );
+            formatter.field("accept", &self.accept);
+            formatter.field("active_contexts", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -1344,54 +1462,69 @@ impl PutSessionInput {
             crate::operation::PutSession,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutSessionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_14 = &_input.bot_name;
-                let input_14 = input_14.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bot_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bot_name = aws_smithy_http::label::fmt_string(input_14, false);
+                let input_14 = input_14.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bot_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bot_name = aws_smithy_http::label::fmt_string(
+                    input_14,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bot_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bot_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bot_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_15 = &_input.bot_alias;
-                let input_15 = input_15.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bot_alias",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bot_alias = aws_smithy_http::label::fmt_string(input_15, false);
+                let input_15 = input_15.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bot_alias",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bot_alias = aws_smithy_http::label::fmt_string(
+                    input_15,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bot_alias.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bot_alias",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bot_alias",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_16 = &_input.user_id;
-                let input_16 = input_16.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "user_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let user_id = aws_smithy_http::label::fmt_string(input_16, false);
+                let input_16 = input_16.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "user_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let user_id = aws_smithy_http::label::fmt_string(
+                    input_16,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if user_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "user_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "user_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1407,8 +1540,10 @@ impl PutSessionInput {
             fn update_http_builder(
                 input: &crate::input::PutSessionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_put_session(input, builder)?;
@@ -1894,7 +2029,7 @@ impl std::fmt::Debug for PostContentInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSessionInput {
     /// <p>The name of the bot that contains the session data.</p>
     #[doc(hidden)]
@@ -1929,20 +2064,10 @@ impl GetSessionInput {
         self.checkpoint_label_filter.as_deref()
     }
 }
-impl std::fmt::Debug for GetSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSessionInput");
-        formatter.field("bot_name", &self.bot_name);
-        formatter.field("bot_alias", &self.bot_alias);
-        formatter.field("user_id", &self.user_id);
-        formatter.field("checkpoint_label_filter", &self.checkpoint_label_filter);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSessionInput {
     /// <p>The name of the bot that contains the session data.</p>
     #[doc(hidden)]
@@ -1966,14 +2091,5 @@ impl DeleteSessionInput {
     /// <p>The identifier of the user associated with the session data.</p>
     pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSessionInput");
-        formatter.field("bot_name", &self.bot_name);
-        formatter.field("bot_alias", &self.bot_alias);
-        formatter.field("user_id", &self.user_id);
-        formatter.finish()
     }
 }

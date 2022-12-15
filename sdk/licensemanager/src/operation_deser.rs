@@ -23,7 +23,7 @@ pub fn parse_accept_grant_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AcceptGrantError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -40,7 +40,7 @@ pub fn parse_accept_grant_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AcceptGrantError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -58,7 +58,7 @@ pub fn parse_accept_grant_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AcceptGrantError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -76,7 +76,7 @@ pub fn parse_accept_grant_error(
                     output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AcceptGrantError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -94,7 +94,7 @@ pub fn parse_accept_grant_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AcceptGrantError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -111,7 +111,7 @@ pub fn parse_accept_grant_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AcceptGrantError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -128,7 +128,7 @@ pub fn parse_accept_grant_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AcceptGrantError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -179,7 +179,7 @@ pub fn parse_check_in_license_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CheckInLicenseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -196,7 +196,7 @@ pub fn parse_check_in_license_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CheckInLicenseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -214,7 +214,7 @@ pub fn parse_check_in_license_error(
                         output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CheckInLicenseError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -233,7 +233,7 @@ pub fn parse_check_in_license_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CheckInLicenseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -251,7 +251,7 @@ pub fn parse_check_in_license_error(
                     output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CheckInLicenseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -268,7 +268,7 @@ pub fn parse_check_in_license_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CheckInLicenseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -285,7 +285,7 @@ pub fn parse_check_in_license_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CheckInLicenseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -302,7 +302,7 @@ pub fn parse_check_in_license_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CheckInLicenseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -349,7 +349,7 @@ pub fn parse_checkout_borrow_license_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -363,7 +363,7 @@ pub fn parse_checkout_borrow_license_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -377,7 +377,7 @@ pub fn parse_checkout_borrow_license_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -391,7 +391,7 @@ pub fn parse_checkout_borrow_license_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -405,7 +405,7 @@ pub fn parse_checkout_borrow_license_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -419,7 +419,7 @@ pub fn parse_checkout_borrow_license_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -433,7 +433,7 @@ pub fn parse_checkout_borrow_license_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -447,7 +447,7 @@ pub fn parse_checkout_borrow_license_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -461,7 +461,7 @@ pub fn parse_checkout_borrow_license_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -475,7 +475,7 @@ pub fn parse_checkout_borrow_license_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -489,7 +489,7 @@ pub fn parse_checkout_borrow_license_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -542,7 +542,7 @@ pub fn parse_checkout_license_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CheckoutLicenseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -559,7 +559,7 @@ pub fn parse_checkout_license_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CheckoutLicenseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -577,7 +577,7 @@ pub fn parse_checkout_license_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CheckoutLicenseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -595,7 +595,7 @@ pub fn parse_checkout_license_error(
                     output = crate::json_deser::deser_structure_crate_error_no_entitlements_allowed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CheckoutLicenseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -613,7 +613,7 @@ pub fn parse_checkout_license_error(
                     output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CheckoutLicenseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -631,7 +631,7 @@ pub fn parse_checkout_license_error(
                         output = crate::json_deser::deser_structure_crate_error_redirect_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CheckoutLicenseError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -649,7 +649,7 @@ pub fn parse_checkout_license_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CheckoutLicenseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -666,7 +666,7 @@ pub fn parse_checkout_license_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CheckoutLicenseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -684,7 +684,7 @@ pub fn parse_checkout_license_error(
                             output = crate::json_deser::deser_structure_crate_error_unsupported_digital_signature_method_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CheckoutLicenseError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -702,7 +702,7 @@ pub fn parse_checkout_license_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CheckoutLicenseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -753,7 +753,7 @@ pub fn parse_create_grant_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGrantError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -770,7 +770,7 @@ pub fn parse_create_grant_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGrantError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -788,7 +788,7 @@ pub fn parse_create_grant_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGrantError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -806,7 +806,7 @@ pub fn parse_create_grant_error(
                     output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGrantError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -824,7 +824,7 @@ pub fn parse_create_grant_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGrantError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -841,7 +841,7 @@ pub fn parse_create_grant_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGrantError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -858,7 +858,7 @@ pub fn parse_create_grant_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGrantError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -912,7 +912,7 @@ pub fn parse_create_grant_version_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGrantVersionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -929,7 +929,7 @@ pub fn parse_create_grant_version_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGrantVersionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -947,7 +947,7 @@ pub fn parse_create_grant_version_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGrantVersionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -965,7 +965,7 @@ pub fn parse_create_grant_version_error(
                     output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGrantVersionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -983,7 +983,7 @@ pub fn parse_create_grant_version_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGrantVersionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1000,7 +1000,7 @@ pub fn parse_create_grant_version_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGrantVersionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1017,7 +1017,7 @@ pub fn parse_create_grant_version_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGrantVersionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1071,7 +1071,7 @@ pub fn parse_create_license_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLicenseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1088,7 +1088,7 @@ pub fn parse_create_license_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLicenseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1106,7 +1106,7 @@ pub fn parse_create_license_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLicenseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1124,7 +1124,7 @@ pub fn parse_create_license_error(
                     output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLicenseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1142,7 +1142,7 @@ pub fn parse_create_license_error(
                         output = crate::json_deser::deser_structure_crate_error_redirect_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLicenseError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1160,7 +1160,7 @@ pub fn parse_create_license_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLicenseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1177,7 +1177,7 @@ pub fn parse_create_license_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLicenseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1235,7 +1235,7 @@ pub fn parse_create_license_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLicenseConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1252,7 +1252,7 @@ pub fn parse_create_license_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLicenseConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1271,7 +1271,7 @@ pub fn parse_create_license_configuration_error(
                         output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLicenseConfigurationError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1290,7 +1290,7 @@ pub fn parse_create_license_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLicenseConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1309,7 +1309,7 @@ pub fn parse_create_license_configuration_error(
                         output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLicenseConfigurationError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1327,7 +1327,7 @@ pub fn parse_create_license_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLicenseConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1386,7 +1386,7 @@ pub fn parse_create_license_conversion_task_for_resource_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1400,7 +1400,7 @@ pub fn parse_create_license_conversion_task_for_resource_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1414,7 +1414,7 @@ pub fn parse_create_license_conversion_task_for_resource_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1428,7 +1428,7 @@ pub fn parse_create_license_conversion_task_for_resource_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1442,7 +1442,7 @@ pub fn parse_create_license_conversion_task_for_resource_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1456,7 +1456,7 @@ pub fn parse_create_license_conversion_task_for_resource_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1509,7 +1509,7 @@ pub fn parse_create_license_manager_report_generator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1523,7 +1523,7 @@ pub fn parse_create_license_manager_report_generator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1537,7 +1537,7 @@ pub fn parse_create_license_manager_report_generator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1551,7 +1551,7 @@ pub fn parse_create_license_manager_report_generator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1565,7 +1565,7 @@ pub fn parse_create_license_manager_report_generator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1579,7 +1579,7 @@ pub fn parse_create_license_manager_report_generator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1593,7 +1593,7 @@ pub fn parse_create_license_manager_report_generator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1607,7 +1607,7 @@ pub fn parse_create_license_manager_report_generator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1660,7 +1660,7 @@ pub fn parse_create_license_version_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLicenseVersionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1677,7 +1677,7 @@ pub fn parse_create_license_version_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLicenseVersionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1695,7 +1695,7 @@ pub fn parse_create_license_version_error(
                         output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLicenseVersionError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1714,7 +1714,7 @@ pub fn parse_create_license_version_error(
                     output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLicenseVersionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1732,7 +1732,7 @@ pub fn parse_create_license_version_error(
                         output = crate::json_deser::deser_structure_crate_error_redirect_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLicenseVersionError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1750,7 +1750,7 @@ pub fn parse_create_license_version_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLicenseVersionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1767,7 +1767,7 @@ pub fn parse_create_license_version_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLicenseVersionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1784,7 +1784,7 @@ pub fn parse_create_license_version_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLicenseVersionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1838,7 +1838,7 @@ pub fn parse_create_token_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1855,7 +1855,7 @@ pub fn parse_create_token_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1873,7 +1873,7 @@ pub fn parse_create_token_error(
                     output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1891,7 +1891,7 @@ pub fn parse_create_token_error(
                         output = crate::json_deser::deser_structure_crate_error_redirect_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1910,7 +1910,7 @@ pub fn parse_create_token_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1927,7 +1927,7 @@ pub fn parse_create_token_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1944,7 +1944,7 @@ pub fn parse_create_token_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1961,7 +1961,7 @@ pub fn parse_create_token_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2012,7 +2012,7 @@ pub fn parse_delete_grant_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteGrantError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2029,7 +2029,7 @@ pub fn parse_delete_grant_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteGrantError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2047,7 +2047,7 @@ pub fn parse_delete_grant_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteGrantError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2065,7 +2065,7 @@ pub fn parse_delete_grant_error(
                     output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteGrantError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2083,7 +2083,7 @@ pub fn parse_delete_grant_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteGrantError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2100,7 +2100,7 @@ pub fn parse_delete_grant_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteGrantError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2117,7 +2117,7 @@ pub fn parse_delete_grant_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteGrantError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2168,7 +2168,7 @@ pub fn parse_delete_license_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLicenseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2185,7 +2185,7 @@ pub fn parse_delete_license_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLicenseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2203,7 +2203,7 @@ pub fn parse_delete_license_error(
                         output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLicenseError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2222,7 +2222,7 @@ pub fn parse_delete_license_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLicenseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2240,7 +2240,7 @@ pub fn parse_delete_license_error(
                     output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLicenseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2258,7 +2258,7 @@ pub fn parse_delete_license_error(
                         output = crate::json_deser::deser_structure_crate_error_redirect_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLicenseError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2276,7 +2276,7 @@ pub fn parse_delete_license_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLicenseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2293,7 +2293,7 @@ pub fn parse_delete_license_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLicenseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2351,7 +2351,7 @@ pub fn parse_delete_license_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLicenseConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2368,7 +2368,7 @@ pub fn parse_delete_license_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLicenseConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2387,7 +2387,7 @@ pub fn parse_delete_license_configuration_error(
                         output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLicenseConfigurationError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2406,7 +2406,7 @@ pub fn parse_delete_license_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLicenseConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2423,7 +2423,7 @@ pub fn parse_delete_license_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLicenseConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2475,7 +2475,7 @@ pub fn parse_delete_license_manager_report_generator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2489,7 +2489,7 @@ pub fn parse_delete_license_manager_report_generator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2503,7 +2503,7 @@ pub fn parse_delete_license_manager_report_generator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2517,7 +2517,7 @@ pub fn parse_delete_license_manager_report_generator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2531,7 +2531,7 @@ pub fn parse_delete_license_manager_report_generator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2545,7 +2545,7 @@ pub fn parse_delete_license_manager_report_generator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2559,7 +2559,7 @@ pub fn parse_delete_license_manager_report_generator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2573,7 +2573,7 @@ pub fn parse_delete_license_manager_report_generator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2622,7 +2622,7 @@ pub fn parse_delete_token_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTokenError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2639,7 +2639,7 @@ pub fn parse_delete_token_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTokenError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2657,7 +2657,7 @@ pub fn parse_delete_token_error(
                     output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTokenError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2675,7 +2675,7 @@ pub fn parse_delete_token_error(
                         output = crate::json_deser::deser_structure_crate_error_redirect_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTokenError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2693,7 +2693,7 @@ pub fn parse_delete_token_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTokenError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2710,7 +2710,7 @@ pub fn parse_delete_token_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTokenError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2727,7 +2727,7 @@ pub fn parse_delete_token_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTokenError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2780,7 +2780,7 @@ pub fn parse_extend_license_consumption_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExtendLicenseConsumptionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2797,7 +2797,7 @@ pub fn parse_extend_license_consumption_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExtendLicenseConsumptionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2816,7 +2816,7 @@ pub fn parse_extend_license_consumption_error(
                         output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExtendLicenseConsumptionError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2835,7 +2835,7 @@ pub fn parse_extend_license_consumption_error(
                     output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExtendLicenseConsumptionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2852,7 +2852,7 @@ pub fn parse_extend_license_consumption_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExtendLicenseConsumptionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2869,7 +2869,7 @@ pub fn parse_extend_license_consumption_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExtendLicenseConsumptionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2886,7 +2886,7 @@ pub fn parse_extend_license_consumption_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExtendLicenseConsumptionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2940,7 +2940,7 @@ pub fn parse_get_access_token_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAccessTokenError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2957,7 +2957,7 @@ pub fn parse_get_access_token_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAccessTokenError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2975,7 +2975,7 @@ pub fn parse_get_access_token_error(
                     output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAccessTokenError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2992,7 +2992,7 @@ pub fn parse_get_access_token_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAccessTokenError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3009,7 +3009,7 @@ pub fn parse_get_access_token_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAccessTokenError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3060,7 +3060,7 @@ pub fn parse_get_grant_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetGrantError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3077,7 +3077,7 @@ pub fn parse_get_grant_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetGrantError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3095,7 +3095,7 @@ pub fn parse_get_grant_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetGrantError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3113,7 +3113,7 @@ pub fn parse_get_grant_error(
                     output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetGrantError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3131,7 +3131,7 @@ pub fn parse_get_grant_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetGrantError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3148,7 +3148,7 @@ pub fn parse_get_grant_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetGrantError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3165,7 +3165,7 @@ pub fn parse_get_grant_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetGrantError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3216,7 +3216,7 @@ pub fn parse_get_license_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLicenseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3233,7 +3233,7 @@ pub fn parse_get_license_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLicenseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3251,7 +3251,7 @@ pub fn parse_get_license_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLicenseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3269,7 +3269,7 @@ pub fn parse_get_license_error(
                     output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLicenseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3286,7 +3286,7 @@ pub fn parse_get_license_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLicenseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3303,7 +3303,7 @@ pub fn parse_get_license_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLicenseError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3361,7 +3361,7 @@ pub fn parse_get_license_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLicenseConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3378,7 +3378,7 @@ pub fn parse_get_license_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLicenseConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3396,7 +3396,7 @@ pub fn parse_get_license_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLicenseConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3414,7 +3414,7 @@ pub fn parse_get_license_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLicenseConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3431,7 +3431,7 @@ pub fn parse_get_license_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLicenseConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3492,7 +3492,7 @@ pub fn parse_get_license_conversion_task_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLicenseConversionTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3509,7 +3509,7 @@ pub fn parse_get_license_conversion_task_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLicenseConversionTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3528,7 +3528,7 @@ pub fn parse_get_license_conversion_task_error(
                         output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLicenseConversionTaskError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -3547,7 +3547,7 @@ pub fn parse_get_license_conversion_task_error(
                     output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLicenseConversionTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3564,7 +3564,7 @@ pub fn parse_get_license_conversion_task_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLicenseConversionTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3621,7 +3621,7 @@ pub fn parse_get_license_manager_report_generator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3635,7 +3635,7 @@ pub fn parse_get_license_manager_report_generator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3649,7 +3649,7 @@ pub fn parse_get_license_manager_report_generator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3663,7 +3663,7 @@ pub fn parse_get_license_manager_report_generator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3677,7 +3677,7 @@ pub fn parse_get_license_manager_report_generator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3691,7 +3691,7 @@ pub fn parse_get_license_manager_report_generator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3705,7 +3705,7 @@ pub fn parse_get_license_manager_report_generator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3719,7 +3719,7 @@ pub fn parse_get_license_manager_report_generator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3769,7 +3769,7 @@ pub fn parse_get_license_usage_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLicenseUsageError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3786,7 +3786,7 @@ pub fn parse_get_license_usage_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLicenseUsageError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3804,7 +3804,7 @@ pub fn parse_get_license_usage_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLicenseUsageError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3822,7 +3822,7 @@ pub fn parse_get_license_usage_error(
                     output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLicenseUsageError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3839,7 +3839,7 @@ pub fn parse_get_license_usage_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLicenseUsageError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3856,7 +3856,7 @@ pub fn parse_get_license_usage_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLicenseUsageError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3910,7 +3910,7 @@ pub fn parse_get_service_settings_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetServiceSettingsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3927,7 +3927,7 @@ pub fn parse_get_service_settings_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetServiceSettingsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3945,7 +3945,7 @@ pub fn parse_get_service_settings_error(
                     output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetServiceSettingsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3962,7 +3962,7 @@ pub fn parse_get_service_settings_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetServiceSettingsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4021,7 +4021,7 @@ pub fn parse_list_associations_for_license_configuration_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4035,7 +4035,7 @@ pub fn parse_list_associations_for_license_configuration_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4049,7 +4049,7 @@ pub fn parse_list_associations_for_license_configuration_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4063,7 +4063,7 @@ pub fn parse_list_associations_for_license_configuration_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4077,7 +4077,7 @@ pub fn parse_list_associations_for_license_configuration_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4091,7 +4091,7 @@ pub fn parse_list_associations_for_license_configuration_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4144,7 +4144,7 @@ pub fn parse_list_distributed_grants_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDistributedGrantsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4161,7 +4161,7 @@ pub fn parse_list_distributed_grants_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDistributedGrantsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4179,7 +4179,7 @@ pub fn parse_list_distributed_grants_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDistributedGrantsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4197,7 +4197,7 @@ pub fn parse_list_distributed_grants_error(
                     output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDistributedGrantsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4215,7 +4215,7 @@ pub fn parse_list_distributed_grants_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDistributedGrantsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4232,7 +4232,7 @@ pub fn parse_list_distributed_grants_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDistributedGrantsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4249,7 +4249,7 @@ pub fn parse_list_distributed_grants_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDistributedGrantsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4310,7 +4310,7 @@ pub fn parse_list_failures_for_license_configuration_operations_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4324,7 +4324,7 @@ pub fn parse_list_failures_for_license_configuration_operations_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4338,7 +4338,7 @@ pub fn parse_list_failures_for_license_configuration_operations_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4352,7 +4352,7 @@ pub fn parse_list_failures_for_license_configuration_operations_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4366,7 +4366,7 @@ pub fn parse_list_failures_for_license_configuration_operations_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4421,7 +4421,7 @@ pub fn parse_list_license_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLicenseConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4438,7 +4438,7 @@ pub fn parse_list_license_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLicenseConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4456,7 +4456,7 @@ pub fn parse_list_license_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_filter_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLicenseConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4475,7 +4475,7 @@ pub fn parse_list_license_configurations_error(
                         output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLicenseConfigurationsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -4494,7 +4494,7 @@ pub fn parse_list_license_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLicenseConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4511,7 +4511,7 @@ pub fn parse_list_license_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLicenseConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4572,7 +4572,7 @@ pub fn parse_list_license_conversion_tasks_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLicenseConversionTasksError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4589,7 +4589,7 @@ pub fn parse_list_license_conversion_tasks_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLicenseConversionTasksError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4608,7 +4608,7 @@ pub fn parse_list_license_conversion_tasks_error(
                         output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLicenseConversionTasksError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -4627,7 +4627,7 @@ pub fn parse_list_license_conversion_tasks_error(
                     output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLicenseConversionTasksError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4644,7 +4644,7 @@ pub fn parse_list_license_conversion_tasks_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLicenseConversionTasksError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4701,7 +4701,7 @@ pub fn parse_list_license_manager_report_generators_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4715,7 +4715,7 @@ pub fn parse_list_license_manager_report_generators_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4729,7 +4729,7 @@ pub fn parse_list_license_manager_report_generators_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4743,7 +4743,7 @@ pub fn parse_list_license_manager_report_generators_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4757,7 +4757,7 @@ pub fn parse_list_license_manager_report_generators_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4771,7 +4771,7 @@ pub fn parse_list_license_manager_report_generators_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4785,7 +4785,7 @@ pub fn parse_list_license_manager_report_generators_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4799,7 +4799,7 @@ pub fn parse_list_license_manager_report_generators_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4849,7 +4849,7 @@ pub fn parse_list_licenses_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLicensesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4866,7 +4866,7 @@ pub fn parse_list_licenses_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLicensesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4884,7 +4884,7 @@ pub fn parse_list_licenses_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLicensesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4902,7 +4902,7 @@ pub fn parse_list_licenses_error(
                     output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLicensesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4919,7 +4919,7 @@ pub fn parse_list_licenses_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLicensesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4936,7 +4936,7 @@ pub fn parse_list_licenses_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLicensesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4990,7 +4990,7 @@ pub fn parse_list_license_specifications_for_resource_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5004,7 +5004,7 @@ pub fn parse_list_license_specifications_for_resource_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5018,7 +5018,7 @@ pub fn parse_list_license_specifications_for_resource_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5032,7 +5032,7 @@ pub fn parse_list_license_specifications_for_resource_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5046,7 +5046,7 @@ pub fn parse_list_license_specifications_for_resource_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5099,7 +5099,7 @@ pub fn parse_list_license_versions_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLicenseVersionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5116,7 +5116,7 @@ pub fn parse_list_license_versions_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLicenseVersionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5134,7 +5134,7 @@ pub fn parse_list_license_versions_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLicenseVersionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5152,7 +5152,7 @@ pub fn parse_list_license_versions_error(
                     output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLicenseVersionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5169,7 +5169,7 @@ pub fn parse_list_license_versions_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLicenseVersionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5226,7 +5226,7 @@ pub fn parse_list_received_grants_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListReceivedGrantsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5243,7 +5243,7 @@ pub fn parse_list_received_grants_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListReceivedGrantsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5261,7 +5261,7 @@ pub fn parse_list_received_grants_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListReceivedGrantsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5279,7 +5279,7 @@ pub fn parse_list_received_grants_error(
                     output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListReceivedGrantsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5297,7 +5297,7 @@ pub fn parse_list_received_grants_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListReceivedGrantsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5314,7 +5314,7 @@ pub fn parse_list_received_grants_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListReceivedGrantsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5331,7 +5331,7 @@ pub fn parse_list_received_grants_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListReceivedGrantsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5388,7 +5388,7 @@ pub fn parse_list_received_licenses_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListReceivedLicensesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5405,7 +5405,7 @@ pub fn parse_list_received_licenses_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListReceivedLicensesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5423,7 +5423,7 @@ pub fn parse_list_received_licenses_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListReceivedLicensesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5441,7 +5441,7 @@ pub fn parse_list_received_licenses_error(
                     output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListReceivedLicensesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5459,7 +5459,7 @@ pub fn parse_list_received_licenses_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListReceivedLicensesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5476,7 +5476,7 @@ pub fn parse_list_received_licenses_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListReceivedLicensesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5493,7 +5493,7 @@ pub fn parse_list_received_licenses_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListReceivedLicensesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5550,7 +5550,7 @@ pub fn parse_list_resource_inventory_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListResourceInventoryError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5567,7 +5567,7 @@ pub fn parse_list_resource_inventory_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListResourceInventoryError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5584,7 +5584,7 @@ pub fn parse_list_resource_inventory_error(
                     output = crate::json_deser::deser_structure_crate_error_failed_dependency_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListResourceInventoryError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5602,7 +5602,7 @@ pub fn parse_list_resource_inventory_error(
                     output = crate::json_deser::deser_structure_crate_error_filter_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListResourceInventoryError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5620,7 +5620,7 @@ pub fn parse_list_resource_inventory_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListResourceInventoryError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5638,7 +5638,7 @@ pub fn parse_list_resource_inventory_error(
                     output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListResourceInventoryError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5655,7 +5655,7 @@ pub fn parse_list_resource_inventory_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListResourceInventoryError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5712,7 +5712,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5729,7 +5729,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5747,7 +5747,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5765,7 +5765,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5782,7 +5782,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5836,7 +5836,7 @@ pub fn parse_list_tokens_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTokensError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5853,7 +5853,7 @@ pub fn parse_list_tokens_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTokensError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5871,7 +5871,7 @@ pub fn parse_list_tokens_error(
                     output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTokensError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5888,7 +5888,7 @@ pub fn parse_list_tokens_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTokensError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5905,7 +5905,7 @@ pub fn parse_list_tokens_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTokensError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5959,7 +5959,7 @@ pub fn parse_list_usage_for_license_configuration_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5973,7 +5973,7 @@ pub fn parse_list_usage_for_license_configuration_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5987,7 +5987,7 @@ pub fn parse_list_usage_for_license_configuration_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6001,7 +6001,7 @@ pub fn parse_list_usage_for_license_configuration_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6015,7 +6015,7 @@ pub fn parse_list_usage_for_license_configuration_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6029,7 +6029,7 @@ pub fn parse_list_usage_for_license_configuration_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6079,7 +6079,7 @@ pub fn parse_reject_grant_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RejectGrantError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6096,7 +6096,7 @@ pub fn parse_reject_grant_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RejectGrantError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6114,7 +6114,7 @@ pub fn parse_reject_grant_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RejectGrantError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6132,7 +6132,7 @@ pub fn parse_reject_grant_error(
                     output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RejectGrantError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6150,7 +6150,7 @@ pub fn parse_reject_grant_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RejectGrantError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6167,7 +6167,7 @@ pub fn parse_reject_grant_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RejectGrantError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6184,7 +6184,7 @@ pub fn parse_reject_grant_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RejectGrantError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6235,7 +6235,7 @@ pub fn parse_tag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6252,7 +6252,7 @@ pub fn parse_tag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6270,7 +6270,7 @@ pub fn parse_tag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6288,7 +6288,7 @@ pub fn parse_tag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6305,7 +6305,7 @@ pub fn parse_tag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6351,7 +6351,7 @@ pub fn parse_untag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6368,7 +6368,7 @@ pub fn parse_untag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6386,7 +6386,7 @@ pub fn parse_untag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6404,7 +6404,7 @@ pub fn parse_untag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6421,7 +6421,7 @@ pub fn parse_untag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6474,7 +6474,7 @@ pub fn parse_update_license_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateLicenseConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6491,7 +6491,7 @@ pub fn parse_update_license_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateLicenseConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6510,7 +6510,7 @@ pub fn parse_update_license_configuration_error(
                         output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateLicenseConfigurationError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -6529,7 +6529,7 @@ pub fn parse_update_license_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateLicenseConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6548,7 +6548,7 @@ pub fn parse_update_license_configuration_error(
                         output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateLicenseConfigurationError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -6566,7 +6566,7 @@ pub fn parse_update_license_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateLicenseConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6618,7 +6618,7 @@ pub fn parse_update_license_manager_report_generator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6632,7 +6632,7 @@ pub fn parse_update_license_manager_report_generator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6646,7 +6646,7 @@ pub fn parse_update_license_manager_report_generator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6660,7 +6660,7 @@ pub fn parse_update_license_manager_report_generator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6674,7 +6674,7 @@ pub fn parse_update_license_manager_report_generator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6688,7 +6688,7 @@ pub fn parse_update_license_manager_report_generator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6702,7 +6702,7 @@ pub fn parse_update_license_manager_report_generator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6716,7 +6716,7 @@ pub fn parse_update_license_manager_report_generator_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6770,7 +6770,7 @@ pub fn parse_update_license_specifications_for_resource_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6784,7 +6784,7 @@ pub fn parse_update_license_specifications_for_resource_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6798,7 +6798,7 @@ pub fn parse_update_license_specifications_for_resource_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6812,7 +6812,7 @@ pub fn parse_update_license_specifications_for_resource_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6826,7 +6826,7 @@ pub fn parse_update_license_specifications_for_resource_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6840,7 +6840,7 @@ pub fn parse_update_license_specifications_for_resource_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6854,7 +6854,7 @@ pub fn parse_update_license_specifications_for_resource_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6906,7 +6906,7 @@ pub fn parse_update_service_settings_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateServiceSettingsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6923,7 +6923,7 @@ pub fn parse_update_service_settings_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateServiceSettingsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6941,7 +6941,7 @@ pub fn parse_update_service_settings_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateServiceSettingsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6959,7 +6959,7 @@ pub fn parse_update_service_settings_error(
                     output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateServiceSettingsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6976,7 +6976,7 @@ pub fn parse_update_service_settings_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateServiceSettingsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp

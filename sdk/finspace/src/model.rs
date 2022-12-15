@@ -2,7 +2,7 @@
 
 /// <p>Represents an FinSpace environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Environment {
     /// <p>The name of the FinSpace environment.</p>
     #[doc(hidden)]
@@ -93,35 +93,11 @@ impl Environment {
         self.federation_parameters.as_ref()
     }
 }
-impl std::fmt::Debug for Environment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Environment");
-        formatter.field("name", &self.name);
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("status", &self.status);
-        formatter.field("environment_url", &self.environment_url);
-        formatter.field("description", &self.description);
-        formatter.field("environment_arn", &self.environment_arn);
-        formatter.field(
-            "sage_maker_studio_domain_url",
-            &self.sage_maker_studio_domain_url,
-        );
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field(
-            "dedicated_service_account_id",
-            &self.dedicated_service_account_id,
-        );
-        formatter.field("federation_mode", &self.federation_mode);
-        formatter.field("federation_parameters", &self.federation_parameters);
-        formatter.finish()
-    }
-}
 /// See [`Environment`](crate::model::Environment).
 pub mod environment {
 
     /// A builder for [`Environment`](crate::model::Environment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) environment_id: std::option::Option<std::string::String>,
@@ -318,7 +294,7 @@ impl Environment {
 
 /// <p>Configuration information when authentication mode is FEDERATED.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FederationParameters {
     /// <p>SAML 2.0 Metadata document from identity provider (IdP).</p>
     #[doc(hidden)]
@@ -369,23 +345,11 @@ impl FederationParameters {
         self.attribute_map.as_ref()
     }
 }
-impl std::fmt::Debug for FederationParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FederationParameters");
-        formatter.field("saml_metadata_document", &self.saml_metadata_document);
-        formatter.field("saml_metadata_url", &self.saml_metadata_url);
-        formatter.field("application_call_back_url", &self.application_call_back_url);
-        formatter.field("federation_urn", &self.federation_urn);
-        formatter.field("federation_provider_name", &self.federation_provider_name);
-        formatter.field("attribute_map", &self.attribute_map);
-        formatter.finish()
-    }
-}
 /// See [`FederationParameters`](crate::model::FederationParameters).
 pub mod federation_parameters {
 
     /// A builder for [`FederationParameters`](crate::model::FederationParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) saml_metadata_document: std::option::Option<std::string::String>,
         pub(crate) saml_metadata_url: std::option::Option<std::string::String>,
@@ -507,6 +471,41 @@ impl FederationParameters {
     }
 }
 
+/// When writing a match expression against `FederationMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let federationmode = unimplemented!();
+/// match federationmode {
+///     FederationMode::Federated => { /* ... */ },
+///     FederationMode::Local => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `federationmode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `FederationMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `FederationMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `FederationMode::NewFeature` is defined.
+/// Specifically, when `federationmode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `FederationMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -523,15 +522,15 @@ pub enum FederationMode {
     Federated,
     #[allow(missing_docs)] // documentation missing in model
     Local,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for FederationMode {
     fn from(s: &str) -> Self {
         match s {
             "FEDERATED" => FederationMode::Federated,
             "LOCAL" => FederationMode::Local,
-            other => FederationMode::Unknown(other.to_owned()),
+            other => FederationMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -548,11 +547,11 @@ impl FederationMode {
         match self {
             FederationMode::Federated => "FEDERATED",
             FederationMode::Local => "LOCAL",
-            FederationMode::Unknown(s) => s.as_ref(),
+            FederationMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FEDERATED", "LOCAL"]
     }
 }
@@ -562,6 +561,49 @@ impl AsRef<str> for FederationMode {
     }
 }
 
+/// When writing a match expression against `EnvironmentStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let environmentstatus = unimplemented!();
+/// match environmentstatus {
+///     EnvironmentStatus::Created => { /* ... */ },
+///     EnvironmentStatus::CreateRequested => { /* ... */ },
+///     EnvironmentStatus::Creating => { /* ... */ },
+///     EnvironmentStatus::Deleted => { /* ... */ },
+///     EnvironmentStatus::DeleteRequested => { /* ... */ },
+///     EnvironmentStatus::Deleting => { /* ... */ },
+///     EnvironmentStatus::FailedCreation => { /* ... */ },
+///     EnvironmentStatus::FailedDeletion => { /* ... */ },
+///     EnvironmentStatus::RetryDeletion => { /* ... */ },
+///     EnvironmentStatus::Suspended => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `environmentstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EnvironmentStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EnvironmentStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EnvironmentStatus::NewFeature` is defined.
+/// Specifically, when `environmentstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EnvironmentStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -594,8 +636,8 @@ pub enum EnvironmentStatus {
     RetryDeletion,
     #[allow(missing_docs)] // documentation missing in model
     Suspended,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EnvironmentStatus {
     fn from(s: &str) -> Self {
@@ -610,7 +652,9 @@ impl std::convert::From<&str> for EnvironmentStatus {
             "FAILED_DELETION" => EnvironmentStatus::FailedDeletion,
             "RETRY_DELETION" => EnvironmentStatus::RetryDeletion,
             "SUSPENDED" => EnvironmentStatus::Suspended,
-            other => EnvironmentStatus::Unknown(other.to_owned()),
+            other => {
+                EnvironmentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -635,11 +679,11 @@ impl EnvironmentStatus {
             EnvironmentStatus::FailedDeletion => "FAILED_DELETION",
             EnvironmentStatus::RetryDeletion => "RETRY_DELETION",
             EnvironmentStatus::Suspended => "SUSPENDED",
-            EnvironmentStatus::Unknown(s) => s.as_ref(),
+            EnvironmentStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATED",
             "CREATE_REQUESTED",
@@ -701,7 +745,7 @@ impl std::fmt::Debug for SuperuserParameters {
 pub mod superuser_parameters {
 
     /// A builder for [`SuperuserParameters`](crate::model::SuperuserParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) email_address: std::option::Option<std::string::String>,
         pub(crate) first_name: std::option::Option<std::string::String>,
@@ -748,6 +792,15 @@ pub mod superuser_parameters {
                 first_name: self.first_name,
                 last_name: self.last_name,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("email_address", &"*** Sensitive Data Redacted ***");
+            formatter.field("first_name", &self.first_name);
+            formatter.field("last_name", &self.last_name);
+            formatter.finish()
         }
     }
 }

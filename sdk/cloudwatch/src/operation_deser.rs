@@ -24,7 +24,7 @@ pub fn parse_delete_alarms_error(
                         output = crate::xml_deser::deser_structure_crate_error_resource_not_found_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAlarmsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -74,7 +74,7 @@ pub fn parse_delete_anomaly_detector_error(
                     output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAnomalyDetectorError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -92,7 +92,7 @@ pub fn parse_delete_anomaly_detector_error(
                             output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAnomalyDetectorError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -111,7 +111,7 @@ pub fn parse_delete_anomaly_detector_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAnomalyDetectorError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -130,7 +130,7 @@ pub fn parse_delete_anomaly_detector_error(
                         output = crate::xml_deser::deser_structure_crate_error_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAnomalyDetectorError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -148,7 +148,7 @@ pub fn parse_delete_anomaly_detector_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAnomalyDetectorError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -198,7 +198,7 @@ pub fn parse_delete_dashboards_error(
                     output = crate::xml_deser::deser_structure_crate_error_dashboard_not_found_error_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDashboardsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -215,7 +215,7 @@ pub fn parse_delete_dashboards_error(
                     output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDashboardsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -233,7 +233,7 @@ pub fn parse_delete_dashboards_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDashboardsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -284,7 +284,7 @@ pub fn parse_delete_insight_rules_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteInsightRulesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -302,7 +302,7 @@ pub fn parse_delete_insight_rules_error(
                     output = crate::xml_deser::deser_structure_crate_error_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteInsightRulesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -359,7 +359,7 @@ pub fn parse_delete_metric_stream_error(
                     output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteMetricStreamError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -377,7 +377,7 @@ pub fn parse_delete_metric_stream_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteMetricStreamError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -395,7 +395,7 @@ pub fn parse_delete_metric_stream_error(
                     output = crate::xml_deser::deser_structure_crate_error_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteMetricStreamError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -448,7 +448,7 @@ pub fn parse_describe_alarm_history_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAlarmHistoryError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -504,7 +504,7 @@ pub fn parse_describe_alarms_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAlarmsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -593,7 +593,7 @@ pub fn parse_describe_anomaly_detectors_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -607,7 +607,7 @@ pub fn parse_describe_anomaly_detectors_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -621,7 +621,7 @@ pub fn parse_describe_anomaly_detectors_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -635,7 +635,7 @@ pub fn parse_describe_anomaly_detectors_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -692,7 +692,7 @@ pub fn parse_describe_insight_rules_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeInsightRulesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -778,7 +778,7 @@ pub fn parse_disable_insight_rules_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DisableInsightRulesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -796,7 +796,7 @@ pub fn parse_disable_insight_rules_error(
                     output = crate::xml_deser::deser_structure_crate_error_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DisableInsightRulesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -881,7 +881,7 @@ pub fn parse_enable_insight_rules_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableInsightRulesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -898,7 +898,7 @@ pub fn parse_enable_insight_rules_error(
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableInsightRulesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -916,7 +916,7 @@ pub fn parse_enable_insight_rules_error(
                     output = crate::xml_deser::deser_structure_crate_error_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableInsightRulesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -970,7 +970,7 @@ pub fn parse_get_dashboard_error(
                     output = crate::xml_deser::deser_structure_crate_error_dashboard_not_found_error_xml_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -987,7 +987,7 @@ pub fn parse_get_dashboard_error(
                     output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1005,7 +1005,7 @@ pub fn parse_get_dashboard_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1060,7 +1060,7 @@ pub fn parse_get_insight_rule_report_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetInsightRuleReportError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1078,7 +1078,7 @@ pub fn parse_get_insight_rule_report_error(
                     output = crate::xml_deser::deser_structure_crate_error_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetInsightRuleReportError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1095,7 +1095,7 @@ pub fn parse_get_insight_rule_report_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetInsightRuleReportError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1150,7 +1150,7 @@ pub fn parse_get_metric_data_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::GetMetricDataError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1205,7 +1205,7 @@ pub fn parse_get_metric_statistics_error(
                     output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::GetMetricStatisticsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1224,7 +1224,7 @@ pub fn parse_get_metric_statistics_error(
                                 output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetMetricStatisticsError::unhandled)?;
                                 output.build()
                             };
-                            if (&tmp.message).is_none() {
+                            if tmp.message.is_none() {
                                 tmp.message = _error_message;
                             }
                             tmp
@@ -1244,7 +1244,7 @@ pub fn parse_get_metric_statistics_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetMetricStatisticsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1262,7 +1262,7 @@ pub fn parse_get_metric_statistics_error(
                     output = crate::xml_deser::deser_structure_crate_error_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetMetricStatisticsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1316,7 +1316,7 @@ pub fn parse_get_metric_stream_error(
                     output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::GetMetricStreamError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1334,7 +1334,7 @@ pub fn parse_get_metric_stream_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetMetricStreamError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1352,7 +1352,7 @@ pub fn parse_get_metric_stream_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetMetricStreamError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1370,7 +1370,7 @@ pub fn parse_get_metric_stream_error(
                     output = crate::xml_deser::deser_structure_crate_error_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetMetricStreamError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1387,7 +1387,7 @@ pub fn parse_get_metric_stream_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetMetricStreamError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1470,7 +1470,7 @@ pub fn parse_list_dashboards_error(
                     output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListDashboardsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1488,7 +1488,7 @@ pub fn parse_list_dashboards_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListDashboardsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1547,7 +1547,7 @@ pub fn parse_list_managed_insight_rules_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::ListManagedInsightRulesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1566,7 +1566,7 @@ pub fn parse_list_managed_insight_rules_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListManagedInsightRulesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1585,7 +1585,7 @@ pub fn parse_list_managed_insight_rules_error(
                         output = crate::xml_deser::deser_structure_crate_error_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListManagedInsightRulesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1640,7 +1640,7 @@ pub fn parse_list_metrics_error(
                     output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListMetricsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1658,7 +1658,7 @@ pub fn parse_list_metrics_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListMetricsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1710,7 +1710,7 @@ pub fn parse_list_metric_streams_error(
                     output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListMetricStreamsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1728,7 +1728,7 @@ pub fn parse_list_metric_streams_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::ListMetricStreamsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1747,7 +1747,7 @@ pub fn parse_list_metric_streams_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListMetricStreamsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1765,7 +1765,7 @@ pub fn parse_list_metric_streams_error(
                     output = crate::xml_deser::deser_structure_crate_error_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListMetricStreamsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1820,7 +1820,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1838,7 +1838,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1855,7 +1855,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1912,7 +1912,7 @@ pub fn parse_put_anomaly_detector_error(
                     output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutAnomalyDetectorError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1931,7 +1931,7 @@ pub fn parse_put_anomaly_detector_error(
                                 output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutAnomalyDetectorError::unhandled)?;
                                 output.build()
                             };
-                            if (&tmp.message).is_none() {
+                            if tmp.message.is_none() {
                                 tmp.message = _error_message;
                             }
                             tmp
@@ -1951,7 +1951,7 @@ pub fn parse_put_anomaly_detector_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutAnomalyDetectorError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1968,7 +1968,7 @@ pub fn parse_put_anomaly_detector_error(
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutAnomalyDetectorError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1986,7 +1986,7 @@ pub fn parse_put_anomaly_detector_error(
                     output = crate::xml_deser::deser_structure_crate_error_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutAnomalyDetectorError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2037,7 +2037,7 @@ pub fn parse_put_composite_alarm_error(
                         output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutCompositeAlarmError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2086,7 +2086,7 @@ pub fn parse_put_dashboard_error(
                     output = crate::xml_deser::deser_structure_crate_error_dashboard_invalid_input_error_xml_err(response.body().as_ref(), output).map_err(crate::error::PutDashboardError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2103,7 +2103,7 @@ pub fn parse_put_dashboard_error(
                     output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutDashboardError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2155,7 +2155,7 @@ pub fn parse_put_insight_rule_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutInsightRuleError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2172,7 +2172,7 @@ pub fn parse_put_insight_rule_error(
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutInsightRuleError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2190,7 +2190,7 @@ pub fn parse_put_insight_rule_error(
                     output = crate::xml_deser::deser_structure_crate_error_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutInsightRuleError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2244,7 +2244,7 @@ pub fn parse_put_managed_insight_rules_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutManagedInsightRulesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2263,7 +2263,7 @@ pub fn parse_put_managed_insight_rules_error(
                         output = crate::xml_deser::deser_structure_crate_error_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutManagedInsightRulesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2319,7 +2319,7 @@ pub fn parse_put_metric_alarm_error(
                         output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutMetricAlarmError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2366,7 +2366,7 @@ pub fn parse_put_metric_data_error(
                     output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutMetricDataError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2384,7 +2384,7 @@ pub fn parse_put_metric_data_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutMetricDataError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2402,7 +2402,7 @@ pub fn parse_put_metric_data_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutMetricDataError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2420,7 +2420,7 @@ pub fn parse_put_metric_data_error(
                     output = crate::xml_deser::deser_structure_crate_error_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutMetricDataError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2467,7 +2467,7 @@ pub fn parse_put_metric_stream_error(
                     output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutMetricStreamError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2484,7 +2484,7 @@ pub fn parse_put_metric_stream_error(
                     output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutMetricStreamError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2502,7 +2502,7 @@ pub fn parse_put_metric_stream_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutMetricStreamError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2520,7 +2520,7 @@ pub fn parse_put_metric_stream_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutMetricStreamError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2538,7 +2538,7 @@ pub fn parse_put_metric_stream_error(
                     output = crate::xml_deser::deser_structure_crate_error_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutMetricStreamError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2590,7 +2590,7 @@ pub fn parse_set_alarm_state_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_format_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::SetAlarmStateError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2609,7 +2609,7 @@ pub fn parse_set_alarm_state_error(
                         output = crate::xml_deser::deser_structure_crate_error_resource_not_found_xml_err(response.body().as_ref(), output).map_err(crate::error::SetAlarmStateError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2659,7 +2659,7 @@ pub fn parse_start_metric_streams_error(
                     output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartMetricStreamsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2677,7 +2677,7 @@ pub fn parse_start_metric_streams_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::StartMetricStreamsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2695,7 +2695,7 @@ pub fn parse_start_metric_streams_error(
                     output = crate::xml_deser::deser_structure_crate_error_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::StartMetricStreamsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2745,7 +2745,7 @@ pub fn parse_stop_metric_streams_error(
                     output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StopMetricStreamsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2763,7 +2763,7 @@ pub fn parse_stop_metric_streams_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::StopMetricStreamsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2781,7 +2781,7 @@ pub fn parse_stop_metric_streams_error(
                     output = crate::xml_deser::deser_structure_crate_error_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::StopMetricStreamsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2829,7 +2829,7 @@ pub fn parse_tag_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2846,7 +2846,7 @@ pub fn parse_tag_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2864,7 +2864,7 @@ pub fn parse_tag_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2881,7 +2881,7 @@ pub fn parse_tag_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2928,7 +2928,7 @@ pub fn parse_untag_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2945,7 +2945,7 @@ pub fn parse_untag_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2963,7 +2963,7 @@ pub fn parse_untag_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2980,7 +2980,7 @@ pub fn parse_untag_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp

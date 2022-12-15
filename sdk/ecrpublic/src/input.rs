@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod batch_check_layer_availability_input {
 
     /// A builder for [`BatchCheckLayerAvailabilityInput`](crate::input::BatchCheckLayerAvailabilityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -59,7 +59,7 @@ pub mod batch_check_layer_availability_input {
             self,
         ) -> Result<
             crate::input::BatchCheckLayerAvailabilityInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::BatchCheckLayerAvailabilityInput {
                 registry_id: self.registry_id,
@@ -82,13 +82,13 @@ impl BatchCheckLayerAvailabilityInput {
             crate::operation::BatchCheckLayerAvailability,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::BatchCheckLayerAvailabilityInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -96,8 +96,10 @@ impl BatchCheckLayerAvailabilityInput {
             fn update_http_builder(
                 input: &crate::input::BatchCheckLayerAvailabilityInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -185,7 +187,7 @@ impl BatchCheckLayerAvailabilityInput {
 pub mod batch_delete_image_input {
 
     /// A builder for [`BatchDeleteImageInput`](crate::input::BatchDeleteImageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -237,8 +239,10 @@ pub mod batch_delete_image_input {
         /// Consumes the builder and constructs a [`BatchDeleteImageInput`](crate::input::BatchDeleteImageInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::BatchDeleteImageInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::BatchDeleteImageInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::BatchDeleteImageInput {
                 registry_id: self.registry_id,
                 repository_name: self.repository_name,
@@ -260,13 +264,13 @@ impl BatchDeleteImageInput {
             crate::operation::BatchDeleteImage,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::BatchDeleteImageInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -274,8 +278,10 @@ impl BatchDeleteImageInput {
             fn update_http_builder(
                 input: &crate::input::BatchDeleteImageInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -364,7 +370,7 @@ impl BatchDeleteImageInput {
 pub mod complete_layer_upload_input {
 
     /// A builder for [`CompleteLayerUploadInput`](crate::input::CompleteLayerUploadInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -427,8 +433,10 @@ pub mod complete_layer_upload_input {
         /// Consumes the builder and constructs a [`CompleteLayerUploadInput`](crate::input::CompleteLayerUploadInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CompleteLayerUploadInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CompleteLayerUploadInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CompleteLayerUploadInput {
                 registry_id: self.registry_id,
                 repository_name: self.repository_name,
@@ -451,13 +459,13 @@ impl CompleteLayerUploadInput {
             crate::operation::CompleteLayerUpload,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CompleteLayerUploadInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -465,8 +473,10 @@ impl CompleteLayerUploadInput {
             fn update_http_builder(
                 input: &crate::input::CompleteLayerUploadInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -555,7 +565,7 @@ impl CompleteLayerUploadInput {
 pub mod create_repository_input {
 
     /// A builder for [`CreateRepositoryInput`](crate::input::CreateRepositoryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
         pub(crate) catalog_data: std::option::Option<crate::model::RepositoryCatalogDataInput>,
@@ -610,8 +620,10 @@ pub mod create_repository_input {
         /// Consumes the builder and constructs a [`CreateRepositoryInput`](crate::input::CreateRepositoryInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateRepositoryInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateRepositoryInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateRepositoryInput {
                 repository_name: self.repository_name,
                 catalog_data: self.catalog_data,
@@ -633,13 +645,13 @@ impl CreateRepositoryInput {
             crate::operation::CreateRepository,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateRepositoryInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -647,8 +659,10 @@ impl CreateRepositoryInput {
             fn update_http_builder(
                 input: &crate::input::CreateRepositoryInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -737,7 +751,7 @@ impl CreateRepositoryInput {
 pub mod delete_repository_input {
 
     /// A builder for [`DeleteRepositoryInput`](crate::input::DeleteRepositoryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -780,8 +794,10 @@ pub mod delete_repository_input {
         /// Consumes the builder and constructs a [`DeleteRepositoryInput`](crate::input::DeleteRepositoryInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteRepositoryInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteRepositoryInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteRepositoryInput {
                 registry_id: self.registry_id,
                 repository_name: self.repository_name,
@@ -803,13 +819,13 @@ impl DeleteRepositoryInput {
             crate::operation::DeleteRepository,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteRepositoryInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -817,8 +833,10 @@ impl DeleteRepositoryInput {
             fn update_http_builder(
                 input: &crate::input::DeleteRepositoryInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -907,7 +925,7 @@ impl DeleteRepositoryInput {
 pub mod delete_repository_policy_input {
 
     /// A builder for [`DeleteRepositoryPolicyInput`](crate::input::DeleteRepositoryPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -939,8 +957,10 @@ pub mod delete_repository_policy_input {
         /// Consumes the builder and constructs a [`DeleteRepositoryPolicyInput`](crate::input::DeleteRepositoryPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteRepositoryPolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteRepositoryPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteRepositoryPolicyInput {
                 registry_id: self.registry_id,
                 repository_name: self.repository_name,
@@ -961,13 +981,13 @@ impl DeleteRepositoryPolicyInput {
             crate::operation::DeleteRepositoryPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteRepositoryPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -975,8 +995,10 @@ impl DeleteRepositoryPolicyInput {
             fn update_http_builder(
                 input: &crate::input::DeleteRepositoryPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1067,7 +1089,7 @@ impl DeleteRepositoryPolicyInput {
 pub mod describe_images_input {
 
     /// A builder for [`DescribeImagesInput`](crate::input::DescribeImagesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -1141,7 +1163,7 @@ pub mod describe_images_input {
         /// Consumes the builder and constructs a [`DescribeImagesInput`](crate::input::DescribeImagesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeImagesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeImagesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeImagesInput {
                 registry_id: self.registry_id,
@@ -1166,13 +1188,13 @@ impl DescribeImagesInput {
             crate::operation::DescribeImages,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeImagesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1180,8 +1202,10 @@ impl DescribeImagesInput {
             fn update_http_builder(
                 input: &crate::input::DescribeImagesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1270,7 +1294,7 @@ impl DescribeImagesInput {
 pub mod describe_image_tags_input {
 
     /// A builder for [`DescribeImageTagsInput`](crate::input::DescribeImageTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -1324,8 +1348,10 @@ pub mod describe_image_tags_input {
         /// Consumes the builder and constructs a [`DescribeImageTagsInput`](crate::input::DescribeImageTagsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeImageTagsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeImageTagsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeImageTagsInput {
                 registry_id: self.registry_id,
                 repository_name: self.repository_name,
@@ -1348,13 +1374,13 @@ impl DescribeImageTagsInput {
             crate::operation::DescribeImageTags,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeImageTagsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1362,8 +1388,10 @@ impl DescribeImageTagsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeImageTagsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1452,7 +1480,7 @@ impl DescribeImageTagsInput {
 pub mod describe_registries_input {
 
     /// A builder for [`DescribeRegistriesInput`](crate::input::DescribeRegistriesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -1485,8 +1513,10 @@ pub mod describe_registries_input {
         /// Consumes the builder and constructs a [`DescribeRegistriesInput`](crate::input::DescribeRegistriesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeRegistriesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeRegistriesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeRegistriesInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
@@ -1507,13 +1537,13 @@ impl DescribeRegistriesInput {
             crate::operation::DescribeRegistries,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeRegistriesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1521,8 +1551,10 @@ impl DescribeRegistriesInput {
             fn update_http_builder(
                 input: &crate::input::DescribeRegistriesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1611,7 +1643,7 @@ impl DescribeRegistriesInput {
 pub mod describe_repositories_input {
 
     /// A builder for [`DescribeRepositoriesInput`](crate::input::DescribeRepositoriesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
         pub(crate) repository_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1675,8 +1707,10 @@ pub mod describe_repositories_input {
         /// Consumes the builder and constructs a [`DescribeRepositoriesInput`](crate::input::DescribeRepositoriesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeRepositoriesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeRepositoriesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeRepositoriesInput {
                 registry_id: self.registry_id,
                 repository_names: self.repository_names,
@@ -1699,13 +1733,13 @@ impl DescribeRepositoriesInput {
             crate::operation::DescribeRepositories,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeRepositoriesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1713,8 +1747,10 @@ impl DescribeRepositoriesInput {
             fn update_http_builder(
                 input: &crate::input::DescribeRepositoriesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1803,14 +1839,16 @@ impl DescribeRepositoriesInput {
 pub mod get_authorization_token_input {
 
     /// A builder for [`GetAuthorizationTokenInput`](crate::input::GetAuthorizationTokenInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetAuthorizationTokenInput`](crate::input::GetAuthorizationTokenInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetAuthorizationTokenInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetAuthorizationTokenInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetAuthorizationTokenInput {})
         }
     }
@@ -1828,13 +1866,13 @@ impl GetAuthorizationTokenInput {
             crate::operation::GetAuthorizationToken,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetAuthorizationTokenInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1842,8 +1880,10 @@ impl GetAuthorizationTokenInput {
             fn update_http_builder(
                 input: &crate::input::GetAuthorizationTokenInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1927,14 +1967,16 @@ impl GetAuthorizationTokenInput {
 pub mod get_registry_catalog_data_input {
 
     /// A builder for [`GetRegistryCatalogDataInput`](crate::input::GetRegistryCatalogDataInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetRegistryCatalogDataInput`](crate::input::GetRegistryCatalogDataInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetRegistryCatalogDataInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetRegistryCatalogDataInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetRegistryCatalogDataInput {})
         }
     }
@@ -1952,13 +1994,13 @@ impl GetRegistryCatalogDataInput {
             crate::operation::GetRegistryCatalogData,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetRegistryCatalogDataInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1966,8 +2008,10 @@ impl GetRegistryCatalogDataInput {
             fn update_http_builder(
                 input: &crate::input::GetRegistryCatalogDataInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2051,7 +2095,7 @@ impl GetRegistryCatalogDataInput {
 pub mod get_repository_catalog_data_input {
 
     /// A builder for [`GetRepositoryCatalogDataInput`](crate::input::GetRepositoryCatalogDataInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -2085,7 +2129,7 @@ pub mod get_repository_catalog_data_input {
             self,
         ) -> Result<
             crate::input::GetRepositoryCatalogDataInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetRepositoryCatalogDataInput {
                 registry_id: self.registry_id,
@@ -2107,13 +2151,13 @@ impl GetRepositoryCatalogDataInput {
             crate::operation::GetRepositoryCatalogData,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetRepositoryCatalogDataInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2121,8 +2165,10 @@ impl GetRepositoryCatalogDataInput {
             fn update_http_builder(
                 input: &crate::input::GetRepositoryCatalogDataInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2213,7 +2259,7 @@ impl GetRepositoryCatalogDataInput {
 pub mod get_repository_policy_input {
 
     /// A builder for [`GetRepositoryPolicyInput`](crate::input::GetRepositoryPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -2245,8 +2291,10 @@ pub mod get_repository_policy_input {
         /// Consumes the builder and constructs a [`GetRepositoryPolicyInput`](crate::input::GetRepositoryPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetRepositoryPolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetRepositoryPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetRepositoryPolicyInput {
                 registry_id: self.registry_id,
                 repository_name: self.repository_name,
@@ -2267,13 +2315,13 @@ impl GetRepositoryPolicyInput {
             crate::operation::GetRepositoryPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetRepositoryPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2281,8 +2329,10 @@ impl GetRepositoryPolicyInput {
             fn update_http_builder(
                 input: &crate::input::GetRepositoryPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2371,7 +2421,7 @@ impl GetRepositoryPolicyInput {
 pub mod initiate_layer_upload_input {
 
     /// A builder for [`InitiateLayerUploadInput`](crate::input::InitiateLayerUploadInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -2403,8 +2453,10 @@ pub mod initiate_layer_upload_input {
         /// Consumes the builder and constructs a [`InitiateLayerUploadInput`](crate::input::InitiateLayerUploadInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::InitiateLayerUploadInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::InitiateLayerUploadInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::InitiateLayerUploadInput {
                 registry_id: self.registry_id,
                 repository_name: self.repository_name,
@@ -2425,13 +2477,13 @@ impl InitiateLayerUploadInput {
             crate::operation::InitiateLayerUpload,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::InitiateLayerUploadInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2439,8 +2491,10 @@ impl InitiateLayerUploadInput {
             fn update_http_builder(
                 input: &crate::input::InitiateLayerUploadInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2529,7 +2583,7 @@ impl InitiateLayerUploadInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -2547,8 +2601,10 @@ pub mod list_tags_for_resource_input {
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
             })
@@ -2568,13 +2624,13 @@ impl ListTagsForResourceInput {
             crate::operation::ListTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2582,8 +2638,10 @@ impl ListTagsForResourceInput {
             fn update_http_builder(
                 input: &crate::input::ListTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2674,7 +2732,7 @@ impl ListTagsForResourceInput {
 pub mod put_image_input {
 
     /// A builder for [`PutImageInput`](crate::input::PutImageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -2756,7 +2814,8 @@ pub mod put_image_input {
         /// Consumes the builder and constructs a [`PutImageInput`](crate::input::PutImageInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutImageInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::PutImageInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::PutImageInput {
                 registry_id: self.registry_id,
                 repository_name: self.repository_name,
@@ -2781,13 +2840,13 @@ impl PutImageInput {
             crate::operation::PutImage,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutImageInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2795,8 +2854,10 @@ impl PutImageInput {
             fn update_http_builder(
                 input: &crate::input::PutImageInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2883,7 +2944,7 @@ impl PutImageInput {
 pub mod put_registry_catalog_data_input {
 
     /// A builder for [`PutRegistryCatalogDataInput`](crate::input::PutRegistryCatalogDataInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) display_name: std::option::Option<std::string::String>,
     }
@@ -2905,8 +2966,10 @@ pub mod put_registry_catalog_data_input {
         /// Consumes the builder and constructs a [`PutRegistryCatalogDataInput`](crate::input::PutRegistryCatalogDataInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutRegistryCatalogDataInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutRegistryCatalogDataInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutRegistryCatalogDataInput {
                 display_name: self.display_name,
             })
@@ -2926,13 +2989,13 @@ impl PutRegistryCatalogDataInput {
             crate::operation::PutRegistryCatalogData,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutRegistryCatalogDataInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2940,8 +3003,10 @@ impl PutRegistryCatalogDataInput {
             fn update_http_builder(
                 input: &crate::input::PutRegistryCatalogDataInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3032,7 +3097,7 @@ impl PutRegistryCatalogDataInput {
 pub mod put_repository_catalog_data_input {
 
     /// A builder for [`PutRepositoryCatalogDataInput`](crate::input::PutRepositoryCatalogDataInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -3080,7 +3145,7 @@ pub mod put_repository_catalog_data_input {
             self,
         ) -> Result<
             crate::input::PutRepositoryCatalogDataInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::PutRepositoryCatalogDataInput {
                 registry_id: self.registry_id,
@@ -3103,13 +3168,13 @@ impl PutRepositoryCatalogDataInput {
             crate::operation::PutRepositoryCatalogData,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutRepositoryCatalogDataInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3117,8 +3182,10 @@ impl PutRepositoryCatalogDataInput {
             fn update_http_builder(
                 input: &crate::input::PutRepositoryCatalogDataInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3209,7 +3276,7 @@ impl PutRepositoryCatalogDataInput {
 pub mod set_repository_policy_input {
 
     /// A builder for [`SetRepositoryPolicyInput`](crate::input::SetRepositoryPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -3263,8 +3330,10 @@ pub mod set_repository_policy_input {
         /// Consumes the builder and constructs a [`SetRepositoryPolicyInput`](crate::input::SetRepositoryPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SetRepositoryPolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::SetRepositoryPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::SetRepositoryPolicyInput {
                 registry_id: self.registry_id,
                 repository_name: self.repository_name,
@@ -3287,13 +3356,13 @@ impl SetRepositoryPolicyInput {
             crate::operation::SetRepositoryPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SetRepositoryPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3301,8 +3370,10 @@ impl SetRepositoryPolicyInput {
             fn update_http_builder(
                 input: &crate::input::SetRepositoryPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3391,7 +3462,7 @@ impl SetRepositoryPolicyInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3429,7 +3500,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
@@ -3451,13 +3522,13 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3465,8 +3536,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3555,7 +3628,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3593,7 +3666,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
@@ -3615,13 +3688,13 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3629,8 +3702,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3719,7 +3794,7 @@ impl UntagResourceInput {
 pub mod upload_layer_part_input {
 
     /// A builder for [`UploadLayerPartInput`](crate::input::UploadLayerPartInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -3798,7 +3873,7 @@ pub mod upload_layer_part_input {
         /// Consumes the builder and constructs a [`UploadLayerPartInput`](crate::input::UploadLayerPartInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UploadLayerPartInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UploadLayerPartInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UploadLayerPartInput {
                 registry_id: self.registry_id,
@@ -3824,13 +3899,13 @@ impl UploadLayerPartInput {
             crate::operation::UploadLayerPart,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UploadLayerPartInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3838,8 +3913,10 @@ impl UploadLayerPartInput {
             fn update_http_builder(
                 input: &crate::input::UploadLayerPartInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3926,7 +4003,7 @@ impl UploadLayerPartInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UploadLayerPartInput {
     /// <p>The AWS account ID associated with the registry to which you are uploading layer parts. If you do not specify a registry, the default public registry is assumed.</p>
     #[doc(hidden)]
@@ -3973,22 +4050,10 @@ impl UploadLayerPartInput {
         self.layer_part_blob.as_ref()
     }
 }
-impl std::fmt::Debug for UploadLayerPartInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UploadLayerPartInput");
-        formatter.field("registry_id", &self.registry_id);
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("upload_id", &self.upload_id);
-        formatter.field("part_first_byte", &self.part_first_byte);
-        formatter.field("part_last_byte", &self.part_last_byte);
-        formatter.field("layer_part_blob", &self.layer_part_blob);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported resource is an Amazon ECR Public repository.</p>
     #[doc(hidden)]
@@ -4007,18 +4072,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the supported resource is an Amazon ECR Public repository.</p>
     #[doc(hidden)]
@@ -4037,18 +4094,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetRepositoryPolicyInput {
     /// <p>The AWS account ID associated with the registry that contains the repository. If you do not specify a registry, the default public registry is assumed.</p>
     #[doc(hidden)]
@@ -4081,20 +4130,10 @@ impl SetRepositoryPolicyInput {
         self.force
     }
 }
-impl std::fmt::Debug for SetRepositoryPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetRepositoryPolicyInput");
-        formatter.field("registry_id", &self.registry_id);
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("policy_text", &self.policy_text);
-        formatter.field("force", &self.force);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRepositoryCatalogDataInput {
     /// <p>The AWS account ID associated with the public registry the repository is in. If you do not specify a registry, the default public registry is assumed.</p>
     #[doc(hidden)]
@@ -4120,19 +4159,10 @@ impl PutRepositoryCatalogDataInput {
         self.catalog_data.as_ref()
     }
 }
-impl std::fmt::Debug for PutRepositoryCatalogDataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRepositoryCatalogDataInput");
-        formatter.field("registry_id", &self.registry_id);
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("catalog_data", &self.catalog_data);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRegistryCatalogDataInput {
     /// <p>The display name for a public registry. The display name is shown as the repository author in the Amazon ECR Public Gallery.</p> <note>
     /// <p>The registry display name is only publicly visible in the Amazon ECR Public Gallery for verified accounts.</p>
@@ -4148,17 +4178,10 @@ impl PutRegistryCatalogDataInput {
         self.display_name.as_deref()
     }
 }
-impl std::fmt::Debug for PutRegistryCatalogDataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRegistryCatalogDataInput");
-        formatter.field("display_name", &self.display_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutImageInput {
     /// <p>The AWS account ID associated with the public registry that contains the repository in which to put the image. If you do not specify a registry, the default public registry is assumed.</p>
     #[doc(hidden)]
@@ -4205,22 +4228,10 @@ impl PutImageInput {
         self.image_digest.as_deref()
     }
 }
-impl std::fmt::Debug for PutImageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutImageInput");
-        formatter.field("registry_id", &self.registry_id);
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("image_manifest", &self.image_manifest);
-        formatter.field("image_manifest_media_type", &self.image_manifest_media_type);
-        formatter.field("image_tag", &self.image_tag);
-        formatter.field("image_digest", &self.image_digest);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resource is an Amazon ECR Public repository.</p>
     #[doc(hidden)]
@@ -4232,17 +4243,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InitiateLayerUploadInput {
     /// <p>The AWS account ID associated with the registry to which you intend to upload layers. If you do not specify a registry, the default public registry is assumed.</p>
     #[doc(hidden)]
@@ -4261,18 +4265,10 @@ impl InitiateLayerUploadInput {
         self.repository_name.as_deref()
     }
 }
-impl std::fmt::Debug for InitiateLayerUploadInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InitiateLayerUploadInput");
-        formatter.field("registry_id", &self.registry_id);
-        formatter.field("repository_name", &self.repository_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRepositoryPolicyInput {
     /// <p>The AWS account ID associated with the public registry that contains the repository. If you do not specify a registry, the default public registry is assumed.</p>
     #[doc(hidden)]
@@ -4291,18 +4287,10 @@ impl GetRepositoryPolicyInput {
         self.repository_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetRepositoryPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRepositoryPolicyInput");
-        formatter.field("registry_id", &self.registry_id);
-        formatter.field("repository_name", &self.repository_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRepositoryCatalogDataInput {
     /// <p>The AWS account ID associated with the registry that contains the repositories to be described. If you do not specify a registry, the default public registry is assumed.</p>
     #[doc(hidden)]
@@ -4321,40 +4309,20 @@ impl GetRepositoryCatalogDataInput {
         self.repository_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetRepositoryCatalogDataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRepositoryCatalogDataInput");
-        formatter.field("registry_id", &self.registry_id);
-        formatter.field("repository_name", &self.repository_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRegistryCatalogDataInput {}
-impl std::fmt::Debug for GetRegistryCatalogDataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRegistryCatalogDataInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAuthorizationTokenInput {}
-impl std::fmt::Debug for GetAuthorizationTokenInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAuthorizationTokenInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRepositoriesInput {
     /// <p>The AWS account ID associated with the registry that contains the repositories to be described. If you do not specify a registry, the default public registry is assumed.</p>
     #[doc(hidden)]
@@ -4391,20 +4359,10 @@ impl DescribeRepositoriesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeRepositoriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRepositoriesInput");
-        formatter.field("registry_id", &self.registry_id);
-        formatter.field("repository_names", &self.repository_names);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRegistriesInput {
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeRegistries</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -4427,18 +4385,10 @@ impl DescribeRegistriesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeRegistriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRegistriesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeImageTagsInput {
     /// <p>The AWS account ID associated with the public registry that contains the repository in which to describe images. If you do not specify a registry, the default public registry is assumed.</p>
     #[doc(hidden)]
@@ -4471,20 +4421,10 @@ impl DescribeImageTagsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeImageTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeImageTagsInput");
-        formatter.field("registry_id", &self.registry_id);
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeImagesInput {
     /// <p>The AWS account ID associated with the public registry that contains the repository in which to describe images. If you do not specify a registry, the default public registry is assumed.</p>
     #[doc(hidden)]
@@ -4524,21 +4464,10 @@ impl DescribeImagesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeImagesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeImagesInput");
-        formatter.field("registry_id", &self.registry_id);
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("image_ids", &self.image_ids);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRepositoryPolicyInput {
     /// <p>The AWS account ID associated with the public registry that contains the repository policy to delete. If you do not specify a registry, the default public registry is assumed.</p>
     #[doc(hidden)]
@@ -4557,18 +4486,10 @@ impl DeleteRepositoryPolicyInput {
         self.repository_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRepositoryPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRepositoryPolicyInput");
-        formatter.field("registry_id", &self.registry_id);
-        formatter.field("repository_name", &self.repository_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRepositoryInput {
     /// <p>The AWS account ID associated with the public registry that contains the repository to delete. If you do not specify a registry, the default public registry is assumed.</p>
     #[doc(hidden)]
@@ -4594,19 +4515,10 @@ impl DeleteRepositoryInput {
         self.force
     }
 }
-impl std::fmt::Debug for DeleteRepositoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRepositoryInput");
-        formatter.field("registry_id", &self.registry_id);
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("force", &self.force);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRepositoryInput {
     /// <p>The name to use for the repository. This appears publicly in the Amazon ECR Public Gallery. The repository name may be specified on its own (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group the repository into a category (such as <code>project-a/nginx-web-app</code>).</p>
     #[doc(hidden)]
@@ -4632,19 +4544,10 @@ impl CreateRepositoryInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateRepositoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRepositoryInput");
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("catalog_data", &self.catalog_data);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CompleteLayerUploadInput {
     /// <p>The AWS account ID associated with the registry to which to upload layers. If you do not specify a registry, the default public registry is assumed.</p>
     #[doc(hidden)]
@@ -4677,20 +4580,10 @@ impl CompleteLayerUploadInput {
         self.layer_digests.as_deref()
     }
 }
-impl std::fmt::Debug for CompleteLayerUploadInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CompleteLayerUploadInput");
-        formatter.field("registry_id", &self.registry_id);
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("upload_id", &self.upload_id);
-        formatter.field("layer_digests", &self.layer_digests);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDeleteImageInput {
     /// <p>The AWS account ID associated with the registry that contains the image to delete. If you do not specify a registry, the default public registry is assumed.</p>
     #[doc(hidden)]
@@ -4716,19 +4609,10 @@ impl BatchDeleteImageInput {
         self.image_ids.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDeleteImageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDeleteImageInput");
-        formatter.field("registry_id", &self.registry_id);
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("image_ids", &self.image_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchCheckLayerAvailabilityInput {
     /// <p>The AWS account ID associated with the public registry that contains the image layers to check. If you do not specify a registry, the default public registry is assumed.</p>
     #[doc(hidden)]
@@ -4752,14 +4636,5 @@ impl BatchCheckLayerAvailabilityInput {
     /// <p>The digests of the image layers to check.</p>
     pub fn layer_digests(&self) -> std::option::Option<&[std::string::String]> {
         self.layer_digests.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchCheckLayerAvailabilityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchCheckLayerAvailabilityInput");
-        formatter.field("registry_id", &self.registry_id);
-        formatter.field("repository_name", &self.repository_name);
-        formatter.field("layer_digests", &self.layer_digests);
-        formatter.finish()
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p>The instance metadata options that apply to the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances, or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceMetadataOptions {
     /// <p>Indicates whether a signed token header is required for instance metadata retrieval requests. The values affect the response as follows:</p>
     /// <ul>
@@ -31,22 +31,11 @@ impl InstanceMetadataOptions {
         self.http_put_response_hop_limit
     }
 }
-impl std::fmt::Debug for InstanceMetadataOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceMetadataOptions");
-        formatter.field("http_tokens", &self.http_tokens);
-        formatter.field(
-            "http_put_response_hop_limit",
-            &self.http_put_response_hop_limit,
-        );
-        formatter.finish()
-    }
-}
 /// See [`InstanceMetadataOptions`](crate::model::InstanceMetadataOptions).
 pub mod instance_metadata_options {
 
     /// A builder for [`InstanceMetadataOptions`](crate::model::InstanceMetadataOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) http_tokens: std::option::Option<std::string::String>,
         pub(crate) http_put_response_hop_limit: std::option::Option<i32>,
@@ -100,7 +89,7 @@ impl InstanceMetadataOptions {
 
 /// <p>Logging configuration defines where Image Builder uploads your logs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Logging {
     /// <p>The Amazon S3 logging configuration.</p>
     #[doc(hidden)]
@@ -112,18 +101,11 @@ impl Logging {
         self.s3_logs.as_ref()
     }
 }
-impl std::fmt::Debug for Logging {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Logging");
-        formatter.field("s3_logs", &self.s3_logs);
-        formatter.finish()
-    }
-}
 /// See [`Logging`](crate::model::Logging).
 pub mod logging {
 
     /// A builder for [`Logging`](crate::model::Logging).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_logs: std::option::Option<crate::model::S3Logs>,
     }
@@ -155,7 +137,7 @@ impl Logging {
 
 /// <p>Amazon S3 logging configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Logs {
     /// <p>The S3 bucket in which to store the logs.</p>
     #[doc(hidden)]
@@ -174,19 +156,11 @@ impl S3Logs {
         self.s3_key_prefix.as_deref()
     }
 }
-impl std::fmt::Debug for S3Logs {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Logs");
-        formatter.field("s3_bucket_name", &self.s3_bucket_name);
-        formatter.field("s3_key_prefix", &self.s3_key_prefix);
-        formatter.finish()
-    }
-}
 /// See [`S3Logs`](crate::model::S3Logs).
 pub mod s3_logs {
 
     /// A builder for [`S3Logs`](crate::model::S3Logs).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_bucket_name: std::option::Option<std::string::String>,
         pub(crate) s3_key_prefix: std::option::Option<std::string::String>,
@@ -234,6 +208,41 @@ impl S3Logs {
     }
 }
 
+/// When writing a match expression against `PipelineStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let pipelinestatus = unimplemented!();
+/// match pipelinestatus {
+///     PipelineStatus::Disabled => { /* ... */ },
+///     PipelineStatus::Enabled => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `pipelinestatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PipelineStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PipelineStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PipelineStatus::NewFeature` is defined.
+/// Specifically, when `pipelinestatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PipelineStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -250,15 +259,15 @@ pub enum PipelineStatus {
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PipelineStatus {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => PipelineStatus::Disabled,
             "ENABLED" => PipelineStatus::Enabled,
-            other => PipelineStatus::Unknown(other.to_owned()),
+            other => PipelineStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -275,11 +284,11 @@ impl PipelineStatus {
         match self {
             PipelineStatus::Disabled => "DISABLED",
             PipelineStatus::Enabled => "ENABLED",
-            PipelineStatus::Unknown(s) => s.as_ref(),
+            PipelineStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -291,7 +300,7 @@ impl AsRef<str> for PipelineStatus {
 
 /// <p>A schedule configures how often and when a pipeline will automatically create a new image.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Schedule {
     /// <p>The cron expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>.</p>
     /// <p>For information on how to format a cron expression in Image Builder, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/image-builder-cron.html">Use cron expressions in EC2 Image Builder</a>.</p>
@@ -322,23 +331,11 @@ impl Schedule {
         self.pipeline_execution_start_condition.as_ref()
     }
 }
-impl std::fmt::Debug for Schedule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Schedule");
-        formatter.field("schedule_expression", &self.schedule_expression);
-        formatter.field("timezone", &self.timezone);
-        formatter.field(
-            "pipeline_execution_start_condition",
-            &self.pipeline_execution_start_condition,
-        );
-        formatter.finish()
-    }
-}
 /// See [`Schedule`](crate::model::Schedule).
 pub mod schedule {
 
     /// A builder for [`Schedule`](crate::model::Schedule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schedule_expression: std::option::Option<std::string::String>,
         pub(crate) timezone: std::option::Option<std::string::String>,
@@ -404,6 +401,41 @@ impl Schedule {
     }
 }
 
+/// When writing a match expression against `PipelineExecutionStartCondition`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let pipelineexecutionstartcondition = unimplemented!();
+/// match pipelineexecutionstartcondition {
+///     PipelineExecutionStartCondition::ExpressionMatchAndDependencyUpdatesAvailable => { /* ... */ },
+///     PipelineExecutionStartCondition::ExpressionMatchOnly => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `pipelineexecutionstartcondition` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PipelineExecutionStartCondition::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PipelineExecutionStartCondition::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PipelineExecutionStartCondition::NewFeature` is defined.
+/// Specifically, when `pipelineexecutionstartcondition` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PipelineExecutionStartCondition::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -420,8 +452,8 @@ pub enum PipelineExecutionStartCondition {
     ExpressionMatchAndDependencyUpdatesAvailable,
     #[allow(missing_docs)] // documentation missing in model
     ExpressionMatchOnly,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PipelineExecutionStartCondition {
     fn from(s: &str) -> Self {
@@ -430,7 +462,9 @@ impl std::convert::From<&str> for PipelineExecutionStartCondition {
                 PipelineExecutionStartCondition::ExpressionMatchAndDependencyUpdatesAvailable
             }
             "EXPRESSION_MATCH_ONLY" => PipelineExecutionStartCondition::ExpressionMatchOnly,
-            other => PipelineExecutionStartCondition::Unknown(other.to_owned()),
+            other => PipelineExecutionStartCondition::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -449,11 +483,11 @@ impl PipelineExecutionStartCondition {
                 "EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE"
             }
             PipelineExecutionStartCondition::ExpressionMatchOnly => "EXPRESSION_MATCH_ONLY",
-            PipelineExecutionStartCondition::Unknown(s) => s.as_ref(),
+            PipelineExecutionStartCondition::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE",
             "EXPRESSION_MATCH_ONLY",
@@ -468,7 +502,7 @@ impl AsRef<str> for PipelineExecutionStartCondition {
 
 /// <p>Configure image tests for your pipeline build. Tests run after building the image, to verify that the AMI or container image is valid before distributing it.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageTestsConfiguration {
     /// <p>Determines if tests should run after building the image. Image Builder defaults to enable tests to run following the image build, before image distribution.</p>
     #[doc(hidden)]
@@ -487,19 +521,11 @@ impl ImageTestsConfiguration {
         self.timeout_minutes
     }
 }
-impl std::fmt::Debug for ImageTestsConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImageTestsConfiguration");
-        formatter.field("image_tests_enabled", &self.image_tests_enabled);
-        formatter.field("timeout_minutes", &self.timeout_minutes);
-        formatter.finish()
-    }
-}
 /// See [`ImageTestsConfiguration`](crate::model::ImageTestsConfiguration).
 pub mod image_tests_configuration {
 
     /// A builder for [`ImageTestsConfiguration`](crate::model::ImageTestsConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_tests_enabled: std::option::Option<bool>,
         pub(crate) timeout_minutes: std::option::Option<i32>,
@@ -543,7 +569,7 @@ impl ImageTestsConfiguration {
 
 /// <p> Defines the settings for a specific Region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Distribution {
     /// <p>The target Region.</p>
     #[doc(hidden)]
@@ -611,39 +637,11 @@ impl Distribution {
         self.fast_launch_configurations.as_deref()
     }
 }
-impl std::fmt::Debug for Distribution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Distribution");
-        formatter.field("region", &self.region);
-        formatter.field(
-            "ami_distribution_configuration",
-            &self.ami_distribution_configuration,
-        );
-        formatter.field(
-            "container_distribution_configuration",
-            &self.container_distribution_configuration,
-        );
-        formatter.field(
-            "license_configuration_arns",
-            &self.license_configuration_arns,
-        );
-        formatter.field(
-            "launch_template_configurations",
-            &self.launch_template_configurations,
-        );
-        formatter.field("s3_export_configuration", &self.s3_export_configuration);
-        formatter.field(
-            "fast_launch_configurations",
-            &self.fast_launch_configurations,
-        );
-        formatter.finish()
-    }
-}
 /// See [`Distribution`](crate::model::Distribution).
 pub mod distribution {
 
     /// A builder for [`Distribution`](crate::model::Distribution).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) region: std::option::Option<std::string::String>,
         pub(crate) ami_distribution_configuration:
@@ -804,7 +802,7 @@ impl Distribution {
 
 /// <p>Define and configure faster launching for output Windows AMIs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FastLaunchConfiguration {
     /// <p>A Boolean that represents the current state of faster launching for the Windows AMI. Set to <code>true</code> to start using Windows faster launching, or <code>false</code> to stop using it.</p>
     #[doc(hidden)]
@@ -848,22 +846,11 @@ impl FastLaunchConfiguration {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for FastLaunchConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FastLaunchConfiguration");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("snapshot_configuration", &self.snapshot_configuration);
-        formatter.field("max_parallel_launches", &self.max_parallel_launches);
-        formatter.field("launch_template", &self.launch_template);
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 /// See [`FastLaunchConfiguration`](crate::model::FastLaunchConfiguration).
 pub mod fast_launch_configuration {
 
     /// A builder for [`FastLaunchConfiguration`](crate::model::FastLaunchConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
         pub(crate) snapshot_configuration:
@@ -959,7 +946,7 @@ impl FastLaunchConfiguration {
 /// <p>You can specify either the <code>launchTemplateName</code> or the <code>launchTemplateId</code>, but not both.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FastLaunchLaunchTemplateSpecification {
     /// <p>The ID of the launch template to use for faster launching for a Windows AMI.</p>
     #[doc(hidden)]
@@ -985,20 +972,11 @@ impl FastLaunchLaunchTemplateSpecification {
         self.launch_template_version.as_deref()
     }
 }
-impl std::fmt::Debug for FastLaunchLaunchTemplateSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FastLaunchLaunchTemplateSpecification");
-        formatter.field("launch_template_id", &self.launch_template_id);
-        formatter.field("launch_template_name", &self.launch_template_name);
-        formatter.field("launch_template_version", &self.launch_template_version);
-        formatter.finish()
-    }
-}
 /// See [`FastLaunchLaunchTemplateSpecification`](crate::model::FastLaunchLaunchTemplateSpecification).
 pub mod fast_launch_launch_template_specification {
 
     /// A builder for [`FastLaunchLaunchTemplateSpecification`](crate::model::FastLaunchLaunchTemplateSpecification).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) launch_template_id: std::option::Option<std::string::String>,
         pub(crate) launch_template_name: std::option::Option<std::string::String>,
@@ -1063,7 +1041,7 @@ impl FastLaunchLaunchTemplateSpecification {
 
 /// <p>Configuration settings for creating and managing pre-provisioned snapshots for a fast-launch enabled Windows AMI.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FastLaunchSnapshotConfiguration {
     /// <p>The number of pre-provisioned snapshots to keep on hand for a fast-launch enabled Windows AMI.</p>
     #[doc(hidden)]
@@ -1075,18 +1053,11 @@ impl FastLaunchSnapshotConfiguration {
         self.target_resource_count
     }
 }
-impl std::fmt::Debug for FastLaunchSnapshotConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FastLaunchSnapshotConfiguration");
-        formatter.field("target_resource_count", &self.target_resource_count);
-        formatter.finish()
-    }
-}
 /// See [`FastLaunchSnapshotConfiguration`](crate::model::FastLaunchSnapshotConfiguration).
 pub mod fast_launch_snapshot_configuration {
 
     /// A builder for [`FastLaunchSnapshotConfiguration`](crate::model::FastLaunchSnapshotConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_resource_count: std::option::Option<i32>,
     }
@@ -1118,7 +1089,7 @@ impl FastLaunchSnapshotConfiguration {
 
 /// <p>Properties that configure export from your build instance to a compatible file format for your VM.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3ExportConfiguration {
     /// <p>The name of the role that grants VM Import/Export permission to export images to your S3 bucket.</p>
     #[doc(hidden)]
@@ -1161,21 +1132,11 @@ impl S3ExportConfiguration {
         self.s3_prefix.as_deref()
     }
 }
-impl std::fmt::Debug for S3ExportConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3ExportConfiguration");
-        formatter.field("role_name", &self.role_name);
-        formatter.field("disk_image_format", &self.disk_image_format);
-        formatter.field("s3_bucket", &self.s3_bucket);
-        formatter.field("s3_prefix", &self.s3_prefix);
-        formatter.finish()
-    }
-}
 /// See [`S3ExportConfiguration`](crate::model::S3ExportConfiguration).
 pub mod s3_export_configuration {
 
     /// A builder for [`S3ExportConfiguration`](crate::model::S3ExportConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_name: std::option::Option<std::string::String>,
         pub(crate) disk_image_format: std::option::Option<crate::model::DiskImageFormat>,
@@ -1254,6 +1215,42 @@ impl S3ExportConfiguration {
     }
 }
 
+/// When writing a match expression against `DiskImageFormat`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let diskimageformat = unimplemented!();
+/// match diskimageformat {
+///     DiskImageFormat::Raw => { /* ... */ },
+///     DiskImageFormat::Vhd => { /* ... */ },
+///     DiskImageFormat::Vmdk => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `diskimageformat` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DiskImageFormat::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DiskImageFormat::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DiskImageFormat::NewFeature` is defined.
+/// Specifically, when `diskimageformat` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DiskImageFormat::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1272,8 +1269,8 @@ pub enum DiskImageFormat {
     Vhd,
     #[allow(missing_docs)] // documentation missing in model
     Vmdk,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DiskImageFormat {
     fn from(s: &str) -> Self {
@@ -1281,7 +1278,7 @@ impl std::convert::From<&str> for DiskImageFormat {
             "RAW" => DiskImageFormat::Raw,
             "VHD" => DiskImageFormat::Vhd,
             "VMDK" => DiskImageFormat::Vmdk,
-            other => DiskImageFormat::Unknown(other.to_owned()),
+            other => DiskImageFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1299,11 +1296,11 @@ impl DiskImageFormat {
             DiskImageFormat::Raw => "RAW",
             DiskImageFormat::Vhd => "VHD",
             DiskImageFormat::Vmdk => "VMDK",
-            DiskImageFormat::Unknown(s) => s.as_ref(),
+            DiskImageFormat::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["RAW", "VHD", "VMDK"]
     }
 }
@@ -1315,7 +1312,7 @@ impl AsRef<str> for DiskImageFormat {
 
 /// <p>Identifies an Amazon EC2 launch template to use for a specific account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LaunchTemplateConfiguration {
     /// <p>Identifies the Amazon EC2 launch template to use.</p>
     #[doc(hidden)]
@@ -1341,20 +1338,11 @@ impl LaunchTemplateConfiguration {
         self.set_default_version
     }
 }
-impl std::fmt::Debug for LaunchTemplateConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LaunchTemplateConfiguration");
-        formatter.field("launch_template_id", &self.launch_template_id);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("set_default_version", &self.set_default_version);
-        formatter.finish()
-    }
-}
 /// See [`LaunchTemplateConfiguration`](crate::model::LaunchTemplateConfiguration).
 pub mod launch_template_configuration {
 
     /// A builder for [`LaunchTemplateConfiguration`](crate::model::LaunchTemplateConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) launch_template_id: std::option::Option<std::string::String>,
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -1413,7 +1401,7 @@ impl LaunchTemplateConfiguration {
 
 /// <p>Container distribution settings for encryption, licensing, and sharing in a specific Region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContainerDistributionConfiguration {
     /// <p>The description of the container distribution configuration.</p>
     #[doc(hidden)]
@@ -1441,20 +1429,11 @@ impl ContainerDistributionConfiguration {
         self.target_repository.as_ref()
     }
 }
-impl std::fmt::Debug for ContainerDistributionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContainerDistributionConfiguration");
-        formatter.field("description", &self.description);
-        formatter.field("container_tags", &self.container_tags);
-        formatter.field("target_repository", &self.target_repository);
-        formatter.finish()
-    }
-}
 /// See [`ContainerDistributionConfiguration`](crate::model::ContainerDistributionConfiguration).
 pub mod container_distribution_configuration {
 
     /// A builder for [`ContainerDistributionConfiguration`](crate::model::ContainerDistributionConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) container_tags: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1522,7 +1501,7 @@ impl ContainerDistributionConfiguration {
 
 /// <p>The container repository where the output container image is stored.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetContainerRepository {
     /// <p>Specifies the service in which this image was registered.</p>
     #[doc(hidden)]
@@ -1541,19 +1520,11 @@ impl TargetContainerRepository {
         self.repository_name.as_deref()
     }
 }
-impl std::fmt::Debug for TargetContainerRepository {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetContainerRepository");
-        formatter.field("service", &self.service);
-        formatter.field("repository_name", &self.repository_name);
-        formatter.finish()
-    }
-}
 /// See [`TargetContainerRepository`](crate::model::TargetContainerRepository).
 pub mod target_container_repository {
 
     /// A builder for [`TargetContainerRepository`](crate::model::TargetContainerRepository).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service: std::option::Option<crate::model::ContainerRepositoryService>,
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -1601,6 +1572,40 @@ impl TargetContainerRepository {
     }
 }
 
+/// When writing a match expression against `ContainerRepositoryService`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let containerrepositoryservice = unimplemented!();
+/// match containerrepositoryservice {
+///     ContainerRepositoryService::Ecr => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `containerrepositoryservice` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ContainerRepositoryService::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ContainerRepositoryService::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ContainerRepositoryService::NewFeature` is defined.
+/// Specifically, when `containerrepositoryservice` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ContainerRepositoryService::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1615,14 +1620,16 @@ impl TargetContainerRepository {
 pub enum ContainerRepositoryService {
     #[allow(missing_docs)] // documentation missing in model
     Ecr,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ContainerRepositoryService {
     fn from(s: &str) -> Self {
         match s {
             "ECR" => ContainerRepositoryService::Ecr,
-            other => ContainerRepositoryService::Unknown(other.to_owned()),
+            other => ContainerRepositoryService::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -1638,11 +1645,11 @@ impl ContainerRepositoryService {
     pub fn as_str(&self) -> &str {
         match self {
             ContainerRepositoryService::Ecr => "ECR",
-            ContainerRepositoryService::Unknown(s) => s.as_ref(),
+            ContainerRepositoryService::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ECR"]
     }
 }
@@ -1654,7 +1661,7 @@ impl AsRef<str> for ContainerRepositoryService {
 
 /// <p> Define and configure the output AMIs of the pipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AmiDistributionConfiguration {
     /// <p>The name of the output AMI.</p>
     #[doc(hidden)]
@@ -1707,23 +1714,11 @@ impl AmiDistributionConfiguration {
         self.launch_permission.as_ref()
     }
 }
-impl std::fmt::Debug for AmiDistributionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AmiDistributionConfiguration");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("target_account_ids", &self.target_account_ids);
-        formatter.field("ami_tags", &self.ami_tags);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("launch_permission", &self.launch_permission);
-        formatter.finish()
-    }
-}
 /// See [`AmiDistributionConfiguration`](crate::model::AmiDistributionConfiguration).
 pub mod ami_distribution_configuration {
 
     /// A builder for [`AmiDistributionConfiguration`](crate::model::AmiDistributionConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1848,7 +1843,7 @@ impl AmiDistributionConfiguration {
 
 /// <p>Describes the configuration for a launch permission. The launch permission modification request is sent to the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html">Amazon EC2 ModifyImageAttribute</a> API on behalf of the user for each Region they have selected to distribute the AMI. To make an AMI public, set the launch permission authorized accounts to <code>all</code>. See the examples for making an AMI public at <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html">Amazon EC2 ModifyImageAttribute</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LaunchPermissionConfiguration {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
@@ -1881,21 +1876,11 @@ impl LaunchPermissionConfiguration {
         self.organizational_unit_arns.as_deref()
     }
 }
-impl std::fmt::Debug for LaunchPermissionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LaunchPermissionConfiguration");
-        formatter.field("user_ids", &self.user_ids);
-        formatter.field("user_groups", &self.user_groups);
-        formatter.field("organization_arns", &self.organization_arns);
-        formatter.field("organizational_unit_arns", &self.organizational_unit_arns);
-        formatter.finish()
-    }
-}
 /// See [`LaunchPermissionConfiguration`](crate::model::LaunchPermissionConfiguration).
 pub mod launch_permission_configuration {
 
     /// A builder for [`LaunchPermissionConfiguration`](crate::model::LaunchPermissionConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) user_groups: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2000,7 +1985,7 @@ impl LaunchPermissionConfiguration {
 
 /// <p>The infrastructure used when building Amazon EC2 AMIs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InfrastructureConfigurationSummary {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
     #[doc(hidden)]
@@ -2076,26 +2061,11 @@ impl InfrastructureConfigurationSummary {
         self.instance_profile_name.as_deref()
     }
 }
-impl std::fmt::Debug for InfrastructureConfigurationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InfrastructureConfigurationSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("date_updated", &self.date_updated);
-        formatter.field("resource_tags", &self.resource_tags);
-        formatter.field("tags", &self.tags);
-        formatter.field("instance_types", &self.instance_types);
-        formatter.field("instance_profile_name", &self.instance_profile_name);
-        formatter.finish()
-    }
-}
 /// See [`InfrastructureConfigurationSummary`](crate::model::InfrastructureConfigurationSummary).
 pub mod infrastructure_configuration_summary {
 
     /// A builder for [`InfrastructureConfigurationSummary`](crate::model::InfrastructureConfigurationSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2269,7 +2239,7 @@ impl InfrastructureConfigurationSummary {
 
 /// <p>A filter name and value pair that is used to return a more specific list of results from a list operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Filter {
     /// <p>The name of the filter. Filter names are case-sensitive.</p>
     #[doc(hidden)]
@@ -2288,19 +2258,11 @@ impl Filter {
         self.values.as_deref()
     }
 }
-impl std::fmt::Debug for Filter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Filter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
-    }
-}
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
 
     /// A builder for [`Filter`](crate::model::Filter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2353,7 +2315,7 @@ impl Filter {
 
 /// <p>The defining characteristics of a specific version of an Image Builder image.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageVersion {
     /// <p>The Amazon Resource Name (ARN) of a specific version of an Image Builder image.</p> <note>
     /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
@@ -2489,26 +2451,11 @@ impl ImageVersion {
         self.build_type.as_ref()
     }
 }
-impl std::fmt::Debug for ImageVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImageVersion");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("version", &self.version);
-        formatter.field("platform", &self.platform);
-        formatter.field("os_version", &self.os_version);
-        formatter.field("owner", &self.owner);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("build_type", &self.build_type);
-        formatter.finish()
-    }
-}
 /// See [`ImageVersion`](crate::model::ImageVersion).
 pub mod image_version {
 
     /// A builder for [`ImageVersion`](crate::model::ImageVersion).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2705,6 +2652,42 @@ impl ImageVersion {
     }
 }
 
+/// When writing a match expression against `BuildType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let buildtype = unimplemented!();
+/// match buildtype {
+///     BuildType::Import => { /* ... */ },
+///     BuildType::Scheduled => { /* ... */ },
+///     BuildType::UserInitiated => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `buildtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `BuildType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `BuildType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `BuildType::NewFeature` is defined.
+/// Specifically, when `buildtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `BuildType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2723,8 +2706,8 @@ pub enum BuildType {
     Scheduled,
     #[allow(missing_docs)] // documentation missing in model
     UserInitiated,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for BuildType {
     fn from(s: &str) -> Self {
@@ -2732,7 +2715,7 @@ impl std::convert::From<&str> for BuildType {
             "IMPORT" => BuildType::Import,
             "SCHEDULED" => BuildType::Scheduled,
             "USER_INITIATED" => BuildType::UserInitiated,
-            other => BuildType::Unknown(other.to_owned()),
+            other => BuildType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2750,11 +2733,11 @@ impl BuildType {
             BuildType::Import => "IMPORT",
             BuildType::Scheduled => "SCHEDULED",
             BuildType::UserInitiated => "USER_INITIATED",
-            BuildType::Unknown(s) => s.as_ref(),
+            BuildType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IMPORT", "SCHEDULED", "USER_INITIATED"]
     }
 }
@@ -2764,6 +2747,41 @@ impl AsRef<str> for BuildType {
     }
 }
 
+/// When writing a match expression against `Platform`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let platform = unimplemented!();
+/// match platform {
+///     Platform::Linux => { /* ... */ },
+///     Platform::Windows => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `platform` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Platform::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Platform::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Platform::NewFeature` is defined.
+/// Specifically, when `platform` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Platform::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2780,15 +2798,15 @@ pub enum Platform {
     Linux,
     #[allow(missing_docs)] // documentation missing in model
     Windows,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Platform {
     fn from(s: &str) -> Self {
         match s {
             "Linux" => Platform::Linux,
             "Windows" => Platform::Windows,
-            other => Platform::Unknown(other.to_owned()),
+            other => Platform::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2805,11 +2823,11 @@ impl Platform {
         match self {
             Platform::Linux => "Linux",
             Platform::Windows => "Windows",
-            Platform::Unknown(s) => s.as_ref(),
+            Platform::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Linux", "Windows"]
     }
 }
@@ -2819,6 +2837,41 @@ impl AsRef<str> for Platform {
     }
 }
 
+/// When writing a match expression against `ImageType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let imagetype = unimplemented!();
+/// match imagetype {
+///     ImageType::Ami => { /* ... */ },
+///     ImageType::Docker => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `imagetype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ImageType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ImageType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ImageType::NewFeature` is defined.
+/// Specifically, when `imagetype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ImageType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2835,15 +2888,15 @@ pub enum ImageType {
     Ami,
     #[allow(missing_docs)] // documentation missing in model
     Docker,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ImageType {
     fn from(s: &str) -> Self {
         match s {
             "AMI" => ImageType::Ami,
             "DOCKER" => ImageType::Docker,
-            other => ImageType::Unknown(other.to_owned()),
+            other => ImageType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2860,11 +2913,11 @@ impl ImageType {
         match self {
             ImageType::Ami => "AMI",
             ImageType::Docker => "DOCKER",
-            ImageType::Unknown(s) => s.as_ref(),
+            ImageType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AMI", "DOCKER"]
     }
 }
@@ -2874,6 +2927,42 @@ impl AsRef<str> for ImageType {
     }
 }
 
+/// When writing a match expression against `Ownership`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let ownership = unimplemented!();
+/// match ownership {
+///     Ownership::Amazon => { /* ... */ },
+///     Ownership::SelfValue => { /* ... */ },
+///     Ownership::Shared => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `ownership` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Ownership::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Ownership::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Ownership::NewFeature` is defined.
+/// Specifically, when `ownership` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Ownership::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 /// _Note: `Ownership::Self` has been renamed to `::SelfValue`._
 #[non_exhaustive]
 #[derive(
@@ -2892,8 +2981,8 @@ pub enum Ownership {
     SelfValue,
     #[allow(missing_docs)] // documentation missing in model
     Shared,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Ownership {
     fn from(s: &str) -> Self {
@@ -2901,7 +2990,7 @@ impl std::convert::From<&str> for Ownership {
             "Amazon" => Ownership::Amazon,
             "Self" => Ownership::SelfValue,
             "Shared" => Ownership::Shared,
-            other => Ownership::Unknown(other.to_owned()),
+            other => Ownership::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2919,11 +3008,11 @@ impl Ownership {
             Ownership::Amazon => "Amazon",
             Ownership::SelfValue => "Self",
             Ownership::Shared => "Shared",
-            Ownership::Unknown(s) => s.as_ref(),
+            Ownership::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Amazon", "Self", "Shared"]
     }
 }
@@ -2935,7 +3024,7 @@ impl AsRef<str> for Ownership {
 
 /// <p>A summary of an image recipe.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageRecipeSummary {
     /// <p>The Amazon Resource Name (ARN) of the image recipe.</p>
     #[doc(hidden)]
@@ -2993,24 +3082,11 @@ impl ImageRecipeSummary {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for ImageRecipeSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImageRecipeSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("platform", &self.platform);
-        formatter.field("owner", &self.owner);
-        formatter.field("parent_image", &self.parent_image);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`ImageRecipeSummary`](crate::model::ImageRecipeSummary).
 pub mod image_recipe_summary {
 
     /// A builder for [`ImageRecipeSummary`](crate::model::ImageRecipeSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3131,7 +3207,7 @@ impl ImageRecipeSummary {
 
 /// <p>Details of an image pipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImagePipeline {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline.</p>
     #[doc(hidden)]
@@ -3261,43 +3337,11 @@ impl ImagePipeline {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for ImagePipeline {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImagePipeline");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("platform", &self.platform);
-        formatter.field(
-            "enhanced_image_metadata_enabled",
-            &self.enhanced_image_metadata_enabled,
-        );
-        formatter.field("image_recipe_arn", &self.image_recipe_arn);
-        formatter.field("container_recipe_arn", &self.container_recipe_arn);
-        formatter.field(
-            "infrastructure_configuration_arn",
-            &self.infrastructure_configuration_arn,
-        );
-        formatter.field(
-            "distribution_configuration_arn",
-            &self.distribution_configuration_arn,
-        );
-        formatter.field("image_tests_configuration", &self.image_tests_configuration);
-        formatter.field("schedule", &self.schedule);
-        formatter.field("status", &self.status);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("date_updated", &self.date_updated);
-        formatter.field("date_last_run", &self.date_last_run);
-        formatter.field("date_next_run", &self.date_next_run);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`ImagePipeline`](crate::model::ImagePipeline).
 pub mod image_pipeline {
 
     /// A builder for [`ImagePipeline`](crate::model::ImagePipeline).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3575,7 +3619,7 @@ impl ImagePipeline {
 
 /// <p>An image summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageSummary {
     /// <p>The Amazon Resource Name (ARN) of the image.</p>
     #[doc(hidden)]
@@ -3678,29 +3722,11 @@ impl ImageSummary {
         self.build_type.as_ref()
     }
 }
-impl std::fmt::Debug for ImageSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImageSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("version", &self.version);
-        formatter.field("platform", &self.platform);
-        formatter.field("os_version", &self.os_version);
-        formatter.field("state", &self.state);
-        formatter.field("owner", &self.owner);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("output_resources", &self.output_resources);
-        formatter.field("tags", &self.tags);
-        formatter.field("build_type", &self.build_type);
-        formatter.finish()
-    }
-}
 /// See [`ImageSummary`](crate::model::ImageSummary).
 pub mod image_summary {
 
     /// A builder for [`ImageSummary`](crate::model::ImageSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3897,7 +3923,7 @@ impl ImageSummary {
 
 /// <p>The resources produced by this image.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutputResources {
     /// <p>The Amazon EC2 AMIs created by this image.</p>
     #[doc(hidden)]
@@ -3916,19 +3942,11 @@ impl OutputResources {
         self.containers.as_deref()
     }
 }
-impl std::fmt::Debug for OutputResources {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutputResources");
-        formatter.field("amis", &self.amis);
-        formatter.field("containers", &self.containers);
-        formatter.finish()
-    }
-}
 /// See [`OutputResources`](crate::model::OutputResources).
 pub mod output_resources {
 
     /// A builder for [`OutputResources`](crate::model::OutputResources).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amis: std::option::Option<std::vec::Vec<crate::model::Ami>>,
         pub(crate) containers: std::option::Option<std::vec::Vec<crate::model::Container>>,
@@ -3990,7 +4008,7 @@ impl OutputResources {
 
 /// <p>A container encapsulates the runtime environment for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Container {
     /// <p>Containers and container images are Region-specific. This is the Region context for the container.</p>
     #[doc(hidden)]
@@ -4009,19 +4027,11 @@ impl Container {
         self.image_uris.as_deref()
     }
 }
-impl std::fmt::Debug for Container {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Container");
-        formatter.field("region", &self.region);
-        formatter.field("image_uris", &self.image_uris);
-        formatter.finish()
-    }
-}
 /// See [`Container`](crate::model::Container).
 pub mod container {
 
     /// A builder for [`Container`](crate::model::Container).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) region: std::option::Option<std::string::String>,
         pub(crate) image_uris: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4074,7 +4084,7 @@ impl Container {
 
 /// <p> Details of an Amazon EC2 AMI.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ami {
     /// <p>The Amazon Web Services Region of the Amazon EC2 AMI.</p>
     #[doc(hidden)]
@@ -4121,23 +4131,11 @@ impl Ami {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for Ami {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ami");
-        formatter.field("region", &self.region);
-        formatter.field("image", &self.image);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("state", &self.state);
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 /// See [`Ami`](crate::model::Ami).
 pub mod ami {
 
     /// A builder for [`Ami`](crate::model::Ami).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) region: std::option::Option<std::string::String>,
         pub(crate) image: std::option::Option<std::string::String>,
@@ -4229,7 +4227,7 @@ impl Ami {
 
 /// <p> Image state shows the image status and the reason for that status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageState {
     /// <p>The status of the image.</p>
     #[doc(hidden)]
@@ -4248,19 +4246,11 @@ impl ImageState {
         self.reason.as_deref()
     }
 }
-impl std::fmt::Debug for ImageState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImageState");
-        formatter.field("status", &self.status);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
-    }
-}
 /// See [`ImageState`](crate::model::ImageState).
 pub mod image_state {
 
     /// A builder for [`ImageState`](crate::model::ImageState).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ImageStatus>,
         pub(crate) reason: std::option::Option<std::string::String>,
@@ -4302,6 +4292,50 @@ impl ImageState {
     }
 }
 
+/// When writing a match expression against `ImageStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let imagestatus = unimplemented!();
+/// match imagestatus {
+///     ImageStatus::Available => { /* ... */ },
+///     ImageStatus::Building => { /* ... */ },
+///     ImageStatus::Cancelled => { /* ... */ },
+///     ImageStatus::Creating => { /* ... */ },
+///     ImageStatus::Deleted => { /* ... */ },
+///     ImageStatus::Deprecated => { /* ... */ },
+///     ImageStatus::Distributing => { /* ... */ },
+///     ImageStatus::Failed => { /* ... */ },
+///     ImageStatus::Integrating => { /* ... */ },
+///     ImageStatus::Pending => { /* ... */ },
+///     ImageStatus::Testing => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `imagestatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ImageStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ImageStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ImageStatus::NewFeature` is defined.
+/// Specifically, when `imagestatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ImageStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -4336,8 +4370,8 @@ pub enum ImageStatus {
     Pending,
     #[allow(missing_docs)] // documentation missing in model
     Testing,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ImageStatus {
     fn from(s: &str) -> Self {
@@ -4353,7 +4387,7 @@ impl std::convert::From<&str> for ImageStatus {
             "INTEGRATING" => ImageStatus::Integrating,
             "PENDING" => ImageStatus::Pending,
             "TESTING" => ImageStatus::Testing,
-            other => ImageStatus::Unknown(other.to_owned()),
+            other => ImageStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -4379,11 +4413,11 @@ impl ImageStatus {
             ImageStatus::Integrating => "INTEGRATING",
             ImageStatus::Pending => "PENDING",
             ImageStatus::Testing => "TESTING",
-            ImageStatus::Unknown(s) => s.as_ref(),
+            ImageStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
             "BUILDING",
@@ -4407,7 +4441,7 @@ impl AsRef<str> for ImageStatus {
 
 /// <p>Represents a package installed on an Image Builder image.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImagePackage {
     /// <p>The name of the package as reported to the operating system package manager.</p>
     #[doc(hidden)]
@@ -4426,19 +4460,11 @@ impl ImagePackage {
         self.package_version.as_deref()
     }
 }
-impl std::fmt::Debug for ImagePackage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImagePackage");
-        formatter.field("package_name", &self.package_name);
-        formatter.field("package_version", &self.package_version);
-        formatter.finish()
-    }
-}
 /// See [`ImagePackage`](crate::model::ImagePackage).
 pub mod image_package {
 
     /// A builder for [`ImagePackage`](crate::model::ImagePackage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_name: std::option::Option<std::string::String>,
         pub(crate) package_version: std::option::Option<std::string::String>,
@@ -4485,7 +4511,7 @@ impl ImagePackage {
 
 /// <p>A high-level overview of a distribution configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DistributionConfigurationSummary {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration.</p>
     #[doc(hidden)]
@@ -4543,24 +4569,11 @@ impl DistributionConfigurationSummary {
         self.regions.as_deref()
     }
 }
-impl std::fmt::Debug for DistributionConfigurationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DistributionConfigurationSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("date_updated", &self.date_updated);
-        formatter.field("tags", &self.tags);
-        formatter.field("regions", &self.regions);
-        formatter.finish()
-    }
-}
 /// See [`DistributionConfigurationSummary`](crate::model::DistributionConfigurationSummary).
 pub mod distribution_configuration_summary {
 
     /// A builder for [`DistributionConfigurationSummary`](crate::model::DistributionConfigurationSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4690,7 +4703,7 @@ impl DistributionConfigurationSummary {
 
 /// <p>A summary of a container recipe</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContainerRecipeSummary {
     /// <p>The Amazon Resource Name (ARN) of the container recipe.</p>
     #[doc(hidden)]
@@ -4755,25 +4768,11 @@ impl ContainerRecipeSummary {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for ContainerRecipeSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContainerRecipeSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("container_type", &self.container_type);
-        formatter.field("name", &self.name);
-        formatter.field("platform", &self.platform);
-        formatter.field("owner", &self.owner);
-        formatter.field("parent_image", &self.parent_image);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`ContainerRecipeSummary`](crate::model::ContainerRecipeSummary).
 pub mod container_recipe_summary {
 
     /// A builder for [`ContainerRecipeSummary`](crate::model::ContainerRecipeSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) container_type: std::option::Option<crate::model::ContainerType>,
@@ -4907,6 +4906,40 @@ impl ContainerRecipeSummary {
     }
 }
 
+/// When writing a match expression against `ContainerType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let containertype = unimplemented!();
+/// match containertype {
+///     ContainerType::Docker => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `containertype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ContainerType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ContainerType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ContainerType::NewFeature` is defined.
+/// Specifically, when `containertype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ContainerType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -4921,14 +4954,14 @@ impl ContainerRecipeSummary {
 pub enum ContainerType {
     #[allow(missing_docs)] // documentation missing in model
     Docker,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ContainerType {
     fn from(s: &str) -> Self {
         match s {
             "DOCKER" => ContainerType::Docker,
-            other => ContainerType::Unknown(other.to_owned()),
+            other => ContainerType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -4944,11 +4977,11 @@ impl ContainerType {
     pub fn as_str(&self) -> &str {
         match self {
             ContainerType::Docker => "DOCKER",
-            ContainerType::Unknown(s) => s.as_ref(),
+            ContainerType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DOCKER"]
     }
 }
@@ -4960,7 +4993,7 @@ impl AsRef<str> for ContainerType {
 
 /// <p>The defining characteristics of a specific version of an Amazon Web Services TOE component.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComponentVersion {
     /// <p>The Amazon Resource Name (ARN) of the component.</p> <note>
     /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
@@ -5086,26 +5119,11 @@ impl ComponentVersion {
         self.date_created.as_deref()
     }
 }
-impl std::fmt::Debug for ComponentVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComponentVersion");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.field("description", &self.description);
-        formatter.field("platform", &self.platform);
-        formatter.field("supported_os_versions", &self.supported_os_versions);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("owner", &self.owner);
-        formatter.field("date_created", &self.date_created);
-        formatter.finish()
-    }
-}
 /// See [`ComponentVersion`](crate::model::ComponentVersion).
 pub mod component_version {
 
     /// A builder for [`ComponentVersion`](crate::model::ComponentVersion).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5298,6 +5316,41 @@ impl ComponentVersion {
     }
 }
 
+/// When writing a match expression against `ComponentType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let componenttype = unimplemented!();
+/// match componenttype {
+///     ComponentType::Build => { /* ... */ },
+///     ComponentType::Test => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `componenttype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ComponentType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ComponentType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ComponentType::NewFeature` is defined.
+/// Specifically, when `componenttype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ComponentType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -5314,15 +5367,15 @@ pub enum ComponentType {
     Build,
     #[allow(missing_docs)] // documentation missing in model
     Test,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ComponentType {
     fn from(s: &str) -> Self {
         match s {
             "BUILD" => ComponentType::Build,
             "TEST" => ComponentType::Test,
-            other => ComponentType::Unknown(other.to_owned()),
+            other => ComponentType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -5339,11 +5392,11 @@ impl ComponentType {
         match self {
             ComponentType::Build => "BUILD",
             ComponentType::Test => "TEST",
-            ComponentType::Unknown(s) => s.as_ref(),
+            ComponentType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BUILD", "TEST"]
     }
 }
@@ -5355,7 +5408,7 @@ impl AsRef<str> for ComponentType {
 
 /// <p>A high-level summary of a component.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComponentSummary {
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
     #[doc(hidden)]
@@ -5448,29 +5501,11 @@ impl ComponentSummary {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for ComponentSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComponentSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.field("platform", &self.platform);
-        formatter.field("supported_os_versions", &self.supported_os_versions);
-        formatter.field("state", &self.state);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("owner", &self.owner);
-        formatter.field("description", &self.description);
-        formatter.field("change_description", &self.change_description);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`ComponentSummary`](crate::model::ComponentSummary).
 pub mod component_summary {
 
     /// A builder for [`ComponentSummary`](crate::model::ComponentSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5666,7 +5701,7 @@ impl ComponentSummary {
 
 /// <p>A group of fields that describe the current status of components that are no longer active.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComponentState {
     /// <p>The current state of the component.</p>
     #[doc(hidden)]
@@ -5685,19 +5720,11 @@ impl ComponentState {
         self.reason.as_deref()
     }
 }
-impl std::fmt::Debug for ComponentState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComponentState");
-        formatter.field("status", &self.status);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
-    }
-}
 /// See [`ComponentState`](crate::model::ComponentState).
 pub mod component_state {
 
     /// A builder for [`ComponentState`](crate::model::ComponentState).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ComponentStatus>,
         pub(crate) reason: std::option::Option<std::string::String>,
@@ -5742,6 +5769,40 @@ impl ComponentState {
     }
 }
 
+/// When writing a match expression against `ComponentStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let componentstatus = unimplemented!();
+/// match componentstatus {
+///     ComponentStatus::Deprecated => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `componentstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ComponentStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ComponentStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ComponentStatus::NewFeature` is defined.
+/// Specifically, when `componentstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ComponentStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -5756,14 +5817,14 @@ impl ComponentState {
 pub enum ComponentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deprecated,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ComponentStatus {
     fn from(s: &str) -> Self {
         match s {
             "DEPRECATED" => ComponentStatus::Deprecated,
-            other => ComponentStatus::Unknown(other.to_owned()),
+            other => ComponentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -5779,11 +5840,11 @@ impl ComponentStatus {
     pub fn as_str(&self) -> &str {
         match self {
             ComponentStatus::Deprecated => "DEPRECATED",
-            ComponentStatus::Unknown(s) => s.as_ref(),
+            ComponentStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEPRECATED"]
     }
 }
@@ -5793,6 +5854,40 @@ impl AsRef<str> for ComponentStatus {
     }
 }
 
+/// When writing a match expression against `ComponentFormat`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let componentformat = unimplemented!();
+/// match componentformat {
+///     ComponentFormat::Shell => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `componentformat` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ComponentFormat::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ComponentFormat::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ComponentFormat::NewFeature` is defined.
+/// Specifically, when `componentformat` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ComponentFormat::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -5807,14 +5902,14 @@ impl AsRef<str> for ComponentStatus {
 pub enum ComponentFormat {
     #[allow(missing_docs)] // documentation missing in model
     Shell,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ComponentFormat {
     fn from(s: &str) -> Self {
         match s {
             "SHELL" => ComponentFormat::Shell,
-            other => ComponentFormat::Unknown(other.to_owned()),
+            other => ComponentFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -5830,11 +5925,11 @@ impl ComponentFormat {
     pub fn as_str(&self) -> &str {
         match self {
             ComponentFormat::Shell => "SHELL",
-            ComponentFormat::Unknown(s) => s.as_ref(),
+            ComponentFormat::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SHELL"]
     }
 }
@@ -5846,7 +5941,7 @@ impl AsRef<str> for ComponentFormat {
 
 /// <p>Details of the infrastructure configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InfrastructureConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
     #[doc(hidden)]
@@ -5977,36 +6072,11 @@ impl InfrastructureConfiguration {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for InfrastructureConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InfrastructureConfiguration");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("instance_types", &self.instance_types);
-        formatter.field("instance_profile_name", &self.instance_profile_name);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.field("logging", &self.logging);
-        formatter.field("key_pair", &self.key_pair);
-        formatter.field(
-            "terminate_instance_on_failure",
-            &self.terminate_instance_on_failure,
-        );
-        formatter.field("sns_topic_arn", &self.sns_topic_arn);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("date_updated", &self.date_updated);
-        formatter.field("resource_tags", &self.resource_tags);
-        formatter.field("instance_metadata_options", &self.instance_metadata_options);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`InfrastructureConfiguration`](crate::model::InfrastructureConfiguration).
 pub mod infrastructure_configuration {
 
     /// A builder for [`InfrastructureConfiguration`](crate::model::InfrastructureConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6290,7 +6360,7 @@ impl InfrastructureConfiguration {
 
 /// <p>An image recipe.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageRecipe {
     /// <p>The Amazon Resource Name (ARN) of the image recipe.</p>
     #[doc(hidden)]
@@ -6403,34 +6473,11 @@ impl ImageRecipe {
         self.additional_instance_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for ImageRecipe {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImageRecipe");
-        formatter.field("arn", &self.arn);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("platform", &self.platform);
-        formatter.field("owner", &self.owner);
-        formatter.field("version", &self.version);
-        formatter.field("components", &self.components);
-        formatter.field("parent_image", &self.parent_image);
-        formatter.field("block_device_mappings", &self.block_device_mappings);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("tags", &self.tags);
-        formatter.field("working_directory", &self.working_directory);
-        formatter.field(
-            "additional_instance_configuration",
-            &self.additional_instance_configuration,
-        );
-        formatter.finish()
-    }
-}
 /// See [`ImageRecipe`](crate::model::ImageRecipe).
 pub mod image_recipe {
 
     /// A builder for [`ImageRecipe`](crate::model::ImageRecipe).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::ImageType>,
@@ -6668,7 +6715,7 @@ impl ImageRecipe {
 
 /// <p>In addition to your infrastruction configuration, these settings provide an extra layer of control over your build instances. For instances where Image Builder installs the Systems Manager agent, you can choose whether to keep it for the AMI that you create. You can also specify commands to run on launch for all of your build instances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdditionalInstanceConfiguration {
     /// <p>Contains settings for the Systems Manager agent on your build instance.</p>
     #[doc(hidden)]
@@ -6699,19 +6746,11 @@ impl AdditionalInstanceConfiguration {
         self.user_data_override.as_deref()
     }
 }
-impl std::fmt::Debug for AdditionalInstanceConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdditionalInstanceConfiguration");
-        formatter.field("systems_manager_agent", &self.systems_manager_agent);
-        formatter.field("user_data_override", &self.user_data_override);
-        formatter.finish()
-    }
-}
 /// See [`AdditionalInstanceConfiguration`](crate::model::AdditionalInstanceConfiguration).
 pub mod additional_instance_configuration {
 
     /// A builder for [`AdditionalInstanceConfiguration`](crate::model::AdditionalInstanceConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) systems_manager_agent: std::option::Option<crate::model::SystemsManagerAgent>,
         pub(crate) user_data_override: std::option::Option<std::string::String>,
@@ -6773,7 +6812,7 @@ impl AdditionalInstanceConfiguration {
 
 /// <p>Contains settings for the Systems Manager agent on your build instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SystemsManagerAgent {
     /// <p>Controls whether the Systems Manager agent is removed from your final build image, prior to creating the new AMI. If this is set to true, then the agent is removed from the final image. If it's set to false, then the agent is left in, so that it is included in the new AMI. The default value is false.</p>
     #[doc(hidden)]
@@ -6785,18 +6824,11 @@ impl SystemsManagerAgent {
         self.uninstall_after_build
     }
 }
-impl std::fmt::Debug for SystemsManagerAgent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SystemsManagerAgent");
-        formatter.field("uninstall_after_build", &self.uninstall_after_build);
-        formatter.finish()
-    }
-}
 /// See [`SystemsManagerAgent`](crate::model::SystemsManagerAgent).
 pub mod systems_manager_agent {
 
     /// A builder for [`SystemsManagerAgent`](crate::model::SystemsManagerAgent).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) uninstall_after_build: std::option::Option<bool>,
     }
@@ -6828,7 +6860,7 @@ impl SystemsManagerAgent {
 
 /// <p>Defines block device mappings for the instance used to configure your image.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceBlockDeviceMapping {
     /// <p>The device to which these mappings apply.</p>
     #[doc(hidden)]
@@ -6861,21 +6893,11 @@ impl InstanceBlockDeviceMapping {
         self.no_device.as_deref()
     }
 }
-impl std::fmt::Debug for InstanceBlockDeviceMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceBlockDeviceMapping");
-        formatter.field("device_name", &self.device_name);
-        formatter.field("ebs", &self.ebs);
-        formatter.field("virtual_name", &self.virtual_name);
-        formatter.field("no_device", &self.no_device);
-        formatter.finish()
-    }
-}
 /// See [`InstanceBlockDeviceMapping`](crate::model::InstanceBlockDeviceMapping).
 pub mod instance_block_device_mapping {
 
     /// A builder for [`InstanceBlockDeviceMapping`](crate::model::InstanceBlockDeviceMapping).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_name: std::option::Option<std::string::String>,
         pub(crate) ebs: std::option::Option<crate::model::EbsInstanceBlockDeviceSpecification>,
@@ -6946,7 +6968,7 @@ impl InstanceBlockDeviceMapping {
 
 /// <p>Amazon EBS-specific block device mapping specifications.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EbsInstanceBlockDeviceSpecification {
     /// <p>Use to configure device encryption.</p>
     #[doc(hidden)]
@@ -7007,25 +7029,11 @@ impl EbsInstanceBlockDeviceSpecification {
         self.throughput
     }
 }
-impl std::fmt::Debug for EbsInstanceBlockDeviceSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EbsInstanceBlockDeviceSpecification");
-        formatter.field("encrypted", &self.encrypted);
-        formatter.field("delete_on_termination", &self.delete_on_termination);
-        formatter.field("iops", &self.iops);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.field("volume_size", &self.volume_size);
-        formatter.field("volume_type", &self.volume_type);
-        formatter.field("throughput", &self.throughput);
-        formatter.finish()
-    }
-}
 /// See [`EbsInstanceBlockDeviceSpecification`](crate::model::EbsInstanceBlockDeviceSpecification).
 pub mod ebs_instance_block_device_specification {
 
     /// A builder for [`EbsInstanceBlockDeviceSpecification`](crate::model::EbsInstanceBlockDeviceSpecification).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encrypted: std::option::Option<bool>,
         pub(crate) delete_on_termination: std::option::Option<bool>,
@@ -7142,6 +7150,46 @@ impl EbsInstanceBlockDeviceSpecification {
     }
 }
 
+/// When writing a match expression against `EbsVolumeType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let ebsvolumetype = unimplemented!();
+/// match ebsvolumetype {
+///     EbsVolumeType::Gp2 => { /* ... */ },
+///     EbsVolumeType::Gp3 => { /* ... */ },
+///     EbsVolumeType::Io1 => { /* ... */ },
+///     EbsVolumeType::Io2 => { /* ... */ },
+///     EbsVolumeType::Sc1 => { /* ... */ },
+///     EbsVolumeType::St1 => { /* ... */ },
+///     EbsVolumeType::Standard => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `ebsvolumetype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EbsVolumeType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EbsVolumeType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EbsVolumeType::NewFeature` is defined.
+/// Specifically, when `ebsvolumetype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EbsVolumeType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -7168,8 +7216,8 @@ pub enum EbsVolumeType {
     St1,
     #[allow(missing_docs)] // documentation missing in model
     Standard,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EbsVolumeType {
     fn from(s: &str) -> Self {
@@ -7181,7 +7229,7 @@ impl std::convert::From<&str> for EbsVolumeType {
             "sc1" => EbsVolumeType::Sc1,
             "st1" => EbsVolumeType::St1,
             "standard" => EbsVolumeType::Standard,
-            other => EbsVolumeType::Unknown(other.to_owned()),
+            other => EbsVolumeType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -7203,11 +7251,11 @@ impl EbsVolumeType {
             EbsVolumeType::Sc1 => "sc1",
             EbsVolumeType::St1 => "st1",
             EbsVolumeType::Standard => "standard",
-            EbsVolumeType::Unknown(s) => s.as_ref(),
+            EbsVolumeType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["gp2", "gp3", "io1", "io2", "sc1", "st1", "standard"]
     }
 }
@@ -7219,7 +7267,7 @@ impl AsRef<str> for EbsVolumeType {
 
 /// <p> Configuration details of the component.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComponentConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
     #[doc(hidden)]
@@ -7238,19 +7286,11 @@ impl ComponentConfiguration {
         self.parameters.as_deref()
     }
 }
-impl std::fmt::Debug for ComponentConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComponentConfiguration");
-        formatter.field("component_arn", &self.component_arn);
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
-    }
-}
 /// See [`ComponentConfiguration`](crate::model::ComponentConfiguration).
 pub mod component_configuration {
 
     /// A builder for [`ComponentConfiguration`](crate::model::ComponentConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component_arn: std::option::Option<std::string::String>,
         pub(crate) parameters: std::option::Option<std::vec::Vec<crate::model::ComponentParameter>>,
@@ -7306,7 +7346,7 @@ impl ComponentConfiguration {
 
 /// <p>Contains a key/value pair that sets the named component parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComponentParameter {
     /// <p>The name of the component parameter to set.</p>
     #[doc(hidden)]
@@ -7325,19 +7365,11 @@ impl ComponentParameter {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for ComponentParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComponentParameter");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`ComponentParameter`](crate::model::ComponentParameter).
 pub mod component_parameter {
 
     /// A builder for [`ComponentParameter`](crate::model::ComponentParameter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7390,7 +7422,7 @@ impl ComponentParameter {
 
 /// <p>An Image Builder image. You must specify exactly one recipe for the image – either a container recipe (<code>containerRecipe</code>), which creates a container image, or an image recipe (<code>imageRecipe</code>), which creates an AMI.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Image {
     /// <p>The Amazon Resource Name (ARN) of the image.</p> <note>
     /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
@@ -7607,45 +7639,11 @@ impl Image {
         self.build_type.as_ref()
     }
 }
-impl std::fmt::Debug for Image {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Image");
-        formatter.field("arn", &self.arn);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.field("platform", &self.platform);
-        formatter.field(
-            "enhanced_image_metadata_enabled",
-            &self.enhanced_image_metadata_enabled,
-        );
-        formatter.field("os_version", &self.os_version);
-        formatter.field("state", &self.state);
-        formatter.field("image_recipe", &self.image_recipe);
-        formatter.field("container_recipe", &self.container_recipe);
-        formatter.field("source_pipeline_name", &self.source_pipeline_name);
-        formatter.field("source_pipeline_arn", &self.source_pipeline_arn);
-        formatter.field(
-            "infrastructure_configuration",
-            &self.infrastructure_configuration,
-        );
-        formatter.field(
-            "distribution_configuration",
-            &self.distribution_configuration,
-        );
-        formatter.field("image_tests_configuration", &self.image_tests_configuration);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("output_resources", &self.output_resources);
-        formatter.field("tags", &self.tags);
-        formatter.field("build_type", &self.build_type);
-        formatter.finish()
-    }
-}
 /// See [`Image`](crate::model::Image).
 pub mod image {
 
     /// A builder for [`Image`](crate::model::Image).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::ImageType>,
@@ -8020,7 +8018,7 @@ impl Image {
 
 /// <p>A distribution configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DistributionConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration.</p>
     #[doc(hidden)]
@@ -8085,25 +8083,11 @@ impl DistributionConfiguration {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for DistributionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DistributionConfiguration");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("distributions", &self.distributions);
-        formatter.field("timeout_minutes", &self.timeout_minutes);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("date_updated", &self.date_updated);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`DistributionConfiguration`](crate::model::DistributionConfiguration).
 pub mod distribution_configuration {
 
     /// A builder for [`DistributionConfiguration`](crate::model::DistributionConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -8245,7 +8229,7 @@ impl DistributionConfiguration {
 
 /// <p>A container recipe.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContainerRecipe {
     /// <p>The Amazon Resource Name (ARN) of the container recipe.</p> <note>
     /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
@@ -8435,34 +8419,11 @@ impl ContainerRecipe {
         self.target_repository.as_ref()
     }
 }
-impl std::fmt::Debug for ContainerRecipe {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContainerRecipe");
-        formatter.field("arn", &self.arn);
-        formatter.field("container_type", &self.container_type);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("platform", &self.platform);
-        formatter.field("owner", &self.owner);
-        formatter.field("version", &self.version);
-        formatter.field("components", &self.components);
-        formatter.field("instance_configuration", &self.instance_configuration);
-        formatter.field("dockerfile_template_data", &self.dockerfile_template_data);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("encrypted", &self.encrypted);
-        formatter.field("parent_image", &self.parent_image);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("tags", &self.tags);
-        formatter.field("working_directory", &self.working_directory);
-        formatter.field("target_repository", &self.target_repository);
-        formatter.finish()
-    }
-}
 /// See [`ContainerRecipe`](crate::model::ContainerRecipe).
 pub mod container_recipe {
 
     /// A builder for [`ContainerRecipe`](crate::model::ContainerRecipe).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) container_type: std::option::Option<crate::model::ContainerType>,
@@ -8789,7 +8750,7 @@ impl ContainerRecipe {
 
 /// <p>Defines a custom base AMI and block device mapping configurations of an instance used for building and testing container images.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceConfiguration {
     /// <p>The AMI ID to use as the base image for a container build and test instance. If not specified, Image Builder will use the appropriate ECS-optimized AMI as a base image.</p>
     #[doc(hidden)]
@@ -8811,19 +8772,11 @@ impl InstanceConfiguration {
         self.block_device_mappings.as_deref()
     }
 }
-impl std::fmt::Debug for InstanceConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceConfiguration");
-        formatter.field("image", &self.image);
-        formatter.field("block_device_mappings", &self.block_device_mappings);
-        formatter.finish()
-    }
-}
 /// See [`InstanceConfiguration`](crate::model::InstanceConfiguration).
 pub mod instance_configuration {
 
     /// A builder for [`InstanceConfiguration`](crate::model::InstanceConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image: std::option::Option<std::string::String>,
         pub(crate) block_device_mappings:
@@ -8880,7 +8833,7 @@ impl InstanceConfiguration {
 
 /// <p>A detailed view of a component.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Component {
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
     #[doc(hidden)]
@@ -9001,33 +8954,11 @@ impl Component {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for Component {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Component");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.field("description", &self.description);
-        formatter.field("change_description", &self.change_description);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("platform", &self.platform);
-        formatter.field("supported_os_versions", &self.supported_os_versions);
-        formatter.field("state", &self.state);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("owner", &self.owner);
-        formatter.field("data", &self.data);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("encrypted", &self.encrypted);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`Component`](crate::model::Component).
 pub mod component {
 
     /// A builder for [`Component`](crate::model::Component).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -9281,7 +9212,7 @@ impl Component {
 
 /// <p>Defines a parameter that is used to provide configuration details for the component.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComponentParameterDetail {
     /// <p>The name of this input parameter.</p>
     #[doc(hidden)]
@@ -9314,21 +9245,11 @@ impl ComponentParameterDetail {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for ComponentParameterDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComponentParameterDetail");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("default_value", &self.default_value);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 /// See [`ComponentParameterDetail`](crate::model::ComponentParameterDetail).
 pub mod component_parameter_detail {
 
     /// A builder for [`ComponentParameterDetail`](crate::model::ComponentParameterDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::string::String>,

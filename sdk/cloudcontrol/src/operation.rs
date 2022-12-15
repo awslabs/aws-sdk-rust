@@ -5,7 +5,7 @@
 /// [`cancel_resource_request`](crate::client::Client::cancel_resource_request).
 ///
 /// See [`crate::client::fluent_builders::CancelResourceRequest`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CancelResourceRequest {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelResourceRequest {
 /// [`create_resource`](crate::client::Client::create_resource).
 ///
 /// See [`crate::client::fluent_builders::CreateResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateResource {
     _private: (),
 }
@@ -71,7 +71,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateResource {
 /// [`delete_resource`](crate::client::Client::delete_resource).
 ///
 /// See [`crate::client::fluent_builders::DeleteResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteResource {
     _private: (),
 }
@@ -103,7 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteResource {
 /// [`get_resource`](crate::client::Client::get_resource).
 ///
 /// See [`crate::client::fluent_builders::GetResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetResource {
     _private: (),
 }
@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResource {
 /// [`get_resource_request_status`](crate::client::Client::get_resource_request_status).
 ///
 /// See [`crate::client::fluent_builders::GetResourceRequestStatus`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetResourceRequestStatus {
     _private: (),
 }
@@ -169,7 +169,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResourceRequestStatus
 /// [`list_resource_requests`](crate::client::Client::list_resource_requests).
 ///
 /// See [`crate::client::fluent_builders::ListResourceRequests`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListResourceRequests {
     _private: (),
 }
@@ -203,7 +203,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResourceRequests {
 /// [`list_resources`](crate::client::Client::list_resources).
 ///
 /// See [`crate::client::fluent_builders::ListResources`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListResources {
     _private: (),
 }
@@ -235,7 +235,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResources {
 /// [`update_resource`](crate::client::Client::update_resource).
 ///
 /// See [`crate::client::fluent_builders::UpdateResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateResource {
     _private: (),
 }

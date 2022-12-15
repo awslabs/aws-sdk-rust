@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod get_deployments_input {
 
     /// A builder for [`GetDeploymentsInput`](crate::input::GetDeploymentsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_name: std::option::Option<std::string::String>,
         pub(crate) device_fleet_name: std::option::Option<std::string::String>,
@@ -37,7 +37,7 @@ pub mod get_deployments_input {
         /// Consumes the builder and constructs a [`GetDeploymentsInput`](crate::input::GetDeploymentsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetDeploymentsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetDeploymentsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetDeploymentsInput {
                 device_name: self.device_name,
@@ -59,13 +59,13 @@ impl GetDeploymentsInput {
             crate::operation::GetDeployments,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetDeploymentsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/GetDeployments").expect("formatting should succeed");
                 Ok(())
             }
@@ -73,8 +73,10 @@ impl GetDeploymentsInput {
             fn update_http_builder(
                 input: &crate::input::GetDeploymentsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -158,7 +160,7 @@ impl GetDeploymentsInput {
 pub mod get_device_registration_input {
 
     /// A builder for [`GetDeviceRegistrationInput`](crate::input::GetDeviceRegistrationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_name: std::option::Option<std::string::String>,
         pub(crate) device_fleet_name: std::option::Option<std::string::String>,
@@ -190,8 +192,10 @@ pub mod get_device_registration_input {
         /// Consumes the builder and constructs a [`GetDeviceRegistrationInput`](crate::input::GetDeviceRegistrationInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetDeviceRegistrationInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetDeviceRegistrationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetDeviceRegistrationInput {
                 device_name: self.device_name,
                 device_fleet_name: self.device_fleet_name,
@@ -212,13 +216,13 @@ impl GetDeviceRegistrationInput {
             crate::operation::GetDeviceRegistration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetDeviceRegistrationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/GetDeviceRegistration").expect("formatting should succeed");
                 Ok(())
             }
@@ -226,8 +230,10 @@ impl GetDeviceRegistrationInput {
             fn update_http_builder(
                 input: &crate::input::GetDeviceRegistrationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -313,7 +319,7 @@ impl GetDeviceRegistrationInput {
 pub mod send_heartbeat_input {
 
     /// A builder for [`SendHeartbeatInput`](crate::input::SendHeartbeatInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agent_metrics: std::option::Option<std::vec::Vec<crate::model::EdgeMetric>>,
         pub(crate) models: std::option::Option<std::vec::Vec<crate::model::Model>>,
@@ -413,7 +419,7 @@ pub mod send_heartbeat_input {
         /// Consumes the builder and constructs a [`SendHeartbeatInput`](crate::input::SendHeartbeatInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SendHeartbeatInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::SendHeartbeatInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::SendHeartbeatInput {
                 agent_metrics: self.agent_metrics,
@@ -439,13 +445,13 @@ impl SendHeartbeatInput {
             crate::operation::SendHeartbeat,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SendHeartbeatInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/SendHeartbeat").expect("formatting should succeed");
                 Ok(())
             }
@@ -453,8 +459,10 @@ impl SendHeartbeatInput {
             fn update_http_builder(
                 input: &crate::input::SendHeartbeatInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -536,7 +544,7 @@ impl SendHeartbeatInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendHeartbeatInput {
     /// <p>For internal use. Returns a list of SageMaker Edge Manager agent operating metrics.</p>
     #[doc(hidden)]
@@ -583,22 +591,10 @@ impl SendHeartbeatInput {
         self.deployment_result.as_ref()
     }
 }
-impl std::fmt::Debug for SendHeartbeatInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendHeartbeatInput");
-        formatter.field("agent_metrics", &self.agent_metrics);
-        formatter.field("models", &self.models);
-        formatter.field("agent_version", &self.agent_version);
-        formatter.field("device_name", &self.device_name);
-        formatter.field("device_fleet_name", &self.device_fleet_name);
-        formatter.field("deployment_result", &self.deployment_result);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeviceRegistrationInput {
     /// <p>The unique name of the device you want to get the registration status from.</p>
     #[doc(hidden)]
@@ -617,18 +613,10 @@ impl GetDeviceRegistrationInput {
         self.device_fleet_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetDeviceRegistrationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeviceRegistrationInput");
-        formatter.field("device_name", &self.device_name);
-        formatter.field("device_fleet_name", &self.device_fleet_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeploymentsInput {
     /// <p>The unique name of the device you want to get the configuration of active deployments from.</p>
     #[doc(hidden)]
@@ -645,13 +633,5 @@ impl GetDeploymentsInput {
     /// <p>The name of the fleet that the device belongs to.</p>
     pub fn device_fleet_name(&self) -> std::option::Option<&str> {
         self.device_fleet_name.as_deref()
-    }
-}
-impl std::fmt::Debug for GetDeploymentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeploymentsInput");
-        formatter.field("device_name", &self.device_name);
-        formatter.field("device_fleet_name", &self.device_fleet_name);
-        formatter.finish()
     }
 }

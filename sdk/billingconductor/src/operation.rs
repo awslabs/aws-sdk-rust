@@ -5,7 +5,7 @@
 /// [`associate_accounts`](crate::client::Client::associate_accounts).
 ///
 /// See [`crate::client::fluent_builders::AssociateAccounts`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateAccounts {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateAccounts {
 /// [`associate_pricing_rules`](crate::client::Client::associate_pricing_rules).
 ///
 /// See [`crate::client::fluent_builders::AssociatePricingRules`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociatePricingRules {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociatePricingRules {
 /// [`batch_associate_resources_to_custom_line_item`](crate::client::Client::batch_associate_resources_to_custom_line_item).
 ///
 /// See [`crate::client::fluent_builders::BatchAssociateResourcesToCustomLineItem`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchAssociateResourcesToCustomLineItem {
     _private: (),
 }
@@ -111,7 +111,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchAssociateResourcesT
 /// [`batch_disassociate_resources_from_custom_line_item`](crate::client::Client::batch_disassociate_resources_from_custom_line_item).
 ///
 /// See [`crate::client::fluent_builders::BatchDisassociateResourcesFromCustomLineItem`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchDisassociateResourcesFromCustomLineItem {
     _private: (),
 }
@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// [`create_billing_group`](crate::client::Client::create_billing_group).
 ///
 /// See [`crate::client::fluent_builders::CreateBillingGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateBillingGroup {
     _private: (),
 }
@@ -184,7 +184,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBillingGroup {
 /// [`create_custom_line_item`](crate::client::Client::create_custom_line_item).
 ///
 /// See [`crate::client::fluent_builders::CreateCustomLineItem`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateCustomLineItem {
     _private: (),
 }
@@ -218,7 +218,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCustomLineItem {
 /// [`create_pricing_plan`](crate::client::Client::create_pricing_plan).
 ///
 /// See [`crate::client::fluent_builders::CreatePricingPlan`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreatePricingPlan {
     _private: (),
 }
@@ -252,7 +252,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePricingPlan {
 /// [`create_pricing_rule`](crate::client::Client::create_pricing_rule).
 ///
 /// See [`crate::client::fluent_builders::CreatePricingRule`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreatePricingRule {
     _private: (),
 }
@@ -286,7 +286,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePricingRule {
 /// [`delete_billing_group`](crate::client::Client::delete_billing_group).
 ///
 /// See [`crate::client::fluent_builders::DeleteBillingGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBillingGroup {
     _private: (),
 }
@@ -320,7 +320,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBillingGroup {
 /// [`delete_custom_line_item`](crate::client::Client::delete_custom_line_item).
 ///
 /// See [`crate::client::fluent_builders::DeleteCustomLineItem`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteCustomLineItem {
     _private: (),
 }
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCustomLineItem {
 /// [`delete_pricing_plan`](crate::client::Client::delete_pricing_plan).
 ///
 /// See [`crate::client::fluent_builders::DeletePricingPlan`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeletePricingPlan {
     _private: (),
 }
@@ -388,7 +388,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePricingPlan {
 /// [`delete_pricing_rule`](crate::client::Client::delete_pricing_rule).
 ///
 /// See [`crate::client::fluent_builders::DeletePricingRule`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeletePricingRule {
     _private: (),
 }
@@ -422,7 +422,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePricingRule {
 /// [`disassociate_accounts`](crate::client::Client::disassociate_accounts).
 ///
 /// See [`crate::client::fluent_builders::DisassociateAccounts`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateAccounts {
     _private: (),
 }
@@ -456,7 +456,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateAccounts {
 /// [`disassociate_pricing_rules`](crate::client::Client::disassociate_pricing_rules).
 ///
 /// See [`crate::client::fluent_builders::DisassociatePricingRules`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociatePricingRules {
     _private: (),
 }
@@ -490,7 +490,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociatePricingRules
 /// [`list_account_associations`](crate::client::Client::list_account_associations).
 ///
 /// See [`crate::client::fluent_builders::ListAccountAssociations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAccountAssociations {
     _private: (),
 }
@@ -524,7 +524,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccountAssociations 
 /// [`list_billing_group_cost_reports`](crate::client::Client::list_billing_group_cost_reports).
 ///
 /// See [`crate::client::fluent_builders::ListBillingGroupCostReports`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListBillingGroupCostReports {
     _private: (),
 }
@@ -558,7 +558,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBillingGroupCostRepo
 /// [`list_billing_groups`](crate::client::Client::list_billing_groups).
 ///
 /// See [`crate::client::fluent_builders::ListBillingGroups`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListBillingGroups {
     _private: (),
 }
@@ -592,7 +592,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBillingGroups {
 /// [`list_custom_line_items`](crate::client::Client::list_custom_line_items).
 ///
 /// See [`crate::client::fluent_builders::ListCustomLineItems`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListCustomLineItems {
     _private: (),
 }
@@ -626,7 +626,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCustomLineItems {
 /// [`list_pricing_plans`](crate::client::Client::list_pricing_plans).
 ///
 /// See [`crate::client::fluent_builders::ListPricingPlans`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPricingPlans {
     _private: (),
 }
@@ -660,7 +660,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPricingPlans {
 /// [`list_pricing_plans_associated_with_pricing_rule`](crate::client::Client::list_pricing_plans_associated_with_pricing_rule).
 ///
 /// See [`crate::client::fluent_builders::ListPricingPlansAssociatedWithPricingRule`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPricingPlansAssociatedWithPricingRule {
     _private: (),
 }
@@ -699,7 +699,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPricingPlansAssociat
 /// [`list_pricing_rules`](crate::client::Client::list_pricing_rules).
 ///
 /// See [`crate::client::fluent_builders::ListPricingRules`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPricingRules {
     _private: (),
 }
@@ -733,7 +733,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPricingRules {
 /// [`list_pricing_rules_associated_to_pricing_plan`](crate::client::Client::list_pricing_rules_associated_to_pricing_plan).
 ///
 /// See [`crate::client::fluent_builders::ListPricingRulesAssociatedToPricingPlan`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPricingRulesAssociatedToPricingPlan {
     _private: (),
 }
@@ -771,7 +771,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPricingRulesAssociat
 /// [`list_resources_associated_to_custom_line_item`](crate::client::Client::list_resources_associated_to_custom_line_item).
 ///
 /// See [`crate::client::fluent_builders::ListResourcesAssociatedToCustomLineItem`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListResourcesAssociatedToCustomLineItem {
     _private: (),
 }
@@ -809,7 +809,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResourcesAssociatedT
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -843,7 +843,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -875,7 +875,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -907,7 +907,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_billing_group`](crate::client::Client::update_billing_group).
 ///
 /// See [`crate::client::fluent_builders::UpdateBillingGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateBillingGroup {
     _private: (),
 }
@@ -941,7 +941,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateBillingGroup {
 /// [`update_custom_line_item`](crate::client::Client::update_custom_line_item).
 ///
 /// See [`crate::client::fluent_builders::UpdateCustomLineItem`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateCustomLineItem {
     _private: (),
 }
@@ -975,7 +975,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCustomLineItem {
 /// [`update_pricing_plan`](crate::client::Client::update_pricing_plan).
 ///
 /// See [`crate::client::fluent_builders::UpdatePricingPlan`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdatePricingPlan {
     _private: (),
 }
@@ -1009,7 +1009,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePricingPlan {
 /// [`update_pricing_rule`](crate::client::Client::update_pricing_rule).
 ///
 /// See [`crate::client::fluent_builders::UpdatePricingRule`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdatePricingRule {
     _private: (),
 }

@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_create_group_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateGroupInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.identity_store_id {
         object.key("IdentityStoreId").string(var_1.as_str());
     }
@@ -18,7 +18,7 @@ pub fn serialize_structure_crate_input_create_group_input(
 pub fn serialize_structure_crate_input_create_group_membership_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateGroupMembershipInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_4) = &input.identity_store_id {
         object.key("IdentityStoreId").string(var_4.as_str());
     }
@@ -26,6 +26,7 @@ pub fn serialize_structure_crate_input_create_group_membership_input(
         object.key("GroupId").string(var_5.as_str());
     }
     if let Some(var_6) = &input.member_id {
+        #[allow(unused_mut)]
         let mut object_7 = object.key("MemberId").start_object();
         crate::json_ser::serialize_union_crate_model_member_id(&mut object_7, var_6)?;
         object_7.finish();
@@ -36,7 +37,7 @@ pub fn serialize_structure_crate_input_create_group_membership_input(
 pub fn serialize_structure_crate_input_create_user_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateUserInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_8) = &input.identity_store_id {
         object.key("IdentityStoreId").string(var_8.as_str());
     }
@@ -44,6 +45,7 @@ pub fn serialize_structure_crate_input_create_user_input(
         object.key("UserName").string(var_9.as_str());
     }
     if let Some(var_10) = &input.name {
+        #[allow(unused_mut)]
         let mut object_11 = object.key("Name").start_object();
         crate::json_ser::serialize_structure_crate_model_name(&mut object_11, var_10)?;
         object_11.finish();
@@ -61,6 +63,7 @@ pub fn serialize_structure_crate_input_create_user_input(
         let mut array_16 = object.key("Emails").start_array();
         for item_17 in var_15 {
             {
+                #[allow(unused_mut)]
                 let mut object_18 = array_16.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_email(&mut object_18, item_17)?;
                 object_18.finish();
@@ -72,6 +75,7 @@ pub fn serialize_structure_crate_input_create_user_input(
         let mut array_20 = object.key("Addresses").start_array();
         for item_21 in var_19 {
             {
+                #[allow(unused_mut)]
                 let mut object_22 = array_20.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_address(&mut object_22, item_21)?;
                 object_22.finish();
@@ -83,6 +87,7 @@ pub fn serialize_structure_crate_input_create_user_input(
         let mut array_24 = object.key("PhoneNumbers").start_array();
         for item_25 in var_23 {
             {
+                #[allow(unused_mut)]
                 let mut object_26 = array_24.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_phone_number(
                     &mut object_26,
@@ -114,7 +119,7 @@ pub fn serialize_structure_crate_input_create_user_input(
 pub fn serialize_structure_crate_input_delete_group_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteGroupInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_32) = &input.identity_store_id {
         object.key("IdentityStoreId").string(var_32.as_str());
     }
@@ -127,7 +132,7 @@ pub fn serialize_structure_crate_input_delete_group_input(
 pub fn serialize_structure_crate_input_delete_group_membership_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteGroupMembershipInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_34) = &input.identity_store_id {
         object.key("IdentityStoreId").string(var_34.as_str());
     }
@@ -140,7 +145,7 @@ pub fn serialize_structure_crate_input_delete_group_membership_input(
 pub fn serialize_structure_crate_input_delete_user_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteUserInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_36) = &input.identity_store_id {
         object.key("IdentityStoreId").string(var_36.as_str());
     }
@@ -153,7 +158,7 @@ pub fn serialize_structure_crate_input_delete_user_input(
 pub fn serialize_structure_crate_input_describe_group_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeGroupInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_38) = &input.identity_store_id {
         object.key("IdentityStoreId").string(var_38.as_str());
     }
@@ -166,7 +171,7 @@ pub fn serialize_structure_crate_input_describe_group_input(
 pub fn serialize_structure_crate_input_describe_group_membership_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeGroupMembershipInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_40) = &input.identity_store_id {
         object.key("IdentityStoreId").string(var_40.as_str());
     }
@@ -179,7 +184,7 @@ pub fn serialize_structure_crate_input_describe_group_membership_input(
 pub fn serialize_structure_crate_input_describe_user_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeUserInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_42) = &input.identity_store_id {
         object.key("IdentityStoreId").string(var_42.as_str());
     }
@@ -192,11 +197,12 @@ pub fn serialize_structure_crate_input_describe_user_input(
 pub fn serialize_structure_crate_input_get_group_id_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetGroupIdInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_44) = &input.identity_store_id {
         object.key("IdentityStoreId").string(var_44.as_str());
     }
     if let Some(var_45) = &input.alternate_identifier {
+        #[allow(unused_mut)]
         let mut object_46 = object.key("AlternateIdentifier").start_object();
         crate::json_ser::serialize_union_crate_model_alternate_identifier(&mut object_46, var_45)?;
         object_46.finish();
@@ -207,7 +213,7 @@ pub fn serialize_structure_crate_input_get_group_id_input(
 pub fn serialize_structure_crate_input_get_group_membership_id_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetGroupMembershipIdInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_47) = &input.identity_store_id {
         object.key("IdentityStoreId").string(var_47.as_str());
     }
@@ -215,6 +221,7 @@ pub fn serialize_structure_crate_input_get_group_membership_id_input(
         object.key("GroupId").string(var_48.as_str());
     }
     if let Some(var_49) = &input.member_id {
+        #[allow(unused_mut)]
         let mut object_50 = object.key("MemberId").start_object();
         crate::json_ser::serialize_union_crate_model_member_id(&mut object_50, var_49)?;
         object_50.finish();
@@ -225,11 +232,12 @@ pub fn serialize_structure_crate_input_get_group_membership_id_input(
 pub fn serialize_structure_crate_input_get_user_id_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetUserIdInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_51) = &input.identity_store_id {
         object.key("IdentityStoreId").string(var_51.as_str());
     }
     if let Some(var_52) = &input.alternate_identifier {
+        #[allow(unused_mut)]
         let mut object_53 = object.key("AlternateIdentifier").start_object();
         crate::json_ser::serialize_union_crate_model_alternate_identifier(&mut object_53, var_52)?;
         object_53.finish();
@@ -240,11 +248,12 @@ pub fn serialize_structure_crate_input_get_user_id_input(
 pub fn serialize_structure_crate_input_is_member_in_groups_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::IsMemberInGroupsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_54) = &input.identity_store_id {
         object.key("IdentityStoreId").string(var_54.as_str());
     }
     if let Some(var_55) = &input.member_id {
+        #[allow(unused_mut)]
         let mut object_56 = object.key("MemberId").start_object();
         crate::json_ser::serialize_union_crate_model_member_id(&mut object_56, var_55)?;
         object_56.finish();
@@ -264,7 +273,7 @@ pub fn serialize_structure_crate_input_is_member_in_groups_input(
 pub fn serialize_structure_crate_input_list_group_memberships_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListGroupMembershipsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_60) = &input.identity_store_id {
         object.key("IdentityStoreId").string(var_60.as_str());
     }
@@ -286,11 +295,12 @@ pub fn serialize_structure_crate_input_list_group_memberships_input(
 pub fn serialize_structure_crate_input_list_group_memberships_for_member_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListGroupMembershipsForMemberInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_64) = &input.identity_store_id {
         object.key("IdentityStoreId").string(var_64.as_str());
     }
     if let Some(var_65) = &input.member_id {
+        #[allow(unused_mut)]
         let mut object_66 = object.key("MemberId").start_object();
         crate::json_ser::serialize_union_crate_model_member_id(&mut object_66, var_65)?;
         object_66.finish();
@@ -310,7 +320,7 @@ pub fn serialize_structure_crate_input_list_group_memberships_for_member_input(
 pub fn serialize_structure_crate_input_list_groups_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListGroupsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_69) = &input.identity_store_id {
         object.key("IdentityStoreId").string(var_69.as_str());
     }
@@ -327,6 +337,7 @@ pub fn serialize_structure_crate_input_list_groups_input(
         let mut array_73 = object.key("Filters").start_array();
         for item_74 in var_72 {
             {
+                #[allow(unused_mut)]
                 let mut object_75 = array_73.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_75, item_74)?;
                 object_75.finish();
@@ -340,7 +351,7 @@ pub fn serialize_structure_crate_input_list_groups_input(
 pub fn serialize_structure_crate_input_list_users_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListUsersInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_76) = &input.identity_store_id {
         object.key("IdentityStoreId").string(var_76.as_str());
     }
@@ -357,6 +368,7 @@ pub fn serialize_structure_crate_input_list_users_input(
         let mut array_80 = object.key("Filters").start_array();
         for item_81 in var_79 {
             {
+                #[allow(unused_mut)]
                 let mut object_82 = array_80.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_82, item_81)?;
                 object_82.finish();
@@ -370,7 +382,7 @@ pub fn serialize_structure_crate_input_list_users_input(
 pub fn serialize_structure_crate_input_update_group_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateGroupInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_83) = &input.identity_store_id {
         object.key("IdentityStoreId").string(var_83.as_str());
     }
@@ -381,6 +393,7 @@ pub fn serialize_structure_crate_input_update_group_input(
         let mut array_86 = object.key("Operations").start_array();
         for item_87 in var_85 {
             {
+                #[allow(unused_mut)]
                 let mut object_88 = array_86.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_attribute_operation(
                     &mut object_88,
@@ -397,7 +410,7 @@ pub fn serialize_structure_crate_input_update_group_input(
 pub fn serialize_structure_crate_input_update_user_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateUserInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_89) = &input.identity_store_id {
         object.key("IdentityStoreId").string(var_89.as_str());
     }
@@ -408,6 +421,7 @@ pub fn serialize_structure_crate_input_update_user_input(
         let mut array_92 = object.key("Operations").start_array();
         for item_93 in var_91 {
             {
+                #[allow(unused_mut)]
                 let mut object_94 = array_92.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_attribute_operation(
                     &mut object_94,
@@ -424,13 +438,15 @@ pub fn serialize_structure_crate_input_update_user_input(
 pub fn serialize_union_crate_model_member_id(
     object_7: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::MemberId,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::MemberId::UserId(inner) => {
             object_7.key("UserId").string(inner.as_str());
         }
         crate::model::MemberId::Unknown => {
-            return Err(aws_smithy_http::operation::SerializationError::unknown_variant("MemberId"))
+            return Err(
+                aws_smithy_http::operation::error::SerializationError::unknown_variant("MemberId"),
+            )
         }
     }
     Ok(())
@@ -439,7 +455,7 @@ pub fn serialize_union_crate_model_member_id(
 pub fn serialize_structure_crate_model_name(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Name,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_95) = &input.formatted {
         object.key("Formatted").string(var_95.as_str());
     }
@@ -464,7 +480,7 @@ pub fn serialize_structure_crate_model_name(
 pub fn serialize_structure_crate_model_email(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Email,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_101) = &input.value {
         object.key("Value").string(var_101.as_str());
     }
@@ -480,7 +496,7 @@ pub fn serialize_structure_crate_model_email(
 pub fn serialize_structure_crate_model_address(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Address,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_103) = &input.street_address {
         object.key("StreetAddress").string(var_103.as_str());
     }
@@ -511,7 +527,7 @@ pub fn serialize_structure_crate_model_address(
 pub fn serialize_structure_crate_model_phone_number(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::PhoneNumber,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_110) = &input.value {
         object.key("Value").string(var_110.as_str());
     }
@@ -527,14 +543,16 @@ pub fn serialize_structure_crate_model_phone_number(
 pub fn serialize_union_crate_model_alternate_identifier(
     object_46: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AlternateIdentifier,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::AlternateIdentifier::ExternalId(inner) => {
+            #[allow(unused_mut)]
             let mut object_112 = object_46.key("ExternalId").start_object();
             crate::json_ser::serialize_structure_crate_model_external_id(&mut object_112, inner)?;
             object_112.finish();
         }
         crate::model::AlternateIdentifier::UniqueAttribute(inner) => {
+            #[allow(unused_mut)]
             let mut object_113 = object_46.key("UniqueAttribute").start_object();
             crate::json_ser::serialize_structure_crate_model_unique_attribute(
                 &mut object_113,
@@ -544,7 +562,7 @@ pub fn serialize_union_crate_model_alternate_identifier(
         }
         crate::model::AlternateIdentifier::Unknown => {
             return Err(
-                aws_smithy_http::operation::SerializationError::unknown_variant(
+                aws_smithy_http::operation::error::SerializationError::unknown_variant(
                     "AlternateIdentifier",
                 ),
             )
@@ -556,7 +574,7 @@ pub fn serialize_union_crate_model_alternate_identifier(
 pub fn serialize_structure_crate_model_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Filter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_114) = &input.attribute_path {
         object.key("AttributePath").string(var_114.as_str());
     }
@@ -569,7 +587,7 @@ pub fn serialize_structure_crate_model_filter(
 pub fn serialize_structure_crate_model_attribute_operation(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AttributeOperation,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_116) = &input.attribute_path {
         object.key("AttributePath").string(var_116.as_str());
     }
@@ -582,7 +600,7 @@ pub fn serialize_structure_crate_model_attribute_operation(
 pub fn serialize_structure_crate_model_external_id(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ExternalId,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_118) = &input.issuer {
         object.key("Issuer").string(var_118.as_str());
     }
@@ -595,7 +613,7 @@ pub fn serialize_structure_crate_model_external_id(
 pub fn serialize_structure_crate_model_unique_attribute(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::UniqueAttribute,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_120) = &input.attribute_path {
         object.key("AttributePath").string(var_120.as_str());
     }

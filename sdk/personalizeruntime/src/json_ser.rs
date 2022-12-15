@@ -2,15 +2,16 @@
 pub fn serialize_structure_crate_input_get_personalized_ranking_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetPersonalizedRankingInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.campaign_arn {
         object.key("campaignArn").string(var_1.as_str());
     }
     if let Some(var_2) = &input.context {
+        #[allow(unused_mut)]
         let mut object_3 = object.key("context").start_object();
         for (key_4, value_5) in var_2 {
             {
-                object_3.key(key_4).string(value_5.as_str());
+                object_3.key(key_4.as_str()).string(value_5.as_str());
             }
         }
         object_3.finish();
@@ -19,10 +20,11 @@ pub fn serialize_structure_crate_input_get_personalized_ranking_input(
         object.key("filterArn").string(var_6.as_str());
     }
     if let Some(var_7) = &input.filter_values {
+        #[allow(unused_mut)]
         let mut object_8 = object.key("filterValues").start_object();
         for (key_9, value_10) in var_7 {
             {
-                object_8.key(key_9).string(value_10.as_str());
+                object_8.key(key_9.as_str()).string(value_10.as_str());
             }
         }
         object_8.finish();
@@ -45,15 +47,16 @@ pub fn serialize_structure_crate_input_get_personalized_ranking_input(
 pub fn serialize_structure_crate_input_get_recommendations_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetRecommendationsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_15) = &input.campaign_arn {
         object.key("campaignArn").string(var_15.as_str());
     }
     if let Some(var_16) = &input.context {
+        #[allow(unused_mut)]
         let mut object_17 = object.key("context").start_object();
         for (key_18, value_19) in var_16 {
             {
-                object_17.key(key_18).string(value_19.as_str());
+                object_17.key(key_18.as_str()).string(value_19.as_str());
             }
         }
         object_17.finish();
@@ -62,10 +65,11 @@ pub fn serialize_structure_crate_input_get_recommendations_input(
         object.key("filterArn").string(var_20.as_str());
     }
     if let Some(var_21) = &input.filter_values {
+        #[allow(unused_mut)]
         let mut object_22 = object.key("filterValues").start_object();
         for (key_23, value_24) in var_21 {
             {
-                object_22.key(key_23).string(value_24.as_str());
+                object_22.key(key_23.as_str()).string(value_24.as_str());
             }
         }
         object_22.finish();
@@ -83,6 +87,7 @@ pub fn serialize_structure_crate_input_get_recommendations_input(
         let mut array_27 = object.key("promotions").start_array();
         for item_28 in var_26 {
             {
+                #[allow(unused_mut)]
                 let mut object_29 = array_27.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_promotion(
                     &mut object_29,
@@ -105,7 +110,7 @@ pub fn serialize_structure_crate_input_get_recommendations_input(
 pub fn serialize_structure_crate_model_promotion(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Promotion,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_32) = &input.name {
         object.key("name").string(var_32.as_str());
     }
@@ -119,10 +124,11 @@ pub fn serialize_structure_crate_model_promotion(
         object.key("filterArn").string(var_33.as_str());
     }
     if let Some(var_34) = &input.filter_values {
+        #[allow(unused_mut)]
         let mut object_35 = object.key("filterValues").start_object();
         for (key_36, value_37) in var_34 {
             {
-                object_35.key(key_36).string(value_37.as_str());
+                object_35.key(key_36.as_str()).string(value_37.as_str());
             }
         }
         object_35.finish();

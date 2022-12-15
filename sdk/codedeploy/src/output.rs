@@ -2,7 +2,7 @@
 
 /// <p>Represents the output of an <code>UpdateDeploymentGroup</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDeploymentGroupOutput {
     /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon Web Services account. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -14,18 +14,11 @@ impl UpdateDeploymentGroupOutput {
         self.hooks_not_cleaned_up.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDeploymentGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDeploymentGroupOutput");
-        formatter.field("hooks_not_cleaned_up", &self.hooks_not_cleaned_up);
-        formatter.finish()
-    }
-}
 /// See [`UpdateDeploymentGroupOutput`](crate::output::UpdateDeploymentGroupOutput).
 pub mod update_deployment_group_output {
 
     /// A builder for [`UpdateDeploymentGroupOutput`](crate::output::UpdateDeploymentGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hooks_not_cleaned_up:
             std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
@@ -67,19 +60,13 @@ impl UpdateDeploymentGroupOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApplicationOutput {}
-impl std::fmt::Debug for UpdateApplicationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateApplicationOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
 pub mod update_application_output {
 
     /// A builder for [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
@@ -97,19 +84,13 @@ impl UpdateApplicationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput {}
-impl std::fmt::Debug for UntagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -127,19 +108,13 @@ impl UntagResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput {}
-impl std::fmt::Debug for TagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -157,7 +132,7 @@ impl TagResourceOutput {
 
 /// <p> Represents the output of a <code>StopDeployment</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopDeploymentOutput {
     /// <p>The status of the stop deployment operation:</p>
     /// <ul>
@@ -184,19 +159,11 @@ impl StopDeploymentOutput {
         self.status_message.as_deref()
     }
 }
-impl std::fmt::Debug for StopDeploymentOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopDeploymentOutput");
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.finish()
-    }
-}
 /// See [`StopDeploymentOutput`](crate::output::StopDeploymentOutput).
 pub mod stop_deployment_output {
 
     /// A builder for [`StopDeploymentOutput`](crate::output::StopDeploymentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::StopStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
@@ -251,19 +218,13 @@ impl StopDeploymentOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SkipWaitTimeForInstanceTerminationOutput {}
-impl std::fmt::Debug for SkipWaitTimeForInstanceTerminationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SkipWaitTimeForInstanceTerminationOutput");
-        formatter.finish()
-    }
-}
 /// See [`SkipWaitTimeForInstanceTerminationOutput`](crate::output::SkipWaitTimeForInstanceTerminationOutput).
 pub mod skip_wait_time_for_instance_termination_output {
 
     /// A builder for [`SkipWaitTimeForInstanceTerminationOutput`](crate::output::SkipWaitTimeForInstanceTerminationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SkipWaitTimeForInstanceTerminationOutput`](crate::output::SkipWaitTimeForInstanceTerminationOutput).
@@ -281,19 +242,13 @@ impl SkipWaitTimeForInstanceTerminationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveTagsFromOnPremisesInstancesOutput {}
-impl std::fmt::Debug for RemoveTagsFromOnPremisesInstancesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveTagsFromOnPremisesInstancesOutput");
-        formatter.finish()
-    }
-}
 /// See [`RemoveTagsFromOnPremisesInstancesOutput`](crate::output::RemoveTagsFromOnPremisesInstancesOutput).
 pub mod remove_tags_from_on_premises_instances_output {
 
     /// A builder for [`RemoveTagsFromOnPremisesInstancesOutput`](crate::output::RemoveTagsFromOnPremisesInstancesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveTagsFromOnPremisesInstancesOutput`](crate::output::RemoveTagsFromOnPremisesInstancesOutput).
@@ -311,19 +266,13 @@ impl RemoveTagsFromOnPremisesInstancesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterOnPremisesInstanceOutput {}
-impl std::fmt::Debug for RegisterOnPremisesInstanceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterOnPremisesInstanceOutput");
-        formatter.finish()
-    }
-}
 /// See [`RegisterOnPremisesInstanceOutput`](crate::output::RegisterOnPremisesInstanceOutput).
 pub mod register_on_premises_instance_output {
 
     /// A builder for [`RegisterOnPremisesInstanceOutput`](crate::output::RegisterOnPremisesInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RegisterOnPremisesInstanceOutput`](crate::output::RegisterOnPremisesInstanceOutput).
@@ -341,19 +290,13 @@ impl RegisterOnPremisesInstanceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterApplicationRevisionOutput {}
-impl std::fmt::Debug for RegisterApplicationRevisionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterApplicationRevisionOutput");
-        formatter.finish()
-    }
-}
 /// See [`RegisterApplicationRevisionOutput`](crate::output::RegisterApplicationRevisionOutput).
 pub mod register_application_revision_output {
 
     /// A builder for [`RegisterApplicationRevisionOutput`](crate::output::RegisterApplicationRevisionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RegisterApplicationRevisionOutput`](crate::output::RegisterApplicationRevisionOutput).
@@ -371,7 +314,7 @@ impl RegisterApplicationRevisionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutLifecycleEventHookExecutionStatusOutput {
     /// <p>The execution ID of the lifecycle event hook. A hook is specified in the <code>hooks</code> section of the deployment's AppSpec file.</p>
     #[doc(hidden)]
@@ -383,21 +326,11 @@ impl PutLifecycleEventHookExecutionStatusOutput {
         self.lifecycle_event_hook_execution_id.as_deref()
     }
 }
-impl std::fmt::Debug for PutLifecycleEventHookExecutionStatusOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutLifecycleEventHookExecutionStatusOutput");
-        formatter.field(
-            "lifecycle_event_hook_execution_id",
-            &self.lifecycle_event_hook_execution_id,
-        );
-        formatter.finish()
-    }
-}
 /// See [`PutLifecycleEventHookExecutionStatusOutput`](crate::output::PutLifecycleEventHookExecutionStatusOutput).
 pub mod put_lifecycle_event_hook_execution_status_output {
 
     /// A builder for [`PutLifecycleEventHookExecutionStatusOutput`](crate::output::PutLifecycleEventHookExecutionStatusOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lifecycle_event_hook_execution_id: std::option::Option<std::string::String>,
     }
@@ -435,7 +368,7 @@ impl PutLifecycleEventHookExecutionStatusOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
     /// <p> A list of tags returned by <code>ListTagsForResource</code>. The tags are associated with the resource identified by the input <code>ResourceArn</code> parameter. </p>
     #[doc(hidden)]
@@ -454,19 +387,11 @@ impl ListTagsForResourceOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceOutput");
-        formatter.field("tags", &self.tags);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -519,7 +444,7 @@ impl ListTagsForResourceOutput {
 
 /// <p>Represents the output of the list on-premises instances operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOnPremisesInstancesOutput {
     /// <p>The list of matching on-premises instance names.</p>
     #[doc(hidden)]
@@ -538,19 +463,11 @@ impl ListOnPremisesInstancesOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListOnPremisesInstancesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOnPremisesInstancesOutput");
-        formatter.field("instance_names", &self.instance_names);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListOnPremisesInstancesOutput`](crate::output::ListOnPremisesInstancesOutput).
 pub mod list_on_premises_instances_output {
 
     /// A builder for [`ListOnPremisesInstancesOutput`](crate::output::ListOnPremisesInstancesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -603,7 +520,7 @@ impl ListOnPremisesInstancesOutput {
 
 /// <p>Represents the output of a <code>ListGitHubAccountTokenNames</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGitHubAccountTokenNamesOutput {
     /// <p>A list of names of connections to GitHub accounts.</p>
     #[doc(hidden)]
@@ -622,19 +539,11 @@ impl ListGitHubAccountTokenNamesOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListGitHubAccountTokenNamesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGitHubAccountTokenNamesOutput");
-        formatter.field("token_name_list", &self.token_name_list);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListGitHubAccountTokenNamesOutput`](crate::output::ListGitHubAccountTokenNamesOutput).
 pub mod list_git_hub_account_token_names_output {
 
     /// A builder for [`ListGitHubAccountTokenNamesOutput`](crate::output::ListGitHubAccountTokenNamesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) token_name_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -687,7 +596,7 @@ impl ListGitHubAccountTokenNamesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDeploymentTargetsOutput {
     /// <p> The unique IDs of deployment targets. </p>
     #[doc(hidden)]
@@ -706,19 +615,11 @@ impl ListDeploymentTargetsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListDeploymentTargetsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDeploymentTargetsOutput");
-        formatter.field("target_ids", &self.target_ids);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListDeploymentTargetsOutput`](crate::output::ListDeploymentTargetsOutput).
 pub mod list_deployment_targets_output {
 
     /// A builder for [`ListDeploymentTargetsOutput`](crate::output::ListDeploymentTargetsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -771,7 +672,7 @@ impl ListDeploymentTargetsOutput {
 
 /// <p>Represents the output of a <code>ListDeployments</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDeploymentsOutput {
     /// <p>A list of deployment IDs.</p>
     #[doc(hidden)]
@@ -790,19 +691,11 @@ impl ListDeploymentsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListDeploymentsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDeploymentsOutput");
-        formatter.field("deployments", &self.deployments);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListDeploymentsOutput`](crate::output::ListDeploymentsOutput).
 pub mod list_deployments_output {
 
     /// A builder for [`ListDeploymentsOutput`](crate::output::ListDeploymentsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployments: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -855,7 +748,7 @@ impl ListDeploymentsOutput {
 
 /// <p>Represents the output of a <code>ListDeploymentInstances</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDeploymentInstancesOutput {
     /// <p>A list of instance IDs.</p>
     #[doc(hidden)]
@@ -874,19 +767,11 @@ impl ListDeploymentInstancesOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListDeploymentInstancesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDeploymentInstancesOutput");
-        formatter.field("instances_list", &self.instances_list);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListDeploymentInstancesOutput`](crate::output::ListDeploymentInstancesOutput).
 pub mod list_deployment_instances_output {
 
     /// A builder for [`ListDeploymentInstancesOutput`](crate::output::ListDeploymentInstancesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instances_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -939,7 +824,7 @@ impl ListDeploymentInstancesOutput {
 
 /// <p>Represents the output of a <code>ListDeploymentGroups</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDeploymentGroupsOutput {
     /// <p>The application name.</p>
     #[doc(hidden)]
@@ -965,20 +850,11 @@ impl ListDeploymentGroupsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListDeploymentGroupsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDeploymentGroupsOutput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("deployment_groups", &self.deployment_groups);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListDeploymentGroupsOutput`](crate::output::ListDeploymentGroupsOutput).
 pub mod list_deployment_groups_output {
 
     /// A builder for [`ListDeploymentGroupsOutput`](crate::output::ListDeploymentGroupsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) deployment_groups: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1046,7 +922,7 @@ impl ListDeploymentGroupsOutput {
 
 /// <p>Represents the output of a <code>ListDeploymentConfigs</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDeploymentConfigsOutput {
     /// <p>A list of deployment configurations, including built-in configurations such as <code>CodeDeployDefault.OneAtATime</code>.</p>
     #[doc(hidden)]
@@ -1065,19 +941,11 @@ impl ListDeploymentConfigsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListDeploymentConfigsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDeploymentConfigsOutput");
-        formatter.field("deployment_configs_list", &self.deployment_configs_list);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListDeploymentConfigsOutput`](crate::output::ListDeploymentConfigsOutput).
 pub mod list_deployment_configs_output {
 
     /// A builder for [`ListDeploymentConfigsOutput`](crate::output::ListDeploymentConfigsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_configs_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1130,7 +998,7 @@ impl ListDeploymentConfigsOutput {
 
 /// <p>Represents the output of a ListApplications operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListApplicationsOutput {
     /// <p>A list of application names.</p>
     #[doc(hidden)]
@@ -1149,19 +1017,11 @@ impl ListApplicationsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListApplicationsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListApplicationsOutput");
-        formatter.field("applications", &self.applications);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
 pub mod list_applications_output {
 
     /// A builder for [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) applications: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1214,7 +1074,7 @@ impl ListApplicationsOutput {
 
 /// <p>Represents the output of a <code>ListApplicationRevisions</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListApplicationRevisionsOutput {
     /// <p>A list of locations that contain the matching revisions.</p>
     #[doc(hidden)]
@@ -1233,19 +1093,11 @@ impl ListApplicationRevisionsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListApplicationRevisionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListApplicationRevisionsOutput");
-        formatter.field("revisions", &self.revisions);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListApplicationRevisionsOutput`](crate::output::ListApplicationRevisionsOutput).
 pub mod list_application_revisions_output {
 
     /// A builder for [`ListApplicationRevisionsOutput`](crate::output::ListApplicationRevisionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) revisions: std::option::Option<std::vec::Vec<crate::model::RevisionLocation>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1298,7 +1150,7 @@ impl ListApplicationRevisionsOutput {
 
 /// <p> Represents the output of a <code>GetOnPremisesInstance</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetOnPremisesInstanceOutput {
     /// <p> Information about the on-premises instance. </p>
     #[doc(hidden)]
@@ -1310,18 +1162,11 @@ impl GetOnPremisesInstanceOutput {
         self.instance_info.as_ref()
     }
 }
-impl std::fmt::Debug for GetOnPremisesInstanceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetOnPremisesInstanceOutput");
-        formatter.field("instance_info", &self.instance_info);
-        formatter.finish()
-    }
-}
 /// See [`GetOnPremisesInstanceOutput`](crate::output::GetOnPremisesInstanceOutput).
 pub mod get_on_premises_instance_output {
 
     /// A builder for [`GetOnPremisesInstanceOutput`](crate::output::GetOnPremisesInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_info: std::option::Option<crate::model::InstanceInfo>,
     }
@@ -1356,7 +1201,7 @@ impl GetOnPremisesInstanceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeploymentTargetOutput {
     /// <p> A deployment target that contains information about a deployment such as its status, lifecycle events, and when it was last updated. It also contains metadata about the deployment target. The deployment target metadata depends on the deployment target's type (<code>instanceTarget</code>, <code>lambdaTarget</code>, or <code>ecsTarget</code>). </p>
     #[doc(hidden)]
@@ -1368,18 +1213,11 @@ impl GetDeploymentTargetOutput {
         self.deployment_target.as_ref()
     }
 }
-impl std::fmt::Debug for GetDeploymentTargetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeploymentTargetOutput");
-        formatter.field("deployment_target", &self.deployment_target);
-        formatter.finish()
-    }
-}
 /// See [`GetDeploymentTargetOutput`](crate::output::GetDeploymentTargetOutput).
 pub mod get_deployment_target_output {
 
     /// A builder for [`GetDeploymentTargetOutput`](crate::output::GetDeploymentTargetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_target: std::option::Option<crate::model::DeploymentTarget>,
     }
@@ -1414,7 +1252,7 @@ impl GetDeploymentTargetOutput {
 
 /// <p> Represents the output of a <code>GetDeploymentInstance</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeploymentInstanceOutput {
     /// <p> Information about the instance. </p>
     #[doc(hidden)]
@@ -1426,18 +1264,11 @@ impl GetDeploymentInstanceOutput {
         self.instance_summary.as_ref()
     }
 }
-impl std::fmt::Debug for GetDeploymentInstanceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeploymentInstanceOutput");
-        formatter.field("instance_summary", &self.instance_summary);
-        formatter.finish()
-    }
-}
 /// See [`GetDeploymentInstanceOutput`](crate::output::GetDeploymentInstanceOutput).
 pub mod get_deployment_instance_output {
 
     /// A builder for [`GetDeploymentInstanceOutput`](crate::output::GetDeploymentInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_summary: std::option::Option<crate::model::InstanceSummary>,
     }
@@ -1472,7 +1303,7 @@ impl GetDeploymentInstanceOutput {
 
 /// <p>Represents the output of a <code>GetDeploymentGroup</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeploymentGroupOutput {
     /// <p>Information about the deployment group.</p>
     #[doc(hidden)]
@@ -1484,18 +1315,11 @@ impl GetDeploymentGroupOutput {
         self.deployment_group_info.as_ref()
     }
 }
-impl std::fmt::Debug for GetDeploymentGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeploymentGroupOutput");
-        formatter.field("deployment_group_info", &self.deployment_group_info);
-        formatter.finish()
-    }
-}
 /// See [`GetDeploymentGroupOutput`](crate::output::GetDeploymentGroupOutput).
 pub mod get_deployment_group_output {
 
     /// A builder for [`GetDeploymentGroupOutput`](crate::output::GetDeploymentGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_group_info: std::option::Option<crate::model::DeploymentGroupInfo>,
     }
@@ -1530,7 +1354,7 @@ impl GetDeploymentGroupOutput {
 
 /// <p>Represents the output of a <code>GetDeploymentConfig</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeploymentConfigOutput {
     /// <p>Information about the deployment configuration.</p>
     #[doc(hidden)]
@@ -1544,18 +1368,11 @@ impl GetDeploymentConfigOutput {
         self.deployment_config_info.as_ref()
     }
 }
-impl std::fmt::Debug for GetDeploymentConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeploymentConfigOutput");
-        formatter.field("deployment_config_info", &self.deployment_config_info);
-        formatter.finish()
-    }
-}
 /// See [`GetDeploymentConfigOutput`](crate::output::GetDeploymentConfigOutput).
 pub mod get_deployment_config_output {
 
     /// A builder for [`GetDeploymentConfigOutput`](crate::output::GetDeploymentConfigOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_config_info: std::option::Option<crate::model::DeploymentConfigInfo>,
     }
@@ -1590,7 +1407,7 @@ impl GetDeploymentConfigOutput {
 
 /// <p>Represents the output of a <code>GetDeployment</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeploymentOutput {
     /// <p>Information about the deployment.</p>
     #[doc(hidden)]
@@ -1602,18 +1419,11 @@ impl GetDeploymentOutput {
         self.deployment_info.as_ref()
     }
 }
-impl std::fmt::Debug for GetDeploymentOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeploymentOutput");
-        formatter.field("deployment_info", &self.deployment_info);
-        formatter.finish()
-    }
-}
 /// See [`GetDeploymentOutput`](crate::output::GetDeploymentOutput).
 pub mod get_deployment_output {
 
     /// A builder for [`GetDeploymentOutput`](crate::output::GetDeploymentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_info: std::option::Option<crate::model::DeploymentInfo>,
     }
@@ -1648,7 +1458,7 @@ impl GetDeploymentOutput {
 
 /// <p>Represents the output of a <code>GetApplicationRevision</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetApplicationRevisionOutput {
     /// <p>The name of the application that corresponds to the revision.</p>
     #[doc(hidden)]
@@ -1674,20 +1484,11 @@ impl GetApplicationRevisionOutput {
         self.revision_info.as_ref()
     }
 }
-impl std::fmt::Debug for GetApplicationRevisionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetApplicationRevisionOutput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("revision", &self.revision);
-        formatter.field("revision_info", &self.revision_info);
-        formatter.finish()
-    }
-}
 /// See [`GetApplicationRevisionOutput`](crate::output::GetApplicationRevisionOutput).
 pub mod get_application_revision_output {
 
     /// A builder for [`GetApplicationRevisionOutput`](crate::output::GetApplicationRevisionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) revision: std::option::Option<crate::model::RevisionLocation>,
@@ -1752,7 +1553,7 @@ impl GetApplicationRevisionOutput {
 
 /// <p>Represents the output of a <code>GetApplication</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetApplicationOutput {
     /// <p>Information about the application.</p>
     #[doc(hidden)]
@@ -1764,18 +1565,11 @@ impl GetApplicationOutput {
         self.application.as_ref()
     }
 }
-impl std::fmt::Debug for GetApplicationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetApplicationOutput");
-        formatter.field("application", &self.application);
-        formatter.finish()
-    }
-}
 /// See [`GetApplicationOutput`](crate::output::GetApplicationOutput).
 pub mod get_application_output {
 
     /// A builder for [`GetApplicationOutput`](crate::output::GetApplicationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<crate::model::ApplicationInfo>,
     }
@@ -1810,19 +1604,13 @@ impl GetApplicationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterOnPremisesInstanceOutput {}
-impl std::fmt::Debug for DeregisterOnPremisesInstanceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterOnPremisesInstanceOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeregisterOnPremisesInstanceOutput`](crate::output::DeregisterOnPremisesInstanceOutput).
 pub mod deregister_on_premises_instance_output {
 
     /// A builder for [`DeregisterOnPremisesInstanceOutput`](crate::output::DeregisterOnPremisesInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeregisterOnPremisesInstanceOutput`](crate::output::DeregisterOnPremisesInstanceOutput).
@@ -1840,19 +1628,13 @@ impl DeregisterOnPremisesInstanceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourcesByExternalIdOutput {}
-impl std::fmt::Debug for DeleteResourcesByExternalIdOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteResourcesByExternalIdOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteResourcesByExternalIdOutput`](crate::output::DeleteResourcesByExternalIdOutput).
 pub mod delete_resources_by_external_id_output {
 
     /// A builder for [`DeleteResourcesByExternalIdOutput`](crate::output::DeleteResourcesByExternalIdOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteResourcesByExternalIdOutput`](crate::output::DeleteResourcesByExternalIdOutput).
@@ -1870,7 +1652,7 @@ impl DeleteResourcesByExternalIdOutput {
 
 /// <p>Represents the output of a <code>DeleteGitHubAccountToken</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGitHubAccountTokenOutput {
     /// <p>The name of the GitHub account connection that was deleted.</p>
     #[doc(hidden)]
@@ -1882,18 +1664,11 @@ impl DeleteGitHubAccountTokenOutput {
         self.token_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteGitHubAccountTokenOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGitHubAccountTokenOutput");
-        formatter.field("token_name", &self.token_name);
-        formatter.finish()
-    }
-}
 /// See [`DeleteGitHubAccountTokenOutput`](crate::output::DeleteGitHubAccountTokenOutput).
 pub mod delete_git_hub_account_token_output {
 
     /// A builder for [`DeleteGitHubAccountTokenOutput`](crate::output::DeleteGitHubAccountTokenOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) token_name: std::option::Option<std::string::String>,
     }
@@ -1925,7 +1700,7 @@ impl DeleteGitHubAccountTokenOutput {
 
 /// <p>Represents the output of a <code>DeleteDeploymentGroup</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDeploymentGroupOutput {
     /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -1937,18 +1712,11 @@ impl DeleteDeploymentGroupOutput {
         self.hooks_not_cleaned_up.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDeploymentGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDeploymentGroupOutput");
-        formatter.field("hooks_not_cleaned_up", &self.hooks_not_cleaned_up);
-        formatter.finish()
-    }
-}
 /// See [`DeleteDeploymentGroupOutput`](crate::output::DeleteDeploymentGroupOutput).
 pub mod delete_deployment_group_output {
 
     /// A builder for [`DeleteDeploymentGroupOutput`](crate::output::DeleteDeploymentGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hooks_not_cleaned_up:
             std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
@@ -1990,19 +1758,13 @@ impl DeleteDeploymentGroupOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDeploymentConfigOutput {}
-impl std::fmt::Debug for DeleteDeploymentConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDeploymentConfigOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteDeploymentConfigOutput`](crate::output::DeleteDeploymentConfigOutput).
 pub mod delete_deployment_config_output {
 
     /// A builder for [`DeleteDeploymentConfigOutput`](crate::output::DeleteDeploymentConfigOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDeploymentConfigOutput`](crate::output::DeleteDeploymentConfigOutput).
@@ -2020,19 +1782,13 @@ impl DeleteDeploymentConfigOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteApplicationOutput {}
-impl std::fmt::Debug for DeleteApplicationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteApplicationOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
 pub mod delete_application_output {
 
     /// A builder for [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
@@ -2050,7 +1806,7 @@ impl DeleteApplicationOutput {
 
 /// <p>Represents the output of a <code>CreateDeploymentGroup</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDeploymentGroupOutput {
     /// <p>A unique deployment group ID.</p>
     #[doc(hidden)]
@@ -2062,18 +1818,11 @@ impl CreateDeploymentGroupOutput {
         self.deployment_group_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDeploymentGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDeploymentGroupOutput");
-        formatter.field("deployment_group_id", &self.deployment_group_id);
-        formatter.finish()
-    }
-}
 /// See [`CreateDeploymentGroupOutput`](crate::output::CreateDeploymentGroupOutput).
 pub mod create_deployment_group_output {
 
     /// A builder for [`CreateDeploymentGroupOutput`](crate::output::CreateDeploymentGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_group_id: std::option::Option<std::string::String>,
     }
@@ -2108,7 +1857,7 @@ impl CreateDeploymentGroupOutput {
 
 /// <p>Represents the output of a <code>CreateDeploymentConfig</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDeploymentConfigOutput {
     /// <p>A unique deployment configuration ID.</p>
     #[doc(hidden)]
@@ -2120,18 +1869,11 @@ impl CreateDeploymentConfigOutput {
         self.deployment_config_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDeploymentConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDeploymentConfigOutput");
-        formatter.field("deployment_config_id", &self.deployment_config_id);
-        formatter.finish()
-    }
-}
 /// See [`CreateDeploymentConfigOutput`](crate::output::CreateDeploymentConfigOutput).
 pub mod create_deployment_config_output {
 
     /// A builder for [`CreateDeploymentConfigOutput`](crate::output::CreateDeploymentConfigOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_config_id: std::option::Option<std::string::String>,
     }
@@ -2166,7 +1908,7 @@ impl CreateDeploymentConfigOutput {
 
 /// <p> Represents the output of a <code>CreateDeployment</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDeploymentOutput {
     /// <p> The unique ID of a deployment. </p>
     #[doc(hidden)]
@@ -2178,18 +1920,11 @@ impl CreateDeploymentOutput {
         self.deployment_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDeploymentOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDeploymentOutput");
-        formatter.field("deployment_id", &self.deployment_id);
-        formatter.finish()
-    }
-}
 /// See [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput).
 pub mod create_deployment_output {
 
     /// A builder for [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_id: std::option::Option<std::string::String>,
     }
@@ -2224,7 +1959,7 @@ impl CreateDeploymentOutput {
 
 /// <p>Represents the output of a <code>CreateApplication</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateApplicationOutput {
     /// <p>A unique application ID.</p>
     #[doc(hidden)]
@@ -2236,18 +1971,11 @@ impl CreateApplicationOutput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateApplicationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateApplicationOutput");
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 /// See [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
 pub mod create_application_output {
 
     /// A builder for [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
     }
@@ -2282,19 +2010,13 @@ impl CreateApplicationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContinueDeploymentOutput {}
-impl std::fmt::Debug for ContinueDeploymentOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContinueDeploymentOutput");
-        formatter.finish()
-    }
-}
 /// See [`ContinueDeploymentOutput`](crate::output::ContinueDeploymentOutput).
 pub mod continue_deployment_output {
 
     /// A builder for [`ContinueDeploymentOutput`](crate::output::ContinueDeploymentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`ContinueDeploymentOutput`](crate::output::ContinueDeploymentOutput).
@@ -2312,7 +2034,7 @@ impl ContinueDeploymentOutput {
 
 /// <p>Represents the output of a <code>BatchGetOnPremisesInstances</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetOnPremisesInstancesOutput {
     /// <p>Information about the on-premises instances.</p>
     #[doc(hidden)]
@@ -2324,18 +2046,11 @@ impl BatchGetOnPremisesInstancesOutput {
         self.instance_infos.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetOnPremisesInstancesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetOnPremisesInstancesOutput");
-        formatter.field("instance_infos", &self.instance_infos);
-        formatter.finish()
-    }
-}
 /// See [`BatchGetOnPremisesInstancesOutput`](crate::output::BatchGetOnPremisesInstancesOutput).
 pub mod batch_get_on_premises_instances_output {
 
     /// A builder for [`BatchGetOnPremisesInstancesOutput`](crate::output::BatchGetOnPremisesInstancesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_infos: std::option::Option<std::vec::Vec<crate::model::InstanceInfo>>,
     }
@@ -2376,7 +2091,7 @@ impl BatchGetOnPremisesInstancesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetDeploymentTargetsOutput {
     /// <p> A list of target objects for a deployment. Each target object contains details about the target, such as its status and lifecycle events. The type of the target objects depends on the deployment' compute platform. </p>
     /// <ul>
@@ -2400,18 +2115,11 @@ impl BatchGetDeploymentTargetsOutput {
         self.deployment_targets.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetDeploymentTargetsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetDeploymentTargetsOutput");
-        formatter.field("deployment_targets", &self.deployment_targets);
-        formatter.finish()
-    }
-}
 /// See [`BatchGetDeploymentTargetsOutput`](crate::output::BatchGetDeploymentTargetsOutput).
 pub mod batch_get_deployment_targets_output {
 
     /// A builder for [`BatchGetDeploymentTargetsOutput`](crate::output::BatchGetDeploymentTargetsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_targets:
             std::option::Option<std::vec::Vec<crate::model::DeploymentTarget>>,
@@ -2465,7 +2173,7 @@ impl BatchGetDeploymentTargetsOutput {
 
 /// <p> Represents the output of a <code>BatchGetDeployments</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetDeploymentsOutput {
     /// <p> Information about the deployments. </p>
     #[doc(hidden)]
@@ -2477,18 +2185,11 @@ impl BatchGetDeploymentsOutput {
         self.deployments_info.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetDeploymentsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetDeploymentsOutput");
-        formatter.field("deployments_info", &self.deployments_info);
-        formatter.finish()
-    }
-}
 /// See [`BatchGetDeploymentsOutput`](crate::output::BatchGetDeploymentsOutput).
 pub mod batch_get_deployments_output {
 
     /// A builder for [`BatchGetDeploymentsOutput`](crate::output::BatchGetDeploymentsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployments_info:
             std::option::Option<std::vec::Vec<crate::model::DeploymentInfo>>,
@@ -2530,7 +2231,7 @@ impl BatchGetDeploymentsOutput {
 
 /// <p>Represents the output of a <code>BatchGetDeploymentInstances</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetDeploymentInstancesOutput {
     /// <p>Information about the instance.</p>
     #[doc(hidden)]
@@ -2549,19 +2250,11 @@ impl BatchGetDeploymentInstancesOutput {
         self.error_message.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetDeploymentInstancesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetDeploymentInstancesOutput");
-        formatter.field("instances_summary", &self.instances_summary);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
-    }
-}
 /// See [`BatchGetDeploymentInstancesOutput`](crate::output::BatchGetDeploymentInstancesOutput).
 pub mod batch_get_deployment_instances_output {
 
     /// A builder for [`BatchGetDeploymentInstancesOutput`](crate::output::BatchGetDeploymentInstancesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instances_summary:
             std::option::Option<std::vec::Vec<crate::model::InstanceSummary>>,
@@ -2618,7 +2311,7 @@ impl BatchGetDeploymentInstancesOutput {
 
 /// <p>Represents the output of a <code>BatchGetDeploymentGroups</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetDeploymentGroupsOutput {
     /// <p>Information about the deployment groups.</p>
     #[doc(hidden)]
@@ -2640,19 +2333,11 @@ impl BatchGetDeploymentGroupsOutput {
         self.error_message.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetDeploymentGroupsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetDeploymentGroupsOutput");
-        formatter.field("deployment_groups_info", &self.deployment_groups_info);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
-    }
-}
 /// See [`BatchGetDeploymentGroupsOutput`](crate::output::BatchGetDeploymentGroupsOutput).
 pub mod batch_get_deployment_groups_output {
 
     /// A builder for [`BatchGetDeploymentGroupsOutput`](crate::output::BatchGetDeploymentGroupsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_groups_info:
             std::option::Option<std::vec::Vec<crate::model::DeploymentGroupInfo>>,
@@ -2709,7 +2394,7 @@ impl BatchGetDeploymentGroupsOutput {
 
 /// <p>Represents the output of a <code>BatchGetApplications</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetApplicationsOutput {
     /// <p>Information about the applications.</p>
     #[doc(hidden)]
@@ -2721,18 +2406,11 @@ impl BatchGetApplicationsOutput {
         self.applications_info.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetApplicationsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetApplicationsOutput");
-        formatter.field("applications_info", &self.applications_info);
-        formatter.finish()
-    }
-}
 /// See [`BatchGetApplicationsOutput`](crate::output::BatchGetApplicationsOutput).
 pub mod batch_get_applications_output {
 
     /// A builder for [`BatchGetApplicationsOutput`](crate::output::BatchGetApplicationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) applications_info:
             std::option::Option<std::vec::Vec<crate::model::ApplicationInfo>>,
@@ -2774,7 +2452,7 @@ impl BatchGetApplicationsOutput {
 
 /// <p>Represents the output of a <code>BatchGetApplicationRevisions</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetApplicationRevisionsOutput {
     /// <p>The name of the application that corresponds to the revisions.</p>
     #[doc(hidden)]
@@ -2800,20 +2478,11 @@ impl BatchGetApplicationRevisionsOutput {
         self.revisions.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetApplicationRevisionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetApplicationRevisionsOutput");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("revisions", &self.revisions);
-        formatter.finish()
-    }
-}
 /// See [`BatchGetApplicationRevisionsOutput`](crate::output::BatchGetApplicationRevisionsOutput).
 pub mod batch_get_application_revisions_output {
 
     /// A builder for [`BatchGetApplicationRevisionsOutput`](crate::output::BatchGetApplicationRevisionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) error_message: std::option::Option<std::string::String>,
@@ -2884,19 +2553,13 @@ impl BatchGetApplicationRevisionsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddTagsToOnPremisesInstancesOutput {}
-impl std::fmt::Debug for AddTagsToOnPremisesInstancesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddTagsToOnPremisesInstancesOutput");
-        formatter.finish()
-    }
-}
 /// See [`AddTagsToOnPremisesInstancesOutput`](crate::output::AddTagsToOnPremisesInstancesOutput).
 pub mod add_tags_to_on_premises_instances_output {
 
     /// A builder for [`AddTagsToOnPremisesInstancesOutput`](crate::output::AddTagsToOnPremisesInstancesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AddTagsToOnPremisesInstancesOutput`](crate::output::AddTagsToOnPremisesInstancesOutput).

@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod accept_direct_connect_gateway_association_proposal_input {
 
     /// A builder for [`AcceptDirectConnectGatewayAssociationProposalInput`](crate::input::AcceptDirectConnectGatewayAssociationProposalInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_id: std::option::Option<std::string::String>,
         pub(crate) proposal_id: std::option::Option<std::string::String>,
@@ -84,7 +84,7 @@ pub mod accept_direct_connect_gateway_association_proposal_input {
             self,
         ) -> Result<
             crate::input::AcceptDirectConnectGatewayAssociationProposalInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(
                 crate::input::AcceptDirectConnectGatewayAssociationProposalInput {
@@ -111,13 +111,13 @@ impl AcceptDirectConnectGatewayAssociationProposalInput {
             crate::operation::AcceptDirectConnectGatewayAssociationProposal,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AcceptDirectConnectGatewayAssociationProposalInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -125,8 +125,10 @@ impl AcceptDirectConnectGatewayAssociationProposalInput {
             fn update_http_builder(
                 input: &crate::input::AcceptDirectConnectGatewayAssociationProposalInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -215,7 +217,7 @@ impl AcceptDirectConnectGatewayAssociationProposalInput {
 pub mod allocate_connection_on_interconnect_input {
 
     /// A builder for [`AllocateConnectionOnInterconnectInput`](crate::input::AllocateConnectionOnInterconnectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bandwidth: std::option::Option<std::string::String>,
         pub(crate) connection_name: std::option::Option<std::string::String>,
@@ -288,7 +290,7 @@ pub mod allocate_connection_on_interconnect_input {
             self,
         ) -> Result<
             crate::input::AllocateConnectionOnInterconnectInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::AllocateConnectionOnInterconnectInput {
                 bandwidth: self.bandwidth,
@@ -313,13 +315,13 @@ impl AllocateConnectionOnInterconnectInput {
             crate::operation::AllocateConnectionOnInterconnect,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AllocateConnectionOnInterconnectInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -327,8 +329,10 @@ impl AllocateConnectionOnInterconnectInput {
             fn update_http_builder(
                 input: &crate::input::AllocateConnectionOnInterconnectInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -416,7 +420,7 @@ impl AllocateConnectionOnInterconnectInput {
 pub mod allocate_hosted_connection_input {
 
     /// A builder for [`AllocateHostedConnectionInput`](crate::input::AllocateHostedConnectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -509,7 +513,7 @@ pub mod allocate_hosted_connection_input {
             self,
         ) -> Result<
             crate::input::AllocateHostedConnectionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::AllocateHostedConnectionInput {
                 connection_id: self.connection_id,
@@ -535,13 +539,13 @@ impl AllocateHostedConnectionInput {
             crate::operation::AllocateHostedConnection,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AllocateHostedConnectionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -549,8 +553,10 @@ impl AllocateHostedConnectionInput {
             fn update_http_builder(
                 input: &crate::input::AllocateHostedConnectionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -641,7 +647,7 @@ impl AllocateHostedConnectionInput {
 pub mod allocate_private_virtual_interface_input {
 
     /// A builder for [`AllocatePrivateVirtualInterfaceInput`](crate::input::AllocatePrivateVirtualInterfaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -696,7 +702,7 @@ pub mod allocate_private_virtual_interface_input {
             self,
         ) -> Result<
             crate::input::AllocatePrivateVirtualInterfaceInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::AllocatePrivateVirtualInterfaceInput {
                 connection_id: self.connection_id,
@@ -720,13 +726,13 @@ impl AllocatePrivateVirtualInterfaceInput {
             crate::operation::AllocatePrivateVirtualInterface,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AllocatePrivateVirtualInterfaceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -734,8 +740,10 @@ impl AllocatePrivateVirtualInterfaceInput {
             fn update_http_builder(
                 input: &crate::input::AllocatePrivateVirtualInterfaceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -823,7 +831,7 @@ impl AllocatePrivateVirtualInterfaceInput {
 pub mod allocate_public_virtual_interface_input {
 
     /// A builder for [`AllocatePublicVirtualInterfaceInput`](crate::input::AllocatePublicVirtualInterfaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -878,7 +886,7 @@ pub mod allocate_public_virtual_interface_input {
             self,
         ) -> Result<
             crate::input::AllocatePublicVirtualInterfaceInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::AllocatePublicVirtualInterfaceInput {
                 connection_id: self.connection_id,
@@ -902,13 +910,13 @@ impl AllocatePublicVirtualInterfaceInput {
             crate::operation::AllocatePublicVirtualInterface,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AllocatePublicVirtualInterfaceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -916,8 +924,10 @@ impl AllocatePublicVirtualInterfaceInput {
             fn update_http_builder(
                 input: &crate::input::AllocatePublicVirtualInterfaceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1005,7 +1015,7 @@ impl AllocatePublicVirtualInterfaceInput {
 pub mod allocate_transit_virtual_interface_input {
 
     /// A builder for [`AllocateTransitVirtualInterfaceInput`](crate::input::AllocateTransitVirtualInterfaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -1060,7 +1070,7 @@ pub mod allocate_transit_virtual_interface_input {
             self,
         ) -> Result<
             crate::input::AllocateTransitVirtualInterfaceInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::AllocateTransitVirtualInterfaceInput {
                 connection_id: self.connection_id,
@@ -1084,13 +1094,13 @@ impl AllocateTransitVirtualInterfaceInput {
             crate::operation::AllocateTransitVirtualInterface,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AllocateTransitVirtualInterfaceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1098,8 +1108,10 @@ impl AllocateTransitVirtualInterfaceInput {
             fn update_http_builder(
                 input: &crate::input::AllocateTransitVirtualInterfaceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1187,7 +1199,7 @@ impl AllocateTransitVirtualInterfaceInput {
 pub mod associate_connection_with_lag_input {
 
     /// A builder for [`AssociateConnectionWithLagInput`](crate::input::AssociateConnectionWithLagInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
         pub(crate) lag_id: std::option::Option<std::string::String>,
@@ -1221,7 +1233,7 @@ pub mod associate_connection_with_lag_input {
             self,
         ) -> Result<
             crate::input::AssociateConnectionWithLagInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::AssociateConnectionWithLagInput {
                 connection_id: self.connection_id,
@@ -1243,13 +1255,13 @@ impl AssociateConnectionWithLagInput {
             crate::operation::AssociateConnectionWithLag,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AssociateConnectionWithLagInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1257,8 +1269,10 @@ impl AssociateConnectionWithLagInput {
             fn update_http_builder(
                 input: &crate::input::AssociateConnectionWithLagInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1346,7 +1360,7 @@ impl AssociateConnectionWithLagInput {
 pub mod associate_hosted_connection_input {
 
     /// A builder for [`AssociateHostedConnectionInput`](crate::input::AssociateHostedConnectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
         pub(crate) parent_connection_id: std::option::Option<std::string::String>,
@@ -1383,7 +1397,7 @@ pub mod associate_hosted_connection_input {
             self,
         ) -> Result<
             crate::input::AssociateHostedConnectionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::AssociateHostedConnectionInput {
                 connection_id: self.connection_id,
@@ -1405,13 +1419,13 @@ impl AssociateHostedConnectionInput {
             crate::operation::AssociateHostedConnection,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AssociateHostedConnectionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1419,8 +1433,10 @@ impl AssociateHostedConnectionInput {
             fn update_http_builder(
                 input: &crate::input::AssociateHostedConnectionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1511,7 +1527,7 @@ impl AssociateHostedConnectionInput {
 pub mod associate_mac_sec_key_input {
 
     /// A builder for [`AssociateMacSecKeyInput`](crate::input::AssociateMacSecKeyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
         pub(crate) secret_arn: std::option::Option<std::string::String>,
@@ -1583,8 +1599,10 @@ pub mod associate_mac_sec_key_input {
         /// Consumes the builder and constructs a [`AssociateMacSecKeyInput`](crate::input::AssociateMacSecKeyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::AssociateMacSecKeyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::AssociateMacSecKeyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::AssociateMacSecKeyInput {
                 connection_id: self.connection_id,
                 secret_arn: self.secret_arn,
@@ -1607,13 +1625,13 @@ impl AssociateMacSecKeyInput {
             crate::operation::AssociateMacSecKey,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AssociateMacSecKeyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1621,8 +1639,10 @@ impl AssociateMacSecKeyInput {
             fn update_http_builder(
                 input: &crate::input::AssociateMacSecKeyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1711,7 +1731,7 @@ impl AssociateMacSecKeyInput {
 pub mod associate_virtual_interface_input {
 
     /// A builder for [`AssociateVirtualInterfaceInput`](crate::input::AssociateVirtualInterfaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_id: std::option::Option<std::string::String>,
         pub(crate) connection_id: std::option::Option<std::string::String>,
@@ -1748,7 +1768,7 @@ pub mod associate_virtual_interface_input {
             self,
         ) -> Result<
             crate::input::AssociateVirtualInterfaceInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::AssociateVirtualInterfaceInput {
                 virtual_interface_id: self.virtual_interface_id,
@@ -1770,13 +1790,13 @@ impl AssociateVirtualInterfaceInput {
             crate::operation::AssociateVirtualInterface,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AssociateVirtualInterfaceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1784,8 +1804,10 @@ impl AssociateVirtualInterfaceInput {
             fn update_http_builder(
                 input: &crate::input::AssociateVirtualInterfaceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1876,7 +1898,7 @@ impl AssociateVirtualInterfaceInput {
 pub mod confirm_connection_input {
 
     /// A builder for [`ConfirmConnectionInput`](crate::input::ConfirmConnectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
     }
@@ -1897,8 +1919,10 @@ pub mod confirm_connection_input {
         /// Consumes the builder and constructs a [`ConfirmConnectionInput`](crate::input::ConfirmConnectionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ConfirmConnectionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ConfirmConnectionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ConfirmConnectionInput {
                 connection_id: self.connection_id,
             })
@@ -1918,13 +1942,13 @@ impl ConfirmConnectionInput {
             crate::operation::ConfirmConnection,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ConfirmConnectionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1932,8 +1956,10 @@ impl ConfirmConnectionInput {
             fn update_http_builder(
                 input: &crate::input::ConfirmConnectionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2022,7 +2048,7 @@ impl ConfirmConnectionInput {
 pub mod confirm_customer_agreement_input {
 
     /// A builder for [`ConfirmCustomerAgreementInput`](crate::input::ConfirmCustomerAgreementInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agreement_name: std::option::Option<std::string::String>,
     }
@@ -2045,7 +2071,7 @@ pub mod confirm_customer_agreement_input {
             self,
         ) -> Result<
             crate::input::ConfirmCustomerAgreementInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ConfirmCustomerAgreementInput {
                 agreement_name: self.agreement_name,
@@ -2066,13 +2092,13 @@ impl ConfirmCustomerAgreementInput {
             crate::operation::ConfirmCustomerAgreement,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ConfirmCustomerAgreementInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2080,8 +2106,10 @@ impl ConfirmCustomerAgreementInput {
             fn update_http_builder(
                 input: &crate::input::ConfirmCustomerAgreementInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2172,7 +2200,7 @@ impl ConfirmCustomerAgreementInput {
 pub mod confirm_private_virtual_interface_input {
 
     /// A builder for [`ConfirmPrivateVirtualInterfaceInput`](crate::input::ConfirmPrivateVirtualInterfaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_id: std::option::Option<std::string::String>,
         pub(crate) virtual_gateway_id: std::option::Option<std::string::String>,
@@ -2223,7 +2251,7 @@ pub mod confirm_private_virtual_interface_input {
             self,
         ) -> Result<
             crate::input::ConfirmPrivateVirtualInterfaceInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ConfirmPrivateVirtualInterfaceInput {
                 virtual_interface_id: self.virtual_interface_id,
@@ -2246,13 +2274,13 @@ impl ConfirmPrivateVirtualInterfaceInput {
             crate::operation::ConfirmPrivateVirtualInterface,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ConfirmPrivateVirtualInterfaceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2260,8 +2288,10 @@ impl ConfirmPrivateVirtualInterfaceInput {
             fn update_http_builder(
                 input: &crate::input::ConfirmPrivateVirtualInterfaceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2349,7 +2379,7 @@ impl ConfirmPrivateVirtualInterfaceInput {
 pub mod confirm_public_virtual_interface_input {
 
     /// A builder for [`ConfirmPublicVirtualInterfaceInput`](crate::input::ConfirmPublicVirtualInterfaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_id: std::option::Option<std::string::String>,
     }
@@ -2372,7 +2402,7 @@ pub mod confirm_public_virtual_interface_input {
             self,
         ) -> Result<
             crate::input::ConfirmPublicVirtualInterfaceInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ConfirmPublicVirtualInterfaceInput {
                 virtual_interface_id: self.virtual_interface_id,
@@ -2393,13 +2423,13 @@ impl ConfirmPublicVirtualInterfaceInput {
             crate::operation::ConfirmPublicVirtualInterface,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ConfirmPublicVirtualInterfaceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2407,8 +2437,10 @@ impl ConfirmPublicVirtualInterfaceInput {
             fn update_http_builder(
                 input: &crate::input::ConfirmPublicVirtualInterfaceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2496,7 +2528,7 @@ impl ConfirmPublicVirtualInterfaceInput {
 pub mod confirm_transit_virtual_interface_input {
 
     /// A builder for [`ConfirmTransitVirtualInterfaceInput`](crate::input::ConfirmTransitVirtualInterfaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_id: std::option::Option<std::string::String>,
         pub(crate) direct_connect_gateway_id: std::option::Option<std::string::String>,
@@ -2533,7 +2565,7 @@ pub mod confirm_transit_virtual_interface_input {
             self,
         ) -> Result<
             crate::input::ConfirmTransitVirtualInterfaceInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ConfirmTransitVirtualInterfaceInput {
                 virtual_interface_id: self.virtual_interface_id,
@@ -2555,13 +2587,13 @@ impl ConfirmTransitVirtualInterfaceInput {
             crate::operation::ConfirmTransitVirtualInterface,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ConfirmTransitVirtualInterfaceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2569,8 +2601,10 @@ impl ConfirmTransitVirtualInterfaceInput {
             fn update_http_builder(
                 input: &crate::input::ConfirmTransitVirtualInterfaceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2658,7 +2692,7 @@ impl ConfirmTransitVirtualInterfaceInput {
 pub mod create_bgp_peer_input {
 
     /// A builder for [`CreateBgpPeerInput`](crate::input::CreateBgpPeerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_id: std::option::Option<std::string::String>,
         pub(crate) new_bgp_peer: std::option::Option<crate::model::NewBgpPeer>,
@@ -2693,7 +2727,7 @@ pub mod create_bgp_peer_input {
         /// Consumes the builder and constructs a [`CreateBgpPeerInput`](crate::input::CreateBgpPeerInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateBgpPeerInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateBgpPeerInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateBgpPeerInput {
                 virtual_interface_id: self.virtual_interface_id,
@@ -2715,13 +2749,13 @@ impl CreateBgpPeerInput {
             crate::operation::CreateBGPPeer,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateBgpPeerInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2729,8 +2763,10 @@ impl CreateBgpPeerInput {
             fn update_http_builder(
                 input: &crate::input::CreateBgpPeerInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2819,7 +2855,7 @@ impl CreateBgpPeerInput {
 pub mod create_connection_input {
 
     /// A builder for [`CreateConnectionInput`](crate::input::CreateConnectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location: std::option::Option<std::string::String>,
         pub(crate) bandwidth: std::option::Option<std::string::String>,
@@ -2920,8 +2956,10 @@ pub mod create_connection_input {
         /// Consumes the builder and constructs a [`CreateConnectionInput`](crate::input::CreateConnectionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateConnectionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateConnectionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateConnectionInput {
                 location: self.location,
                 bandwidth: self.bandwidth,
@@ -2947,13 +2985,13 @@ impl CreateConnectionInput {
             crate::operation::CreateConnection,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateConnectionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2961,8 +2999,10 @@ impl CreateConnectionInput {
             fn update_http_builder(
                 input: &crate::input::CreateConnectionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3051,7 +3091,7 @@ impl CreateConnectionInput {
 pub mod create_direct_connect_gateway_input {
 
     /// A builder for [`CreateDirectConnectGatewayInput`](crate::input::CreateDirectConnectGatewayInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_name: std::option::Option<std::string::String>,
         pub(crate) amazon_side_asn: std::option::Option<i64>,
@@ -3088,7 +3128,7 @@ pub mod create_direct_connect_gateway_input {
             self,
         ) -> Result<
             crate::input::CreateDirectConnectGatewayInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateDirectConnectGatewayInput {
                 direct_connect_gateway_name: self.direct_connect_gateway_name,
@@ -3110,13 +3150,13 @@ impl CreateDirectConnectGatewayInput {
             crate::operation::CreateDirectConnectGateway,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateDirectConnectGatewayInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3124,8 +3164,10 @@ impl CreateDirectConnectGatewayInput {
             fn update_http_builder(
                 input: &crate::input::CreateDirectConnectGatewayInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3213,7 +3255,7 @@ impl CreateDirectConnectGatewayInput {
 pub mod create_direct_connect_gateway_association_input {
 
     /// A builder for [`CreateDirectConnectGatewayAssociationInput`](crate::input::CreateDirectConnectGatewayAssociationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_id: std::option::Option<std::string::String>,
         pub(crate) gateway_id: std::option::Option<std::string::String>,
@@ -3291,7 +3333,7 @@ pub mod create_direct_connect_gateway_association_input {
             self,
         ) -> Result<
             crate::input::CreateDirectConnectGatewayAssociationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateDirectConnectGatewayAssociationInput {
                 direct_connect_gateway_id: self.direct_connect_gateway_id,
@@ -3316,13 +3358,13 @@ impl CreateDirectConnectGatewayAssociationInput {
             crate::operation::CreateDirectConnectGatewayAssociation,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateDirectConnectGatewayAssociationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3330,8 +3372,10 @@ impl CreateDirectConnectGatewayAssociationInput {
             fn update_http_builder(
                 input: &crate::input::CreateDirectConnectGatewayAssociationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3419,7 +3463,7 @@ impl CreateDirectConnectGatewayAssociationInput {
 pub mod create_direct_connect_gateway_association_proposal_input {
 
     /// A builder for [`CreateDirectConnectGatewayAssociationProposalInput`](crate::input::CreateDirectConnectGatewayAssociationProposalInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_id: std::option::Option<std::string::String>,
         pub(crate) direct_connect_gateway_owner_account: std::option::Option<std::string::String>,
@@ -3522,7 +3566,7 @@ pub mod create_direct_connect_gateway_association_proposal_input {
             self,
         ) -> Result<
             crate::input::CreateDirectConnectGatewayAssociationProposalInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(
                 crate::input::CreateDirectConnectGatewayAssociationProposalInput {
@@ -3551,13 +3595,13 @@ impl CreateDirectConnectGatewayAssociationProposalInput {
             crate::operation::CreateDirectConnectGatewayAssociationProposal,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateDirectConnectGatewayAssociationProposalInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3565,8 +3609,10 @@ impl CreateDirectConnectGatewayAssociationProposalInput {
             fn update_http_builder(
                 input: &crate::input::CreateDirectConnectGatewayAssociationProposalInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3655,7 +3701,7 @@ impl CreateDirectConnectGatewayAssociationProposalInput {
 pub mod create_interconnect_input {
 
     /// A builder for [`CreateInterconnectInput`](crate::input::CreateInterconnectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interconnect_name: std::option::Option<std::string::String>,
         pub(crate) bandwidth: std::option::Option<std::string::String>,
@@ -3743,8 +3789,10 @@ pub mod create_interconnect_input {
         /// Consumes the builder and constructs a [`CreateInterconnectInput`](crate::input::CreateInterconnectInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateInterconnectInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateInterconnectInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateInterconnectInput {
                 interconnect_name: self.interconnect_name,
                 bandwidth: self.bandwidth,
@@ -3769,13 +3817,13 @@ impl CreateInterconnectInput {
             crate::operation::CreateInterconnect,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateInterconnectInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3783,8 +3831,10 @@ impl CreateInterconnectInput {
             fn update_http_builder(
                 input: &crate::input::CreateInterconnectInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3873,7 +3923,7 @@ impl CreateInterconnectInput {
 pub mod create_lag_input {
 
     /// A builder for [`CreateLagInput`](crate::input::CreateLagInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) number_of_connections: std::option::Option<i32>,
         pub(crate) location: std::option::Option<std::string::String>,
@@ -4010,7 +4060,8 @@ pub mod create_lag_input {
         /// Consumes the builder and constructs a [`CreateLagInput`](crate::input::CreateLagInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateLagInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::CreateLagInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::CreateLagInput {
                 number_of_connections: self.number_of_connections.unwrap_or_default(),
                 location: self.location,
@@ -4038,13 +4089,13 @@ impl CreateLagInput {
             crate::operation::CreateLag,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateLagInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4052,8 +4103,10 @@ impl CreateLagInput {
             fn update_http_builder(
                 input: &crate::input::CreateLagInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4140,7 +4193,7 @@ impl CreateLagInput {
 pub mod create_private_virtual_interface_input {
 
     /// A builder for [`CreatePrivateVirtualInterfaceInput`](crate::input::CreatePrivateVirtualInterfaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
         pub(crate) new_private_virtual_interface:
@@ -4181,7 +4234,7 @@ pub mod create_private_virtual_interface_input {
             self,
         ) -> Result<
             crate::input::CreatePrivateVirtualInterfaceInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreatePrivateVirtualInterfaceInput {
                 connection_id: self.connection_id,
@@ -4203,13 +4256,13 @@ impl CreatePrivateVirtualInterfaceInput {
             crate::operation::CreatePrivateVirtualInterface,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreatePrivateVirtualInterfaceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4217,8 +4270,10 @@ impl CreatePrivateVirtualInterfaceInput {
             fn update_http_builder(
                 input: &crate::input::CreatePrivateVirtualInterfaceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4306,7 +4361,7 @@ impl CreatePrivateVirtualInterfaceInput {
 pub mod create_public_virtual_interface_input {
 
     /// A builder for [`CreatePublicVirtualInterfaceInput`](crate::input::CreatePublicVirtualInterfaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
         pub(crate) new_public_virtual_interface:
@@ -4347,7 +4402,7 @@ pub mod create_public_virtual_interface_input {
             self,
         ) -> Result<
             crate::input::CreatePublicVirtualInterfaceInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreatePublicVirtualInterfaceInput {
                 connection_id: self.connection_id,
@@ -4369,13 +4424,13 @@ impl CreatePublicVirtualInterfaceInput {
             crate::operation::CreatePublicVirtualInterface,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreatePublicVirtualInterfaceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4383,8 +4438,10 @@ impl CreatePublicVirtualInterfaceInput {
             fn update_http_builder(
                 input: &crate::input::CreatePublicVirtualInterfaceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4472,7 +4529,7 @@ impl CreatePublicVirtualInterfaceInput {
 pub mod create_transit_virtual_interface_input {
 
     /// A builder for [`CreateTransitVirtualInterfaceInput`](crate::input::CreateTransitVirtualInterfaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
         pub(crate) new_transit_virtual_interface:
@@ -4513,7 +4570,7 @@ pub mod create_transit_virtual_interface_input {
             self,
         ) -> Result<
             crate::input::CreateTransitVirtualInterfaceInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateTransitVirtualInterfaceInput {
                 connection_id: self.connection_id,
@@ -4535,13 +4592,13 @@ impl CreateTransitVirtualInterfaceInput {
             crate::operation::CreateTransitVirtualInterface,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateTransitVirtualInterfaceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4549,8 +4606,10 @@ impl CreateTransitVirtualInterfaceInput {
             fn update_http_builder(
                 input: &crate::input::CreateTransitVirtualInterfaceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4638,7 +4697,7 @@ impl CreateTransitVirtualInterfaceInput {
 pub mod delete_bgp_peer_input {
 
     /// A builder for [`DeleteBgpPeerInput`](crate::input::DeleteBgpPeerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_id: std::option::Option<std::string::String>,
         pub(crate) asn: std::option::Option<i32>,
@@ -4695,7 +4754,7 @@ pub mod delete_bgp_peer_input {
         /// Consumes the builder and constructs a [`DeleteBgpPeerInput`](crate::input::DeleteBgpPeerInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteBgpPeerInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteBgpPeerInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteBgpPeerInput {
                 virtual_interface_id: self.virtual_interface_id,
@@ -4719,13 +4778,13 @@ impl DeleteBgpPeerInput {
             crate::operation::DeleteBGPPeer,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBgpPeerInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4733,8 +4792,10 @@ impl DeleteBgpPeerInput {
             fn update_http_builder(
                 input: &crate::input::DeleteBgpPeerInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4823,7 +4884,7 @@ impl DeleteBgpPeerInput {
 pub mod delete_connection_input {
 
     /// A builder for [`DeleteConnectionInput`](crate::input::DeleteConnectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
     }
@@ -4844,8 +4905,10 @@ pub mod delete_connection_input {
         /// Consumes the builder and constructs a [`DeleteConnectionInput`](crate::input::DeleteConnectionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteConnectionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteConnectionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteConnectionInput {
                 connection_id: self.connection_id,
             })
@@ -4865,13 +4928,13 @@ impl DeleteConnectionInput {
             crate::operation::DeleteConnection,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteConnectionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4879,8 +4942,10 @@ impl DeleteConnectionInput {
             fn update_http_builder(
                 input: &crate::input::DeleteConnectionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4969,7 +5034,7 @@ impl DeleteConnectionInput {
 pub mod delete_direct_connect_gateway_input {
 
     /// A builder for [`DeleteDirectConnectGatewayInput`](crate::input::DeleteDirectConnectGatewayInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_id: std::option::Option<std::string::String>,
     }
@@ -4992,7 +5057,7 @@ pub mod delete_direct_connect_gateway_input {
             self,
         ) -> Result<
             crate::input::DeleteDirectConnectGatewayInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteDirectConnectGatewayInput {
                 direct_connect_gateway_id: self.direct_connect_gateway_id,
@@ -5013,13 +5078,13 @@ impl DeleteDirectConnectGatewayInput {
             crate::operation::DeleteDirectConnectGateway,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteDirectConnectGatewayInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5027,8 +5092,10 @@ impl DeleteDirectConnectGatewayInput {
             fn update_http_builder(
                 input: &crate::input::DeleteDirectConnectGatewayInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5116,7 +5183,7 @@ impl DeleteDirectConnectGatewayInput {
 pub mod delete_direct_connect_gateway_association_input {
 
     /// A builder for [`DeleteDirectConnectGatewayAssociationInput`](crate::input::DeleteDirectConnectGatewayAssociationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_id: std::option::Option<std::string::String>,
         pub(crate) direct_connect_gateway_id: std::option::Option<std::string::String>,
@@ -5167,7 +5234,7 @@ pub mod delete_direct_connect_gateway_association_input {
             self,
         ) -> Result<
             crate::input::DeleteDirectConnectGatewayAssociationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteDirectConnectGatewayAssociationInput {
                 association_id: self.association_id,
@@ -5190,13 +5257,13 @@ impl DeleteDirectConnectGatewayAssociationInput {
             crate::operation::DeleteDirectConnectGatewayAssociation,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteDirectConnectGatewayAssociationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5204,8 +5271,10 @@ impl DeleteDirectConnectGatewayAssociationInput {
             fn update_http_builder(
                 input: &crate::input::DeleteDirectConnectGatewayAssociationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5293,7 +5362,7 @@ impl DeleteDirectConnectGatewayAssociationInput {
 pub mod delete_direct_connect_gateway_association_proposal_input {
 
     /// A builder for [`DeleteDirectConnectGatewayAssociationProposalInput`](crate::input::DeleteDirectConnectGatewayAssociationProposalInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) proposal_id: std::option::Option<std::string::String>,
     }
@@ -5313,7 +5382,7 @@ pub mod delete_direct_connect_gateway_association_proposal_input {
             self,
         ) -> Result<
             crate::input::DeleteDirectConnectGatewayAssociationProposalInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(
                 crate::input::DeleteDirectConnectGatewayAssociationProposalInput {
@@ -5336,13 +5405,13 @@ impl DeleteDirectConnectGatewayAssociationProposalInput {
             crate::operation::DeleteDirectConnectGatewayAssociationProposal,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteDirectConnectGatewayAssociationProposalInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5350,8 +5419,10 @@ impl DeleteDirectConnectGatewayAssociationProposalInput {
             fn update_http_builder(
                 input: &crate::input::DeleteDirectConnectGatewayAssociationProposalInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5440,7 +5511,7 @@ impl DeleteDirectConnectGatewayAssociationProposalInput {
 pub mod delete_interconnect_input {
 
     /// A builder for [`DeleteInterconnectInput`](crate::input::DeleteInterconnectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interconnect_id: std::option::Option<std::string::String>,
     }
@@ -5461,8 +5532,10 @@ pub mod delete_interconnect_input {
         /// Consumes the builder and constructs a [`DeleteInterconnectInput`](crate::input::DeleteInterconnectInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteInterconnectInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteInterconnectInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteInterconnectInput {
                 interconnect_id: self.interconnect_id,
             })
@@ -5482,13 +5555,13 @@ impl DeleteInterconnectInput {
             crate::operation::DeleteInterconnect,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteInterconnectInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5496,8 +5569,10 @@ impl DeleteInterconnectInput {
             fn update_http_builder(
                 input: &crate::input::DeleteInterconnectInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5586,7 +5661,7 @@ impl DeleteInterconnectInput {
 pub mod delete_lag_input {
 
     /// A builder for [`DeleteLagInput`](crate::input::DeleteLagInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lag_id: std::option::Option<std::string::String>,
     }
@@ -5604,7 +5679,8 @@ pub mod delete_lag_input {
         /// Consumes the builder and constructs a [`DeleteLagInput`](crate::input::DeleteLagInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteLagInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::DeleteLagInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::DeleteLagInput {
                 lag_id: self.lag_id,
             })
@@ -5624,13 +5700,13 @@ impl DeleteLagInput {
             crate::operation::DeleteLag,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteLagInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5638,8 +5714,10 @@ impl DeleteLagInput {
             fn update_http_builder(
                 input: &crate::input::DeleteLagInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5726,7 +5804,7 @@ impl DeleteLagInput {
 pub mod delete_virtual_interface_input {
 
     /// A builder for [`DeleteVirtualInterfaceInput`](crate::input::DeleteVirtualInterfaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_id: std::option::Option<std::string::String>,
     }
@@ -5747,8 +5825,10 @@ pub mod delete_virtual_interface_input {
         /// Consumes the builder and constructs a [`DeleteVirtualInterfaceInput`](crate::input::DeleteVirtualInterfaceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteVirtualInterfaceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteVirtualInterfaceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteVirtualInterfaceInput {
                 virtual_interface_id: self.virtual_interface_id,
             })
@@ -5768,13 +5848,13 @@ impl DeleteVirtualInterfaceInput {
             crate::operation::DeleteVirtualInterface,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteVirtualInterfaceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5782,8 +5862,10 @@ impl DeleteVirtualInterfaceInput {
             fn update_http_builder(
                 input: &crate::input::DeleteVirtualInterfaceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5874,7 +5956,7 @@ impl DeleteVirtualInterfaceInput {
 pub mod describe_connection_loa_input {
 
     /// A builder for [`DescribeConnectionLoaInput`](crate::input::DescribeConnectionLoaInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
         pub(crate) provider_name: std::option::Option<std::string::String>,
@@ -5923,8 +6005,10 @@ pub mod describe_connection_loa_input {
         /// Consumes the builder and constructs a [`DescribeConnectionLoaInput`](crate::input::DescribeConnectionLoaInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeConnectionLoaInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeConnectionLoaInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeConnectionLoaInput {
                 connection_id: self.connection_id,
                 provider_name: self.provider_name,
@@ -5946,13 +6030,13 @@ impl DescribeConnectionLoaInput {
             crate::operation::DescribeConnectionLoa,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeConnectionLoaInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5960,8 +6044,10 @@ impl DescribeConnectionLoaInput {
             fn update_http_builder(
                 input: &crate::input::DescribeConnectionLoaInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6052,7 +6138,7 @@ impl DescribeConnectionLoaInput {
 pub mod describe_connections_input {
 
     /// A builder for [`DescribeConnectionsInput`](crate::input::DescribeConnectionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
     }
@@ -6073,8 +6159,10 @@ pub mod describe_connections_input {
         /// Consumes the builder and constructs a [`DescribeConnectionsInput`](crate::input::DescribeConnectionsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeConnectionsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeConnectionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeConnectionsInput {
                 connection_id: self.connection_id,
             })
@@ -6094,13 +6182,13 @@ impl DescribeConnectionsInput {
             crate::operation::DescribeConnections,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeConnectionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6108,8 +6196,10 @@ impl DescribeConnectionsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeConnectionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6198,7 +6288,7 @@ impl DescribeConnectionsInput {
 pub mod describe_connections_on_interconnect_input {
 
     /// A builder for [`DescribeConnectionsOnInterconnectInput`](crate::input::DescribeConnectionsOnInterconnectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interconnect_id: std::option::Option<std::string::String>,
     }
@@ -6221,7 +6311,7 @@ pub mod describe_connections_on_interconnect_input {
             self,
         ) -> Result<
             crate::input::DescribeConnectionsOnInterconnectInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeConnectionsOnInterconnectInput {
                 interconnect_id: self.interconnect_id,
@@ -6242,13 +6332,13 @@ impl DescribeConnectionsOnInterconnectInput {
             crate::operation::DescribeConnectionsOnInterconnect,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeConnectionsOnInterconnectInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6256,8 +6346,10 @@ impl DescribeConnectionsOnInterconnectInput {
             fn update_http_builder(
                 input: &crate::input::DescribeConnectionsOnInterconnectInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6345,7 +6437,7 @@ impl DescribeConnectionsOnInterconnectInput {
 pub mod describe_customer_metadata_input {
 
     /// A builder for [`DescribeCustomerMetadataInput`](crate::input::DescribeCustomerMetadataInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DescribeCustomerMetadataInput`](crate::input::DescribeCustomerMetadataInput).
@@ -6353,7 +6445,7 @@ pub mod describe_customer_metadata_input {
             self,
         ) -> Result<
             crate::input::DescribeCustomerMetadataInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeCustomerMetadataInput {})
         }
@@ -6372,13 +6464,13 @@ impl DescribeCustomerMetadataInput {
             crate::operation::DescribeCustomerMetadata,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeCustomerMetadataInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6386,8 +6478,10 @@ impl DescribeCustomerMetadataInput {
             fn update_http_builder(
                 input: &crate::input::DescribeCustomerMetadataInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6471,7 +6565,7 @@ impl DescribeCustomerMetadataInput {
 pub mod describe_direct_connect_gateway_association_proposals_input {
 
     /// A builder for [`DescribeDirectConnectGatewayAssociationProposalsInput`](crate::input::DescribeDirectConnectGatewayAssociationProposalsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_id: std::option::Option<std::string::String>,
         pub(crate) proposal_id: std::option::Option<std::string::String>,
@@ -6543,7 +6637,7 @@ pub mod describe_direct_connect_gateway_association_proposals_input {
             self,
         ) -> Result<
             crate::input::DescribeDirectConnectGatewayAssociationProposalsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(
                 crate::input::DescribeDirectConnectGatewayAssociationProposalsInput {
@@ -6570,13 +6664,13 @@ impl DescribeDirectConnectGatewayAssociationProposalsInput {
             crate::operation::DescribeDirectConnectGatewayAssociationProposals,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeDirectConnectGatewayAssociationProposalsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6584,8 +6678,10 @@ impl DescribeDirectConnectGatewayAssociationProposalsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeDirectConnectGatewayAssociationProposalsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6675,7 +6771,7 @@ impl DescribeDirectConnectGatewayAssociationProposalsInput {
 pub mod describe_direct_connect_gateway_associations_input {
 
     /// A builder for [`DescribeDirectConnectGatewayAssociationsInput`](crate::input::DescribeDirectConnectGatewayAssociationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_id: std::option::Option<std::string::String>,
         pub(crate) associated_gateway_id: std::option::Option<std::string::String>,
@@ -6764,7 +6860,7 @@ pub mod describe_direct_connect_gateway_associations_input {
             self,
         ) -> Result<
             crate::input::DescribeDirectConnectGatewayAssociationsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(
                 crate::input::DescribeDirectConnectGatewayAssociationsInput {
@@ -6792,13 +6888,13 @@ impl DescribeDirectConnectGatewayAssociationsInput {
             crate::operation::DescribeDirectConnectGatewayAssociations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeDirectConnectGatewayAssociationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6806,8 +6902,10 @@ impl DescribeDirectConnectGatewayAssociationsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeDirectConnectGatewayAssociationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6895,7 +6993,7 @@ impl DescribeDirectConnectGatewayAssociationsInput {
 pub mod describe_direct_connect_gateway_attachments_input {
 
     /// A builder for [`DescribeDirectConnectGatewayAttachmentsInput`](crate::input::DescribeDirectConnectGatewayAttachmentsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_id: std::option::Option<std::string::String>,
         pub(crate) virtual_interface_id: std::option::Option<std::string::String>,
@@ -6956,7 +7054,7 @@ pub mod describe_direct_connect_gateway_attachments_input {
             self,
         ) -> Result<
             crate::input::DescribeDirectConnectGatewayAttachmentsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeDirectConnectGatewayAttachmentsInput {
                 direct_connect_gateway_id: self.direct_connect_gateway_id,
@@ -6980,13 +7078,13 @@ impl DescribeDirectConnectGatewayAttachmentsInput {
             crate::operation::DescribeDirectConnectGatewayAttachments,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeDirectConnectGatewayAttachmentsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6994,8 +7092,10 @@ impl DescribeDirectConnectGatewayAttachmentsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeDirectConnectGatewayAttachmentsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7083,7 +7183,7 @@ impl DescribeDirectConnectGatewayAttachmentsInput {
 pub mod describe_direct_connect_gateways_input {
 
     /// A builder for [`DescribeDirectConnectGatewaysInput`](crate::input::DescribeDirectConnectGatewaysInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -7130,7 +7230,7 @@ pub mod describe_direct_connect_gateways_input {
             self,
         ) -> Result<
             crate::input::DescribeDirectConnectGatewaysInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeDirectConnectGatewaysInput {
                 direct_connect_gateway_id: self.direct_connect_gateway_id,
@@ -7153,13 +7253,13 @@ impl DescribeDirectConnectGatewaysInput {
             crate::operation::DescribeDirectConnectGateways,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeDirectConnectGatewaysInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7167,8 +7267,10 @@ impl DescribeDirectConnectGatewaysInput {
             fn update_http_builder(
                 input: &crate::input::DescribeDirectConnectGatewaysInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7256,7 +7358,7 @@ impl DescribeDirectConnectGatewaysInput {
 pub mod describe_hosted_connections_input {
 
     /// A builder for [`DescribeHostedConnectionsInput`](crate::input::DescribeHostedConnectionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
     }
@@ -7279,7 +7381,7 @@ pub mod describe_hosted_connections_input {
             self,
         ) -> Result<
             crate::input::DescribeHostedConnectionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeHostedConnectionsInput {
                 connection_id: self.connection_id,
@@ -7300,13 +7402,13 @@ impl DescribeHostedConnectionsInput {
             crate::operation::DescribeHostedConnections,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeHostedConnectionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7314,8 +7416,10 @@ impl DescribeHostedConnectionsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeHostedConnectionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7406,7 +7510,7 @@ impl DescribeHostedConnectionsInput {
 pub mod describe_interconnect_loa_input {
 
     /// A builder for [`DescribeInterconnectLoaInput`](crate::input::DescribeInterconnectLoaInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interconnect_id: std::option::Option<std::string::String>,
         pub(crate) provider_name: std::option::Option<std::string::String>,
@@ -7457,7 +7561,7 @@ pub mod describe_interconnect_loa_input {
             self,
         ) -> Result<
             crate::input::DescribeInterconnectLoaInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeInterconnectLoaInput {
                 interconnect_id: self.interconnect_id,
@@ -7480,13 +7584,13 @@ impl DescribeInterconnectLoaInput {
             crate::operation::DescribeInterconnectLoa,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeInterconnectLoaInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7494,8 +7598,10 @@ impl DescribeInterconnectLoaInput {
             fn update_http_builder(
                 input: &crate::input::DescribeInterconnectLoaInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7586,7 +7692,7 @@ impl DescribeInterconnectLoaInput {
 pub mod describe_interconnects_input {
 
     /// A builder for [`DescribeInterconnectsInput`](crate::input::DescribeInterconnectsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interconnect_id: std::option::Option<std::string::String>,
     }
@@ -7607,8 +7713,10 @@ pub mod describe_interconnects_input {
         /// Consumes the builder and constructs a [`DescribeInterconnectsInput`](crate::input::DescribeInterconnectsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeInterconnectsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeInterconnectsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeInterconnectsInput {
                 interconnect_id: self.interconnect_id,
             })
@@ -7628,13 +7736,13 @@ impl DescribeInterconnectsInput {
             crate::operation::DescribeInterconnects,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeInterconnectsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7642,8 +7750,10 @@ impl DescribeInterconnectsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeInterconnectsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7734,7 +7844,7 @@ impl DescribeInterconnectsInput {
 pub mod describe_lags_input {
 
     /// A builder for [`DescribeLagsInput`](crate::input::DescribeLagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lag_id: std::option::Option<std::string::String>,
     }
@@ -7752,7 +7862,7 @@ pub mod describe_lags_input {
         /// Consumes the builder and constructs a [`DescribeLagsInput`](crate::input::DescribeLagsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeLagsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeLagsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeLagsInput {
                 lag_id: self.lag_id,
@@ -7773,13 +7883,13 @@ impl DescribeLagsInput {
             crate::operation::DescribeLags,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeLagsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7787,8 +7897,10 @@ impl DescribeLagsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeLagsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7877,7 +7989,7 @@ impl DescribeLagsInput {
 pub mod describe_loa_input {
 
     /// A builder for [`DescribeLoaInput`](crate::input::DescribeLoaInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
         pub(crate) provider_name: std::option::Option<std::string::String>,
@@ -7926,7 +8038,7 @@ pub mod describe_loa_input {
         /// Consumes the builder and constructs a [`DescribeLoaInput`](crate::input::DescribeLoaInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeLoaInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeLoaInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeLoaInput {
                 connection_id: self.connection_id,
@@ -7949,13 +8061,13 @@ impl DescribeLoaInput {
             crate::operation::DescribeLoa,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeLoaInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7963,8 +8075,10 @@ impl DescribeLoaInput {
             fn update_http_builder(
                 input: &crate::input::DescribeLoaInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8053,14 +8167,16 @@ impl DescribeLoaInput {
 pub mod describe_locations_input {
 
     /// A builder for [`DescribeLocationsInput`](crate::input::DescribeLocationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DescribeLocationsInput`](crate::input::DescribeLocationsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeLocationsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeLocationsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeLocationsInput {})
         }
     }
@@ -8078,13 +8194,13 @@ impl DescribeLocationsInput {
             crate::operation::DescribeLocations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeLocationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -8092,8 +8208,10 @@ impl DescribeLocationsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeLocationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8175,7 +8293,7 @@ impl DescribeLocationsInput {
 pub mod describe_router_configuration_input {
 
     /// A builder for [`DescribeRouterConfigurationInput`](crate::input::DescribeRouterConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_id: std::option::Option<std::string::String>,
         pub(crate) router_type_identifier: std::option::Option<std::string::String>,
@@ -8212,7 +8330,7 @@ pub mod describe_router_configuration_input {
             self,
         ) -> Result<
             crate::input::DescribeRouterConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeRouterConfigurationInput {
                 virtual_interface_id: self.virtual_interface_id,
@@ -8234,13 +8352,13 @@ impl DescribeRouterConfigurationInput {
             crate::operation::DescribeRouterConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeRouterConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -8248,8 +8366,10 @@ impl DescribeRouterConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::DescribeRouterConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8337,7 +8457,7 @@ impl DescribeRouterConfigurationInput {
 pub mod describe_tags_input {
 
     /// A builder for [`DescribeTagsInput`](crate::input::DescribeTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -8364,7 +8484,7 @@ pub mod describe_tags_input {
         /// Consumes the builder and constructs a [`DescribeTagsInput`](crate::input::DescribeTagsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeTagsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeTagsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeTagsInput {
                 resource_arns: self.resource_arns,
@@ -8385,13 +8505,13 @@ impl DescribeTagsInput {
             crate::operation::DescribeTags,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeTagsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -8399,8 +8519,10 @@ impl DescribeTagsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeTagsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8489,7 +8611,7 @@ impl DescribeTagsInput {
 pub mod describe_virtual_gateways_input {
 
     /// A builder for [`DescribeVirtualGatewaysInput`](crate::input::DescribeVirtualGatewaysInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DescribeVirtualGatewaysInput`](crate::input::DescribeVirtualGatewaysInput).
@@ -8497,7 +8619,7 @@ pub mod describe_virtual_gateways_input {
             self,
         ) -> Result<
             crate::input::DescribeVirtualGatewaysInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeVirtualGatewaysInput {})
         }
@@ -8516,13 +8638,13 @@ impl DescribeVirtualGatewaysInput {
             crate::operation::DescribeVirtualGateways,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeVirtualGatewaysInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -8530,8 +8652,10 @@ impl DescribeVirtualGatewaysInput {
             fn update_http_builder(
                 input: &crate::input::DescribeVirtualGatewaysInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8615,7 +8739,7 @@ impl DescribeVirtualGatewaysInput {
 pub mod describe_virtual_interfaces_input {
 
     /// A builder for [`DescribeVirtualInterfacesInput`](crate::input::DescribeVirtualInterfacesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
         pub(crate) virtual_interface_id: std::option::Option<std::string::String>,
@@ -8652,7 +8776,7 @@ pub mod describe_virtual_interfaces_input {
             self,
         ) -> Result<
             crate::input::DescribeVirtualInterfacesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeVirtualInterfacesInput {
                 connection_id: self.connection_id,
@@ -8674,13 +8798,13 @@ impl DescribeVirtualInterfacesInput {
             crate::operation::DescribeVirtualInterfaces,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeVirtualInterfacesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -8688,8 +8812,10 @@ impl DescribeVirtualInterfacesInput {
             fn update_http_builder(
                 input: &crate::input::DescribeVirtualInterfacesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8780,7 +8906,7 @@ impl DescribeVirtualInterfacesInput {
 pub mod disassociate_connection_from_lag_input {
 
     /// A builder for [`DisassociateConnectionFromLagInput`](crate::input::DisassociateConnectionFromLagInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
         pub(crate) lag_id: std::option::Option<std::string::String>,
@@ -8814,7 +8940,7 @@ pub mod disassociate_connection_from_lag_input {
             self,
         ) -> Result<
             crate::input::DisassociateConnectionFromLagInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DisassociateConnectionFromLagInput {
                 connection_id: self.connection_id,
@@ -8836,13 +8962,13 @@ impl DisassociateConnectionFromLagInput {
             crate::operation::DisassociateConnectionFromLag,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisassociateConnectionFromLagInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -8850,8 +8976,10 @@ impl DisassociateConnectionFromLagInput {
             fn update_http_builder(
                 input: &crate::input::DisassociateConnectionFromLagInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8939,7 +9067,7 @@ impl DisassociateConnectionFromLagInput {
 pub mod disassociate_mac_sec_key_input {
 
     /// A builder for [`DisassociateMacSecKeyInput`](crate::input::DisassociateMacSecKeyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
         pub(crate) secret_arn: std::option::Option<std::string::String>,
@@ -8975,8 +9103,10 @@ pub mod disassociate_mac_sec_key_input {
         /// Consumes the builder and constructs a [`DisassociateMacSecKeyInput`](crate::input::DisassociateMacSecKeyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DisassociateMacSecKeyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DisassociateMacSecKeyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DisassociateMacSecKeyInput {
                 connection_id: self.connection_id,
                 secret_arn: self.secret_arn,
@@ -8997,13 +9127,13 @@ impl DisassociateMacSecKeyInput {
             crate::operation::DisassociateMacSecKey,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisassociateMacSecKeyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -9011,8 +9141,10 @@ impl DisassociateMacSecKeyInput {
             fn update_http_builder(
                 input: &crate::input::DisassociateMacSecKeyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -9103,7 +9235,7 @@ impl DisassociateMacSecKeyInput {
 pub mod list_virtual_interface_test_history_input {
 
     /// A builder for [`ListVirtualInterfaceTestHistoryInput`](crate::input::ListVirtualInterfaceTestHistoryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) test_id: std::option::Option<std::string::String>,
         pub(crate) virtual_interface_id: std::option::Option<std::string::String>,
@@ -9192,7 +9324,7 @@ pub mod list_virtual_interface_test_history_input {
             self,
         ) -> Result<
             crate::input::ListVirtualInterfaceTestHistoryInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListVirtualInterfaceTestHistoryInput {
                 test_id: self.test_id,
@@ -9218,13 +9350,13 @@ impl ListVirtualInterfaceTestHistoryInput {
             crate::operation::ListVirtualInterfaceTestHistory,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListVirtualInterfaceTestHistoryInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -9232,8 +9364,10 @@ impl ListVirtualInterfaceTestHistoryInput {
             fn update_http_builder(
                 input: &crate::input::ListVirtualInterfaceTestHistoryInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -9321,7 +9455,7 @@ impl ListVirtualInterfaceTestHistoryInput {
 pub mod start_bgp_failover_test_input {
 
     /// A builder for [`StartBgpFailoverTestInput`](crate::input::StartBgpFailoverTestInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_id: std::option::Option<std::string::String>,
         pub(crate) bgp_peers: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9377,8 +9511,10 @@ pub mod start_bgp_failover_test_input {
         /// Consumes the builder and constructs a [`StartBgpFailoverTestInput`](crate::input::StartBgpFailoverTestInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StartBgpFailoverTestInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::StartBgpFailoverTestInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::StartBgpFailoverTestInput {
                 virtual_interface_id: self.virtual_interface_id,
                 bgp_peers: self.bgp_peers,
@@ -9400,13 +9536,13 @@ impl StartBgpFailoverTestInput {
             crate::operation::StartBgpFailoverTest,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StartBgpFailoverTestInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -9414,8 +9550,10 @@ impl StartBgpFailoverTestInput {
             fn update_http_builder(
                 input: &crate::input::StartBgpFailoverTestInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -9506,7 +9644,7 @@ impl StartBgpFailoverTestInput {
 pub mod stop_bgp_failover_test_input {
 
     /// A builder for [`StopBgpFailoverTestInput`](crate::input::StopBgpFailoverTestInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_id: std::option::Option<std::string::String>,
     }
@@ -9527,8 +9665,10 @@ pub mod stop_bgp_failover_test_input {
         /// Consumes the builder and constructs a [`StopBgpFailoverTestInput`](crate::input::StopBgpFailoverTestInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StopBgpFailoverTestInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::StopBgpFailoverTestInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::StopBgpFailoverTestInput {
                 virtual_interface_id: self.virtual_interface_id,
             })
@@ -9548,13 +9688,13 @@ impl StopBgpFailoverTestInput {
             crate::operation::StopBgpFailoverTest,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StopBgpFailoverTestInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -9562,8 +9702,10 @@ impl StopBgpFailoverTestInput {
             fn update_http_builder(
                 input: &crate::input::StopBgpFailoverTestInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -9654,7 +9796,7 @@ impl StopBgpFailoverTestInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -9692,7 +9834,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
@@ -9714,13 +9856,13 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -9728,8 +9870,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -9818,7 +9962,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9856,7 +10000,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
@@ -9878,13 +10022,13 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -9892,8 +10036,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -9982,7 +10128,7 @@ impl UntagResourceInput {
 pub mod update_connection_input {
 
     /// A builder for [`UpdateConnectionInput`](crate::input::UpdateConnectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
         pub(crate) connection_name: std::option::Option<std::string::String>,
@@ -10035,8 +10181,10 @@ pub mod update_connection_input {
         /// Consumes the builder and constructs a [`UpdateConnectionInput`](crate::input::UpdateConnectionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateConnectionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateConnectionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateConnectionInput {
                 connection_id: self.connection_id,
                 connection_name: self.connection_name,
@@ -10058,13 +10206,13 @@ impl UpdateConnectionInput {
             crate::operation::UpdateConnection,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateConnectionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -10072,8 +10220,10 @@ impl UpdateConnectionInput {
             fn update_http_builder(
                 input: &crate::input::UpdateConnectionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -10162,7 +10312,7 @@ impl UpdateConnectionInput {
 pub mod update_direct_connect_gateway_input {
 
     /// A builder for [`UpdateDirectConnectGatewayInput`](crate::input::UpdateDirectConnectGatewayInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_id: std::option::Option<std::string::String>,
         pub(crate) new_direct_connect_gateway_name: std::option::Option<std::string::String>,
@@ -10202,7 +10352,7 @@ pub mod update_direct_connect_gateway_input {
             self,
         ) -> Result<
             crate::input::UpdateDirectConnectGatewayInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateDirectConnectGatewayInput {
                 direct_connect_gateway_id: self.direct_connect_gateway_id,
@@ -10224,13 +10374,13 @@ impl UpdateDirectConnectGatewayInput {
             crate::operation::UpdateDirectConnectGateway,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateDirectConnectGatewayInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -10238,8 +10388,10 @@ impl UpdateDirectConnectGatewayInput {
             fn update_http_builder(
                 input: &crate::input::UpdateDirectConnectGatewayInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -10327,7 +10479,7 @@ impl UpdateDirectConnectGatewayInput {
 pub mod update_direct_connect_gateway_association_input {
 
     /// A builder for [`UpdateDirectConnectGatewayAssociationInput`](crate::input::UpdateDirectConnectGatewayAssociationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_id: std::option::Option<std::string::String>,
         pub(crate) add_allowed_prefixes_to_direct_connect_gateway:
@@ -10402,7 +10554,7 @@ pub mod update_direct_connect_gateway_association_input {
             self,
         ) -> Result<
             crate::input::UpdateDirectConnectGatewayAssociationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateDirectConnectGatewayAssociationInput {
                 association_id: self.association_id,
@@ -10427,13 +10579,13 @@ impl UpdateDirectConnectGatewayAssociationInput {
             crate::operation::UpdateDirectConnectGatewayAssociation,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateDirectConnectGatewayAssociationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -10441,8 +10593,10 @@ impl UpdateDirectConnectGatewayAssociationInput {
             fn update_http_builder(
                 input: &crate::input::UpdateDirectConnectGatewayAssociationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -10530,7 +10684,7 @@ impl UpdateDirectConnectGatewayAssociationInput {
 pub mod update_lag_input {
 
     /// A builder for [`UpdateLagInput`](crate::input::UpdateLagInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lag_id: std::option::Option<std::string::String>,
         pub(crate) lag_name: std::option::Option<std::string::String>,
@@ -10586,7 +10740,8 @@ pub mod update_lag_input {
         /// Consumes the builder and constructs a [`UpdateLagInput`](crate::input::UpdateLagInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateLagInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::UpdateLagInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::UpdateLagInput {
                 lag_id: self.lag_id,
                 lag_name: self.lag_name,
@@ -10609,13 +10764,13 @@ impl UpdateLagInput {
             crate::operation::UpdateLag,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateLagInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -10623,8 +10778,10 @@ impl UpdateLagInput {
             fn update_http_builder(
                 input: &crate::input::UpdateLagInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -10711,7 +10868,7 @@ impl UpdateLagInput {
 pub mod update_virtual_interface_attributes_input {
 
     /// A builder for [`UpdateVirtualInterfaceAttributesInput`](crate::input::UpdateVirtualInterfaceAttributesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_id: std::option::Option<std::string::String>,
         pub(crate) mtu: std::option::Option<i32>,
@@ -10770,7 +10927,7 @@ pub mod update_virtual_interface_attributes_input {
             self,
         ) -> Result<
             crate::input::UpdateVirtualInterfaceAttributesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateVirtualInterfaceAttributesInput {
                 virtual_interface_id: self.virtual_interface_id,
@@ -10794,13 +10951,13 @@ impl UpdateVirtualInterfaceAttributesInput {
             crate::operation::UpdateVirtualInterfaceAttributes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateVirtualInterfaceAttributesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -10808,8 +10965,10 @@ impl UpdateVirtualInterfaceAttributesInput {
             fn update_http_builder(
                 input: &crate::input::UpdateVirtualInterfaceAttributesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -10895,7 +11054,7 @@ impl UpdateVirtualInterfaceAttributesInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateVirtualInterfaceAttributesInput {
     /// <p>The ID of the virtual private interface.</p>
     #[doc(hidden)]
@@ -10928,20 +11087,10 @@ impl UpdateVirtualInterfaceAttributesInput {
         self.virtual_interface_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateVirtualInterfaceAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateVirtualInterfaceAttributesInput");
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.field("mtu", &self.mtu);
-        formatter.field("enable_site_link", &self.enable_site_link);
-        formatter.field("virtual_interface_name", &self.virtual_interface_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLagInput {
     /// <p>The ID of the LAG.</p>
     #[doc(hidden)]
@@ -10976,20 +11125,10 @@ impl UpdateLagInput {
         self.encryption_mode.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateLagInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLagInput");
-        formatter.field("lag_id", &self.lag_id);
-        formatter.field("lag_name", &self.lag_name);
-        formatter.field("minimum_links", &self.minimum_links);
-        formatter.field("encryption_mode", &self.encryption_mode);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDirectConnectGatewayAssociationInput {
     /// <p>The ID of the Direct Connect gateway association.</p>
     #[doc(hidden)]
@@ -11023,25 +11162,10 @@ impl UpdateDirectConnectGatewayAssociationInput {
             .as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDirectConnectGatewayAssociationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDirectConnectGatewayAssociationInput");
-        formatter.field("association_id", &self.association_id);
-        formatter.field(
-            "add_allowed_prefixes_to_direct_connect_gateway",
-            &self.add_allowed_prefixes_to_direct_connect_gateway,
-        );
-        formatter.field(
-            "remove_allowed_prefixes_to_direct_connect_gateway",
-            &self.remove_allowed_prefixes_to_direct_connect_gateway,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDirectConnectGatewayInput {
     /// <p>The ID of the Direct Connect gateway to update.</p>
     #[doc(hidden)]
@@ -11060,21 +11184,10 @@ impl UpdateDirectConnectGatewayInput {
         self.new_direct_connect_gateway_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDirectConnectGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDirectConnectGatewayInput");
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.field(
-            "new_direct_connect_gateway_name",
-            &self.new_direct_connect_gateway_name,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConnectionInput {
     /// <p>The ID of the dedicated connection.</p>
     /// <p>You can use <code>DescribeConnections</code> to retrieve the connection ID.</p>
@@ -11104,19 +11217,10 @@ impl UpdateConnectionInput {
         self.encryption_mode.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConnectionInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("connection_name", &self.connection_name);
-        formatter.field("encryption_mode", &self.encryption_mode);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -11135,18 +11239,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -11165,18 +11261,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopBgpFailoverTestInput {
     /// <p>The ID of the virtual interface you no longer want to test.</p>
     #[doc(hidden)]
@@ -11188,17 +11276,10 @@ impl StopBgpFailoverTestInput {
         self.virtual_interface_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopBgpFailoverTestInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopBgpFailoverTestInput");
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartBgpFailoverTestInput {
     /// <p>The ID of the virtual interface you want to test.</p>
     #[doc(hidden)]
@@ -11228,19 +11309,10 @@ impl StartBgpFailoverTestInput {
         self.test_duration_in_minutes
     }
 }
-impl std::fmt::Debug for StartBgpFailoverTestInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartBgpFailoverTestInput");
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.field("bgp_peers", &self.bgp_peers);
-        formatter.field("test_duration_in_minutes", &self.test_duration_in_minutes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVirtualInterfaceTestHistoryInput {
     /// <p>The ID of the virtual interface failover test.</p>
     #[doc(hidden)]
@@ -11289,22 +11361,10 @@ impl ListVirtualInterfaceTestHistoryInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListVirtualInterfaceTestHistoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVirtualInterfaceTestHistoryInput");
-        formatter.field("test_id", &self.test_id);
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.field("bgp_peers", &self.bgp_peers);
-        formatter.field("status", &self.status);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateMacSecKeyInput {
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
     /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
@@ -11327,18 +11387,10 @@ impl DisassociateMacSecKeyInput {
         self.secret_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateMacSecKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateMacSecKeyInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("secret_arn", &self.secret_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateConnectionFromLagInput {
     /// <p>The ID of the connection.</p>
     #[doc(hidden)]
@@ -11357,18 +11409,10 @@ impl DisassociateConnectionFromLagInput {
         self.lag_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateConnectionFromLagInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateConnectionFromLagInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("lag_id", &self.lag_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeVirtualInterfacesInput {
     /// <p>The ID of the connection.</p>
     #[doc(hidden)]
@@ -11387,29 +11431,15 @@ impl DescribeVirtualInterfacesInput {
         self.virtual_interface_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeVirtualInterfacesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeVirtualInterfacesInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeVirtualGatewaysInput {}
-impl std::fmt::Debug for DescribeVirtualGatewaysInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeVirtualGatewaysInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTagsInput {
     /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
     #[doc(hidden)]
@@ -11421,17 +11451,10 @@ impl DescribeTagsInput {
         self.resource_arns.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTagsInput");
-        formatter.field("resource_arns", &self.resource_arns);
-        formatter.finish()
-    }
-}
 
 /// <p>Provides the details about a virtual interface's router.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRouterConfigurationInput {
     /// <p>The ID of the virtual interface.</p>
     #[doc(hidden)]
@@ -11450,29 +11473,15 @@ impl DescribeRouterConfigurationInput {
         self.router_type_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeRouterConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRouterConfigurationInput");
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.field("router_type_identifier", &self.router_type_identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLocationsInput {}
-impl std::fmt::Debug for DescribeLocationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLocationsInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLoaInput {
     /// <p>The ID of a connection, LAG, or interconnect.</p>
     #[doc(hidden)]
@@ -11498,19 +11507,10 @@ impl DescribeLoaInput {
         self.loa_content_type.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeLoaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLoaInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("provider_name", &self.provider_name);
-        formatter.field("loa_content_type", &self.loa_content_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLagsInput {
     /// <p>The ID of the LAG.</p>
     #[doc(hidden)]
@@ -11522,17 +11522,10 @@ impl DescribeLagsInput {
         self.lag_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLagsInput");
-        formatter.field("lag_id", &self.lag_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInterconnectsInput {
     /// <p>The ID of the interconnect.</p>
     #[doc(hidden)]
@@ -11544,17 +11537,10 @@ impl DescribeInterconnectsInput {
         self.interconnect_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeInterconnectsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInterconnectsInput");
-        formatter.field("interconnect_id", &self.interconnect_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInterconnectLoaInput {
     /// <p>The ID of the interconnect.</p>
     #[doc(hidden)]
@@ -11580,19 +11566,10 @@ impl DescribeInterconnectLoaInput {
         self.loa_content_type.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeInterconnectLoaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInterconnectLoaInput");
-        formatter.field("interconnect_id", &self.interconnect_id);
-        formatter.field("provider_name", &self.provider_name);
-        formatter.field("loa_content_type", &self.loa_content_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeHostedConnectionsInput {
     /// <p>The ID of the interconnect or LAG.</p>
     #[doc(hidden)]
@@ -11604,17 +11581,10 @@ impl DescribeHostedConnectionsInput {
         self.connection_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeHostedConnectionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeHostedConnectionsInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDirectConnectGatewaysInput {
     /// <p>The ID of the Direct Connect gateway.</p>
     #[doc(hidden)]
@@ -11642,19 +11612,10 @@ impl DescribeDirectConnectGatewaysInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDirectConnectGatewaysInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDirectConnectGatewaysInput");
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDirectConnectGatewayAttachmentsInput {
     /// <p>The ID of the Direct Connect gateway.</p>
     #[doc(hidden)]
@@ -11689,20 +11650,10 @@ impl DescribeDirectConnectGatewayAttachmentsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDirectConnectGatewayAttachmentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDirectConnectGatewayAttachmentsInput");
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDirectConnectGatewayAssociationsInput {
     /// <p>The ID of the Direct Connect gateway association.</p>
     #[doc(hidden)]
@@ -11751,22 +11702,10 @@ impl DescribeDirectConnectGatewayAssociationsInput {
         self.virtual_gateway_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDirectConnectGatewayAssociationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDirectConnectGatewayAssociationsInput");
-        formatter.field("association_id", &self.association_id);
-        formatter.field("associated_gateway_id", &self.associated_gateway_id);
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("virtual_gateway_id", &self.virtual_gateway_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDirectConnectGatewayAssociationProposalsInput {
     /// <p>The ID of the Direct Connect gateway.</p>
     #[doc(hidden)]
@@ -11808,32 +11747,15 @@ impl DescribeDirectConnectGatewayAssociationProposalsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDirectConnectGatewayAssociationProposalsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDirectConnectGatewayAssociationProposalsInput");
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.field("proposal_id", &self.proposal_id);
-        formatter.field("associated_gateway_id", &self.associated_gateway_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCustomerMetadataInput {}
-impl std::fmt::Debug for DescribeCustomerMetadataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCustomerMetadataInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConnectionsOnInterconnectInput {
     /// <p>The ID of the interconnect.</p>
     #[doc(hidden)]
@@ -11845,17 +11767,10 @@ impl DescribeConnectionsOnInterconnectInput {
         self.interconnect_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeConnectionsOnInterconnectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConnectionsOnInterconnectInput");
-        formatter.field("interconnect_id", &self.interconnect_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConnectionsInput {
     /// <p>The ID of the connection.</p>
     #[doc(hidden)]
@@ -11867,17 +11782,10 @@ impl DescribeConnectionsInput {
         self.connection_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeConnectionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConnectionsInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConnectionLoaInput {
     /// <p>The ID of the connection.</p>
     #[doc(hidden)]
@@ -11903,19 +11811,10 @@ impl DescribeConnectionLoaInput {
         self.loa_content_type.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeConnectionLoaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConnectionLoaInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("provider_name", &self.provider_name);
-        formatter.field("loa_content_type", &self.loa_content_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVirtualInterfaceInput {
     /// <p>The ID of the virtual interface.</p>
     #[doc(hidden)]
@@ -11927,17 +11826,10 @@ impl DeleteVirtualInterfaceInput {
         self.virtual_interface_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteVirtualInterfaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVirtualInterfaceInput");
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLagInput {
     /// <p>The ID of the LAG.</p>
     #[doc(hidden)]
@@ -11949,17 +11841,10 @@ impl DeleteLagInput {
         self.lag_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLagInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLagInput");
-        formatter.field("lag_id", &self.lag_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteInterconnectInput {
     /// <p>The ID of the interconnect.</p>
     #[doc(hidden)]
@@ -11971,17 +11856,10 @@ impl DeleteInterconnectInput {
         self.interconnect_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteInterconnectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteInterconnectInput");
-        formatter.field("interconnect_id", &self.interconnect_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDirectConnectGatewayAssociationProposalInput {
     /// <p>The ID of the proposal.</p>
     #[doc(hidden)]
@@ -11993,17 +11871,10 @@ impl DeleteDirectConnectGatewayAssociationProposalInput {
         self.proposal_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDirectConnectGatewayAssociationProposalInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDirectConnectGatewayAssociationProposalInput");
-        formatter.field("proposal_id", &self.proposal_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDirectConnectGatewayAssociationInput {
     /// <p>The ID of the Direct Connect gateway association.</p>
     #[doc(hidden)]
@@ -12029,19 +11900,10 @@ impl DeleteDirectConnectGatewayAssociationInput {
         self.virtual_gateway_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDirectConnectGatewayAssociationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDirectConnectGatewayAssociationInput");
-        formatter.field("association_id", &self.association_id);
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.field("virtual_gateway_id", &self.virtual_gateway_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDirectConnectGatewayInput {
     /// <p>The ID of the Direct Connect gateway.</p>
     #[doc(hidden)]
@@ -12053,17 +11915,10 @@ impl DeleteDirectConnectGatewayInput {
         self.direct_connect_gateway_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDirectConnectGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDirectConnectGatewayInput");
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConnectionInput {
     /// <p>The ID of the connection.</p>
     #[doc(hidden)]
@@ -12075,17 +11930,10 @@ impl DeleteConnectionInput {
         self.connection_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConnectionInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBgpPeerInput {
     /// <p>The ID of the virtual interface.</p>
     #[doc(hidden)]
@@ -12118,20 +11966,10 @@ impl DeleteBgpPeerInput {
         self.bgp_peer_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBgpPeerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBgpPeerInput");
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.field("asn", &self.asn);
-        formatter.field("customer_address", &self.customer_address);
-        formatter.field("bgp_peer_id", &self.bgp_peer_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTransitVirtualInterfaceInput {
     /// <p>The ID of the connection.</p>
     #[doc(hidden)]
@@ -12153,21 +11991,10 @@ impl CreateTransitVirtualInterfaceInput {
         self.new_transit_virtual_interface.as_ref()
     }
 }
-impl std::fmt::Debug for CreateTransitVirtualInterfaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTransitVirtualInterfaceInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field(
-            "new_transit_virtual_interface",
-            &self.new_transit_virtual_interface,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePublicVirtualInterfaceInput {
     /// <p>The ID of the connection.</p>
     #[doc(hidden)]
@@ -12188,21 +12015,10 @@ impl CreatePublicVirtualInterfaceInput {
         self.new_public_virtual_interface.as_ref()
     }
 }
-impl std::fmt::Debug for CreatePublicVirtualInterfaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePublicVirtualInterfaceInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field(
-            "new_public_virtual_interface",
-            &self.new_public_virtual_interface,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePrivateVirtualInterfaceInput {
     /// <p>The ID of the connection.</p>
     #[doc(hidden)]
@@ -12224,21 +12040,10 @@ impl CreatePrivateVirtualInterfaceInput {
         self.new_private_virtual_interface.as_ref()
     }
 }
-impl std::fmt::Debug for CreatePrivateVirtualInterfaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePrivateVirtualInterfaceInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field(
-            "new_private_virtual_interface",
-            &self.new_private_virtual_interface,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLagInput {
     /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG.</p>
     #[doc(hidden)]
@@ -12310,25 +12115,10 @@ impl CreateLagInput {
         self.request_mac_sec
     }
 }
-impl std::fmt::Debug for CreateLagInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLagInput");
-        formatter.field("number_of_connections", &self.number_of_connections);
-        formatter.field("location", &self.location);
-        formatter.field("connections_bandwidth", &self.connections_bandwidth);
-        formatter.field("lag_name", &self.lag_name);
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("tags", &self.tags);
-        formatter.field("child_connection_tags", &self.child_connection_tags);
-        formatter.field("provider_name", &self.provider_name);
-        formatter.field("request_mac_sec", &self.request_mac_sec);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateInterconnectInput {
     /// <p>The name of the interconnect.</p>
     #[doc(hidden)]
@@ -12375,22 +12165,10 @@ impl CreateInterconnectInput {
         self.provider_name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateInterconnectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateInterconnectInput");
-        formatter.field("interconnect_name", &self.interconnect_name);
-        formatter.field("bandwidth", &self.bandwidth);
-        formatter.field("location", &self.location);
-        formatter.field("lag_id", &self.lag_id);
-        formatter.field("tags", &self.tags);
-        formatter.field("provider_name", &self.provider_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDirectConnectGatewayAssociationProposalInput {
     /// <p>The ID of the Direct Connect gateway.</p>
     #[doc(hidden)]
@@ -12438,30 +12216,10 @@ impl CreateDirectConnectGatewayAssociationProposalInput {
             .as_deref()
     }
 }
-impl std::fmt::Debug for CreateDirectConnectGatewayAssociationProposalInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDirectConnectGatewayAssociationProposalInput");
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.field(
-            "direct_connect_gateway_owner_account",
-            &self.direct_connect_gateway_owner_account,
-        );
-        formatter.field("gateway_id", &self.gateway_id);
-        formatter.field(
-            "add_allowed_prefixes_to_direct_connect_gateway",
-            &self.add_allowed_prefixes_to_direct_connect_gateway,
-        );
-        formatter.field(
-            "remove_allowed_prefixes_to_direct_connect_gateway",
-            &self.remove_allowed_prefixes_to_direct_connect_gateway,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDirectConnectGatewayAssociationInput {
     /// <p>The ID of the Direct Connect gateway.</p>
     #[doc(hidden)]
@@ -12502,23 +12260,10 @@ impl CreateDirectConnectGatewayAssociationInput {
         self.virtual_gateway_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDirectConnectGatewayAssociationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDirectConnectGatewayAssociationInput");
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.field("gateway_id", &self.gateway_id);
-        formatter.field(
-            "add_allowed_prefixes_to_direct_connect_gateway",
-            &self.add_allowed_prefixes_to_direct_connect_gateway,
-        );
-        formatter.field("virtual_gateway_id", &self.virtual_gateway_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDirectConnectGatewayInput {
     /// <p>The name of the Direct Connect gateway.</p>
     #[doc(hidden)]
@@ -12537,21 +12282,10 @@ impl CreateDirectConnectGatewayInput {
         self.amazon_side_asn
     }
 }
-impl std::fmt::Debug for CreateDirectConnectGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDirectConnectGatewayInput");
-        formatter.field(
-            "direct_connect_gateway_name",
-            &self.direct_connect_gateway_name,
-        );
-        formatter.field("amazon_side_asn", &self.amazon_side_asn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConnectionInput {
     /// <p>The location of the connection.</p>
     #[doc(hidden)]
@@ -12607,23 +12341,10 @@ impl CreateConnectionInput {
         self.request_mac_sec
     }
 }
-impl std::fmt::Debug for CreateConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConnectionInput");
-        formatter.field("location", &self.location);
-        formatter.field("bandwidth", &self.bandwidth);
-        formatter.field("connection_name", &self.connection_name);
-        formatter.field("lag_id", &self.lag_id);
-        formatter.field("tags", &self.tags);
-        formatter.field("provider_name", &self.provider_name);
-        formatter.field("request_mac_sec", &self.request_mac_sec);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBgpPeerInput {
     /// <p>The ID of the virtual interface.</p>
     #[doc(hidden)]
@@ -12642,18 +12363,10 @@ impl CreateBgpPeerInput {
         self.new_bgp_peer.as_ref()
     }
 }
-impl std::fmt::Debug for CreateBgpPeerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBgpPeerInput");
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.field("new_bgp_peer", &self.new_bgp_peer);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfirmTransitVirtualInterfaceInput {
     /// <p>The ID of the virtual interface.</p>
     #[doc(hidden)]
@@ -12672,18 +12385,10 @@ impl ConfirmTransitVirtualInterfaceInput {
         self.direct_connect_gateway_id.as_deref()
     }
 }
-impl std::fmt::Debug for ConfirmTransitVirtualInterfaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfirmTransitVirtualInterfaceInput");
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfirmPublicVirtualInterfaceInput {
     /// <p>The ID of the virtual interface.</p>
     #[doc(hidden)]
@@ -12695,17 +12400,10 @@ impl ConfirmPublicVirtualInterfaceInput {
         self.virtual_interface_id.as_deref()
     }
 }
-impl std::fmt::Debug for ConfirmPublicVirtualInterfaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfirmPublicVirtualInterfaceInput");
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfirmPrivateVirtualInterfaceInput {
     /// <p>The ID of the virtual interface.</p>
     #[doc(hidden)]
@@ -12731,19 +12429,10 @@ impl ConfirmPrivateVirtualInterfaceInput {
         self.direct_connect_gateway_id.as_deref()
     }
 }
-impl std::fmt::Debug for ConfirmPrivateVirtualInterfaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfirmPrivateVirtualInterfaceInput");
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.field("virtual_gateway_id", &self.virtual_gateway_id);
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfirmCustomerAgreementInput {
     /// <p> The name of the customer agreement. </p>
     #[doc(hidden)]
@@ -12755,17 +12444,10 @@ impl ConfirmCustomerAgreementInput {
         self.agreement_name.as_deref()
     }
 }
-impl std::fmt::Debug for ConfirmCustomerAgreementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfirmCustomerAgreementInput");
-        formatter.field("agreement_name", &self.agreement_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfirmConnectionInput {
     /// <p>The ID of the hosted connection.</p>
     #[doc(hidden)]
@@ -12777,17 +12459,10 @@ impl ConfirmConnectionInput {
         self.connection_id.as_deref()
     }
 }
-impl std::fmt::Debug for ConfirmConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfirmConnectionInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateVirtualInterfaceInput {
     /// <p>The ID of the virtual interface.</p>
     #[doc(hidden)]
@@ -12806,18 +12481,10 @@ impl AssociateVirtualInterfaceInput {
         self.connection_id.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateVirtualInterfaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateVirtualInterfaceInput");
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.field("connection_id", &self.connection_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateMacSecKeyInput {
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
     /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
@@ -12868,20 +12535,10 @@ impl AssociateMacSecKeyInput {
         self.cak.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateMacSecKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateMacSecKeyInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("secret_arn", &self.secret_arn);
-        formatter.field("ckn", &self.ckn);
-        formatter.field("cak", &self.cak);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateHostedConnectionInput {
     /// <p>The ID of the hosted connection.</p>
     #[doc(hidden)]
@@ -12900,18 +12557,10 @@ impl AssociateHostedConnectionInput {
         self.parent_connection_id.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateHostedConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateHostedConnectionInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("parent_connection_id", &self.parent_connection_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateConnectionWithLagInput {
     /// <p>The ID of the connection.</p>
     #[doc(hidden)]
@@ -12930,18 +12579,10 @@ impl AssociateConnectionWithLagInput {
         self.lag_id.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateConnectionWithLagInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateConnectionWithLagInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("lag_id", &self.lag_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AllocateTransitVirtualInterfaceInput {
     /// <p>The ID of the connection on which the transit virtual interface is provisioned.</p>
     #[doc(hidden)]
@@ -12970,22 +12611,10 @@ impl AllocateTransitVirtualInterfaceInput {
         self.new_transit_virtual_interface_allocation.as_ref()
     }
 }
-impl std::fmt::Debug for AllocateTransitVirtualInterfaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AllocateTransitVirtualInterfaceInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field(
-            "new_transit_virtual_interface_allocation",
-            &self.new_transit_virtual_interface_allocation,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AllocatePublicVirtualInterfaceInput {
     /// <p>The ID of the connection on which the public virtual interface is provisioned.</p>
     #[doc(hidden)]
@@ -13014,22 +12643,10 @@ impl AllocatePublicVirtualInterfaceInput {
         self.new_public_virtual_interface_allocation.as_ref()
     }
 }
-impl std::fmt::Debug for AllocatePublicVirtualInterfaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AllocatePublicVirtualInterfaceInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field(
-            "new_public_virtual_interface_allocation",
-            &self.new_public_virtual_interface_allocation,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AllocatePrivateVirtualInterfaceInput {
     /// <p>The ID of the connection on which the private virtual interface is provisioned.</p>
     #[doc(hidden)]
@@ -13058,22 +12675,10 @@ impl AllocatePrivateVirtualInterfaceInput {
         self.new_private_virtual_interface_allocation.as_ref()
     }
 }
-impl std::fmt::Debug for AllocatePrivateVirtualInterfaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AllocatePrivateVirtualInterfaceInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field(
-            "new_private_virtual_interface_allocation",
-            &self.new_private_virtual_interface_allocation,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AllocateHostedConnectionInput {
     /// <p>The ID of the interconnect or LAG.</p>
     #[doc(hidden)]
@@ -13120,22 +12725,10 @@ impl AllocateHostedConnectionInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for AllocateHostedConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AllocateHostedConnectionInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field("bandwidth", &self.bandwidth);
-        formatter.field("connection_name", &self.connection_name);
-        formatter.field("vlan", &self.vlan);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AllocateConnectionOnInterconnectInput {
     /// <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met specific requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.</p>
     #[doc(hidden)]
@@ -13175,21 +12768,10 @@ impl AllocateConnectionOnInterconnectInput {
         self.vlan
     }
 }
-impl std::fmt::Debug for AllocateConnectionOnInterconnectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AllocateConnectionOnInterconnectInput");
-        formatter.field("bandwidth", &self.bandwidth);
-        formatter.field("connection_name", &self.connection_name);
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field("interconnect_id", &self.interconnect_id);
-        formatter.field("vlan", &self.vlan);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceptDirectConnectGatewayAssociationProposalInput {
     /// <p>The ID of the Direct Connect gateway.</p>
     #[doc(hidden)]
@@ -13226,21 +12808,5 @@ impl AcceptDirectConnectGatewayAssociationProposalInput {
     ) -> std::option::Option<&[crate::model::RouteFilterPrefix]> {
         self.override_allowed_prefixes_to_direct_connect_gateway
             .as_deref()
-    }
-}
-impl std::fmt::Debug for AcceptDirectConnectGatewayAssociationProposalInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceptDirectConnectGatewayAssociationProposalInput");
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.field("proposal_id", &self.proposal_id);
-        formatter.field(
-            "associated_gateway_owner_account",
-            &self.associated_gateway_owner_account,
-        );
-        formatter.field(
-            "override_allowed_prefixes_to_direct_connect_gateway",
-            &self.override_allowed_prefixes_to_direct_connect_gateway,
-        );
-        formatter.finish()
     }
 }

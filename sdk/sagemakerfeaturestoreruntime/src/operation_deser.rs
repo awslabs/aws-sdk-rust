@@ -24,7 +24,7 @@ pub fn parse_batch_get_record_error(
                         output = crate::json_deser::deser_structure_crate_error_access_forbidden_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetRecordError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -43,7 +43,7 @@ pub fn parse_batch_get_record_error(
                         output = crate::json_deser::deser_structure_crate_error_internal_failure_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetRecordError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -61,7 +61,7 @@ pub fn parse_batch_get_record_error(
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetRecordError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -79,7 +79,7 @@ pub fn parse_batch_get_record_error(
                         output = crate::json_deser::deser_structure_crate_error_validation_error_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetRecordError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -132,7 +132,7 @@ pub fn parse_delete_record_error(
                         output = crate::json_deser::deser_structure_crate_error_access_forbidden_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRecordError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -151,7 +151,7 @@ pub fn parse_delete_record_error(
                         output = crate::json_deser::deser_structure_crate_error_internal_failure_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRecordError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -169,7 +169,7 @@ pub fn parse_delete_record_error(
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRecordError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -187,7 +187,7 @@ pub fn parse_delete_record_error(
                         output = crate::json_deser::deser_structure_crate_error_validation_error_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRecordError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -235,7 +235,7 @@ pub fn parse_get_record_error(
                         output = crate::json_deser::deser_structure_crate_error_access_forbidden_json_err(response.body().as_ref(), output).map_err(crate::error::GetRecordError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -254,7 +254,7 @@ pub fn parse_get_record_error(
                         output = crate::json_deser::deser_structure_crate_error_internal_failure_json_err(response.body().as_ref(), output).map_err(crate::error::GetRecordError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -273,7 +273,7 @@ pub fn parse_get_record_error(
                         output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::GetRecordError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -291,7 +291,7 @@ pub fn parse_get_record_error(
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_json_err(response.body().as_ref(), output).map_err(crate::error::GetRecordError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -309,7 +309,7 @@ pub fn parse_get_record_error(
                         output = crate::json_deser::deser_structure_crate_error_validation_error_json_err(response.body().as_ref(), output).map_err(crate::error::GetRecordError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -362,7 +362,7 @@ pub fn parse_put_record_error(
                         output = crate::json_deser::deser_structure_crate_error_access_forbidden_json_err(response.body().as_ref(), output).map_err(crate::error::PutRecordError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -381,7 +381,7 @@ pub fn parse_put_record_error(
                         output = crate::json_deser::deser_structure_crate_error_internal_failure_json_err(response.body().as_ref(), output).map_err(crate::error::PutRecordError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -399,7 +399,7 @@ pub fn parse_put_record_error(
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_json_err(response.body().as_ref(), output).map_err(crate::error::PutRecordError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -417,7 +417,7 @@ pub fn parse_put_record_error(
                         output = crate::json_deser::deser_structure_crate_error_validation_error_json_err(response.body().as_ref(), output).map_err(crate::error::PutRecordError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp

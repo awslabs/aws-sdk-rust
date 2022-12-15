@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_group_input {
 
     /// A builder for [`CreateGroupInput`](crate::input::CreateGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
@@ -48,13 +48,22 @@ pub mod create_group_input {
         /// Consumes the builder and constructs a [`CreateGroupInput`](crate::input::CreateGroupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateGroupInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateGroupInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateGroupInput {
                 identity_store_id: self.identity_store_id,
                 display_name: self.display_name,
                 description: self.description,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("identity_store_id", &self.identity_store_id);
+            formatter.field("display_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -71,13 +80,13 @@ impl CreateGroupInput {
             crate::operation::CreateGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -85,8 +94,10 @@ impl CreateGroupInput {
             fn update_http_builder(
                 input: &crate::input::CreateGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -175,7 +186,7 @@ impl CreateGroupInput {
 pub mod create_group_membership_input {
 
     /// A builder for [`CreateGroupMembershipInput`](crate::input::CreateGroupMembershipInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -218,8 +229,10 @@ pub mod create_group_membership_input {
         /// Consumes the builder and constructs a [`CreateGroupMembershipInput`](crate::input::CreateGroupMembershipInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateGroupMembershipInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateGroupMembershipInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateGroupMembershipInput {
                 identity_store_id: self.identity_store_id,
                 group_id: self.group_id,
@@ -241,13 +254,13 @@ impl CreateGroupMembershipInput {
             crate::operation::CreateGroupMembership,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateGroupMembershipInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -255,8 +268,10 @@ impl CreateGroupMembershipInput {
             fn update_http_builder(
                 input: &crate::input::CreateGroupMembershipInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -347,7 +362,7 @@ impl CreateGroupMembershipInput {
 pub mod create_user_input {
 
     /// A builder for [`CreateUserInput`](crate::input::CreateUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -541,7 +556,8 @@ pub mod create_user_input {
         /// Consumes the builder and constructs a [`CreateUserInput`](crate::input::CreateUserInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateUserInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::CreateUserInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::CreateUserInput {
                 identity_store_id: self.identity_store_id,
                 user_name: self.user_name,
@@ -560,6 +576,26 @@ pub mod create_user_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("identity_store_id", &self.identity_store_id);
+            formatter.field("user_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("name", &self.name);
+            formatter.field("display_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("nick_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("profile_url", &"*** Sensitive Data Redacted ***");
+            formatter.field("emails", &self.emails);
+            formatter.field("addresses", &self.addresses);
+            formatter.field("phone_numbers", &self.phone_numbers);
+            formatter.field("user_type", &"*** Sensitive Data Redacted ***");
+            formatter.field("title", &"*** Sensitive Data Redacted ***");
+            formatter.field("preferred_language", &"*** Sensitive Data Redacted ***");
+            formatter.field("locale", &"*** Sensitive Data Redacted ***");
+            formatter.field("timezone", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl CreateUserInput {
     /// Consumes the builder and constructs an Operation<[`CreateUser`](crate::operation::CreateUser)>
@@ -574,13 +610,13 @@ impl CreateUserInput {
             crate::operation::CreateUser,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateUserInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -588,8 +624,10 @@ impl CreateUserInput {
             fn update_http_builder(
                 input: &crate::input::CreateUserInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -678,7 +716,7 @@ impl CreateUserInput {
 pub mod delete_group_input {
 
     /// A builder for [`DeleteGroupInput`](crate::input::DeleteGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -710,7 +748,7 @@ pub mod delete_group_input {
         /// Consumes the builder and constructs a [`DeleteGroupInput`](crate::input::DeleteGroupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteGroupInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteGroupInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteGroupInput {
                 identity_store_id: self.identity_store_id,
@@ -732,13 +770,13 @@ impl DeleteGroupInput {
             crate::operation::DeleteGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -746,8 +784,10 @@ impl DeleteGroupInput {
             fn update_http_builder(
                 input: &crate::input::DeleteGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -836,7 +876,7 @@ impl DeleteGroupInput {
 pub mod delete_group_membership_input {
 
     /// A builder for [`DeleteGroupMembershipInput`](crate::input::DeleteGroupMembershipInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) membership_id: std::option::Option<std::string::String>,
@@ -871,8 +911,10 @@ pub mod delete_group_membership_input {
         /// Consumes the builder and constructs a [`DeleteGroupMembershipInput`](crate::input::DeleteGroupMembershipInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteGroupMembershipInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteGroupMembershipInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteGroupMembershipInput {
                 identity_store_id: self.identity_store_id,
                 membership_id: self.membership_id,
@@ -893,13 +935,13 @@ impl DeleteGroupMembershipInput {
             crate::operation::DeleteGroupMembership,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteGroupMembershipInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -907,8 +949,10 @@ impl DeleteGroupMembershipInput {
             fn update_http_builder(
                 input: &crate::input::DeleteGroupMembershipInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -999,7 +1043,7 @@ impl DeleteGroupMembershipInput {
 pub mod delete_user_input {
 
     /// A builder for [`DeleteUserInput`](crate::input::DeleteUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -1031,7 +1075,8 @@ pub mod delete_user_input {
         /// Consumes the builder and constructs a [`DeleteUserInput`](crate::input::DeleteUserInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteUserInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::DeleteUserInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::DeleteUserInput {
                 identity_store_id: self.identity_store_id,
                 user_id: self.user_id,
@@ -1052,13 +1097,13 @@ impl DeleteUserInput {
             crate::operation::DeleteUser,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteUserInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1066,8 +1111,10 @@ impl DeleteUserInput {
             fn update_http_builder(
                 input: &crate::input::DeleteUserInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1156,7 +1203,7 @@ impl DeleteUserInput {
 pub mod describe_group_input {
 
     /// A builder for [`DescribeGroupInput`](crate::input::DescribeGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -1188,7 +1235,7 @@ pub mod describe_group_input {
         /// Consumes the builder and constructs a [`DescribeGroupInput`](crate::input::DescribeGroupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeGroupInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeGroupInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeGroupInput {
                 identity_store_id: self.identity_store_id,
@@ -1210,13 +1257,13 @@ impl DescribeGroupInput {
             crate::operation::DescribeGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1224,8 +1271,10 @@ impl DescribeGroupInput {
             fn update_http_builder(
                 input: &crate::input::DescribeGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1314,7 +1363,7 @@ impl DescribeGroupInput {
 pub mod describe_group_membership_input {
 
     /// A builder for [`DescribeGroupMembershipInput`](crate::input::DescribeGroupMembershipInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) membership_id: std::option::Option<std::string::String>,
@@ -1351,7 +1400,7 @@ pub mod describe_group_membership_input {
             self,
         ) -> Result<
             crate::input::DescribeGroupMembershipInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeGroupMembershipInput {
                 identity_store_id: self.identity_store_id,
@@ -1373,13 +1422,13 @@ impl DescribeGroupMembershipInput {
             crate::operation::DescribeGroupMembership,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeGroupMembershipInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1387,8 +1436,10 @@ impl DescribeGroupMembershipInput {
             fn update_http_builder(
                 input: &crate::input::DescribeGroupMembershipInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1479,7 +1530,7 @@ impl DescribeGroupMembershipInput {
 pub mod describe_user_input {
 
     /// A builder for [`DescribeUserInput`](crate::input::DescribeUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -1511,7 +1562,7 @@ pub mod describe_user_input {
         /// Consumes the builder and constructs a [`DescribeUserInput`](crate::input::DescribeUserInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeUserInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeUserInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeUserInput {
                 identity_store_id: self.identity_store_id,
@@ -1533,13 +1584,13 @@ impl DescribeUserInput {
             crate::operation::DescribeUser,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeUserInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1547,8 +1598,10 @@ impl DescribeUserInput {
             fn update_http_builder(
                 input: &crate::input::DescribeUserInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1637,7 +1690,7 @@ impl DescribeUserInput {
 pub mod get_group_id_input {
 
     /// A builder for [`GetGroupIdInput`](crate::input::GetGroupIdInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) alternate_identifier: std::option::Option<crate::model::AlternateIdentifier>,
@@ -1672,7 +1725,8 @@ pub mod get_group_id_input {
         /// Consumes the builder and constructs a [`GetGroupIdInput`](crate::input::GetGroupIdInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetGroupIdInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::GetGroupIdInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::GetGroupIdInput {
                 identity_store_id: self.identity_store_id,
                 alternate_identifier: self.alternate_identifier,
@@ -1693,13 +1747,13 @@ impl GetGroupIdInput {
             crate::operation::GetGroupId,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetGroupIdInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1707,8 +1761,10 @@ impl GetGroupIdInput {
             fn update_http_builder(
                 input: &crate::input::GetGroupIdInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1797,7 +1853,7 @@ impl GetGroupIdInput {
 pub mod get_group_membership_id_input {
 
     /// A builder for [`GetGroupMembershipIdInput`](crate::input::GetGroupMembershipIdInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -1840,8 +1896,10 @@ pub mod get_group_membership_id_input {
         /// Consumes the builder and constructs a [`GetGroupMembershipIdInput`](crate::input::GetGroupMembershipIdInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetGroupMembershipIdInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetGroupMembershipIdInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetGroupMembershipIdInput {
                 identity_store_id: self.identity_store_id,
                 group_id: self.group_id,
@@ -1863,13 +1921,13 @@ impl GetGroupMembershipIdInput {
             crate::operation::GetGroupMembershipId,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetGroupMembershipIdInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1877,8 +1935,10 @@ impl GetGroupMembershipIdInput {
             fn update_http_builder(
                 input: &crate::input::GetGroupMembershipIdInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1969,7 +2029,7 @@ impl GetGroupMembershipIdInput {
 pub mod get_user_id_input {
 
     /// A builder for [`GetUserIdInput`](crate::input::GetUserIdInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) alternate_identifier: std::option::Option<crate::model::AlternateIdentifier>,
@@ -2004,7 +2064,8 @@ pub mod get_user_id_input {
         /// Consumes the builder and constructs a [`GetUserIdInput`](crate::input::GetUserIdInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetUserIdInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::GetUserIdInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::GetUserIdInput {
                 identity_store_id: self.identity_store_id,
                 alternate_identifier: self.alternate_identifier,
@@ -2025,13 +2086,13 @@ impl GetUserIdInput {
             crate::operation::GetUserId,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetUserIdInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2039,8 +2100,10 @@ impl GetUserIdInput {
             fn update_http_builder(
                 input: &crate::input::GetUserIdInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2127,7 +2190,7 @@ impl GetUserIdInput {
 pub mod is_member_in_groups_input {
 
     /// A builder for [`IsMemberInGroupsInput`](crate::input::IsMemberInGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) member_id: std::option::Option<crate::model::MemberId>,
@@ -2179,8 +2242,10 @@ pub mod is_member_in_groups_input {
         /// Consumes the builder and constructs a [`IsMemberInGroupsInput`](crate::input::IsMemberInGroupsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::IsMemberInGroupsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::IsMemberInGroupsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::IsMemberInGroupsInput {
                 identity_store_id: self.identity_store_id,
                 member_id: self.member_id,
@@ -2202,13 +2267,13 @@ impl IsMemberInGroupsInput {
             crate::operation::IsMemberInGroups,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::IsMemberInGroupsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2216,8 +2281,10 @@ impl IsMemberInGroupsInput {
             fn update_http_builder(
                 input: &crate::input::IsMemberInGroupsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2306,7 +2373,7 @@ impl IsMemberInGroupsInput {
 pub mod list_group_memberships_input {
 
     /// A builder for [`ListGroupMembershipsInput`](crate::input::ListGroupMembershipsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -2360,8 +2427,10 @@ pub mod list_group_memberships_input {
         /// Consumes the builder and constructs a [`ListGroupMembershipsInput`](crate::input::ListGroupMembershipsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListGroupMembershipsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListGroupMembershipsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListGroupMembershipsInput {
                 identity_store_id: self.identity_store_id,
                 group_id: self.group_id,
@@ -2384,13 +2453,13 @@ impl ListGroupMembershipsInput {
             crate::operation::ListGroupMemberships,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListGroupMembershipsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2398,8 +2467,10 @@ impl ListGroupMembershipsInput {
             fn update_http_builder(
                 input: &crate::input::ListGroupMembershipsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2490,7 +2561,7 @@ impl ListGroupMembershipsInput {
 pub mod list_group_memberships_for_member_input {
 
     /// A builder for [`ListGroupMembershipsForMemberInput`](crate::input::ListGroupMembershipsForMemberInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) member_id: std::option::Option<crate::model::MemberId>,
@@ -2546,7 +2617,7 @@ pub mod list_group_memberships_for_member_input {
             self,
         ) -> Result<
             crate::input::ListGroupMembershipsForMemberInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListGroupMembershipsForMemberInput {
                 identity_store_id: self.identity_store_id,
@@ -2570,13 +2641,13 @@ impl ListGroupMembershipsForMemberInput {
             crate::operation::ListGroupMembershipsForMember,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListGroupMembershipsForMemberInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2584,8 +2655,10 @@ impl ListGroupMembershipsForMemberInput {
             fn update_http_builder(
                 input: &crate::input::ListGroupMembershipsForMemberInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2673,7 +2746,7 @@ impl ListGroupMembershipsForMemberInput {
 pub mod list_groups_input {
 
     /// A builder for [`ListGroupsInput`](crate::input::ListGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2742,7 +2815,8 @@ pub mod list_groups_input {
         /// Consumes the builder and constructs a [`ListGroupsInput`](crate::input::ListGroupsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListGroupsInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ListGroupsInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ListGroupsInput {
                 identity_store_id: self.identity_store_id,
                 max_results: self.max_results,
@@ -2765,13 +2839,13 @@ impl ListGroupsInput {
             crate::operation::ListGroups,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListGroupsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2779,8 +2853,10 @@ impl ListGroupsInput {
             fn update_http_builder(
                 input: &crate::input::ListGroupsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2869,7 +2945,7 @@ impl ListGroupsInput {
 pub mod list_users_input {
 
     /// A builder for [`ListUsersInput`](crate::input::ListUsersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2938,7 +3014,8 @@ pub mod list_users_input {
         /// Consumes the builder and constructs a [`ListUsersInput`](crate::input::ListUsersInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListUsersInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ListUsersInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ListUsersInput {
                 identity_store_id: self.identity_store_id,
                 max_results: self.max_results,
@@ -2961,13 +3038,13 @@ impl ListUsersInput {
             crate::operation::ListUsers,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListUsersInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2975,8 +3052,10 @@ impl ListUsersInput {
             fn update_http_builder(
                 input: &crate::input::ListUsersInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3063,7 +3142,7 @@ impl ListUsersInput {
 pub mod update_group_input {
 
     /// A builder for [`UpdateGroupInput`](crate::input::UpdateGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -3115,7 +3194,7 @@ pub mod update_group_input {
         /// Consumes the builder and constructs a [`UpdateGroupInput`](crate::input::UpdateGroupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateGroupInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateGroupInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateGroupInput {
                 identity_store_id: self.identity_store_id,
@@ -3138,13 +3217,13 @@ impl UpdateGroupInput {
             crate::operation::UpdateGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3152,8 +3231,10 @@ impl UpdateGroupInput {
             fn update_http_builder(
                 input: &crate::input::UpdateGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3242,7 +3323,7 @@ impl UpdateGroupInput {
 pub mod update_user_input {
 
     /// A builder for [`UpdateUserInput`](crate::input::UpdateUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -3294,7 +3375,8 @@ pub mod update_user_input {
         /// Consumes the builder and constructs a [`UpdateUserInput`](crate::input::UpdateUserInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateUserInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::UpdateUserInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::UpdateUserInput {
                 identity_store_id: self.identity_store_id,
                 user_id: self.user_id,
@@ -3316,13 +3398,13 @@ impl UpdateUserInput {
             crate::operation::UpdateUser,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateUserInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3330,8 +3412,10 @@ impl UpdateUserInput {
             fn update_http_builder(
                 input: &crate::input::UpdateUserInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3418,7 +3502,7 @@ impl UpdateUserInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUsersInput {
     /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.</p>
     #[doc(hidden)]
@@ -3455,16 +3539,6 @@ impl ListUsersInput {
     )]
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
-    }
-}
-impl std::fmt::Debug for ListUsersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUsersInput");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
     }
 }
 
@@ -3596,7 +3670,7 @@ impl std::fmt::Debug for CreateUserInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUserInput {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
@@ -3615,18 +3689,10 @@ impl DeleteUserInput {
         self.user_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteUserInput");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("user_id", &self.user_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateUserInput {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
@@ -3652,19 +3718,10 @@ impl UpdateUserInput {
         self.operations.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateUserInput");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("user_id", &self.user_id);
-        formatter.field("operations", &self.operations);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeUserInput {
     /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.</p>
     #[doc(hidden)]
@@ -3683,18 +3740,10 @@ impl DescribeUserInput {
         self.user_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeUserInput");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("user_id", &self.user_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGroupsInput {
     /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.</p>
     #[doc(hidden)]
@@ -3731,16 +3780,6 @@ impl ListGroupsInput {
     )]
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
-    }
-}
-impl std::fmt::Debug for ListGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGroupsInput");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
     }
 }
 
@@ -3784,7 +3823,7 @@ impl std::fmt::Debug for CreateGroupInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGroupInput {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
@@ -3803,18 +3842,10 @@ impl DeleteGroupInput {
         self.group_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGroupInput");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("group_id", &self.group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGroupInput {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
@@ -3840,19 +3871,10 @@ impl UpdateGroupInput {
         self.operations.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGroupInput");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("group_id", &self.group_id);
-        formatter.field("operations", &self.operations);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGroupInput {
     /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.</p>
     #[doc(hidden)]
@@ -3871,18 +3893,10 @@ impl DescribeGroupInput {
         self.group_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGroupInput");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("group_id", &self.group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGroupMembershipsInput {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
@@ -3915,20 +3929,10 @@ impl ListGroupMembershipsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListGroupMembershipsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGroupMembershipsInput");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("group_id", &self.group_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGroupMembershipInput {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
@@ -3954,19 +3958,10 @@ impl CreateGroupMembershipInput {
         self.member_id.as_ref()
     }
 }
-impl std::fmt::Debug for CreateGroupMembershipInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGroupMembershipInput");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("group_id", &self.group_id);
-        formatter.field("member_id", &self.member_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGroupMembershipInput {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
@@ -3985,18 +3980,10 @@ impl DeleteGroupMembershipInput {
         self.membership_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteGroupMembershipInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGroupMembershipInput");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("membership_id", &self.membership_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGroupMembershipInput {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
@@ -4015,18 +4002,10 @@ impl DescribeGroupMembershipInput {
         self.membership_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeGroupMembershipInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGroupMembershipInput");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("membership_id", &self.membership_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGroupMembershipsForMemberInput {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
@@ -4059,20 +4038,10 @@ impl ListGroupMembershipsForMemberInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListGroupMembershipsForMemberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGroupMembershipsForMemberInput");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("member_id", &self.member_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IsMemberInGroupsInput {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
@@ -4098,19 +4067,10 @@ impl IsMemberInGroupsInput {
         self.group_ids.as_deref()
     }
 }
-impl std::fmt::Debug for IsMemberInGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IsMemberInGroupsInput");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("member_id", &self.member_id);
-        formatter.field("group_ids", &self.group_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUserIdInput {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
@@ -4129,18 +4089,10 @@ impl GetUserIdInput {
         self.alternate_identifier.as_ref()
     }
 }
-impl std::fmt::Debug for GetUserIdInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUserIdInput");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("alternate_identifier", &self.alternate_identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGroupMembershipIdInput {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
@@ -4166,19 +4118,10 @@ impl GetGroupMembershipIdInput {
         self.member_id.as_ref()
     }
 }
-impl std::fmt::Debug for GetGroupMembershipIdInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGroupMembershipIdInput");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("group_id", &self.group_id);
-        formatter.field("member_id", &self.member_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGroupIdInput {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
@@ -4195,13 +4138,5 @@ impl GetGroupIdInput {
     /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For example, a unique <code>GroupDisplayName</code>.</p>
     pub fn alternate_identifier(&self) -> std::option::Option<&crate::model::AlternateIdentifier> {
         self.alternate_identifier.as_ref()
-    }
-}
-impl std::fmt::Debug for GetGroupIdInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGroupIdInput");
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("alternate_identifier", &self.alternate_identifier);
-        formatter.finish()
     }
 }

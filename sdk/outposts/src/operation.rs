@@ -5,7 +5,7 @@
 /// [`cancel_order`](crate::client::Client::cancel_order).
 ///
 /// See [`crate::client::fluent_builders::CancelOrder`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CancelOrder {
     _private: (),
 }
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelOrder {
 /// [`create_order`](crate::client::Client::create_order).
 ///
 /// See [`crate::client::fluent_builders::CreateOrder`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateOrder {
     _private: (),
 }
@@ -69,7 +69,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateOrder {
 /// [`create_outpost`](crate::client::Client::create_outpost).
 ///
 /// See [`crate::client::fluent_builders::CreateOutpost`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateOutpost {
     _private: (),
 }
@@ -101,7 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateOutpost {
 /// [`create_site`](crate::client::Client::create_site).
 ///
 /// See [`crate::client::fluent_builders::CreateSite`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateSite {
     _private: (),
 }
@@ -133,7 +133,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSite {
 /// [`delete_outpost`](crate::client::Client::delete_outpost).
 ///
 /// See [`crate::client::fluent_builders::DeleteOutpost`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteOutpost {
     _private: (),
 }
@@ -165,7 +165,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteOutpost {
 /// [`delete_site`](crate::client::Client::delete_site).
 ///
 /// See [`crate::client::fluent_builders::DeleteSite`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteSite {
     _private: (),
 }
@@ -197,7 +197,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSite {
 /// [`get_catalog_item`](crate::client::Client::get_catalog_item).
 ///
 /// See [`crate::client::fluent_builders::GetCatalogItem`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetCatalogItem {
     _private: (),
 }
@@ -229,7 +229,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCatalogItem {
 /// [`get_connection`](crate::client::Client::get_connection).
 ///
 /// See [`crate::client::fluent_builders::GetConnection`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetConnection {
     _private: (),
 }
@@ -261,7 +261,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConnection {
 /// [`get_order`](crate::client::Client::get_order).
 ///
 /// See [`crate::client::fluent_builders::GetOrder`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetOrder {
     _private: (),
 }
@@ -292,7 +292,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetOrder {
 /// [`get_outpost`](crate::client::Client::get_outpost).
 ///
 /// See [`crate::client::fluent_builders::GetOutpost`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetOutpost {
     _private: (),
 }
@@ -324,7 +324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetOutpost {
 /// [`get_outpost_instance_types`](crate::client::Client::get_outpost_instance_types).
 ///
 /// See [`crate::client::fluent_builders::GetOutpostInstanceTypes`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetOutpostInstanceTypes {
     _private: (),
 }
@@ -358,7 +358,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetOutpostInstanceTypes 
 /// [`get_site`](crate::client::Client::get_site).
 ///
 /// See [`crate::client::fluent_builders::GetSite`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSite {
     _private: (),
 }
@@ -389,7 +389,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSite {
 /// [`get_site_address`](crate::client::Client::get_site_address).
 ///
 /// See [`crate::client::fluent_builders::GetSiteAddress`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSiteAddress {
     _private: (),
 }
@@ -421,7 +421,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSiteAddress {
 /// [`list_assets`](crate::client::Client::list_assets).
 ///
 /// See [`crate::client::fluent_builders::ListAssets`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAssets {
     _private: (),
 }
@@ -453,7 +453,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAssets {
 /// [`list_catalog_items`](crate::client::Client::list_catalog_items).
 ///
 /// See [`crate::client::fluent_builders::ListCatalogItems`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListCatalogItems {
     _private: (),
 }
@@ -487,7 +487,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCatalogItems {
 /// [`list_orders`](crate::client::Client::list_orders).
 ///
 /// See [`crate::client::fluent_builders::ListOrders`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListOrders {
     _private: (),
 }
@@ -519,7 +519,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOrders {
 /// [`list_outposts`](crate::client::Client::list_outposts).
 ///
 /// See [`crate::client::fluent_builders::ListOutposts`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListOutposts {
     _private: (),
 }
@@ -551,7 +551,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOutposts {
 /// [`list_sites`](crate::client::Client::list_sites).
 ///
 /// See [`crate::client::fluent_builders::ListSites`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSites {
     _private: (),
 }
@@ -582,7 +582,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSites {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -616,7 +616,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`start_connection`](crate::client::Client::start_connection).
 ///
 /// See [`crate::client::fluent_builders::StartConnection`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartConnection {
     _private: (),
 }
@@ -650,7 +650,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartConnection {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -682,7 +682,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -714,7 +714,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_outpost`](crate::client::Client::update_outpost).
 ///
 /// See [`crate::client::fluent_builders::UpdateOutpost`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateOutpost {
     _private: (),
 }
@@ -746,7 +746,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateOutpost {
 /// [`update_site`](crate::client::Client::update_site).
 ///
 /// See [`crate::client::fluent_builders::UpdateSite`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateSite {
     _private: (),
 }
@@ -778,7 +778,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSite {
 /// [`update_site_address`](crate::client::Client::update_site_address).
 ///
 /// See [`crate::client::fluent_builders::UpdateSiteAddress`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateSiteAddress {
     _private: (),
 }
@@ -812,7 +812,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSiteAddress {
 /// [`update_site_rack_physical_properties`](crate::client::Client::update_site_rack_physical_properties).
 ///
 /// See [`crate::client::fluent_builders::UpdateSiteRackPhysicalProperties`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateSiteRackPhysicalProperties {
     _private: (),
 }

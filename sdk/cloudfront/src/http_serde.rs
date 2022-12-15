@@ -2,20 +2,20 @@
 pub fn add_headers_delete_cache_policy(
     input: &crate::input::DeleteCachePolicyInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_1) = &input.if_match {
-        let formatted_2 = AsRef::<str>::as_ref(inner_1);
+        let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "if_match",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "if_match",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("If-Match", header_value);
         }
@@ -26,20 +26,20 @@ pub fn add_headers_delete_cache_policy(
 pub fn add_headers_delete_cloud_front_origin_access_identity(
     input: &crate::input::DeleteCloudFrontOriginAccessIdentityInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_3) = &input.if_match {
-        let formatted_4 = AsRef::<str>::as_ref(inner_3);
+        let formatted_4 = inner_3.as_str();
         if !formatted_4.is_empty() {
             let header_value = formatted_4;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "if_match",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "if_match",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("If-Match", header_value);
         }
@@ -50,20 +50,20 @@ pub fn add_headers_delete_cloud_front_origin_access_identity(
 pub fn add_headers_delete_distribution(
     input: &crate::input::DeleteDistributionInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_5) = &input.if_match {
-        let formatted_6 = AsRef::<str>::as_ref(inner_5);
+        let formatted_6 = inner_5.as_str();
         if !formatted_6.is_empty() {
             let header_value = formatted_6;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "if_match",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "if_match",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("If-Match", header_value);
         }
@@ -74,20 +74,20 @@ pub fn add_headers_delete_distribution(
 pub fn add_headers_delete_field_level_encryption_config(
     input: &crate::input::DeleteFieldLevelEncryptionConfigInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_7) = &input.if_match {
-        let formatted_8 = AsRef::<str>::as_ref(inner_7);
+        let formatted_8 = inner_7.as_str();
         if !formatted_8.is_empty() {
             let header_value = formatted_8;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "if_match",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "if_match",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("If-Match", header_value);
         }
@@ -98,20 +98,20 @@ pub fn add_headers_delete_field_level_encryption_config(
 pub fn add_headers_delete_field_level_encryption_profile(
     input: &crate::input::DeleteFieldLevelEncryptionProfileInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_9) = &input.if_match {
-        let formatted_10 = AsRef::<str>::as_ref(inner_9);
+        let formatted_10 = inner_9.as_str();
         if !formatted_10.is_empty() {
             let header_value = formatted_10;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "if_match",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "if_match",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("If-Match", header_value);
         }
@@ -122,20 +122,20 @@ pub fn add_headers_delete_field_level_encryption_profile(
 pub fn add_headers_delete_function(
     input: &crate::input::DeleteFunctionInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_11) = &input.if_match {
-        let formatted_12 = AsRef::<str>::as_ref(inner_11);
+        let formatted_12 = inner_11.as_str();
         if !formatted_12.is_empty() {
             let header_value = formatted_12;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "if_match",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "if_match",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("If-Match", header_value);
         }
@@ -146,20 +146,20 @@ pub fn add_headers_delete_function(
 pub fn add_headers_delete_key_group(
     input: &crate::input::DeleteKeyGroupInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_13) = &input.if_match {
-        let formatted_14 = AsRef::<str>::as_ref(inner_13);
+        let formatted_14 = inner_13.as_str();
         if !formatted_14.is_empty() {
             let header_value = formatted_14;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "if_match",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "if_match",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("If-Match", header_value);
         }
@@ -170,20 +170,20 @@ pub fn add_headers_delete_key_group(
 pub fn add_headers_delete_origin_access_control(
     input: &crate::input::DeleteOriginAccessControlInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_15) = &input.if_match {
-        let formatted_16 = AsRef::<str>::as_ref(inner_15);
+        let formatted_16 = inner_15.as_str();
         if !formatted_16.is_empty() {
             let header_value = formatted_16;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "if_match",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "if_match",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("If-Match", header_value);
         }
@@ -194,20 +194,20 @@ pub fn add_headers_delete_origin_access_control(
 pub fn add_headers_delete_origin_request_policy(
     input: &crate::input::DeleteOriginRequestPolicyInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_17) = &input.if_match {
-        let formatted_18 = AsRef::<str>::as_ref(inner_17);
+        let formatted_18 = inner_17.as_str();
         if !formatted_18.is_empty() {
             let header_value = formatted_18;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "if_match",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "if_match",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("If-Match", header_value);
         }
@@ -218,20 +218,20 @@ pub fn add_headers_delete_origin_request_policy(
 pub fn add_headers_delete_public_key(
     input: &crate::input::DeletePublicKeyInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_19) = &input.if_match {
-        let formatted_20 = AsRef::<str>::as_ref(inner_19);
+        let formatted_20 = inner_19.as_str();
         if !formatted_20.is_empty() {
             let header_value = formatted_20;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "if_match",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "if_match",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("If-Match", header_value);
         }
@@ -242,20 +242,20 @@ pub fn add_headers_delete_public_key(
 pub fn add_headers_delete_response_headers_policy(
     input: &crate::input::DeleteResponseHeadersPolicyInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_21) = &input.if_match {
-        let formatted_22 = AsRef::<str>::as_ref(inner_21);
+        let formatted_22 = inner_21.as_str();
         if !formatted_22.is_empty() {
             let header_value = formatted_22;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "if_match",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "if_match",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("If-Match", header_value);
         }
@@ -266,20 +266,20 @@ pub fn add_headers_delete_response_headers_policy(
 pub fn add_headers_delete_streaming_distribution(
     input: &crate::input::DeleteStreamingDistributionInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_23) = &input.if_match {
-        let formatted_24 = AsRef::<str>::as_ref(inner_23);
+        let formatted_24 = inner_23.as_str();
         if !formatted_24.is_empty() {
             let header_value = formatted_24;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "if_match",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "if_match",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("If-Match", header_value);
         }
@@ -290,20 +290,20 @@ pub fn add_headers_delete_streaming_distribution(
 pub fn add_headers_publish_function(
     input: &crate::input::PublishFunctionInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_25) = &input.if_match {
-        let formatted_26 = AsRef::<str>::as_ref(inner_25);
+        let formatted_26 = inner_25.as_str();
         if !formatted_26.is_empty() {
             let header_value = formatted_26;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "if_match",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "if_match",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("If-Match", header_value);
         }
@@ -314,20 +314,20 @@ pub fn add_headers_publish_function(
 pub fn add_headers_test_function(
     input: &crate::input::TestFunctionInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_27) = &input.if_match {
-        let formatted_28 = AsRef::<str>::as_ref(inner_27);
+        let formatted_28 = inner_27.as_str();
         if !formatted_28.is_empty() {
             let header_value = formatted_28;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "if_match",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "if_match",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("If-Match", header_value);
         }
@@ -338,20 +338,20 @@ pub fn add_headers_test_function(
 pub fn add_headers_update_cache_policy(
     input: &crate::input::UpdateCachePolicyInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_29) = &input.if_match {
-        let formatted_30 = AsRef::<str>::as_ref(inner_29);
+        let formatted_30 = inner_29.as_str();
         if !formatted_30.is_empty() {
             let header_value = formatted_30;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "if_match",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "if_match",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("If-Match", header_value);
         }
@@ -362,20 +362,20 @@ pub fn add_headers_update_cache_policy(
 pub fn add_headers_update_cloud_front_origin_access_identity(
     input: &crate::input::UpdateCloudFrontOriginAccessIdentityInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_31) = &input.if_match {
-        let formatted_32 = AsRef::<str>::as_ref(inner_31);
+        let formatted_32 = inner_31.as_str();
         if !formatted_32.is_empty() {
             let header_value = formatted_32;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "if_match",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "if_match",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("If-Match", header_value);
         }
@@ -386,20 +386,20 @@ pub fn add_headers_update_cloud_front_origin_access_identity(
 pub fn add_headers_update_distribution(
     input: &crate::input::UpdateDistributionInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_33) = &input.if_match {
-        let formatted_34 = AsRef::<str>::as_ref(inner_33);
+        let formatted_34 = inner_33.as_str();
         if !formatted_34.is_empty() {
             let header_value = formatted_34;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "if_match",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "if_match",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("If-Match", header_value);
         }
@@ -410,20 +410,20 @@ pub fn add_headers_update_distribution(
 pub fn add_headers_update_field_level_encryption_config(
     input: &crate::input::UpdateFieldLevelEncryptionConfigInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_35) = &input.if_match {
-        let formatted_36 = AsRef::<str>::as_ref(inner_35);
+        let formatted_36 = inner_35.as_str();
         if !formatted_36.is_empty() {
             let header_value = formatted_36;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "if_match",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "if_match",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("If-Match", header_value);
         }
@@ -434,20 +434,20 @@ pub fn add_headers_update_field_level_encryption_config(
 pub fn add_headers_update_field_level_encryption_profile(
     input: &crate::input::UpdateFieldLevelEncryptionProfileInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_37) = &input.if_match {
-        let formatted_38 = AsRef::<str>::as_ref(inner_37);
+        let formatted_38 = inner_37.as_str();
         if !formatted_38.is_empty() {
             let header_value = formatted_38;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "if_match",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "if_match",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("If-Match", header_value);
         }
@@ -458,20 +458,20 @@ pub fn add_headers_update_field_level_encryption_profile(
 pub fn add_headers_update_function(
     input: &crate::input::UpdateFunctionInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_39) = &input.if_match {
-        let formatted_40 = AsRef::<str>::as_ref(inner_39);
+        let formatted_40 = inner_39.as_str();
         if !formatted_40.is_empty() {
             let header_value = formatted_40;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "if_match",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "if_match",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("If-Match", header_value);
         }
@@ -482,20 +482,20 @@ pub fn add_headers_update_function(
 pub fn add_headers_update_key_group(
     input: &crate::input::UpdateKeyGroupInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_41) = &input.if_match {
-        let formatted_42 = AsRef::<str>::as_ref(inner_41);
+        let formatted_42 = inner_41.as_str();
         if !formatted_42.is_empty() {
             let header_value = formatted_42;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "if_match",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "if_match",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("If-Match", header_value);
         }
@@ -506,20 +506,20 @@ pub fn add_headers_update_key_group(
 pub fn add_headers_update_origin_access_control(
     input: &crate::input::UpdateOriginAccessControlInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_43) = &input.if_match {
-        let formatted_44 = AsRef::<str>::as_ref(inner_43);
+        let formatted_44 = inner_43.as_str();
         if !formatted_44.is_empty() {
             let header_value = formatted_44;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "if_match",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "if_match",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("If-Match", header_value);
         }
@@ -530,20 +530,20 @@ pub fn add_headers_update_origin_access_control(
 pub fn add_headers_update_origin_request_policy(
     input: &crate::input::UpdateOriginRequestPolicyInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_45) = &input.if_match {
-        let formatted_46 = AsRef::<str>::as_ref(inner_45);
+        let formatted_46 = inner_45.as_str();
         if !formatted_46.is_empty() {
             let header_value = formatted_46;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "if_match",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "if_match",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("If-Match", header_value);
         }
@@ -554,20 +554,20 @@ pub fn add_headers_update_origin_request_policy(
 pub fn add_headers_update_public_key(
     input: &crate::input::UpdatePublicKeyInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_47) = &input.if_match {
-        let formatted_48 = AsRef::<str>::as_ref(inner_47);
+        let formatted_48 = inner_47.as_str();
         if !formatted_48.is_empty() {
             let header_value = formatted_48;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "if_match",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "if_match",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("If-Match", header_value);
         }
@@ -578,20 +578,20 @@ pub fn add_headers_update_public_key(
 pub fn add_headers_update_response_headers_policy(
     input: &crate::input::UpdateResponseHeadersPolicyInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_49) = &input.if_match {
-        let formatted_50 = AsRef::<str>::as_ref(inner_49);
+        let formatted_50 = inner_49.as_str();
         if !formatted_50.is_empty() {
             let header_value = formatted_50;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "if_match",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "if_match",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("If-Match", header_value);
         }
@@ -602,20 +602,20 @@ pub fn add_headers_update_response_headers_policy(
 pub fn add_headers_update_streaming_distribution(
     input: &crate::input::UpdateStreamingDistributionInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_51) = &input.if_match {
-        let formatted_52 = AsRef::<str>::as_ref(inner_51);
+        let formatted_52 = inner_51.as_str();
         if !formatted_52.is_empty() {
             let header_value = formatted_52;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "if_match",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "if_match",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("If-Match", header_value);
         }
@@ -634,7 +634,7 @@ pub fn deser_payload_create_cache_policy_create_cache_policy_output_cache_policy
     }).transpose()
 }
 
-pub fn deser_header_create_cache_policy_create_cache_policy_output_e_tag(
+pub(crate) fn deser_header_create_cache_policy_create_cache_policy_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -644,7 +644,7 @@ pub fn deser_header_create_cache_policy_create_cache_policy_output_e_tag(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_cache_policy_create_cache_policy_output_location(
+pub(crate) fn deser_header_create_cache_policy_create_cache_policy_output_location(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -665,7 +665,7 @@ pub fn deser_payload_create_cloud_front_origin_access_identity_create_cloud_fron
     }).transpose()
 }
 
-pub fn deser_header_create_cloud_front_origin_access_identity_create_cloud_front_origin_access_identity_output_e_tag(
+pub(crate) fn deser_header_create_cloud_front_origin_access_identity_create_cloud_front_origin_access_identity_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -675,7 +675,7 @@ pub fn deser_header_create_cloud_front_origin_access_identity_create_cloud_front
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_cloud_front_origin_access_identity_create_cloud_front_origin_access_identity_output_location(
+pub(crate) fn deser_header_create_cloud_front_origin_access_identity_create_cloud_front_origin_access_identity_output_location(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -696,7 +696,7 @@ pub fn deser_payload_create_distribution_create_distribution_output_distribution
     }).transpose()
 }
 
-pub fn deser_header_create_distribution_create_distribution_output_e_tag(
+pub(crate) fn deser_header_create_distribution_create_distribution_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -706,7 +706,7 @@ pub fn deser_header_create_distribution_create_distribution_output_e_tag(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_distribution_create_distribution_output_location(
+pub(crate) fn deser_header_create_distribution_create_distribution_output_location(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -727,7 +727,7 @@ pub fn deser_payload_create_distribution_with_tags_create_distribution_with_tags
     }).transpose()
 }
 
-pub fn deser_header_create_distribution_with_tags_create_distribution_with_tags_output_e_tag(
+pub(crate) fn deser_header_create_distribution_with_tags_create_distribution_with_tags_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -737,7 +737,7 @@ pub fn deser_header_create_distribution_with_tags_create_distribution_with_tags_
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_distribution_with_tags_create_distribution_with_tags_output_location(
+pub(crate) fn deser_header_create_distribution_with_tags_create_distribution_with_tags_output_location(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -747,7 +747,7 @@ pub fn deser_header_create_distribution_with_tags_create_distribution_with_tags_
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_field_level_encryption_config_create_field_level_encryption_config_output_e_tag(
+pub(crate) fn deser_header_create_field_level_encryption_config_create_field_level_encryption_config_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -768,7 +768,7 @@ pub fn deser_payload_create_field_level_encryption_config_create_field_level_enc
     }).transpose()
 }
 
-pub fn deser_header_create_field_level_encryption_config_create_field_level_encryption_config_output_location(
+pub(crate) fn deser_header_create_field_level_encryption_config_create_field_level_encryption_config_output_location(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -778,7 +778,7 @@ pub fn deser_header_create_field_level_encryption_config_create_field_level_encr
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_field_level_encryption_profile_create_field_level_encryption_profile_output_e_tag(
+pub(crate) fn deser_header_create_field_level_encryption_profile_create_field_level_encryption_profile_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -799,7 +799,7 @@ pub fn deser_payload_create_field_level_encryption_profile_create_field_level_en
     }).transpose()
 }
 
-pub fn deser_header_create_field_level_encryption_profile_create_field_level_encryption_profile_output_location(
+pub(crate) fn deser_header_create_field_level_encryption_profile_create_field_level_encryption_profile_output_location(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -809,7 +809,7 @@ pub fn deser_header_create_field_level_encryption_profile_create_field_level_enc
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_function_create_function_output_e_tag(
+pub(crate) fn deser_header_create_function_create_function_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -830,7 +830,7 @@ pub fn deser_payload_create_function_create_function_output_function_summary(
     }).transpose()
 }
 
-pub fn deser_header_create_function_create_function_output_location(
+pub(crate) fn deser_header_create_function_create_function_output_location(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -851,7 +851,7 @@ pub fn deser_payload_create_invalidation_create_invalidation_output_invalidation
     }).transpose()
 }
 
-pub fn deser_header_create_invalidation_create_invalidation_output_location(
+pub(crate) fn deser_header_create_invalidation_create_invalidation_output_location(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -861,7 +861,7 @@ pub fn deser_header_create_invalidation_create_invalidation_output_location(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_key_group_create_key_group_output_e_tag(
+pub(crate) fn deser_header_create_key_group_create_key_group_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -882,7 +882,7 @@ pub fn deser_payload_create_key_group_create_key_group_output_key_group(
     }).transpose()
 }
 
-pub fn deser_header_create_key_group_create_key_group_output_location(
+pub(crate) fn deser_header_create_key_group_create_key_group_output_location(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -903,7 +903,7 @@ pub fn deser_payload_create_monitoring_subscription_create_monitoring_subscripti
     }).transpose()
 }
 
-pub fn deser_header_create_origin_access_control_create_origin_access_control_output_e_tag(
+pub(crate) fn deser_header_create_origin_access_control_create_origin_access_control_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -913,7 +913,7 @@ pub fn deser_header_create_origin_access_control_create_origin_access_control_ou
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_origin_access_control_create_origin_access_control_output_location(
+pub(crate) fn deser_header_create_origin_access_control_create_origin_access_control_output_location(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -934,7 +934,7 @@ pub fn deser_payload_create_origin_access_control_create_origin_access_control_o
     }).transpose()
 }
 
-pub fn deser_header_create_origin_request_policy_create_origin_request_policy_output_e_tag(
+pub(crate) fn deser_header_create_origin_request_policy_create_origin_request_policy_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -944,7 +944,7 @@ pub fn deser_header_create_origin_request_policy_create_origin_request_policy_ou
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_origin_request_policy_create_origin_request_policy_output_location(
+pub(crate) fn deser_header_create_origin_request_policy_create_origin_request_policy_output_location(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -965,7 +965,7 @@ pub fn deser_payload_create_origin_request_policy_create_origin_request_policy_o
     }).transpose()
 }
 
-pub fn deser_header_create_public_key_create_public_key_output_e_tag(
+pub(crate) fn deser_header_create_public_key_create_public_key_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -975,7 +975,7 @@ pub fn deser_header_create_public_key_create_public_key_output_e_tag(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_public_key_create_public_key_output_location(
+pub(crate) fn deser_header_create_public_key_create_public_key_output_location(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -996,7 +996,7 @@ pub fn deser_payload_create_public_key_create_public_key_output_public_key(
     }).transpose()
 }
 
-pub fn deser_header_create_response_headers_policy_create_response_headers_policy_output_e_tag(
+pub(crate) fn deser_header_create_response_headers_policy_create_response_headers_policy_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1006,7 +1006,7 @@ pub fn deser_header_create_response_headers_policy_create_response_headers_polic
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_response_headers_policy_create_response_headers_policy_output_location(
+pub(crate) fn deser_header_create_response_headers_policy_create_response_headers_policy_output_location(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1027,7 +1027,7 @@ pub fn deser_payload_create_response_headers_policy_create_response_headers_poli
     }).transpose()
 }
 
-pub fn deser_header_create_streaming_distribution_create_streaming_distribution_output_e_tag(
+pub(crate) fn deser_header_create_streaming_distribution_create_streaming_distribution_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1037,7 +1037,7 @@ pub fn deser_header_create_streaming_distribution_create_streaming_distribution_
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_streaming_distribution_create_streaming_distribution_output_location(
+pub(crate) fn deser_header_create_streaming_distribution_create_streaming_distribution_output_location(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1058,7 +1058,7 @@ pub fn deser_payload_create_streaming_distribution_create_streaming_distribution
     }).transpose()
 }
 
-pub fn deser_header_create_streaming_distribution_with_tags_create_streaming_distribution_with_tags_output_e_tag(
+pub(crate) fn deser_header_create_streaming_distribution_with_tags_create_streaming_distribution_with_tags_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1068,7 +1068,7 @@ pub fn deser_header_create_streaming_distribution_with_tags_create_streaming_dis
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_streaming_distribution_with_tags_create_streaming_distribution_with_tags_output_location(
+pub(crate) fn deser_header_create_streaming_distribution_with_tags_create_streaming_distribution_with_tags_output_location(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1089,7 +1089,7 @@ pub fn deser_payload_create_streaming_distribution_with_tags_create_streaming_di
     }).transpose()
 }
 
-pub fn deser_header_describe_function_describe_function_output_e_tag(
+pub(crate) fn deser_header_describe_function_describe_function_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1121,7 +1121,7 @@ pub fn deser_payload_get_cache_policy_get_cache_policy_output_cache_policy(
     }).transpose()
 }
 
-pub fn deser_header_get_cache_policy_get_cache_policy_output_e_tag(
+pub(crate) fn deser_header_get_cache_policy_get_cache_policy_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1142,7 +1142,7 @@ pub fn deser_payload_get_cache_policy_config_get_cache_policy_config_output_cach
     }).transpose()
 }
 
-pub fn deser_header_get_cache_policy_config_get_cache_policy_config_output_e_tag(
+pub(crate) fn deser_header_get_cache_policy_config_get_cache_policy_config_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1163,7 +1163,7 @@ pub fn deser_payload_get_cloud_front_origin_access_identity_get_cloud_front_orig
     }).transpose()
 }
 
-pub fn deser_header_get_cloud_front_origin_access_identity_get_cloud_front_origin_access_identity_output_e_tag(
+pub(crate) fn deser_header_get_cloud_front_origin_access_identity_get_cloud_front_origin_access_identity_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1184,7 +1184,7 @@ pub fn deser_payload_get_cloud_front_origin_access_identity_config_get_cloud_fro
     }).transpose()
 }
 
-pub fn deser_header_get_cloud_front_origin_access_identity_config_get_cloud_front_origin_access_identity_config_output_e_tag(
+pub(crate) fn deser_header_get_cloud_front_origin_access_identity_config_get_cloud_front_origin_access_identity_config_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1205,7 +1205,7 @@ pub fn deser_payload_get_distribution_get_distribution_output_distribution(
     }).transpose()
 }
 
-pub fn deser_header_get_distribution_get_distribution_output_e_tag(
+pub(crate) fn deser_header_get_distribution_get_distribution_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1226,7 +1226,7 @@ pub fn deser_payload_get_distribution_config_get_distribution_config_output_dist
     }).transpose()
 }
 
-pub fn deser_header_get_distribution_config_get_distribution_config_output_e_tag(
+pub(crate) fn deser_header_get_distribution_config_get_distribution_config_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1236,7 +1236,7 @@ pub fn deser_header_get_distribution_config_get_distribution_config_output_e_tag
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_field_level_encryption_get_field_level_encryption_output_e_tag(
+pub(crate) fn deser_header_get_field_level_encryption_get_field_level_encryption_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1257,7 +1257,7 @@ pub fn deser_payload_get_field_level_encryption_get_field_level_encryption_outpu
     }).transpose()
 }
 
-pub fn deser_header_get_field_level_encryption_config_get_field_level_encryption_config_output_e_tag(
+pub(crate) fn deser_header_get_field_level_encryption_config_get_field_level_encryption_config_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1278,7 +1278,7 @@ pub fn deser_payload_get_field_level_encryption_config_get_field_level_encryptio
     }).transpose()
 }
 
-pub fn deser_header_get_field_level_encryption_profile_get_field_level_encryption_profile_output_e_tag(
+pub(crate) fn deser_header_get_field_level_encryption_profile_get_field_level_encryption_profile_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1299,7 +1299,7 @@ pub fn deser_payload_get_field_level_encryption_profile_get_field_level_encrypti
     }).transpose()
 }
 
-pub fn deser_header_get_field_level_encryption_profile_config_get_field_level_encryption_profile_config_output_e_tag(
+pub(crate) fn deser_header_get_field_level_encryption_profile_config_get_field_level_encryption_profile_config_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1320,7 +1320,7 @@ pub fn deser_payload_get_field_level_encryption_profile_config_get_field_level_e
     }).transpose()
 }
 
-pub fn deser_header_get_function_get_function_output_content_type(
+pub(crate) fn deser_header_get_function_get_function_output_content_type(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1330,7 +1330,7 @@ pub fn deser_header_get_function_get_function_output_content_type(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_function_get_function_output_e_tag(
+pub(crate) fn deser_header_get_function_get_function_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1360,7 +1360,7 @@ pub fn deser_payload_get_invalidation_get_invalidation_output_invalidation(
     }).transpose()
 }
 
-pub fn deser_header_get_key_group_get_key_group_output_e_tag(
+pub(crate) fn deser_header_get_key_group_get_key_group_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1379,7 +1379,7 @@ pub fn deser_payload_get_key_group_get_key_group_output_key_group(
     }).transpose()
 }
 
-pub fn deser_header_get_key_group_config_get_key_group_config_output_e_tag(
+pub(crate) fn deser_header_get_key_group_config_get_key_group_config_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1411,7 +1411,7 @@ pub fn deser_payload_get_monitoring_subscription_get_monitoring_subscription_out
     }).transpose()
 }
 
-pub fn deser_header_get_origin_access_control_get_origin_access_control_output_e_tag(
+pub(crate) fn deser_header_get_origin_access_control_get_origin_access_control_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1432,7 +1432,7 @@ pub fn deser_payload_get_origin_access_control_get_origin_access_control_output_
     }).transpose()
 }
 
-pub fn deser_header_get_origin_access_control_config_get_origin_access_control_config_output_e_tag(
+pub(crate) fn deser_header_get_origin_access_control_config_get_origin_access_control_config_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1453,7 +1453,7 @@ pub fn deser_payload_get_origin_access_control_config_get_origin_access_control_
     }).transpose()
 }
 
-pub fn deser_header_get_origin_request_policy_get_origin_request_policy_output_e_tag(
+pub(crate) fn deser_header_get_origin_request_policy_get_origin_request_policy_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1474,7 +1474,7 @@ pub fn deser_payload_get_origin_request_policy_get_origin_request_policy_output_
     }).transpose()
 }
 
-pub fn deser_header_get_origin_request_policy_config_get_origin_request_policy_config_output_e_tag(
+pub(crate) fn deser_header_get_origin_request_policy_config_get_origin_request_policy_config_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1495,7 +1495,7 @@ pub fn deser_payload_get_origin_request_policy_config_get_origin_request_policy_
     }).transpose()
 }
 
-pub fn deser_header_get_public_key_get_public_key_output_e_tag(
+pub(crate) fn deser_header_get_public_key_get_public_key_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1516,7 +1516,7 @@ pub fn deser_payload_get_public_key_get_public_key_output_public_key(
     }).transpose()
 }
 
-pub fn deser_header_get_public_key_config_get_public_key_config_output_e_tag(
+pub(crate) fn deser_header_get_public_key_config_get_public_key_config_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1537,7 +1537,7 @@ pub fn deser_payload_get_public_key_config_get_public_key_config_output_public_k
     }).transpose()
 }
 
-pub fn deser_header_get_response_headers_policy_get_response_headers_policy_output_e_tag(
+pub(crate) fn deser_header_get_response_headers_policy_get_response_headers_policy_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1558,7 +1558,7 @@ pub fn deser_payload_get_response_headers_policy_get_response_headers_policy_out
     }).transpose()
 }
 
-pub fn deser_header_get_response_headers_policy_config_get_response_headers_policy_config_output_e_tag(
+pub(crate) fn deser_header_get_response_headers_policy_config_get_response_headers_policy_config_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1579,7 +1579,7 @@ pub fn deser_payload_get_response_headers_policy_config_get_response_headers_pol
     }).transpose()
 }
 
-pub fn deser_header_get_streaming_distribution_get_streaming_distribution_output_e_tag(
+pub(crate) fn deser_header_get_streaming_distribution_get_streaming_distribution_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1600,7 +1600,7 @@ pub fn deser_payload_get_streaming_distribution_get_streaming_distribution_outpu
     }).transpose()
 }
 
-pub fn deser_header_get_streaming_distribution_config_get_streaming_distribution_config_output_e_tag(
+pub(crate) fn deser_header_get_streaming_distribution_config_get_streaming_distribution_config_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1896,7 +1896,7 @@ pub fn deser_payload_update_cache_policy_update_cache_policy_output_cache_policy
     }).transpose()
 }
 
-pub fn deser_header_update_cache_policy_update_cache_policy_output_e_tag(
+pub(crate) fn deser_header_update_cache_policy_update_cache_policy_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1917,7 +1917,7 @@ pub fn deser_payload_update_cloud_front_origin_access_identity_update_cloud_fron
     }).transpose()
 }
 
-pub fn deser_header_update_cloud_front_origin_access_identity_update_cloud_front_origin_access_identity_output_e_tag(
+pub(crate) fn deser_header_update_cloud_front_origin_access_identity_update_cloud_front_origin_access_identity_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1938,7 +1938,7 @@ pub fn deser_payload_update_distribution_update_distribution_output_distribution
     }).transpose()
 }
 
-pub fn deser_header_update_distribution_update_distribution_output_e_tag(
+pub(crate) fn deser_header_update_distribution_update_distribution_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1948,7 +1948,7 @@ pub fn deser_header_update_distribution_update_distribution_output_e_tag(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_update_field_level_encryption_config_update_field_level_encryption_config_output_e_tag(
+pub(crate) fn deser_header_update_field_level_encryption_config_update_field_level_encryption_config_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1969,7 +1969,7 @@ pub fn deser_payload_update_field_level_encryption_config_update_field_level_enc
     }).transpose()
 }
 
-pub fn deser_header_update_field_level_encryption_profile_update_field_level_encryption_profile_output_e_tag(
+pub(crate) fn deser_header_update_field_level_encryption_profile_update_field_level_encryption_profile_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -1990,7 +1990,7 @@ pub fn deser_payload_update_field_level_encryption_profile_update_field_level_en
     }).transpose()
 }
 
-pub fn deser_header_update_function_update_function_output_e_tag(
+pub(crate) fn deser_header_update_function_update_function_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -2011,7 +2011,7 @@ pub fn deser_payload_update_function_update_function_output_function_summary(
     }).transpose()
 }
 
-pub fn deser_header_update_key_group_update_key_group_output_e_tag(
+pub(crate) fn deser_header_update_key_group_update_key_group_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -2032,7 +2032,7 @@ pub fn deser_payload_update_key_group_update_key_group_output_key_group(
     }).transpose()
 }
 
-pub fn deser_header_update_origin_access_control_update_origin_access_control_output_e_tag(
+pub(crate) fn deser_header_update_origin_access_control_update_origin_access_control_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -2053,7 +2053,7 @@ pub fn deser_payload_update_origin_access_control_update_origin_access_control_o
     }).transpose()
 }
 
-pub fn deser_header_update_origin_request_policy_update_origin_request_policy_output_e_tag(
+pub(crate) fn deser_header_update_origin_request_policy_update_origin_request_policy_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -2074,7 +2074,7 @@ pub fn deser_payload_update_origin_request_policy_update_origin_request_policy_o
     }).transpose()
 }
 
-pub fn deser_header_update_public_key_update_public_key_output_e_tag(
+pub(crate) fn deser_header_update_public_key_update_public_key_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -2095,7 +2095,7 @@ pub fn deser_payload_update_public_key_update_public_key_output_public_key(
     }).transpose()
 }
 
-pub fn deser_header_update_response_headers_policy_update_response_headers_policy_output_e_tag(
+pub(crate) fn deser_header_update_response_headers_policy_update_response_headers_policy_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -2116,7 +2116,7 @@ pub fn deser_payload_update_response_headers_policy_update_response_headers_poli
     }).transpose()
 }
 
-pub fn deser_header_update_streaming_distribution_update_streaming_distribution_output_e_tag(
+pub(crate) fn deser_header_update_streaming_distribution_update_streaming_distribution_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,

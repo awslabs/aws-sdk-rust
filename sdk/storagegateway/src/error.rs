@@ -2,7 +2,7 @@
 
 /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidGatewayRequestException {
     /// <p>A human-readable message describing the error that occurred.</p>
     #[doc(hidden)]
@@ -17,17 +17,9 @@ impl InvalidGatewayRequestException {
         self.error.as_ref()
     }
 }
-impl std::fmt::Debug for InvalidGatewayRequestException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidGatewayRequestException");
-        formatter.field("message", &self.message);
-        formatter.field("error", &self.error);
-        formatter.finish()
-    }
-}
 impl InvalidGatewayRequestException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -35,7 +27,9 @@ impl std::fmt::Display for InvalidGatewayRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidGatewayRequestException")?;
         if let Some(inner_1) = &self.message {
-            write!(f, ": {}", inner_1)?;
+            {
+                write!(f, ": {}", inner_1)?;
+            }
         }
         Ok(())
     }
@@ -45,7 +39,7 @@ impl std::error::Error for InvalidGatewayRequestException {}
 pub mod invalid_gateway_request_exception {
 
     /// A builder for [`InvalidGatewayRequestException`](crate::error::InvalidGatewayRequestException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) error: std::option::Option<crate::model::StorageGatewayError>,
@@ -92,7 +86,7 @@ impl InvalidGatewayRequestException {
 
 /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalServerError {
     /// <p>A human-readable message describing the error that occurred.</p>
     #[doc(hidden)]
@@ -107,17 +101,9 @@ impl InternalServerError {
         self.error.as_ref()
     }
 }
-impl std::fmt::Debug for InternalServerError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerError");
-        formatter.field("message", &self.message);
-        formatter.field("error", &self.error);
-        formatter.finish()
-    }
-}
 impl InternalServerError {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -125,7 +111,9 @@ impl std::fmt::Display for InternalServerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServerError")?;
         if let Some(inner_2) = &self.message {
-            write!(f, ": {}", inner_2)?;
+            {
+                write!(f, ": {}", inner_2)?;
+            }
         }
         Ok(())
     }
@@ -135,7 +123,7 @@ impl std::error::Error for InternalServerError {}
 pub mod internal_server_error {
 
     /// A builder for [`InternalServerError`](crate::error::InternalServerError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) error: std::option::Option<crate::model::StorageGatewayError>,
@@ -182,7 +170,7 @@ impl InternalServerError {
 
 /// <p>An internal server error has occurred because the service is unavailable. For more information, see the error and message fields.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceUnavailableError {
     /// <p>A human-readable message describing the error that occurred.</p>
     #[doc(hidden)]
@@ -197,17 +185,9 @@ impl ServiceUnavailableError {
         self.error.as_ref()
     }
 }
-impl std::fmt::Debug for ServiceUnavailableError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceUnavailableError");
-        formatter.field("message", &self.message);
-        formatter.field("error", &self.error);
-        formatter.finish()
-    }
-}
 impl ServiceUnavailableError {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -215,7 +195,9 @@ impl std::fmt::Display for ServiceUnavailableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceUnavailableError")?;
         if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+            {
+                write!(f, ": {}", inner_3)?;
+            }
         }
         Ok(())
     }
@@ -225,7 +207,7 @@ impl std::error::Error for ServiceUnavailableError {}
 pub mod service_unavailable_error {
 
     /// A builder for [`ServiceUnavailableError`](crate::error::ServiceUnavailableError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) error: std::option::Option<crate::model::StorageGatewayError>,
@@ -279,6 +261,14 @@ pub struct ActivateGatewayError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ActivateGatewayError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ActivateGatewayErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ActivateGateway` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -287,8 +277,15 @@ pub enum ActivateGatewayErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ActivateGatewayError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -316,7 +313,7 @@ impl ActivateGatewayError {
     /// Creates the `ActivateGatewayError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ActivateGatewayErrorKind::Unhandled(err.into()),
+            kind: ActivateGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -325,7 +322,7 @@ impl ActivateGatewayError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ActivateGatewayErrorKind::Unhandled(err.into()),
+            kind: ActivateGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -366,7 +363,7 @@ impl std::error::Error for ActivateGatewayError {
         match &self.kind {
             ActivateGatewayErrorKind::InternalServerError(_inner) => Some(_inner),
             ActivateGatewayErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            ActivateGatewayErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ActivateGatewayErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -380,6 +377,14 @@ pub struct AddCacheError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for AddCacheError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AddCacheErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AddCache` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -388,8 +393,15 @@ pub enum AddCacheErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AddCacheError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -417,7 +429,7 @@ impl AddCacheError {
     /// Creates the `AddCacheError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AddCacheErrorKind::Unhandled(err.into()),
+            kind: AddCacheErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -426,7 +438,7 @@ impl AddCacheError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AddCacheErrorKind::Unhandled(err.into()),
+            kind: AddCacheErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -467,7 +479,7 @@ impl std::error::Error for AddCacheError {
         match &self.kind {
             AddCacheErrorKind::InternalServerError(_inner) => Some(_inner),
             AddCacheErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            AddCacheErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AddCacheErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -481,6 +493,14 @@ pub struct AddTagsToResourceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for AddTagsToResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AddTagsToResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AddTagsToResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -489,8 +509,15 @@ pub enum AddTagsToResourceErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AddTagsToResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -518,7 +545,7 @@ impl AddTagsToResourceError {
     /// Creates the `AddTagsToResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AddTagsToResourceErrorKind::Unhandled(err.into()),
+            kind: AddTagsToResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -527,7 +554,7 @@ impl AddTagsToResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AddTagsToResourceErrorKind::Unhandled(err.into()),
+            kind: AddTagsToResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -571,7 +598,7 @@ impl std::error::Error for AddTagsToResourceError {
         match &self.kind {
             AddTagsToResourceErrorKind::InternalServerError(_inner) => Some(_inner),
             AddTagsToResourceErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            AddTagsToResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AddTagsToResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -585,6 +612,14 @@ pub struct AddUploadBufferError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for AddUploadBufferError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AddUploadBufferErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AddUploadBuffer` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -593,8 +628,15 @@ pub enum AddUploadBufferErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AddUploadBufferError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -622,7 +664,7 @@ impl AddUploadBufferError {
     /// Creates the `AddUploadBufferError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AddUploadBufferErrorKind::Unhandled(err.into()),
+            kind: AddUploadBufferErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -631,7 +673,7 @@ impl AddUploadBufferError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AddUploadBufferErrorKind::Unhandled(err.into()),
+            kind: AddUploadBufferErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -672,7 +714,7 @@ impl std::error::Error for AddUploadBufferError {
         match &self.kind {
             AddUploadBufferErrorKind::InternalServerError(_inner) => Some(_inner),
             AddUploadBufferErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            AddUploadBufferErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AddUploadBufferErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -686,6 +728,14 @@ pub struct AddWorkingStorageError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for AddWorkingStorageError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AddWorkingStorageErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AddWorkingStorage` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -694,8 +744,15 @@ pub enum AddWorkingStorageErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AddWorkingStorageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -723,7 +780,7 @@ impl AddWorkingStorageError {
     /// Creates the `AddWorkingStorageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AddWorkingStorageErrorKind::Unhandled(err.into()),
+            kind: AddWorkingStorageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -732,7 +789,7 @@ impl AddWorkingStorageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AddWorkingStorageErrorKind::Unhandled(err.into()),
+            kind: AddWorkingStorageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -776,7 +833,7 @@ impl std::error::Error for AddWorkingStorageError {
         match &self.kind {
             AddWorkingStorageErrorKind::InternalServerError(_inner) => Some(_inner),
             AddWorkingStorageErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            AddWorkingStorageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AddWorkingStorageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -790,6 +847,14 @@ pub struct AssignTapePoolError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for AssignTapePoolError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AssignTapePoolErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AssignTapePool` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -798,8 +863,15 @@ pub enum AssignTapePoolErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssignTapePoolError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -827,7 +899,7 @@ impl AssignTapePoolError {
     /// Creates the `AssignTapePoolError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssignTapePoolErrorKind::Unhandled(err.into()),
+            kind: AssignTapePoolErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -836,7 +908,7 @@ impl AssignTapePoolError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssignTapePoolErrorKind::Unhandled(err.into()),
+            kind: AssignTapePoolErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -877,7 +949,7 @@ impl std::error::Error for AssignTapePoolError {
         match &self.kind {
             AssignTapePoolErrorKind::InternalServerError(_inner) => Some(_inner),
             AssignTapePoolErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            AssignTapePoolErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AssignTapePoolErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -891,6 +963,14 @@ pub struct AssociateFileSystemError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for AssociateFileSystemError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AssociateFileSystemErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AssociateFileSystem` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -899,8 +979,15 @@ pub enum AssociateFileSystemErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateFileSystemError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -928,7 +1015,7 @@ impl AssociateFileSystemError {
     /// Creates the `AssociateFileSystemError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssociateFileSystemErrorKind::Unhandled(err.into()),
+            kind: AssociateFileSystemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -937,7 +1024,7 @@ impl AssociateFileSystemError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssociateFileSystemErrorKind::Unhandled(err.into()),
+            kind: AssociateFileSystemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -981,7 +1068,7 @@ impl std::error::Error for AssociateFileSystemError {
         match &self.kind {
             AssociateFileSystemErrorKind::InternalServerError(_inner) => Some(_inner),
             AssociateFileSystemErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            AssociateFileSystemErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AssociateFileSystemErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -995,6 +1082,14 @@ pub struct AttachVolumeError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for AttachVolumeError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AttachVolumeErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AttachVolume` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1003,8 +1098,15 @@ pub enum AttachVolumeErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AttachVolumeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1032,7 +1134,7 @@ impl AttachVolumeError {
     /// Creates the `AttachVolumeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AttachVolumeErrorKind::Unhandled(err.into()),
+            kind: AttachVolumeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1041,7 +1143,7 @@ impl AttachVolumeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AttachVolumeErrorKind::Unhandled(err.into()),
+            kind: AttachVolumeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1082,7 +1184,7 @@ impl std::error::Error for AttachVolumeError {
         match &self.kind {
             AttachVolumeErrorKind::InternalServerError(_inner) => Some(_inner),
             AttachVolumeErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            AttachVolumeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AttachVolumeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1096,6 +1198,14 @@ pub struct CancelArchivalError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CancelArchivalError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CancelArchivalErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CancelArchival` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1104,8 +1214,15 @@ pub enum CancelArchivalErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CancelArchivalError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1133,7 +1250,7 @@ impl CancelArchivalError {
     /// Creates the `CancelArchivalError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CancelArchivalErrorKind::Unhandled(err.into()),
+            kind: CancelArchivalErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1142,7 +1259,7 @@ impl CancelArchivalError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CancelArchivalErrorKind::Unhandled(err.into()),
+            kind: CancelArchivalErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1183,7 +1300,7 @@ impl std::error::Error for CancelArchivalError {
         match &self.kind {
             CancelArchivalErrorKind::InternalServerError(_inner) => Some(_inner),
             CancelArchivalErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            CancelArchivalErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CancelArchivalErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1197,6 +1314,14 @@ pub struct CancelRetrievalError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CancelRetrievalError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CancelRetrievalErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CancelRetrieval` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1205,8 +1330,15 @@ pub enum CancelRetrievalErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CancelRetrievalError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1234,7 +1366,7 @@ impl CancelRetrievalError {
     /// Creates the `CancelRetrievalError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CancelRetrievalErrorKind::Unhandled(err.into()),
+            kind: CancelRetrievalErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1243,7 +1375,7 @@ impl CancelRetrievalError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CancelRetrievalErrorKind::Unhandled(err.into()),
+            kind: CancelRetrievalErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1284,7 +1416,7 @@ impl std::error::Error for CancelRetrievalError {
         match &self.kind {
             CancelRetrievalErrorKind::InternalServerError(_inner) => Some(_inner),
             CancelRetrievalErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            CancelRetrievalErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CancelRetrievalErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1298,6 +1430,14 @@ pub struct CreateCachediSCSIVolumeError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateCachediSCSIVolumeError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateCachediSCSIVolumeErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateCachediSCSIVolume` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1306,8 +1446,15 @@ pub enum CreateCachediSCSIVolumeErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateCachediSCSIVolumeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1337,7 +1484,9 @@ impl CreateCachediSCSIVolumeError {
     /// Creates the `CreateCachediSCSIVolumeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateCachediSCSIVolumeErrorKind::Unhandled(err.into()),
+            kind: CreateCachediSCSIVolumeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1346,7 +1495,9 @@ impl CreateCachediSCSIVolumeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateCachediSCSIVolumeErrorKind::Unhandled(err.into()),
+            kind: CreateCachediSCSIVolumeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1392,7 +1543,7 @@ impl std::error::Error for CreateCachediSCSIVolumeError {
             CreateCachediSCSIVolumeErrorKind::InvalidGatewayRequestException(_inner) => {
                 Some(_inner)
             }
-            CreateCachediSCSIVolumeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateCachediSCSIVolumeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1406,6 +1557,14 @@ pub struct CreateNFSFileShareError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateNFSFileShareError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateNFSFileShareErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateNFSFileShare` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1414,8 +1573,15 @@ pub enum CreateNFSFileShareErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateNFSFileShareError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1443,7 +1609,7 @@ impl CreateNFSFileShareError {
     /// Creates the `CreateNFSFileShareError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateNFSFileShareErrorKind::Unhandled(err.into()),
+            kind: CreateNFSFileShareErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1452,7 +1618,7 @@ impl CreateNFSFileShareError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateNFSFileShareErrorKind::Unhandled(err.into()),
+            kind: CreateNFSFileShareErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1496,7 +1662,7 @@ impl std::error::Error for CreateNFSFileShareError {
         match &self.kind {
             CreateNFSFileShareErrorKind::InternalServerError(_inner) => Some(_inner),
             CreateNFSFileShareErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            CreateNFSFileShareErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateNFSFileShareErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1510,6 +1676,14 @@ pub struct CreateSMBFileShareError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateSMBFileShareError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateSMBFileShareErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateSMBFileShare` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1518,8 +1692,15 @@ pub enum CreateSMBFileShareErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateSMBFileShareError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1547,7 +1728,7 @@ impl CreateSMBFileShareError {
     /// Creates the `CreateSMBFileShareError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateSMBFileShareErrorKind::Unhandled(err.into()),
+            kind: CreateSMBFileShareErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1556,7 +1737,7 @@ impl CreateSMBFileShareError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateSMBFileShareErrorKind::Unhandled(err.into()),
+            kind: CreateSMBFileShareErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1600,7 +1781,7 @@ impl std::error::Error for CreateSMBFileShareError {
         match &self.kind {
             CreateSMBFileShareErrorKind::InternalServerError(_inner) => Some(_inner),
             CreateSMBFileShareErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            CreateSMBFileShareErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateSMBFileShareErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1614,6 +1795,14 @@ pub struct CreateSnapshotError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateSnapshotError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateSnapshot` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1624,8 +1813,15 @@ pub enum CreateSnapshotErrorKind {
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// <p>An internal server error has occurred because the service is unavailable. For more information, see the error and message fields.</p>
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateSnapshotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1654,7 +1850,7 @@ impl CreateSnapshotError {
     /// Creates the `CreateSnapshotError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateSnapshotErrorKind::Unhandled(err.into()),
+            kind: CreateSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1663,7 +1859,7 @@ impl CreateSnapshotError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateSnapshotErrorKind::Unhandled(err.into()),
+            kind: CreateSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1712,7 +1908,7 @@ impl std::error::Error for CreateSnapshotError {
             CreateSnapshotErrorKind::InternalServerError(_inner) => Some(_inner),
             CreateSnapshotErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
             CreateSnapshotErrorKind::ServiceUnavailableError(_inner) => Some(_inner),
-            CreateSnapshotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateSnapshotErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1726,6 +1922,16 @@ pub struct CreateSnapshotFromVolumeRecoveryPointError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateSnapshotFromVolumeRecoveryPointError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateSnapshotFromVolumeRecoveryPointErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateSnapshotFromVolumeRecoveryPoint` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1736,8 +1942,15 @@ pub enum CreateSnapshotFromVolumeRecoveryPointErrorKind {
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// <p>An internal server error has occurred because the service is unavailable. For more information, see the error and message fields.</p>
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateSnapshotFromVolumeRecoveryPointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1775,7 +1988,9 @@ impl CreateSnapshotFromVolumeRecoveryPointError {
     /// Creates the `CreateSnapshotFromVolumeRecoveryPointError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateSnapshotFromVolumeRecoveryPointErrorKind::Unhandled(err.into()),
+            kind: CreateSnapshotFromVolumeRecoveryPointErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1784,7 +1999,9 @@ impl CreateSnapshotFromVolumeRecoveryPointError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateSnapshotFromVolumeRecoveryPointErrorKind::Unhandled(err.into()),
+            kind: CreateSnapshotFromVolumeRecoveryPointErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1842,9 +2059,7 @@ impl std::error::Error for CreateSnapshotFromVolumeRecoveryPointError {
             CreateSnapshotFromVolumeRecoveryPointErrorKind::ServiceUnavailableError(_inner) => {
                 Some(_inner)
             }
-            CreateSnapshotFromVolumeRecoveryPointErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            CreateSnapshotFromVolumeRecoveryPointErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1858,6 +2073,14 @@ pub struct CreateStorediSCSIVolumeError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateStorediSCSIVolumeError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateStorediSCSIVolumeErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateStorediSCSIVolume` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1866,8 +2089,15 @@ pub enum CreateStorediSCSIVolumeErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateStorediSCSIVolumeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1897,7 +2127,9 @@ impl CreateStorediSCSIVolumeError {
     /// Creates the `CreateStorediSCSIVolumeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateStorediSCSIVolumeErrorKind::Unhandled(err.into()),
+            kind: CreateStorediSCSIVolumeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1906,7 +2138,9 @@ impl CreateStorediSCSIVolumeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateStorediSCSIVolumeErrorKind::Unhandled(err.into()),
+            kind: CreateStorediSCSIVolumeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1952,7 +2186,7 @@ impl std::error::Error for CreateStorediSCSIVolumeError {
             CreateStorediSCSIVolumeErrorKind::InvalidGatewayRequestException(_inner) => {
                 Some(_inner)
             }
-            CreateStorediSCSIVolumeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateStorediSCSIVolumeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1966,6 +2200,14 @@ pub struct CreateTapePoolError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateTapePoolError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateTapePoolErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateTapePool` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1974,8 +2216,15 @@ pub enum CreateTapePoolErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateTapePoolError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2003,7 +2252,7 @@ impl CreateTapePoolError {
     /// Creates the `CreateTapePoolError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateTapePoolErrorKind::Unhandled(err.into()),
+            kind: CreateTapePoolErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2012,7 +2261,7 @@ impl CreateTapePoolError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateTapePoolErrorKind::Unhandled(err.into()),
+            kind: CreateTapePoolErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2053,7 +2302,7 @@ impl std::error::Error for CreateTapePoolError {
         match &self.kind {
             CreateTapePoolErrorKind::InternalServerError(_inner) => Some(_inner),
             CreateTapePoolErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            CreateTapePoolErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateTapePoolErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2067,6 +2316,14 @@ pub struct CreateTapesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateTapesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateTapesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateTapes` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2075,8 +2332,15 @@ pub enum CreateTapesErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateTapesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2104,7 +2368,7 @@ impl CreateTapesError {
     /// Creates the `CreateTapesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateTapesErrorKind::Unhandled(err.into()),
+            kind: CreateTapesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2113,7 +2377,7 @@ impl CreateTapesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateTapesErrorKind::Unhandled(err.into()),
+            kind: CreateTapesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2154,7 +2418,7 @@ impl std::error::Error for CreateTapesError {
         match &self.kind {
             CreateTapesErrorKind::InternalServerError(_inner) => Some(_inner),
             CreateTapesErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            CreateTapesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateTapesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2168,6 +2432,14 @@ pub struct CreateTapeWithBarcodeError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateTapeWithBarcodeError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateTapeWithBarcodeErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateTapeWithBarcode` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2176,8 +2448,15 @@ pub enum CreateTapeWithBarcodeErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateTapeWithBarcodeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2205,7 +2484,9 @@ impl CreateTapeWithBarcodeError {
     /// Creates the `CreateTapeWithBarcodeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateTapeWithBarcodeErrorKind::Unhandled(err.into()),
+            kind: CreateTapeWithBarcodeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2214,7 +2495,9 @@ impl CreateTapeWithBarcodeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateTapeWithBarcodeErrorKind::Unhandled(err.into()),
+            kind: CreateTapeWithBarcodeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2258,7 +2541,7 @@ impl std::error::Error for CreateTapeWithBarcodeError {
         match &self.kind {
             CreateTapeWithBarcodeErrorKind::InternalServerError(_inner) => Some(_inner),
             CreateTapeWithBarcodeErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            CreateTapeWithBarcodeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateTapeWithBarcodeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2272,6 +2555,16 @@ pub struct DeleteAutomaticTapeCreationPolicyError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteAutomaticTapeCreationPolicyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteAutomaticTapeCreationPolicyErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteAutomaticTapeCreationPolicy` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2280,8 +2573,15 @@ pub enum DeleteAutomaticTapeCreationPolicyErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAutomaticTapeCreationPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2316,7 +2616,9 @@ impl DeleteAutomaticTapeCreationPolicyError {
     /// Creates the `DeleteAutomaticTapeCreationPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAutomaticTapeCreationPolicyErrorKind::Unhandled(err.into()),
+            kind: DeleteAutomaticTapeCreationPolicyErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2325,7 +2627,9 @@ impl DeleteAutomaticTapeCreationPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAutomaticTapeCreationPolicyErrorKind::Unhandled(err.into()),
+            kind: DeleteAutomaticTapeCreationPolicyErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2371,7 +2675,7 @@ impl std::error::Error for DeleteAutomaticTapeCreationPolicyError {
             DeleteAutomaticTapeCreationPolicyErrorKind::InvalidGatewayRequestException(_inner) => {
                 Some(_inner)
             }
-            DeleteAutomaticTapeCreationPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAutomaticTapeCreationPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2385,6 +2689,16 @@ pub struct DeleteBandwidthRateLimitError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteBandwidthRateLimitError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteBandwidthRateLimitErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteBandwidthRateLimit` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2393,8 +2707,15 @@ pub enum DeleteBandwidthRateLimitErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteBandwidthRateLimitError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2424,7 +2745,9 @@ impl DeleteBandwidthRateLimitError {
     /// Creates the `DeleteBandwidthRateLimitError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteBandwidthRateLimitErrorKind::Unhandled(err.into()),
+            kind: DeleteBandwidthRateLimitErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2433,7 +2756,9 @@ impl DeleteBandwidthRateLimitError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteBandwidthRateLimitErrorKind::Unhandled(err.into()),
+            kind: DeleteBandwidthRateLimitErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2479,7 +2804,7 @@ impl std::error::Error for DeleteBandwidthRateLimitError {
             DeleteBandwidthRateLimitErrorKind::InvalidGatewayRequestException(_inner) => {
                 Some(_inner)
             }
-            DeleteBandwidthRateLimitErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteBandwidthRateLimitErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2493,6 +2818,14 @@ pub struct DeleteChapCredentialsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteChapCredentialsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteChapCredentialsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteChapCredentials` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2501,8 +2834,15 @@ pub enum DeleteChapCredentialsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteChapCredentialsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2530,7 +2870,9 @@ impl DeleteChapCredentialsError {
     /// Creates the `DeleteChapCredentialsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteChapCredentialsErrorKind::Unhandled(err.into()),
+            kind: DeleteChapCredentialsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2539,7 +2881,9 @@ impl DeleteChapCredentialsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteChapCredentialsErrorKind::Unhandled(err.into()),
+            kind: DeleteChapCredentialsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2583,7 +2927,7 @@ impl std::error::Error for DeleteChapCredentialsError {
         match &self.kind {
             DeleteChapCredentialsErrorKind::InternalServerError(_inner) => Some(_inner),
             DeleteChapCredentialsErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            DeleteChapCredentialsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteChapCredentialsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2597,6 +2941,14 @@ pub struct DeleteFileShareError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteFileShareError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteFileShareErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteFileShare` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2605,8 +2957,15 @@ pub enum DeleteFileShareErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteFileShareError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2634,7 +2993,7 @@ impl DeleteFileShareError {
     /// Creates the `DeleteFileShareError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteFileShareErrorKind::Unhandled(err.into()),
+            kind: DeleteFileShareErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2643,7 +3002,7 @@ impl DeleteFileShareError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteFileShareErrorKind::Unhandled(err.into()),
+            kind: DeleteFileShareErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2684,7 +3043,7 @@ impl std::error::Error for DeleteFileShareError {
         match &self.kind {
             DeleteFileShareErrorKind::InternalServerError(_inner) => Some(_inner),
             DeleteFileShareErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            DeleteFileShareErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteFileShareErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2698,6 +3057,14 @@ pub struct DeleteGatewayError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteGatewayError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteGatewayErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteGateway` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2706,8 +3073,15 @@ pub enum DeleteGatewayErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteGatewayError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2735,7 +3109,7 @@ impl DeleteGatewayError {
     /// Creates the `DeleteGatewayError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteGatewayErrorKind::Unhandled(err.into()),
+            kind: DeleteGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2744,7 +3118,7 @@ impl DeleteGatewayError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteGatewayErrorKind::Unhandled(err.into()),
+            kind: DeleteGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2785,7 +3159,7 @@ impl std::error::Error for DeleteGatewayError {
         match &self.kind {
             DeleteGatewayErrorKind::InternalServerError(_inner) => Some(_inner),
             DeleteGatewayErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            DeleteGatewayErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteGatewayErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2799,6 +3173,14 @@ pub struct DeleteSnapshotScheduleError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteSnapshotScheduleError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteSnapshotScheduleErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteSnapshotSchedule` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2807,8 +3189,15 @@ pub enum DeleteSnapshotScheduleErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteSnapshotScheduleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2838,7 +3227,9 @@ impl DeleteSnapshotScheduleError {
     /// Creates the `DeleteSnapshotScheduleError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteSnapshotScheduleErrorKind::Unhandled(err.into()),
+            kind: DeleteSnapshotScheduleErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2847,7 +3238,9 @@ impl DeleteSnapshotScheduleError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteSnapshotScheduleErrorKind::Unhandled(err.into()),
+            kind: DeleteSnapshotScheduleErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2891,7 +3284,7 @@ impl std::error::Error for DeleteSnapshotScheduleError {
         match &self.kind {
             DeleteSnapshotScheduleErrorKind::InternalServerError(_inner) => Some(_inner),
             DeleteSnapshotScheduleErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            DeleteSnapshotScheduleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteSnapshotScheduleErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2905,6 +3298,14 @@ pub struct DeleteTapeError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteTapeError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteTapeErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteTape` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2913,8 +3314,15 @@ pub enum DeleteTapeErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteTapeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2942,7 +3350,7 @@ impl DeleteTapeError {
     /// Creates the `DeleteTapeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteTapeErrorKind::Unhandled(err.into()),
+            kind: DeleteTapeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2951,7 +3359,7 @@ impl DeleteTapeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteTapeErrorKind::Unhandled(err.into()),
+            kind: DeleteTapeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2992,7 +3400,7 @@ impl std::error::Error for DeleteTapeError {
         match &self.kind {
             DeleteTapeErrorKind::InternalServerError(_inner) => Some(_inner),
             DeleteTapeErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            DeleteTapeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteTapeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3006,6 +3414,14 @@ pub struct DeleteTapeArchiveError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteTapeArchiveError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteTapeArchiveErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteTapeArchive` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3014,8 +3430,15 @@ pub enum DeleteTapeArchiveErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteTapeArchiveError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3043,7 +3466,7 @@ impl DeleteTapeArchiveError {
     /// Creates the `DeleteTapeArchiveError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteTapeArchiveErrorKind::Unhandled(err.into()),
+            kind: DeleteTapeArchiveErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3052,7 +3475,7 @@ impl DeleteTapeArchiveError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteTapeArchiveErrorKind::Unhandled(err.into()),
+            kind: DeleteTapeArchiveErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3096,7 +3519,7 @@ impl std::error::Error for DeleteTapeArchiveError {
         match &self.kind {
             DeleteTapeArchiveErrorKind::InternalServerError(_inner) => Some(_inner),
             DeleteTapeArchiveErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            DeleteTapeArchiveErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteTapeArchiveErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3110,6 +3533,14 @@ pub struct DeleteTapePoolError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteTapePoolError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteTapePoolErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteTapePool` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3118,8 +3549,15 @@ pub enum DeleteTapePoolErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteTapePoolError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3147,7 +3585,7 @@ impl DeleteTapePoolError {
     /// Creates the `DeleteTapePoolError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteTapePoolErrorKind::Unhandled(err.into()),
+            kind: DeleteTapePoolErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3156,7 +3594,7 @@ impl DeleteTapePoolError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteTapePoolErrorKind::Unhandled(err.into()),
+            kind: DeleteTapePoolErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3197,7 +3635,7 @@ impl std::error::Error for DeleteTapePoolError {
         match &self.kind {
             DeleteTapePoolErrorKind::InternalServerError(_inner) => Some(_inner),
             DeleteTapePoolErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            DeleteTapePoolErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteTapePoolErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3211,6 +3649,14 @@ pub struct DeleteVolumeError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteVolumeError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteVolumeErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteVolume` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3219,8 +3665,15 @@ pub enum DeleteVolumeErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteVolumeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3248,7 +3701,7 @@ impl DeleteVolumeError {
     /// Creates the `DeleteVolumeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteVolumeErrorKind::Unhandled(err.into()),
+            kind: DeleteVolumeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3257,7 +3710,7 @@ impl DeleteVolumeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteVolumeErrorKind::Unhandled(err.into()),
+            kind: DeleteVolumeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3298,7 +3751,7 @@ impl std::error::Error for DeleteVolumeError {
         match &self.kind {
             DeleteVolumeErrorKind::InternalServerError(_inner) => Some(_inner),
             DeleteVolumeErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            DeleteVolumeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteVolumeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3312,6 +3765,16 @@ pub struct DescribeAvailabilityMonitorTestError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeAvailabilityMonitorTestError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeAvailabilityMonitorTestErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeAvailabilityMonitorTest` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3320,8 +3783,15 @@ pub enum DescribeAvailabilityMonitorTestErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAvailabilityMonitorTestError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3354,7 +3824,9 @@ impl DescribeAvailabilityMonitorTestError {
     /// Creates the `DescribeAvailabilityMonitorTestError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAvailabilityMonitorTestErrorKind::Unhandled(err.into()),
+            kind: DescribeAvailabilityMonitorTestErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3363,7 +3835,9 @@ impl DescribeAvailabilityMonitorTestError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAvailabilityMonitorTestErrorKind::Unhandled(err.into()),
+            kind: DescribeAvailabilityMonitorTestErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3409,7 +3883,7 @@ impl std::error::Error for DescribeAvailabilityMonitorTestError {
             DescribeAvailabilityMonitorTestErrorKind::InvalidGatewayRequestException(_inner) => {
                 Some(_inner)
             }
-            DescribeAvailabilityMonitorTestErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAvailabilityMonitorTestErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3423,6 +3897,16 @@ pub struct DescribeBandwidthRateLimitError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeBandwidthRateLimitError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeBandwidthRateLimitErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeBandwidthRateLimit` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3431,8 +3915,15 @@ pub enum DescribeBandwidthRateLimitErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeBandwidthRateLimitError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3462,7 +3953,9 @@ impl DescribeBandwidthRateLimitError {
     /// Creates the `DescribeBandwidthRateLimitError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeBandwidthRateLimitErrorKind::Unhandled(err.into()),
+            kind: DescribeBandwidthRateLimitErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3471,7 +3964,9 @@ impl DescribeBandwidthRateLimitError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeBandwidthRateLimitErrorKind::Unhandled(err.into()),
+            kind: DescribeBandwidthRateLimitErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3517,7 +4012,7 @@ impl std::error::Error for DescribeBandwidthRateLimitError {
             DescribeBandwidthRateLimitErrorKind::InvalidGatewayRequestException(_inner) => {
                 Some(_inner)
             }
-            DescribeBandwidthRateLimitErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeBandwidthRateLimitErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3531,6 +4026,16 @@ pub struct DescribeBandwidthRateLimitScheduleError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeBandwidthRateLimitScheduleError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeBandwidthRateLimitScheduleErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeBandwidthRateLimitSchedule` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3539,8 +4044,15 @@ pub enum DescribeBandwidthRateLimitScheduleErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeBandwidthRateLimitScheduleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3575,7 +4087,9 @@ impl DescribeBandwidthRateLimitScheduleError {
     /// Creates the `DescribeBandwidthRateLimitScheduleError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeBandwidthRateLimitScheduleErrorKind::Unhandled(err.into()),
+            kind: DescribeBandwidthRateLimitScheduleErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3584,7 +4098,9 @@ impl DescribeBandwidthRateLimitScheduleError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeBandwidthRateLimitScheduleErrorKind::Unhandled(err.into()),
+            kind: DescribeBandwidthRateLimitScheduleErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3632,7 +4148,7 @@ impl std::error::Error for DescribeBandwidthRateLimitScheduleError {
             DescribeBandwidthRateLimitScheduleErrorKind::InvalidGatewayRequestException(_inner) => {
                 Some(_inner)
             }
-            DescribeBandwidthRateLimitScheduleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeBandwidthRateLimitScheduleErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3646,6 +4162,14 @@ pub struct DescribeCacheError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeCacheError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeCacheErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeCache` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3654,8 +4178,15 @@ pub enum DescribeCacheErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeCacheError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3683,7 +4214,7 @@ impl DescribeCacheError {
     /// Creates the `DescribeCacheError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeCacheErrorKind::Unhandled(err.into()),
+            kind: DescribeCacheErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3692,7 +4223,7 @@ impl DescribeCacheError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeCacheErrorKind::Unhandled(err.into()),
+            kind: DescribeCacheErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3733,7 +4264,7 @@ impl std::error::Error for DescribeCacheError {
         match &self.kind {
             DescribeCacheErrorKind::InternalServerError(_inner) => Some(_inner),
             DescribeCacheErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            DescribeCacheErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeCacheErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3747,6 +4278,16 @@ pub struct DescribeCachediSCSIVolumesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeCachediSCSIVolumesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeCachediSCSIVolumesErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeCachediSCSIVolumes` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3755,8 +4296,15 @@ pub enum DescribeCachediSCSIVolumesErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeCachediSCSIVolumesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3786,7 +4334,9 @@ impl DescribeCachediSCSIVolumesError {
     /// Creates the `DescribeCachediSCSIVolumesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeCachediSCSIVolumesErrorKind::Unhandled(err.into()),
+            kind: DescribeCachediSCSIVolumesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3795,7 +4345,9 @@ impl DescribeCachediSCSIVolumesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeCachediSCSIVolumesErrorKind::Unhandled(err.into()),
+            kind: DescribeCachediSCSIVolumesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3841,7 +4393,7 @@ impl std::error::Error for DescribeCachediSCSIVolumesError {
             DescribeCachediSCSIVolumesErrorKind::InvalidGatewayRequestException(_inner) => {
                 Some(_inner)
             }
-            DescribeCachediSCSIVolumesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeCachediSCSIVolumesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3855,6 +4407,14 @@ pub struct DescribeChapCredentialsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeChapCredentialsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeChapCredentialsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeChapCredentials` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3863,8 +4423,15 @@ pub enum DescribeChapCredentialsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeChapCredentialsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3894,7 +4461,9 @@ impl DescribeChapCredentialsError {
     /// Creates the `DescribeChapCredentialsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeChapCredentialsErrorKind::Unhandled(err.into()),
+            kind: DescribeChapCredentialsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3903,7 +4472,9 @@ impl DescribeChapCredentialsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeChapCredentialsErrorKind::Unhandled(err.into()),
+            kind: DescribeChapCredentialsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3949,7 +4520,7 @@ impl std::error::Error for DescribeChapCredentialsError {
             DescribeChapCredentialsErrorKind::InvalidGatewayRequestException(_inner) => {
                 Some(_inner)
             }
-            DescribeChapCredentialsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeChapCredentialsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3963,6 +4534,16 @@ pub struct DescribeFileSystemAssociationsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeFileSystemAssociationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeFileSystemAssociationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeFileSystemAssociations` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3971,8 +4552,15 @@ pub enum DescribeFileSystemAssociationsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeFileSystemAssociationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4005,7 +4593,9 @@ impl DescribeFileSystemAssociationsError {
     /// Creates the `DescribeFileSystemAssociationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeFileSystemAssociationsErrorKind::Unhandled(err.into()),
+            kind: DescribeFileSystemAssociationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4014,7 +4604,9 @@ impl DescribeFileSystemAssociationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeFileSystemAssociationsErrorKind::Unhandled(err.into()),
+            kind: DescribeFileSystemAssociationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4060,7 +4652,7 @@ impl std::error::Error for DescribeFileSystemAssociationsError {
             DescribeFileSystemAssociationsErrorKind::InvalidGatewayRequestException(_inner) => {
                 Some(_inner)
             }
-            DescribeFileSystemAssociationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeFileSystemAssociationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4074,6 +4666,16 @@ pub struct DescribeGatewayInformationError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeGatewayInformationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeGatewayInformationErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeGatewayInformation` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4082,8 +4684,15 @@ pub enum DescribeGatewayInformationErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeGatewayInformationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4113,7 +4722,9 @@ impl DescribeGatewayInformationError {
     /// Creates the `DescribeGatewayInformationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeGatewayInformationErrorKind::Unhandled(err.into()),
+            kind: DescribeGatewayInformationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4122,7 +4733,9 @@ impl DescribeGatewayInformationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeGatewayInformationErrorKind::Unhandled(err.into()),
+            kind: DescribeGatewayInformationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4168,7 +4781,7 @@ impl std::error::Error for DescribeGatewayInformationError {
             DescribeGatewayInformationErrorKind::InvalidGatewayRequestException(_inner) => {
                 Some(_inner)
             }
-            DescribeGatewayInformationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeGatewayInformationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4182,6 +4795,16 @@ pub struct DescribeMaintenanceStartTimeError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeMaintenanceStartTimeError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeMaintenanceStartTimeErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeMaintenanceStartTime` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4190,8 +4813,15 @@ pub enum DescribeMaintenanceStartTimeErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeMaintenanceStartTimeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4221,7 +4851,9 @@ impl DescribeMaintenanceStartTimeError {
     /// Creates the `DescribeMaintenanceStartTimeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeMaintenanceStartTimeErrorKind::Unhandled(err.into()),
+            kind: DescribeMaintenanceStartTimeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4230,7 +4862,9 @@ impl DescribeMaintenanceStartTimeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeMaintenanceStartTimeErrorKind::Unhandled(err.into()),
+            kind: DescribeMaintenanceStartTimeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4276,7 +4910,7 @@ impl std::error::Error for DescribeMaintenanceStartTimeError {
             DescribeMaintenanceStartTimeErrorKind::InvalidGatewayRequestException(_inner) => {
                 Some(_inner)
             }
-            DescribeMaintenanceStartTimeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeMaintenanceStartTimeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4290,6 +4924,14 @@ pub struct DescribeNFSFileSharesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeNFSFileSharesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeNFSFileSharesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeNFSFileShares` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4298,8 +4940,15 @@ pub enum DescribeNFSFileSharesErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeNFSFileSharesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4327,7 +4976,9 @@ impl DescribeNFSFileSharesError {
     /// Creates the `DescribeNFSFileSharesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeNFSFileSharesErrorKind::Unhandled(err.into()),
+            kind: DescribeNFSFileSharesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4336,7 +4987,9 @@ impl DescribeNFSFileSharesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeNFSFileSharesErrorKind::Unhandled(err.into()),
+            kind: DescribeNFSFileSharesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4380,7 +5033,7 @@ impl std::error::Error for DescribeNFSFileSharesError {
         match &self.kind {
             DescribeNFSFileSharesErrorKind::InternalServerError(_inner) => Some(_inner),
             DescribeNFSFileSharesErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            DescribeNFSFileSharesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeNFSFileSharesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4394,6 +5047,14 @@ pub struct DescribeSMBFileSharesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeSMBFileSharesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeSMBFileSharesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeSMBFileShares` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4402,8 +5063,15 @@ pub enum DescribeSMBFileSharesErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeSMBFileSharesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4431,7 +5099,9 @@ impl DescribeSMBFileSharesError {
     /// Creates the `DescribeSMBFileSharesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeSMBFileSharesErrorKind::Unhandled(err.into()),
+            kind: DescribeSMBFileSharesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4440,7 +5110,9 @@ impl DescribeSMBFileSharesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeSMBFileSharesErrorKind::Unhandled(err.into()),
+            kind: DescribeSMBFileSharesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4484,7 +5156,7 @@ impl std::error::Error for DescribeSMBFileSharesError {
         match &self.kind {
             DescribeSMBFileSharesErrorKind::InternalServerError(_inner) => Some(_inner),
             DescribeSMBFileSharesErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            DescribeSMBFileSharesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeSMBFileSharesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4498,6 +5170,14 @@ pub struct DescribeSMBSettingsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeSMBSettingsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeSMBSettingsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeSMBSettings` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4506,8 +5186,15 @@ pub enum DescribeSMBSettingsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeSMBSettingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4535,7 +5222,7 @@ impl DescribeSMBSettingsError {
     /// Creates the `DescribeSMBSettingsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeSMBSettingsErrorKind::Unhandled(err.into()),
+            kind: DescribeSMBSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4544,7 +5231,7 @@ impl DescribeSMBSettingsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeSMBSettingsErrorKind::Unhandled(err.into()),
+            kind: DescribeSMBSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4588,7 +5275,7 @@ impl std::error::Error for DescribeSMBSettingsError {
         match &self.kind {
             DescribeSMBSettingsErrorKind::InternalServerError(_inner) => Some(_inner),
             DescribeSMBSettingsErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            DescribeSMBSettingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeSMBSettingsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4602,6 +5289,16 @@ pub struct DescribeSnapshotScheduleError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeSnapshotScheduleError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeSnapshotScheduleErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeSnapshotSchedule` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4610,8 +5307,15 @@ pub enum DescribeSnapshotScheduleErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeSnapshotScheduleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4641,7 +5345,9 @@ impl DescribeSnapshotScheduleError {
     /// Creates the `DescribeSnapshotScheduleError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeSnapshotScheduleErrorKind::Unhandled(err.into()),
+            kind: DescribeSnapshotScheduleErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4650,7 +5356,9 @@ impl DescribeSnapshotScheduleError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeSnapshotScheduleErrorKind::Unhandled(err.into()),
+            kind: DescribeSnapshotScheduleErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4696,7 +5404,7 @@ impl std::error::Error for DescribeSnapshotScheduleError {
             DescribeSnapshotScheduleErrorKind::InvalidGatewayRequestException(_inner) => {
                 Some(_inner)
             }
-            DescribeSnapshotScheduleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeSnapshotScheduleErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4710,6 +5418,16 @@ pub struct DescribeStorediSCSIVolumesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeStorediSCSIVolumesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeStorediSCSIVolumesErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeStorediSCSIVolumes` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4718,8 +5436,15 @@ pub enum DescribeStorediSCSIVolumesErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeStorediSCSIVolumesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4749,7 +5474,9 @@ impl DescribeStorediSCSIVolumesError {
     /// Creates the `DescribeStorediSCSIVolumesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeStorediSCSIVolumesErrorKind::Unhandled(err.into()),
+            kind: DescribeStorediSCSIVolumesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4758,7 +5485,9 @@ impl DescribeStorediSCSIVolumesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeStorediSCSIVolumesErrorKind::Unhandled(err.into()),
+            kind: DescribeStorediSCSIVolumesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4804,7 +5533,7 @@ impl std::error::Error for DescribeStorediSCSIVolumesError {
             DescribeStorediSCSIVolumesErrorKind::InvalidGatewayRequestException(_inner) => {
                 Some(_inner)
             }
-            DescribeStorediSCSIVolumesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeStorediSCSIVolumesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4818,6 +5547,14 @@ pub struct DescribeTapeArchivesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeTapeArchivesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeTapeArchivesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeTapeArchives` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4826,8 +5563,15 @@ pub enum DescribeTapeArchivesErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTapeArchivesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4855,7 +5599,9 @@ impl DescribeTapeArchivesError {
     /// Creates the `DescribeTapeArchivesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeTapeArchivesErrorKind::Unhandled(err.into()),
+            kind: DescribeTapeArchivesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4864,7 +5610,9 @@ impl DescribeTapeArchivesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeTapeArchivesErrorKind::Unhandled(err.into()),
+            kind: DescribeTapeArchivesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4908,7 +5656,7 @@ impl std::error::Error for DescribeTapeArchivesError {
         match &self.kind {
             DescribeTapeArchivesErrorKind::InternalServerError(_inner) => Some(_inner),
             DescribeTapeArchivesErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            DescribeTapeArchivesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeTapeArchivesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4922,6 +5670,16 @@ pub struct DescribeTapeRecoveryPointsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeTapeRecoveryPointsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeTapeRecoveryPointsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeTapeRecoveryPoints` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4930,8 +5688,15 @@ pub enum DescribeTapeRecoveryPointsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTapeRecoveryPointsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4961,7 +5726,9 @@ impl DescribeTapeRecoveryPointsError {
     /// Creates the `DescribeTapeRecoveryPointsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeTapeRecoveryPointsErrorKind::Unhandled(err.into()),
+            kind: DescribeTapeRecoveryPointsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4970,7 +5737,9 @@ impl DescribeTapeRecoveryPointsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeTapeRecoveryPointsErrorKind::Unhandled(err.into()),
+            kind: DescribeTapeRecoveryPointsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5016,7 +5785,7 @@ impl std::error::Error for DescribeTapeRecoveryPointsError {
             DescribeTapeRecoveryPointsErrorKind::InvalidGatewayRequestException(_inner) => {
                 Some(_inner)
             }
-            DescribeTapeRecoveryPointsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeTapeRecoveryPointsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5030,6 +5799,14 @@ pub struct DescribeTapesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeTapesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeTapesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeTapes` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5038,8 +5815,15 @@ pub enum DescribeTapesErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTapesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5067,7 +5851,7 @@ impl DescribeTapesError {
     /// Creates the `DescribeTapesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeTapesErrorKind::Unhandled(err.into()),
+            kind: DescribeTapesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5076,7 +5860,7 @@ impl DescribeTapesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeTapesErrorKind::Unhandled(err.into()),
+            kind: DescribeTapesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5117,7 +5901,7 @@ impl std::error::Error for DescribeTapesError {
         match &self.kind {
             DescribeTapesErrorKind::InternalServerError(_inner) => Some(_inner),
             DescribeTapesErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            DescribeTapesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeTapesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5131,6 +5915,14 @@ pub struct DescribeUploadBufferError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeUploadBufferError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeUploadBufferErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeUploadBuffer` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5139,8 +5931,15 @@ pub enum DescribeUploadBufferErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeUploadBufferError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5168,7 +5967,9 @@ impl DescribeUploadBufferError {
     /// Creates the `DescribeUploadBufferError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeUploadBufferErrorKind::Unhandled(err.into()),
+            kind: DescribeUploadBufferErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5177,7 +5978,9 @@ impl DescribeUploadBufferError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeUploadBufferErrorKind::Unhandled(err.into()),
+            kind: DescribeUploadBufferErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5221,7 +6024,7 @@ impl std::error::Error for DescribeUploadBufferError {
         match &self.kind {
             DescribeUploadBufferErrorKind::InternalServerError(_inner) => Some(_inner),
             DescribeUploadBufferErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            DescribeUploadBufferErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeUploadBufferErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5235,6 +6038,14 @@ pub struct DescribeVTLDevicesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeVTLDevicesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeVTLDevicesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeVTLDevices` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5243,8 +6054,15 @@ pub enum DescribeVTLDevicesErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeVTLDevicesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5272,7 +6090,7 @@ impl DescribeVTLDevicesError {
     /// Creates the `DescribeVTLDevicesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeVTLDevicesErrorKind::Unhandled(err.into()),
+            kind: DescribeVTLDevicesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5281,7 +6099,7 @@ impl DescribeVTLDevicesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeVTLDevicesErrorKind::Unhandled(err.into()),
+            kind: DescribeVTLDevicesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5325,7 +6143,7 @@ impl std::error::Error for DescribeVTLDevicesError {
         match &self.kind {
             DescribeVTLDevicesErrorKind::InternalServerError(_inner) => Some(_inner),
             DescribeVTLDevicesErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            DescribeVTLDevicesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeVTLDevicesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5339,6 +6157,14 @@ pub struct DescribeWorkingStorageError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeWorkingStorageError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeWorkingStorageErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeWorkingStorage` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5347,8 +6173,15 @@ pub enum DescribeWorkingStorageErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeWorkingStorageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5378,7 +6211,9 @@ impl DescribeWorkingStorageError {
     /// Creates the `DescribeWorkingStorageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeWorkingStorageErrorKind::Unhandled(err.into()),
+            kind: DescribeWorkingStorageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5387,7 +6222,9 @@ impl DescribeWorkingStorageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeWorkingStorageErrorKind::Unhandled(err.into()),
+            kind: DescribeWorkingStorageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5431,7 +6268,7 @@ impl std::error::Error for DescribeWorkingStorageError {
         match &self.kind {
             DescribeWorkingStorageErrorKind::InternalServerError(_inner) => Some(_inner),
             DescribeWorkingStorageErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            DescribeWorkingStorageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeWorkingStorageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5445,6 +6282,14 @@ pub struct DetachVolumeError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DetachVolumeError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DetachVolumeErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DetachVolume` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5453,8 +6298,15 @@ pub enum DetachVolumeErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DetachVolumeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5482,7 +6334,7 @@ impl DetachVolumeError {
     /// Creates the `DetachVolumeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DetachVolumeErrorKind::Unhandled(err.into()),
+            kind: DetachVolumeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5491,7 +6343,7 @@ impl DetachVolumeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DetachVolumeErrorKind::Unhandled(err.into()),
+            kind: DetachVolumeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5532,7 +6384,7 @@ impl std::error::Error for DetachVolumeError {
         match &self.kind {
             DetachVolumeErrorKind::InternalServerError(_inner) => Some(_inner),
             DetachVolumeErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            DetachVolumeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DetachVolumeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5546,6 +6398,14 @@ pub struct DisableGatewayError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DisableGatewayError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DisableGatewayErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DisableGateway` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5554,8 +6414,15 @@ pub enum DisableGatewayErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisableGatewayError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5583,7 +6450,7 @@ impl DisableGatewayError {
     /// Creates the `DisableGatewayError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisableGatewayErrorKind::Unhandled(err.into()),
+            kind: DisableGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5592,7 +6459,7 @@ impl DisableGatewayError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisableGatewayErrorKind::Unhandled(err.into()),
+            kind: DisableGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5633,7 +6500,7 @@ impl std::error::Error for DisableGatewayError {
         match &self.kind {
             DisableGatewayErrorKind::InternalServerError(_inner) => Some(_inner),
             DisableGatewayErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            DisableGatewayErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisableGatewayErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5647,6 +6514,14 @@ pub struct DisassociateFileSystemError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DisassociateFileSystemError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DisassociateFileSystemErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DisassociateFileSystem` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5655,8 +6530,15 @@ pub enum DisassociateFileSystemErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateFileSystemError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5686,7 +6568,9 @@ impl DisassociateFileSystemError {
     /// Creates the `DisassociateFileSystemError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisassociateFileSystemErrorKind::Unhandled(err.into()),
+            kind: DisassociateFileSystemErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5695,7 +6579,9 @@ impl DisassociateFileSystemError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisassociateFileSystemErrorKind::Unhandled(err.into()),
+            kind: DisassociateFileSystemErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5739,7 +6625,7 @@ impl std::error::Error for DisassociateFileSystemError {
         match &self.kind {
             DisassociateFileSystemErrorKind::InternalServerError(_inner) => Some(_inner),
             DisassociateFileSystemErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            DisassociateFileSystemErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisassociateFileSystemErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5753,6 +6639,14 @@ pub struct JoinDomainError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for JoinDomainError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: JoinDomainErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `JoinDomain` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5761,8 +6655,15 @@ pub enum JoinDomainErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for JoinDomainError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5790,7 +6691,7 @@ impl JoinDomainError {
     /// Creates the `JoinDomainError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: JoinDomainErrorKind::Unhandled(err.into()),
+            kind: JoinDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5799,7 +6700,7 @@ impl JoinDomainError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: JoinDomainErrorKind::Unhandled(err.into()),
+            kind: JoinDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5840,7 +6741,7 @@ impl std::error::Error for JoinDomainError {
         match &self.kind {
             JoinDomainErrorKind::InternalServerError(_inner) => Some(_inner),
             JoinDomainErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            JoinDomainErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            JoinDomainErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5854,6 +6755,16 @@ pub struct ListAutomaticTapeCreationPoliciesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListAutomaticTapeCreationPoliciesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListAutomaticTapeCreationPoliciesErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListAutomaticTapeCreationPolicies` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5862,8 +6773,15 @@ pub enum ListAutomaticTapeCreationPoliciesErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAutomaticTapeCreationPoliciesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5898,7 +6816,9 @@ impl ListAutomaticTapeCreationPoliciesError {
     /// Creates the `ListAutomaticTapeCreationPoliciesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAutomaticTapeCreationPoliciesErrorKind::Unhandled(err.into()),
+            kind: ListAutomaticTapeCreationPoliciesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -5907,7 +6827,9 @@ impl ListAutomaticTapeCreationPoliciesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAutomaticTapeCreationPoliciesErrorKind::Unhandled(err.into()),
+            kind: ListAutomaticTapeCreationPoliciesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -5953,7 +6875,7 @@ impl std::error::Error for ListAutomaticTapeCreationPoliciesError {
             ListAutomaticTapeCreationPoliciesErrorKind::InvalidGatewayRequestException(_inner) => {
                 Some(_inner)
             }
-            ListAutomaticTapeCreationPoliciesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAutomaticTapeCreationPoliciesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5967,6 +6889,14 @@ pub struct ListFileSharesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListFileSharesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListFileSharesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListFileShares` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5975,8 +6905,15 @@ pub enum ListFileSharesErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListFileSharesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6004,7 +6941,7 @@ impl ListFileSharesError {
     /// Creates the `ListFileSharesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListFileSharesErrorKind::Unhandled(err.into()),
+            kind: ListFileSharesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6013,7 +6950,7 @@ impl ListFileSharesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListFileSharesErrorKind::Unhandled(err.into()),
+            kind: ListFileSharesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6054,7 +6991,7 @@ impl std::error::Error for ListFileSharesError {
         match &self.kind {
             ListFileSharesErrorKind::InternalServerError(_inner) => Some(_inner),
             ListFileSharesErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            ListFileSharesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListFileSharesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6068,6 +7005,16 @@ pub struct ListFileSystemAssociationsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListFileSystemAssociationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListFileSystemAssociationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListFileSystemAssociations` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6076,8 +7023,15 @@ pub enum ListFileSystemAssociationsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListFileSystemAssociationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6107,7 +7061,9 @@ impl ListFileSystemAssociationsError {
     /// Creates the `ListFileSystemAssociationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListFileSystemAssociationsErrorKind::Unhandled(err.into()),
+            kind: ListFileSystemAssociationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6116,7 +7072,9 @@ impl ListFileSystemAssociationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListFileSystemAssociationsErrorKind::Unhandled(err.into()),
+            kind: ListFileSystemAssociationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6162,7 +7120,7 @@ impl std::error::Error for ListFileSystemAssociationsError {
             ListFileSystemAssociationsErrorKind::InvalidGatewayRequestException(_inner) => {
                 Some(_inner)
             }
-            ListFileSystemAssociationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListFileSystemAssociationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6176,6 +7134,14 @@ pub struct ListGatewaysError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListGatewaysError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListGatewaysErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListGateways` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6184,8 +7150,15 @@ pub enum ListGatewaysErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListGatewaysError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6213,7 +7186,7 @@ impl ListGatewaysError {
     /// Creates the `ListGatewaysError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListGatewaysErrorKind::Unhandled(err.into()),
+            kind: ListGatewaysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6222,7 +7195,7 @@ impl ListGatewaysError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListGatewaysErrorKind::Unhandled(err.into()),
+            kind: ListGatewaysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6263,7 +7236,7 @@ impl std::error::Error for ListGatewaysError {
         match &self.kind {
             ListGatewaysErrorKind::InternalServerError(_inner) => Some(_inner),
             ListGatewaysErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            ListGatewaysErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListGatewaysErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6277,6 +7250,14 @@ pub struct ListLocalDisksError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListLocalDisksError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListLocalDisksErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListLocalDisks` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6285,8 +7266,15 @@ pub enum ListLocalDisksErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListLocalDisksError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6314,7 +7302,7 @@ impl ListLocalDisksError {
     /// Creates the `ListLocalDisksError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListLocalDisksErrorKind::Unhandled(err.into()),
+            kind: ListLocalDisksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6323,7 +7311,7 @@ impl ListLocalDisksError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListLocalDisksErrorKind::Unhandled(err.into()),
+            kind: ListLocalDisksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6364,7 +7352,7 @@ impl std::error::Error for ListLocalDisksError {
         match &self.kind {
             ListLocalDisksErrorKind::InternalServerError(_inner) => Some(_inner),
             ListLocalDisksErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            ListLocalDisksErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListLocalDisksErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6378,6 +7366,14 @@ pub struct ListTagsForResourceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListTagsForResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListTagsForResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6386,8 +7382,15 @@ pub enum ListTagsForResourceErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6415,7 +7418,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6424,7 +7427,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6468,7 +7471,7 @@ impl std::error::Error for ListTagsForResourceError {
         match &self.kind {
             ListTagsForResourceErrorKind::InternalServerError(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6482,6 +7485,14 @@ pub struct ListTapePoolsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListTapePoolsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListTapePoolsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListTapePools` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6490,8 +7501,15 @@ pub enum ListTapePoolsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTapePoolsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6519,7 +7537,7 @@ impl ListTapePoolsError {
     /// Creates the `ListTapePoolsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTapePoolsErrorKind::Unhandled(err.into()),
+            kind: ListTapePoolsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6528,7 +7546,7 @@ impl ListTapePoolsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTapePoolsErrorKind::Unhandled(err.into()),
+            kind: ListTapePoolsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6569,7 +7587,7 @@ impl std::error::Error for ListTapePoolsError {
         match &self.kind {
             ListTapePoolsErrorKind::InternalServerError(_inner) => Some(_inner),
             ListTapePoolsErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            ListTapePoolsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTapePoolsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6583,6 +7601,14 @@ pub struct ListTapesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListTapesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListTapesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListTapes` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6591,8 +7617,15 @@ pub enum ListTapesErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTapesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6620,7 +7653,7 @@ impl ListTapesError {
     /// Creates the `ListTapesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTapesErrorKind::Unhandled(err.into()),
+            kind: ListTapesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6629,7 +7662,7 @@ impl ListTapesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTapesErrorKind::Unhandled(err.into()),
+            kind: ListTapesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6670,7 +7703,7 @@ impl std::error::Error for ListTapesError {
         match &self.kind {
             ListTapesErrorKind::InternalServerError(_inner) => Some(_inner),
             ListTapesErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            ListTapesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTapesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6684,6 +7717,14 @@ pub struct ListVolumeInitiatorsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListVolumeInitiatorsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListVolumeInitiatorsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListVolumeInitiators` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6692,8 +7733,15 @@ pub enum ListVolumeInitiatorsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListVolumeInitiatorsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6721,7 +7769,9 @@ impl ListVolumeInitiatorsError {
     /// Creates the `ListVolumeInitiatorsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListVolumeInitiatorsErrorKind::Unhandled(err.into()),
+            kind: ListVolumeInitiatorsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6730,7 +7780,9 @@ impl ListVolumeInitiatorsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListVolumeInitiatorsErrorKind::Unhandled(err.into()),
+            kind: ListVolumeInitiatorsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6774,7 +7826,7 @@ impl std::error::Error for ListVolumeInitiatorsError {
         match &self.kind {
             ListVolumeInitiatorsErrorKind::InternalServerError(_inner) => Some(_inner),
             ListVolumeInitiatorsErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            ListVolumeInitiatorsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListVolumeInitiatorsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6788,6 +7840,16 @@ pub struct ListVolumeRecoveryPointsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListVolumeRecoveryPointsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListVolumeRecoveryPointsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListVolumeRecoveryPoints` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6796,8 +7858,15 @@ pub enum ListVolumeRecoveryPointsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListVolumeRecoveryPointsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6827,7 +7896,9 @@ impl ListVolumeRecoveryPointsError {
     /// Creates the `ListVolumeRecoveryPointsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListVolumeRecoveryPointsErrorKind::Unhandled(err.into()),
+            kind: ListVolumeRecoveryPointsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6836,7 +7907,9 @@ impl ListVolumeRecoveryPointsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListVolumeRecoveryPointsErrorKind::Unhandled(err.into()),
+            kind: ListVolumeRecoveryPointsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6882,7 +7955,7 @@ impl std::error::Error for ListVolumeRecoveryPointsError {
             ListVolumeRecoveryPointsErrorKind::InvalidGatewayRequestException(_inner) => {
                 Some(_inner)
             }
-            ListVolumeRecoveryPointsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListVolumeRecoveryPointsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6896,6 +7969,14 @@ pub struct ListVolumesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListVolumesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListVolumesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListVolumes` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6904,8 +7985,15 @@ pub enum ListVolumesErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListVolumesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6933,7 +8021,7 @@ impl ListVolumesError {
     /// Creates the `ListVolumesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListVolumesErrorKind::Unhandled(err.into()),
+            kind: ListVolumesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6942,7 +8030,7 @@ impl ListVolumesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListVolumesErrorKind::Unhandled(err.into()),
+            kind: ListVolumesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6983,7 +8071,7 @@ impl std::error::Error for ListVolumesError {
         match &self.kind {
             ListVolumesErrorKind::InternalServerError(_inner) => Some(_inner),
             ListVolumesErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            ListVolumesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListVolumesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6997,6 +8085,14 @@ pub struct NotifyWhenUploadedError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for NotifyWhenUploadedError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: NotifyWhenUploadedErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `NotifyWhenUploaded` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7005,8 +8101,15 @@ pub enum NotifyWhenUploadedErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for NotifyWhenUploadedError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7034,7 +8137,7 @@ impl NotifyWhenUploadedError {
     /// Creates the `NotifyWhenUploadedError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: NotifyWhenUploadedErrorKind::Unhandled(err.into()),
+            kind: NotifyWhenUploadedErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7043,7 +8146,7 @@ impl NotifyWhenUploadedError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: NotifyWhenUploadedErrorKind::Unhandled(err.into()),
+            kind: NotifyWhenUploadedErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7087,7 +8190,7 @@ impl std::error::Error for NotifyWhenUploadedError {
         match &self.kind {
             NotifyWhenUploadedErrorKind::InternalServerError(_inner) => Some(_inner),
             NotifyWhenUploadedErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            NotifyWhenUploadedErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            NotifyWhenUploadedErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7101,6 +8204,14 @@ pub struct RefreshCacheError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for RefreshCacheError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RefreshCacheErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `RefreshCache` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7109,8 +8220,15 @@ pub enum RefreshCacheErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RefreshCacheError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7138,7 +8256,7 @@ impl RefreshCacheError {
     /// Creates the `RefreshCacheError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RefreshCacheErrorKind::Unhandled(err.into()),
+            kind: RefreshCacheErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7147,7 +8265,7 @@ impl RefreshCacheError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RefreshCacheErrorKind::Unhandled(err.into()),
+            kind: RefreshCacheErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7188,7 +8306,7 @@ impl std::error::Error for RefreshCacheError {
         match &self.kind {
             RefreshCacheErrorKind::InternalServerError(_inner) => Some(_inner),
             RefreshCacheErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            RefreshCacheErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RefreshCacheErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7202,6 +8320,14 @@ pub struct RemoveTagsFromResourceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for RemoveTagsFromResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RemoveTagsFromResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `RemoveTagsFromResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7210,8 +8336,15 @@ pub enum RemoveTagsFromResourceErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RemoveTagsFromResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7241,7 +8374,9 @@ impl RemoveTagsFromResourceError {
     /// Creates the `RemoveTagsFromResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RemoveTagsFromResourceErrorKind::Unhandled(err.into()),
+            kind: RemoveTagsFromResourceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7250,7 +8385,9 @@ impl RemoveTagsFromResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RemoveTagsFromResourceErrorKind::Unhandled(err.into()),
+            kind: RemoveTagsFromResourceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7294,7 +8431,7 @@ impl std::error::Error for RemoveTagsFromResourceError {
         match &self.kind {
             RemoveTagsFromResourceErrorKind::InternalServerError(_inner) => Some(_inner),
             RemoveTagsFromResourceErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            RemoveTagsFromResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RemoveTagsFromResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7308,6 +8445,14 @@ pub struct ResetCacheError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ResetCacheError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ResetCacheErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ResetCache` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7316,8 +8461,15 @@ pub enum ResetCacheErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ResetCacheError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7345,7 +8497,7 @@ impl ResetCacheError {
     /// Creates the `ResetCacheError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ResetCacheErrorKind::Unhandled(err.into()),
+            kind: ResetCacheErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7354,7 +8506,7 @@ impl ResetCacheError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ResetCacheErrorKind::Unhandled(err.into()),
+            kind: ResetCacheErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7395,7 +8547,7 @@ impl std::error::Error for ResetCacheError {
         match &self.kind {
             ResetCacheErrorKind::InternalServerError(_inner) => Some(_inner),
             ResetCacheErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            ResetCacheErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ResetCacheErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7409,6 +8561,14 @@ pub struct RetrieveTapeArchiveError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for RetrieveTapeArchiveError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RetrieveTapeArchiveErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `RetrieveTapeArchive` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7417,8 +8577,15 @@ pub enum RetrieveTapeArchiveErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RetrieveTapeArchiveError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7446,7 +8613,7 @@ impl RetrieveTapeArchiveError {
     /// Creates the `RetrieveTapeArchiveError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RetrieveTapeArchiveErrorKind::Unhandled(err.into()),
+            kind: RetrieveTapeArchiveErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7455,7 +8622,7 @@ impl RetrieveTapeArchiveError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RetrieveTapeArchiveErrorKind::Unhandled(err.into()),
+            kind: RetrieveTapeArchiveErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7499,7 +8666,7 @@ impl std::error::Error for RetrieveTapeArchiveError {
         match &self.kind {
             RetrieveTapeArchiveErrorKind::InternalServerError(_inner) => Some(_inner),
             RetrieveTapeArchiveErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            RetrieveTapeArchiveErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RetrieveTapeArchiveErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7513,6 +8680,16 @@ pub struct RetrieveTapeRecoveryPointError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for RetrieveTapeRecoveryPointError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RetrieveTapeRecoveryPointErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `RetrieveTapeRecoveryPoint` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7521,8 +8698,15 @@ pub enum RetrieveTapeRecoveryPointErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RetrieveTapeRecoveryPointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7552,7 +8736,9 @@ impl RetrieveTapeRecoveryPointError {
     /// Creates the `RetrieveTapeRecoveryPointError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RetrieveTapeRecoveryPointErrorKind::Unhandled(err.into()),
+            kind: RetrieveTapeRecoveryPointErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7561,7 +8747,9 @@ impl RetrieveTapeRecoveryPointError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RetrieveTapeRecoveryPointErrorKind::Unhandled(err.into()),
+            kind: RetrieveTapeRecoveryPointErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7607,7 +8795,7 @@ impl std::error::Error for RetrieveTapeRecoveryPointError {
             RetrieveTapeRecoveryPointErrorKind::InvalidGatewayRequestException(_inner) => {
                 Some(_inner)
             }
-            RetrieveTapeRecoveryPointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RetrieveTapeRecoveryPointErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7621,6 +8809,14 @@ pub struct SetLocalConsolePasswordError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for SetLocalConsolePasswordError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: SetLocalConsolePasswordErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `SetLocalConsolePassword` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7629,8 +8825,15 @@ pub enum SetLocalConsolePasswordErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SetLocalConsolePasswordError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7660,7 +8863,9 @@ impl SetLocalConsolePasswordError {
     /// Creates the `SetLocalConsolePasswordError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SetLocalConsolePasswordErrorKind::Unhandled(err.into()),
+            kind: SetLocalConsolePasswordErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7669,7 +8874,9 @@ impl SetLocalConsolePasswordError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SetLocalConsolePasswordErrorKind::Unhandled(err.into()),
+            kind: SetLocalConsolePasswordErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7715,7 +8922,7 @@ impl std::error::Error for SetLocalConsolePasswordError {
             SetLocalConsolePasswordErrorKind::InvalidGatewayRequestException(_inner) => {
                 Some(_inner)
             }
-            SetLocalConsolePasswordErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SetLocalConsolePasswordErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7729,6 +8936,14 @@ pub struct SetSMBGuestPasswordError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for SetSMBGuestPasswordError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: SetSMBGuestPasswordErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `SetSMBGuestPassword` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7737,8 +8952,15 @@ pub enum SetSMBGuestPasswordErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SetSMBGuestPasswordError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7766,7 +8988,7 @@ impl SetSMBGuestPasswordError {
     /// Creates the `SetSMBGuestPasswordError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SetSMBGuestPasswordErrorKind::Unhandled(err.into()),
+            kind: SetSMBGuestPasswordErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7775,7 +8997,7 @@ impl SetSMBGuestPasswordError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SetSMBGuestPasswordErrorKind::Unhandled(err.into()),
+            kind: SetSMBGuestPasswordErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7819,7 +9041,7 @@ impl std::error::Error for SetSMBGuestPasswordError {
         match &self.kind {
             SetSMBGuestPasswordErrorKind::InternalServerError(_inner) => Some(_inner),
             SetSMBGuestPasswordErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            SetSMBGuestPasswordErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SetSMBGuestPasswordErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7833,6 +9055,14 @@ pub struct ShutdownGatewayError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ShutdownGatewayError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ShutdownGatewayErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ShutdownGateway` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7841,8 +9071,15 @@ pub enum ShutdownGatewayErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ShutdownGatewayError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7870,7 +9107,7 @@ impl ShutdownGatewayError {
     /// Creates the `ShutdownGatewayError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ShutdownGatewayErrorKind::Unhandled(err.into()),
+            kind: ShutdownGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7879,7 +9116,7 @@ impl ShutdownGatewayError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ShutdownGatewayErrorKind::Unhandled(err.into()),
+            kind: ShutdownGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7920,7 +9157,7 @@ impl std::error::Error for ShutdownGatewayError {
         match &self.kind {
             ShutdownGatewayErrorKind::InternalServerError(_inner) => Some(_inner),
             ShutdownGatewayErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            ShutdownGatewayErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ShutdownGatewayErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7934,6 +9171,16 @@ pub struct StartAvailabilityMonitorTestError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for StartAvailabilityMonitorTestError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StartAvailabilityMonitorTestErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `StartAvailabilityMonitorTest` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7942,8 +9189,15 @@ pub enum StartAvailabilityMonitorTestErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartAvailabilityMonitorTestError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7973,7 +9227,9 @@ impl StartAvailabilityMonitorTestError {
     /// Creates the `StartAvailabilityMonitorTestError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartAvailabilityMonitorTestErrorKind::Unhandled(err.into()),
+            kind: StartAvailabilityMonitorTestErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7982,7 +9238,9 @@ impl StartAvailabilityMonitorTestError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartAvailabilityMonitorTestErrorKind::Unhandled(err.into()),
+            kind: StartAvailabilityMonitorTestErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8028,7 +9286,7 @@ impl std::error::Error for StartAvailabilityMonitorTestError {
             StartAvailabilityMonitorTestErrorKind::InvalidGatewayRequestException(_inner) => {
                 Some(_inner)
             }
-            StartAvailabilityMonitorTestErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartAvailabilityMonitorTestErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8042,6 +9300,14 @@ pub struct StartGatewayError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for StartGatewayError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StartGatewayErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `StartGateway` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8050,8 +9316,15 @@ pub enum StartGatewayErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartGatewayError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8079,7 +9352,7 @@ impl StartGatewayError {
     /// Creates the `StartGatewayError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartGatewayErrorKind::Unhandled(err.into()),
+            kind: StartGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8088,7 +9361,7 @@ impl StartGatewayError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartGatewayErrorKind::Unhandled(err.into()),
+            kind: StartGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8129,7 +9402,7 @@ impl std::error::Error for StartGatewayError {
         match &self.kind {
             StartGatewayErrorKind::InternalServerError(_inner) => Some(_inner),
             StartGatewayErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            StartGatewayErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartGatewayErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8143,6 +9416,16 @@ pub struct UpdateAutomaticTapeCreationPolicyError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UpdateAutomaticTapeCreationPolicyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateAutomaticTapeCreationPolicyErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UpdateAutomaticTapeCreationPolicy` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8151,8 +9434,15 @@ pub enum UpdateAutomaticTapeCreationPolicyErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAutomaticTapeCreationPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8187,7 +9477,9 @@ impl UpdateAutomaticTapeCreationPolicyError {
     /// Creates the `UpdateAutomaticTapeCreationPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateAutomaticTapeCreationPolicyErrorKind::Unhandled(err.into()),
+            kind: UpdateAutomaticTapeCreationPolicyErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -8196,7 +9488,9 @@ impl UpdateAutomaticTapeCreationPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateAutomaticTapeCreationPolicyErrorKind::Unhandled(err.into()),
+            kind: UpdateAutomaticTapeCreationPolicyErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -8242,7 +9536,7 @@ impl std::error::Error for UpdateAutomaticTapeCreationPolicyError {
             UpdateAutomaticTapeCreationPolicyErrorKind::InvalidGatewayRequestException(_inner) => {
                 Some(_inner)
             }
-            UpdateAutomaticTapeCreationPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateAutomaticTapeCreationPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8256,6 +9550,16 @@ pub struct UpdateBandwidthRateLimitError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UpdateBandwidthRateLimitError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateBandwidthRateLimitErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UpdateBandwidthRateLimit` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8264,8 +9568,15 @@ pub enum UpdateBandwidthRateLimitErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateBandwidthRateLimitError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8295,7 +9606,9 @@ impl UpdateBandwidthRateLimitError {
     /// Creates the `UpdateBandwidthRateLimitError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateBandwidthRateLimitErrorKind::Unhandled(err.into()),
+            kind: UpdateBandwidthRateLimitErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8304,7 +9617,9 @@ impl UpdateBandwidthRateLimitError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateBandwidthRateLimitErrorKind::Unhandled(err.into()),
+            kind: UpdateBandwidthRateLimitErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8350,7 +9665,7 @@ impl std::error::Error for UpdateBandwidthRateLimitError {
             UpdateBandwidthRateLimitErrorKind::InvalidGatewayRequestException(_inner) => {
                 Some(_inner)
             }
-            UpdateBandwidthRateLimitErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateBandwidthRateLimitErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8364,6 +9679,16 @@ pub struct UpdateBandwidthRateLimitScheduleError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UpdateBandwidthRateLimitScheduleError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateBandwidthRateLimitScheduleErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UpdateBandwidthRateLimitSchedule` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8372,8 +9697,15 @@ pub enum UpdateBandwidthRateLimitScheduleErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateBandwidthRateLimitScheduleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8406,7 +9738,9 @@ impl UpdateBandwidthRateLimitScheduleError {
     /// Creates the `UpdateBandwidthRateLimitScheduleError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateBandwidthRateLimitScheduleErrorKind::Unhandled(err.into()),
+            kind: UpdateBandwidthRateLimitScheduleErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -8415,7 +9749,9 @@ impl UpdateBandwidthRateLimitScheduleError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateBandwidthRateLimitScheduleErrorKind::Unhandled(err.into()),
+            kind: UpdateBandwidthRateLimitScheduleErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -8461,7 +9797,7 @@ impl std::error::Error for UpdateBandwidthRateLimitScheduleError {
             UpdateBandwidthRateLimitScheduleErrorKind::InvalidGatewayRequestException(_inner) => {
                 Some(_inner)
             }
-            UpdateBandwidthRateLimitScheduleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateBandwidthRateLimitScheduleErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8475,6 +9811,14 @@ pub struct UpdateChapCredentialsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UpdateChapCredentialsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateChapCredentialsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UpdateChapCredentials` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8483,8 +9827,15 @@ pub enum UpdateChapCredentialsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateChapCredentialsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8512,7 +9863,9 @@ impl UpdateChapCredentialsError {
     /// Creates the `UpdateChapCredentialsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateChapCredentialsErrorKind::Unhandled(err.into()),
+            kind: UpdateChapCredentialsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8521,7 +9874,9 @@ impl UpdateChapCredentialsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateChapCredentialsErrorKind::Unhandled(err.into()),
+            kind: UpdateChapCredentialsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8565,7 +9920,7 @@ impl std::error::Error for UpdateChapCredentialsError {
         match &self.kind {
             UpdateChapCredentialsErrorKind::InternalServerError(_inner) => Some(_inner),
             UpdateChapCredentialsErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            UpdateChapCredentialsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateChapCredentialsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8579,6 +9934,16 @@ pub struct UpdateFileSystemAssociationError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UpdateFileSystemAssociationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateFileSystemAssociationErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UpdateFileSystemAssociation` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8587,8 +9952,15 @@ pub enum UpdateFileSystemAssociationErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateFileSystemAssociationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8618,7 +9990,9 @@ impl UpdateFileSystemAssociationError {
     /// Creates the `UpdateFileSystemAssociationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateFileSystemAssociationErrorKind::Unhandled(err.into()),
+            kind: UpdateFileSystemAssociationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8627,7 +10001,9 @@ impl UpdateFileSystemAssociationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateFileSystemAssociationErrorKind::Unhandled(err.into()),
+            kind: UpdateFileSystemAssociationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8673,7 +10049,7 @@ impl std::error::Error for UpdateFileSystemAssociationError {
             UpdateFileSystemAssociationErrorKind::InvalidGatewayRequestException(_inner) => {
                 Some(_inner)
             }
-            UpdateFileSystemAssociationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateFileSystemAssociationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8687,6 +10063,16 @@ pub struct UpdateGatewayInformationError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UpdateGatewayInformationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateGatewayInformationErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UpdateGatewayInformation` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8695,8 +10081,15 @@ pub enum UpdateGatewayInformationErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateGatewayInformationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8726,7 +10119,9 @@ impl UpdateGatewayInformationError {
     /// Creates the `UpdateGatewayInformationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateGatewayInformationErrorKind::Unhandled(err.into()),
+            kind: UpdateGatewayInformationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8735,7 +10130,9 @@ impl UpdateGatewayInformationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateGatewayInformationErrorKind::Unhandled(err.into()),
+            kind: UpdateGatewayInformationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8781,7 +10178,7 @@ impl std::error::Error for UpdateGatewayInformationError {
             UpdateGatewayInformationErrorKind::InvalidGatewayRequestException(_inner) => {
                 Some(_inner)
             }
-            UpdateGatewayInformationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateGatewayInformationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8795,6 +10192,16 @@ pub struct UpdateGatewaySoftwareNowError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UpdateGatewaySoftwareNowError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateGatewaySoftwareNowErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UpdateGatewaySoftwareNow` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8803,8 +10210,15 @@ pub enum UpdateGatewaySoftwareNowErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateGatewaySoftwareNowError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8834,7 +10248,9 @@ impl UpdateGatewaySoftwareNowError {
     /// Creates the `UpdateGatewaySoftwareNowError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateGatewaySoftwareNowErrorKind::Unhandled(err.into()),
+            kind: UpdateGatewaySoftwareNowErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8843,7 +10259,9 @@ impl UpdateGatewaySoftwareNowError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateGatewaySoftwareNowErrorKind::Unhandled(err.into()),
+            kind: UpdateGatewaySoftwareNowErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8889,7 +10307,7 @@ impl std::error::Error for UpdateGatewaySoftwareNowError {
             UpdateGatewaySoftwareNowErrorKind::InvalidGatewayRequestException(_inner) => {
                 Some(_inner)
             }
-            UpdateGatewaySoftwareNowErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateGatewaySoftwareNowErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8903,6 +10321,16 @@ pub struct UpdateMaintenanceStartTimeError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UpdateMaintenanceStartTimeError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateMaintenanceStartTimeErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UpdateMaintenanceStartTime` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8911,8 +10339,15 @@ pub enum UpdateMaintenanceStartTimeErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateMaintenanceStartTimeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8942,7 +10377,9 @@ impl UpdateMaintenanceStartTimeError {
     /// Creates the `UpdateMaintenanceStartTimeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateMaintenanceStartTimeErrorKind::Unhandled(err.into()),
+            kind: UpdateMaintenanceStartTimeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8951,7 +10388,9 @@ impl UpdateMaintenanceStartTimeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateMaintenanceStartTimeErrorKind::Unhandled(err.into()),
+            kind: UpdateMaintenanceStartTimeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8997,7 +10436,7 @@ impl std::error::Error for UpdateMaintenanceStartTimeError {
             UpdateMaintenanceStartTimeErrorKind::InvalidGatewayRequestException(_inner) => {
                 Some(_inner)
             }
-            UpdateMaintenanceStartTimeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateMaintenanceStartTimeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9011,6 +10450,14 @@ pub struct UpdateNFSFileShareError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UpdateNFSFileShareError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateNFSFileShareErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UpdateNFSFileShare` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -9019,8 +10466,15 @@ pub enum UpdateNFSFileShareErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateNFSFileShareError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9048,7 +10502,7 @@ impl UpdateNFSFileShareError {
     /// Creates the `UpdateNFSFileShareError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateNFSFileShareErrorKind::Unhandled(err.into()),
+            kind: UpdateNFSFileShareErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9057,7 +10511,7 @@ impl UpdateNFSFileShareError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateNFSFileShareErrorKind::Unhandled(err.into()),
+            kind: UpdateNFSFileShareErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9101,7 +10555,7 @@ impl std::error::Error for UpdateNFSFileShareError {
         match &self.kind {
             UpdateNFSFileShareErrorKind::InternalServerError(_inner) => Some(_inner),
             UpdateNFSFileShareErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            UpdateNFSFileShareErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateNFSFileShareErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9115,6 +10569,14 @@ pub struct UpdateSMBFileShareError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UpdateSMBFileShareError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateSMBFileShareErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UpdateSMBFileShare` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -9123,8 +10585,15 @@ pub enum UpdateSMBFileShareErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateSMBFileShareError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9152,7 +10621,7 @@ impl UpdateSMBFileShareError {
     /// Creates the `UpdateSMBFileShareError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateSMBFileShareErrorKind::Unhandled(err.into()),
+            kind: UpdateSMBFileShareErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9161,7 +10630,7 @@ impl UpdateSMBFileShareError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateSMBFileShareErrorKind::Unhandled(err.into()),
+            kind: UpdateSMBFileShareErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9205,7 +10674,7 @@ impl std::error::Error for UpdateSMBFileShareError {
         match &self.kind {
             UpdateSMBFileShareErrorKind::InternalServerError(_inner) => Some(_inner),
             UpdateSMBFileShareErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            UpdateSMBFileShareErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateSMBFileShareErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9219,6 +10688,16 @@ pub struct UpdateSMBFileShareVisibilityError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UpdateSMBFileShareVisibilityError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateSMBFileShareVisibilityErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UpdateSMBFileShareVisibility` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -9227,8 +10706,15 @@ pub enum UpdateSMBFileShareVisibilityErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateSMBFileShareVisibilityError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9258,7 +10744,9 @@ impl UpdateSMBFileShareVisibilityError {
     /// Creates the `UpdateSMBFileShareVisibilityError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateSMBFileShareVisibilityErrorKind::Unhandled(err.into()),
+            kind: UpdateSMBFileShareVisibilityErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9267,7 +10755,9 @@ impl UpdateSMBFileShareVisibilityError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateSMBFileShareVisibilityErrorKind::Unhandled(err.into()),
+            kind: UpdateSMBFileShareVisibilityErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -9313,7 +10803,7 @@ impl std::error::Error for UpdateSMBFileShareVisibilityError {
             UpdateSMBFileShareVisibilityErrorKind::InvalidGatewayRequestException(_inner) => {
                 Some(_inner)
             }
-            UpdateSMBFileShareVisibilityErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateSMBFileShareVisibilityErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9327,6 +10817,14 @@ pub struct UpdateSMBLocalGroupsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UpdateSMBLocalGroupsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateSMBLocalGroupsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UpdateSMBLocalGroups` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -9335,8 +10833,15 @@ pub enum UpdateSMBLocalGroupsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateSMBLocalGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9364,7 +10869,9 @@ impl UpdateSMBLocalGroupsError {
     /// Creates the `UpdateSMBLocalGroupsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateSMBLocalGroupsErrorKind::Unhandled(err.into()),
+            kind: UpdateSMBLocalGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9373,7 +10880,9 @@ impl UpdateSMBLocalGroupsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateSMBLocalGroupsErrorKind::Unhandled(err.into()),
+            kind: UpdateSMBLocalGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -9417,7 +10926,7 @@ impl std::error::Error for UpdateSMBLocalGroupsError {
         match &self.kind {
             UpdateSMBLocalGroupsErrorKind::InternalServerError(_inner) => Some(_inner),
             UpdateSMBLocalGroupsErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            UpdateSMBLocalGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateSMBLocalGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9431,6 +10940,16 @@ pub struct UpdateSMBSecurityStrategyError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UpdateSMBSecurityStrategyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateSMBSecurityStrategyErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UpdateSMBSecurityStrategy` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -9439,8 +10958,15 @@ pub enum UpdateSMBSecurityStrategyErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateSMBSecurityStrategyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9470,7 +10996,9 @@ impl UpdateSMBSecurityStrategyError {
     /// Creates the `UpdateSMBSecurityStrategyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateSMBSecurityStrategyErrorKind::Unhandled(err.into()),
+            kind: UpdateSMBSecurityStrategyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9479,7 +11007,9 @@ impl UpdateSMBSecurityStrategyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateSMBSecurityStrategyErrorKind::Unhandled(err.into()),
+            kind: UpdateSMBSecurityStrategyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -9525,7 +11055,7 @@ impl std::error::Error for UpdateSMBSecurityStrategyError {
             UpdateSMBSecurityStrategyErrorKind::InvalidGatewayRequestException(_inner) => {
                 Some(_inner)
             }
-            UpdateSMBSecurityStrategyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateSMBSecurityStrategyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9539,6 +11069,14 @@ pub struct UpdateSnapshotScheduleError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UpdateSnapshotScheduleError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateSnapshotScheduleErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UpdateSnapshotSchedule` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -9547,8 +11085,15 @@ pub enum UpdateSnapshotScheduleErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateSnapshotScheduleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9578,7 +11123,9 @@ impl UpdateSnapshotScheduleError {
     /// Creates the `UpdateSnapshotScheduleError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateSnapshotScheduleErrorKind::Unhandled(err.into()),
+            kind: UpdateSnapshotScheduleErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9587,7 +11134,9 @@ impl UpdateSnapshotScheduleError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateSnapshotScheduleErrorKind::Unhandled(err.into()),
+            kind: UpdateSnapshotScheduleErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -9631,7 +11180,7 @@ impl std::error::Error for UpdateSnapshotScheduleError {
         match &self.kind {
             UpdateSnapshotScheduleErrorKind::InternalServerError(_inner) => Some(_inner),
             UpdateSnapshotScheduleErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            UpdateSnapshotScheduleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateSnapshotScheduleErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9645,6 +11194,14 @@ pub struct UpdateVTLDeviceTypeError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UpdateVTLDeviceTypeError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateVTLDeviceTypeErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UpdateVTLDeviceType` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -9653,8 +11210,15 @@ pub enum UpdateVTLDeviceTypeErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateVTLDeviceTypeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9682,7 +11246,7 @@ impl UpdateVTLDeviceTypeError {
     /// Creates the `UpdateVTLDeviceTypeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateVTLDeviceTypeErrorKind::Unhandled(err.into()),
+            kind: UpdateVTLDeviceTypeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9691,7 +11255,7 @@ impl UpdateVTLDeviceTypeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateVTLDeviceTypeErrorKind::Unhandled(err.into()),
+            kind: UpdateVTLDeviceTypeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9735,7 +11299,35 @@ impl std::error::Error for UpdateVTLDeviceTypeError {
         match &self.kind {
             UpdateVTLDeviceTypeErrorKind::InternalServerError(_inner) => Some(_inner),
             UpdateVTLDeviceTypeErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
-            UpdateVTLDeviceTypeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateVTLDeviceTypeErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+///
+/// When logging an error from the SDK, it is recommended that you either wrap the error in
+/// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+/// error reporter library that visits the error's cause/source chain, or call
+/// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

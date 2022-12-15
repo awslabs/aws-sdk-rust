@@ -2,11 +2,12 @@
 pub fn serialize_structure_crate_input_count_closed_workflow_executions_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CountClosedWorkflowExecutionsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.domain {
         object.key("domain").string(var_1.as_str());
     }
     if let Some(var_2) = &input.start_time_filter {
+        #[allow(unused_mut)]
         let mut object_3 = object.key("startTimeFilter").start_object();
         crate::json_ser::serialize_structure_crate_model_execution_time_filter(
             &mut object_3,
@@ -15,6 +16,7 @@ pub fn serialize_structure_crate_input_count_closed_workflow_executions_input(
         object_3.finish();
     }
     if let Some(var_4) = &input.close_time_filter {
+        #[allow(unused_mut)]
         let mut object_5 = object.key("closeTimeFilter").start_object();
         crate::json_ser::serialize_structure_crate_model_execution_time_filter(
             &mut object_5,
@@ -23,6 +25,7 @@ pub fn serialize_structure_crate_input_count_closed_workflow_executions_input(
         object_5.finish();
     }
     if let Some(var_6) = &input.execution_filter {
+        #[allow(unused_mut)]
         let mut object_7 = object.key("executionFilter").start_object();
         crate::json_ser::serialize_structure_crate_model_workflow_execution_filter(
             &mut object_7,
@@ -31,6 +34,7 @@ pub fn serialize_structure_crate_input_count_closed_workflow_executions_input(
         object_7.finish();
     }
     if let Some(var_8) = &input.type_filter {
+        #[allow(unused_mut)]
         let mut object_9 = object.key("typeFilter").start_object();
         crate::json_ser::serialize_structure_crate_model_workflow_type_filter(
             &mut object_9,
@@ -39,11 +43,13 @@ pub fn serialize_structure_crate_input_count_closed_workflow_executions_input(
         object_9.finish();
     }
     if let Some(var_10) = &input.tag_filter {
+        #[allow(unused_mut)]
         let mut object_11 = object.key("tagFilter").start_object();
         crate::json_ser::serialize_structure_crate_model_tag_filter(&mut object_11, var_10)?;
         object_11.finish();
     }
     if let Some(var_12) = &input.close_status_filter {
+        #[allow(unused_mut)]
         let mut object_13 = object.key("closeStatusFilter").start_object();
         crate::json_ser::serialize_structure_crate_model_close_status_filter(
             &mut object_13,
@@ -57,11 +63,12 @@ pub fn serialize_structure_crate_input_count_closed_workflow_executions_input(
 pub fn serialize_structure_crate_input_count_open_workflow_executions_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CountOpenWorkflowExecutionsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_14) = &input.domain {
         object.key("domain").string(var_14.as_str());
     }
     if let Some(var_15) = &input.start_time_filter {
+        #[allow(unused_mut)]
         let mut object_16 = object.key("startTimeFilter").start_object();
         crate::json_ser::serialize_structure_crate_model_execution_time_filter(
             &mut object_16,
@@ -70,6 +77,7 @@ pub fn serialize_structure_crate_input_count_open_workflow_executions_input(
         object_16.finish();
     }
     if let Some(var_17) = &input.type_filter {
+        #[allow(unused_mut)]
         let mut object_18 = object.key("typeFilter").start_object();
         crate::json_ser::serialize_structure_crate_model_workflow_type_filter(
             &mut object_18,
@@ -78,11 +86,13 @@ pub fn serialize_structure_crate_input_count_open_workflow_executions_input(
         object_18.finish();
     }
     if let Some(var_19) = &input.tag_filter {
+        #[allow(unused_mut)]
         let mut object_20 = object.key("tagFilter").start_object();
         crate::json_ser::serialize_structure_crate_model_tag_filter(&mut object_20, var_19)?;
         object_20.finish();
     }
     if let Some(var_21) = &input.execution_filter {
+        #[allow(unused_mut)]
         let mut object_22 = object.key("executionFilter").start_object();
         crate::json_ser::serialize_structure_crate_model_workflow_execution_filter(
             &mut object_22,
@@ -96,11 +106,12 @@ pub fn serialize_structure_crate_input_count_open_workflow_executions_input(
 pub fn serialize_structure_crate_input_count_pending_activity_tasks_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CountPendingActivityTasksInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_23) = &input.domain {
         object.key("domain").string(var_23.as_str());
     }
     if let Some(var_24) = &input.task_list {
+        #[allow(unused_mut)]
         let mut object_25 = object.key("taskList").start_object();
         crate::json_ser::serialize_structure_crate_model_task_list(&mut object_25, var_24)?;
         object_25.finish();
@@ -111,11 +122,12 @@ pub fn serialize_structure_crate_input_count_pending_activity_tasks_input(
 pub fn serialize_structure_crate_input_count_pending_decision_tasks_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CountPendingDecisionTasksInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_26) = &input.domain {
         object.key("domain").string(var_26.as_str());
     }
     if let Some(var_27) = &input.task_list {
+        #[allow(unused_mut)]
         let mut object_28 = object.key("taskList").start_object();
         crate::json_ser::serialize_structure_crate_model_task_list(&mut object_28, var_27)?;
         object_28.finish();
@@ -126,11 +138,12 @@ pub fn serialize_structure_crate_input_count_pending_decision_tasks_input(
 pub fn serialize_structure_crate_input_deprecate_activity_type_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeprecateActivityTypeInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_29) = &input.domain {
         object.key("domain").string(var_29.as_str());
     }
     if let Some(var_30) = &input.activity_type {
+        #[allow(unused_mut)]
         let mut object_31 = object.key("activityType").start_object();
         crate::json_ser::serialize_structure_crate_model_activity_type(&mut object_31, var_30)?;
         object_31.finish();
@@ -141,7 +154,7 @@ pub fn serialize_structure_crate_input_deprecate_activity_type_input(
 pub fn serialize_structure_crate_input_deprecate_domain_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeprecateDomainInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_32) = &input.name {
         object.key("name").string(var_32.as_str());
     }
@@ -151,11 +164,12 @@ pub fn serialize_structure_crate_input_deprecate_domain_input(
 pub fn serialize_structure_crate_input_deprecate_workflow_type_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeprecateWorkflowTypeInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_33) = &input.domain {
         object.key("domain").string(var_33.as_str());
     }
     if let Some(var_34) = &input.workflow_type {
+        #[allow(unused_mut)]
         let mut object_35 = object.key("workflowType").start_object();
         crate::json_ser::serialize_structure_crate_model_workflow_type(&mut object_35, var_34)?;
         object_35.finish();
@@ -166,11 +180,12 @@ pub fn serialize_structure_crate_input_deprecate_workflow_type_input(
 pub fn serialize_structure_crate_input_describe_activity_type_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeActivityTypeInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_36) = &input.domain {
         object.key("domain").string(var_36.as_str());
     }
     if let Some(var_37) = &input.activity_type {
+        #[allow(unused_mut)]
         let mut object_38 = object.key("activityType").start_object();
         crate::json_ser::serialize_structure_crate_model_activity_type(&mut object_38, var_37)?;
         object_38.finish();
@@ -181,7 +196,7 @@ pub fn serialize_structure_crate_input_describe_activity_type_input(
 pub fn serialize_structure_crate_input_describe_domain_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeDomainInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_39) = &input.name {
         object.key("name").string(var_39.as_str());
     }
@@ -191,11 +206,12 @@ pub fn serialize_structure_crate_input_describe_domain_input(
 pub fn serialize_structure_crate_input_describe_workflow_execution_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeWorkflowExecutionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_40) = &input.domain {
         object.key("domain").string(var_40.as_str());
     }
     if let Some(var_41) = &input.execution {
+        #[allow(unused_mut)]
         let mut object_42 = object.key("execution").start_object();
         crate::json_ser::serialize_structure_crate_model_workflow_execution(
             &mut object_42,
@@ -209,11 +225,12 @@ pub fn serialize_structure_crate_input_describe_workflow_execution_input(
 pub fn serialize_structure_crate_input_describe_workflow_type_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeWorkflowTypeInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_43) = &input.domain {
         object.key("domain").string(var_43.as_str());
     }
     if let Some(var_44) = &input.workflow_type {
+        #[allow(unused_mut)]
         let mut object_45 = object.key("workflowType").start_object();
         crate::json_ser::serialize_structure_crate_model_workflow_type(&mut object_45, var_44)?;
         object_45.finish();
@@ -224,11 +241,12 @@ pub fn serialize_structure_crate_input_describe_workflow_type_input(
 pub fn serialize_structure_crate_input_get_workflow_execution_history_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetWorkflowExecutionHistoryInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_46) = &input.domain {
         object.key("domain").string(var_46.as_str());
     }
     if let Some(var_47) = &input.execution {
+        #[allow(unused_mut)]
         let mut object_48 = object.key("execution").start_object();
         crate::json_ser::serialize_structure_crate_model_workflow_execution(
             &mut object_48,
@@ -254,7 +272,7 @@ pub fn serialize_structure_crate_input_get_workflow_execution_history_input(
 pub fn serialize_structure_crate_input_list_activity_types_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListActivityTypesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_50) = &input.domain {
         object.key("domain").string(var_50.as_str());
     }
@@ -282,11 +300,12 @@ pub fn serialize_structure_crate_input_list_activity_types_input(
 pub fn serialize_structure_crate_input_list_closed_workflow_executions_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListClosedWorkflowExecutionsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_54) = &input.domain {
         object.key("domain").string(var_54.as_str());
     }
     if let Some(var_55) = &input.start_time_filter {
+        #[allow(unused_mut)]
         let mut object_56 = object.key("startTimeFilter").start_object();
         crate::json_ser::serialize_structure_crate_model_execution_time_filter(
             &mut object_56,
@@ -295,6 +314,7 @@ pub fn serialize_structure_crate_input_list_closed_workflow_executions_input(
         object_56.finish();
     }
     if let Some(var_57) = &input.close_time_filter {
+        #[allow(unused_mut)]
         let mut object_58 = object.key("closeTimeFilter").start_object();
         crate::json_ser::serialize_structure_crate_model_execution_time_filter(
             &mut object_58,
@@ -303,6 +323,7 @@ pub fn serialize_structure_crate_input_list_closed_workflow_executions_input(
         object_58.finish();
     }
     if let Some(var_59) = &input.execution_filter {
+        #[allow(unused_mut)]
         let mut object_60 = object.key("executionFilter").start_object();
         crate::json_ser::serialize_structure_crate_model_workflow_execution_filter(
             &mut object_60,
@@ -311,6 +332,7 @@ pub fn serialize_structure_crate_input_list_closed_workflow_executions_input(
         object_60.finish();
     }
     if let Some(var_61) = &input.close_status_filter {
+        #[allow(unused_mut)]
         let mut object_62 = object.key("closeStatusFilter").start_object();
         crate::json_ser::serialize_structure_crate_model_close_status_filter(
             &mut object_62,
@@ -319,6 +341,7 @@ pub fn serialize_structure_crate_input_list_closed_workflow_executions_input(
         object_62.finish();
     }
     if let Some(var_63) = &input.type_filter {
+        #[allow(unused_mut)]
         let mut object_64 = object.key("typeFilter").start_object();
         crate::json_ser::serialize_structure_crate_model_workflow_type_filter(
             &mut object_64,
@@ -327,6 +350,7 @@ pub fn serialize_structure_crate_input_list_closed_workflow_executions_input(
         object_64.finish();
     }
     if let Some(var_65) = &input.tag_filter {
+        #[allow(unused_mut)]
         let mut object_66 = object.key("tagFilter").start_object();
         crate::json_ser::serialize_structure_crate_model_tag_filter(&mut object_66, var_65)?;
         object_66.finish();
@@ -349,7 +373,7 @@ pub fn serialize_structure_crate_input_list_closed_workflow_executions_input(
 pub fn serialize_structure_crate_input_list_domains_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListDomainsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_68) = &input.next_page_token {
         object.key("nextPageToken").string(var_68.as_str());
     }
@@ -371,11 +395,12 @@ pub fn serialize_structure_crate_input_list_domains_input(
 pub fn serialize_structure_crate_input_list_open_workflow_executions_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListOpenWorkflowExecutionsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_70) = &input.domain {
         object.key("domain").string(var_70.as_str());
     }
     if let Some(var_71) = &input.start_time_filter {
+        #[allow(unused_mut)]
         let mut object_72 = object.key("startTimeFilter").start_object();
         crate::json_ser::serialize_structure_crate_model_execution_time_filter(
             &mut object_72,
@@ -384,6 +409,7 @@ pub fn serialize_structure_crate_input_list_open_workflow_executions_input(
         object_72.finish();
     }
     if let Some(var_73) = &input.type_filter {
+        #[allow(unused_mut)]
         let mut object_74 = object.key("typeFilter").start_object();
         crate::json_ser::serialize_structure_crate_model_workflow_type_filter(
             &mut object_74,
@@ -392,6 +418,7 @@ pub fn serialize_structure_crate_input_list_open_workflow_executions_input(
         object_74.finish();
     }
     if let Some(var_75) = &input.tag_filter {
+        #[allow(unused_mut)]
         let mut object_76 = object.key("tagFilter").start_object();
         crate::json_ser::serialize_structure_crate_model_tag_filter(&mut object_76, var_75)?;
         object_76.finish();
@@ -409,6 +436,7 @@ pub fn serialize_structure_crate_input_list_open_workflow_executions_input(
         object.key("reverseOrder").boolean(input.reverse_order);
     }
     if let Some(var_78) = &input.execution_filter {
+        #[allow(unused_mut)]
         let mut object_79 = object.key("executionFilter").start_object();
         crate::json_ser::serialize_structure_crate_model_workflow_execution_filter(
             &mut object_79,
@@ -422,7 +450,7 @@ pub fn serialize_structure_crate_input_list_open_workflow_executions_input(
 pub fn serialize_structure_crate_input_list_tags_for_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListTagsForResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_80) = &input.resource_arn {
         object.key("resourceArn").string(var_80.as_str());
     }
@@ -432,7 +460,7 @@ pub fn serialize_structure_crate_input_list_tags_for_resource_input(
 pub fn serialize_structure_crate_input_list_workflow_types_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListWorkflowTypesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_81) = &input.domain {
         object.key("domain").string(var_81.as_str());
     }
@@ -460,11 +488,12 @@ pub fn serialize_structure_crate_input_list_workflow_types_input(
 pub fn serialize_structure_crate_input_poll_for_activity_task_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PollForActivityTaskInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_85) = &input.domain {
         object.key("domain").string(var_85.as_str());
     }
     if let Some(var_86) = &input.task_list {
+        #[allow(unused_mut)]
         let mut object_87 = object.key("taskList").start_object();
         crate::json_ser::serialize_structure_crate_model_task_list(&mut object_87, var_86)?;
         object_87.finish();
@@ -478,11 +507,12 @@ pub fn serialize_structure_crate_input_poll_for_activity_task_input(
 pub fn serialize_structure_crate_input_poll_for_decision_task_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PollForDecisionTaskInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_89) = &input.domain {
         object.key("domain").string(var_89.as_str());
     }
     if let Some(var_90) = &input.task_list {
+        #[allow(unused_mut)]
         let mut object_91 = object.key("taskList").start_object();
         crate::json_ser::serialize_structure_crate_model_task_list(&mut object_91, var_90)?;
         object_91.finish();
@@ -508,7 +538,7 @@ pub fn serialize_structure_crate_input_poll_for_decision_task_input(
 pub fn serialize_structure_crate_input_record_activity_task_heartbeat_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RecordActivityTaskHeartbeatInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_94) = &input.task_token {
         object.key("taskToken").string(var_94.as_str());
     }
@@ -521,7 +551,7 @@ pub fn serialize_structure_crate_input_record_activity_task_heartbeat_input(
 pub fn serialize_structure_crate_input_register_activity_type_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RegisterActivityTypeInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_96) = &input.domain {
         object.key("domain").string(var_96.as_str());
     }
@@ -545,6 +575,7 @@ pub fn serialize_structure_crate_input_register_activity_type_input(
             .string(var_101.as_str());
     }
     if let Some(var_102) = &input.default_task_list {
+        #[allow(unused_mut)]
         let mut object_103 = object.key("defaultTaskList").start_object();
         crate::json_ser::serialize_structure_crate_model_task_list(&mut object_103, var_102)?;
         object_103.finish();
@@ -568,7 +599,7 @@ pub fn serialize_structure_crate_input_register_activity_type_input(
 pub fn serialize_structure_crate_input_register_domain_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RegisterDomainInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_107) = &input.name {
         object.key("name").string(var_107.as_str());
     }
@@ -584,6 +615,7 @@ pub fn serialize_structure_crate_input_register_domain_input(
         let mut array_111 = object.key("tags").start_array();
         for item_112 in var_110 {
             {
+                #[allow(unused_mut)]
                 let mut object_113 = array_111.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_resource_tag(
                     &mut object_113,
@@ -600,7 +632,7 @@ pub fn serialize_structure_crate_input_register_domain_input(
 pub fn serialize_structure_crate_input_register_workflow_type_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RegisterWorkflowTypeInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_114) = &input.domain {
         object.key("domain").string(var_114.as_str());
     }
@@ -624,6 +656,7 @@ pub fn serialize_structure_crate_input_register_workflow_type_input(
             .string(var_119.as_str());
     }
     if let Some(var_120) = &input.default_task_list {
+        #[allow(unused_mut)]
         let mut object_121 = object.key("defaultTaskList").start_object();
         crate::json_ser::serialize_structure_crate_model_task_list(&mut object_121, var_120)?;
         object_121.finish();
@@ -643,7 +676,7 @@ pub fn serialize_structure_crate_input_register_workflow_type_input(
 pub fn serialize_structure_crate_input_request_cancel_workflow_execution_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RequestCancelWorkflowExecutionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_125) = &input.domain {
         object.key("domain").string(var_125.as_str());
     }
@@ -659,7 +692,7 @@ pub fn serialize_structure_crate_input_request_cancel_workflow_execution_input(
 pub fn serialize_structure_crate_input_respond_activity_task_canceled_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RespondActivityTaskCanceledInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_128) = &input.task_token {
         object.key("taskToken").string(var_128.as_str());
     }
@@ -672,7 +705,7 @@ pub fn serialize_structure_crate_input_respond_activity_task_canceled_input(
 pub fn serialize_structure_crate_input_respond_activity_task_completed_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RespondActivityTaskCompletedInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_130) = &input.task_token {
         object.key("taskToken").string(var_130.as_str());
     }
@@ -685,7 +718,7 @@ pub fn serialize_structure_crate_input_respond_activity_task_completed_input(
 pub fn serialize_structure_crate_input_respond_activity_task_failed_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RespondActivityTaskFailedInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_132) = &input.task_token {
         object.key("taskToken").string(var_132.as_str());
     }
@@ -701,7 +734,7 @@ pub fn serialize_structure_crate_input_respond_activity_task_failed_input(
 pub fn serialize_structure_crate_input_respond_decision_task_completed_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RespondDecisionTaskCompletedInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_135) = &input.task_token {
         object.key("taskToken").string(var_135.as_str());
     }
@@ -709,6 +742,7 @@ pub fn serialize_structure_crate_input_respond_decision_task_completed_input(
         let mut array_137 = object.key("decisions").start_array();
         for item_138 in var_136 {
             {
+                #[allow(unused_mut)]
                 let mut object_139 = array_137.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_decision(
                     &mut object_139,
@@ -728,7 +762,7 @@ pub fn serialize_structure_crate_input_respond_decision_task_completed_input(
 pub fn serialize_structure_crate_input_signal_workflow_execution_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::SignalWorkflowExecutionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_141) = &input.domain {
         object.key("domain").string(var_141.as_str());
     }
@@ -750,7 +784,7 @@ pub fn serialize_structure_crate_input_signal_workflow_execution_input(
 pub fn serialize_structure_crate_input_start_workflow_execution_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartWorkflowExecutionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_146) = &input.domain {
         object.key("domain").string(var_146.as_str());
     }
@@ -758,11 +792,13 @@ pub fn serialize_structure_crate_input_start_workflow_execution_input(
         object.key("workflowId").string(var_147.as_str());
     }
     if let Some(var_148) = &input.workflow_type {
+        #[allow(unused_mut)]
         let mut object_149 = object.key("workflowType").start_object();
         crate::json_ser::serialize_structure_crate_model_workflow_type(&mut object_149, var_148)?;
         object_149.finish();
     }
     if let Some(var_150) = &input.task_list {
+        #[allow(unused_mut)]
         let mut object_151 = object.key("taskList").start_object();
         crate::json_ser::serialize_structure_crate_model_task_list(&mut object_151, var_150)?;
         object_151.finish();
@@ -804,7 +840,7 @@ pub fn serialize_structure_crate_input_start_workflow_execution_input(
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_161) = &input.resource_arn {
         object.key("resourceArn").string(var_161.as_str());
     }
@@ -812,6 +848,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_163 = object.key("tags").start_array();
         for item_164 in var_162 {
             {
+                #[allow(unused_mut)]
                 let mut object_165 = array_163.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_resource_tag(
                     &mut object_165,
@@ -828,7 +865,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_input_terminate_workflow_execution_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TerminateWorkflowExecutionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_166) = &input.domain {
         object.key("domain").string(var_166.as_str());
     }
@@ -853,11 +890,12 @@ pub fn serialize_structure_crate_input_terminate_workflow_execution_input(
 pub fn serialize_structure_crate_input_undeprecate_activity_type_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UndeprecateActivityTypeInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_172) = &input.domain {
         object.key("domain").string(var_172.as_str());
     }
     if let Some(var_173) = &input.activity_type {
+        #[allow(unused_mut)]
         let mut object_174 = object.key("activityType").start_object();
         crate::json_ser::serialize_structure_crate_model_activity_type(&mut object_174, var_173)?;
         object_174.finish();
@@ -868,7 +906,7 @@ pub fn serialize_structure_crate_input_undeprecate_activity_type_input(
 pub fn serialize_structure_crate_input_undeprecate_domain_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UndeprecateDomainInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_175) = &input.name {
         object.key("name").string(var_175.as_str());
     }
@@ -878,11 +916,12 @@ pub fn serialize_structure_crate_input_undeprecate_domain_input(
 pub fn serialize_structure_crate_input_undeprecate_workflow_type_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UndeprecateWorkflowTypeInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_176) = &input.domain {
         object.key("domain").string(var_176.as_str());
     }
     if let Some(var_177) = &input.workflow_type {
+        #[allow(unused_mut)]
         let mut object_178 = object.key("workflowType").start_object();
         crate::json_ser::serialize_structure_crate_model_workflow_type(&mut object_178, var_177)?;
         object_178.finish();
@@ -893,7 +932,7 @@ pub fn serialize_structure_crate_input_undeprecate_workflow_type_input(
 pub fn serialize_structure_crate_input_untag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UntagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_179) = &input.resource_arn {
         object.key("resourceArn").string(var_179.as_str());
     }
@@ -912,7 +951,7 @@ pub fn serialize_structure_crate_input_untag_resource_input(
 pub fn serialize_structure_crate_model_execution_time_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ExecutionTimeFilter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_183) = &input.oldest_date {
         object
             .key("oldestDate")
@@ -929,7 +968,7 @@ pub fn serialize_structure_crate_model_execution_time_filter(
 pub fn serialize_structure_crate_model_workflow_execution_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::WorkflowExecutionFilter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_185) = &input.workflow_id {
         object.key("workflowId").string(var_185.as_str());
     }
@@ -939,7 +978,7 @@ pub fn serialize_structure_crate_model_workflow_execution_filter(
 pub fn serialize_structure_crate_model_workflow_type_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::WorkflowTypeFilter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_186) = &input.name {
         object.key("name").string(var_186.as_str());
     }
@@ -952,7 +991,7 @@ pub fn serialize_structure_crate_model_workflow_type_filter(
 pub fn serialize_structure_crate_model_tag_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TagFilter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_188) = &input.tag {
         object.key("tag").string(var_188.as_str());
     }
@@ -962,7 +1001,7 @@ pub fn serialize_structure_crate_model_tag_filter(
 pub fn serialize_structure_crate_model_close_status_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CloseStatusFilter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_189) = &input.status {
         object.key("status").string(var_189.as_str());
     }
@@ -972,7 +1011,7 @@ pub fn serialize_structure_crate_model_close_status_filter(
 pub fn serialize_structure_crate_model_task_list(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TaskList,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_190) = &input.name {
         object.key("name").string(var_190.as_str());
     }
@@ -982,7 +1021,7 @@ pub fn serialize_structure_crate_model_task_list(
 pub fn serialize_structure_crate_model_activity_type(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ActivityType,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_191) = &input.name {
         object.key("name").string(var_191.as_str());
     }
@@ -995,7 +1034,7 @@ pub fn serialize_structure_crate_model_activity_type(
 pub fn serialize_structure_crate_model_workflow_type(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::WorkflowType,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_193) = &input.name {
         object.key("name").string(var_193.as_str());
     }
@@ -1008,7 +1047,7 @@ pub fn serialize_structure_crate_model_workflow_type(
 pub fn serialize_structure_crate_model_workflow_execution(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::WorkflowExecution,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_195) = &input.workflow_id {
         object.key("workflowId").string(var_195.as_str());
     }
@@ -1021,7 +1060,7 @@ pub fn serialize_structure_crate_model_workflow_execution(
 pub fn serialize_structure_crate_model_resource_tag(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ResourceTag,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_197) = &input.key {
         object.key("key").string(var_197.as_str());
     }
@@ -1034,11 +1073,12 @@ pub fn serialize_structure_crate_model_resource_tag(
 pub fn serialize_structure_crate_model_decision(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Decision,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_199) = &input.decision_type {
         object.key("decisionType").string(var_199.as_str());
     }
     if let Some(var_200) = &input.schedule_activity_task_decision_attributes {
+        #[allow(unused_mut)]
         let mut object_201 = object
             .key("scheduleActivityTaskDecisionAttributes")
             .start_object();
@@ -1046,6 +1086,7 @@ pub fn serialize_structure_crate_model_decision(
         object_201.finish();
     }
     if let Some(var_202) = &input.request_cancel_activity_task_decision_attributes {
+        #[allow(unused_mut)]
         let mut object_203 = object
             .key("requestCancelActivityTaskDecisionAttributes")
             .start_object();
@@ -1053,6 +1094,7 @@ pub fn serialize_structure_crate_model_decision(
         object_203.finish();
     }
     if let Some(var_204) = &input.complete_workflow_execution_decision_attributes {
+        #[allow(unused_mut)]
         let mut object_205 = object
             .key("completeWorkflowExecutionDecisionAttributes")
             .start_object();
@@ -1060,6 +1102,7 @@ pub fn serialize_structure_crate_model_decision(
         object_205.finish();
     }
     if let Some(var_206) = &input.fail_workflow_execution_decision_attributes {
+        #[allow(unused_mut)]
         let mut object_207 = object
             .key("failWorkflowExecutionDecisionAttributes")
             .start_object();
@@ -1067,6 +1110,7 @@ pub fn serialize_structure_crate_model_decision(
         object_207.finish();
     }
     if let Some(var_208) = &input.cancel_workflow_execution_decision_attributes {
+        #[allow(unused_mut)]
         let mut object_209 = object
             .key("cancelWorkflowExecutionDecisionAttributes")
             .start_object();
@@ -1074,6 +1118,7 @@ pub fn serialize_structure_crate_model_decision(
         object_209.finish();
     }
     if let Some(var_210) = &input.continue_as_new_workflow_execution_decision_attributes {
+        #[allow(unused_mut)]
         let mut object_211 = object
             .key("continueAsNewWorkflowExecutionDecisionAttributes")
             .start_object();
@@ -1081,6 +1126,7 @@ pub fn serialize_structure_crate_model_decision(
         object_211.finish();
     }
     if let Some(var_212) = &input.record_marker_decision_attributes {
+        #[allow(unused_mut)]
         let mut object_213 = object.key("recordMarkerDecisionAttributes").start_object();
         crate::json_ser::serialize_structure_crate_model_record_marker_decision_attributes(
             &mut object_213,
@@ -1089,6 +1135,7 @@ pub fn serialize_structure_crate_model_decision(
         object_213.finish();
     }
     if let Some(var_214) = &input.start_timer_decision_attributes {
+        #[allow(unused_mut)]
         let mut object_215 = object.key("startTimerDecisionAttributes").start_object();
         crate::json_ser::serialize_structure_crate_model_start_timer_decision_attributes(
             &mut object_215,
@@ -1097,6 +1144,7 @@ pub fn serialize_structure_crate_model_decision(
         object_215.finish();
     }
     if let Some(var_216) = &input.cancel_timer_decision_attributes {
+        #[allow(unused_mut)]
         let mut object_217 = object.key("cancelTimerDecisionAttributes").start_object();
         crate::json_ser::serialize_structure_crate_model_cancel_timer_decision_attributes(
             &mut object_217,
@@ -1105,6 +1153,7 @@ pub fn serialize_structure_crate_model_decision(
         object_217.finish();
     }
     if let Some(var_218) = &input.signal_external_workflow_execution_decision_attributes {
+        #[allow(unused_mut)]
         let mut object_219 = object
             .key("signalExternalWorkflowExecutionDecisionAttributes")
             .start_object();
@@ -1112,6 +1161,7 @@ pub fn serialize_structure_crate_model_decision(
         object_219.finish();
     }
     if let Some(var_220) = &input.request_cancel_external_workflow_execution_decision_attributes {
+        #[allow(unused_mut)]
         let mut object_221 = object
             .key("requestCancelExternalWorkflowExecutionDecisionAttributes")
             .start_object();
@@ -1119,6 +1169,7 @@ pub fn serialize_structure_crate_model_decision(
         object_221.finish();
     }
     if let Some(var_222) = &input.start_child_workflow_execution_decision_attributes {
+        #[allow(unused_mut)]
         let mut object_223 = object
             .key("startChildWorkflowExecutionDecisionAttributes")
             .start_object();
@@ -1126,6 +1177,7 @@ pub fn serialize_structure_crate_model_decision(
         object_223.finish();
     }
     if let Some(var_224) = &input.schedule_lambda_function_decision_attributes {
+        #[allow(unused_mut)]
         let mut object_225 = object
             .key("scheduleLambdaFunctionDecisionAttributes")
             .start_object();
@@ -1138,8 +1190,9 @@ pub fn serialize_structure_crate_model_decision(
 pub fn serialize_structure_crate_model_schedule_activity_task_decision_attributes(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ScheduleActivityTaskDecisionAttributes,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_226) = &input.activity_type {
+        #[allow(unused_mut)]
         let mut object_227 = object.key("activityType").start_object();
         crate::json_ser::serialize_structure_crate_model_activity_type(&mut object_227, var_226)?;
         object_227.finish();
@@ -1159,6 +1212,7 @@ pub fn serialize_structure_crate_model_schedule_activity_task_decision_attribute
             .string(var_231.as_str());
     }
     if let Some(var_232) = &input.task_list {
+        #[allow(unused_mut)]
         let mut object_233 = object.key("taskList").start_object();
         crate::json_ser::serialize_structure_crate_model_task_list(&mut object_233, var_232)?;
         object_233.finish();
@@ -1183,7 +1237,7 @@ pub fn serialize_structure_crate_model_schedule_activity_task_decision_attribute
 pub fn serialize_structure_crate_model_request_cancel_activity_task_decision_attributes(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RequestCancelActivityTaskDecisionAttributes,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_238) = &input.activity_id {
         object.key("activityId").string(var_238.as_str());
     }
@@ -1193,7 +1247,7 @@ pub fn serialize_structure_crate_model_request_cancel_activity_task_decision_att
 pub fn serialize_structure_crate_model_complete_workflow_execution_decision_attributes(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CompleteWorkflowExecutionDecisionAttributes,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_239) = &input.result {
         object.key("result").string(var_239.as_str());
     }
@@ -1203,7 +1257,7 @@ pub fn serialize_structure_crate_model_complete_workflow_execution_decision_attr
 pub fn serialize_structure_crate_model_fail_workflow_execution_decision_attributes(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::FailWorkflowExecutionDecisionAttributes,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_240) = &input.reason {
         object.key("reason").string(var_240.as_str());
     }
@@ -1216,7 +1270,7 @@ pub fn serialize_structure_crate_model_fail_workflow_execution_decision_attribut
 pub fn serialize_structure_crate_model_cancel_workflow_execution_decision_attributes(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CancelWorkflowExecutionDecisionAttributes,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_242) = &input.details {
         object.key("details").string(var_242.as_str());
     }
@@ -1226,7 +1280,7 @@ pub fn serialize_structure_crate_model_cancel_workflow_execution_decision_attrib
 pub fn serialize_structure_crate_model_continue_as_new_workflow_execution_decision_attributes(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ContinueAsNewWorkflowExecutionDecisionAttributes,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_243) = &input.input {
         object.key("input").string(var_243.as_str());
     }
@@ -1236,6 +1290,7 @@ pub fn serialize_structure_crate_model_continue_as_new_workflow_execution_decisi
             .string(var_244.as_str());
     }
     if let Some(var_245) = &input.task_list {
+        #[allow(unused_mut)]
         let mut object_246 = object.key("taskList").start_object();
         crate::json_ser::serialize_structure_crate_model_task_list(&mut object_246, var_245)?;
         object_246.finish();
@@ -1272,7 +1327,7 @@ pub fn serialize_structure_crate_model_continue_as_new_workflow_execution_decisi
 pub fn serialize_structure_crate_model_record_marker_decision_attributes(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RecordMarkerDecisionAttributes,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_255) = &input.marker_name {
         object.key("markerName").string(var_255.as_str());
     }
@@ -1285,7 +1340,7 @@ pub fn serialize_structure_crate_model_record_marker_decision_attributes(
 pub fn serialize_structure_crate_model_start_timer_decision_attributes(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::StartTimerDecisionAttributes,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_257) = &input.timer_id {
         object.key("timerId").string(var_257.as_str());
     }
@@ -1301,7 +1356,7 @@ pub fn serialize_structure_crate_model_start_timer_decision_attributes(
 pub fn serialize_structure_crate_model_cancel_timer_decision_attributes(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CancelTimerDecisionAttributes,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_260) = &input.timer_id {
         object.key("timerId").string(var_260.as_str());
     }
@@ -1311,7 +1366,7 @@ pub fn serialize_structure_crate_model_cancel_timer_decision_attributes(
 pub fn serialize_structure_crate_model_signal_external_workflow_execution_decision_attributes(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SignalExternalWorkflowExecutionDecisionAttributes,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_261) = &input.workflow_id {
         object.key("workflowId").string(var_261.as_str());
     }
@@ -1333,7 +1388,7 @@ pub fn serialize_structure_crate_model_signal_external_workflow_execution_decisi
 pub fn serialize_structure_crate_model_request_cancel_external_workflow_execution_decision_attributes(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RequestCancelExternalWorkflowExecutionDecisionAttributes,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_266) = &input.workflow_id {
         object.key("workflowId").string(var_266.as_str());
     }
@@ -1349,8 +1404,9 @@ pub fn serialize_structure_crate_model_request_cancel_external_workflow_executio
 pub fn serialize_structure_crate_model_start_child_workflow_execution_decision_attributes(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::StartChildWorkflowExecutionDecisionAttributes,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_269) = &input.workflow_type {
+        #[allow(unused_mut)]
         let mut object_270 = object.key("workflowType").start_object();
         crate::json_ser::serialize_structure_crate_model_workflow_type(&mut object_270, var_269)?;
         object_270.finish();
@@ -1370,6 +1426,7 @@ pub fn serialize_structure_crate_model_start_child_workflow_execution_decision_a
             .string(var_274.as_str());
     }
     if let Some(var_275) = &input.task_list {
+        #[allow(unused_mut)]
         let mut object_276 = object.key("taskList").start_object();
         crate::json_ser::serialize_structure_crate_model_task_list(&mut object_276, var_275)?;
         object_276.finish();
@@ -1403,7 +1460,7 @@ pub fn serialize_structure_crate_model_start_child_workflow_execution_decision_a
 pub fn serialize_structure_crate_model_schedule_lambda_function_decision_attributes(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ScheduleLambdaFunctionDecisionAttributes,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_284) = &input.id {
         object.key("id").string(var_284.as_str());
     }

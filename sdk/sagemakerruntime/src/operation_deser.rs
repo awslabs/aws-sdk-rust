@@ -24,7 +24,7 @@ pub fn parse_invoke_endpoint_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_dependency_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeEndpointError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -42,7 +42,7 @@ pub fn parse_invoke_endpoint_error(
                         output = crate::json_deser::deser_structure_crate_error_internal_failure_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeEndpointError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -64,7 +64,7 @@ pub fn parse_invoke_endpoint_error(
                     .map_err(crate::error::InvokeEndpointError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -81,7 +81,7 @@ pub fn parse_invoke_endpoint_error(
                     output = crate::json_deser::deser_structure_crate_error_model_not_ready_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeEndpointError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -98,7 +98,7 @@ pub fn parse_invoke_endpoint_error(
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeEndpointError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -116,7 +116,7 @@ pub fn parse_invoke_endpoint_error(
                         output = crate::json_deser::deser_structure_crate_error_validation_error_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeEndpointError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -190,7 +190,7 @@ pub fn parse_invoke_endpoint_async_error(
                         output = crate::json_deser::deser_structure_crate_error_internal_failure_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeEndpointAsyncError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -208,7 +208,7 @@ pub fn parse_invoke_endpoint_async_error(
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeEndpointAsyncError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -226,7 +226,7 @@ pub fn parse_invoke_endpoint_async_error(
                         output = crate::json_deser::deser_structure_crate_error_validation_error_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeEndpointAsyncError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp

@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use super::error::SigningError;
 use super::{PayloadChecksumKind, SignatureLocation};
 use crate::http_request::canonical_request::header;
 use crate::http_request::canonical_request::param;
@@ -15,11 +16,7 @@ use http::header::HeaderValue;
 use http::{HeaderMap, Method, Uri};
 use std::borrow::Cow;
 use std::convert::TryFrom;
-use std::error::Error as StdError;
 use std::str;
-
-/// Signing error type
-pub type Error = Box<dyn StdError + Send + Sync + 'static>;
 
 /// Represents all of the information necessary to sign an HTTP request.
 #[derive(Debug)]
@@ -155,7 +152,7 @@ impl SigningInstructions {
 pub fn sign<'a>(
     request: SignableRequest<'a>,
     params: &'a SigningParams<'a>,
-) -> Result<SigningOutput<SigningInstructions>, Error> {
+) -> Result<SigningOutput<SigningInstructions>, SigningError> {
     tracing::trace!(request = ?request, params = ?params, "signing request");
     match params.settings.signature_location {
         SignatureLocation::Headers => {
@@ -181,24 +178,25 @@ type CalculatedParams = Vec<(&'static str, Cow<'static, str>)>;
 fn calculate_signing_params<'a>(
     request: &'a SignableRequest<'a>,
     params: &'a SigningParams<'a>,
-) -> Result<(CalculatedParams, String), Error> {
+) -> Result<(CalculatedParams, String), SigningError> {
     let creq = CanonicalRequest::from(request, params)?;
-    tracing::trace!(canonical_request = %creq);
 
     let encoded_creq = &sha256_hex_string(creq.to_string().as_bytes());
-    let sts = StringToSign::new(
+    let string_to_sign = StringToSign::new(
         params.time,
         params.region,
         params.service_name,
         encoded_creq,
-    );
+    )
+    .to_string();
     let signing_key = generate_signing_key(
         params.secret_key,
         params.time,
         params.region,
         params.service_name,
     );
-    let signature = calculate_signature(signing_key, sts.to_string().as_bytes());
+    let signature = calculate_signature(signing_key, string_to_sign.as_bytes());
+    tracing::trace!(canonical_request = %creq, string_to_sign = %string_to_sign, "calculated signing parameters");
 
     let values = creq.values.into_query_params().expect("signing with query");
     let mut signing_params = vec![
@@ -230,7 +228,7 @@ fn calculate_signing_params<'a>(
 fn calculate_signing_headers<'a>(
     request: &'a SignableRequest<'a>,
     params: &'a SigningParams<'a>,
-) -> Result<SigningOutput<HeaderMap<HeaderValue>>, Error> {
+) -> Result<SigningOutput<HeaderMap<HeaderValue>>, SigningError> {
     // Step 1: https://docs.aws.amazon.com/en_pv/general/latest/gr/sigv4-create-canonical-request.html.
     let creq = CanonicalRequest::from(request, params)?;
     tracing::trace!(canonical_request = %creq);
@@ -311,6 +309,7 @@ mod tests {
     use crate::http_request::{SignatureLocation, SigningParams, SigningSettings};
     use http::{HeaderMap, HeaderValue};
     use pretty_assertions::assert_eq;
+    use proptest::proptest;
     use std::borrow::Cow;
     use std::time::Duration;
 
@@ -513,6 +512,62 @@ mod tests {
             .body("")
             .unwrap();
         assert_req_eq!(expected, signed);
+    }
+
+    #[test]
+    fn test_sign_headers_returning_expected_error_on_invalid_utf8() {
+        let settings = SigningSettings::default();
+        let params = SigningParams {
+            access_key: "123",
+            secret_key: "asdf",
+            security_token: None,
+            region: "us-east-1",
+            service_name: "foo",
+            time: std::time::SystemTime::now(),
+            settings,
+        };
+
+        let req = http::Request::builder()
+            .uri("https://foo.com/")
+            .header("x-sign-me", HeaderValue::from_bytes(&[0xC0, 0xC1]).unwrap())
+            .body(&[])
+            .unwrap();
+
+        let creq = crate::http_request::sign(SignableRequest::from(&req), &params);
+        assert!(creq.is_err());
+    }
+
+    proptest! {
+        #[test]
+        // Only byte values between 32 and 255 (inclusive) are permitted, excluding byte 127, for
+        // [HeaderValue](https://docs.rs/http/latest/http/header/struct.HeaderValue.html#method.from_bytes).
+        fn test_sign_headers_no_panic(
+            left in proptest::collection::vec(32_u8..=126, 0..100),
+            right in proptest::collection::vec(128_u8..=255, 0..100),
+        ) {
+            let settings = SigningSettings::default();
+            let params = SigningParams {
+                access_key: "123",
+                secret_key: "asdf",
+                security_token: None,
+                region: "us-east-1",
+                service_name: "foo",
+                time: std::time::SystemTime::now(),
+                settings,
+            };
+
+            let bytes = left.iter().chain(right.iter()).cloned().collect::<Vec<_>>();
+            let req = http::Request::builder()
+                .uri("https://foo.com/")
+                .header("x-sign-me", HeaderValue::from_bytes(&bytes).unwrap())
+                .body(&[])
+                .unwrap();
+
+            // The test considered a pass if the creation of `creq` does not panic.
+            let _creq = crate::http_request::sign(
+                SignableRequest::from(&req),
+                &params);
+        }
     }
 
     #[test]

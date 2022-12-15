@@ -2,7 +2,7 @@
 
 /// <p>Updates the specified HTTP endpoint destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpEndpointDestinationUpdate {
     /// <p>Describes the configuration of the HTTP endpoint destination.</p>
     #[doc(hidden)]
@@ -80,29 +80,11 @@ impl HttpEndpointDestinationUpdate {
         self.s3_update.as_ref()
     }
 }
-impl std::fmt::Debug for HttpEndpointDestinationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpEndpointDestinationUpdate");
-        formatter.field("endpoint_configuration", &self.endpoint_configuration);
-        formatter.field("buffering_hints", &self.buffering_hints);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.field("request_configuration", &self.request_configuration);
-        formatter.field("processing_configuration", &self.processing_configuration);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("retry_options", &self.retry_options);
-        formatter.field("s3_backup_mode", &self.s3_backup_mode);
-        formatter.field("s3_update", &self.s3_update);
-        formatter.finish()
-    }
-}
 /// See [`HttpEndpointDestinationUpdate`](crate::model::HttpEndpointDestinationUpdate).
 pub mod http_endpoint_destination_update {
 
     /// A builder for [`HttpEndpointDestinationUpdate`](crate::model::HttpEndpointDestinationUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_configuration:
             std::option::Option<crate::model::HttpEndpointConfiguration>,
@@ -270,7 +252,7 @@ impl HttpEndpointDestinationUpdate {
 
 /// <p>Describes an update for a destination in Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3DestinationUpdate {
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
     #[doc(hidden)]
@@ -337,28 +319,11 @@ impl S3DestinationUpdate {
         self.cloud_watch_logging_options.as_ref()
     }
 }
-impl std::fmt::Debug for S3DestinationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3DestinationUpdate");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("bucket_arn", &self.bucket_arn);
-        formatter.field("prefix", &self.prefix);
-        formatter.field("error_output_prefix", &self.error_output_prefix);
-        formatter.field("buffering_hints", &self.buffering_hints);
-        formatter.field("compression_format", &self.compression_format);
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.finish()
-    }
-}
 /// See [`S3DestinationUpdate`](crate::model::S3DestinationUpdate).
 pub mod s3_destination_update {
 
     /// A builder for [`S3DestinationUpdate`](crate::model::S3DestinationUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) bucket_arn: std::option::Option<std::string::String>,
@@ -499,7 +464,7 @@ impl S3DestinationUpdate {
 
 /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudWatchLoggingOptions {
     /// <p>Enables or disables CloudWatch logging.</p>
     #[doc(hidden)]
@@ -525,20 +490,11 @@ impl CloudWatchLoggingOptions {
         self.log_stream_name.as_deref()
     }
 }
-impl std::fmt::Debug for CloudWatchLoggingOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudWatchLoggingOptions");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.field("log_stream_name", &self.log_stream_name);
-        formatter.finish()
-    }
-}
 /// See [`CloudWatchLoggingOptions`](crate::model::CloudWatchLoggingOptions).
 pub mod cloud_watch_logging_options {
 
     /// A builder for [`CloudWatchLoggingOptions`](crate::model::CloudWatchLoggingOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
         pub(crate) log_group_name: std::option::Option<std::string::String>,
@@ -600,7 +556,7 @@ impl CloudWatchLoggingOptions {
 
 /// <p>Describes the encryption for a destination in Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionConfiguration {
     /// <p>Specifically override existing encryption information to ensure that no encryption is used.</p>
     #[doc(hidden)]
@@ -619,19 +575,11 @@ impl EncryptionConfiguration {
         self.kms_encryption_config.as_ref()
     }
 }
-impl std::fmt::Debug for EncryptionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionConfiguration");
-        formatter.field("no_encryption_config", &self.no_encryption_config);
-        formatter.field("kms_encryption_config", &self.kms_encryption_config);
-        formatter.finish()
-    }
-}
 /// See [`EncryptionConfiguration`](crate::model::EncryptionConfiguration).
 pub mod encryption_configuration {
 
     /// A builder for [`EncryptionConfiguration`](crate::model::EncryptionConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) no_encryption_config: std::option::Option<crate::model::NoEncryptionConfig>,
         pub(crate) kms_encryption_config: std::option::Option<crate::model::KmsEncryptionConfig>,
@@ -681,7 +629,7 @@ impl EncryptionConfiguration {
 
 /// <p>Describes an encryption key for a destination in Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KmsEncryptionConfig {
     /// <p>The Amazon Resource Name (ARN) of the encryption key. Must belong to the same AWS Region as the destination Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
     #[doc(hidden)]
@@ -693,18 +641,11 @@ impl KmsEncryptionConfig {
         self.awskms_key_arn.as_deref()
     }
 }
-impl std::fmt::Debug for KmsEncryptionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KmsEncryptionConfig");
-        formatter.field("awskms_key_arn", &self.awskms_key_arn);
-        formatter.finish()
-    }
-}
 /// See [`KmsEncryptionConfig`](crate::model::KmsEncryptionConfig).
 pub mod kms_encryption_config {
 
     /// A builder for [`KmsEncryptionConfig`](crate::model::KmsEncryptionConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) awskms_key_arn: std::option::Option<std::string::String>,
     }
@@ -737,6 +678,40 @@ impl KmsEncryptionConfig {
     }
 }
 
+/// When writing a match expression against `NoEncryptionConfig`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let noencryptionconfig = unimplemented!();
+/// match noencryptionconfig {
+///     NoEncryptionConfig::NoEncryption => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `noencryptionconfig` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `NoEncryptionConfig::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `NoEncryptionConfig::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `NoEncryptionConfig::NewFeature` is defined.
+/// Specifically, when `noencryptionconfig` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `NoEncryptionConfig::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -751,14 +726,16 @@ impl KmsEncryptionConfig {
 pub enum NoEncryptionConfig {
     #[allow(missing_docs)] // documentation missing in model
     NoEncryption,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for NoEncryptionConfig {
     fn from(s: &str) -> Self {
         match s {
             "NoEncryption" => NoEncryptionConfig::NoEncryption,
-            other => NoEncryptionConfig::Unknown(other.to_owned()),
+            other => {
+                NoEncryptionConfig::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -774,11 +751,11 @@ impl NoEncryptionConfig {
     pub fn as_str(&self) -> &str {
         match self {
             NoEncryptionConfig::NoEncryption => "NoEncryption",
-            NoEncryptionConfig::Unknown(s) => s.as_ref(),
+            NoEncryptionConfig::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NoEncryption"]
     }
 }
@@ -788,6 +765,44 @@ impl AsRef<str> for NoEncryptionConfig {
     }
 }
 
+/// When writing a match expression against `CompressionFormat`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let compressionformat = unimplemented!();
+/// match compressionformat {
+///     CompressionFormat::Gzip => { /* ... */ },
+///     CompressionFormat::HadoopSnappy => { /* ... */ },
+///     CompressionFormat::Snappy => { /* ... */ },
+///     CompressionFormat::Uncompressed => { /* ... */ },
+///     CompressionFormat::Zip => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `compressionformat` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CompressionFormat::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CompressionFormat::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CompressionFormat::NewFeature` is defined.
+/// Specifically, when `compressionformat` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CompressionFormat::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -810,8 +825,8 @@ pub enum CompressionFormat {
     Uncompressed,
     #[allow(missing_docs)] // documentation missing in model
     Zip,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CompressionFormat {
     fn from(s: &str) -> Self {
@@ -821,7 +836,9 @@ impl std::convert::From<&str> for CompressionFormat {
             "Snappy" => CompressionFormat::Snappy,
             "UNCOMPRESSED" => CompressionFormat::Uncompressed,
             "ZIP" => CompressionFormat::Zip,
-            other => CompressionFormat::Unknown(other.to_owned()),
+            other => {
+                CompressionFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -841,11 +858,11 @@ impl CompressionFormat {
             CompressionFormat::Snappy => "Snappy",
             CompressionFormat::Uncompressed => "UNCOMPRESSED",
             CompressionFormat::Zip => "ZIP",
-            CompressionFormat::Unknown(s) => s.as_ref(),
+            CompressionFormat::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GZIP", "HADOOP_SNAPPY", "Snappy", "UNCOMPRESSED", "ZIP"]
     }
 }
@@ -857,7 +874,7 @@ impl AsRef<str> for CompressionFormat {
 
 /// <p>Describes hints for the buffering to perform before delivering data to the destination. These options are treated as hints, and therefore Kinesis Data Firehose might choose to use different values when it is optimal. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BufferingHints {
     /// <p>Buffer incoming data to the specified size, in MiBs, before delivering it to the destination. The default value is 5. This parameter is optional but if you specify a value for it, you must also specify a value for <code>IntervalInSeconds</code>, and vice versa.</p>
     /// <p>We recommend setting this parameter to a value greater than the amount of data you typically ingest into the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MiB/sec, the value should be 10 MiB or higher.</p>
@@ -878,19 +895,11 @@ impl BufferingHints {
         self.interval_in_seconds
     }
 }
-impl std::fmt::Debug for BufferingHints {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BufferingHints");
-        formatter.field("size_in_m_bs", &self.size_in_m_bs);
-        formatter.field("interval_in_seconds", &self.interval_in_seconds);
-        formatter.finish()
-    }
-}
 /// See [`BufferingHints`](crate::model::BufferingHints).
 pub mod buffering_hints {
 
     /// A builder for [`BufferingHints`](crate::model::BufferingHints).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) size_in_m_bs: std::option::Option<i32>,
         pub(crate) interval_in_seconds: std::option::Option<i32>,
@@ -934,6 +943,41 @@ impl BufferingHints {
     }
 }
 
+/// When writing a match expression against `HttpEndpointS3BackupMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let httpendpoints3backupmode = unimplemented!();
+/// match httpendpoints3backupmode {
+///     HttpEndpointS3BackupMode::AllData => { /* ... */ },
+///     HttpEndpointS3BackupMode::FailedDataOnly => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `httpendpoints3backupmode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `HttpEndpointS3BackupMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `HttpEndpointS3BackupMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `HttpEndpointS3BackupMode::NewFeature` is defined.
+/// Specifically, when `httpendpoints3backupmode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `HttpEndpointS3BackupMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -950,15 +994,17 @@ pub enum HttpEndpointS3BackupMode {
     AllData,
     #[allow(missing_docs)] // documentation missing in model
     FailedDataOnly,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for HttpEndpointS3BackupMode {
     fn from(s: &str) -> Self {
         match s {
             "AllData" => HttpEndpointS3BackupMode::AllData,
             "FailedDataOnly" => HttpEndpointS3BackupMode::FailedDataOnly,
-            other => HttpEndpointS3BackupMode::Unknown(other.to_owned()),
+            other => HttpEndpointS3BackupMode::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -975,11 +1021,11 @@ impl HttpEndpointS3BackupMode {
         match self {
             HttpEndpointS3BackupMode::AllData => "AllData",
             HttpEndpointS3BackupMode::FailedDataOnly => "FailedDataOnly",
-            HttpEndpointS3BackupMode::Unknown(s) => s.as_ref(),
+            HttpEndpointS3BackupMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AllData", "FailedDataOnly"]
     }
 }
@@ -991,7 +1037,7 @@ impl AsRef<str> for HttpEndpointS3BackupMode {
 
 /// <p>Describes the retry behavior in case Kinesis Data Firehose is unable to deliver data to the specified HTTP endpoint destination, or if it doesn't receive a valid acknowledgment of receipt from the specified HTTP endpoint destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpEndpointRetryOptions {
     /// <p>The total amount of time that Kinesis Data Firehose spends on retries. This duration starts after the initial attempt to send data to the custom destination via HTTPS endpoint fails. It doesn't include the periods during which Kinesis Data Firehose waits for acknowledgment from the specified destination after each attempt. </p>
     #[doc(hidden)]
@@ -1003,18 +1049,11 @@ impl HttpEndpointRetryOptions {
         self.duration_in_seconds
     }
 }
-impl std::fmt::Debug for HttpEndpointRetryOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpEndpointRetryOptions");
-        formatter.field("duration_in_seconds", &self.duration_in_seconds);
-        formatter.finish()
-    }
-}
 /// See [`HttpEndpointRetryOptions`](crate::model::HttpEndpointRetryOptions).
 pub mod http_endpoint_retry_options {
 
     /// A builder for [`HttpEndpointRetryOptions`](crate::model::HttpEndpointRetryOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) duration_in_seconds: std::option::Option<i32>,
     }
@@ -1046,7 +1085,7 @@ impl HttpEndpointRetryOptions {
 
 /// <p>Describes a data processing configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProcessingConfiguration {
     /// <p>Enables or disables data processing.</p>
     #[doc(hidden)]
@@ -1065,19 +1104,11 @@ impl ProcessingConfiguration {
         self.processors.as_deref()
     }
 }
-impl std::fmt::Debug for ProcessingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProcessingConfiguration");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("processors", &self.processors);
-        formatter.finish()
-    }
-}
 /// See [`ProcessingConfiguration`](crate::model::ProcessingConfiguration).
 pub mod processing_configuration {
 
     /// A builder for [`ProcessingConfiguration`](crate::model::ProcessingConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
         pub(crate) processors: std::option::Option<std::vec::Vec<crate::model::Processor>>,
@@ -1130,7 +1161,7 @@ impl ProcessingConfiguration {
 
 /// <p>Describes a data processor.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Processor {
     /// <p>The type of processor.</p>
     #[doc(hidden)]
@@ -1149,19 +1180,11 @@ impl Processor {
         self.parameters.as_deref()
     }
 }
-impl std::fmt::Debug for Processor {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Processor");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
-    }
-}
 /// See [`Processor`](crate::model::Processor).
 pub mod processor {
 
     /// A builder for [`Processor`](crate::model::Processor).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ProcessorType>,
         pub(crate) parameters: std::option::Option<std::vec::Vec<crate::model::ProcessorParameter>>,
@@ -1214,7 +1237,7 @@ impl Processor {
 
 /// <p>Describes the processor parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProcessorParameter {
     /// <p>The name of the parameter.</p>
     #[doc(hidden)]
@@ -1233,19 +1256,11 @@ impl ProcessorParameter {
         self.parameter_value.as_deref()
     }
 }
-impl std::fmt::Debug for ProcessorParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProcessorParameter");
-        formatter.field("parameter_name", &self.parameter_name);
-        formatter.field("parameter_value", &self.parameter_value);
-        formatter.finish()
-    }
-}
 /// See [`ProcessorParameter`](crate::model::ProcessorParameter).
 pub mod processor_parameter {
 
     /// A builder for [`ProcessorParameter`](crate::model::ProcessorParameter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_name: std::option::Option<crate::model::ProcessorParameterName>,
         pub(crate) parameter_value: std::option::Option<std::string::String>,
@@ -1293,6 +1308,48 @@ impl ProcessorParameter {
     }
 }
 
+/// When writing a match expression against `ProcessorParameterName`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let processorparametername = unimplemented!();
+/// match processorparametername {
+///     ProcessorParameterName::BufferIntervalInSeconds => { /* ... */ },
+///     ProcessorParameterName::BufferSizeInMb => { /* ... */ },
+///     ProcessorParameterName::Delimiter => { /* ... */ },
+///     ProcessorParameterName::JsonParsingEngine => { /* ... */ },
+///     ProcessorParameterName::LambdaArn => { /* ... */ },
+///     ProcessorParameterName::MetadataExtractionQuery => { /* ... */ },
+///     ProcessorParameterName::LambdaNumberOfRetries => { /* ... */ },
+///     ProcessorParameterName::RoleArn => { /* ... */ },
+///     ProcessorParameterName::SubRecordType => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `processorparametername` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ProcessorParameterName::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ProcessorParameterName::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ProcessorParameterName::NewFeature` is defined.
+/// Specifically, when `processorparametername` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ProcessorParameterName::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1323,8 +1380,8 @@ pub enum ProcessorParameterName {
     RoleArn,
     #[allow(missing_docs)] // documentation missing in model
     SubRecordType,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ProcessorParameterName {
     fn from(s: &str) -> Self {
@@ -1338,7 +1395,9 @@ impl std::convert::From<&str> for ProcessorParameterName {
             "NumberOfRetries" => ProcessorParameterName::LambdaNumberOfRetries,
             "RoleArn" => ProcessorParameterName::RoleArn,
             "SubRecordType" => ProcessorParameterName::SubRecordType,
-            other => ProcessorParameterName::Unknown(other.to_owned()),
+            other => {
+                ProcessorParameterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -1362,11 +1421,11 @@ impl ProcessorParameterName {
             ProcessorParameterName::LambdaNumberOfRetries => "NumberOfRetries",
             ProcessorParameterName::RoleArn => "RoleArn",
             ProcessorParameterName::SubRecordType => "SubRecordType",
-            ProcessorParameterName::Unknown(s) => s.as_ref(),
+            ProcessorParameterName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BufferIntervalInSeconds",
             "BufferSizeInMBs",
@@ -1386,6 +1445,43 @@ impl AsRef<str> for ProcessorParameterName {
     }
 }
 
+/// When writing a match expression against `ProcessorType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let processortype = unimplemented!();
+/// match processortype {
+///     ProcessorType::AppendDelimiterToRecord => { /* ... */ },
+///     ProcessorType::Lambda => { /* ... */ },
+///     ProcessorType::MetadataExtraction => { /* ... */ },
+///     ProcessorType::RecordDeAggregation => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `processortype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ProcessorType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ProcessorType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ProcessorType::NewFeature` is defined.
+/// Specifically, when `processortype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ProcessorType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1406,8 +1502,8 @@ pub enum ProcessorType {
     MetadataExtraction,
     #[allow(missing_docs)] // documentation missing in model
     RecordDeAggregation,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ProcessorType {
     fn from(s: &str) -> Self {
@@ -1416,7 +1512,7 @@ impl std::convert::From<&str> for ProcessorType {
             "Lambda" => ProcessorType::Lambda,
             "MetadataExtraction" => ProcessorType::MetadataExtraction,
             "RecordDeAggregation" => ProcessorType::RecordDeAggregation,
-            other => ProcessorType::Unknown(other.to_owned()),
+            other => ProcessorType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1435,11 +1531,11 @@ impl ProcessorType {
             ProcessorType::Lambda => "Lambda",
             ProcessorType::MetadataExtraction => "MetadataExtraction",
             ProcessorType::RecordDeAggregation => "RecordDeAggregation",
-            ProcessorType::Unknown(s) => s.as_ref(),
+            ProcessorType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AppendDelimiterToRecord",
             "Lambda",
@@ -1456,7 +1552,7 @@ impl AsRef<str> for ProcessorType {
 
 /// <p>The configuration of the HTTP endpoint request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpEndpointRequestConfiguration {
     /// <p>Kinesis Data Firehose uses the content encoding to compress the body of a request before sending the request to the destination. For more information, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding">Content-Encoding</a> in MDN Web Docs, the official Mozilla documentation.</p>
     #[doc(hidden)]
@@ -1478,19 +1574,11 @@ impl HttpEndpointRequestConfiguration {
         self.common_attributes.as_deref()
     }
 }
-impl std::fmt::Debug for HttpEndpointRequestConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpEndpointRequestConfiguration");
-        formatter.field("content_encoding", &self.content_encoding);
-        formatter.field("common_attributes", &self.common_attributes);
-        formatter.finish()
-    }
-}
 /// See [`HttpEndpointRequestConfiguration`](crate::model::HttpEndpointRequestConfiguration).
 pub mod http_endpoint_request_configuration {
 
     /// A builder for [`HttpEndpointRequestConfiguration`](crate::model::HttpEndpointRequestConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_encoding: std::option::Option<crate::model::ContentEncoding>,
         pub(crate) common_attributes:
@@ -1581,7 +1669,7 @@ impl std::fmt::Debug for HttpEndpointCommonAttribute {
 pub mod http_endpoint_common_attribute {
 
     /// A builder for [`HttpEndpointCommonAttribute`](crate::model::HttpEndpointCommonAttribute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) attribute_name: std::option::Option<std::string::String>,
         pub(crate) attribute_value: std::option::Option<std::string::String>,
@@ -1621,6 +1709,14 @@ pub mod http_endpoint_common_attribute {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("attribute_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("attribute_value", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl HttpEndpointCommonAttribute {
     /// Creates a new builder-style object to manufacture [`HttpEndpointCommonAttribute`](crate::model::HttpEndpointCommonAttribute).
@@ -1629,6 +1725,41 @@ impl HttpEndpointCommonAttribute {
     }
 }
 
+/// When writing a match expression against `ContentEncoding`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let contentencoding = unimplemented!();
+/// match contentencoding {
+///     ContentEncoding::Gzip => { /* ... */ },
+///     ContentEncoding::None => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `contentencoding` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ContentEncoding::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ContentEncoding::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ContentEncoding::NewFeature` is defined.
+/// Specifically, when `contentencoding` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ContentEncoding::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1645,15 +1776,15 @@ pub enum ContentEncoding {
     Gzip,
     #[allow(missing_docs)] // documentation missing in model
     None,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ContentEncoding {
     fn from(s: &str) -> Self {
         match s {
             "GZIP" => ContentEncoding::Gzip,
             "NONE" => ContentEncoding::None,
-            other => ContentEncoding::Unknown(other.to_owned()),
+            other => ContentEncoding::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1670,11 +1801,11 @@ impl ContentEncoding {
         match self {
             ContentEncoding::Gzip => "GZIP",
             ContentEncoding::None => "NONE",
-            ContentEncoding::Unknown(s) => s.as_ref(),
+            ContentEncoding::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GZIP", "NONE"]
     }
 }
@@ -1686,7 +1817,7 @@ impl AsRef<str> for ContentEncoding {
 
 /// <p>Describes the buffering options that can be applied before data is delivered to the HTTP endpoint destination. Kinesis Data Firehose treats these options as hints, and it might choose to use more optimal values. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpEndpointBufferingHints {
     /// <p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 5. </p>
     /// <p>We recommend setting this parameter to a value greater than the amount of data you typically ingest into the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec, the value should be 10 MB or higher. </p>
@@ -1707,19 +1838,11 @@ impl HttpEndpointBufferingHints {
         self.interval_in_seconds
     }
 }
-impl std::fmt::Debug for HttpEndpointBufferingHints {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpEndpointBufferingHints");
-        formatter.field("size_in_m_bs", &self.size_in_m_bs);
-        formatter.field("interval_in_seconds", &self.interval_in_seconds);
-        formatter.finish()
-    }
-}
 /// See [`HttpEndpointBufferingHints`](crate::model::HttpEndpointBufferingHints).
 pub mod http_endpoint_buffering_hints {
 
     /// A builder for [`HttpEndpointBufferingHints`](crate::model::HttpEndpointBufferingHints).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) size_in_m_bs: std::option::Option<i32>,
         pub(crate) interval_in_seconds: std::option::Option<i32>,
@@ -1808,7 +1931,7 @@ impl std::fmt::Debug for HttpEndpointConfiguration {
 pub mod http_endpoint_configuration {
 
     /// A builder for [`HttpEndpointConfiguration`](crate::model::HttpEndpointConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) url: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1858,6 +1981,15 @@ pub mod http_endpoint_configuration {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("url", &"*** Sensitive Data Redacted ***");
+            formatter.field("name", &self.name);
+            formatter.field("access_key", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl HttpEndpointConfiguration {
     /// Creates a new builder-style object to manufacture [`HttpEndpointConfiguration`](crate::model::HttpEndpointConfiguration).
@@ -1868,7 +2000,7 @@ impl HttpEndpointConfiguration {
 
 /// <p>Describes an update for a destination in Splunk.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SplunkDestinationUpdate {
     /// <p>The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends your data.</p>
     #[doc(hidden)]
@@ -1942,32 +2074,11 @@ impl SplunkDestinationUpdate {
         self.cloud_watch_logging_options.as_ref()
     }
 }
-impl std::fmt::Debug for SplunkDestinationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SplunkDestinationUpdate");
-        formatter.field("hec_endpoint", &self.hec_endpoint);
-        formatter.field("hec_endpoint_type", &self.hec_endpoint_type);
-        formatter.field("hec_token", &self.hec_token);
-        formatter.field(
-            "hec_acknowledgment_timeout_in_seconds",
-            &self.hec_acknowledgment_timeout_in_seconds,
-        );
-        formatter.field("retry_options", &self.retry_options);
-        formatter.field("s3_backup_mode", &self.s3_backup_mode);
-        formatter.field("s3_update", &self.s3_update);
-        formatter.field("processing_configuration", &self.processing_configuration);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.finish()
-    }
-}
 /// See [`SplunkDestinationUpdate`](crate::model::SplunkDestinationUpdate).
 pub mod splunk_destination_update {
 
     /// A builder for [`SplunkDestinationUpdate`](crate::model::SplunkDestinationUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hec_endpoint: std::option::Option<std::string::String>,
         pub(crate) hec_endpoint_type: std::option::Option<crate::model::HecEndpointType>,
@@ -2124,6 +2235,41 @@ impl SplunkDestinationUpdate {
     }
 }
 
+/// When writing a match expression against `SplunkS3BackupMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let splunks3backupmode = unimplemented!();
+/// match splunks3backupmode {
+///     SplunkS3BackupMode::AllEvents => { /* ... */ },
+///     SplunkS3BackupMode::FailedEventsOnly => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `splunks3backupmode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SplunkS3BackupMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SplunkS3BackupMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SplunkS3BackupMode::NewFeature` is defined.
+/// Specifically, when `splunks3backupmode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SplunkS3BackupMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2140,15 +2286,17 @@ pub enum SplunkS3BackupMode {
     AllEvents,
     #[allow(missing_docs)] // documentation missing in model
     FailedEventsOnly,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SplunkS3BackupMode {
     fn from(s: &str) -> Self {
         match s {
             "AllEvents" => SplunkS3BackupMode::AllEvents,
             "FailedEventsOnly" => SplunkS3BackupMode::FailedEventsOnly,
-            other => SplunkS3BackupMode::Unknown(other.to_owned()),
+            other => {
+                SplunkS3BackupMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -2165,11 +2313,11 @@ impl SplunkS3BackupMode {
         match self {
             SplunkS3BackupMode::AllEvents => "AllEvents",
             SplunkS3BackupMode::FailedEventsOnly => "FailedEventsOnly",
-            SplunkS3BackupMode::Unknown(s) => s.as_ref(),
+            SplunkS3BackupMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AllEvents", "FailedEventsOnly"]
     }
 }
@@ -2181,7 +2329,7 @@ impl AsRef<str> for SplunkS3BackupMode {
 
 /// <p>Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Splunk, or if it doesn't receive an acknowledgment from Splunk.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SplunkRetryOptions {
     /// <p>The total amount of time that Kinesis Data Firehose spends on retries. This duration starts after the initial attempt to send data to Splunk fails. It doesn't include the periods during which Kinesis Data Firehose waits for acknowledgment from Splunk after each attempt.</p>
     #[doc(hidden)]
@@ -2193,18 +2341,11 @@ impl SplunkRetryOptions {
         self.duration_in_seconds
     }
 }
-impl std::fmt::Debug for SplunkRetryOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SplunkRetryOptions");
-        formatter.field("duration_in_seconds", &self.duration_in_seconds);
-        formatter.finish()
-    }
-}
 /// See [`SplunkRetryOptions`](crate::model::SplunkRetryOptions).
 pub mod splunk_retry_options {
 
     /// A builder for [`SplunkRetryOptions`](crate::model::SplunkRetryOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) duration_in_seconds: std::option::Option<i32>,
     }
@@ -2234,6 +2375,41 @@ impl SplunkRetryOptions {
     }
 }
 
+/// When writing a match expression against `HecEndpointType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let hecendpointtype = unimplemented!();
+/// match hecendpointtype {
+///     HecEndpointType::Event => { /* ... */ },
+///     HecEndpointType::Raw => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `hecendpointtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `HecEndpointType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `HecEndpointType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `HecEndpointType::NewFeature` is defined.
+/// Specifically, when `hecendpointtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `HecEndpointType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2250,15 +2426,15 @@ pub enum HecEndpointType {
     Event,
     #[allow(missing_docs)] // documentation missing in model
     Raw,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for HecEndpointType {
     fn from(s: &str) -> Self {
         match s {
             "Event" => HecEndpointType::Event,
             "Raw" => HecEndpointType::Raw,
-            other => HecEndpointType::Unknown(other.to_owned()),
+            other => HecEndpointType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2275,11 +2451,11 @@ impl HecEndpointType {
         match self {
             HecEndpointType::Event => "Event",
             HecEndpointType::Raw => "Raw",
-            HecEndpointType::Unknown(s) => s.as_ref(),
+            HecEndpointType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Event", "Raw"]
     }
 }
@@ -2291,7 +2467,7 @@ impl AsRef<str> for HecEndpointType {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AmazonopensearchserviceDestinationUpdate {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -2384,31 +2560,11 @@ impl AmazonopensearchserviceDestinationUpdate {
         self.cloud_watch_logging_options.as_ref()
     }
 }
-impl std::fmt::Debug for AmazonopensearchserviceDestinationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AmazonopensearchserviceDestinationUpdate");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("domain_arn", &self.domain_arn);
-        formatter.field("cluster_endpoint", &self.cluster_endpoint);
-        formatter.field("index_name", &self.index_name);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("index_rotation_period", &self.index_rotation_period);
-        formatter.field("buffering_hints", &self.buffering_hints);
-        formatter.field("retry_options", &self.retry_options);
-        formatter.field("s3_update", &self.s3_update);
-        formatter.field("processing_configuration", &self.processing_configuration);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.finish()
-    }
-}
 /// See [`AmazonopensearchserviceDestinationUpdate`](crate::model::AmazonopensearchserviceDestinationUpdate).
 pub mod amazonopensearchservice_destination_update {
 
     /// A builder for [`AmazonopensearchserviceDestinationUpdate`](crate::model::AmazonopensearchserviceDestinationUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) domain_arn: std::option::Option<std::string::String>,
@@ -2601,7 +2757,7 @@ impl AmazonopensearchserviceDestinationUpdate {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AmazonopensearchserviceRetryOptions {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -2613,18 +2769,11 @@ impl AmazonopensearchserviceRetryOptions {
         self.duration_in_seconds
     }
 }
-impl std::fmt::Debug for AmazonopensearchserviceRetryOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AmazonopensearchserviceRetryOptions");
-        formatter.field("duration_in_seconds", &self.duration_in_seconds);
-        formatter.finish()
-    }
-}
 /// See [`AmazonopensearchserviceRetryOptions`](crate::model::AmazonopensearchserviceRetryOptions).
 pub mod amazonopensearchservice_retry_options {
 
     /// A builder for [`AmazonopensearchserviceRetryOptions`](crate::model::AmazonopensearchserviceRetryOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) duration_in_seconds: std::option::Option<i32>,
     }
@@ -2656,7 +2805,7 @@ impl AmazonopensearchserviceRetryOptions {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AmazonopensearchserviceBufferingHints {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -2675,19 +2824,11 @@ impl AmazonopensearchserviceBufferingHints {
         self.size_in_m_bs
     }
 }
-impl std::fmt::Debug for AmazonopensearchserviceBufferingHints {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AmazonopensearchserviceBufferingHints");
-        formatter.field("interval_in_seconds", &self.interval_in_seconds);
-        formatter.field("size_in_m_bs", &self.size_in_m_bs);
-        formatter.finish()
-    }
-}
 /// See [`AmazonopensearchserviceBufferingHints`](crate::model::AmazonopensearchserviceBufferingHints).
 pub mod amazonopensearchservice_buffering_hints {
 
     /// A builder for [`AmazonopensearchserviceBufferingHints`](crate::model::AmazonopensearchserviceBufferingHints).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interval_in_seconds: std::option::Option<i32>,
         pub(crate) size_in_m_bs: std::option::Option<i32>,
@@ -2729,6 +2870,44 @@ impl AmazonopensearchserviceBufferingHints {
     }
 }
 
+/// When writing a match expression against `AmazonopensearchserviceIndexRotationPeriod`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let amazonopensearchserviceindexrotationperiod = unimplemented!();
+/// match amazonopensearchserviceindexrotationperiod {
+///     AmazonopensearchserviceIndexRotationPeriod::NoRotation => { /* ... */ },
+///     AmazonopensearchserviceIndexRotationPeriod::OneDay => { /* ... */ },
+///     AmazonopensearchserviceIndexRotationPeriod::OneHour => { /* ... */ },
+///     AmazonopensearchserviceIndexRotationPeriod::OneMonth => { /* ... */ },
+///     AmazonopensearchserviceIndexRotationPeriod::OneWeek => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `amazonopensearchserviceindexrotationperiod` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `AmazonopensearchserviceIndexRotationPeriod::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `AmazonopensearchserviceIndexRotationPeriod::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `AmazonopensearchserviceIndexRotationPeriod::NewFeature` is defined.
+/// Specifically, when `amazonopensearchserviceindexrotationperiod` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `AmazonopensearchserviceIndexRotationPeriod::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2751,8 +2930,8 @@ pub enum AmazonopensearchserviceIndexRotationPeriod {
     OneMonth,
     #[allow(missing_docs)] // documentation missing in model
     OneWeek,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AmazonopensearchserviceIndexRotationPeriod {
     fn from(s: &str) -> Self {
@@ -2762,7 +2941,9 @@ impl std::convert::From<&str> for AmazonopensearchserviceIndexRotationPeriod {
             "OneHour" => AmazonopensearchserviceIndexRotationPeriod::OneHour,
             "OneMonth" => AmazonopensearchserviceIndexRotationPeriod::OneMonth,
             "OneWeek" => AmazonopensearchserviceIndexRotationPeriod::OneWeek,
-            other => AmazonopensearchserviceIndexRotationPeriod::Unknown(other.to_owned()),
+            other => AmazonopensearchserviceIndexRotationPeriod::Unknown(
+                crate::types::UnknownVariantValue(other.to_owned()),
+            ),
         }
     }
 }
@@ -2782,11 +2963,11 @@ impl AmazonopensearchserviceIndexRotationPeriod {
             AmazonopensearchserviceIndexRotationPeriod::OneHour => "OneHour",
             AmazonopensearchserviceIndexRotationPeriod::OneMonth => "OneMonth",
             AmazonopensearchserviceIndexRotationPeriod::OneWeek => "OneWeek",
-            AmazonopensearchserviceIndexRotationPeriod::Unknown(s) => s.as_ref(),
+            AmazonopensearchserviceIndexRotationPeriod::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NoRotation", "OneDay", "OneHour", "OneMonth", "OneWeek"]
     }
 }
@@ -2798,7 +2979,7 @@ impl AsRef<str> for AmazonopensearchserviceIndexRotationPeriod {
 
 /// <p>Describes an update for a destination in Amazon ES.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ElasticsearchDestinationUpdate {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon ES Configuration API and for indexing documents. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
     #[doc(hidden)]
@@ -2892,31 +3073,11 @@ impl ElasticsearchDestinationUpdate {
         self.cloud_watch_logging_options.as_ref()
     }
 }
-impl std::fmt::Debug for ElasticsearchDestinationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ElasticsearchDestinationUpdate");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("domain_arn", &self.domain_arn);
-        formatter.field("cluster_endpoint", &self.cluster_endpoint);
-        formatter.field("index_name", &self.index_name);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("index_rotation_period", &self.index_rotation_period);
-        formatter.field("buffering_hints", &self.buffering_hints);
-        formatter.field("retry_options", &self.retry_options);
-        formatter.field("s3_update", &self.s3_update);
-        formatter.field("processing_configuration", &self.processing_configuration);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.finish()
-    }
-}
 /// See [`ElasticsearchDestinationUpdate`](crate::model::ElasticsearchDestinationUpdate).
 pub mod elasticsearch_destination_update {
 
     /// A builder for [`ElasticsearchDestinationUpdate`](crate::model::ElasticsearchDestinationUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) domain_arn: std::option::Option<std::string::String>,
@@ -3105,7 +3266,7 @@ impl ElasticsearchDestinationUpdate {
 
 /// <p>Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ElasticsearchRetryOptions {
     /// <p>After an initial failure to deliver to Amazon ES, the total amount of time during which Kinesis Data Firehose retries delivery (including the first attempt). After this time has elapsed, the failed documents are written to Amazon S3. Default value is 300 seconds (5 minutes). A value of 0 (zero) results in no retries.</p>
     #[doc(hidden)]
@@ -3117,18 +3278,11 @@ impl ElasticsearchRetryOptions {
         self.duration_in_seconds
     }
 }
-impl std::fmt::Debug for ElasticsearchRetryOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ElasticsearchRetryOptions");
-        formatter.field("duration_in_seconds", &self.duration_in_seconds);
-        formatter.finish()
-    }
-}
 /// See [`ElasticsearchRetryOptions`](crate::model::ElasticsearchRetryOptions).
 pub mod elasticsearch_retry_options {
 
     /// A builder for [`ElasticsearchRetryOptions`](crate::model::ElasticsearchRetryOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) duration_in_seconds: std::option::Option<i32>,
     }
@@ -3160,7 +3314,7 @@ impl ElasticsearchRetryOptions {
 
 /// <p>Describes the buffering to perform before delivering data to the Amazon ES destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ElasticsearchBufferingHints {
     /// <p>Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The default value is 300 (5 minutes).</p>
     #[doc(hidden)]
@@ -3181,19 +3335,11 @@ impl ElasticsearchBufferingHints {
         self.size_in_m_bs
     }
 }
-impl std::fmt::Debug for ElasticsearchBufferingHints {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ElasticsearchBufferingHints");
-        formatter.field("interval_in_seconds", &self.interval_in_seconds);
-        formatter.field("size_in_m_bs", &self.size_in_m_bs);
-        formatter.finish()
-    }
-}
 /// See [`ElasticsearchBufferingHints`](crate::model::ElasticsearchBufferingHints).
 pub mod elasticsearch_buffering_hints {
 
     /// A builder for [`ElasticsearchBufferingHints`](crate::model::ElasticsearchBufferingHints).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interval_in_seconds: std::option::Option<i32>,
         pub(crate) size_in_m_bs: std::option::Option<i32>,
@@ -3237,6 +3383,44 @@ impl ElasticsearchBufferingHints {
     }
 }
 
+/// When writing a match expression against `ElasticsearchIndexRotationPeriod`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let elasticsearchindexrotationperiod = unimplemented!();
+/// match elasticsearchindexrotationperiod {
+///     ElasticsearchIndexRotationPeriod::NoRotation => { /* ... */ },
+///     ElasticsearchIndexRotationPeriod::OneDay => { /* ... */ },
+///     ElasticsearchIndexRotationPeriod::OneHour => { /* ... */ },
+///     ElasticsearchIndexRotationPeriod::OneMonth => { /* ... */ },
+///     ElasticsearchIndexRotationPeriod::OneWeek => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `elasticsearchindexrotationperiod` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ElasticsearchIndexRotationPeriod::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ElasticsearchIndexRotationPeriod::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ElasticsearchIndexRotationPeriod::NewFeature` is defined.
+/// Specifically, when `elasticsearchindexrotationperiod` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ElasticsearchIndexRotationPeriod::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3259,8 +3443,8 @@ pub enum ElasticsearchIndexRotationPeriod {
     OneMonth,
     #[allow(missing_docs)] // documentation missing in model
     OneWeek,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ElasticsearchIndexRotationPeriod {
     fn from(s: &str) -> Self {
@@ -3270,7 +3454,9 @@ impl std::convert::From<&str> for ElasticsearchIndexRotationPeriod {
             "OneHour" => ElasticsearchIndexRotationPeriod::OneHour,
             "OneMonth" => ElasticsearchIndexRotationPeriod::OneMonth,
             "OneWeek" => ElasticsearchIndexRotationPeriod::OneWeek,
-            other => ElasticsearchIndexRotationPeriod::Unknown(other.to_owned()),
+            other => ElasticsearchIndexRotationPeriod::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -3290,11 +3476,11 @@ impl ElasticsearchIndexRotationPeriod {
             ElasticsearchIndexRotationPeriod::OneHour => "OneHour",
             ElasticsearchIndexRotationPeriod::OneMonth => "OneMonth",
             ElasticsearchIndexRotationPeriod::OneWeek => "OneWeek",
-            ElasticsearchIndexRotationPeriod::Unknown(s) => s.as_ref(),
+            ElasticsearchIndexRotationPeriod::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NoRotation", "OneDay", "OneHour", "OneMonth", "OneWeek"]
     }
 }
@@ -3418,7 +3604,7 @@ impl std::fmt::Debug for RedshiftDestinationUpdate {
 pub mod redshift_destination_update {
 
     /// A builder for [`RedshiftDestinationUpdate`](crate::model::RedshiftDestinationUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) cluster_jdbcurl: std::option::Option<std::string::String>,
@@ -3594,6 +3780,26 @@ pub mod redshift_destination_update {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("role_arn", &self.role_arn);
+            formatter.field("cluster_jdbcurl", &self.cluster_jdbcurl);
+            formatter.field("copy_command", &self.copy_command);
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.field("retry_options", &self.retry_options);
+            formatter.field("s3_update", &self.s3_update);
+            formatter.field("processing_configuration", &self.processing_configuration);
+            formatter.field("s3_backup_mode", &self.s3_backup_mode);
+            formatter.field("s3_backup_update", &self.s3_backup_update);
+            formatter.field(
+                "cloud_watch_logging_options",
+                &self.cloud_watch_logging_options,
+            );
+            formatter.finish()
+        }
+    }
 }
 impl RedshiftDestinationUpdate {
     /// Creates a new builder-style object to manufacture [`RedshiftDestinationUpdate`](crate::model::RedshiftDestinationUpdate).
@@ -3602,6 +3808,41 @@ impl RedshiftDestinationUpdate {
     }
 }
 
+/// When writing a match expression against `RedshiftS3BackupMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let redshifts3backupmode = unimplemented!();
+/// match redshifts3backupmode {
+///     RedshiftS3BackupMode::Disabled => { /* ... */ },
+///     RedshiftS3BackupMode::Enabled => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `redshifts3backupmode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RedshiftS3BackupMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RedshiftS3BackupMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RedshiftS3BackupMode::NewFeature` is defined.
+/// Specifically, when `redshifts3backupmode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RedshiftS3BackupMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3618,15 +3859,17 @@ pub enum RedshiftS3BackupMode {
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for RedshiftS3BackupMode {
     fn from(s: &str) -> Self {
         match s {
             "Disabled" => RedshiftS3BackupMode::Disabled,
             "Enabled" => RedshiftS3BackupMode::Enabled,
-            other => RedshiftS3BackupMode::Unknown(other.to_owned()),
+            other => {
+                RedshiftS3BackupMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -3643,11 +3886,11 @@ impl RedshiftS3BackupMode {
         match self {
             RedshiftS3BackupMode::Disabled => "Disabled",
             RedshiftS3BackupMode::Enabled => "Enabled",
-            RedshiftS3BackupMode::Unknown(s) => s.as_ref(),
+            RedshiftS3BackupMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Disabled", "Enabled"]
     }
 }
@@ -3659,7 +3902,7 @@ impl AsRef<str> for RedshiftS3BackupMode {
 
 /// <p>Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RedshiftRetryOptions {
     /// <p>The length of time during which Kinesis Data Firehose retries delivery after a failure, starting from the initial request and including the first attempt. The default value is 3600 seconds (60 minutes). Kinesis Data Firehose does not retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt takes longer than the current value.</p>
     #[doc(hidden)]
@@ -3671,18 +3914,11 @@ impl RedshiftRetryOptions {
         self.duration_in_seconds
     }
 }
-impl std::fmt::Debug for RedshiftRetryOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RedshiftRetryOptions");
-        formatter.field("duration_in_seconds", &self.duration_in_seconds);
-        formatter.finish()
-    }
-}
 /// See [`RedshiftRetryOptions`](crate::model::RedshiftRetryOptions).
 pub mod redshift_retry_options {
 
     /// A builder for [`RedshiftRetryOptions`](crate::model::RedshiftRetryOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) duration_in_seconds: std::option::Option<i32>,
     }
@@ -3714,7 +3950,7 @@ impl RedshiftRetryOptions {
 
 /// <p>Describes a <code>COPY</code> command for Amazon Redshift.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CopyCommand {
     /// <p>The name of the target table. The table must already exist in the database.</p>
     #[doc(hidden)]
@@ -3752,20 +3988,11 @@ impl CopyCommand {
         self.copy_options.as_deref()
     }
 }
-impl std::fmt::Debug for CopyCommand {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CopyCommand");
-        formatter.field("data_table_name", &self.data_table_name);
-        formatter.field("data_table_columns", &self.data_table_columns);
-        formatter.field("copy_options", &self.copy_options);
-        formatter.finish()
-    }
-}
 /// See [`CopyCommand`](crate::model::CopyCommand).
 pub mod copy_command {
 
     /// A builder for [`CopyCommand`](crate::model::CopyCommand).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_table_name: std::option::Option<std::string::String>,
         pub(crate) data_table_columns: std::option::Option<std::string::String>,
@@ -3839,7 +4066,7 @@ impl CopyCommand {
 
 /// <p>Describes an update for a destination in Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExtendedS3DestinationUpdate {
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
     #[doc(hidden)]
@@ -3947,39 +4174,11 @@ impl ExtendedS3DestinationUpdate {
         self.dynamic_partitioning_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for ExtendedS3DestinationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExtendedS3DestinationUpdate");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("bucket_arn", &self.bucket_arn);
-        formatter.field("prefix", &self.prefix);
-        formatter.field("error_output_prefix", &self.error_output_prefix);
-        formatter.field("buffering_hints", &self.buffering_hints);
-        formatter.field("compression_format", &self.compression_format);
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.field("processing_configuration", &self.processing_configuration);
-        formatter.field("s3_backup_mode", &self.s3_backup_mode);
-        formatter.field("s3_backup_update", &self.s3_backup_update);
-        formatter.field(
-            "data_format_conversion_configuration",
-            &self.data_format_conversion_configuration,
-        );
-        formatter.field(
-            "dynamic_partitioning_configuration",
-            &self.dynamic_partitioning_configuration,
-        );
-        formatter.finish()
-    }
-}
 /// See [`ExtendedS3DestinationUpdate`](crate::model::ExtendedS3DestinationUpdate).
 pub mod extended_s3_destination_update {
 
     /// A builder for [`ExtendedS3DestinationUpdate`](crate::model::ExtendedS3DestinationUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) bucket_arn: std::option::Option<std::string::String>,
@@ -4205,7 +4404,7 @@ impl ExtendedS3DestinationUpdate {
 
 /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html">https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DynamicPartitioningConfiguration {
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver data to an Amazon S3 prefix.</p>
     #[doc(hidden)]
@@ -4224,19 +4423,11 @@ impl DynamicPartitioningConfiguration {
         self.enabled
     }
 }
-impl std::fmt::Debug for DynamicPartitioningConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DynamicPartitioningConfiguration");
-        formatter.field("retry_options", &self.retry_options);
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
-    }
-}
 /// See [`DynamicPartitioningConfiguration`](crate::model::DynamicPartitioningConfiguration).
 pub mod dynamic_partitioning_configuration {
 
     /// A builder for [`DynamicPartitioningConfiguration`](crate::model::DynamicPartitioningConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) retry_options: std::option::Option<crate::model::RetryOptions>,
         pub(crate) enabled: std::option::Option<bool>,
@@ -4283,7 +4474,7 @@ impl DynamicPartitioningConfiguration {
 
 /// <p> The retry behavior in case Kinesis Data Firehose is unable to deliver data to an Amazon S3 prefix.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RetryOptions {
     /// <p>The period of time during which Kinesis Data Firehose retries to deliver data to the specified Amazon S3 prefix.</p>
     #[doc(hidden)]
@@ -4295,18 +4486,11 @@ impl RetryOptions {
         self.duration_in_seconds
     }
 }
-impl std::fmt::Debug for RetryOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RetryOptions");
-        formatter.field("duration_in_seconds", &self.duration_in_seconds);
-        formatter.finish()
-    }
-}
 /// See [`RetryOptions`](crate::model::RetryOptions).
 pub mod retry_options {
 
     /// A builder for [`RetryOptions`](crate::model::RetryOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) duration_in_seconds: std::option::Option<i32>,
     }
@@ -4338,7 +4522,7 @@ impl RetryOptions {
 
 /// <p>Specifies that you want Kinesis Data Firehose to convert data from the JSON format to the Parquet or ORC format before writing it to Amazon S3. Kinesis Data Firehose uses the serializer and deserializer that you specify, in addition to the column information from the AWS Glue table, to deserialize your input data from JSON and then serialize it to the Parquet or ORC format. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/record-format-conversion.html">Kinesis Data Firehose Record Format Conversion</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataFormatConversionConfiguration {
     /// <p>Specifies the AWS Glue Data Catalog table that contains the column information. This parameter is required if <code>Enabled</code> is set to true.</p>
     #[doc(hidden)]
@@ -4375,27 +4559,11 @@ impl DataFormatConversionConfiguration {
         self.enabled
     }
 }
-impl std::fmt::Debug for DataFormatConversionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataFormatConversionConfiguration");
-        formatter.field("schema_configuration", &self.schema_configuration);
-        formatter.field(
-            "input_format_configuration",
-            &self.input_format_configuration,
-        );
-        formatter.field(
-            "output_format_configuration",
-            &self.output_format_configuration,
-        );
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
-    }
-}
 /// See [`DataFormatConversionConfiguration`](crate::model::DataFormatConversionConfiguration).
 pub mod data_format_conversion_configuration {
 
     /// A builder for [`DataFormatConversionConfiguration`](crate::model::DataFormatConversionConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_configuration: std::option::Option<crate::model::SchemaConfiguration>,
         pub(crate) input_format_configuration:
@@ -4480,7 +4648,7 @@ impl DataFormatConversionConfiguration {
 
 /// <p>Specifies the serializer that you want Kinesis Data Firehose to use to convert the format of your data before it writes it to Amazon S3. This parameter is required if <code>Enabled</code> is set to true.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutputFormatConfiguration {
     /// <p>Specifies which serializer to use. You can choose either the ORC SerDe or the Parquet SerDe. If both are non-null, the server rejects the request.</p>
     #[doc(hidden)]
@@ -4492,18 +4660,11 @@ impl OutputFormatConfiguration {
         self.serializer.as_ref()
     }
 }
-impl std::fmt::Debug for OutputFormatConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutputFormatConfiguration");
-        formatter.field("serializer", &self.serializer);
-        formatter.finish()
-    }
-}
 /// See [`OutputFormatConfiguration`](crate::model::OutputFormatConfiguration).
 pub mod output_format_configuration {
 
     /// A builder for [`OutputFormatConfiguration`](crate::model::OutputFormatConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) serializer: std::option::Option<crate::model::Serializer>,
     }
@@ -4538,7 +4699,7 @@ impl OutputFormatConfiguration {
 
 /// <p>The serializer that you want Kinesis Data Firehose to use to convert data to the target format before writing it to Amazon S3. Kinesis Data Firehose supports two types of serializers: the <a href="https://hive.apache.org/javadocs/r1.2.2/api/org/apache/hadoop/hive/ql/io/orc/OrcSerde.html">ORC SerDe</a> and the <a href="https://hive.apache.org/javadocs/r1.2.2/api/org/apache/hadoop/hive/ql/io/parquet/serde/ParquetHiveSerDe.html">Parquet SerDe</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Serializer {
     /// <p>A serializer to use for converting data to the Parquet format before storing it in Amazon S3. For more information, see <a href="https://parquet.apache.org/documentation/latest/">Apache Parquet</a>.</p>
     #[doc(hidden)]
@@ -4557,19 +4718,11 @@ impl Serializer {
         self.orc_ser_de.as_ref()
     }
 }
-impl std::fmt::Debug for Serializer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Serializer");
-        formatter.field("parquet_ser_de", &self.parquet_ser_de);
-        formatter.field("orc_ser_de", &self.orc_ser_de);
-        formatter.finish()
-    }
-}
 /// See [`Serializer`](crate::model::Serializer).
 pub mod serializer {
 
     /// A builder for [`Serializer`](crate::model::Serializer).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parquet_ser_de: std::option::Option<crate::model::ParquetSerDe>,
         pub(crate) orc_ser_de: std::option::Option<crate::model::OrcSerDe>,
@@ -4619,7 +4772,7 @@ impl Serializer {
 
 /// <p>A serializer to use for converting data to the ORC format before storing it in Amazon S3. For more information, see <a href="https://orc.apache.org/docs/">Apache ORC</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrcSerDe {
     /// <p>The number of bytes in each stripe. The default is 64 MiB and the minimum is 8 MiB.</p>
     #[doc(hidden)]
@@ -4698,30 +4851,11 @@ impl OrcSerDe {
         self.format_version.as_ref()
     }
 }
-impl std::fmt::Debug for OrcSerDe {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrcSerDe");
-        formatter.field("stripe_size_bytes", &self.stripe_size_bytes);
-        formatter.field("block_size_bytes", &self.block_size_bytes);
-        formatter.field("row_index_stride", &self.row_index_stride);
-        formatter.field("enable_padding", &self.enable_padding);
-        formatter.field("padding_tolerance", &self.padding_tolerance);
-        formatter.field("compression", &self.compression);
-        formatter.field("bloom_filter_columns", &self.bloom_filter_columns);
-        formatter.field(
-            "bloom_filter_false_positive_probability",
-            &self.bloom_filter_false_positive_probability,
-        );
-        formatter.field("dictionary_key_threshold", &self.dictionary_key_threshold);
-        formatter.field("format_version", &self.format_version);
-        formatter.finish()
-    }
-}
 /// See [`OrcSerDe`](crate::model::OrcSerDe).
 pub mod orc_ser_de {
 
     /// A builder for [`OrcSerDe`](crate::model::OrcSerDe).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stripe_size_bytes: std::option::Option<i32>,
         pub(crate) block_size_bytes: std::option::Option<i32>,
@@ -4882,6 +5016,41 @@ impl OrcSerDe {
     }
 }
 
+/// When writing a match expression against `OrcFormatVersion`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let orcformatversion = unimplemented!();
+/// match orcformatversion {
+///     OrcFormatVersion::V011 => { /* ... */ },
+///     OrcFormatVersion::V012 => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `orcformatversion` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `OrcFormatVersion::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `OrcFormatVersion::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `OrcFormatVersion::NewFeature` is defined.
+/// Specifically, when `orcformatversion` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `OrcFormatVersion::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -4898,15 +5067,15 @@ pub enum OrcFormatVersion {
     V011,
     #[allow(missing_docs)] // documentation missing in model
     V012,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for OrcFormatVersion {
     fn from(s: &str) -> Self {
         match s {
             "V0_11" => OrcFormatVersion::V011,
             "V0_12" => OrcFormatVersion::V012,
-            other => OrcFormatVersion::Unknown(other.to_owned()),
+            other => OrcFormatVersion::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -4923,11 +5092,11 @@ impl OrcFormatVersion {
         match self {
             OrcFormatVersion::V011 => "V0_11",
             OrcFormatVersion::V012 => "V0_12",
-            OrcFormatVersion::Unknown(s) => s.as_ref(),
+            OrcFormatVersion::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["V0_11", "V0_12"]
     }
 }
@@ -4937,6 +5106,42 @@ impl AsRef<str> for OrcFormatVersion {
     }
 }
 
+/// When writing a match expression against `OrcCompression`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let orccompression = unimplemented!();
+/// match orccompression {
+///     OrcCompression::None => { /* ... */ },
+///     OrcCompression::Snappy => { /* ... */ },
+///     OrcCompression::Zlib => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `orccompression` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `OrcCompression::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `OrcCompression::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `OrcCompression::NewFeature` is defined.
+/// Specifically, when `orccompression` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `OrcCompression::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -4955,8 +5160,8 @@ pub enum OrcCompression {
     Snappy,
     #[allow(missing_docs)] // documentation missing in model
     Zlib,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for OrcCompression {
     fn from(s: &str) -> Self {
@@ -4964,7 +5169,7 @@ impl std::convert::From<&str> for OrcCompression {
             "NONE" => OrcCompression::None,
             "SNAPPY" => OrcCompression::Snappy,
             "ZLIB" => OrcCompression::Zlib,
-            other => OrcCompression::Unknown(other.to_owned()),
+            other => OrcCompression::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -4982,11 +5187,11 @@ impl OrcCompression {
             OrcCompression::None => "NONE",
             OrcCompression::Snappy => "SNAPPY",
             OrcCompression::Zlib => "ZLIB",
-            OrcCompression::Unknown(s) => s.as_ref(),
+            OrcCompression::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NONE", "SNAPPY", "ZLIB"]
     }
 }
@@ -4998,7 +5203,7 @@ impl AsRef<str> for OrcCompression {
 
 /// <p>A serializer to use for converting data to the Parquet format before storing it in Amazon S3. For more information, see <a href="https://parquet.apache.org/documentation/latest/">Apache Parquet</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParquetSerDe {
     /// <p>The Hadoop Distributed File System (HDFS) block size. This is useful if you intend to copy the data from Amazon S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Kinesis Data Firehose uses this value for padding calculations.</p>
     #[doc(hidden)]
@@ -5045,26 +5250,11 @@ impl ParquetSerDe {
         self.writer_version.as_ref()
     }
 }
-impl std::fmt::Debug for ParquetSerDe {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParquetSerDe");
-        formatter.field("block_size_bytes", &self.block_size_bytes);
-        formatter.field("page_size_bytes", &self.page_size_bytes);
-        formatter.field("compression", &self.compression);
-        formatter.field(
-            "enable_dictionary_compression",
-            &self.enable_dictionary_compression,
-        );
-        formatter.field("max_padding_bytes", &self.max_padding_bytes);
-        formatter.field("writer_version", &self.writer_version);
-        formatter.finish()
-    }
-}
 /// See [`ParquetSerDe`](crate::model::ParquetSerDe).
 pub mod parquet_ser_de {
 
     /// A builder for [`ParquetSerDe`](crate::model::ParquetSerDe).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) block_size_bytes: std::option::Option<i32>,
         pub(crate) page_size_bytes: std::option::Option<i32>,
@@ -5163,6 +5353,41 @@ impl ParquetSerDe {
     }
 }
 
+/// When writing a match expression against `ParquetWriterVersion`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let parquetwriterversion = unimplemented!();
+/// match parquetwriterversion {
+///     ParquetWriterVersion::V1 => { /* ... */ },
+///     ParquetWriterVersion::V2 => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `parquetwriterversion` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ParquetWriterVersion::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ParquetWriterVersion::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ParquetWriterVersion::NewFeature` is defined.
+/// Specifically, when `parquetwriterversion` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ParquetWriterVersion::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -5179,15 +5404,17 @@ pub enum ParquetWriterVersion {
     V1,
     #[allow(missing_docs)] // documentation missing in model
     V2,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ParquetWriterVersion {
     fn from(s: &str) -> Self {
         match s {
             "V1" => ParquetWriterVersion::V1,
             "V2" => ParquetWriterVersion::V2,
-            other => ParquetWriterVersion::Unknown(other.to_owned()),
+            other => {
+                ParquetWriterVersion::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -5204,11 +5431,11 @@ impl ParquetWriterVersion {
         match self {
             ParquetWriterVersion::V1 => "V1",
             ParquetWriterVersion::V2 => "V2",
-            ParquetWriterVersion::Unknown(s) => s.as_ref(),
+            ParquetWriterVersion::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["V1", "V2"]
     }
 }
@@ -5218,6 +5445,42 @@ impl AsRef<str> for ParquetWriterVersion {
     }
 }
 
+/// When writing a match expression against `ParquetCompression`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let parquetcompression = unimplemented!();
+/// match parquetcompression {
+///     ParquetCompression::Gzip => { /* ... */ },
+///     ParquetCompression::Snappy => { /* ... */ },
+///     ParquetCompression::Uncompressed => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `parquetcompression` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ParquetCompression::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ParquetCompression::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ParquetCompression::NewFeature` is defined.
+/// Specifically, when `parquetcompression` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ParquetCompression::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -5236,8 +5499,8 @@ pub enum ParquetCompression {
     Snappy,
     #[allow(missing_docs)] // documentation missing in model
     Uncompressed,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ParquetCompression {
     fn from(s: &str) -> Self {
@@ -5245,7 +5508,9 @@ impl std::convert::From<&str> for ParquetCompression {
             "GZIP" => ParquetCompression::Gzip,
             "SNAPPY" => ParquetCompression::Snappy,
             "UNCOMPRESSED" => ParquetCompression::Uncompressed,
-            other => ParquetCompression::Unknown(other.to_owned()),
+            other => {
+                ParquetCompression::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -5263,11 +5528,11 @@ impl ParquetCompression {
             ParquetCompression::Gzip => "GZIP",
             ParquetCompression::Snappy => "SNAPPY",
             ParquetCompression::Uncompressed => "UNCOMPRESSED",
-            ParquetCompression::Unknown(s) => s.as_ref(),
+            ParquetCompression::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GZIP", "SNAPPY", "UNCOMPRESSED"]
     }
 }
@@ -5279,7 +5544,7 @@ impl AsRef<str> for ParquetCompression {
 
 /// <p>Specifies the deserializer you want to use to convert the format of the input data. This parameter is required if <code>Enabled</code> is set to true.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputFormatConfiguration {
     /// <p>Specifies which deserializer to use. You can choose either the Apache Hive JSON SerDe or the OpenX JSON SerDe. If both are non-null, the server rejects the request.</p>
     #[doc(hidden)]
@@ -5291,18 +5556,11 @@ impl InputFormatConfiguration {
         self.deserializer.as_ref()
     }
 }
-impl std::fmt::Debug for InputFormatConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputFormatConfiguration");
-        formatter.field("deserializer", &self.deserializer);
-        formatter.finish()
-    }
-}
 /// See [`InputFormatConfiguration`](crate::model::InputFormatConfiguration).
 pub mod input_format_configuration {
 
     /// A builder for [`InputFormatConfiguration`](crate::model::InputFormatConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deserializer: std::option::Option<crate::model::Deserializer>,
     }
@@ -5337,7 +5595,7 @@ impl InputFormatConfiguration {
 
 /// <p>The deserializer you want Kinesis Data Firehose to use for converting the input data from JSON. Kinesis Data Firehose then serializes the data to its final format using the <code>Serializer</code>. Kinesis Data Firehose supports two types of deserializers: the <a href="https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-JSON">Apache Hive JSON SerDe</a> and the <a href="https://github.com/rcongiu/Hive-JSON-Serde">OpenX JSON SerDe</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Deserializer {
     /// <p>The OpenX SerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose, depending on which one offers the functionality you need. The other option is the native Hive / HCatalog JsonSerDe.</p>
     #[doc(hidden)]
@@ -5356,19 +5614,11 @@ impl Deserializer {
         self.hive_json_ser_de.as_ref()
     }
 }
-impl std::fmt::Debug for Deserializer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Deserializer");
-        formatter.field("open_x_json_ser_de", &self.open_x_json_ser_de);
-        formatter.field("hive_json_ser_de", &self.hive_json_ser_de);
-        formatter.finish()
-    }
-}
 /// See [`Deserializer`](crate::model::Deserializer).
 pub mod deserializer {
 
     /// A builder for [`Deserializer`](crate::model::Deserializer).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) open_x_json_ser_de: std::option::Option<crate::model::OpenXJsonSerDe>,
         pub(crate) hive_json_ser_de: std::option::Option<crate::model::HiveJsonSerDe>,
@@ -5418,7 +5668,7 @@ impl Deserializer {
 
 /// <p>The native Hive / HCatalog JsonSerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose, depending on which one offers the functionality you need. The other option is the OpenX SerDe.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HiveJsonSerDe {
     /// <p>Indicates how you want Kinesis Data Firehose to parse the date and timestamps that may be present in your input data JSON. To specify these format strings, follow the pattern syntax of JodaTime's DateTimeFormat format strings. For more information, see <a href="https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">Class DateTimeFormat</a>. You can also use the special value <code>millis</code> to parse timestamps in epoch milliseconds. If you don't specify a format, Kinesis Data Firehose uses <code>java.sql.Timestamp::valueOf</code> by default.</p>
     #[doc(hidden)]
@@ -5430,18 +5680,11 @@ impl HiveJsonSerDe {
         self.timestamp_formats.as_deref()
     }
 }
-impl std::fmt::Debug for HiveJsonSerDe {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HiveJsonSerDe");
-        formatter.field("timestamp_formats", &self.timestamp_formats);
-        formatter.finish()
-    }
-}
 /// See [`HiveJsonSerDe`](crate::model::HiveJsonSerDe).
 pub mod hive_json_ser_de {
 
     /// A builder for [`HiveJsonSerDe`](crate::model::HiveJsonSerDe).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp_formats: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -5482,7 +5725,7 @@ impl HiveJsonSerDe {
 
 /// <p>The OpenX SerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose, depending on which one offers the functionality you need. The other option is the native Hive / HCatalog JsonSerDe.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpenXJsonSerDe {
     /// <p>When set to <code>true</code>, specifies that the names of the keys include dots and that you want Kinesis Data Firehose to replace them with underscores. This is useful because Apache Hive does not allow dots in column names. For example, if the JSON contains a key whose name is "a.b", you can define the column name to be "a_b" when using this option.</p>
     /// <p>The default is <code>false</code>.</p>
@@ -5514,26 +5757,11 @@ impl OpenXJsonSerDe {
         self.column_to_json_key_mappings.as_ref()
     }
 }
-impl std::fmt::Debug for OpenXJsonSerDe {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpenXJsonSerDe");
-        formatter.field(
-            "convert_dots_in_json_keys_to_underscores",
-            &self.convert_dots_in_json_keys_to_underscores,
-        );
-        formatter.field("case_insensitive", &self.case_insensitive);
-        formatter.field(
-            "column_to_json_key_mappings",
-            &self.column_to_json_key_mappings,
-        );
-        formatter.finish()
-    }
-}
 /// See [`OpenXJsonSerDe`](crate::model::OpenXJsonSerDe).
 pub mod open_x_json_ser_de {
 
     /// A builder for [`OpenXJsonSerDe`](crate::model::OpenXJsonSerDe).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) convert_dots_in_json_keys_to_underscores: std::option::Option<bool>,
         pub(crate) case_insensitive: std::option::Option<bool>,
@@ -5612,7 +5840,7 @@ impl OpenXJsonSerDe {
 
 /// <p>Specifies the schema to which you want Kinesis Data Firehose to configure your data before it writes it to Amazon S3. This parameter is required if <code>Enabled</code> is set to true.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SchemaConfiguration {
     /// <p>The role that Kinesis Data Firehose can use to access AWS Glue. This role must be in the same account you use for Kinesis Data Firehose. Cross-account roles aren't allowed.</p> <important>
     /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code> property is required and its value must be specified.</p>
@@ -5671,23 +5899,11 @@ impl SchemaConfiguration {
         self.version_id.as_deref()
     }
 }
-impl std::fmt::Debug for SchemaConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SchemaConfiguration");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("catalog_id", &self.catalog_id);
-        formatter.field("database_name", &self.database_name);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("region", &self.region);
-        formatter.field("version_id", &self.version_id);
-        formatter.finish()
-    }
-}
 /// See [`SchemaConfiguration`](crate::model::SchemaConfiguration).
 pub mod schema_configuration {
 
     /// A builder for [`SchemaConfiguration`](crate::model::SchemaConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) catalog_id: std::option::Option<std::string::String>,
@@ -5792,6 +6008,41 @@ impl SchemaConfiguration {
     }
 }
 
+/// When writing a match expression against `S3BackupMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let s3backupmode = unimplemented!();
+/// match s3backupmode {
+///     S3BackupMode::Disabled => { /* ... */ },
+///     S3BackupMode::Enabled => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `s3backupmode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `S3BackupMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `S3BackupMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `S3BackupMode::NewFeature` is defined.
+/// Specifically, when `s3backupmode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `S3BackupMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -5808,15 +6059,15 @@ pub enum S3BackupMode {
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for S3BackupMode {
     fn from(s: &str) -> Self {
         match s {
             "Disabled" => S3BackupMode::Disabled,
             "Enabled" => S3BackupMode::Enabled,
-            other => S3BackupMode::Unknown(other.to_owned()),
+            other => S3BackupMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -5833,11 +6084,11 @@ impl S3BackupMode {
         match self {
             S3BackupMode::Disabled => "Disabled",
             S3BackupMode::Enabled => "Enabled",
-            S3BackupMode::Unknown(s) => s.as_ref(),
+            S3BackupMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Disabled", "Enabled"]
     }
 }
@@ -5849,7 +6100,7 @@ impl AsRef<str> for S3BackupMode {
 
 /// <p>Metadata that you can assign to a delivery stream, consisting of a key-value pair.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>A unique identifier for the tag. Maximum length: 128 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - % @</p>
     #[doc(hidden)]
@@ -5868,19 +6119,11 @@ impl Tag {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -5924,7 +6167,7 @@ impl Tag {
 
 /// <p>Specifies the type and Amazon Resource Name (ARN) of the CMK to use for Server-Side Encryption (SSE). </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeliveryStreamEncryptionConfigurationInput {
     /// <p>If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you must specify the Amazon Resource Name (ARN) of the CMK. If you set <code>KeyType</code> to <code>AWS_OWNED_CMK</code>, Kinesis Data Firehose uses a service-account CMK.</p>
     #[doc(hidden)]
@@ -5951,19 +6194,11 @@ impl DeliveryStreamEncryptionConfigurationInput {
         self.key_type.as_ref()
     }
 }
-impl std::fmt::Debug for DeliveryStreamEncryptionConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeliveryStreamEncryptionConfigurationInput");
-        formatter.field("key_arn", &self.key_arn);
-        formatter.field("key_type", &self.key_type);
-        formatter.finish()
-    }
-}
 /// See [`DeliveryStreamEncryptionConfigurationInput`](crate::model::DeliveryStreamEncryptionConfigurationInput).
 pub mod delivery_stream_encryption_configuration_input {
 
     /// A builder for [`DeliveryStreamEncryptionConfigurationInput`](crate::model::DeliveryStreamEncryptionConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_arn: std::option::Option<std::string::String>,
         pub(crate) key_type: std::option::Option<crate::model::KeyType>,
@@ -6013,6 +6248,41 @@ impl DeliveryStreamEncryptionConfigurationInput {
     }
 }
 
+/// When writing a match expression against `KeyType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let keytype = unimplemented!();
+/// match keytype {
+///     KeyType::AwsOwnedCmk => { /* ... */ },
+///     KeyType::CustomerManagedCmk => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `keytype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `KeyType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `KeyType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `KeyType::NewFeature` is defined.
+/// Specifically, when `keytype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `KeyType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -6029,15 +6299,15 @@ pub enum KeyType {
     AwsOwnedCmk,
     #[allow(missing_docs)] // documentation missing in model
     CustomerManagedCmk,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for KeyType {
     fn from(s: &str) -> Self {
         match s {
             "AWS_OWNED_CMK" => KeyType::AwsOwnedCmk,
             "CUSTOMER_MANAGED_CMK" => KeyType::CustomerManagedCmk,
-            other => KeyType::Unknown(other.to_owned()),
+            other => KeyType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -6054,11 +6324,11 @@ impl KeyType {
         match self {
             KeyType::AwsOwnedCmk => "AWS_OWNED_CMK",
             KeyType::CustomerManagedCmk => "CUSTOMER_MANAGED_CMK",
-            KeyType::Unknown(s) => s.as_ref(),
+            KeyType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS_OWNED_CMK", "CUSTOMER_MANAGED_CMK"]
     }
 }
@@ -6070,7 +6340,7 @@ impl AsRef<str> for KeyType {
 
 /// <p>Contains the result for an individual record from a <code>PutRecordBatch</code> request. If the record is successfully added to your delivery stream, it receives a record ID. If the record fails to be added to your delivery stream, the result includes an error code and an error message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRecordBatchResponseEntry {
     /// <p>The ID of the record.</p>
     #[doc(hidden)]
@@ -6096,20 +6366,11 @@ impl PutRecordBatchResponseEntry {
         self.error_message.as_deref()
     }
 }
-impl std::fmt::Debug for PutRecordBatchResponseEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRecordBatchResponseEntry");
-        formatter.field("record_id", &self.record_id);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
-    }
-}
 /// See [`PutRecordBatchResponseEntry`](crate::model::PutRecordBatchResponseEntry).
 pub mod put_record_batch_response_entry {
 
     /// A builder for [`PutRecordBatchResponseEntry`](crate::model::PutRecordBatchResponseEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) record_id: std::option::Option<std::string::String>,
         pub(crate) error_code: std::option::Option<std::string::String>,
@@ -6168,7 +6429,7 @@ impl PutRecordBatchResponseEntry {
 
 /// <p>The unit of data in a delivery stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Record {
     /// <p>The data blob, which is base64-encoded when the blob is serialized. The maximum size of the data blob, before base64-encoding, is 1,000 KiB.</p>
     #[doc(hidden)]
@@ -6180,18 +6441,11 @@ impl Record {
         self.data.as_ref()
     }
 }
-impl std::fmt::Debug for Record {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Record");
-        formatter.field("data", &self.data);
-        formatter.finish()
-    }
-}
 /// See [`Record`](crate::model::Record).
 pub mod record {
 
     /// A builder for [`Record`](crate::model::Record).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data: std::option::Option<aws_smithy_types::Blob>,
     }
@@ -6219,6 +6473,41 @@ impl Record {
     }
 }
 
+/// When writing a match expression against `DeliveryStreamType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let deliverystreamtype = unimplemented!();
+/// match deliverystreamtype {
+///     DeliveryStreamType::DirectPut => { /* ... */ },
+///     DeliveryStreamType::KinesisStreamAsSource => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `deliverystreamtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DeliveryStreamType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DeliveryStreamType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DeliveryStreamType::NewFeature` is defined.
+/// Specifically, when `deliverystreamtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DeliveryStreamType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -6235,15 +6524,17 @@ pub enum DeliveryStreamType {
     DirectPut,
     #[allow(missing_docs)] // documentation missing in model
     KinesisStreamAsSource,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DeliveryStreamType {
     fn from(s: &str) -> Self {
         match s {
             "DirectPut" => DeliveryStreamType::DirectPut,
             "KinesisStreamAsSource" => DeliveryStreamType::KinesisStreamAsSource,
-            other => DeliveryStreamType::Unknown(other.to_owned()),
+            other => {
+                DeliveryStreamType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -6260,11 +6551,11 @@ impl DeliveryStreamType {
         match self {
             DeliveryStreamType::DirectPut => "DirectPut",
             DeliveryStreamType::KinesisStreamAsSource => "KinesisStreamAsSource",
-            DeliveryStreamType::Unknown(s) => s.as_ref(),
+            DeliveryStreamType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DirectPut", "KinesisStreamAsSource"]
     }
 }
@@ -6276,7 +6567,7 @@ impl AsRef<str> for DeliveryStreamType {
 
 /// <p>Contains information about a delivery stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeliveryStreamDescription {
     /// <p>The name of the delivery stream.</p>
     #[doc(hidden)]
@@ -6378,32 +6669,11 @@ impl DeliveryStreamDescription {
         self.has_more_destinations
     }
 }
-impl std::fmt::Debug for DeliveryStreamDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeliveryStreamDescription");
-        formatter.field("delivery_stream_name", &self.delivery_stream_name);
-        formatter.field("delivery_stream_arn", &self.delivery_stream_arn);
-        formatter.field("delivery_stream_status", &self.delivery_stream_status);
-        formatter.field("failure_description", &self.failure_description);
-        formatter.field(
-            "delivery_stream_encryption_configuration",
-            &self.delivery_stream_encryption_configuration,
-        );
-        formatter.field("delivery_stream_type", &self.delivery_stream_type);
-        formatter.field("version_id", &self.version_id);
-        formatter.field("create_timestamp", &self.create_timestamp);
-        formatter.field("last_update_timestamp", &self.last_update_timestamp);
-        formatter.field("source", &self.source);
-        formatter.field("destinations", &self.destinations);
-        formatter.field("has_more_destinations", &self.has_more_destinations);
-        formatter.finish()
-    }
-}
 /// See [`DeliveryStreamDescription`](crate::model::DeliveryStreamDescription).
 pub mod delivery_stream_description {
 
     /// A builder for [`DeliveryStreamDescription`](crate::model::DeliveryStreamDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
         pub(crate) delivery_stream_arn: std::option::Option<std::string::String>,
@@ -6617,7 +6887,7 @@ impl DeliveryStreamDescription {
 
 /// <p>Describes the destination for a delivery stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DestinationDescription {
     /// <p>The ID of the destination.</p>
     #[doc(hidden)]
@@ -6699,46 +6969,11 @@ impl DestinationDescription {
         self.http_endpoint_destination_description.as_ref()
     }
 }
-impl std::fmt::Debug for DestinationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DestinationDescription");
-        formatter.field("destination_id", &self.destination_id);
-        formatter.field(
-            "s3_destination_description",
-            &self.s3_destination_description,
-        );
-        formatter.field(
-            "extended_s3_destination_description",
-            &self.extended_s3_destination_description,
-        );
-        formatter.field(
-            "redshift_destination_description",
-            &self.redshift_destination_description,
-        );
-        formatter.field(
-            "elasticsearch_destination_description",
-            &self.elasticsearch_destination_description,
-        );
-        formatter.field(
-            "amazonopensearchservice_destination_description",
-            &self.amazonopensearchservice_destination_description,
-        );
-        formatter.field(
-            "splunk_destination_description",
-            &self.splunk_destination_description,
-        );
-        formatter.field(
-            "http_endpoint_destination_description",
-            &self.http_endpoint_destination_description,
-        );
-        formatter.finish()
-    }
-}
 /// See [`DestinationDescription`](crate::model::DestinationDescription).
 pub mod destination_description {
 
     /// A builder for [`DestinationDescription`](crate::model::DestinationDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_id: std::option::Option<std::string::String>,
         pub(crate) s3_destination_description:
@@ -6907,7 +7142,7 @@ impl DestinationDescription {
 
 /// <p>Describes the HTTP endpoint destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpEndpointDestinationDescription {
     /// <p>The configuration of the specified HTTP endpoint destination.</p>
     #[doc(hidden)]
@@ -6987,32 +7222,11 @@ impl HttpEndpointDestinationDescription {
         self.s3_destination_description.as_ref()
     }
 }
-impl std::fmt::Debug for HttpEndpointDestinationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpEndpointDestinationDescription");
-        formatter.field("endpoint_configuration", &self.endpoint_configuration);
-        formatter.field("buffering_hints", &self.buffering_hints);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.field("request_configuration", &self.request_configuration);
-        formatter.field("processing_configuration", &self.processing_configuration);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("retry_options", &self.retry_options);
-        formatter.field("s3_backup_mode", &self.s3_backup_mode);
-        formatter.field(
-            "s3_destination_description",
-            &self.s3_destination_description,
-        );
-        formatter.finish()
-    }
-}
 /// See [`HttpEndpointDestinationDescription`](crate::model::HttpEndpointDestinationDescription).
 pub mod http_endpoint_destination_description {
 
     /// A builder for [`HttpEndpointDestinationDescription`](crate::model::HttpEndpointDestinationDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_configuration:
             std::option::Option<crate::model::HttpEndpointDescription>,
@@ -7184,7 +7398,7 @@ impl HttpEndpointDestinationDescription {
 
 /// <p>Describes a destination in Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3DestinationDescription {
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
     #[doc(hidden)]
@@ -7249,28 +7463,11 @@ impl S3DestinationDescription {
         self.cloud_watch_logging_options.as_ref()
     }
 }
-impl std::fmt::Debug for S3DestinationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3DestinationDescription");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("bucket_arn", &self.bucket_arn);
-        formatter.field("prefix", &self.prefix);
-        formatter.field("error_output_prefix", &self.error_output_prefix);
-        formatter.field("buffering_hints", &self.buffering_hints);
-        formatter.field("compression_format", &self.compression_format);
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.finish()
-    }
-}
 /// See [`S3DestinationDescription`](crate::model::S3DestinationDescription).
 pub mod s3_destination_description {
 
     /// A builder for [`S3DestinationDescription`](crate::model::S3DestinationDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) bucket_arn: std::option::Option<std::string::String>,
@@ -7440,7 +7637,7 @@ impl std::fmt::Debug for HttpEndpointDescription {
 pub mod http_endpoint_description {
 
     /// A builder for [`HttpEndpointDescription`](crate::model::HttpEndpointDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) url: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -7474,6 +7671,14 @@ pub mod http_endpoint_description {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("url", &"*** Sensitive Data Redacted ***");
+            formatter.field("name", &self.name);
+            formatter.finish()
+        }
+    }
 }
 impl HttpEndpointDescription {
     /// Creates a new builder-style object to manufacture [`HttpEndpointDescription`](crate::model::HttpEndpointDescription).
@@ -7484,7 +7689,7 @@ impl HttpEndpointDescription {
 
 /// <p>Describes a destination in Splunk.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SplunkDestinationDescription {
     /// <p>The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends your data.</p>
     #[doc(hidden)]
@@ -7558,35 +7763,11 @@ impl SplunkDestinationDescription {
         self.cloud_watch_logging_options.as_ref()
     }
 }
-impl std::fmt::Debug for SplunkDestinationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SplunkDestinationDescription");
-        formatter.field("hec_endpoint", &self.hec_endpoint);
-        formatter.field("hec_endpoint_type", &self.hec_endpoint_type);
-        formatter.field("hec_token", &self.hec_token);
-        formatter.field(
-            "hec_acknowledgment_timeout_in_seconds",
-            &self.hec_acknowledgment_timeout_in_seconds,
-        );
-        formatter.field("retry_options", &self.retry_options);
-        formatter.field("s3_backup_mode", &self.s3_backup_mode);
-        formatter.field(
-            "s3_destination_description",
-            &self.s3_destination_description,
-        );
-        formatter.field("processing_configuration", &self.processing_configuration);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.finish()
-    }
-}
 /// See [`SplunkDestinationDescription`](crate::model::SplunkDestinationDescription).
 pub mod splunk_destination_description {
 
     /// A builder for [`SplunkDestinationDescription`](crate::model::SplunkDestinationDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hec_endpoint: std::option::Option<std::string::String>,
         pub(crate) hec_endpoint_type: std::option::Option<crate::model::HecEndpointType>,
@@ -7747,7 +7928,7 @@ impl SplunkDestinationDescription {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AmazonopensearchserviceDestinationDescription {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -7861,39 +8042,11 @@ impl AmazonopensearchserviceDestinationDescription {
         self.vpc_configuration_description.as_ref()
     }
 }
-impl std::fmt::Debug for AmazonopensearchserviceDestinationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AmazonopensearchserviceDestinationDescription");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("domain_arn", &self.domain_arn);
-        formatter.field("cluster_endpoint", &self.cluster_endpoint);
-        formatter.field("index_name", &self.index_name);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("index_rotation_period", &self.index_rotation_period);
-        formatter.field("buffering_hints", &self.buffering_hints);
-        formatter.field("retry_options", &self.retry_options);
-        formatter.field("s3_backup_mode", &self.s3_backup_mode);
-        formatter.field(
-            "s3_destination_description",
-            &self.s3_destination_description,
-        );
-        formatter.field("processing_configuration", &self.processing_configuration);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.field(
-            "vpc_configuration_description",
-            &self.vpc_configuration_description,
-        );
-        formatter.finish()
-    }
-}
 /// See [`AmazonopensearchserviceDestinationDescription`](crate::model::AmazonopensearchserviceDestinationDescription).
 pub mod amazonopensearchservice_destination_description {
 
     /// A builder for [`AmazonopensearchserviceDestinationDescription`](crate::model::AmazonopensearchserviceDestinationDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) domain_arn: std::option::Option<std::string::String>,
@@ -8128,7 +8281,7 @@ impl AmazonopensearchserviceDestinationDescription {
 
 /// <p>The details of the VPC of the Amazon ES destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcConfigurationDescription {
     /// <p>The IDs of the subnets that Kinesis Data Firehose uses to create ENIs in the VPC of the Amazon ES destination. Make sure that the routing tables and inbound and outbound rules allow traffic to flow from the subnets whose IDs are specified here to the subnets that have the destination Amazon ES endpoints. Kinesis Data Firehose creates at least one ENI in each of the subnets that are specified here. Do not delete or modify these ENIs.</p>
     /// <p>The number of ENIs that Kinesis Data Firehose creates in the subnets specified here scales up and down automatically based on throughput. To enable Kinesis Data Firehose to scale up the number of ENIs to match throughput, ensure that you have sufficient quota. To help you calculate the quota you need, assume that Kinesis Data Firehose can create up to three ENIs for this delivery stream for each of the subnets specified here. For more information about ENI quota, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-enis">Network Interfaces </a> in the Amazon VPC Quotas topic.</p>
@@ -8185,21 +8338,11 @@ impl VpcConfigurationDescription {
         self.vpc_id.as_deref()
     }
 }
-impl std::fmt::Debug for VpcConfigurationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcConfigurationDescription");
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.finish()
-    }
-}
 /// See [`VpcConfigurationDescription`](crate::model::VpcConfigurationDescription).
 pub mod vpc_configuration_description {
 
     /// A builder for [`VpcConfigurationDescription`](crate::model::VpcConfigurationDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -8307,6 +8450,41 @@ impl VpcConfigurationDescription {
     }
 }
 
+/// When writing a match expression against `AmazonopensearchserviceS3BackupMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let amazonopensearchservices3backupmode = unimplemented!();
+/// match amazonopensearchservices3backupmode {
+///     AmazonopensearchserviceS3BackupMode::AllDocuments => { /* ... */ },
+///     AmazonopensearchserviceS3BackupMode::FailedDocumentsOnly => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `amazonopensearchservices3backupmode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `AmazonopensearchserviceS3BackupMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `AmazonopensearchserviceS3BackupMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `AmazonopensearchserviceS3BackupMode::NewFeature` is defined.
+/// Specifically, when `amazonopensearchservices3backupmode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `AmazonopensearchserviceS3BackupMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -8323,15 +8501,17 @@ pub enum AmazonopensearchserviceS3BackupMode {
     AllDocuments,
     #[allow(missing_docs)] // documentation missing in model
     FailedDocumentsOnly,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AmazonopensearchserviceS3BackupMode {
     fn from(s: &str) -> Self {
         match s {
             "AllDocuments" => AmazonopensearchserviceS3BackupMode::AllDocuments,
             "FailedDocumentsOnly" => AmazonopensearchserviceS3BackupMode::FailedDocumentsOnly,
-            other => AmazonopensearchserviceS3BackupMode::Unknown(other.to_owned()),
+            other => AmazonopensearchserviceS3BackupMode::Unknown(
+                crate::types::UnknownVariantValue(other.to_owned()),
+            ),
         }
     }
 }
@@ -8348,11 +8528,11 @@ impl AmazonopensearchserviceS3BackupMode {
         match self {
             AmazonopensearchserviceS3BackupMode::AllDocuments => "AllDocuments",
             AmazonopensearchserviceS3BackupMode::FailedDocumentsOnly => "FailedDocumentsOnly",
-            AmazonopensearchserviceS3BackupMode::Unknown(s) => s.as_ref(),
+            AmazonopensearchserviceS3BackupMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AllDocuments", "FailedDocumentsOnly"]
     }
 }
@@ -8364,7 +8544,7 @@ impl AsRef<str> for AmazonopensearchserviceS3BackupMode {
 
 /// <p>The destination description in Amazon ES.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ElasticsearchDestinationDescription {
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
     #[doc(hidden)]
@@ -8475,39 +8655,11 @@ impl ElasticsearchDestinationDescription {
         self.vpc_configuration_description.as_ref()
     }
 }
-impl std::fmt::Debug for ElasticsearchDestinationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ElasticsearchDestinationDescription");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("domain_arn", &self.domain_arn);
-        formatter.field("cluster_endpoint", &self.cluster_endpoint);
-        formatter.field("index_name", &self.index_name);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("index_rotation_period", &self.index_rotation_period);
-        formatter.field("buffering_hints", &self.buffering_hints);
-        formatter.field("retry_options", &self.retry_options);
-        formatter.field("s3_backup_mode", &self.s3_backup_mode);
-        formatter.field(
-            "s3_destination_description",
-            &self.s3_destination_description,
-        );
-        formatter.field("processing_configuration", &self.processing_configuration);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.field(
-            "vpc_configuration_description",
-            &self.vpc_configuration_description,
-        );
-        formatter.finish()
-    }
-}
 /// See [`ElasticsearchDestinationDescription`](crate::model::ElasticsearchDestinationDescription).
 pub mod elasticsearch_destination_description {
 
     /// A builder for [`ElasticsearchDestinationDescription`](crate::model::ElasticsearchDestinationDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) domain_arn: std::option::Option<std::string::String>,
@@ -8730,6 +8882,41 @@ impl ElasticsearchDestinationDescription {
     }
 }
 
+/// When writing a match expression against `ElasticsearchS3BackupMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let elasticsearchs3backupmode = unimplemented!();
+/// match elasticsearchs3backupmode {
+///     ElasticsearchS3BackupMode::AllDocuments => { /* ... */ },
+///     ElasticsearchS3BackupMode::FailedDocumentsOnly => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `elasticsearchs3backupmode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ElasticsearchS3BackupMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ElasticsearchS3BackupMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ElasticsearchS3BackupMode::NewFeature` is defined.
+/// Specifically, when `elasticsearchs3backupmode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ElasticsearchS3BackupMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -8746,15 +8933,17 @@ pub enum ElasticsearchS3BackupMode {
     AllDocuments,
     #[allow(missing_docs)] // documentation missing in model
     FailedDocumentsOnly,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ElasticsearchS3BackupMode {
     fn from(s: &str) -> Self {
         match s {
             "AllDocuments" => ElasticsearchS3BackupMode::AllDocuments,
             "FailedDocumentsOnly" => ElasticsearchS3BackupMode::FailedDocumentsOnly,
-            other => ElasticsearchS3BackupMode::Unknown(other.to_owned()),
+            other => ElasticsearchS3BackupMode::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -8771,11 +8960,11 @@ impl ElasticsearchS3BackupMode {
         match self {
             ElasticsearchS3BackupMode::AllDocuments => "AllDocuments",
             ElasticsearchS3BackupMode::FailedDocumentsOnly => "FailedDocumentsOnly",
-            ElasticsearchS3BackupMode::Unknown(s) => s.as_ref(),
+            ElasticsearchS3BackupMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AllDocuments", "FailedDocumentsOnly"]
     }
 }
@@ -8896,7 +9085,7 @@ impl std::fmt::Debug for RedshiftDestinationDescription {
 pub mod redshift_destination_description {
 
     /// A builder for [`RedshiftDestinationDescription`](crate::model::RedshiftDestinationDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) cluster_jdbcurl: std::option::Option<std::string::String>,
@@ -9066,6 +9255,28 @@ pub mod redshift_destination_description {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("role_arn", &self.role_arn);
+            formatter.field("cluster_jdbcurl", &self.cluster_jdbcurl);
+            formatter.field("copy_command", &self.copy_command);
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.field("retry_options", &self.retry_options);
+            formatter.field(
+                "s3_destination_description",
+                &self.s3_destination_description,
+            );
+            formatter.field("processing_configuration", &self.processing_configuration);
+            formatter.field("s3_backup_mode", &self.s3_backup_mode);
+            formatter.field("s3_backup_description", &self.s3_backup_description);
+            formatter.field(
+                "cloud_watch_logging_options",
+                &self.cloud_watch_logging_options,
+            );
+            formatter.finish()
+        }
+    }
 }
 impl RedshiftDestinationDescription {
     /// Creates a new builder-style object to manufacture [`RedshiftDestinationDescription`](crate::model::RedshiftDestinationDescription).
@@ -9076,7 +9287,7 @@ impl RedshiftDestinationDescription {
 
 /// <p>Describes a destination in Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExtendedS3DestinationDescription {
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
     #[doc(hidden)]
@@ -9186,39 +9397,11 @@ impl ExtendedS3DestinationDescription {
         self.dynamic_partitioning_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for ExtendedS3DestinationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExtendedS3DestinationDescription");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("bucket_arn", &self.bucket_arn);
-        formatter.field("prefix", &self.prefix);
-        formatter.field("error_output_prefix", &self.error_output_prefix);
-        formatter.field("buffering_hints", &self.buffering_hints);
-        formatter.field("compression_format", &self.compression_format);
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.field("processing_configuration", &self.processing_configuration);
-        formatter.field("s3_backup_mode", &self.s3_backup_mode);
-        formatter.field("s3_backup_description", &self.s3_backup_description);
-        formatter.field(
-            "data_format_conversion_configuration",
-            &self.data_format_conversion_configuration,
-        );
-        formatter.field(
-            "dynamic_partitioning_configuration",
-            &self.dynamic_partitioning_configuration,
-        );
-        formatter.finish()
-    }
-}
 /// See [`ExtendedS3DestinationDescription`](crate::model::ExtendedS3DestinationDescription).
 pub mod extended_s3_destination_description {
 
     /// A builder for [`ExtendedS3DestinationDescription`](crate::model::ExtendedS3DestinationDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) bucket_arn: std::option::Option<std::string::String>,
@@ -9448,7 +9631,7 @@ impl ExtendedS3DestinationDescription {
 
 /// <p>Details about a Kinesis data stream used as the source for a Kinesis Data Firehose delivery stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceDescription {
     /// <p>The <code>KinesisStreamSourceDescription</code> value for the source Kinesis data stream.</p>
     #[doc(hidden)]
@@ -9463,21 +9646,11 @@ impl SourceDescription {
         self.kinesis_stream_source_description.as_ref()
     }
 }
-impl std::fmt::Debug for SourceDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceDescription");
-        formatter.field(
-            "kinesis_stream_source_description",
-            &self.kinesis_stream_source_description,
-        );
-        formatter.finish()
-    }
-}
 /// See [`SourceDescription`](crate::model::SourceDescription).
 pub mod source_description {
 
     /// A builder for [`SourceDescription`](crate::model::SourceDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) kinesis_stream_source_description:
             std::option::Option<crate::model::KinesisStreamSourceDescription>,
@@ -9516,7 +9689,7 @@ impl SourceDescription {
 
 /// <p>Details about a Kinesis data stream used as the source for a Kinesis Data Firehose delivery stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisStreamSourceDescription {
     /// <p>The Amazon Resource Name (ARN) of the source Kinesis data stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Kinesis Data Streams ARN Format</a>.</p>
     #[doc(hidden)]
@@ -9542,20 +9715,11 @@ impl KinesisStreamSourceDescription {
         self.delivery_start_timestamp.as_ref()
     }
 }
-impl std::fmt::Debug for KinesisStreamSourceDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisStreamSourceDescription");
-        formatter.field("kinesis_stream_arn", &self.kinesis_stream_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("delivery_start_timestamp", &self.delivery_start_timestamp);
-        formatter.finish()
-    }
-}
 /// See [`KinesisStreamSourceDescription`](crate::model::KinesisStreamSourceDescription).
 pub mod kinesis_stream_source_description {
 
     /// A builder for [`KinesisStreamSourceDescription`](crate::model::KinesisStreamSourceDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) kinesis_stream_arn: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -9617,7 +9781,7 @@ impl KinesisStreamSourceDescription {
 
 /// <p>Contains information about the server-side encryption (SSE) status for the delivery stream, the type customer master key (CMK) in use, if any, and the ARN of the CMK. You can get <code>DeliveryStreamEncryptionConfiguration</code> by invoking the <code>DescribeDeliveryStream</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeliveryStreamEncryptionConfiguration {
     /// <p>If <code>KeyType</code> is <code>CUSTOMER_MANAGED_CMK</code>, this field contains the ARN of the customer managed CMK. If <code>KeyType</code> is <code>AWS_OWNED_CMK</code>, <code>DeliveryStreamEncryptionConfiguration</code> doesn't contain a value for <code>KeyARN</code>.</p>
     #[doc(hidden)]
@@ -9650,21 +9814,11 @@ impl DeliveryStreamEncryptionConfiguration {
         self.failure_description.as_ref()
     }
 }
-impl std::fmt::Debug for DeliveryStreamEncryptionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeliveryStreamEncryptionConfiguration");
-        formatter.field("key_arn", &self.key_arn);
-        formatter.field("key_type", &self.key_type);
-        formatter.field("status", &self.status);
-        formatter.field("failure_description", &self.failure_description);
-        formatter.finish()
-    }
-}
 /// See [`DeliveryStreamEncryptionConfiguration`](crate::model::DeliveryStreamEncryptionConfiguration).
 pub mod delivery_stream_encryption_configuration {
 
     /// A builder for [`DeliveryStreamEncryptionConfiguration`](crate::model::DeliveryStreamEncryptionConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_arn: std::option::Option<std::string::String>,
         pub(crate) key_type: std::option::Option<crate::model::KeyType>,
@@ -9738,7 +9892,7 @@ impl DeliveryStreamEncryptionConfiguration {
 
 /// <p>Provides details in case one of the following operations fails due to an error related to KMS: <code>CreateDeliveryStream</code>, <code>DeleteDeliveryStream</code>, <code>StartDeliveryStreamEncryption</code>, <code>StopDeliveryStreamEncryption</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FailureDescription {
     /// <p>The type of error that caused the failure.</p>
     #[doc(hidden)]
@@ -9757,19 +9911,11 @@ impl FailureDescription {
         self.details.as_deref()
     }
 }
-impl std::fmt::Debug for FailureDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FailureDescription");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("details", &self.details);
-        formatter.finish()
-    }
-}
 /// See [`FailureDescription`](crate::model::FailureDescription).
 pub mod failure_description {
 
     /// A builder for [`FailureDescription`](crate::model::FailureDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::DeliveryStreamFailureType>,
         pub(crate) details: std::option::Option<std::string::String>,
@@ -9814,6 +9960,54 @@ impl FailureDescription {
     }
 }
 
+/// When writing a match expression against `DeliveryStreamFailureType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let deliverystreamfailuretype = unimplemented!();
+/// match deliverystreamfailuretype {
+///     DeliveryStreamFailureType::CreateEniFailed => { /* ... */ },
+///     DeliveryStreamFailureType::CreateKmsGrantFailed => { /* ... */ },
+///     DeliveryStreamFailureType::DeleteEniFailed => { /* ... */ },
+///     DeliveryStreamFailureType::DisabledKmsKey => { /* ... */ },
+///     DeliveryStreamFailureType::EniAccessDenied => { /* ... */ },
+///     DeliveryStreamFailureType::InvalidKmsKey => { /* ... */ },
+///     DeliveryStreamFailureType::KmsAccessDenied => { /* ... */ },
+///     DeliveryStreamFailureType::KmsKeyNotFound => { /* ... */ },
+///     DeliveryStreamFailureType::KmsOptInRequired => { /* ... */ },
+///     DeliveryStreamFailureType::RetireKmsGrantFailed => { /* ... */ },
+///     DeliveryStreamFailureType::SecurityGroupAccessDenied => { /* ... */ },
+///     DeliveryStreamFailureType::SecurityGroupNotFound => { /* ... */ },
+///     DeliveryStreamFailureType::SubnetAccessDenied => { /* ... */ },
+///     DeliveryStreamFailureType::SubnetNotFound => { /* ... */ },
+///     DeliveryStreamFailureType::UnknownError => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `deliverystreamfailuretype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DeliveryStreamFailureType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DeliveryStreamFailureType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DeliveryStreamFailureType::NewFeature` is defined.
+/// Specifically, when `deliverystreamfailuretype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DeliveryStreamFailureType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -9856,8 +10050,8 @@ pub enum DeliveryStreamFailureType {
     SubnetNotFound,
     #[allow(missing_docs)] // documentation missing in model
     UnknownError,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DeliveryStreamFailureType {
     fn from(s: &str) -> Self {
@@ -9877,7 +10071,9 @@ impl std::convert::From<&str> for DeliveryStreamFailureType {
             "SUBNET_ACCESS_DENIED" => DeliveryStreamFailureType::SubnetAccessDenied,
             "SUBNET_NOT_FOUND" => DeliveryStreamFailureType::SubnetNotFound,
             "UNKNOWN_ERROR" => DeliveryStreamFailureType::UnknownError,
-            other => DeliveryStreamFailureType::Unknown(other.to_owned()),
+            other => DeliveryStreamFailureType::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -9907,11 +10103,11 @@ impl DeliveryStreamFailureType {
             DeliveryStreamFailureType::SubnetAccessDenied => "SUBNET_ACCESS_DENIED",
             DeliveryStreamFailureType::SubnetNotFound => "SUBNET_NOT_FOUND",
             DeliveryStreamFailureType::UnknownError => "UNKNOWN_ERROR",
-            DeliveryStreamFailureType::Unknown(s) => s.as_ref(),
+            DeliveryStreamFailureType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_ENI_FAILED",
             "CREATE_KMS_GRANT_FAILED",
@@ -9937,6 +10133,45 @@ impl AsRef<str> for DeliveryStreamFailureType {
     }
 }
 
+/// When writing a match expression against `DeliveryStreamEncryptionStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let deliverystreamencryptionstatus = unimplemented!();
+/// match deliverystreamencryptionstatus {
+///     DeliveryStreamEncryptionStatus::Disabled => { /* ... */ },
+///     DeliveryStreamEncryptionStatus::Disabling => { /* ... */ },
+///     DeliveryStreamEncryptionStatus::DisablingFailed => { /* ... */ },
+///     DeliveryStreamEncryptionStatus::Enabled => { /* ... */ },
+///     DeliveryStreamEncryptionStatus::Enabling => { /* ... */ },
+///     DeliveryStreamEncryptionStatus::EnablingFailed => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `deliverystreamencryptionstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DeliveryStreamEncryptionStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DeliveryStreamEncryptionStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DeliveryStreamEncryptionStatus::NewFeature` is defined.
+/// Specifically, when `deliverystreamencryptionstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DeliveryStreamEncryptionStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -9961,8 +10196,8 @@ pub enum DeliveryStreamEncryptionStatus {
     Enabling,
     #[allow(missing_docs)] // documentation missing in model
     EnablingFailed,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DeliveryStreamEncryptionStatus {
     fn from(s: &str) -> Self {
@@ -9973,7 +10208,9 @@ impl std::convert::From<&str> for DeliveryStreamEncryptionStatus {
             "ENABLED" => DeliveryStreamEncryptionStatus::Enabled,
             "ENABLING" => DeliveryStreamEncryptionStatus::Enabling,
             "ENABLING_FAILED" => DeliveryStreamEncryptionStatus::EnablingFailed,
-            other => DeliveryStreamEncryptionStatus::Unknown(other.to_owned()),
+            other => DeliveryStreamEncryptionStatus::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -9994,11 +10231,11 @@ impl DeliveryStreamEncryptionStatus {
             DeliveryStreamEncryptionStatus::Enabled => "ENABLED",
             DeliveryStreamEncryptionStatus::Enabling => "ENABLING",
             DeliveryStreamEncryptionStatus::EnablingFailed => "ENABLING_FAILED",
-            DeliveryStreamEncryptionStatus::Unknown(s) => s.as_ref(),
+            DeliveryStreamEncryptionStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DISABLED",
             "DISABLING",
@@ -10015,6 +10252,44 @@ impl AsRef<str> for DeliveryStreamEncryptionStatus {
     }
 }
 
+/// When writing a match expression against `DeliveryStreamStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let deliverystreamstatus = unimplemented!();
+/// match deliverystreamstatus {
+///     DeliveryStreamStatus::Active => { /* ... */ },
+///     DeliveryStreamStatus::Creating => { /* ... */ },
+///     DeliveryStreamStatus::CreatingFailed => { /* ... */ },
+///     DeliveryStreamStatus::Deleting => { /* ... */ },
+///     DeliveryStreamStatus::DeletingFailed => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `deliverystreamstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DeliveryStreamStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DeliveryStreamStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DeliveryStreamStatus::NewFeature` is defined.
+/// Specifically, when `deliverystreamstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DeliveryStreamStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -10037,8 +10312,8 @@ pub enum DeliveryStreamStatus {
     Deleting,
     #[allow(missing_docs)] // documentation missing in model
     DeletingFailed,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DeliveryStreamStatus {
     fn from(s: &str) -> Self {
@@ -10048,7 +10323,9 @@ impl std::convert::From<&str> for DeliveryStreamStatus {
             "CREATING_FAILED" => DeliveryStreamStatus::CreatingFailed,
             "DELETING" => DeliveryStreamStatus::Deleting,
             "DELETING_FAILED" => DeliveryStreamStatus::DeletingFailed,
-            other => DeliveryStreamStatus::Unknown(other.to_owned()),
+            other => {
+                DeliveryStreamStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -10068,11 +10345,11 @@ impl DeliveryStreamStatus {
             DeliveryStreamStatus::CreatingFailed => "CREATING_FAILED",
             DeliveryStreamStatus::Deleting => "DELETING",
             DeliveryStreamStatus::DeletingFailed => "DELETING_FAILED",
-            DeliveryStreamStatus::Unknown(s) => s.as_ref(),
+            DeliveryStreamStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "CREATING",
@@ -10090,7 +10367,7 @@ impl AsRef<str> for DeliveryStreamStatus {
 
 /// <p>Describes the configuration of the HTTP endpoint destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpEndpointDestinationConfiguration {
     /// <p>The configuration of the HTTP endpoint selected as the destination.</p>
     #[doc(hidden)]
@@ -10170,29 +10447,11 @@ impl HttpEndpointDestinationConfiguration {
         self.s3_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for HttpEndpointDestinationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpEndpointDestinationConfiguration");
-        formatter.field("endpoint_configuration", &self.endpoint_configuration);
-        formatter.field("buffering_hints", &self.buffering_hints);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.field("request_configuration", &self.request_configuration);
-        formatter.field("processing_configuration", &self.processing_configuration);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("retry_options", &self.retry_options);
-        formatter.field("s3_backup_mode", &self.s3_backup_mode);
-        formatter.field("s3_configuration", &self.s3_configuration);
-        formatter.finish()
-    }
-}
 /// See [`HttpEndpointDestinationConfiguration`](crate::model::HttpEndpointDestinationConfiguration).
 pub mod http_endpoint_destination_configuration {
 
     /// A builder for [`HttpEndpointDestinationConfiguration`](crate::model::HttpEndpointDestinationConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_configuration:
             std::option::Option<crate::model::HttpEndpointConfiguration>,
@@ -10360,7 +10619,7 @@ impl HttpEndpointDestinationConfiguration {
 
 /// <p>Describes the configuration of a destination in Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3DestinationConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
     #[doc(hidden)]
@@ -10427,28 +10686,11 @@ impl S3DestinationConfiguration {
         self.cloud_watch_logging_options.as_ref()
     }
 }
-impl std::fmt::Debug for S3DestinationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3DestinationConfiguration");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("bucket_arn", &self.bucket_arn);
-        formatter.field("prefix", &self.prefix);
-        formatter.field("error_output_prefix", &self.error_output_prefix);
-        formatter.field("buffering_hints", &self.buffering_hints);
-        formatter.field("compression_format", &self.compression_format);
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.finish()
-    }
-}
 /// See [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
 pub mod s3_destination_configuration {
 
     /// A builder for [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) bucket_arn: std::option::Option<std::string::String>,
@@ -10589,7 +10831,7 @@ impl S3DestinationConfiguration {
 
 /// <p>Describes the configuration of a destination in Splunk.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SplunkDestinationConfiguration {
     /// <p>The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends your data.</p>
     #[doc(hidden)]
@@ -10665,32 +10907,11 @@ impl SplunkDestinationConfiguration {
         self.cloud_watch_logging_options.as_ref()
     }
 }
-impl std::fmt::Debug for SplunkDestinationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SplunkDestinationConfiguration");
-        formatter.field("hec_endpoint", &self.hec_endpoint);
-        formatter.field("hec_endpoint_type", &self.hec_endpoint_type);
-        formatter.field("hec_token", &self.hec_token);
-        formatter.field(
-            "hec_acknowledgment_timeout_in_seconds",
-            &self.hec_acknowledgment_timeout_in_seconds,
-        );
-        formatter.field("retry_options", &self.retry_options);
-        formatter.field("s3_backup_mode", &self.s3_backup_mode);
-        formatter.field("s3_configuration", &self.s3_configuration);
-        formatter.field("processing_configuration", &self.processing_configuration);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.finish()
-    }
-}
 /// See [`SplunkDestinationConfiguration`](crate::model::SplunkDestinationConfiguration).
 pub mod splunk_destination_configuration {
 
     /// A builder for [`SplunkDestinationConfiguration`](crate::model::SplunkDestinationConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hec_endpoint: std::option::Option<std::string::String>,
         pub(crate) hec_endpoint_type: std::option::Option<crate::model::HecEndpointType>,
@@ -10849,7 +11070,7 @@ impl SplunkDestinationConfiguration {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AmazonopensearchserviceDestinationConfiguration {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -10960,33 +11181,11 @@ impl AmazonopensearchserviceDestinationConfiguration {
         self.vpc_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for AmazonopensearchserviceDestinationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AmazonopensearchserviceDestinationConfiguration");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("domain_arn", &self.domain_arn);
-        formatter.field("cluster_endpoint", &self.cluster_endpoint);
-        formatter.field("index_name", &self.index_name);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("index_rotation_period", &self.index_rotation_period);
-        formatter.field("buffering_hints", &self.buffering_hints);
-        formatter.field("retry_options", &self.retry_options);
-        formatter.field("s3_backup_mode", &self.s3_backup_mode);
-        formatter.field("s3_configuration", &self.s3_configuration);
-        formatter.field("processing_configuration", &self.processing_configuration);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.field("vpc_configuration", &self.vpc_configuration);
-        formatter.finish()
-    }
-}
 /// See [`AmazonopensearchserviceDestinationConfiguration`](crate::model::AmazonopensearchserviceDestinationConfiguration).
 pub mod amazonopensearchservice_destination_configuration {
 
     /// A builder for [`AmazonopensearchserviceDestinationConfiguration`](crate::model::AmazonopensearchserviceDestinationConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) domain_arn: std::option::Option<std::string::String>,
@@ -11213,7 +11412,7 @@ impl AmazonopensearchserviceDestinationConfiguration {
 
 /// <p>The details of the VPC of the Amazon ES destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcConfiguration {
     /// <p>The IDs of the subnets that you want Kinesis Data Firehose to use to create ENIs in the VPC of the Amazon ES destination. Make sure that the routing tables and inbound and outbound rules allow traffic to flow from the subnets whose IDs are specified here to the subnets that have the destination Amazon ES endpoints. Kinesis Data Firehose creates at least one ENI in each of the subnets that are specified here. Do not delete or modify these ENIs.</p>
     /// <p>The number of ENIs that Kinesis Data Firehose creates in the subnets specified here scales up and down automatically based on throughput. To enable Kinesis Data Firehose to scale up the number of ENIs to match throughput, ensure that you have sufficient quota. To help you calculate the quota you need, assume that Kinesis Data Firehose can create up to three ENIs for this delivery stream for each of the subnets specified here. For more information about ENI quota, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-enis">Network Interfaces </a> in the Amazon VPC Quotas topic.</p>
@@ -11263,20 +11462,11 @@ impl VpcConfiguration {
         self.security_group_ids.as_deref()
     }
 }
-impl std::fmt::Debug for VpcConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcConfiguration");
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.finish()
-    }
-}
 /// See [`VpcConfiguration`](crate::model::VpcConfiguration).
 pub mod vpc_configuration {
 
     /// A builder for [`VpcConfiguration`](crate::model::VpcConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -11374,7 +11564,7 @@ impl VpcConfiguration {
 
 /// <p>Describes the configuration of a destination in Amazon ES.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ElasticsearchDestinationConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon ES Configuration API and for indexing documents. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
     #[doc(hidden)]
@@ -11486,33 +11676,11 @@ impl ElasticsearchDestinationConfiguration {
         self.vpc_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for ElasticsearchDestinationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ElasticsearchDestinationConfiguration");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("domain_arn", &self.domain_arn);
-        formatter.field("cluster_endpoint", &self.cluster_endpoint);
-        formatter.field("index_name", &self.index_name);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("index_rotation_period", &self.index_rotation_period);
-        formatter.field("buffering_hints", &self.buffering_hints);
-        formatter.field("retry_options", &self.retry_options);
-        formatter.field("s3_backup_mode", &self.s3_backup_mode);
-        formatter.field("s3_configuration", &self.s3_configuration);
-        formatter.field("processing_configuration", &self.processing_configuration);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.field("vpc_configuration", &self.vpc_configuration);
-        formatter.finish()
-    }
-}
 /// See [`ElasticsearchDestinationConfiguration`](crate::model::ElasticsearchDestinationConfiguration).
 pub mod elasticsearch_destination_configuration {
 
     /// A builder for [`ElasticsearchDestinationConfiguration`](crate::model::ElasticsearchDestinationConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) domain_arn: std::option::Option<std::string::String>,
@@ -11849,7 +12017,7 @@ impl std::fmt::Debug for RedshiftDestinationConfiguration {
 pub mod redshift_destination_configuration {
 
     /// A builder for [`RedshiftDestinationConfiguration`](crate::model::RedshiftDestinationConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) cluster_jdbcurl: std::option::Option<std::string::String>,
@@ -12029,6 +12197,26 @@ pub mod redshift_destination_configuration {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("role_arn", &self.role_arn);
+            formatter.field("cluster_jdbcurl", &self.cluster_jdbcurl);
+            formatter.field("copy_command", &self.copy_command);
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.field("retry_options", &self.retry_options);
+            formatter.field("s3_configuration", &self.s3_configuration);
+            formatter.field("processing_configuration", &self.processing_configuration);
+            formatter.field("s3_backup_mode", &self.s3_backup_mode);
+            formatter.field("s3_backup_configuration", &self.s3_backup_configuration);
+            formatter.field(
+                "cloud_watch_logging_options",
+                &self.cloud_watch_logging_options,
+            );
+            formatter.finish()
+        }
+    }
 }
 impl RedshiftDestinationConfiguration {
     /// Creates a new builder-style object to manufacture [`RedshiftDestinationConfiguration`](crate::model::RedshiftDestinationConfiguration).
@@ -12039,7 +12227,7 @@ impl RedshiftDestinationConfiguration {
 
 /// <p>Describes the configuration of a destination in Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExtendedS3DestinationConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
     #[doc(hidden)]
@@ -12149,39 +12337,11 @@ impl ExtendedS3DestinationConfiguration {
         self.dynamic_partitioning_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for ExtendedS3DestinationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExtendedS3DestinationConfiguration");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("bucket_arn", &self.bucket_arn);
-        formatter.field("prefix", &self.prefix);
-        formatter.field("error_output_prefix", &self.error_output_prefix);
-        formatter.field("buffering_hints", &self.buffering_hints);
-        formatter.field("compression_format", &self.compression_format);
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
-        formatter.field("processing_configuration", &self.processing_configuration);
-        formatter.field("s3_backup_mode", &self.s3_backup_mode);
-        formatter.field("s3_backup_configuration", &self.s3_backup_configuration);
-        formatter.field(
-            "data_format_conversion_configuration",
-            &self.data_format_conversion_configuration,
-        );
-        formatter.field(
-            "dynamic_partitioning_configuration",
-            &self.dynamic_partitioning_configuration,
-        );
-        formatter.finish()
-    }
-}
 /// See [`ExtendedS3DestinationConfiguration`](crate::model::ExtendedS3DestinationConfiguration).
 pub mod extended_s3_destination_configuration {
 
     /// A builder for [`ExtendedS3DestinationConfiguration`](crate::model::ExtendedS3DestinationConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) bucket_arn: std::option::Option<std::string::String>,
@@ -12411,7 +12571,7 @@ impl ExtendedS3DestinationConfiguration {
 
 /// <p>The stream and role Amazon Resource Names (ARNs) for a Kinesis data stream used as the source for a delivery stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisStreamSourceConfiguration {
     /// <p>The ARN of the source Kinesis data stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Kinesis Data Streams ARN Format</a>.</p>
     #[doc(hidden)]
@@ -12430,19 +12590,11 @@ impl KinesisStreamSourceConfiguration {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for KinesisStreamSourceConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisStreamSourceConfiguration");
-        formatter.field("kinesis_stream_arn", &self.kinesis_stream_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 /// See [`KinesisStreamSourceConfiguration`](crate::model::KinesisStreamSourceConfiguration).
 pub mod kinesis_stream_source_configuration {
 
     /// A builder for [`KinesisStreamSourceConfiguration`](crate::model::KinesisStreamSourceConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) kinesis_stream_arn: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,

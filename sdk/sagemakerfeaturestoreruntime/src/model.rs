@@ -2,7 +2,7 @@
 
 /// <p>The value associated with a feature.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FeatureValue {
     /// <p>The name of a feature that a feature value corresponds to.</p>
     #[doc(hidden)]
@@ -21,19 +21,11 @@ impl FeatureValue {
         self.value_as_string.as_deref()
     }
 }
-impl std::fmt::Debug for FeatureValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FeatureValue");
-        formatter.field("feature_name", &self.feature_name);
-        formatter.field("value_as_string", &self.value_as_string);
-        formatter.finish()
-    }
-}
 /// See [`FeatureValue`](crate::model::FeatureValue).
 pub mod feature_value {
 
     /// A builder for [`FeatureValue`](crate::model::FeatureValue).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) feature_name: std::option::Option<std::string::String>,
         pub(crate) value_as_string: std::option::Option<std::string::String>,
@@ -80,7 +72,7 @@ impl FeatureValue {
 
 /// <p>The identifier that identifies the batch of Records you are retrieving in a batch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetRecordIdentifier {
     /// <p>A <code>FeatureGroupName</code> containing Records you are retrieving in a batch.</p>
     #[doc(hidden)]
@@ -108,23 +100,11 @@ impl BatchGetRecordIdentifier {
         self.feature_names.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetRecordIdentifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetRecordIdentifier");
-        formatter.field("feature_group_name", &self.feature_group_name);
-        formatter.field(
-            "record_identifiers_value_as_string",
-            &self.record_identifiers_value_as_string,
-        );
-        formatter.field("feature_names", &self.feature_names);
-        formatter.finish()
-    }
-}
 /// See [`BatchGetRecordIdentifier`](crate::model::BatchGetRecordIdentifier).
 pub mod batch_get_record_identifier {
 
     /// A builder for [`BatchGetRecordIdentifier`](crate::model::BatchGetRecordIdentifier).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) feature_group_name: std::option::Option<std::string::String>,
         pub(crate) record_identifiers_value_as_string:
@@ -205,7 +185,7 @@ impl BatchGetRecordIdentifier {
 
 /// <p>The error that has occurred when attempting to retrieve a batch of Records.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetRecordError {
     /// <p>The name of the feature group that the record belongs to.</p>
     #[doc(hidden)]
@@ -238,24 +218,11 @@ impl BatchGetRecordError {
         self.error_message.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetRecordError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetRecordError");
-        formatter.field("feature_group_name", &self.feature_group_name);
-        formatter.field(
-            "record_identifier_value_as_string",
-            &self.record_identifier_value_as_string,
-        );
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
-    }
-}
 /// See [`BatchGetRecordError`](crate::model::BatchGetRecordError).
 pub mod batch_get_record_error {
 
     /// A builder for [`BatchGetRecordError`](crate::model::BatchGetRecordError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) feature_group_name: std::option::Option<std::string::String>,
         pub(crate) record_identifier_value_as_string: std::option::Option<std::string::String>,
@@ -335,7 +302,7 @@ impl BatchGetRecordError {
 
 /// <p>The output of Records that have been retrieved in a batch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetRecordResultDetail {
     /// <p>The <code>FeatureGroupName</code> containing Records you retrieved in a batch.</p>
     #[doc(hidden)]
@@ -361,23 +328,11 @@ impl BatchGetRecordResultDetail {
         self.record.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetRecordResultDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetRecordResultDetail");
-        formatter.field("feature_group_name", &self.feature_group_name);
-        formatter.field(
-            "record_identifier_value_as_string",
-            &self.record_identifier_value_as_string,
-        );
-        formatter.field("record", &self.record);
-        formatter.finish()
-    }
-}
 /// See [`BatchGetRecordResultDetail`](crate::model::BatchGetRecordResultDetail).
 pub mod batch_get_record_result_detail {
 
     /// A builder for [`BatchGetRecordResultDetail`](crate::model::BatchGetRecordResultDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) feature_group_name: std::option::Option<std::string::String>,
         pub(crate) record_identifier_value_as_string: std::option::Option<std::string::String>,

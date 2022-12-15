@@ -81,8 +81,15 @@ pub enum Error {
     ),
     /// <p>The specified protocol is not supported.</p>
     UnsupportedProtocolException(crate::error::UnsupportedProtocolException),
-    /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -137,21 +144,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::AddListenerCertificatesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::AddListenerCertificatesErrorKind::CertificateNotFoundException(
-                    inner,
-                ) => Error::CertificateNotFoundException(inner),
-                crate::error::AddListenerCertificatesErrorKind::ListenerNotFoundException(
-                    inner,
-                ) => Error::ListenerNotFoundException(inner),
-                crate::error::AddListenerCertificatesErrorKind::TooManyCertificatesException(
-                    inner,
-                ) => Error::TooManyCertificatesException(inner),
-                crate::error::AddListenerCertificatesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::AddListenerCertificatesError> for Error {
+    fn from(err: crate::error::AddListenerCertificatesError) -> Self {
+        match err.kind {
+            crate::error::AddListenerCertificatesErrorKind::CertificateNotFoundException(inner) => {
+                Error::CertificateNotFoundException(inner)
+            }
+            crate::error::AddListenerCertificatesErrorKind::ListenerNotFoundException(inner) => {
+                Error::ListenerNotFoundException(inner)
+            }
+            crate::error::AddListenerCertificatesErrorKind::TooManyCertificatesException(inner) => {
+                Error::TooManyCertificatesException(inner)
+            }
+            crate::error::AddListenerCertificatesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -161,28 +175,37 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AddTagsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::AddTagsErrorKind::DuplicateTagKeysException(inner) => {
-                    Error::DuplicateTagKeysException(inner)
-                }
-                crate::error::AddTagsErrorKind::ListenerNotFoundException(inner) => {
-                    Error::ListenerNotFoundException(inner)
-                }
-                crate::error::AddTagsErrorKind::LoadBalancerNotFoundException(inner) => {
-                    Error::LoadBalancerNotFoundException(inner)
-                }
-                crate::error::AddTagsErrorKind::RuleNotFoundException(inner) => {
-                    Error::RuleNotFoundException(inner)
-                }
-                crate::error::AddTagsErrorKind::TargetGroupNotFoundException(inner) => {
-                    Error::TargetGroupNotFoundException(inner)
-                }
-                crate::error::AddTagsErrorKind::TooManyTagsException(inner) => {
-                    Error::TooManyTagsException(inner)
-                }
-                crate::error::AddTagsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::AddTagsError> for Error {
+    fn from(err: crate::error::AddTagsError) -> Self {
+        match err.kind {
+            crate::error::AddTagsErrorKind::DuplicateTagKeysException(inner) => {
+                Error::DuplicateTagKeysException(inner)
+            }
+            crate::error::AddTagsErrorKind::ListenerNotFoundException(inner) => {
+                Error::ListenerNotFoundException(inner)
+            }
+            crate::error::AddTagsErrorKind::LoadBalancerNotFoundException(inner) => {
+                Error::LoadBalancerNotFoundException(inner)
+            }
+            crate::error::AddTagsErrorKind::RuleNotFoundException(inner) => {
+                Error::RuleNotFoundException(inner)
+            }
+            crate::error::AddTagsErrorKind::TargetGroupNotFoundException(inner) => {
+                Error::TargetGroupNotFoundException(inner)
+            }
+            crate::error::AddTagsErrorKind::TooManyTagsException(inner) => {
+                Error::TooManyTagsException(inner)
+            }
+            crate::error::AddTagsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -192,28 +215,35 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateListenerError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::CreateListenerErrorKind::AlpnPolicyNotSupportedException(inner) => Error::AlpnPolicyNotSupportedException(inner),
-                crate::error::CreateListenerErrorKind::CertificateNotFoundException(inner) => Error::CertificateNotFoundException(inner),
-                crate::error::CreateListenerErrorKind::DuplicateListenerException(inner) => Error::DuplicateListenerException(inner),
-                crate::error::CreateListenerErrorKind::IncompatibleProtocolsException(inner) => Error::IncompatibleProtocolsException(inner),
-                crate::error::CreateListenerErrorKind::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
-                crate::error::CreateListenerErrorKind::InvalidLoadBalancerActionException(inner) => Error::InvalidLoadBalancerActionException(inner),
-                crate::error::CreateListenerErrorKind::LoadBalancerNotFoundException(inner) => Error::LoadBalancerNotFoundException(inner),
-                crate::error::CreateListenerErrorKind::SslPolicyNotFoundException(inner) => Error::SslPolicyNotFoundException(inner),
-                crate::error::CreateListenerErrorKind::TargetGroupAssociationLimitException(inner) => Error::TargetGroupAssociationLimitException(inner),
-                crate::error::CreateListenerErrorKind::TargetGroupNotFoundException(inner) => Error::TargetGroupNotFoundException(inner),
-                crate::error::CreateListenerErrorKind::TooManyActionsException(inner) => Error::TooManyActionsException(inner),
-                crate::error::CreateListenerErrorKind::TooManyCertificatesException(inner) => Error::TooManyCertificatesException(inner),
-                crate::error::CreateListenerErrorKind::TooManyListenersException(inner) => Error::TooManyListenersException(inner),
-                crate::error::CreateListenerErrorKind::TooManyRegistrationsForTargetIdException(inner) => Error::TooManyRegistrationsForTargetIdException(inner),
-                crate::error::CreateListenerErrorKind::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
-                crate::error::CreateListenerErrorKind::TooManyTargetsException(inner) => Error::TooManyTargetsException(inner),
-                crate::error::CreateListenerErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException(inner) => Error::TooManyUniqueTargetGroupsPerLoadBalancerException(inner),
-                crate::error::CreateListenerErrorKind::UnsupportedProtocolException(inner) => Error::UnsupportedProtocolException(inner),
-                crate::error::CreateListenerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateListenerError> for Error {
+    fn from(err: crate::error::CreateListenerError) -> Self {
+        match err.kind {
+            crate::error::CreateListenerErrorKind::AlpnPolicyNotSupportedException(inner) => Error::AlpnPolicyNotSupportedException(inner),
+            crate::error::CreateListenerErrorKind::CertificateNotFoundException(inner) => Error::CertificateNotFoundException(inner),
+            crate::error::CreateListenerErrorKind::DuplicateListenerException(inner) => Error::DuplicateListenerException(inner),
+            crate::error::CreateListenerErrorKind::IncompatibleProtocolsException(inner) => Error::IncompatibleProtocolsException(inner),
+            crate::error::CreateListenerErrorKind::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
+            crate::error::CreateListenerErrorKind::InvalidLoadBalancerActionException(inner) => Error::InvalidLoadBalancerActionException(inner),
+            crate::error::CreateListenerErrorKind::LoadBalancerNotFoundException(inner) => Error::LoadBalancerNotFoundException(inner),
+            crate::error::CreateListenerErrorKind::SslPolicyNotFoundException(inner) => Error::SslPolicyNotFoundException(inner),
+            crate::error::CreateListenerErrorKind::TargetGroupAssociationLimitException(inner) => Error::TargetGroupAssociationLimitException(inner),
+            crate::error::CreateListenerErrorKind::TargetGroupNotFoundException(inner) => Error::TargetGroupNotFoundException(inner),
+            crate::error::CreateListenerErrorKind::TooManyActionsException(inner) => Error::TooManyActionsException(inner),
+            crate::error::CreateListenerErrorKind::TooManyCertificatesException(inner) => Error::TooManyCertificatesException(inner),
+            crate::error::CreateListenerErrorKind::TooManyListenersException(inner) => Error::TooManyListenersException(inner),
+            crate::error::CreateListenerErrorKind::TooManyRegistrationsForTargetIdException(inner) => Error::TooManyRegistrationsForTargetIdException(inner),
+            crate::error::CreateListenerErrorKind::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
+            crate::error::CreateListenerErrorKind::TooManyTargetsException(inner) => Error::TooManyTargetsException(inner),
+            crate::error::CreateListenerErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException(inner) => Error::TooManyUniqueTargetGroupsPerLoadBalancerException(inner),
+            crate::error::CreateListenerErrorKind::UnsupportedProtocolException(inner) => Error::UnsupportedProtocolException(inner),
+            crate::error::CreateListenerErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -225,23 +255,58 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateLoadBalancerError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::CreateLoadBalancerErrorKind::AllocationIdNotFoundException(inner) => Error::AllocationIdNotFoundException(inner),
-                crate::error::CreateLoadBalancerErrorKind::AvailabilityZoneNotSupportedException(inner) => Error::AvailabilityZoneNotSupportedException(inner),
-                crate::error::CreateLoadBalancerErrorKind::DuplicateLoadBalancerNameException(inner) => Error::DuplicateLoadBalancerNameException(inner),
-                crate::error::CreateLoadBalancerErrorKind::DuplicateTagKeysException(inner) => Error::DuplicateTagKeysException(inner),
-                crate::error::CreateLoadBalancerErrorKind::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
-                crate::error::CreateLoadBalancerErrorKind::InvalidSchemeException(inner) => Error::InvalidSchemeException(inner),
-                crate::error::CreateLoadBalancerErrorKind::InvalidSecurityGroupException(inner) => Error::InvalidSecurityGroupException(inner),
-                crate::error::CreateLoadBalancerErrorKind::InvalidSubnetException(inner) => Error::InvalidSubnetException(inner),
-                crate::error::CreateLoadBalancerErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-                crate::error::CreateLoadBalancerErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-                crate::error::CreateLoadBalancerErrorKind::SubnetNotFoundException(inner) => Error::SubnetNotFoundException(inner),
-                crate::error::CreateLoadBalancerErrorKind::TooManyLoadBalancersException(inner) => Error::TooManyLoadBalancersException(inner),
-                crate::error::CreateLoadBalancerErrorKind::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
-                crate::error::CreateLoadBalancerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateLoadBalancerError> for Error {
+    fn from(err: crate::error::CreateLoadBalancerError) -> Self {
+        match err.kind {
+            crate::error::CreateLoadBalancerErrorKind::AllocationIdNotFoundException(inner) => {
+                Error::AllocationIdNotFoundException(inner)
+            }
+            crate::error::CreateLoadBalancerErrorKind::AvailabilityZoneNotSupportedException(
+                inner,
+            ) => Error::AvailabilityZoneNotSupportedException(inner),
+            crate::error::CreateLoadBalancerErrorKind::DuplicateLoadBalancerNameException(
+                inner,
+            ) => Error::DuplicateLoadBalancerNameException(inner),
+            crate::error::CreateLoadBalancerErrorKind::DuplicateTagKeysException(inner) => {
+                Error::DuplicateTagKeysException(inner)
+            }
+            crate::error::CreateLoadBalancerErrorKind::InvalidConfigurationRequestException(
+                inner,
+            ) => Error::InvalidConfigurationRequestException(inner),
+            crate::error::CreateLoadBalancerErrorKind::InvalidSchemeException(inner) => {
+                Error::InvalidSchemeException(inner)
+            }
+            crate::error::CreateLoadBalancerErrorKind::InvalidSecurityGroupException(inner) => {
+                Error::InvalidSecurityGroupException(inner)
+            }
+            crate::error::CreateLoadBalancerErrorKind::InvalidSubnetException(inner) => {
+                Error::InvalidSubnetException(inner)
+            }
+            crate::error::CreateLoadBalancerErrorKind::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::error::CreateLoadBalancerErrorKind::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::error::CreateLoadBalancerErrorKind::SubnetNotFoundException(inner) => {
+                Error::SubnetNotFoundException(inner)
+            }
+            crate::error::CreateLoadBalancerErrorKind::TooManyLoadBalancersException(inner) => {
+                Error::TooManyLoadBalancersException(inner)
+            }
+            crate::error::CreateLoadBalancerErrorKind::TooManyTagsException(inner) => {
+                Error::TooManyTagsException(inner)
+            }
+            crate::error::CreateLoadBalancerErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -251,25 +316,32 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateRuleError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::CreateRuleErrorKind::IncompatibleProtocolsException(inner) => Error::IncompatibleProtocolsException(inner),
-                crate::error::CreateRuleErrorKind::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
-                crate::error::CreateRuleErrorKind::InvalidLoadBalancerActionException(inner) => Error::InvalidLoadBalancerActionException(inner),
-                crate::error::CreateRuleErrorKind::ListenerNotFoundException(inner) => Error::ListenerNotFoundException(inner),
-                crate::error::CreateRuleErrorKind::PriorityInUseException(inner) => Error::PriorityInUseException(inner),
-                crate::error::CreateRuleErrorKind::TargetGroupAssociationLimitException(inner) => Error::TargetGroupAssociationLimitException(inner),
-                crate::error::CreateRuleErrorKind::TargetGroupNotFoundException(inner) => Error::TargetGroupNotFoundException(inner),
-                crate::error::CreateRuleErrorKind::TooManyActionsException(inner) => Error::TooManyActionsException(inner),
-                crate::error::CreateRuleErrorKind::TooManyRegistrationsForTargetIdException(inner) => Error::TooManyRegistrationsForTargetIdException(inner),
-                crate::error::CreateRuleErrorKind::TooManyRulesException(inner) => Error::TooManyRulesException(inner),
-                crate::error::CreateRuleErrorKind::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
-                crate::error::CreateRuleErrorKind::TooManyTargetGroupsException(inner) => Error::TooManyTargetGroupsException(inner),
-                crate::error::CreateRuleErrorKind::TooManyTargetsException(inner) => Error::TooManyTargetsException(inner),
-                crate::error::CreateRuleErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException(inner) => Error::TooManyUniqueTargetGroupsPerLoadBalancerException(inner),
-                crate::error::CreateRuleErrorKind::UnsupportedProtocolException(inner) => Error::UnsupportedProtocolException(inner),
-                crate::error::CreateRuleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateRuleError> for Error {
+    fn from(err: crate::error::CreateRuleError) -> Self {
+        match err.kind {
+            crate::error::CreateRuleErrorKind::IncompatibleProtocolsException(inner) => Error::IncompatibleProtocolsException(inner),
+            crate::error::CreateRuleErrorKind::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
+            crate::error::CreateRuleErrorKind::InvalidLoadBalancerActionException(inner) => Error::InvalidLoadBalancerActionException(inner),
+            crate::error::CreateRuleErrorKind::ListenerNotFoundException(inner) => Error::ListenerNotFoundException(inner),
+            crate::error::CreateRuleErrorKind::PriorityInUseException(inner) => Error::PriorityInUseException(inner),
+            crate::error::CreateRuleErrorKind::TargetGroupAssociationLimitException(inner) => Error::TargetGroupAssociationLimitException(inner),
+            crate::error::CreateRuleErrorKind::TargetGroupNotFoundException(inner) => Error::TargetGroupNotFoundException(inner),
+            crate::error::CreateRuleErrorKind::TooManyActionsException(inner) => Error::TooManyActionsException(inner),
+            crate::error::CreateRuleErrorKind::TooManyRegistrationsForTargetIdException(inner) => Error::TooManyRegistrationsForTargetIdException(inner),
+            crate::error::CreateRuleErrorKind::TooManyRulesException(inner) => Error::TooManyRulesException(inner),
+            crate::error::CreateRuleErrorKind::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
+            crate::error::CreateRuleErrorKind::TooManyTargetGroupsException(inner) => Error::TooManyTargetGroupsException(inner),
+            crate::error::CreateRuleErrorKind::TooManyTargetsException(inner) => Error::TooManyTargetsException(inner),
+            crate::error::CreateRuleErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException(inner) => Error::TooManyUniqueTargetGroupsPerLoadBalancerException(inner),
+            crate::error::CreateRuleErrorKind::UnsupportedProtocolException(inner) => Error::UnsupportedProtocolException(inner),
+            crate::error::CreateRuleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -281,24 +353,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateTargetGroupError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateTargetGroupErrorKind::DuplicateTargetGroupNameException(
-                    inner,
-                ) => Error::DuplicateTargetGroupNameException(inner),
-                crate::error::CreateTargetGroupErrorKind::InvalidConfigurationRequestException(
-                    inner,
-                ) => Error::InvalidConfigurationRequestException(inner),
-                crate::error::CreateTargetGroupErrorKind::TooManyTagsException(inner) => {
-                    Error::TooManyTagsException(inner)
-                }
-                crate::error::CreateTargetGroupErrorKind::TooManyTargetGroupsException(inner) => {
-                    Error::TooManyTargetGroupsException(inner)
-                }
-                crate::error::CreateTargetGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateTargetGroupError> for Error {
+    fn from(err: crate::error::CreateTargetGroupError) -> Self {
+        match err.kind {
+            crate::error::CreateTargetGroupErrorKind::DuplicateTargetGroupNameException(inner) => {
+                Error::DuplicateTargetGroupNameException(inner)
+            }
+            crate::error::CreateTargetGroupErrorKind::InvalidConfigurationRequestException(
+                inner,
+            ) => Error::InvalidConfigurationRequestException(inner),
+            crate::error::CreateTargetGroupErrorKind::TooManyTagsException(inner) => {
+                Error::TooManyTagsException(inner)
+            }
+            crate::error::CreateTargetGroupErrorKind::TooManyTargetGroupsException(inner) => {
+                Error::TooManyTargetGroupsException(inner)
+            }
+            crate::error::CreateTargetGroupErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -308,16 +387,25 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteListenerError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteListenerErrorKind::ListenerNotFoundException(inner) => {
-                    Error::ListenerNotFoundException(inner)
-                }
-                crate::error::DeleteListenerErrorKind::ResourceInUseException(inner) => {
-                    Error::ResourceInUseException(inner)
-                }
-                crate::error::DeleteListenerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteListenerError> for Error {
+    fn from(err: crate::error::DeleteListenerError) -> Self {
+        match err.kind {
+            crate::error::DeleteListenerErrorKind::ListenerNotFoundException(inner) => {
+                Error::ListenerNotFoundException(inner)
+            }
+            crate::error::DeleteListenerErrorKind::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::error::DeleteListenerErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -329,21 +417,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteLoadBalancerError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteLoadBalancerErrorKind::LoadBalancerNotFoundException(inner) => {
-                    Error::LoadBalancerNotFoundException(inner)
-                }
-                crate::error::DeleteLoadBalancerErrorKind::OperationNotPermittedException(
-                    inner,
-                ) => Error::OperationNotPermittedException(inner),
-                crate::error::DeleteLoadBalancerErrorKind::ResourceInUseException(inner) => {
-                    Error::ResourceInUseException(inner)
-                }
-                crate::error::DeleteLoadBalancerErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteLoadBalancerError> for Error {
+    fn from(err: crate::error::DeleteLoadBalancerError) -> Self {
+        match err.kind {
+            crate::error::DeleteLoadBalancerErrorKind::LoadBalancerNotFoundException(inner) => {
+                Error::LoadBalancerNotFoundException(inner)
+            }
+            crate::error::DeleteLoadBalancerErrorKind::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::error::DeleteLoadBalancerErrorKind::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::error::DeleteLoadBalancerErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -353,16 +448,25 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteRuleError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteRuleErrorKind::OperationNotPermittedException(inner) => {
-                    Error::OperationNotPermittedException(inner)
-                }
-                crate::error::DeleteRuleErrorKind::RuleNotFoundException(inner) => {
-                    Error::RuleNotFoundException(inner)
-                }
-                crate::error::DeleteRuleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteRuleError> for Error {
+    fn from(err: crate::error::DeleteRuleError) -> Self {
+        match err.kind {
+            crate::error::DeleteRuleErrorKind::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::error::DeleteRuleErrorKind::RuleNotFoundException(inner) => {
+                Error::RuleNotFoundException(inner)
+            }
+            crate::error::DeleteRuleErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -374,15 +478,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteTargetGroupError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteTargetGroupErrorKind::ResourceInUseException(inner) => {
-                    Error::ResourceInUseException(inner)
-                }
-                crate::error::DeleteTargetGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteTargetGroupError> for Error {
+    fn from(err: crate::error::DeleteTargetGroupError) -> Self {
+        match err.kind {
+            crate::error::DeleteTargetGroupErrorKind::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::error::DeleteTargetGroupErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -394,18 +505,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeregisterTargetsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeregisterTargetsErrorKind::InvalidTargetException(inner) => {
-                    Error::InvalidTargetException(inner)
-                }
-                crate::error::DeregisterTargetsErrorKind::TargetGroupNotFoundException(inner) => {
-                    Error::TargetGroupNotFoundException(inner)
-                }
-                crate::error::DeregisterTargetsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeregisterTargetsError> for Error {
+    fn from(err: crate::error::DeregisterTargetsError) -> Self {
+        match err.kind {
+            crate::error::DeregisterTargetsErrorKind::InvalidTargetException(inner) => {
+                Error::InvalidTargetException(inner)
+            }
+            crate::error::DeregisterTargetsErrorKind::TargetGroupNotFoundException(inner) => {
+                Error::TargetGroupNotFoundException(inner)
+            }
+            crate::error::DeregisterTargetsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -418,12 +536,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeAccountLimitsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeAccountLimitsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeAccountLimitsError> for Error {
+    fn from(err: crate::error::DescribeAccountLimitsError) -> Self {
+        match err.kind {
+            crate::error::DescribeAccountLimitsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -436,15 +561,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeListenerCertificatesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeListenerCertificatesErrorKind::ListenerNotFoundException(
-                    inner,
-                ) => Error::ListenerNotFoundException(inner),
-                crate::error::DescribeListenerCertificatesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeListenerCertificatesError> for Error {
+    fn from(err: crate::error::DescribeListenerCertificatesError) -> Self {
+        match err.kind {
+            crate::error::DescribeListenerCertificatesErrorKind::ListenerNotFoundException(
+                inner,
+            ) => Error::ListenerNotFoundException(inner),
+            crate::error::DescribeListenerCertificatesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -456,21 +588,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeListenersError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeListenersErrorKind::ListenerNotFoundException(inner) => {
-                    Error::ListenerNotFoundException(inner)
-                }
-                crate::error::DescribeListenersErrorKind::LoadBalancerNotFoundException(inner) => {
-                    Error::LoadBalancerNotFoundException(inner)
-                }
-                crate::error::DescribeListenersErrorKind::UnsupportedProtocolException(inner) => {
-                    Error::UnsupportedProtocolException(inner)
-                }
-                crate::error::DescribeListenersErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeListenersError> for Error {
+    fn from(err: crate::error::DescribeListenersError) -> Self {
+        match err.kind {
+            crate::error::DescribeListenersErrorKind::ListenerNotFoundException(inner) => {
+                Error::ListenerNotFoundException(inner)
+            }
+            crate::error::DescribeListenersErrorKind::LoadBalancerNotFoundException(inner) => {
+                Error::LoadBalancerNotFoundException(inner)
+            }
+            crate::error::DescribeListenersErrorKind::UnsupportedProtocolException(inner) => {
+                Error::UnsupportedProtocolException(inner)
+            }
+            crate::error::DescribeListenersErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -487,11 +626,18 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::DescribeLoadBalancerAttributesErrorKind::LoadBalancerNotFoundException(inner) => Error::LoadBalancerNotFoundException(inner),
-                crate::error::DescribeLoadBalancerAttributesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeLoadBalancerAttributesError> for Error {
+    fn from(err: crate::error::DescribeLoadBalancerAttributesError) -> Self {
+        match err.kind {
+            crate::error::DescribeLoadBalancerAttributesErrorKind::LoadBalancerNotFoundException(inner) => Error::LoadBalancerNotFoundException(inner),
+            crate::error::DescribeLoadBalancerAttributesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -504,15 +650,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeLoadBalancersError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeLoadBalancersErrorKind::LoadBalancerNotFoundException(
-                    inner,
-                ) => Error::LoadBalancerNotFoundException(inner),
-                crate::error::DescribeLoadBalancersErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeLoadBalancersError> for Error {
+    fn from(err: crate::error::DescribeLoadBalancersError) -> Self {
+        match err.kind {
+            crate::error::DescribeLoadBalancersErrorKind::LoadBalancerNotFoundException(inner) => {
+                Error::LoadBalancerNotFoundException(inner)
+            }
+            crate::error::DescribeLoadBalancersErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -522,19 +675,28 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeRulesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeRulesErrorKind::ListenerNotFoundException(inner) => {
-                    Error::ListenerNotFoundException(inner)
-                }
-                crate::error::DescribeRulesErrorKind::RuleNotFoundException(inner) => {
-                    Error::RuleNotFoundException(inner)
-                }
-                crate::error::DescribeRulesErrorKind::UnsupportedProtocolException(inner) => {
-                    Error::UnsupportedProtocolException(inner)
-                }
-                crate::error::DescribeRulesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeRulesError> for Error {
+    fn from(err: crate::error::DescribeRulesError) -> Self {
+        match err.kind {
+            crate::error::DescribeRulesErrorKind::ListenerNotFoundException(inner) => {
+                Error::ListenerNotFoundException(inner)
+            }
+            crate::error::DescribeRulesErrorKind::RuleNotFoundException(inner) => {
+                Error::RuleNotFoundException(inner)
+            }
+            crate::error::DescribeRulesErrorKind::UnsupportedProtocolException(inner) => {
+                Error::UnsupportedProtocolException(inner)
+            }
+            crate::error::DescribeRulesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -546,15 +708,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeSSLPoliciesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeSSLPoliciesErrorKind::SslPolicyNotFoundException(inner) => {
-                    Error::SslPolicyNotFoundException(inner)
-                }
-                crate::error::DescribeSSLPoliciesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeSSLPoliciesError> for Error {
+    fn from(err: crate::error::DescribeSSLPoliciesError) -> Self {
+        match err.kind {
+            crate::error::DescribeSSLPoliciesErrorKind::SslPolicyNotFoundException(inner) => {
+                Error::SslPolicyNotFoundException(inner)
+            }
+            crate::error::DescribeSSLPoliciesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -564,22 +733,31 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeTagsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeTagsErrorKind::ListenerNotFoundException(inner) => {
-                    Error::ListenerNotFoundException(inner)
-                }
-                crate::error::DescribeTagsErrorKind::LoadBalancerNotFoundException(inner) => {
-                    Error::LoadBalancerNotFoundException(inner)
-                }
-                crate::error::DescribeTagsErrorKind::RuleNotFoundException(inner) => {
-                    Error::RuleNotFoundException(inner)
-                }
-                crate::error::DescribeTagsErrorKind::TargetGroupNotFoundException(inner) => {
-                    Error::TargetGroupNotFoundException(inner)
-                }
-                crate::error::DescribeTagsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeTagsError> for Error {
+    fn from(err: crate::error::DescribeTagsError) -> Self {
+        match err.kind {
+            crate::error::DescribeTagsErrorKind::ListenerNotFoundException(inner) => {
+                Error::ListenerNotFoundException(inner)
+            }
+            crate::error::DescribeTagsErrorKind::LoadBalancerNotFoundException(inner) => {
+                Error::LoadBalancerNotFoundException(inner)
+            }
+            crate::error::DescribeTagsErrorKind::RuleNotFoundException(inner) => {
+                Error::RuleNotFoundException(inner)
+            }
+            crate::error::DescribeTagsErrorKind::TargetGroupNotFoundException(inner) => {
+                Error::TargetGroupNotFoundException(inner)
+            }
+            crate::error::DescribeTagsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -592,11 +770,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeTargetGroupAttributesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::DescribeTargetGroupAttributesErrorKind::TargetGroupNotFoundException(inner) => Error::TargetGroupNotFoundException(inner),
-                crate::error::DescribeTargetGroupAttributesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeTargetGroupAttributesError> for Error {
+    fn from(err: crate::error::DescribeTargetGroupAttributesError) -> Self {
+        match err.kind {
+            crate::error::DescribeTargetGroupAttributesErrorKind::TargetGroupNotFoundException(
+                inner,
+            ) => Error::TargetGroupNotFoundException(inner),
+            crate::error::DescribeTargetGroupAttributesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -609,18 +798,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeTargetGroupsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeTargetGroupsErrorKind::LoadBalancerNotFoundException(
-                    inner,
-                ) => Error::LoadBalancerNotFoundException(inner),
-                crate::error::DescribeTargetGroupsErrorKind::TargetGroupNotFoundException(
-                    inner,
-                ) => Error::TargetGroupNotFoundException(inner),
-                crate::error::DescribeTargetGroupsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeTargetGroupsError> for Error {
+    fn from(err: crate::error::DescribeTargetGroupsError) -> Self {
+        match err.kind {
+            crate::error::DescribeTargetGroupsErrorKind::LoadBalancerNotFoundException(inner) => {
+                Error::LoadBalancerNotFoundException(inner)
+            }
+            crate::error::DescribeTargetGroupsErrorKind::TargetGroupNotFoundException(inner) => {
+                Error::TargetGroupNotFoundException(inner)
+            }
+            crate::error::DescribeTargetGroupsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -633,21 +829,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeTargetHealthError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeTargetHealthErrorKind::HealthUnavailableException(inner) => {
-                    Error::HealthUnavailableException(inner)
-                }
-                crate::error::DescribeTargetHealthErrorKind::InvalidTargetException(inner) => {
-                    Error::InvalidTargetException(inner)
-                }
-                crate::error::DescribeTargetHealthErrorKind::TargetGroupNotFoundException(
-                    inner,
-                ) => Error::TargetGroupNotFoundException(inner),
-                crate::error::DescribeTargetHealthErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeTargetHealthError> for Error {
+    fn from(err: crate::error::DescribeTargetHealthError) -> Self {
+        match err.kind {
+            crate::error::DescribeTargetHealthErrorKind::HealthUnavailableException(inner) => {
+                Error::HealthUnavailableException(inner)
+            }
+            crate::error::DescribeTargetHealthErrorKind::InvalidTargetException(inner) => {
+                Error::InvalidTargetException(inner)
+            }
+            crate::error::DescribeTargetHealthErrorKind::TargetGroupNotFoundException(inner) => {
+                Error::TargetGroupNotFoundException(inner)
+            }
+            crate::error::DescribeTargetHealthErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -657,27 +860,34 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ModifyListenerError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::ModifyListenerErrorKind::AlpnPolicyNotSupportedException(inner) => Error::AlpnPolicyNotSupportedException(inner),
-                crate::error::ModifyListenerErrorKind::CertificateNotFoundException(inner) => Error::CertificateNotFoundException(inner),
-                crate::error::ModifyListenerErrorKind::DuplicateListenerException(inner) => Error::DuplicateListenerException(inner),
-                crate::error::ModifyListenerErrorKind::IncompatibleProtocolsException(inner) => Error::IncompatibleProtocolsException(inner),
-                crate::error::ModifyListenerErrorKind::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
-                crate::error::ModifyListenerErrorKind::InvalidLoadBalancerActionException(inner) => Error::InvalidLoadBalancerActionException(inner),
-                crate::error::ModifyListenerErrorKind::ListenerNotFoundException(inner) => Error::ListenerNotFoundException(inner),
-                crate::error::ModifyListenerErrorKind::SslPolicyNotFoundException(inner) => Error::SslPolicyNotFoundException(inner),
-                crate::error::ModifyListenerErrorKind::TargetGroupAssociationLimitException(inner) => Error::TargetGroupAssociationLimitException(inner),
-                crate::error::ModifyListenerErrorKind::TargetGroupNotFoundException(inner) => Error::TargetGroupNotFoundException(inner),
-                crate::error::ModifyListenerErrorKind::TooManyActionsException(inner) => Error::TooManyActionsException(inner),
-                crate::error::ModifyListenerErrorKind::TooManyCertificatesException(inner) => Error::TooManyCertificatesException(inner),
-                crate::error::ModifyListenerErrorKind::TooManyListenersException(inner) => Error::TooManyListenersException(inner),
-                crate::error::ModifyListenerErrorKind::TooManyRegistrationsForTargetIdException(inner) => Error::TooManyRegistrationsForTargetIdException(inner),
-                crate::error::ModifyListenerErrorKind::TooManyTargetsException(inner) => Error::TooManyTargetsException(inner),
-                crate::error::ModifyListenerErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException(inner) => Error::TooManyUniqueTargetGroupsPerLoadBalancerException(inner),
-                crate::error::ModifyListenerErrorKind::UnsupportedProtocolException(inner) => Error::UnsupportedProtocolException(inner),
-                crate::error::ModifyListenerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ModifyListenerError> for Error {
+    fn from(err: crate::error::ModifyListenerError) -> Self {
+        match err.kind {
+            crate::error::ModifyListenerErrorKind::AlpnPolicyNotSupportedException(inner) => Error::AlpnPolicyNotSupportedException(inner),
+            crate::error::ModifyListenerErrorKind::CertificateNotFoundException(inner) => Error::CertificateNotFoundException(inner),
+            crate::error::ModifyListenerErrorKind::DuplicateListenerException(inner) => Error::DuplicateListenerException(inner),
+            crate::error::ModifyListenerErrorKind::IncompatibleProtocolsException(inner) => Error::IncompatibleProtocolsException(inner),
+            crate::error::ModifyListenerErrorKind::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
+            crate::error::ModifyListenerErrorKind::InvalidLoadBalancerActionException(inner) => Error::InvalidLoadBalancerActionException(inner),
+            crate::error::ModifyListenerErrorKind::ListenerNotFoundException(inner) => Error::ListenerNotFoundException(inner),
+            crate::error::ModifyListenerErrorKind::SslPolicyNotFoundException(inner) => Error::SslPolicyNotFoundException(inner),
+            crate::error::ModifyListenerErrorKind::TargetGroupAssociationLimitException(inner) => Error::TargetGroupAssociationLimitException(inner),
+            crate::error::ModifyListenerErrorKind::TargetGroupNotFoundException(inner) => Error::TargetGroupNotFoundException(inner),
+            crate::error::ModifyListenerErrorKind::TooManyActionsException(inner) => Error::TooManyActionsException(inner),
+            crate::error::ModifyListenerErrorKind::TooManyCertificatesException(inner) => Error::TooManyCertificatesException(inner),
+            crate::error::ModifyListenerErrorKind::TooManyListenersException(inner) => Error::TooManyListenersException(inner),
+            crate::error::ModifyListenerErrorKind::TooManyRegistrationsForTargetIdException(inner) => Error::TooManyRegistrationsForTargetIdException(inner),
+            crate::error::ModifyListenerErrorKind::TooManyTargetsException(inner) => Error::TooManyTargetsException(inner),
+            crate::error::ModifyListenerErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException(inner) => Error::TooManyUniqueTargetGroupsPerLoadBalancerException(inner),
+            crate::error::ModifyListenerErrorKind::UnsupportedProtocolException(inner) => Error::UnsupportedProtocolException(inner),
+            crate::error::ModifyListenerErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -690,12 +900,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ModifyLoadBalancerAttributesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::ModifyLoadBalancerAttributesErrorKind::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
-                crate::error::ModifyLoadBalancerAttributesErrorKind::LoadBalancerNotFoundException(inner) => Error::LoadBalancerNotFoundException(inner),
-                crate::error::ModifyLoadBalancerAttributesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ModifyLoadBalancerAttributesError> for Error {
+    fn from(err: crate::error::ModifyLoadBalancerAttributesError) -> Self {
+        match err.kind {
+            crate::error::ModifyLoadBalancerAttributesErrorKind::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
+            crate::error::ModifyLoadBalancerAttributesErrorKind::LoadBalancerNotFoundException(inner) => Error::LoadBalancerNotFoundException(inner),
+            crate::error::ModifyLoadBalancerAttributesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -705,21 +922,28 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ModifyRuleError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::ModifyRuleErrorKind::IncompatibleProtocolsException(inner) => Error::IncompatibleProtocolsException(inner),
-                crate::error::ModifyRuleErrorKind::InvalidLoadBalancerActionException(inner) => Error::InvalidLoadBalancerActionException(inner),
-                crate::error::ModifyRuleErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-                crate::error::ModifyRuleErrorKind::RuleNotFoundException(inner) => Error::RuleNotFoundException(inner),
-                crate::error::ModifyRuleErrorKind::TargetGroupAssociationLimitException(inner) => Error::TargetGroupAssociationLimitException(inner),
-                crate::error::ModifyRuleErrorKind::TargetGroupNotFoundException(inner) => Error::TargetGroupNotFoundException(inner),
-                crate::error::ModifyRuleErrorKind::TooManyActionsException(inner) => Error::TooManyActionsException(inner),
-                crate::error::ModifyRuleErrorKind::TooManyRegistrationsForTargetIdException(inner) => Error::TooManyRegistrationsForTargetIdException(inner),
-                crate::error::ModifyRuleErrorKind::TooManyTargetsException(inner) => Error::TooManyTargetsException(inner),
-                crate::error::ModifyRuleErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException(inner) => Error::TooManyUniqueTargetGroupsPerLoadBalancerException(inner),
-                crate::error::ModifyRuleErrorKind::UnsupportedProtocolException(inner) => Error::UnsupportedProtocolException(inner),
-                crate::error::ModifyRuleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ModifyRuleError> for Error {
+    fn from(err: crate::error::ModifyRuleError) -> Self {
+        match err.kind {
+            crate::error::ModifyRuleErrorKind::IncompatibleProtocolsException(inner) => Error::IncompatibleProtocolsException(inner),
+            crate::error::ModifyRuleErrorKind::InvalidLoadBalancerActionException(inner) => Error::InvalidLoadBalancerActionException(inner),
+            crate::error::ModifyRuleErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::error::ModifyRuleErrorKind::RuleNotFoundException(inner) => Error::RuleNotFoundException(inner),
+            crate::error::ModifyRuleErrorKind::TargetGroupAssociationLimitException(inner) => Error::TargetGroupAssociationLimitException(inner),
+            crate::error::ModifyRuleErrorKind::TargetGroupNotFoundException(inner) => Error::TargetGroupNotFoundException(inner),
+            crate::error::ModifyRuleErrorKind::TooManyActionsException(inner) => Error::TooManyActionsException(inner),
+            crate::error::ModifyRuleErrorKind::TooManyRegistrationsForTargetIdException(inner) => Error::TooManyRegistrationsForTargetIdException(inner),
+            crate::error::ModifyRuleErrorKind::TooManyTargetsException(inner) => Error::TooManyTargetsException(inner),
+            crate::error::ModifyRuleErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException(inner) => Error::TooManyUniqueTargetGroupsPerLoadBalancerException(inner),
+            crate::error::ModifyRuleErrorKind::UnsupportedProtocolException(inner) => Error::UnsupportedProtocolException(inner),
+            crate::error::ModifyRuleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -731,18 +955,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ModifyTargetGroupError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ModifyTargetGroupErrorKind::InvalidConfigurationRequestException(
-                    inner,
-                ) => Error::InvalidConfigurationRequestException(inner),
-                crate::error::ModifyTargetGroupErrorKind::TargetGroupNotFoundException(inner) => {
-                    Error::TargetGroupNotFoundException(inner)
-                }
-                crate::error::ModifyTargetGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ModifyTargetGroupError> for Error {
+    fn from(err: crate::error::ModifyTargetGroupError) -> Self {
+        match err.kind {
+            crate::error::ModifyTargetGroupErrorKind::InvalidConfigurationRequestException(
+                inner,
+            ) => Error::InvalidConfigurationRequestException(inner),
+            crate::error::ModifyTargetGroupErrorKind::TargetGroupNotFoundException(inner) => {
+                Error::TargetGroupNotFoundException(inner)
+            }
+            crate::error::ModifyTargetGroupErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -755,12 +986,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ModifyTargetGroupAttributesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::ModifyTargetGroupAttributesErrorKind::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
-                crate::error::ModifyTargetGroupAttributesErrorKind::TargetGroupNotFoundException(inner) => Error::TargetGroupNotFoundException(inner),
-                crate::error::ModifyTargetGroupAttributesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ModifyTargetGroupAttributesError> for Error {
+    fn from(err: crate::error::ModifyTargetGroupAttributesError) -> Self {
+        match err.kind {
+            crate::error::ModifyTargetGroupAttributesErrorKind::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
+            crate::error::ModifyTargetGroupAttributesErrorKind::TargetGroupNotFoundException(inner) => Error::TargetGroupNotFoundException(inner),
+            crate::error::ModifyTargetGroupAttributesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -770,14 +1008,31 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::RegisterTargetsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::RegisterTargetsErrorKind::InvalidTargetException(inner) => Error::InvalidTargetException(inner),
-                crate::error::RegisterTargetsErrorKind::TargetGroupNotFoundException(inner) => Error::TargetGroupNotFoundException(inner),
-                crate::error::RegisterTargetsErrorKind::TooManyRegistrationsForTargetIdException(inner) => Error::TooManyRegistrationsForTargetIdException(inner),
-                crate::error::RegisterTargetsErrorKind::TooManyTargetsException(inner) => Error::TooManyTargetsException(inner),
-                crate::error::RegisterTargetsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::RegisterTargetsError> for Error {
+    fn from(err: crate::error::RegisterTargetsError) -> Self {
+        match err.kind {
+            crate::error::RegisterTargetsErrorKind::InvalidTargetException(inner) => {
+                Error::InvalidTargetException(inner)
+            }
+            crate::error::RegisterTargetsErrorKind::TargetGroupNotFoundException(inner) => {
+                Error::TargetGroupNotFoundException(inner)
+            }
+            crate::error::RegisterTargetsErrorKind::TooManyRegistrationsForTargetIdException(
+                inner,
+            ) => Error::TooManyRegistrationsForTargetIdException(inner),
+            crate::error::RegisterTargetsErrorKind::TooManyTargetsException(inner) => {
+                Error::TooManyTargetsException(inner)
+            }
+            crate::error::RegisterTargetsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -790,12 +1045,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::RemoveListenerCertificatesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::RemoveListenerCertificatesErrorKind::ListenerNotFoundException(inner) => Error::ListenerNotFoundException(inner),
-                crate::error::RemoveListenerCertificatesErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-                crate::error::RemoveListenerCertificatesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::RemoveListenerCertificatesError> for Error {
+    fn from(err: crate::error::RemoveListenerCertificatesError) -> Self {
+        match err.kind {
+            crate::error::RemoveListenerCertificatesErrorKind::ListenerNotFoundException(inner) => {
+                Error::ListenerNotFoundException(inner)
+            }
+            crate::error::RemoveListenerCertificatesErrorKind::OperationNotPermittedException(
+                inner,
+            ) => Error::OperationNotPermittedException(inner),
+            crate::error::RemoveListenerCertificatesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -805,25 +1073,34 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::RemoveTagsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::RemoveTagsErrorKind::ListenerNotFoundException(inner) => {
-                    Error::ListenerNotFoundException(inner)
-                }
-                crate::error::RemoveTagsErrorKind::LoadBalancerNotFoundException(inner) => {
-                    Error::LoadBalancerNotFoundException(inner)
-                }
-                crate::error::RemoveTagsErrorKind::RuleNotFoundException(inner) => {
-                    Error::RuleNotFoundException(inner)
-                }
-                crate::error::RemoveTagsErrorKind::TargetGroupNotFoundException(inner) => {
-                    Error::TargetGroupNotFoundException(inner)
-                }
-                crate::error::RemoveTagsErrorKind::TooManyTagsException(inner) => {
-                    Error::TooManyTagsException(inner)
-                }
-                crate::error::RemoveTagsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::RemoveTagsError> for Error {
+    fn from(err: crate::error::RemoveTagsError) -> Self {
+        match err.kind {
+            crate::error::RemoveTagsErrorKind::ListenerNotFoundException(inner) => {
+                Error::ListenerNotFoundException(inner)
+            }
+            crate::error::RemoveTagsErrorKind::LoadBalancerNotFoundException(inner) => {
+                Error::LoadBalancerNotFoundException(inner)
+            }
+            crate::error::RemoveTagsErrorKind::RuleNotFoundException(inner) => {
+                Error::RuleNotFoundException(inner)
+            }
+            crate::error::RemoveTagsErrorKind::TargetGroupNotFoundException(inner) => {
+                Error::TargetGroupNotFoundException(inner)
+            }
+            crate::error::RemoveTagsErrorKind::TooManyTagsException(inner) => {
+                Error::TooManyTagsException(inner)
+            }
+            crate::error::RemoveTagsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -835,21 +1112,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::SetIpAddressTypeError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SetIpAddressTypeErrorKind::InvalidConfigurationRequestException(
-                    inner,
-                ) => Error::InvalidConfigurationRequestException(inner),
-                crate::error::SetIpAddressTypeErrorKind::InvalidSubnetException(inner) => {
-                    Error::InvalidSubnetException(inner)
-                }
-                crate::error::SetIpAddressTypeErrorKind::LoadBalancerNotFoundException(inner) => {
-                    Error::LoadBalancerNotFoundException(inner)
-                }
-                crate::error::SetIpAddressTypeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::SetIpAddressTypeError> for Error {
+    fn from(err: crate::error::SetIpAddressTypeError) -> Self {
+        match err.kind {
+            crate::error::SetIpAddressTypeErrorKind::InvalidConfigurationRequestException(
+                inner,
+            ) => Error::InvalidConfigurationRequestException(inner),
+            crate::error::SetIpAddressTypeErrorKind::InvalidSubnetException(inner) => {
+                Error::InvalidSubnetException(inner)
+            }
+            crate::error::SetIpAddressTypeErrorKind::LoadBalancerNotFoundException(inner) => {
+                Error::LoadBalancerNotFoundException(inner)
+            }
+            crate::error::SetIpAddressTypeErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -861,21 +1145,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::SetRulePrioritiesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SetRulePrioritiesErrorKind::OperationNotPermittedException(inner) => {
-                    Error::OperationNotPermittedException(inner)
-                }
-                crate::error::SetRulePrioritiesErrorKind::PriorityInUseException(inner) => {
-                    Error::PriorityInUseException(inner)
-                }
-                crate::error::SetRulePrioritiesErrorKind::RuleNotFoundException(inner) => {
-                    Error::RuleNotFoundException(inner)
-                }
-                crate::error::SetRulePrioritiesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::SetRulePrioritiesError> for Error {
+    fn from(err: crate::error::SetRulePrioritiesError) -> Self {
+        match err.kind {
+            crate::error::SetRulePrioritiesErrorKind::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::error::SetRulePrioritiesErrorKind::PriorityInUseException(inner) => {
+                Error::PriorityInUseException(inner)
+            }
+            crate::error::SetRulePrioritiesErrorKind::RuleNotFoundException(inner) => {
+                Error::RuleNotFoundException(inner)
+            }
+            crate::error::SetRulePrioritiesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -887,21 +1178,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::SetSecurityGroupsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SetSecurityGroupsErrorKind::InvalidConfigurationRequestException(
-                    inner,
-                ) => Error::InvalidConfigurationRequestException(inner),
-                crate::error::SetSecurityGroupsErrorKind::InvalidSecurityGroupException(inner) => {
-                    Error::InvalidSecurityGroupException(inner)
-                }
-                crate::error::SetSecurityGroupsErrorKind::LoadBalancerNotFoundException(inner) => {
-                    Error::LoadBalancerNotFoundException(inner)
-                }
-                crate::error::SetSecurityGroupsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::SetSecurityGroupsError> for Error {
+    fn from(err: crate::error::SetSecurityGroupsError) -> Self {
+        match err.kind {
+            crate::error::SetSecurityGroupsErrorKind::InvalidConfigurationRequestException(
+                inner,
+            ) => Error::InvalidConfigurationRequestException(inner),
+            crate::error::SetSecurityGroupsErrorKind::InvalidSecurityGroupException(inner) => {
+                Error::InvalidSecurityGroupException(inner)
+            }
+            crate::error::SetSecurityGroupsErrorKind::LoadBalancerNotFoundException(inner) => {
+                Error::LoadBalancerNotFoundException(inner)
+            }
+            crate::error::SetSecurityGroupsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -911,28 +1209,37 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::SetSubnetsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SetSubnetsErrorKind::AllocationIdNotFoundException(inner) => {
-                    Error::AllocationIdNotFoundException(inner)
-                }
-                crate::error::SetSubnetsErrorKind::AvailabilityZoneNotSupportedException(inner) => {
-                    Error::AvailabilityZoneNotSupportedException(inner)
-                }
-                crate::error::SetSubnetsErrorKind::InvalidConfigurationRequestException(inner) => {
-                    Error::InvalidConfigurationRequestException(inner)
-                }
-                crate::error::SetSubnetsErrorKind::InvalidSubnetException(inner) => {
-                    Error::InvalidSubnetException(inner)
-                }
-                crate::error::SetSubnetsErrorKind::LoadBalancerNotFoundException(inner) => {
-                    Error::LoadBalancerNotFoundException(inner)
-                }
-                crate::error::SetSubnetsErrorKind::SubnetNotFoundException(inner) => {
-                    Error::SubnetNotFoundException(inner)
-                }
-                crate::error::SetSubnetsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::SetSubnetsError> for Error {
+    fn from(err: crate::error::SetSubnetsError) -> Self {
+        match err.kind {
+            crate::error::SetSubnetsErrorKind::AllocationIdNotFoundException(inner) => {
+                Error::AllocationIdNotFoundException(inner)
+            }
+            crate::error::SetSubnetsErrorKind::AvailabilityZoneNotSupportedException(inner) => {
+                Error::AvailabilityZoneNotSupportedException(inner)
+            }
+            crate::error::SetSubnetsErrorKind::InvalidConfigurationRequestException(inner) => {
+                Error::InvalidConfigurationRequestException(inner)
+            }
+            crate::error::SetSubnetsErrorKind::InvalidSubnetException(inner) => {
+                Error::InvalidSubnetException(inner)
+            }
+            crate::error::SetSubnetsErrorKind::LoadBalancerNotFoundException(inner) => {
+                Error::LoadBalancerNotFoundException(inner)
+            }
+            crate::error::SetSubnetsErrorKind::SubnetNotFoundException(inner) => {
+                Error::SubnetNotFoundException(inner)
+            }
+            crate::error::SetSubnetsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }

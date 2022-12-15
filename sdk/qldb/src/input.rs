@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod cancel_journal_kinesis_stream_input {
 
     /// A builder for [`CancelJournalKinesisStreamInput`](crate::input::CancelJournalKinesisStreamInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ledger_name: std::option::Option<std::string::String>,
         pub(crate) stream_id: std::option::Option<std::string::String>,
@@ -36,7 +36,7 @@ pub mod cancel_journal_kinesis_stream_input {
             self,
         ) -> Result<
             crate::input::CancelJournalKinesisStreamInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CancelJournalKinesisStreamInput {
                 ledger_name: self.ledger_name,
@@ -58,40 +58,50 @@ impl CancelJournalKinesisStreamInput {
             crate::operation::CancelJournalKinesisStream,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CancelJournalKinesisStreamInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.ledger_name;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "ledger_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let ledger_name = aws_smithy_http::label::fmt_string(input_1, false);
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "ledger_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let ledger_name = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if ledger_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "ledger_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "ledger_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_2 = &_input.stream_id;
-                let input_2 = input_2.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "stream_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let stream_id = aws_smithy_http::label::fmt_string(input_2, false);
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "stream_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let stream_id = aws_smithy_http::label::fmt_string(
+                    input_2,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if stream_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "stream_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "stream_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -106,8 +116,10 @@ impl CancelJournalKinesisStreamInput {
             fn update_http_builder(
                 input: &crate::input::CancelJournalKinesisStreamInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -177,7 +189,7 @@ impl CancelJournalKinesisStreamInput {
 pub mod create_ledger_input {
 
     /// A builder for [`CreateLedgerInput`](crate::input::CreateLedgerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -311,7 +323,7 @@ pub mod create_ledger_input {
         /// Consumes the builder and constructs a [`CreateLedgerInput`](crate::input::CreateLedgerInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateLedgerInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateLedgerInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateLedgerInput {
                 name: self.name,
@@ -336,13 +348,13 @@ impl CreateLedgerInput {
             crate::operation::CreateLedger,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateLedgerInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/ledgers").expect("formatting should succeed");
                 Ok(())
             }
@@ -350,8 +362,10 @@ impl CreateLedgerInput {
             fn update_http_builder(
                 input: &crate::input::CreateLedgerInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -435,7 +449,7 @@ impl CreateLedgerInput {
 pub mod delete_ledger_input {
 
     /// A builder for [`DeleteLedgerInput`](crate::input::DeleteLedgerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -453,7 +467,7 @@ pub mod delete_ledger_input {
         /// Consumes the builder and constructs a [`DeleteLedgerInput`](crate::input::DeleteLedgerInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteLedgerInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteLedgerInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteLedgerInput { name: self.name })
         }
@@ -472,26 +486,31 @@ impl DeleteLedgerInput {
             crate::operation::DeleteLedger,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteLedgerInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_3 = &_input.name;
-                let input_3 = input_3.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_3, false);
+                let input_3 = input_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_3,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/ledgers/{Name}", Name = name).expect("formatting should succeed");
                 Ok(())
@@ -500,8 +519,10 @@ impl DeleteLedgerInput {
             fn update_http_builder(
                 input: &crate::input::DeleteLedgerInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -571,7 +592,7 @@ impl DeleteLedgerInput {
 pub mod describe_journal_kinesis_stream_input {
 
     /// A builder for [`DescribeJournalKinesisStreamInput`](crate::input::DescribeJournalKinesisStreamInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ledger_name: std::option::Option<std::string::String>,
         pub(crate) stream_id: std::option::Option<std::string::String>,
@@ -602,7 +623,7 @@ pub mod describe_journal_kinesis_stream_input {
             self,
         ) -> Result<
             crate::input::DescribeJournalKinesisStreamInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeJournalKinesisStreamInput {
                 ledger_name: self.ledger_name,
@@ -624,40 +645,50 @@ impl DescribeJournalKinesisStreamInput {
             crate::operation::DescribeJournalKinesisStream,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeJournalKinesisStreamInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_4 = &_input.ledger_name;
-                let input_4 = input_4.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "ledger_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let ledger_name = aws_smithy_http::label::fmt_string(input_4, false);
+                let input_4 = input_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "ledger_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let ledger_name = aws_smithy_http::label::fmt_string(
+                    input_4,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if ledger_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "ledger_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "ledger_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_5 = &_input.stream_id;
-                let input_5 = input_5.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "stream_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let stream_id = aws_smithy_http::label::fmt_string(input_5, false);
+                let input_5 = input_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "stream_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let stream_id = aws_smithy_http::label::fmt_string(
+                    input_5,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if stream_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "stream_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "stream_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -672,8 +703,10 @@ impl DescribeJournalKinesisStreamInput {
             fn update_http_builder(
                 input: &crate::input::DescribeJournalKinesisStreamInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -743,7 +776,7 @@ impl DescribeJournalKinesisStreamInput {
 pub mod describe_journal_s3_export_input {
 
     /// A builder for [`DescribeJournalS3ExportInput`](crate::input::DescribeJournalS3ExportInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) export_id: std::option::Option<std::string::String>,
@@ -774,7 +807,7 @@ pub mod describe_journal_s3_export_input {
             self,
         ) -> Result<
             crate::input::DescribeJournalS3ExportInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeJournalS3ExportInput {
                 name: self.name,
@@ -796,40 +829,50 @@ impl DescribeJournalS3ExportInput {
             crate::operation::DescribeJournalS3Export,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeJournalS3ExportInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_6 = &_input.name;
-                let input_6 = input_6.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_6, false);
+                let input_6 = input_6.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_6,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_7 = &_input.export_id;
-                let input_7 = input_7.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "export_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let export_id = aws_smithy_http::label::fmt_string(input_7, false);
+                let input_7 = input_7.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "export_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let export_id = aws_smithy_http::label::fmt_string(
+                    input_7,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if export_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "export_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "export_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -844,8 +887,10 @@ impl DescribeJournalS3ExportInput {
             fn update_http_builder(
                 input: &crate::input::DescribeJournalS3ExportInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -915,7 +960,7 @@ impl DescribeJournalS3ExportInput {
 pub mod describe_ledger_input {
 
     /// A builder for [`DescribeLedgerInput`](crate::input::DescribeLedgerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -933,7 +978,7 @@ pub mod describe_ledger_input {
         /// Consumes the builder and constructs a [`DescribeLedgerInput`](crate::input::DescribeLedgerInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeLedgerInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeLedgerInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeLedgerInput { name: self.name })
         }
@@ -952,26 +997,31 @@ impl DescribeLedgerInput {
             crate::operation::DescribeLedger,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeLedgerInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_8 = &_input.name;
-                let input_8 = input_8.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_8, false);
+                let input_8 = input_8.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_8,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/ledgers/{Name}", Name = name).expect("formatting should succeed");
                 Ok(())
@@ -980,8 +1030,10 @@ impl DescribeLedgerInput {
             fn update_http_builder(
                 input: &crate::input::DescribeLedgerInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1051,7 +1103,7 @@ impl DescribeLedgerInput {
 pub mod export_journal_to_s3_input {
 
     /// A builder for [`ExportJournalToS3Input`](crate::input::ExportJournalToS3Input).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) inclusive_start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1160,8 +1212,10 @@ pub mod export_journal_to_s3_input {
         /// Consumes the builder and constructs a [`ExportJournalToS3Input`](crate::input::ExportJournalToS3Input).
         pub fn build(
             self,
-        ) -> Result<crate::input::ExportJournalToS3Input, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ExportJournalToS3Input,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ExportJournalToS3Input {
                 name: self.name,
                 inclusive_start_time: self.inclusive_start_time,
@@ -1186,26 +1240,31 @@ impl ExportJournalToS3Input {
             crate::operation::ExportJournalToS3,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ExportJournalToS3Input,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_9 = &_input.name;
-                let input_9 = input_9.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_9, false);
+                let input_9 = input_9.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_9,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/ledgers/{Name}/journal-s3-exports", Name = name)
                     .expect("formatting should succeed");
@@ -1215,8 +1274,10 @@ impl ExportJournalToS3Input {
             fn update_http_builder(
                 input: &crate::input::ExportJournalToS3Input,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1300,7 +1361,7 @@ impl ExportJournalToS3Input {
 pub mod get_block_input {
 
     /// A builder for [`GetBlockInput`](crate::input::GetBlockInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) block_address: std::option::Option<crate::model::ValueHolder>,
@@ -1350,12 +1411,22 @@ pub mod get_block_input {
         /// Consumes the builder and constructs a [`GetBlockInput`](crate::input::GetBlockInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBlockInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::GetBlockInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::GetBlockInput {
                 name: self.name,
                 block_address: self.block_address,
                 digest_tip_address: self.digest_tip_address,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("block_address", &"*** Sensitive Data Redacted ***");
+            formatter.field("digest_tip_address", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -1372,26 +1443,31 @@ impl GetBlockInput {
             crate::operation::GetBlock,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBlockInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_10 = &_input.name;
-                let input_10 = input_10.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_10, false);
+                let input_10 = input_10.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_10,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/ledgers/{Name}/block", Name = name)
                     .expect("formatting should succeed");
@@ -1401,8 +1477,10 @@ impl GetBlockInput {
             fn update_http_builder(
                 input: &crate::input::GetBlockInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1483,7 +1561,7 @@ impl GetBlockInput {
 pub mod get_digest_input {
 
     /// A builder for [`GetDigestInput`](crate::input::GetDigestInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -1501,7 +1579,8 @@ pub mod get_digest_input {
         /// Consumes the builder and constructs a [`GetDigestInput`](crate::input::GetDigestInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetDigestInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::GetDigestInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::GetDigestInput { name: self.name })
         }
     }
@@ -1519,26 +1598,31 @@ impl GetDigestInput {
             crate::operation::GetDigest,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetDigestInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_11 = &_input.name;
-                let input_11 = input_11.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_11, false);
+                let input_11 = input_11.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_11,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/ledgers/{Name}/digest", Name = name)
                     .expect("formatting should succeed");
@@ -1548,8 +1632,10 @@ impl GetDigestInput {
             fn update_http_builder(
                 input: &crate::input::GetDigestInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1617,7 +1703,7 @@ impl GetDigestInput {
 pub mod get_revision_input {
 
     /// A builder for [`GetRevisionInput`](crate::input::GetRevisionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) block_address: std::option::Option<crate::model::ValueHolder>,
@@ -1678,7 +1764,7 @@ pub mod get_revision_input {
         /// Consumes the builder and constructs a [`GetRevisionInput`](crate::input::GetRevisionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetRevisionInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetRevisionInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetRevisionInput {
                 name: self.name,
@@ -1686,6 +1772,16 @@ pub mod get_revision_input {
                 document_id: self.document_id,
                 digest_tip_address: self.digest_tip_address,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("block_address", &"*** Sensitive Data Redacted ***");
+            formatter.field("document_id", &self.document_id);
+            formatter.field("digest_tip_address", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -1702,26 +1798,31 @@ impl GetRevisionInput {
             crate::operation::GetRevision,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetRevisionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_12 = &_input.name;
-                let input_12 = input_12.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_12, false);
+                let input_12 = input_12.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_12,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/ledgers/{Name}/revision", Name = name)
                     .expect("formatting should succeed");
@@ -1731,8 +1832,10 @@ impl GetRevisionInput {
             fn update_http_builder(
                 input: &crate::input::GetRevisionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1816,7 +1919,7 @@ impl GetRevisionInput {
 pub mod list_journal_kinesis_streams_for_ledger_input {
 
     /// A builder for [`ListJournalKinesisStreamsForLedgerInput`](crate::input::ListJournalKinesisStreamsForLedgerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ledger_name: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -1858,7 +1961,7 @@ pub mod list_journal_kinesis_streams_for_ledger_input {
             self,
         ) -> Result<
             crate::input::ListJournalKinesisStreamsForLedgerInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListJournalKinesisStreamsForLedgerInput {
                 ledger_name: self.ledger_name,
@@ -1881,26 +1984,31 @@ impl ListJournalKinesisStreamsForLedgerInput {
             crate::operation::ListJournalKinesisStreamsForLedger,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListJournalKinesisStreamsForLedgerInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_13 = &_input.ledger_name;
-                let input_13 = input_13.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "ledger_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let ledger_name = aws_smithy_http::label::fmt_string(input_13, false);
+                let input_13 = input_13.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "ledger_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let ledger_name = aws_smithy_http::label::fmt_string(
+                    input_13,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if ledger_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "ledger_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "ledger_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1913,16 +2021,20 @@ impl ListJournalKinesisStreamsForLedgerInput {
             fn uri_query(
                 _input: &crate::input::ListJournalKinesisStreamsForLedgerInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_14) = &_input.max_results {
-                    query.push_kv(
-                        "max_results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_14).encode(),
-                    );
+                    if *inner_14 != 0 {
+                        query.push_kv(
+                            "max_results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_14).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_15) = &_input.next_token {
-                    query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_15));
+                    {
+                        query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_15));
+                    }
                 }
                 Ok(())
             }
@@ -1930,8 +2042,10 @@ impl ListJournalKinesisStreamsForLedgerInput {
             fn update_http_builder(
                 input: &crate::input::ListJournalKinesisStreamsForLedgerInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2002,7 +2116,7 @@ impl ListJournalKinesisStreamsForLedgerInput {
 pub mod list_journal_s3_exports_input {
 
     /// A builder for [`ListJournalS3ExportsInput`](crate::input::ListJournalS3ExportsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2031,8 +2145,10 @@ pub mod list_journal_s3_exports_input {
         /// Consumes the builder and constructs a [`ListJournalS3ExportsInput`](crate::input::ListJournalS3ExportsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListJournalS3ExportsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListJournalS3ExportsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListJournalS3ExportsInput {
                 max_results: self.max_results,
                 next_token: self.next_token,
@@ -2053,29 +2169,33 @@ impl ListJournalS3ExportsInput {
             crate::operation::ListJournalS3Exports,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListJournalS3ExportsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/journal-s3-exports").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListJournalS3ExportsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_16) = &_input.max_results {
-                    query.push_kv(
-                        "max_results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_16).encode(),
-                    );
+                    if *inner_16 != 0 {
+                        query.push_kv(
+                            "max_results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_16).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_17) = &_input.next_token {
-                    query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_17));
+                    {
+                        query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_17));
+                    }
                 }
                 Ok(())
             }
@@ -2083,8 +2203,10 @@ impl ListJournalS3ExportsInput {
             fn update_http_builder(
                 input: &crate::input::ListJournalS3ExportsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2155,7 +2277,7 @@ impl ListJournalS3ExportsInput {
 pub mod list_journal_s3_exports_for_ledger_input {
 
     /// A builder for [`ListJournalS3ExportsForLedgerInput`](crate::input::ListJournalS3ExportsForLedgerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2197,7 +2319,7 @@ pub mod list_journal_s3_exports_for_ledger_input {
             self,
         ) -> Result<
             crate::input::ListJournalS3ExportsForLedgerInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListJournalS3ExportsForLedgerInput {
                 name: self.name,
@@ -2220,26 +2342,31 @@ impl ListJournalS3ExportsForLedgerInput {
             crate::operation::ListJournalS3ExportsForLedger,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListJournalS3ExportsForLedgerInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_18 = &_input.name;
-                let input_18 = input_18.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_18, false);
+                let input_18 = input_18.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_18,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/ledgers/{Name}/journal-s3-exports", Name = name)
                     .expect("formatting should succeed");
@@ -2248,16 +2375,20 @@ impl ListJournalS3ExportsForLedgerInput {
             fn uri_query(
                 _input: &crate::input::ListJournalS3ExportsForLedgerInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_19) = &_input.max_results {
-                    query.push_kv(
-                        "max_results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_19).encode(),
-                    );
+                    if *inner_19 != 0 {
+                        query.push_kv(
+                            "max_results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_19).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_20) = &_input.next_token {
-                    query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_20));
+                    {
+                        query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_20));
+                    }
                 }
                 Ok(())
             }
@@ -2265,8 +2396,10 @@ impl ListJournalS3ExportsForLedgerInput {
             fn update_http_builder(
                 input: &crate::input::ListJournalS3ExportsForLedgerInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2337,7 +2470,7 @@ impl ListJournalS3ExportsForLedgerInput {
 pub mod list_ledgers_input {
 
     /// A builder for [`ListLedgersInput`](crate::input::ListLedgersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2366,7 +2499,7 @@ pub mod list_ledgers_input {
         /// Consumes the builder and constructs a [`ListLedgersInput`](crate::input::ListLedgersInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListLedgersInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListLedgersInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListLedgersInput {
                 max_results: self.max_results,
@@ -2388,29 +2521,33 @@ impl ListLedgersInput {
             crate::operation::ListLedgers,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListLedgersInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/ledgers").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListLedgersInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_21) = &_input.max_results {
-                    query.push_kv(
-                        "max_results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_21).encode(),
-                    );
+                    if *inner_21 != 0 {
+                        query.push_kv(
+                            "max_results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_21).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_22) = &_input.next_token {
-                    query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_22));
+                    {
+                        query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_22));
+                    }
                 }
                 Ok(())
             }
@@ -2418,8 +2555,10 @@ impl ListLedgersInput {
             fn update_http_builder(
                 input: &crate::input::ListLedgersInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2490,7 +2629,7 @@ impl ListLedgersInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -2510,8 +2649,10 @@ pub mod list_tags_for_resource_input {
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
             })
@@ -2531,26 +2672,31 @@ impl ListTagsForResourceInput {
             crate::operation::ListTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_23 = &_input.resource_arn;
-                let input_23 = input_23.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_23, false);
+                let input_23 = input_23.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_23,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
                     .expect("formatting should succeed");
@@ -2560,8 +2706,10 @@ impl ListTagsForResourceInput {
             fn update_http_builder(
                 input: &crate::input::ListTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2631,7 +2779,7 @@ impl ListTagsForResourceInput {
 pub mod stream_journal_to_kinesis_input {
 
     /// A builder for [`StreamJournalToKinesisInput`](crate::input::StreamJournalToKinesisInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ledger_name: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -2757,8 +2905,10 @@ pub mod stream_journal_to_kinesis_input {
         /// Consumes the builder and constructs a [`StreamJournalToKinesisInput`](crate::input::StreamJournalToKinesisInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StreamJournalToKinesisInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::StreamJournalToKinesisInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::StreamJournalToKinesisInput {
                 ledger_name: self.ledger_name,
                 role_arn: self.role_arn,
@@ -2784,26 +2934,31 @@ impl StreamJournalToKinesisInput {
             crate::operation::StreamJournalToKinesis,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StreamJournalToKinesisInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_24 = &_input.ledger_name;
-                let input_24 = input_24.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "ledger_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let ledger_name = aws_smithy_http::label::fmt_string(input_24, false);
+                let input_24 = input_24.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "ledger_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let ledger_name = aws_smithy_http::label::fmt_string(
+                    input_24,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if ledger_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "ledger_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "ledger_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2817,8 +2972,10 @@ impl StreamJournalToKinesisInput {
             fn update_http_builder(
                 input: &crate::input::StreamJournalToKinesisInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2904,7 +3061,7 @@ impl StreamJournalToKinesisInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -2958,7 +3115,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
@@ -2980,26 +3137,31 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_25 = &_input.resource_arn;
-                let input_25 = input_25.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_25, false);
+                let input_25 = input_25.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_25,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
                     .expect("formatting should succeed");
@@ -3009,8 +3171,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3094,7 +3258,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3134,7 +3298,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
@@ -3156,26 +3320,31 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_26 = &_input.resource_arn;
-                let input_26 = input_26.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_26, false);
+                let input_26 = input_26.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_26,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
                     .expect("formatting should succeed");
@@ -3184,12 +3353,17 @@ impl UntagResourceInput {
             fn uri_query(
                 _input: &crate::input::UntagResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_27) = &_input.tag_keys {
-                    for inner_28 in inner_27 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_28));
-                    }
+                let inner_27 = &_input.tag_keys;
+                let inner_27 = inner_27.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_28 in inner_27 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_28));
                 }
                 Ok(())
             }
@@ -3197,8 +3371,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3269,7 +3445,7 @@ impl UntagResourceInput {
 pub mod update_ledger_input {
 
     /// A builder for [`UpdateLedgerInput`](crate::input::UpdateLedgerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) deletion_protection: std::option::Option<bool>,
@@ -3341,7 +3517,7 @@ pub mod update_ledger_input {
         /// Consumes the builder and constructs a [`UpdateLedgerInput`](crate::input::UpdateLedgerInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateLedgerInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateLedgerInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateLedgerInput {
                 name: self.name,
@@ -3364,26 +3540,31 @@ impl UpdateLedgerInput {
             crate::operation::UpdateLedger,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateLedgerInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_29 = &_input.name;
-                let input_29 = input_29.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_29, false);
+                let input_29 = input_29.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_29,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/ledgers/{Name}", Name = name).expect("formatting should succeed");
                 Ok(())
@@ -3392,8 +3573,10 @@ impl UpdateLedgerInput {
             fn update_http_builder(
                 input: &crate::input::UpdateLedgerInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PATCH").uri(uri))
@@ -3477,7 +3660,7 @@ impl UpdateLedgerInput {
 pub mod update_ledger_permissions_mode_input {
 
     /// A builder for [`UpdateLedgerPermissionsModeInput`](crate::input::UpdateLedgerPermissionsModeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) permissions_mode: std::option::Option<crate::model::PermissionsMode>,
@@ -3523,7 +3706,7 @@ pub mod update_ledger_permissions_mode_input {
             self,
         ) -> Result<
             crate::input::UpdateLedgerPermissionsModeInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateLedgerPermissionsModeInput {
                 name: self.name,
@@ -3545,26 +3728,31 @@ impl UpdateLedgerPermissionsModeInput {
             crate::operation::UpdateLedgerPermissionsMode,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateLedgerPermissionsModeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_30 = &_input.name;
-                let input_30 = input_30.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_30, false);
+                let input_30 = input_30.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_30,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/ledgers/{Name}/permissions-mode", Name = name)
                     .expect("formatting should succeed");
@@ -3574,8 +3762,10 @@ impl UpdateLedgerPermissionsModeInput {
             fn update_http_builder(
                 input: &crate::input::UpdateLedgerPermissionsModeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PATCH").uri(uri))
@@ -3656,7 +3846,7 @@ impl UpdateLedgerPermissionsModeInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLedgerPermissionsModeInput {
     /// <p>The name of the ledger.</p>
     #[doc(hidden)]
@@ -3687,18 +3877,10 @@ impl UpdateLedgerPermissionsModeInput {
         self.permissions_mode.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateLedgerPermissionsModeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLedgerPermissionsModeInput");
-        formatter.field("name", &self.name);
-        formatter.field("permissions_mode", &self.permissions_mode);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLedgerInput {
     /// <p>The name of the ledger.</p>
     #[doc(hidden)]
@@ -3756,19 +3938,10 @@ impl UpdateLedgerInput {
         self.kms_key.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateLedgerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLedgerInput");
-        formatter.field("name", &self.name);
-        formatter.field("deletion_protection", &self.deletion_protection);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) from which to remove the tags. For example:</p>
     /// <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
@@ -3789,18 +3962,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) to which you want to add the tags. For example:</p>
     /// <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
@@ -3827,18 +3992,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamJournalToKinesisInput {
     /// <p>The name of the ledger.</p>
     #[doc(hidden)]
@@ -3910,23 +4067,10 @@ impl StreamJournalToKinesisInput {
         self.stream_name.as_deref()
     }
 }
-impl std::fmt::Debug for StreamJournalToKinesisInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamJournalToKinesisInput");
-        formatter.field("ledger_name", &self.ledger_name);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("inclusive_start_time", &self.inclusive_start_time);
-        formatter.field("exclusive_end_time", &self.exclusive_end_time);
-        formatter.field("kinesis_configuration", &self.kinesis_configuration);
-        formatter.field("stream_name", &self.stream_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for which to list the tags. For example:</p>
     /// <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
@@ -3940,17 +4084,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLedgersInput {
     /// <p>The maximum number of results to return in a single <code>ListLedgers</code> request. (The actual number of results returned might be fewer.)</p>
     #[doc(hidden)]
@@ -3969,18 +4106,10 @@ impl ListLedgersInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListLedgersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLedgersInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListJournalS3ExportsForLedgerInput {
     /// <p>The name of the ledger.</p>
     #[doc(hidden)]
@@ -4006,19 +4135,10 @@ impl ListJournalS3ExportsForLedgerInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListJournalS3ExportsForLedgerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListJournalS3ExportsForLedgerInput");
-        formatter.field("name", &self.name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListJournalS3ExportsInput {
     /// <p>The maximum number of results to return in a single <code>ListJournalS3Exports</code> request. (The actual number of results returned might be fewer.)</p>
     #[doc(hidden)]
@@ -4037,18 +4157,10 @@ impl ListJournalS3ExportsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListJournalS3ExportsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListJournalS3ExportsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListJournalKinesisStreamsForLedgerInput {
     /// <p>The name of the ledger.</p>
     #[doc(hidden)]
@@ -4072,15 +4184,6 @@ impl ListJournalKinesisStreamsForLedgerInput {
     /// <p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalKinesisStreamsForLedger</code> call, you should use that value as input here.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListJournalKinesisStreamsForLedgerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListJournalKinesisStreamsForLedgerInput");
-        formatter.field("ledger_name", &self.ledger_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 
@@ -4136,7 +4239,7 @@ impl std::fmt::Debug for GetRevisionInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDigestInput {
     /// <p>The name of the ledger.</p>
     #[doc(hidden)]
@@ -4146,13 +4249,6 @@ impl GetDigestInput {
     /// <p>The name of the ledger.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for GetDigestInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDigestInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 
@@ -4200,7 +4296,7 @@ impl std::fmt::Debug for GetBlockInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportJournalToS3Input {
     /// <p>The name of the ledger.</p>
     #[doc(hidden)]
@@ -4269,22 +4365,10 @@ impl ExportJournalToS3Input {
         self.output_format.as_ref()
     }
 }
-impl std::fmt::Debug for ExportJournalToS3Input {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportJournalToS3Input");
-        formatter.field("name", &self.name);
-        formatter.field("inclusive_start_time", &self.inclusive_start_time);
-        formatter.field("exclusive_end_time", &self.exclusive_end_time);
-        formatter.field("s3_export_configuration", &self.s3_export_configuration);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("output_format", &self.output_format);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLedgerInput {
     /// <p>The name of the ledger that you want to describe.</p>
     #[doc(hidden)]
@@ -4296,17 +4380,10 @@ impl DescribeLedgerInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLedgerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLedgerInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeJournalS3ExportInput {
     /// <p>The name of the ledger.</p>
     #[doc(hidden)]
@@ -4325,18 +4402,10 @@ impl DescribeJournalS3ExportInput {
         self.export_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeJournalS3ExportInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeJournalS3ExportInput");
-        formatter.field("name", &self.name);
-        formatter.field("export_id", &self.export_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeJournalKinesisStreamInput {
     /// <p>The name of the ledger.</p>
     #[doc(hidden)]
@@ -4355,18 +4424,10 @@ impl DescribeJournalKinesisStreamInput {
         self.stream_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeJournalKinesisStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeJournalKinesisStreamInput");
-        formatter.field("ledger_name", &self.ledger_name);
-        formatter.field("stream_id", &self.stream_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLedgerInput {
     /// <p>The name of the ledger that you want to delete.</p>
     #[doc(hidden)]
@@ -4378,17 +4439,10 @@ impl DeleteLedgerInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLedgerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLedgerInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLedgerInput {
     /// <p>The name of the ledger that you want to create. The name must be unique among all of the ledgers in your Amazon Web Services account in the current Region.</p>
     /// <p>Naming constraints for ledger names are defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
@@ -4480,21 +4534,10 @@ impl CreateLedgerInput {
         self.kms_key.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLedgerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLedgerInput");
-        formatter.field("name", &self.name);
-        formatter.field("tags", &self.tags);
-        formatter.field("permissions_mode", &self.permissions_mode);
-        formatter.field("deletion_protection", &self.deletion_protection);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelJournalKinesisStreamInput {
     /// <p>The name of the ledger.</p>
     #[doc(hidden)]
@@ -4511,13 +4554,5 @@ impl CancelJournalKinesisStreamInput {
     /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to be canceled.</p>
     pub fn stream_id(&self) -> std::option::Option<&str> {
         self.stream_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CancelJournalKinesisStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelJournalKinesisStreamInput");
-        formatter.field("ledger_name", &self.ledger_name);
-        formatter.field("stream_id", &self.stream_id);
-        formatter.finish()
     }
 }

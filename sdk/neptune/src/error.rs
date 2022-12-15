@@ -2,22 +2,15 @@
 
 /// <p>The specified DB instance is not in the <i>available</i> state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDbInstanceStateFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidDbInstanceStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDbInstanceStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidDbInstanceStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -28,7 +21,9 @@ impl std::fmt::Display for InvalidDbInstanceStateFault {
             "InvalidDbInstanceStateFault [InvalidDBInstanceStateFault]"
         )?;
         if let Some(inner_1) = &self.message {
-            write!(f, ": {}", inner_1)?;
+            {
+                write!(f, ": {}", inner_1)?;
+            }
         }
         Ok(())
     }
@@ -38,7 +33,7 @@ impl std::error::Error for InvalidDbInstanceStateFault {}
 pub mod invalid_db_instance_state_fault {
 
     /// A builder for [`InvalidDbInstanceStateFault`](crate::error::InvalidDbInstanceStateFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -70,22 +65,15 @@ impl InvalidDbInstanceStateFault {
 
 /// <p>The DB cluster is not in a valid state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDbClusterStateFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidDbClusterStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDbClusterStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidDbClusterStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -93,7 +81,9 @@ impl std::fmt::Display for InvalidDbClusterStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDbClusterStateFault [InvalidDBClusterStateFault]")?;
         if let Some(inner_2) = &self.message {
-            write!(f, ": {}", inner_2)?;
+            {
+                write!(f, ": {}", inner_2)?;
+            }
         }
         Ok(())
     }
@@ -103,7 +93,7 @@ impl std::error::Error for InvalidDbClusterStateFault {}
 pub mod invalid_db_cluster_state_fault {
 
     /// A builder for [`InvalidDbClusterStateFault`](crate::error::InvalidDbClusterStateFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -135,22 +125,15 @@ impl InvalidDbClusterStateFault {
 
 /// <p> <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbClusterNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DbClusterNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbClusterNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DbClusterNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -158,7 +141,9 @@ impl std::fmt::Display for DbClusterNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DbClusterNotFoundFault [DBClusterNotFoundFault]")?;
         if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+            {
+                write!(f, ": {}", inner_3)?;
+            }
         }
         Ok(())
     }
@@ -168,7 +153,7 @@ impl std::error::Error for DbClusterNotFoundFault {}
 pub mod db_cluster_not_found_fault {
 
     /// A builder for [`DbClusterNotFoundFault`](crate::error::DbClusterNotFoundFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -200,22 +185,15 @@ impl DbClusterNotFoundFault {
 
 /// <p>Request would result in user exceeding the allowed amount of storage available across all DB instances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StorageQuotaExceededFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for StorageQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StorageQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl StorageQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -223,7 +201,9 @@ impl std::fmt::Display for StorageQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "StorageQuotaExceededFault")?;
         if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+            {
+                write!(f, ": {}", inner_4)?;
+            }
         }
         Ok(())
     }
@@ -233,7 +213,7 @@ impl std::error::Error for StorageQuotaExceededFault {}
 pub mod storage_quota_exceeded_fault {
 
     /// A builder for [`StorageQuotaExceededFault`](crate::error::StorageQuotaExceededFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -265,22 +245,15 @@ impl StorageQuotaExceededFault {
 
 /// <p>The designated option group could not be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OptionGroupNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for OptionGroupNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OptionGroupNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl OptionGroupNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -288,7 +261,9 @@ impl std::fmt::Display for OptionGroupNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OptionGroupNotFoundFault")?;
         if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+            {
+                write!(f, ": {}", inner_5)?;
+            }
         }
         Ok(())
     }
@@ -298,7 +273,7 @@ impl std::error::Error for OptionGroupNotFoundFault {}
 pub mod option_group_not_found_fault {
 
     /// A builder for [`OptionGroupNotFoundFault`](crate::error::OptionGroupNotFoundFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -330,22 +305,15 @@ impl OptionGroupNotFoundFault {
 
 /// <p>Error accessing KMS key.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KmsKeyNotAccessibleFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for KmsKeyNotAccessibleFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KmsKeyNotAccessibleFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl KmsKeyNotAccessibleFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -353,7 +321,9 @@ impl std::fmt::Display for KmsKeyNotAccessibleFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsKeyNotAccessibleFault [KMSKeyNotAccessibleFault]")?;
         if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+            {
+                write!(f, ": {}", inner_6)?;
+            }
         }
         Ok(())
     }
@@ -363,7 +333,7 @@ impl std::error::Error for KmsKeyNotAccessibleFault {}
 pub mod kms_key_not_accessible_fault {
 
     /// A builder for [`KmsKeyNotAccessibleFault`](crate::error::KmsKeyNotAccessibleFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -395,22 +365,15 @@ impl KmsKeyNotAccessibleFault {
 
 /// <p>DB subnet group does not cover all Availability Zones after it is created because users' change.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidVpcNetworkStateFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidVpcNetworkStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidVpcNetworkStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidVpcNetworkStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -421,7 +384,9 @@ impl std::fmt::Display for InvalidVpcNetworkStateFault {
             "InvalidVpcNetworkStateFault [InvalidVPCNetworkStateFault]"
         )?;
         if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
+            {
+                write!(f, ": {}", inner_7)?;
+            }
         }
         Ok(())
     }
@@ -431,7 +396,7 @@ impl std::error::Error for InvalidVpcNetworkStateFault {}
 pub mod invalid_vpc_network_state_fault {
 
     /// A builder for [`InvalidVpcNetworkStateFault`](crate::error::InvalidVpcNetworkStateFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -463,22 +428,15 @@ impl InvalidVpcNetworkStateFault {
 
 /// <p>The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidSubnet {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidSubnet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSubnet");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidSubnet {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -486,7 +444,9 @@ impl std::fmt::Display for InvalidSubnet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSubnet")?;
         if let Some(inner_8) = &self.message {
-            write!(f, ": {}", inner_8)?;
+            {
+                write!(f, ": {}", inner_8)?;
+            }
         }
         Ok(())
     }
@@ -496,7 +456,7 @@ impl std::error::Error for InvalidSubnet {}
 pub mod invalid_subnet {
 
     /// A builder for [`InvalidSubnet`](crate::error::InvalidSubnet).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -528,22 +488,15 @@ impl InvalidSubnet {
 
 /// <p>Cannot restore from vpc backup to non-vpc DB instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRestoreFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidRestoreFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRestoreFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidRestoreFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -551,7 +504,9 @@ impl std::fmt::Display for InvalidRestoreFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRestoreFault")?;
         if let Some(inner_9) = &self.message {
-            write!(f, ": {}", inner_9)?;
+            {
+                write!(f, ": {}", inner_9)?;
+            }
         }
         Ok(())
     }
@@ -561,7 +516,7 @@ impl std::error::Error for InvalidRestoreFault {}
 pub mod invalid_restore_fault {
 
     /// A builder for [`InvalidRestoreFault`](crate::error::InvalidRestoreFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -593,22 +548,15 @@ impl InvalidRestoreFault {
 
 /// <p>The state of the DB snapshot does not allow deletion.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDbSnapshotStateFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidDbSnapshotStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDbSnapshotStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidDbSnapshotStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -619,7 +567,9 @@ impl std::fmt::Display for InvalidDbSnapshotStateFault {
             "InvalidDbSnapshotStateFault [InvalidDBSnapshotStateFault]"
         )?;
         if let Some(inner_10) = &self.message {
-            write!(f, ": {}", inner_10)?;
+            {
+                write!(f, ": {}", inner_10)?;
+            }
         }
         Ok(())
     }
@@ -629,7 +579,7 @@ impl std::error::Error for InvalidDbSnapshotStateFault {}
 pub mod invalid_db_snapshot_state_fault {
 
     /// A builder for [`InvalidDbSnapshotStateFault`](crate::error::InvalidDbSnapshotStateFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -661,22 +611,15 @@ impl InvalidDbSnapshotStateFault {
 
 /// <p>The supplied value is not a valid DB cluster snapshot state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDbClusterSnapshotStateFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidDbClusterSnapshotStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDbClusterSnapshotStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidDbClusterSnapshotStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -687,7 +630,9 @@ impl std::fmt::Display for InvalidDbClusterSnapshotStateFault {
             "InvalidDbClusterSnapshotStateFault [InvalidDBClusterSnapshotStateFault]"
         )?;
         if let Some(inner_11) = &self.message {
-            write!(f, ": {}", inner_11)?;
+            {
+                write!(f, ": {}", inner_11)?;
+            }
         }
         Ok(())
     }
@@ -697,7 +642,7 @@ impl std::error::Error for InvalidDbClusterSnapshotStateFault {}
 pub mod invalid_db_cluster_snapshot_state_fault {
 
     /// A builder for [`InvalidDbClusterSnapshotStateFault`](crate::error::InvalidDbClusterSnapshotStateFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -729,22 +674,15 @@ impl InvalidDbClusterSnapshotStateFault {
 
 /// <p>There is insufficient storage available for the current action. You may be able to resolve this error by updating your subnet group to use different Availability Zones that have more storage available.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsufficientStorageClusterCapacityFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InsufficientStorageClusterCapacityFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsufficientStorageClusterCapacityFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InsufficientStorageClusterCapacityFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -752,7 +690,9 @@ impl std::fmt::Display for InsufficientStorageClusterCapacityFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InsufficientStorageClusterCapacityFault")?;
         if let Some(inner_12) = &self.message {
-            write!(f, ": {}", inner_12)?;
+            {
+                write!(f, ": {}", inner_12)?;
+            }
         }
         Ok(())
     }
@@ -762,7 +702,7 @@ impl std::error::Error for InsufficientStorageClusterCapacityFault {}
 pub mod insufficient_storage_cluster_capacity_fault {
 
     /// A builder for [`InsufficientStorageClusterCapacityFault`](crate::error::InsufficientStorageClusterCapacityFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -794,22 +734,15 @@ impl InsufficientStorageClusterCapacityFault {
 
 /// <p>The DB cluster does not have enough capacity for the current operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsufficientDbClusterCapacityFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InsufficientDbClusterCapacityFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsufficientDbClusterCapacityFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InsufficientDbClusterCapacityFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -820,7 +753,9 @@ impl std::fmt::Display for InsufficientDbClusterCapacityFault {
             "InsufficientDbClusterCapacityFault [InsufficientDBClusterCapacityFault]"
         )?;
         if let Some(inner_13) = &self.message {
-            write!(f, ": {}", inner_13)?;
+            {
+                write!(f, ": {}", inner_13)?;
+            }
         }
         Ok(())
     }
@@ -830,7 +765,7 @@ impl std::error::Error for InsufficientDbClusterCapacityFault {}
 pub mod insufficient_db_cluster_capacity_fault {
 
     /// A builder for [`InsufficientDbClusterCapacityFault`](crate::error::InsufficientDbClusterCapacityFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -862,22 +797,15 @@ impl InsufficientDbClusterCapacityFault {
 
 /// <p> <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbSubnetGroupNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DbSubnetGroupNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbSubnetGroupNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DbSubnetGroupNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -885,7 +813,9 @@ impl std::fmt::Display for DbSubnetGroupNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DbSubnetGroupNotFoundFault [DBSubnetGroupNotFoundFault]")?;
         if let Some(inner_14) = &self.message {
-            write!(f, ": {}", inner_14)?;
+            {
+                write!(f, ": {}", inner_14)?;
+            }
         }
         Ok(())
     }
@@ -895,7 +825,7 @@ impl std::error::Error for DbSubnetGroupNotFoundFault {}
 pub mod db_subnet_group_not_found_fault {
 
     /// A builder for [`DbSubnetGroupNotFoundFault`](crate::error::DbSubnetGroupNotFoundFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -927,22 +857,15 @@ impl DbSubnetGroupNotFoundFault {
 
 /// <p> <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbClusterSnapshotNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DbClusterSnapshotNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbClusterSnapshotNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DbClusterSnapshotNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -953,7 +876,9 @@ impl std::fmt::Display for DbClusterSnapshotNotFoundFault {
             "DbClusterSnapshotNotFoundFault [DBClusterSnapshotNotFoundFault]"
         )?;
         if let Some(inner_15) = &self.message {
-            write!(f, ": {}", inner_15)?;
+            {
+                write!(f, ": {}", inner_15)?;
+            }
         }
         Ok(())
     }
@@ -963,7 +888,7 @@ impl std::error::Error for DbClusterSnapshotNotFoundFault {}
 pub mod db_cluster_snapshot_not_found_fault {
 
     /// A builder for [`DbClusterSnapshotNotFoundFault`](crate::error::DbClusterSnapshotNotFoundFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -995,22 +920,15 @@ impl DbClusterSnapshotNotFoundFault {
 
 /// <p>User attempted to create a new DB cluster and the user has already reached the maximum allowed DB cluster quota.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbClusterQuotaExceededFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DbClusterQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbClusterQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DbClusterQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1021,7 +939,9 @@ impl std::fmt::Display for DbClusterQuotaExceededFault {
             "DbClusterQuotaExceededFault [DBClusterQuotaExceededFault]"
         )?;
         if let Some(inner_16) = &self.message {
-            write!(f, ": {}", inner_16)?;
+            {
+                write!(f, ": {}", inner_16)?;
+            }
         }
         Ok(())
     }
@@ -1031,7 +951,7 @@ impl std::error::Error for DbClusterQuotaExceededFault {}
 pub mod db_cluster_quota_exceeded_fault {
 
     /// A builder for [`DbClusterQuotaExceededFault`](crate::error::DbClusterQuotaExceededFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1063,22 +983,15 @@ impl DbClusterQuotaExceededFault {
 
 /// <p> <i>DBClusterParameterGroupName</i> does not refer to an existing DB Cluster parameter group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbClusterParameterGroupNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DbClusterParameterGroupNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbClusterParameterGroupNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DbClusterParameterGroupNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1089,7 +1002,9 @@ impl std::fmt::Display for DbClusterParameterGroupNotFoundFault {
             "DbClusterParameterGroupNotFoundFault [DBClusterParameterGroupNotFoundFault]"
         )?;
         if let Some(inner_17) = &self.message {
-            write!(f, ": {}", inner_17)?;
+            {
+                write!(f, ": {}", inner_17)?;
+            }
         }
         Ok(())
     }
@@ -1099,7 +1014,7 @@ impl std::error::Error for DbClusterParameterGroupNotFoundFault {}
 pub mod db_cluster_parameter_group_not_found_fault {
 
     /// A builder for [`DbClusterParameterGroupNotFoundFault`](crate::error::DbClusterParameterGroupNotFoundFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1131,22 +1046,15 @@ impl DbClusterParameterGroupNotFoundFault {
 
 /// <p>User already has a DB cluster with the given identifier.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbClusterAlreadyExistsFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DbClusterAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbClusterAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DbClusterAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1157,7 +1065,9 @@ impl std::fmt::Display for DbClusterAlreadyExistsFault {
             "DbClusterAlreadyExistsFault [DBClusterAlreadyExistsFault]"
         )?;
         if let Some(inner_18) = &self.message {
-            write!(f, ": {}", inner_18)?;
+            {
+                write!(f, ": {}", inner_18)?;
+            }
         }
         Ok(())
     }
@@ -1167,7 +1077,7 @@ impl std::error::Error for DbClusterAlreadyExistsFault {}
 pub mod db_cluster_already_exists_fault {
 
     /// A builder for [`DbClusterAlreadyExistsFault`](crate::error::DbClusterAlreadyExistsFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1199,22 +1109,15 @@ impl DbClusterAlreadyExistsFault {
 
 /// <p> <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbSnapshotNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DbSnapshotNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbSnapshotNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DbSnapshotNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1222,7 +1125,9 @@ impl std::fmt::Display for DbSnapshotNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DbSnapshotNotFoundFault [DBSnapshotNotFoundFault]")?;
         if let Some(inner_19) = &self.message {
-            write!(f, ": {}", inner_19)?;
+            {
+                write!(f, ": {}", inner_19)?;
+            }
         }
         Ok(())
     }
@@ -1232,7 +1137,7 @@ impl std::error::Error for DbSnapshotNotFoundFault {}
 pub mod db_snapshot_not_found_fault {
 
     /// A builder for [`DbSnapshotNotFoundFault`](crate::error::DbSnapshotNotFoundFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1264,22 +1169,15 @@ impl DbSnapshotNotFoundFault {
 
 /// <p>The DB parameter group is in use or is in an invalid state. If you are attempting to delete the parameter group, you cannot delete it when the parameter group is in this state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDbParameterGroupStateFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidDbParameterGroupStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDbParameterGroupStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidDbParameterGroupStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1290,7 +1188,9 @@ impl std::fmt::Display for InvalidDbParameterGroupStateFault {
             "InvalidDbParameterGroupStateFault [InvalidDBParameterGroupStateFault]"
         )?;
         if let Some(inner_20) = &self.message {
-            write!(f, ": {}", inner_20)?;
+            {
+                write!(f, ": {}", inner_20)?;
+            }
         }
         Ok(())
     }
@@ -1300,7 +1200,7 @@ impl std::error::Error for InvalidDbParameterGroupStateFault {}
 pub mod invalid_db_parameter_group_state_fault {
 
     /// A builder for [`InvalidDbParameterGroupStateFault`](crate::error::InvalidDbParameterGroupStateFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1332,22 +1232,15 @@ impl InvalidDbParameterGroupStateFault {
 
 /// <p> <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbParameterGroupNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DbParameterGroupNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbParameterGroupNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DbParameterGroupNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1358,7 +1251,9 @@ impl std::fmt::Display for DbParameterGroupNotFoundFault {
             "DbParameterGroupNotFoundFault [DBParameterGroupNotFoundFault]"
         )?;
         if let Some(inner_21) = &self.message {
-            write!(f, ": {}", inner_21)?;
+            {
+                write!(f, ": {}", inner_21)?;
+            }
         }
         Ok(())
     }
@@ -1368,7 +1263,7 @@ impl std::error::Error for DbParameterGroupNotFoundFault {}
 pub mod db_parameter_group_not_found_fault {
 
     /// A builder for [`DbParameterGroupNotFoundFault`](crate::error::DbParameterGroupNotFoundFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1400,22 +1295,15 @@ impl DbParameterGroupNotFoundFault {
 
 /// <p> <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbInstanceNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DbInstanceNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbInstanceNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DbInstanceNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1423,7 +1311,9 @@ impl std::fmt::Display for DbInstanceNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DbInstanceNotFoundFault [DBInstanceNotFoundFault]")?;
         if let Some(inner_22) = &self.message {
-            write!(f, ": {}", inner_22)?;
+            {
+                write!(f, ": {}", inner_22)?;
+            }
         }
         Ok(())
     }
@@ -1433,7 +1323,7 @@ impl std::error::Error for DbInstanceNotFoundFault {}
 pub mod db_instance_not_found_fault {
 
     /// A builder for [`DbInstanceNotFoundFault`](crate::error::DbInstanceNotFoundFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1465,22 +1355,15 @@ impl DbInstanceNotFoundFault {
 
 /// <p>The designated subscription could not be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubscriptionNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for SubscriptionNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubscriptionNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl SubscriptionNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1488,7 +1371,9 @@ impl std::fmt::Display for SubscriptionNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubscriptionNotFoundFault")?;
         if let Some(inner_23) = &self.message {
-            write!(f, ": {}", inner_23)?;
+            {
+                write!(f, ": {}", inner_23)?;
+            }
         }
         Ok(())
     }
@@ -1498,7 +1383,7 @@ impl std::error::Error for SubscriptionNotFoundFault {}
 pub mod subscription_not_found_fault {
 
     /// A builder for [`SubscriptionNotFoundFault`](crate::error::SubscriptionNotFoundFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1530,22 +1415,15 @@ impl SubscriptionNotFoundFault {
 
 /// <p>The source could not be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for SourceNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl SourceNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1553,7 +1431,9 @@ impl std::fmt::Display for SourceNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SourceNotFoundFault")?;
         if let Some(inner_24) = &self.message {
-            write!(f, ": {}", inner_24)?;
+            {
+                write!(f, ": {}", inner_24)?;
+            }
         }
         Ok(())
     }
@@ -1563,7 +1443,7 @@ impl std::error::Error for SourceNotFoundFault {}
 pub mod source_not_found_fault {
 
     /// A builder for [`SourceNotFoundFault`](crate::error::SourceNotFoundFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1595,22 +1475,15 @@ impl SourceNotFoundFault {
 
 /// <p>The specified IAM role Amazon Resource Name (ARN) is not associated with the specified DB cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbClusterRoleNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DbClusterRoleNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbClusterRoleNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DbClusterRoleNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1618,7 +1491,9 @@ impl std::fmt::Display for DbClusterRoleNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DbClusterRoleNotFoundFault [DBClusterRoleNotFoundFault]")?;
         if let Some(inner_25) = &self.message {
-            write!(f, ": {}", inner_25)?;
+            {
+                write!(f, ": {}", inner_25)?;
+            }
         }
         Ok(())
     }
@@ -1628,7 +1503,7 @@ impl std::error::Error for DbClusterRoleNotFoundFault {}
 pub mod db_cluster_role_not_found_fault {
 
     /// A builder for [`DbClusterRoleNotFoundFault`](crate::error::DbClusterRoleNotFoundFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1660,22 +1535,15 @@ impl DbClusterRoleNotFoundFault {
 
 /// <p>The global cluster is in an invalid state and can't perform the requested operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidGlobalClusterStateFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidGlobalClusterStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidGlobalClusterStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidGlobalClusterStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1683,7 +1551,9 @@ impl std::fmt::Display for InvalidGlobalClusterStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidGlobalClusterStateFault")?;
         if let Some(inner_26) = &self.message {
-            write!(f, ": {}", inner_26)?;
+            {
+                write!(f, ": {}", inner_26)?;
+            }
         }
         Ok(())
     }
@@ -1693,7 +1563,7 @@ impl std::error::Error for InvalidGlobalClusterStateFault {}
 pub mod invalid_global_cluster_state_fault {
 
     /// A builder for [`InvalidGlobalClusterStateFault`](crate::error::InvalidGlobalClusterStateFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1725,22 +1595,15 @@ impl InvalidGlobalClusterStateFault {
 
 /// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GlobalClusterNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for GlobalClusterNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GlobalClusterNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl GlobalClusterNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1748,7 +1611,9 @@ impl std::fmt::Display for GlobalClusterNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "GlobalClusterNotFoundFault")?;
         if let Some(inner_27) = &self.message {
-            write!(f, ": {}", inner_27)?;
+            {
+                write!(f, ": {}", inner_27)?;
+            }
         }
         Ok(())
     }
@@ -1758,7 +1623,7 @@ impl std::error::Error for GlobalClusterNotFoundFault {}
 pub mod global_cluster_not_found_fault {
 
     /// A builder for [`GlobalClusterNotFoundFault`](crate::error::GlobalClusterNotFoundFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1790,22 +1655,15 @@ impl GlobalClusterNotFoundFault {
 
 /// <p>The designated subscription category could not be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubscriptionCategoryNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for SubscriptionCategoryNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubscriptionCategoryNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl SubscriptionCategoryNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1813,7 +1671,9 @@ impl std::fmt::Display for SubscriptionCategoryNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubscriptionCategoryNotFoundFault")?;
         if let Some(inner_28) = &self.message {
-            write!(f, ": {}", inner_28)?;
+            {
+                write!(f, ": {}", inner_28)?;
+            }
         }
         Ok(())
     }
@@ -1823,7 +1683,7 @@ impl std::error::Error for SubscriptionCategoryNotFoundFault {}
 pub mod subscription_category_not_found_fault {
 
     /// A builder for [`SubscriptionCategoryNotFoundFault`](crate::error::SubscriptionCategoryNotFoundFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1855,22 +1715,15 @@ impl SubscriptionCategoryNotFoundFault {
 
 /// <p>The ARN of the SNS topic could not be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnsTopicArnNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for SnsTopicArnNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnsTopicArnNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl SnsTopicArnNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1878,7 +1731,9 @@ impl std::fmt::Display for SnsTopicArnNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnsTopicArnNotFoundFault [SNSTopicArnNotFoundFault]")?;
         if let Some(inner_29) = &self.message {
-            write!(f, ": {}", inner_29)?;
+            {
+                write!(f, ": {}", inner_29)?;
+            }
         }
         Ok(())
     }
@@ -1888,7 +1743,7 @@ impl std::error::Error for SnsTopicArnNotFoundFault {}
 pub mod sns_topic_arn_not_found_fault {
 
     /// A builder for [`SnsTopicArnNotFoundFault`](crate::error::SnsTopicArnNotFoundFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1920,22 +1775,15 @@ impl SnsTopicArnNotFoundFault {
 
 /// <p>There is no SNS authorization.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnsNoAuthorizationFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for SnsNoAuthorizationFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnsNoAuthorizationFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl SnsNoAuthorizationFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1943,7 +1791,9 @@ impl std::fmt::Display for SnsNoAuthorizationFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnsNoAuthorizationFault [SNSNoAuthorizationFault]")?;
         if let Some(inner_30) = &self.message {
-            write!(f, ": {}", inner_30)?;
+            {
+                write!(f, ": {}", inner_30)?;
+            }
         }
         Ok(())
     }
@@ -1953,7 +1803,7 @@ impl std::error::Error for SnsNoAuthorizationFault {}
 pub mod sns_no_authorization_fault {
 
     /// A builder for [`SnsNoAuthorizationFault`](crate::error::SnsNoAuthorizationFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1985,22 +1835,15 @@ impl SnsNoAuthorizationFault {
 
 /// <p>The SNS topic is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnsInvalidTopicFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for SnsInvalidTopicFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnsInvalidTopicFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl SnsInvalidTopicFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2008,7 +1851,9 @@ impl std::fmt::Display for SnsInvalidTopicFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnsInvalidTopicFault [SNSInvalidTopicFault]")?;
         if let Some(inner_31) = &self.message {
-            write!(f, ": {}", inner_31)?;
+            {
+                write!(f, ": {}", inner_31)?;
+            }
         }
         Ok(())
     }
@@ -2018,7 +1863,7 @@ impl std::error::Error for SnsInvalidTopicFault {}
 pub mod sns_invalid_topic_fault {
 
     /// A builder for [`SnsInvalidTopicFault`](crate::error::SnsInvalidTopicFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2050,22 +1895,15 @@ impl SnsInvalidTopicFault {
 
 /// <p>You have exceeded the number of events you can subscribe to.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventSubscriptionQuotaExceededFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for EventSubscriptionQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventSubscriptionQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl EventSubscriptionQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2073,7 +1911,9 @@ impl std::fmt::Display for EventSubscriptionQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EventSubscriptionQuotaExceededFault")?;
         if let Some(inner_32) = &self.message {
-            write!(f, ": {}", inner_32)?;
+            {
+                write!(f, ": {}", inner_32)?;
+            }
         }
         Ok(())
     }
@@ -2083,7 +1923,7 @@ impl std::error::Error for EventSubscriptionQuotaExceededFault {}
 pub mod event_subscription_quota_exceeded_fault {
 
     /// A builder for [`EventSubscriptionQuotaExceededFault`](crate::error::EventSubscriptionQuotaExceededFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2115,22 +1955,15 @@ impl EventSubscriptionQuotaExceededFault {
 
 /// <p>The DB subnet is already in use in the Availability Zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubnetAlreadyInUse {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for SubnetAlreadyInUse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubnetAlreadyInUse");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl SubnetAlreadyInUse {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2138,7 +1971,9 @@ impl std::fmt::Display for SubnetAlreadyInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubnetAlreadyInUse")?;
         if let Some(inner_33) = &self.message {
-            write!(f, ": {}", inner_33)?;
+            {
+                write!(f, ": {}", inner_33)?;
+            }
         }
         Ok(())
     }
@@ -2148,7 +1983,7 @@ impl std::error::Error for SubnetAlreadyInUse {}
 pub mod subnet_already_in_use {
 
     /// A builder for [`SubnetAlreadyInUse`](crate::error::SubnetAlreadyInUse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2180,22 +2015,15 @@ impl SubnetAlreadyInUse {
 
 /// <p>Request would result in user exceeding the allowed number of subnets in a DB subnet groups.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbSubnetQuotaExceededFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DbSubnetQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbSubnetQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DbSubnetQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2203,7 +2031,9 @@ impl std::fmt::Display for DbSubnetQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DbSubnetQuotaExceededFault [DBSubnetQuotaExceededFault]")?;
         if let Some(inner_34) = &self.message {
-            write!(f, ": {}", inner_34)?;
+            {
+                write!(f, ": {}", inner_34)?;
+            }
         }
         Ok(())
     }
@@ -2213,7 +2043,7 @@ impl std::error::Error for DbSubnetQuotaExceededFault {}
 pub mod db_subnet_quota_exceeded_fault {
 
     /// A builder for [`DbSubnetQuotaExceededFault`](crate::error::DbSubnetQuotaExceededFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2245,22 +2075,15 @@ impl DbSubnetQuotaExceededFault {
 
 /// <p>Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one Availability Zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbSubnetGroupDoesNotCoverEnoughAZs {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DbSubnetGroupDoesNotCoverEnoughAZs {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbSubnetGroupDoesNotCoverEnoughAZs");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DbSubnetGroupDoesNotCoverEnoughAZs {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2271,7 +2094,9 @@ impl std::fmt::Display for DbSubnetGroupDoesNotCoverEnoughAZs {
             "DbSubnetGroupDoesNotCoverEnoughAZs [DBSubnetGroupDoesNotCoverEnoughAZs]"
         )?;
         if let Some(inner_35) = &self.message {
-            write!(f, ": {}", inner_35)?;
+            {
+                write!(f, ": {}", inner_35)?;
+            }
         }
         Ok(())
     }
@@ -2281,7 +2106,7 @@ impl std::error::Error for DbSubnetGroupDoesNotCoverEnoughAZs {}
 pub mod db_subnet_group_does_not_cover_enough_a_zs {
 
     /// A builder for [`DbSubnetGroupDoesNotCoverEnoughAZs`](crate::error::DbSubnetGroupDoesNotCoverEnoughAZs).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2313,22 +2138,15 @@ impl DbSubnetGroupDoesNotCoverEnoughAZs {
 
 /// <p> <i>StorageType</i> specified cannot be associated with the DB Instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StorageTypeNotSupportedFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for StorageTypeNotSupportedFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StorageTypeNotSupportedFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl StorageTypeNotSupportedFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2336,7 +2154,9 @@ impl std::fmt::Display for StorageTypeNotSupportedFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "StorageTypeNotSupportedFault")?;
         if let Some(inner_36) = &self.message {
-            write!(f, ": {}", inner_36)?;
+            {
+                write!(f, ": {}", inner_36)?;
+            }
         }
         Ok(())
     }
@@ -2346,7 +2166,7 @@ impl std::error::Error for StorageTypeNotSupportedFault {}
 pub mod storage_type_not_supported_fault {
 
     /// A builder for [`StorageTypeNotSupportedFault`](crate::error::StorageTypeNotSupportedFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2378,22 +2198,15 @@ impl StorageTypeNotSupportedFault {
 
 /// <p>Provisioned IOPS not available in the specified Availability Zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProvisionedIopsNotAvailableInAzFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ProvisionedIopsNotAvailableInAzFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProvisionedIopsNotAvailableInAzFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ProvisionedIopsNotAvailableInAzFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2404,7 +2217,9 @@ impl std::fmt::Display for ProvisionedIopsNotAvailableInAzFault {
             "ProvisionedIopsNotAvailableInAzFault [ProvisionedIopsNotAvailableInAZFault]"
         )?;
         if let Some(inner_37) = &self.message {
-            write!(f, ": {}", inner_37)?;
+            {
+                write!(f, ": {}", inner_37)?;
+            }
         }
         Ok(())
     }
@@ -2414,7 +2229,7 @@ impl std::error::Error for ProvisionedIopsNotAvailableInAzFault {}
 pub mod provisioned_iops_not_available_in_az_fault {
 
     /// A builder for [`ProvisionedIopsNotAvailableInAzFault`](crate::error::ProvisionedIopsNotAvailableInAzFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2446,22 +2261,15 @@ impl ProvisionedIopsNotAvailableInAzFault {
 
 /// <p>The state of the DB security group does not allow deletion.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDbSecurityGroupStateFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidDbSecurityGroupStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDbSecurityGroupStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidDbSecurityGroupStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2472,7 +2280,9 @@ impl std::fmt::Display for InvalidDbSecurityGroupStateFault {
             "InvalidDbSecurityGroupStateFault [InvalidDBSecurityGroupStateFault]"
         )?;
         if let Some(inner_38) = &self.message {
-            write!(f, ": {}", inner_38)?;
+            {
+                write!(f, ": {}", inner_38)?;
+            }
         }
         Ok(())
     }
@@ -2482,7 +2292,7 @@ impl std::error::Error for InvalidDbSecurityGroupStateFault {}
 pub mod invalid_db_security_group_state_fault {
 
     /// A builder for [`InvalidDbSecurityGroupStateFault`](crate::error::InvalidDbSecurityGroupStateFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2514,22 +2324,15 @@ impl InvalidDbSecurityGroupStateFault {
 
 /// <p>Specified DB instance class is not available in the specified Availability Zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsufficientDbInstanceCapacityFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InsufficientDbInstanceCapacityFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsufficientDbInstanceCapacityFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InsufficientDbInstanceCapacityFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2540,7 +2343,9 @@ impl std::fmt::Display for InsufficientDbInstanceCapacityFault {
             "InsufficientDbInstanceCapacityFault [InsufficientDBInstanceCapacityFault]"
         )?;
         if let Some(inner_39) = &self.message {
-            write!(f, ": {}", inner_39)?;
+            {
+                write!(f, ": {}", inner_39)?;
+            }
         }
         Ok(())
     }
@@ -2550,7 +2355,7 @@ impl std::error::Error for InsufficientDbInstanceCapacityFault {}
 pub mod insufficient_db_instance_capacity_fault {
 
     /// A builder for [`InsufficientDbInstanceCapacityFault`](crate::error::InsufficientDbInstanceCapacityFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2582,22 +2387,15 @@ impl InsufficientDbInstanceCapacityFault {
 
 /// <p> <i>Domain</i> does not refer to an existing Active Directory Domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DomainNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DomainNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2605,7 +2403,9 @@ impl std::fmt::Display for DomainNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DomainNotFoundFault")?;
         if let Some(inner_40) = &self.message {
-            write!(f, ": {}", inner_40)?;
+            {
+                write!(f, ": {}", inner_40)?;
+            }
         }
         Ok(())
     }
@@ -2615,7 +2415,7 @@ impl std::error::Error for DomainNotFoundFault {}
 pub mod domain_not_found_fault {
 
     /// A builder for [`DomainNotFoundFault`](crate::error::DomainNotFoundFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2647,22 +2447,15 @@ impl DomainNotFoundFault {
 
 /// <p>The DB upgrade failed because a resource the DB depends on could not be modified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbUpgradeDependencyFailureFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DbUpgradeDependencyFailureFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbUpgradeDependencyFailureFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DbUpgradeDependencyFailureFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2673,7 +2466,9 @@ impl std::fmt::Display for DbUpgradeDependencyFailureFault {
             "DbUpgradeDependencyFailureFault [DBUpgradeDependencyFailureFault]"
         )?;
         if let Some(inner_41) = &self.message {
-            write!(f, ": {}", inner_41)?;
+            {
+                write!(f, ": {}", inner_41)?;
+            }
         }
         Ok(())
     }
@@ -2683,7 +2478,7 @@ impl std::error::Error for DbUpgradeDependencyFailureFault {}
 pub mod db_upgrade_dependency_failure_fault {
 
     /// A builder for [`DbUpgradeDependencyFailureFault`](crate::error::DbUpgradeDependencyFailureFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2715,22 +2510,15 @@ impl DbUpgradeDependencyFailureFault {
 
 /// <p> <i>DBSecurityGroupName</i> does not refer to an existing DB security group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbSecurityGroupNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DbSecurityGroupNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbSecurityGroupNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DbSecurityGroupNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2741,7 +2529,9 @@ impl std::fmt::Display for DbSecurityGroupNotFoundFault {
             "DbSecurityGroupNotFoundFault [DBSecurityGroupNotFoundFault]"
         )?;
         if let Some(inner_42) = &self.message {
-            write!(f, ": {}", inner_42)?;
+            {
+                write!(f, ": {}", inner_42)?;
+            }
         }
         Ok(())
     }
@@ -2751,7 +2541,7 @@ impl std::error::Error for DbSecurityGroupNotFoundFault {}
 pub mod db_security_group_not_found_fault {
 
     /// A builder for [`DbSecurityGroupNotFoundFault`](crate::error::DbSecurityGroupNotFoundFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2783,22 +2573,15 @@ impl DbSecurityGroupNotFoundFault {
 
 /// <p>User already has a DB instance with the given identifier.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbInstanceAlreadyExistsFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DbInstanceAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbInstanceAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DbInstanceAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2809,7 +2592,9 @@ impl std::fmt::Display for DbInstanceAlreadyExistsFault {
             "DbInstanceAlreadyExistsFault [DBInstanceAlreadyExistsFault]"
         )?;
         if let Some(inner_43) = &self.message {
-            write!(f, ": {}", inner_43)?;
+            {
+                write!(f, ": {}", inner_43)?;
+            }
         }
         Ok(())
     }
@@ -2819,7 +2604,7 @@ impl std::error::Error for DbInstanceAlreadyExistsFault {}
 pub mod db_instance_already_exists_fault {
 
     /// A builder for [`DbInstanceAlreadyExistsFault`](crate::error::DbInstanceAlreadyExistsFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2851,22 +2636,15 @@ impl DbInstanceAlreadyExistsFault {
 
 /// <p> <i>CertificateIdentifier</i> does not refer to an existing certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CertificateNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CertificateNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CertificateNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl CertificateNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2874,7 +2652,9 @@ impl std::fmt::Display for CertificateNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CertificateNotFoundFault")?;
         if let Some(inner_44) = &self.message {
-            write!(f, ": {}", inner_44)?;
+            {
+                write!(f, ": {}", inner_44)?;
+            }
         }
         Ok(())
     }
@@ -2884,7 +2664,7 @@ impl std::error::Error for CertificateNotFoundFault {}
 pub mod certificate_not_found_fault {
 
     /// A builder for [`CertificateNotFoundFault`](crate::error::CertificateNotFoundFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2917,22 +2697,15 @@ impl CertificateNotFoundFault {
 /// <p>Specified CIDRIP or EC2 security group is not authorized for the specified DB security group.</p>
 /// <p>Neptune may not also be authorized via IAM to perform necessary actions on your behalf.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuthorizationNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for AuthorizationNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuthorizationNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl AuthorizationNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2940,7 +2713,9 @@ impl std::fmt::Display for AuthorizationNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AuthorizationNotFoundFault")?;
         if let Some(inner_45) = &self.message {
-            write!(f, ": {}", inner_45)?;
+            {
+                write!(f, ": {}", inner_45)?;
+            }
         }
         Ok(())
     }
@@ -2950,7 +2725,7 @@ impl std::error::Error for AuthorizationNotFoundFault {}
 pub mod authorization_not_found_fault {
 
     /// A builder for [`AuthorizationNotFoundFault`](crate::error::AuthorizationNotFoundFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2982,22 +2757,15 @@ impl AuthorizationNotFoundFault {
 
 /// <p>You have exceeded the maximum number of accounts that you can share a manual DB snapshot with.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SharedSnapshotQuotaExceededFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for SharedSnapshotQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SharedSnapshotQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl SharedSnapshotQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3005,7 +2773,9 @@ impl std::fmt::Display for SharedSnapshotQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SharedSnapshotQuotaExceededFault")?;
         if let Some(inner_46) = &self.message {
-            write!(f, ": {}", inner_46)?;
+            {
+                write!(f, ": {}", inner_46)?;
+            }
         }
         Ok(())
     }
@@ -3015,7 +2785,7 @@ impl std::error::Error for SharedSnapshotQuotaExceededFault {}
 pub mod shared_snapshot_quota_exceeded_fault {
 
     /// A builder for [`SharedSnapshotQuotaExceededFault`](crate::error::SharedSnapshotQuotaExceededFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3047,22 +2817,15 @@ impl SharedSnapshotQuotaExceededFault {
 
 /// <p>The requested operation cannot be performed on the endpoint while the endpoint is in this state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDbClusterEndpointStateFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidDbClusterEndpointStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDbClusterEndpointStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidDbClusterEndpointStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3073,7 +2836,9 @@ impl std::fmt::Display for InvalidDbClusterEndpointStateFault {
             "InvalidDbClusterEndpointStateFault [InvalidDBClusterEndpointStateFault]"
         )?;
         if let Some(inner_47) = &self.message {
-            write!(f, ": {}", inner_47)?;
+            {
+                write!(f, ": {}", inner_47)?;
+            }
         }
         Ok(())
     }
@@ -3083,7 +2848,7 @@ impl std::error::Error for InvalidDbClusterEndpointStateFault {}
 pub mod invalid_db_cluster_endpoint_state_fault {
 
     /// A builder for [`InvalidDbClusterEndpointStateFault`](crate::error::InvalidDbClusterEndpointStateFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3115,22 +2880,15 @@ impl InvalidDbClusterEndpointStateFault {
 
 /// <p>The specified custom endpoint doesn't exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbClusterEndpointNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DbClusterEndpointNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbClusterEndpointNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DbClusterEndpointNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3141,7 +2899,9 @@ impl std::fmt::Display for DbClusterEndpointNotFoundFault {
             "DbClusterEndpointNotFoundFault [DBClusterEndpointNotFoundFault]"
         )?;
         if let Some(inner_48) = &self.message {
-            write!(f, ": {}", inner_48)?;
+            {
+                write!(f, ": {}", inner_48)?;
+            }
         }
         Ok(())
     }
@@ -3151,7 +2911,7 @@ impl std::error::Error for DbClusterEndpointNotFoundFault {}
 pub mod db_cluster_endpoint_not_found_fault {
 
     /// A builder for [`DbClusterEndpointNotFoundFault`](crate::error::DbClusterEndpointNotFoundFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3183,22 +2943,15 @@ impl DbClusterEndpointNotFoundFault {
 
 /// <p>The DB subnet group cannot be deleted because it is in use.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDbSubnetGroupStateFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidDbSubnetGroupStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDbSubnetGroupStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidDbSubnetGroupStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3209,7 +2962,9 @@ impl std::fmt::Display for InvalidDbSubnetGroupStateFault {
             "InvalidDbSubnetGroupStateFault [InvalidDBSubnetGroupStateFault]"
         )?;
         if let Some(inner_49) = &self.message {
-            write!(f, ": {}", inner_49)?;
+            {
+                write!(f, ": {}", inner_49)?;
+            }
         }
         Ok(())
     }
@@ -3219,7 +2974,7 @@ impl std::error::Error for InvalidDbSubnetGroupStateFault {}
 pub mod invalid_db_subnet_group_state_fault {
 
     /// A builder for [`InvalidDbSubnetGroupStateFault`](crate::error::InvalidDbSubnetGroupStateFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3251,22 +3006,15 @@ impl InvalidDbSubnetGroupStateFault {
 
 /// <p>The specified resource ID was not found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ResourceNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ResourceNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3274,7 +3022,9 @@ impl std::fmt::Display for ResourceNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundFault")?;
         if let Some(inner_50) = &self.message {
-            write!(f, ": {}", inner_50)?;
+            {
+                write!(f, ": {}", inner_50)?;
+            }
         }
         Ok(())
     }
@@ -3284,7 +3034,7 @@ impl std::error::Error for ResourceNotFoundFault {}
 pub mod resource_not_found_fault {
 
     /// A builder for [`ResourceNotFoundFault`](crate::error::ResourceNotFoundFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3316,22 +3066,15 @@ impl ResourceNotFoundFault {
 
 /// <p>The event subscription is in an invalid state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidEventSubscriptionStateFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidEventSubscriptionStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidEventSubscriptionStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidEventSubscriptionStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3339,7 +3082,9 @@ impl std::fmt::Display for InvalidEventSubscriptionStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidEventSubscriptionStateFault")?;
         if let Some(inner_51) = &self.message {
-            write!(f, ": {}", inner_51)?;
+            {
+                write!(f, ": {}", inner_51)?;
+            }
         }
         Ok(())
     }
@@ -3349,7 +3094,7 @@ impl std::error::Error for InvalidEventSubscriptionStateFault {}
 pub mod invalid_event_subscription_state_fault {
 
     /// A builder for [`InvalidEventSubscriptionStateFault`](crate::error::InvalidEventSubscriptionStateFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3381,22 +3126,15 @@ impl InvalidEventSubscriptionStateFault {
 
 /// <p>The DB subnet is not in the <i>available</i> state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDbSubnetStateFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidDbSubnetStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDbSubnetStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidDbSubnetStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3404,7 +3142,9 @@ impl std::fmt::Display for InvalidDbSubnetStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDbSubnetStateFault [InvalidDBSubnetStateFault]")?;
         if let Some(inner_52) = &self.message {
-            write!(f, ": {}", inner_52)?;
+            {
+                write!(f, ": {}", inner_52)?;
+            }
         }
         Ok(())
     }
@@ -3414,7 +3154,7 @@ impl std::error::Error for InvalidDbSubnetStateFault {}
 pub mod invalid_db_subnet_state_fault {
 
     /// A builder for [`InvalidDbSubnetStateFault`](crate::error::InvalidDbSubnetStateFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3446,22 +3186,15 @@ impl InvalidDbSubnetStateFault {
 
 /// <p>Request would result in user exceeding the allowed number of DB snapshots.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnapshotQuotaExceededFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for SnapshotQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnapshotQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl SnapshotQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3469,7 +3202,9 @@ impl std::fmt::Display for SnapshotQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnapshotQuotaExceededFault")?;
         if let Some(inner_53) = &self.message {
-            write!(f, ": {}", inner_53)?;
+            {
+                write!(f, ": {}", inner_53)?;
+            }
         }
         Ok(())
     }
@@ -3479,7 +3214,7 @@ impl std::error::Error for SnapshotQuotaExceededFault {}
 pub mod snapshot_quota_exceeded_fault {
 
     /// A builder for [`SnapshotQuotaExceededFault`](crate::error::SnapshotQuotaExceededFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3511,22 +3246,15 @@ impl SnapshotQuotaExceededFault {
 
 /// <p> <i>DBSnapshotIdentifier</i> is already used by an existing snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbSnapshotAlreadyExistsFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DbSnapshotAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbSnapshotAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DbSnapshotAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3537,7 +3265,9 @@ impl std::fmt::Display for DbSnapshotAlreadyExistsFault {
             "DbSnapshotAlreadyExistsFault [DBSnapshotAlreadyExistsFault]"
         )?;
         if let Some(inner_54) = &self.message {
-            write!(f, ": {}", inner_54)?;
+            {
+                write!(f, ": {}", inner_54)?;
+            }
         }
         Ok(())
     }
@@ -3547,7 +3277,7 @@ impl std::error::Error for DbSnapshotAlreadyExistsFault {}
 pub mod db_snapshot_already_exists_fault {
 
     /// A builder for [`DbSnapshotAlreadyExistsFault`](crate::error::DbSnapshotAlreadyExistsFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3579,22 +3309,15 @@ impl DbSnapshotAlreadyExistsFault {
 
 /// <p>User already has a DB cluster snapshot with the given identifier.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbClusterSnapshotAlreadyExistsFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DbClusterSnapshotAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbClusterSnapshotAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DbClusterSnapshotAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3605,7 +3328,9 @@ impl std::fmt::Display for DbClusterSnapshotAlreadyExistsFault {
             "DbClusterSnapshotAlreadyExistsFault [DBClusterSnapshotAlreadyExistsFault]"
         )?;
         if let Some(inner_55) = &self.message {
-            write!(f, ": {}", inner_55)?;
+            {
+                write!(f, ": {}", inner_55)?;
+            }
         }
         Ok(())
     }
@@ -3615,7 +3340,7 @@ impl std::error::Error for DbClusterSnapshotAlreadyExistsFault {}
 pub mod db_cluster_snapshot_already_exists_fault {
 
     /// A builder for [`DbClusterSnapshotAlreadyExistsFault`](crate::error::DbClusterSnapshotAlreadyExistsFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3647,22 +3372,15 @@ impl DbClusterSnapshotAlreadyExistsFault {
 
 /// <p>The number of global database clusters for this account is already at the maximum allowed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GlobalClusterQuotaExceededFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for GlobalClusterQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GlobalClusterQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl GlobalClusterQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3670,7 +3388,9 @@ impl std::fmt::Display for GlobalClusterQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "GlobalClusterQuotaExceededFault")?;
         if let Some(inner_56) = &self.message {
-            write!(f, ": {}", inner_56)?;
+            {
+                write!(f, ": {}", inner_56)?;
+            }
         }
         Ok(())
     }
@@ -3680,7 +3400,7 @@ impl std::error::Error for GlobalClusterQuotaExceededFault {}
 pub mod global_cluster_quota_exceeded_fault {
 
     /// A builder for [`GlobalClusterQuotaExceededFault`](crate::error::GlobalClusterQuotaExceededFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3712,22 +3432,15 @@ impl GlobalClusterQuotaExceededFault {
 
 /// <p>The <code>GlobalClusterIdentifier</code> already exists. Choose a new global database identifier (unique name) to create a new global database cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GlobalClusterAlreadyExistsFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for GlobalClusterAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GlobalClusterAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl GlobalClusterAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3735,7 +3448,9 @@ impl std::fmt::Display for GlobalClusterAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "GlobalClusterAlreadyExistsFault")?;
         if let Some(inner_57) = &self.message {
-            write!(f, ": {}", inner_57)?;
+            {
+                write!(f, ": {}", inner_57)?;
+            }
         }
         Ok(())
     }
@@ -3745,7 +3460,7 @@ impl std::error::Error for GlobalClusterAlreadyExistsFault {}
 pub mod global_cluster_already_exists_fault {
 
     /// A builder for [`GlobalClusterAlreadyExistsFault`](crate::error::GlobalClusterAlreadyExistsFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3777,22 +3492,15 @@ impl GlobalClusterAlreadyExistsFault {
 
 /// <p>This subscription already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubscriptionAlreadyExistFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for SubscriptionAlreadyExistFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubscriptionAlreadyExistFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl SubscriptionAlreadyExistFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3800,7 +3508,9 @@ impl std::fmt::Display for SubscriptionAlreadyExistFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubscriptionAlreadyExistFault")?;
         if let Some(inner_58) = &self.message {
-            write!(f, ": {}", inner_58)?;
+            {
+                write!(f, ": {}", inner_58)?;
+            }
         }
         Ok(())
     }
@@ -3810,7 +3520,7 @@ impl std::error::Error for SubscriptionAlreadyExistFault {}
 pub mod subscription_already_exist_fault {
 
     /// A builder for [`SubscriptionAlreadyExistFault`](crate::error::SubscriptionAlreadyExistFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3842,22 +3552,15 @@ impl SubscriptionAlreadyExistFault {
 
 /// <p>Request would result in user exceeding the allowed number of DB subnet groups.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbSubnetGroupQuotaExceededFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DbSubnetGroupQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbSubnetGroupQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DbSubnetGroupQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3868,7 +3571,9 @@ impl std::fmt::Display for DbSubnetGroupQuotaExceededFault {
             "DbSubnetGroupQuotaExceededFault [DBSubnetGroupQuotaExceededFault]"
         )?;
         if let Some(inner_59) = &self.message {
-            write!(f, ": {}", inner_59)?;
+            {
+                write!(f, ": {}", inner_59)?;
+            }
         }
         Ok(())
     }
@@ -3878,7 +3583,7 @@ impl std::error::Error for DbSubnetGroupQuotaExceededFault {}
 pub mod db_subnet_group_quota_exceeded_fault {
 
     /// A builder for [`DbSubnetGroupQuotaExceededFault`](crate::error::DbSubnetGroupQuotaExceededFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3910,22 +3615,15 @@ impl DbSubnetGroupQuotaExceededFault {
 
 /// <p> <i>DBSubnetGroupName</i> is already used by an existing DB subnet group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbSubnetGroupAlreadyExistsFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DbSubnetGroupAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbSubnetGroupAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DbSubnetGroupAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3936,7 +3634,9 @@ impl std::fmt::Display for DbSubnetGroupAlreadyExistsFault {
             "DbSubnetGroupAlreadyExistsFault [DBSubnetGroupAlreadyExistsFault]"
         )?;
         if let Some(inner_60) = &self.message {
-            write!(f, ": {}", inner_60)?;
+            {
+                write!(f, ": {}", inner_60)?;
+            }
         }
         Ok(())
     }
@@ -3946,7 +3646,7 @@ impl std::error::Error for DbSubnetGroupAlreadyExistsFault {}
 pub mod db_subnet_group_already_exists_fault {
 
     /// A builder for [`DbSubnetGroupAlreadyExistsFault`](crate::error::DbSubnetGroupAlreadyExistsFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3978,22 +3678,15 @@ impl DbSubnetGroupAlreadyExistsFault {
 
 /// <p>Request would result in user exceeding the allowed number of DB parameter groups.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbParameterGroupQuotaExceededFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DbParameterGroupQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbParameterGroupQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DbParameterGroupQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4004,7 +3697,9 @@ impl std::fmt::Display for DbParameterGroupQuotaExceededFault {
             "DbParameterGroupQuotaExceededFault [DBParameterGroupQuotaExceededFault]"
         )?;
         if let Some(inner_61) = &self.message {
-            write!(f, ": {}", inner_61)?;
+            {
+                write!(f, ": {}", inner_61)?;
+            }
         }
         Ok(())
     }
@@ -4014,7 +3709,7 @@ impl std::error::Error for DbParameterGroupQuotaExceededFault {}
 pub mod db_parameter_group_quota_exceeded_fault {
 
     /// A builder for [`DbParameterGroupQuotaExceededFault`](crate::error::DbParameterGroupQuotaExceededFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -4046,22 +3741,15 @@ impl DbParameterGroupQuotaExceededFault {
 
 /// <p>A DB parameter group with the same name exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbParameterGroupAlreadyExistsFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DbParameterGroupAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbParameterGroupAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DbParameterGroupAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4072,7 +3760,9 @@ impl std::fmt::Display for DbParameterGroupAlreadyExistsFault {
             "DbParameterGroupAlreadyExistsFault [DBParameterGroupAlreadyExistsFault]"
         )?;
         if let Some(inner_62) = &self.message {
-            write!(f, ": {}", inner_62)?;
+            {
+                write!(f, ": {}", inner_62)?;
+            }
         }
         Ok(())
     }
@@ -4082,7 +3772,7 @@ impl std::error::Error for DbParameterGroupAlreadyExistsFault {}
 pub mod db_parameter_group_already_exists_fault {
 
     /// A builder for [`DbParameterGroupAlreadyExistsFault`](crate::error::DbParameterGroupAlreadyExistsFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -4114,22 +3804,15 @@ impl DbParameterGroupAlreadyExistsFault {
 
 /// <p>Request would result in user exceeding the allowed number of DB instances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceQuotaExceededFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InstanceQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InstanceQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4137,7 +3820,9 @@ impl std::fmt::Display for InstanceQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InstanceQuotaExceededFault")?;
         if let Some(inner_63) = &self.message {
-            write!(f, ": {}", inner_63)?;
+            {
+                write!(f, ": {}", inner_63)?;
+            }
         }
         Ok(())
     }
@@ -4147,7 +3832,7 @@ impl std::error::Error for InstanceQuotaExceededFault {}
 pub mod instance_quota_exceeded_fault {
 
     /// A builder for [`InstanceQuotaExceededFault`](crate::error::InstanceQuotaExceededFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -4179,22 +3864,15 @@ impl InstanceQuotaExceededFault {
 
 /// <p>The cluster already has the maximum number of custom endpoints.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbClusterEndpointQuotaExceededFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DbClusterEndpointQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbClusterEndpointQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DbClusterEndpointQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4205,7 +3883,9 @@ impl std::fmt::Display for DbClusterEndpointQuotaExceededFault {
             "DbClusterEndpointQuotaExceededFault [DBClusterEndpointQuotaExceededFault]"
         )?;
         if let Some(inner_64) = &self.message {
-            write!(f, ": {}", inner_64)?;
+            {
+                write!(f, ": {}", inner_64)?;
+            }
         }
         Ok(())
     }
@@ -4215,7 +3895,7 @@ impl std::error::Error for DbClusterEndpointQuotaExceededFault {}
 pub mod db_cluster_endpoint_quota_exceeded_fault {
 
     /// A builder for [`DbClusterEndpointQuotaExceededFault`](crate::error::DbClusterEndpointQuotaExceededFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -4247,22 +3927,15 @@ impl DbClusterEndpointQuotaExceededFault {
 
 /// <p>The specified custom endpoint cannot be created because it already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbClusterEndpointAlreadyExistsFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DbClusterEndpointAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbClusterEndpointAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DbClusterEndpointAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4273,7 +3946,9 @@ impl std::fmt::Display for DbClusterEndpointAlreadyExistsFault {
             "DbClusterEndpointAlreadyExistsFault [DBClusterEndpointAlreadyExistsFault]"
         )?;
         if let Some(inner_65) = &self.message {
-            write!(f, ": {}", inner_65)?;
+            {
+                write!(f, ": {}", inner_65)?;
+            }
         }
         Ok(())
     }
@@ -4283,7 +3958,7 @@ impl std::error::Error for DbClusterEndpointAlreadyExistsFault {}
 pub mod db_cluster_endpoint_already_exists_fault {
 
     /// A builder for [`DbClusterEndpointAlreadyExistsFault`](crate::error::DbClusterEndpointAlreadyExistsFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -4315,22 +3990,15 @@ impl DbClusterEndpointAlreadyExistsFault {
 
 /// <p>You have exceeded the maximum number of IAM roles that can be associated with the specified DB cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbClusterRoleQuotaExceededFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DbClusterRoleQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbClusterRoleQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DbClusterRoleQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4341,7 +4009,9 @@ impl std::fmt::Display for DbClusterRoleQuotaExceededFault {
             "DbClusterRoleQuotaExceededFault [DBClusterRoleQuotaExceededFault]"
         )?;
         if let Some(inner_66) = &self.message {
-            write!(f, ": {}", inner_66)?;
+            {
+                write!(f, ": {}", inner_66)?;
+            }
         }
         Ok(())
     }
@@ -4351,7 +4021,7 @@ impl std::error::Error for DbClusterRoleQuotaExceededFault {}
 pub mod db_cluster_role_quota_exceeded_fault {
 
     /// A builder for [`DbClusterRoleQuotaExceededFault`](crate::error::DbClusterRoleQuotaExceededFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -4383,22 +4053,15 @@ impl DbClusterRoleQuotaExceededFault {
 
 /// <p>The specified IAM role Amazon Resource Name (ARN) is already associated with the specified DB cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DbClusterRoleAlreadyExistsFault {
     /// <p>A message describing the details of the problem.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DbClusterRoleAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DbClusterRoleAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DbClusterRoleAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4409,7 +4072,9 @@ impl std::fmt::Display for DbClusterRoleAlreadyExistsFault {
             "DbClusterRoleAlreadyExistsFault [DBClusterRoleAlreadyExistsFault]"
         )?;
         if let Some(inner_67) = &self.message {
-            write!(f, ": {}", inner_67)?;
+            {
+                write!(f, ": {}", inner_67)?;
+            }
         }
         Ok(())
     }
@@ -4419,7 +4084,7 @@ impl std::error::Error for DbClusterRoleAlreadyExistsFault {}
 pub mod db_cluster_role_already_exists_fault {
 
     /// A builder for [`DbClusterRoleAlreadyExistsFault`](crate::error::DbClusterRoleAlreadyExistsFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -4458,6 +4123,14 @@ pub struct AddRoleToDBClusterError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for AddRoleToDBClusterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AddRoleToDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AddRoleToDBCluster` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4470,8 +4143,15 @@ pub enum AddRoleToDBClusterErrorKind {
     DbClusterRoleQuotaExceededFault(crate::error::DbClusterRoleQuotaExceededFault),
     /// <p>The DB cluster is not in a valid state.</p>
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AddRoleToDBClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4501,7 +4181,7 @@ impl AddRoleToDBClusterError {
     /// Creates the `AddRoleToDBClusterError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AddRoleToDBClusterErrorKind::Unhandled(err.into()),
+            kind: AddRoleToDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4510,7 +4190,7 @@ impl AddRoleToDBClusterError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AddRoleToDBClusterErrorKind::Unhandled(err.into()),
+            kind: AddRoleToDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4570,7 +4250,7 @@ impl std::error::Error for AddRoleToDBClusterError {
             AddRoleToDBClusterErrorKind::DbClusterRoleAlreadyExistsFault(_inner) => Some(_inner),
             AddRoleToDBClusterErrorKind::DbClusterRoleQuotaExceededFault(_inner) => Some(_inner),
             AddRoleToDBClusterErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
-            AddRoleToDBClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AddRoleToDBClusterErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4584,6 +4264,16 @@ pub struct AddSourceIdentifierToSubscriptionError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for AddSourceIdentifierToSubscriptionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AddSourceIdentifierToSubscriptionErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AddSourceIdentifierToSubscription` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4592,8 +4282,15 @@ pub enum AddSourceIdentifierToSubscriptionErrorKind {
     SourceNotFoundFault(crate::error::SourceNotFoundFault),
     /// <p>The designated subscription could not be found.</p>
     SubscriptionNotFoundFault(crate::error::SubscriptionNotFoundFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AddSourceIdentifierToSubscriptionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4628,7 +4325,9 @@ impl AddSourceIdentifierToSubscriptionError {
     /// Creates the `AddSourceIdentifierToSubscriptionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AddSourceIdentifierToSubscriptionErrorKind::Unhandled(err.into()),
+            kind: AddSourceIdentifierToSubscriptionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -4637,7 +4336,9 @@ impl AddSourceIdentifierToSubscriptionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AddSourceIdentifierToSubscriptionErrorKind::Unhandled(err.into()),
+            kind: AddSourceIdentifierToSubscriptionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -4683,7 +4384,7 @@ impl std::error::Error for AddSourceIdentifierToSubscriptionError {
             AddSourceIdentifierToSubscriptionErrorKind::SubscriptionNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            AddSourceIdentifierToSubscriptionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AddSourceIdentifierToSubscriptionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4697,6 +4398,14 @@ pub struct AddTagsToResourceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for AddTagsToResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AddTagsToResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AddTagsToResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4707,8 +4416,15 @@ pub enum AddTagsToResourceErrorKind {
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
     /// <p> <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.</p>
     DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AddTagsToResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4737,7 +4453,7 @@ impl AddTagsToResourceError {
     /// Creates the `AddTagsToResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AddTagsToResourceErrorKind::Unhandled(err.into()),
+            kind: AddTagsToResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4746,7 +4462,7 @@ impl AddTagsToResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AddTagsToResourceErrorKind::Unhandled(err.into()),
+            kind: AddTagsToResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4798,7 +4514,7 @@ impl std::error::Error for AddTagsToResourceError {
             AddTagsToResourceErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
             AddTagsToResourceErrorKind::DbInstanceNotFoundFault(_inner) => Some(_inner),
             AddTagsToResourceErrorKind::DbSnapshotNotFoundFault(_inner) => Some(_inner),
-            AddTagsToResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AddTagsToResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4812,14 +4528,31 @@ pub struct ApplyPendingMaintenanceActionError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ApplyPendingMaintenanceActionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ApplyPendingMaintenanceActionErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ApplyPendingMaintenanceAction` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ApplyPendingMaintenanceActionErrorKind {
     /// <p>The specified resource ID was not found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ApplyPendingMaintenanceActionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4849,7 +4582,9 @@ impl ApplyPendingMaintenanceActionError {
     /// Creates the `ApplyPendingMaintenanceActionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ApplyPendingMaintenanceActionErrorKind::Unhandled(err.into()),
+            kind: ApplyPendingMaintenanceActionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4858,7 +4593,9 @@ impl ApplyPendingMaintenanceActionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ApplyPendingMaintenanceActionErrorKind::Unhandled(err.into()),
+            kind: ApplyPendingMaintenanceActionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4894,7 +4631,7 @@ impl std::error::Error for ApplyPendingMaintenanceActionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ApplyPendingMaintenanceActionErrorKind::ResourceNotFoundFault(_inner) => Some(_inner),
-            ApplyPendingMaintenanceActionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ApplyPendingMaintenanceActionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4908,6 +4645,16 @@ pub struct CopyDBClusterParameterGroupError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CopyDBClusterParameterGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CopyDBClusterParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CopyDBClusterParameterGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4918,8 +4665,15 @@ pub enum CopyDBClusterParameterGroupErrorKind {
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
     /// <p>Request would result in user exceeding the allowed number of DB parameter groups.</p>
     DbParameterGroupQuotaExceededFault(crate::error::DbParameterGroupQuotaExceededFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CopyDBClusterParameterGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4954,7 +4708,9 @@ impl CopyDBClusterParameterGroupError {
     /// Creates the `CopyDBClusterParameterGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CopyDBClusterParameterGroupErrorKind::Unhandled(err.into()),
+            kind: CopyDBClusterParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4963,7 +4719,9 @@ impl CopyDBClusterParameterGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CopyDBClusterParameterGroupErrorKind::Unhandled(err.into()),
+            kind: CopyDBClusterParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5021,7 +4779,7 @@ impl std::error::Error for CopyDBClusterParameterGroupError {
             CopyDBClusterParameterGroupErrorKind::DbParameterGroupQuotaExceededFault(_inner) => {
                 Some(_inner)
             }
-            CopyDBClusterParameterGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CopyDBClusterParameterGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5034,6 +4792,14 @@ pub struct CopyDBClusterSnapshotError {
     pub kind: CopyDBClusterSnapshotErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CopyDBClusterSnapshotError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CopyDBClusterSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CopyDBClusterSnapshot` operation.
 #[non_exhaustive]
@@ -5051,8 +4817,15 @@ pub enum CopyDBClusterSnapshotErrorKind {
     KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
     /// <p>Request would result in user exceeding the allowed number of DB snapshots.</p>
     SnapshotQuotaExceededFault(crate::error::SnapshotQuotaExceededFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CopyDBClusterSnapshotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5088,7 +4861,9 @@ impl CopyDBClusterSnapshotError {
     /// Creates the `CopyDBClusterSnapshotError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CopyDBClusterSnapshotErrorKind::Unhandled(err.into()),
+            kind: CopyDBClusterSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5097,7 +4872,9 @@ impl CopyDBClusterSnapshotError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CopyDBClusterSnapshotErrorKind::Unhandled(err.into()),
+            kind: CopyDBClusterSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5177,7 +4954,7 @@ impl std::error::Error for CopyDBClusterSnapshotError {
             CopyDBClusterSnapshotErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
             CopyDBClusterSnapshotErrorKind::KmsKeyNotAccessibleFault(_inner) => Some(_inner),
             CopyDBClusterSnapshotErrorKind::SnapshotQuotaExceededFault(_inner) => Some(_inner),
-            CopyDBClusterSnapshotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CopyDBClusterSnapshotErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5191,6 +4968,14 @@ pub struct CopyDBParameterGroupError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CopyDBParameterGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CopyDBParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CopyDBParameterGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5201,8 +4986,15 @@ pub enum CopyDBParameterGroupErrorKind {
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
     /// <p>Request would result in user exceeding the allowed number of DB parameter groups.</p>
     DbParameterGroupQuotaExceededFault(crate::error::DbParameterGroupQuotaExceededFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CopyDBParameterGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5235,7 +5027,9 @@ impl CopyDBParameterGroupError {
     /// Creates the `CopyDBParameterGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CopyDBParameterGroupErrorKind::Unhandled(err.into()),
+            kind: CopyDBParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5244,7 +5038,9 @@ impl CopyDBParameterGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CopyDBParameterGroupErrorKind::Unhandled(err.into()),
+            kind: CopyDBParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5300,7 +5096,7 @@ impl std::error::Error for CopyDBParameterGroupError {
             CopyDBParameterGroupErrorKind::DbParameterGroupQuotaExceededFault(_inner) => {
                 Some(_inner)
             }
-            CopyDBParameterGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CopyDBParameterGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5313,6 +5109,14 @@ pub struct CreateDBClusterError {
     pub kind: CreateDBClusterErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateDBClusterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateDBCluster` operation.
 #[non_exhaustive]
@@ -5352,8 +5156,15 @@ pub enum CreateDBClusterErrorKind {
     KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
     /// <p>Request would result in user exceeding the allowed amount of storage available across all DB instances.</p>
     StorageQuotaExceededFault(crate::error::StorageQuotaExceededFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDBClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5398,7 +5209,7 @@ impl CreateDBClusterError {
     /// Creates the `CreateDBClusterError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDBClusterErrorKind::Unhandled(err.into()),
+            kind: CreateDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5407,7 +5218,7 @@ impl CreateDBClusterError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDBClusterErrorKind::Unhandled(err.into()),
+            kind: CreateDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5570,7 +5381,7 @@ impl std::error::Error for CreateDBClusterError {
             CreateDBClusterErrorKind::InvalidVpcNetworkStateFault(_inner) => Some(_inner),
             CreateDBClusterErrorKind::KmsKeyNotAccessibleFault(_inner) => Some(_inner),
             CreateDBClusterErrorKind::StorageQuotaExceededFault(_inner) => Some(_inner),
-            CreateDBClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDBClusterErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5583,6 +5394,14 @@ pub struct CreateDBClusterEndpointError {
     pub kind: CreateDBClusterEndpointErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateDBClusterEndpointError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateDBClusterEndpointErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateDBClusterEndpoint` operation.
 #[non_exhaustive]
@@ -5600,8 +5419,15 @@ pub enum CreateDBClusterEndpointErrorKind {
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
     /// <p>The specified DB instance is not in the <i>available</i> state.</p>
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDBClusterEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5637,7 +5463,9 @@ impl CreateDBClusterEndpointError {
     /// Creates the `CreateDBClusterEndpointError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDBClusterEndpointErrorKind::Unhandled(err.into()),
+            kind: CreateDBClusterEndpointErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5646,7 +5474,9 @@ impl CreateDBClusterEndpointError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDBClusterEndpointErrorKind::Unhandled(err.into()),
+            kind: CreateDBClusterEndpointErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5726,7 +5556,7 @@ impl std::error::Error for CreateDBClusterEndpointError {
             CreateDBClusterEndpointErrorKind::DbInstanceNotFoundFault(_inner) => Some(_inner),
             CreateDBClusterEndpointErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
             CreateDBClusterEndpointErrorKind::InvalidDbInstanceStateFault(_inner) => Some(_inner),
-            CreateDBClusterEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDBClusterEndpointErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5740,6 +5570,16 @@ pub struct CreateDBClusterParameterGroupError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateDBClusterParameterGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateDBClusterParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateDBClusterParameterGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5748,8 +5588,15 @@ pub enum CreateDBClusterParameterGroupErrorKind {
     DbParameterGroupAlreadyExistsFault(crate::error::DbParameterGroupAlreadyExistsFault),
     /// <p>Request would result in user exceeding the allowed number of DB parameter groups.</p>
     DbParameterGroupQuotaExceededFault(crate::error::DbParameterGroupQuotaExceededFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDBClusterParameterGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5784,7 +5631,9 @@ impl CreateDBClusterParameterGroupError {
     /// Creates the `CreateDBClusterParameterGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDBClusterParameterGroupErrorKind::Unhandled(err.into()),
+            kind: CreateDBClusterParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5793,7 +5642,9 @@ impl CreateDBClusterParameterGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDBClusterParameterGroupErrorKind::Unhandled(err.into()),
+            kind: CreateDBClusterParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5841,7 +5692,7 @@ impl std::error::Error for CreateDBClusterParameterGroupError {
             CreateDBClusterParameterGroupErrorKind::DbParameterGroupQuotaExceededFault(_inner) => {
                 Some(_inner)
             }
-            CreateDBClusterParameterGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDBClusterParameterGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5854,6 +5705,14 @@ pub struct CreateDBClusterSnapshotError {
     pub kind: CreateDBClusterSnapshotErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateDBClusterSnapshotError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateDBClusterSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateDBClusterSnapshot` operation.
 #[non_exhaustive]
@@ -5869,8 +5728,15 @@ pub enum CreateDBClusterSnapshotErrorKind {
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
     /// <p>Request would result in user exceeding the allowed number of DB snapshots.</p>
     SnapshotQuotaExceededFault(crate::error::SnapshotQuotaExceededFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDBClusterSnapshotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5905,7 +5771,9 @@ impl CreateDBClusterSnapshotError {
     /// Creates the `CreateDBClusterSnapshotError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDBClusterSnapshotErrorKind::Unhandled(err.into()),
+            kind: CreateDBClusterSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5914,7 +5782,9 @@ impl CreateDBClusterSnapshotError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDBClusterSnapshotErrorKind::Unhandled(err.into()),
+            kind: CreateDBClusterSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5986,7 +5856,7 @@ impl std::error::Error for CreateDBClusterSnapshotError {
             }
             CreateDBClusterSnapshotErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
             CreateDBClusterSnapshotErrorKind::SnapshotQuotaExceededFault(_inner) => Some(_inner),
-            CreateDBClusterSnapshotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDBClusterSnapshotErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5999,6 +5869,14 @@ pub struct CreateDBInstanceError {
     pub kind: CreateDBInstanceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateDBInstanceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateDBInstanceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateDBInstance` operation.
 #[non_exhaustive]
@@ -6041,8 +5919,15 @@ pub enum CreateDBInstanceErrorKind {
     StorageQuotaExceededFault(crate::error::StorageQuotaExceededFault),
     /// <p> <i>StorageType</i> specified cannot be associated with the DB Instance.</p>
     StorageTypeNotSupportedFault(crate::error::StorageTypeNotSupportedFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDBInstanceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6088,7 +5973,7 @@ impl CreateDBInstanceError {
     /// Creates the `CreateDBInstanceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDBInstanceErrorKind::Unhandled(err.into()),
+            kind: CreateDBInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6097,7 +5982,7 @@ impl CreateDBInstanceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDBInstanceErrorKind::Unhandled(err.into()),
+            kind: CreateDBInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6266,7 +6151,7 @@ impl std::error::Error for CreateDBInstanceError {
             CreateDBInstanceErrorKind::ProvisionedIopsNotAvailableInAzFault(_inner) => Some(_inner),
             CreateDBInstanceErrorKind::StorageQuotaExceededFault(_inner) => Some(_inner),
             CreateDBInstanceErrorKind::StorageTypeNotSupportedFault(_inner) => Some(_inner),
-            CreateDBInstanceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDBInstanceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6280,6 +6165,14 @@ pub struct CreateDBParameterGroupError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateDBParameterGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateDBParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateDBParameterGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6288,8 +6181,15 @@ pub enum CreateDBParameterGroupErrorKind {
     DbParameterGroupAlreadyExistsFault(crate::error::DbParameterGroupAlreadyExistsFault),
     /// <p>Request would result in user exceeding the allowed number of DB parameter groups.</p>
     DbParameterGroupQuotaExceededFault(crate::error::DbParameterGroupQuotaExceededFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDBParameterGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6321,7 +6221,9 @@ impl CreateDBParameterGroupError {
     /// Creates the `CreateDBParameterGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDBParameterGroupErrorKind::Unhandled(err.into()),
+            kind: CreateDBParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6330,7 +6232,9 @@ impl CreateDBParameterGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDBParameterGroupErrorKind::Unhandled(err.into()),
+            kind: CreateDBParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6378,7 +6282,7 @@ impl std::error::Error for CreateDBParameterGroupError {
             CreateDBParameterGroupErrorKind::DbParameterGroupQuotaExceededFault(_inner) => {
                 Some(_inner)
             }
-            CreateDBParameterGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDBParameterGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6391,6 +6295,14 @@ pub struct CreateDBSubnetGroupError {
     pub kind: CreateDBSubnetGroupErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateDBSubnetGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateDBSubnetGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateDBSubnetGroup` operation.
 #[non_exhaustive]
@@ -6406,8 +6318,15 @@ pub enum CreateDBSubnetGroupErrorKind {
     DbSubnetQuotaExceededFault(crate::error::DbSubnetQuotaExceededFault),
     /// <p>The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.</p>
     InvalidSubnet(crate::error::InvalidSubnet),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDBSubnetGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6440,7 +6359,7 @@ impl CreateDBSubnetGroupError {
     /// Creates the `CreateDBSubnetGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDBSubnetGroupErrorKind::Unhandled(err.into()),
+            kind: CreateDBSubnetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6449,7 +6368,7 @@ impl CreateDBSubnetGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDBSubnetGroupErrorKind::Unhandled(err.into()),
+            kind: CreateDBSubnetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6516,7 +6435,7 @@ impl std::error::Error for CreateDBSubnetGroupError {
             CreateDBSubnetGroupErrorKind::DbSubnetGroupQuotaExceededFault(_inner) => Some(_inner),
             CreateDBSubnetGroupErrorKind::DbSubnetQuotaExceededFault(_inner) => Some(_inner),
             CreateDBSubnetGroupErrorKind::InvalidSubnet(_inner) => Some(_inner),
-            CreateDBSubnetGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDBSubnetGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6529,6 +6448,14 @@ pub struct CreateEventSubscriptionError {
     pub kind: CreateEventSubscriptionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateEventSubscriptionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateEventSubscriptionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateEventSubscription` operation.
 #[non_exhaustive]
@@ -6548,8 +6475,15 @@ pub enum CreateEventSubscriptionErrorKind {
     SubscriptionAlreadyExistFault(crate::error::SubscriptionAlreadyExistFault),
     /// <p>The designated subscription category could not be found.</p>
     SubscriptionCategoryNotFoundFault(crate::error::SubscriptionCategoryNotFoundFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateEventSubscriptionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6588,7 +6522,9 @@ impl CreateEventSubscriptionError {
     /// Creates the `CreateEventSubscriptionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateEventSubscriptionErrorKind::Unhandled(err.into()),
+            kind: CreateEventSubscriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6597,7 +6533,9 @@ impl CreateEventSubscriptionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateEventSubscriptionErrorKind::Unhandled(err.into()),
+            kind: CreateEventSubscriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6685,7 +6623,7 @@ impl std::error::Error for CreateEventSubscriptionError {
             CreateEventSubscriptionErrorKind::SubscriptionCategoryNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            CreateEventSubscriptionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateEventSubscriptionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6699,6 +6637,14 @@ pub struct CreateGlobalClusterError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateGlobalClusterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateGlobalClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateGlobalCluster` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6711,8 +6657,15 @@ pub enum CreateGlobalClusterErrorKind {
     GlobalClusterQuotaExceededFault(crate::error::GlobalClusterQuotaExceededFault),
     /// <p>The DB cluster is not in a valid state.</p>
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateGlobalClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6742,7 +6695,7 @@ impl CreateGlobalClusterError {
     /// Creates the `CreateGlobalClusterError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateGlobalClusterErrorKind::Unhandled(err.into()),
+            kind: CreateGlobalClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6751,7 +6704,7 @@ impl CreateGlobalClusterError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateGlobalClusterErrorKind::Unhandled(err.into()),
+            kind: CreateGlobalClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6811,7 +6764,7 @@ impl std::error::Error for CreateGlobalClusterError {
             CreateGlobalClusterErrorKind::GlobalClusterAlreadyExistsFault(_inner) => Some(_inner),
             CreateGlobalClusterErrorKind::GlobalClusterQuotaExceededFault(_inner) => Some(_inner),
             CreateGlobalClusterErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
-            CreateGlobalClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateGlobalClusterErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6824,6 +6777,14 @@ pub struct DeleteDBClusterError {
     pub kind: DeleteDBClusterErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteDBClusterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteDBCluster` operation.
 #[non_exhaustive]
@@ -6839,8 +6800,15 @@ pub enum DeleteDBClusterErrorKind {
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
     /// <p>Request would result in user exceeding the allowed number of DB snapshots.</p>
     SnapshotQuotaExceededFault(crate::error::SnapshotQuotaExceededFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDBClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6871,7 +6839,7 @@ impl DeleteDBClusterError {
     /// Creates the `DeleteDBClusterError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDBClusterErrorKind::Unhandled(err.into()),
+            kind: DeleteDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6880,7 +6848,7 @@ impl DeleteDBClusterError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDBClusterErrorKind::Unhandled(err.into()),
+            kind: DeleteDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6948,7 +6916,7 @@ impl std::error::Error for DeleteDBClusterError {
             DeleteDBClusterErrorKind::InvalidDbClusterSnapshotStateFault(_inner) => Some(_inner),
             DeleteDBClusterErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
             DeleteDBClusterErrorKind::SnapshotQuotaExceededFault(_inner) => Some(_inner),
-            DeleteDBClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDBClusterErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6962,6 +6930,14 @@ pub struct DeleteDBClusterEndpointError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteDBClusterEndpointError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteDBClusterEndpointErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteDBClusterEndpoint` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6972,8 +6948,15 @@ pub enum DeleteDBClusterEndpointErrorKind {
     InvalidDbClusterEndpointStateFault(crate::error::InvalidDbClusterEndpointStateFault),
     /// <p>The DB cluster is not in a valid state.</p>
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDBClusterEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7006,7 +6989,9 @@ impl DeleteDBClusterEndpointError {
     /// Creates the `DeleteDBClusterEndpointError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDBClusterEndpointErrorKind::Unhandled(err.into()),
+            kind: DeleteDBClusterEndpointErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7015,7 +7000,9 @@ impl DeleteDBClusterEndpointError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDBClusterEndpointErrorKind::Unhandled(err.into()),
+            kind: DeleteDBClusterEndpointErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7071,7 +7058,7 @@ impl std::error::Error for DeleteDBClusterEndpointError {
                 Some(_inner)
             }
             DeleteDBClusterEndpointErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
-            DeleteDBClusterEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDBClusterEndpointErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7085,6 +7072,16 @@ pub struct DeleteDBClusterParameterGroupError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteDBClusterParameterGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteDBClusterParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteDBClusterParameterGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7093,8 +7090,15 @@ pub enum DeleteDBClusterParameterGroupErrorKind {
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
     /// <p>The DB parameter group is in use or is in an invalid state. If you are attempting to delete the parameter group, you cannot delete it when the parameter group is in this state.</p>
     InvalidDbParameterGroupStateFault(crate::error::InvalidDbParameterGroupStateFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDBClusterParameterGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7129,7 +7133,9 @@ impl DeleteDBClusterParameterGroupError {
     /// Creates the `DeleteDBClusterParameterGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDBClusterParameterGroupErrorKind::Unhandled(err.into()),
+            kind: DeleteDBClusterParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7138,7 +7144,9 @@ impl DeleteDBClusterParameterGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDBClusterParameterGroupErrorKind::Unhandled(err.into()),
+            kind: DeleteDBClusterParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7186,7 +7194,7 @@ impl std::error::Error for DeleteDBClusterParameterGroupError {
             DeleteDBClusterParameterGroupErrorKind::InvalidDbParameterGroupStateFault(_inner) => {
                 Some(_inner)
             }
-            DeleteDBClusterParameterGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDBClusterParameterGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7200,6 +7208,14 @@ pub struct DeleteDBClusterSnapshotError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteDBClusterSnapshotError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteDBClusterSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteDBClusterSnapshot` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7208,8 +7224,15 @@ pub enum DeleteDBClusterSnapshotErrorKind {
     DbClusterSnapshotNotFoundFault(crate::error::DbClusterSnapshotNotFoundFault),
     /// <p>The supplied value is not a valid DB cluster snapshot state.</p>
     InvalidDbClusterSnapshotStateFault(crate::error::InvalidDbClusterSnapshotStateFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDBClusterSnapshotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7241,7 +7264,9 @@ impl DeleteDBClusterSnapshotError {
     /// Creates the `DeleteDBClusterSnapshotError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDBClusterSnapshotErrorKind::Unhandled(err.into()),
+            kind: DeleteDBClusterSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7250,7 +7275,9 @@ impl DeleteDBClusterSnapshotError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDBClusterSnapshotErrorKind::Unhandled(err.into()),
+            kind: DeleteDBClusterSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7298,7 +7325,7 @@ impl std::error::Error for DeleteDBClusterSnapshotError {
             DeleteDBClusterSnapshotErrorKind::InvalidDbClusterSnapshotStateFault(_inner) => {
                 Some(_inner)
             }
-            DeleteDBClusterSnapshotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDBClusterSnapshotErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7311,6 +7338,14 @@ pub struct DeleteDBInstanceError {
     pub kind: DeleteDBInstanceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteDBInstanceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteDBInstanceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteDBInstance` operation.
 #[non_exhaustive]
@@ -7326,8 +7361,15 @@ pub enum DeleteDBInstanceErrorKind {
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
     /// <p>Request would result in user exceeding the allowed number of DB snapshots.</p>
     SnapshotQuotaExceededFault(crate::error::SnapshotQuotaExceededFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDBInstanceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7358,7 +7400,7 @@ impl DeleteDBInstanceError {
     /// Creates the `DeleteDBInstanceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDBInstanceErrorKind::Unhandled(err.into()),
+            kind: DeleteDBInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7367,7 +7409,7 @@ impl DeleteDBInstanceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDBInstanceErrorKind::Unhandled(err.into()),
+            kind: DeleteDBInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7435,7 +7477,7 @@ impl std::error::Error for DeleteDBInstanceError {
             DeleteDBInstanceErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
             DeleteDBInstanceErrorKind::InvalidDbInstanceStateFault(_inner) => Some(_inner),
             DeleteDBInstanceErrorKind::SnapshotQuotaExceededFault(_inner) => Some(_inner),
-            DeleteDBInstanceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDBInstanceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7449,6 +7491,14 @@ pub struct DeleteDBParameterGroupError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteDBParameterGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteDBParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteDBParameterGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7457,8 +7507,15 @@ pub enum DeleteDBParameterGroupErrorKind {
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
     /// <p>The DB parameter group is in use or is in an invalid state. If you are attempting to delete the parameter group, you cannot delete it when the parameter group is in this state.</p>
     InvalidDbParameterGroupStateFault(crate::error::InvalidDbParameterGroupStateFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDBParameterGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7488,7 +7545,9 @@ impl DeleteDBParameterGroupError {
     /// Creates the `DeleteDBParameterGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDBParameterGroupErrorKind::Unhandled(err.into()),
+            kind: DeleteDBParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7497,7 +7556,9 @@ impl DeleteDBParameterGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDBParameterGroupErrorKind::Unhandled(err.into()),
+            kind: DeleteDBParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7543,7 +7604,7 @@ impl std::error::Error for DeleteDBParameterGroupError {
             DeleteDBParameterGroupErrorKind::InvalidDbParameterGroupStateFault(_inner) => {
                 Some(_inner)
             }
-            DeleteDBParameterGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDBParameterGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7557,6 +7618,14 @@ pub struct DeleteDBSubnetGroupError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteDBSubnetGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteDBSubnetGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteDBSubnetGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7567,8 +7636,15 @@ pub enum DeleteDBSubnetGroupErrorKind {
     InvalidDbSubnetGroupStateFault(crate::error::InvalidDbSubnetGroupStateFault),
     /// <p>The DB subnet is not in the <i>available</i> state.</p>
     InvalidDbSubnetStateFault(crate::error::InvalidDbSubnetStateFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDBSubnetGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7597,7 +7673,7 @@ impl DeleteDBSubnetGroupError {
     /// Creates the `DeleteDBSubnetGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDBSubnetGroupErrorKind::Unhandled(err.into()),
+            kind: DeleteDBSubnetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7606,7 +7682,7 @@ impl DeleteDBSubnetGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDBSubnetGroupErrorKind::Unhandled(err.into()),
+            kind: DeleteDBSubnetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7658,7 +7734,7 @@ impl std::error::Error for DeleteDBSubnetGroupError {
             DeleteDBSubnetGroupErrorKind::DbSubnetGroupNotFoundFault(_inner) => Some(_inner),
             DeleteDBSubnetGroupErrorKind::InvalidDbSubnetGroupStateFault(_inner) => Some(_inner),
             DeleteDBSubnetGroupErrorKind::InvalidDbSubnetStateFault(_inner) => Some(_inner),
-            DeleteDBSubnetGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDBSubnetGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7672,6 +7748,14 @@ pub struct DeleteEventSubscriptionError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteEventSubscriptionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteEventSubscriptionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteEventSubscription` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7680,8 +7764,15 @@ pub enum DeleteEventSubscriptionErrorKind {
     InvalidEventSubscriptionStateFault(crate::error::InvalidEventSubscriptionStateFault),
     /// <p>The designated subscription could not be found.</p>
     SubscriptionNotFoundFault(crate::error::SubscriptionNotFoundFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteEventSubscriptionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7711,7 +7802,9 @@ impl DeleteEventSubscriptionError {
     /// Creates the `DeleteEventSubscriptionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteEventSubscriptionErrorKind::Unhandled(err.into()),
+            kind: DeleteEventSubscriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7720,7 +7813,9 @@ impl DeleteEventSubscriptionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteEventSubscriptionErrorKind::Unhandled(err.into()),
+            kind: DeleteEventSubscriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7766,7 +7861,7 @@ impl std::error::Error for DeleteEventSubscriptionError {
                 Some(_inner)
             }
             DeleteEventSubscriptionErrorKind::SubscriptionNotFoundFault(_inner) => Some(_inner),
-            DeleteEventSubscriptionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteEventSubscriptionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7780,6 +7875,14 @@ pub struct DeleteGlobalClusterError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteGlobalClusterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteGlobalClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteGlobalCluster` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7788,8 +7891,15 @@ pub enum DeleteGlobalClusterErrorKind {
     GlobalClusterNotFoundFault(crate::error::GlobalClusterNotFoundFault),
     /// <p>The global cluster is in an invalid state and can't perform the requested operation. </p>
     InvalidGlobalClusterStateFault(crate::error::InvalidGlobalClusterStateFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteGlobalClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7817,7 +7927,7 @@ impl DeleteGlobalClusterError {
     /// Creates the `DeleteGlobalClusterError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteGlobalClusterErrorKind::Unhandled(err.into()),
+            kind: DeleteGlobalClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7826,7 +7936,7 @@ impl DeleteGlobalClusterError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteGlobalClusterErrorKind::Unhandled(err.into()),
+            kind: DeleteGlobalClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7870,7 +7980,7 @@ impl std::error::Error for DeleteGlobalClusterError {
         match &self.kind {
             DeleteGlobalClusterErrorKind::GlobalClusterNotFoundFault(_inner) => Some(_inner),
             DeleteGlobalClusterErrorKind::InvalidGlobalClusterStateFault(_inner) => Some(_inner),
-            DeleteGlobalClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteGlobalClusterErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7884,14 +7994,31 @@ pub struct DescribeDBClusterEndpointsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDBClusterEndpointsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDBClusterEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeDBClusterEndpoints` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBClusterEndpointsErrorKind {
     /// <p> <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDBClusterEndpointsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7918,7 +8045,9 @@ impl DescribeDBClusterEndpointsError {
     /// Creates the `DescribeDBClusterEndpointsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDBClusterEndpointsErrorKind::Unhandled(err.into()),
+            kind: DescribeDBClusterEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7927,7 +8056,9 @@ impl DescribeDBClusterEndpointsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDBClusterEndpointsErrorKind::Unhandled(err.into()),
+            kind: DescribeDBClusterEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7963,7 +8094,7 @@ impl std::error::Error for DescribeDBClusterEndpointsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeDBClusterEndpointsErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
-            DescribeDBClusterEndpointsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeDBClusterEndpointsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7977,14 +8108,31 @@ pub struct DescribeDBClusterParameterGroupsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDBClusterParameterGroupsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDBClusterParameterGroupsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeDBClusterParameterGroups` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBClusterParameterGroupsErrorKind {
     /// <p> <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.</p>
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDBClusterParameterGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8016,7 +8164,9 @@ impl DescribeDBClusterParameterGroupsError {
     /// Creates the `DescribeDBClusterParameterGroupsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDBClusterParameterGroupsErrorKind::Unhandled(err.into()),
+            kind: DescribeDBClusterParameterGroupsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -8025,7 +8175,9 @@ impl DescribeDBClusterParameterGroupsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDBClusterParameterGroupsErrorKind::Unhandled(err.into()),
+            kind: DescribeDBClusterParameterGroupsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -8063,7 +8215,7 @@ impl std::error::Error for DescribeDBClusterParameterGroupsError {
             DescribeDBClusterParameterGroupsErrorKind::DbParameterGroupNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            DescribeDBClusterParameterGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeDBClusterParameterGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8077,14 +8229,31 @@ pub struct DescribeDBClusterParametersError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDBClusterParametersError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDBClusterParametersErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeDBClusterParameters` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBClusterParametersErrorKind {
     /// <p> <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.</p>
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDBClusterParametersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8113,7 +8282,9 @@ impl DescribeDBClusterParametersError {
     /// Creates the `DescribeDBClusterParametersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDBClusterParametersErrorKind::Unhandled(err.into()),
+            kind: DescribeDBClusterParametersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8122,7 +8293,9 @@ impl DescribeDBClusterParametersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDBClusterParametersErrorKind::Unhandled(err.into()),
+            kind: DescribeDBClusterParametersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8160,7 +8333,7 @@ impl std::error::Error for DescribeDBClusterParametersError {
             DescribeDBClusterParametersErrorKind::DbParameterGroupNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            DescribeDBClusterParametersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeDBClusterParametersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8174,14 +8347,29 @@ pub struct DescribeDBClustersError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDBClustersError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDBClustersErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeDBClusters` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBClustersErrorKind {
     /// <p> <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDBClustersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8208,7 +8396,7 @@ impl DescribeDBClustersError {
     /// Creates the `DescribeDBClustersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDBClustersErrorKind::Unhandled(err.into()),
+            kind: DescribeDBClustersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8217,7 +8405,7 @@ impl DescribeDBClustersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDBClustersErrorKind::Unhandled(err.into()),
+            kind: DescribeDBClustersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8253,7 +8441,7 @@ impl std::error::Error for DescribeDBClustersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeDBClustersErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
-            DescribeDBClustersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeDBClustersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8267,14 +8455,31 @@ pub struct DescribeDBClusterSnapshotAttributesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDBClusterSnapshotAttributesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDBClusterSnapshotAttributesErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeDBClusterSnapshotAttributes` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBClusterSnapshotAttributesErrorKind {
     /// <p> <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.</p>
     DbClusterSnapshotNotFoundFault(crate::error::DbClusterSnapshotNotFoundFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDBClusterSnapshotAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8306,7 +8511,9 @@ impl DescribeDBClusterSnapshotAttributesError {
     /// Creates the `DescribeDBClusterSnapshotAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDBClusterSnapshotAttributesErrorKind::Unhandled(err.into()),
+            kind: DescribeDBClusterSnapshotAttributesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -8315,7 +8522,9 @@ impl DescribeDBClusterSnapshotAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDBClusterSnapshotAttributesErrorKind::Unhandled(err.into()),
+            kind: DescribeDBClusterSnapshotAttributesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -8353,9 +8562,7 @@ impl std::error::Error for DescribeDBClusterSnapshotAttributesError {
             DescribeDBClusterSnapshotAttributesErrorKind::DbClusterSnapshotNotFoundFault(
                 _inner,
             ) => Some(_inner),
-            DescribeDBClusterSnapshotAttributesErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DescribeDBClusterSnapshotAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8369,14 +8576,31 @@ pub struct DescribeDBClusterSnapshotsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDBClusterSnapshotsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDBClusterSnapshotsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeDBClusterSnapshots` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBClusterSnapshotsErrorKind {
     /// <p> <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.</p>
     DbClusterSnapshotNotFoundFault(crate::error::DbClusterSnapshotNotFoundFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDBClusterSnapshotsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8405,7 +8629,9 @@ impl DescribeDBClusterSnapshotsError {
     /// Creates the `DescribeDBClusterSnapshotsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDBClusterSnapshotsErrorKind::Unhandled(err.into()),
+            kind: DescribeDBClusterSnapshotsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8414,7 +8640,9 @@ impl DescribeDBClusterSnapshotsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDBClusterSnapshotsErrorKind::Unhandled(err.into()),
+            kind: DescribeDBClusterSnapshotsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8452,7 +8680,7 @@ impl std::error::Error for DescribeDBClusterSnapshotsError {
             DescribeDBClusterSnapshotsErrorKind::DbClusterSnapshotNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            DescribeDBClusterSnapshotsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeDBClusterSnapshotsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8466,12 +8694,29 @@ pub struct DescribeDBEngineVersionsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDBEngineVersionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDBEngineVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeDBEngineVersions` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBEngineVersionsErrorKind {
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDBEngineVersionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8497,7 +8742,9 @@ impl DescribeDBEngineVersionsError {
     /// Creates the `DescribeDBEngineVersionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDBEngineVersionsErrorKind::Unhandled(err.into()),
+            kind: DescribeDBEngineVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8506,7 +8753,9 @@ impl DescribeDBEngineVersionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDBEngineVersionsErrorKind::Unhandled(err.into()),
+            kind: DescribeDBEngineVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8534,7 +8783,7 @@ impl DescribeDBEngineVersionsError {
 impl std::error::Error for DescribeDBEngineVersionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeDBEngineVersionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeDBEngineVersionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8548,14 +8797,29 @@ pub struct DescribeDBInstancesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDBInstancesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDBInstancesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeDBInstances` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBInstancesErrorKind {
     /// <p> <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDBInstancesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8582,7 +8846,7 @@ impl DescribeDBInstancesError {
     /// Creates the `DescribeDBInstancesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDBInstancesErrorKind::Unhandled(err.into()),
+            kind: DescribeDBInstancesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8591,7 +8855,7 @@ impl DescribeDBInstancesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDBInstancesErrorKind::Unhandled(err.into()),
+            kind: DescribeDBInstancesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8627,7 +8891,7 @@ impl std::error::Error for DescribeDBInstancesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeDBInstancesErrorKind::DbInstanceNotFoundFault(_inner) => Some(_inner),
-            DescribeDBInstancesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeDBInstancesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8641,14 +8905,31 @@ pub struct DescribeDBParameterGroupsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDBParameterGroupsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDBParameterGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeDBParameterGroups` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBParameterGroupsErrorKind {
     /// <p> <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.</p>
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDBParameterGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8677,7 +8958,9 @@ impl DescribeDBParameterGroupsError {
     /// Creates the `DescribeDBParameterGroupsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDBParameterGroupsErrorKind::Unhandled(err.into()),
+            kind: DescribeDBParameterGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8686,7 +8969,9 @@ impl DescribeDBParameterGroupsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDBParameterGroupsErrorKind::Unhandled(err.into()),
+            kind: DescribeDBParameterGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8724,7 +9009,7 @@ impl std::error::Error for DescribeDBParameterGroupsError {
             DescribeDBParameterGroupsErrorKind::DbParameterGroupNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            DescribeDBParameterGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeDBParameterGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8738,14 +9023,29 @@ pub struct DescribeDBParametersError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDBParametersError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDBParametersErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeDBParameters` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBParametersErrorKind {
     /// <p> <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.</p>
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDBParametersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8772,7 +9072,9 @@ impl DescribeDBParametersError {
     /// Creates the `DescribeDBParametersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDBParametersErrorKind::Unhandled(err.into()),
+            kind: DescribeDBParametersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8781,7 +9083,9 @@ impl DescribeDBParametersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDBParametersErrorKind::Unhandled(err.into()),
+            kind: DescribeDBParametersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8817,7 +9121,7 @@ impl std::error::Error for DescribeDBParametersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeDBParametersErrorKind::DbParameterGroupNotFoundFault(_inner) => Some(_inner),
-            DescribeDBParametersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeDBParametersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8831,14 +9135,29 @@ pub struct DescribeDBSubnetGroupsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDBSubnetGroupsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDBSubnetGroupsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeDBSubnetGroups` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBSubnetGroupsErrorKind {
     /// <p> <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.</p>
     DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDBSubnetGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8865,7 +9184,9 @@ impl DescribeDBSubnetGroupsError {
     /// Creates the `DescribeDBSubnetGroupsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDBSubnetGroupsErrorKind::Unhandled(err.into()),
+            kind: DescribeDBSubnetGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8874,7 +9195,9 @@ impl DescribeDBSubnetGroupsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDBSubnetGroupsErrorKind::Unhandled(err.into()),
+            kind: DescribeDBSubnetGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8910,7 +9233,7 @@ impl std::error::Error for DescribeDBSubnetGroupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeDBSubnetGroupsErrorKind::DbSubnetGroupNotFoundFault(_inner) => Some(_inner),
-            DescribeDBSubnetGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeDBSubnetGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8924,12 +9247,29 @@ pub struct DescribeEngineDefaultClusterParametersError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeEngineDefaultClusterParametersError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeEngineDefaultClusterParametersErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeEngineDefaultClusterParameters` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeEngineDefaultClusterParametersErrorKind {
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEngineDefaultClusterParametersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8958,7 +9298,9 @@ impl DescribeEngineDefaultClusterParametersError {
     /// Creates the `DescribeEngineDefaultClusterParametersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeEngineDefaultClusterParametersErrorKind::Unhandled(err.into()),
+            kind: DescribeEngineDefaultClusterParametersErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -8967,7 +9309,9 @@ impl DescribeEngineDefaultClusterParametersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeEngineDefaultClusterParametersErrorKind::Unhandled(err.into()),
+            kind: DescribeEngineDefaultClusterParametersErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -8995,9 +9339,7 @@ impl DescribeEngineDefaultClusterParametersError {
 impl std::error::Error for DescribeEngineDefaultClusterParametersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeEngineDefaultClusterParametersErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DescribeEngineDefaultClusterParametersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9011,12 +9353,29 @@ pub struct DescribeEngineDefaultParametersError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeEngineDefaultParametersError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeEngineDefaultParametersErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeEngineDefaultParameters` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeEngineDefaultParametersErrorKind {
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEngineDefaultParametersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9045,7 +9404,9 @@ impl DescribeEngineDefaultParametersError {
     /// Creates the `DescribeEngineDefaultParametersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeEngineDefaultParametersErrorKind::Unhandled(err.into()),
+            kind: DescribeEngineDefaultParametersErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -9054,7 +9415,9 @@ impl DescribeEngineDefaultParametersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeEngineDefaultParametersErrorKind::Unhandled(err.into()),
+            kind: DescribeEngineDefaultParametersErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -9082,7 +9445,7 @@ impl DescribeEngineDefaultParametersError {
 impl std::error::Error for DescribeEngineDefaultParametersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeEngineDefaultParametersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeEngineDefaultParametersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9096,12 +9459,27 @@ pub struct DescribeEventCategoriesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeEventCategoriesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeEventCategoriesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeEventCategories` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeEventCategoriesErrorKind {
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEventCategoriesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9127,7 +9505,9 @@ impl DescribeEventCategoriesError {
     /// Creates the `DescribeEventCategoriesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeEventCategoriesErrorKind::Unhandled(err.into()),
+            kind: DescribeEventCategoriesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9136,7 +9516,9 @@ impl DescribeEventCategoriesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeEventCategoriesErrorKind::Unhandled(err.into()),
+            kind: DescribeEventCategoriesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -9164,7 +9546,7 @@ impl DescribeEventCategoriesError {
 impl std::error::Error for DescribeEventCategoriesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeEventCategoriesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeEventCategoriesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9178,12 +9560,27 @@ pub struct DescribeEventsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeEventsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeEventsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeEvents` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeEventsErrorKind {
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEventsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9209,7 +9606,7 @@ impl DescribeEventsError {
     /// Creates the `DescribeEventsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeEventsErrorKind::Unhandled(err.into()),
+            kind: DescribeEventsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9218,7 +9615,7 @@ impl DescribeEventsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeEventsErrorKind::Unhandled(err.into()),
+            kind: DescribeEventsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9246,7 +9643,7 @@ impl DescribeEventsError {
 impl std::error::Error for DescribeEventsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeEventsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeEventsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9260,14 +9657,31 @@ pub struct DescribeEventSubscriptionsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeEventSubscriptionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeEventSubscriptionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeEventSubscriptions` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeEventSubscriptionsErrorKind {
     /// <p>The designated subscription could not be found.</p>
     SubscriptionNotFoundFault(crate::error::SubscriptionNotFoundFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEventSubscriptionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9294,7 +9708,9 @@ impl DescribeEventSubscriptionsError {
     /// Creates the `DescribeEventSubscriptionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeEventSubscriptionsErrorKind::Unhandled(err.into()),
+            kind: DescribeEventSubscriptionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9303,7 +9719,9 @@ impl DescribeEventSubscriptionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeEventSubscriptionsErrorKind::Unhandled(err.into()),
+            kind: DescribeEventSubscriptionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -9339,7 +9757,7 @@ impl std::error::Error for DescribeEventSubscriptionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeEventSubscriptionsErrorKind::SubscriptionNotFoundFault(_inner) => Some(_inner),
-            DescribeEventSubscriptionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeEventSubscriptionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9353,14 +9771,29 @@ pub struct DescribeGlobalClustersError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeGlobalClustersError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeGlobalClustersErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeGlobalClusters` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeGlobalClustersErrorKind {
     /// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster. </p>
     GlobalClusterNotFoundFault(crate::error::GlobalClusterNotFoundFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeGlobalClustersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9387,7 +9820,9 @@ impl DescribeGlobalClustersError {
     /// Creates the `DescribeGlobalClustersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeGlobalClustersErrorKind::Unhandled(err.into()),
+            kind: DescribeGlobalClustersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9396,7 +9831,9 @@ impl DescribeGlobalClustersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeGlobalClustersErrorKind::Unhandled(err.into()),
+            kind: DescribeGlobalClustersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -9432,7 +9869,7 @@ impl std::error::Error for DescribeGlobalClustersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeGlobalClustersErrorKind::GlobalClusterNotFoundFault(_inner) => Some(_inner),
-            DescribeGlobalClustersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeGlobalClustersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9446,12 +9883,29 @@ pub struct DescribeOrderableDBInstanceOptionsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeOrderableDBInstanceOptionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeOrderableDBInstanceOptionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeOrderableDBInstanceOptions` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeOrderableDBInstanceOptionsErrorKind {
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeOrderableDBInstanceOptionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9480,7 +9934,9 @@ impl DescribeOrderableDBInstanceOptionsError {
     /// Creates the `DescribeOrderableDBInstanceOptionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeOrderableDBInstanceOptionsErrorKind::Unhandled(err.into()),
+            kind: DescribeOrderableDBInstanceOptionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -9489,7 +9945,9 @@ impl DescribeOrderableDBInstanceOptionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeOrderableDBInstanceOptionsErrorKind::Unhandled(err.into()),
+            kind: DescribeOrderableDBInstanceOptionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -9517,7 +9975,7 @@ impl DescribeOrderableDBInstanceOptionsError {
 impl std::error::Error for DescribeOrderableDBInstanceOptionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeOrderableDBInstanceOptionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeOrderableDBInstanceOptionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9531,14 +9989,31 @@ pub struct DescribePendingMaintenanceActionsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribePendingMaintenanceActionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribePendingMaintenanceActionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribePendingMaintenanceActions` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribePendingMaintenanceActionsErrorKind {
     /// <p>The specified resource ID was not found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribePendingMaintenanceActionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9570,7 +10045,9 @@ impl DescribePendingMaintenanceActionsError {
     /// Creates the `DescribePendingMaintenanceActionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribePendingMaintenanceActionsErrorKind::Unhandled(err.into()),
+            kind: DescribePendingMaintenanceActionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -9579,7 +10056,9 @@ impl DescribePendingMaintenanceActionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribePendingMaintenanceActionsErrorKind::Unhandled(err.into()),
+            kind: DescribePendingMaintenanceActionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -9617,7 +10096,7 @@ impl std::error::Error for DescribePendingMaintenanceActionsError {
             DescribePendingMaintenanceActionsErrorKind::ResourceNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            DescribePendingMaintenanceActionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribePendingMaintenanceActionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9631,6 +10110,16 @@ pub struct DescribeValidDBInstanceModificationsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeValidDBInstanceModificationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeValidDBInstanceModificationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeValidDBInstanceModifications` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -9639,8 +10128,15 @@ pub enum DescribeValidDBInstanceModificationsErrorKind {
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
     /// <p>The specified DB instance is not in the <i>available</i> state.</p>
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeValidDBInstanceModificationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9675,7 +10171,9 @@ impl DescribeValidDBInstanceModificationsError {
     /// Creates the `DescribeValidDBInstanceModificationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeValidDBInstanceModificationsErrorKind::Unhandled(err.into()),
+            kind: DescribeValidDBInstanceModificationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -9684,7 +10182,9 @@ impl DescribeValidDBInstanceModificationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeValidDBInstanceModificationsErrorKind::Unhandled(err.into()),
+            kind: DescribeValidDBInstanceModificationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -9732,9 +10232,7 @@ impl std::error::Error for DescribeValidDBInstanceModificationsError {
             DescribeValidDBInstanceModificationsErrorKind::InvalidDbInstanceStateFault(_inner) => {
                 Some(_inner)
             }
-            DescribeValidDBInstanceModificationsErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DescribeValidDBInstanceModificationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9748,6 +10246,14 @@ pub struct FailoverDBClusterError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for FailoverDBClusterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: FailoverDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `FailoverDBCluster` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -9758,8 +10264,15 @@ pub enum FailoverDBClusterErrorKind {
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
     /// <p>The specified DB instance is not in the <i>available</i> state.</p>
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for FailoverDBClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9788,7 +10301,7 @@ impl FailoverDBClusterError {
     /// Creates the `FailoverDBClusterError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: FailoverDBClusterErrorKind::Unhandled(err.into()),
+            kind: FailoverDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9797,7 +10310,7 @@ impl FailoverDBClusterError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: FailoverDBClusterErrorKind::Unhandled(err.into()),
+            kind: FailoverDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9849,7 +10362,7 @@ impl std::error::Error for FailoverDBClusterError {
             FailoverDBClusterErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
             FailoverDBClusterErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
             FailoverDBClusterErrorKind::InvalidDbInstanceStateFault(_inner) => Some(_inner),
-            FailoverDBClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            FailoverDBClusterErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9863,6 +10376,14 @@ pub struct FailoverGlobalClusterError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for FailoverGlobalClusterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: FailoverGlobalClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `FailoverGlobalCluster` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -9875,8 +10396,15 @@ pub enum FailoverGlobalClusterErrorKind {
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
     /// <p>The global cluster is in an invalid state and can't perform the requested operation. </p>
     InvalidGlobalClusterStateFault(crate::error::InvalidGlobalClusterStateFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for FailoverGlobalClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9906,7 +10434,9 @@ impl FailoverGlobalClusterError {
     /// Creates the `FailoverGlobalClusterError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: FailoverGlobalClusterErrorKind::Unhandled(err.into()),
+            kind: FailoverGlobalClusterErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9915,7 +10445,9 @@ impl FailoverGlobalClusterError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: FailoverGlobalClusterErrorKind::Unhandled(err.into()),
+            kind: FailoverGlobalClusterErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -9975,7 +10507,7 @@ impl std::error::Error for FailoverGlobalClusterError {
             FailoverGlobalClusterErrorKind::GlobalClusterNotFoundFault(_inner) => Some(_inner),
             FailoverGlobalClusterErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
             FailoverGlobalClusterErrorKind::InvalidGlobalClusterStateFault(_inner) => Some(_inner),
-            FailoverGlobalClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            FailoverGlobalClusterErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9989,6 +10521,14 @@ pub struct ListTagsForResourceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListTagsForResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListTagsForResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -9999,8 +10539,15 @@ pub enum ListTagsForResourceErrorKind {
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
     /// <p> <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.</p>
     DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10029,7 +10576,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10038,7 +10585,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10090,7 +10637,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::DbInstanceNotFoundFault(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::DbSnapshotNotFoundFault(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10103,6 +10650,14 @@ pub struct ModifyDBClusterError {
     pub kind: ModifyDBClusterErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ModifyDBClusterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ModifyDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ModifyDBCluster` operation.
 #[non_exhaustive]
@@ -10130,8 +10685,15 @@ pub enum ModifyDBClusterErrorKind {
     InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
     /// <p>Request would result in user exceeding the allowed amount of storage available across all DB instances.</p>
     StorageQuotaExceededFault(crate::error::StorageQuotaExceededFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ModifyDBClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10168,7 +10730,7 @@ impl ModifyDBClusterError {
     /// Creates the `ModifyDBClusterError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ModifyDBClusterErrorKind::Unhandled(err.into()),
+            kind: ModifyDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10177,7 +10739,7 @@ impl ModifyDBClusterError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ModifyDBClusterErrorKind::Unhandled(err.into()),
+            kind: ModifyDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10290,7 +10852,7 @@ impl std::error::Error for ModifyDBClusterError {
             ModifyDBClusterErrorKind::InvalidSubnet(_inner) => Some(_inner),
             ModifyDBClusterErrorKind::InvalidVpcNetworkStateFault(_inner) => Some(_inner),
             ModifyDBClusterErrorKind::StorageQuotaExceededFault(_inner) => Some(_inner),
-            ModifyDBClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ModifyDBClusterErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10303,6 +10865,14 @@ pub struct ModifyDBClusterEndpointError {
     pub kind: ModifyDBClusterEndpointErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ModifyDBClusterEndpointError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ModifyDBClusterEndpointErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ModifyDBClusterEndpoint` operation.
 #[non_exhaustive]
@@ -10318,8 +10888,15 @@ pub enum ModifyDBClusterEndpointErrorKind {
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
     /// <p>The specified DB instance is not in the <i>available</i> state.</p>
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ModifyDBClusterEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10354,7 +10931,9 @@ impl ModifyDBClusterEndpointError {
     /// Creates the `ModifyDBClusterEndpointError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ModifyDBClusterEndpointErrorKind::Unhandled(err.into()),
+            kind: ModifyDBClusterEndpointErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -10363,7 +10942,9 @@ impl ModifyDBClusterEndpointError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ModifyDBClusterEndpointErrorKind::Unhandled(err.into()),
+            kind: ModifyDBClusterEndpointErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -10435,7 +11016,7 @@ impl std::error::Error for ModifyDBClusterEndpointError {
             }
             ModifyDBClusterEndpointErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
             ModifyDBClusterEndpointErrorKind::InvalidDbInstanceStateFault(_inner) => Some(_inner),
-            ModifyDBClusterEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ModifyDBClusterEndpointErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10449,6 +11030,16 @@ pub struct ModifyDBClusterParameterGroupError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ModifyDBClusterParameterGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ModifyDBClusterParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ModifyDBClusterParameterGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -10457,8 +11048,15 @@ pub enum ModifyDBClusterParameterGroupErrorKind {
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
     /// <p>The DB parameter group is in use or is in an invalid state. If you are attempting to delete the parameter group, you cannot delete it when the parameter group is in this state.</p>
     InvalidDbParameterGroupStateFault(crate::error::InvalidDbParameterGroupStateFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ModifyDBClusterParameterGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10493,7 +11091,9 @@ impl ModifyDBClusterParameterGroupError {
     /// Creates the `ModifyDBClusterParameterGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ModifyDBClusterParameterGroupErrorKind::Unhandled(err.into()),
+            kind: ModifyDBClusterParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -10502,7 +11102,9 @@ impl ModifyDBClusterParameterGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ModifyDBClusterParameterGroupErrorKind::Unhandled(err.into()),
+            kind: ModifyDBClusterParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -10550,7 +11152,7 @@ impl std::error::Error for ModifyDBClusterParameterGroupError {
             ModifyDBClusterParameterGroupErrorKind::InvalidDbParameterGroupStateFault(_inner) => {
                 Some(_inner)
             }
-            ModifyDBClusterParameterGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ModifyDBClusterParameterGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10564,6 +11166,16 @@ pub struct ModifyDBClusterSnapshotAttributeError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ModifyDBClusterSnapshotAttributeError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ModifyDBClusterSnapshotAttributeErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ModifyDBClusterSnapshotAttribute` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -10574,8 +11186,15 @@ pub enum ModifyDBClusterSnapshotAttributeErrorKind {
     InvalidDbClusterSnapshotStateFault(crate::error::InvalidDbClusterSnapshotStateFault),
     /// <p>You have exceeded the maximum number of accounts that you can share a manual DB snapshot with.</p>
     SharedSnapshotQuotaExceededFault(crate::error::SharedSnapshotQuotaExceededFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ModifyDBClusterSnapshotAttributeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10613,7 +11232,9 @@ impl ModifyDBClusterSnapshotAttributeError {
     /// Creates the `ModifyDBClusterSnapshotAttributeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ModifyDBClusterSnapshotAttributeErrorKind::Unhandled(err.into()),
+            kind: ModifyDBClusterSnapshotAttributeErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -10622,7 +11243,9 @@ impl ModifyDBClusterSnapshotAttributeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ModifyDBClusterSnapshotAttributeErrorKind::Unhandled(err.into()),
+            kind: ModifyDBClusterSnapshotAttributeErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -10680,7 +11303,7 @@ impl std::error::Error for ModifyDBClusterSnapshotAttributeError {
             ModifyDBClusterSnapshotAttributeErrorKind::SharedSnapshotQuotaExceededFault(_inner) => {
                 Some(_inner)
             }
-            ModifyDBClusterSnapshotAttributeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ModifyDBClusterSnapshotAttributeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10693,6 +11316,14 @@ pub struct ModifyDBInstanceError {
     pub kind: ModifyDBInstanceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ModifyDBInstanceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ModifyDBInstanceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ModifyDBInstance` operation.
 #[non_exhaustive]
@@ -10731,8 +11362,15 @@ pub enum ModifyDBInstanceErrorKind {
     StorageQuotaExceededFault(crate::error::StorageQuotaExceededFault),
     /// <p> <i>StorageType</i> specified cannot be associated with the DB Instance.</p>
     StorageTypeNotSupportedFault(crate::error::StorageTypeNotSupportedFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ModifyDBInstanceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10776,7 +11414,7 @@ impl ModifyDBInstanceError {
     /// Creates the `ModifyDBInstanceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ModifyDBInstanceErrorKind::Unhandled(err.into()),
+            kind: ModifyDBInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10785,7 +11423,7 @@ impl ModifyDBInstanceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ModifyDBInstanceErrorKind::Unhandled(err.into()),
+            kind: ModifyDBInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10941,7 +11579,7 @@ impl std::error::Error for ModifyDBInstanceError {
             ModifyDBInstanceErrorKind::ProvisionedIopsNotAvailableInAzFault(_inner) => Some(_inner),
             ModifyDBInstanceErrorKind::StorageQuotaExceededFault(_inner) => Some(_inner),
             ModifyDBInstanceErrorKind::StorageTypeNotSupportedFault(_inner) => Some(_inner),
-            ModifyDBInstanceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ModifyDBInstanceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10955,6 +11593,14 @@ pub struct ModifyDBParameterGroupError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ModifyDBParameterGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ModifyDBParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ModifyDBParameterGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -10963,8 +11609,15 @@ pub enum ModifyDBParameterGroupErrorKind {
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
     /// <p>The DB parameter group is in use or is in an invalid state. If you are attempting to delete the parameter group, you cannot delete it when the parameter group is in this state.</p>
     InvalidDbParameterGroupStateFault(crate::error::InvalidDbParameterGroupStateFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ModifyDBParameterGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10994,7 +11647,9 @@ impl ModifyDBParameterGroupError {
     /// Creates the `ModifyDBParameterGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ModifyDBParameterGroupErrorKind::Unhandled(err.into()),
+            kind: ModifyDBParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -11003,7 +11658,9 @@ impl ModifyDBParameterGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ModifyDBParameterGroupErrorKind::Unhandled(err.into()),
+            kind: ModifyDBParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -11049,7 +11706,7 @@ impl std::error::Error for ModifyDBParameterGroupError {
             ModifyDBParameterGroupErrorKind::InvalidDbParameterGroupStateFault(_inner) => {
                 Some(_inner)
             }
-            ModifyDBParameterGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ModifyDBParameterGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11062,6 +11719,14 @@ pub struct ModifyDBSubnetGroupError {
     pub kind: ModifyDBSubnetGroupErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ModifyDBSubnetGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ModifyDBSubnetGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ModifyDBSubnetGroup` operation.
 #[non_exhaustive]
@@ -11077,8 +11742,15 @@ pub enum ModifyDBSubnetGroupErrorKind {
     InvalidSubnet(crate::error::InvalidSubnet),
     /// <p>The DB subnet is already in use in the Availability Zone.</p>
     SubnetAlreadyInUse(crate::error::SubnetAlreadyInUse),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ModifyDBSubnetGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11111,7 +11783,7 @@ impl ModifyDBSubnetGroupError {
     /// Creates the `ModifyDBSubnetGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ModifyDBSubnetGroupErrorKind::Unhandled(err.into()),
+            kind: ModifyDBSubnetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -11120,7 +11792,7 @@ impl ModifyDBSubnetGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ModifyDBSubnetGroupErrorKind::Unhandled(err.into()),
+            kind: ModifyDBSubnetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -11187,7 +11859,7 @@ impl std::error::Error for ModifyDBSubnetGroupError {
             ModifyDBSubnetGroupErrorKind::DbSubnetQuotaExceededFault(_inner) => Some(_inner),
             ModifyDBSubnetGroupErrorKind::InvalidSubnet(_inner) => Some(_inner),
             ModifyDBSubnetGroupErrorKind::SubnetAlreadyInUse(_inner) => Some(_inner),
-            ModifyDBSubnetGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ModifyDBSubnetGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11200,6 +11872,14 @@ pub struct ModifyEventSubscriptionError {
     pub kind: ModifyEventSubscriptionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ModifyEventSubscriptionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ModifyEventSubscriptionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ModifyEventSubscription` operation.
 #[non_exhaustive]
@@ -11217,8 +11897,15 @@ pub enum ModifyEventSubscriptionErrorKind {
     SubscriptionCategoryNotFoundFault(crate::error::SubscriptionCategoryNotFoundFault),
     /// <p>The designated subscription could not be found.</p>
     SubscriptionNotFoundFault(crate::error::SubscriptionNotFoundFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ModifyEventSubscriptionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11254,7 +11941,9 @@ impl ModifyEventSubscriptionError {
     /// Creates the `ModifyEventSubscriptionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ModifyEventSubscriptionErrorKind::Unhandled(err.into()),
+            kind: ModifyEventSubscriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -11263,7 +11952,9 @@ impl ModifyEventSubscriptionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ModifyEventSubscriptionErrorKind::Unhandled(err.into()),
+            kind: ModifyEventSubscriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -11343,7 +12034,7 @@ impl std::error::Error for ModifyEventSubscriptionError {
                 Some(_inner)
             }
             ModifyEventSubscriptionErrorKind::SubscriptionNotFoundFault(_inner) => Some(_inner),
-            ModifyEventSubscriptionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ModifyEventSubscriptionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11357,6 +12048,14 @@ pub struct ModifyGlobalClusterError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ModifyGlobalClusterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ModifyGlobalClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ModifyGlobalCluster` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -11365,8 +12064,15 @@ pub enum ModifyGlobalClusterErrorKind {
     GlobalClusterNotFoundFault(crate::error::GlobalClusterNotFoundFault),
     /// <p>The global cluster is in an invalid state and can't perform the requested operation. </p>
     InvalidGlobalClusterStateFault(crate::error::InvalidGlobalClusterStateFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ModifyGlobalClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11394,7 +12100,7 @@ impl ModifyGlobalClusterError {
     /// Creates the `ModifyGlobalClusterError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ModifyGlobalClusterErrorKind::Unhandled(err.into()),
+            kind: ModifyGlobalClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -11403,7 +12109,7 @@ impl ModifyGlobalClusterError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ModifyGlobalClusterErrorKind::Unhandled(err.into()),
+            kind: ModifyGlobalClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -11447,7 +12153,7 @@ impl std::error::Error for ModifyGlobalClusterError {
         match &self.kind {
             ModifyGlobalClusterErrorKind::GlobalClusterNotFoundFault(_inner) => Some(_inner),
             ModifyGlobalClusterErrorKind::InvalidGlobalClusterStateFault(_inner) => Some(_inner),
-            ModifyGlobalClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ModifyGlobalClusterErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11461,6 +12167,16 @@ pub struct PromoteReadReplicaDBClusterError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for PromoteReadReplicaDBClusterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PromoteReadReplicaDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `PromoteReadReplicaDBCluster` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -11469,8 +12185,15 @@ pub enum PromoteReadReplicaDBClusterErrorKind {
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     /// <p>The DB cluster is not in a valid state.</p>
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PromoteReadReplicaDBClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11500,7 +12223,9 @@ impl PromoteReadReplicaDBClusterError {
     /// Creates the `PromoteReadReplicaDBClusterError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PromoteReadReplicaDBClusterErrorKind::Unhandled(err.into()),
+            kind: PromoteReadReplicaDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -11509,7 +12234,9 @@ impl PromoteReadReplicaDBClusterError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PromoteReadReplicaDBClusterErrorKind::Unhandled(err.into()),
+            kind: PromoteReadReplicaDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -11555,7 +12282,7 @@ impl std::error::Error for PromoteReadReplicaDBClusterError {
             PromoteReadReplicaDBClusterErrorKind::InvalidDbClusterStateFault(_inner) => {
                 Some(_inner)
             }
-            PromoteReadReplicaDBClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PromoteReadReplicaDBClusterErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11569,6 +12296,14 @@ pub struct RebootDBInstanceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for RebootDBInstanceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RebootDBInstanceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `RebootDBInstance` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -11577,8 +12312,15 @@ pub enum RebootDBInstanceErrorKind {
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
     /// <p>The specified DB instance is not in the <i>available</i> state.</p>
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RebootDBInstanceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11606,7 +12348,7 @@ impl RebootDBInstanceError {
     /// Creates the `RebootDBInstanceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RebootDBInstanceErrorKind::Unhandled(err.into()),
+            kind: RebootDBInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -11615,7 +12357,7 @@ impl RebootDBInstanceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RebootDBInstanceErrorKind::Unhandled(err.into()),
+            kind: RebootDBInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -11659,7 +12401,7 @@ impl std::error::Error for RebootDBInstanceError {
         match &self.kind {
             RebootDBInstanceErrorKind::DbInstanceNotFoundFault(_inner) => Some(_inner),
             RebootDBInstanceErrorKind::InvalidDbInstanceStateFault(_inner) => Some(_inner),
-            RebootDBInstanceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RebootDBInstanceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11673,6 +12415,14 @@ pub struct RemoveFromGlobalClusterError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for RemoveFromGlobalClusterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RemoveFromGlobalClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `RemoveFromGlobalCluster` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -11683,8 +12433,15 @@ pub enum RemoveFromGlobalClusterErrorKind {
     GlobalClusterNotFoundFault(crate::error::GlobalClusterNotFoundFault),
     /// <p>The global cluster is in an invalid state and can't perform the requested operation. </p>
     InvalidGlobalClusterStateFault(crate::error::InvalidGlobalClusterStateFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RemoveFromGlobalClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11715,7 +12472,9 @@ impl RemoveFromGlobalClusterError {
     /// Creates the `RemoveFromGlobalClusterError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RemoveFromGlobalClusterErrorKind::Unhandled(err.into()),
+            kind: RemoveFromGlobalClusterErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -11724,7 +12483,9 @@ impl RemoveFromGlobalClusterError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RemoveFromGlobalClusterErrorKind::Unhandled(err.into()),
+            kind: RemoveFromGlobalClusterErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -11778,7 +12539,7 @@ impl std::error::Error for RemoveFromGlobalClusterError {
             RemoveFromGlobalClusterErrorKind::InvalidGlobalClusterStateFault(_inner) => {
                 Some(_inner)
             }
-            RemoveFromGlobalClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RemoveFromGlobalClusterErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11792,6 +12553,14 @@ pub struct RemoveRoleFromDBClusterError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for RemoveRoleFromDBClusterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RemoveRoleFromDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `RemoveRoleFromDBCluster` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -11802,8 +12571,15 @@ pub enum RemoveRoleFromDBClusterErrorKind {
     DbClusterRoleNotFoundFault(crate::error::DbClusterRoleNotFoundFault),
     /// <p>The DB cluster is not in a valid state.</p>
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RemoveRoleFromDBClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11832,7 +12608,9 @@ impl RemoveRoleFromDBClusterError {
     /// Creates the `RemoveRoleFromDBClusterError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RemoveRoleFromDBClusterErrorKind::Unhandled(err.into()),
+            kind: RemoveRoleFromDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -11841,7 +12619,9 @@ impl RemoveRoleFromDBClusterError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RemoveRoleFromDBClusterErrorKind::Unhandled(err.into()),
+            kind: RemoveRoleFromDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -11893,7 +12673,7 @@ impl std::error::Error for RemoveRoleFromDBClusterError {
             RemoveRoleFromDBClusterErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
             RemoveRoleFromDBClusterErrorKind::DbClusterRoleNotFoundFault(_inner) => Some(_inner),
             RemoveRoleFromDBClusterErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
-            RemoveRoleFromDBClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RemoveRoleFromDBClusterErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11907,6 +12687,16 @@ pub struct RemoveSourceIdentifierFromSubscriptionError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for RemoveSourceIdentifierFromSubscriptionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RemoveSourceIdentifierFromSubscriptionErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `RemoveSourceIdentifierFromSubscription` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -11915,8 +12705,15 @@ pub enum RemoveSourceIdentifierFromSubscriptionErrorKind {
     SourceNotFoundFault(crate::error::SourceNotFoundFault),
     /// <p>The designated subscription could not be found.</p>
     SubscriptionNotFoundFault(crate::error::SubscriptionNotFoundFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RemoveSourceIdentifierFromSubscriptionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11951,7 +12748,9 @@ impl RemoveSourceIdentifierFromSubscriptionError {
     /// Creates the `RemoveSourceIdentifierFromSubscriptionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RemoveSourceIdentifierFromSubscriptionErrorKind::Unhandled(err.into()),
+            kind: RemoveSourceIdentifierFromSubscriptionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -11960,7 +12759,9 @@ impl RemoveSourceIdentifierFromSubscriptionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RemoveSourceIdentifierFromSubscriptionErrorKind::Unhandled(err.into()),
+            kind: RemoveSourceIdentifierFromSubscriptionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -12008,9 +12809,7 @@ impl std::error::Error for RemoveSourceIdentifierFromSubscriptionError {
             RemoveSourceIdentifierFromSubscriptionErrorKind::SubscriptionNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            RemoveSourceIdentifierFromSubscriptionErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            RemoveSourceIdentifierFromSubscriptionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12024,6 +12823,14 @@ pub struct RemoveTagsFromResourceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for RemoveTagsFromResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RemoveTagsFromResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `RemoveTagsFromResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -12034,8 +12841,15 @@ pub enum RemoveTagsFromResourceErrorKind {
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
     /// <p> <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.</p>
     DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RemoveTagsFromResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12064,7 +12878,9 @@ impl RemoveTagsFromResourceError {
     /// Creates the `RemoveTagsFromResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RemoveTagsFromResourceErrorKind::Unhandled(err.into()),
+            kind: RemoveTagsFromResourceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -12073,7 +12889,9 @@ impl RemoveTagsFromResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RemoveTagsFromResourceErrorKind::Unhandled(err.into()),
+            kind: RemoveTagsFromResourceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -12125,7 +12943,7 @@ impl std::error::Error for RemoveTagsFromResourceError {
             RemoveTagsFromResourceErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
             RemoveTagsFromResourceErrorKind::DbInstanceNotFoundFault(_inner) => Some(_inner),
             RemoveTagsFromResourceErrorKind::DbSnapshotNotFoundFault(_inner) => Some(_inner),
-            RemoveTagsFromResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RemoveTagsFromResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12139,6 +12957,16 @@ pub struct ResetDBClusterParameterGroupError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ResetDBClusterParameterGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ResetDBClusterParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ResetDBClusterParameterGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -12147,8 +12975,15 @@ pub enum ResetDBClusterParameterGroupErrorKind {
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
     /// <p>The DB parameter group is in use or is in an invalid state. If you are attempting to delete the parameter group, you cannot delete it when the parameter group is in this state.</p>
     InvalidDbParameterGroupStateFault(crate::error::InvalidDbParameterGroupStateFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ResetDBClusterParameterGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12180,7 +13015,9 @@ impl ResetDBClusterParameterGroupError {
     /// Creates the `ResetDBClusterParameterGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ResetDBClusterParameterGroupErrorKind::Unhandled(err.into()),
+            kind: ResetDBClusterParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -12189,7 +13026,9 @@ impl ResetDBClusterParameterGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ResetDBClusterParameterGroupErrorKind::Unhandled(err.into()),
+            kind: ResetDBClusterParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -12237,7 +13076,7 @@ impl std::error::Error for ResetDBClusterParameterGroupError {
             ResetDBClusterParameterGroupErrorKind::InvalidDbParameterGroupStateFault(_inner) => {
                 Some(_inner)
             }
-            ResetDBClusterParameterGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ResetDBClusterParameterGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12251,6 +13090,14 @@ pub struct ResetDBParameterGroupError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ResetDBParameterGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ResetDBParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ResetDBParameterGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -12259,8 +13106,15 @@ pub enum ResetDBParameterGroupErrorKind {
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
     /// <p>The DB parameter group is in use or is in an invalid state. If you are attempting to delete the parameter group, you cannot delete it when the parameter group is in this state.</p>
     InvalidDbParameterGroupStateFault(crate::error::InvalidDbParameterGroupStateFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ResetDBParameterGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12290,7 +13144,9 @@ impl ResetDBParameterGroupError {
     /// Creates the `ResetDBParameterGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ResetDBParameterGroupErrorKind::Unhandled(err.into()),
+            kind: ResetDBParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -12299,7 +13155,9 @@ impl ResetDBParameterGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ResetDBParameterGroupErrorKind::Unhandled(err.into()),
+            kind: ResetDBParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -12345,7 +13203,7 @@ impl std::error::Error for ResetDBParameterGroupError {
             ResetDBParameterGroupErrorKind::InvalidDbParameterGroupStateFault(_inner) => {
                 Some(_inner)
             }
-            ResetDBParameterGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ResetDBParameterGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12358,6 +13216,16 @@ pub struct RestoreDBClusterFromSnapshotError {
     pub kind: RestoreDBClusterFromSnapshotErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for RestoreDBClusterFromSnapshotError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RestoreDBClusterFromSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `RestoreDBClusterFromSnapshot` operation.
 #[non_exhaustive]
@@ -12395,8 +13263,15 @@ pub enum RestoreDBClusterFromSnapshotErrorKind {
     OptionGroupNotFoundFault(crate::error::OptionGroupNotFoundFault),
     /// <p>Request would result in user exceeding the allowed amount of storage available across all DB instances.</p>
     StorageQuotaExceededFault(crate::error::StorageQuotaExceededFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RestoreDBClusterFromSnapshotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12464,7 +13339,9 @@ impl RestoreDBClusterFromSnapshotError {
     /// Creates the `RestoreDBClusterFromSnapshotError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RestoreDBClusterFromSnapshotErrorKind::Unhandled(err.into()),
+            kind: RestoreDBClusterFromSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -12473,7 +13350,9 @@ impl RestoreDBClusterFromSnapshotError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RestoreDBClusterFromSnapshotErrorKind::Unhandled(err.into()),
+            kind: RestoreDBClusterFromSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -12651,7 +13530,7 @@ impl std::error::Error for RestoreDBClusterFromSnapshotError {
             RestoreDBClusterFromSnapshotErrorKind::StorageQuotaExceededFault(_inner) => {
                 Some(_inner)
             }
-            RestoreDBClusterFromSnapshotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RestoreDBClusterFromSnapshotErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12664,6 +13543,16 @@ pub struct RestoreDBClusterToPointInTimeError {
     pub kind: RestoreDBClusterToPointInTimeErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for RestoreDBClusterToPointInTimeError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RestoreDBClusterToPointInTimeErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `RestoreDBClusterToPointInTime` operation.
 #[non_exhaustive]
@@ -12703,8 +13592,15 @@ pub enum RestoreDBClusterToPointInTimeErrorKind {
     OptionGroupNotFoundFault(crate::error::OptionGroupNotFoundFault),
     /// <p>Request would result in user exceeding the allowed amount of storage available across all DB instances.</p>
     StorageQuotaExceededFault(crate::error::StorageQuotaExceededFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RestoreDBClusterToPointInTimeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12778,7 +13674,9 @@ impl RestoreDBClusterToPointInTimeError {
     /// Creates the `RestoreDBClusterToPointInTimeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RestoreDBClusterToPointInTimeErrorKind::Unhandled(err.into()),
+            kind: RestoreDBClusterToPointInTimeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -12787,7 +13685,9 @@ impl RestoreDBClusterToPointInTimeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RestoreDBClusterToPointInTimeErrorKind::Unhandled(err.into()),
+            kind: RestoreDBClusterToPointInTimeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -12979,7 +13879,7 @@ impl std::error::Error for RestoreDBClusterToPointInTimeError {
             RestoreDBClusterToPointInTimeErrorKind::StorageQuotaExceededFault(_inner) => {
                 Some(_inner)
             }
-            RestoreDBClusterToPointInTimeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RestoreDBClusterToPointInTimeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12993,6 +13893,14 @@ pub struct StartDBClusterError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for StartDBClusterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StartDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `StartDBCluster` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -13003,8 +13911,15 @@ pub enum StartDBClusterErrorKind {
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
     /// <p>The specified DB instance is not in the <i>available</i> state.</p>
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartDBClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13033,7 +13948,7 @@ impl StartDBClusterError {
     /// Creates the `StartDBClusterError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartDBClusterErrorKind::Unhandled(err.into()),
+            kind: StartDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -13042,7 +13957,7 @@ impl StartDBClusterError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartDBClusterErrorKind::Unhandled(err.into()),
+            kind: StartDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -13094,7 +14009,7 @@ impl std::error::Error for StartDBClusterError {
             StartDBClusterErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
             StartDBClusterErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
             StartDBClusterErrorKind::InvalidDbInstanceStateFault(_inner) => Some(_inner),
-            StartDBClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartDBClusterErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13108,6 +14023,14 @@ pub struct StopDBClusterError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for StopDBClusterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StopDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `StopDBCluster` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -13118,8 +14041,15 @@ pub enum StopDBClusterErrorKind {
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
     /// <p>The specified DB instance is not in the <i>available</i> state.</p>
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StopDBClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13148,7 +14078,7 @@ impl StopDBClusterError {
     /// Creates the `StopDBClusterError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StopDBClusterErrorKind::Unhandled(err.into()),
+            kind: StopDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -13157,7 +14087,7 @@ impl StopDBClusterError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StopDBClusterErrorKind::Unhandled(err.into()),
+            kind: StopDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -13209,7 +14139,35 @@ impl std::error::Error for StopDBClusterError {
             StopDBClusterErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
             StopDBClusterErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
             StopDBClusterErrorKind::InvalidDbInstanceStateFault(_inner) => Some(_inner),
-            StopDBClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StopDBClusterErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+///
+/// When logging an error from the SDK, it is recommended that you either wrap the error in
+/// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+/// error reporter library that visits the error's cause/source chain, or call
+/// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

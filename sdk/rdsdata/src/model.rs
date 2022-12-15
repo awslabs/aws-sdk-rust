@@ -228,7 +228,7 @@ impl ArrayValue {
 
 /// <p>Contains the metadata for a column.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ColumnMetadata {
     /// <p>The name of the column.</p>
     #[doc(hidden)]
@@ -331,31 +331,11 @@ impl ColumnMetadata {
         self.array_base_column_type
     }
 }
-impl std::fmt::Debug for ColumnMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ColumnMetadata");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("type_name", &self.type_name);
-        formatter.field("label", &self.label);
-        formatter.field("schema_name", &self.schema_name);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("is_auto_increment", &self.is_auto_increment);
-        formatter.field("is_signed", &self.is_signed);
-        formatter.field("is_currency", &self.is_currency);
-        formatter.field("is_case_sensitive", &self.is_case_sensitive);
-        formatter.field("nullable", &self.nullable);
-        formatter.field("precision", &self.precision);
-        formatter.field("scale", &self.scale);
-        formatter.field("array_base_column_type", &self.array_base_column_type);
-        formatter.finish()
-    }
-}
 /// See [`ColumnMetadata`](crate::model::ColumnMetadata).
 pub mod column_metadata {
 
     /// A builder for [`ColumnMetadata`](crate::model::ColumnMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<i32>,
@@ -541,6 +521,41 @@ impl ColumnMetadata {
     }
 }
 
+/// When writing a match expression against `RecordsFormatType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let recordsformattype = unimplemented!();
+/// match recordsformattype {
+///     RecordsFormatType::Json => { /* ... */ },
+///     RecordsFormatType::None => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `recordsformattype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RecordsFormatType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RecordsFormatType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RecordsFormatType::NewFeature` is defined.
+/// Specifically, when `recordsformattype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RecordsFormatType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -557,15 +572,17 @@ pub enum RecordsFormatType {
     Json,
     #[allow(missing_docs)] // documentation missing in model
     None,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for RecordsFormatType {
     fn from(s: &str) -> Self {
         match s {
             "JSON" => RecordsFormatType::Json,
             "NONE" => RecordsFormatType::None,
-            other => RecordsFormatType::Unknown(other.to_owned()),
+            other => {
+                RecordsFormatType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -582,11 +599,11 @@ impl RecordsFormatType {
         match self {
             RecordsFormatType::Json => "JSON",
             RecordsFormatType::None => "NONE",
-            RecordsFormatType::Unknown(s) => s.as_ref(),
+            RecordsFormatType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["JSON", "NONE"]
     }
 }
@@ -598,7 +615,7 @@ impl AsRef<str> for RecordsFormatType {
 
 /// <p>Options that control how the result set is returned.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResultSetOptions {
     /// <p>A value that indicates how a field of <code>DECIMAL</code> type is represented in the response. The value of <code>STRING</code>, the default, specifies that it is converted to a String value. The value of <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if its scale is 0, or to a Double value otherwise.</p> <note>
     /// <p>Conversion to Double or Long can result in roundoff errors due to precision loss. We recommend converting to String, especially when working with currency values.</p>
@@ -621,19 +638,11 @@ impl ResultSetOptions {
         self.long_return_type.as_ref()
     }
 }
-impl std::fmt::Debug for ResultSetOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResultSetOptions");
-        formatter.field("decimal_return_type", &self.decimal_return_type);
-        formatter.field("long_return_type", &self.long_return_type);
-        formatter.finish()
-    }
-}
 /// See [`ResultSetOptions`](crate::model::ResultSetOptions).
 pub mod result_set_options {
 
     /// A builder for [`ResultSetOptions`](crate::model::ResultSetOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) decimal_return_type: std::option::Option<crate::model::DecimalReturnType>,
         pub(crate) long_return_type: std::option::Option<crate::model::LongReturnType>,
@@ -685,6 +694,41 @@ impl ResultSetOptions {
     }
 }
 
+/// When writing a match expression against `LongReturnType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let longreturntype = unimplemented!();
+/// match longreturntype {
+///     LongReturnType::Long => { /* ... */ },
+///     LongReturnType::String => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `longreturntype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `LongReturnType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `LongReturnType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `LongReturnType::NewFeature` is defined.
+/// Specifically, when `longreturntype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `LongReturnType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -701,15 +745,15 @@ pub enum LongReturnType {
     Long,
     #[allow(missing_docs)] // documentation missing in model
     String,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for LongReturnType {
     fn from(s: &str) -> Self {
         match s {
             "LONG" => LongReturnType::Long,
             "STRING" => LongReturnType::String,
-            other => LongReturnType::Unknown(other.to_owned()),
+            other => LongReturnType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -726,11 +770,11 @@ impl LongReturnType {
         match self {
             LongReturnType::Long => "LONG",
             LongReturnType::String => "STRING",
-            LongReturnType::Unknown(s) => s.as_ref(),
+            LongReturnType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LONG", "STRING"]
     }
 }
@@ -740,6 +784,41 @@ impl AsRef<str> for LongReturnType {
     }
 }
 
+/// When writing a match expression against `DecimalReturnType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let decimalreturntype = unimplemented!();
+/// match decimalreturntype {
+///     DecimalReturnType::DoubleOrLong => { /* ... */ },
+///     DecimalReturnType::String => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `decimalreturntype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DecimalReturnType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DecimalReturnType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DecimalReturnType::NewFeature` is defined.
+/// Specifically, when `decimalreturntype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DecimalReturnType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -756,15 +835,17 @@ pub enum DecimalReturnType {
     DoubleOrLong,
     #[allow(missing_docs)] // documentation missing in model
     String,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DecimalReturnType {
     fn from(s: &str) -> Self {
         match s {
             "DOUBLE_OR_LONG" => DecimalReturnType::DoubleOrLong,
             "STRING" => DecimalReturnType::String,
-            other => DecimalReturnType::Unknown(other.to_owned()),
+            other => {
+                DecimalReturnType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -781,11 +862,11 @@ impl DecimalReturnType {
         match self {
             DecimalReturnType::DoubleOrLong => "DOUBLE_OR_LONG",
             DecimalReturnType::String => "STRING",
-            DecimalReturnType::Unknown(s) => s.as_ref(),
+            DecimalReturnType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DOUBLE_OR_LONG", "STRING"]
     }
 }
@@ -797,7 +878,7 @@ impl AsRef<str> for DecimalReturnType {
 
 /// <p>A parameter used in a SQL statement.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SqlParameter {
     /// <p>The name of the parameter.</p>
     #[doc(hidden)]
@@ -839,20 +920,11 @@ impl SqlParameter {
         self.type_hint.as_ref()
     }
 }
-impl std::fmt::Debug for SqlParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SqlParameter");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.field("type_hint", &self.type_hint);
-        formatter.finish()
-    }
-}
 /// See [`SqlParameter`](crate::model::SqlParameter).
 pub mod sql_parameter {
 
     /// A builder for [`SqlParameter`](crate::model::SqlParameter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<crate::model::Field>,
@@ -922,6 +994,45 @@ impl SqlParameter {
     }
 }
 
+/// When writing a match expression against `TypeHint`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let typehint = unimplemented!();
+/// match typehint {
+///     TypeHint::Date => { /* ... */ },
+///     TypeHint::Decimal => { /* ... */ },
+///     TypeHint::Json => { /* ... */ },
+///     TypeHint::Time => { /* ... */ },
+///     TypeHint::Timestamp => { /* ... */ },
+///     TypeHint::Uuid => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `typehint` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `TypeHint::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `TypeHint::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `TypeHint::NewFeature` is defined.
+/// Specifically, when `typehint` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `TypeHint::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -946,8 +1057,8 @@ pub enum TypeHint {
     Timestamp,
     #[allow(missing_docs)] // documentation missing in model
     Uuid,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TypeHint {
     fn from(s: &str) -> Self {
@@ -958,7 +1069,7 @@ impl std::convert::From<&str> for TypeHint {
             "TIME" => TypeHint::Time,
             "TIMESTAMP" => TypeHint::Timestamp,
             "UUID" => TypeHint::Uuid,
-            other => TypeHint::Unknown(other.to_owned()),
+            other => TypeHint::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -979,11 +1090,11 @@ impl TypeHint {
             TypeHint::Time => "TIME",
             TypeHint::Timestamp => "TIMESTAMP",
             TypeHint::Uuid => "UUID",
-            TypeHint::Unknown(s) => s.as_ref(),
+            TypeHint::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DATE", "DECIMAL", "JSON", "TIME", "TIMESTAMP", "UUID"]
     }
 }
@@ -997,7 +1108,7 @@ impl AsRef<str> for TypeHint {
 /// <p>This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SqlStatementResult {
     /// <p>The result set of the SQL statement.</p>
     #[doc(hidden)]
@@ -1016,19 +1127,11 @@ impl SqlStatementResult {
         self.number_of_records_updated
     }
 }
-impl std::fmt::Debug for SqlStatementResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SqlStatementResult");
-        formatter.field("result_frame", &self.result_frame);
-        formatter.field("number_of_records_updated", &self.number_of_records_updated);
-        formatter.finish()
-    }
-}
 /// See [`SqlStatementResult`](crate::model::SqlStatementResult).
 pub mod sql_statement_result {
 
     /// A builder for [`SqlStatementResult`](crate::model::SqlStatementResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) result_frame: std::option::Option<crate::model::ResultFrame>,
         pub(crate) number_of_records_updated: std::option::Option<i64>,
@@ -1077,7 +1180,7 @@ impl SqlStatementResult {
 /// <p>This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResultFrame {
     /// <p>The result-set metadata in the result set.</p>
     #[doc(hidden)]
@@ -1096,19 +1199,11 @@ impl ResultFrame {
         self.records.as_deref()
     }
 }
-impl std::fmt::Debug for ResultFrame {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResultFrame");
-        formatter.field("result_set_metadata", &self.result_set_metadata);
-        formatter.field("records", &self.records);
-        formatter.finish()
-    }
-}
 /// See [`ResultFrame`](crate::model::ResultFrame).
 pub mod result_frame {
 
     /// A builder for [`ResultFrame`](crate::model::ResultFrame).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) result_set_metadata: std::option::Option<crate::model::ResultSetMetadata>,
         pub(crate) records: std::option::Option<std::vec::Vec<crate::model::Record>>,
@@ -1166,7 +1261,7 @@ impl ResultFrame {
 /// <p>This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Record {
     /// <p>The values returned in the record.</p>
     #[doc(hidden)]
@@ -1178,18 +1273,11 @@ impl Record {
         self.values.as_deref()
     }
 }
-impl std::fmt::Debug for Record {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Record");
-        formatter.field("values", &self.values);
-        formatter.finish()
-    }
-}
 /// See [`Record`](crate::model::Record).
 pub mod record {
 
     /// A builder for [`Record`](crate::model::Record).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) values: std::option::Option<std::vec::Vec<crate::model::Value>>,
     }
@@ -1407,7 +1495,7 @@ impl Value {
 /// <p>This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StructValue {
     /// <p>The attributes returned in the record.</p>
     #[doc(hidden)]
@@ -1419,18 +1507,11 @@ impl StructValue {
         self.attributes.as_deref()
     }
 }
-impl std::fmt::Debug for StructValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StructValue");
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
 /// See [`StructValue`](crate::model::StructValue).
 pub mod struct_value {
 
     /// A builder for [`StructValue`](crate::model::StructValue).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes: std::option::Option<std::vec::Vec<crate::model::Value>>,
     }
@@ -1471,7 +1552,7 @@ impl StructValue {
 
 /// <p>The metadata of the result set returned by a SQL statement.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResultSetMetadata {
     /// <p>The number of columns in the result set.</p>
     #[doc(hidden)]
@@ -1490,19 +1571,11 @@ impl ResultSetMetadata {
         self.column_metadata.as_deref()
     }
 }
-impl std::fmt::Debug for ResultSetMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResultSetMetadata");
-        formatter.field("column_count", &self.column_count);
-        formatter.field("column_metadata", &self.column_metadata);
-        formatter.finish()
-    }
-}
 /// See [`ResultSetMetadata`](crate::model::ResultSetMetadata).
 pub mod result_set_metadata {
 
     /// A builder for [`ResultSetMetadata`](crate::model::ResultSetMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) column_count: std::option::Option<i64>,
         pub(crate) column_metadata:
@@ -1556,7 +1629,7 @@ impl ResultSetMetadata {
 
 /// <p>The response elements represent the results of an update.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateResult {
     /// <p>Values for fields generated during the request.</p>
     #[doc(hidden)]
@@ -1568,18 +1641,11 @@ impl UpdateResult {
         self.generated_fields.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateResult");
-        formatter.field("generated_fields", &self.generated_fields);
-        formatter.finish()
-    }
-}
 /// See [`UpdateResult`](crate::model::UpdateResult).
 pub mod update_result {
 
     /// A builder for [`UpdateResult`](crate::model::UpdateResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) generated_fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
     }

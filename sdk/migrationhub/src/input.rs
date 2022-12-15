@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod associate_created_artifact_input {
 
     /// A builder for [`AssociateCreatedArtifactInput`](crate::input::AssociateCreatedArtifactInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_update_stream: std::option::Option<std::string::String>,
         pub(crate) migration_task_name: std::option::Option<std::string::String>,
@@ -67,7 +67,7 @@ pub mod associate_created_artifact_input {
             self,
         ) -> Result<
             crate::input::AssociateCreatedArtifactInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::AssociateCreatedArtifactInput {
                 progress_update_stream: self.progress_update_stream,
@@ -91,13 +91,13 @@ impl AssociateCreatedArtifactInput {
             crate::operation::AssociateCreatedArtifact,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AssociateCreatedArtifactInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -105,8 +105,10 @@ impl AssociateCreatedArtifactInput {
             fn update_http_builder(
                 input: &crate::input::AssociateCreatedArtifactInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -197,7 +199,7 @@ impl AssociateCreatedArtifactInput {
 pub mod associate_discovered_resource_input {
 
     /// A builder for [`AssociateDiscoveredResourceInput`](crate::input::AssociateDiscoveredResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_update_stream: std::option::Option<std::string::String>,
         pub(crate) migration_task_name: std::option::Option<std::string::String>,
@@ -259,7 +261,7 @@ pub mod associate_discovered_resource_input {
             self,
         ) -> Result<
             crate::input::AssociateDiscoveredResourceInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::AssociateDiscoveredResourceInput {
                 progress_update_stream: self.progress_update_stream,
@@ -283,13 +285,13 @@ impl AssociateDiscoveredResourceInput {
             crate::operation::AssociateDiscoveredResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AssociateDiscoveredResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -297,8 +299,10 @@ impl AssociateDiscoveredResourceInput {
             fn update_http_builder(
                 input: &crate::input::AssociateDiscoveredResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -386,7 +390,7 @@ impl AssociateDiscoveredResourceInput {
 pub mod create_progress_update_stream_input {
 
     /// A builder for [`CreateProgressUpdateStreamInput`](crate::input::CreateProgressUpdateStreamInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_update_stream_name: std::option::Option<std::string::String>,
         pub(crate) dry_run: std::option::Option<bool>,
@@ -423,7 +427,7 @@ pub mod create_progress_update_stream_input {
             self,
         ) -> Result<
             crate::input::CreateProgressUpdateStreamInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateProgressUpdateStreamInput {
                 progress_update_stream_name: self.progress_update_stream_name,
@@ -445,13 +449,13 @@ impl CreateProgressUpdateStreamInput {
             crate::operation::CreateProgressUpdateStream,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateProgressUpdateStreamInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -459,8 +463,10 @@ impl CreateProgressUpdateStreamInput {
             fn update_http_builder(
                 input: &crate::input::CreateProgressUpdateStreamInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -548,7 +554,7 @@ impl CreateProgressUpdateStreamInput {
 pub mod delete_progress_update_stream_input {
 
     /// A builder for [`DeleteProgressUpdateStreamInput`](crate::input::DeleteProgressUpdateStreamInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_update_stream_name: std::option::Option<std::string::String>,
         pub(crate) dry_run: std::option::Option<bool>,
@@ -585,7 +591,7 @@ pub mod delete_progress_update_stream_input {
             self,
         ) -> Result<
             crate::input::DeleteProgressUpdateStreamInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteProgressUpdateStreamInput {
                 progress_update_stream_name: self.progress_update_stream_name,
@@ -607,13 +613,13 @@ impl DeleteProgressUpdateStreamInput {
             crate::operation::DeleteProgressUpdateStream,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteProgressUpdateStreamInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -621,8 +627,10 @@ impl DeleteProgressUpdateStreamInput {
             fn update_http_builder(
                 input: &crate::input::DeleteProgressUpdateStreamInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -710,7 +718,7 @@ impl DeleteProgressUpdateStreamInput {
 pub mod describe_application_state_input {
 
     /// A builder for [`DescribeApplicationStateInput`](crate::input::DescribeApplicationStateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
     }
@@ -733,7 +741,7 @@ pub mod describe_application_state_input {
             self,
         ) -> Result<
             crate::input::DescribeApplicationStateInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeApplicationStateInput {
                 application_id: self.application_id,
@@ -754,13 +762,13 @@ impl DescribeApplicationStateInput {
             crate::operation::DescribeApplicationState,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeApplicationStateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -768,8 +776,10 @@ impl DescribeApplicationStateInput {
             fn update_http_builder(
                 input: &crate::input::DescribeApplicationStateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -860,7 +870,7 @@ impl DescribeApplicationStateInput {
 pub mod describe_migration_task_input {
 
     /// A builder for [`DescribeMigrationTaskInput`](crate::input::DescribeMigrationTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_update_stream: std::option::Option<std::string::String>,
         pub(crate) migration_task_name: std::option::Option<std::string::String>,
@@ -895,8 +905,10 @@ pub mod describe_migration_task_input {
         /// Consumes the builder and constructs a [`DescribeMigrationTaskInput`](crate::input::DescribeMigrationTaskInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeMigrationTaskInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeMigrationTaskInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeMigrationTaskInput {
                 progress_update_stream: self.progress_update_stream,
                 migration_task_name: self.migration_task_name,
@@ -917,13 +929,13 @@ impl DescribeMigrationTaskInput {
             crate::operation::DescribeMigrationTask,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeMigrationTaskInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -931,8 +943,10 @@ impl DescribeMigrationTaskInput {
             fn update_http_builder(
                 input: &crate::input::DescribeMigrationTaskInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1023,7 +1037,7 @@ impl DescribeMigrationTaskInput {
 pub mod disassociate_created_artifact_input {
 
     /// A builder for [`DisassociateCreatedArtifactInput`](crate::input::DisassociateCreatedArtifactInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_update_stream: std::option::Option<std::string::String>,
         pub(crate) migration_task_name: std::option::Option<std::string::String>,
@@ -1085,7 +1099,7 @@ pub mod disassociate_created_artifact_input {
             self,
         ) -> Result<
             crate::input::DisassociateCreatedArtifactInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DisassociateCreatedArtifactInput {
                 progress_update_stream: self.progress_update_stream,
@@ -1109,13 +1123,13 @@ impl DisassociateCreatedArtifactInput {
             crate::operation::DisassociateCreatedArtifact,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisassociateCreatedArtifactInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1123,8 +1137,10 @@ impl DisassociateCreatedArtifactInput {
             fn update_http_builder(
                 input: &crate::input::DisassociateCreatedArtifactInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1212,7 +1228,7 @@ impl DisassociateCreatedArtifactInput {
 pub mod disassociate_discovered_resource_input {
 
     /// A builder for [`DisassociateDiscoveredResourceInput`](crate::input::DisassociateDiscoveredResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_update_stream: std::option::Option<std::string::String>,
         pub(crate) migration_task_name: std::option::Option<std::string::String>,
@@ -1274,7 +1290,7 @@ pub mod disassociate_discovered_resource_input {
             self,
         ) -> Result<
             crate::input::DisassociateDiscoveredResourceInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DisassociateDiscoveredResourceInput {
                 progress_update_stream: self.progress_update_stream,
@@ -1298,13 +1314,13 @@ impl DisassociateDiscoveredResourceInput {
             crate::operation::DisassociateDiscoveredResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisassociateDiscoveredResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1312,8 +1328,10 @@ impl DisassociateDiscoveredResourceInput {
             fn update_http_builder(
                 input: &crate::input::DisassociateDiscoveredResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1401,7 +1419,7 @@ impl DisassociateDiscoveredResourceInput {
 pub mod import_migration_task_input {
 
     /// A builder for [`ImportMigrationTaskInput`](crate::input::ImportMigrationTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_update_stream: std::option::Option<std::string::String>,
         pub(crate) migration_task_name: std::option::Option<std::string::String>,
@@ -1447,8 +1465,10 @@ pub mod import_migration_task_input {
         /// Consumes the builder and constructs a [`ImportMigrationTaskInput`](crate::input::ImportMigrationTaskInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ImportMigrationTaskInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ImportMigrationTaskInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ImportMigrationTaskInput {
                 progress_update_stream: self.progress_update_stream,
                 migration_task_name: self.migration_task_name,
@@ -1470,13 +1490,13 @@ impl ImportMigrationTaskInput {
             crate::operation::ImportMigrationTask,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ImportMigrationTaskInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1484,8 +1504,10 @@ impl ImportMigrationTaskInput {
             fn update_http_builder(
                 input: &crate::input::ImportMigrationTaskInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1574,7 +1596,7 @@ impl ImportMigrationTaskInput {
 pub mod list_application_states_input {
 
     /// A builder for [`ListApplicationStatesInput`](crate::input::ListApplicationStatesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1623,8 +1645,10 @@ pub mod list_application_states_input {
         /// Consumes the builder and constructs a [`ListApplicationStatesInput`](crate::input::ListApplicationStatesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListApplicationStatesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListApplicationStatesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListApplicationStatesInput {
                 application_ids: self.application_ids,
                 next_token: self.next_token,
@@ -1646,13 +1670,13 @@ impl ListApplicationStatesInput {
             crate::operation::ListApplicationStates,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListApplicationStatesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1660,8 +1684,10 @@ impl ListApplicationStatesInput {
             fn update_http_builder(
                 input: &crate::input::ListApplicationStatesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1752,7 +1778,7 @@ impl ListApplicationStatesInput {
 pub mod list_created_artifacts_input {
 
     /// A builder for [`ListCreatedArtifactsInput`](crate::input::ListCreatedArtifactsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_update_stream: std::option::Option<std::string::String>,
         pub(crate) migration_task_name: std::option::Option<std::string::String>,
@@ -1809,8 +1835,10 @@ pub mod list_created_artifacts_input {
         /// Consumes the builder and constructs a [`ListCreatedArtifactsInput`](crate::input::ListCreatedArtifactsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListCreatedArtifactsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListCreatedArtifactsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListCreatedArtifactsInput {
                 progress_update_stream: self.progress_update_stream,
                 migration_task_name: self.migration_task_name,
@@ -1833,13 +1861,13 @@ impl ListCreatedArtifactsInput {
             crate::operation::ListCreatedArtifacts,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListCreatedArtifactsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1847,8 +1875,10 @@ impl ListCreatedArtifactsInput {
             fn update_http_builder(
                 input: &crate::input::ListCreatedArtifactsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1939,7 +1969,7 @@ impl ListCreatedArtifactsInput {
 pub mod list_discovered_resources_input {
 
     /// A builder for [`ListDiscoveredResourcesInput`](crate::input::ListDiscoveredResourcesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_update_stream: std::option::Option<std::string::String>,
         pub(crate) migration_task_name: std::option::Option<std::string::String>,
@@ -1998,7 +2028,7 @@ pub mod list_discovered_resources_input {
             self,
         ) -> Result<
             crate::input::ListDiscoveredResourcesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListDiscoveredResourcesInput {
                 progress_update_stream: self.progress_update_stream,
@@ -2022,13 +2052,13 @@ impl ListDiscoveredResourcesInput {
             crate::operation::ListDiscoveredResources,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListDiscoveredResourcesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2036,8 +2066,10 @@ impl ListDiscoveredResourcesInput {
             fn update_http_builder(
                 input: &crate::input::ListDiscoveredResourcesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2128,7 +2160,7 @@ impl ListDiscoveredResourcesInput {
 pub mod list_migration_tasks_input {
 
     /// A builder for [`ListMigrationTasksInput`](crate::input::ListMigrationTasksInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2171,8 +2203,10 @@ pub mod list_migration_tasks_input {
         /// Consumes the builder and constructs a [`ListMigrationTasksInput`](crate::input::ListMigrationTasksInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListMigrationTasksInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListMigrationTasksInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListMigrationTasksInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
@@ -2194,13 +2228,13 @@ impl ListMigrationTasksInput {
             crate::operation::ListMigrationTasks,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListMigrationTasksInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2208,8 +2242,10 @@ impl ListMigrationTasksInput {
             fn update_http_builder(
                 input: &crate::input::ListMigrationTasksInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2298,7 +2334,7 @@ impl ListMigrationTasksInput {
 pub mod list_progress_update_streams_input {
 
     /// A builder for [`ListProgressUpdateStreamsInput`](crate::input::ListProgressUpdateStreamsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2329,7 +2365,7 @@ pub mod list_progress_update_streams_input {
             self,
         ) -> Result<
             crate::input::ListProgressUpdateStreamsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListProgressUpdateStreamsInput {
                 next_token: self.next_token,
@@ -2351,13 +2387,13 @@ impl ListProgressUpdateStreamsInput {
             crate::operation::ListProgressUpdateStreams,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListProgressUpdateStreamsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2365,8 +2401,10 @@ impl ListProgressUpdateStreamsInput {
             fn update_http_builder(
                 input: &crate::input::ListProgressUpdateStreamsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2457,7 +2495,7 @@ impl ListProgressUpdateStreamsInput {
 pub mod notify_application_state_input {
 
     /// A builder for [`NotifyApplicationStateInput`](crate::input::NotifyApplicationStateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ApplicationStatus>,
@@ -2517,8 +2555,10 @@ pub mod notify_application_state_input {
         /// Consumes the builder and constructs a [`NotifyApplicationStateInput`](crate::input::NotifyApplicationStateInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::NotifyApplicationStateInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::NotifyApplicationStateInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::NotifyApplicationStateInput {
                 application_id: self.application_id,
                 status: self.status,
@@ -2541,13 +2581,13 @@ impl NotifyApplicationStateInput {
             crate::operation::NotifyApplicationState,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::NotifyApplicationStateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2555,8 +2595,10 @@ impl NotifyApplicationStateInput {
             fn update_http_builder(
                 input: &crate::input::NotifyApplicationStateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2647,7 +2689,7 @@ impl NotifyApplicationStateInput {
 pub mod notify_migration_task_state_input {
 
     /// A builder for [`NotifyMigrationTaskStateInput`](crate::input::NotifyMigrationTaskStateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_update_stream: std::option::Option<std::string::String>,
         pub(crate) migration_task_name: std::option::Option<std::string::String>,
@@ -2731,7 +2773,7 @@ pub mod notify_migration_task_state_input {
             self,
         ) -> Result<
             crate::input::NotifyMigrationTaskStateInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::NotifyMigrationTaskStateInput {
                 progress_update_stream: self.progress_update_stream,
@@ -2757,13 +2799,13 @@ impl NotifyMigrationTaskStateInput {
             crate::operation::NotifyMigrationTaskState,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::NotifyMigrationTaskStateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2771,8 +2813,10 @@ impl NotifyMigrationTaskStateInput {
             fn update_http_builder(
                 input: &crate::input::NotifyMigrationTaskStateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2863,7 +2907,7 @@ impl NotifyMigrationTaskStateInput {
 pub mod put_resource_attributes_input {
 
     /// A builder for [`PutResourceAttributesInput`](crate::input::PutResourceAttributesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_update_stream: std::option::Option<std::string::String>,
         pub(crate) migration_task_name: std::option::Option<std::string::String>,
@@ -2944,8 +2988,10 @@ pub mod put_resource_attributes_input {
         /// Consumes the builder and constructs a [`PutResourceAttributesInput`](crate::input::PutResourceAttributesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutResourceAttributesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutResourceAttributesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutResourceAttributesInput {
                 progress_update_stream: self.progress_update_stream,
                 migration_task_name: self.migration_task_name,
@@ -2968,13 +3014,13 @@ impl PutResourceAttributesInput {
             crate::operation::PutResourceAttributes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutResourceAttributesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2982,8 +3028,10 @@ impl PutResourceAttributesInput {
             fn update_http_builder(
                 input: &crate::input::PutResourceAttributesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3072,7 +3120,7 @@ impl PutResourceAttributesInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutResourceAttributesInput {
     /// <p>The name of the ProgressUpdateStream. </p>
     #[doc(hidden)]
@@ -3122,20 +3170,10 @@ impl PutResourceAttributesInput {
         self.dry_run
     }
 }
-impl std::fmt::Debug for PutResourceAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutResourceAttributesInput");
-        formatter.field("progress_update_stream", &self.progress_update_stream);
-        formatter.field("migration_task_name", &self.migration_task_name);
-        formatter.field("resource_attribute_list", &self.resource_attribute_list);
-        formatter.field("dry_run", &self.dry_run);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotifyMigrationTaskStateInput {
     /// <p>The name of the ProgressUpdateStream. </p>
     #[doc(hidden)]
@@ -3182,22 +3220,10 @@ impl NotifyMigrationTaskStateInput {
         self.dry_run
     }
 }
-impl std::fmt::Debug for NotifyMigrationTaskStateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotifyMigrationTaskStateInput");
-        formatter.field("progress_update_stream", &self.progress_update_stream);
-        formatter.field("migration_task_name", &self.migration_task_name);
-        formatter.field("task", &self.task);
-        formatter.field("update_date_time", &self.update_date_time);
-        formatter.field("next_update_seconds", &self.next_update_seconds);
-        formatter.field("dry_run", &self.dry_run);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotifyApplicationStateInput {
     /// <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
     #[doc(hidden)]
@@ -3230,20 +3256,10 @@ impl NotifyApplicationStateInput {
         self.dry_run
     }
 }
-impl std::fmt::Debug for NotifyApplicationStateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotifyApplicationStateInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("status", &self.status);
-        formatter.field("update_date_time", &self.update_date_time);
-        formatter.field("dry_run", &self.dry_run);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProgressUpdateStreamsInput {
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     #[doc(hidden)]
@@ -3262,18 +3278,10 @@ impl ListProgressUpdateStreamsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListProgressUpdateStreamsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProgressUpdateStreamsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMigrationTasksInput {
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     #[doc(hidden)]
@@ -3299,19 +3307,10 @@ impl ListMigrationTasksInput {
         self.resource_name.as_deref()
     }
 }
-impl std::fmt::Debug for ListMigrationTasksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMigrationTasksInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("resource_name", &self.resource_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDiscoveredResourcesInput {
     /// <p>The name of the ProgressUpdateStream.</p>
     #[doc(hidden)]
@@ -3344,20 +3343,10 @@ impl ListDiscoveredResourcesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDiscoveredResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDiscoveredResourcesInput");
-        formatter.field("progress_update_stream", &self.progress_update_stream);
-        formatter.field("migration_task_name", &self.migration_task_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCreatedArtifactsInput {
     /// <p>The name of the ProgressUpdateStream. </p>
     #[doc(hidden)]
@@ -3390,20 +3379,10 @@ impl ListCreatedArtifactsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListCreatedArtifactsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCreatedArtifactsInput");
-        formatter.field("progress_update_stream", &self.progress_update_stream);
-        formatter.field("migration_task_name", &self.migration_task_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListApplicationStatesInput {
     /// <p>The configurationIds from the Application Discovery Service that uniquely identifies your applications.</p>
     #[doc(hidden)]
@@ -3429,19 +3408,10 @@ impl ListApplicationStatesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListApplicationStatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListApplicationStatesInput");
-        formatter.field("application_ids", &self.application_ids);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportMigrationTaskInput {
     /// <p>The name of the ProgressUpdateStream. &gt;</p>
     #[doc(hidden)]
@@ -3467,19 +3437,10 @@ impl ImportMigrationTaskInput {
         self.dry_run
     }
 }
-impl std::fmt::Debug for ImportMigrationTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportMigrationTaskInput");
-        formatter.field("progress_update_stream", &self.progress_update_stream);
-        formatter.field("migration_task_name", &self.migration_task_name);
-        formatter.field("dry_run", &self.dry_run);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateDiscoveredResourceInput {
     /// <p>The name of the ProgressUpdateStream.</p>
     #[doc(hidden)]
@@ -3512,20 +3473,10 @@ impl DisassociateDiscoveredResourceInput {
         self.dry_run
     }
 }
-impl std::fmt::Debug for DisassociateDiscoveredResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateDiscoveredResourceInput");
-        formatter.field("progress_update_stream", &self.progress_update_stream);
-        formatter.field("migration_task_name", &self.migration_task_name);
-        formatter.field("configuration_id", &self.configuration_id);
-        formatter.field("dry_run", &self.dry_run);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateCreatedArtifactInput {
     /// <p>The name of the ProgressUpdateStream. </p>
     #[doc(hidden)]
@@ -3558,20 +3509,10 @@ impl DisassociateCreatedArtifactInput {
         self.dry_run
     }
 }
-impl std::fmt::Debug for DisassociateCreatedArtifactInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateCreatedArtifactInput");
-        formatter.field("progress_update_stream", &self.progress_update_stream);
-        formatter.field("migration_task_name", &self.migration_task_name);
-        formatter.field("created_artifact_name", &self.created_artifact_name);
-        formatter.field("dry_run", &self.dry_run);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMigrationTaskInput {
     /// <p>The name of the ProgressUpdateStream. </p>
     #[doc(hidden)]
@@ -3590,18 +3531,10 @@ impl DescribeMigrationTaskInput {
         self.migration_task_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeMigrationTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMigrationTaskInput");
-        formatter.field("progress_update_stream", &self.progress_update_stream);
-        formatter.field("migration_task_name", &self.migration_task_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeApplicationStateInput {
     /// <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
     #[doc(hidden)]
@@ -3613,17 +3546,10 @@ impl DescribeApplicationStateInput {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeApplicationStateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeApplicationStateInput");
-        formatter.field("application_id", &self.application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProgressUpdateStreamInput {
     /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
     #[doc(hidden)]
@@ -3642,21 +3568,10 @@ impl DeleteProgressUpdateStreamInput {
         self.dry_run
     }
 }
-impl std::fmt::Debug for DeleteProgressUpdateStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteProgressUpdateStreamInput");
-        formatter.field(
-            "progress_update_stream_name",
-            &self.progress_update_stream_name,
-        );
-        formatter.field("dry_run", &self.dry_run);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateProgressUpdateStreamInput {
     /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
     #[doc(hidden)]
@@ -3675,21 +3590,10 @@ impl CreateProgressUpdateStreamInput {
         self.dry_run
     }
 }
-impl std::fmt::Debug for CreateProgressUpdateStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateProgressUpdateStreamInput");
-        formatter.field(
-            "progress_update_stream_name",
-            &self.progress_update_stream_name,
-        );
-        formatter.field("dry_run", &self.dry_run);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateDiscoveredResourceInput {
     /// <p>The name of the ProgressUpdateStream.</p>
     #[doc(hidden)]
@@ -3722,20 +3626,10 @@ impl AssociateDiscoveredResourceInput {
         self.dry_run
     }
 }
-impl std::fmt::Debug for AssociateDiscoveredResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateDiscoveredResourceInput");
-        formatter.field("progress_update_stream", &self.progress_update_stream);
-        formatter.field("migration_task_name", &self.migration_task_name);
-        formatter.field("discovered_resource", &self.discovered_resource);
-        formatter.field("dry_run", &self.dry_run);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateCreatedArtifactInput {
     /// <p>The name of the ProgressUpdateStream. </p>
     #[doc(hidden)]
@@ -3766,15 +3660,5 @@ impl AssociateCreatedArtifactInput {
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub fn dry_run(&self) -> bool {
         self.dry_run
-    }
-}
-impl std::fmt::Debug for AssociateCreatedArtifactInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateCreatedArtifactInput");
-        formatter.field("progress_update_stream", &self.progress_update_stream);
-        formatter.field("migration_task_name", &self.migration_task_name);
-        formatter.field("created_artifact", &self.created_artifact);
-        formatter.field("dry_run", &self.dry_run);
-        formatter.finish()
     }
 }

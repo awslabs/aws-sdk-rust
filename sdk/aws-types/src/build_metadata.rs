@@ -41,7 +41,7 @@ pub enum OsFamily {
 /// is set to a specific value. This macro simplifies checking the current OS family.
 ///
 /// Usage:
-/// ```rust
+/// ```ignore
 /// let os = get_os_family!(target_os: ("linux", OsFamily::Windows), ("android", OsFamily::Android));
 /// ```
 macro_rules! get_os_family {

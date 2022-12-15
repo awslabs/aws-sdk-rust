@@ -3,7 +3,7 @@
 pub fn serialize_structure_crate_model_tag(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Tag,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Key");
     if let Some(var_2) = &input.key {
@@ -21,7 +21,7 @@ pub fn serialize_structure_crate_model_tag(
 pub fn serialize_structure_crate_model_message_attribute_value(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::MessageAttributeValue,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("DataType");
     if let Some(var_6) = &input.data_type {
@@ -44,7 +44,7 @@ pub fn serialize_structure_crate_model_message_attribute_value(
 pub fn serialize_structure_crate_model_publish_batch_request_entry(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::PublishBatchRequestEntry,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_11 = writer.prefix("Id");
     if let Some(var_12) = &input.id {

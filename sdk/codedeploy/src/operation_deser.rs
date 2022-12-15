@@ -33,7 +33,7 @@ pub fn parse_add_tags_to_on_premises_instances_error(
                             output = crate::json_deser::deser_structure_crate_error_instance_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToOnPremisesInstancesError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -54,7 +54,7 @@ pub fn parse_add_tags_to_on_premises_instances_error(
                             output = crate::json_deser::deser_structure_crate_error_instance_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToOnPremisesInstancesError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -75,7 +75,7 @@ pub fn parse_add_tags_to_on_premises_instances_error(
                             output = crate::json_deser::deser_structure_crate_error_instance_not_registered_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToOnPremisesInstancesError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -95,7 +95,7 @@ pub fn parse_add_tags_to_on_premises_instances_error(
                         output = crate::json_deser::deser_structure_crate_error_invalid_instance_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToOnPremisesInstancesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -113,7 +113,7 @@ pub fn parse_add_tags_to_on_premises_instances_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_tag_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToOnPremisesInstancesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -130,7 +130,7 @@ pub fn parse_add_tags_to_on_premises_instances_error(
                     output = crate::json_deser::deser_structure_crate_error_tag_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToOnPremisesInstancesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -147,7 +147,7 @@ pub fn parse_add_tags_to_on_premises_instances_error(
                     output = crate::json_deser::deser_structure_crate_error_tag_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToOnPremisesInstancesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -202,7 +202,7 @@ pub fn parse_batch_get_application_revisions_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -216,7 +216,7 @@ pub fn parse_batch_get_application_revisions_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -230,7 +230,7 @@ pub fn parse_batch_get_application_revisions_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -244,7 +244,7 @@ pub fn parse_batch_get_application_revisions_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -258,7 +258,7 @@ pub fn parse_batch_get_application_revisions_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -272,7 +272,7 @@ pub fn parse_batch_get_application_revisions_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -330,7 +330,7 @@ pub fn parse_batch_get_applications_error(
                     output = crate::json_deser::deser_structure_crate_error_application_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetApplicationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -348,7 +348,7 @@ pub fn parse_batch_get_applications_error(
                     output = crate::json_deser::deser_structure_crate_error_application_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetApplicationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -366,7 +366,7 @@ pub fn parse_batch_get_applications_error(
                     output = crate::json_deser::deser_structure_crate_error_batch_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetApplicationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -384,7 +384,7 @@ pub fn parse_batch_get_applications_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_application_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetApplicationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -443,7 +443,7 @@ pub fn parse_batch_get_deployment_groups_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -457,7 +457,7 @@ pub fn parse_batch_get_deployment_groups_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -471,7 +471,7 @@ pub fn parse_batch_get_deployment_groups_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -485,7 +485,7 @@ pub fn parse_batch_get_deployment_groups_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -499,7 +499,7 @@ pub fn parse_batch_get_deployment_groups_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -513,7 +513,7 @@ pub fn parse_batch_get_deployment_groups_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -527,7 +527,7 @@ pub fn parse_batch_get_deployment_groups_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -589,7 +589,7 @@ pub fn parse_batch_get_deployment_instances_error(
                         output = crate::json_deser::deser_structure_crate_error_batch_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetDeploymentInstancesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -611,7 +611,7 @@ pub fn parse_batch_get_deployment_instances_error(
                             output = crate::json_deser::deser_structure_crate_error_deployment_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetDeploymentInstancesError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -631,7 +631,7 @@ pub fn parse_batch_get_deployment_instances_error(
                         output = crate::json_deser::deser_structure_crate_error_deployment_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetDeploymentInstancesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -651,7 +651,7 @@ pub fn parse_batch_get_deployment_instances_error(
                         output = crate::json_deser::deser_structure_crate_error_instance_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetDeploymentInstancesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -673,7 +673,7 @@ pub fn parse_batch_get_deployment_instances_error(
                             output = crate::json_deser::deser_structure_crate_error_invalid_compute_platform_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetDeploymentInstancesError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -693,7 +693,7 @@ pub fn parse_batch_get_deployment_instances_error(
                         output = crate::json_deser::deser_structure_crate_error_invalid_deployment_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetDeploymentInstancesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -713,7 +713,7 @@ pub fn parse_batch_get_deployment_instances_error(
                         output = crate::json_deser::deser_structure_crate_error_invalid_instance_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetDeploymentInstancesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -772,7 +772,7 @@ pub fn parse_batch_get_deployments_error(
                     output = crate::json_deser::deser_structure_crate_error_batch_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetDeploymentsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -790,7 +790,7 @@ pub fn parse_batch_get_deployments_error(
                     output = crate::json_deser::deser_structure_crate_error_deployment_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetDeploymentsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -808,7 +808,7 @@ pub fn parse_batch_get_deployments_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_deployment_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetDeploymentsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -867,7 +867,7 @@ pub fn parse_batch_get_deployment_targets_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -881,7 +881,7 @@ pub fn parse_batch_get_deployment_targets_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -895,7 +895,7 @@ pub fn parse_batch_get_deployment_targets_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -909,7 +909,7 @@ pub fn parse_batch_get_deployment_targets_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -923,7 +923,7 @@ pub fn parse_batch_get_deployment_targets_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -937,7 +937,7 @@ pub fn parse_batch_get_deployment_targets_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -951,7 +951,7 @@ pub fn parse_batch_get_deployment_targets_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -965,7 +965,7 @@ pub fn parse_batch_get_deployment_targets_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -979,7 +979,7 @@ pub fn parse_batch_get_deployment_targets_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1041,7 +1041,7 @@ pub fn parse_batch_get_on_premises_instances_error(
                         output = crate::json_deser::deser_structure_crate_error_batch_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetOnPremisesInstancesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1061,7 +1061,7 @@ pub fn parse_batch_get_on_premises_instances_error(
                         output = crate::json_deser::deser_structure_crate_error_instance_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetOnPremisesInstancesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1081,7 +1081,7 @@ pub fn parse_batch_get_on_premises_instances_error(
                         output = crate::json_deser::deser_structure_crate_error_invalid_instance_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetOnPremisesInstancesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1138,7 +1138,7 @@ pub fn parse_continue_deployment_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1152,7 +1152,7 @@ pub fn parse_continue_deployment_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1166,7 +1166,7 @@ pub fn parse_continue_deployment_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1180,7 +1180,7 @@ pub fn parse_continue_deployment_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1194,7 +1194,7 @@ pub fn parse_continue_deployment_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1208,7 +1208,7 @@ pub fn parse_continue_deployment_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1222,7 +1222,7 @@ pub fn parse_continue_deployment_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1236,7 +1236,7 @@ pub fn parse_continue_deployment_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1286,7 +1286,7 @@ pub fn parse_create_application_error(
                     output = crate::json_deser::deser_structure_crate_error_application_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1304,7 +1304,7 @@ pub fn parse_create_application_error(
                     output = crate::json_deser::deser_structure_crate_error_application_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1322,7 +1322,7 @@ pub fn parse_create_application_error(
                     output = crate::json_deser::deser_structure_crate_error_application_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1340,7 +1340,7 @@ pub fn parse_create_application_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_application_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1358,7 +1358,7 @@ pub fn parse_create_application_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_compute_platform_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1376,7 +1376,7 @@ pub fn parse_create_application_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_tags_to_add_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1427,7 +1427,7 @@ pub fn parse_create_deployment_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1441,7 +1441,7 @@ pub fn parse_create_deployment_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1455,7 +1455,7 @@ pub fn parse_create_deployment_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1469,7 +1469,7 @@ pub fn parse_create_deployment_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1483,7 +1483,7 @@ pub fn parse_create_deployment_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1497,7 +1497,7 @@ pub fn parse_create_deployment_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1511,7 +1511,7 @@ pub fn parse_create_deployment_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1525,7 +1525,7 @@ pub fn parse_create_deployment_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1539,7 +1539,7 @@ pub fn parse_create_deployment_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1553,7 +1553,7 @@ pub fn parse_create_deployment_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1567,7 +1567,7 @@ pub fn parse_create_deployment_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1581,7 +1581,7 @@ pub fn parse_create_deployment_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1595,7 +1595,7 @@ pub fn parse_create_deployment_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1609,7 +1609,7 @@ pub fn parse_create_deployment_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1623,7 +1623,7 @@ pub fn parse_create_deployment_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1637,7 +1637,7 @@ pub fn parse_create_deployment_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1651,7 +1651,7 @@ pub fn parse_create_deployment_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1665,7 +1665,7 @@ pub fn parse_create_deployment_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1679,7 +1679,7 @@ pub fn parse_create_deployment_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1693,7 +1693,7 @@ pub fn parse_create_deployment_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1707,7 +1707,7 @@ pub fn parse_create_deployment_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1721,7 +1721,7 @@ pub fn parse_create_deployment_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1735,7 +1735,7 @@ pub fn parse_create_deployment_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1749,7 +1749,7 @@ pub fn parse_create_deployment_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1763,7 +1763,7 @@ pub fn parse_create_deployment_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1777,7 +1777,7 @@ pub fn parse_create_deployment_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1833,7 +1833,7 @@ pub fn parse_create_deployment_config_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1847,7 +1847,7 @@ pub fn parse_create_deployment_config_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1861,7 +1861,7 @@ pub fn parse_create_deployment_config_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1875,7 +1875,7 @@ pub fn parse_create_deployment_config_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1889,7 +1889,7 @@ pub fn parse_create_deployment_config_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1903,7 +1903,7 @@ pub fn parse_create_deployment_config_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1917,7 +1917,7 @@ pub fn parse_create_deployment_config_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1971,7 +1971,7 @@ pub fn parse_create_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1985,7 +1985,7 @@ pub fn parse_create_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1999,7 +1999,7 @@ pub fn parse_create_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2013,7 +2013,7 @@ pub fn parse_create_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2027,7 +2027,7 @@ pub fn parse_create_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2041,7 +2041,7 @@ pub fn parse_create_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2055,7 +2055,7 @@ pub fn parse_create_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2069,7 +2069,7 @@ pub fn parse_create_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2083,7 +2083,7 @@ pub fn parse_create_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2097,7 +2097,7 @@ pub fn parse_create_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2111,7 +2111,7 @@ pub fn parse_create_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2125,7 +2125,7 @@ pub fn parse_create_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2139,7 +2139,7 @@ pub fn parse_create_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2153,7 +2153,7 @@ pub fn parse_create_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2167,7 +2167,7 @@ pub fn parse_create_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2181,7 +2181,7 @@ pub fn parse_create_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2195,7 +2195,7 @@ pub fn parse_create_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2209,7 +2209,7 @@ pub fn parse_create_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2223,7 +2223,7 @@ pub fn parse_create_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2237,7 +2237,7 @@ pub fn parse_create_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2251,7 +2251,7 @@ pub fn parse_create_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2265,7 +2265,7 @@ pub fn parse_create_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2279,7 +2279,7 @@ pub fn parse_create_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2293,7 +2293,7 @@ pub fn parse_create_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2307,7 +2307,7 @@ pub fn parse_create_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2321,7 +2321,7 @@ pub fn parse_create_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2335,7 +2335,7 @@ pub fn parse_create_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2349,7 +2349,7 @@ pub fn parse_create_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2363,7 +2363,7 @@ pub fn parse_create_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2377,7 +2377,7 @@ pub fn parse_create_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2391,7 +2391,7 @@ pub fn parse_create_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2405,7 +2405,7 @@ pub fn parse_create_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2419,7 +2419,7 @@ pub fn parse_create_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2474,7 +2474,7 @@ pub fn parse_delete_application_error(
                     output = crate::json_deser::deser_structure_crate_error_application_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2492,7 +2492,7 @@ pub fn parse_delete_application_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_application_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2509,7 +2509,7 @@ pub fn parse_delete_application_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_role_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2564,7 +2564,7 @@ pub fn parse_delete_deployment_config_error(
                     output = crate::json_deser::deser_structure_crate_error_deployment_config_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDeploymentConfigError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2582,7 +2582,7 @@ pub fn parse_delete_deployment_config_error(
                             output = crate::json_deser::deser_structure_crate_error_deployment_config_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDeploymentConfigError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -2601,7 +2601,7 @@ pub fn parse_delete_deployment_config_error(
                             output = crate::json_deser::deser_structure_crate_error_invalid_deployment_config_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDeploymentConfigError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -2619,7 +2619,7 @@ pub fn parse_delete_deployment_config_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDeploymentConfigError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2672,7 +2672,7 @@ pub fn parse_delete_deployment_group_error(
                     output = crate::json_deser::deser_structure_crate_error_application_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDeploymentGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2690,7 +2690,7 @@ pub fn parse_delete_deployment_group_error(
                             output = crate::json_deser::deser_structure_crate_error_deployment_group_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDeploymentGroupError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -2709,7 +2709,7 @@ pub fn parse_delete_deployment_group_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_application_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDeploymentGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2729,7 +2729,7 @@ pub fn parse_delete_deployment_group_error(
                         output = crate::json_deser::deser_structure_crate_error_invalid_deployment_group_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDeploymentGroupError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2747,7 +2747,7 @@ pub fn parse_delete_deployment_group_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_role_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDeploymentGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2806,7 +2806,7 @@ pub fn parse_delete_git_hub_account_token_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2820,7 +2820,7 @@ pub fn parse_delete_git_hub_account_token_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2834,7 +2834,7 @@ pub fn parse_delete_git_hub_account_token_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2848,7 +2848,7 @@ pub fn parse_delete_git_hub_account_token_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2862,7 +2862,7 @@ pub fn parse_delete_git_hub_account_token_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2954,7 +2954,7 @@ pub fn parse_deregister_on_premises_instance_error(
                             output = crate::json_deser::deser_structure_crate_error_instance_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterOnPremisesInstanceError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -2974,7 +2974,7 @@ pub fn parse_deregister_on_premises_instance_error(
                         output = crate::json_deser::deser_structure_crate_error_invalid_instance_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterOnPremisesInstanceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -3025,7 +3025,7 @@ pub fn parse_get_application_error(
                     output = crate::json_deser::deser_structure_crate_error_application_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetApplicationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3043,7 +3043,7 @@ pub fn parse_get_application_error(
                     output = crate::json_deser::deser_structure_crate_error_application_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetApplicationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3061,7 +3061,7 @@ pub fn parse_get_application_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_application_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetApplicationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3121,7 +3121,7 @@ pub fn parse_get_application_revision_error(
                         output = crate::json_deser::deser_structure_crate_error_application_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetApplicationRevisionError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -3141,7 +3141,7 @@ pub fn parse_get_application_revision_error(
                         output = crate::json_deser::deser_structure_crate_error_application_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetApplicationRevisionError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -3160,7 +3160,7 @@ pub fn parse_get_application_revision_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_application_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetApplicationRevisionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3177,7 +3177,7 @@ pub fn parse_get_application_revision_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_revision_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetApplicationRevisionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3195,7 +3195,7 @@ pub fn parse_get_application_revision_error(
                     output = crate::json_deser::deser_structure_crate_error_revision_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetApplicationRevisionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3212,7 +3212,7 @@ pub fn parse_get_application_revision_error(
                     output = crate::json_deser::deser_structure_crate_error_revision_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetApplicationRevisionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3267,7 +3267,7 @@ pub fn parse_get_deployment_error(
                     output = crate::json_deser::deser_structure_crate_error_deployment_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeploymentError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3285,7 +3285,7 @@ pub fn parse_get_deployment_error(
                     output = crate::json_deser::deser_structure_crate_error_deployment_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeploymentError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3303,7 +3303,7 @@ pub fn parse_get_deployment_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_deployment_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeploymentError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3357,7 +3357,7 @@ pub fn parse_get_deployment_config_error(
                         output = crate::json_deser::deser_structure_crate_error_deployment_config_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeploymentConfigError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -3375,7 +3375,7 @@ pub fn parse_get_deployment_config_error(
                         output = crate::json_deser::deser_structure_crate_error_deployment_config_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeploymentConfigError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -3394,7 +3394,7 @@ pub fn parse_get_deployment_config_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_compute_platform_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeploymentConfigError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3411,7 +3411,7 @@ pub fn parse_get_deployment_config_error(
                         output = crate::json_deser::deser_structure_crate_error_invalid_deployment_config_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeploymentConfigError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -3470,7 +3470,7 @@ pub fn parse_get_deployment_group_error(
                     output = crate::json_deser::deser_structure_crate_error_application_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeploymentGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3488,7 +3488,7 @@ pub fn parse_get_deployment_group_error(
                     output = crate::json_deser::deser_structure_crate_error_application_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeploymentGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3505,7 +3505,7 @@ pub fn parse_get_deployment_group_error(
                         output = crate::json_deser::deser_structure_crate_error_deployment_config_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeploymentGroupError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -3523,7 +3523,7 @@ pub fn parse_get_deployment_group_error(
                         output = crate::json_deser::deser_structure_crate_error_deployment_group_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeploymentGroupError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -3541,7 +3541,7 @@ pub fn parse_get_deployment_group_error(
                         output = crate::json_deser::deser_structure_crate_error_deployment_group_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeploymentGroupError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -3560,7 +3560,7 @@ pub fn parse_get_deployment_group_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_application_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeploymentGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3578,7 +3578,7 @@ pub fn parse_get_deployment_group_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_deployment_group_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeploymentGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3636,7 +3636,7 @@ pub fn parse_get_deployment_instance_error(
                     output = crate::json_deser::deser_structure_crate_error_deployment_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeploymentInstanceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3654,7 +3654,7 @@ pub fn parse_get_deployment_instance_error(
                     output = crate::json_deser::deser_structure_crate_error_deployment_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeploymentInstanceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3672,7 +3672,7 @@ pub fn parse_get_deployment_instance_error(
                     output = crate::json_deser::deser_structure_crate_error_instance_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeploymentInstanceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3690,7 +3690,7 @@ pub fn parse_get_deployment_instance_error(
                     output = crate::json_deser::deser_structure_crate_error_instance_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeploymentInstanceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3708,7 +3708,7 @@ pub fn parse_get_deployment_instance_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_compute_platform_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeploymentInstanceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3726,7 +3726,7 @@ pub fn parse_get_deployment_instance_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_deployment_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeploymentInstanceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3744,7 +3744,7 @@ pub fn parse_get_deployment_instance_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_instance_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeploymentInstanceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3802,7 +3802,7 @@ pub fn parse_get_deployment_target_error(
                     output = crate::json_deser::deser_structure_crate_error_deployment_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeploymentTargetError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3820,7 +3820,7 @@ pub fn parse_get_deployment_target_error(
                     output = crate::json_deser::deser_structure_crate_error_deployment_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeploymentTargetError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3838,7 +3838,7 @@ pub fn parse_get_deployment_target_error(
                     output = crate::json_deser::deser_structure_crate_error_deployment_not_started_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeploymentTargetError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3855,7 +3855,7 @@ pub fn parse_get_deployment_target_error(
                         output = crate::json_deser::deser_structure_crate_error_deployment_target_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeploymentTargetError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -3875,7 +3875,7 @@ pub fn parse_get_deployment_target_error(
                                 output = crate::json_deser::deser_structure_crate_error_deployment_target_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeploymentTargetError::unhandled)?;
                                 output.build()
                             };
-                            if (&tmp.message).is_none() {
+                            if tmp.message.is_none() {
                                 tmp.message = _error_message;
                             }
                             tmp
@@ -3895,7 +3895,7 @@ pub fn parse_get_deployment_target_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_deployment_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeploymentTargetError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3913,7 +3913,7 @@ pub fn parse_get_deployment_target_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_deployment_target_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeploymentTargetError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3931,7 +3931,7 @@ pub fn parse_get_deployment_target_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_instance_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeploymentTargetError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3989,7 +3989,7 @@ pub fn parse_get_on_premises_instance_error(
                     output = crate::json_deser::deser_structure_crate_error_instance_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetOnPremisesInstanceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4007,7 +4007,7 @@ pub fn parse_get_on_premises_instance_error(
                     output = crate::json_deser::deser_structure_crate_error_instance_not_registered_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetOnPremisesInstanceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4025,7 +4025,7 @@ pub fn parse_get_on_premises_instance_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_instance_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetOnPremisesInstanceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4088,7 +4088,7 @@ pub fn parse_list_application_revisions_error(
                         output = crate::json_deser::deser_structure_crate_error_application_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListApplicationRevisionsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -4108,7 +4108,7 @@ pub fn parse_list_application_revisions_error(
                         output = crate::json_deser::deser_structure_crate_error_application_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListApplicationRevisionsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -4127,7 +4127,7 @@ pub fn parse_list_application_revisions_error(
                             output = crate::json_deser::deser_structure_crate_error_bucket_name_filter_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListApplicationRevisionsError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -4147,7 +4147,7 @@ pub fn parse_list_application_revisions_error(
                         output = crate::json_deser::deser_structure_crate_error_invalid_application_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListApplicationRevisionsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -4167,7 +4167,7 @@ pub fn parse_list_application_revisions_error(
                         output = crate::json_deser::deser_structure_crate_error_invalid_bucket_name_filter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListApplicationRevisionsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -4186,7 +4186,7 @@ pub fn parse_list_application_revisions_error(
                             output = crate::json_deser::deser_structure_crate_error_invalid_deployed_state_filter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListApplicationRevisionsError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -4206,7 +4206,7 @@ pub fn parse_list_application_revisions_error(
                         output = crate::json_deser::deser_structure_crate_error_invalid_key_prefix_filter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListApplicationRevisionsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -4224,7 +4224,7 @@ pub fn parse_list_application_revisions_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListApplicationRevisionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4241,7 +4241,7 @@ pub fn parse_list_application_revisions_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_sort_by_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListApplicationRevisionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4258,7 +4258,7 @@ pub fn parse_list_application_revisions_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_sort_order_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListApplicationRevisionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4313,7 +4313,7 @@ pub fn parse_list_applications_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListApplicationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4368,7 +4368,7 @@ pub fn parse_list_deployment_configs_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDeploymentConfigsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4426,7 +4426,7 @@ pub fn parse_list_deployment_groups_error(
                     output = crate::json_deser::deser_structure_crate_error_application_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDeploymentGroupsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4444,7 +4444,7 @@ pub fn parse_list_deployment_groups_error(
                     output = crate::json_deser::deser_structure_crate_error_application_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDeploymentGroupsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4462,7 +4462,7 @@ pub fn parse_list_deployment_groups_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_application_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDeploymentGroupsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4479,7 +4479,7 @@ pub fn parse_list_deployment_groups_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDeploymentGroupsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4538,7 +4538,7 @@ pub fn parse_list_deployment_instances_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4552,7 +4552,7 @@ pub fn parse_list_deployment_instances_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4566,7 +4566,7 @@ pub fn parse_list_deployment_instances_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4580,7 +4580,7 @@ pub fn parse_list_deployment_instances_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4594,7 +4594,7 @@ pub fn parse_list_deployment_instances_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4608,7 +4608,7 @@ pub fn parse_list_deployment_instances_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4622,7 +4622,7 @@ pub fn parse_list_deployment_instances_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4636,7 +4636,7 @@ pub fn parse_list_deployment_instances_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4650,7 +4650,7 @@ pub fn parse_list_deployment_instances_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4664,7 +4664,7 @@ pub fn parse_list_deployment_instances_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4718,7 +4718,7 @@ pub fn parse_list_deployments_error(
                     output = crate::json_deser::deser_structure_crate_error_application_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDeploymentsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4736,7 +4736,7 @@ pub fn parse_list_deployments_error(
                     output = crate::json_deser::deser_structure_crate_error_application_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDeploymentsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4754,7 +4754,7 @@ pub fn parse_list_deployments_error(
                     output = crate::json_deser::deser_structure_crate_error_deployment_group_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDeploymentsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4772,7 +4772,7 @@ pub fn parse_list_deployments_error(
                     output = crate::json_deser::deser_structure_crate_error_deployment_group_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDeploymentsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4790,7 +4790,7 @@ pub fn parse_list_deployments_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_application_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDeploymentsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4808,7 +4808,7 @@ pub fn parse_list_deployments_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_deployment_group_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDeploymentsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4826,7 +4826,7 @@ pub fn parse_list_deployments_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_deployment_status_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDeploymentsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4844,7 +4844,7 @@ pub fn parse_list_deployments_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_external_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDeploymentsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4861,7 +4861,7 @@ pub fn parse_list_deployments_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDeploymentsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4878,7 +4878,7 @@ pub fn parse_list_deployments_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDeploymentsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4895,7 +4895,7 @@ pub fn parse_list_deployments_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_time_range_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDeploymentsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4950,7 +4950,7 @@ pub fn parse_list_deployment_targets_error(
                     output = crate::json_deser::deser_structure_crate_error_deployment_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDeploymentTargetsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4968,7 +4968,7 @@ pub fn parse_list_deployment_targets_error(
                     output = crate::json_deser::deser_structure_crate_error_deployment_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDeploymentTargetsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4986,7 +4986,7 @@ pub fn parse_list_deployment_targets_error(
                     output = crate::json_deser::deser_structure_crate_error_deployment_not_started_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDeploymentTargetsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5004,7 +5004,7 @@ pub fn parse_list_deployment_targets_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_deployment_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDeploymentTargetsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5022,7 +5022,7 @@ pub fn parse_list_deployment_targets_error(
                             output = crate::json_deser::deser_structure_crate_error_invalid_deployment_instance_type_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDeploymentTargetsError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -5041,7 +5041,7 @@ pub fn parse_list_deployment_targets_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_instance_status_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDeploymentTargetsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5059,7 +5059,7 @@ pub fn parse_list_deployment_targets_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_instance_type_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDeploymentTargetsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5076,7 +5076,7 @@ pub fn parse_list_deployment_targets_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDeploymentTargetsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5137,7 +5137,7 @@ pub fn parse_list_git_hub_account_token_names_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListGitHubAccountTokenNamesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5157,7 +5157,7 @@ pub fn parse_list_git_hub_account_token_names_error(
                             output = crate::json_deser::deser_structure_crate_error_operation_not_supported_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListGitHubAccountTokenNamesError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -5177,7 +5177,7 @@ pub fn parse_list_git_hub_account_token_names_error(
                         output = crate::json_deser::deser_structure_crate_error_resource_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListGitHubAccountTokenNamesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -5240,7 +5240,7 @@ pub fn parse_list_on_premises_instances_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListOnPremisesInstancesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5258,7 +5258,7 @@ pub fn parse_list_on_premises_instances_error(
                             output = crate::json_deser::deser_structure_crate_error_invalid_registration_status_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListOnPremisesInstancesError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -5276,7 +5276,7 @@ pub fn parse_list_on_premises_instances_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_tag_filter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListOnPremisesInstancesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5333,7 +5333,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_arn_not_supported_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5350,7 +5350,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5368,7 +5368,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_arn_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5425,7 +5425,7 @@ pub fn parse_put_lifecycle_event_hook_execution_status_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5439,7 +5439,7 @@ pub fn parse_put_lifecycle_event_hook_execution_status_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5453,7 +5453,7 @@ pub fn parse_put_lifecycle_event_hook_execution_status_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5467,7 +5467,7 @@ pub fn parse_put_lifecycle_event_hook_execution_status_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5481,7 +5481,7 @@ pub fn parse_put_lifecycle_event_hook_execution_status_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5495,7 +5495,7 @@ pub fn parse_put_lifecycle_event_hook_execution_status_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5509,7 +5509,7 @@ pub fn parse_put_lifecycle_event_hook_execution_status_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5567,7 +5567,7 @@ pub fn parse_register_application_revision_error(
                             output = crate::json_deser::deser_structure_crate_error_application_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterApplicationRevisionError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -5589,7 +5589,7 @@ pub fn parse_register_application_revision_error(
                             output = crate::json_deser::deser_structure_crate_error_application_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterApplicationRevisionError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -5609,7 +5609,7 @@ pub fn parse_register_application_revision_error(
                         output = crate::json_deser::deser_structure_crate_error_description_too_long_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterApplicationRevisionError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -5631,7 +5631,7 @@ pub fn parse_register_application_revision_error(
                             output = crate::json_deser::deser_structure_crate_error_invalid_application_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterApplicationRevisionError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -5649,7 +5649,7 @@ pub fn parse_register_application_revision_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_revision_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterApplicationRevisionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5666,7 +5666,7 @@ pub fn parse_register_application_revision_error(
                     output = crate::json_deser::deser_structure_crate_error_revision_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterApplicationRevisionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5720,7 +5720,7 @@ pub fn parse_register_on_premises_instance_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5734,7 +5734,7 @@ pub fn parse_register_on_premises_instance_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5748,7 +5748,7 @@ pub fn parse_register_on_premises_instance_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5762,7 +5762,7 @@ pub fn parse_register_on_premises_instance_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5776,7 +5776,7 @@ pub fn parse_register_on_premises_instance_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5790,7 +5790,7 @@ pub fn parse_register_on_premises_instance_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5804,7 +5804,7 @@ pub fn parse_register_on_premises_instance_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5818,7 +5818,7 @@ pub fn parse_register_on_premises_instance_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5832,7 +5832,7 @@ pub fn parse_register_on_premises_instance_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5846,7 +5846,7 @@ pub fn parse_register_on_premises_instance_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5897,7 +5897,7 @@ pub fn parse_remove_tags_from_on_premises_instances_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5911,7 +5911,7 @@ pub fn parse_remove_tags_from_on_premises_instances_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5925,7 +5925,7 @@ pub fn parse_remove_tags_from_on_premises_instances_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5939,7 +5939,7 @@ pub fn parse_remove_tags_from_on_premises_instances_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5953,7 +5953,7 @@ pub fn parse_remove_tags_from_on_premises_instances_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5967,7 +5967,7 @@ pub fn parse_remove_tags_from_on_premises_instances_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5981,7 +5981,7 @@ pub fn parse_remove_tags_from_on_premises_instances_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6033,7 +6033,7 @@ pub fn parse_skip_wait_time_for_instance_termination_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6047,7 +6047,7 @@ pub fn parse_skip_wait_time_for_instance_termination_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6061,7 +6061,7 @@ pub fn parse_skip_wait_time_for_instance_termination_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6075,7 +6075,7 @@ pub fn parse_skip_wait_time_for_instance_termination_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6089,7 +6089,7 @@ pub fn parse_skip_wait_time_for_instance_termination_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6103,7 +6103,7 @@ pub fn parse_skip_wait_time_for_instance_termination_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6153,7 +6153,7 @@ pub fn parse_stop_deployment_error(
                     output = crate::json_deser::deser_structure_crate_error_deployment_already_completed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopDeploymentError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6171,7 +6171,7 @@ pub fn parse_stop_deployment_error(
                     output = crate::json_deser::deser_structure_crate_error_deployment_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopDeploymentError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6189,7 +6189,7 @@ pub fn parse_stop_deployment_error(
                     output = crate::json_deser::deser_structure_crate_error_deployment_group_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopDeploymentError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6207,7 +6207,7 @@ pub fn parse_stop_deployment_error(
                     output = crate::json_deser::deser_structure_crate_error_deployment_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopDeploymentError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6225,7 +6225,7 @@ pub fn parse_stop_deployment_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_deployment_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopDeploymentError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6243,7 +6243,7 @@ pub fn parse_stop_deployment_error(
                             output = crate::json_deser::deser_structure_crate_error_unsupported_action_for_deployment_type_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopDeploymentError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -6296,7 +6296,7 @@ pub fn parse_tag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_application_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6313,7 +6313,7 @@ pub fn parse_tag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_arn_not_supported_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6330,7 +6330,7 @@ pub fn parse_tag_resource_error(
                         output = crate::json_deser::deser_structure_crate_error_deployment_config_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -6348,7 +6348,7 @@ pub fn parse_tag_resource_error(
                         output = crate::json_deser::deser_structure_crate_error_deployment_group_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -6366,7 +6366,7 @@ pub fn parse_tag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6384,7 +6384,7 @@ pub fn parse_tag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_tags_to_add_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6402,7 +6402,7 @@ pub fn parse_tag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_arn_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6419,7 +6419,7 @@ pub fn parse_tag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_tag_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6466,7 +6466,7 @@ pub fn parse_untag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_application_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6483,7 +6483,7 @@ pub fn parse_untag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_arn_not_supported_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6502,7 +6502,7 @@ pub fn parse_untag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_deployment_config_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6519,7 +6519,7 @@ pub fn parse_untag_resource_error(
                         output = crate::json_deser::deser_structure_crate_error_deployment_group_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -6537,7 +6537,7 @@ pub fn parse_untag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6555,7 +6555,7 @@ pub fn parse_untag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_tags_to_add_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6573,7 +6573,7 @@ pub fn parse_untag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_arn_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6590,7 +6590,7 @@ pub fn parse_untag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_tag_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6638,7 +6638,7 @@ pub fn parse_update_application_error(
                     output = crate::json_deser::deser_structure_crate_error_application_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateApplicationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6656,7 +6656,7 @@ pub fn parse_update_application_error(
                     output = crate::json_deser::deser_structure_crate_error_application_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateApplicationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6674,7 +6674,7 @@ pub fn parse_update_application_error(
                     output = crate::json_deser::deser_structure_crate_error_application_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateApplicationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6692,7 +6692,7 @@ pub fn parse_update_application_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_application_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateApplicationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6740,7 +6740,7 @@ pub fn parse_update_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6754,7 +6754,7 @@ pub fn parse_update_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6768,7 +6768,7 @@ pub fn parse_update_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6782,7 +6782,7 @@ pub fn parse_update_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6796,7 +6796,7 @@ pub fn parse_update_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6810,7 +6810,7 @@ pub fn parse_update_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6824,7 +6824,7 @@ pub fn parse_update_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6838,7 +6838,7 @@ pub fn parse_update_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6852,7 +6852,7 @@ pub fn parse_update_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6866,7 +6866,7 @@ pub fn parse_update_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6880,7 +6880,7 @@ pub fn parse_update_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6894,7 +6894,7 @@ pub fn parse_update_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6908,7 +6908,7 @@ pub fn parse_update_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6922,7 +6922,7 @@ pub fn parse_update_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6936,7 +6936,7 @@ pub fn parse_update_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6950,7 +6950,7 @@ pub fn parse_update_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6964,7 +6964,7 @@ pub fn parse_update_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6978,7 +6978,7 @@ pub fn parse_update_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6992,7 +6992,7 @@ pub fn parse_update_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -7006,7 +7006,7 @@ pub fn parse_update_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -7020,7 +7020,7 @@ pub fn parse_update_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -7034,7 +7034,7 @@ pub fn parse_update_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -7048,7 +7048,7 @@ pub fn parse_update_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -7062,7 +7062,7 @@ pub fn parse_update_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -7076,7 +7076,7 @@ pub fn parse_update_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -7090,7 +7090,7 @@ pub fn parse_update_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -7104,7 +7104,7 @@ pub fn parse_update_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -7118,7 +7118,7 @@ pub fn parse_update_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -7132,7 +7132,7 @@ pub fn parse_update_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -7146,7 +7146,7 @@ pub fn parse_update_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -7160,7 +7160,7 @@ pub fn parse_update_deployment_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp

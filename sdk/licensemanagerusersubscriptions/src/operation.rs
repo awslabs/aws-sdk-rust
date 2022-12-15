@@ -5,7 +5,7 @@
 /// [`associate_user`](crate::client::Client::associate_user).
 ///
 /// See [`crate::client::fluent_builders::AssociateUser`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateUser {
     _private: (),
 }
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateUser {
 /// [`deregister_identity_provider`](crate::client::Client::deregister_identity_provider).
 ///
 /// See [`crate::client::fluent_builders::DeregisterIdentityProvider`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeregisterIdentityProvider {
     _private: (),
 }
@@ -71,7 +71,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterIdentityProvid
 /// [`disassociate_user`](crate::client::Client::disassociate_user).
 ///
 /// See [`crate::client::fluent_builders::DisassociateUser`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateUser {
     _private: (),
 }
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateUser {
 /// [`list_identity_providers`](crate::client::Client::list_identity_providers).
 ///
 /// See [`crate::client::fluent_builders::ListIdentityProviders`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListIdentityProviders {
     _private: (),
 }
@@ -139,7 +139,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListIdentityProviders {
 /// [`list_instances`](crate::client::Client::list_instances).
 ///
 /// See [`crate::client::fluent_builders::ListInstances`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListInstances {
     _private: (),
 }
@@ -171,7 +171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInstances {
 /// [`list_product_subscriptions`](crate::client::Client::list_product_subscriptions).
 ///
 /// See [`crate::client::fluent_builders::ListProductSubscriptions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListProductSubscriptions {
     _private: (),
 }
@@ -205,7 +205,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProductSubscriptions
 /// [`list_user_associations`](crate::client::Client::list_user_associations).
 ///
 /// See [`crate::client::fluent_builders::ListUserAssociations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListUserAssociations {
     _private: (),
 }
@@ -239,7 +239,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListUserAssociations {
 /// [`register_identity_provider`](crate::client::Client::register_identity_provider).
 ///
 /// See [`crate::client::fluent_builders::RegisterIdentityProvider`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RegisterIdentityProvider {
     _private: (),
 }
@@ -273,7 +273,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterIdentityProvider
 /// [`start_product_subscription`](crate::client::Client::start_product_subscription).
 ///
 /// See [`crate::client::fluent_builders::StartProductSubscription`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartProductSubscription {
     _private: (),
 }
@@ -307,7 +307,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartProductSubscription
 /// [`stop_product_subscription`](crate::client::Client::stop_product_subscription).
 ///
 /// See [`crate::client::fluent_builders::StopProductSubscription`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopProductSubscription {
     _private: (),
 }

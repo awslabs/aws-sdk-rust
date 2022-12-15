@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod add_permission_input {
 
     /// A builder for [`AddPermissionInput`](crate::input::AddPermissionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_url: std::option::Option<std::string::String>,
         pub(crate) label: std::option::Option<std::string::String>,
@@ -80,7 +80,7 @@ pub mod add_permission_input {
         /// Consumes the builder and constructs a [`AddPermissionInput`](crate::input::AddPermissionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::AddPermissionInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::AddPermissionInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::AddPermissionInput {
                 queue_url: self.queue_url,
@@ -104,13 +104,13 @@ impl AddPermissionInput {
             crate::operation::AddPermission,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AddPermissionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -118,8 +118,10 @@ impl AddPermissionInput {
             fn update_http_builder(
                 input: &crate::input::AddPermissionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -203,7 +205,7 @@ impl AddPermissionInput {
 pub mod change_message_visibility_input {
 
     /// A builder for [`ChangeMessageVisibilityInput`](crate::input::ChangeMessageVisibilityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_url: std::option::Option<std::string::String>,
         pub(crate) receipt_handle: std::option::Option<std::string::String>,
@@ -250,7 +252,7 @@ pub mod change_message_visibility_input {
             self,
         ) -> Result<
             crate::input::ChangeMessageVisibilityInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ChangeMessageVisibilityInput {
                 queue_url: self.queue_url,
@@ -273,13 +275,13 @@ impl ChangeMessageVisibilityInput {
             crate::operation::ChangeMessageVisibility,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ChangeMessageVisibilityInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -287,8 +289,10 @@ impl ChangeMessageVisibilityInput {
             fn update_http_builder(
                 input: &crate::input::ChangeMessageVisibilityInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -374,7 +378,7 @@ impl ChangeMessageVisibilityInput {
 pub mod change_message_visibility_batch_input {
 
     /// A builder for [`ChangeMessageVisibilityBatchInput`](crate::input::ChangeMessageVisibilityBatchInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_url: std::option::Option<std::string::String>,
         pub(crate) entries: std::option::Option<
@@ -423,7 +427,7 @@ pub mod change_message_visibility_batch_input {
             self,
         ) -> Result<
             crate::input::ChangeMessageVisibilityBatchInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ChangeMessageVisibilityBatchInput {
                 queue_url: self.queue_url,
@@ -445,13 +449,13 @@ impl ChangeMessageVisibilityBatchInput {
             crate::operation::ChangeMessageVisibilityBatch,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ChangeMessageVisibilityBatchInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -459,8 +463,10 @@ impl ChangeMessageVisibilityBatchInput {
             fn update_http_builder(
                 input: &crate::input::ChangeMessageVisibilityBatchInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -543,7 +549,7 @@ impl ChangeMessageVisibilityBatchInput {
 pub mod create_queue_input {
 
     /// A builder for [`CreateQueueInput`](crate::input::CreateQueueInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -751,7 +757,7 @@ pub mod create_queue_input {
         /// Consumes the builder and constructs a [`CreateQueueInput`](crate::input::CreateQueueInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateQueueInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateQueueInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateQueueInput {
                 queue_name: self.queue_name,
@@ -774,13 +780,13 @@ impl CreateQueueInput {
             crate::operation::CreateQueue,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateQueueInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -788,8 +794,10 @@ impl CreateQueueInput {
             fn update_http_builder(
                 input: &crate::input::CreateQueueInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -873,7 +881,7 @@ impl CreateQueueInput {
 pub mod delete_message_input {
 
     /// A builder for [`DeleteMessageInput`](crate::input::DeleteMessageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_url: std::option::Option<std::string::String>,
         pub(crate) receipt_handle: std::option::Option<std::string::String>,
@@ -907,7 +915,7 @@ pub mod delete_message_input {
         /// Consumes the builder and constructs a [`DeleteMessageInput`](crate::input::DeleteMessageInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteMessageInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteMessageInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteMessageInput {
                 queue_url: self.queue_url,
@@ -929,13 +937,13 @@ impl DeleteMessageInput {
             crate::operation::DeleteMessage,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteMessageInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -943,8 +951,10 @@ impl DeleteMessageInput {
             fn update_http_builder(
                 input: &crate::input::DeleteMessageInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1028,7 +1038,7 @@ impl DeleteMessageInput {
 pub mod delete_message_batch_input {
 
     /// A builder for [`DeleteMessageBatchInput`](crate::input::DeleteMessageBatchInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_url: std::option::Option<std::string::String>,
         pub(crate) entries:
@@ -1069,8 +1079,10 @@ pub mod delete_message_batch_input {
         /// Consumes the builder and constructs a [`DeleteMessageBatchInput`](crate::input::DeleteMessageBatchInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteMessageBatchInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteMessageBatchInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteMessageBatchInput {
                 queue_url: self.queue_url,
                 entries: self.entries,
@@ -1091,13 +1103,13 @@ impl DeleteMessageBatchInput {
             crate::operation::DeleteMessageBatch,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteMessageBatchInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1105,8 +1117,10 @@ impl DeleteMessageBatchInput {
             fn update_http_builder(
                 input: &crate::input::DeleteMessageBatchInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1190,7 +1204,7 @@ impl DeleteMessageBatchInput {
 pub mod delete_queue_input {
 
     /// A builder for [`DeleteQueueInput`](crate::input::DeleteQueueInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_url: std::option::Option<std::string::String>,
     }
@@ -1210,7 +1224,7 @@ pub mod delete_queue_input {
         /// Consumes the builder and constructs a [`DeleteQueueInput`](crate::input::DeleteQueueInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteQueueInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteQueueInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteQueueInput {
                 queue_url: self.queue_url,
@@ -1231,13 +1245,13 @@ impl DeleteQueueInput {
             crate::operation::DeleteQueue,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteQueueInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1245,8 +1259,10 @@ impl DeleteQueueInput {
             fn update_http_builder(
                 input: &crate::input::DeleteQueueInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1330,7 +1346,7 @@ impl DeleteQueueInput {
 pub mod get_queue_attributes_input {
 
     /// A builder for [`GetQueueAttributesInput`](crate::input::GetQueueAttributesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_url: std::option::Option<std::string::String>,
         pub(crate) attribute_names:
@@ -1473,8 +1489,10 @@ pub mod get_queue_attributes_input {
         /// Consumes the builder and constructs a [`GetQueueAttributesInput`](crate::input::GetQueueAttributesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetQueueAttributesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetQueueAttributesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetQueueAttributesInput {
                 queue_url: self.queue_url,
                 attribute_names: self.attribute_names,
@@ -1495,13 +1513,13 @@ impl GetQueueAttributesInput {
             crate::operation::GetQueueAttributes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetQueueAttributesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1509,8 +1527,10 @@ impl GetQueueAttributesInput {
             fn update_http_builder(
                 input: &crate::input::GetQueueAttributesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1594,7 +1614,7 @@ impl GetQueueAttributesInput {
 pub mod get_queue_url_input {
 
     /// A builder for [`GetQueueUrlInput`](crate::input::GetQueueUrlInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_name: std::option::Option<std::string::String>,
         pub(crate) queue_owner_aws_account_id: std::option::Option<std::string::String>,
@@ -1628,7 +1648,7 @@ pub mod get_queue_url_input {
         /// Consumes the builder and constructs a [`GetQueueUrlInput`](crate::input::GetQueueUrlInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetQueueUrlInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetQueueUrlInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetQueueUrlInput {
                 queue_name: self.queue_name,
@@ -1650,13 +1670,13 @@ impl GetQueueUrlInput {
             crate::operation::GetQueueUrl,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetQueueUrlInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1664,8 +1684,10 @@ impl GetQueueUrlInput {
             fn update_http_builder(
                 input: &crate::input::GetQueueUrlInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1749,7 +1771,7 @@ impl GetQueueUrlInput {
 pub mod list_dead_letter_source_queues_input {
 
     /// A builder for [`ListDeadLetterSourceQueuesInput`](crate::input::ListDeadLetterSourceQueuesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_url: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1793,7 +1815,7 @@ pub mod list_dead_letter_source_queues_input {
             self,
         ) -> Result<
             crate::input::ListDeadLetterSourceQueuesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListDeadLetterSourceQueuesInput {
                 queue_url: self.queue_url,
@@ -1816,13 +1838,13 @@ impl ListDeadLetterSourceQueuesInput {
             crate::operation::ListDeadLetterSourceQueues,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListDeadLetterSourceQueuesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1830,8 +1852,10 @@ impl ListDeadLetterSourceQueuesInput {
             fn update_http_builder(
                 input: &crate::input::ListDeadLetterSourceQueuesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1914,7 +1938,7 @@ impl ListDeadLetterSourceQueuesInput {
 pub mod list_queues_input {
 
     /// A builder for [`ListQueuesInput`](crate::input::ListQueuesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_name_prefix: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1959,7 +1983,8 @@ pub mod list_queues_input {
         /// Consumes the builder and constructs a [`ListQueuesInput`](crate::input::ListQueuesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListQueuesInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ListQueuesInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ListQueuesInput {
                 queue_name_prefix: self.queue_name_prefix,
                 next_token: self.next_token,
@@ -1981,13 +2006,13 @@ impl ListQueuesInput {
             crate::operation::ListQueues,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListQueuesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1995,8 +2020,10 @@ impl ListQueuesInput {
             fn update_http_builder(
                 input: &crate::input::ListQueuesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2080,7 +2107,7 @@ impl ListQueuesInput {
 pub mod list_queue_tags_input {
 
     /// A builder for [`ListQueueTagsInput`](crate::input::ListQueueTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_url: std::option::Option<std::string::String>,
     }
@@ -2098,7 +2125,7 @@ pub mod list_queue_tags_input {
         /// Consumes the builder and constructs a [`ListQueueTagsInput`](crate::input::ListQueueTagsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListQueueTagsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListQueueTagsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListQueueTagsInput {
                 queue_url: self.queue_url,
@@ -2119,13 +2146,13 @@ impl ListQueueTagsInput {
             crate::operation::ListQueueTags,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListQueueTagsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2133,8 +2160,10 @@ impl ListQueueTagsInput {
             fn update_http_builder(
                 input: &crate::input::ListQueueTagsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2218,7 +2247,7 @@ impl ListQueueTagsInput {
 pub mod purge_queue_input {
 
     /// A builder for [`PurgeQueueInput`](crate::input::PurgeQueueInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_url: std::option::Option<std::string::String>,
     }
@@ -2238,7 +2267,8 @@ pub mod purge_queue_input {
         /// Consumes the builder and constructs a [`PurgeQueueInput`](crate::input::PurgeQueueInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PurgeQueueInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::PurgeQueueInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::PurgeQueueInput {
                 queue_url: self.queue_url,
             })
@@ -2258,13 +2288,13 @@ impl PurgeQueueInput {
             crate::operation::PurgeQueue,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PurgeQueueInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2272,8 +2302,10 @@ impl PurgeQueueInput {
             fn update_http_builder(
                 input: &crate::input::PurgeQueueInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2357,7 +2389,7 @@ impl PurgeQueueInput {
 pub mod receive_message_input {
 
     /// A builder for [`ReceiveMessageInput`](crate::input::ReceiveMessageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_url: std::option::Option<std::string::String>,
         pub(crate) attribute_names:
@@ -2547,7 +2579,7 @@ pub mod receive_message_input {
         /// Consumes the builder and constructs a [`ReceiveMessageInput`](crate::input::ReceiveMessageInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ReceiveMessageInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ReceiveMessageInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ReceiveMessageInput {
                 queue_url: self.queue_url,
@@ -2574,13 +2606,13 @@ impl ReceiveMessageInput {
             crate::operation::ReceiveMessage,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ReceiveMessageInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2588,8 +2620,10 @@ impl ReceiveMessageInput {
             fn update_http_builder(
                 input: &crate::input::ReceiveMessageInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2673,7 +2707,7 @@ impl ReceiveMessageInput {
 pub mod remove_permission_input {
 
     /// A builder for [`RemovePermissionInput`](crate::input::RemovePermissionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_url: std::option::Option<std::string::String>,
         pub(crate) label: std::option::Option<std::string::String>,
@@ -2704,8 +2738,10 @@ pub mod remove_permission_input {
         /// Consumes the builder and constructs a [`RemovePermissionInput`](crate::input::RemovePermissionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::RemovePermissionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::RemovePermissionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::RemovePermissionInput {
                 queue_url: self.queue_url,
                 label: self.label,
@@ -2726,13 +2762,13 @@ impl RemovePermissionInput {
             crate::operation::RemovePermission,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RemovePermissionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2740,8 +2776,10 @@ impl RemovePermissionInput {
             fn update_http_builder(
                 input: &crate::input::RemovePermissionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2825,7 +2863,7 @@ impl RemovePermissionInput {
 pub mod send_message_input {
 
     /// A builder for [`SendMessageInput`](crate::input::SendMessageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_url: std::option::Option<std::string::String>,
         pub(crate) message_body: std::option::Option<std::string::String>,
@@ -3033,7 +3071,7 @@ pub mod send_message_input {
         /// Consumes the builder and constructs a [`SendMessageInput`](crate::input::SendMessageInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SendMessageInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::SendMessageInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::SendMessageInput {
                 queue_url: self.queue_url,
@@ -3060,13 +3098,13 @@ impl SendMessageInput {
             crate::operation::SendMessage,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SendMessageInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3074,8 +3112,10 @@ impl SendMessageInput {
             fn update_http_builder(
                 input: &crate::input::SendMessageInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3159,7 +3199,7 @@ impl SendMessageInput {
 pub mod send_message_batch_input {
 
     /// A builder for [`SendMessageBatchInput`](crate::input::SendMessageBatchInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_url: std::option::Option<std::string::String>,
         pub(crate) entries:
@@ -3200,8 +3240,10 @@ pub mod send_message_batch_input {
         /// Consumes the builder and constructs a [`SendMessageBatchInput`](crate::input::SendMessageBatchInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SendMessageBatchInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::SendMessageBatchInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::SendMessageBatchInput {
                 queue_url: self.queue_url,
                 entries: self.entries,
@@ -3222,13 +3264,13 @@ impl SendMessageBatchInput {
             crate::operation::SendMessageBatch,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SendMessageBatchInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3236,8 +3278,10 @@ impl SendMessageBatchInput {
             fn update_http_builder(
                 input: &crate::input::SendMessageBatchInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3321,7 +3365,7 @@ impl SendMessageBatchInput {
 pub mod set_queue_attributes_input {
 
     /// A builder for [`SetQueueAttributesInput`](crate::input::SetQueueAttributesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_url: std::option::Option<std::string::String>,
         pub(crate) attributes: std::option::Option<
@@ -3467,8 +3511,10 @@ pub mod set_queue_attributes_input {
         /// Consumes the builder and constructs a [`SetQueueAttributesInput`](crate::input::SetQueueAttributesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SetQueueAttributesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::SetQueueAttributesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::SetQueueAttributesInput {
                 queue_url: self.queue_url,
                 attributes: self.attributes,
@@ -3489,13 +3535,13 @@ impl SetQueueAttributesInput {
             crate::operation::SetQueueAttributes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SetQueueAttributesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3503,8 +3549,10 @@ impl SetQueueAttributesInput {
             fn update_http_builder(
                 input: &crate::input::SetQueueAttributesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3588,7 +3636,7 @@ impl SetQueueAttributesInput {
 pub mod tag_queue_input {
 
     /// A builder for [`TagQueueInput`](crate::input::TagQueueInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_url: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -3634,7 +3682,8 @@ pub mod tag_queue_input {
         /// Consumes the builder and constructs a [`TagQueueInput`](crate::input::TagQueueInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagQueueInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::TagQueueInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::TagQueueInput {
                 queue_url: self.queue_url,
                 tags: self.tags,
@@ -3655,13 +3704,13 @@ impl TagQueueInput {
             crate::operation::TagQueue,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagQueueInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3669,8 +3718,10 @@ impl TagQueueInput {
             fn update_http_builder(
                 input: &crate::input::TagQueueInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3749,7 +3800,7 @@ impl TagQueueInput {
 pub mod untag_queue_input {
 
     /// A builder for [`UntagQueueInput`](crate::input::UntagQueueInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_url: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3787,7 +3838,8 @@ pub mod untag_queue_input {
         /// Consumes the builder and constructs a [`UntagQueueInput`](crate::input::UntagQueueInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagQueueInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::UntagQueueInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::UntagQueueInput {
                 queue_url: self.queue_url,
                 tag_keys: self.tag_keys,
@@ -3808,13 +3860,13 @@ impl UntagQueueInput {
             crate::operation::UntagQueue,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagQueueInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3822,8 +3874,10 @@ impl UntagQueueInput {
             fn update_http_builder(
                 input: &crate::input::UntagQueueInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3905,7 +3959,7 @@ impl UntagQueueInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagQueueInput {
     /// <p>The URL of the queue.</p>
     #[doc(hidden)]
@@ -3924,18 +3978,10 @@ impl UntagQueueInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagQueueInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagQueueInput");
-        formatter.field("queue_url", &self.queue_url);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagQueueInput {
     /// <p>The URL of the queue.</p>
     #[doc(hidden)]
@@ -3958,18 +4004,10 @@ impl TagQueueInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagQueueInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagQueueInput");
-        formatter.field("queue_url", &self.queue_url);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetQueueAttributesInput {
     /// <p>The URL of the Amazon SQS queue whose attributes are set.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -4094,18 +4132,10 @@ impl SetQueueAttributesInput {
         self.attributes.as_ref()
     }
 }
-impl std::fmt::Debug for SetQueueAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetQueueAttributesInput");
-        formatter.field("queue_url", &self.queue_url);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendMessageBatchInput {
     /// <p>The URL of the Amazon SQS queue to which batched messages are sent.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -4126,18 +4156,10 @@ impl SendMessageBatchInput {
         self.entries.as_deref()
     }
 }
-impl std::fmt::Debug for SendMessageBatchInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendMessageBatchInput");
-        formatter.field("queue_url", &self.queue_url);
-        formatter.field("entries", &self.entries);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendMessageInput {
     /// <p>The URL of the Amazon SQS queue to which a message is sent.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -4287,23 +4309,10 @@ impl SendMessageInput {
         self.message_group_id.as_deref()
     }
 }
-impl std::fmt::Debug for SendMessageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendMessageInput");
-        formatter.field("queue_url", &self.queue_url);
-        formatter.field("message_body", &self.message_body);
-        formatter.field("delay_seconds", &self.delay_seconds);
-        formatter.field("message_attributes", &self.message_attributes);
-        formatter.field("message_system_attributes", &self.message_system_attributes);
-        formatter.field("message_deduplication_id", &self.message_deduplication_id);
-        formatter.field("message_group_id", &self.message_group_id);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemovePermissionInput {
     /// <p>The URL of the Amazon SQS queue from which permissions are removed.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -4324,18 +4333,10 @@ impl RemovePermissionInput {
         self.label.as_deref()
     }
 }
-impl std::fmt::Debug for RemovePermissionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemovePermissionInput");
-        formatter.field("queue_url", &self.queue_url);
-        formatter.field("label", &self.label);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReceiveMessageInput {
     /// <p>The URL of the Amazon SQS queue from which messages are received.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -4473,26 +4474,10 @@ impl ReceiveMessageInput {
         self.receive_request_attempt_id.as_deref()
     }
 }
-impl std::fmt::Debug for ReceiveMessageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReceiveMessageInput");
-        formatter.field("queue_url", &self.queue_url);
-        formatter.field("attribute_names", &self.attribute_names);
-        formatter.field("message_attribute_names", &self.message_attribute_names);
-        formatter.field("max_number_of_messages", &self.max_number_of_messages);
-        formatter.field("visibility_timeout", &self.visibility_timeout);
-        formatter.field("wait_time_seconds", &self.wait_time_seconds);
-        formatter.field(
-            "receive_request_attempt_id",
-            &self.receive_request_attempt_id,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PurgeQueueInput {
     /// <p>The URL of the queue from which the <code>PurgeQueue</code> action deletes messages.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -4506,17 +4491,10 @@ impl PurgeQueueInput {
         self.queue_url.as_deref()
     }
 }
-impl std::fmt::Debug for PurgeQueueInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PurgeQueueInput");
-        formatter.field("queue_url", &self.queue_url);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListQueueTagsInput {
     /// <p>The URL of the queue.</p>
     #[doc(hidden)]
@@ -4528,17 +4506,10 @@ impl ListQueueTagsInput {
         self.queue_url.as_deref()
     }
 }
-impl std::fmt::Debug for ListQueueTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListQueueTagsInput");
-        formatter.field("queue_url", &self.queue_url);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListQueuesInput {
     /// <p>A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -4566,19 +4537,10 @@ impl ListQueuesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListQueuesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListQueuesInput");
-        formatter.field("queue_name_prefix", &self.queue_name_prefix);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDeadLetterSourceQueuesInput {
     /// <p>The URL of a dead-letter queue.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -4606,19 +4568,10 @@ impl ListDeadLetterSourceQueuesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDeadLetterSourceQueuesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDeadLetterSourceQueuesInput");
-        formatter.field("queue_url", &self.queue_url);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetQueueUrlInput {
     /// <p>The name of the queue whose URL must be fetched. Maximum 80 characters. Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -4639,21 +4592,10 @@ impl GetQueueUrlInput {
         self.queue_owner_aws_account_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetQueueUrlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetQueueUrlInput");
-        formatter.field("queue_name", &self.queue_name);
-        formatter.field(
-            "queue_owner_aws_account_id",
-            &self.queue_owner_aws_account_id,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetQueueAttributesInput {
     /// <p>The URL of the Amazon SQS queue whose attribute information is retrieved.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -4776,18 +4718,10 @@ impl GetQueueAttributesInput {
         self.attribute_names.as_deref()
     }
 }
-impl std::fmt::Debug for GetQueueAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetQueueAttributesInput");
-        formatter.field("queue_url", &self.queue_url);
-        formatter.field("attribute_names", &self.attribute_names);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteQueueInput {
     /// <p>The URL of the Amazon SQS queue to delete.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -4801,17 +4735,10 @@ impl DeleteQueueInput {
         self.queue_url.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteQueueInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteQueueInput");
-        formatter.field("queue_url", &self.queue_url);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMessageBatchInput {
     /// <p>The URL of the Amazon SQS queue from which messages are deleted.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -4832,18 +4759,10 @@ impl DeleteMessageBatchInput {
         self.entries.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMessageBatchInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMessageBatchInput");
-        formatter.field("queue_url", &self.queue_url);
-        formatter.field("entries", &self.entries);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMessageInput {
     /// <p>The URL of the Amazon SQS queue from which messages are deleted.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -4864,18 +4783,10 @@ impl DeleteMessageInput {
         self.receipt_handle.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMessageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMessageInput");
-        formatter.field("queue_url", &self.queue_url);
-        formatter.field("receipt_handle", &self.receipt_handle);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateQueueInput {
     /// <p>The name of the new queue. The following limits apply to this name:</p>
     /// <ul>
@@ -5045,19 +4956,10 @@ impl CreateQueueInput {
         self.attributes.as_ref()
     }
 }
-impl std::fmt::Debug for CreateQueueInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateQueueInput");
-        formatter.field("queue_name", &self.queue_name);
-        formatter.field("tags", &self.tags);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChangeMessageVisibilityBatchInput {
     /// <p>The URL of the Amazon SQS queue whose messages' visibility is changed.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -5081,18 +4983,10 @@ impl ChangeMessageVisibilityBatchInput {
         self.entries.as_deref()
     }
 }
-impl std::fmt::Debug for ChangeMessageVisibilityBatchInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChangeMessageVisibilityBatchInput");
-        formatter.field("queue_url", &self.queue_url);
-        formatter.field("entries", &self.entries);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChangeMessageVisibilityInput {
     /// <p>The URL of the Amazon SQS queue whose message's visibility is changed.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -5120,19 +5014,10 @@ impl ChangeMessageVisibilityInput {
         self.visibility_timeout
     }
 }
-impl std::fmt::Debug for ChangeMessageVisibilityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChangeMessageVisibilityInput");
-        formatter.field("queue_url", &self.queue_url);
-        formatter.field("receipt_handle", &self.receipt_handle);
-        formatter.field("visibility_timeout", &self.visibility_timeout);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddPermissionInput {
     /// <p>The URL of the Amazon SQS queue to which permissions are added.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -5169,15 +5054,5 @@ impl AddPermissionInput {
     /// <p>Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those actions: <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and <code>ChangeMessageVisibilityBatch</code>.</p>
     pub fn actions(&self) -> std::option::Option<&[std::string::String]> {
         self.actions.as_deref()
-    }
-}
-impl std::fmt::Debug for AddPermissionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddPermissionInput");
-        formatter.field("queue_url", &self.queue_url);
-        formatter.field("label", &self.label);
-        formatter.field("aws_account_ids", &self.aws_account_ids);
-        formatter.field("actions", &self.actions);
-        formatter.finish()
     }
 }

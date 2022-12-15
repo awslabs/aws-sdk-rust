@@ -61,50 +61,63 @@ impl SigV4SigningStage {
 }
 
 #[derive(Debug)]
-pub enum SigningStageError {
+enum SigningStageErrorKind {
     MissingCredentials,
     MissingSigningRegion,
     MissingSigningService,
     MissingSigningConfig,
-    InvalidBodyType,
     SigningFailure(SigningError),
+}
+
+#[derive(Debug)]
+pub struct SigningStageError {
+    kind: SigningStageErrorKind,
 }
 
 impl Display for SigningStageError {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
-        match self {
-            SigningStageError::MissingCredentials => {
-                write!(f, "No credentials in the property bag")
+        use SigningStageErrorKind::*;
+        match self.kind {
+            MissingCredentials => {
+                write!(f, "no credentials in the property bag")
             }
-            SigningStageError::MissingSigningRegion => {
-                write!(f, "No signing region in the property bag")
+            MissingSigningRegion => {
+                write!(f, "no signing region in the property bag")
             }
-            SigningStageError::MissingSigningService => {
-                write!(f, "No signing service in the property bag")
+            MissingSigningService => {
+                write!(f, "no signing service in the property bag")
             }
-            SigningStageError::MissingSigningConfig => {
-                write!(f, "No signing configuration in the property bag")
+            MissingSigningConfig => {
+                write!(f, "no signing configuration in the property bag")
             }
-            SigningStageError::InvalidBodyType => write!(
-                f,
-                "The request body could not be signed by this configuration"
-            ),
-            SigningStageError::SigningFailure(_) => write!(f, "Signing failed"),
+            SigningFailure(_) => write!(f, "signing failed"),
         }
-    }
-}
-
-impl From<SigningError> for SigningStageError {
-    fn from(error: SigningError) -> Self {
-        Self::SigningFailure(error)
     }
 }
 
 impl Error for SigningStageError {
     fn source(&self) -> Option<&(dyn Error + 'static)> {
-        match &self {
-            SigningStageError::SigningFailure(err) => Some(err.as_ref()),
-            _ => None,
+        use SigningStageErrorKind as ErrorKind;
+        match &self.kind {
+            ErrorKind::SigningFailure(err) => Some(err),
+            ErrorKind::MissingCredentials
+            | ErrorKind::MissingSigningRegion
+            | ErrorKind::MissingSigningService
+            | ErrorKind::MissingSigningConfig => None,
+        }
+    }
+}
+
+impl From<SigningStageErrorKind> for SigningStageError {
+    fn from(kind: SigningStageErrorKind) -> Self {
+        Self { kind }
+    }
+}
+
+impl From<SigningError> for SigningStageError {
+    fn from(error: SigningError) -> Self {
+        Self {
+            kind: SigningStageErrorKind::SigningFailure(error),
         }
     }
 }
@@ -115,17 +128,17 @@ fn signing_config(
 ) -> Result<(&OperationSigningConfig, RequestConfig, Credentials), SigningStageError> {
     let operation_config = config
         .get::<OperationSigningConfig>()
-        .ok_or(SigningStageError::MissingSigningConfig)?;
+        .ok_or(SigningStageErrorKind::MissingSigningConfig)?;
     let credentials = config
         .get::<Credentials>()
-        .ok_or(SigningStageError::MissingCredentials)?
+        .ok_or(SigningStageErrorKind::MissingCredentials)?
         .clone();
     let region = config
         .get::<SigningRegion>()
-        .ok_or(SigningStageError::MissingSigningRegion)?;
+        .ok_or(SigningStageErrorKind::MissingSigningRegion)?;
     let signing_service = config
         .get::<SigningService>()
-        .ok_or(SigningStageError::MissingSigningService)?;
+        .ok_or(SigningStageErrorKind::MissingSigningService)?;
     let payload_override = config.get::<SignableBody<'static>>();
     let request_config = RequestConfig {
         request_ts: config
@@ -142,11 +155,15 @@ fn signing_config(
 impl MapRequest for SigV4SigningStage {
     type Error = SigningStageError;
 
+    fn name(&self) -> &'static str {
+        "sigv4_sign_request"
+    }
+
     fn apply(&self, req: Request) -> Result<Request, Self::Error> {
         req.augment(|mut req, config| {
             let operation_config = config
                 .get::<OperationSigningConfig>()
-                .ok_or(SigningStageError::MissingSigningConfig)?;
+                .ok_or(SigningStageErrorKind::MissingSigningConfig)?;
             let (operation_config, request_config, creds) =
                 match &operation_config.signing_requirements {
                     SigningRequirements::Disabled => return Ok(req),
@@ -160,7 +177,7 @@ impl MapRequest for SigV4SigningStage {
             let signature = self
                 .signer
                 .sign(operation_config, &request_config, &creds, &mut req)
-                .map_err(|err| SigningStageError::SigningFailure(err))?;
+                .map_err(SigningStageErrorKind::SigningFailure)?;
             config.insert(signature);
             Ok(req)
         })
@@ -169,10 +186,12 @@ impl MapRequest for SigV4SigningStage {
 
 #[cfg(test)]
 mod test {
-    use crate::middleware::{SigV4SigningStage, Signature, SigningStageError};
+    use crate::middleware::{
+        SigV4SigningStage, Signature, SigningStageError, SigningStageErrorKind,
+    };
     use crate::signer::{OperationSigningConfig, SigV4Signer};
     use aws_endpoint::partition::endpoint::{Protocol, SignatureVersion};
-    use aws_endpoint::{AwsEndpointStage, Params};
+    use aws_endpoint::{AwsAuthStage, Params};
     use aws_smithy_http::body::SdkBody;
     use aws_smithy_http::endpoint::ResolveEndpoint;
     use aws_smithy_http::middleware::MapRequest;
@@ -222,19 +241,26 @@ mod test {
                 signature_versions: SignatureVersion::V4,
             },
         );
-        let req = http::Request::new(SdkBody::from(""));
+        let req = http::Request::builder()
+            .uri("https://kinesis.us-east-1.amazonaws.com")
+            .body(SdkBody::from(""))
+            .unwrap();
         let region = Region::new("us-east-1");
         let req = operation::Request::new(req)
             .augment(|req, conf| {
                 conf.insert(region.clone());
                 conf.insert(UNIX_EPOCH + Duration::new(1611160427, 0));
                 conf.insert(SigningService::from_static("kinesis"));
-                conf.insert(provider.resolve_endpoint(&Params::new(Some(region.clone()))));
+                conf.insert(
+                    provider
+                        .resolve_endpoint(&Params::new(Some(region.clone())))
+                        .unwrap(),
+                );
                 Result::<_, Infallible>::Ok(req)
             })
             .expect("succeeds");
 
-        let endpoint = AwsEndpointStage;
+        let endpoint = AwsAuthStage;
         let signer = SigV4SigningStage::new(SigV4Signer::new());
         let mut req = endpoint.apply(req).expect("add endpoint should succeed");
         let mut errs = vec![signer
@@ -254,7 +280,10 @@ mod test {
         // make sure we got the correct error types in any order
         assert!(errs.iter().all(|el| matches!(
             el,
-            SigningStageError::MissingCredentials | SigningStageError::MissingSigningConfig
+            SigningStageError {
+                kind: SigningStageErrorKind::MissingCredentials
+                    | SigningStageErrorKind::MissingSigningConfig
+            }
         )));
 
         let (req, _) = req.into_parts();

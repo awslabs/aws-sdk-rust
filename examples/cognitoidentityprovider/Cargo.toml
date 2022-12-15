@@ -4,26 +4,30 @@ version = "0.1.0"
 authors = ["John DiSanti <jdisanti@amazon.com>", "Doug Schwartz <dougsch@amazon.com>"]
 edition = "2021"
 publish = false
+
+[dependencies]
+thiserror = "1.0"
+
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.50.0"
+version = "0.52.0"
 
 [dependencies.aws-sdk-cognitoidentityprovider]
 path = "../../sdk/cognitoidentityprovider"
-version = "0.20.0"
+version = "0.22.0"
 
 [dependencies.aws-smithy-types-convert]
 features = ["convert-chrono"]
 path = "../../sdk/aws-smithy-types-convert"
-version = "0.50.0"
-
-[dependencies.tokio]
-version = "1.20.1"
-features = ["full"]
+version = "0.52.0"
 
 [dependencies.structopt]
 version = "0.3"
 default-features = false
+
+[dependencies.tokio]
+version = "1.20.1"
+features = ["full"]
 
 [dependencies.tracing-subscriber]
 version = "0.3.15"

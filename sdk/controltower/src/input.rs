@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod disable_control_input {
 
     /// A builder for [`DisableControlInput`](crate::input::DisableControlInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_identifier: std::option::Option<std::string::String>,
         pub(crate) target_identifier: std::option::Option<std::string::String>,
@@ -40,7 +40,7 @@ pub mod disable_control_input {
         /// Consumes the builder and constructs a [`DisableControlInput`](crate::input::DisableControlInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DisableControlInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DisableControlInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DisableControlInput {
                 control_identifier: self.control_identifier,
@@ -62,13 +62,13 @@ impl DisableControlInput {
             crate::operation::DisableControl,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisableControlInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/disable-control").expect("formatting should succeed");
                 Ok(())
             }
@@ -76,8 +76,10 @@ impl DisableControlInput {
             fn update_http_builder(
                 input: &crate::input::DisableControlInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -161,7 +163,7 @@ impl DisableControlInput {
 pub mod enable_control_input {
 
     /// A builder for [`EnableControlInput`](crate::input::EnableControlInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_identifier: std::option::Option<std::string::String>,
         pub(crate) target_identifier: std::option::Option<std::string::String>,
@@ -196,7 +198,7 @@ pub mod enable_control_input {
         /// Consumes the builder and constructs a [`EnableControlInput`](crate::input::EnableControlInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::EnableControlInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::EnableControlInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::EnableControlInput {
                 control_identifier: self.control_identifier,
@@ -218,13 +220,13 @@ impl EnableControlInput {
             crate::operation::EnableControl,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::EnableControlInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/enable-control").expect("formatting should succeed");
                 Ok(())
             }
@@ -232,8 +234,10 @@ impl EnableControlInput {
             fn update_http_builder(
                 input: &crate::input::EnableControlInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -317,7 +321,7 @@ impl EnableControlInput {
 pub mod get_control_operation_input {
 
     /// A builder for [`GetControlOperationInput`](crate::input::GetControlOperationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_identifier: std::option::Option<std::string::String>,
     }
@@ -338,8 +342,10 @@ pub mod get_control_operation_input {
         /// Consumes the builder and constructs a [`GetControlOperationInput`](crate::input::GetControlOperationInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetControlOperationInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetControlOperationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetControlOperationInput {
                 operation_identifier: self.operation_identifier,
             })
@@ -359,13 +365,13 @@ impl GetControlOperationInput {
             crate::operation::GetControlOperation,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetControlOperationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/get-control-operation").expect("formatting should succeed");
                 Ok(())
             }
@@ -373,8 +379,10 @@ impl GetControlOperationInput {
             fn update_http_builder(
                 input: &crate::input::GetControlOperationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -458,7 +466,7 @@ impl GetControlOperationInput {
 pub mod list_enabled_controls_input {
 
     /// A builder for [`ListEnabledControlsInput`](crate::input::ListEnabledControlsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_identifier: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -501,8 +509,10 @@ pub mod list_enabled_controls_input {
         /// Consumes the builder and constructs a [`ListEnabledControlsInput`](crate::input::ListEnabledControlsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListEnabledControlsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListEnabledControlsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListEnabledControlsInput {
                 target_identifier: self.target_identifier,
                 next_token: self.next_token,
@@ -524,13 +534,13 @@ impl ListEnabledControlsInput {
             crate::operation::ListEnabledControls,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListEnabledControlsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/list-enabled-controls").expect("formatting should succeed");
                 Ok(())
             }
@@ -538,8 +548,10 @@ impl ListEnabledControlsInput {
             fn update_http_builder(
                 input: &crate::input::ListEnabledControlsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -621,7 +633,7 @@ impl ListEnabledControlsInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEnabledControlsInput {
     /// <p>The ARN of the organizational unit.</p>
     #[doc(hidden)]
@@ -647,19 +659,10 @@ impl ListEnabledControlsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListEnabledControlsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEnabledControlsInput");
-        formatter.field("target_identifier", &self.target_identifier);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetControlOperationInput {
     /// <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
     #[doc(hidden)]
@@ -671,17 +674,10 @@ impl GetControlOperationInput {
         self.operation_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for GetControlOperationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetControlOperationInput");
-        formatter.field("operation_identifier", &self.operation_identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableControlInput {
     /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> guardrail.</p>
     #[doc(hidden)]
@@ -700,18 +696,10 @@ impl EnableControlInput {
         self.target_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for EnableControlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableControlInput");
-        formatter.field("control_identifier", &self.control_identifier);
-        formatter.field("target_identifier", &self.target_identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableControlInput {
     /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> guardrail.</p>
     #[doc(hidden)]
@@ -728,13 +716,5 @@ impl DisableControlInput {
     /// <p>The ARN of the organizational unit.</p>
     pub fn target_identifier(&self) -> std::option::Option<&str> {
         self.target_identifier.as_deref()
-    }
-}
-impl std::fmt::Debug for DisableControlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableControlInput");
-        formatter.field("control_identifier", &self.control_identifier);
-        formatter.field("target_identifier", &self.target_identifier);
-        formatter.finish()
     }
 }

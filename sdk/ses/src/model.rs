@@ -2,7 +2,7 @@
 
 /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only part.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Template {
     /// <p>The name of the template. You will refer to this name when you send email using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.</p>
     #[doc(hidden)]
@@ -35,21 +35,11 @@ impl Template {
         self.html_part.as_deref()
     }
 }
-impl std::fmt::Debug for Template {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Template");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("subject_part", &self.subject_part);
-        formatter.field("text_part", &self.text_part);
-        formatter.field("html_part", &self.html_part);
-        formatter.finish()
-    }
-}
 /// See [`Template`](crate::model::Template).
 pub mod template {
 
     /// A builder for [`Template`](crate::model::Template).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
         pub(crate) subject_part: std::option::Option<std::string::String>,
@@ -122,7 +112,7 @@ impl Template {
 /// <p>Each receipt rule defines a set of email addresses or domains that it applies to. If the email addresses or domains match at least one recipient address of the message, Amazon SES executes all of the receipt rule's actions on the message.</p>
 /// <p>For information about setting up receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReceiptRule {
     /// <p>The name of the receipt rule. The name must:</p>
     /// <ul>
@@ -179,23 +169,11 @@ impl ReceiptRule {
         self.scan_enabled
     }
 }
-impl std::fmt::Debug for ReceiptRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReceiptRule");
-        formatter.field("name", &self.name);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("tls_policy", &self.tls_policy);
-        formatter.field("recipients", &self.recipients);
-        formatter.field("actions", &self.actions);
-        formatter.field("scan_enabled", &self.scan_enabled);
-        formatter.finish()
-    }
-}
 /// See [`ReceiptRule`](crate::model::ReceiptRule).
 pub mod receipt_rule {
 
     /// A builder for [`ReceiptRule`](crate::model::ReceiptRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) enabled: std::option::Option<bool>,
@@ -319,7 +297,7 @@ impl ReceiptRule {
 /// <p>An action that Amazon SES can take when it receives an email on behalf of one or more email addresses or domains that you own. An instance of this data type can represent only one action.</p>
 /// <p>For information about setting up receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReceiptAction {
     /// <p>Saves the received message to an Amazon Simple Storage Service (Amazon S3) bucket and, optionally, publishes a notification to Amazon SNS.</p>
     #[doc(hidden)]
@@ -373,24 +351,11 @@ impl ReceiptAction {
         self.sns_action.as_ref()
     }
 }
-impl std::fmt::Debug for ReceiptAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReceiptAction");
-        formatter.field("s3_action", &self.s3_action);
-        formatter.field("bounce_action", &self.bounce_action);
-        formatter.field("workmail_action", &self.workmail_action);
-        formatter.field("lambda_action", &self.lambda_action);
-        formatter.field("stop_action", &self.stop_action);
-        formatter.field("add_header_action", &self.add_header_action);
-        formatter.field("sns_action", &self.sns_action);
-        formatter.finish()
-    }
-}
 /// See [`ReceiptAction`](crate::model::ReceiptAction).
 pub mod receipt_action {
 
     /// A builder for [`ReceiptAction`](crate::model::ReceiptAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_action: std::option::Option<crate::model::S3Action>,
         pub(crate) bounce_action: std::option::Option<crate::model::BounceAction>,
@@ -516,7 +481,7 @@ impl ReceiptAction {
 /// </important>
 /// <p>For information about using a receipt rule to publish an Amazon SNS notification, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-sns.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnsAction {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify. An example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
     #[doc(hidden)]
@@ -535,19 +500,11 @@ impl SnsAction {
         self.encoding.as_ref()
     }
 }
-impl std::fmt::Debug for SnsAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnsAction");
-        formatter.field("topic_arn", &self.topic_arn);
-        formatter.field("encoding", &self.encoding);
-        formatter.finish()
-    }
-}
 /// See [`SnsAction`](crate::model::SnsAction).
 pub mod sns_action {
 
     /// A builder for [`SnsAction`](crate::model::SnsAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic_arn: std::option::Option<std::string::String>,
         pub(crate) encoding: std::option::Option<crate::model::SnsActionEncoding>,
@@ -592,6 +549,41 @@ impl SnsAction {
     }
 }
 
+/// When writing a match expression against `SnsActionEncoding`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let snsactionencoding = unimplemented!();
+/// match snsactionencoding {
+///     SnsActionEncoding::Base64 => { /* ... */ },
+///     SnsActionEncoding::Utf8 => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `snsactionencoding` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SnsActionEncoding::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SnsActionEncoding::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SnsActionEncoding::NewFeature` is defined.
+/// Specifically, when `snsactionencoding` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SnsActionEncoding::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -608,15 +600,17 @@ pub enum SnsActionEncoding {
     Base64,
     #[allow(missing_docs)] // documentation missing in model
     Utf8,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SnsActionEncoding {
     fn from(s: &str) -> Self {
         match s {
             "Base64" => SnsActionEncoding::Base64,
             "UTF-8" => SnsActionEncoding::Utf8,
-            other => SnsActionEncoding::Unknown(other.to_owned()),
+            other => {
+                SnsActionEncoding::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -633,11 +627,11 @@ impl SnsActionEncoding {
         match self {
             SnsActionEncoding::Base64 => "Base64",
             SnsActionEncoding::Utf8 => "UTF-8",
-            SnsActionEncoding::Unknown(s) => s.as_ref(),
+            SnsActionEncoding::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Base64", "UTF-8"]
     }
 }
@@ -650,7 +644,7 @@ impl AsRef<str> for SnsActionEncoding {
 /// <p>When included in a receipt rule, this action adds a header to the received email.</p>
 /// <p>For information about adding a header using a receipt rule, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-add-header.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddHeaderAction {
     /// <p>The name of the header to add. Must be between 1 and 50 characters, inclusive, and consist of alphanumeric (a-z, A-Z, 0-9) characters and dashes only.</p>
     #[doc(hidden)]
@@ -669,19 +663,11 @@ impl AddHeaderAction {
         self.header_value.as_deref()
     }
 }
-impl std::fmt::Debug for AddHeaderAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddHeaderAction");
-        formatter.field("header_name", &self.header_name);
-        formatter.field("header_value", &self.header_value);
-        formatter.finish()
-    }
-}
 /// See [`AddHeaderAction`](crate::model::AddHeaderAction).
 pub mod add_header_action {
 
     /// A builder for [`AddHeaderAction`](crate::model::AddHeaderAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) header_name: std::option::Option<std::string::String>,
         pub(crate) header_value: std::option::Option<std::string::String>,
@@ -726,7 +712,7 @@ impl AddHeaderAction {
 /// <p>When included in a receipt rule, this action terminates the evaluation of the receipt rule set and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).</p>
 /// <p>For information about setting a stop action in a receipt rule, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-stop.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopAction {
     /// <p>The scope of the StopAction. The only acceptable value is <code>RuleSet</code>.</p>
     #[doc(hidden)]
@@ -745,19 +731,11 @@ impl StopAction {
         self.topic_arn.as_deref()
     }
 }
-impl std::fmt::Debug for StopAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopAction");
-        formatter.field("scope", &self.scope);
-        formatter.field("topic_arn", &self.topic_arn);
-        formatter.finish()
-    }
-}
 /// See [`StopAction`](crate::model::StopAction).
 pub mod stop_action {
 
     /// A builder for [`StopAction`](crate::model::StopAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scope: std::option::Option<crate::model::StopScope>,
         pub(crate) topic_arn: std::option::Option<std::string::String>,
@@ -799,6 +777,40 @@ impl StopAction {
     }
 }
 
+/// When writing a match expression against `StopScope`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let stopscope = unimplemented!();
+/// match stopscope {
+///     StopScope::RuleSet => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `stopscope` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `StopScope::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `StopScope::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `StopScope::NewFeature` is defined.
+/// Specifically, when `stopscope` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `StopScope::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -813,14 +825,14 @@ impl StopAction {
 pub enum StopScope {
     #[allow(missing_docs)] // documentation missing in model
     RuleSet,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for StopScope {
     fn from(s: &str) -> Self {
         match s {
             "RuleSet" => StopScope::RuleSet,
-            other => StopScope::Unknown(other.to_owned()),
+            other => StopScope::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -836,11 +848,11 @@ impl StopScope {
     pub fn as_str(&self) -> &str {
         match self {
             StopScope::RuleSet => "RuleSet",
-            StopScope::Unknown(s) => s.as_ref(),
+            StopScope::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["RuleSet"]
     }
 }
@@ -854,7 +866,7 @@ impl AsRef<str> for StopScope {
 /// <p>To enable Amazon SES to call your AWS Lambda function or to publish to an Amazon SNS topic of another account, Amazon SES must have permission to access those resources. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p>
 /// <p>For information about using AWS Lambda actions in receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-lambda.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaAction {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the Lambda action is taken. An example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
     #[doc(hidden)]
@@ -884,20 +896,11 @@ impl LambdaAction {
         self.invocation_type.as_ref()
     }
 }
-impl std::fmt::Debug for LambdaAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaAction");
-        formatter.field("topic_arn", &self.topic_arn);
-        formatter.field("function_arn", &self.function_arn);
-        formatter.field("invocation_type", &self.invocation_type);
-        formatter.finish()
-    }
-}
 /// See [`LambdaAction`](crate::model::LambdaAction).
 pub mod lambda_action {
 
     /// A builder for [`LambdaAction`](crate::model::LambdaAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic_arn: std::option::Option<std::string::String>,
         pub(crate) function_arn: std::option::Option<std::string::String>,
@@ -958,6 +961,41 @@ impl LambdaAction {
     }
 }
 
+/// When writing a match expression against `InvocationType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let invocationtype = unimplemented!();
+/// match invocationtype {
+///     InvocationType::Event => { /* ... */ },
+///     InvocationType::RequestResponse => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `invocationtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `InvocationType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `InvocationType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `InvocationType::NewFeature` is defined.
+/// Specifically, when `invocationtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `InvocationType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -974,15 +1012,15 @@ pub enum InvocationType {
     Event,
     #[allow(missing_docs)] // documentation missing in model
     RequestResponse,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for InvocationType {
     fn from(s: &str) -> Self {
         match s {
             "Event" => InvocationType::Event,
             "RequestResponse" => InvocationType::RequestResponse,
-            other => InvocationType::Unknown(other.to_owned()),
+            other => InvocationType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -999,11 +1037,11 @@ impl InvocationType {
         match self {
             InvocationType::Event => "Event",
             InvocationType::RequestResponse => "RequestResponse",
-            InvocationType::Unknown(s) => s.as_ref(),
+            InvocationType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Event", "RequestResponse"]
     }
 }
@@ -1016,7 +1054,7 @@ impl AsRef<str> for InvocationType {
 /// <p>When included in a receipt rule, this action calls Amazon WorkMail and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS). You will typically not use this action directly because Amazon WorkMail adds the rule automatically during its setup procedure.</p>
 /// <p>For information using a receipt rule to call Amazon WorkMail, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-workmail.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkmailAction {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the WorkMail action is called. An example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
     #[doc(hidden)]
@@ -1035,19 +1073,11 @@ impl WorkmailAction {
         self.organization_arn.as_deref()
     }
 }
-impl std::fmt::Debug for WorkmailAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkmailAction");
-        formatter.field("topic_arn", &self.topic_arn);
-        formatter.field("organization_arn", &self.organization_arn);
-        formatter.finish()
-    }
-}
 /// See [`WorkmailAction`](crate::model::WorkmailAction).
 pub mod workmail_action {
 
     /// A builder for [`WorkmailAction`](crate::model::WorkmailAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic_arn: std::option::Option<std::string::String>,
         pub(crate) organization_arn: std::option::Option<std::string::String>,
@@ -1095,7 +1125,7 @@ impl WorkmailAction {
 /// <p>When included in a receipt rule, this action rejects the received email by returning a bounce response to the sender and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).</p>
 /// <p>For information about sending a bounce message in response to a received email, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-bounce.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BounceAction {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the bounce action is taken. An example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
     #[doc(hidden)]
@@ -1135,22 +1165,11 @@ impl BounceAction {
         self.sender.as_deref()
     }
 }
-impl std::fmt::Debug for BounceAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BounceAction");
-        formatter.field("topic_arn", &self.topic_arn);
-        formatter.field("smtp_reply_code", &self.smtp_reply_code);
-        formatter.field("status_code", &self.status_code);
-        formatter.field("message", &self.message);
-        formatter.field("sender", &self.sender);
-        formatter.finish()
-    }
-}
 /// See [`BounceAction`](crate::model::BounceAction).
 pub mod bounce_action {
 
     /// A builder for [`BounceAction`](crate::model::BounceAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic_arn: std::option::Option<std::string::String>,
         pub(crate) smtp_reply_code: std::option::Option<std::string::String>,
@@ -1237,7 +1256,7 @@ impl BounceAction {
 /// </note>
 /// <p>For information about specifying Amazon S3 actions in receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-s3.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Action {
     /// <p>The ARN of the Amazon SNS topic to notify when the message is saved to the Amazon S3 bucket. An example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
     #[doc(hidden)]
@@ -1284,21 +1303,11 @@ impl S3Action {
         self.kms_key_arn.as_deref()
     }
 }
-impl std::fmt::Debug for S3Action {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Action");
-        formatter.field("topic_arn", &self.topic_arn);
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("object_key_prefix", &self.object_key_prefix);
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.finish()
-    }
-}
 /// See [`S3Action`](crate::model::S3Action).
 pub mod s3_action {
 
     /// A builder for [`S3Action`](crate::model::S3Action).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic_arn: std::option::Option<std::string::String>,
         pub(crate) bucket_name: std::option::Option<std::string::String>,
@@ -1381,6 +1390,41 @@ impl S3Action {
     }
 }
 
+/// When writing a match expression against `TlsPolicy`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let tlspolicy = unimplemented!();
+/// match tlspolicy {
+///     TlsPolicy::Optional => { /* ... */ },
+///     TlsPolicy::Require => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `tlspolicy` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `TlsPolicy::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `TlsPolicy::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `TlsPolicy::NewFeature` is defined.
+/// Specifically, when `tlspolicy` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `TlsPolicy::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1397,15 +1441,15 @@ pub enum TlsPolicy {
     Optional,
     #[allow(missing_docs)] // documentation missing in model
     Require,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TlsPolicy {
     fn from(s: &str) -> Self {
         match s {
             "Optional" => TlsPolicy::Optional,
             "Require" => TlsPolicy::Require,
-            other => TlsPolicy::Unknown(other.to_owned()),
+            other => TlsPolicy::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1422,11 +1466,11 @@ impl TlsPolicy {
         match self {
             TlsPolicy::Optional => "Optional",
             TlsPolicy::Require => "Require",
-            TlsPolicy::Unknown(s) => s.as_ref(),
+            TlsPolicy::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Optional", "Require"]
     }
 }
@@ -1439,7 +1483,7 @@ impl AsRef<str> for TlsPolicy {
 /// <p>A domain that is used to redirect email recipients to an Amazon SES-operated domain. This domain captures open and click events generated by Amazon SES emails.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring Custom Domains to Handle Open and Click Tracking</a> in the <i>Amazon SES Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrackingOptions {
     /// <p>The custom subdomain that will be used to redirect email recipients to the Amazon SES event tracking domain.</p>
     #[doc(hidden)]
@@ -1451,18 +1495,11 @@ impl TrackingOptions {
         self.custom_redirect_domain.as_deref()
     }
 }
-impl std::fmt::Debug for TrackingOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrackingOptions");
-        formatter.field("custom_redirect_domain", &self.custom_redirect_domain);
-        formatter.finish()
-    }
-}
 /// See [`TrackingOptions`](crate::model::TrackingOptions).
 pub mod tracking_options {
 
     /// A builder for [`TrackingOptions`](crate::model::TrackingOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_redirect_domain: std::option::Option<std::string::String>,
     }
@@ -1500,7 +1537,7 @@ impl TrackingOptions {
 /// </note>
 /// <p>Event destinations are associated with configuration sets, which enable you to publish email sending events to Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon Simple Notification Service (Amazon SNS). For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventDestination {
     /// <p>The name of the event destination. The name must:</p>
     /// <ul>
@@ -1559,26 +1596,11 @@ impl EventDestination {
         self.sns_destination.as_ref()
     }
 }
-impl std::fmt::Debug for EventDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventDestination");
-        formatter.field("name", &self.name);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("matching_event_types", &self.matching_event_types);
-        formatter.field(
-            "kinesis_firehose_destination",
-            &self.kinesis_firehose_destination,
-        );
-        formatter.field("cloud_watch_destination", &self.cloud_watch_destination);
-        formatter.field("sns_destination", &self.sns_destination);
-        formatter.finish()
-    }
-}
 /// See [`EventDestination`](crate::model::EventDestination).
 pub mod event_destination {
 
     /// A builder for [`EventDestination`](crate::model::EventDestination).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) enabled: std::option::Option<bool>,
@@ -1706,7 +1728,7 @@ impl EventDestination {
 /// <p>Contains the topic ARN associated with an Amazon Simple Notification Service (Amazon SNS) event destination.</p>
 /// <p>Event destinations, such as Amazon SNS, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnsDestination {
     /// <p>The ARN of the Amazon SNS topic that email sending events will be published to. An example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
     #[doc(hidden)]
@@ -1718,18 +1740,11 @@ impl SnsDestination {
         self.topic_arn.as_deref()
     }
 }
-impl std::fmt::Debug for SnsDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnsDestination");
-        formatter.field("topic_arn", &self.topic_arn);
-        formatter.finish()
-    }
-}
 /// See [`SnsDestination`](crate::model::SnsDestination).
 pub mod sns_destination {
 
     /// A builder for [`SnsDestination`](crate::model::SnsDestination).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic_arn: std::option::Option<std::string::String>,
     }
@@ -1762,7 +1777,7 @@ impl SnsDestination {
 /// <p>Contains information associated with an Amazon CloudWatch event destination to which email sending events are published.</p>
 /// <p>Event destinations, such as Amazon CloudWatch, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudWatchDestination {
     /// <p>A list of dimensions upon which to categorize your emails when you publish email sending events to Amazon CloudWatch.</p>
     #[doc(hidden)]
@@ -1777,18 +1792,11 @@ impl CloudWatchDestination {
         self.dimension_configurations.as_deref()
     }
 }
-impl std::fmt::Debug for CloudWatchDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudWatchDestination");
-        formatter.field("dimension_configurations", &self.dimension_configurations);
-        formatter.finish()
-    }
-}
 /// See [`CloudWatchDestination`](crate::model::CloudWatchDestination).
 pub mod cloud_watch_destination {
 
     /// A builder for [`CloudWatchDestination`](crate::model::CloudWatchDestination).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dimension_configurations:
             std::option::Option<std::vec::Vec<crate::model::CloudWatchDimensionConfiguration>>,
@@ -1836,7 +1844,7 @@ impl CloudWatchDestination {
 /// <p>Contains the dimension configuration to use when you publish email sending events to Amazon CloudWatch.</p>
 /// <p>For information about publishing email sending events to Amazon CloudWatch, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudWatchDimensionConfiguration {
     /// <p>The name of an Amazon CloudWatch dimension associated with an email sending metric. The name must:</p>
     /// <ul>
@@ -1880,20 +1888,11 @@ impl CloudWatchDimensionConfiguration {
         self.default_dimension_value.as_deref()
     }
 }
-impl std::fmt::Debug for CloudWatchDimensionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudWatchDimensionConfiguration");
-        formatter.field("dimension_name", &self.dimension_name);
-        formatter.field("dimension_value_source", &self.dimension_value_source);
-        formatter.field("default_dimension_value", &self.default_dimension_value);
-        formatter.finish()
-    }
-}
 /// See [`CloudWatchDimensionConfiguration`](crate::model::CloudWatchDimensionConfiguration).
 pub mod cloud_watch_dimension_configuration {
 
     /// A builder for [`CloudWatchDimensionConfiguration`](crate::model::CloudWatchDimensionConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dimension_name: std::option::Option<std::string::String>,
         pub(crate) dimension_value_source: std::option::Option<crate::model::DimensionValueSource>,
@@ -1972,6 +1971,42 @@ impl CloudWatchDimensionConfiguration {
     }
 }
 
+/// When writing a match expression against `DimensionValueSource`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let dimensionvaluesource = unimplemented!();
+/// match dimensionvaluesource {
+///     DimensionValueSource::EmailHeader => { /* ... */ },
+///     DimensionValueSource::LinkTag => { /* ... */ },
+///     DimensionValueSource::MessageTag => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `dimensionvaluesource` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DimensionValueSource::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DimensionValueSource::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DimensionValueSource::NewFeature` is defined.
+/// Specifically, when `dimensionvaluesource` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DimensionValueSource::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1990,8 +2025,8 @@ pub enum DimensionValueSource {
     LinkTag,
     #[allow(missing_docs)] // documentation missing in model
     MessageTag,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DimensionValueSource {
     fn from(s: &str) -> Self {
@@ -1999,7 +2034,9 @@ impl std::convert::From<&str> for DimensionValueSource {
             "emailHeader" => DimensionValueSource::EmailHeader,
             "linkTag" => DimensionValueSource::LinkTag,
             "messageTag" => DimensionValueSource::MessageTag,
-            other => DimensionValueSource::Unknown(other.to_owned()),
+            other => {
+                DimensionValueSource::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -2017,11 +2054,11 @@ impl DimensionValueSource {
             DimensionValueSource::EmailHeader => "emailHeader",
             DimensionValueSource::LinkTag => "linkTag",
             DimensionValueSource::MessageTag => "messageTag",
-            DimensionValueSource::Unknown(s) => s.as_ref(),
+            DimensionValueSource::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["emailHeader", "linkTag", "messageTag"]
     }
 }
@@ -2034,7 +2071,7 @@ impl AsRef<str> for DimensionValueSource {
 /// <p>Contains the delivery stream ARN and the IAM role ARN associated with an Amazon Kinesis Firehose event destination.</p>
 /// <p>Event destinations, such as Amazon Kinesis Firehose, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisFirehoseDestination {
     /// <p>The ARN of the IAM role under which Amazon SES publishes email sending events to the Amazon Kinesis Firehose stream.</p>
     #[doc(hidden)]
@@ -2053,19 +2090,11 @@ impl KinesisFirehoseDestination {
         self.delivery_stream_arn.as_deref()
     }
 }
-impl std::fmt::Debug for KinesisFirehoseDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisFirehoseDestination");
-        formatter.field("iam_role_arn", &self.iam_role_arn);
-        formatter.field("delivery_stream_arn", &self.delivery_stream_arn);
-        formatter.finish()
-    }
-}
 /// See [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination).
 pub mod kinesis_firehose_destination {
 
     /// A builder for [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) iam_role_arn: std::option::Option<std::string::String>,
         pub(crate) delivery_stream_arn: std::option::Option<std::string::String>,
@@ -2110,6 +2139,47 @@ impl KinesisFirehoseDestination {
     }
 }
 
+/// When writing a match expression against `EventType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let eventtype = unimplemented!();
+/// match eventtype {
+///     EventType::Bounce => { /* ... */ },
+///     EventType::Click => { /* ... */ },
+///     EventType::Complaint => { /* ... */ },
+///     EventType::Delivery => { /* ... */ },
+///     EventType::Open => { /* ... */ },
+///     EventType::Reject => { /* ... */ },
+///     EventType::RenderingFailure => { /* ... */ },
+///     EventType::Send => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `eventtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EventType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EventType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EventType::NewFeature` is defined.
+/// Specifically, when `eventtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EventType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2138,8 +2208,8 @@ pub enum EventType {
     RenderingFailure,
     #[allow(missing_docs)] // documentation missing in model
     Send,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EventType {
     fn from(s: &str) -> Self {
@@ -2152,7 +2222,7 @@ impl std::convert::From<&str> for EventType {
             "reject" => EventType::Reject,
             "renderingFailure" => EventType::RenderingFailure,
             "send" => EventType::Send,
-            other => EventType::Unknown(other.to_owned()),
+            other => EventType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2175,11 +2245,11 @@ impl EventType {
             EventType::Reject => "reject",
             EventType::RenderingFailure => "renderingFailure",
             EventType::Send => "send",
-            EventType::Unknown(s) => s.as_ref(),
+            EventType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "bounce",
             "click",
@@ -2198,6 +2268,42 @@ impl AsRef<str> for EventType {
     }
 }
 
+/// When writing a match expression against `NotificationType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let notificationtype = unimplemented!();
+/// match notificationtype {
+///     NotificationType::Bounce => { /* ... */ },
+///     NotificationType::Complaint => { /* ... */ },
+///     NotificationType::Delivery => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `notificationtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `NotificationType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `NotificationType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `NotificationType::NewFeature` is defined.
+/// Specifically, when `notificationtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `NotificationType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2216,8 +2322,8 @@ pub enum NotificationType {
     Complaint,
     #[allow(missing_docs)] // documentation missing in model
     Delivery,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for NotificationType {
     fn from(s: &str) -> Self {
@@ -2225,7 +2331,7 @@ impl std::convert::From<&str> for NotificationType {
             "Bounce" => NotificationType::Bounce,
             "Complaint" => NotificationType::Complaint,
             "Delivery" => NotificationType::Delivery,
-            other => NotificationType::Unknown(other.to_owned()),
+            other => NotificationType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2243,11 +2349,11 @@ impl NotificationType {
             NotificationType::Bounce => "Bounce",
             NotificationType::Complaint => "Complaint",
             NotificationType::Delivery => "Delivery",
-            NotificationType::Unknown(s) => s.as_ref(),
+            NotificationType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Bounce", "Complaint", "Delivery"]
     }
 }
@@ -2257,6 +2363,41 @@ impl AsRef<str> for NotificationType {
     }
 }
 
+/// When writing a match expression against `BehaviorOnMxFailure`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let behavioronmxfailure = unimplemented!();
+/// match behavioronmxfailure {
+///     BehaviorOnMxFailure::RejectMessage => { /* ... */ },
+///     BehaviorOnMxFailure::UseDefaultValue => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `behavioronmxfailure` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `BehaviorOnMxFailure::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `BehaviorOnMxFailure::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `BehaviorOnMxFailure::NewFeature` is defined.
+/// Specifically, when `behavioronmxfailure` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `BehaviorOnMxFailure::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2273,15 +2414,17 @@ pub enum BehaviorOnMxFailure {
     RejectMessage,
     #[allow(missing_docs)] // documentation missing in model
     UseDefaultValue,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for BehaviorOnMxFailure {
     fn from(s: &str) -> Self {
         match s {
             "RejectMessage" => BehaviorOnMxFailure::RejectMessage,
             "UseDefaultValue" => BehaviorOnMxFailure::UseDefaultValue,
-            other => BehaviorOnMxFailure::Unknown(other.to_owned()),
+            other => {
+                BehaviorOnMxFailure::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -2298,11 +2441,11 @@ impl BehaviorOnMxFailure {
         match self {
             BehaviorOnMxFailure::RejectMessage => "RejectMessage",
             BehaviorOnMxFailure::UseDefaultValue => "UseDefaultValue",
-            BehaviorOnMxFailure::Unknown(s) => s.as_ref(),
+            BehaviorOnMxFailure::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["RejectMessage", "UseDefaultValue"]
     }
 }
@@ -2315,7 +2458,7 @@ impl AsRef<str> for BehaviorOnMxFailure {
 /// <p>Contains the name and value of a tag that you can provide to <code>SendEmail</code> or <code>SendRawEmail</code> to apply to an email.</p>
 /// <p>Message tags, which you use with configuration sets, enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MessageTag {
     /// <p>The name of the tag. The name must:</p>
     /// <ul>
@@ -2350,19 +2493,11 @@ impl MessageTag {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for MessageTag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MessageTag");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`MessageTag`](crate::model::MessageTag).
 pub mod message_tag {
 
     /// A builder for [`MessageTag`](crate::model::MessageTag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -2424,7 +2559,7 @@ impl MessageTag {
 /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a destination email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Destination {
     /// <p>The recipients to place on the To: line of the message.</p>
     #[doc(hidden)]
@@ -2450,20 +2585,11 @@ impl Destination {
         self.bcc_addresses.as_deref()
     }
 }
-impl std::fmt::Debug for Destination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Destination");
-        formatter.field("to_addresses", &self.to_addresses);
-        formatter.field("cc_addresses", &self.cc_addresses);
-        formatter.field("bcc_addresses", &self.bcc_addresses);
-        formatter.finish()
-    }
-}
 /// See [`Destination`](crate::model::Destination).
 pub mod destination {
 
     /// A builder for [`Destination`](crate::model::Destination).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) to_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) cc_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2546,7 +2672,7 @@ impl Destination {
 
 /// <p>Represents the raw data of the message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RawMessage {
     /// <p>The raw data of the message. This data needs to base64-encoded if you are accessing Amazon SES directly through the HTTPS interface. If you are accessing Amazon SES using an AWS SDK, the SDK takes care of the base 64-encoding for you. In all cases, the client must ensure that the message format complies with Internet email standards regarding email header fields, MIME types, and MIME encoding.</p>
     /// <p>The To:, CC:, and BCC: headers in the raw message can contain a group list.</p>
@@ -2568,18 +2694,11 @@ impl RawMessage {
         self.data.as_ref()
     }
 }
-impl std::fmt::Debug for RawMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RawMessage");
-        formatter.field("data", &self.data);
-        formatter.finish()
-    }
-}
 /// See [`RawMessage`](crate::model::RawMessage).
 pub mod raw_message {
 
     /// A builder for [`RawMessage`](crate::model::RawMessage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data: std::option::Option<aws_smithy_types::Blob>,
     }
@@ -2619,7 +2738,7 @@ impl RawMessage {
 
 /// <p>Represents the message to be sent, composed of a subject and a body.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Message {
     /// <p>The subject of the message: A short summary of the content, which will appear in the recipient's inbox.</p>
     #[doc(hidden)]
@@ -2638,19 +2757,11 @@ impl Message {
         self.body.as_ref()
     }
 }
-impl std::fmt::Debug for Message {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Message");
-        formatter.field("subject", &self.subject);
-        formatter.field("body", &self.body);
-        formatter.finish()
-    }
-}
 /// See [`Message`](crate::model::Message).
 pub mod message {
 
     /// A builder for [`Message`](crate::model::Message).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subject: std::option::Option<crate::model::Content>,
         pub(crate) body: std::option::Option<crate::model::Body>,
@@ -2694,7 +2805,7 @@ impl Message {
 
 /// <p>Represents the body of the message. You can specify text, HTML, or both. If you use both, then the message should display correctly in the widest variety of email clients.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Body {
     /// <p>The content of the message, in text format. Use this for text-based email clients, or clients on high-latency networks (such as mobile devices).</p>
     #[doc(hidden)]
@@ -2713,19 +2824,11 @@ impl Body {
         self.html.as_ref()
     }
 }
-impl std::fmt::Debug for Body {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Body");
-        formatter.field("text", &self.text);
-        formatter.field("html", &self.html);
-        formatter.finish()
-    }
-}
 /// See [`Body`](crate::model::Body).
 pub mod body {
 
     /// A builder for [`Body`](crate::model::Body).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<crate::model::Content>,
         pub(crate) html: std::option::Option<crate::model::Content>,
@@ -2770,7 +2873,7 @@ impl Body {
 /// <p>Represents textual data, plus an optional character set specification.</p>
 /// <p>By default, the text must be 7-bit ASCII, due to the constraints of the SMTP protocol. If the text must contain any other characters, then you must also specify a character set. Examples include UTF-8, ISO-8859-1, and Shift_JIS.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Content {
     /// <p>The textual data of the content.</p>
     #[doc(hidden)]
@@ -2789,19 +2892,11 @@ impl Content {
         self.charset.as_deref()
     }
 }
-impl std::fmt::Debug for Content {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Content");
-        formatter.field("data", &self.data);
-        formatter.field("charset", &self.charset);
-        formatter.finish()
-    }
-}
 /// See [`Content`](crate::model::Content).
 pub mod content {
 
     /// A builder for [`Content`](crate::model::Content).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data: std::option::Option<std::string::String>,
         pub(crate) charset: std::option::Option<std::string::String>,
@@ -2845,7 +2940,7 @@ impl Content {
 
 /// <p>An object that contains the response from the <code>SendBulkTemplatedEmail</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BulkEmailDestinationStatus {
     /// <p>The status of a message sent using the <code>SendBulkTemplatedEmail</code> operation.</p>
     /// <p>Possible values for this parameter include:</p>
@@ -2905,20 +3000,11 @@ impl BulkEmailDestinationStatus {
         self.message_id.as_deref()
     }
 }
-impl std::fmt::Debug for BulkEmailDestinationStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BulkEmailDestinationStatus");
-        formatter.field("status", &self.status);
-        formatter.field("error", &self.error);
-        formatter.field("message_id", &self.message_id);
-        formatter.finish()
-    }
-}
 /// See [`BulkEmailDestinationStatus`](crate::model::BulkEmailDestinationStatus).
 pub mod bulk_email_destination_status {
 
     /// A builder for [`BulkEmailDestinationStatus`](crate::model::BulkEmailDestinationStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::BulkEmailStatus>,
         pub(crate) error: std::option::Option<std::string::String>,
@@ -3009,6 +3095,53 @@ impl BulkEmailDestinationStatus {
     }
 }
 
+/// When writing a match expression against `BulkEmailStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let bulkemailstatus = unimplemented!();
+/// match bulkemailstatus {
+///     BulkEmailStatus::AccountDailyQuotaExceeded => { /* ... */ },
+///     BulkEmailStatus::AccountSendingPaused => { /* ... */ },
+///     BulkEmailStatus::AccountSuspended => { /* ... */ },
+///     BulkEmailStatus::AccountThrottled => { /* ... */ },
+///     BulkEmailStatus::ConfigurationSetDoesNotExist => { /* ... */ },
+///     BulkEmailStatus::ConfigurationSetSendingPaused => { /* ... */ },
+///     BulkEmailStatus::Failed => { /* ... */ },
+///     BulkEmailStatus::InvalidParameterValue => { /* ... */ },
+///     BulkEmailStatus::InvalidSendingPoolName => { /* ... */ },
+///     BulkEmailStatus::MailFromDomainNotVerified => { /* ... */ },
+///     BulkEmailStatus::MessageRejected => { /* ... */ },
+///     BulkEmailStatus::Success => { /* ... */ },
+///     BulkEmailStatus::TemplateDoesNotExist => { /* ... */ },
+///     BulkEmailStatus::TransientFailure => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `bulkemailstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `BulkEmailStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `BulkEmailStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `BulkEmailStatus::NewFeature` is defined.
+/// Specifically, when `bulkemailstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `BulkEmailStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3049,8 +3182,8 @@ pub enum BulkEmailStatus {
     TemplateDoesNotExist,
     #[allow(missing_docs)] // documentation missing in model
     TransientFailure,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for BulkEmailStatus {
     fn from(s: &str) -> Self {
@@ -3069,7 +3202,7 @@ impl std::convert::From<&str> for BulkEmailStatus {
             "Success" => BulkEmailStatus::Success,
             "TemplateDoesNotExist" => BulkEmailStatus::TemplateDoesNotExist,
             "TransientFailure" => BulkEmailStatus::TransientFailure,
-            other => BulkEmailStatus::Unknown(other.to_owned()),
+            other => BulkEmailStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -3098,11 +3231,11 @@ impl BulkEmailStatus {
             BulkEmailStatus::Success => "Success",
             BulkEmailStatus::TemplateDoesNotExist => "TemplateDoesNotExist",
             BulkEmailStatus::TransientFailure => "TransientFailure",
-            BulkEmailStatus::Unknown(s) => s.as_ref(),
+            BulkEmailStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AccountDailyQuotaExceeded",
             "AccountSendingPaused",
@@ -3129,7 +3262,7 @@ impl AsRef<str> for BulkEmailStatus {
 
 /// <p>An array that contains one or more Destinations, as well as the tags and replacement data associated with each of those Destinations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BulkEmailDestination {
     /// <p>Represents the destination of the message, consisting of To:, CC:, and BCC: fields.</p> <note>
     /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a destination email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>.</p>
@@ -3159,20 +3292,11 @@ impl BulkEmailDestination {
         self.replacement_template_data.as_deref()
     }
 }
-impl std::fmt::Debug for BulkEmailDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BulkEmailDestination");
-        formatter.field("destination", &self.destination);
-        formatter.field("replacement_tags", &self.replacement_tags);
-        formatter.field("replacement_template_data", &self.replacement_template_data);
-        formatter.finish()
-    }
-}
 /// See [`BulkEmailDestination`](crate::model::BulkEmailDestination).
 pub mod bulk_email_destination {
 
     /// A builder for [`BulkEmailDestination`](crate::model::BulkEmailDestination).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination: std::option::Option<crate::model::Destination>,
         pub(crate) replacement_tags: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
@@ -3248,7 +3372,7 @@ impl BulkEmailDestination {
 /// <p>Recipient-related information to include in the Delivery Status Notification (DSN) when an email that Amazon SES receives on your behalf bounces.</p>
 /// <p>For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BouncedRecipientInfo {
     /// <p>The email address of the recipient of the bounced email.</p>
     #[doc(hidden)]
@@ -3281,21 +3405,11 @@ impl BouncedRecipientInfo {
         self.recipient_dsn_fields.as_ref()
     }
 }
-impl std::fmt::Debug for BouncedRecipientInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BouncedRecipientInfo");
-        formatter.field("recipient", &self.recipient);
-        formatter.field("recipient_arn", &self.recipient_arn);
-        formatter.field("bounce_type", &self.bounce_type);
-        formatter.field("recipient_dsn_fields", &self.recipient_dsn_fields);
-        formatter.finish()
-    }
-}
 /// See [`BouncedRecipientInfo`](crate::model::BouncedRecipientInfo).
 pub mod bounced_recipient_info {
 
     /// A builder for [`BouncedRecipientInfo`](crate::model::BouncedRecipientInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recipient: std::option::Option<std::string::String>,
         pub(crate) recipient_arn: std::option::Option<std::string::String>,
@@ -3373,7 +3487,7 @@ impl BouncedRecipientInfo {
 /// <p>Recipient-related information to include in the Delivery Status Notification (DSN) when an email that Amazon SES receives on your behalf bounces.</p>
 /// <p>For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecipientDsnFields {
     /// <p>The email address that the message was ultimately delivered to. This corresponds to the <code>Final-Recipient</code> in the DSN. If not specified, <code>FinalRecipient</code> will be set to the <code>Recipient</code> specified in the <code>BouncedRecipientInfo</code> structure. Either <code>FinalRecipient</code> or the recipient in <code>BouncedRecipientInfo</code> must be a recipient of the original bounced message.</p> <note>
     /// <p>Do not prepend the <code>FinalRecipient</code> email address with <code>rfc 822;</code>, as described in <a href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</p>
@@ -3431,24 +3545,11 @@ impl RecipientDsnFields {
         self.extension_fields.as_deref()
     }
 }
-impl std::fmt::Debug for RecipientDsnFields {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecipientDsnFields");
-        formatter.field("final_recipient", &self.final_recipient);
-        formatter.field("action", &self.action);
-        formatter.field("remote_mta", &self.remote_mta);
-        formatter.field("status", &self.status);
-        formatter.field("diagnostic_code", &self.diagnostic_code);
-        formatter.field("last_attempt_date", &self.last_attempt_date);
-        formatter.field("extension_fields", &self.extension_fields);
-        formatter.finish()
-    }
-}
 /// See [`RecipientDsnFields`](crate::model::RecipientDsnFields).
 pub mod recipient_dsn_fields {
 
     /// A builder for [`RecipientDsnFields`](crate::model::RecipientDsnFields).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) final_recipient: std::option::Option<std::string::String>,
         pub(crate) action: std::option::Option<crate::model::DsnAction>,
@@ -3576,7 +3677,7 @@ impl RecipientDsnFields {
 /// <p>Additional X-headers to include in the Delivery Status Notification (DSN) when an email that Amazon SES receives on your behalf bounces.</p>
 /// <p>For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExtensionField {
     /// <p>The name of the header to add. Must be between 1 and 50 characters, inclusive, and consist of alphanumeric (a-z, A-Z, 0-9) characters and dashes only.</p>
     #[doc(hidden)]
@@ -3595,19 +3696,11 @@ impl ExtensionField {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for ExtensionField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExtensionField");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`ExtensionField`](crate::model::ExtensionField).
 pub mod extension_field {
 
     /// A builder for [`ExtensionField`](crate::model::ExtensionField).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -3649,6 +3742,44 @@ impl ExtensionField {
     }
 }
 
+/// When writing a match expression against `DsnAction`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let dsnaction = unimplemented!();
+/// match dsnaction {
+///     DsnAction::Delayed => { /* ... */ },
+///     DsnAction::Delivered => { /* ... */ },
+///     DsnAction::Expanded => { /* ... */ },
+///     DsnAction::Failed => { /* ... */ },
+///     DsnAction::Relayed => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `dsnaction` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DsnAction::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DsnAction::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DsnAction::NewFeature` is defined.
+/// Specifically, when `dsnaction` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DsnAction::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3671,8 +3802,8 @@ pub enum DsnAction {
     Failed,
     #[allow(missing_docs)] // documentation missing in model
     Relayed,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DsnAction {
     fn from(s: &str) -> Self {
@@ -3682,7 +3813,7 @@ impl std::convert::From<&str> for DsnAction {
             "expanded" => DsnAction::Expanded,
             "failed" => DsnAction::Failed,
             "relayed" => DsnAction::Relayed,
-            other => DsnAction::Unknown(other.to_owned()),
+            other => DsnAction::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -3702,11 +3833,11 @@ impl DsnAction {
             DsnAction::Expanded => "expanded",
             DsnAction::Failed => "failed",
             DsnAction::Relayed => "relayed",
-            DsnAction::Unknown(s) => s.as_ref(),
+            DsnAction::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["delayed", "delivered", "expanded", "failed", "relayed"]
     }
 }
@@ -3716,6 +3847,45 @@ impl AsRef<str> for DsnAction {
     }
 }
 
+/// When writing a match expression against `BounceType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let bouncetype = unimplemented!();
+/// match bouncetype {
+///     BounceType::ContentRejected => { /* ... */ },
+///     BounceType::DoesNotExist => { /* ... */ },
+///     BounceType::ExceededQuota => { /* ... */ },
+///     BounceType::MessageTooLarge => { /* ... */ },
+///     BounceType::TemporaryFailure => { /* ... */ },
+///     BounceType::Undefined => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `bouncetype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `BounceType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `BounceType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `BounceType::NewFeature` is defined.
+/// Specifically, when `bouncetype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `BounceType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3740,8 +3910,8 @@ pub enum BounceType {
     TemporaryFailure,
     #[allow(missing_docs)] // documentation missing in model
     Undefined,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for BounceType {
     fn from(s: &str) -> Self {
@@ -3752,7 +3922,7 @@ impl std::convert::From<&str> for BounceType {
             "MessageTooLarge" => BounceType::MessageTooLarge,
             "TemporaryFailure" => BounceType::TemporaryFailure,
             "Undefined" => BounceType::Undefined,
-            other => BounceType::Unknown(other.to_owned()),
+            other => BounceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -3773,11 +3943,11 @@ impl BounceType {
             BounceType::MessageTooLarge => "MessageTooLarge",
             BounceType::TemporaryFailure => "TemporaryFailure",
             BounceType::Undefined => "Undefined",
-            BounceType::Unknown(s) => s.as_ref(),
+            BounceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ContentRejected",
             "DoesNotExist",
@@ -3797,7 +3967,7 @@ impl AsRef<str> for BounceType {
 /// <p>Message-related information to include in the Delivery Status Notification (DSN) when an email that Amazon SES receives on your behalf bounces.</p>
 /// <p>For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MessageDsn {
     /// <p>The reporting MTA that attempted to deliver the message, formatted as specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a> (<code>mta-name-type; mta-name</code>). The default value is <code>dns; inbound-smtp.[region].amazonaws.com</code>.</p>
     #[doc(hidden)]
@@ -3823,20 +3993,11 @@ impl MessageDsn {
         self.extension_fields.as_deref()
     }
 }
-impl std::fmt::Debug for MessageDsn {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MessageDsn");
-        formatter.field("reporting_mta", &self.reporting_mta);
-        formatter.field("arrival_date", &self.arrival_date);
-        formatter.field("extension_fields", &self.extension_fields);
-        formatter.finish()
-    }
-}
 /// See [`MessageDsn`](crate::model::MessageDsn).
 pub mod message_dsn {
 
     /// A builder for [`MessageDsn`](crate::model::MessageDsn).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reporting_mta: std::option::Option<std::string::String>,
         pub(crate) arrival_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -3908,7 +4069,7 @@ impl MessageDsn {
 
 /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeliveryOptions {
     /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
     #[doc(hidden)]
@@ -3920,18 +4081,11 @@ impl DeliveryOptions {
         self.tls_policy.as_ref()
     }
 }
-impl std::fmt::Debug for DeliveryOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeliveryOptions");
-        formatter.field("tls_policy", &self.tls_policy);
-        formatter.finish()
-    }
-}
 /// See [`DeliveryOptions`](crate::model::DeliveryOptions).
 pub mod delivery_options {
 
     /// A builder for [`DeliveryOptions`](crate::model::DeliveryOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tls_policy: std::option::Option<crate::model::TlsPolicy>,
     }
@@ -3966,7 +4120,7 @@ impl DeliveryOptions {
 
 /// <p>Contains information about an email template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemplateMetadata {
     /// <p>The name of the template.</p>
     #[doc(hidden)]
@@ -3985,19 +4139,11 @@ impl TemplateMetadata {
         self.created_timestamp.as_ref()
     }
 }
-impl std::fmt::Debug for TemplateMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemplateMetadata");
-        formatter.field("name", &self.name);
-        formatter.field("created_timestamp", &self.created_timestamp);
-        formatter.finish()
-    }
-}
 /// See [`TemplateMetadata`](crate::model::TemplateMetadata).
 pub mod template_metadata {
 
     /// A builder for [`TemplateMetadata`](crate::model::TemplateMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -4046,7 +4192,7 @@ impl TemplateMetadata {
 /// <p>A receipt rule set is a collection of rules that specify what Amazon SES should do with mail it receives on behalf of your account's verified domains.</p>
 /// <p>For information about setting up receipt rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReceiptRuleSetMetadata {
     /// <p>The name of the receipt rule set. The name must:</p>
     /// <ul>
@@ -4075,19 +4221,11 @@ impl ReceiptRuleSetMetadata {
         self.created_timestamp.as_ref()
     }
 }
-impl std::fmt::Debug for ReceiptRuleSetMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReceiptRuleSetMetadata");
-        formatter.field("name", &self.name);
-        formatter.field("created_timestamp", &self.created_timestamp);
-        formatter.finish()
-    }
-}
 /// See [`ReceiptRuleSetMetadata`](crate::model::ReceiptRuleSetMetadata).
 pub mod receipt_rule_set_metadata {
 
     /// A builder for [`ReceiptRuleSetMetadata`](crate::model::ReceiptRuleSetMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -4145,7 +4283,7 @@ impl ReceiptRuleSetMetadata {
 /// <p>A receipt IP address filter enables you to specify whether to accept or reject mail originating from an IP address or range of IP addresses.</p>
 /// <p>For information about setting up IP address filters, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReceiptFilter {
     /// <p>The name of the IP address filter. The name must:</p>
     /// <ul>
@@ -4174,19 +4312,11 @@ impl ReceiptFilter {
         self.ip_filter.as_ref()
     }
 }
-impl std::fmt::Debug for ReceiptFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReceiptFilter");
-        formatter.field("name", &self.name);
-        formatter.field("ip_filter", &self.ip_filter);
-        formatter.finish()
-    }
-}
 /// See [`ReceiptFilter`](crate::model::ReceiptFilter).
 pub mod receipt_filter {
 
     /// A builder for [`ReceiptFilter`](crate::model::ReceiptFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) ip_filter: std::option::Option<crate::model::ReceiptIpFilter>,
@@ -4244,7 +4374,7 @@ impl ReceiptFilter {
 /// <p>A receipt IP address filter enables you to specify whether to accept or reject mail originating from an IP address or range of IP addresses.</p>
 /// <p>For information about setting up IP address filters, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReceiptIpFilter {
     /// <p>Indicates whether to block or allow incoming mail from the specified IP addresses.</p>
     #[doc(hidden)]
@@ -4263,19 +4393,11 @@ impl ReceiptIpFilter {
         self.cidr.as_deref()
     }
 }
-impl std::fmt::Debug for ReceiptIpFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReceiptIpFilter");
-        formatter.field("policy", &self.policy);
-        formatter.field("cidr", &self.cidr);
-        formatter.finish()
-    }
-}
 /// See [`ReceiptIpFilter`](crate::model::ReceiptIpFilter).
 pub mod receipt_ip_filter {
 
     /// A builder for [`ReceiptIpFilter`](crate::model::ReceiptIpFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<crate::model::ReceiptFilterPolicy>,
         pub(crate) cidr: std::option::Option<std::string::String>,
@@ -4320,6 +4442,41 @@ impl ReceiptIpFilter {
     }
 }
 
+/// When writing a match expression against `ReceiptFilterPolicy`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let receiptfilterpolicy = unimplemented!();
+/// match receiptfilterpolicy {
+///     ReceiptFilterPolicy::Allow => { /* ... */ },
+///     ReceiptFilterPolicy::Block => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `receiptfilterpolicy` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ReceiptFilterPolicy::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ReceiptFilterPolicy::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ReceiptFilterPolicy::NewFeature` is defined.
+/// Specifically, when `receiptfilterpolicy` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ReceiptFilterPolicy::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -4336,15 +4493,17 @@ pub enum ReceiptFilterPolicy {
     Allow,
     #[allow(missing_docs)] // documentation missing in model
     Block,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ReceiptFilterPolicy {
     fn from(s: &str) -> Self {
         match s {
             "Allow" => ReceiptFilterPolicy::Allow,
             "Block" => ReceiptFilterPolicy::Block,
-            other => ReceiptFilterPolicy::Unknown(other.to_owned()),
+            other => {
+                ReceiptFilterPolicy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -4361,11 +4520,11 @@ impl ReceiptFilterPolicy {
         match self {
             ReceiptFilterPolicy::Allow => "Allow",
             ReceiptFilterPolicy::Block => "Block",
-            ReceiptFilterPolicy::Unknown(s) => s.as_ref(),
+            ReceiptFilterPolicy::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Allow", "Block"]
     }
 }
@@ -4375,6 +4534,41 @@ impl AsRef<str> for ReceiptFilterPolicy {
     }
 }
 
+/// When writing a match expression against `IdentityType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let identitytype = unimplemented!();
+/// match identitytype {
+///     IdentityType::Domain => { /* ... */ },
+///     IdentityType::EmailAddress => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `identitytype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `IdentityType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `IdentityType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `IdentityType::NewFeature` is defined.
+/// Specifically, when `identitytype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `IdentityType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -4391,15 +4585,15 @@ pub enum IdentityType {
     Domain,
     #[allow(missing_docs)] // documentation missing in model
     EmailAddress,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for IdentityType {
     fn from(s: &str) -> Self {
         match s {
             "Domain" => IdentityType::Domain,
             "EmailAddress" => IdentityType::EmailAddress,
-            other => IdentityType::Unknown(other.to_owned()),
+            other => IdentityType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -4416,11 +4610,11 @@ impl IdentityType {
         match self {
             IdentityType::Domain => "Domain",
             IdentityType::EmailAddress => "EmailAddress",
-            IdentityType::Unknown(s) => s.as_ref(),
+            IdentityType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Domain", "EmailAddress"]
     }
 }
@@ -4432,7 +4626,7 @@ impl AsRef<str> for IdentityType {
 
 /// <p>Contains information about a custom verification email template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomVerificationEmailTemplate {
     /// <p>The name of the custom verification email template.</p>
     #[doc(hidden)]
@@ -4472,22 +4666,11 @@ impl CustomVerificationEmailTemplate {
         self.failure_redirection_url.as_deref()
     }
 }
-impl std::fmt::Debug for CustomVerificationEmailTemplate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomVerificationEmailTemplate");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("from_email_address", &self.from_email_address);
-        formatter.field("template_subject", &self.template_subject);
-        formatter.field("success_redirection_url", &self.success_redirection_url);
-        formatter.field("failure_redirection_url", &self.failure_redirection_url);
-        formatter.finish()
-    }
-}
 /// See [`CustomVerificationEmailTemplate`](crate::model::CustomVerificationEmailTemplate).
 pub mod custom_verification_email_template {
 
     /// A builder for [`CustomVerificationEmailTemplate`](crate::model::CustomVerificationEmailTemplate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
         pub(crate) from_email_address: std::option::Option<std::string::String>,
@@ -4583,7 +4766,7 @@ impl CustomVerificationEmailTemplate {
 /// <p>The name of the configuration set.</p>
 /// <p>Configuration sets let you create groups of rules that you can apply to the emails you send using Amazon SES. For more information about using configuration sets, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/using-configuration-sets.html">Using Amazon SES Configuration Sets</a> in the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigurationSet {
     /// <p>The name of the configuration set. The name must meet the following requirements:</p>
     /// <ul>
@@ -4603,18 +4786,11 @@ impl ConfigurationSet {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for ConfigurationSet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigurationSet");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 /// See [`ConfigurationSet`](crate::model::ConfigurationSet).
 pub mod configuration_set {
 
     /// A builder for [`ConfigurationSet`](crate::model::ConfigurationSet).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -4652,7 +4828,7 @@ impl ConfigurationSet {
 
 /// <p>Represents sending statistics data. Each <code>SendDataPoint</code> contains statistics for a 15-minute period of sending activity. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendDataPoint {
     /// <p>Time of the data point.</p>
     #[doc(hidden)]
@@ -4692,22 +4868,11 @@ impl SendDataPoint {
         self.rejects
     }
 }
-impl std::fmt::Debug for SendDataPoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendDataPoint");
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("delivery_attempts", &self.delivery_attempts);
-        formatter.field("bounces", &self.bounces);
-        formatter.field("complaints", &self.complaints);
-        formatter.field("rejects", &self.rejects);
-        formatter.finish()
-    }
-}
 /// See [`SendDataPoint`](crate::model::SendDataPoint).
 pub mod send_data_point {
 
     /// A builder for [`SendDataPoint`](crate::model::SendDataPoint).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) delivery_attempts: std::option::Option<i64>,
@@ -4790,7 +4955,7 @@ impl SendDataPoint {
 
 /// <p>Represents the verification attributes of a single identity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IdentityVerificationAttributes {
     /// <p>The verification status of the identity: "Pending", "Success", "Failed", or "TemporaryFailure".</p>
     #[doc(hidden)]
@@ -4809,19 +4974,11 @@ impl IdentityVerificationAttributes {
         self.verification_token.as_deref()
     }
 }
-impl std::fmt::Debug for IdentityVerificationAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IdentityVerificationAttributes");
-        formatter.field("verification_status", &self.verification_status);
-        formatter.field("verification_token", &self.verification_token);
-        formatter.finish()
-    }
-}
 /// See [`IdentityVerificationAttributes`](crate::model::IdentityVerificationAttributes).
 pub mod identity_verification_attributes {
 
     /// A builder for [`IdentityVerificationAttributes`](crate::model::IdentityVerificationAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) verification_status: std::option::Option<crate::model::VerificationStatus>,
         pub(crate) verification_token: std::option::Option<std::string::String>,
@@ -4869,6 +5026,44 @@ impl IdentityVerificationAttributes {
     }
 }
 
+/// When writing a match expression against `VerificationStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let verificationstatus = unimplemented!();
+/// match verificationstatus {
+///     VerificationStatus::Failed => { /* ... */ },
+///     VerificationStatus::NotStarted => { /* ... */ },
+///     VerificationStatus::Pending => { /* ... */ },
+///     VerificationStatus::Success => { /* ... */ },
+///     VerificationStatus::TemporaryFailure => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `verificationstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `VerificationStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `VerificationStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `VerificationStatus::NewFeature` is defined.
+/// Specifically, when `verificationstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `VerificationStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -4891,8 +5086,8 @@ pub enum VerificationStatus {
     Success,
     #[allow(missing_docs)] // documentation missing in model
     TemporaryFailure,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for VerificationStatus {
     fn from(s: &str) -> Self {
@@ -4902,7 +5097,9 @@ impl std::convert::From<&str> for VerificationStatus {
             "Pending" => VerificationStatus::Pending,
             "Success" => VerificationStatus::Success,
             "TemporaryFailure" => VerificationStatus::TemporaryFailure,
-            other => VerificationStatus::Unknown(other.to_owned()),
+            other => {
+                VerificationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -4922,11 +5119,11 @@ impl VerificationStatus {
             VerificationStatus::Pending => "Pending",
             VerificationStatus::Success => "Success",
             VerificationStatus::TemporaryFailure => "TemporaryFailure",
-            VerificationStatus::Unknown(s) => s.as_ref(),
+            VerificationStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Failed",
             "NotStarted",
@@ -4944,7 +5141,7 @@ impl AsRef<str> for VerificationStatus {
 
 /// <p>Represents the notification attributes of an identity, including whether an identity has Amazon Simple Notification Service (Amazon SNS) topics set for bounce, complaint, and/or delivery notifications, and whether feedback forwarding is enabled for bounce and complaint notifications.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IdentityNotificationAttributes {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish bounce notifications.</p>
     #[doc(hidden)]
@@ -4998,33 +5195,11 @@ impl IdentityNotificationAttributes {
         self.headers_in_delivery_notifications_enabled
     }
 }
-impl std::fmt::Debug for IdentityNotificationAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IdentityNotificationAttributes");
-        formatter.field("bounce_topic", &self.bounce_topic);
-        formatter.field("complaint_topic", &self.complaint_topic);
-        formatter.field("delivery_topic", &self.delivery_topic);
-        formatter.field("forwarding_enabled", &self.forwarding_enabled);
-        formatter.field(
-            "headers_in_bounce_notifications_enabled",
-            &self.headers_in_bounce_notifications_enabled,
-        );
-        formatter.field(
-            "headers_in_complaint_notifications_enabled",
-            &self.headers_in_complaint_notifications_enabled,
-        );
-        formatter.field(
-            "headers_in_delivery_notifications_enabled",
-            &self.headers_in_delivery_notifications_enabled,
-        );
-        formatter.finish()
-    }
-}
 /// See [`IdentityNotificationAttributes`](crate::model::IdentityNotificationAttributes).
 pub mod identity_notification_attributes {
 
     /// A builder for [`IdentityNotificationAttributes`](crate::model::IdentityNotificationAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bounce_topic: std::option::Option<std::string::String>,
         pub(crate) complaint_topic: std::option::Option<std::string::String>,
@@ -5149,7 +5324,7 @@ impl IdentityNotificationAttributes {
 
 /// <p>Represents the custom MAIL FROM domain attributes of a verified identity (email address or domain).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IdentityMailFromDomainAttributes {
     /// <p>The custom MAIL FROM domain that the identity is configured to use.</p>
     #[doc(hidden)]
@@ -5181,20 +5356,11 @@ impl IdentityMailFromDomainAttributes {
         self.behavior_on_mx_failure.as_ref()
     }
 }
-impl std::fmt::Debug for IdentityMailFromDomainAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IdentityMailFromDomainAttributes");
-        formatter.field("mail_from_domain", &self.mail_from_domain);
-        formatter.field("mail_from_domain_status", &self.mail_from_domain_status);
-        formatter.field("behavior_on_mx_failure", &self.behavior_on_mx_failure);
-        formatter.finish()
-    }
-}
 /// See [`IdentityMailFromDomainAttributes`](crate::model::IdentityMailFromDomainAttributes).
 pub mod identity_mail_from_domain_attributes {
 
     /// A builder for [`IdentityMailFromDomainAttributes`](crate::model::IdentityMailFromDomainAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mail_from_domain: std::option::Option<std::string::String>,
         pub(crate) mail_from_domain_status: std::option::Option<crate::model::CustomMailFromStatus>,
@@ -5262,6 +5428,43 @@ impl IdentityMailFromDomainAttributes {
     }
 }
 
+/// When writing a match expression against `CustomMailFromStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let custommailfromstatus = unimplemented!();
+/// match custommailfromstatus {
+///     CustomMailFromStatus::Failed => { /* ... */ },
+///     CustomMailFromStatus::Pending => { /* ... */ },
+///     CustomMailFromStatus::Success => { /* ... */ },
+///     CustomMailFromStatus::TemporaryFailure => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `custommailfromstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CustomMailFromStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CustomMailFromStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CustomMailFromStatus::NewFeature` is defined.
+/// Specifically, when `custommailfromstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CustomMailFromStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -5282,8 +5485,8 @@ pub enum CustomMailFromStatus {
     Success,
     #[allow(missing_docs)] // documentation missing in model
     TemporaryFailure,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CustomMailFromStatus {
     fn from(s: &str) -> Self {
@@ -5292,7 +5495,9 @@ impl std::convert::From<&str> for CustomMailFromStatus {
             "Pending" => CustomMailFromStatus::Pending,
             "Success" => CustomMailFromStatus::Success,
             "TemporaryFailure" => CustomMailFromStatus::TemporaryFailure,
-            other => CustomMailFromStatus::Unknown(other.to_owned()),
+            other => {
+                CustomMailFromStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -5311,11 +5516,11 @@ impl CustomMailFromStatus {
             CustomMailFromStatus::Pending => "Pending",
             CustomMailFromStatus::Success => "Success",
             CustomMailFromStatus::TemporaryFailure => "TemporaryFailure",
-            CustomMailFromStatus::Unknown(s) => s.as_ref(),
+            CustomMailFromStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Failed", "Pending", "Success", "TemporaryFailure"]
     }
 }
@@ -5327,7 +5532,7 @@ impl AsRef<str> for CustomMailFromStatus {
 
 /// <p>Represents the DKIM attributes of a verified email address or a domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IdentityDkimAttributes {
     /// <p>Is true if DKIM signing is enabled for email sent from the identity. It's false otherwise. The default value is true.</p>
     #[doc(hidden)]
@@ -5357,20 +5562,11 @@ impl IdentityDkimAttributes {
         self.dkim_tokens.as_deref()
     }
 }
-impl std::fmt::Debug for IdentityDkimAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IdentityDkimAttributes");
-        formatter.field("dkim_enabled", &self.dkim_enabled);
-        formatter.field("dkim_verification_status", &self.dkim_verification_status);
-        formatter.field("dkim_tokens", &self.dkim_tokens);
-        formatter.finish()
-    }
-}
 /// See [`IdentityDkimAttributes`](crate::model::IdentityDkimAttributes).
 pub mod identity_dkim_attributes {
 
     /// A builder for [`IdentityDkimAttributes`](crate::model::IdentityDkimAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dkim_enabled: std::option::Option<bool>,
         pub(crate) dkim_verification_status: std::option::Option<crate::model::VerificationStatus>,
@@ -5440,7 +5636,7 @@ impl IdentityDkimAttributes {
 
 /// <p>Contains information about the reputation settings for a configuration set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReputationOptions {
     /// <p>Describes whether email sending is enabled or disabled for the configuration set. If the value is <code>true</code>, then Amazon SES will send emails that use the configuration set. If the value is <code>false</code>, Amazon SES will not send emails that use the configuration set. The default value is <code>true</code>. You can change this setting using <code>UpdateConfigurationSetSendingEnabled</code>.</p>
     #[doc(hidden)]
@@ -5472,23 +5668,11 @@ impl ReputationOptions {
         self.last_fresh_start.as_ref()
     }
 }
-impl std::fmt::Debug for ReputationOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReputationOptions");
-        formatter.field("sending_enabled", &self.sending_enabled);
-        formatter.field(
-            "reputation_metrics_enabled",
-            &self.reputation_metrics_enabled,
-        );
-        formatter.field("last_fresh_start", &self.last_fresh_start);
-        formatter.finish()
-    }
-}
 /// See [`ReputationOptions`](crate::model::ReputationOptions).
 pub mod reputation_options {
 
     /// A builder for [`ReputationOptions`](crate::model::ReputationOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sending_enabled: std::option::Option<bool>,
         pub(crate) reputation_metrics_enabled: std::option::Option<bool>,
@@ -5551,6 +5735,43 @@ impl ReputationOptions {
     }
 }
 
+/// When writing a match expression against `ConfigurationSetAttribute`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let configurationsetattribute = unimplemented!();
+/// match configurationsetattribute {
+///     ConfigurationSetAttribute::DeliveryOptions => { /* ... */ },
+///     ConfigurationSetAttribute::EventDestinations => { /* ... */ },
+///     ConfigurationSetAttribute::ReputationOptions => { /* ... */ },
+///     ConfigurationSetAttribute::TrackingOptions => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `configurationsetattribute` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ConfigurationSetAttribute::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ConfigurationSetAttribute::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ConfigurationSetAttribute::NewFeature` is defined.
+/// Specifically, when `configurationsetattribute` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ConfigurationSetAttribute::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -5571,8 +5792,8 @@ pub enum ConfigurationSetAttribute {
     ReputationOptions,
     #[allow(missing_docs)] // documentation missing in model
     TrackingOptions,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ConfigurationSetAttribute {
     fn from(s: &str) -> Self {
@@ -5581,7 +5802,9 @@ impl std::convert::From<&str> for ConfigurationSetAttribute {
             "eventDestinations" => ConfigurationSetAttribute::EventDestinations,
             "reputationOptions" => ConfigurationSetAttribute::ReputationOptions,
             "trackingOptions" => ConfigurationSetAttribute::TrackingOptions,
-            other => ConfigurationSetAttribute::Unknown(other.to_owned()),
+            other => ConfigurationSetAttribute::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -5600,11 +5823,11 @@ impl ConfigurationSetAttribute {
             ConfigurationSetAttribute::EventDestinations => "eventDestinations",
             ConfigurationSetAttribute::ReputationOptions => "reputationOptions",
             ConfigurationSetAttribute::TrackingOptions => "trackingOptions",
-            ConfigurationSetAttribute::Unknown(s) => s.as_ref(),
+            ConfigurationSetAttribute::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "deliveryOptions",
             "eventDestinations",

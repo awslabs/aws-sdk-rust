@@ -97,12 +97,14 @@ pub use aws_smithy_http::result::{SdkError, SdkSuccess};
 use aws_smithy_http::retry::ClassifyRetry;
 use aws_smithy_http_tower::dispatch::DispatchLayer;
 use aws_smithy_http_tower::parse_response::ParseResponseLayer;
+use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_smithy_types::retry::ProvideErrorKind;
 use aws_smithy_types::timeout::OperationTimeoutConfig;
 use std::error::Error;
 use std::sync::Arc;
 use timeout::ClientTimeoutParams;
 use tower::{Layer, Service, ServiceBuilder, ServiceExt};
+use tracing::{debug_span, field, field::display, Instrument};
 
 /// Smithy service client.
 ///
@@ -173,15 +175,16 @@ where
     ///
     /// For ergonomics, this does not include the raw response for successful responses. To
     /// access the raw response use `call_raw`.
-    pub async fn call<O, T, E, Retry>(&self, input: Operation<O, Retry>) -> Result<T, SdkError<E>>
+    pub async fn call<O, T, E, Retry>(&self, op: Operation<O, Retry>) -> Result<T, SdkError<E>>
     where
         O: Send + Sync,
+        E: std::error::Error + Send + Sync + 'static,
         Retry: Send + Sync,
         R::Policy: bounds::SmithyRetryPolicy<O, T, E, Retry>,
         bounds::Parsed<<M as bounds::SmithyMiddleware<C>>::Service, O, Retry>:
             Service<Operation<O, Retry>, Response = SdkSuccess<T>, Error = SdkError<E>> + Clone,
     {
-        self.call_raw(input).await.map(|res| res.parsed)
+        self.call_raw(op).await.map(|res| res.parsed)
     }
 
     /// Dispatch this request to the network
@@ -190,10 +193,11 @@ where
     /// implementing unsupported features.
     pub async fn call_raw<O, T, E, Retry>(
         &self,
-        input: Operation<O, Retry>,
+        op: Operation<O, Retry>,
     ) -> Result<SdkSuccess<T>, SdkError<E>>
     where
         O: Send + Sync,
+        E: std::error::Error + Send + Sync + 'static,
         Retry: Send + Sync,
         R::Policy: bounds::SmithyRetryPolicy<O, T, E, Retry>,
         // This bound is not _technically_ inferred by all the previous bounds, but in practice it
@@ -224,7 +228,47 @@ where
             .layer(DispatchLayer::new())
             .service(connector);
 
-        check_send_sync(svc).ready().await?.call(input).await
+        // send_operation records the full request-response lifecycle.
+        // NOTE: For operations that stream output, only the setup is captured in this span.
+        let span = debug_span!(
+            "send_operation",
+            operation = field::Empty,
+            service = field::Empty,
+            status = field::Empty,
+            message = field::Empty
+        );
+        let (mut req, parts) = op.into_request_response();
+        if let Some(metadata) = &parts.metadata {
+            span.record("operation", &metadata.name());
+            span.record("service", &metadata.service());
+            // This will clone two `Cow::<&'static str>::Borrow`s in the vast majority of cases
+            req.properties_mut().insert(metadata.clone());
+        }
+        let op = Operation::from_parts(req, parts);
+
+        let result = async move { check_send_sync(svc).ready().await?.call(op).await }
+            .instrument(span.clone())
+            .await;
+        match &result {
+            Ok(_) => {
+                span.record("status", &"ok");
+            }
+            Err(err) => {
+                span.record(
+                    "status",
+                    &match err {
+                        SdkError::ConstructionFailure(_) => "construction_failure",
+                        SdkError::DispatchFailure(_) => "dispatch_failure",
+                        SdkError::ResponseError(_) => "response_error",
+                        SdkError::ServiceError(_) => "service_error",
+                        SdkError::TimeoutError(_) => "timeout_error",
+                        _ => "error",
+                    },
+                )
+                .record("message", &display(DisplayErrorContext(err)));
+            }
+        }
+        result
     }
 
     /// Statically check the validity of a `Client` without a request to send.

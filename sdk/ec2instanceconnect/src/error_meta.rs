@@ -29,8 +29,15 @@ pub enum Error {
     ServiceException(crate::error::ServiceException),
     /// <p>The requests were made too frequently and have been throttled. Wait a while and try again. To increase the limit on your request frequency, contact AWS Support.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -59,21 +66,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::SendSerialConsoleSSHPublicKeyError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::SendSerialConsoleSSHPublicKeyErrorKind::AuthException(inner) => Error::AuthException(inner),
-                crate::error::SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceNotFoundException(inner) => Error::Ec2InstanceNotFoundException(inner),
-                crate::error::SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceStateInvalidException(inner) => Error::Ec2InstanceStateInvalidException(inner),
-                crate::error::SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceTypeInvalidException(inner) => Error::Ec2InstanceTypeInvalidException(inner),
-                crate::error::SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceUnavailableException(inner) => Error::Ec2InstanceUnavailableException(inner),
-                crate::error::SendSerialConsoleSSHPublicKeyErrorKind::InvalidArgsException(inner) => Error::InvalidArgsException(inner),
-                crate::error::SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleAccessDisabledException(inner) => Error::SerialConsoleAccessDisabledException(inner),
-                crate::error::SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleSessionLimitExceededException(inner) => Error::SerialConsoleSessionLimitExceededException(inner),
-                crate::error::SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleSessionUnavailableException(inner) => Error::SerialConsoleSessionUnavailableException(inner),
-                crate::error::SendSerialConsoleSSHPublicKeyErrorKind::ServiceException(inner) => Error::ServiceException(inner),
-                crate::error::SendSerialConsoleSSHPublicKeyErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::SendSerialConsoleSSHPublicKeyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::SendSerialConsoleSSHPublicKeyError> for Error {
+    fn from(err: crate::error::SendSerialConsoleSSHPublicKeyError) -> Self {
+        match err.kind {
+            crate::error::SendSerialConsoleSSHPublicKeyErrorKind::AuthException(inner) => Error::AuthException(inner),
+            crate::error::SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceNotFoundException(inner) => Error::Ec2InstanceNotFoundException(inner),
+            crate::error::SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceStateInvalidException(inner) => Error::Ec2InstanceStateInvalidException(inner),
+            crate::error::SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceTypeInvalidException(inner) => Error::Ec2InstanceTypeInvalidException(inner),
+            crate::error::SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceUnavailableException(inner) => Error::Ec2InstanceUnavailableException(inner),
+            crate::error::SendSerialConsoleSSHPublicKeyErrorKind::InvalidArgsException(inner) => Error::InvalidArgsException(inner),
+            crate::error::SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleAccessDisabledException(inner) => Error::SerialConsoleAccessDisabledException(inner),
+            crate::error::SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleSessionLimitExceededException(inner) => Error::SerialConsoleSessionLimitExceededException(inner),
+            crate::error::SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleSessionUnavailableException(inner) => Error::SerialConsoleSessionUnavailableException(inner),
+            crate::error::SendSerialConsoleSSHPublicKeyErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::SendSerialConsoleSSHPublicKeyErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::SendSerialConsoleSSHPublicKeyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -85,33 +99,40 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::SendSSHPublicKeyError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SendSSHPublicKeyErrorKind::AuthException(inner) => {
-                    Error::AuthException(inner)
-                }
-                crate::error::SendSSHPublicKeyErrorKind::Ec2InstanceNotFoundException(inner) => {
-                    Error::Ec2InstanceNotFoundException(inner)
-                }
-                crate::error::SendSSHPublicKeyErrorKind::Ec2InstanceStateInvalidException(
-                    inner,
-                ) => Error::Ec2InstanceStateInvalidException(inner),
-                crate::error::SendSSHPublicKeyErrorKind::Ec2InstanceUnavailableException(inner) => {
-                    Error::Ec2InstanceUnavailableException(inner)
-                }
-                crate::error::SendSSHPublicKeyErrorKind::InvalidArgsException(inner) => {
-                    Error::InvalidArgsException(inner)
-                }
-                crate::error::SendSSHPublicKeyErrorKind::ServiceException(inner) => {
-                    Error::ServiceException(inner)
-                }
-                crate::error::SendSSHPublicKeyErrorKind::ThrottlingException(inner) => {
-                    Error::ThrottlingException(inner)
-                }
-                crate::error::SendSSHPublicKeyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::SendSSHPublicKeyError> for Error {
+    fn from(err: crate::error::SendSSHPublicKeyError) -> Self {
+        match err.kind {
+            crate::error::SendSSHPublicKeyErrorKind::AuthException(inner) => {
+                Error::AuthException(inner)
+            }
+            crate::error::SendSSHPublicKeyErrorKind::Ec2InstanceNotFoundException(inner) => {
+                Error::Ec2InstanceNotFoundException(inner)
+            }
+            crate::error::SendSSHPublicKeyErrorKind::Ec2InstanceStateInvalidException(inner) => {
+                Error::Ec2InstanceStateInvalidException(inner)
+            }
+            crate::error::SendSSHPublicKeyErrorKind::Ec2InstanceUnavailableException(inner) => {
+                Error::Ec2InstanceUnavailableException(inner)
+            }
+            crate::error::SendSSHPublicKeyErrorKind::InvalidArgsException(inner) => {
+                Error::InvalidArgsException(inner)
+            }
+            crate::error::SendSSHPublicKeyErrorKind::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::error::SendSSHPublicKeyErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::SendSSHPublicKeyErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }

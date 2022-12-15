@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_query_forecast_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::QueryForecastInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.forecast_arn {
         object.key("ForecastArn").string(var_1.as_str());
     }
@@ -13,10 +13,11 @@ pub fn serialize_structure_crate_input_query_forecast_input(
         object.key("EndDate").string(var_3.as_str());
     }
     if let Some(var_4) = &input.filters {
+        #[allow(unused_mut)]
         let mut object_5 = object.key("Filters").start_object();
         for (key_6, value_7) in var_4 {
             {
-                object_5.key(key_6).string(value_7.as_str());
+                object_5.key(key_6.as_str()).string(value_7.as_str());
             }
         }
         object_5.finish();
@@ -30,7 +31,7 @@ pub fn serialize_structure_crate_input_query_forecast_input(
 pub fn serialize_structure_crate_input_query_what_if_forecast_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::QueryWhatIfForecastInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_9) = &input.what_if_forecast_arn {
         object.key("WhatIfForecastArn").string(var_9.as_str());
     }
@@ -41,10 +42,11 @@ pub fn serialize_structure_crate_input_query_what_if_forecast_input(
         object.key("EndDate").string(var_11.as_str());
     }
     if let Some(var_12) = &input.filters {
+        #[allow(unused_mut)]
         let mut object_13 = object.key("Filters").start_object();
         for (key_14, value_15) in var_12 {
             {
-                object_13.key(key_14).string(value_15.as_str());
+                object_13.key(key_14.as_str()).string(value_15.as_str());
             }
         }
         object_13.finish();

@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod search_input {
 
     /// A builder for [`SearchInput`](crate::input::SearchInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cursor: std::option::Option<std::string::String>,
         pub(crate) expr: std::option::Option<std::string::String>,
@@ -272,7 +272,8 @@ pub mod search_input {
         /// Consumes the builder and constructs a [`SearchInput`](crate::input::SearchInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SearchInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::SearchInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::SearchInput {
                 cursor: self.cursor,
                 expr: self.expr,
@@ -305,37 +306,47 @@ impl SearchInput {
             crate::operation::Search,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SearchInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/2013-01-01/search").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::SearchInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("format", "sdk");
                 query.push_kv("pretty", "true");
                 if let Some(inner_1) = &_input.cursor {
-                    query.push_kv("cursor", &aws_smithy_http::query::fmt_string(&inner_1));
+                    {
+                        query.push_kv("cursor", &aws_smithy_http::query::fmt_string(&inner_1));
+                    }
                 }
                 if let Some(inner_2) = &_input.expr {
-                    query.push_kv("expr", &aws_smithy_http::query::fmt_string(&inner_2));
+                    {
+                        query.push_kv("expr", &aws_smithy_http::query::fmt_string(&inner_2));
+                    }
                 }
                 if let Some(inner_3) = &_input.facet {
-                    query.push_kv("facet", &aws_smithy_http::query::fmt_string(&inner_3));
+                    {
+                        query.push_kv("facet", &aws_smithy_http::query::fmt_string(&inner_3));
+                    }
                 }
                 if let Some(inner_4) = &_input.filter_query {
-                    query.push_kv("fq", &aws_smithy_http::query::fmt_string(&inner_4));
+                    {
+                        query.push_kv("fq", &aws_smithy_http::query::fmt_string(&inner_4));
+                    }
                 }
                 if let Some(inner_5) = &_input.highlight {
-                    query.push_kv("highlight", &aws_smithy_http::query::fmt_string(&inner_5));
+                    {
+                        query.push_kv("highlight", &aws_smithy_http::query::fmt_string(&inner_5));
+                    }
                 }
                 if _input.partial {
                     query.push_kv(
@@ -343,17 +354,36 @@ impl SearchInput {
                         aws_smithy_types::primitive::Encoder::from(_input.partial).encode(),
                     );
                 }
-                if let Some(inner_6) = &_input.query {
-                    query.push_kv("q", &aws_smithy_http::query::fmt_string(&inner_6));
+                let inner_6 = &_input.query;
+                let inner_6 = inner_6.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "query",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_6.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "query",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("q", &aws_smithy_http::query::fmt_string(&inner_6));
                 if let Some(inner_7) = &_input.query_options {
-                    query.push_kv("q.options", &aws_smithy_http::query::fmt_string(&inner_7));
+                    {
+                        query.push_kv("q.options", &aws_smithy_http::query::fmt_string(&inner_7));
+                    }
                 }
                 if let Some(inner_8) = &_input.query_parser {
-                    query.push_kv("q.parser", &aws_smithy_http::query::fmt_string(&inner_8));
+                    {
+                        query.push_kv("q.parser", &aws_smithy_http::query::fmt_string(&inner_8));
+                    }
                 }
                 if let Some(inner_9) = &_input.r#return {
-                    query.push_kv("return", &aws_smithy_http::query::fmt_string(&inner_9));
+                    {
+                        query.push_kv("return", &aws_smithy_http::query::fmt_string(&inner_9));
+                    }
                 }
                 if _input.size != 0 {
                     query.push_kv(
@@ -362,7 +392,9 @@ impl SearchInput {
                     );
                 }
                 if let Some(inner_10) = &_input.sort {
-                    query.push_kv("sort", &aws_smithy_http::query::fmt_string(&inner_10));
+                    {
+                        query.push_kv("sort", &aws_smithy_http::query::fmt_string(&inner_10));
+                    }
                 }
                 if _input.start != 0 {
                     query.push_kv(
@@ -371,7 +403,9 @@ impl SearchInput {
                     );
                 }
                 if let Some(inner_11) = &_input.stats {
-                    query.push_kv("stats", &aws_smithy_http::query::fmt_string(&inner_11));
+                    {
+                        query.push_kv("stats", &aws_smithy_http::query::fmt_string(&inner_11));
+                    }
                 }
                 Ok(())
             }
@@ -379,8 +413,10 @@ impl SearchInput {
             fn update_http_builder(
                 input: &crate::input::SearchInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -449,7 +485,7 @@ impl SearchInput {
 pub mod suggest_input {
 
     /// A builder for [`SuggestInput`](crate::input::SuggestInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query: std::option::Option<std::string::String>,
         pub(crate) suggester: std::option::Option<std::string::String>,
@@ -489,7 +525,8 @@ pub mod suggest_input {
         /// Consumes the builder and constructs a [`SuggestInput`](crate::input::SuggestInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SuggestInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::SuggestInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::SuggestInput {
                 query: self.query,
                 suggester: self.suggester,
@@ -511,29 +548,55 @@ impl SuggestInput {
             crate::operation::Suggest,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SuggestInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/2013-01-01/suggest").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::SuggestInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("format", "sdk");
                 query.push_kv("pretty", "true");
-                if let Some(inner_12) = &_input.query {
-                    query.push_kv("q", &aws_smithy_http::query::fmt_string(&inner_12));
+                let inner_12 = &_input.query;
+                let inner_12 = inner_12.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "query",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_12.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "query",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_13) = &_input.suggester {
-                    query.push_kv("suggester", &aws_smithy_http::query::fmt_string(&inner_13));
+                query.push_kv("q", &aws_smithy_http::query::fmt_string(&inner_12));
+                let inner_13 = &_input.suggester;
+                let inner_13 = inner_13.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "suggester",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_13.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "suggester",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("suggester", &aws_smithy_http::query::fmt_string(&inner_13));
                 if _input.size != 0 {
                     query.push_kv(
                         "size",
@@ -546,8 +609,10 @@ impl SuggestInput {
             fn update_http_builder(
                 input: &crate::input::SuggestInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -659,7 +724,7 @@ pub mod upload_documents_input {
         /// Consumes the builder and constructs a [`UploadDocumentsInput`](crate::input::UploadDocumentsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UploadDocumentsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UploadDocumentsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UploadDocumentsInput {
                 documents: self.documents.unwrap_or_default(),
@@ -681,20 +746,20 @@ impl UploadDocumentsInput {
             crate::operation::UploadDocuments,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UploadDocumentsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/2013-01-01/documents/batch").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::UploadDocumentsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("format", "sdk");
                 Ok(())
@@ -703,8 +768,10 @@ impl UploadDocumentsInput {
             fn update_http_builder(
                 input: &crate::input::UploadDocumentsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -789,6 +856,7 @@ impl UploadDocumentsInput {
 
 /// <p>Container for the parameters to the <code>UploadDocuments</code> request.</p>
 #[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct UploadDocumentsInput {
     /// <p>A batch of documents formatted in JSON or HTML.</p>
     pub documents: aws_smithy_http::byte_stream::ByteStream,
@@ -814,18 +882,10 @@ impl UploadDocumentsInput {
         self.content_type.as_ref()
     }
 }
-impl std::fmt::Debug for UploadDocumentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UploadDocumentsInput");
-        formatter.field("documents", &self.documents);
-        formatter.field("content_type", &self.content_type);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code>Suggest</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SuggestInput {
     /// <p>Specifies the string for which you want to get suggestions.</p>
     #[doc(hidden)]
@@ -851,19 +911,10 @@ impl SuggestInput {
         self.size
     }
 }
-impl std::fmt::Debug for SuggestInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SuggestInput");
-        formatter.field("query", &self.query);
-        formatter.field("suggester", &self.suggester);
-        formatter.field("size", &self.size);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code>Search</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchInput {
     /// <p>Retrieves a cursor value you can use to page through large result sets. Use the <code>size</code> parameter to control the number of hits to include in each response. You can specify either the <code>cursor</code> or <code>start</code> parameter in a request; they are mutually exclusive. To get the first cursor, set the cursor value to <code>initial</code>. In subsequent requests, specify the cursor value returned in the hits section of the response. </p>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/paginating-results.html">Paginating Results</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
@@ -1064,25 +1115,5 @@ impl SearchInput {
     /// <p>There are currently no options supported for statistics.</p>
     pub fn stats(&self) -> std::option::Option<&str> {
         self.stats.as_deref()
-    }
-}
-impl std::fmt::Debug for SearchInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchInput");
-        formatter.field("cursor", &self.cursor);
-        formatter.field("expr", &self.expr);
-        formatter.field("facet", &self.facet);
-        formatter.field("filter_query", &self.filter_query);
-        formatter.field("highlight", &self.highlight);
-        formatter.field("partial", &self.partial);
-        formatter.field("query", &self.query);
-        formatter.field("query_options", &self.query_options);
-        formatter.field("query_parser", &self.query_parser);
-        formatter.field("r#return", &self.r#return);
-        formatter.field("size", &self.size);
-        formatter.field("sort", &self.sort);
-        formatter.field("start", &self.start);
-        formatter.field("stats", &self.stats);
-        formatter.finish()
     }
 }

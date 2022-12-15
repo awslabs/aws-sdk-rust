@@ -2,7 +2,7 @@
 
 /// <p>An object that contains the full name, description, and unit of a metric. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseResourceMetric {
     /// <p>The full name of the metric.</p>
     #[doc(hidden)]
@@ -28,20 +28,11 @@ impl ResponseResourceMetric {
         self.unit.as_deref()
     }
 }
-impl std::fmt::Debug for ResponseResourceMetric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseResourceMetric");
-        formatter.field("metric", &self.metric);
-        formatter.field("description", &self.description);
-        formatter.field("unit", &self.unit);
-        formatter.finish()
-    }
-}
 /// See [`ResponseResourceMetric`](crate::model::ResponseResourceMetric).
 pub mod response_resource_metric {
 
     /// A builder for [`ResponseResourceMetric`](crate::model::ResponseResourceMetric).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -95,6 +86,41 @@ impl ResponseResourceMetric {
     }
 }
 
+/// When writing a match expression against `ServiceType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let servicetype = unimplemented!();
+/// match servicetype {
+///     ServiceType::Docdb => { /* ... */ },
+///     ServiceType::Rds => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `servicetype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ServiceType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ServiceType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ServiceType::NewFeature` is defined.
+/// Specifically, when `servicetype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ServiceType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -111,15 +137,15 @@ pub enum ServiceType {
     Docdb,
     #[allow(missing_docs)] // documentation missing in model
     Rds,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ServiceType {
     fn from(s: &str) -> Self {
         match s {
             "DOCDB" => ServiceType::Docdb,
             "RDS" => ServiceType::Rds,
-            other => ServiceType::Unknown(other.to_owned()),
+            other => ServiceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -136,11 +162,11 @@ impl ServiceType {
         match self {
             ServiceType::Docdb => "DOCDB",
             ServiceType::Rds => "RDS",
-            ServiceType::Unknown(s) => s.as_ref(),
+            ServiceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DOCDB", "RDS"]
     }
 }
@@ -152,7 +178,7 @@ impl AsRef<str> for ServiceType {
 
 /// <p>The available dimension information for a metric type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricDimensionGroups {
     /// <p>The metric type to which the dimension information belongs.</p>
     #[doc(hidden)]
@@ -171,19 +197,11 @@ impl MetricDimensionGroups {
         self.groups.as_deref()
     }
 }
-impl std::fmt::Debug for MetricDimensionGroups {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricDimensionGroups");
-        formatter.field("metric", &self.metric);
-        formatter.field("groups", &self.groups);
-        formatter.finish()
-    }
-}
 /// See [`MetricDimensionGroups`](crate::model::MetricDimensionGroups).
 pub mod metric_dimension_groups {
 
     /// A builder for [`MetricDimensionGroups`](crate::model::MetricDimensionGroups).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric: std::option::Option<std::string::String>,
         pub(crate) groups: std::option::Option<std::vec::Vec<crate::model::DimensionGroupDetail>>,
@@ -236,7 +254,7 @@ impl MetricDimensionGroups {
 
 /// <p>Information about dimensions within a dimension group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DimensionGroupDetail {
     /// <p>The name of the dimension group.</p>
     #[doc(hidden)]
@@ -255,19 +273,11 @@ impl DimensionGroupDetail {
         self.dimensions.as_deref()
     }
 }
-impl std::fmt::Debug for DimensionGroupDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DimensionGroupDetail");
-        formatter.field("group", &self.group);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.finish()
-    }
-}
 /// See [`DimensionGroupDetail`](crate::model::DimensionGroupDetail).
 pub mod dimension_group_detail {
 
     /// A builder for [`DimensionGroupDetail`](crate::model::DimensionGroupDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group: std::option::Option<std::string::String>,
         pub(crate) dimensions: std::option::Option<std::vec::Vec<crate::model::DimensionDetail>>,
@@ -320,7 +330,7 @@ impl DimensionGroupDetail {
 
 /// <p>The information about a dimension.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DimensionDetail {
     /// <p>The identifier of a dimension.</p>
     #[doc(hidden)]
@@ -332,18 +342,11 @@ impl DimensionDetail {
         self.identifier.as_deref()
     }
 }
-impl std::fmt::Debug for DimensionDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DimensionDetail");
-        formatter.field("identifier", &self.identifier);
-        formatter.finish()
-    }
-}
 /// See [`DimensionDetail`](crate::model::DimensionDetail).
 pub mod dimension_detail {
 
     /// A builder for [`DimensionDetail`](crate::model::DimensionDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
     }
@@ -375,7 +378,7 @@ impl DimensionDetail {
 
 /// <p>A time-ordered series of data points, corresponding to a dimension of a Performance Insights metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricKeyDataPoints {
     /// <p>The dimensions to which the data points apply.</p>
     #[doc(hidden)]
@@ -394,19 +397,11 @@ impl MetricKeyDataPoints {
         self.data_points.as_deref()
     }
 }
-impl std::fmt::Debug for MetricKeyDataPoints {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricKeyDataPoints");
-        formatter.field("key", &self.key);
-        formatter.field("data_points", &self.data_points);
-        formatter.finish()
-    }
-}
 /// See [`MetricKeyDataPoints`](crate::model::MetricKeyDataPoints).
 pub mod metric_key_data_points {
 
     /// A builder for [`MetricKeyDataPoints`](crate::model::MetricKeyDataPoints).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<crate::model::ResponseResourceMetricKey>,
         pub(crate) data_points: std::option::Option<std::vec::Vec<crate::model::DataPoint>>,
@@ -462,7 +457,7 @@ impl MetricKeyDataPoints {
 
 /// <p>A timestamp, and a single numerical value, which together represent a measurement at a particular point in time.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataPoint {
     /// <p>The time, in epoch format, associated with a particular <code>Value</code>.</p>
     #[doc(hidden)]
@@ -481,19 +476,11 @@ impl DataPoint {
         self.value
     }
 }
-impl std::fmt::Debug for DataPoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataPoint");
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`DataPoint`](crate::model::DataPoint).
 pub mod data_point {
 
     /// A builder for [`DataPoint`](crate::model::DataPoint).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) value: std::option::Option<f64>,
@@ -540,7 +527,7 @@ impl DataPoint {
 
 /// <p>An object describing a Performance Insights metric and one or more dimensions for that metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseResourceMetricKey {
     /// <p>The name of a Performance Insights metric to be measured.</p>
     /// <p>Valid values for <code>Metric</code> are:</p>
@@ -577,19 +564,11 @@ impl ResponseResourceMetricKey {
         self.dimensions.as_ref()
     }
 }
-impl std::fmt::Debug for ResponseResourceMetricKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseResourceMetricKey");
-        formatter.field("metric", &self.metric);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.finish()
-    }
-}
 /// See [`ResponseResourceMetricKey`](crate::model::ResponseResourceMetricKey).
 pub mod response_resource_metric_key {
 
     /// A builder for [`ResponseResourceMetricKey`](crate::model::ResponseResourceMetricKey).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric: std::option::Option<std::string::String>,
         pub(crate) dimensions: std::option::Option<
@@ -664,7 +643,7 @@ impl ResponseResourceMetricKey {
 
 /// <p>A single query to be processed. You must provide the metric to query. If no other parameters are specified, Performance Insights returns all data points for the specified metric. Optionally, you can request that the data points be aggregated by dimension group (<code>GroupBy</code>), and return only those data points that match your criteria (<code>Filter</code>).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricQuery {
     /// <p>The name of a Performance Insights metric to be measured.</p>
     /// <p>Valid values for <code>Metric</code> are:</p>
@@ -716,20 +695,11 @@ impl MetricQuery {
         self.filter.as_ref()
     }
 }
-impl std::fmt::Debug for MetricQuery {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricQuery");
-        formatter.field("metric", &self.metric);
-        formatter.field("group_by", &self.group_by);
-        formatter.field("filter", &self.filter);
-        formatter.finish()
-    }
-}
 /// See [`MetricQuery`](crate::model::MetricQuery).
 pub mod metric_query {
 
     /// A builder for [`MetricQuery`](crate::model::MetricQuery).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric: std::option::Option<std::string::String>,
         pub(crate) group_by: std::option::Option<crate::model::DimensionGroup>,
@@ -835,7 +805,7 @@ impl MetricQuery {
 /// <p>Each response element returns a maximum of 500 bytes. For larger elements, such as SQL statements, only the first 500 bytes are returned.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DimensionGroup {
     /// <p>The name of the dimension group. Valid values are as follows:</p>
     /// <ul>
@@ -997,20 +967,11 @@ impl DimensionGroup {
         self.limit
     }
 }
-impl std::fmt::Debug for DimensionGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DimensionGroup");
-        formatter.field("group", &self.group);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 /// See [`DimensionGroup`](crate::model::DimensionGroup).
 pub mod dimension_group {
 
     /// A builder for [`DimensionGroup`](crate::model::DimensionGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group: std::option::Option<std::string::String>,
         pub(crate) dimensions: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1211,7 +1172,7 @@ impl DimensionGroup {
 
 /// <p>The metadata for a feature. For example, the metadata might indicate that a feature is turned on or off on a specific DB instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FeatureMetadata {
     /// <p>The status of the feature on the DB instance. Possible values include the following:</p>
     /// <ul>
@@ -1239,18 +1200,11 @@ impl FeatureMetadata {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for FeatureMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FeatureMetadata");
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 /// See [`FeatureMetadata`](crate::model::FeatureMetadata).
 pub mod feature_metadata {
 
     /// A builder for [`FeatureMetadata`](crate::model::FeatureMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::FeatureStatus>,
     }
@@ -1299,6 +1253,45 @@ impl FeatureMetadata {
     }
 }
 
+/// When writing a match expression against `FeatureStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let featurestatus = unimplemented!();
+/// match featurestatus {
+///     FeatureStatus::Disabled => { /* ... */ },
+///     FeatureStatus::DisabledPendingReboot => { /* ... */ },
+///     FeatureStatus::Enabled => { /* ... */ },
+///     FeatureStatus::EnabledPendingReboot => { /* ... */ },
+///     FeatureStatus::UnknownValue => { /* ... */ },
+///     FeatureStatus::Unsupported => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `featurestatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `FeatureStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `FeatureStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `FeatureStatus::NewFeature` is defined.
+/// Specifically, when `featurestatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `FeatureStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 /// _Note: `FeatureStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
@@ -1323,8 +1316,8 @@ pub enum FeatureStatus {
     UnknownValue,
     #[allow(missing_docs)] // documentation missing in model
     Unsupported,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for FeatureStatus {
     fn from(s: &str) -> Self {
@@ -1335,7 +1328,7 @@ impl std::convert::From<&str> for FeatureStatus {
             "ENABLED_PENDING_REBOOT" => FeatureStatus::EnabledPendingReboot,
             "UNKNOWN" => FeatureStatus::UnknownValue,
             "UNSUPPORTED" => FeatureStatus::Unsupported,
-            other => FeatureStatus::Unknown(other.to_owned()),
+            other => FeatureStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1356,11 +1349,11 @@ impl FeatureStatus {
             FeatureStatus::EnabledPendingReboot => "ENABLED_PENDING_REBOOT",
             FeatureStatus::UnknownValue => "UNKNOWN",
             FeatureStatus::Unsupported => "UNSUPPORTED",
-            FeatureStatus::Unknown(s) => s.as_ref(),
+            FeatureStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DISABLED",
             "DISABLED_PENDING_REBOOT",
@@ -1379,7 +1372,7 @@ impl AsRef<str> for FeatureStatus {
 
 /// <p>An object that describes the details for a specified dimension.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DimensionKeyDetail {
     /// <p>The value of the dimension detail data. Depending on the return status, this value is either the full or truncated SQL query for the following dimensions:</p>
     /// <ul>
@@ -1431,20 +1424,11 @@ impl DimensionKeyDetail {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for DimensionKeyDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DimensionKeyDetail");
-        formatter.field("value", &self.value);
-        formatter.field("dimension", &self.dimension);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 /// See [`DimensionKeyDetail`](crate::model::DimensionKeyDetail).
 pub mod dimension_key_detail {
 
     /// A builder for [`DimensionKeyDetail`](crate::model::DimensionKeyDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
         pub(crate) dimension: std::option::Option<std::string::String>,
@@ -1527,6 +1511,42 @@ impl DimensionKeyDetail {
     }
 }
 
+/// When writing a match expression against `DetailStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let detailstatus = unimplemented!();
+/// match detailstatus {
+///     DetailStatus::Available => { /* ... */ },
+///     DetailStatus::Processing => { /* ... */ },
+///     DetailStatus::Unavailable => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `detailstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DetailStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DetailStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DetailStatus::NewFeature` is defined.
+/// Specifically, when `detailstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DetailStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1545,8 +1565,8 @@ pub enum DetailStatus {
     Processing,
     #[allow(missing_docs)] // documentation missing in model
     Unavailable,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DetailStatus {
     fn from(s: &str) -> Self {
@@ -1554,7 +1574,7 @@ impl std::convert::From<&str> for DetailStatus {
             "AVAILABLE" => DetailStatus::Available,
             "PROCESSING" => DetailStatus::Processing,
             "UNAVAILABLE" => DetailStatus::Unavailable,
-            other => DetailStatus::Unknown(other.to_owned()),
+            other => DetailStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1572,11 +1592,11 @@ impl DetailStatus {
             DetailStatus::Available => "AVAILABLE",
             DetailStatus::Processing => "PROCESSING",
             DetailStatus::Unavailable => "UNAVAILABLE",
-            DetailStatus::Unknown(s) => s.as_ref(),
+            DetailStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "PROCESSING", "UNAVAILABLE"]
     }
 }
@@ -1588,7 +1608,7 @@ impl AsRef<str> for DetailStatus {
 
 /// <p>An object that includes the requested dimension key values and aggregated metric values within a dimension group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DimensionKeyDescription {
     /// <p>A map of name-value pairs for the dimensions in the group.</p>
     #[doc(hidden)]
@@ -1628,21 +1648,11 @@ impl DimensionKeyDescription {
         self.partitions.as_deref()
     }
 }
-impl std::fmt::Debug for DimensionKeyDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DimensionKeyDescription");
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("total", &self.total);
-        formatter.field("additional_metrics", &self.additional_metrics);
-        formatter.field("partitions", &self.partitions);
-        formatter.finish()
-    }
-}
 /// See [`DimensionKeyDescription`](crate::model::DimensionKeyDescription).
 pub mod dimension_key_description {
 
     /// A builder for [`DimensionKeyDescription`](crate::model::DimensionKeyDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dimensions: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -1743,7 +1753,7 @@ impl DimensionKeyDescription {
 
 /// <p>If <code>PartitionBy</code> was specified in a <code>DescribeDimensionKeys</code> request, the dimensions are returned in an array. Each element in the array specifies one dimension. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponsePartitionKey {
     /// <p>A dimension map that contains the dimensions for this partition.</p>
     #[doc(hidden)]
@@ -1759,18 +1769,11 @@ impl ResponsePartitionKey {
         self.dimensions.as_ref()
     }
 }
-impl std::fmt::Debug for ResponsePartitionKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponsePartitionKey");
-        formatter.field("dimensions", &self.dimensions);
-        formatter.finish()
-    }
-}
 /// See [`ResponsePartitionKey`](crate::model::ResponsePartitionKey).
 pub mod response_partition_key {
 
     /// A builder for [`ResponsePartitionKey`](crate::model::ResponsePartitionKey).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dimensions: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,

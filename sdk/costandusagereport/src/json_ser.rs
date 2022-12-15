@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_delete_report_definition_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteReportDefinitionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.report_name {
         object.key("ReportName").string(var_1.as_str());
     }
@@ -12,7 +12,7 @@ pub fn serialize_structure_crate_input_delete_report_definition_input(
 pub fn serialize_structure_crate_input_describe_report_definitions_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeReportDefinitionsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_2) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -28,11 +28,12 @@ pub fn serialize_structure_crate_input_describe_report_definitions_input(
 pub fn serialize_structure_crate_input_modify_report_definition_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ModifyReportDefinitionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_4) = &input.report_name {
         object.key("ReportName").string(var_4.as_str());
     }
     if let Some(var_5) = &input.report_definition {
+        #[allow(unused_mut)]
         let mut object_6 = object.key("ReportDefinition").start_object();
         crate::json_ser::serialize_structure_crate_model_report_definition(&mut object_6, var_5)?;
         object_6.finish();
@@ -43,8 +44,9 @@ pub fn serialize_structure_crate_input_modify_report_definition_input(
 pub fn serialize_structure_crate_input_put_report_definition_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutReportDefinitionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_7) = &input.report_definition {
+        #[allow(unused_mut)]
         let mut object_8 = object.key("ReportDefinition").start_object();
         crate::json_ser::serialize_structure_crate_model_report_definition(&mut object_8, var_7)?;
         object_8.finish();
@@ -55,7 +57,7 @@ pub fn serialize_structure_crate_input_put_report_definition_input(
 pub fn serialize_structure_crate_model_report_definition(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ReportDefinition,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_9) = &input.report_name {
         object.key("ReportName").string(var_9.as_str());
     }

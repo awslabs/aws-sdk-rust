@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod cancel_rotate_secret_input {
 
     /// A builder for [`CancelRotateSecretInput`](crate::input::CancelRotateSecretInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) secret_id: std::option::Option<std::string::String>,
     }
@@ -25,8 +25,10 @@ pub mod cancel_rotate_secret_input {
         /// Consumes the builder and constructs a [`CancelRotateSecretInput`](crate::input::CancelRotateSecretInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CancelRotateSecretInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CancelRotateSecretInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CancelRotateSecretInput {
                 secret_id: self.secret_id,
             })
@@ -46,13 +48,13 @@ impl CancelRotateSecretInput {
             crate::operation::CancelRotateSecret,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CancelRotateSecretInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -60,8 +62,10 @@ impl CancelRotateSecretInput {
             fn update_http_builder(
                 input: &crate::input::CancelRotateSecretInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -150,7 +154,7 @@ impl CancelRotateSecretInput {
 pub mod create_secret_input {
 
     /// A builder for [`CreateSecretInput`](crate::input::CreateSecretInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -349,7 +353,7 @@ pub mod create_secret_input {
         /// Consumes the builder and constructs a [`CreateSecretInput`](crate::input::CreateSecretInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateSecretInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateSecretInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateSecretInput {
                 name: self.name,
@@ -366,6 +370,24 @@ pub mod create_secret_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("client_request_token", &self.client_request_token);
+            formatter.field("description", &self.description);
+            formatter.field("kms_key_id", &self.kms_key_id);
+            formatter.field("secret_binary", &"*** Sensitive Data Redacted ***");
+            formatter.field("secret_string", &"*** Sensitive Data Redacted ***");
+            formatter.field("tags", &self.tags);
+            formatter.field("add_replica_regions", &self.add_replica_regions);
+            formatter.field(
+                "force_overwrite_replica_secret",
+                &self.force_overwrite_replica_secret,
+            );
+            formatter.finish()
+        }
+    }
 }
 impl CreateSecretInput {
     /// Consumes the builder and constructs an Operation<[`CreateSecret`](crate::operation::CreateSecret)>
@@ -380,7 +402,7 @@ impl CreateSecretInput {
             crate::operation::CreateSecret,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
@@ -389,7 +411,7 @@ impl CreateSecretInput {
             fn uri_base(
                 _input: &crate::input::CreateSecretInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -397,8 +419,10 @@ impl CreateSecretInput {
             fn update_http_builder(
                 input: &crate::input::CreateSecretInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -487,7 +511,7 @@ impl CreateSecretInput {
 pub mod delete_resource_policy_input {
 
     /// A builder for [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) secret_id: std::option::Option<std::string::String>,
     }
@@ -507,8 +531,10 @@ pub mod delete_resource_policy_input {
         /// Consumes the builder and constructs a [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteResourcePolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteResourcePolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteResourcePolicyInput {
                 secret_id: self.secret_id,
             })
@@ -528,13 +554,13 @@ impl DeleteResourcePolicyInput {
             crate::operation::DeleteResourcePolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteResourcePolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -542,8 +568,10 @@ impl DeleteResourcePolicyInput {
             fn update_http_builder(
                 input: &crate::input::DeleteResourcePolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -634,7 +662,7 @@ impl DeleteResourcePolicyInput {
 pub mod delete_secret_input {
 
     /// A builder for [`DeleteSecretInput`](crate::input::DeleteSecretInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) secret_id: std::option::Option<std::string::String>,
         pub(crate) recovery_window_in_days: std::option::Option<i64>,
@@ -685,7 +713,7 @@ pub mod delete_secret_input {
         /// Consumes the builder and constructs a [`DeleteSecretInput`](crate::input::DeleteSecretInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteSecretInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteSecretInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteSecretInput {
                 secret_id: self.secret_id,
@@ -708,13 +736,13 @@ impl DeleteSecretInput {
             crate::operation::DeleteSecret,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteSecretInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -722,8 +750,10 @@ impl DeleteSecretInput {
             fn update_http_builder(
                 input: &crate::input::DeleteSecretInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -812,7 +842,7 @@ impl DeleteSecretInput {
 pub mod describe_secret_input {
 
     /// A builder for [`DescribeSecretInput`](crate::input::DescribeSecretInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) secret_id: std::option::Option<std::string::String>,
     }
@@ -832,7 +862,7 @@ pub mod describe_secret_input {
         /// Consumes the builder and constructs a [`DescribeSecretInput`](crate::input::DescribeSecretInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeSecretInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeSecretInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeSecretInput {
                 secret_id: self.secret_id,
@@ -853,13 +883,13 @@ impl DescribeSecretInput {
             crate::operation::DescribeSecret,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeSecretInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -867,8 +897,10 @@ impl DescribeSecretInput {
             fn update_http_builder(
                 input: &crate::input::DescribeSecretInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -957,7 +989,7 @@ impl DescribeSecretInput {
 pub mod get_random_password_input {
 
     /// A builder for [`GetRandomPasswordInput`](crate::input::GetRandomPasswordInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) password_length: std::option::Option<i64>,
         pub(crate) exclude_characters: std::option::Option<std::string::String>,
@@ -1055,8 +1087,10 @@ pub mod get_random_password_input {
         /// Consumes the builder and constructs a [`GetRandomPasswordInput`](crate::input::GetRandomPasswordInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetRandomPasswordInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetRandomPasswordInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetRandomPasswordInput {
                 password_length: self.password_length,
                 exclude_characters: self.exclude_characters,
@@ -1083,13 +1117,13 @@ impl GetRandomPasswordInput {
             crate::operation::GetRandomPassword,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetRandomPasswordInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1097,8 +1131,10 @@ impl GetRandomPasswordInput {
             fn update_http_builder(
                 input: &crate::input::GetRandomPasswordInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1187,7 +1223,7 @@ impl GetRandomPasswordInput {
 pub mod get_resource_policy_input {
 
     /// A builder for [`GetResourcePolicyInput`](crate::input::GetResourcePolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) secret_id: std::option::Option<std::string::String>,
     }
@@ -1207,8 +1243,10 @@ pub mod get_resource_policy_input {
         /// Consumes the builder and constructs a [`GetResourcePolicyInput`](crate::input::GetResourcePolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetResourcePolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetResourcePolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetResourcePolicyInput {
                 secret_id: self.secret_id,
             })
@@ -1228,13 +1266,13 @@ impl GetResourcePolicyInput {
             crate::operation::GetResourcePolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetResourcePolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1242,8 +1280,10 @@ impl GetResourcePolicyInput {
             fn update_http_builder(
                 input: &crate::input::GetResourcePolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1332,7 +1372,7 @@ impl GetResourcePolicyInput {
 pub mod get_secret_value_input {
 
     /// A builder for [`GetSecretValueInput`](crate::input::GetSecretValueInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) secret_id: std::option::Option<std::string::String>,
         pub(crate) version_id: std::option::Option<std::string::String>,
@@ -1381,7 +1421,7 @@ pub mod get_secret_value_input {
         /// Consumes the builder and constructs a [`GetSecretValueInput`](crate::input::GetSecretValueInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetSecretValueInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetSecretValueInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetSecretValueInput {
                 secret_id: self.secret_id,
@@ -1404,13 +1444,13 @@ impl GetSecretValueInput {
             crate::operation::GetSecretValue,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetSecretValueInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1418,8 +1458,10 @@ impl GetSecretValueInput {
             fn update_http_builder(
                 input: &crate::input::GetSecretValueInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1508,7 +1550,7 @@ impl GetSecretValueInput {
 pub mod list_secrets_input {
 
     /// A builder for [`ListSecretsInput`](crate::input::ListSecretsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1573,7 +1615,7 @@ pub mod list_secrets_input {
         /// Consumes the builder and constructs a [`ListSecretsInput`](crate::input::ListSecretsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListSecretsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListSecretsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListSecretsInput {
                 max_results: self.max_results,
@@ -1597,13 +1639,13 @@ impl ListSecretsInput {
             crate::operation::ListSecrets,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListSecretsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1611,8 +1653,10 @@ impl ListSecretsInput {
             fn update_http_builder(
                 input: &crate::input::ListSecretsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1701,7 +1745,7 @@ impl ListSecretsInput {
 pub mod list_secret_version_ids_input {
 
     /// A builder for [`ListSecretVersionIdsInput`](crate::input::ListSecretVersionIdsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) secret_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -1756,8 +1800,10 @@ pub mod list_secret_version_ids_input {
         /// Consumes the builder and constructs a [`ListSecretVersionIdsInput`](crate::input::ListSecretVersionIdsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListSecretVersionIdsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListSecretVersionIdsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListSecretVersionIdsInput {
                 secret_id: self.secret_id,
                 max_results: self.max_results,
@@ -1780,13 +1826,13 @@ impl ListSecretVersionIdsInput {
             crate::operation::ListSecretVersionIds,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListSecretVersionIdsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1794,8 +1840,10 @@ impl ListSecretVersionIdsInput {
             fn update_http_builder(
                 input: &crate::input::ListSecretVersionIdsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1886,7 +1934,7 @@ impl ListSecretVersionIdsInput {
 pub mod put_resource_policy_input {
 
     /// A builder for [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) secret_id: std::option::Option<std::string::String>,
         pub(crate) resource_policy: std::option::Option<std::string::String>,
@@ -1931,8 +1979,10 @@ pub mod put_resource_policy_input {
         /// Consumes the builder and constructs a [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutResourcePolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutResourcePolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutResourcePolicyInput {
                 secret_id: self.secret_id,
                 resource_policy: self.resource_policy,
@@ -1954,13 +2004,13 @@ impl PutResourcePolicyInput {
             crate::operation::PutResourcePolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutResourcePolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1968,8 +2018,10 @@ impl PutResourcePolicyInput {
             fn update_http_builder(
                 input: &crate::input::PutResourcePolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2058,7 +2110,7 @@ impl PutResourcePolicyInput {
 pub mod put_secret_value_input {
 
     /// A builder for [`PutSecretValueInput`](crate::input::PutSecretValueInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) secret_id: std::option::Option<std::string::String>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -2172,7 +2224,7 @@ pub mod put_secret_value_input {
         /// Consumes the builder and constructs a [`PutSecretValueInput`](crate::input::PutSecretValueInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutSecretValueInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::PutSecretValueInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::PutSecretValueInput {
                 secret_id: self.secret_id,
@@ -2181,6 +2233,17 @@ pub mod put_secret_value_input {
                 secret_string: self.secret_string,
                 version_stages: self.version_stages,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("secret_id", &self.secret_id);
+            formatter.field("client_request_token", &self.client_request_token);
+            formatter.field("secret_binary", &"*** Sensitive Data Redacted ***");
+            formatter.field("secret_string", &"*** Sensitive Data Redacted ***");
+            formatter.field("version_stages", &self.version_stages);
+            formatter.finish()
         }
     }
 }
@@ -2197,7 +2260,7 @@ impl PutSecretValueInput {
             crate::operation::PutSecretValue,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
@@ -2206,7 +2269,7 @@ impl PutSecretValueInput {
             fn uri_base(
                 _input: &crate::input::PutSecretValueInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2214,8 +2277,10 @@ impl PutSecretValueInput {
             fn update_http_builder(
                 input: &crate::input::PutSecretValueInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2304,7 +2369,7 @@ impl PutSecretValueInput {
 pub mod remove_regions_from_replication_input {
 
     /// A builder for [`RemoveRegionsFromReplicationInput`](crate::input::RemoveRegionsFromReplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) secret_id: std::option::Option<std::string::String>,
         pub(crate) remove_replica_regions: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2344,7 +2409,7 @@ pub mod remove_regions_from_replication_input {
             self,
         ) -> Result<
             crate::input::RemoveRegionsFromReplicationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::RemoveRegionsFromReplicationInput {
                 secret_id: self.secret_id,
@@ -2366,13 +2431,13 @@ impl RemoveRegionsFromReplicationInput {
             crate::operation::RemoveRegionsFromReplication,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RemoveRegionsFromReplicationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2380,8 +2445,10 @@ impl RemoveRegionsFromReplicationInput {
             fn update_http_builder(
                 input: &crate::input::RemoveRegionsFromReplicationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2469,7 +2536,7 @@ impl RemoveRegionsFromReplicationInput {
 pub mod replicate_secret_to_regions_input {
 
     /// A builder for [`ReplicateSecretToRegionsInput`](crate::input::ReplicateSecretToRegionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) secret_id: std::option::Option<std::string::String>,
         pub(crate) add_replica_regions:
@@ -2524,7 +2591,7 @@ pub mod replicate_secret_to_regions_input {
             self,
         ) -> Result<
             crate::input::ReplicateSecretToRegionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ReplicateSecretToRegionsInput {
                 secret_id: self.secret_id,
@@ -2549,13 +2616,13 @@ impl ReplicateSecretToRegionsInput {
             crate::operation::ReplicateSecretToRegions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ReplicateSecretToRegionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2563,8 +2630,10 @@ impl ReplicateSecretToRegionsInput {
             fn update_http_builder(
                 input: &crate::input::ReplicateSecretToRegionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2655,7 +2724,7 @@ impl ReplicateSecretToRegionsInput {
 pub mod restore_secret_input {
 
     /// A builder for [`RestoreSecretInput`](crate::input::RestoreSecretInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) secret_id: std::option::Option<std::string::String>,
     }
@@ -2675,7 +2744,7 @@ pub mod restore_secret_input {
         /// Consumes the builder and constructs a [`RestoreSecretInput`](crate::input::RestoreSecretInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::RestoreSecretInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::RestoreSecretInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::RestoreSecretInput {
                 secret_id: self.secret_id,
@@ -2696,13 +2765,13 @@ impl RestoreSecretInput {
             crate::operation::RestoreSecret,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RestoreSecretInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2710,8 +2779,10 @@ impl RestoreSecretInput {
             fn update_http_builder(
                 input: &crate::input::RestoreSecretInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2800,7 +2871,7 @@ impl RestoreSecretInput {
 pub mod rotate_secret_input {
 
     /// A builder for [`RotateSecretInput`](crate::input::RotateSecretInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) secret_id: std::option::Option<std::string::String>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -2881,7 +2952,7 @@ pub mod rotate_secret_input {
         /// Consumes the builder and constructs a [`RotateSecretInput`](crate::input::RotateSecretInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::RotateSecretInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::RotateSecretInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::RotateSecretInput {
                 secret_id: self.secret_id,
@@ -2906,7 +2977,7 @@ impl RotateSecretInput {
             crate::operation::RotateSecret,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
@@ -2915,7 +2986,7 @@ impl RotateSecretInput {
             fn uri_base(
                 _input: &crate::input::RotateSecretInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2923,8 +2994,10 @@ impl RotateSecretInput {
             fn update_http_builder(
                 input: &crate::input::RotateSecretInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3013,7 +3086,7 @@ impl RotateSecretInput {
 pub mod stop_replication_to_replica_input {
 
     /// A builder for [`StopReplicationToReplicaInput`](crate::input::StopReplicationToReplicaInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) secret_id: std::option::Option<std::string::String>,
     }
@@ -3033,7 +3106,7 @@ pub mod stop_replication_to_replica_input {
             self,
         ) -> Result<
             crate::input::StopReplicationToReplicaInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::StopReplicationToReplicaInput {
                 secret_id: self.secret_id,
@@ -3054,13 +3127,13 @@ impl StopReplicationToReplicaInput {
             crate::operation::StopReplicationToReplica,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StopReplicationToReplicaInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3068,8 +3141,10 @@ impl StopReplicationToReplicaInput {
             fn update_http_builder(
                 input: &crate::input::StopReplicationToReplicaInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3160,7 +3235,7 @@ impl StopReplicationToReplicaInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) secret_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3202,7 +3277,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 secret_id: self.secret_id,
@@ -3224,13 +3299,13 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3238,8 +3313,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3328,7 +3405,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) secret_id: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3372,7 +3449,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 secret_id: self.secret_id,
@@ -3394,13 +3471,13 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3408,8 +3485,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3498,7 +3577,7 @@ impl UntagResourceInput {
 pub mod update_secret_input {
 
     /// A builder for [`UpdateSecretInput`](crate::input::UpdateSecretInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) secret_id: std::option::Option<std::string::String>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -3602,7 +3681,7 @@ pub mod update_secret_input {
         /// Consumes the builder and constructs a [`UpdateSecretInput`](crate::input::UpdateSecretInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateSecretInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateSecretInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateSecretInput {
                 secret_id: self.secret_id,
@@ -3612,6 +3691,18 @@ pub mod update_secret_input {
                 secret_binary: self.secret_binary,
                 secret_string: self.secret_string,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("secret_id", &self.secret_id);
+            formatter.field("client_request_token", &self.client_request_token);
+            formatter.field("description", &self.description);
+            formatter.field("kms_key_id", &self.kms_key_id);
+            formatter.field("secret_binary", &"*** Sensitive Data Redacted ***");
+            formatter.field("secret_string", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -3628,7 +3719,7 @@ impl UpdateSecretInput {
             crate::operation::UpdateSecret,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
@@ -3637,7 +3728,7 @@ impl UpdateSecretInput {
             fn uri_base(
                 _input: &crate::input::UpdateSecretInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3645,8 +3736,10 @@ impl UpdateSecretInput {
             fn update_http_builder(
                 input: &crate::input::UpdateSecretInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3735,7 +3828,7 @@ impl UpdateSecretInput {
 pub mod update_secret_version_stage_input {
 
     /// A builder for [`UpdateSecretVersionStageInput`](crate::input::UpdateSecretVersionStageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) secret_id: std::option::Option<std::string::String>,
         pub(crate) version_stage: std::option::Option<std::string::String>,
@@ -3801,7 +3894,7 @@ pub mod update_secret_version_stage_input {
             self,
         ) -> Result<
             crate::input::UpdateSecretVersionStageInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateSecretVersionStageInput {
                 secret_id: self.secret_id,
@@ -3825,13 +3918,13 @@ impl UpdateSecretVersionStageInput {
             crate::operation::UpdateSecretVersionStage,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateSecretVersionStageInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3839,8 +3932,10 @@ impl UpdateSecretVersionStageInput {
             fn update_http_builder(
                 input: &crate::input::UpdateSecretVersionStageInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3931,7 +4026,7 @@ impl UpdateSecretVersionStageInput {
 pub mod validate_resource_policy_input {
 
     /// A builder for [`ValidateResourcePolicyInput`](crate::input::ValidateResourcePolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) secret_id: std::option::Option<std::string::String>,
         pub(crate) resource_policy: std::option::Option<std::string::String>,
@@ -3963,8 +4058,10 @@ pub mod validate_resource_policy_input {
         /// Consumes the builder and constructs a [`ValidateResourcePolicyInput`](crate::input::ValidateResourcePolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ValidateResourcePolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ValidateResourcePolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ValidateResourcePolicyInput {
                 secret_id: self.secret_id,
                 resource_policy: self.resource_policy,
@@ -3985,13 +4082,13 @@ impl ValidateResourcePolicyInput {
             crate::operation::ValidateResourcePolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ValidateResourcePolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3999,8 +4096,10 @@ impl ValidateResourcePolicyInput {
             fn update_http_builder(
                 input: &crate::input::ValidateResourcePolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4089,7 +4188,7 @@ impl ValidateResourcePolicyInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidateResourcePolicyInput {
     /// <p>This field is reserved for internal use.</p>
     #[doc(hidden)]
@@ -4108,18 +4207,10 @@ impl ValidateResourcePolicyInput {
         self.resource_policy.as_deref()
     }
 }
-impl std::fmt::Debug for ValidateResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidateResourcePolicyInput");
-        formatter.field("secret_id", &self.secret_id);
-        formatter.field("resource_policy", &self.resource_policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSecretVersionStageInput {
     /// <p>The ARN or the name of the secret with the version and staging labelsto modify.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
@@ -4154,16 +4245,6 @@ impl UpdateSecretVersionStageInput {
     /// <p>If the staging label is already attached to a different version of the secret, then you must also specify the <code>RemoveFromVersionId</code> parameter. </p>
     pub fn move_to_version_id(&self) -> std::option::Option<&str> {
         self.move_to_version_id.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateSecretVersionStageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSecretVersionStageInput");
-        formatter.field("secret_id", &self.secret_id);
-        formatter.field("version_stage", &self.version_stage);
-        formatter.field("remove_from_version_id", &self.remove_from_version_id);
-        formatter.field("move_to_version_id", &self.move_to_version_id);
-        formatter.finish()
     }
 }
 
@@ -4253,7 +4334,7 @@ impl std::fmt::Debug for UpdateSecretInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The ARN or name of the secret.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
@@ -4278,18 +4359,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("secret_id", &self.secret_id);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The identifier for the secret to attach tags to. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
@@ -4312,18 +4385,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("secret_id", &self.secret_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopReplicationToReplicaInput {
     /// <p>The ARN of the primary secret. </p>
     #[doc(hidden)]
@@ -4335,17 +4400,10 @@ impl StopReplicationToReplicaInput {
         self.secret_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopReplicationToReplicaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopReplicationToReplicaInput");
-        formatter.field("secret_id", &self.secret_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RotateSecretInput {
     /// <p>The ARN or name of the secret to rotate.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
@@ -4395,21 +4453,10 @@ impl RotateSecretInput {
         self.rotate_immediately
     }
 }
-impl std::fmt::Debug for RotateSecretInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RotateSecretInput");
-        formatter.field("secret_id", &self.secret_id);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("rotation_lambda_arn", &self.rotation_lambda_arn);
-        formatter.field("rotation_rules", &self.rotation_rules);
-        formatter.field("rotate_immediately", &self.rotate_immediately);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestoreSecretInput {
     /// <p>The ARN or name of the secret to restore.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
@@ -4423,17 +4470,10 @@ impl RestoreSecretInput {
         self.secret_id.as_deref()
     }
 }
-impl std::fmt::Debug for RestoreSecretInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestoreSecretInput");
-        formatter.field("secret_id", &self.secret_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicateSecretToRegionsInput {
     /// <p>The ARN or name of the secret to replicate.</p>
     #[doc(hidden)]
@@ -4459,22 +4499,10 @@ impl ReplicateSecretToRegionsInput {
         self.force_overwrite_replica_secret
     }
 }
-impl std::fmt::Debug for ReplicateSecretToRegionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicateSecretToRegionsInput");
-        formatter.field("secret_id", &self.secret_id);
-        formatter.field("add_replica_regions", &self.add_replica_regions);
-        formatter.field(
-            "force_overwrite_replica_secret",
-            &self.force_overwrite_replica_secret,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveRegionsFromReplicationInput {
     /// <p>The ARN or name of the secret.</p>
     #[doc(hidden)]
@@ -4491,14 +4519,6 @@ impl RemoveRegionsFromReplicationInput {
     /// <p>The Regions of the replicas to remove.</p>
     pub fn remove_replica_regions(&self) -> std::option::Option<&[std::string::String]> {
         self.remove_replica_regions.as_deref()
-    }
-}
-impl std::fmt::Debug for RemoveRegionsFromReplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveRegionsFromReplicationInput");
-        formatter.field("secret_id", &self.secret_id);
-        formatter.field("remove_replica_regions", &self.remove_replica_regions);
-        formatter.finish()
     }
 }
 
@@ -4592,7 +4612,7 @@ impl std::fmt::Debug for PutSecretValueInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutResourcePolicyInput {
     /// <p>The ARN or name of the secret to attach the resource-based policy.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
@@ -4620,19 +4640,10 @@ impl PutResourcePolicyInput {
         self.block_public_policy
     }
 }
-impl std::fmt::Debug for PutResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutResourcePolicyInput");
-        formatter.field("secret_id", &self.secret_id);
-        formatter.field("resource_policy", &self.resource_policy);
-        formatter.field("block_public_policy", &self.block_public_policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSecretVersionIdsInput {
     /// <p>The ARN or name of the secret whose versions you want to list.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
@@ -4669,20 +4680,10 @@ impl ListSecretVersionIdsInput {
         self.include_deprecated
     }
 }
-impl std::fmt::Debug for ListSecretVersionIdsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSecretVersionIdsInput");
-        formatter.field("secret_id", &self.secret_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("include_deprecated", &self.include_deprecated);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSecretsInput {
     /// <p>The number of results to include in the response.</p>
     /// <p>If there are more results available, in the response, Secrets Manager includes <code>NextToken</code>. To get the next results, call <code>ListSecrets</code> again with the value from <code>NextToken</code>.</p>
@@ -4717,20 +4718,10 @@ impl ListSecretsInput {
         self.sort_order.as_ref()
     }
 }
-impl std::fmt::Debug for ListSecretsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSecretsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("filters", &self.filters);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSecretValueInput {
     /// <p>The ARN or name of the secret to retrieve.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
@@ -4762,19 +4753,10 @@ impl GetSecretValueInput {
         self.version_stage.as_deref()
     }
 }
-impl std::fmt::Debug for GetSecretValueInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSecretValueInput");
-        formatter.field("secret_id", &self.secret_id);
-        formatter.field("version_id", &self.version_id);
-        formatter.field("version_stage", &self.version_stage);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourcePolicyInput {
     /// <p>The ARN or name of the secret to retrieve the attached resource-based policy for.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
@@ -4788,17 +4770,10 @@ impl GetResourcePolicyInput {
         self.secret_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourcePolicyInput");
-        formatter.field("secret_id", &self.secret_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRandomPasswordInput {
     /// <p>The length of the password. If you don't include this parameter, the default length is 32 characters.</p>
     #[doc(hidden)]
@@ -4859,27 +4834,10 @@ impl GetRandomPasswordInput {
         self.require_each_included_type
     }
 }
-impl std::fmt::Debug for GetRandomPasswordInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRandomPasswordInput");
-        formatter.field("password_length", &self.password_length);
-        formatter.field("exclude_characters", &self.exclude_characters);
-        formatter.field("exclude_numbers", &self.exclude_numbers);
-        formatter.field("exclude_punctuation", &self.exclude_punctuation);
-        formatter.field("exclude_uppercase", &self.exclude_uppercase);
-        formatter.field("exclude_lowercase", &self.exclude_lowercase);
-        formatter.field("include_space", &self.include_space);
-        formatter.field(
-            "require_each_included_type",
-            &self.require_each_included_type,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSecretInput {
     /// <p>The ARN or name of the secret. </p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
@@ -4893,17 +4851,10 @@ impl DescribeSecretInput {
         self.secret_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeSecretInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSecretInput");
-        formatter.field("secret_id", &self.secret_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSecretInput {
     /// <p>The ARN or name of the secret to delete.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
@@ -4937,22 +4888,10 @@ impl DeleteSecretInput {
         self.force_delete_without_recovery
     }
 }
-impl std::fmt::Debug for DeleteSecretInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSecretInput");
-        formatter.field("secret_id", &self.secret_id);
-        formatter.field("recovery_window_in_days", &self.recovery_window_in_days);
-        formatter.field(
-            "force_delete_without_recovery",
-            &self.force_delete_without_recovery,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourcePolicyInput {
     /// <p>The ARN or name of the secret to delete the attached resource-based policy for.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
@@ -4964,13 +4903,6 @@ impl DeleteResourcePolicyInput {
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub fn secret_id(&self) -> std::option::Option<&str> {
         self.secret_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteResourcePolicyInput");
-        formatter.field("secret_id", &self.secret_id);
-        formatter.finish()
     }
 }
 
@@ -5127,7 +5059,7 @@ impl std::fmt::Debug for CreateSecretInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelRotateSecretInput {
     /// <p>The ARN or name of the secret.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
@@ -5139,12 +5071,5 @@ impl CancelRotateSecretInput {
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub fn secret_id(&self) -> std::option::Option<&str> {
         self.secret_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CancelRotateSecretInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelRotateSecretInput");
-        formatter.field("secret_id", &self.secret_id);
-        formatter.finish()
     }
 }

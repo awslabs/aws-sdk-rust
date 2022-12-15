@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_access_point_input {
 
     /// A builder for [`CreateAccessPointInput`](crate::input::CreateAccessPointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -87,8 +87,10 @@ pub mod create_access_point_input {
         /// Consumes the builder and constructs a [`CreateAccessPointInput`](crate::input::CreateAccessPointInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateAccessPointInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateAccessPointInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateAccessPointInput {
                 client_token: self.client_token,
                 tags: self.tags,
@@ -112,7 +114,7 @@ impl CreateAccessPointInput {
             crate::operation::CreateAccessPoint,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -121,7 +123,7 @@ impl CreateAccessPointInput {
             fn uri_base(
                 _input: &crate::input::CreateAccessPointInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/2015-02-01/access-points").expect("formatting should succeed");
                 Ok(())
             }
@@ -129,8 +131,10 @@ impl CreateAccessPointInput {
             fn update_http_builder(
                 input: &crate::input::CreateAccessPointInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -214,7 +218,7 @@ impl CreateAccessPointInput {
 pub mod create_file_system_input {
 
     /// A builder for [`CreateFileSystemInput`](crate::input::CreateFileSystemInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) creation_token: std::option::Option<std::string::String>,
         pub(crate) performance_mode: std::option::Option<crate::model::PerformanceMode>,
@@ -378,8 +382,10 @@ pub mod create_file_system_input {
         /// Consumes the builder and constructs a [`CreateFileSystemInput`](crate::input::CreateFileSystemInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateFileSystemInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateFileSystemInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateFileSystemInput {
                 creation_token: self.creation_token,
                 performance_mode: self.performance_mode,
@@ -407,7 +413,7 @@ impl CreateFileSystemInput {
             crate::operation::CreateFileSystem,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.creation_token.is_none() {
             self.creation_token = Some(_config.make_token.make_idempotency_token());
@@ -416,7 +422,7 @@ impl CreateFileSystemInput {
             fn uri_base(
                 _input: &crate::input::CreateFileSystemInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/2015-02-01/file-systems").expect("formatting should succeed");
                 Ok(())
             }
@@ -424,8 +430,10 @@ impl CreateFileSystemInput {
             fn update_http_builder(
                 input: &crate::input::CreateFileSystemInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -509,7 +517,7 @@ impl CreateFileSystemInput {
 pub mod create_mount_target_input {
 
     /// A builder for [`CreateMountTargetInput`](crate::input::CreateMountTargetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
         pub(crate) subnet_id: std::option::Option<std::string::String>,
@@ -572,8 +580,10 @@ pub mod create_mount_target_input {
         /// Consumes the builder and constructs a [`CreateMountTargetInput`](crate::input::CreateMountTargetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateMountTargetInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateMountTargetInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateMountTargetInput {
                 file_system_id: self.file_system_id,
                 subnet_id: self.subnet_id,
@@ -596,13 +606,13 @@ impl CreateMountTargetInput {
             crate::operation::CreateMountTarget,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateMountTargetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/2015-02-01/mount-targets").expect("formatting should succeed");
                 Ok(())
             }
@@ -610,8 +620,10 @@ impl CreateMountTargetInput {
             fn update_http_builder(
                 input: &crate::input::CreateMountTargetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -695,7 +707,7 @@ impl CreateMountTargetInput {
 pub mod create_replication_configuration_input {
 
     /// A builder for [`CreateReplicationConfigurationInput`](crate::input::CreateReplicationConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_file_system_id: std::option::Option<std::string::String>,
         pub(crate) destinations:
@@ -739,7 +751,7 @@ pub mod create_replication_configuration_input {
             self,
         ) -> Result<
             crate::input::CreateReplicationConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateReplicationConfigurationInput {
                 source_file_system_id: self.source_file_system_id,
@@ -761,26 +773,31 @@ impl CreateReplicationConfigurationInput {
             crate::operation::CreateReplicationConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateReplicationConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.source_file_system_id;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "source_file_system_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let source_file_system_id = aws_smithy_http::label::fmt_string(input_1, false);
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "source_file_system_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let source_file_system_id = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if source_file_system_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "source_file_system_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "source_file_system_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -794,8 +811,10 @@ impl CreateReplicationConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::CreateReplicationConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -878,7 +897,7 @@ impl CreateReplicationConfigurationInput {
 pub mod create_tags_input {
 
     /// A builder for [`CreateTagsInput`](crate::input::CreateTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -919,7 +938,8 @@ pub mod create_tags_input {
         /// Consumes the builder and constructs a [`CreateTagsInput`](crate::input::CreateTagsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateTagsInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::CreateTagsInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::CreateTagsInput {
                 file_system_id: self.file_system_id,
                 tags: self.tags,
@@ -940,26 +960,31 @@ impl CreateTagsInput {
             crate::operation::CreateTags,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateTagsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_2 = &_input.file_system_id;
-                let input_2 = input_2.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "file_system_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let file_system_id = aws_smithy_http::label::fmt_string(input_2, false);
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "file_system_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let file_system_id = aws_smithy_http::label::fmt_string(
+                    input_2,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if file_system_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "file_system_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "file_system_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -973,8 +998,10 @@ impl CreateTagsInput {
             fn update_http_builder(
                 input: &crate::input::CreateTagsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1058,7 +1085,7 @@ impl CreateTagsInput {
 pub mod delete_access_point_input {
 
     /// A builder for [`DeleteAccessPointInput`](crate::input::DeleteAccessPointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_point_id: std::option::Option<std::string::String>,
     }
@@ -1079,8 +1106,10 @@ pub mod delete_access_point_input {
         /// Consumes the builder and constructs a [`DeleteAccessPointInput`](crate::input::DeleteAccessPointInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteAccessPointInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteAccessPointInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteAccessPointInput {
                 access_point_id: self.access_point_id,
             })
@@ -1100,26 +1129,31 @@ impl DeleteAccessPointInput {
             crate::operation::DeleteAccessPoint,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteAccessPointInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_3 = &_input.access_point_id;
-                let input_3 = input_3.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "access_point_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let access_point_id = aws_smithy_http::label::fmt_string(input_3, false);
+                let input_3 = input_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "access_point_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let access_point_id = aws_smithy_http::label::fmt_string(
+                    input_3,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if access_point_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "access_point_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "access_point_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1133,8 +1167,10 @@ impl DeleteAccessPointInput {
             fn update_http_builder(
                 input: &crate::input::DeleteAccessPointInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1204,7 +1240,7 @@ impl DeleteAccessPointInput {
 pub mod delete_file_system_input {
 
     /// A builder for [`DeleteFileSystemInput`](crate::input::DeleteFileSystemInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
     }
@@ -1225,8 +1261,10 @@ pub mod delete_file_system_input {
         /// Consumes the builder and constructs a [`DeleteFileSystemInput`](crate::input::DeleteFileSystemInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteFileSystemInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteFileSystemInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteFileSystemInput {
                 file_system_id: self.file_system_id,
             })
@@ -1246,26 +1284,31 @@ impl DeleteFileSystemInput {
             crate::operation::DeleteFileSystem,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteFileSystemInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_4 = &_input.file_system_id;
-                let input_4 = input_4.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "file_system_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let file_system_id = aws_smithy_http::label::fmt_string(input_4, false);
+                let input_4 = input_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "file_system_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let file_system_id = aws_smithy_http::label::fmt_string(
+                    input_4,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if file_system_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "file_system_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "file_system_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1279,8 +1322,10 @@ impl DeleteFileSystemInput {
             fn update_http_builder(
                 input: &crate::input::DeleteFileSystemInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1350,7 +1395,7 @@ impl DeleteFileSystemInput {
 pub mod delete_file_system_policy_input {
 
     /// A builder for [`DeleteFileSystemPolicyInput`](crate::input::DeleteFileSystemPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
     }
@@ -1371,8 +1416,10 @@ pub mod delete_file_system_policy_input {
         /// Consumes the builder and constructs a [`DeleteFileSystemPolicyInput`](crate::input::DeleteFileSystemPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteFileSystemPolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteFileSystemPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteFileSystemPolicyInput {
                 file_system_id: self.file_system_id,
             })
@@ -1392,26 +1439,31 @@ impl DeleteFileSystemPolicyInput {
             crate::operation::DeleteFileSystemPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteFileSystemPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_5 = &_input.file_system_id;
-                let input_5 = input_5.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "file_system_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let file_system_id = aws_smithy_http::label::fmt_string(input_5, false);
+                let input_5 = input_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "file_system_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let file_system_id = aws_smithy_http::label::fmt_string(
+                    input_5,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if file_system_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "file_system_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "file_system_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1425,8 +1477,10 @@ impl DeleteFileSystemPolicyInput {
             fn update_http_builder(
                 input: &crate::input::DeleteFileSystemPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1496,7 +1550,7 @@ impl DeleteFileSystemPolicyInput {
 pub mod delete_mount_target_input {
 
     /// A builder for [`DeleteMountTargetInput`](crate::input::DeleteMountTargetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mount_target_id: std::option::Option<std::string::String>,
     }
@@ -1517,8 +1571,10 @@ pub mod delete_mount_target_input {
         /// Consumes the builder and constructs a [`DeleteMountTargetInput`](crate::input::DeleteMountTargetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteMountTargetInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteMountTargetInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteMountTargetInput {
                 mount_target_id: self.mount_target_id,
             })
@@ -1538,26 +1594,31 @@ impl DeleteMountTargetInput {
             crate::operation::DeleteMountTarget,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteMountTargetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_6 = &_input.mount_target_id;
-                let input_6 = input_6.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mount_target_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let mount_target_id = aws_smithy_http::label::fmt_string(input_6, false);
+                let input_6 = input_6.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mount_target_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let mount_target_id = aws_smithy_http::label::fmt_string(
+                    input_6,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if mount_target_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mount_target_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mount_target_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1571,8 +1632,10 @@ impl DeleteMountTargetInput {
             fn update_http_builder(
                 input: &crate::input::DeleteMountTargetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1642,7 +1705,7 @@ impl DeleteMountTargetInput {
 pub mod delete_replication_configuration_input {
 
     /// A builder for [`DeleteReplicationConfigurationInput`](crate::input::DeleteReplicationConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_file_system_id: std::option::Option<std::string::String>,
     }
@@ -1665,7 +1728,7 @@ pub mod delete_replication_configuration_input {
             self,
         ) -> Result<
             crate::input::DeleteReplicationConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteReplicationConfigurationInput {
                 source_file_system_id: self.source_file_system_id,
@@ -1686,26 +1749,31 @@ impl DeleteReplicationConfigurationInput {
             crate::operation::DeleteReplicationConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteReplicationConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_7 = &_input.source_file_system_id;
-                let input_7 = input_7.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "source_file_system_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let source_file_system_id = aws_smithy_http::label::fmt_string(input_7, false);
+                let input_7 = input_7.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "source_file_system_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let source_file_system_id = aws_smithy_http::label::fmt_string(
+                    input_7,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if source_file_system_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "source_file_system_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "source_file_system_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1719,8 +1787,10 @@ impl DeleteReplicationConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::DeleteReplicationConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1790,7 +1860,7 @@ impl DeleteReplicationConfigurationInput {
 pub mod delete_tags_input {
 
     /// A builder for [`DeleteTagsInput`](crate::input::DeleteTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1831,7 +1901,8 @@ pub mod delete_tags_input {
         /// Consumes the builder and constructs a [`DeleteTagsInput`](crate::input::DeleteTagsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteTagsInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::DeleteTagsInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::DeleteTagsInput {
                 file_system_id: self.file_system_id,
                 tag_keys: self.tag_keys,
@@ -1852,26 +1923,31 @@ impl DeleteTagsInput {
             crate::operation::DeleteTags,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteTagsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_8 = &_input.file_system_id;
-                let input_8 = input_8.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "file_system_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let file_system_id = aws_smithy_http::label::fmt_string(input_8, false);
+                let input_8 = input_8.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "file_system_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let file_system_id = aws_smithy_http::label::fmt_string(
+                    input_8,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if file_system_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "file_system_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "file_system_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1885,8 +1961,10 @@ impl DeleteTagsInput {
             fn update_http_builder(
                 input: &crate::input::DeleteTagsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1970,7 +2048,7 @@ impl DeleteTagsInput {
 pub mod describe_access_points_input {
 
     /// A builder for [`DescribeAccessPointsInput`](crate::input::DescribeAccessPointsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2027,8 +2105,10 @@ pub mod describe_access_points_input {
         /// Consumes the builder and constructs a [`DescribeAccessPointsInput`](crate::input::DescribeAccessPointsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeAccessPointsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeAccessPointsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeAccessPointsInput {
                 max_results: self.max_results,
                 next_token: self.next_token,
@@ -2051,41 +2131,49 @@ impl DescribeAccessPointsInput {
             crate::operation::DescribeAccessPoints,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeAccessPointsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/2015-02-01/access-points").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::DescribeAccessPointsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_9) = &_input.max_results {
-                    query.push_kv(
-                        "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_9).encode(),
-                    );
+                    if *inner_9 != 0 {
+                        query.push_kv(
+                            "MaxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_9).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_10) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_10));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_10));
+                    }
                 }
                 if let Some(inner_11) = &_input.access_point_id {
-                    query.push_kv(
-                        "AccessPointId",
-                        &aws_smithy_http::query::fmt_string(&inner_11),
-                    );
+                    {
+                        query.push_kv(
+                            "AccessPointId",
+                            &aws_smithy_http::query::fmt_string(&inner_11),
+                        );
+                    }
                 }
                 if let Some(inner_12) = &_input.file_system_id {
-                    query.push_kv(
-                        "FileSystemId",
-                        &aws_smithy_http::query::fmt_string(&inner_12),
-                    );
+                    {
+                        query.push_kv(
+                            "FileSystemId",
+                            &aws_smithy_http::query::fmt_string(&inner_12),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -2093,8 +2181,10 @@ impl DescribeAccessPointsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeAccessPointsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2165,7 +2255,7 @@ impl DescribeAccessPointsInput {
 pub mod describe_account_preferences_input {
 
     /// A builder for [`DescribeAccountPreferencesInput`](crate::input::DescribeAccountPreferencesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2196,7 +2286,7 @@ pub mod describe_account_preferences_input {
             self,
         ) -> Result<
             crate::input::DescribeAccountPreferencesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeAccountPreferencesInput {
                 next_token: self.next_token,
@@ -2218,13 +2308,13 @@ impl DescribeAccountPreferencesInput {
             crate::operation::DescribeAccountPreferences,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeAccountPreferencesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/2015-02-01/account-preferences")
                     .expect("formatting should succeed");
                 Ok(())
@@ -2233,8 +2323,10 @@ impl DescribeAccountPreferencesInput {
             fn update_http_builder(
                 input: &crate::input::DescribeAccountPreferencesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2320,7 +2412,7 @@ impl DescribeAccountPreferencesInput {
 pub mod describe_backup_policy_input {
 
     /// A builder for [`DescribeBackupPolicyInput`](crate::input::DescribeBackupPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
     }
@@ -2341,8 +2433,10 @@ pub mod describe_backup_policy_input {
         /// Consumes the builder and constructs a [`DescribeBackupPolicyInput`](crate::input::DescribeBackupPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeBackupPolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeBackupPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeBackupPolicyInput {
                 file_system_id: self.file_system_id,
             })
@@ -2362,26 +2456,31 @@ impl DescribeBackupPolicyInput {
             crate::operation::DescribeBackupPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeBackupPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_13 = &_input.file_system_id;
-                let input_13 = input_13.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "file_system_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let file_system_id = aws_smithy_http::label::fmt_string(input_13, false);
+                let input_13 = input_13.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "file_system_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let file_system_id = aws_smithy_http::label::fmt_string(
+                    input_13,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if file_system_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "file_system_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "file_system_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2395,8 +2494,10 @@ impl DescribeBackupPolicyInput {
             fn update_http_builder(
                 input: &crate::input::DescribeBackupPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2466,7 +2567,7 @@ impl DescribeBackupPolicyInput {
 pub mod describe_file_system_policy_input {
 
     /// A builder for [`DescribeFileSystemPolicyInput`](crate::input::DescribeFileSystemPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
     }
@@ -2489,7 +2590,7 @@ pub mod describe_file_system_policy_input {
             self,
         ) -> Result<
             crate::input::DescribeFileSystemPolicyInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeFileSystemPolicyInput {
                 file_system_id: self.file_system_id,
@@ -2510,26 +2611,31 @@ impl DescribeFileSystemPolicyInput {
             crate::operation::DescribeFileSystemPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeFileSystemPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_14 = &_input.file_system_id;
-                let input_14 = input_14.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "file_system_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let file_system_id = aws_smithy_http::label::fmt_string(input_14, false);
+                let input_14 = input_14.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "file_system_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let file_system_id = aws_smithy_http::label::fmt_string(
+                    input_14,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if file_system_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "file_system_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "file_system_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2543,8 +2649,10 @@ impl DescribeFileSystemPolicyInput {
             fn update_http_builder(
                 input: &crate::input::DescribeFileSystemPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2614,7 +2722,7 @@ impl DescribeFileSystemPolicyInput {
 pub mod describe_file_systems_input {
 
     /// A builder for [`DescribeFileSystemsInput`](crate::input::DescribeFileSystemsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_items: std::option::Option<i32>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -2671,8 +2779,10 @@ pub mod describe_file_systems_input {
         /// Consumes the builder and constructs a [`DescribeFileSystemsInput`](crate::input::DescribeFileSystemsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeFileSystemsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeFileSystemsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeFileSystemsInput {
                 max_items: self.max_items,
                 marker: self.marker,
@@ -2695,41 +2805,49 @@ impl DescribeFileSystemsInput {
             crate::operation::DescribeFileSystems,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeFileSystemsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/2015-02-01/file-systems").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::DescribeFileSystemsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_15) = &_input.max_items {
-                    query.push_kv(
-                        "MaxItems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_15).encode(),
-                    );
+                    if *inner_15 != 0 {
+                        query.push_kv(
+                            "MaxItems",
+                            aws_smithy_types::primitive::Encoder::from(*inner_15).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_16) = &_input.marker {
-                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_16));
+                    {
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_16));
+                    }
                 }
                 if let Some(inner_17) = &_input.creation_token {
-                    query.push_kv(
-                        "CreationToken",
-                        &aws_smithy_http::query::fmt_string(&inner_17),
-                    );
+                    {
+                        query.push_kv(
+                            "CreationToken",
+                            &aws_smithy_http::query::fmt_string(&inner_17),
+                        );
+                    }
                 }
                 if let Some(inner_18) = &_input.file_system_id {
-                    query.push_kv(
-                        "FileSystemId",
-                        &aws_smithy_http::query::fmt_string(&inner_18),
-                    );
+                    {
+                        query.push_kv(
+                            "FileSystemId",
+                            &aws_smithy_http::query::fmt_string(&inner_18),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -2737,8 +2855,10 @@ impl DescribeFileSystemsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeFileSystemsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2809,7 +2929,7 @@ impl DescribeFileSystemsInput {
 pub mod describe_lifecycle_configuration_input {
 
     /// A builder for [`DescribeLifecycleConfigurationInput`](crate::input::DescribeLifecycleConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
     }
@@ -2832,7 +2952,7 @@ pub mod describe_lifecycle_configuration_input {
             self,
         ) -> Result<
             crate::input::DescribeLifecycleConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeLifecycleConfigurationInput {
                 file_system_id: self.file_system_id,
@@ -2853,26 +2973,31 @@ impl DescribeLifecycleConfigurationInput {
             crate::operation::DescribeLifecycleConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeLifecycleConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_19 = &_input.file_system_id;
-                let input_19 = input_19.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "file_system_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let file_system_id = aws_smithy_http::label::fmt_string(input_19, false);
+                let input_19 = input_19.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "file_system_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let file_system_id = aws_smithy_http::label::fmt_string(
+                    input_19,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if file_system_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "file_system_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "file_system_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2886,8 +3011,10 @@ impl DescribeLifecycleConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::DescribeLifecycleConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2957,7 +3084,7 @@ impl DescribeLifecycleConfigurationInput {
 pub mod describe_mount_targets_input {
 
     /// A builder for [`DescribeMountTargetsInput`](crate::input::DescribeMountTargetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_items: std::option::Option<i32>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -3028,8 +3155,10 @@ pub mod describe_mount_targets_input {
         /// Consumes the builder and constructs a [`DescribeMountTargetsInput`](crate::input::DescribeMountTargetsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeMountTargetsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeMountTargetsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeMountTargetsInput {
                 max_items: self.max_items,
                 marker: self.marker,
@@ -3053,47 +3182,57 @@ impl DescribeMountTargetsInput {
             crate::operation::DescribeMountTargets,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeMountTargetsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/2015-02-01/mount-targets").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::DescribeMountTargetsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_20) = &_input.max_items {
-                    query.push_kv(
-                        "MaxItems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_20).encode(),
-                    );
+                    if *inner_20 != 0 {
+                        query.push_kv(
+                            "MaxItems",
+                            aws_smithy_types::primitive::Encoder::from(*inner_20).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_21) = &_input.marker {
-                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_21));
+                    {
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_21));
+                    }
                 }
                 if let Some(inner_22) = &_input.file_system_id {
-                    query.push_kv(
-                        "FileSystemId",
-                        &aws_smithy_http::query::fmt_string(&inner_22),
-                    );
+                    {
+                        query.push_kv(
+                            "FileSystemId",
+                            &aws_smithy_http::query::fmt_string(&inner_22),
+                        );
+                    }
                 }
                 if let Some(inner_23) = &_input.mount_target_id {
-                    query.push_kv(
-                        "MountTargetId",
-                        &aws_smithy_http::query::fmt_string(&inner_23),
-                    );
+                    {
+                        query.push_kv(
+                            "MountTargetId",
+                            &aws_smithy_http::query::fmt_string(&inner_23),
+                        );
+                    }
                 }
                 if let Some(inner_24) = &_input.access_point_id {
-                    query.push_kv(
-                        "AccessPointId",
-                        &aws_smithy_http::query::fmt_string(&inner_24),
-                    );
+                    {
+                        query.push_kv(
+                            "AccessPointId",
+                            &aws_smithy_http::query::fmt_string(&inner_24),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -3101,8 +3240,10 @@ impl DescribeMountTargetsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeMountTargetsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3173,7 +3314,7 @@ impl DescribeMountTargetsInput {
 pub mod describe_mount_target_security_groups_input {
 
     /// A builder for [`DescribeMountTargetSecurityGroupsInput`](crate::input::DescribeMountTargetSecurityGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mount_target_id: std::option::Option<std::string::String>,
     }
@@ -3196,7 +3337,7 @@ pub mod describe_mount_target_security_groups_input {
             self,
         ) -> Result<
             crate::input::DescribeMountTargetSecurityGroupsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeMountTargetSecurityGroupsInput {
                 mount_target_id: self.mount_target_id,
@@ -3217,26 +3358,31 @@ impl DescribeMountTargetSecurityGroupsInput {
             crate::operation::DescribeMountTargetSecurityGroups,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeMountTargetSecurityGroupsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_25 = &_input.mount_target_id;
-                let input_25 = input_25.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mount_target_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let mount_target_id = aws_smithy_http::label::fmt_string(input_25, false);
+                let input_25 = input_25.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mount_target_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let mount_target_id = aws_smithy_http::label::fmt_string(
+                    input_25,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if mount_target_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mount_target_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mount_target_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3250,8 +3396,10 @@ impl DescribeMountTargetSecurityGroupsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeMountTargetSecurityGroupsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -3321,7 +3469,7 @@ impl DescribeMountTargetSecurityGroupsInput {
 pub mod describe_replication_configurations_input {
 
     /// A builder for [`DescribeReplicationConfigurationsInput`](crate::input::DescribeReplicationConfigurationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3366,7 +3514,7 @@ pub mod describe_replication_configurations_input {
             self,
         ) -> Result<
             crate::input::DescribeReplicationConfigurationsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeReplicationConfigurationsInput {
                 file_system_id: self.file_system_id,
@@ -3389,13 +3537,13 @@ impl DescribeReplicationConfigurationsInput {
             crate::operation::DescribeReplicationConfigurations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeReplicationConfigurationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(
                     output,
                     "/2015-02-01/file-systems/replication-configurations"
@@ -3406,22 +3554,28 @@ impl DescribeReplicationConfigurationsInput {
             fn uri_query(
                 _input: &crate::input::DescribeReplicationConfigurationsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_26) = &_input.file_system_id {
-                    query.push_kv(
-                        "FileSystemId",
-                        &aws_smithy_http::query::fmt_string(&inner_26),
-                    );
+                    {
+                        query.push_kv(
+                            "FileSystemId",
+                            &aws_smithy_http::query::fmt_string(&inner_26),
+                        );
+                    }
                 }
                 if let Some(inner_27) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_27));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_27));
+                    }
                 }
                 if let Some(inner_28) = &_input.max_results {
-                    query.push_kv(
-                        "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_28).encode(),
-                    );
+                    if *inner_28 != 0 {
+                        query.push_kv(
+                            "MaxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_28).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -3429,8 +3583,10 @@ impl DescribeReplicationConfigurationsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeReplicationConfigurationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3501,7 +3657,7 @@ impl DescribeReplicationConfigurationsInput {
 pub mod describe_tags_input {
 
     /// A builder for [`DescribeTagsInput`](crate::input::DescribeTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_items: std::option::Option<i32>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -3544,7 +3700,7 @@ pub mod describe_tags_input {
         /// Consumes the builder and constructs a [`DescribeTagsInput`](crate::input::DescribeTagsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeTagsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeTagsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeTagsInput {
                 max_items: self.max_items,
@@ -3567,26 +3723,31 @@ impl DescribeTagsInput {
             crate::operation::DescribeTags,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeTagsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_29 = &_input.file_system_id;
-                let input_29 = input_29.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "file_system_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let file_system_id = aws_smithy_http::label::fmt_string(input_29, false);
+                let input_29 = input_29.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "file_system_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let file_system_id = aws_smithy_http::label::fmt_string(
+                    input_29,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if file_system_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "file_system_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "file_system_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3599,16 +3760,20 @@ impl DescribeTagsInput {
             fn uri_query(
                 _input: &crate::input::DescribeTagsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_30) = &_input.max_items {
-                    query.push_kv(
-                        "MaxItems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_30).encode(),
-                    );
+                    if *inner_30 != 0 {
+                        query.push_kv(
+                            "MaxItems",
+                            aws_smithy_types::primitive::Encoder::from(*inner_30).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_31) = &_input.marker {
-                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_31));
+                    {
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_31));
+                    }
                 }
                 Ok(())
             }
@@ -3616,8 +3781,10 @@ impl DescribeTagsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeTagsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3688,7 +3855,7 @@ impl DescribeTagsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3728,8 +3895,10 @@ pub mod list_tags_for_resource_input {
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_id: self.resource_id,
                 max_results: self.max_results,
@@ -3751,26 +3920,31 @@ impl ListTagsForResourceInput {
             crate::operation::ListTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_32 = &_input.resource_id;
-                let input_32 = input_32.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource_id = aws_smithy_http::label::fmt_string(input_32, false);
+                let input_32 = input_32.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_id = aws_smithy_http::label::fmt_string(
+                    input_32,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3783,16 +3957,20 @@ impl ListTagsForResourceInput {
             fn uri_query(
                 _input: &crate::input::ListTagsForResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_33) = &_input.max_results {
-                    query.push_kv(
-                        "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_33).encode(),
-                    );
+                    if *inner_33 != 0 {
+                        query.push_kv(
+                            "MaxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_33).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_34) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_34));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_34));
+                    }
                 }
                 Ok(())
             }
@@ -3800,8 +3978,10 @@ impl ListTagsForResourceInput {
             fn update_http_builder(
                 input: &crate::input::ListTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3872,7 +4052,7 @@ impl ListTagsForResourceInput {
 pub mod modify_mount_target_security_groups_input {
 
     /// A builder for [`ModifyMountTargetSecurityGroupsInput`](crate::input::ModifyMountTargetSecurityGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mount_target_id: std::option::Option<std::string::String>,
         pub(crate) security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3915,7 +4095,7 @@ pub mod modify_mount_target_security_groups_input {
             self,
         ) -> Result<
             crate::input::ModifyMountTargetSecurityGroupsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ModifyMountTargetSecurityGroupsInput {
                 mount_target_id: self.mount_target_id,
@@ -3937,26 +4117,31 @@ impl ModifyMountTargetSecurityGroupsInput {
             crate::operation::ModifyMountTargetSecurityGroups,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ModifyMountTargetSecurityGroupsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_35 = &_input.mount_target_id;
-                let input_35 = input_35.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mount_target_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let mount_target_id = aws_smithy_http::label::fmt_string(input_35, false);
+                let input_35 = input_35.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mount_target_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let mount_target_id = aws_smithy_http::label::fmt_string(
+                    input_35,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if mount_target_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mount_target_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mount_target_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3970,8 +4155,10 @@ impl ModifyMountTargetSecurityGroupsInput {
             fn update_http_builder(
                 input: &crate::input::ModifyMountTargetSecurityGroupsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -4054,7 +4241,7 @@ impl ModifyMountTargetSecurityGroupsInput {
 pub mod put_account_preferences_input {
 
     /// A builder for [`PutAccountPreferencesInput`](crate::input::PutAccountPreferencesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id_type: std::option::Option<crate::model::ResourceIdType>,
     }
@@ -4079,8 +4266,10 @@ pub mod put_account_preferences_input {
         /// Consumes the builder and constructs a [`PutAccountPreferencesInput`](crate::input::PutAccountPreferencesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutAccountPreferencesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutAccountPreferencesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutAccountPreferencesInput {
                 resource_id_type: self.resource_id_type,
             })
@@ -4100,13 +4289,13 @@ impl PutAccountPreferencesInput {
             crate::operation::PutAccountPreferences,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutAccountPreferencesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/2015-02-01/account-preferences")
                     .expect("formatting should succeed");
                 Ok(())
@@ -4115,8 +4304,10 @@ impl PutAccountPreferencesInput {
             fn update_http_builder(
                 input: &crate::input::PutAccountPreferencesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -4202,7 +4393,7 @@ impl PutAccountPreferencesInput {
 pub mod put_backup_policy_input {
 
     /// A builder for [`PutBackupPolicyInput`](crate::input::PutBackupPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
         pub(crate) backup_policy: std::option::Option<crate::model::BackupPolicy>,
@@ -4237,7 +4428,7 @@ pub mod put_backup_policy_input {
         /// Consumes the builder and constructs a [`PutBackupPolicyInput`](crate::input::PutBackupPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutBackupPolicyInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::PutBackupPolicyInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::PutBackupPolicyInput {
                 file_system_id: self.file_system_id,
@@ -4259,26 +4450,31 @@ impl PutBackupPolicyInput {
             crate::operation::PutBackupPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBackupPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_36 = &_input.file_system_id;
-                let input_36 = input_36.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "file_system_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let file_system_id = aws_smithy_http::label::fmt_string(input_36, false);
+                let input_36 = input_36.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "file_system_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let file_system_id = aws_smithy_http::label::fmt_string(
+                    input_36,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if file_system_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "file_system_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "file_system_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4292,8 +4488,10 @@ impl PutBackupPolicyInput {
             fn update_http_builder(
                 input: &crate::input::PutBackupPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -4377,7 +4575,7 @@ impl PutBackupPolicyInput {
 pub mod put_file_system_policy_input {
 
     /// A builder for [`PutFileSystemPolicyInput`](crate::input::PutFileSystemPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -4423,8 +4621,10 @@ pub mod put_file_system_policy_input {
         /// Consumes the builder and constructs a [`PutFileSystemPolicyInput`](crate::input::PutFileSystemPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutFileSystemPolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutFileSystemPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutFileSystemPolicyInput {
                 file_system_id: self.file_system_id,
                 policy: self.policy,
@@ -4448,26 +4648,31 @@ impl PutFileSystemPolicyInput {
             crate::operation::PutFileSystemPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutFileSystemPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_37 = &_input.file_system_id;
-                let input_37 = input_37.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "file_system_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let file_system_id = aws_smithy_http::label::fmt_string(input_37, false);
+                let input_37 = input_37.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "file_system_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let file_system_id = aws_smithy_http::label::fmt_string(
+                    input_37,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if file_system_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "file_system_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "file_system_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4481,8 +4686,10 @@ impl PutFileSystemPolicyInput {
             fn update_http_builder(
                 input: &crate::input::PutFileSystemPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -4568,7 +4775,7 @@ impl PutFileSystemPolicyInput {
 pub mod put_lifecycle_configuration_input {
 
     /// A builder for [`PutLifecycleConfigurationInput`](crate::input::PutLifecycleConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
         pub(crate) lifecycle_policies:
@@ -4624,7 +4831,7 @@ pub mod put_lifecycle_configuration_input {
             self,
         ) -> Result<
             crate::input::PutLifecycleConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::PutLifecycleConfigurationInput {
                 file_system_id: self.file_system_id,
@@ -4646,26 +4853,31 @@ impl PutLifecycleConfigurationInput {
             crate::operation::PutLifecycleConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutLifecycleConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_38 = &_input.file_system_id;
-                let input_38 = input_38.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "file_system_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let file_system_id = aws_smithy_http::label::fmt_string(input_38, false);
+                let input_38 = input_38.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "file_system_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let file_system_id = aws_smithy_http::label::fmt_string(
+                    input_38,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if file_system_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "file_system_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "file_system_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4679,8 +4891,10 @@ impl PutLifecycleConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::PutLifecycleConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -4766,7 +4980,7 @@ impl PutLifecycleConfigurationInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4804,7 +5018,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_id: self.resource_id,
@@ -4826,26 +5040,31 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_39 = &_input.resource_id;
-                let input_39 = input_39.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource_id = aws_smithy_http::label::fmt_string(input_39, false);
+                let input_39 = input_39.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_id = aws_smithy_http::label::fmt_string(
+                    input_39,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4859,8 +5078,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4944,7 +5165,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4982,7 +5203,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_id: self.resource_id,
@@ -5004,26 +5225,31 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_40 = &_input.resource_id;
-                let input_40 = input_40.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource_id = aws_smithy_http::label::fmt_string(input_40, false);
+                let input_40 = input_40.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_id = aws_smithy_http::label::fmt_string(
+                    input_40,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5036,12 +5262,17 @@ impl UntagResourceInput {
             fn uri_query(
                 _input: &crate::input::UntagResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_41) = &_input.tag_keys {
-                    for inner_42 in inner_41 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_42));
-                    }
+                let inner_41 = &_input.tag_keys;
+                let inner_41 = inner_41.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_42 in inner_41 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_42));
                 }
                 Ok(())
             }
@@ -5049,8 +5280,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5121,7 +5354,7 @@ impl UntagResourceInput {
 pub mod update_file_system_input {
 
     /// A builder for [`UpdateFileSystemInput`](crate::input::UpdateFileSystemInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
         pub(crate) throughput_mode: std::option::Option<crate::model::ThroughputMode>,
@@ -5170,8 +5403,10 @@ pub mod update_file_system_input {
         /// Consumes the builder and constructs a [`UpdateFileSystemInput`](crate::input::UpdateFileSystemInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateFileSystemInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateFileSystemInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateFileSystemInput {
                 file_system_id: self.file_system_id,
                 throughput_mode: self.throughput_mode,
@@ -5193,26 +5428,31 @@ impl UpdateFileSystemInput {
             crate::operation::UpdateFileSystem,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateFileSystemInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_43 = &_input.file_system_id;
-                let input_43 = input_43.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "file_system_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let file_system_id = aws_smithy_http::label::fmt_string(input_43, false);
+                let input_43 = input_43.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "file_system_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let file_system_id = aws_smithy_http::label::fmt_string(
+                    input_43,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if file_system_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "file_system_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "file_system_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5226,8 +5466,10 @@ impl UpdateFileSystemInput {
             fn update_http_builder(
                 input: &crate::input::UpdateFileSystemInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -5309,7 +5551,7 @@ impl UpdateFileSystemInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFileSystemInput {
     /// <p>The ID of the file system that you want to update.</p>
     #[doc(hidden)]
@@ -5335,22 +5577,10 @@ impl UpdateFileSystemInput {
         self.provisioned_throughput_in_mibps
     }
 }
-impl std::fmt::Debug for UpdateFileSystemInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFileSystemInput");
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.field("throughput_mode", &self.throughput_mode);
-        formatter.field(
-            "provisioned_throughput_in_mibps",
-            &self.provisioned_throughput_in_mibps,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>Specifies the EFS resource that you want to remove tags from.</p>
     #[doc(hidden)]
@@ -5369,18 +5599,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The ID specifying the EFS resource that you want to create a tag for.</p>
     #[doc(hidden)]
@@ -5399,18 +5621,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutLifecycleConfigurationInput {
     /// <p>The ID of the file system for which you are creating the <code>LifecycleConfiguration</code> object (String).</p>
     #[doc(hidden)]
@@ -5441,18 +5655,10 @@ impl PutLifecycleConfigurationInput {
         self.lifecycle_policies.as_deref()
     }
 }
-impl std::fmt::Debug for PutLifecycleConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutLifecycleConfigurationInput");
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.field("lifecycle_policies", &self.lifecycle_policies);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutFileSystemPolicyInput {
     /// <p>The ID of the EFS file system that you want to create or update the <code>FileSystemPolicy</code> for.</p>
     #[doc(hidden)]
@@ -5478,22 +5684,10 @@ impl PutFileSystemPolicyInput {
         self.bypass_policy_lockout_safety_check
     }
 }
-impl std::fmt::Debug for PutFileSystemPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutFileSystemPolicyInput");
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.field("policy", &self.policy);
-        formatter.field(
-            "bypass_policy_lockout_safety_check",
-            &self.bypass_policy_lockout_safety_check,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBackupPolicyInput {
     /// <p>Specifies which EFS file system to update the backup policy for.</p>
     #[doc(hidden)]
@@ -5512,18 +5706,10 @@ impl PutBackupPolicyInput {
         self.backup_policy.as_ref()
     }
 }
-impl std::fmt::Debug for PutBackupPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBackupPolicyInput");
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.field("backup_policy", &self.backup_policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutAccountPreferencesInput {
     /// <p>Specifies the EFS resource ID preference to set for the user's Amazon Web Services account, in the current Amazon Web Services Region, either <code>LONG_ID</code> (17 characters), or <code>SHORT_ID</code> (8 characters).</p> <note>
     /// <p>Starting in October, 2021, you will receive an error when setting the account preference to <code>SHORT_ID</code>. Contact Amazon Web Services support if you receive an error and must use short IDs for file system and mount target resources.</p>
@@ -5539,17 +5725,10 @@ impl PutAccountPreferencesInput {
         self.resource_id_type.as_ref()
     }
 }
-impl std::fmt::Debug for PutAccountPreferencesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutAccountPreferencesInput");
-        formatter.field("resource_id_type", &self.resource_id_type);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyMountTargetSecurityGroupsInput {
     /// <p>The ID of the mount target whose security groups you want to modify.</p>
     #[doc(hidden)]
@@ -5568,18 +5747,10 @@ impl ModifyMountTargetSecurityGroupsInput {
         self.security_groups.as_deref()
     }
 }
-impl std::fmt::Debug for ModifyMountTargetSecurityGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyMountTargetSecurityGroupsInput");
-        formatter.field("mount_target_id", &self.mount_target_id);
-        formatter.field("security_groups", &self.security_groups);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>Specifies the EFS resource you want to retrieve tags for. You can retrieve tags for EFS file systems and access points using this API endpoint.</p>
     #[doc(hidden)]
@@ -5605,19 +5776,10 @@ impl ListTagsForResourceInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTagsInput {
     /// <p>(Optional) The maximum number of file system tags to return in the response. Currently, this number is automatically set to 100, and other values are ignored. The response is paginated at 100 per page if you have more than 100 tags.</p>
     #[doc(hidden)]
@@ -5643,19 +5805,10 @@ impl DescribeTagsInput {
         self.file_system_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTagsInput");
-        formatter.field("max_items", &self.max_items);
-        formatter.field("marker", &self.marker);
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeReplicationConfigurationsInput {
     /// <p>You can retrieve the replication configuration for a specific file system by providing its file system ID.</p>
     #[doc(hidden)]
@@ -5681,19 +5834,10 @@ impl DescribeReplicationConfigurationsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeReplicationConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeReplicationConfigurationsInput");
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMountTargetSecurityGroupsInput {
     /// <p>The ID of the mount target whose security groups you want to retrieve.</p>
     #[doc(hidden)]
@@ -5705,17 +5849,10 @@ impl DescribeMountTargetSecurityGroupsInput {
         self.mount_target_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeMountTargetSecurityGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMountTargetSecurityGroupsInput");
-        formatter.field("mount_target_id", &self.mount_target_id);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMountTargetsInput {
     /// <p>(Optional) Maximum number of mount targets to return in the response. Currently, this number is automatically set to 10, and other values are ignored. The response is paginated at 100 per page if you have more than 100 mount targets.</p>
     #[doc(hidden)]
@@ -5755,21 +5892,10 @@ impl DescribeMountTargetsInput {
         self.access_point_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeMountTargetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMountTargetsInput");
-        formatter.field("max_items", &self.max_items);
-        formatter.field("marker", &self.marker);
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.field("mount_target_id", &self.mount_target_id);
-        formatter.field("access_point_id", &self.access_point_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLifecycleConfigurationInput {
     /// <p>The ID of the file system whose <code>LifecycleConfiguration</code> object you want to retrieve (String).</p>
     #[doc(hidden)]
@@ -5781,17 +5907,10 @@ impl DescribeLifecycleConfigurationInput {
         self.file_system_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLifecycleConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLifecycleConfigurationInput");
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFileSystemsInput {
     /// <p>(Optional) Specifies the maximum number of file systems to return in the response (integer). This number is automatically set to 100. The response is paginated at 100 per page if you have more than 100 file systems. </p>
     #[doc(hidden)]
@@ -5824,20 +5943,10 @@ impl DescribeFileSystemsInput {
         self.file_system_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFileSystemsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFileSystemsInput");
-        formatter.field("max_items", &self.max_items);
-        formatter.field("marker", &self.marker);
-        formatter.field("creation_token", &self.creation_token);
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFileSystemPolicyInput {
     /// <p>Specifies which EFS file system to retrieve the <code>FileSystemPolicy</code> for.</p>
     #[doc(hidden)]
@@ -5849,17 +5958,10 @@ impl DescribeFileSystemPolicyInput {
         self.file_system_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFileSystemPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFileSystemPolicyInput");
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBackupPolicyInput {
     /// <p>Specifies which EFS file system to retrieve the <code>BackupPolicy</code> for.</p>
     #[doc(hidden)]
@@ -5871,17 +5973,10 @@ impl DescribeBackupPolicyInput {
         self.file_system_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeBackupPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBackupPolicyInput");
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAccountPreferencesInput {
     /// <p>(Optional) You can use <code>NextToken</code> in a subsequent request to fetch the next page of Amazon Web Services account preferences if the response payload was paginated.</p>
     #[doc(hidden)]
@@ -5900,18 +5995,10 @@ impl DescribeAccountPreferencesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeAccountPreferencesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAccountPreferencesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAccessPointsInput {
     /// <p>(Optional) When retrieving all access points for a file system, you can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response. The default value is 100. </p>
     #[doc(hidden)]
@@ -5944,20 +6031,10 @@ impl DescribeAccessPointsInput {
         self.file_system_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAccessPointsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAccessPointsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("access_point_id", &self.access_point_id);
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTagsInput {
     /// <p>The ID of the file system whose tags you want to delete (String).</p>
     #[doc(hidden)]
@@ -5976,18 +6053,10 @@ impl DeleteTagsInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTagsInput");
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteReplicationConfigurationInput {
     /// <p>The ID of the source file system in the replication configuration.</p>
     #[doc(hidden)]
@@ -5999,17 +6068,10 @@ impl DeleteReplicationConfigurationInput {
         self.source_file_system_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteReplicationConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteReplicationConfigurationInput");
-        formatter.field("source_file_system_id", &self.source_file_system_id);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMountTargetInput {
     /// <p>The ID of the mount target to delete (String).</p>
     #[doc(hidden)]
@@ -6021,17 +6083,10 @@ impl DeleteMountTargetInput {
         self.mount_target_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMountTargetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMountTargetInput");
-        formatter.field("mount_target_id", &self.mount_target_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFileSystemPolicyInput {
     /// <p>Specifies the EFS file system for which to delete the <code>FileSystemPolicy</code>.</p>
     #[doc(hidden)]
@@ -6043,17 +6098,10 @@ impl DeleteFileSystemPolicyInput {
         self.file_system_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFileSystemPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFileSystemPolicyInput");
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFileSystemInput {
     /// <p>The ID of the file system you want to delete.</p>
     #[doc(hidden)]
@@ -6065,17 +6113,10 @@ impl DeleteFileSystemInput {
         self.file_system_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFileSystemInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFileSystemInput");
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAccessPointInput {
     /// <p>The ID of the access point that you want to delete.</p>
     #[doc(hidden)]
@@ -6087,17 +6128,10 @@ impl DeleteAccessPointInput {
         self.access_point_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAccessPointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAccessPointInput");
-        formatter.field("access_point_id", &self.access_point_id);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTagsInput {
     /// <p>The ID of the file system whose tags you want to modify (String). This operation modifies the tags only, not the file system.</p>
     #[doc(hidden)]
@@ -6116,18 +6150,10 @@ impl CreateTagsInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTagsInput");
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateReplicationConfigurationInput {
     /// <p>Specifies the Amazon EFS file system that you want to replicate. This file system cannot already be a source or destination file system in another replication configuration.</p>
     #[doc(hidden)]
@@ -6146,18 +6172,10 @@ impl CreateReplicationConfigurationInput {
         self.destinations.as_deref()
     }
 }
-impl std::fmt::Debug for CreateReplicationConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateReplicationConfigurationInput");
-        formatter.field("source_file_system_id", &self.source_file_system_id);
-        formatter.field("destinations", &self.destinations);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateMountTargetInput {
     /// <p>The ID of the file system for which to create the mount target.</p>
     #[doc(hidden)]
@@ -6190,20 +6208,10 @@ impl CreateMountTargetInput {
         self.security_groups.as_deref()
     }
 }
-impl std::fmt::Debug for CreateMountTargetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateMountTargetInput");
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.field("ip_address", &self.ip_address);
-        formatter.field("security_groups", &self.security_groups);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFileSystemInput {
     /// <p>A string of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent creation.</p>
     #[doc(hidden)]
@@ -6305,28 +6313,10 @@ impl CreateFileSystemInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateFileSystemInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFileSystemInput");
-        formatter.field("creation_token", &self.creation_token);
-        formatter.field("performance_mode", &self.performance_mode);
-        formatter.field("encrypted", &self.encrypted);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("throughput_mode", &self.throughput_mode);
-        formatter.field(
-            "provisioned_throughput_in_mibps",
-            &self.provisioned_throughput_in_mibps,
-        );
-        formatter.field("availability_zone_name", &self.availability_zone_name);
-        formatter.field("backup", &self.backup);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAccessPointInput {
     /// <p>A string of up to 64 ASCII characters that Amazon EFS uses to ensure idempotent creation.</p>
     #[doc(hidden)]
@@ -6366,16 +6356,5 @@ impl CreateAccessPointInput {
     /// <p>Amazon EFS creates a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and permissions for the directory. If you do not provide this information, Amazon EFS does not create the root directory. If the root directory does not exist, attempts to mount using the access point will fail.</p>
     pub fn root_directory(&self) -> std::option::Option<&crate::model::RootDirectory> {
         self.root_directory.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateAccessPointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAccessPointInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("tags", &self.tags);
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.field("posix_user", &self.posix_user);
-        formatter.field("root_directory", &self.root_directory);
-        formatter.finish()
     }
 }

@@ -6,6 +6,7 @@
 use crate::fs_util::{home_dir, Os};
 use crate::profile::credentials::{CouldNotReadProfileFile, ProfileFileError};
 use crate::profile::profile_file::{ProfileFile, ProfileFileKind, ProfileFiles};
+use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_types::os_shim_internal;
 use std::borrow::Cow;
 use std::io::ErrorKind;
@@ -64,7 +65,7 @@ fn file_contents_to_string(path: &Path, contents: Vec<u8>) -> String {
     match String::from_utf8(contents) {
         Ok(contents) => contents,
         Err(e) => {
-            tracing::warn!(path = ?path, error = %e, "config file did not contain utf-8 encoded data");
+            tracing::warn!(path = ?path, error = %DisplayErrorContext(&e), "config file did not contain utf-8 encoded data");
             Default::default()
         }
     }
@@ -113,7 +114,7 @@ async fn load_config_file(
                             tracing::warn!(path = %path, env = %kind.override_environment_variable(), "config file overridden via environment variable not found")
                         }
                         _other => {
-                            tracing::warn!(path = %path, error = %e, "failed to read config file")
+                            tracing::warn!(path = %path, error = %DisplayErrorContext(&e), "failed to read config file")
                         }
                     };
                     Default::default()

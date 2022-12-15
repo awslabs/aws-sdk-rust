@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod add_profile_permission_input {
 
     /// A builder for [`AddProfilePermissionInput`](crate::input::AddProfilePermissionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_name: std::option::Option<std::string::String>,
         pub(crate) profile_version: std::option::Option<std::string::String>,
@@ -81,8 +81,10 @@ pub mod add_profile_permission_input {
         /// Consumes the builder and constructs a [`AddProfilePermissionInput`](crate::input::AddProfilePermissionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::AddProfilePermissionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::AddProfilePermissionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::AddProfilePermissionInput {
                 profile_name: self.profile_name,
                 profile_version: self.profile_version,
@@ -107,26 +109,31 @@ impl AddProfilePermissionInput {
             crate::operation::AddProfilePermission,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AddProfilePermissionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.profile_name;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "profile_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let profile_name = aws_smithy_http::label::fmt_string(input_1, false);
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "profile_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let profile_name = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if profile_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "profile_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "profile_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -140,8 +147,10 @@ impl AddProfilePermissionInput {
             fn update_http_builder(
                 input: &crate::input::AddProfilePermissionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -227,7 +236,7 @@ impl AddProfilePermissionInput {
 pub mod cancel_signing_profile_input {
 
     /// A builder for [`CancelSigningProfileInput`](crate::input::CancelSigningProfileInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_name: std::option::Option<std::string::String>,
     }
@@ -245,8 +254,10 @@ pub mod cancel_signing_profile_input {
         /// Consumes the builder and constructs a [`CancelSigningProfileInput`](crate::input::CancelSigningProfileInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CancelSigningProfileInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CancelSigningProfileInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CancelSigningProfileInput {
                 profile_name: self.profile_name,
             })
@@ -266,26 +277,31 @@ impl CancelSigningProfileInput {
             crate::operation::CancelSigningProfile,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CancelSigningProfileInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_2 = &_input.profile_name;
-                let input_2 = input_2.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "profile_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let profile_name = aws_smithy_http::label::fmt_string(input_2, false);
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "profile_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let profile_name = aws_smithy_http::label::fmt_string(
+                    input_2,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if profile_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "profile_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "profile_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -299,8 +315,10 @@ impl CancelSigningProfileInput {
             fn update_http_builder(
                 input: &crate::input::CancelSigningProfileInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -370,7 +388,7 @@ impl CancelSigningProfileInput {
 pub mod describe_signing_job_input {
 
     /// A builder for [`DescribeSigningJobInput`](crate::input::DescribeSigningJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -388,8 +406,10 @@ pub mod describe_signing_job_input {
         /// Consumes the builder and constructs a [`DescribeSigningJobInput`](crate::input::DescribeSigningJobInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeSigningJobInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeSigningJobInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeSigningJobInput {
                 job_id: self.job_id,
             })
@@ -409,26 +429,31 @@ impl DescribeSigningJobInput {
             crate::operation::DescribeSigningJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeSigningJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_3 = &_input.job_id;
-                let input_3 = input_3.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let job_id = aws_smithy_http::label::fmt_string(input_3, false);
+                let input_3 = input_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "job_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let job_id = aws_smithy_http::label::fmt_string(
+                    input_3,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if job_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "job_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/signing-jobs/{jobId}", jobId = job_id)
                     .expect("formatting should succeed");
@@ -438,8 +463,10 @@ impl DescribeSigningJobInput {
             fn update_http_builder(
                 input: &crate::input::DescribeSigningJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -509,7 +536,7 @@ impl DescribeSigningJobInput {
 pub mod get_signing_platform_input {
 
     /// A builder for [`GetSigningPlatformInput`](crate::input::GetSigningPlatformInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) platform_id: std::option::Option<std::string::String>,
     }
@@ -527,8 +554,10 @@ pub mod get_signing_platform_input {
         /// Consumes the builder and constructs a [`GetSigningPlatformInput`](crate::input::GetSigningPlatformInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetSigningPlatformInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetSigningPlatformInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetSigningPlatformInput {
                 platform_id: self.platform_id,
             })
@@ -548,26 +577,31 @@ impl GetSigningPlatformInput {
             crate::operation::GetSigningPlatform,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetSigningPlatformInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_4 = &_input.platform_id;
-                let input_4 = input_4.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "platform_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let platform_id = aws_smithy_http::label::fmt_string(input_4, false);
+                let input_4 = input_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "platform_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let platform_id = aws_smithy_http::label::fmt_string(
+                    input_4,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if platform_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "platform_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "platform_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -581,8 +615,10 @@ impl GetSigningPlatformInput {
             fn update_http_builder(
                 input: &crate::input::GetSigningPlatformInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -652,7 +688,7 @@ impl GetSigningPlatformInput {
 pub mod get_signing_profile_input {
 
     /// A builder for [`GetSigningProfileInput`](crate::input::GetSigningProfileInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_name: std::option::Option<std::string::String>,
         pub(crate) profile_owner: std::option::Option<std::string::String>,
@@ -684,8 +720,10 @@ pub mod get_signing_profile_input {
         /// Consumes the builder and constructs a [`GetSigningProfileInput`](crate::input::GetSigningProfileInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetSigningProfileInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetSigningProfileInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetSigningProfileInput {
                 profile_name: self.profile_name,
                 profile_owner: self.profile_owner,
@@ -706,26 +744,31 @@ impl GetSigningProfileInput {
             crate::operation::GetSigningProfile,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetSigningProfileInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_5 = &_input.profile_name;
-                let input_5 = input_5.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "profile_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let profile_name = aws_smithy_http::label::fmt_string(input_5, false);
+                let input_5 = input_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "profile_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let profile_name = aws_smithy_http::label::fmt_string(
+                    input_5,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if profile_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "profile_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "profile_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -738,13 +781,15 @@ impl GetSigningProfileInput {
             fn uri_query(
                 _input: &crate::input::GetSigningProfileInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_6) = &_input.profile_owner {
-                    query.push_kv(
-                        "profileOwner",
-                        &aws_smithy_http::query::fmt_string(&inner_6),
-                    );
+                    {
+                        query.push_kv(
+                            "profileOwner",
+                            &aws_smithy_http::query::fmt_string(&inner_6),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -752,8 +797,10 @@ impl GetSigningProfileInput {
             fn update_http_builder(
                 input: &crate::input::GetSigningProfileInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -824,7 +871,7 @@ impl GetSigningProfileInput {
 pub mod list_profile_permissions_input {
 
     /// A builder for [`ListProfilePermissionsInput`](crate::input::ListProfilePermissionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_name: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -853,8 +900,10 @@ pub mod list_profile_permissions_input {
         /// Consumes the builder and constructs a [`ListProfilePermissionsInput`](crate::input::ListProfilePermissionsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListProfilePermissionsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListProfilePermissionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListProfilePermissionsInput {
                 profile_name: self.profile_name,
                 next_token: self.next_token,
@@ -875,26 +924,31 @@ impl ListProfilePermissionsInput {
             crate::operation::ListProfilePermissions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListProfilePermissionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_7 = &_input.profile_name;
-                let input_7 = input_7.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "profile_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let profile_name = aws_smithy_http::label::fmt_string(input_7, false);
+                let input_7 = input_7.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "profile_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let profile_name = aws_smithy_http::label::fmt_string(
+                    input_7,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if profile_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "profile_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "profile_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -907,10 +961,12 @@ impl ListProfilePermissionsInput {
             fn uri_query(
                 _input: &crate::input::ListProfilePermissionsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_8) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_8));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_8));
+                    }
                 }
                 Ok(())
             }
@@ -918,8 +974,10 @@ impl ListProfilePermissionsInput {
             fn update_http_builder(
                 input: &crate::input::ListProfilePermissionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -990,7 +1048,7 @@ impl ListProfilePermissionsInput {
 pub mod list_signing_jobs_input {
 
     /// A builder for [`ListSigningJobsInput`](crate::input::ListSigningJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::SigningStatus>,
         pub(crate) platform_id: std::option::Option<std::string::String>,
@@ -1105,7 +1163,7 @@ pub mod list_signing_jobs_input {
         /// Consumes the builder and constructs a [`ListSigningJobsInput`](crate::input::ListSigningJobsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListSigningJobsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListSigningJobsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListSigningJobsInput {
                 status: self.status,
@@ -1134,41 +1192,51 @@ impl ListSigningJobsInput {
             crate::operation::ListSigningJobs,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListSigningJobsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/signing-jobs").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListSigningJobsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_9) = &_input.status {
-                    query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_9));
+                    {
+                        query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_9));
+                    }
                 }
                 if let Some(inner_10) = &_input.platform_id {
-                    query.push_kv("platformId", &aws_smithy_http::query::fmt_string(&inner_10));
+                    {
+                        query.push_kv("platformId", &aws_smithy_http::query::fmt_string(&inner_10));
+                    }
                 }
                 if let Some(inner_11) = &_input.requested_by {
-                    query.push_kv(
-                        "requestedBy",
-                        &aws_smithy_http::query::fmt_string(&inner_11),
-                    );
+                    {
+                        query.push_kv(
+                            "requestedBy",
+                            &aws_smithy_http::query::fmt_string(&inner_11),
+                        );
+                    }
                 }
                 if let Some(inner_12) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_12).encode(),
-                    );
+                    if *inner_12 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_12).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_13) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_13));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_13));
+                    }
                 }
                 if _input.is_revoked {
                     query.push_kv(
@@ -1177,25 +1245,31 @@ impl ListSigningJobsInput {
                     );
                 }
                 if let Some(inner_14) = &_input.signature_expires_before {
-                    query.push_kv(
-                        "signatureExpiresBefore",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_14,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
+                    {
+                        query.push_kv(
+                            "signatureExpiresBefore",
+                            &aws_smithy_http::query::fmt_timestamp(
+                                inner_14,
+                                aws_smithy_types::date_time::Format::DateTime,
+                            )?,
+                        );
+                    }
                 }
                 if let Some(inner_15) = &_input.signature_expires_after {
-                    query.push_kv(
-                        "signatureExpiresAfter",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_15,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
+                    {
+                        query.push_kv(
+                            "signatureExpiresAfter",
+                            &aws_smithy_http::query::fmt_timestamp(
+                                inner_15,
+                                aws_smithy_types::date_time::Format::DateTime,
+                            )?,
+                        );
+                    }
                 }
                 if let Some(inner_16) = &_input.job_invoker {
-                    query.push_kv("jobInvoker", &aws_smithy_http::query::fmt_string(&inner_16));
+                    {
+                        query.push_kv("jobInvoker", &aws_smithy_http::query::fmt_string(&inner_16));
+                    }
                 }
                 Ok(())
             }
@@ -1203,8 +1277,10 @@ impl ListSigningJobsInput {
             fn update_http_builder(
                 input: &crate::input::ListSigningJobsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1275,7 +1351,7 @@ impl ListSigningJobsInput {
 pub mod list_signing_platforms_input {
 
     /// A builder for [`ListSigningPlatformsInput`](crate::input::ListSigningPlatformsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) category: std::option::Option<std::string::String>,
         pub(crate) partner: std::option::Option<std::string::String>,
@@ -1337,8 +1413,10 @@ pub mod list_signing_platforms_input {
         /// Consumes the builder and constructs a [`ListSigningPlatformsInput`](crate::input::ListSigningPlatformsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListSigningPlatformsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListSigningPlatformsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListSigningPlatformsInput {
                 category: self.category,
                 partner: self.partner,
@@ -1362,38 +1440,48 @@ impl ListSigningPlatformsInput {
             crate::operation::ListSigningPlatforms,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListSigningPlatformsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/signing-platforms").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListSigningPlatformsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_17) = &_input.category {
-                    query.push_kv("category", &aws_smithy_http::query::fmt_string(&inner_17));
+                    {
+                        query.push_kv("category", &aws_smithy_http::query::fmt_string(&inner_17));
+                    }
                 }
                 if let Some(inner_18) = &_input.partner {
-                    query.push_kv("partner", &aws_smithy_http::query::fmt_string(&inner_18));
+                    {
+                        query.push_kv("partner", &aws_smithy_http::query::fmt_string(&inner_18));
+                    }
                 }
                 if let Some(inner_19) = &_input.target {
-                    query.push_kv("target", &aws_smithy_http::query::fmt_string(&inner_19));
+                    {
+                        query.push_kv("target", &aws_smithy_http::query::fmt_string(&inner_19));
+                    }
                 }
                 if let Some(inner_20) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_20).encode(),
-                    );
+                    if *inner_20 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_20).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_21) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_21));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_21));
+                    }
                 }
                 Ok(())
             }
@@ -1401,8 +1489,10 @@ impl ListSigningPlatformsInput {
             fn update_http_builder(
                 input: &crate::input::ListSigningPlatformsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1473,7 +1563,7 @@ impl ListSigningPlatformsInput {
 pub mod list_signing_profiles_input {
 
     /// A builder for [`ListSigningProfilesInput`](crate::input::ListSigningProfilesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) include_canceled: std::option::Option<bool>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -1544,8 +1634,10 @@ pub mod list_signing_profiles_input {
         /// Consumes the builder and constructs a [`ListSigningProfilesInput`](crate::input::ListSigningProfilesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListSigningProfilesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListSigningProfilesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListSigningProfilesInput {
                 include_canceled: self.include_canceled.unwrap_or_default(),
                 max_results: self.max_results,
@@ -1569,20 +1661,20 @@ impl ListSigningProfilesInput {
             crate::operation::ListSigningProfiles,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListSigningProfilesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/signing-profiles").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListSigningProfilesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if _input.include_canceled {
                     query.push_kv(
@@ -1592,20 +1684,31 @@ impl ListSigningProfilesInput {
                     );
                 }
                 if let Some(inner_22) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_22).encode(),
-                    );
+                    if *inner_22 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_22).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_23) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_23));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_23));
+                    }
                 }
                 if let Some(inner_24) = &_input.platform_id {
-                    query.push_kv("platformId", &aws_smithy_http::query::fmt_string(&inner_24));
+                    {
+                        query.push_kv("platformId", &aws_smithy_http::query::fmt_string(&inner_24));
+                    }
                 }
                 if let Some(inner_25) = &_input.statuses {
-                    for inner_26 in inner_25 {
-                        query.push_kv("statuses", &aws_smithy_http::query::fmt_string(&inner_26));
+                    {
+                        for inner_26 in inner_25 {
+                            query.push_kv(
+                                "statuses",
+                                &aws_smithy_http::query::fmt_string(&inner_26),
+                            );
+                        }
                     }
                 }
                 Ok(())
@@ -1614,8 +1717,10 @@ impl ListSigningProfilesInput {
             fn update_http_builder(
                 input: &crate::input::ListSigningProfilesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1686,7 +1791,7 @@ impl ListSigningProfilesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -1704,8 +1809,10 @@ pub mod list_tags_for_resource_input {
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
             })
@@ -1725,26 +1832,31 @@ impl ListTagsForResourceInput {
             crate::operation::ListTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_27 = &_input.resource_arn;
-                let input_27 = input_27.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_27, false);
+                let input_27 = input_27.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_27,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
                     .expect("formatting should succeed");
@@ -1754,8 +1866,10 @@ impl ListTagsForResourceInput {
             fn update_http_builder(
                 input: &crate::input::ListTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1825,7 +1939,7 @@ impl ListTagsForResourceInput {
 pub mod put_signing_profile_input {
 
     /// A builder for [`PutSigningProfileInput`](crate::input::PutSigningProfileInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_name: std::option::Option<std::string::String>,
         pub(crate) signing_material: std::option::Option<crate::model::SigningMaterial>,
@@ -1956,8 +2070,10 @@ pub mod put_signing_profile_input {
         /// Consumes the builder and constructs a [`PutSigningProfileInput`](crate::input::PutSigningProfileInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutSigningProfileInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutSigningProfileInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutSigningProfileInput {
                 profile_name: self.profile_name,
                 signing_material: self.signing_material,
@@ -1983,26 +2099,31 @@ impl PutSigningProfileInput {
             crate::operation::PutSigningProfile,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutSigningProfileInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_28 = &_input.profile_name;
-                let input_28 = input_28.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "profile_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let profile_name = aws_smithy_http::label::fmt_string(input_28, false);
+                let input_28 = input_28.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "profile_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let profile_name = aws_smithy_http::label::fmt_string(
+                    input_28,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if profile_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "profile_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "profile_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2016,8 +2137,10 @@ impl PutSigningProfileInput {
             fn update_http_builder(
                 input: &crate::input::PutSigningProfileInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -2101,7 +2224,7 @@ impl PutSigningProfileInput {
 pub mod remove_profile_permission_input {
 
     /// A builder for [`RemoveProfilePermissionInput`](crate::input::RemoveProfilePermissionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_name: std::option::Option<std::string::String>,
         pub(crate) revision_id: std::option::Option<std::string::String>,
@@ -2143,7 +2266,7 @@ pub mod remove_profile_permission_input {
             self,
         ) -> Result<
             crate::input::RemoveProfilePermissionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::RemoveProfilePermissionInput {
                 profile_name: self.profile_name,
@@ -2166,40 +2289,50 @@ impl RemoveProfilePermissionInput {
             crate::operation::RemoveProfilePermission,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RemoveProfilePermissionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_29 = &_input.profile_name;
-                let input_29 = input_29.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "profile_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let profile_name = aws_smithy_http::label::fmt_string(input_29, false);
+                let input_29 = input_29.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "profile_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let profile_name = aws_smithy_http::label::fmt_string(
+                    input_29,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if profile_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "profile_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "profile_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_30 = &_input.statement_id;
-                let input_30 = input_30.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "statement_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let statement_id = aws_smithy_http::label::fmt_string(input_30, false);
+                let input_30 = input_30.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "statement_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let statement_id = aws_smithy_http::label::fmt_string(
+                    input_30,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if statement_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "statement_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "statement_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2213,19 +2346,34 @@ impl RemoveProfilePermissionInput {
             fn uri_query(
                 _input: &crate::input::RemoveProfilePermissionInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_31) = &_input.revision_id {
-                    query.push_kv("revisionId", &aws_smithy_http::query::fmt_string(&inner_31));
+                let inner_31 = &_input.revision_id;
+                let inner_31 = inner_31.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "revision_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_31.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "revision_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("revisionId", &aws_smithy_http::query::fmt_string(&inner_31));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::RemoveProfilePermissionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2296,7 +2444,7 @@ impl RemoveProfilePermissionInput {
 pub mod revoke_signature_input {
 
     /// A builder for [`RevokeSignatureInput`](crate::input::RevokeSignatureInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_owner: std::option::Option<std::string::String>,
@@ -2336,7 +2484,7 @@ pub mod revoke_signature_input {
         /// Consumes the builder and constructs a [`RevokeSignatureInput`](crate::input::RevokeSignatureInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::RevokeSignatureInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::RevokeSignatureInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::RevokeSignatureInput {
                 job_id: self.job_id,
@@ -2359,26 +2507,31 @@ impl RevokeSignatureInput {
             crate::operation::RevokeSignature,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RevokeSignatureInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_32 = &_input.job_id;
-                let input_32 = input_32.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let job_id = aws_smithy_http::label::fmt_string(input_32, false);
+                let input_32 = input_32.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "job_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let job_id = aws_smithy_http::label::fmt_string(
+                    input_32,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if job_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "job_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/signing-jobs/{jobId}/revoke", jobId = job_id)
                     .expect("formatting should succeed");
@@ -2388,8 +2541,10 @@ impl RevokeSignatureInput {
             fn update_http_builder(
                 input: &crate::input::RevokeSignatureInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -2473,7 +2628,7 @@ impl RevokeSignatureInput {
 pub mod revoke_signing_profile_input {
 
     /// A builder for [`RevokeSigningProfileInput`](crate::input::RevokeSigningProfileInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_name: std::option::Option<std::string::String>,
         pub(crate) profile_version: std::option::Option<std::string::String>,
@@ -2530,8 +2685,10 @@ pub mod revoke_signing_profile_input {
         /// Consumes the builder and constructs a [`RevokeSigningProfileInput`](crate::input::RevokeSigningProfileInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::RevokeSigningProfileInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::RevokeSigningProfileInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::RevokeSigningProfileInput {
                 profile_name: self.profile_name,
                 profile_version: self.profile_version,
@@ -2554,26 +2711,31 @@ impl RevokeSigningProfileInput {
             crate::operation::RevokeSigningProfile,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RevokeSigningProfileInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_33 = &_input.profile_name;
-                let input_33 = input_33.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "profile_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let profile_name = aws_smithy_http::label::fmt_string(input_33, false);
+                let input_33 = input_33.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "profile_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let profile_name = aws_smithy_http::label::fmt_string(
+                    input_33,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if profile_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "profile_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "profile_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2587,8 +2749,10 @@ impl RevokeSigningProfileInput {
             fn update_http_builder(
                 input: &crate::input::RevokeSigningProfileInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -2674,7 +2838,7 @@ impl RevokeSigningProfileInput {
 pub mod start_signing_job_input {
 
     /// A builder for [`StartSigningJobInput`](crate::input::StartSigningJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<crate::model::Source>,
         pub(crate) destination: std::option::Option<crate::model::Destination>,
@@ -2745,7 +2909,7 @@ pub mod start_signing_job_input {
         /// Consumes the builder and constructs a [`StartSigningJobInput`](crate::input::StartSigningJobInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StartSigningJobInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::StartSigningJobInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::StartSigningJobInput {
                 source: self.source,
@@ -2770,7 +2934,7 @@ impl StartSigningJobInput {
             crate::operation::StartSigningJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
@@ -2779,7 +2943,7 @@ impl StartSigningJobInput {
             fn uri_base(
                 _input: &crate::input::StartSigningJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/signing-jobs").expect("formatting should succeed");
                 Ok(())
             }
@@ -2787,8 +2951,10 @@ impl StartSigningJobInput {
             fn update_http_builder(
                 input: &crate::input::StartSigningJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2872,7 +3038,7 @@ impl StartSigningJobInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -2918,7 +3084,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
@@ -2940,26 +3106,31 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_34 = &_input.resource_arn;
-                let input_34 = input_34.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_34, false);
+                let input_34 = input_34.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_34,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
                     .expect("formatting should succeed");
@@ -2969,8 +3140,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3054,7 +3227,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3092,7 +3265,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
@@ -3114,26 +3287,31 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_35 = &_input.resource_arn;
-                let input_35 = input_35.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_35, false);
+                let input_35 = input_35.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_35,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
                     .expect("formatting should succeed");
@@ -3142,12 +3320,17 @@ impl UntagResourceInput {
             fn uri_query(
                 _input: &crate::input::UntagResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_36) = &_input.tag_keys {
-                    for inner_37 in inner_36 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_37));
-                    }
+                let inner_36 = &_input.tag_keys;
+                let inner_36 = inner_36.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_37 in inner_36 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_37));
                 }
                 Ok(())
             }
@@ -3155,8 +3338,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3225,7 +3410,7 @@ impl UntagResourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the signing profile.</p>
     #[doc(hidden)]
@@ -3244,18 +3429,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the signing profile.</p>
     #[doc(hidden)]
@@ -3278,18 +3455,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartSigningJobInput {
     /// <p>The S3 bucket that contains the object to sign or a BLOB that contains your raw code.</p>
     #[doc(hidden)]
@@ -3329,21 +3498,10 @@ impl StartSigningJobInput {
         self.profile_owner.as_deref()
     }
 }
-impl std::fmt::Debug for StartSigningJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartSigningJobInput");
-        formatter.field("source", &self.source);
-        formatter.field("destination", &self.destination);
-        formatter.field("profile_name", &self.profile_name);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("profile_owner", &self.profile_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RevokeSigningProfileInput {
     /// <p>The name of the signing profile to be revoked.</p>
     #[doc(hidden)]
@@ -3376,20 +3534,10 @@ impl RevokeSigningProfileInput {
         self.effective_time.as_ref()
     }
 }
-impl std::fmt::Debug for RevokeSigningProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RevokeSigningProfileInput");
-        formatter.field("profile_name", &self.profile_name);
-        formatter.field("profile_version", &self.profile_version);
-        formatter.field("reason", &self.reason);
-        formatter.field("effective_time", &self.effective_time);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RevokeSignatureInput {
     /// <p>ID of the signing job to be revoked.</p>
     #[doc(hidden)]
@@ -3415,19 +3563,10 @@ impl RevokeSignatureInput {
         self.reason.as_deref()
     }
 }
-impl std::fmt::Debug for RevokeSignatureInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RevokeSignatureInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("job_owner", &self.job_owner);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveProfilePermissionInput {
     /// <p>A human-readable name for the signing profile with permissions to be removed.</p>
     #[doc(hidden)]
@@ -3453,19 +3592,10 @@ impl RemoveProfilePermissionInput {
         self.statement_id.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveProfilePermissionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveProfilePermissionInput");
-        formatter.field("profile_name", &self.profile_name);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.field("statement_id", &self.statement_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutSigningProfileInput {
     /// <p>The name of the signing profile to be created.</p>
     #[doc(hidden)]
@@ -3529,23 +3659,10 @@ impl PutSigningProfileInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for PutSigningProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutSigningProfileInput");
-        formatter.field("profile_name", &self.profile_name);
-        formatter.field("signing_material", &self.signing_material);
-        formatter.field("signature_validity_period", &self.signature_validity_period);
-        formatter.field("platform_id", &self.platform_id);
-        formatter.field("overrides", &self.overrides);
-        formatter.field("signing_parameters", &self.signing_parameters);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the signing profile.</p>
     #[doc(hidden)]
@@ -3557,17 +3674,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSigningProfilesInput {
     /// <p>Designates whether to include profiles with the status of <code>CANCELED</code>.</p>
     #[doc(hidden)]
@@ -3607,21 +3717,10 @@ impl ListSigningProfilesInput {
         self.statuses.as_deref()
     }
 }
-impl std::fmt::Debug for ListSigningProfilesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSigningProfilesInput");
-        formatter.field("include_canceled", &self.include_canceled);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("platform_id", &self.platform_id);
-        formatter.field("statuses", &self.statuses);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSigningPlatformsInput {
     /// <p>The category type of a signing platform.</p>
     #[doc(hidden)]
@@ -3661,21 +3760,10 @@ impl ListSigningPlatformsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListSigningPlatformsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSigningPlatformsInput");
-        formatter.field("category", &self.category);
-        formatter.field("partner", &self.partner);
-        formatter.field("target", &self.target);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSigningJobsInput {
     /// <p>A status value with which to filter your results.</p>
     #[doc(hidden)]
@@ -3743,25 +3831,10 @@ impl ListSigningJobsInput {
         self.job_invoker.as_deref()
     }
 }
-impl std::fmt::Debug for ListSigningJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSigningJobsInput");
-        formatter.field("status", &self.status);
-        formatter.field("platform_id", &self.platform_id);
-        formatter.field("requested_by", &self.requested_by);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("is_revoked", &self.is_revoked);
-        formatter.field("signature_expires_before", &self.signature_expires_before);
-        formatter.field("signature_expires_after", &self.signature_expires_after);
-        formatter.field("job_invoker", &self.job_invoker);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProfilePermissionsInput {
     /// <p>Name of the signing profile containing the cross-account permissions.</p>
     #[doc(hidden)]
@@ -3780,18 +3853,10 @@ impl ListProfilePermissionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListProfilePermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProfilePermissionsInput");
-        formatter.field("profile_name", &self.profile_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSigningProfileInput {
     /// <p>The name of the target signing profile.</p>
     #[doc(hidden)]
@@ -3810,18 +3875,10 @@ impl GetSigningProfileInput {
         self.profile_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetSigningProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSigningProfileInput");
-        formatter.field("profile_name", &self.profile_name);
-        formatter.field("profile_owner", &self.profile_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSigningPlatformInput {
     /// <p>The ID of the target signing platform.</p>
     #[doc(hidden)]
@@ -3833,17 +3890,10 @@ impl GetSigningPlatformInput {
         self.platform_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetSigningPlatformInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSigningPlatformInput");
-        formatter.field("platform_id", &self.platform_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSigningJobInput {
     /// <p>The ID of the signing job on input.</p>
     #[doc(hidden)]
@@ -3855,17 +3905,10 @@ impl DescribeSigningJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeSigningJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSigningJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelSigningProfileInput {
     /// <p>The name of the signing profile to be canceled.</p>
     #[doc(hidden)]
@@ -3877,17 +3920,10 @@ impl CancelSigningProfileInput {
         self.profile_name.as_deref()
     }
 }
-impl std::fmt::Debug for CancelSigningProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelSigningProfileInput");
-        formatter.field("profile_name", &self.profile_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddProfilePermissionInput {
     /// <p>The human-readable name of the signing profile.</p>
     #[doc(hidden)]
@@ -3932,17 +3968,5 @@ impl AddProfilePermissionInput {
     /// <p>A unique identifier for the cross-account permission statement.</p>
     pub fn statement_id(&self) -> std::option::Option<&str> {
         self.statement_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AddProfilePermissionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddProfilePermissionInput");
-        formatter.field("profile_name", &self.profile_name);
-        formatter.field("profile_version", &self.profile_version);
-        formatter.field("action", &self.action);
-        formatter.field("principal", &self.principal);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.field("statement_id", &self.statement_id);
-        formatter.finish()
     }
 }

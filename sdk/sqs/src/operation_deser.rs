@@ -27,7 +27,7 @@ pub fn parse_add_permission_error(
                     .map_err(crate::error::AddPermissionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -81,7 +81,7 @@ pub fn parse_change_message_visibility_error(
                         output = crate::xml_deser::deser_structure_crate_error_message_not_inflight_xml_err(response.body().as_ref(), output).map_err(crate::error::ChangeMessageVisibilityError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -99,7 +99,7 @@ pub fn parse_change_message_visibility_error(
                     output = crate::xml_deser::deser_structure_crate_error_receipt_handle_is_invalid_xml_err(response.body().as_ref(), output).map_err(crate::error::ChangeMessageVisibilityError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -153,7 +153,7 @@ pub fn parse_change_message_visibility_batch_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -167,7 +167,7 @@ pub fn parse_change_message_visibility_batch_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -181,7 +181,7 @@ pub fn parse_change_message_visibility_batch_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -195,7 +195,7 @@ pub fn parse_change_message_visibility_batch_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -248,7 +248,7 @@ pub fn parse_create_queue_error(
                     output = crate::xml_deser::deser_structure_crate_error_queue_deleted_recently_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateQueueError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -266,7 +266,7 @@ pub fn parse_create_queue_error(
                         output = crate::xml_deser::deser_structure_crate_error_queue_name_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateQueueError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -319,7 +319,7 @@ pub fn parse_delete_message_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_id_format_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteMessageError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -337,7 +337,7 @@ pub fn parse_delete_message_error(
                     output = crate::xml_deser::deser_structure_crate_error_receipt_handle_is_invalid_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteMessageError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -388,7 +388,7 @@ pub fn parse_delete_message_batch_error(
                         output = crate::xml_deser::deser_structure_crate_error_batch_entry_ids_not_distinct_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteMessageBatchError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -407,7 +407,7 @@ pub fn parse_delete_message_batch_error(
                         output = crate::xml_deser::deser_structure_crate_error_empty_batch_request_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteMessageBatchError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -425,7 +425,7 @@ pub fn parse_delete_message_batch_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_batch_entry_id_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteMessageBatchError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -444,7 +444,7 @@ pub fn parse_delete_message_batch_error(
                         output = crate::xml_deser::deser_structure_crate_error_too_many_entries_in_batch_request_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteMessageBatchError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -523,7 +523,7 @@ pub fn parse_get_queue_attributes_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_attribute_name_xml_err(response.body().as_ref(), output).map_err(crate::error::GetQueueAttributesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -578,7 +578,7 @@ pub fn parse_get_queue_url_error(
                         output = crate::xml_deser::deser_structure_crate_error_queue_does_not_exist_xml_err(response.body().as_ref(), output).map_err(crate::error::GetQueueUrlError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -638,7 +638,7 @@ pub fn parse_list_dead_letter_source_queues_error(
                         output = crate::xml_deser::deser_structure_crate_error_queue_does_not_exist_xml_err(response.body().as_ref(), output).map_err(crate::error::ListDeadLetterSourceQueuesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -745,7 +745,7 @@ pub fn parse_purge_queue_error(
                     output = crate::xml_deser::deser_structure_crate_error_purge_queue_in_progress_xml_err(response.body().as_ref(), output).map_err(crate::error::PurgeQueueError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -763,7 +763,7 @@ pub fn parse_purge_queue_error(
                         output = crate::xml_deser::deser_structure_crate_error_queue_does_not_exist_xml_err(response.body().as_ref(), output).map_err(crate::error::PurgeQueueError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -814,7 +814,7 @@ pub fn parse_receive_message_error(
                     .map_err(crate::error::ReceiveMessageError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -888,7 +888,7 @@ pub fn parse_send_message_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_message_contents_xml_err(response.body().as_ref(), output).map_err(crate::error::SendMessageError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -905,7 +905,7 @@ pub fn parse_send_message_error(
                     output = crate::xml_deser::deser_structure_crate_error_unsupported_operation_xml_err(response.body().as_ref(), output).map_err(crate::error::SendMessageError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -957,7 +957,7 @@ pub fn parse_send_message_batch_error(
                     output = crate::xml_deser::deser_structure_crate_error_batch_entry_ids_not_distinct_xml_err(response.body().as_ref(), output).map_err(crate::error::SendMessageBatchError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -974,7 +974,7 @@ pub fn parse_send_message_batch_error(
                     output = crate::xml_deser::deser_structure_crate_error_batch_request_too_long_xml_err(response.body().as_ref(), output).map_err(crate::error::SendMessageBatchError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -992,7 +992,7 @@ pub fn parse_send_message_batch_error(
                         output = crate::xml_deser::deser_structure_crate_error_empty_batch_request_xml_err(response.body().as_ref(), output).map_err(crate::error::SendMessageBatchError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1010,7 +1010,7 @@ pub fn parse_send_message_batch_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_batch_entry_id_xml_err(response.body().as_ref(), output).map_err(crate::error::SendMessageBatchError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1029,7 +1029,7 @@ pub fn parse_send_message_batch_error(
                         output = crate::xml_deser::deser_structure_crate_error_too_many_entries_in_batch_request_xml_err(response.body().as_ref(), output).map_err(crate::error::SendMessageBatchError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1047,7 +1047,7 @@ pub fn parse_send_message_batch_error(
                     output = crate::xml_deser::deser_structure_crate_error_unsupported_operation_xml_err(response.body().as_ref(), output).map_err(crate::error::SendMessageBatchError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1102,7 +1102,7 @@ pub fn parse_set_queue_attributes_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_attribute_name_xml_err(response.body().as_ref(), output).map_err(crate::error::SetQueueAttributesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp

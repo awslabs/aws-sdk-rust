@@ -2,7 +2,7 @@
 
 /// <p>A virtual machine that is on a hypervisor.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualMachine {
     /// <p>The host name of the virtual machine.</p>
     #[doc(hidden)]
@@ -49,23 +49,11 @@ impl VirtualMachine {
         self.last_backup_date.as_ref()
     }
 }
-impl std::fmt::Debug for VirtualMachine {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualMachine");
-        formatter.field("host_name", &self.host_name);
-        formatter.field("hypervisor_id", &self.hypervisor_id);
-        formatter.field("name", &self.name);
-        formatter.field("path", &self.path);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("last_backup_date", &self.last_backup_date);
-        formatter.finish()
-    }
-}
 /// See [`VirtualMachine`](crate::model::VirtualMachine).
 pub mod virtual_machine {
 
     /// A builder for [`VirtualMachine`](crate::model::VirtualMachine).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) host_name: std::option::Option<std::string::String>,
         pub(crate) hypervisor_id: std::option::Option<std::string::String>,
@@ -163,7 +151,7 @@ impl VirtualMachine {
 
 /// <p>Your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualMachineDetails {
     /// <p>The host name of the virtual machine.</p>
     #[doc(hidden)]
@@ -210,23 +198,11 @@ impl VirtualMachineDetails {
         self.last_backup_date.as_ref()
     }
 }
-impl std::fmt::Debug for VirtualMachineDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualMachineDetails");
-        formatter.field("host_name", &self.host_name);
-        formatter.field("hypervisor_id", &self.hypervisor_id);
-        formatter.field("name", &self.name);
-        formatter.field("path", &self.path);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("last_backup_date", &self.last_backup_date);
-        formatter.finish()
-    }
-}
 /// See [`VirtualMachineDetails`](crate::model::VirtualMachineDetails).
 pub mod virtual_machine_details {
 
     /// A builder for [`VirtualMachineDetails`](crate::model::VirtualMachineDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) host_name: std::option::Option<std::string::String>,
         pub(crate) hypervisor_id: std::option::Option<std::string::String>,
@@ -325,7 +301,7 @@ impl VirtualMachineDetails {
 /// <p>Represents the hypervisor's permissions to which the gateway will connect.</p>
 /// <p>A hypervisor is hardware, software, or firmware that creates and manages virtual machines, and allocates resources to them.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Hypervisor {
     /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
     #[doc(hidden)]
@@ -365,22 +341,11 @@ impl Hypervisor {
         self.state.as_ref()
     }
 }
-impl std::fmt::Debug for Hypervisor {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Hypervisor");
-        formatter.field("host", &self.host);
-        formatter.field("hypervisor_arn", &self.hypervisor_arn);
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.field("name", &self.name);
-        formatter.field("state", &self.state);
-        formatter.finish()
-    }
-}
 /// See [`Hypervisor`](crate::model::Hypervisor).
 pub mod hypervisor {
 
     /// A builder for [`Hypervisor`](crate::model::Hypervisor).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) host: std::option::Option<std::string::String>,
         pub(crate) hypervisor_arn: std::option::Option<std::string::String>,
@@ -464,6 +429,43 @@ impl Hypervisor {
     }
 }
 
+/// When writing a match expression against `HypervisorState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let hypervisorstate = unimplemented!();
+/// match hypervisorstate {
+///     HypervisorState::Error => { /* ... */ },
+///     HypervisorState::Offline => { /* ... */ },
+///     HypervisorState::Online => { /* ... */ },
+///     HypervisorState::Pending => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `hypervisorstate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `HypervisorState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `HypervisorState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `HypervisorState::NewFeature` is defined.
+/// Specifically, when `hypervisorstate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `HypervisorState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -484,8 +486,8 @@ pub enum HypervisorState {
     Online,
     #[allow(missing_docs)] // documentation missing in model
     Pending,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for HypervisorState {
     fn from(s: &str) -> Self {
@@ -494,7 +496,7 @@ impl std::convert::From<&str> for HypervisorState {
             "OFFLINE" => HypervisorState::Offline,
             "ONLINE" => HypervisorState::Online,
             "PENDING" => HypervisorState::Pending,
-            other => HypervisorState::Unknown(other.to_owned()),
+            other => HypervisorState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -513,11 +515,11 @@ impl HypervisorState {
             HypervisorState::Offline => "OFFLINE",
             HypervisorState::Online => "ONLINE",
             HypervisorState::Pending => "PENDING",
-            HypervisorState::Unknown(s) => s.as_ref(),
+            HypervisorState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ERROR", "OFFLINE", "ONLINE", "PENDING"]
     }
 }
@@ -529,7 +531,7 @@ impl AsRef<str> for HypervisorState {
 
 /// <p>A key-value pair you can use to manage, filter, and search for your resources. Allowed characters include UTF-8 letters, numbers, spaces, and the following characters: + - = . _ : /.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key part of a tag's key-value pair. The key can't start with <code>aws:</code>.</p>
     #[doc(hidden)]
@@ -548,19 +550,11 @@ impl Tag {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -604,7 +598,7 @@ impl Tag {
 
 /// <p>A gateway is an Backup Gateway appliance that runs on the customer's network to provide seamless connectivity to backup storage in the Amazon Web Services Cloud.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Gateway {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -644,22 +638,11 @@ impl Gateway {
         self.last_seen_time.as_ref()
     }
 }
-impl std::fmt::Debug for Gateway {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Gateway");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("gateway_display_name", &self.gateway_display_name);
-        formatter.field("gateway_type", &self.gateway_type);
-        formatter.field("hypervisor_id", &self.hypervisor_id);
-        formatter.field("last_seen_time", &self.last_seen_time);
-        formatter.finish()
-    }
-}
 /// See [`Gateway`](crate::model::Gateway).
 pub mod gateway {
 
     /// A builder for [`Gateway`](crate::model::Gateway).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) gateway_display_name: std::option::Option<std::string::String>,
@@ -749,6 +732,40 @@ impl Gateway {
     }
 }
 
+/// When writing a match expression against `GatewayType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let gatewaytype = unimplemented!();
+/// match gatewaytype {
+///     GatewayType::BackupVm => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `gatewaytype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `GatewayType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `GatewayType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `GatewayType::NewFeature` is defined.
+/// Specifically, when `gatewaytype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `GatewayType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -763,14 +780,14 @@ impl Gateway {
 pub enum GatewayType {
     #[allow(missing_docs)] // documentation missing in model
     BackupVm,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for GatewayType {
     fn from(s: &str) -> Self {
         match s {
             "BACKUP_VM" => GatewayType::BackupVm,
-            other => GatewayType::Unknown(other.to_owned()),
+            other => GatewayType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -786,11 +803,11 @@ impl GatewayType {
     pub fn as_str(&self) -> &str {
         match self {
             GatewayType::BackupVm => "BACKUP_VM",
-            GatewayType::Unknown(s) => s.as_ref(),
+            GatewayType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BACKUP_VM"]
     }
 }
@@ -802,7 +819,7 @@ impl AsRef<str> for GatewayType {
 
 /// <p>The details of gateway.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GatewayDetails {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -867,28 +884,11 @@ impl GatewayDetails {
         self.vpc_endpoint.as_deref()
     }
 }
-impl std::fmt::Debug for GatewayDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GatewayDetails");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("gateway_display_name", &self.gateway_display_name);
-        formatter.field("gateway_type", &self.gateway_type);
-        formatter.field("hypervisor_id", &self.hypervisor_id);
-        formatter.field("last_seen_time", &self.last_seen_time);
-        formatter.field("maintenance_start_time", &self.maintenance_start_time);
-        formatter.field(
-            "next_update_availability_time",
-            &self.next_update_availability_time,
-        );
-        formatter.field("vpc_endpoint", &self.vpc_endpoint);
-        formatter.finish()
-    }
-}
 /// See [`GatewayDetails`](crate::model::GatewayDetails).
 pub mod gateway_details {
 
     /// A builder for [`GatewayDetails`](crate::model::GatewayDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) gateway_display_name: std::option::Option<std::string::String>,
@@ -1022,7 +1022,7 @@ impl GatewayDetails {
 
 /// <p>This is your gateway's weekly maintenance start time including the day and time of the week. Note that values are in terms of the gateway's time zone. Can be weekly or monthly.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaintenanceStartTime {
     /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month and 28 represents the last day of the month.</p>
     #[doc(hidden)]
@@ -1055,21 +1055,11 @@ impl MaintenanceStartTime {
         self.minute_of_hour
     }
 }
-impl std::fmt::Debug for MaintenanceStartTime {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaintenanceStartTime");
-        formatter.field("day_of_month", &self.day_of_month);
-        formatter.field("day_of_week", &self.day_of_week);
-        formatter.field("hour_of_day", &self.hour_of_day);
-        formatter.field("minute_of_hour", &self.minute_of_hour);
-        formatter.finish()
-    }
-}
 /// See [`MaintenanceStartTime`](crate::model::MaintenanceStartTime).
 pub mod maintenance_start_time {
 
     /// A builder for [`MaintenanceStartTime`](crate::model::MaintenanceStartTime).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) day_of_month: std::option::Option<i32>,
         pub(crate) day_of_week: std::option::Option<i32>,

@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod describe_entities_detection_v2_job_input {
 
     /// A builder for [`DescribeEntitiesDetectionV2JobInput`](crate::input::DescribeEntitiesDetectionV2JobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -25,7 +25,7 @@ pub mod describe_entities_detection_v2_job_input {
             self,
         ) -> Result<
             crate::input::DescribeEntitiesDetectionV2JobInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeEntitiesDetectionV2JobInput {
                 job_id: self.job_id,
@@ -46,13 +46,13 @@ impl DescribeEntitiesDetectionV2JobInput {
             crate::operation::DescribeEntitiesDetectionV2Job,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeEntitiesDetectionV2JobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -60,8 +60,10 @@ impl DescribeEntitiesDetectionV2JobInput {
             fn update_http_builder(
                 input: &crate::input::DescribeEntitiesDetectionV2JobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -149,7 +151,7 @@ impl DescribeEntitiesDetectionV2JobInput {
 pub mod describe_icd10_cm_inference_job_input {
 
     /// A builder for [`DescribeIcd10CmInferenceJobInput`](crate::input::DescribeIcd10CmInferenceJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -169,7 +171,7 @@ pub mod describe_icd10_cm_inference_job_input {
             self,
         ) -> Result<
             crate::input::DescribeIcd10CmInferenceJobInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeIcd10CmInferenceJobInput {
                 job_id: self.job_id,
@@ -190,13 +192,13 @@ impl DescribeIcd10CmInferenceJobInput {
             crate::operation::DescribeICD10CMInferenceJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeIcd10CmInferenceJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -204,8 +206,10 @@ impl DescribeIcd10CmInferenceJobInput {
             fn update_http_builder(
                 input: &crate::input::DescribeIcd10CmInferenceJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -293,7 +297,7 @@ impl DescribeIcd10CmInferenceJobInput {
 pub mod describe_phi_detection_job_input {
 
     /// A builder for [`DescribePhiDetectionJobInput`](crate::input::DescribePhiDetectionJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -313,7 +317,7 @@ pub mod describe_phi_detection_job_input {
             self,
         ) -> Result<
             crate::input::DescribePhiDetectionJobInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribePhiDetectionJobInput {
                 job_id: self.job_id,
@@ -334,13 +338,13 @@ impl DescribePhiDetectionJobInput {
             crate::operation::DescribePHIDetectionJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribePhiDetectionJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -348,8 +352,10 @@ impl DescribePhiDetectionJobInput {
             fn update_http_builder(
                 input: &crate::input::DescribePhiDetectionJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -440,7 +446,7 @@ impl DescribePhiDetectionJobInput {
 pub mod describe_rx_norm_inference_job_input {
 
     /// A builder for [`DescribeRxNormInferenceJobInput`](crate::input::DescribeRxNormInferenceJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -460,7 +466,7 @@ pub mod describe_rx_norm_inference_job_input {
             self,
         ) -> Result<
             crate::input::DescribeRxNormInferenceJobInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeRxNormInferenceJobInput {
                 job_id: self.job_id,
@@ -481,13 +487,13 @@ impl DescribeRxNormInferenceJobInput {
             crate::operation::DescribeRxNormInferenceJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeRxNormInferenceJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -495,8 +501,10 @@ impl DescribeRxNormInferenceJobInput {
             fn update_http_builder(
                 input: &crate::input::DescribeRxNormInferenceJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -584,7 +592,7 @@ impl DescribeRxNormInferenceJobInput {
 pub mod describe_snomedct_inference_job_input {
 
     /// A builder for [`DescribeSnomedctInferenceJobInput`](crate::input::DescribeSnomedctInferenceJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -604,7 +612,7 @@ pub mod describe_snomedct_inference_job_input {
             self,
         ) -> Result<
             crate::input::DescribeSnomedctInferenceJobInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeSnomedctInferenceJobInput {
                 job_id: self.job_id,
@@ -625,13 +633,13 @@ impl DescribeSnomedctInferenceJobInput {
             crate::operation::DescribeSNOMEDCTInferenceJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeSnomedctInferenceJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -639,8 +647,10 @@ impl DescribeSnomedctInferenceJobInput {
             fn update_http_builder(
                 input: &crate::input::DescribeSnomedctInferenceJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -728,7 +738,7 @@ impl DescribeSnomedctInferenceJobInput {
 pub mod detect_entities_input {
 
     /// A builder for [`DetectEntitiesInput`](crate::input::DetectEntitiesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
     }
@@ -746,7 +756,7 @@ pub mod detect_entities_input {
         /// Consumes the builder and constructs a [`DetectEntitiesInput`](crate::input::DetectEntitiesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DetectEntitiesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DetectEntitiesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DetectEntitiesInput { text: self.text })
         }
@@ -765,13 +775,13 @@ impl DetectEntitiesInput {
             crate::operation::DetectEntities,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DetectEntitiesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -779,8 +789,10 @@ impl DetectEntitiesInput {
             fn update_http_builder(
                 input: &crate::input::DetectEntitiesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -869,7 +881,7 @@ impl DetectEntitiesInput {
 pub mod detect_entities_v2_input {
 
     /// A builder for [`DetectEntitiesV2Input`](crate::input::DetectEntitiesV2Input).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
     }
@@ -887,8 +899,10 @@ pub mod detect_entities_v2_input {
         /// Consumes the builder and constructs a [`DetectEntitiesV2Input`](crate::input::DetectEntitiesV2Input).
         pub fn build(
             self,
-        ) -> Result<crate::input::DetectEntitiesV2Input, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DetectEntitiesV2Input,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DetectEntitiesV2Input { text: self.text })
         }
     }
@@ -906,13 +920,13 @@ impl DetectEntitiesV2Input {
             crate::operation::DetectEntitiesV2,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DetectEntitiesV2Input,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -920,8 +934,10 @@ impl DetectEntitiesV2Input {
             fn update_http_builder(
                 input: &crate::input::DetectEntitiesV2Input,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1010,7 +1026,7 @@ impl DetectEntitiesV2Input {
 pub mod detect_phi_input {
 
     /// A builder for [`DetectPhiInput`](crate::input::DetectPhiInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
     }
@@ -1028,7 +1044,8 @@ pub mod detect_phi_input {
         /// Consumes the builder and constructs a [`DetectPhiInput`](crate::input::DetectPhiInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DetectPhiInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::DetectPhiInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::DetectPhiInput { text: self.text })
         }
     }
@@ -1046,13 +1063,13 @@ impl DetectPhiInput {
             crate::operation::DetectPHI,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DetectPhiInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1060,8 +1077,10 @@ impl DetectPhiInput {
             fn update_http_builder(
                 input: &crate::input::DetectPhiInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1148,7 +1167,7 @@ impl DetectPhiInput {
 pub mod infer_icd10_cm_input {
 
     /// A builder for [`InferIcd10CmInput`](crate::input::InferIcd10CmInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
     }
@@ -1166,7 +1185,7 @@ pub mod infer_icd10_cm_input {
         /// Consumes the builder and constructs a [`InferIcd10CmInput`](crate::input::InferIcd10CmInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::InferIcd10CmInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::InferIcd10CmInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::InferIcd10CmInput { text: self.text })
         }
@@ -1185,13 +1204,13 @@ impl InferIcd10CmInput {
             crate::operation::InferICD10CM,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::InferIcd10CmInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1199,8 +1218,10 @@ impl InferIcd10CmInput {
             fn update_http_builder(
                 input: &crate::input::InferIcd10CmInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1289,7 +1310,7 @@ impl InferIcd10CmInput {
 pub mod infer_rx_norm_input {
 
     /// A builder for [`InferRxNormInput`](crate::input::InferRxNormInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
     }
@@ -1307,7 +1328,7 @@ pub mod infer_rx_norm_input {
         /// Consumes the builder and constructs a [`InferRxNormInput`](crate::input::InferRxNormInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::InferRxNormInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::InferRxNormInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::InferRxNormInput { text: self.text })
         }
@@ -1326,13 +1347,13 @@ impl InferRxNormInput {
             crate::operation::InferRxNorm,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::InferRxNormInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1340,8 +1361,10 @@ impl InferRxNormInput {
             fn update_http_builder(
                 input: &crate::input::InferRxNormInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1430,7 +1453,7 @@ impl InferRxNormInput {
 pub mod infer_snomedct_input {
 
     /// A builder for [`InferSnomedctInput`](crate::input::InferSnomedctInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
     }
@@ -1448,7 +1471,7 @@ pub mod infer_snomedct_input {
         /// Consumes the builder and constructs a [`InferSnomedctInput`](crate::input::InferSnomedctInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::InferSnomedctInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::InferSnomedctInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::InferSnomedctInput { text: self.text })
         }
@@ -1467,13 +1490,13 @@ impl InferSnomedctInput {
             crate::operation::InferSNOMEDCT,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::InferSnomedctInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1481,8 +1504,10 @@ impl InferSnomedctInput {
             fn update_http_builder(
                 input: &crate::input::InferSnomedctInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1571,7 +1596,7 @@ impl InferSnomedctInput {
 pub mod list_entities_detection_v2_jobs_input {
 
     /// A builder for [`ListEntitiesDetectionV2JobsInput`](crate::input::ListEntitiesDetectionV2JobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1616,7 +1641,7 @@ pub mod list_entities_detection_v2_jobs_input {
             self,
         ) -> Result<
             crate::input::ListEntitiesDetectionV2JobsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListEntitiesDetectionV2JobsInput {
                 filter: self.filter,
@@ -1639,13 +1664,13 @@ impl ListEntitiesDetectionV2JobsInput {
             crate::operation::ListEntitiesDetectionV2Jobs,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListEntitiesDetectionV2JobsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1653,8 +1678,10 @@ impl ListEntitiesDetectionV2JobsInput {
             fn update_http_builder(
                 input: &crate::input::ListEntitiesDetectionV2JobsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1742,7 +1769,7 @@ impl ListEntitiesDetectionV2JobsInput {
 pub mod list_icd10_cm_inference_jobs_input {
 
     /// A builder for [`ListIcd10CmInferenceJobsInput`](crate::input::ListIcd10CmInferenceJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1787,7 +1814,7 @@ pub mod list_icd10_cm_inference_jobs_input {
             self,
         ) -> Result<
             crate::input::ListIcd10CmInferenceJobsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListIcd10CmInferenceJobsInput {
                 filter: self.filter,
@@ -1810,13 +1837,13 @@ impl ListIcd10CmInferenceJobsInput {
             crate::operation::ListICD10CMInferenceJobs,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListIcd10CmInferenceJobsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1824,8 +1851,10 @@ impl ListIcd10CmInferenceJobsInput {
             fn update_http_builder(
                 input: &crate::input::ListIcd10CmInferenceJobsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1916,7 +1945,7 @@ impl ListIcd10CmInferenceJobsInput {
 pub mod list_phi_detection_jobs_input {
 
     /// A builder for [`ListPhiDetectionJobsInput`](crate::input::ListPhiDetectionJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1959,8 +1988,10 @@ pub mod list_phi_detection_jobs_input {
         /// Consumes the builder and constructs a [`ListPhiDetectionJobsInput`](crate::input::ListPhiDetectionJobsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListPhiDetectionJobsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListPhiDetectionJobsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListPhiDetectionJobsInput {
                 filter: self.filter,
                 next_token: self.next_token,
@@ -1982,13 +2013,13 @@ impl ListPhiDetectionJobsInput {
             crate::operation::ListPHIDetectionJobs,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListPhiDetectionJobsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1996,8 +2027,10 @@ impl ListPhiDetectionJobsInput {
             fn update_http_builder(
                 input: &crate::input::ListPhiDetectionJobsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2088,7 +2121,7 @@ impl ListPhiDetectionJobsInput {
 pub mod list_rx_norm_inference_jobs_input {
 
     /// A builder for [`ListRxNormInferenceJobsInput`](crate::input::ListRxNormInferenceJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2133,7 +2166,7 @@ pub mod list_rx_norm_inference_jobs_input {
             self,
         ) -> Result<
             crate::input::ListRxNormInferenceJobsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListRxNormInferenceJobsInput {
                 filter: self.filter,
@@ -2156,13 +2189,13 @@ impl ListRxNormInferenceJobsInput {
             crate::operation::ListRxNormInferenceJobs,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListRxNormInferenceJobsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2170,8 +2203,10 @@ impl ListRxNormInferenceJobsInput {
             fn update_http_builder(
                 input: &crate::input::ListRxNormInferenceJobsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2262,7 +2297,7 @@ impl ListRxNormInferenceJobsInput {
 pub mod list_snomedct_inference_jobs_input {
 
     /// A builder for [`ListSnomedctInferenceJobsInput`](crate::input::ListSnomedctInferenceJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2307,7 +2342,7 @@ pub mod list_snomedct_inference_jobs_input {
             self,
         ) -> Result<
             crate::input::ListSnomedctInferenceJobsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListSnomedctInferenceJobsInput {
                 filter: self.filter,
@@ -2330,13 +2365,13 @@ impl ListSnomedctInferenceJobsInput {
             crate::operation::ListSNOMEDCTInferenceJobs,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListSnomedctInferenceJobsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2344,8 +2379,10 @@ impl ListSnomedctInferenceJobsInput {
             fn update_http_builder(
                 input: &crate::input::ListSnomedctInferenceJobsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2436,7 +2473,7 @@ impl ListSnomedctInferenceJobsInput {
 pub mod start_entities_detection_v2_job_input {
 
     /// A builder for [`StartEntitiesDetectionV2JobInput`](crate::input::StartEntitiesDetectionV2JobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
         pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
@@ -2537,7 +2574,7 @@ pub mod start_entities_detection_v2_job_input {
             self,
         ) -> Result<
             crate::input::StartEntitiesDetectionV2JobInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::StartEntitiesDetectionV2JobInput {
                 input_data_config: self.input_data_config,
@@ -2564,7 +2601,7 @@ impl StartEntitiesDetectionV2JobInput {
             crate::operation::StartEntitiesDetectionV2Job,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
@@ -2573,7 +2610,7 @@ impl StartEntitiesDetectionV2JobInput {
             fn uri_base(
                 _input: &crate::input::StartEntitiesDetectionV2JobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2581,8 +2618,10 @@ impl StartEntitiesDetectionV2JobInput {
             fn update_http_builder(
                 input: &crate::input::StartEntitiesDetectionV2JobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2670,7 +2709,7 @@ impl StartEntitiesDetectionV2JobInput {
 pub mod start_icd10_cm_inference_job_input {
 
     /// A builder for [`StartIcd10CmInferenceJobInput`](crate::input::StartIcd10CmInferenceJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
         pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
@@ -2771,7 +2810,7 @@ pub mod start_icd10_cm_inference_job_input {
             self,
         ) -> Result<
             crate::input::StartIcd10CmInferenceJobInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::StartIcd10CmInferenceJobInput {
                 input_data_config: self.input_data_config,
@@ -2798,7 +2837,7 @@ impl StartIcd10CmInferenceJobInput {
             crate::operation::StartICD10CMInferenceJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
@@ -2807,7 +2846,7 @@ impl StartIcd10CmInferenceJobInput {
             fn uri_base(
                 _input: &crate::input::StartIcd10CmInferenceJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2815,8 +2854,10 @@ impl StartIcd10CmInferenceJobInput {
             fn update_http_builder(
                 input: &crate::input::StartIcd10CmInferenceJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2907,7 +2948,7 @@ impl StartIcd10CmInferenceJobInput {
 pub mod start_phi_detection_job_input {
 
     /// A builder for [`StartPhiDetectionJobInput`](crate::input::StartPhiDetectionJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
         pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
@@ -3006,8 +3047,10 @@ pub mod start_phi_detection_job_input {
         /// Consumes the builder and constructs a [`StartPhiDetectionJobInput`](crate::input::StartPhiDetectionJobInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StartPhiDetectionJobInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::StartPhiDetectionJobInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::StartPhiDetectionJobInput {
                 input_data_config: self.input_data_config,
                 output_data_config: self.output_data_config,
@@ -3033,7 +3076,7 @@ impl StartPhiDetectionJobInput {
             crate::operation::StartPHIDetectionJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
@@ -3042,7 +3085,7 @@ impl StartPhiDetectionJobInput {
             fn uri_base(
                 _input: &crate::input::StartPhiDetectionJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3050,8 +3093,10 @@ impl StartPhiDetectionJobInput {
             fn update_http_builder(
                 input: &crate::input::StartPhiDetectionJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3142,7 +3187,7 @@ impl StartPhiDetectionJobInput {
 pub mod start_rx_norm_inference_job_input {
 
     /// A builder for [`StartRxNormInferenceJobInput`](crate::input::StartRxNormInferenceJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
         pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
@@ -3243,7 +3288,7 @@ pub mod start_rx_norm_inference_job_input {
             self,
         ) -> Result<
             crate::input::StartRxNormInferenceJobInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::StartRxNormInferenceJobInput {
                 input_data_config: self.input_data_config,
@@ -3270,7 +3315,7 @@ impl StartRxNormInferenceJobInput {
             crate::operation::StartRxNormInferenceJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
@@ -3279,7 +3324,7 @@ impl StartRxNormInferenceJobInput {
             fn uri_base(
                 _input: &crate::input::StartRxNormInferenceJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3287,8 +3332,10 @@ impl StartRxNormInferenceJobInput {
             fn update_http_builder(
                 input: &crate::input::StartRxNormInferenceJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3379,7 +3426,7 @@ impl StartRxNormInferenceJobInput {
 pub mod start_snomedct_inference_job_input {
 
     /// A builder for [`StartSnomedctInferenceJobInput`](crate::input::StartSnomedctInferenceJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
         pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
@@ -3480,7 +3527,7 @@ pub mod start_snomedct_inference_job_input {
             self,
         ) -> Result<
             crate::input::StartSnomedctInferenceJobInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::StartSnomedctInferenceJobInput {
                 input_data_config: self.input_data_config,
@@ -3507,7 +3554,7 @@ impl StartSnomedctInferenceJobInput {
             crate::operation::StartSNOMEDCTInferenceJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
@@ -3516,7 +3563,7 @@ impl StartSnomedctInferenceJobInput {
             fn uri_base(
                 _input: &crate::input::StartSnomedctInferenceJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3524,8 +3571,10 @@ impl StartSnomedctInferenceJobInput {
             fn update_http_builder(
                 input: &crate::input::StartSnomedctInferenceJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3616,7 +3665,7 @@ impl StartSnomedctInferenceJobInput {
 pub mod stop_entities_detection_v2_job_input {
 
     /// A builder for [`StopEntitiesDetectionV2JobInput`](crate::input::StopEntitiesDetectionV2JobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -3636,7 +3685,7 @@ pub mod stop_entities_detection_v2_job_input {
             self,
         ) -> Result<
             crate::input::StopEntitiesDetectionV2JobInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::StopEntitiesDetectionV2JobInput {
                 job_id: self.job_id,
@@ -3657,13 +3706,13 @@ impl StopEntitiesDetectionV2JobInput {
             crate::operation::StopEntitiesDetectionV2Job,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StopEntitiesDetectionV2JobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3671,8 +3720,10 @@ impl StopEntitiesDetectionV2JobInput {
             fn update_http_builder(
                 input: &crate::input::StopEntitiesDetectionV2JobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3760,7 +3811,7 @@ impl StopEntitiesDetectionV2JobInput {
 pub mod stop_icd10_cm_inference_job_input {
 
     /// A builder for [`StopIcd10CmInferenceJobInput`](crate::input::StopIcd10CmInferenceJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -3780,7 +3831,7 @@ pub mod stop_icd10_cm_inference_job_input {
             self,
         ) -> Result<
             crate::input::StopIcd10CmInferenceJobInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::StopIcd10CmInferenceJobInput {
                 job_id: self.job_id,
@@ -3801,13 +3852,13 @@ impl StopIcd10CmInferenceJobInput {
             crate::operation::StopICD10CMInferenceJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StopIcd10CmInferenceJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3815,8 +3866,10 @@ impl StopIcd10CmInferenceJobInput {
             fn update_http_builder(
                 input: &crate::input::StopIcd10CmInferenceJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3907,7 +3960,7 @@ impl StopIcd10CmInferenceJobInput {
 pub mod stop_phi_detection_job_input {
 
     /// A builder for [`StopPhiDetectionJobInput`](crate::input::StopPhiDetectionJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -3925,8 +3978,10 @@ pub mod stop_phi_detection_job_input {
         /// Consumes the builder and constructs a [`StopPhiDetectionJobInput`](crate::input::StopPhiDetectionJobInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StopPhiDetectionJobInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::StopPhiDetectionJobInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::StopPhiDetectionJobInput {
                 job_id: self.job_id,
             })
@@ -3946,13 +4001,13 @@ impl StopPhiDetectionJobInput {
             crate::operation::StopPHIDetectionJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StopPhiDetectionJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3960,8 +4015,10 @@ impl StopPhiDetectionJobInput {
             fn update_http_builder(
                 input: &crate::input::StopPhiDetectionJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4052,7 +4109,7 @@ impl StopPhiDetectionJobInput {
 pub mod stop_rx_norm_inference_job_input {
 
     /// A builder for [`StopRxNormInferenceJobInput`](crate::input::StopRxNormInferenceJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -4070,8 +4127,10 @@ pub mod stop_rx_norm_inference_job_input {
         /// Consumes the builder and constructs a [`StopRxNormInferenceJobInput`](crate::input::StopRxNormInferenceJobInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StopRxNormInferenceJobInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::StopRxNormInferenceJobInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::StopRxNormInferenceJobInput {
                 job_id: self.job_id,
             })
@@ -4091,13 +4150,13 @@ impl StopRxNormInferenceJobInput {
             crate::operation::StopRxNormInferenceJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StopRxNormInferenceJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4105,8 +4164,10 @@ impl StopRxNormInferenceJobInput {
             fn update_http_builder(
                 input: &crate::input::StopRxNormInferenceJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4197,7 +4258,7 @@ impl StopRxNormInferenceJobInput {
 pub mod stop_snomedct_inference_job_input {
 
     /// A builder for [`StopSnomedctInferenceJobInput`](crate::input::StopSnomedctInferenceJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -4217,7 +4278,7 @@ pub mod stop_snomedct_inference_job_input {
             self,
         ) -> Result<
             crate::input::StopSnomedctInferenceJobInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::StopSnomedctInferenceJobInput {
                 job_id: self.job_id,
@@ -4238,13 +4299,13 @@ impl StopSnomedctInferenceJobInput {
             crate::operation::StopSNOMEDCTInferenceJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StopSnomedctInferenceJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4252,8 +4313,10 @@ impl StopSnomedctInferenceJobInput {
             fn update_http_builder(
                 input: &crate::input::StopSnomedctInferenceJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4342,7 +4405,7 @@ impl StopSnomedctInferenceJobInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopSnomedctInferenceJobInput {
     /// <p> The job id of the asynchronous InferSNOMEDCT job to be stopped. </p>
     #[doc(hidden)]
@@ -4354,17 +4417,10 @@ impl StopSnomedctInferenceJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopSnomedctInferenceJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopSnomedctInferenceJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopRxNormInferenceJobInput {
     /// <p>The identifier of the job.</p>
     #[doc(hidden)]
@@ -4376,17 +4432,10 @@ impl StopRxNormInferenceJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopRxNormInferenceJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopRxNormInferenceJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopPhiDetectionJobInput {
     /// <p>The identifier of the PHI detection job to stop.</p>
     #[doc(hidden)]
@@ -4398,17 +4447,10 @@ impl StopPhiDetectionJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopPhiDetectionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopPhiDetectionJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopIcd10CmInferenceJobInput {
     /// <p>The identifier of the job.</p>
     #[doc(hidden)]
@@ -4420,17 +4462,10 @@ impl StopIcd10CmInferenceJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopIcd10CmInferenceJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopIcd10CmInferenceJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopEntitiesDetectionV2JobInput {
     /// <p>The identifier of the medical entities job to stop.</p>
     #[doc(hidden)]
@@ -4442,17 +4477,10 @@ impl StopEntitiesDetectionV2JobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopEntitiesDetectionV2JobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopEntitiesDetectionV2JobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartSnomedctInferenceJobInput {
     /// <p>The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed. </p>
     #[doc(hidden)]
@@ -4506,23 +4534,10 @@ impl StartSnomedctInferenceJobInput {
         self.language_code.as_ref()
     }
 }
-impl std::fmt::Debug for StartSnomedctInferenceJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartSnomedctInferenceJobInput");
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.field("language_code", &self.language_code);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartRxNormInferenceJobInput {
     /// <p>Specifies the format and location of the input data for the job.</p>
     #[doc(hidden)]
@@ -4576,23 +4591,10 @@ impl StartRxNormInferenceJobInput {
         self.language_code.as_ref()
     }
 }
-impl std::fmt::Debug for StartRxNormInferenceJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartRxNormInferenceJobInput");
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.field("language_code", &self.language_code);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartPhiDetectionJobInput {
     /// <p>Specifies the format and location of the input data for the job.</p>
     #[doc(hidden)]
@@ -4646,23 +4648,10 @@ impl StartPhiDetectionJobInput {
         self.language_code.as_ref()
     }
 }
-impl std::fmt::Debug for StartPhiDetectionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartPhiDetectionJobInput");
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.field("language_code", &self.language_code);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartIcd10CmInferenceJobInput {
     /// <p>Specifies the format and location of the input data for the job.</p>
     #[doc(hidden)]
@@ -4716,23 +4705,10 @@ impl StartIcd10CmInferenceJobInput {
         self.language_code.as_ref()
     }
 }
-impl std::fmt::Debug for StartIcd10CmInferenceJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartIcd10CmInferenceJobInput");
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.field("language_code", &self.language_code);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartEntitiesDetectionV2JobInput {
     /// <p>The input configuration that specifies the format and location of the input data for the job.</p>
     #[doc(hidden)]
@@ -4786,23 +4762,10 @@ impl StartEntitiesDetectionV2JobInput {
         self.language_code.as_ref()
     }
 }
-impl std::fmt::Debug for StartEntitiesDetectionV2JobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartEntitiesDetectionV2JobInput");
-        formatter.field("input_data_config", &self.input_data_config);
-        formatter.field("output_data_config", &self.output_data_config);
-        formatter.field("data_access_role_arn", &self.data_access_role_arn);
-        formatter.field("job_name", &self.job_name);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.field("language_code", &self.language_code);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSnomedctInferenceJobsInput {
     /// <p>Provides information for filtering a list of detection jobs.</p>
     #[doc(hidden)]
@@ -4828,19 +4791,10 @@ impl ListSnomedctInferenceJobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListSnomedctInferenceJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSnomedctInferenceJobsInput");
-        formatter.field("filter", &self.filter);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRxNormInferenceJobsInput {
     /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     #[doc(hidden)]
@@ -4866,19 +4820,10 @@ impl ListRxNormInferenceJobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListRxNormInferenceJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRxNormInferenceJobsInput");
-        formatter.field("filter", &self.filter);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPhiDetectionJobsInput {
     /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     #[doc(hidden)]
@@ -4904,19 +4849,10 @@ impl ListPhiDetectionJobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListPhiDetectionJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPhiDetectionJobsInput");
-        formatter.field("filter", &self.filter);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListIcd10CmInferenceJobsInput {
     /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     #[doc(hidden)]
@@ -4942,19 +4878,10 @@ impl ListIcd10CmInferenceJobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListIcd10CmInferenceJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListIcd10CmInferenceJobsInput");
-        formatter.field("filter", &self.filter);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEntitiesDetectionV2JobsInput {
     /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     #[doc(hidden)]
@@ -4980,19 +4907,10 @@ impl ListEntitiesDetectionV2JobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListEntitiesDetectionV2JobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEntitiesDetectionV2JobsInput");
-        formatter.field("filter", &self.filter);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InferSnomedctInput {
     /// <p> The input text to be analyzed using InferSNOMEDCT. The text should be a string with 1 to 10000 characters. </p>
     #[doc(hidden)]
@@ -5004,17 +4922,10 @@ impl InferSnomedctInput {
         self.text.as_deref()
     }
 }
-impl std::fmt::Debug for InferSnomedctInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InferSnomedctInput");
-        formatter.field("text", &self.text);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InferRxNormInput {
     /// <p>The input text used for analysis. The input for InferRxNorm is a string from 1 to 10000 characters.</p>
     #[doc(hidden)]
@@ -5026,17 +4937,10 @@ impl InferRxNormInput {
         self.text.as_deref()
     }
 }
-impl std::fmt::Debug for InferRxNormInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InferRxNormInput");
-        formatter.field("text", &self.text);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InferIcd10CmInput {
     /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000 characters.</p>
     #[doc(hidden)]
@@ -5048,17 +4952,10 @@ impl InferIcd10CmInput {
         self.text.as_deref()
     }
 }
-impl std::fmt::Debug for InferIcd10CmInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InferIcd10CmInput");
-        formatter.field("text", &self.text);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectPhiInput {
     /// <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each string must contain fewer than 20,000 bytes of characters.</p>
     #[doc(hidden)]
@@ -5070,17 +4967,10 @@ impl DetectPhiInput {
         self.text.as_deref()
     }
 }
-impl std::fmt::Debug for DetectPhiInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectPhiInput");
-        formatter.field("text", &self.text);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectEntitiesV2Input {
     /// <p>A UTF-8 string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
     #[doc(hidden)]
@@ -5092,17 +4982,10 @@ impl DetectEntitiesV2Input {
         self.text.as_deref()
     }
 }
-impl std::fmt::Debug for DetectEntitiesV2Input {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectEntitiesV2Input");
-        formatter.field("text", &self.text);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectEntitiesInput {
     /// <p> A UTF-8 text string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
     #[doc(hidden)]
@@ -5114,17 +4997,10 @@ impl DetectEntitiesInput {
         self.text.as_deref()
     }
 }
-impl std::fmt::Debug for DetectEntitiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectEntitiesInput");
-        formatter.field("text", &self.text);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSnomedctInferenceJobInput {
     /// <p> The identifier that Amazon Comprehend Medical generated for the job. The StartSNOMEDCTInferenceJob operation returns this identifier in its response. </p>
     #[doc(hidden)]
@@ -5136,17 +5012,10 @@ impl DescribeSnomedctInferenceJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeSnomedctInferenceJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSnomedctInferenceJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRxNormInferenceJobInput {
     /// <p>The identifier that Amazon Comprehend Medical generated for the job. The StartRxNormInferenceJob operation returns this identifier in its response.</p>
     #[doc(hidden)]
@@ -5158,17 +5027,10 @@ impl DescribeRxNormInferenceJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeRxNormInferenceJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRxNormInferenceJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePhiDetectionJobInput {
     /// <p>The identifier that Comprehend Medical; generated for the job. The <code>StartPHIDetectionJob</code> operation returns this identifier in its response.</p>
     #[doc(hidden)]
@@ -5180,17 +5042,10 @@ impl DescribePhiDetectionJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePhiDetectionJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePhiDetectionJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeIcd10CmInferenceJobInput {
     /// <p>The identifier that Amazon Comprehend Medical generated for the job. <code>The StartICD10CMInferenceJob</code> operation returns this identifier in its response.</p>
     #[doc(hidden)]
@@ -5202,17 +5057,10 @@ impl DescribeIcd10CmInferenceJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeIcd10CmInferenceJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeIcd10CmInferenceJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEntitiesDetectionV2JobInput {
     /// <p>The identifier that Comprehend Medical; generated for the job. The <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its response.</p>
     #[doc(hidden)]
@@ -5222,12 +5070,5 @@ impl DescribeEntitiesDetectionV2JobInput {
     /// <p>The identifier that Comprehend Medical; generated for the job. The <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its response.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeEntitiesDetectionV2JobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEntitiesDetectionV2JobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
     }
 }

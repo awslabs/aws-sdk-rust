@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod associate_assets_input {
 
     /// A builder for [`AssociateAssetsInput`](crate::input::AssociateAssetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_id: std::option::Option<std::string::String>,
         pub(crate) hierarchy_id: std::option::Option<std::string::String>,
@@ -59,7 +59,7 @@ pub mod associate_assets_input {
         /// Consumes the builder and constructs a [`AssociateAssetsInput`](crate::input::AssociateAssetsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::AssociateAssetsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::AssociateAssetsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::AssociateAssetsInput {
                 asset_id: self.asset_id,
@@ -83,7 +83,7 @@ impl AssociateAssetsInput {
             crate::operation::AssociateAssets,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -92,20 +92,25 @@ impl AssociateAssetsInput {
             fn uri_base(
                 _input: &crate::input::AssociateAssetsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.asset_id;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "asset_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let asset_id = aws_smithy_http::label::fmt_string(input_1, false);
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "asset_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let asset_id = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if asset_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "asset_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "asset_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/assets/{assetId}/associate", assetId = asset_id)
                     .expect("formatting should succeed");
@@ -115,8 +120,10 @@ impl AssociateAssetsInput {
             fn update_http_builder(
                 input: &crate::input::AssociateAssetsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -202,7 +209,7 @@ impl AssociateAssetsInput {
 pub mod associate_time_series_to_asset_property_input {
 
     /// A builder for [`AssociateTimeSeriesToAssetPropertyInput`](crate::input::AssociateTimeSeriesToAssetPropertyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alias: std::option::Option<std::string::String>,
         pub(crate) asset_id: std::option::Option<std::string::String>,
@@ -255,7 +262,7 @@ pub mod associate_time_series_to_asset_property_input {
             self,
         ) -> Result<
             crate::input::AssociateTimeSeriesToAssetPropertyInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::AssociateTimeSeriesToAssetPropertyInput {
                 alias: self.alias,
@@ -279,7 +286,7 @@ impl AssociateTimeSeriesToAssetPropertyInput {
             crate::operation::AssociateTimeSeriesToAssetProperty,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -288,32 +295,73 @@ impl AssociateTimeSeriesToAssetPropertyInput {
             fn uri_base(
                 _input: &crate::input::AssociateTimeSeriesToAssetPropertyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/timeseries/associate").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::AssociateTimeSeriesToAssetPropertyInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_2) = &_input.alias {
-                    query.push_kv("alias", &aws_smithy_http::query::fmt_string(&inner_2));
+                let inner_2 = &_input.alias;
+                let inner_2 = inner_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "alias",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_2.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "alias",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_3) = &_input.asset_id {
-                    query.push_kv("assetId", &aws_smithy_http::query::fmt_string(&inner_3));
+                query.push_kv("alias", &aws_smithy_http::query::fmt_string(&inner_2));
+                let inner_3 = &_input.asset_id;
+                let inner_3 = inner_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "asset_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_3.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "asset_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_4) = &_input.property_id {
-                    query.push_kv("propertyId", &aws_smithy_http::query::fmt_string(&inner_4));
+                query.push_kv("assetId", &aws_smithy_http::query::fmt_string(&inner_3));
+                let inner_4 = &_input.property_id;
+                let inner_4 = inner_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "property_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_4.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "property_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("propertyId", &aws_smithy_http::query::fmt_string(&inner_4));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::AssociateTimeSeriesToAssetPropertyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -399,7 +447,7 @@ impl AssociateTimeSeriesToAssetPropertyInput {
 pub mod batch_associate_project_assets_input {
 
     /// A builder for [`BatchAssociateProjectAssetsInput`](crate::input::BatchAssociateProjectAssetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_id: std::option::Option<std::string::String>,
         pub(crate) asset_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -450,7 +498,7 @@ pub mod batch_associate_project_assets_input {
             self,
         ) -> Result<
             crate::input::BatchAssociateProjectAssetsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::BatchAssociateProjectAssetsInput {
                 project_id: self.project_id,
@@ -473,7 +521,7 @@ impl BatchAssociateProjectAssetsInput {
             crate::operation::BatchAssociateProjectAssets,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -482,20 +530,25 @@ impl BatchAssociateProjectAssetsInput {
             fn uri_base(
                 _input: &crate::input::BatchAssociateProjectAssetsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_5 = &_input.project_id;
-                let input_5 = input_5.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "project_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let project_id = aws_smithy_http::label::fmt_string(input_5, false);
+                let input_5 = input_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "project_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let project_id = aws_smithy_http::label::fmt_string(
+                    input_5,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if project_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "project_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "project_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -509,8 +562,10 @@ impl BatchAssociateProjectAssetsInput {
             fn update_http_builder(
                 input: &crate::input::BatchAssociateProjectAssetsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -595,7 +650,7 @@ impl BatchAssociateProjectAssetsInput {
 pub mod batch_disassociate_project_assets_input {
 
     /// A builder for [`BatchDisassociateProjectAssetsInput`](crate::input::BatchDisassociateProjectAssetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_id: std::option::Option<std::string::String>,
         pub(crate) asset_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -646,7 +701,7 @@ pub mod batch_disassociate_project_assets_input {
             self,
         ) -> Result<
             crate::input::BatchDisassociateProjectAssetsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::BatchDisassociateProjectAssetsInput {
                 project_id: self.project_id,
@@ -669,7 +724,7 @@ impl BatchDisassociateProjectAssetsInput {
             crate::operation::BatchDisassociateProjectAssets,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -678,20 +733,25 @@ impl BatchDisassociateProjectAssetsInput {
             fn uri_base(
                 _input: &crate::input::BatchDisassociateProjectAssetsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_6 = &_input.project_id;
-                let input_6 = input_6.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "project_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let project_id = aws_smithy_http::label::fmt_string(input_6, false);
+                let input_6 = input_6.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "project_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let project_id = aws_smithy_http::label::fmt_string(
+                    input_6,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if project_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "project_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "project_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -705,8 +765,10 @@ impl BatchDisassociateProjectAssetsInput {
             fn update_http_builder(
                 input: &crate::input::BatchDisassociateProjectAssetsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -791,7 +853,7 @@ impl BatchDisassociateProjectAssetsInput {
 pub mod batch_get_asset_property_aggregates_input {
 
     /// A builder for [`BatchGetAssetPropertyAggregatesInput`](crate::input::BatchGetAssetPropertyAggregatesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entries:
             std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyAggregatesEntry>>,
@@ -856,7 +918,7 @@ pub mod batch_get_asset_property_aggregates_input {
             self,
         ) -> Result<
             crate::input::BatchGetAssetPropertyAggregatesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::BatchGetAssetPropertyAggregatesInput {
                 entries: self.entries,
@@ -879,13 +941,13 @@ impl BatchGetAssetPropertyAggregatesInput {
             crate::operation::BatchGetAssetPropertyAggregates,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::BatchGetAssetPropertyAggregatesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/properties/batch/aggregates").expect("formatting should succeed");
                 Ok(())
             }
@@ -893,8 +955,10 @@ impl BatchGetAssetPropertyAggregatesInput {
             fn update_http_builder(
                 input: &crate::input::BatchGetAssetPropertyAggregatesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -979,7 +1043,7 @@ impl BatchGetAssetPropertyAggregatesInput {
 pub mod batch_get_asset_property_value_input {
 
     /// A builder for [`BatchGetAssetPropertyValueInput`](crate::input::BatchGetAssetPropertyValueInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entries:
             std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyValueEntry>>,
@@ -1022,7 +1086,7 @@ pub mod batch_get_asset_property_value_input {
             self,
         ) -> Result<
             crate::input::BatchGetAssetPropertyValueInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::BatchGetAssetPropertyValueInput {
                 entries: self.entries,
@@ -1044,13 +1108,13 @@ impl BatchGetAssetPropertyValueInput {
             crate::operation::BatchGetAssetPropertyValue,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::BatchGetAssetPropertyValueInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/properties/batch/latest").expect("formatting should succeed");
                 Ok(())
             }
@@ -1058,8 +1122,10 @@ impl BatchGetAssetPropertyValueInput {
             fn update_http_builder(
                 input: &crate::input::BatchGetAssetPropertyValueInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1144,7 +1210,7 @@ impl BatchGetAssetPropertyValueInput {
 pub mod batch_get_asset_property_value_history_input {
 
     /// A builder for [`BatchGetAssetPropertyValueHistoryInput`](crate::input::BatchGetAssetPropertyValueHistoryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entries: std::option::Option<
             std::vec::Vec<crate::model::BatchGetAssetPropertyValueHistoryEntry>,
@@ -1210,7 +1276,7 @@ pub mod batch_get_asset_property_value_history_input {
             self,
         ) -> Result<
             crate::input::BatchGetAssetPropertyValueHistoryInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::BatchGetAssetPropertyValueHistoryInput {
                 entries: self.entries,
@@ -1233,13 +1299,13 @@ impl BatchGetAssetPropertyValueHistoryInput {
             crate::operation::BatchGetAssetPropertyValueHistory,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::BatchGetAssetPropertyValueHistoryInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/properties/batch/history").expect("formatting should succeed");
                 Ok(())
             }
@@ -1247,8 +1313,10 @@ impl BatchGetAssetPropertyValueHistoryInput {
             fn update_http_builder(
                 input: &crate::input::BatchGetAssetPropertyValueHistoryInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1333,7 +1401,7 @@ impl BatchGetAssetPropertyValueHistoryInput {
 pub mod batch_put_asset_property_value_input {
 
     /// A builder for [`BatchPutAssetPropertyValueInput`](crate::input::BatchPutAssetPropertyValueInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entries:
             std::option::Option<std::vec::Vec<crate::model::PutAssetPropertyValueEntry>>,
@@ -1363,7 +1431,7 @@ pub mod batch_put_asset_property_value_input {
             self,
         ) -> Result<
             crate::input::BatchPutAssetPropertyValueInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::BatchPutAssetPropertyValueInput {
                 entries: self.entries,
@@ -1384,13 +1452,13 @@ impl BatchPutAssetPropertyValueInput {
             crate::operation::BatchPutAssetPropertyValue,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::BatchPutAssetPropertyValueInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/properties").expect("formatting should succeed");
                 Ok(())
             }
@@ -1398,8 +1466,10 @@ impl BatchPutAssetPropertyValueInput {
             fn update_http_builder(
                 input: &crate::input::BatchPutAssetPropertyValueInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1484,7 +1554,7 @@ impl BatchPutAssetPropertyValueInput {
 pub mod create_access_policy_input {
 
     /// A builder for [`CreateAccessPolicyInput`](crate::input::CreateAccessPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_policy_identity: std::option::Option<crate::model::Identity>,
         pub(crate) access_policy_resource: std::option::Option<crate::model::Resource>,
@@ -1572,8 +1642,10 @@ pub mod create_access_policy_input {
         /// Consumes the builder and constructs a [`CreateAccessPolicyInput`](crate::input::CreateAccessPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateAccessPolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateAccessPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateAccessPolicyInput {
                 access_policy_identity: self.access_policy_identity,
                 access_policy_resource: self.access_policy_resource,
@@ -1597,7 +1669,7 @@ impl CreateAccessPolicyInput {
             crate::operation::CreateAccessPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -1606,7 +1678,7 @@ impl CreateAccessPolicyInput {
             fn uri_base(
                 _input: &crate::input::CreateAccessPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/access-policies").expect("formatting should succeed");
                 Ok(())
             }
@@ -1614,8 +1686,10 @@ impl CreateAccessPolicyInput {
             fn update_http_builder(
                 input: &crate::input::CreateAccessPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1701,7 +1775,7 @@ impl CreateAccessPolicyInput {
 pub mod create_asset_input {
 
     /// A builder for [`CreateAssetInput`](crate::input::CreateAssetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_name: std::option::Option<std::string::String>,
         pub(crate) asset_model_id: std::option::Option<std::string::String>,
@@ -1786,7 +1860,7 @@ pub mod create_asset_input {
         /// Consumes the builder and constructs a [`CreateAssetInput`](crate::input::CreateAssetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateAssetInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateAssetInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateAssetInput {
                 asset_name: self.asset_name,
@@ -1811,7 +1885,7 @@ impl CreateAssetInput {
             crate::operation::CreateAsset,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -1820,7 +1894,7 @@ impl CreateAssetInput {
             fn uri_base(
                 _input: &crate::input::CreateAssetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/assets").expect("formatting should succeed");
                 Ok(())
             }
@@ -1828,8 +1902,10 @@ impl CreateAssetInput {
             fn update_http_builder(
                 input: &crate::input::CreateAssetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1915,7 +1991,7 @@ impl CreateAssetInput {
 pub mod create_asset_model_input {
 
     /// A builder for [`CreateAssetModelInput`](crate::input::CreateAssetModelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_model_name: std::option::Option<std::string::String>,
         pub(crate) asset_model_description: std::option::Option<std::string::String>,
@@ -2067,8 +2143,10 @@ pub mod create_asset_model_input {
         /// Consumes the builder and constructs a [`CreateAssetModelInput`](crate::input::CreateAssetModelInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateAssetModelInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateAssetModelInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateAssetModelInput {
                 asset_model_name: self.asset_model_name,
                 asset_model_description: self.asset_model_description,
@@ -2094,7 +2172,7 @@ impl CreateAssetModelInput {
             crate::operation::CreateAssetModel,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -2103,7 +2181,7 @@ impl CreateAssetModelInput {
             fn uri_base(
                 _input: &crate::input::CreateAssetModelInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/asset-models").expect("formatting should succeed");
                 Ok(())
             }
@@ -2111,8 +2189,10 @@ impl CreateAssetModelInput {
             fn update_http_builder(
                 input: &crate::input::CreateAssetModelInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2198,7 +2278,7 @@ impl CreateAssetModelInput {
 pub mod create_bulk_import_job_input {
 
     /// A builder for [`CreateBulkImportJobInput`](crate::input::CreateBulkImportJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_role_arn: std::option::Option<std::string::String>,
@@ -2275,8 +2355,10 @@ pub mod create_bulk_import_job_input {
         /// Consumes the builder and constructs a [`CreateBulkImportJobInput`](crate::input::CreateBulkImportJobInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateBulkImportJobInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateBulkImportJobInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateBulkImportJobInput {
                 job_name: self.job_name,
                 job_role_arn: self.job_role_arn,
@@ -2300,13 +2382,13 @@ impl CreateBulkImportJobInput {
             crate::operation::CreateBulkImportJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateBulkImportJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/jobs").expect("formatting should succeed");
                 Ok(())
             }
@@ -2314,8 +2396,10 @@ impl CreateBulkImportJobInput {
             fn update_http_builder(
                 input: &crate::input::CreateBulkImportJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2403,7 +2487,7 @@ impl CreateBulkImportJobInput {
 pub mod create_dashboard_input {
 
     /// A builder for [`CreateDashboardInput`](crate::input::CreateDashboardInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_id: std::option::Option<std::string::String>,
         pub(crate) dashboard_name: std::option::Option<std::string::String>,
@@ -2502,7 +2586,7 @@ pub mod create_dashboard_input {
         /// Consumes the builder and constructs a [`CreateDashboardInput`](crate::input::CreateDashboardInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateDashboardInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateDashboardInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateDashboardInput {
                 project_id: self.project_id,
@@ -2528,7 +2612,7 @@ impl CreateDashboardInput {
             crate::operation::CreateDashboard,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -2537,7 +2621,7 @@ impl CreateDashboardInput {
             fn uri_base(
                 _input: &crate::input::CreateDashboardInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/dashboards").expect("formatting should succeed");
                 Ok(())
             }
@@ -2545,8 +2629,10 @@ impl CreateDashboardInput {
             fn update_http_builder(
                 input: &crate::input::CreateDashboardInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2632,7 +2718,7 @@ impl CreateDashboardInput {
 pub mod create_gateway_input {
 
     /// A builder for [`CreateGatewayInput`](crate::input::CreateGatewayInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_name: std::option::Option<std::string::String>,
         pub(crate) gateway_platform: std::option::Option<crate::model::GatewayPlatform>,
@@ -2692,7 +2778,7 @@ pub mod create_gateway_input {
         /// Consumes the builder and constructs a [`CreateGatewayInput`](crate::input::CreateGatewayInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateGatewayInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateGatewayInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateGatewayInput {
                 gateway_name: self.gateway_name,
@@ -2715,13 +2801,13 @@ impl CreateGatewayInput {
             crate::operation::CreateGateway,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateGatewayInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/20200301/gateways").expect("formatting should succeed");
                 Ok(())
             }
@@ -2729,8 +2815,10 @@ impl CreateGatewayInput {
             fn update_http_builder(
                 input: &crate::input::CreateGatewayInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2816,7 +2904,7 @@ impl CreateGatewayInput {
 pub mod create_portal_input {
 
     /// A builder for [`CreatePortalInput`](crate::input::CreatePortalInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portal_name: std::option::Option<std::string::String>,
         pub(crate) portal_description: std::option::Option<std::string::String>,
@@ -2981,7 +3069,7 @@ pub mod create_portal_input {
         /// Consumes the builder and constructs a [`CreatePortalInput`](crate::input::CreatePortalInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreatePortalInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreatePortalInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreatePortalInput {
                 portal_name: self.portal_name,
@@ -3011,7 +3099,7 @@ impl CreatePortalInput {
             crate::operation::CreatePortal,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -3020,7 +3108,7 @@ impl CreatePortalInput {
             fn uri_base(
                 _input: &crate::input::CreatePortalInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/portals").expect("formatting should succeed");
                 Ok(())
             }
@@ -3028,8 +3116,10 @@ impl CreatePortalInput {
             fn update_http_builder(
                 input: &crate::input::CreatePortalInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3115,7 +3205,7 @@ impl CreatePortalInput {
 pub mod create_project_input {
 
     /// A builder for [`CreateProjectInput`](crate::input::CreateProjectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portal_id: std::option::Option<std::string::String>,
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -3197,7 +3287,7 @@ pub mod create_project_input {
         /// Consumes the builder and constructs a [`CreateProjectInput`](crate::input::CreateProjectInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateProjectInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateProjectInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateProjectInput {
                 portal_id: self.portal_id,
@@ -3222,7 +3312,7 @@ impl CreateProjectInput {
             crate::operation::CreateProject,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -3231,7 +3321,7 @@ impl CreateProjectInput {
             fn uri_base(
                 _input: &crate::input::CreateProjectInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/projects").expect("formatting should succeed");
                 Ok(())
             }
@@ -3239,8 +3329,10 @@ impl CreateProjectInput {
             fn update_http_builder(
                 input: &crate::input::CreateProjectInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3326,7 +3418,7 @@ impl CreateProjectInput {
 pub mod delete_access_policy_input {
 
     /// A builder for [`DeleteAccessPolicyInput`](crate::input::DeleteAccessPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_policy_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -3358,8 +3450,10 @@ pub mod delete_access_policy_input {
         /// Consumes the builder and constructs a [`DeleteAccessPolicyInput`](crate::input::DeleteAccessPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteAccessPolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteAccessPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteAccessPolicyInput {
                 access_policy_id: self.access_policy_id,
                 client_token: self.client_token,
@@ -3380,7 +3474,7 @@ impl DeleteAccessPolicyInput {
             crate::operation::DeleteAccessPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -3389,20 +3483,25 @@ impl DeleteAccessPolicyInput {
             fn uri_base(
                 _input: &crate::input::DeleteAccessPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_7 = &_input.access_policy_id;
-                let input_7 = input_7.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "access_policy_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let access_policy_id = aws_smithy_http::label::fmt_string(input_7, false);
+                let input_7 = input_7.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "access_policy_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let access_policy_id = aws_smithy_http::label::fmt_string(
+                    input_7,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if access_policy_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "access_policy_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "access_policy_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3415,10 +3514,12 @@ impl DeleteAccessPolicyInput {
             fn uri_query(
                 _input: &crate::input::DeleteAccessPolicyInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_8) = &_input.client_token {
-                    query.push_kv("clientToken", &aws_smithy_http::query::fmt_string(&inner_8));
+                    {
+                        query.push_kv("clientToken", &aws_smithy_http::query::fmt_string(&inner_8));
+                    }
                 }
                 Ok(())
             }
@@ -3426,8 +3527,10 @@ impl DeleteAccessPolicyInput {
             fn update_http_builder(
                 input: &crate::input::DeleteAccessPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3500,7 +3603,7 @@ impl DeleteAccessPolicyInput {
 pub mod delete_asset_input {
 
     /// A builder for [`DeleteAssetInput`](crate::input::DeleteAssetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -3529,7 +3632,7 @@ pub mod delete_asset_input {
         /// Consumes the builder and constructs a [`DeleteAssetInput`](crate::input::DeleteAssetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteAssetInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteAssetInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteAssetInput {
                 asset_id: self.asset_id,
@@ -3551,7 +3654,7 @@ impl DeleteAssetInput {
             crate::operation::DeleteAsset,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -3560,20 +3663,25 @@ impl DeleteAssetInput {
             fn uri_base(
                 _input: &crate::input::DeleteAssetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_9 = &_input.asset_id;
-                let input_9 = input_9.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "asset_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let asset_id = aws_smithy_http::label::fmt_string(input_9, false);
+                let input_9 = input_9.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "asset_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let asset_id = aws_smithy_http::label::fmt_string(
+                    input_9,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if asset_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "asset_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "asset_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/assets/{assetId}", assetId = asset_id)
                     .expect("formatting should succeed");
@@ -3582,13 +3690,15 @@ impl DeleteAssetInput {
             fn uri_query(
                 _input: &crate::input::DeleteAssetInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_10) = &_input.client_token {
-                    query.push_kv(
-                        "clientToken",
-                        &aws_smithy_http::query::fmt_string(&inner_10),
-                    );
+                    {
+                        query.push_kv(
+                            "clientToken",
+                            &aws_smithy_http::query::fmt_string(&inner_10),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -3596,8 +3706,10 @@ impl DeleteAssetInput {
             fn update_http_builder(
                 input: &crate::input::DeleteAssetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3670,7 +3782,7 @@ impl DeleteAssetInput {
 pub mod delete_asset_model_input {
 
     /// A builder for [`DeleteAssetModelInput`](crate::input::DeleteAssetModelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_model_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -3702,8 +3814,10 @@ pub mod delete_asset_model_input {
         /// Consumes the builder and constructs a [`DeleteAssetModelInput`](crate::input::DeleteAssetModelInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteAssetModelInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteAssetModelInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteAssetModelInput {
                 asset_model_id: self.asset_model_id,
                 client_token: self.client_token,
@@ -3724,7 +3838,7 @@ impl DeleteAssetModelInput {
             crate::operation::DeleteAssetModel,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -3733,20 +3847,25 @@ impl DeleteAssetModelInput {
             fn uri_base(
                 _input: &crate::input::DeleteAssetModelInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_11 = &_input.asset_model_id;
-                let input_11 = input_11.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "asset_model_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let asset_model_id = aws_smithy_http::label::fmt_string(input_11, false);
+                let input_11 = input_11.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "asset_model_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let asset_model_id = aws_smithy_http::label::fmt_string(
+                    input_11,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if asset_model_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "asset_model_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "asset_model_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3759,13 +3878,15 @@ impl DeleteAssetModelInput {
             fn uri_query(
                 _input: &crate::input::DeleteAssetModelInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_12) = &_input.client_token {
-                    query.push_kv(
-                        "clientToken",
-                        &aws_smithy_http::query::fmt_string(&inner_12),
-                    );
+                    {
+                        query.push_kv(
+                            "clientToken",
+                            &aws_smithy_http::query::fmt_string(&inner_12),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -3773,8 +3894,10 @@ impl DeleteAssetModelInput {
             fn update_http_builder(
                 input: &crate::input::DeleteAssetModelInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3847,7 +3970,7 @@ impl DeleteAssetModelInput {
 pub mod delete_dashboard_input {
 
     /// A builder for [`DeleteDashboardInput`](crate::input::DeleteDashboardInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dashboard_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -3876,7 +3999,7 @@ pub mod delete_dashboard_input {
         /// Consumes the builder and constructs a [`DeleteDashboardInput`](crate::input::DeleteDashboardInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteDashboardInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteDashboardInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteDashboardInput {
                 dashboard_id: self.dashboard_id,
@@ -3898,7 +4021,7 @@ impl DeleteDashboardInput {
             crate::operation::DeleteDashboard,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -3907,20 +4030,25 @@ impl DeleteDashboardInput {
             fn uri_base(
                 _input: &crate::input::DeleteDashboardInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_13 = &_input.dashboard_id;
-                let input_13 = input_13.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dashboard_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let dashboard_id = aws_smithy_http::label::fmt_string(input_13, false);
+                let input_13 = input_13.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "dashboard_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let dashboard_id = aws_smithy_http::label::fmt_string(
+                    input_13,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if dashboard_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dashboard_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "dashboard_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3933,13 +4061,15 @@ impl DeleteDashboardInput {
             fn uri_query(
                 _input: &crate::input::DeleteDashboardInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_14) = &_input.client_token {
-                    query.push_kv(
-                        "clientToken",
-                        &aws_smithy_http::query::fmt_string(&inner_14),
-                    );
+                    {
+                        query.push_kv(
+                            "clientToken",
+                            &aws_smithy_http::query::fmt_string(&inner_14),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -3947,8 +4077,10 @@ impl DeleteDashboardInput {
             fn update_http_builder(
                 input: &crate::input::DeleteDashboardInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4021,7 +4153,7 @@ impl DeleteDashboardInput {
 pub mod delete_gateway_input {
 
     /// A builder for [`DeleteGatewayInput`](crate::input::DeleteGatewayInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_id: std::option::Option<std::string::String>,
     }
@@ -4039,7 +4171,7 @@ pub mod delete_gateway_input {
         /// Consumes the builder and constructs a [`DeleteGatewayInput`](crate::input::DeleteGatewayInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteGatewayInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteGatewayInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteGatewayInput {
                 gateway_id: self.gateway_id,
@@ -4060,26 +4192,31 @@ impl DeleteGatewayInput {
             crate::operation::DeleteGateway,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteGatewayInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_15 = &_input.gateway_id;
-                let input_15 = input_15.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "gateway_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let gateway_id = aws_smithy_http::label::fmt_string(input_15, false);
+                let input_15 = input_15.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "gateway_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let gateway_id = aws_smithy_http::label::fmt_string(
+                    input_15,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if gateway_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "gateway_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "gateway_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4093,8 +4230,10 @@ impl DeleteGatewayInput {
             fn update_http_builder(
                 input: &crate::input::DeleteGatewayInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -4166,7 +4305,7 @@ impl DeleteGatewayInput {
 pub mod delete_portal_input {
 
     /// A builder for [`DeletePortalInput`](crate::input::DeletePortalInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portal_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -4195,7 +4334,7 @@ pub mod delete_portal_input {
         /// Consumes the builder and constructs a [`DeletePortalInput`](crate::input::DeletePortalInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeletePortalInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeletePortalInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeletePortalInput {
                 portal_id: self.portal_id,
@@ -4217,7 +4356,7 @@ impl DeletePortalInput {
             crate::operation::DeletePortal,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -4226,20 +4365,25 @@ impl DeletePortalInput {
             fn uri_base(
                 _input: &crate::input::DeletePortalInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_16 = &_input.portal_id;
-                let input_16 = input_16.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "portal_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let portal_id = aws_smithy_http::label::fmt_string(input_16, false);
+                let input_16 = input_16.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "portal_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let portal_id = aws_smithy_http::label::fmt_string(
+                    input_16,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if portal_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "portal_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "portal_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/portals/{portalId}", portalId = portal_id)
                     .expect("formatting should succeed");
@@ -4248,13 +4392,15 @@ impl DeletePortalInput {
             fn uri_query(
                 _input: &crate::input::DeletePortalInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_17) = &_input.client_token {
-                    query.push_kv(
-                        "clientToken",
-                        &aws_smithy_http::query::fmt_string(&inner_17),
-                    );
+                    {
+                        query.push_kv(
+                            "clientToken",
+                            &aws_smithy_http::query::fmt_string(&inner_17),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -4262,8 +4408,10 @@ impl DeletePortalInput {
             fn update_http_builder(
                 input: &crate::input::DeletePortalInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4336,7 +4484,7 @@ impl DeletePortalInput {
 pub mod delete_project_input {
 
     /// A builder for [`DeleteProjectInput`](crate::input::DeleteProjectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -4365,7 +4513,7 @@ pub mod delete_project_input {
         /// Consumes the builder and constructs a [`DeleteProjectInput`](crate::input::DeleteProjectInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteProjectInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteProjectInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteProjectInput {
                 project_id: self.project_id,
@@ -4387,7 +4535,7 @@ impl DeleteProjectInput {
             crate::operation::DeleteProject,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -4396,20 +4544,25 @@ impl DeleteProjectInput {
             fn uri_base(
                 _input: &crate::input::DeleteProjectInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_18 = &_input.project_id;
-                let input_18 = input_18.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "project_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let project_id = aws_smithy_http::label::fmt_string(input_18, false);
+                let input_18 = input_18.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "project_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let project_id = aws_smithy_http::label::fmt_string(
+                    input_18,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if project_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "project_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "project_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/projects/{projectId}", projectId = project_id)
                     .expect("formatting should succeed");
@@ -4418,13 +4571,15 @@ impl DeleteProjectInput {
             fn uri_query(
                 _input: &crate::input::DeleteProjectInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_19) = &_input.client_token {
-                    query.push_kv(
-                        "clientToken",
-                        &aws_smithy_http::query::fmt_string(&inner_19),
-                    );
+                    {
+                        query.push_kv(
+                            "clientToken",
+                            &aws_smithy_http::query::fmt_string(&inner_19),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -4432,8 +4587,10 @@ impl DeleteProjectInput {
             fn update_http_builder(
                 input: &crate::input::DeleteProjectInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4506,7 +4663,7 @@ impl DeleteProjectInput {
 pub mod delete_time_series_input {
 
     /// A builder for [`DeleteTimeSeriesInput`](crate::input::DeleteTimeSeriesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alias: std::option::Option<std::string::String>,
         pub(crate) asset_id: std::option::Option<std::string::String>,
@@ -4557,8 +4714,10 @@ pub mod delete_time_series_input {
         /// Consumes the builder and constructs a [`DeleteTimeSeriesInput`](crate::input::DeleteTimeSeriesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteTimeSeriesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteTimeSeriesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteTimeSeriesInput {
                 alias: self.alias,
                 asset_id: self.asset_id,
@@ -4581,7 +4740,7 @@ impl DeleteTimeSeriesInput {
             crate::operation::DeleteTimeSeries,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -4590,23 +4749,29 @@ impl DeleteTimeSeriesInput {
             fn uri_base(
                 _input: &crate::input::DeleteTimeSeriesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/timeseries/delete").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::DeleteTimeSeriesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_20) = &_input.alias {
-                    query.push_kv("alias", &aws_smithy_http::query::fmt_string(&inner_20));
+                    {
+                        query.push_kv("alias", &aws_smithy_http::query::fmt_string(&inner_20));
+                    }
                 }
                 if let Some(inner_21) = &_input.asset_id {
-                    query.push_kv("assetId", &aws_smithy_http::query::fmt_string(&inner_21));
+                    {
+                        query.push_kv("assetId", &aws_smithy_http::query::fmt_string(&inner_21));
+                    }
                 }
                 if let Some(inner_22) = &_input.property_id {
-                    query.push_kv("propertyId", &aws_smithy_http::query::fmt_string(&inner_22));
+                    {
+                        query.push_kv("propertyId", &aws_smithy_http::query::fmt_string(&inner_22));
+                    }
                 }
                 Ok(())
             }
@@ -4614,8 +4779,10 @@ impl DeleteTimeSeriesInput {
             fn update_http_builder(
                 input: &crate::input::DeleteTimeSeriesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4702,7 +4869,7 @@ impl DeleteTimeSeriesInput {
 pub mod describe_access_policy_input {
 
     /// A builder for [`DescribeAccessPolicyInput`](crate::input::DescribeAccessPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_policy_id: std::option::Option<std::string::String>,
     }
@@ -4723,8 +4890,10 @@ pub mod describe_access_policy_input {
         /// Consumes the builder and constructs a [`DescribeAccessPolicyInput`](crate::input::DescribeAccessPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeAccessPolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeAccessPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeAccessPolicyInput {
                 access_policy_id: self.access_policy_id,
             })
@@ -4744,26 +4913,31 @@ impl DescribeAccessPolicyInput {
             crate::operation::DescribeAccessPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeAccessPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_23 = &_input.access_policy_id;
-                let input_23 = input_23.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "access_policy_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let access_policy_id = aws_smithy_http::label::fmt_string(input_23, false);
+                let input_23 = input_23.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "access_policy_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let access_policy_id = aws_smithy_http::label::fmt_string(
+                    input_23,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if access_policy_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "access_policy_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "access_policy_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4777,8 +4951,10 @@ impl DescribeAccessPolicyInput {
             fn update_http_builder(
                 input: &crate::input::DescribeAccessPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -4850,7 +5026,7 @@ impl DescribeAccessPolicyInput {
 pub mod describe_asset_input {
 
     /// A builder for [`DescribeAssetInput`](crate::input::DescribeAssetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_id: std::option::Option<std::string::String>,
     }
@@ -4868,7 +5044,7 @@ pub mod describe_asset_input {
         /// Consumes the builder and constructs a [`DescribeAssetInput`](crate::input::DescribeAssetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeAssetInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeAssetInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeAssetInput {
                 asset_id: self.asset_id,
@@ -4889,26 +5065,31 @@ impl DescribeAssetInput {
             crate::operation::DescribeAsset,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeAssetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_24 = &_input.asset_id;
-                let input_24 = input_24.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "asset_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let asset_id = aws_smithy_http::label::fmt_string(input_24, false);
+                let input_24 = input_24.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "asset_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let asset_id = aws_smithy_http::label::fmt_string(
+                    input_24,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if asset_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "asset_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "asset_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/assets/{assetId}", assetId = asset_id)
                     .expect("formatting should succeed");
@@ -4918,8 +5099,10 @@ impl DescribeAssetInput {
             fn update_http_builder(
                 input: &crate::input::DescribeAssetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -4991,7 +5174,7 @@ impl DescribeAssetInput {
 pub mod describe_asset_model_input {
 
     /// A builder for [`DescribeAssetModelInput`](crate::input::DescribeAssetModelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_model_id: std::option::Option<std::string::String>,
     }
@@ -5012,8 +5195,10 @@ pub mod describe_asset_model_input {
         /// Consumes the builder and constructs a [`DescribeAssetModelInput`](crate::input::DescribeAssetModelInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeAssetModelInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeAssetModelInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeAssetModelInput {
                 asset_model_id: self.asset_model_id,
             })
@@ -5033,26 +5218,31 @@ impl DescribeAssetModelInput {
             crate::operation::DescribeAssetModel,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeAssetModelInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_25 = &_input.asset_model_id;
-                let input_25 = input_25.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "asset_model_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let asset_model_id = aws_smithy_http::label::fmt_string(input_25, false);
+                let input_25 = input_25.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "asset_model_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let asset_model_id = aws_smithy_http::label::fmt_string(
+                    input_25,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if asset_model_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "asset_model_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "asset_model_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5066,8 +5256,10 @@ impl DescribeAssetModelInput {
             fn update_http_builder(
                 input: &crate::input::DescribeAssetModelInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -5139,7 +5331,7 @@ impl DescribeAssetModelInput {
 pub mod describe_asset_property_input {
 
     /// A builder for [`DescribeAssetPropertyInput`](crate::input::DescribeAssetPropertyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_id: std::option::Option<std::string::String>,
         pub(crate) property_id: std::option::Option<std::string::String>,
@@ -5168,8 +5360,10 @@ pub mod describe_asset_property_input {
         /// Consumes the builder and constructs a [`DescribeAssetPropertyInput`](crate::input::DescribeAssetPropertyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeAssetPropertyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeAssetPropertyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeAssetPropertyInput {
                 asset_id: self.asset_id,
                 property_id: self.property_id,
@@ -5190,40 +5384,50 @@ impl DescribeAssetPropertyInput {
             crate::operation::DescribeAssetProperty,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeAssetPropertyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_26 = &_input.asset_id;
-                let input_26 = input_26.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "asset_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let asset_id = aws_smithy_http::label::fmt_string(input_26, false);
+                let input_26 = input_26.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "asset_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let asset_id = aws_smithy_http::label::fmt_string(
+                    input_26,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if asset_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "asset_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "asset_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_27 = &_input.property_id;
-                let input_27 = input_27.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "property_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let property_id = aws_smithy_http::label::fmt_string(input_27, false);
+                let input_27 = input_27.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "property_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let property_id = aws_smithy_http::label::fmt_string(
+                    input_27,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if property_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "property_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "property_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5238,8 +5442,10 @@ impl DescribeAssetPropertyInput {
             fn update_http_builder(
                 input: &crate::input::DescribeAssetPropertyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -5311,7 +5517,7 @@ impl DescribeAssetPropertyInput {
 pub mod describe_bulk_import_job_input {
 
     /// A builder for [`DescribeBulkImportJobInput`](crate::input::DescribeBulkImportJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -5329,8 +5535,10 @@ pub mod describe_bulk_import_job_input {
         /// Consumes the builder and constructs a [`DescribeBulkImportJobInput`](crate::input::DescribeBulkImportJobInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeBulkImportJobInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeBulkImportJobInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeBulkImportJobInput {
                 job_id: self.job_id,
             })
@@ -5350,26 +5558,31 @@ impl DescribeBulkImportJobInput {
             crate::operation::DescribeBulkImportJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeBulkImportJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_28 = &_input.job_id;
-                let input_28 = input_28.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let job_id = aws_smithy_http::label::fmt_string(input_28, false);
+                let input_28 = input_28.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "job_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let job_id = aws_smithy_http::label::fmt_string(
+                    input_28,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if job_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "job_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/jobs/{jobId}", jobId = job_id).expect("formatting should succeed");
                 Ok(())
@@ -5378,8 +5591,10 @@ impl DescribeBulkImportJobInput {
             fn update_http_builder(
                 input: &crate::input::DescribeBulkImportJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -5451,7 +5666,7 @@ impl DescribeBulkImportJobInput {
 pub mod describe_dashboard_input {
 
     /// A builder for [`DescribeDashboardInput`](crate::input::DescribeDashboardInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dashboard_id: std::option::Option<std::string::String>,
     }
@@ -5469,8 +5684,10 @@ pub mod describe_dashboard_input {
         /// Consumes the builder and constructs a [`DescribeDashboardInput`](crate::input::DescribeDashboardInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeDashboardInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeDashboardInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeDashboardInput {
                 dashboard_id: self.dashboard_id,
             })
@@ -5490,26 +5707,31 @@ impl DescribeDashboardInput {
             crate::operation::DescribeDashboard,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeDashboardInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_29 = &_input.dashboard_id;
-                let input_29 = input_29.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dashboard_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let dashboard_id = aws_smithy_http::label::fmt_string(input_29, false);
+                let input_29 = input_29.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "dashboard_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let dashboard_id = aws_smithy_http::label::fmt_string(
+                    input_29,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if dashboard_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dashboard_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "dashboard_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5523,8 +5745,10 @@ impl DescribeDashboardInput {
             fn update_http_builder(
                 input: &crate::input::DescribeDashboardInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -5596,7 +5820,7 @@ impl DescribeDashboardInput {
 pub mod describe_default_encryption_configuration_input {
 
     /// A builder for [`DescribeDefaultEncryptionConfigurationInput`](crate::input::DescribeDefaultEncryptionConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DescribeDefaultEncryptionConfigurationInput`](crate::input::DescribeDefaultEncryptionConfigurationInput).
@@ -5604,7 +5828,7 @@ pub mod describe_default_encryption_configuration_input {
             self,
         ) -> Result<
             crate::input::DescribeDefaultEncryptionConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeDefaultEncryptionConfigurationInput {})
         }
@@ -5623,13 +5847,13 @@ impl DescribeDefaultEncryptionConfigurationInput {
             crate::operation::DescribeDefaultEncryptionConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeDefaultEncryptionConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/configuration/account/encryption")
                     .expect("formatting should succeed");
                 Ok(())
@@ -5638,8 +5862,10 @@ impl DescribeDefaultEncryptionConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::DescribeDefaultEncryptionConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -5711,7 +5937,7 @@ impl DescribeDefaultEncryptionConfigurationInput {
 pub mod describe_gateway_input {
 
     /// A builder for [`DescribeGatewayInput`](crate::input::DescribeGatewayInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_id: std::option::Option<std::string::String>,
     }
@@ -5729,7 +5955,7 @@ pub mod describe_gateway_input {
         /// Consumes the builder and constructs a [`DescribeGatewayInput`](crate::input::DescribeGatewayInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeGatewayInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeGatewayInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeGatewayInput {
                 gateway_id: self.gateway_id,
@@ -5750,26 +5976,31 @@ impl DescribeGatewayInput {
             crate::operation::DescribeGateway,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeGatewayInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_30 = &_input.gateway_id;
-                let input_30 = input_30.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "gateway_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let gateway_id = aws_smithy_http::label::fmt_string(input_30, false);
+                let input_30 = input_30.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "gateway_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let gateway_id = aws_smithy_http::label::fmt_string(
+                    input_30,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if gateway_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "gateway_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "gateway_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5783,8 +6014,10 @@ impl DescribeGatewayInput {
             fn update_http_builder(
                 input: &crate::input::DescribeGatewayInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -5856,7 +6089,7 @@ impl DescribeGatewayInput {
 pub mod describe_gateway_capability_configuration_input {
 
     /// A builder for [`DescribeGatewayCapabilityConfigurationInput`](crate::input::DescribeGatewayCapabilityConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_id: std::option::Option<std::string::String>,
         pub(crate) capability_namespace: std::option::Option<std::string::String>,
@@ -5890,7 +6123,7 @@ pub mod describe_gateway_capability_configuration_input {
             self,
         ) -> Result<
             crate::input::DescribeGatewayCapabilityConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeGatewayCapabilityConfigurationInput {
                 gateway_id: self.gateway_id,
@@ -5912,40 +6145,50 @@ impl DescribeGatewayCapabilityConfigurationInput {
             crate::operation::DescribeGatewayCapabilityConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeGatewayCapabilityConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_31 = &_input.gateway_id;
-                let input_31 = input_31.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "gateway_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let gateway_id = aws_smithy_http::label::fmt_string(input_31, false);
+                let input_31 = input_31.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "gateway_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let gateway_id = aws_smithy_http::label::fmt_string(
+                    input_31,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if gateway_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "gateway_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "gateway_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_32 = &_input.capability_namespace;
-                let input_32 = input_32.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "capability_namespace",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let capability_namespace = aws_smithy_http::label::fmt_string(input_32, false);
+                let input_32 = input_32.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "capability_namespace",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let capability_namespace = aws_smithy_http::label::fmt_string(
+                    input_32,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if capability_namespace.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "capability_namespace",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "capability_namespace",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5960,8 +6203,10 @@ impl DescribeGatewayCapabilityConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::DescribeGatewayCapabilityConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -6033,14 +6278,16 @@ impl DescribeGatewayCapabilityConfigurationInput {
 pub mod describe_logging_options_input {
 
     /// A builder for [`DescribeLoggingOptionsInput`](crate::input::DescribeLoggingOptionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DescribeLoggingOptionsInput`](crate::input::DescribeLoggingOptionsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeLoggingOptionsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeLoggingOptionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeLoggingOptionsInput {})
         }
     }
@@ -6058,13 +6305,13 @@ impl DescribeLoggingOptionsInput {
             crate::operation::DescribeLoggingOptions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeLoggingOptionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/logging").expect("formatting should succeed");
                 Ok(())
             }
@@ -6072,8 +6319,10 @@ impl DescribeLoggingOptionsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeLoggingOptionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -6145,7 +6394,7 @@ impl DescribeLoggingOptionsInput {
 pub mod describe_portal_input {
 
     /// A builder for [`DescribePortalInput`](crate::input::DescribePortalInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portal_id: std::option::Option<std::string::String>,
     }
@@ -6163,7 +6412,7 @@ pub mod describe_portal_input {
         /// Consumes the builder and constructs a [`DescribePortalInput`](crate::input::DescribePortalInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribePortalInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribePortalInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribePortalInput {
                 portal_id: self.portal_id,
@@ -6184,26 +6433,31 @@ impl DescribePortalInput {
             crate::operation::DescribePortal,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribePortalInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_33 = &_input.portal_id;
-                let input_33 = input_33.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "portal_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let portal_id = aws_smithy_http::label::fmt_string(input_33, false);
+                let input_33 = input_33.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "portal_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let portal_id = aws_smithy_http::label::fmt_string(
+                    input_33,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if portal_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "portal_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "portal_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/portals/{portalId}", portalId = portal_id)
                     .expect("formatting should succeed");
@@ -6213,8 +6467,10 @@ impl DescribePortalInput {
             fn update_http_builder(
                 input: &crate::input::DescribePortalInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -6286,7 +6542,7 @@ impl DescribePortalInput {
 pub mod describe_project_input {
 
     /// A builder for [`DescribeProjectInput`](crate::input::DescribeProjectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_id: std::option::Option<std::string::String>,
     }
@@ -6304,7 +6560,7 @@ pub mod describe_project_input {
         /// Consumes the builder and constructs a [`DescribeProjectInput`](crate::input::DescribeProjectInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeProjectInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeProjectInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeProjectInput {
                 project_id: self.project_id,
@@ -6325,26 +6581,31 @@ impl DescribeProjectInput {
             crate::operation::DescribeProject,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeProjectInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_34 = &_input.project_id;
-                let input_34 = input_34.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "project_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let project_id = aws_smithy_http::label::fmt_string(input_34, false);
+                let input_34 = input_34.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "project_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let project_id = aws_smithy_http::label::fmt_string(
+                    input_34,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if project_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "project_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "project_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/projects/{projectId}", projectId = project_id)
                     .expect("formatting should succeed");
@@ -6354,8 +6615,10 @@ impl DescribeProjectInput {
             fn update_http_builder(
                 input: &crate::input::DescribeProjectInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -6427,7 +6690,7 @@ impl DescribeProjectInput {
 pub mod describe_storage_configuration_input {
 
     /// A builder for [`DescribeStorageConfigurationInput`](crate::input::DescribeStorageConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DescribeStorageConfigurationInput`](crate::input::DescribeStorageConfigurationInput).
@@ -6435,7 +6698,7 @@ pub mod describe_storage_configuration_input {
             self,
         ) -> Result<
             crate::input::DescribeStorageConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeStorageConfigurationInput {})
         }
@@ -6454,13 +6717,13 @@ impl DescribeStorageConfigurationInput {
             crate::operation::DescribeStorageConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeStorageConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/configuration/account/storage")
                     .expect("formatting should succeed");
                 Ok(())
@@ -6469,8 +6732,10 @@ impl DescribeStorageConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::DescribeStorageConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -6542,7 +6807,7 @@ impl DescribeStorageConfigurationInput {
 pub mod describe_time_series_input {
 
     /// A builder for [`DescribeTimeSeriesInput`](crate::input::DescribeTimeSeriesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alias: std::option::Option<std::string::String>,
         pub(crate) asset_id: std::option::Option<std::string::String>,
@@ -6582,8 +6847,10 @@ pub mod describe_time_series_input {
         /// Consumes the builder and constructs a [`DescribeTimeSeriesInput`](crate::input::DescribeTimeSeriesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeTimeSeriesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeTimeSeriesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeTimeSeriesInput {
                 alias: self.alias,
                 asset_id: self.asset_id,
@@ -6605,29 +6872,35 @@ impl DescribeTimeSeriesInput {
             crate::operation::DescribeTimeSeries,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeTimeSeriesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/timeseries/describe").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::DescribeTimeSeriesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_35) = &_input.alias {
-                    query.push_kv("alias", &aws_smithy_http::query::fmt_string(&inner_35));
+                    {
+                        query.push_kv("alias", &aws_smithy_http::query::fmt_string(&inner_35));
+                    }
                 }
                 if let Some(inner_36) = &_input.asset_id {
-                    query.push_kv("assetId", &aws_smithy_http::query::fmt_string(&inner_36));
+                    {
+                        query.push_kv("assetId", &aws_smithy_http::query::fmt_string(&inner_36));
+                    }
                 }
                 if let Some(inner_37) = &_input.property_id {
-                    query.push_kv("propertyId", &aws_smithy_http::query::fmt_string(&inner_37));
+                    {
+                        query.push_kv("propertyId", &aws_smithy_http::query::fmt_string(&inner_37));
+                    }
                 }
                 Ok(())
             }
@@ -6635,8 +6908,10 @@ impl DescribeTimeSeriesInput {
             fn update_http_builder(
                 input: &crate::input::DescribeTimeSeriesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -6709,7 +6984,7 @@ impl DescribeTimeSeriesInput {
 pub mod disassociate_assets_input {
 
     /// A builder for [`DisassociateAssetsInput`](crate::input::DisassociateAssetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_id: std::option::Option<std::string::String>,
         pub(crate) hierarchy_id: std::option::Option<std::string::String>,
@@ -6763,8 +7038,10 @@ pub mod disassociate_assets_input {
         /// Consumes the builder and constructs a [`DisassociateAssetsInput`](crate::input::DisassociateAssetsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DisassociateAssetsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DisassociateAssetsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DisassociateAssetsInput {
                 asset_id: self.asset_id,
                 hierarchy_id: self.hierarchy_id,
@@ -6787,7 +7064,7 @@ impl DisassociateAssetsInput {
             crate::operation::DisassociateAssets,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -6796,20 +7073,25 @@ impl DisassociateAssetsInput {
             fn uri_base(
                 _input: &crate::input::DisassociateAssetsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_38 = &_input.asset_id;
-                let input_38 = input_38.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "asset_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let asset_id = aws_smithy_http::label::fmt_string(input_38, false);
+                let input_38 = input_38.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "asset_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let asset_id = aws_smithy_http::label::fmt_string(
+                    input_38,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if asset_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "asset_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "asset_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/assets/{assetId}/disassociate", assetId = asset_id)
                     .expect("formatting should succeed");
@@ -6819,8 +7101,10 @@ impl DisassociateAssetsInput {
             fn update_http_builder(
                 input: &crate::input::DisassociateAssetsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6906,7 +7190,7 @@ impl DisassociateAssetsInput {
 pub mod disassociate_time_series_from_asset_property_input {
 
     /// A builder for [`DisassociateTimeSeriesFromAssetPropertyInput`](crate::input::DisassociateTimeSeriesFromAssetPropertyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alias: std::option::Option<std::string::String>,
         pub(crate) asset_id: std::option::Option<std::string::String>,
@@ -6959,7 +7243,7 @@ pub mod disassociate_time_series_from_asset_property_input {
             self,
         ) -> Result<
             crate::input::DisassociateTimeSeriesFromAssetPropertyInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DisassociateTimeSeriesFromAssetPropertyInput {
                 alias: self.alias,
@@ -6983,7 +7267,7 @@ impl DisassociateTimeSeriesFromAssetPropertyInput {
             crate::operation::DisassociateTimeSeriesFromAssetProperty,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -6992,32 +7276,73 @@ impl DisassociateTimeSeriesFromAssetPropertyInput {
             fn uri_base(
                 _input: &crate::input::DisassociateTimeSeriesFromAssetPropertyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/timeseries/disassociate").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::DisassociateTimeSeriesFromAssetPropertyInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_39) = &_input.alias {
-                    query.push_kv("alias", &aws_smithy_http::query::fmt_string(&inner_39));
+                let inner_39 = &_input.alias;
+                let inner_39 = inner_39.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "alias",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_39.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "alias",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_40) = &_input.asset_id {
-                    query.push_kv("assetId", &aws_smithy_http::query::fmt_string(&inner_40));
+                query.push_kv("alias", &aws_smithy_http::query::fmt_string(&inner_39));
+                let inner_40 = &_input.asset_id;
+                let inner_40 = inner_40.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "asset_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_40.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "asset_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                if let Some(inner_41) = &_input.property_id {
-                    query.push_kv("propertyId", &aws_smithy_http::query::fmt_string(&inner_41));
+                query.push_kv("assetId", &aws_smithy_http::query::fmt_string(&inner_40));
+                let inner_41 = &_input.property_id;
+                let inner_41 = inner_41.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "property_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_41.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "property_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("propertyId", &aws_smithy_http::query::fmt_string(&inner_41));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::DisassociateTimeSeriesFromAssetPropertyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -7103,7 +7428,7 @@ impl DisassociateTimeSeriesFromAssetPropertyInput {
 pub mod get_asset_property_aggregates_input {
 
     /// A builder for [`GetAssetPropertyAggregatesInput`](crate::input::GetAssetPropertyAggregatesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_id: std::option::Option<std::string::String>,
         pub(crate) property_id: std::option::Option<std::string::String>,
@@ -7267,7 +7592,7 @@ pub mod get_asset_property_aggregates_input {
             self,
         ) -> Result<
             crate::input::GetAssetPropertyAggregatesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetAssetPropertyAggregatesInput {
                 asset_id: self.asset_id,
@@ -7298,81 +7623,126 @@ impl GetAssetPropertyAggregatesInput {
             crate::operation::GetAssetPropertyAggregates,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetAssetPropertyAggregatesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/properties/aggregates").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::GetAssetPropertyAggregatesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_42) = &_input.asset_id {
-                    query.push_kv("assetId", &aws_smithy_http::query::fmt_string(&inner_42));
+                    {
+                        query.push_kv("assetId", &aws_smithy_http::query::fmt_string(&inner_42));
+                    }
                 }
                 if let Some(inner_43) = &_input.property_id {
-                    query.push_kv("propertyId", &aws_smithy_http::query::fmt_string(&inner_43));
+                    {
+                        query.push_kv("propertyId", &aws_smithy_http::query::fmt_string(&inner_43));
+                    }
                 }
                 if let Some(inner_44) = &_input.property_alias {
-                    query.push_kv(
-                        "propertyAlias",
-                        &aws_smithy_http::query::fmt_string(&inner_44),
-                    );
-                }
-                if let Some(inner_45) = &_input.aggregate_types {
-                    for inner_46 in inner_45 {
+                    {
                         query.push_kv(
-                            "aggregateTypes",
-                            &aws_smithy_http::query::fmt_string(&inner_46),
+                            "propertyAlias",
+                            &aws_smithy_http::query::fmt_string(&inner_44),
                         );
                     }
                 }
-                if let Some(inner_47) = &_input.resolution {
-                    query.push_kv("resolution", &aws_smithy_http::query::fmt_string(&inner_47));
+                let inner_45 = &_input.aggregate_types;
+                let inner_45 = inner_45.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aggregate_types",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_46 in inner_45 {
+                    query.push_kv(
+                        "aggregateTypes",
+                        &aws_smithy_http::query::fmt_string(&inner_46),
+                    );
                 }
+                let inner_47 = &_input.resolution;
+                let inner_47 = inner_47.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resolution",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_47.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resolution",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                query.push_kv("resolution", &aws_smithy_http::query::fmt_string(&inner_47));
                 if let Some(inner_48) = &_input.qualities {
-                    for inner_49 in inner_48 {
-                        query.push_kv("qualities", &aws_smithy_http::query::fmt_string(&inner_49));
+                    {
+                        for inner_49 in inner_48 {
+                            query.push_kv(
+                                "qualities",
+                                &aws_smithy_http::query::fmt_string(&inner_49),
+                            );
+                        }
                     }
                 }
-                if let Some(inner_50) = &_input.start_date {
-                    query.push_kv(
-                        "startDate",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_50,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
-                }
-                if let Some(inner_51) = &_input.end_date {
-                    query.push_kv(
-                        "endDate",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_51,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
-                }
+                let inner_50 = &_input.start_date;
+                let inner_50 = inner_50.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "start_date",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "startDate",
+                    &aws_smithy_http::query::fmt_timestamp(
+                        inner_50,
+                        aws_smithy_types::date_time::Format::DateTime,
+                    )?,
+                );
+                let inner_51 = &_input.end_date;
+                let inner_51 = inner_51.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "end_date",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "endDate",
+                    &aws_smithy_http::query::fmt_timestamp(
+                        inner_51,
+                        aws_smithy_types::date_time::Format::DateTime,
+                    )?,
+                );
                 if let Some(inner_52) = &_input.time_ordering {
-                    query.push_kv(
-                        "timeOrdering",
-                        &aws_smithy_http::query::fmt_string(&inner_52),
-                    );
+                    {
+                        query.push_kv(
+                            "timeOrdering",
+                            &aws_smithy_http::query::fmt_string(&inner_52),
+                        );
+                    }
                 }
                 if let Some(inner_53) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_53));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_53));
+                    }
                 }
                 if let Some(inner_54) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_54).encode(),
-                    );
+                    if *inner_54 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_54).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -7380,8 +7750,10 @@ impl GetAssetPropertyAggregatesInput {
             fn update_http_builder(
                 input: &crate::input::GetAssetPropertyAggregatesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -7454,7 +7826,7 @@ impl GetAssetPropertyAggregatesInput {
 pub mod get_asset_property_value_input {
 
     /// A builder for [`GetAssetPropertyValueInput`](crate::input::GetAssetPropertyValueInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_id: std::option::Option<std::string::String>,
         pub(crate) property_id: std::option::Option<std::string::String>,
@@ -7497,8 +7869,10 @@ pub mod get_asset_property_value_input {
         /// Consumes the builder and constructs a [`GetAssetPropertyValueInput`](crate::input::GetAssetPropertyValueInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetAssetPropertyValueInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetAssetPropertyValueInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetAssetPropertyValueInput {
                 asset_id: self.asset_id,
                 property_id: self.property_id,
@@ -7520,32 +7894,38 @@ impl GetAssetPropertyValueInput {
             crate::operation::GetAssetPropertyValue,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetAssetPropertyValueInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/properties/latest").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::GetAssetPropertyValueInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_55) = &_input.asset_id {
-                    query.push_kv("assetId", &aws_smithy_http::query::fmt_string(&inner_55));
+                    {
+                        query.push_kv("assetId", &aws_smithy_http::query::fmt_string(&inner_55));
+                    }
                 }
                 if let Some(inner_56) = &_input.property_id {
-                    query.push_kv("propertyId", &aws_smithy_http::query::fmt_string(&inner_56));
+                    {
+                        query.push_kv("propertyId", &aws_smithy_http::query::fmt_string(&inner_56));
+                    }
                 }
                 if let Some(inner_57) = &_input.property_alias {
-                    query.push_kv(
-                        "propertyAlias",
-                        &aws_smithy_http::query::fmt_string(&inner_57),
-                    );
+                    {
+                        query.push_kv(
+                            "propertyAlias",
+                            &aws_smithy_http::query::fmt_string(&inner_57),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -7553,8 +7933,10 @@ impl GetAssetPropertyValueInput {
             fn update_http_builder(
                 input: &crate::input::GetAssetPropertyValueInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -7627,7 +8009,7 @@ impl GetAssetPropertyValueInput {
 pub mod get_asset_property_value_history_input {
 
     /// A builder for [`GetAssetPropertyValueHistoryInput`](crate::input::GetAssetPropertyValueHistoryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_id: std::option::Option<std::string::String>,
         pub(crate) property_id: std::option::Option<std::string::String>,
@@ -7760,7 +8142,7 @@ pub mod get_asset_property_value_history_input {
             self,
         ) -> Result<
             crate::input::GetAssetPropertyValueHistoryInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetAssetPropertyValueHistoryInput {
                 asset_id: self.asset_id,
@@ -7789,70 +8171,91 @@ impl GetAssetPropertyValueHistoryInput {
             crate::operation::GetAssetPropertyValueHistory,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetAssetPropertyValueHistoryInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/properties/history").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::GetAssetPropertyValueHistoryInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_58) = &_input.asset_id {
-                    query.push_kv("assetId", &aws_smithy_http::query::fmt_string(&inner_58));
+                    {
+                        query.push_kv("assetId", &aws_smithy_http::query::fmt_string(&inner_58));
+                    }
                 }
                 if let Some(inner_59) = &_input.property_id {
-                    query.push_kv("propertyId", &aws_smithy_http::query::fmt_string(&inner_59));
+                    {
+                        query.push_kv("propertyId", &aws_smithy_http::query::fmt_string(&inner_59));
+                    }
                 }
                 if let Some(inner_60) = &_input.property_alias {
-                    query.push_kv(
-                        "propertyAlias",
-                        &aws_smithy_http::query::fmt_string(&inner_60),
-                    );
+                    {
+                        query.push_kv(
+                            "propertyAlias",
+                            &aws_smithy_http::query::fmt_string(&inner_60),
+                        );
+                    }
                 }
                 if let Some(inner_61) = &_input.start_date {
-                    query.push_kv(
-                        "startDate",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_61,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
+                    {
+                        query.push_kv(
+                            "startDate",
+                            &aws_smithy_http::query::fmt_timestamp(
+                                inner_61,
+                                aws_smithy_types::date_time::Format::DateTime,
+                            )?,
+                        );
+                    }
                 }
                 if let Some(inner_62) = &_input.end_date {
-                    query.push_kv(
-                        "endDate",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_62,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
+                    {
+                        query.push_kv(
+                            "endDate",
+                            &aws_smithy_http::query::fmt_timestamp(
+                                inner_62,
+                                aws_smithy_types::date_time::Format::DateTime,
+                            )?,
+                        );
+                    }
                 }
                 if let Some(inner_63) = &_input.qualities {
-                    for inner_64 in inner_63 {
-                        query.push_kv("qualities", &aws_smithy_http::query::fmt_string(&inner_64));
+                    {
+                        for inner_64 in inner_63 {
+                            query.push_kv(
+                                "qualities",
+                                &aws_smithy_http::query::fmt_string(&inner_64),
+                            );
+                        }
                     }
                 }
                 if let Some(inner_65) = &_input.time_ordering {
-                    query.push_kv(
-                        "timeOrdering",
-                        &aws_smithy_http::query::fmt_string(&inner_65),
-                    );
+                    {
+                        query.push_kv(
+                            "timeOrdering",
+                            &aws_smithy_http::query::fmt_string(&inner_65),
+                        );
+                    }
                 }
                 if let Some(inner_66) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_66));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_66));
+                    }
                 }
                 if let Some(inner_67) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_67).encode(),
-                    );
+                    if *inner_67 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_67).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -7860,8 +8263,10 @@ impl GetAssetPropertyValueHistoryInput {
             fn update_http_builder(
                 input: &crate::input::GetAssetPropertyValueHistoryInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -7934,7 +8339,7 @@ impl GetAssetPropertyValueHistoryInput {
 pub mod get_interpolated_asset_property_values_input {
 
     /// A builder for [`GetInterpolatedAssetPropertyValuesInput`](crate::input::GetInterpolatedAssetPropertyValuesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_id: std::option::Option<std::string::String>,
         pub(crate) property_id: std::option::Option<std::string::String>,
@@ -8111,7 +8516,7 @@ pub mod get_interpolated_asset_property_values_input {
             self,
         ) -> Result<
             crate::input::GetInterpolatedAssetPropertyValuesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetInterpolatedAssetPropertyValuesInput {
                 asset_id: self.asset_id,
@@ -8144,83 +8549,132 @@ impl GetInterpolatedAssetPropertyValuesInput {
             crate::operation::GetInterpolatedAssetPropertyValues,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetInterpolatedAssetPropertyValuesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/properties/interpolated").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::GetInterpolatedAssetPropertyValuesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_68) = &_input.asset_id {
-                    query.push_kv("assetId", &aws_smithy_http::query::fmt_string(&inner_68));
+                    {
+                        query.push_kv("assetId", &aws_smithy_http::query::fmt_string(&inner_68));
+                    }
                 }
                 if let Some(inner_69) = &_input.property_id {
-                    query.push_kv("propertyId", &aws_smithy_http::query::fmt_string(&inner_69));
+                    {
+                        query.push_kv("propertyId", &aws_smithy_http::query::fmt_string(&inner_69));
+                    }
                 }
                 if let Some(inner_70) = &_input.property_alias {
-                    query.push_kv(
-                        "propertyAlias",
-                        &aws_smithy_http::query::fmt_string(&inner_70),
-                    );
+                    {
+                        query.push_kv(
+                            "propertyAlias",
+                            &aws_smithy_http::query::fmt_string(&inner_70),
+                        );
+                    }
                 }
-                if let Some(inner_71) = &_input.start_time_in_seconds {
-                    query.push_kv(
-                        "startTimeInSeconds",
-                        aws_smithy_types::primitive::Encoder::from(*inner_71).encode(),
-                    );
-                }
+                let inner_71 = &_input.start_time_in_seconds;
+                let inner_71 = inner_71.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "start_time_in_seconds",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "startTimeInSeconds",
+                    aws_smithy_types::primitive::Encoder::from(*inner_71).encode(),
+                );
                 if let Some(inner_72) = &_input.start_time_offset_in_nanos {
-                    query.push_kv(
-                        "startTimeOffsetInNanos",
-                        aws_smithy_types::primitive::Encoder::from(*inner_72).encode(),
-                    );
+                    if *inner_72 != 0 {
+                        query.push_kv(
+                            "startTimeOffsetInNanos",
+                            aws_smithy_types::primitive::Encoder::from(*inner_72).encode(),
+                        );
+                    }
                 }
-                if let Some(inner_73) = &_input.end_time_in_seconds {
-                    query.push_kv(
-                        "endTimeInSeconds",
-                        aws_smithy_types::primitive::Encoder::from(*inner_73).encode(),
-                    );
-                }
+                let inner_73 = &_input.end_time_in_seconds;
+                let inner_73 = inner_73.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "end_time_in_seconds",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "endTimeInSeconds",
+                    aws_smithy_types::primitive::Encoder::from(*inner_73).encode(),
+                );
                 if let Some(inner_74) = &_input.end_time_offset_in_nanos {
-                    query.push_kv(
-                        "endTimeOffsetInNanos",
-                        aws_smithy_types::primitive::Encoder::from(*inner_74).encode(),
-                    );
+                    if *inner_74 != 0 {
+                        query.push_kv(
+                            "endTimeOffsetInNanos",
+                            aws_smithy_types::primitive::Encoder::from(*inner_74).encode(),
+                        );
+                    }
                 }
-                if let Some(inner_75) = &_input.quality {
-                    query.push_kv("quality", &aws_smithy_http::query::fmt_string(&inner_75));
-                }
-                if let Some(inner_76) = &_input.interval_in_seconds {
-                    query.push_kv(
-                        "intervalInSeconds",
-                        aws_smithy_types::primitive::Encoder::from(*inner_76).encode(),
-                    );
-                }
+                let inner_75 = &_input.quality;
+                let inner_75 = inner_75.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "quality",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("quality", &aws_smithy_http::query::fmt_string(&inner_75));
+                let inner_76 = &_input.interval_in_seconds;
+                let inner_76 = inner_76.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "interval_in_seconds",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "intervalInSeconds",
+                    aws_smithy_types::primitive::Encoder::from(*inner_76).encode(),
+                );
                 if let Some(inner_77) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_77));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_77));
+                    }
                 }
                 if let Some(inner_78) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_78).encode(),
+                    if *inner_78 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_78).encode(),
+                        );
+                    }
+                }
+                let inner_79 = &_input.r#type;
+                let inner_79 = inner_79.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "r#type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_79.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "r#type",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_79) = &_input.r#type {
-                    query.push_kv("type", &aws_smithy_http::query::fmt_string(&inner_79));
-                }
+                query.push_kv("type", &aws_smithy_http::query::fmt_string(&inner_79));
                 if let Some(inner_80) = &_input.interval_window_in_seconds {
-                    query.push_kv(
-                        "intervalWindowInSeconds",
-                        aws_smithy_types::primitive::Encoder::from(*inner_80).encode(),
-                    );
+                    if *inner_80 != 0 {
+                        query.push_kv(
+                            "intervalWindowInSeconds",
+                            aws_smithy_types::primitive::Encoder::from(*inner_80).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -8228,8 +8682,10 @@ impl GetInterpolatedAssetPropertyValuesInput {
             fn update_http_builder(
                 input: &crate::input::GetInterpolatedAssetPropertyValuesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -8302,7 +8758,7 @@ impl GetInterpolatedAssetPropertyValuesInput {
 pub mod list_access_policies_input {
 
     /// A builder for [`ListAccessPoliciesInput`](crate::input::ListAccessPoliciesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_type: std::option::Option<crate::model::IdentityType>,
         pub(crate) identity_id: std::option::Option<std::string::String>,
@@ -8394,8 +8850,10 @@ pub mod list_access_policies_input {
         /// Consumes the builder and constructs a [`ListAccessPoliciesInput`](crate::input::ListAccessPoliciesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListAccessPoliciesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListAccessPoliciesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListAccessPoliciesInput {
                 identity_type: self.identity_type,
                 identity_id: self.identity_id,
@@ -8421,50 +8879,64 @@ impl ListAccessPoliciesInput {
             crate::operation::ListAccessPolicies,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListAccessPoliciesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/access-policies").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListAccessPoliciesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_81) = &_input.identity_type {
-                    query.push_kv(
-                        "identityType",
-                        &aws_smithy_http::query::fmt_string(&inner_81),
-                    );
+                    {
+                        query.push_kv(
+                            "identityType",
+                            &aws_smithy_http::query::fmt_string(&inner_81),
+                        );
+                    }
                 }
                 if let Some(inner_82) = &_input.identity_id {
-                    query.push_kv("identityId", &aws_smithy_http::query::fmt_string(&inner_82));
+                    {
+                        query.push_kv("identityId", &aws_smithy_http::query::fmt_string(&inner_82));
+                    }
                 }
                 if let Some(inner_83) = &_input.resource_type {
-                    query.push_kv(
-                        "resourceType",
-                        &aws_smithy_http::query::fmt_string(&inner_83),
-                    );
+                    {
+                        query.push_kv(
+                            "resourceType",
+                            &aws_smithy_http::query::fmt_string(&inner_83),
+                        );
+                    }
                 }
                 if let Some(inner_84) = &_input.resource_id {
-                    query.push_kv("resourceId", &aws_smithy_http::query::fmt_string(&inner_84));
+                    {
+                        query.push_kv("resourceId", &aws_smithy_http::query::fmt_string(&inner_84));
+                    }
                 }
                 if let Some(inner_85) = &_input.iam_arn {
-                    query.push_kv("iamArn", &aws_smithy_http::query::fmt_string(&inner_85));
+                    {
+                        query.push_kv("iamArn", &aws_smithy_http::query::fmt_string(&inner_85));
+                    }
                 }
                 if let Some(inner_86) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_86));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_86));
+                    }
                 }
                 if let Some(inner_87) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_87).encode(),
-                    );
+                    if *inner_87 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_87).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -8472,8 +8944,10 @@ impl ListAccessPoliciesInput {
             fn update_http_builder(
                 input: &crate::input::ListAccessPoliciesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -8546,7 +9020,7 @@ impl ListAccessPoliciesInput {
 pub mod list_asset_models_input {
 
     /// A builder for [`ListAssetModelsInput`](crate::input::ListAssetModelsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -8577,7 +9051,7 @@ pub mod list_asset_models_input {
         /// Consumes the builder and constructs a [`ListAssetModelsInput`](crate::input::ListAssetModelsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListAssetModelsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListAssetModelsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListAssetModelsInput {
                 next_token: self.next_token,
@@ -8599,29 +9073,33 @@ impl ListAssetModelsInput {
             crate::operation::ListAssetModels,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListAssetModelsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/asset-models").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListAssetModelsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_88) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_88));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_88));
+                    }
                 }
                 if let Some(inner_89) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_89).encode(),
-                    );
+                    if *inner_89 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_89).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -8629,8 +9107,10 @@ impl ListAssetModelsInput {
             fn update_http_builder(
                 input: &crate::input::ListAssetModelsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -8703,7 +9183,7 @@ impl ListAssetModelsInput {
 pub mod list_asset_relationships_input {
 
     /// A builder for [`ListAssetRelationshipsInput`](crate::input::ListAssetRelationshipsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_id: std::option::Option<std::string::String>,
         pub(crate) traversal_type: std::option::Option<crate::model::TraversalType>,
@@ -8763,8 +9243,10 @@ pub mod list_asset_relationships_input {
         /// Consumes the builder and constructs a [`ListAssetRelationshipsInput`](crate::input::ListAssetRelationshipsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListAssetRelationshipsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListAssetRelationshipsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListAssetRelationshipsInput {
                 asset_id: self.asset_id,
                 traversal_type: self.traversal_type,
@@ -8787,26 +9269,31 @@ impl ListAssetRelationshipsInput {
             crate::operation::ListAssetRelationships,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListAssetRelationshipsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_90 = &_input.asset_id;
-                let input_90 = input_90.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "asset_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let asset_id = aws_smithy_http::label::fmt_string(input_90, false);
+                let input_90 = input_90.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "asset_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let asset_id = aws_smithy_http::label::fmt_string(
+                    input_90,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if asset_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "asset_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "asset_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -8819,22 +9306,31 @@ impl ListAssetRelationshipsInput {
             fn uri_query(
                 _input: &crate::input::ListAssetRelationshipsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_91) = &_input.traversal_type {
-                    query.push_kv(
-                        "traversalType",
-                        &aws_smithy_http::query::fmt_string(&inner_91),
-                    );
-                }
+                let inner_91 = &_input.traversal_type;
+                let inner_91 = inner_91.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "traversal_type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "traversalType",
+                    &aws_smithy_http::query::fmt_string(&inner_91),
+                );
                 if let Some(inner_92) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_92));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_92));
+                    }
                 }
                 if let Some(inner_93) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_93).encode(),
-                    );
+                    if *inner_93 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_93).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -8842,8 +9338,10 @@ impl ListAssetRelationshipsInput {
             fn update_http_builder(
                 input: &crate::input::ListAssetRelationshipsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -8916,7 +9414,7 @@ impl ListAssetRelationshipsInput {
 pub mod list_assets_input {
 
     /// A builder for [`ListAssetsInput`](crate::input::ListAssetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -8985,7 +9483,8 @@ pub mod list_assets_input {
         /// Consumes the builder and constructs a [`ListAssetsInput`](crate::input::ListAssetsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListAssetsInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ListAssetsInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ListAssetsInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
@@ -9008,38 +9507,46 @@ impl ListAssetsInput {
             crate::operation::ListAssets,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListAssetsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/assets").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListAssetsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_94) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_94));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_94));
+                    }
                 }
                 if let Some(inner_95) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_95).encode(),
-                    );
+                    if *inner_95 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_95).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_96) = &_input.asset_model_id {
-                    query.push_kv(
-                        "assetModelId",
-                        &aws_smithy_http::query::fmt_string(&inner_96),
-                    );
+                    {
+                        query.push_kv(
+                            "assetModelId",
+                            &aws_smithy_http::query::fmt_string(&inner_96),
+                        );
+                    }
                 }
                 if let Some(inner_97) = &_input.filter {
-                    query.push_kv("filter", &aws_smithy_http::query::fmt_string(&inner_97));
+                    {
+                        query.push_kv("filter", &aws_smithy_http::query::fmt_string(&inner_97));
+                    }
                 }
                 Ok(())
             }
@@ -9047,8 +9554,10 @@ impl ListAssetsInput {
             fn update_http_builder(
                 input: &crate::input::ListAssetsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -9121,7 +9630,7 @@ impl ListAssetsInput {
 pub mod list_associated_assets_input {
 
     /// A builder for [`ListAssociatedAssetsInput`](crate::input::ListAssociatedAssetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_id: std::option::Option<std::string::String>,
         pub(crate) hierarchy_id: std::option::Option<std::string::String>,
@@ -9200,8 +9709,10 @@ pub mod list_associated_assets_input {
         /// Consumes the builder and constructs a [`ListAssociatedAssetsInput`](crate::input::ListAssociatedAssetsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListAssociatedAssetsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListAssociatedAssetsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListAssociatedAssetsInput {
                 asset_id: self.asset_id,
                 hierarchy_id: self.hierarchy_id,
@@ -9225,26 +9736,31 @@ impl ListAssociatedAssetsInput {
             crate::operation::ListAssociatedAssets,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListAssociatedAssetsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_98 = &_input.asset_id;
-                let input_98 = input_98.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "asset_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let asset_id = aws_smithy_http::label::fmt_string(input_98, false);
+                let input_98 = input_98.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "asset_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let asset_id = aws_smithy_http::label::fmt_string(
+                    input_98,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if asset_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "asset_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "asset_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/assets/{assetId}/hierarchies", assetId = asset_id)
                     .expect("formatting should succeed");
@@ -9253,28 +9769,36 @@ impl ListAssociatedAssetsInput {
             fn uri_query(
                 _input: &crate::input::ListAssociatedAssetsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_99) = &_input.hierarchy_id {
-                    query.push_kv(
-                        "hierarchyId",
-                        &aws_smithy_http::query::fmt_string(&inner_99),
-                    );
+                    {
+                        query.push_kv(
+                            "hierarchyId",
+                            &aws_smithy_http::query::fmt_string(&inner_99),
+                        );
+                    }
                 }
                 if let Some(inner_100) = &_input.traversal_direction {
-                    query.push_kv(
-                        "traversalDirection",
-                        &aws_smithy_http::query::fmt_string(&inner_100),
-                    );
+                    {
+                        query.push_kv(
+                            "traversalDirection",
+                            &aws_smithy_http::query::fmt_string(&inner_100),
+                        );
+                    }
                 }
                 if let Some(inner_101) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_101));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_101));
+                    }
                 }
                 if let Some(inner_102) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_102).encode(),
-                    );
+                    if *inner_102 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_102).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -9282,8 +9806,10 @@ impl ListAssociatedAssetsInput {
             fn update_http_builder(
                 input: &crate::input::ListAssociatedAssetsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -9356,7 +9882,7 @@ impl ListAssociatedAssetsInput {
 pub mod list_bulk_import_jobs_input {
 
     /// A builder for [`ListBulkImportJobsInput`](crate::input::ListBulkImportJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -9399,8 +9925,10 @@ pub mod list_bulk_import_jobs_input {
         /// Consumes the builder and constructs a [`ListBulkImportJobsInput`](crate::input::ListBulkImportJobsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListBulkImportJobsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListBulkImportJobsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListBulkImportJobsInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
@@ -9422,32 +9950,38 @@ impl ListBulkImportJobsInput {
             crate::operation::ListBulkImportJobs,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListBulkImportJobsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/jobs").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListBulkImportJobsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_103) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_103));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_103));
+                    }
                 }
                 if let Some(inner_104) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_104).encode(),
-                    );
+                    if *inner_104 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_104).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_105) = &_input.filter {
-                    query.push_kv("filter", &aws_smithy_http::query::fmt_string(&inner_105));
+                    {
+                        query.push_kv("filter", &aws_smithy_http::query::fmt_string(&inner_105));
+                    }
                 }
                 Ok(())
             }
@@ -9455,8 +9989,10 @@ impl ListBulkImportJobsInput {
             fn update_http_builder(
                 input: &crate::input::ListBulkImportJobsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -9529,7 +10065,7 @@ impl ListBulkImportJobsInput {
 pub mod list_dashboards_input {
 
     /// A builder for [`ListDashboardsInput`](crate::input::ListDashboardsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -9571,7 +10107,7 @@ pub mod list_dashboards_input {
         /// Consumes the builder and constructs a [`ListDashboardsInput`](crate::input::ListDashboardsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListDashboardsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListDashboardsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListDashboardsInput {
                 project_id: self.project_id,
@@ -9594,32 +10130,49 @@ impl ListDashboardsInput {
             crate::operation::ListDashboards,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListDashboardsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/dashboards").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListDashboardsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_106) = &_input.project_id {
-                    query.push_kv("projectId", &aws_smithy_http::query::fmt_string(&inner_106));
+                let inner_106 = &_input.project_id;
+                let inner_106 = inner_106.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "project_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_106.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "project_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("projectId", &aws_smithy_http::query::fmt_string(&inner_106));
                 if let Some(inner_107) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_107));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_107));
+                    }
                 }
                 if let Some(inner_108) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_108).encode(),
-                    );
+                    if *inner_108 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_108).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -9627,8 +10180,10 @@ impl ListDashboardsInput {
             fn update_http_builder(
                 input: &crate::input::ListDashboardsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -9701,7 +10256,7 @@ impl ListDashboardsInput {
 pub mod list_gateways_input {
 
     /// A builder for [`ListGatewaysInput`](crate::input::ListGatewaysInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -9732,7 +10287,7 @@ pub mod list_gateways_input {
         /// Consumes the builder and constructs a [`ListGatewaysInput`](crate::input::ListGatewaysInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListGatewaysInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListGatewaysInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListGatewaysInput {
                 next_token: self.next_token,
@@ -9754,29 +10309,33 @@ impl ListGatewaysInput {
             crate::operation::ListGateways,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListGatewaysInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/20200301/gateways").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListGatewaysInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_109) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_109));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_109));
+                    }
                 }
                 if let Some(inner_110) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_110).encode(),
-                    );
+                    if *inner_110 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_110).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -9784,8 +10343,10 @@ impl ListGatewaysInput {
             fn update_http_builder(
                 input: &crate::input::ListGatewaysInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -9858,7 +10419,7 @@ impl ListGatewaysInput {
 pub mod list_portals_input {
 
     /// A builder for [`ListPortalsInput`](crate::input::ListPortalsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -9889,7 +10450,7 @@ pub mod list_portals_input {
         /// Consumes the builder and constructs a [`ListPortalsInput`](crate::input::ListPortalsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListPortalsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListPortalsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListPortalsInput {
                 next_token: self.next_token,
@@ -9911,29 +10472,33 @@ impl ListPortalsInput {
             crate::operation::ListPortals,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListPortalsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/portals").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListPortalsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_111) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_111));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_111));
+                    }
                 }
                 if let Some(inner_112) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_112).encode(),
-                    );
+                    if *inner_112 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_112).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -9941,8 +10506,10 @@ impl ListPortalsInput {
             fn update_http_builder(
                 input: &crate::input::ListPortalsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -10015,7 +10582,7 @@ impl ListPortalsInput {
 pub mod list_project_assets_input {
 
     /// A builder for [`ListProjectAssetsInput`](crate::input::ListProjectAssetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -10057,8 +10624,10 @@ pub mod list_project_assets_input {
         /// Consumes the builder and constructs a [`ListProjectAssetsInput`](crate::input::ListProjectAssetsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListProjectAssetsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListProjectAssetsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListProjectAssetsInput {
                 project_id: self.project_id,
                 next_token: self.next_token,
@@ -10080,26 +10649,31 @@ impl ListProjectAssetsInput {
             crate::operation::ListProjectAssets,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListProjectAssetsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_113 = &_input.project_id;
-                let input_113 = input_113.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "project_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let project_id = aws_smithy_http::label::fmt_string(input_113, false);
+                let input_113 = input_113.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "project_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let project_id = aws_smithy_http::label::fmt_string(
+                    input_113,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if project_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "project_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "project_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -10112,16 +10686,20 @@ impl ListProjectAssetsInput {
             fn uri_query(
                 _input: &crate::input::ListProjectAssetsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_114) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_114));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_114));
+                    }
                 }
                 if let Some(inner_115) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_115).encode(),
-                    );
+                    if *inner_115 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_115).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -10129,8 +10707,10 @@ impl ListProjectAssetsInput {
             fn update_http_builder(
                 input: &crate::input::ListProjectAssetsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -10203,7 +10783,7 @@ impl ListProjectAssetsInput {
 pub mod list_projects_input {
 
     /// A builder for [`ListProjectsInput`](crate::input::ListProjectsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portal_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -10245,7 +10825,7 @@ pub mod list_projects_input {
         /// Consumes the builder and constructs a [`ListProjectsInput`](crate::input::ListProjectsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListProjectsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListProjectsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListProjectsInput {
                 portal_id: self.portal_id,
@@ -10268,32 +10848,49 @@ impl ListProjectsInput {
             crate::operation::ListProjects,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListProjectsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/projects").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListProjectsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_116) = &_input.portal_id {
-                    query.push_kv("portalId", &aws_smithy_http::query::fmt_string(&inner_116));
+                let inner_116 = &_input.portal_id;
+                let inner_116 = inner_116.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "portal_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_116.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "portal_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("portalId", &aws_smithy_http::query::fmt_string(&inner_116));
                 if let Some(inner_117) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_117));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_117));
+                    }
                 }
                 if let Some(inner_118) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_118).encode(),
-                    );
+                    if *inner_118 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_118).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -10301,8 +10898,10 @@ impl ListProjectsInput {
             fn update_http_builder(
                 input: &crate::input::ListProjectsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -10375,7 +10974,7 @@ impl ListProjectsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -10393,8 +10992,10 @@ pub mod list_tags_for_resource_input {
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
             })
@@ -10414,35 +11015,50 @@ impl ListTagsForResourceInput {
             crate::operation::ListTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/tags").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListTagsForResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_119) = &_input.resource_arn {
-                    query.push_kv(
-                        "resourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_119),
+                let inner_119 = &_input.resource_arn;
+                let inner_119 = inner_119.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_119.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_119),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::ListTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -10515,7 +11131,7 @@ impl ListTagsForResourceInput {
 pub mod list_time_series_input {
 
     /// A builder for [`ListTimeSeriesInput`](crate::input::ListTimeSeriesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -10588,7 +11204,7 @@ pub mod list_time_series_input {
         /// Consumes the builder and constructs a [`ListTimeSeriesInput`](crate::input::ListTimeSeriesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTimeSeriesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListTimeSeriesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListTimeSeriesInput {
                 next_token: self.next_token,
@@ -10613,44 +11229,54 @@ impl ListTimeSeriesInput {
             crate::operation::ListTimeSeries,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTimeSeriesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/timeseries").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListTimeSeriesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_120) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_120));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_120));
+                    }
                 }
                 if let Some(inner_121) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_121).encode(),
-                    );
+                    if *inner_121 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_121).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_122) = &_input.asset_id {
-                    query.push_kv("assetId", &aws_smithy_http::query::fmt_string(&inner_122));
+                    {
+                        query.push_kv("assetId", &aws_smithy_http::query::fmt_string(&inner_122));
+                    }
                 }
                 if let Some(inner_123) = &_input.alias_prefix {
-                    query.push_kv(
-                        "aliasPrefix",
-                        &aws_smithy_http::query::fmt_string(&inner_123),
-                    );
+                    {
+                        query.push_kv(
+                            "aliasPrefix",
+                            &aws_smithy_http::query::fmt_string(&inner_123),
+                        );
+                    }
                 }
                 if let Some(inner_124) = &_input.time_series_type {
-                    query.push_kv(
-                        "timeSeriesType",
-                        &aws_smithy_http::query::fmt_string(&inner_124),
-                    );
+                    {
+                        query.push_kv(
+                            "timeSeriesType",
+                            &aws_smithy_http::query::fmt_string(&inner_124),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -10658,8 +11284,10 @@ impl ListTimeSeriesInput {
             fn update_http_builder(
                 input: &crate::input::ListTimeSeriesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -10732,7 +11360,7 @@ impl ListTimeSeriesInput {
 pub mod put_default_encryption_configuration_input {
 
     /// A builder for [`PutDefaultEncryptionConfigurationInput`](crate::input::PutDefaultEncryptionConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_type: std::option::Option<crate::model::EncryptionType>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
@@ -10766,7 +11394,7 @@ pub mod put_default_encryption_configuration_input {
             self,
         ) -> Result<
             crate::input::PutDefaultEncryptionConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::PutDefaultEncryptionConfigurationInput {
                 encryption_type: self.encryption_type,
@@ -10788,13 +11416,13 @@ impl PutDefaultEncryptionConfigurationInput {
             crate::operation::PutDefaultEncryptionConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutDefaultEncryptionConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/configuration/account/encryption")
                     .expect("formatting should succeed");
                 Ok(())
@@ -10803,8 +11431,10 @@ impl PutDefaultEncryptionConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::PutDefaultEncryptionConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -10889,7 +11519,7 @@ impl PutDefaultEncryptionConfigurationInput {
 pub mod put_logging_options_input {
 
     /// A builder for [`PutLoggingOptionsInput`](crate::input::PutLoggingOptionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) logging_options: std::option::Option<crate::model::LoggingOptions>,
     }
@@ -10910,8 +11540,10 @@ pub mod put_logging_options_input {
         /// Consumes the builder and constructs a [`PutLoggingOptionsInput`](crate::input::PutLoggingOptionsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutLoggingOptionsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutLoggingOptionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutLoggingOptionsInput {
                 logging_options: self.logging_options,
             })
@@ -10931,13 +11563,13 @@ impl PutLoggingOptionsInput {
             crate::operation::PutLoggingOptions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutLoggingOptionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/logging").expect("formatting should succeed");
                 Ok(())
             }
@@ -10945,8 +11577,10 @@ impl PutLoggingOptionsInput {
             fn update_http_builder(
                 input: &crate::input::PutLoggingOptionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -11032,7 +11666,7 @@ impl PutLoggingOptionsInput {
 pub mod put_storage_configuration_input {
 
     /// A builder for [`PutStorageConfigurationInput`](crate::input::PutStorageConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) storage_type: std::option::Option<crate::model::StorageType>,
         pub(crate) multi_layer_storage: std::option::Option<crate::model::MultiLayerStorage>,
@@ -11123,7 +11757,7 @@ pub mod put_storage_configuration_input {
             self,
         ) -> Result<
             crate::input::PutStorageConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::PutStorageConfigurationInput {
                 storage_type: self.storage_type,
@@ -11147,13 +11781,13 @@ impl PutStorageConfigurationInput {
             crate::operation::PutStorageConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutStorageConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/configuration/account/storage")
                     .expect("formatting should succeed");
                 Ok(())
@@ -11162,8 +11796,10 @@ impl PutStorageConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::PutStorageConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -11251,7 +11887,7 @@ impl PutStorageConfigurationInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -11297,7 +11933,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
@@ -11319,35 +11955,50 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/tags").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::TagResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_125) = &_input.resource_arn {
-                    query.push_kv(
-                        "resourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_125),
+                let inner_125 = &_input.resource_arn;
+                let inner_125 = inner_125.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_125.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_125),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -11434,7 +12085,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11472,7 +12123,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
@@ -11494,31 +12145,49 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/tags").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::UntagResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_126) = &_input.resource_arn {
-                    query.push_kv(
-                        "resourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_126),
+                let inner_126 = &_input.resource_arn;
+                let inner_126 = inner_126.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_126.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_127) = &_input.tag_keys {
-                    for inner_128 in inner_127 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_128));
-                    }
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_126),
+                );
+                let inner_127 = &_input.tag_keys;
+                let inner_127 = inner_127.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_128 in inner_127 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_128));
                 }
                 Ok(())
             }
@@ -11526,8 +12195,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -11600,7 +12271,7 @@ impl UntagResourceInput {
 pub mod update_access_policy_input {
 
     /// A builder for [`UpdateAccessPolicyInput`](crate::input::UpdateAccessPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_policy_id: std::option::Option<std::string::String>,
         pub(crate) access_policy_identity: std::option::Option<crate::model::Identity>,
@@ -11674,8 +12345,10 @@ pub mod update_access_policy_input {
         /// Consumes the builder and constructs a [`UpdateAccessPolicyInput`](crate::input::UpdateAccessPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateAccessPolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateAccessPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateAccessPolicyInput {
                 access_policy_id: self.access_policy_id,
                 access_policy_identity: self.access_policy_identity,
@@ -11699,7 +12372,7 @@ impl UpdateAccessPolicyInput {
             crate::operation::UpdateAccessPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -11708,20 +12381,25 @@ impl UpdateAccessPolicyInput {
             fn uri_base(
                 _input: &crate::input::UpdateAccessPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_129 = &_input.access_policy_id;
-                let input_129 = input_129.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "access_policy_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let access_policy_id = aws_smithy_http::label::fmt_string(input_129, false);
+                let input_129 = input_129.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "access_policy_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let access_policy_id = aws_smithy_http::label::fmt_string(
+                    input_129,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if access_policy_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "access_policy_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "access_policy_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -11735,8 +12413,10 @@ impl UpdateAccessPolicyInput {
             fn update_http_builder(
                 input: &crate::input::UpdateAccessPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -11822,7 +12502,7 @@ impl UpdateAccessPolicyInput {
 pub mod update_asset_input {
 
     /// A builder for [`UpdateAssetInput`](crate::input::UpdateAssetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_id: std::option::Option<std::string::String>,
         pub(crate) asset_name: std::option::Option<std::string::String>,
@@ -11876,7 +12556,7 @@ pub mod update_asset_input {
         /// Consumes the builder and constructs a [`UpdateAssetInput`](crate::input::UpdateAssetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateAssetInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateAssetInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateAssetInput {
                 asset_id: self.asset_id,
@@ -11900,7 +12580,7 @@ impl UpdateAssetInput {
             crate::operation::UpdateAsset,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -11909,20 +12589,25 @@ impl UpdateAssetInput {
             fn uri_base(
                 _input: &crate::input::UpdateAssetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_130 = &_input.asset_id;
-                let input_130 = input_130.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "asset_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let asset_id = aws_smithy_http::label::fmt_string(input_130, false);
+                let input_130 = input_130.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "asset_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let asset_id = aws_smithy_http::label::fmt_string(
+                    input_130,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if asset_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "asset_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "asset_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/assets/{assetId}", assetId = asset_id)
                     .expect("formatting should succeed");
@@ -11932,8 +12617,10 @@ impl UpdateAssetInput {
             fn update_http_builder(
                 input: &crate::input::UpdateAssetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -12019,7 +12706,7 @@ impl UpdateAssetInput {
 pub mod update_asset_model_input {
 
     /// A builder for [`UpdateAssetModelInput`](crate::input::UpdateAssetModelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_model_id: std::option::Option<std::string::String>,
         pub(crate) asset_model_name: std::option::Option<std::string::String>,
@@ -12149,8 +12836,10 @@ pub mod update_asset_model_input {
         /// Consumes the builder and constructs a [`UpdateAssetModelInput`](crate::input::UpdateAssetModelInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateAssetModelInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateAssetModelInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateAssetModelInput {
                 asset_model_id: self.asset_model_id,
                 asset_model_name: self.asset_model_name,
@@ -12176,7 +12865,7 @@ impl UpdateAssetModelInput {
             crate::operation::UpdateAssetModel,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -12185,20 +12874,25 @@ impl UpdateAssetModelInput {
             fn uri_base(
                 _input: &crate::input::UpdateAssetModelInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_131 = &_input.asset_model_id;
-                let input_131 = input_131.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "asset_model_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let asset_model_id = aws_smithy_http::label::fmt_string(input_131, false);
+                let input_131 = input_131.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "asset_model_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let asset_model_id = aws_smithy_http::label::fmt_string(
+                    input_131,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if asset_model_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "asset_model_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "asset_model_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -12212,8 +12906,10 @@ impl UpdateAssetModelInput {
             fn update_http_builder(
                 input: &crate::input::UpdateAssetModelInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -12299,7 +12995,7 @@ impl UpdateAssetModelInput {
 pub mod update_asset_property_input {
 
     /// A builder for [`UpdateAssetPropertyInput`](crate::input::UpdateAssetPropertyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_id: std::option::Option<std::string::String>,
         pub(crate) property_id: std::option::Option<std::string::String>,
@@ -12389,8 +13085,10 @@ pub mod update_asset_property_input {
         /// Consumes the builder and constructs a [`UpdateAssetPropertyInput`](crate::input::UpdateAssetPropertyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateAssetPropertyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateAssetPropertyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateAssetPropertyInput {
                 asset_id: self.asset_id,
                 property_id: self.property_id,
@@ -12415,7 +13113,7 @@ impl UpdateAssetPropertyInput {
             crate::operation::UpdateAssetProperty,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -12424,34 +13122,44 @@ impl UpdateAssetPropertyInput {
             fn uri_base(
                 _input: &crate::input::UpdateAssetPropertyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_132 = &_input.asset_id;
-                let input_132 = input_132.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "asset_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let asset_id = aws_smithy_http::label::fmt_string(input_132, false);
+                let input_132 = input_132.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "asset_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let asset_id = aws_smithy_http::label::fmt_string(
+                    input_132,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if asset_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "asset_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "asset_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_133 = &_input.property_id;
-                let input_133 = input_133.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "property_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let property_id = aws_smithy_http::label::fmt_string(input_133, false);
+                let input_133 = input_133.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "property_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let property_id = aws_smithy_http::label::fmt_string(
+                    input_133,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if property_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "property_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "property_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -12466,8 +13174,10 @@ impl UpdateAssetPropertyInput {
             fn update_http_builder(
                 input: &crate::input::UpdateAssetPropertyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -12553,7 +13263,7 @@ impl UpdateAssetPropertyInput {
 pub mod update_dashboard_input {
 
     /// A builder for [`UpdateDashboardInput`](crate::input::UpdateDashboardInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dashboard_id: std::option::Option<std::string::String>,
         pub(crate) dashboard_name: std::option::Option<std::string::String>,
@@ -12624,7 +13334,7 @@ pub mod update_dashboard_input {
         /// Consumes the builder and constructs a [`UpdateDashboardInput`](crate::input::UpdateDashboardInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateDashboardInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateDashboardInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateDashboardInput {
                 dashboard_id: self.dashboard_id,
@@ -12649,7 +13359,7 @@ impl UpdateDashboardInput {
             crate::operation::UpdateDashboard,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -12658,20 +13368,25 @@ impl UpdateDashboardInput {
             fn uri_base(
                 _input: &crate::input::UpdateDashboardInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_134 = &_input.dashboard_id;
-                let input_134 = input_134.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dashboard_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let dashboard_id = aws_smithy_http::label::fmt_string(input_134, false);
+                let input_134 = input_134.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "dashboard_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let dashboard_id = aws_smithy_http::label::fmt_string(
+                    input_134,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if dashboard_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dashboard_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "dashboard_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -12685,8 +13400,10 @@ impl UpdateDashboardInput {
             fn update_http_builder(
                 input: &crate::input::UpdateDashboardInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -12772,7 +13489,7 @@ impl UpdateDashboardInput {
 pub mod update_gateway_input {
 
     /// A builder for [`UpdateGatewayInput`](crate::input::UpdateGatewayInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_id: std::option::Option<std::string::String>,
         pub(crate) gateway_name: std::option::Option<std::string::String>,
@@ -12801,7 +13518,7 @@ pub mod update_gateway_input {
         /// Consumes the builder and constructs a [`UpdateGatewayInput`](crate::input::UpdateGatewayInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateGatewayInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateGatewayInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateGatewayInput {
                 gateway_id: self.gateway_id,
@@ -12823,26 +13540,31 @@ impl UpdateGatewayInput {
             crate::operation::UpdateGateway,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateGatewayInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_135 = &_input.gateway_id;
-                let input_135 = input_135.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "gateway_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let gateway_id = aws_smithy_http::label::fmt_string(input_135, false);
+                let input_135 = input_135.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "gateway_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let gateway_id = aws_smithy_http::label::fmt_string(
+                    input_135,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if gateway_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "gateway_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "gateway_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -12856,8 +13578,10 @@ impl UpdateGatewayInput {
             fn update_http_builder(
                 input: &crate::input::UpdateGatewayInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -12943,7 +13667,7 @@ impl UpdateGatewayInput {
 pub mod update_gateway_capability_configuration_input {
 
     /// A builder for [`UpdateGatewayCapabilityConfigurationInput`](crate::input::UpdateGatewayCapabilityConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_id: std::option::Option<std::string::String>,
         pub(crate) capability_namespace: std::option::Option<std::string::String>,
@@ -12991,7 +13715,7 @@ pub mod update_gateway_capability_configuration_input {
             self,
         ) -> Result<
             crate::input::UpdateGatewayCapabilityConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateGatewayCapabilityConfigurationInput {
                 gateway_id: self.gateway_id,
@@ -13014,26 +13738,31 @@ impl UpdateGatewayCapabilityConfigurationInput {
             crate::operation::UpdateGatewayCapabilityConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateGatewayCapabilityConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_136 = &_input.gateway_id;
-                let input_136 = input_136.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "gateway_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let gateway_id = aws_smithy_http::label::fmt_string(input_136, false);
+                let input_136 = input_136.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "gateway_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let gateway_id = aws_smithy_http::label::fmt_string(
+                    input_136,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if gateway_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "gateway_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "gateway_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -13047,8 +13776,10 @@ impl UpdateGatewayCapabilityConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::UpdateGatewayCapabilityConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -13133,7 +13864,7 @@ impl UpdateGatewayCapabilityConfigurationInput {
 pub mod update_portal_input {
 
     /// A builder for [`UpdatePortalInput`](crate::input::UpdatePortalInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portal_id: std::option::Option<std::string::String>,
         pub(crate) portal_name: std::option::Option<std::string::String>,
@@ -13259,7 +13990,7 @@ pub mod update_portal_input {
         /// Consumes the builder and constructs a [`UpdatePortalInput`](crate::input::UpdatePortalInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdatePortalInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdatePortalInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdatePortalInput {
                 portal_id: self.portal_id,
@@ -13288,7 +14019,7 @@ impl UpdatePortalInput {
             crate::operation::UpdatePortal,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -13297,20 +14028,25 @@ impl UpdatePortalInput {
             fn uri_base(
                 _input: &crate::input::UpdatePortalInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_137 = &_input.portal_id;
-                let input_137 = input_137.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "portal_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let portal_id = aws_smithy_http::label::fmt_string(input_137, false);
+                let input_137 = input_137.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "portal_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let portal_id = aws_smithy_http::label::fmt_string(
+                    input_137,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if portal_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "portal_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "portal_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/portals/{portalId}", portalId = portal_id)
                     .expect("formatting should succeed");
@@ -13320,8 +14056,10 @@ impl UpdatePortalInput {
             fn update_http_builder(
                 input: &crate::input::UpdatePortalInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -13407,7 +14145,7 @@ impl UpdatePortalInput {
 pub mod update_project_input {
 
     /// A builder for [`UpdateProjectInput`](crate::input::UpdateProjectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_id: std::option::Option<std::string::String>,
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -13461,7 +14199,7 @@ pub mod update_project_input {
         /// Consumes the builder and constructs a [`UpdateProjectInput`](crate::input::UpdateProjectInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateProjectInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateProjectInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateProjectInput {
                 project_id: self.project_id,
@@ -13485,7 +14223,7 @@ impl UpdateProjectInput {
             crate::operation::UpdateProject,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -13494,20 +14232,25 @@ impl UpdateProjectInput {
             fn uri_base(
                 _input: &crate::input::UpdateProjectInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_138 = &_input.project_id;
-                let input_138 = input_138.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "project_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let project_id = aws_smithy_http::label::fmt_string(input_138, false);
+                let input_138 = input_138.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "project_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let project_id = aws_smithy_http::label::fmt_string(
+                    input_138,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if project_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "project_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "project_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/projects/{projectId}", projectId = project_id)
                     .expect("formatting should succeed");
@@ -13517,8 +14260,10 @@ impl UpdateProjectInput {
             fn update_http_builder(
                 input: &crate::input::UpdateProjectInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -13602,7 +14347,7 @@ impl UpdateProjectInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateProjectInput {
     /// <p>The ID of the project to update.</p>
     #[doc(hidden)]
@@ -13635,20 +14380,10 @@ impl UpdateProjectInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateProjectInput");
-        formatter.field("project_id", &self.project_id);
-        formatter.field("project_name", &self.project_name);
-        formatter.field("project_description", &self.project_description);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePortalInput {
     /// <p>The ID of the portal to update.</p>
     #[doc(hidden)]
@@ -13724,25 +14459,10 @@ impl UpdatePortalInput {
         self.alarms.as_ref()
     }
 }
-impl std::fmt::Debug for UpdatePortalInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePortalInput");
-        formatter.field("portal_id", &self.portal_id);
-        formatter.field("portal_name", &self.portal_name);
-        formatter.field("portal_description", &self.portal_description);
-        formatter.field("portal_contact_email", &self.portal_contact_email);
-        formatter.field("portal_logo_image", &self.portal_logo_image);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("notification_sender_email", &self.notification_sender_email);
-        formatter.field("alarms", &self.alarms);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGatewayCapabilityConfigurationInput {
     /// <p>The ID of the gateway to be updated.</p>
     #[doc(hidden)]
@@ -13768,19 +14488,10 @@ impl UpdateGatewayCapabilityConfigurationInput {
         self.capability_configuration.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateGatewayCapabilityConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGatewayCapabilityConfigurationInput");
-        formatter.field("gateway_id", &self.gateway_id);
-        formatter.field("capability_namespace", &self.capability_namespace);
-        formatter.field("capability_configuration", &self.capability_configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGatewayInput {
     /// <p>The ID of the gateway to update.</p>
     #[doc(hidden)]
@@ -13799,18 +14510,10 @@ impl UpdateGatewayInput {
         self.gateway_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGatewayInput");
-        formatter.field("gateway_id", &self.gateway_id);
-        formatter.field("gateway_name", &self.gateway_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDashboardInput {
     /// <p>The ID of the dashboard to update.</p>
     #[doc(hidden)]
@@ -13850,21 +14553,10 @@ impl UpdateDashboardInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDashboardInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDashboardInput");
-        formatter.field("dashboard_id", &self.dashboard_id);
-        formatter.field("dashboard_name", &self.dashboard_name);
-        formatter.field("dashboard_description", &self.dashboard_description);
-        formatter.field("dashboard_definition", &self.dashboard_definition);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAssetPropertyInput {
     /// <p>The ID of the asset to be updated.</p>
     #[doc(hidden)]
@@ -13917,25 +14609,10 @@ impl UpdateAssetPropertyInput {
         self.property_unit.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAssetPropertyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAssetPropertyInput");
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("property_id", &self.property_id);
-        formatter.field("property_alias", &self.property_alias);
-        formatter.field(
-            "property_notification_state",
-            &self.property_notification_state,
-        );
-        formatter.field("client_token", &self.client_token);
-        formatter.field("property_unit", &self.property_unit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAssetModelInput {
     /// <p>The ID of the asset model to update.</p>
     #[doc(hidden)]
@@ -14002,26 +14679,10 @@ impl UpdateAssetModelInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAssetModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAssetModelInput");
-        formatter.field("asset_model_id", &self.asset_model_id);
-        formatter.field("asset_model_name", &self.asset_model_name);
-        formatter.field("asset_model_description", &self.asset_model_description);
-        formatter.field("asset_model_properties", &self.asset_model_properties);
-        formatter.field("asset_model_hierarchies", &self.asset_model_hierarchies);
-        formatter.field(
-            "asset_model_composite_models",
-            &self.asset_model_composite_models,
-        );
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAssetInput {
     /// <p>The ID of the asset to update.</p>
     #[doc(hidden)]
@@ -14054,20 +14715,10 @@ impl UpdateAssetInput {
         self.asset_description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAssetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAssetInput");
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("asset_name", &self.asset_name);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("asset_description", &self.asset_description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAccessPolicyInput {
     /// <p>The ID of the access policy.</p>
     #[doc(hidden)]
@@ -14107,21 +14758,10 @@ impl UpdateAccessPolicyInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAccessPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAccessPolicyInput");
-        formatter.field("access_policy_id", &self.access_policy_id);
-        formatter.field("access_policy_identity", &self.access_policy_identity);
-        formatter.field("access_policy_resource", &self.access_policy_resource);
-        formatter.field("access_policy_permission", &self.access_policy_permission);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to untag.</p>
     #[doc(hidden)]
@@ -14140,18 +14780,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to tag.</p>
     #[doc(hidden)]
@@ -14174,18 +14806,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutStorageConfigurationInput {
     /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
     /// <ul>
@@ -14243,23 +14867,10 @@ impl PutStorageConfigurationInput {
         self.retention_period.as_ref()
     }
 }
-impl std::fmt::Debug for PutStorageConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutStorageConfigurationInput");
-        formatter.field("storage_type", &self.storage_type);
-        formatter.field("multi_layer_storage", &self.multi_layer_storage);
-        formatter.field(
-            "disassociated_data_storage",
-            &self.disassociated_data_storage,
-        );
-        formatter.field("retention_period", &self.retention_period);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutLoggingOptionsInput {
     /// <p>The logging options to set.</p>
     #[doc(hidden)]
@@ -14271,17 +14882,10 @@ impl PutLoggingOptionsInput {
         self.logging_options.as_ref()
     }
 }
-impl std::fmt::Debug for PutLoggingOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutLoggingOptionsInput");
-        formatter.field("logging_options", &self.logging_options);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutDefaultEncryptionConfigurationInput {
     /// <p>The type of encryption used for the encryption configuration.</p>
     #[doc(hidden)]
@@ -14300,18 +14904,10 @@ impl PutDefaultEncryptionConfigurationInput {
         self.kms_key_id.as_deref()
     }
 }
-impl std::fmt::Debug for PutDefaultEncryptionConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutDefaultEncryptionConfigurationInput");
-        formatter.field("encryption_type", &self.encryption_type);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTimeSeriesInput {
     /// <p>The token to be used for the next set of paginated results.</p>
     #[doc(hidden)]
@@ -14359,21 +14955,10 @@ impl ListTimeSeriesInput {
         self.time_series_type.as_ref()
     }
 }
-impl std::fmt::Debug for ListTimeSeriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTimeSeriesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("alias_prefix", &self.alias_prefix);
-        formatter.field("time_series_type", &self.time_series_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource.</p>
     #[doc(hidden)]
@@ -14385,17 +14970,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProjectsInput {
     /// <p>The ID of the portal.</p>
     #[doc(hidden)]
@@ -14423,19 +15001,10 @@ impl ListProjectsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListProjectsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProjectsInput");
-        formatter.field("portal_id", &self.portal_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProjectAssetsInput {
     /// <p>The ID of the project.</p>
     #[doc(hidden)]
@@ -14463,19 +15032,10 @@ impl ListProjectAssetsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListProjectAssetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProjectAssetsInput");
-        formatter.field("project_id", &self.project_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPortalsInput {
     /// <p>The token to be used for the next set of paginated results.</p>
     #[doc(hidden)]
@@ -14496,18 +15056,10 @@ impl ListPortalsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListPortalsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPortalsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGatewaysInput {
     /// <p>The token to be used for the next set of paginated results.</p>
     #[doc(hidden)]
@@ -14528,18 +15080,10 @@ impl ListGatewaysInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListGatewaysInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGatewaysInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDashboardsInput {
     /// <p>The ID of the project.</p>
     #[doc(hidden)]
@@ -14567,19 +15111,10 @@ impl ListDashboardsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDashboardsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDashboardsInput");
-        formatter.field("project_id", &self.project_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBulkImportJobsInput {
     /// <p>The token to be used for the next set of paginated results.</p>
     #[doc(hidden)]
@@ -14605,19 +15140,10 @@ impl ListBulkImportJobsInput {
         self.filter.as_ref()
     }
 }
-impl std::fmt::Debug for ListBulkImportJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBulkImportJobsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filter", &self.filter);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAssociatedAssetsInput {
     /// <p>The ID of the asset to query.</p>
     #[doc(hidden)]
@@ -14671,21 +15197,10 @@ impl ListAssociatedAssetsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAssociatedAssetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAssociatedAssetsInput");
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("hierarchy_id", &self.hierarchy_id);
-        formatter.field("traversal_direction", &self.traversal_direction);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAssetsInput {
     /// <p>The token to be used for the next set of paginated results.</p>
     #[doc(hidden)]
@@ -14730,20 +15245,10 @@ impl ListAssetsInput {
         self.filter.as_ref()
     }
 }
-impl std::fmt::Debug for ListAssetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAssetsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("asset_model_id", &self.asset_model_id);
-        formatter.field("filter", &self.filter);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAssetRelationshipsInput {
     /// <p>The ID of the asset.</p>
     #[doc(hidden)]
@@ -14782,20 +15287,10 @@ impl ListAssetRelationshipsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAssetRelationshipsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAssetRelationshipsInput");
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("traversal_type", &self.traversal_type);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAssetModelsInput {
     /// <p>The token to be used for the next set of paginated results.</p>
     #[doc(hidden)]
@@ -14816,18 +15311,10 @@ impl ListAssetModelsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAssetModelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAssetModelsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAccessPoliciesInput {
     /// <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user). This parameter is required if you specify <code>identityId</code>.</p>
     #[doc(hidden)]
@@ -14883,23 +15370,10 @@ impl ListAccessPoliciesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAccessPoliciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAccessPoliciesInput");
-        formatter.field("identity_type", &self.identity_type);
-        formatter.field("identity_id", &self.identity_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("iam_arn", &self.iam_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetInterpolatedAssetPropertyValuesInput {
     /// <p>The ID of the asset.</p>
     #[doc(hidden)]
@@ -15017,35 +15491,10 @@ impl GetInterpolatedAssetPropertyValuesInput {
         self.interval_window_in_seconds
     }
 }
-impl std::fmt::Debug for GetInterpolatedAssetPropertyValuesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetInterpolatedAssetPropertyValuesInput");
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("property_id", &self.property_id);
-        formatter.field("property_alias", &self.property_alias);
-        formatter.field("start_time_in_seconds", &self.start_time_in_seconds);
-        formatter.field(
-            "start_time_offset_in_nanos",
-            &self.start_time_offset_in_nanos,
-        );
-        formatter.field("end_time_in_seconds", &self.end_time_in_seconds);
-        formatter.field("end_time_offset_in_nanos", &self.end_time_offset_in_nanos);
-        formatter.field("quality", &self.quality);
-        formatter.field("interval_in_seconds", &self.interval_in_seconds);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("r#type", &self.r#type);
-        formatter.field(
-            "interval_window_in_seconds",
-            &self.interval_window_in_seconds,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAssetPropertyValueHistoryInput {
     /// <p>The ID of the asset.</p>
     #[doc(hidden)]
@@ -15117,25 +15566,10 @@ impl GetAssetPropertyValueHistoryInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetAssetPropertyValueHistoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAssetPropertyValueHistoryInput");
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("property_id", &self.property_id);
-        formatter.field("property_alias", &self.property_alias);
-        formatter.field("start_date", &self.start_date);
-        formatter.field("end_date", &self.end_date);
-        formatter.field("qualities", &self.qualities);
-        formatter.field("time_ordering", &self.time_ordering);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAssetPropertyValueInput {
     /// <p>The ID of the asset.</p>
     #[doc(hidden)]
@@ -15161,19 +15595,10 @@ impl GetAssetPropertyValueInput {
         self.property_alias.as_deref()
     }
 }
-impl std::fmt::Debug for GetAssetPropertyValueInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAssetPropertyValueInput");
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("property_id", &self.property_id);
-        formatter.field("property_alias", &self.property_alias);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAssetPropertyAggregatesInput {
     /// <p>The ID of the asset.</p>
     #[doc(hidden)]
@@ -15259,27 +15684,10 @@ impl GetAssetPropertyAggregatesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetAssetPropertyAggregatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAssetPropertyAggregatesInput");
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("property_id", &self.property_id);
-        formatter.field("property_alias", &self.property_alias);
-        formatter.field("aggregate_types", &self.aggregate_types);
-        formatter.field("resolution", &self.resolution);
-        formatter.field("qualities", &self.qualities);
-        formatter.field("start_date", &self.start_date);
-        formatter.field("end_date", &self.end_date);
-        formatter.field("time_ordering", &self.time_ordering);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateTimeSeriesFromAssetPropertyInput {
     /// <p>The alias that identifies the time series.</p>
     #[doc(hidden)]
@@ -15312,20 +15720,10 @@ impl DisassociateTimeSeriesFromAssetPropertyInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateTimeSeriesFromAssetPropertyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateTimeSeriesFromAssetPropertyInput");
-        formatter.field("alias", &self.alias);
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("property_id", &self.property_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateAssetsInput {
     /// <p>The ID of the parent asset from which to disassociate the child asset.</p>
     #[doc(hidden)]
@@ -15358,20 +15756,10 @@ impl DisassociateAssetsInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateAssetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateAssetsInput");
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("hierarchy_id", &self.hierarchy_id);
-        formatter.field("child_asset_id", &self.child_asset_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTimeSeriesInput {
     /// <p>The alias that identifies the time series.</p>
     #[doc(hidden)]
@@ -15397,30 +15785,15 @@ impl DescribeTimeSeriesInput {
         self.property_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTimeSeriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTimeSeriesInput");
-        formatter.field("alias", &self.alias);
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("property_id", &self.property_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeStorageConfigurationInput {}
-impl std::fmt::Debug for DescribeStorageConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeStorageConfigurationInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeProjectInput {
     /// <p>The ID of the project.</p>
     #[doc(hidden)]
@@ -15432,17 +15805,10 @@ impl DescribeProjectInput {
         self.project_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeProjectInput");
-        formatter.field("project_id", &self.project_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePortalInput {
     /// <p>The ID of the portal.</p>
     #[doc(hidden)]
@@ -15454,28 +15820,15 @@ impl DescribePortalInput {
         self.portal_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePortalInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePortalInput");
-        formatter.field("portal_id", &self.portal_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLoggingOptionsInput {}
-impl std::fmt::Debug for DescribeLoggingOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLoggingOptionsInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGatewayCapabilityConfigurationInput {
     /// <p>The ID of the gateway that defines the capability configuration.</p>
     #[doc(hidden)]
@@ -15494,18 +15847,10 @@ impl DescribeGatewayCapabilityConfigurationInput {
         self.capability_namespace.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeGatewayCapabilityConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGatewayCapabilityConfigurationInput");
-        formatter.field("gateway_id", &self.gateway_id);
-        formatter.field("capability_namespace", &self.capability_namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGatewayInput {
     /// <p>The ID of the gateway device.</p>
     #[doc(hidden)]
@@ -15517,28 +15862,15 @@ impl DescribeGatewayInput {
         self.gateway_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGatewayInput");
-        formatter.field("gateway_id", &self.gateway_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDefaultEncryptionConfigurationInput {}
-impl std::fmt::Debug for DescribeDefaultEncryptionConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDefaultEncryptionConfigurationInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDashboardInput {
     /// <p>The ID of the dashboard.</p>
     #[doc(hidden)]
@@ -15550,17 +15882,10 @@ impl DescribeDashboardInput {
         self.dashboard_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDashboardInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDashboardInput");
-        formatter.field("dashboard_id", &self.dashboard_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBulkImportJobInput {
     /// <p>The ID of the job.</p>
     #[doc(hidden)]
@@ -15572,17 +15897,10 @@ impl DescribeBulkImportJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeBulkImportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBulkImportJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAssetPropertyInput {
     /// <p>The ID of the asset.</p>
     #[doc(hidden)]
@@ -15601,18 +15919,10 @@ impl DescribeAssetPropertyInput {
         self.property_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAssetPropertyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAssetPropertyInput");
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("property_id", &self.property_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAssetModelInput {
     /// <p>The ID of the asset model.</p>
     #[doc(hidden)]
@@ -15624,17 +15934,10 @@ impl DescribeAssetModelInput {
         self.asset_model_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAssetModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAssetModelInput");
-        formatter.field("asset_model_id", &self.asset_model_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAssetInput {
     /// <p>The ID of the asset.</p>
     #[doc(hidden)]
@@ -15646,17 +15949,10 @@ impl DescribeAssetInput {
         self.asset_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAssetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAssetInput");
-        formatter.field("asset_id", &self.asset_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAccessPolicyInput {
     /// <p>The ID of the access policy.</p>
     #[doc(hidden)]
@@ -15668,17 +15964,10 @@ impl DescribeAccessPolicyInput {
         self.access_policy_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAccessPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAccessPolicyInput");
-        formatter.field("access_policy_id", &self.access_policy_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTimeSeriesInput {
     /// <p>The alias that identifies the time series.</p>
     #[doc(hidden)]
@@ -15711,20 +16000,10 @@ impl DeleteTimeSeriesInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTimeSeriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTimeSeriesInput");
-        formatter.field("alias", &self.alias);
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("property_id", &self.property_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProjectInput {
     /// <p>The ID of the project.</p>
     #[doc(hidden)]
@@ -15743,18 +16022,10 @@ impl DeleteProjectInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteProjectInput");
-        formatter.field("project_id", &self.project_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePortalInput {
     /// <p>The ID of the portal to delete.</p>
     #[doc(hidden)]
@@ -15773,18 +16044,10 @@ impl DeletePortalInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePortalInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePortalInput");
-        formatter.field("portal_id", &self.portal_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGatewayInput {
     /// <p>The ID of the gateway to delete.</p>
     #[doc(hidden)]
@@ -15796,17 +16059,10 @@ impl DeleteGatewayInput {
         self.gateway_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGatewayInput");
-        formatter.field("gateway_id", &self.gateway_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDashboardInput {
     /// <p>The ID of the dashboard to delete.</p>
     #[doc(hidden)]
@@ -15825,18 +16081,10 @@ impl DeleteDashboardInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDashboardInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDashboardInput");
-        formatter.field("dashboard_id", &self.dashboard_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAssetModelInput {
     /// <p>The ID of the asset model to delete.</p>
     #[doc(hidden)]
@@ -15855,18 +16103,10 @@ impl DeleteAssetModelInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAssetModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAssetModelInput");
-        formatter.field("asset_model_id", &self.asset_model_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAssetInput {
     /// <p>The ID of the asset to delete.</p>
     #[doc(hidden)]
@@ -15885,18 +16125,10 @@ impl DeleteAssetInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAssetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAssetInput");
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAccessPolicyInput {
     /// <p>The ID of the access policy to be deleted.</p>
     #[doc(hidden)]
@@ -15915,18 +16147,10 @@ impl DeleteAccessPolicyInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAccessPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAccessPolicyInput");
-        formatter.field("access_policy_id", &self.access_policy_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateProjectInput {
     /// <p>The ID of the portal in which to create the project.</p>
     #[doc(hidden)]
@@ -15970,21 +16194,10 @@ impl CreateProjectInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateProjectInput");
-        formatter.field("portal_id", &self.portal_id);
-        formatter.field("project_name", &self.project_name);
-        formatter.field("project_description", &self.project_description);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePortalInput {
     /// <p>A friendly name for the portal.</p>
     #[doc(hidden)]
@@ -16079,26 +16292,10 @@ impl CreatePortalInput {
         self.alarms.as_ref()
     }
 }
-impl std::fmt::Debug for CreatePortalInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePortalInput");
-        formatter.field("portal_name", &self.portal_name);
-        formatter.field("portal_description", &self.portal_description);
-        formatter.field("portal_contact_email", &self.portal_contact_email);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("portal_logo_image_file", &self.portal_logo_image_file);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("portal_auth_mode", &self.portal_auth_mode);
-        formatter.field("notification_sender_email", &self.notification_sender_email);
-        formatter.field("alarms", &self.alarms);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGatewayInput {
     /// <p>A unique, friendly name for the gateway.</p>
     #[doc(hidden)]
@@ -16128,19 +16325,10 @@ impl CreateGatewayInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGatewayInput");
-        formatter.field("gateway_name", &self.gateway_name);
-        formatter.field("gateway_platform", &self.gateway_platform);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDashboardInput {
     /// <p>The ID of the project in which to create the dashboard.</p>
     #[doc(hidden)]
@@ -16191,22 +16379,10 @@ impl CreateDashboardInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateDashboardInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDashboardInput");
-        formatter.field("project_id", &self.project_id);
-        formatter.field("dashboard_name", &self.dashboard_name);
-        formatter.field("dashboard_description", &self.dashboard_description);
-        formatter.field("dashboard_definition", &self.dashboard_definition);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBulkImportJobInput {
     /// <p>The unique name that helps identify the job request.</p>
     #[doc(hidden)]
@@ -16246,21 +16422,10 @@ impl CreateBulkImportJobInput {
         self.job_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for CreateBulkImportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBulkImportJobInput");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_role_arn", &self.job_role_arn);
-        formatter.field("files", &self.files);
-        formatter.field("error_report_location", &self.error_report_location);
-        formatter.field("job_configuration", &self.job_configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAssetModelInput {
     /// <p>A unique, friendly name for the asset model.</p>
     #[doc(hidden)]
@@ -16331,26 +16496,10 @@ impl CreateAssetModelInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateAssetModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAssetModelInput");
-        formatter.field("asset_model_name", &self.asset_model_name);
-        formatter.field("asset_model_description", &self.asset_model_description);
-        formatter.field("asset_model_properties", &self.asset_model_properties);
-        formatter.field("asset_model_hierarchies", &self.asset_model_hierarchies);
-        formatter.field(
-            "asset_model_composite_models",
-            &self.asset_model_composite_models,
-        );
-        formatter.field("client_token", &self.client_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAssetInput {
     /// <p>A friendly name for the asset.</p>
     #[doc(hidden)]
@@ -16394,21 +16543,10 @@ impl CreateAssetInput {
         self.asset_description.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAssetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAssetInput");
-        formatter.field("asset_name", &self.asset_name);
-        formatter.field("asset_model_id", &self.asset_model_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("tags", &self.tags);
-        formatter.field("asset_description", &self.asset_description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAccessPolicyInput {
     /// <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
     #[doc(hidden)]
@@ -16452,21 +16590,10 @@ impl CreateAccessPolicyInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateAccessPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAccessPolicyInput");
-        formatter.field("access_policy_identity", &self.access_policy_identity);
-        formatter.field("access_policy_resource", &self.access_policy_resource);
-        formatter.field("access_policy_permission", &self.access_policy_permission);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchPutAssetPropertyValueInput {
     /// <p>The list of asset property value entries for the batch put request. You can specify up to 10 entries per request.</p>
     #[doc(hidden)]
@@ -16478,17 +16605,10 @@ impl BatchPutAssetPropertyValueInput {
         self.entries.as_deref()
     }
 }
-impl std::fmt::Debug for BatchPutAssetPropertyValueInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchPutAssetPropertyValueInput");
-        formatter.field("entries", &self.entries);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueHistoryInput {
     /// <p>The list of asset property historical value entries for the batch get request. You can specify up to 16 entries per request.</p>
     #[doc(hidden)]
@@ -16525,19 +16645,10 @@ impl BatchGetAssetPropertyValueHistoryInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for BatchGetAssetPropertyValueHistoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetAssetPropertyValueHistoryInput");
-        formatter.field("entries", &self.entries);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueInput {
     /// <p>The list of asset property value entries for the batch get request. You can specify up to 16 entries per request.</p>
     #[doc(hidden)]
@@ -16556,18 +16667,10 @@ impl BatchGetAssetPropertyValueInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetAssetPropertyValueInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetAssetPropertyValueInput");
-        formatter.field("entries", &self.entries);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetAssetPropertyAggregatesInput {
     /// <p>The list of asset property aggregate entries for the batch get request. You can specify up to 16 entries per request.</p>
     #[doc(hidden)]
@@ -16604,19 +16707,10 @@ impl BatchGetAssetPropertyAggregatesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for BatchGetAssetPropertyAggregatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetAssetPropertyAggregatesInput");
-        formatter.field("entries", &self.entries);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDisassociateProjectAssetsInput {
     /// <p>The ID of the project from which to disassociate the assets.</p>
     #[doc(hidden)]
@@ -16642,19 +16736,10 @@ impl BatchDisassociateProjectAssetsInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDisassociateProjectAssetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDisassociateProjectAssetsInput");
-        formatter.field("project_id", &self.project_id);
-        formatter.field("asset_ids", &self.asset_ids);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchAssociateProjectAssetsInput {
     /// <p>The ID of the project to which to associate the assets.</p>
     #[doc(hidden)]
@@ -16680,19 +16765,10 @@ impl BatchAssociateProjectAssetsInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for BatchAssociateProjectAssetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchAssociateProjectAssetsInput");
-        formatter.field("project_id", &self.project_id);
-        formatter.field("asset_ids", &self.asset_ids);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateTimeSeriesToAssetPropertyInput {
     /// <p>The alias that identifies the time series.</p>
     #[doc(hidden)]
@@ -16725,20 +16801,10 @@ impl AssociateTimeSeriesToAssetPropertyInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateTimeSeriesToAssetPropertyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateTimeSeriesToAssetPropertyInput");
-        formatter.field("alias", &self.alias);
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("property_id", &self.property_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateAssetsInput {
     /// <p>The ID of the parent asset.</p>
     #[doc(hidden)]
@@ -16769,15 +16835,5 @@ impl AssociateAssetsInput {
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateAssetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateAssetsInput");
-        formatter.field("asset_id", &self.asset_id);
-        formatter.field("hierarchy_id", &self.hierarchy_id);
-        formatter.field("child_asset_id", &self.child_asset_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
     }
 }

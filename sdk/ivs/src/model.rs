@@ -2,7 +2,7 @@
 
 /// <p>Object specifying a channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Channel {
     /// <p>Channel ARN.</p>
     #[doc(hidden)]
@@ -82,29 +82,11 @@ impl Channel {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for Channel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Channel");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("latency_mode", &self.latency_mode);
-        formatter.field("r#type", &self.r#type);
-        formatter.field(
-            "recording_configuration_arn",
-            &self.recording_configuration_arn,
-        );
-        formatter.field("ingest_endpoint", &self.ingest_endpoint);
-        formatter.field("playback_url", &self.playback_url);
-        formatter.field("authorized", &self.authorized);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`Channel`](crate::model::Channel).
 pub mod channel {
 
     /// A builder for [`Channel`](crate::model::Channel).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -267,6 +249,41 @@ impl Channel {
     }
 }
 
+/// When writing a match expression against `ChannelType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let channeltype = unimplemented!();
+/// match channeltype {
+///     ChannelType::BasicChannelType => { /* ... */ },
+///     ChannelType::StandardChannelType => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `channeltype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ChannelType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ChannelType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ChannelType::NewFeature` is defined.
+/// Specifically, when `channeltype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ChannelType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -283,15 +300,15 @@ pub enum ChannelType {
     BasicChannelType,
     #[allow(missing_docs)] // documentation missing in model
     StandardChannelType,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ChannelType {
     fn from(s: &str) -> Self {
         match s {
             "BASIC" => ChannelType::BasicChannelType,
             "STANDARD" => ChannelType::StandardChannelType,
-            other => ChannelType::Unknown(other.to_owned()),
+            other => ChannelType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -308,11 +325,11 @@ impl ChannelType {
         match self {
             ChannelType::BasicChannelType => "BASIC",
             ChannelType::StandardChannelType => "STANDARD",
-            ChannelType::Unknown(s) => s.as_ref(),
+            ChannelType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BASIC", "STANDARD"]
     }
 }
@@ -322,6 +339,41 @@ impl AsRef<str> for ChannelType {
     }
 }
 
+/// When writing a match expression against `ChannelLatencyMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let channellatencymode = unimplemented!();
+/// match channellatencymode {
+///     ChannelLatencyMode::LowLatency => { /* ... */ },
+///     ChannelLatencyMode::NormalLatency => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `channellatencymode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ChannelLatencyMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ChannelLatencyMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ChannelLatencyMode::NewFeature` is defined.
+/// Specifically, when `channellatencymode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ChannelLatencyMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -338,15 +390,17 @@ pub enum ChannelLatencyMode {
     LowLatency,
     #[allow(missing_docs)] // documentation missing in model
     NormalLatency,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ChannelLatencyMode {
     fn from(s: &str) -> Self {
         match s {
             "LOW" => ChannelLatencyMode::LowLatency,
             "NORMAL" => ChannelLatencyMode::NormalLatency,
-            other => ChannelLatencyMode::Unknown(other.to_owned()),
+            other => {
+                ChannelLatencyMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -363,11 +417,11 @@ impl ChannelLatencyMode {
         match self {
             ChannelLatencyMode::LowLatency => "LOW",
             ChannelLatencyMode::NormalLatency => "NORMAL",
-            ChannelLatencyMode::Unknown(s) => s.as_ref(),
+            ChannelLatencyMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LOW", "NORMAL"]
     }
 }
@@ -379,7 +433,7 @@ impl AsRef<str> for ChannelLatencyMode {
 
 /// <p>Summary information about a stream session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamSessionSummary {
     /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
     #[doc(hidden)]
@@ -412,21 +466,11 @@ impl StreamSessionSummary {
         self.has_error_event
     }
 }
-impl std::fmt::Debug for StreamSessionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamSessionSummary");
-        formatter.field("stream_id", &self.stream_id);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("has_error_event", &self.has_error_event);
-        formatter.finish()
-    }
-}
 /// See [`StreamSessionSummary`](crate::model::StreamSessionSummary).
 pub mod stream_session_summary {
 
     /// A builder for [`StreamSessionSummary`](crate::model::StreamSessionSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_id: std::option::Option<std::string::String>,
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -500,7 +544,7 @@ impl StreamSessionSummary {
 
 /// <p>Summary information about a stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamSummary {
     /// <p>Channel ARN for the stream.</p>
     #[doc(hidden)]
@@ -547,23 +591,11 @@ impl StreamSummary {
         self.start_time.as_ref()
     }
 }
-impl std::fmt::Debug for StreamSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamSummary");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("stream_id", &self.stream_id);
-        formatter.field("state", &self.state);
-        formatter.field("health", &self.health);
-        formatter.field("viewer_count", &self.viewer_count);
-        formatter.field("start_time", &self.start_time);
-        formatter.finish()
-    }
-}
 /// See [`StreamSummary`](crate::model::StreamSummary).
 pub mod stream_summary {
 
     /// A builder for [`StreamSummary`](crate::model::StreamSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) stream_id: std::option::Option<std::string::String>,
@@ -659,6 +691,42 @@ impl StreamSummary {
     }
 }
 
+/// When writing a match expression against `StreamHealth`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let streamhealth = unimplemented!();
+/// match streamhealth {
+///     StreamHealth::StreamHealthy => { /* ... */ },
+///     StreamHealth::Starving => { /* ... */ },
+///     StreamHealth::UnknownValue => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `streamhealth` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `StreamHealth::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `StreamHealth::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `StreamHealth::NewFeature` is defined.
+/// Specifically, when `streamhealth` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `StreamHealth::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 /// _Note: `StreamHealth::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
@@ -677,8 +745,8 @@ pub enum StreamHealth {
     Starving,
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for StreamHealth {
     fn from(s: &str) -> Self {
@@ -686,7 +754,7 @@ impl std::convert::From<&str> for StreamHealth {
             "HEALTHY" => StreamHealth::StreamHealthy,
             "STARVING" => StreamHealth::Starving,
             "UNKNOWN" => StreamHealth::UnknownValue,
-            other => StreamHealth::Unknown(other.to_owned()),
+            other => StreamHealth::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -704,11 +772,11 @@ impl StreamHealth {
             StreamHealth::StreamHealthy => "HEALTHY",
             StreamHealth::Starving => "STARVING",
             StreamHealth::UnknownValue => "UNKNOWN",
-            StreamHealth::Unknown(s) => s.as_ref(),
+            StreamHealth::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HEALTHY", "STARVING", "UNKNOWN"]
     }
 }
@@ -718,6 +786,41 @@ impl AsRef<str> for StreamHealth {
     }
 }
 
+/// When writing a match expression against `StreamState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let streamstate = unimplemented!();
+/// match streamstate {
+///     StreamState::StreamLive => { /* ... */ },
+///     StreamState::StreamOffline => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `streamstate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `StreamState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `StreamState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `StreamState::NewFeature` is defined.
+/// Specifically, when `streamstate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `StreamState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -734,15 +837,15 @@ pub enum StreamState {
     StreamLive,
     #[allow(missing_docs)] // documentation missing in model
     StreamOffline,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for StreamState {
     fn from(s: &str) -> Self {
         match s {
             "LIVE" => StreamState::StreamLive,
             "OFFLINE" => StreamState::StreamOffline,
-            other => StreamState::Unknown(other.to_owned()),
+            other => StreamState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -759,11 +862,11 @@ impl StreamState {
         match self {
             StreamState::StreamLive => "LIVE",
             StreamState::StreamOffline => "OFFLINE",
-            StreamState::Unknown(s) => s.as_ref(),
+            StreamState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LIVE", "OFFLINE"]
     }
 }
@@ -775,7 +878,7 @@ impl AsRef<str> for StreamState {
 
 /// <p>Object specifying the stream attribute on which to filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamFilters {
     /// <p>The stream’s health.</p>
     #[doc(hidden)]
@@ -787,18 +890,11 @@ impl StreamFilters {
         self.health.as_ref()
     }
 }
-impl std::fmt::Debug for StreamFilters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamFilters");
-        formatter.field("health", &self.health);
-        formatter.finish()
-    }
-}
 /// See [`StreamFilters`](crate::model::StreamFilters).
 pub mod stream_filters {
 
     /// A builder for [`StreamFilters`](crate::model::StreamFilters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) health: std::option::Option<crate::model::StreamHealth>,
     }
@@ -833,7 +929,7 @@ impl StreamFilters {
 
 /// <p>Summary information about a stream key.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamKeySummary {
     /// <p>Stream-key ARN.</p>
     #[doc(hidden)]
@@ -863,20 +959,11 @@ impl StreamKeySummary {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for StreamKeySummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamKeySummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`StreamKeySummary`](crate::model::StreamKeySummary).
 pub mod stream_key_summary {
 
     /// A builder for [`StreamKeySummary`](crate::model::StreamKeySummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -949,7 +1036,7 @@ impl StreamKeySummary {
 
 /// <p>Summary information about a RecordingConfiguration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecordingConfigurationSummary {
     /// <p>Recording-configuration ARN.</p>
     #[doc(hidden)]
@@ -995,22 +1082,11 @@ impl RecordingConfigurationSummary {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for RecordingConfigurationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecordingConfigurationSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("destination_configuration", &self.destination_configuration);
-        formatter.field("state", &self.state);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`RecordingConfigurationSummary`](crate::model::RecordingConfigurationSummary).
 pub mod recording_configuration_summary {
 
     /// A builder for [`RecordingConfigurationSummary`](crate::model::RecordingConfigurationSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1115,6 +1191,42 @@ impl RecordingConfigurationSummary {
     }
 }
 
+/// When writing a match expression against `RecordingConfigurationState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let recordingconfigurationstate = unimplemented!();
+/// match recordingconfigurationstate {
+///     RecordingConfigurationState::Active => { /* ... */ },
+///     RecordingConfigurationState::CreateFailed => { /* ... */ },
+///     RecordingConfigurationState::Creating => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `recordingconfigurationstate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RecordingConfigurationState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RecordingConfigurationState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RecordingConfigurationState::NewFeature` is defined.
+/// Specifically, when `recordingconfigurationstate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RecordingConfigurationState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1133,8 +1245,8 @@ pub enum RecordingConfigurationState {
     CreateFailed,
     #[allow(missing_docs)] // documentation missing in model
     Creating,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for RecordingConfigurationState {
     fn from(s: &str) -> Self {
@@ -1142,7 +1254,9 @@ impl std::convert::From<&str> for RecordingConfigurationState {
             "ACTIVE" => RecordingConfigurationState::Active,
             "CREATE_FAILED" => RecordingConfigurationState::CreateFailed,
             "CREATING" => RecordingConfigurationState::Creating,
-            other => RecordingConfigurationState::Unknown(other.to_owned()),
+            other => RecordingConfigurationState::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -1160,11 +1274,11 @@ impl RecordingConfigurationState {
             RecordingConfigurationState::Active => "ACTIVE",
             RecordingConfigurationState::CreateFailed => "CREATE_FAILED",
             RecordingConfigurationState::Creating => "CREATING",
-            RecordingConfigurationState::Unknown(s) => s.as_ref(),
+            RecordingConfigurationState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATE_FAILED", "CREATING"]
     }
 }
@@ -1176,7 +1290,7 @@ impl AsRef<str> for RecordingConfigurationState {
 
 /// <p>A complex type that describes a location where recorded videos will be stored. Each member represents a type of destination configuration. For recording, you define one and only one type of destination configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DestinationConfiguration {
     /// <p>An S3 destination configuration where recorded videos will be stored.</p>
     #[doc(hidden)]
@@ -1188,18 +1302,11 @@ impl DestinationConfiguration {
         self.s3.as_ref()
     }
 }
-impl std::fmt::Debug for DestinationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DestinationConfiguration");
-        formatter.field("s3", &self.s3);
-        formatter.finish()
-    }
-}
 /// See [`DestinationConfiguration`](crate::model::DestinationConfiguration).
 pub mod destination_configuration {
 
     /// A builder for [`DestinationConfiguration`](crate::model::DestinationConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3: std::option::Option<crate::model::S3DestinationConfiguration>,
     }
@@ -1232,7 +1339,7 @@ impl DestinationConfiguration {
 
 /// <p>A complex type that describes an S3 location where recorded videos will be stored.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3DestinationConfiguration {
     /// <p>Location (S3 bucket name) where recorded videos will be stored.</p>
     #[doc(hidden)]
@@ -1244,18 +1351,11 @@ impl S3DestinationConfiguration {
         self.bucket_name.as_deref()
     }
 }
-impl std::fmt::Debug for S3DestinationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3DestinationConfiguration");
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.finish()
-    }
-}
 /// See [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
 pub mod s3_destination_configuration {
 
     /// A builder for [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
     }
@@ -1287,7 +1387,7 @@ impl S3DestinationConfiguration {
 
 /// <p>Summary information about a playback key pair.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PlaybackKeyPairSummary {
     /// <p>Key-pair ARN.</p>
     #[doc(hidden)]
@@ -1317,20 +1417,11 @@ impl PlaybackKeyPairSummary {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for PlaybackKeyPairSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PlaybackKeyPairSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`PlaybackKeyPairSummary`](crate::model::PlaybackKeyPairSummary).
 pub mod playback_key_pair_summary {
 
     /// A builder for [`PlaybackKeyPairSummary`](crate::model::PlaybackKeyPairSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1403,7 +1494,7 @@ impl PlaybackKeyPairSummary {
 
 /// <p>Summary information about a channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelSummary {
     /// <p>Channel ARN.</p>
     #[doc(hidden)]
@@ -1454,26 +1545,11 @@ impl ChannelSummary {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for ChannelSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("latency_mode", &self.latency_mode);
-        formatter.field("authorized", &self.authorized);
-        formatter.field(
-            "recording_configuration_arn",
-            &self.recording_configuration_arn,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`ChannelSummary`](crate::model::ChannelSummary).
 pub mod channel_summary {
 
     /// A builder for [`ChannelSummary`](crate::model::ChannelSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1591,7 +1667,7 @@ impl ChannelSummary {
 
 /// <p>A key pair used to sign and validate a playback authorization token.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PlaybackKeyPair {
     /// <p>Key-pair ARN.</p>
     #[doc(hidden)]
@@ -1628,21 +1704,11 @@ impl PlaybackKeyPair {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for PlaybackKeyPair {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PlaybackKeyPair");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("fingerprint", &self.fingerprint);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`PlaybackKeyPair`](crate::model::PlaybackKeyPair).
 pub mod playback_key_pair {
 
     /// A builder for [`PlaybackKeyPair`](crate::model::PlaybackKeyPair).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1727,7 +1793,7 @@ impl PlaybackKeyPair {
 
 /// <p>Object that captures the Amazon IVS configuration that the customer provisioned, the ingest configurations that the broadcaster used, and the most recent Amazon IVS stream events it encountered.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamSession {
     /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
     #[doc(hidden)]
@@ -1783,24 +1849,11 @@ impl StreamSession {
         self.truncated_events.as_deref()
     }
 }
-impl std::fmt::Debug for StreamSession {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamSession");
-        formatter.field("stream_id", &self.stream_id);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("channel", &self.channel);
-        formatter.field("ingest_configuration", &self.ingest_configuration);
-        formatter.field("recording_configuration", &self.recording_configuration);
-        formatter.field("truncated_events", &self.truncated_events);
-        formatter.finish()
-    }
-}
 /// See [`StreamSession`](crate::model::StreamSession).
 pub mod stream_session {
 
     /// A builder for [`StreamSession`](crate::model::StreamSession).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_id: std::option::Option<std::string::String>,
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1929,7 +1982,7 @@ impl StreamSession {
 
 /// <p>Object specifying a stream’s events. For a list of events, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using Amazon EventBridge with Amazon IVS</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamEvent {
     /// <p>Name that identifies the stream event within a <code>type</code>.</p>
     #[doc(hidden)]
@@ -1955,20 +2008,11 @@ impl StreamEvent {
         self.event_time.as_ref()
     }
 }
-impl std::fmt::Debug for StreamEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamEvent");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("event_time", &self.event_time);
-        formatter.finish()
-    }
-}
 /// See [`StreamEvent`](crate::model::StreamEvent).
 pub mod stream_event {
 
     /// A builder for [`StreamEvent`](crate::model::StreamEvent).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -2027,7 +2071,7 @@ impl StreamEvent {
 
 /// <p>An object representing a configuration to record a channel stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecordingConfiguration {
     /// <p>Recording-configuration ARN.</p>
     #[doc(hidden)]
@@ -2089,27 +2133,11 @@ impl RecordingConfiguration {
         self.recording_reconnect_window_seconds
     }
 }
-impl std::fmt::Debug for RecordingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecordingConfiguration");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("destination_configuration", &self.destination_configuration);
-        formatter.field("state", &self.state);
-        formatter.field("tags", &self.tags);
-        formatter.field("thumbnail_configuration", &self.thumbnail_configuration);
-        formatter.field(
-            "recording_reconnect_window_seconds",
-            &self.recording_reconnect_window_seconds,
-        );
-        formatter.finish()
-    }
-}
 /// See [`RecordingConfiguration`](crate::model::RecordingConfiguration).
 pub mod recording_configuration {
 
     /// A builder for [`RecordingConfiguration`](crate::model::RecordingConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2252,7 +2280,7 @@ impl RecordingConfiguration {
 
 /// <p>An object representing a configuration of thumbnails for recorded video.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThumbnailConfiguration {
     /// <p>Thumbnail recording mode. Default: <code>INTERVAL</code>.</p>
     #[doc(hidden)]
@@ -2273,19 +2301,11 @@ impl ThumbnailConfiguration {
         self.target_interval_seconds
     }
 }
-impl std::fmt::Debug for ThumbnailConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThumbnailConfiguration");
-        formatter.field("recording_mode", &self.recording_mode);
-        formatter.field("target_interval_seconds", &self.target_interval_seconds);
-        formatter.finish()
-    }
-}
 /// See [`ThumbnailConfiguration`](crate::model::ThumbnailConfiguration).
 pub mod thumbnail_configuration {
 
     /// A builder for [`ThumbnailConfiguration`](crate::model::ThumbnailConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recording_mode: std::option::Option<crate::model::RecordingMode>,
         pub(crate) target_interval_seconds: std::option::Option<i64>,
@@ -2332,6 +2352,41 @@ impl ThumbnailConfiguration {
     }
 }
 
+/// When writing a match expression against `RecordingMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let recordingmode = unimplemented!();
+/// match recordingmode {
+///     RecordingMode::Disabled => { /* ... */ },
+///     RecordingMode::Interval => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `recordingmode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RecordingMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RecordingMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RecordingMode::NewFeature` is defined.
+/// Specifically, when `recordingmode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RecordingMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2348,15 +2403,15 @@ pub enum RecordingMode {
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Interval,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for RecordingMode {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => RecordingMode::Disabled,
             "INTERVAL" => RecordingMode::Interval,
-            other => RecordingMode::Unknown(other.to_owned()),
+            other => RecordingMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2373,11 +2428,11 @@ impl RecordingMode {
         match self {
             RecordingMode::Disabled => "DISABLED",
             RecordingMode::Interval => "INTERVAL",
-            RecordingMode::Unknown(s) => s.as_ref(),
+            RecordingMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "INTERVAL"]
     }
 }
@@ -2389,7 +2444,7 @@ impl AsRef<str> for RecordingMode {
 
 /// <p>Object specifying the ingest configuration set up by the broadcaster, usually in an encoder.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IngestConfiguration {
     /// <p>Encoder settings for video.</p>
     #[doc(hidden)]
@@ -2408,19 +2463,11 @@ impl IngestConfiguration {
         self.audio.as_ref()
     }
 }
-impl std::fmt::Debug for IngestConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IngestConfiguration");
-        formatter.field("video", &self.video);
-        formatter.field("audio", &self.audio);
-        formatter.finish()
-    }
-}
 /// See [`IngestConfiguration`](crate::model::IngestConfiguration).
 pub mod ingest_configuration {
 
     /// A builder for [`IngestConfiguration`](crate::model::IngestConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) video: std::option::Option<crate::model::VideoConfiguration>,
         pub(crate) audio: std::option::Option<crate::model::AudioConfiguration>,
@@ -2470,7 +2517,7 @@ impl IngestConfiguration {
 
 /// <p>Object specifying a stream’s audio configuration, as set up by the broadcaster (usually in an encoder). This is part of the <code>IngestConfiguration</code> object and used for monitoring stream health.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AudioConfiguration {
     /// <p>Codec used for the audio encoding.</p>
     #[doc(hidden)]
@@ -2503,21 +2550,11 @@ impl AudioConfiguration {
         self.channels
     }
 }
-impl std::fmt::Debug for AudioConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AudioConfiguration");
-        formatter.field("codec", &self.codec);
-        formatter.field("target_bitrate", &self.target_bitrate);
-        formatter.field("sample_rate", &self.sample_rate);
-        formatter.field("channels", &self.channels);
-        formatter.finish()
-    }
-}
 /// See [`AudioConfiguration`](crate::model::AudioConfiguration).
 pub mod audio_configuration {
 
     /// A builder for [`AudioConfiguration`](crate::model::AudioConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) codec: std::option::Option<std::string::String>,
         pub(crate) target_bitrate: std::option::Option<i64>,
@@ -2585,7 +2622,7 @@ impl AudioConfiguration {
 
 /// <p>Object specifying a stream’s video configuration, as set up by the broadcaster (usually in an encoder). This is part of the <code>IngestConfiguration</code> object and used for monitoring stream health.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VideoConfiguration {
     /// <p>Indicates to the decoder the requirements for decoding the stream. For definitions of the valid values, see the H.264 specification.</p>
     #[doc(hidden)]
@@ -2646,25 +2683,11 @@ impl VideoConfiguration {
         self.video_width
     }
 }
-impl std::fmt::Debug for VideoConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VideoConfiguration");
-        formatter.field("avc_profile", &self.avc_profile);
-        formatter.field("avc_level", &self.avc_level);
-        formatter.field("codec", &self.codec);
-        formatter.field("encoder", &self.encoder);
-        formatter.field("target_bitrate", &self.target_bitrate);
-        formatter.field("target_framerate", &self.target_framerate);
-        formatter.field("video_height", &self.video_height);
-        formatter.field("video_width", &self.video_width);
-        formatter.finish()
-    }
-}
 /// See [`VideoConfiguration`](crate::model::VideoConfiguration).
 pub mod video_configuration {
 
     /// A builder for [`VideoConfiguration`](crate::model::VideoConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) avc_profile: std::option::Option<std::string::String>,
         pub(crate) avc_level: std::option::Option<std::string::String>,
@@ -2831,7 +2854,7 @@ impl std::fmt::Debug for StreamKey {
 pub mod stream_key {
 
     /// A builder for [`StreamKey`](crate::model::StreamKey).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -2906,6 +2929,16 @@ pub mod stream_key {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("arn", &self.arn);
+            formatter.field("value", &"*** Sensitive Data Redacted ***");
+            formatter.field("channel_arn", &self.channel_arn);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
+        }
+    }
 }
 impl StreamKey {
     /// Creates a new builder-style object to manufacture [`StreamKey`](crate::model::StreamKey).
@@ -2916,7 +2949,7 @@ impl StreamKey {
 
 /// <p>Specifies a live video stream that has been ingested and distributed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Stream {
     /// <p>Channel ARN for the stream.</p>
     #[doc(hidden)]
@@ -2970,24 +3003,11 @@ impl Stream {
         self.viewer_count
     }
 }
-impl std::fmt::Debug for Stream {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Stream");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("stream_id", &self.stream_id);
-        formatter.field("playback_url", &self.playback_url);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("state", &self.state);
-        formatter.field("health", &self.health);
-        formatter.field("viewer_count", &self.viewer_count);
-        formatter.finish()
-    }
-}
 /// See [`Stream`](crate::model::Stream).
 pub mod stream {
 
     /// A builder for [`Stream`](crate::model::Stream).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) stream_id: std::option::Option<std::string::String>,
@@ -3097,7 +3117,7 @@ impl Stream {
 
 /// <p>Error related to a specific channel, specified by its ARN.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchError {
     /// <p>Channel ARN.</p>
     #[doc(hidden)]
@@ -3123,20 +3143,11 @@ impl BatchError {
         self.message.as_deref()
     }
 }
-impl std::fmt::Debug for BatchError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchError");
-        formatter.field("arn", &self.arn);
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 /// See [`BatchError`](crate::model::BatchError).
 pub mod batch_error {
 
     /// A builder for [`BatchError`](crate::model::BatchError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) code: std::option::Option<std::string::String>,

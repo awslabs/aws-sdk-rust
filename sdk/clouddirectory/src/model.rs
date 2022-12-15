@@ -2,7 +2,7 @@
 
 /// <p>A typed link facet attribute update.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TypedLinkFacetAttributeUpdate {
     /// <p>The attribute to update.</p>
     #[doc(hidden)]
@@ -21,19 +21,11 @@ impl TypedLinkFacetAttributeUpdate {
         self.action.as_ref()
     }
 }
-impl std::fmt::Debug for TypedLinkFacetAttributeUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TypedLinkFacetAttributeUpdate");
-        formatter.field("attribute", &self.attribute);
-        formatter.field("action", &self.action);
-        formatter.finish()
-    }
-}
 /// See [`TypedLinkFacetAttributeUpdate`](crate::model::TypedLinkFacetAttributeUpdate).
 pub mod typed_link_facet_attribute_update {
 
     /// A builder for [`TypedLinkFacetAttributeUpdate`](crate::model::TypedLinkFacetAttributeUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute: std::option::Option<crate::model::TypedLinkAttributeDefinition>,
         pub(crate) action: std::option::Option<crate::model::UpdateActionType>,
@@ -81,6 +73,41 @@ impl TypedLinkFacetAttributeUpdate {
     }
 }
 
+/// When writing a match expression against `UpdateActionType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let updateactiontype = unimplemented!();
+/// match updateactiontype {
+///     UpdateActionType::CreateOrUpdate => { /* ... */ },
+///     UpdateActionType::Delete => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `updateactiontype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `UpdateActionType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `UpdateActionType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `UpdateActionType::NewFeature` is defined.
+/// Specifically, when `updateactiontype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `UpdateActionType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -97,15 +124,15 @@ pub enum UpdateActionType {
     CreateOrUpdate,
     #[allow(missing_docs)] // documentation missing in model
     Delete,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for UpdateActionType {
     fn from(s: &str) -> Self {
         match s {
             "CREATE_OR_UPDATE" => UpdateActionType::CreateOrUpdate,
             "DELETE" => UpdateActionType::Delete,
-            other => UpdateActionType::Unknown(other.to_owned()),
+            other => UpdateActionType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -122,11 +149,11 @@ impl UpdateActionType {
         match self {
             UpdateActionType::CreateOrUpdate => "CREATE_OR_UPDATE",
             UpdateActionType::Delete => "DELETE",
-            UpdateActionType::Unknown(s) => s.as_ref(),
+            UpdateActionType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATE_OR_UPDATE", "DELETE"]
     }
 }
@@ -138,7 +165,7 @@ impl AsRef<str> for UpdateActionType {
 
 /// <p>A typed link attribute definition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TypedLinkAttributeDefinition {
     /// <p>The unique name of the typed link attribute.</p>
     #[doc(hidden)]
@@ -191,23 +218,11 @@ impl TypedLinkAttributeDefinition {
         self.required_behavior.as_ref()
     }
 }
-impl std::fmt::Debug for TypedLinkAttributeDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TypedLinkAttributeDefinition");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("default_value", &self.default_value);
-        formatter.field("is_immutable", &self.is_immutable);
-        formatter.field("rules", &self.rules);
-        formatter.field("required_behavior", &self.required_behavior);
-        formatter.finish()
-    }
-}
 /// See [`TypedLinkAttributeDefinition`](crate::model::TypedLinkAttributeDefinition).
 pub mod typed_link_attribute_definition {
 
     /// A builder for [`TypedLinkAttributeDefinition`](crate::model::TypedLinkAttributeDefinition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::FacetAttributeType>,
@@ -318,6 +333,41 @@ impl TypedLinkAttributeDefinition {
     }
 }
 
+/// When writing a match expression against `RequiredAttributeBehavior`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let requiredattributebehavior = unimplemented!();
+/// match requiredattributebehavior {
+///     RequiredAttributeBehavior::NotRequired => { /* ... */ },
+///     RequiredAttributeBehavior::RequiredAlways => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `requiredattributebehavior` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RequiredAttributeBehavior::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RequiredAttributeBehavior::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RequiredAttributeBehavior::NewFeature` is defined.
+/// Specifically, when `requiredattributebehavior` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RequiredAttributeBehavior::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -334,15 +384,17 @@ pub enum RequiredAttributeBehavior {
     NotRequired,
     #[allow(missing_docs)] // documentation missing in model
     RequiredAlways,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for RequiredAttributeBehavior {
     fn from(s: &str) -> Self {
         match s {
             "NOT_REQUIRED" => RequiredAttributeBehavior::NotRequired,
             "REQUIRED_ALWAYS" => RequiredAttributeBehavior::RequiredAlways,
-            other => RequiredAttributeBehavior::Unknown(other.to_owned()),
+            other => RequiredAttributeBehavior::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -359,11 +411,11 @@ impl RequiredAttributeBehavior {
         match self {
             RequiredAttributeBehavior::NotRequired => "NOT_REQUIRED",
             RequiredAttributeBehavior::RequiredAlways => "REQUIRED_ALWAYS",
-            RequiredAttributeBehavior::Unknown(s) => s.as_ref(),
+            RequiredAttributeBehavior::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NOT_REQUIRED", "REQUIRED_ALWAYS"]
     }
 }
@@ -375,7 +427,7 @@ impl AsRef<str> for RequiredAttributeBehavior {
 
 /// <p>Contains an Amazon Resource Name (ARN) and parameters that are associated with the rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Rule {
     /// <p>The type of attribute validation rule.</p>
     #[doc(hidden)]
@@ -398,19 +450,11 @@ impl Rule {
         self.parameters.as_ref()
     }
 }
-impl std::fmt::Debug for Rule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Rule");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
-    }
-}
 /// See [`Rule`](crate::model::Rule).
 pub mod rule {
 
     /// A builder for [`Rule`](crate::model::Rule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::RuleType>,
         pub(crate) parameters: std::option::Option<
@@ -469,6 +513,43 @@ impl Rule {
     }
 }
 
+/// When writing a match expression against `RuleType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let ruletype = unimplemented!();
+/// match ruletype {
+///     RuleType::BinaryLength => { /* ... */ },
+///     RuleType::NumberComparison => { /* ... */ },
+///     RuleType::StringFromSet => { /* ... */ },
+///     RuleType::StringLength => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `ruletype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RuleType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RuleType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RuleType::NewFeature` is defined.
+/// Specifically, when `ruletype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RuleType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -489,8 +570,8 @@ pub enum RuleType {
     StringFromSet,
     #[allow(missing_docs)] // documentation missing in model
     StringLength,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for RuleType {
     fn from(s: &str) -> Self {
@@ -499,7 +580,7 @@ impl std::convert::From<&str> for RuleType {
             "NUMBER_COMPARISON" => RuleType::NumberComparison,
             "STRING_FROM_SET" => RuleType::StringFromSet,
             "STRING_LENGTH" => RuleType::StringLength,
-            other => RuleType::Unknown(other.to_owned()),
+            other => RuleType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -518,11 +599,11 @@ impl RuleType {
             RuleType::NumberComparison => "NUMBER_COMPARISON",
             RuleType::StringFromSet => "STRING_FROM_SET",
             RuleType::StringLength => "STRING_LENGTH",
-            RuleType::Unknown(s) => s.as_ref(),
+            RuleType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BINARY_LENGTH",
             "NUMBER_COMPARISON",
@@ -633,6 +714,45 @@ impl TypedAttributeValue {
     }
 }
 
+/// When writing a match expression against `FacetAttributeType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let facetattributetype = unimplemented!();
+/// match facetattributetype {
+///     FacetAttributeType::Binary => { /* ... */ },
+///     FacetAttributeType::Boolean => { /* ... */ },
+///     FacetAttributeType::Datetime => { /* ... */ },
+///     FacetAttributeType::Number => { /* ... */ },
+///     FacetAttributeType::String => { /* ... */ },
+///     FacetAttributeType::Variant => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `facetattributetype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `FacetAttributeType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `FacetAttributeType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `FacetAttributeType::NewFeature` is defined.
+/// Specifically, when `facetattributetype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `FacetAttributeType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -657,8 +777,8 @@ pub enum FacetAttributeType {
     String,
     #[allow(missing_docs)] // documentation missing in model
     Variant,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for FacetAttributeType {
     fn from(s: &str) -> Self {
@@ -669,7 +789,9 @@ impl std::convert::From<&str> for FacetAttributeType {
             "NUMBER" => FacetAttributeType::Number,
             "STRING" => FacetAttributeType::String,
             "VARIANT" => FacetAttributeType::Variant,
-            other => FacetAttributeType::Unknown(other.to_owned()),
+            other => {
+                FacetAttributeType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -690,11 +812,11 @@ impl FacetAttributeType {
             FacetAttributeType::Number => "NUMBER",
             FacetAttributeType::String => "STRING",
             FacetAttributeType::Variant => "VARIANT",
-            FacetAttributeType::Unknown(s) => s.as_ref(),
+            FacetAttributeType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BINARY", "BOOLEAN", "DATETIME", "NUMBER", "STRING", "VARIANT",
         ]
@@ -708,7 +830,7 @@ impl AsRef<str> for FacetAttributeType {
 
 /// <p>Structure that contains attribute update information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ObjectAttributeUpdate {
     /// <p>The key of the attribute being updated.</p>
     #[doc(hidden)]
@@ -729,19 +851,11 @@ impl ObjectAttributeUpdate {
         self.object_attribute_action.as_ref()
     }
 }
-impl std::fmt::Debug for ObjectAttributeUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ObjectAttributeUpdate");
-        formatter.field("object_attribute_key", &self.object_attribute_key);
-        formatter.field("object_attribute_action", &self.object_attribute_action);
-        formatter.finish()
-    }
-}
 /// See [`ObjectAttributeUpdate`](crate::model::ObjectAttributeUpdate).
 pub mod object_attribute_update {
 
     /// A builder for [`ObjectAttributeUpdate`](crate::model::ObjectAttributeUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_attribute_key: std::option::Option<crate::model::AttributeKey>,
         pub(crate) object_attribute_action:
@@ -795,7 +909,7 @@ impl ObjectAttributeUpdate {
 
 /// <p>The action to take on the object attribute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ObjectAttributeAction {
     /// <p>A type that can be either <code>Update</code> or <code>Delete</code>.</p>
     #[doc(hidden)]
@@ -818,25 +932,11 @@ impl ObjectAttributeAction {
         self.object_attribute_update_value.as_ref()
     }
 }
-impl std::fmt::Debug for ObjectAttributeAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ObjectAttributeAction");
-        formatter.field(
-            "object_attribute_action_type",
-            &self.object_attribute_action_type,
-        );
-        formatter.field(
-            "object_attribute_update_value",
-            &self.object_attribute_update_value,
-        );
-        formatter.finish()
-    }
-}
 /// See [`ObjectAttributeAction`](crate::model::ObjectAttributeAction).
 pub mod object_attribute_action {
 
     /// A builder for [`ObjectAttributeAction`](crate::model::ObjectAttributeAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_attribute_action_type:
             std::option::Option<crate::model::UpdateActionType>,
@@ -894,7 +994,7 @@ impl ObjectAttributeAction {
 
 /// <p>A unique identifier for an attribute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttributeKey {
     /// <p>The Amazon Resource Name (ARN) of the schema that contains the facet and attribute.</p>
     #[doc(hidden)]
@@ -920,20 +1020,11 @@ impl AttributeKey {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for AttributeKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttributeKey");
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.field("facet_name", &self.facet_name);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 /// See [`AttributeKey`](crate::model::AttributeKey).
 pub mod attribute_key {
 
     /// A builder for [`AttributeKey`](crate::model::AttributeKey).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
         pub(crate) facet_name: std::option::Option<std::string::String>,
@@ -989,7 +1080,7 @@ impl AttributeKey {
 
 /// <p>The reference that identifies an object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ObjectReference {
     /// <p>A path selector supports easy selection of an object by the parent/child links leading to it from the directory root. Use the link names from each parent/child link to construct the path. Path selectors start with a slash (/) and link names are separated by slashes. For more information about paths, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_access_objects.html">Access Objects</a>. You can identify an object in one of the following ways:</p>
     /// <ul>
@@ -1011,18 +1102,11 @@ impl ObjectReference {
         self.selector.as_deref()
     }
 }
-impl std::fmt::Debug for ObjectReference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ObjectReference");
-        formatter.field("selector", &self.selector);
-        formatter.finish()
-    }
-}
 /// See [`ObjectReference`](crate::model::ObjectReference).
 pub mod object_reference {
 
     /// A builder for [`ObjectReference`](crate::model::ObjectReference).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) selector: std::option::Option<std::string::String>,
     }
@@ -1064,7 +1148,7 @@ impl ObjectReference {
 
 /// <p>Structure that contains attribute update information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LinkAttributeUpdate {
     /// <p>The key of the attribute being updated.</p>
     #[doc(hidden)]
@@ -1083,19 +1167,11 @@ impl LinkAttributeUpdate {
         self.attribute_action.as_ref()
     }
 }
-impl std::fmt::Debug for LinkAttributeUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LinkAttributeUpdate");
-        formatter.field("attribute_key", &self.attribute_key);
-        formatter.field("attribute_action", &self.attribute_action);
-        formatter.finish()
-    }
-}
 /// See [`LinkAttributeUpdate`](crate::model::LinkAttributeUpdate).
 pub mod link_attribute_update {
 
     /// A builder for [`LinkAttributeUpdate`](crate::model::LinkAttributeUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_key: std::option::Option<crate::model::AttributeKey>,
         pub(crate) attribute_action: std::option::Option<crate::model::LinkAttributeAction>,
@@ -1145,7 +1221,7 @@ impl LinkAttributeUpdate {
 
 /// <p>The action to take on a typed link attribute value. Updates are only supported for attributes which don’t contribute to link identity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LinkAttributeAction {
     /// <p>A type that can be either <code>UPDATE_OR_CREATE</code> or <code>DELETE</code>.</p>
     #[doc(hidden)]
@@ -1166,19 +1242,11 @@ impl LinkAttributeAction {
         self.attribute_update_value.as_ref()
     }
 }
-impl std::fmt::Debug for LinkAttributeAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LinkAttributeAction");
-        formatter.field("attribute_action_type", &self.attribute_action_type);
-        formatter.field("attribute_update_value", &self.attribute_update_value);
-        formatter.finish()
-    }
-}
 /// See [`LinkAttributeAction`](crate::model::LinkAttributeAction).
 pub mod link_attribute_action {
 
     /// A builder for [`LinkAttributeAction`](crate::model::LinkAttributeAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_action_type: std::option::Option<crate::model::UpdateActionType>,
         pub(crate) attribute_update_value: std::option::Option<crate::model::TypedAttributeValue>,
@@ -1228,7 +1296,7 @@ impl LinkAttributeAction {
 
 /// <p>Contains all the information that is used to uniquely identify a typed link. The parameters discussed in this topic are used to uniquely specify the typed link being operated on. The <code>AttachTypedLink</code> API returns a typed link specifier while the <code>DetachTypedLink</code> API accepts one as input. Similarly, the <code>ListIncomingTypedLinks</code> and <code>ListOutgoingTypedLinks</code> API operations provide typed link specifiers as output. You can also construct a typed link specifier from scratch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TypedLinkSpecifier {
     /// <p>Identifies the typed link facet that is associated with the typed link.</p>
     #[doc(hidden)]
@@ -1266,21 +1334,11 @@ impl TypedLinkSpecifier {
         self.identity_attribute_values.as_deref()
     }
 }
-impl std::fmt::Debug for TypedLinkSpecifier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TypedLinkSpecifier");
-        formatter.field("typed_link_facet", &self.typed_link_facet);
-        formatter.field("source_object_reference", &self.source_object_reference);
-        formatter.field("target_object_reference", &self.target_object_reference);
-        formatter.field("identity_attribute_values", &self.identity_attribute_values);
-        formatter.finish()
-    }
-}
 /// See [`TypedLinkSpecifier`](crate::model::TypedLinkSpecifier).
 pub mod typed_link_specifier {
 
     /// A builder for [`TypedLinkSpecifier`](crate::model::TypedLinkSpecifier).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) typed_link_facet: std::option::Option<crate::model::TypedLinkSchemaAndFacetName>,
         pub(crate) source_object_reference: std::option::Option<crate::model::ObjectReference>,
@@ -1373,7 +1431,7 @@ impl TypedLinkSpecifier {
 
 /// <p>Identifies the attribute name and value for a typed link.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttributeNameAndValue {
     /// <p>The attribute name of the typed link.</p>
     #[doc(hidden)]
@@ -1392,19 +1450,11 @@ impl AttributeNameAndValue {
         self.value.as_ref()
     }
 }
-impl std::fmt::Debug for AttributeNameAndValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttributeNameAndValue");
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`AttributeNameAndValue`](crate::model::AttributeNameAndValue).
 pub mod attribute_name_and_value {
 
     /// A builder for [`AttributeNameAndValue`](crate::model::AttributeNameAndValue).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_name: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<crate::model::TypedAttributeValue>,
@@ -1454,7 +1504,7 @@ impl AttributeNameAndValue {
 
 /// <p>Identifies the schema Amazon Resource Name (ARN) and facet name for the typed link.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TypedLinkSchemaAndFacetName {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
@@ -1473,19 +1523,11 @@ impl TypedLinkSchemaAndFacetName {
         self.typed_link_name.as_deref()
     }
 }
-impl std::fmt::Debug for TypedLinkSchemaAndFacetName {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TypedLinkSchemaAndFacetName");
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.field("typed_link_name", &self.typed_link_name);
-        formatter.finish()
-    }
-}
 /// See [`TypedLinkSchemaAndFacetName`](crate::model::TypedLinkSchemaAndFacetName).
 pub mod typed_link_schema_and_facet_name {
 
     /// A builder for [`TypedLinkSchemaAndFacetName`](crate::model::TypedLinkSchemaAndFacetName).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
         pub(crate) typed_link_name: std::option::Option<std::string::String>,
@@ -1530,6 +1572,43 @@ impl TypedLinkSchemaAndFacetName {
     }
 }
 
+/// When writing a match expression against `ObjectType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let objecttype = unimplemented!();
+/// match objecttype {
+///     ObjectType::Index => { /* ... */ },
+///     ObjectType::LeafNode => { /* ... */ },
+///     ObjectType::Node => { /* ... */ },
+///     ObjectType::Policy => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `objecttype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ObjectType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ObjectType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ObjectType::NewFeature` is defined.
+/// Specifically, when `objecttype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ObjectType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1550,8 +1629,8 @@ pub enum ObjectType {
     Node,
     #[allow(missing_docs)] // documentation missing in model
     Policy,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ObjectType {
     fn from(s: &str) -> Self {
@@ -1560,7 +1639,7 @@ impl std::convert::From<&str> for ObjectType {
             "LEAF_NODE" => ObjectType::LeafNode,
             "NODE" => ObjectType::Node,
             "POLICY" => ObjectType::Policy,
-            other => ObjectType::Unknown(other.to_owned()),
+            other => ObjectType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1579,11 +1658,11 @@ impl ObjectType {
             ObjectType::LeafNode => "LEAF_NODE",
             ObjectType::Node => "NODE",
             ObjectType::Policy => "POLICY",
-            ObjectType::Unknown(s) => s.as_ref(),
+            ObjectType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INDEX", "LEAF_NODE", "NODE", "POLICY"]
     }
 }
@@ -1595,7 +1674,7 @@ impl AsRef<str> for ObjectType {
 
 /// <p>A structure that contains information used to update an attribute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FacetAttributeUpdate {
     /// <p>The attribute to update.</p>
     #[doc(hidden)]
@@ -1614,19 +1693,11 @@ impl FacetAttributeUpdate {
         self.action.as_ref()
     }
 }
-impl std::fmt::Debug for FacetAttributeUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FacetAttributeUpdate");
-        formatter.field("attribute", &self.attribute);
-        formatter.field("action", &self.action);
-        formatter.finish()
-    }
-}
 /// See [`FacetAttributeUpdate`](crate::model::FacetAttributeUpdate).
 pub mod facet_attribute_update {
 
     /// A builder for [`FacetAttributeUpdate`](crate::model::FacetAttributeUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute: std::option::Option<crate::model::FacetAttribute>,
         pub(crate) action: std::option::Option<crate::model::UpdateActionType>,
@@ -1676,7 +1747,7 @@ impl FacetAttributeUpdate {
 
 /// <p>An attribute that is associated with the <code>Facet</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FacetAttribute {
     /// <p>The name of the facet attribute.</p>
     #[doc(hidden)]
@@ -1715,21 +1786,11 @@ impl FacetAttribute {
         self.required_behavior.as_ref()
     }
 }
-impl std::fmt::Debug for FacetAttribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FacetAttribute");
-        formatter.field("name", &self.name);
-        formatter.field("attribute_definition", &self.attribute_definition);
-        formatter.field("attribute_reference", &self.attribute_reference);
-        formatter.field("required_behavior", &self.required_behavior);
-        formatter.finish()
-    }
-}
 /// See [`FacetAttribute`](crate::model::FacetAttribute).
 pub mod facet_attribute {
 
     /// A builder for [`FacetAttribute`](crate::model::FacetAttribute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) attribute_definition:
@@ -1810,7 +1871,7 @@ impl FacetAttribute {
 
 /// <p>The facet attribute reference that specifies the attribute definition that contains the attribute facet name and attribute name.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FacetAttributeReference {
     /// <p>The target facet name that is associated with the facet reference. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
     #[doc(hidden)]
@@ -1829,19 +1890,11 @@ impl FacetAttributeReference {
         self.target_attribute_name.as_deref()
     }
 }
-impl std::fmt::Debug for FacetAttributeReference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FacetAttributeReference");
-        formatter.field("target_facet_name", &self.target_facet_name);
-        formatter.field("target_attribute_name", &self.target_attribute_name);
-        formatter.finish()
-    }
-}
 /// See [`FacetAttributeReference`](crate::model::FacetAttributeReference).
 pub mod facet_attribute_reference {
 
     /// A builder for [`FacetAttributeReference`](crate::model::FacetAttributeReference).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_facet_name: std::option::Option<std::string::String>,
         pub(crate) target_attribute_name: std::option::Option<std::string::String>,
@@ -1891,7 +1944,7 @@ impl FacetAttributeReference {
 
 /// <p>A facet attribute definition. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FacetAttributeDefinition {
     /// <p>The type of the attribute.</p>
     #[doc(hidden)]
@@ -1928,21 +1981,11 @@ impl FacetAttributeDefinition {
         self.rules.as_ref()
     }
 }
-impl std::fmt::Debug for FacetAttributeDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FacetAttributeDefinition");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("default_value", &self.default_value);
-        formatter.field("is_immutable", &self.is_immutable);
-        formatter.field("rules", &self.rules);
-        formatter.finish()
-    }
-}
 /// See [`FacetAttributeDefinition`](crate::model::FacetAttributeDefinition).
 pub mod facet_attribute_definition {
 
     /// A builder for [`FacetAttributeDefinition`](crate::model::FacetAttributeDefinition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::FacetAttributeType>,
         pub(crate) default_value: std::option::Option<crate::model::TypedAttributeValue>,
@@ -2028,7 +2071,7 @@ impl FacetAttributeDefinition {
 
 /// <p>The tag structure that contains a tag key and value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key that is associated with the tag.</p>
     #[doc(hidden)]
@@ -2047,19 +2090,11 @@ impl Tag {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -2103,7 +2138,7 @@ impl Tag {
 
 /// <p>A facet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SchemaFacet {
     /// <p>The ARN of the schema that contains the facet with no minor component. See <code>arns</code> and <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_inplaceschemaupgrade.html">In-Place Schema Upgrade</a> for a description of when to provide minor versions. If this value is set, FacetName must also be set.</p>
     #[doc(hidden)]
@@ -2122,19 +2157,11 @@ impl SchemaFacet {
         self.facet_name.as_deref()
     }
 }
-impl std::fmt::Debug for SchemaFacet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SchemaFacet");
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.field("facet_name", &self.facet_name);
-        formatter.finish()
-    }
-}
 /// See [`SchemaFacet`](crate::model::SchemaFacet).
 pub mod schema_facet {
 
     /// A builder for [`SchemaFacet`](crate::model::SchemaFacet).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
         pub(crate) facet_name: std::option::Option<std::string::String>,
@@ -2178,7 +2205,7 @@ impl SchemaFacet {
 
 /// <p>Used when a regular object exists in a <code>Directory</code> and you want to find all of the policies that are associated with that object and the parent to that object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyToPath {
     /// <p>The path that is referenced from the root.</p>
     #[doc(hidden)]
@@ -2197,19 +2224,11 @@ impl PolicyToPath {
         self.policies.as_deref()
     }
 }
-impl std::fmt::Debug for PolicyToPath {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyToPath");
-        formatter.field("path", &self.path);
-        formatter.field("policies", &self.policies);
-        formatter.finish()
-    }
-}
 /// See [`PolicyToPath`](crate::model::PolicyToPath).
 pub mod policy_to_path {
 
     /// A builder for [`PolicyToPath`](crate::model::PolicyToPath).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
         pub(crate) policies: std::option::Option<std::vec::Vec<crate::model::PolicyAttachment>>,
@@ -2262,7 +2281,7 @@ impl PolicyToPath {
 
 /// <p>Contains the <code>PolicyType</code>, <code>PolicyId</code>, and the <code>ObjectIdentifier</code> to which it is attached. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyAttachment {
     /// <p>The ID of <code>PolicyAttachment</code>.</p>
     #[doc(hidden)]
@@ -2288,20 +2307,11 @@ impl PolicyAttachment {
         self.policy_type.as_deref()
     }
 }
-impl std::fmt::Debug for PolicyAttachment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyAttachment");
-        formatter.field("policy_id", &self.policy_id);
-        formatter.field("object_identifier", &self.object_identifier);
-        formatter.field("policy_type", &self.policy_type);
-        formatter.finish()
-    }
-}
 /// See [`PolicyAttachment`](crate::model::PolicyAttachment).
 pub mod policy_attachment {
 
     /// A builder for [`PolicyAttachment`](crate::model::PolicyAttachment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_id: std::option::Option<std::string::String>,
         pub(crate) object_identifier: std::option::Option<std::string::String>,
@@ -2358,6 +2368,41 @@ impl PolicyAttachment {
     }
 }
 
+/// When writing a match expression against `ConsistencyLevel`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let consistencylevel = unimplemented!();
+/// match consistencylevel {
+///     ConsistencyLevel::Eventual => { /* ... */ },
+///     ConsistencyLevel::Serializable => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `consistencylevel` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ConsistencyLevel::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ConsistencyLevel::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ConsistencyLevel::NewFeature` is defined.
+/// Specifically, when `consistencylevel` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ConsistencyLevel::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2374,15 +2419,15 @@ pub enum ConsistencyLevel {
     Eventual,
     #[allow(missing_docs)] // documentation missing in model
     Serializable,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ConsistencyLevel {
     fn from(s: &str) -> Self {
         match s {
             "EVENTUAL" => ConsistencyLevel::Eventual,
             "SERIALIZABLE" => ConsistencyLevel::Serializable,
-            other => ConsistencyLevel::Unknown(other.to_owned()),
+            other => ConsistencyLevel::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2399,11 +2444,11 @@ impl ConsistencyLevel {
         match self {
             ConsistencyLevel::Eventual => "EVENTUAL",
             ConsistencyLevel::Serializable => "SERIALIZABLE",
-            ConsistencyLevel::Unknown(s) => s.as_ref(),
+            ConsistencyLevel::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EVENTUAL", "SERIALIZABLE"]
     }
 }
@@ -2415,7 +2460,7 @@ impl AsRef<str> for ConsistencyLevel {
 
 /// <p>Identifies the range of attributes that are used by a specified filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TypedLinkAttributeRange {
     /// <p>The unique name of the typed link attribute.</p>
     #[doc(hidden)]
@@ -2434,19 +2479,11 @@ impl TypedLinkAttributeRange {
         self.range.as_ref()
     }
 }
-impl std::fmt::Debug for TypedLinkAttributeRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TypedLinkAttributeRange");
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("range", &self.range);
-        formatter.finish()
-    }
-}
 /// See [`TypedLinkAttributeRange`](crate::model::TypedLinkAttributeRange).
 pub mod typed_link_attribute_range {
 
     /// A builder for [`TypedLinkAttributeRange`](crate::model::TypedLinkAttributeRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_name: std::option::Option<std::string::String>,
         pub(crate) range: std::option::Option<crate::model::TypedAttributeValueRange>,
@@ -2496,7 +2533,7 @@ impl TypedLinkAttributeRange {
 
 /// <p>A range of attribute values. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_range_filters.html">Range Filters</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TypedAttributeValueRange {
     /// <p>The inclusive or exclusive range start.</p>
     #[doc(hidden)]
@@ -2529,21 +2566,11 @@ impl TypedAttributeValueRange {
         self.end_value.as_ref()
     }
 }
-impl std::fmt::Debug for TypedAttributeValueRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TypedAttributeValueRange");
-        formatter.field("start_mode", &self.start_mode);
-        formatter.field("start_value", &self.start_value);
-        formatter.field("end_mode", &self.end_mode);
-        formatter.field("end_value", &self.end_value);
-        formatter.finish()
-    }
-}
 /// See [`TypedAttributeValueRange`](crate::model::TypedAttributeValueRange).
 pub mod typed_attribute_value_range {
 
     /// A builder for [`TypedAttributeValueRange`](crate::model::TypedAttributeValueRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_mode: std::option::Option<crate::model::RangeMode>,
         pub(crate) start_value: std::option::Option<crate::model::TypedAttributeValue>,
@@ -2618,6 +2645,44 @@ impl TypedAttributeValueRange {
     }
 }
 
+/// When writing a match expression against `RangeMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let rangemode = unimplemented!();
+/// match rangemode {
+///     RangeMode::Exclusive => { /* ... */ },
+///     RangeMode::First => { /* ... */ },
+///     RangeMode::Inclusive => { /* ... */ },
+///     RangeMode::Last => { /* ... */ },
+///     RangeMode::LastBeforeMissingValues => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `rangemode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RangeMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RangeMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RangeMode::NewFeature` is defined.
+/// Specifically, when `rangemode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RangeMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2640,8 +2705,8 @@ pub enum RangeMode {
     Last,
     #[allow(missing_docs)] // documentation missing in model
     LastBeforeMissingValues,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for RangeMode {
     fn from(s: &str) -> Self {
@@ -2651,7 +2716,7 @@ impl std::convert::From<&str> for RangeMode {
             "INCLUSIVE" => RangeMode::Inclusive,
             "LAST" => RangeMode::Last,
             "LAST_BEFORE_MISSING_VALUES" => RangeMode::LastBeforeMissingValues,
-            other => RangeMode::Unknown(other.to_owned()),
+            other => RangeMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2671,11 +2736,11 @@ impl RangeMode {
             RangeMode::Inclusive => "INCLUSIVE",
             RangeMode::Last => "LAST",
             RangeMode::LastBeforeMissingValues => "LAST_BEFORE_MISSING_VALUES",
-            RangeMode::Unknown(s) => s.as_ref(),
+            RangeMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "EXCLUSIVE",
             "FIRST",
@@ -2693,7 +2758,7 @@ impl AsRef<str> for RangeMode {
 
 /// <p>A pair of ObjectIdentifier and LinkName.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ObjectIdentifierAndLinkNameTuple {
     /// <p>The ID that is associated with the object.</p>
     #[doc(hidden)]
@@ -2712,19 +2777,11 @@ impl ObjectIdentifierAndLinkNameTuple {
         self.link_name.as_deref()
     }
 }
-impl std::fmt::Debug for ObjectIdentifierAndLinkNameTuple {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ObjectIdentifierAndLinkNameTuple");
-        formatter.field("object_identifier", &self.object_identifier);
-        formatter.field("link_name", &self.link_name);
-        formatter.finish()
-    }
-}
 /// See [`ObjectIdentifierAndLinkNameTuple`](crate::model::ObjectIdentifierAndLinkNameTuple).
 pub mod object_identifier_and_link_name_tuple {
 
     /// A builder for [`ObjectIdentifierAndLinkNameTuple`](crate::model::ObjectIdentifierAndLinkNameTuple).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_identifier: std::option::Option<std::string::String>,
         pub(crate) link_name: std::option::Option<std::string::String>,
@@ -2771,7 +2828,7 @@ impl ObjectIdentifierAndLinkNameTuple {
 
 /// <p>Returns the path to the <code>ObjectIdentifiers</code> that is associated with the directory.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PathToObjectIdentifiers {
     /// <p>The path that is used to identify the object starting from directory root.</p>
     #[doc(hidden)]
@@ -2790,19 +2847,11 @@ impl PathToObjectIdentifiers {
         self.object_identifiers.as_deref()
     }
 }
-impl std::fmt::Debug for PathToObjectIdentifiers {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PathToObjectIdentifiers");
-        formatter.field("path", &self.path);
-        formatter.field("object_identifiers", &self.object_identifiers);
-        formatter.finish()
-    }
-}
 /// See [`PathToObjectIdentifiers`](crate::model::PathToObjectIdentifiers).
 pub mod path_to_object_identifiers {
 
     /// A builder for [`PathToObjectIdentifiers`](crate::model::PathToObjectIdentifiers).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
         pub(crate) object_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2855,7 +2904,7 @@ impl PathToObjectIdentifiers {
 
 /// <p>The combination of an attribute key and an attribute value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttributeKeyAndValue {
     /// <p>The key of the attribute.</p>
     #[doc(hidden)]
@@ -2874,19 +2923,11 @@ impl AttributeKeyAndValue {
         self.value.as_ref()
     }
 }
-impl std::fmt::Debug for AttributeKeyAndValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttributeKeyAndValue");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`AttributeKeyAndValue`](crate::model::AttributeKeyAndValue).
 pub mod attribute_key_and_value {
 
     /// A builder for [`AttributeKeyAndValue`](crate::model::AttributeKeyAndValue).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<crate::model::AttributeKey>,
         pub(crate) value: std::option::Option<crate::model::TypedAttributeValue>,
@@ -2933,7 +2974,7 @@ impl AttributeKeyAndValue {
 
 /// <p>Represents an index and an attached object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IndexAttachment {
     /// <p>The indexed attribute values.</p>
     #[doc(hidden)]
@@ -2952,19 +2993,11 @@ impl IndexAttachment {
         self.object_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for IndexAttachment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IndexAttachment");
-        formatter.field("indexed_attributes", &self.indexed_attributes);
-        formatter.field("object_identifier", &self.object_identifier);
-        formatter.finish()
-    }
-}
 /// See [`IndexAttachment`](crate::model::IndexAttachment).
 pub mod index_attachment {
 
     /// A builder for [`IndexAttachment`](crate::model::IndexAttachment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) indexed_attributes:
             std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
@@ -3021,7 +3054,7 @@ impl IndexAttachment {
 
 /// <p>A range of attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ObjectAttributeRange {
     /// <p>The key of the attribute that the attribute range covers.</p>
     #[doc(hidden)]
@@ -3040,19 +3073,11 @@ impl ObjectAttributeRange {
         self.range.as_ref()
     }
 }
-impl std::fmt::Debug for ObjectAttributeRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ObjectAttributeRange");
-        formatter.field("attribute_key", &self.attribute_key);
-        formatter.field("range", &self.range);
-        formatter.finish()
-    }
-}
 /// See [`ObjectAttributeRange`](crate::model::ObjectAttributeRange).
 pub mod object_attribute_range {
 
     /// A builder for [`ObjectAttributeRange`](crate::model::ObjectAttributeRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_key: std::option::Option<crate::model::AttributeKey>,
         pub(crate) range: std::option::Option<crate::model::TypedAttributeValueRange>,
@@ -3102,7 +3127,7 @@ impl ObjectAttributeRange {
 
 /// <p>Directory structure that includes the directory name and directory ARN.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Directory {
     /// <p>The name of the directory.</p>
     #[doc(hidden)]
@@ -3135,21 +3160,11 @@ impl Directory {
         self.creation_date_time.as_ref()
     }
 }
-impl std::fmt::Debug for Directory {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Directory");
-        formatter.field("name", &self.name);
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.field("state", &self.state);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.finish()
-    }
-}
 /// See [`Directory`](crate::model::Directory).
 pub mod directory {
 
     /// A builder for [`Directory`](crate::model::Directory).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -3224,6 +3239,42 @@ impl Directory {
     }
 }
 
+/// When writing a match expression against `DirectoryState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let directorystate = unimplemented!();
+/// match directorystate {
+///     DirectoryState::Deleted => { /* ... */ },
+///     DirectoryState::Disabled => { /* ... */ },
+///     DirectoryState::Enabled => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `directorystate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DirectoryState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DirectoryState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DirectoryState::NewFeature` is defined.
+/// Specifically, when `directorystate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DirectoryState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3242,8 +3293,8 @@ pub enum DirectoryState {
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DirectoryState {
     fn from(s: &str) -> Self {
@@ -3251,7 +3302,7 @@ impl std::convert::From<&str> for DirectoryState {
             "DELETED" => DirectoryState::Deleted,
             "DISABLED" => DirectoryState::Disabled,
             "ENABLED" => DirectoryState::Enabled,
-            other => DirectoryState::Unknown(other.to_owned()),
+            other => DirectoryState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -3269,11 +3320,11 @@ impl DirectoryState {
             DirectoryState::Deleted => "DELETED",
             DirectoryState::Disabled => "DISABLED",
             DirectoryState::Enabled => "ENABLED",
-            DirectoryState::Unknown(s) => s.as_ref(),
+            DirectoryState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DELETED", "DISABLED", "ENABLED"]
     }
 }
@@ -3285,7 +3336,7 @@ impl AsRef<str> for DirectoryState {
 
 /// <p>A structure that contains <code>Name</code>, <code>ARN</code>, <code>Attributes</code>, <code> <code>Rule</code>s</code>, and <code>ObjectTypes</code>. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_whatarefacets.html">Facets</a> for more information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Facet {
     /// <p>The name of the <code>Facet</code>.</p>
     #[doc(hidden)]
@@ -3311,20 +3362,11 @@ impl Facet {
         self.facet_style.as_ref()
     }
 }
-impl std::fmt::Debug for Facet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Facet");
-        formatter.field("name", &self.name);
-        formatter.field("object_type", &self.object_type);
-        formatter.field("facet_style", &self.facet_style);
-        formatter.finish()
-    }
-}
 /// See [`Facet`](crate::model::Facet).
 pub mod facet {
 
     /// A builder for [`Facet`](crate::model::Facet).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) object_type: std::option::Option<crate::model::ObjectType>,
@@ -3384,6 +3426,41 @@ impl Facet {
     }
 }
 
+/// When writing a match expression against `FacetStyle`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let facetstyle = unimplemented!();
+/// match facetstyle {
+///     FacetStyle::Dynamic => { /* ... */ },
+///     FacetStyle::Static => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `facetstyle` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `FacetStyle::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `FacetStyle::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `FacetStyle::NewFeature` is defined.
+/// Specifically, when `facetstyle` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `FacetStyle::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3400,15 +3477,15 @@ pub enum FacetStyle {
     Dynamic,
     #[allow(missing_docs)] // documentation missing in model
     Static,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for FacetStyle {
     fn from(s: &str) -> Self {
         match s {
             "DYNAMIC" => FacetStyle::Dynamic,
             "STATIC" => FacetStyle::Static,
-            other => FacetStyle::Unknown(other.to_owned()),
+            other => FacetStyle::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -3425,11 +3502,11 @@ impl FacetStyle {
         match self {
             FacetStyle::Dynamic => "DYNAMIC",
             FacetStyle::Static => "STATIC",
-            FacetStyle::Unknown(s) => s.as_ref(),
+            FacetStyle::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DYNAMIC", "STATIC"]
     }
 }
@@ -3441,7 +3518,7 @@ impl AsRef<str> for FacetStyle {
 
 /// <p>Defines the typed links structure and its attributes. To create a typed link facet, use the <code>CreateTypedLinkFacet</code> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TypedLinkFacet {
     /// <p>The unique name of the typed link facet.</p>
     #[doc(hidden)]
@@ -3467,20 +3544,11 @@ impl TypedLinkFacet {
         self.identity_attribute_order.as_deref()
     }
 }
-impl std::fmt::Debug for TypedLinkFacet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TypedLinkFacet");
-        formatter.field("name", &self.name);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("identity_attribute_order", &self.identity_attribute_order);
-        formatter.finish()
-    }
-}
 /// See [`TypedLinkFacet`](crate::model::TypedLinkFacet).
 pub mod typed_link_facet {
 
     /// A builder for [`TypedLinkFacet`](crate::model::TypedLinkFacet).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) attributes:
@@ -3554,6 +3622,57 @@ impl TypedLinkFacet {
     }
 }
 
+/// When writing a match expression against `BatchWriteExceptionType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let batchwriteexceptiontype = unimplemented!();
+/// match batchwriteexceptiontype {
+///     BatchWriteExceptionType::AccessDeniedException => { /* ... */ },
+///     BatchWriteExceptionType::DirectoryNotEnabledException => { /* ... */ },
+///     BatchWriteExceptionType::FacetValidationException => { /* ... */ },
+///     BatchWriteExceptionType::IndexedAttributeMissingException => { /* ... */ },
+///     BatchWriteExceptionType::InternalServiceException => { /* ... */ },
+///     BatchWriteExceptionType::InvalidArnException => { /* ... */ },
+///     BatchWriteExceptionType::InvalidAttachmentException => { /* ... */ },
+///     BatchWriteExceptionType::LimitExceededException => { /* ... */ },
+///     BatchWriteExceptionType::LinkNameAlreadyInUseException => { /* ... */ },
+///     BatchWriteExceptionType::NotIndexException => { /* ... */ },
+///     BatchWriteExceptionType::NotNodeException => { /* ... */ },
+///     BatchWriteExceptionType::NotPolicyException => { /* ... */ },
+///     BatchWriteExceptionType::ObjectAlreadyDetachedException => { /* ... */ },
+///     BatchWriteExceptionType::ObjectNotDetachedException => { /* ... */ },
+///     BatchWriteExceptionType::ResourceNotFoundException => { /* ... */ },
+///     BatchWriteExceptionType::StillContainsLinksException => { /* ... */ },
+///     BatchWriteExceptionType::UnsupportedIndexTypeException => { /* ... */ },
+///     BatchWriteExceptionType::ValidationException => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `batchwriteexceptiontype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `BatchWriteExceptionType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `BatchWriteExceptionType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `BatchWriteExceptionType::NewFeature` is defined.
+/// Specifically, when `batchwriteexceptiontype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `BatchWriteExceptionType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3602,8 +3721,8 @@ pub enum BatchWriteExceptionType {
     UnsupportedIndexTypeException,
     #[allow(missing_docs)] // documentation missing in model
     ValidationException,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for BatchWriteExceptionType {
     fn from(s: &str) -> Self {
@@ -3634,7 +3753,9 @@ impl std::convert::From<&str> for BatchWriteExceptionType {
                 BatchWriteExceptionType::UnsupportedIndexTypeException
             }
             "ValidationException" => BatchWriteExceptionType::ValidationException,
-            other => BatchWriteExceptionType::Unknown(other.to_owned()),
+            other => BatchWriteExceptionType::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -3675,11 +3796,11 @@ impl BatchWriteExceptionType {
                 "UnsupportedIndexTypeException"
             }
             BatchWriteExceptionType::ValidationException => "ValidationException",
-            BatchWriteExceptionType::Unknown(s) => s.as_ref(),
+            BatchWriteExceptionType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AccessDeniedException",
             "DirectoryNotEnabledException",
@@ -3710,7 +3831,7 @@ impl AsRef<str> for BatchWriteExceptionType {
 
 /// <p>Represents the output of a <code>BatchWrite</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchWriteOperationResponse {
     /// <p>Creates an object in a <code>Directory</code>.</p>
     #[doc(hidden)]
@@ -3839,32 +3960,11 @@ impl BatchWriteOperationResponse {
         self.update_link_attributes.as_ref()
     }
 }
-impl std::fmt::Debug for BatchWriteOperationResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchWriteOperationResponse");
-        formatter.field("create_object", &self.create_object);
-        formatter.field("attach_object", &self.attach_object);
-        formatter.field("detach_object", &self.detach_object);
-        formatter.field("update_object_attributes", &self.update_object_attributes);
-        formatter.field("delete_object", &self.delete_object);
-        formatter.field("add_facet_to_object", &self.add_facet_to_object);
-        formatter.field("remove_facet_from_object", &self.remove_facet_from_object);
-        formatter.field("attach_policy", &self.attach_policy);
-        formatter.field("detach_policy", &self.detach_policy);
-        formatter.field("create_index", &self.create_index);
-        formatter.field("attach_to_index", &self.attach_to_index);
-        formatter.field("detach_from_index", &self.detach_from_index);
-        formatter.field("attach_typed_link", &self.attach_typed_link);
-        formatter.field("detach_typed_link", &self.detach_typed_link);
-        formatter.field("update_link_attributes", &self.update_link_attributes);
-        formatter.finish()
-    }
-}
 /// See [`BatchWriteOperationResponse`](crate::model::BatchWriteOperationResponse).
 pub mod batch_write_operation_response {
 
     /// A builder for [`BatchWriteOperationResponse`](crate::model::BatchWriteOperationResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_object: std::option::Option<crate::model::BatchCreateObjectResponse>,
         pub(crate) attach_object: std::option::Option<crate::model::BatchAttachObjectResponse>,
@@ -4137,19 +4237,13 @@ impl BatchWriteOperationResponse {
 
 /// <p>Represents the output of a <code>UpdateLinkAttributes</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchUpdateLinkAttributesResponse {}
-impl std::fmt::Debug for BatchUpdateLinkAttributesResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchUpdateLinkAttributesResponse");
-        formatter.finish()
-    }
-}
 /// See [`BatchUpdateLinkAttributesResponse`](crate::model::BatchUpdateLinkAttributesResponse).
 pub mod batch_update_link_attributes_response {
 
     /// A builder for [`BatchUpdateLinkAttributesResponse`](crate::model::BatchUpdateLinkAttributesResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`BatchUpdateLinkAttributesResponse`](crate::model::BatchUpdateLinkAttributesResponse).
@@ -4167,19 +4261,13 @@ impl BatchUpdateLinkAttributesResponse {
 
 /// <p>Represents the output of a <code>DetachTypedLink</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDetachTypedLinkResponse {}
-impl std::fmt::Debug for BatchDetachTypedLinkResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDetachTypedLinkResponse");
-        formatter.finish()
-    }
-}
 /// See [`BatchDetachTypedLinkResponse`](crate::model::BatchDetachTypedLinkResponse).
 pub mod batch_detach_typed_link_response {
 
     /// A builder for [`BatchDetachTypedLinkResponse`](crate::model::BatchDetachTypedLinkResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`BatchDetachTypedLinkResponse`](crate::model::BatchDetachTypedLinkResponse).
@@ -4197,7 +4285,7 @@ impl BatchDetachTypedLinkResponse {
 
 /// <p>Represents the output of a <code>AttachTypedLink</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchAttachTypedLinkResponse {
     /// <p>Returns a typed link specifier as output.</p>
     #[doc(hidden)]
@@ -4209,18 +4297,11 @@ impl BatchAttachTypedLinkResponse {
         self.typed_link_specifier.as_ref()
     }
 }
-impl std::fmt::Debug for BatchAttachTypedLinkResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchAttachTypedLinkResponse");
-        formatter.field("typed_link_specifier", &self.typed_link_specifier);
-        formatter.finish()
-    }
-}
 /// See [`BatchAttachTypedLinkResponse`](crate::model::BatchAttachTypedLinkResponse).
 pub mod batch_attach_typed_link_response {
 
     /// A builder for [`BatchAttachTypedLinkResponse`](crate::model::BatchAttachTypedLinkResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) typed_link_specifier: std::option::Option<crate::model::TypedLinkSpecifier>,
     }
@@ -4255,7 +4336,7 @@ impl BatchAttachTypedLinkResponse {
 
 /// <p>Represents the output of a <code>DetachFromIndex</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDetachFromIndexResponse {
     /// <p>The <code>ObjectIdentifier</code> of the object that was detached from the index.</p>
     #[doc(hidden)]
@@ -4267,21 +4348,11 @@ impl BatchDetachFromIndexResponse {
         self.detached_object_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDetachFromIndexResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDetachFromIndexResponse");
-        formatter.field(
-            "detached_object_identifier",
-            &self.detached_object_identifier,
-        );
-        formatter.finish()
-    }
-}
 /// See [`BatchDetachFromIndexResponse`](crate::model::BatchDetachFromIndexResponse).
 pub mod batch_detach_from_index_response {
 
     /// A builder for [`BatchDetachFromIndexResponse`](crate::model::BatchDetachFromIndexResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detached_object_identifier: std::option::Option<std::string::String>,
     }
@@ -4316,7 +4387,7 @@ impl BatchDetachFromIndexResponse {
 
 /// <p>Represents the output of a <code>AttachToIndex</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchAttachToIndexResponse {
     /// <p>The <code>ObjectIdentifier</code> of the object that was attached to the index.</p>
     #[doc(hidden)]
@@ -4328,21 +4399,11 @@ impl BatchAttachToIndexResponse {
         self.attached_object_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for BatchAttachToIndexResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchAttachToIndexResponse");
-        formatter.field(
-            "attached_object_identifier",
-            &self.attached_object_identifier,
-        );
-        formatter.finish()
-    }
-}
 /// See [`BatchAttachToIndexResponse`](crate::model::BatchAttachToIndexResponse).
 pub mod batch_attach_to_index_response {
 
     /// A builder for [`BatchAttachToIndexResponse`](crate::model::BatchAttachToIndexResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attached_object_identifier: std::option::Option<std::string::String>,
     }
@@ -4377,7 +4438,7 @@ impl BatchAttachToIndexResponse {
 
 /// <p>Represents the output of a <code>CreateIndex</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchCreateIndexResponse {
     /// <p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>
     #[doc(hidden)]
@@ -4389,18 +4450,11 @@ impl BatchCreateIndexResponse {
         self.object_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for BatchCreateIndexResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchCreateIndexResponse");
-        formatter.field("object_identifier", &self.object_identifier);
-        formatter.finish()
-    }
-}
 /// See [`BatchCreateIndexResponse`](crate::model::BatchCreateIndexResponse).
 pub mod batch_create_index_response {
 
     /// A builder for [`BatchCreateIndexResponse`](crate::model::BatchCreateIndexResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_identifier: std::option::Option<std::string::String>,
     }
@@ -4435,19 +4489,13 @@ impl BatchCreateIndexResponse {
 
 /// <p>Represents the output of a <code>DetachPolicy</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDetachPolicyResponse {}
-impl std::fmt::Debug for BatchDetachPolicyResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDetachPolicyResponse");
-        formatter.finish()
-    }
-}
 /// See [`BatchDetachPolicyResponse`](crate::model::BatchDetachPolicyResponse).
 pub mod batch_detach_policy_response {
 
     /// A builder for [`BatchDetachPolicyResponse`](crate::model::BatchDetachPolicyResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`BatchDetachPolicyResponse`](crate::model::BatchDetachPolicyResponse).
@@ -4465,19 +4513,13 @@ impl BatchDetachPolicyResponse {
 
 /// <p>Represents the output of an <code>AttachPolicy</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchAttachPolicyResponse {}
-impl std::fmt::Debug for BatchAttachPolicyResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchAttachPolicyResponse");
-        formatter.finish()
-    }
-}
 /// See [`BatchAttachPolicyResponse`](crate::model::BatchAttachPolicyResponse).
 pub mod batch_attach_policy_response {
 
     /// A builder for [`BatchAttachPolicyResponse`](crate::model::BatchAttachPolicyResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`BatchAttachPolicyResponse`](crate::model::BatchAttachPolicyResponse).
@@ -4495,19 +4537,13 @@ impl BatchAttachPolicyResponse {
 
 /// <p>An empty result that represents success.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchRemoveFacetFromObjectResponse {}
-impl std::fmt::Debug for BatchRemoveFacetFromObjectResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchRemoveFacetFromObjectResponse");
-        formatter.finish()
-    }
-}
 /// See [`BatchRemoveFacetFromObjectResponse`](crate::model::BatchRemoveFacetFromObjectResponse).
 pub mod batch_remove_facet_from_object_response {
 
     /// A builder for [`BatchRemoveFacetFromObjectResponse`](crate::model::BatchRemoveFacetFromObjectResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`BatchRemoveFacetFromObjectResponse`](crate::model::BatchRemoveFacetFromObjectResponse).
@@ -4525,19 +4561,13 @@ impl BatchRemoveFacetFromObjectResponse {
 
 /// <p>The result of a batch add facet to object operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchAddFacetToObjectResponse {}
-impl std::fmt::Debug for BatchAddFacetToObjectResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchAddFacetToObjectResponse");
-        formatter.finish()
-    }
-}
 /// See [`BatchAddFacetToObjectResponse`](crate::model::BatchAddFacetToObjectResponse).
 pub mod batch_add_facet_to_object_response {
 
     /// A builder for [`BatchAddFacetToObjectResponse`](crate::model::BatchAddFacetToObjectResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`BatchAddFacetToObjectResponse`](crate::model::BatchAddFacetToObjectResponse).
@@ -4555,19 +4585,13 @@ impl BatchAddFacetToObjectResponse {
 
 /// <p>Represents the output of a <code>DeleteObject</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDeleteObjectResponse {}
-impl std::fmt::Debug for BatchDeleteObjectResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDeleteObjectResponse");
-        formatter.finish()
-    }
-}
 /// See [`BatchDeleteObjectResponse`](crate::model::BatchDeleteObjectResponse).
 pub mod batch_delete_object_response {
 
     /// A builder for [`BatchDeleteObjectResponse`](crate::model::BatchDeleteObjectResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`BatchDeleteObjectResponse`](crate::model::BatchDeleteObjectResponse).
@@ -4585,7 +4609,7 @@ impl BatchDeleteObjectResponse {
 
 /// <p>Represents the output of a <code>BatchUpdate</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchUpdateObjectAttributesResponse {
     /// <p>ID that is associated with the object.</p>
     #[doc(hidden)]
@@ -4597,18 +4621,11 @@ impl BatchUpdateObjectAttributesResponse {
         self.object_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for BatchUpdateObjectAttributesResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchUpdateObjectAttributesResponse");
-        formatter.field("object_identifier", &self.object_identifier);
-        formatter.finish()
-    }
-}
 /// See [`BatchUpdateObjectAttributesResponse`](crate::model::BatchUpdateObjectAttributesResponse).
 pub mod batch_update_object_attributes_response {
 
     /// A builder for [`BatchUpdateObjectAttributesResponse`](crate::model::BatchUpdateObjectAttributesResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_identifier: std::option::Option<std::string::String>,
     }
@@ -4643,7 +4660,7 @@ impl BatchUpdateObjectAttributesResponse {
 
 /// <p>Represents the output of a <code>DetachObject</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDetachObjectResponse {
     /// <p>The <code>ObjectIdentifier</code> of the detached object.</p>
     #[doc(hidden)]
@@ -4655,21 +4672,11 @@ impl BatchDetachObjectResponse {
         self.detached_object_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDetachObjectResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDetachObjectResponse");
-        formatter.field(
-            "detached_object_identifier",
-            &self.detached_object_identifier,
-        );
-        formatter.finish()
-    }
-}
 /// See [`BatchDetachObjectResponse`](crate::model::BatchDetachObjectResponse).
 pub mod batch_detach_object_response {
 
     /// A builder for [`BatchDetachObjectResponse`](crate::model::BatchDetachObjectResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detached_object_identifier: std::option::Option<std::string::String>,
     }
@@ -4704,7 +4711,7 @@ impl BatchDetachObjectResponse {
 
 /// <p>Represents the output batch <code>AttachObject</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchAttachObjectResponse {
     /// <p>The <code>ObjectIdentifier</code> of the object that has been attached.</p>
     #[doc(hidden)]
@@ -4716,21 +4723,11 @@ impl BatchAttachObjectResponse {
         self.attached_object_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for BatchAttachObjectResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchAttachObjectResponse");
-        formatter.field(
-            "attached_object_identifier",
-            &self.attached_object_identifier,
-        );
-        formatter.finish()
-    }
-}
 /// See [`BatchAttachObjectResponse`](crate::model::BatchAttachObjectResponse).
 pub mod batch_attach_object_response {
 
     /// A builder for [`BatchAttachObjectResponse`](crate::model::BatchAttachObjectResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attached_object_identifier: std::option::Option<std::string::String>,
     }
@@ -4765,7 +4762,7 @@ impl BatchAttachObjectResponse {
 
 /// <p>Represents the output of a <code>CreateObject</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchCreateObjectResponse {
     /// <p>The ID that is associated with the object.</p>
     #[doc(hidden)]
@@ -4777,18 +4774,11 @@ impl BatchCreateObjectResponse {
         self.object_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for BatchCreateObjectResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchCreateObjectResponse");
-        formatter.field("object_identifier", &self.object_identifier);
-        formatter.finish()
-    }
-}
 /// See [`BatchCreateObjectResponse`](crate::model::BatchCreateObjectResponse).
 pub mod batch_create_object_response {
 
     /// A builder for [`BatchCreateObjectResponse`](crate::model::BatchCreateObjectResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_identifier: std::option::Option<std::string::String>,
     }
@@ -4823,7 +4813,7 @@ impl BatchCreateObjectResponse {
 
 /// <p>Represents the output of a <code>BatchWrite</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchWriteOperation {
     /// <p>Creates an object.</p>
     #[doc(hidden)]
@@ -4939,32 +4929,11 @@ impl BatchWriteOperation {
         self.update_link_attributes.as_ref()
     }
 }
-impl std::fmt::Debug for BatchWriteOperation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchWriteOperation");
-        formatter.field("create_object", &self.create_object);
-        formatter.field("attach_object", &self.attach_object);
-        formatter.field("detach_object", &self.detach_object);
-        formatter.field("update_object_attributes", &self.update_object_attributes);
-        formatter.field("delete_object", &self.delete_object);
-        formatter.field("add_facet_to_object", &self.add_facet_to_object);
-        formatter.field("remove_facet_from_object", &self.remove_facet_from_object);
-        formatter.field("attach_policy", &self.attach_policy);
-        formatter.field("detach_policy", &self.detach_policy);
-        formatter.field("create_index", &self.create_index);
-        formatter.field("attach_to_index", &self.attach_to_index);
-        formatter.field("detach_from_index", &self.detach_from_index);
-        formatter.field("attach_typed_link", &self.attach_typed_link);
-        formatter.field("detach_typed_link", &self.detach_typed_link);
-        formatter.field("update_link_attributes", &self.update_link_attributes);
-        formatter.finish()
-    }
-}
 /// See [`BatchWriteOperation`](crate::model::BatchWriteOperation).
 pub mod batch_write_operation {
 
     /// A builder for [`BatchWriteOperation`](crate::model::BatchWriteOperation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_object: std::option::Option<crate::model::BatchCreateObject>,
         pub(crate) attach_object: std::option::Option<crate::model::BatchAttachObject>,
@@ -5221,7 +5190,7 @@ impl BatchWriteOperation {
 
 /// <p>Updates a given typed link’s attributes inside a <code>BatchRead</code> operation. Attributes to be updated must not contribute to the typed link’s identity, as defined by its <code>IdentityAttributeOrder</code>. For more information, see <code>UpdateLinkAttributes</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchUpdateLinkAttributes {
     /// <p>Allows a typed link specifier to be accepted as input.</p>
     #[doc(hidden)]
@@ -5240,19 +5209,11 @@ impl BatchUpdateLinkAttributes {
         self.attribute_updates.as_deref()
     }
 }
-impl std::fmt::Debug for BatchUpdateLinkAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchUpdateLinkAttributes");
-        formatter.field("typed_link_specifier", &self.typed_link_specifier);
-        formatter.field("attribute_updates", &self.attribute_updates);
-        formatter.finish()
-    }
-}
 /// See [`BatchUpdateLinkAttributes`](crate::model::BatchUpdateLinkAttributes).
 pub mod batch_update_link_attributes {
 
     /// A builder for [`BatchUpdateLinkAttributes`](crate::model::BatchUpdateLinkAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) typed_link_specifier: std::option::Option<crate::model::TypedLinkSpecifier>,
         pub(crate) attribute_updates:
@@ -5309,7 +5270,7 @@ impl BatchUpdateLinkAttributes {
 
 /// <p>Detaches a typed link from a specified source and target object inside a <code>BatchRead</code> operation. For more information, see <code>DetachTypedLink</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDetachTypedLink {
     /// <p>Used to accept a typed link specifier as input.</p>
     #[doc(hidden)]
@@ -5321,18 +5282,11 @@ impl BatchDetachTypedLink {
         self.typed_link_specifier.as_ref()
     }
 }
-impl std::fmt::Debug for BatchDetachTypedLink {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDetachTypedLink");
-        formatter.field("typed_link_specifier", &self.typed_link_specifier);
-        formatter.finish()
-    }
-}
 /// See [`BatchDetachTypedLink`](crate::model::BatchDetachTypedLink).
 pub mod batch_detach_typed_link {
 
     /// A builder for [`BatchDetachTypedLink`](crate::model::BatchDetachTypedLink).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) typed_link_specifier: std::option::Option<crate::model::TypedLinkSpecifier>,
     }
@@ -5367,7 +5321,7 @@ impl BatchDetachTypedLink {
 
 /// <p>Attaches a typed link to a specified source and target object inside a <code>BatchRead</code> operation. For more information, see <code>AttachTypedLink</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchAttachTypedLink {
     /// <p>Identifies the source object that the typed link will attach to.</p>
     #[doc(hidden)]
@@ -5402,21 +5356,11 @@ impl BatchAttachTypedLink {
         self.attributes.as_deref()
     }
 }
-impl std::fmt::Debug for BatchAttachTypedLink {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchAttachTypedLink");
-        formatter.field("source_object_reference", &self.source_object_reference);
-        formatter.field("target_object_reference", &self.target_object_reference);
-        formatter.field("typed_link_facet", &self.typed_link_facet);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
 /// See [`BatchAttachTypedLink`](crate::model::BatchAttachTypedLink).
 pub mod batch_attach_typed_link {
 
     /// A builder for [`BatchAttachTypedLink`](crate::model::BatchAttachTypedLink).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_object_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) target_object_reference: std::option::Option<crate::model::ObjectReference>,
@@ -5506,7 +5450,7 @@ impl BatchAttachTypedLink {
 
 /// <p>Detaches the specified object from the specified index inside a <code>BatchRead</code> operation. For more information, see <code>DetachFromIndex</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDetachFromIndex {
     /// <p>A reference to the index object.</p>
     #[doc(hidden)]
@@ -5525,19 +5469,11 @@ impl BatchDetachFromIndex {
         self.target_reference.as_ref()
     }
 }
-impl std::fmt::Debug for BatchDetachFromIndex {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDetachFromIndex");
-        formatter.field("index_reference", &self.index_reference);
-        formatter.field("target_reference", &self.target_reference);
-        formatter.finish()
-    }
-}
 /// See [`BatchDetachFromIndex`](crate::model::BatchDetachFromIndex).
 pub mod batch_detach_from_index {
 
     /// A builder for [`BatchDetachFromIndex`](crate::model::BatchDetachFromIndex).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) target_reference: std::option::Option<crate::model::ObjectReference>,
@@ -5587,7 +5523,7 @@ impl BatchDetachFromIndex {
 
 /// <p>Attaches the specified object to the specified index inside a <code>BatchRead</code> operation. For more information, see <code>AttachToIndex</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchAttachToIndex {
     /// <p>A reference to the index that you are attaching the object to.</p>
     #[doc(hidden)]
@@ -5606,19 +5542,11 @@ impl BatchAttachToIndex {
         self.target_reference.as_ref()
     }
 }
-impl std::fmt::Debug for BatchAttachToIndex {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchAttachToIndex");
-        formatter.field("index_reference", &self.index_reference);
-        formatter.field("target_reference", &self.target_reference);
-        formatter.finish()
-    }
-}
 /// See [`BatchAttachToIndex`](crate::model::BatchAttachToIndex).
 pub mod batch_attach_to_index {
 
     /// A builder for [`BatchAttachToIndex`](crate::model::BatchAttachToIndex).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) target_reference: std::option::Option<crate::model::ObjectReference>,
@@ -5668,7 +5596,7 @@ impl BatchAttachToIndex {
 
 /// <p>Creates an index object inside of a <code>BatchRead</code> operation. For more information, see <code>CreateIndex</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchCreateIndex {
     /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute is supported.</p>
     #[doc(hidden)]
@@ -5711,25 +5639,11 @@ impl BatchCreateIndex {
         self.batch_reference_name.as_deref()
     }
 }
-impl std::fmt::Debug for BatchCreateIndex {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchCreateIndex");
-        formatter.field(
-            "ordered_indexed_attribute_list",
-            &self.ordered_indexed_attribute_list,
-        );
-        formatter.field("is_unique", &self.is_unique);
-        formatter.field("parent_reference", &self.parent_reference);
-        formatter.field("link_name", &self.link_name);
-        formatter.field("batch_reference_name", &self.batch_reference_name);
-        formatter.finish()
-    }
-}
 /// See [`BatchCreateIndex`](crate::model::BatchCreateIndex).
 pub mod batch_create_index {
 
     /// A builder for [`BatchCreateIndex`](crate::model::BatchCreateIndex).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ordered_indexed_attribute_list:
             std::option::Option<std::vec::Vec<crate::model::AttributeKey>>,
@@ -5825,7 +5739,7 @@ impl BatchCreateIndex {
 
 /// <p>Detaches the specified policy from the specified directory inside a <code>BatchWrite</code> operation. For more information, see <code>DetachPolicy</code> and <code>BatchWriteRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDetachPolicy {
     /// <p>Reference that identifies the policy object.</p>
     #[doc(hidden)]
@@ -5844,19 +5758,11 @@ impl BatchDetachPolicy {
         self.object_reference.as_ref()
     }
 }
-impl std::fmt::Debug for BatchDetachPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDetachPolicy");
-        formatter.field("policy_reference", &self.policy_reference);
-        formatter.field("object_reference", &self.object_reference);
-        formatter.finish()
-    }
-}
 /// See [`BatchDetachPolicy`](crate::model::BatchDetachPolicy).
 pub mod batch_detach_policy {
 
     /// A builder for [`BatchDetachPolicy`](crate::model::BatchDetachPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
@@ -5906,7 +5812,7 @@ impl BatchDetachPolicy {
 
 /// <p>Attaches a policy object to a regular object inside a <code>BatchRead</code> operation.&nbsp;For more information, see <code>AttachPolicy</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchAttachPolicy {
     /// <p>The reference that is associated with the policy object.</p>
     #[doc(hidden)]
@@ -5925,19 +5831,11 @@ impl BatchAttachPolicy {
         self.object_reference.as_ref()
     }
 }
-impl std::fmt::Debug for BatchAttachPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchAttachPolicy");
-        formatter.field("policy_reference", &self.policy_reference);
-        formatter.field("object_reference", &self.object_reference);
-        formatter.finish()
-    }
-}
 /// See [`BatchAttachPolicy`](crate::model::BatchAttachPolicy).
 pub mod batch_attach_policy {
 
     /// A builder for [`BatchAttachPolicy`](crate::model::BatchAttachPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
@@ -5987,7 +5885,7 @@ impl BatchAttachPolicy {
 
 /// <p>A batch operation to remove a facet from an object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchRemoveFacetFromObject {
     /// <p>The facet to remove from the object.</p>
     #[doc(hidden)]
@@ -6006,19 +5904,11 @@ impl BatchRemoveFacetFromObject {
         self.object_reference.as_ref()
     }
 }
-impl std::fmt::Debug for BatchRemoveFacetFromObject {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchRemoveFacetFromObject");
-        formatter.field("schema_facet", &self.schema_facet);
-        formatter.field("object_reference", &self.object_reference);
-        formatter.finish()
-    }
-}
 /// See [`BatchRemoveFacetFromObject`](crate::model::BatchRemoveFacetFromObject).
 pub mod batch_remove_facet_from_object {
 
     /// A builder for [`BatchRemoveFacetFromObject`](crate::model::BatchRemoveFacetFromObject).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_facet: std::option::Option<crate::model::SchemaFacet>,
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
@@ -6068,7 +5958,7 @@ impl BatchRemoveFacetFromObject {
 
 /// <p>Represents the output of a batch add facet to object operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchAddFacetToObject {
     /// <p>Represents the facet being added to the object.</p>
     #[doc(hidden)]
@@ -6097,20 +5987,11 @@ impl BatchAddFacetToObject {
         self.object_reference.as_ref()
     }
 }
-impl std::fmt::Debug for BatchAddFacetToObject {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchAddFacetToObject");
-        formatter.field("schema_facet", &self.schema_facet);
-        formatter.field("object_attribute_list", &self.object_attribute_list);
-        formatter.field("object_reference", &self.object_reference);
-        formatter.finish()
-    }
-}
 /// See [`BatchAddFacetToObject`](crate::model::BatchAddFacetToObject).
 pub mod batch_add_facet_to_object {
 
     /// A builder for [`BatchAddFacetToObject`](crate::model::BatchAddFacetToObject).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_facet: std::option::Option<crate::model::SchemaFacet>,
         pub(crate) object_attribute_list:
@@ -6182,7 +6063,7 @@ impl BatchAddFacetToObject {
 
 /// <p>Represents the output of a <code>DeleteObject</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDeleteObject {
     /// <p>The reference that identifies the object.</p>
     #[doc(hidden)]
@@ -6194,18 +6075,11 @@ impl BatchDeleteObject {
         self.object_reference.as_ref()
     }
 }
-impl std::fmt::Debug for BatchDeleteObject {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDeleteObject");
-        formatter.field("object_reference", &self.object_reference);
-        formatter.finish()
-    }
-}
 /// See [`BatchDeleteObject`](crate::model::BatchDeleteObject).
 pub mod batch_delete_object {
 
     /// A builder for [`BatchDeleteObject`](crate::model::BatchDeleteObject).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
     }
@@ -6240,7 +6114,7 @@ impl BatchDeleteObject {
 
 /// <p>Represents the output of a <code>BatchUpdate</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchUpdateObjectAttributes {
     /// <p>Reference that identifies the object.</p>
     #[doc(hidden)]
@@ -6259,19 +6133,11 @@ impl BatchUpdateObjectAttributes {
         self.attribute_updates.as_deref()
     }
 }
-impl std::fmt::Debug for BatchUpdateObjectAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchUpdateObjectAttributes");
-        formatter.field("object_reference", &self.object_reference);
-        formatter.field("attribute_updates", &self.attribute_updates);
-        formatter.finish()
-    }
-}
 /// See [`BatchUpdateObjectAttributes`](crate::model::BatchUpdateObjectAttributes).
 pub mod batch_update_object_attributes {
 
     /// A builder for [`BatchUpdateObjectAttributes`](crate::model::BatchUpdateObjectAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) attribute_updates:
@@ -6328,7 +6194,7 @@ impl BatchUpdateObjectAttributes {
 
 /// <p>Represents the output of a <code>DetachObject</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDetachObject {
     /// <p>Parent reference from which the object with the specified link name is detached.</p>
     #[doc(hidden)]
@@ -6354,20 +6220,11 @@ impl BatchDetachObject {
         self.batch_reference_name.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDetachObject {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDetachObject");
-        formatter.field("parent_reference", &self.parent_reference);
-        formatter.field("link_name", &self.link_name);
-        formatter.field("batch_reference_name", &self.batch_reference_name);
-        formatter.finish()
-    }
-}
 /// See [`BatchDetachObject`](crate::model::BatchDetachObject).
 pub mod batch_detach_object {
 
     /// A builder for [`BatchDetachObject`](crate::model::BatchDetachObject).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parent_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) link_name: std::option::Option<std::string::String>,
@@ -6429,7 +6286,7 @@ impl BatchDetachObject {
 
 /// <p>Represents the output of an <code>AttachObject</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchAttachObject {
     /// <p>The parent object reference.</p>
     #[doc(hidden)]
@@ -6455,20 +6312,11 @@ impl BatchAttachObject {
         self.link_name.as_deref()
     }
 }
-impl std::fmt::Debug for BatchAttachObject {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchAttachObject");
-        formatter.field("parent_reference", &self.parent_reference);
-        formatter.field("child_reference", &self.child_reference);
-        formatter.field("link_name", &self.link_name);
-        formatter.finish()
-    }
-}
 /// See [`BatchAttachObject`](crate::model::BatchAttachObject).
 pub mod batch_attach_object {
 
     /// A builder for [`BatchAttachObject`](crate::model::BatchAttachObject).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parent_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) child_reference: std::option::Option<crate::model::ObjectReference>,
@@ -6530,7 +6378,7 @@ impl BatchAttachObject {
 
 /// <p>Represents the output of a <code>CreateObject</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchCreateObject {
     /// <p>A list of <code>FacetArns</code> that will be associated with the object. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
@@ -6573,22 +6421,11 @@ impl BatchCreateObject {
         self.batch_reference_name.as_deref()
     }
 }
-impl std::fmt::Debug for BatchCreateObject {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchCreateObject");
-        formatter.field("schema_facet", &self.schema_facet);
-        formatter.field("object_attribute_list", &self.object_attribute_list);
-        formatter.field("parent_reference", &self.parent_reference);
-        formatter.field("link_name", &self.link_name);
-        formatter.field("batch_reference_name", &self.batch_reference_name);
-        formatter.finish()
-    }
-}
 /// See [`BatchCreateObject`](crate::model::BatchCreateObject).
 pub mod batch_create_object {
 
     /// A builder for [`BatchCreateObject`](crate::model::BatchCreateObject).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_facet: std::option::Option<std::vec::Vec<crate::model::SchemaFacet>>,
         pub(crate) object_attribute_list:
@@ -6693,7 +6530,7 @@ impl BatchCreateObject {
 
 /// <p>Represents the output of a <code>BatchRead</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchReadOperationResponse {
     /// <p>Identifies which operation in a batch has succeeded.</p>
     #[doc(hidden)]
@@ -6714,19 +6551,11 @@ impl BatchReadOperationResponse {
         self.exception_response.as_ref()
     }
 }
-impl std::fmt::Debug for BatchReadOperationResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchReadOperationResponse");
-        formatter.field("successful_response", &self.successful_response);
-        formatter.field("exception_response", &self.exception_response);
-        formatter.finish()
-    }
-}
 /// See [`BatchReadOperationResponse`](crate::model::BatchReadOperationResponse).
 pub mod batch_read_operation_response {
 
     /// A builder for [`BatchReadOperationResponse`](crate::model::BatchReadOperationResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) successful_response:
             std::option::Option<crate::model::BatchReadSuccessfulResponse>,
@@ -6780,7 +6609,7 @@ impl BatchReadOperationResponse {
 
 /// <p>The batch read exception structure, which contains the exception type and message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchReadException {
     /// <p>A type of exception, such as <code>InvalidArnException</code>.</p>
     #[doc(hidden)]
@@ -6799,19 +6628,11 @@ impl BatchReadException {
         self.message.as_deref()
     }
 }
-impl std::fmt::Debug for BatchReadException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchReadException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 /// See [`BatchReadException`](crate::model::BatchReadException).
 pub mod batch_read_exception {
 
     /// A builder for [`BatchReadException`](crate::model::BatchReadException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::BatchReadExceptionType>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6856,6 +6677,52 @@ impl BatchReadException {
     }
 }
 
+/// When writing a match expression against `BatchReadExceptionType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let batchreadexceptiontype = unimplemented!();
+/// match batchreadexceptiontype {
+///     BatchReadExceptionType::AccessDeniedException => { /* ... */ },
+///     BatchReadExceptionType::CannotListParentOfRootException => { /* ... */ },
+///     BatchReadExceptionType::DirectoryNotEnabledException => { /* ... */ },
+///     BatchReadExceptionType::FacetValidationException => { /* ... */ },
+///     BatchReadExceptionType::InternalServiceException => { /* ... */ },
+///     BatchReadExceptionType::InvalidArnException => { /* ... */ },
+///     BatchReadExceptionType::InvalidNextTokenException => { /* ... */ },
+///     BatchReadExceptionType::LimitExceededException => { /* ... */ },
+///     BatchReadExceptionType::NotIndexException => { /* ... */ },
+///     BatchReadExceptionType::NotNodeException => { /* ... */ },
+///     BatchReadExceptionType::NotPolicyException => { /* ... */ },
+///     BatchReadExceptionType::ResourceNotFoundException => { /* ... */ },
+///     BatchReadExceptionType::ValidationException => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `batchreadexceptiontype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `BatchReadExceptionType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `BatchReadExceptionType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `BatchReadExceptionType::NewFeature` is defined.
+/// Specifically, when `batchreadexceptiontype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `BatchReadExceptionType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -6894,8 +6761,8 @@ pub enum BatchReadExceptionType {
     ResourceNotFoundException,
     #[allow(missing_docs)] // documentation missing in model
     ValidationException,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for BatchReadExceptionType {
     fn from(s: &str) -> Self {
@@ -6915,7 +6782,9 @@ impl std::convert::From<&str> for BatchReadExceptionType {
             "NotPolicyException" => BatchReadExceptionType::NotPolicyException,
             "ResourceNotFoundException" => BatchReadExceptionType::ResourceNotFoundException,
             "ValidationException" => BatchReadExceptionType::ValidationException,
-            other => BatchReadExceptionType::Unknown(other.to_owned()),
+            other => {
+                BatchReadExceptionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -6945,11 +6814,11 @@ impl BatchReadExceptionType {
             BatchReadExceptionType::NotPolicyException => "NotPolicyException",
             BatchReadExceptionType::ResourceNotFoundException => "ResourceNotFoundException",
             BatchReadExceptionType::ValidationException => "ValidationException",
-            BatchReadExceptionType::Unknown(s) => s.as_ref(),
+            BatchReadExceptionType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AccessDeniedException",
             "CannotListParentOfRootException",
@@ -6975,7 +6844,7 @@ impl AsRef<str> for BatchReadExceptionType {
 
 /// <p>Represents the output of a <code>BatchRead</code> success response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchReadSuccessfulResponse {
     /// <p>Lists all attributes that are associated with an object.</p>
     #[doc(hidden)]
@@ -7108,31 +6977,11 @@ impl BatchReadSuccessfulResponse {
         self.list_object_parents.as_ref()
     }
 }
-impl std::fmt::Debug for BatchReadSuccessfulResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchReadSuccessfulResponse");
-        formatter.field("list_object_attributes", &self.list_object_attributes);
-        formatter.field("list_object_children", &self.list_object_children);
-        formatter.field("get_object_information", &self.get_object_information);
-        formatter.field("get_object_attributes", &self.get_object_attributes);
-        formatter.field("list_attached_indices", &self.list_attached_indices);
-        formatter.field("list_object_parent_paths", &self.list_object_parent_paths);
-        formatter.field("list_object_policies", &self.list_object_policies);
-        formatter.field("list_policy_attachments", &self.list_policy_attachments);
-        formatter.field("lookup_policy", &self.lookup_policy);
-        formatter.field("list_index", &self.list_index);
-        formatter.field("list_outgoing_typed_links", &self.list_outgoing_typed_links);
-        formatter.field("list_incoming_typed_links", &self.list_incoming_typed_links);
-        formatter.field("get_link_attributes", &self.get_link_attributes);
-        formatter.field("list_object_parents", &self.list_object_parents);
-        formatter.finish()
-    }
-}
 /// See [`BatchReadSuccessfulResponse`](crate::model::BatchReadSuccessfulResponse).
 pub mod batch_read_successful_response {
 
     /// A builder for [`BatchReadSuccessfulResponse`](crate::model::BatchReadSuccessfulResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) list_object_attributes:
             std::option::Option<crate::model::BatchListObjectAttributesResponse>,
@@ -7410,7 +7259,7 @@ impl BatchReadSuccessfulResponse {
 
 /// <p>Represents the output of a <code>ListObjectParents</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListObjectParentsResponse {
     /// <p>Returns a list of parent reference and LinkName Tuples.</p>
     #[doc(hidden)]
@@ -7432,19 +7281,11 @@ impl BatchListObjectParentsResponse {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for BatchListObjectParentsResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListObjectParentsResponse");
-        formatter.field("parent_links", &self.parent_links);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`BatchListObjectParentsResponse`](crate::model::BatchListObjectParentsResponse).
 pub mod batch_list_object_parents_response {
 
     /// A builder for [`BatchListObjectParentsResponse`](crate::model::BatchListObjectParentsResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parent_links:
             std::option::Option<std::vec::Vec<crate::model::ObjectIdentifierAndLinkNameTuple>>,
@@ -7503,7 +7344,7 @@ impl BatchListObjectParentsResponse {
 
 /// <p>Represents the output of a <code>GetLinkAttributes</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetLinkAttributesResponse {
     /// <p>The attributes that are associated with the typed link.</p>
     #[doc(hidden)]
@@ -7515,18 +7356,11 @@ impl BatchGetLinkAttributesResponse {
         self.attributes.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetLinkAttributesResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetLinkAttributesResponse");
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
 /// See [`BatchGetLinkAttributesResponse`](crate::model::BatchGetLinkAttributesResponse).
 pub mod batch_get_link_attributes_response {
 
     /// A builder for [`BatchGetLinkAttributesResponse`](crate::model::BatchGetLinkAttributesResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes:
             std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
@@ -7568,7 +7402,7 @@ impl BatchGetLinkAttributesResponse {
 
 /// <p>Represents the output of a <code>ListIncomingTypedLinks</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListIncomingTypedLinksResponse {
     /// <p>Returns one or more typed link specifiers as output.</p>
     #[doc(hidden)]
@@ -7587,19 +7421,11 @@ impl BatchListIncomingTypedLinksResponse {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for BatchListIncomingTypedLinksResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListIncomingTypedLinksResponse");
-        formatter.field("link_specifiers", &self.link_specifiers);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`BatchListIncomingTypedLinksResponse`](crate::model::BatchListIncomingTypedLinksResponse).
 pub mod batch_list_incoming_typed_links_response {
 
     /// A builder for [`BatchListIncomingTypedLinksResponse`](crate::model::BatchListIncomingTypedLinksResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) link_specifiers:
             std::option::Option<std::vec::Vec<crate::model::TypedLinkSpecifier>>,
@@ -7653,7 +7479,7 @@ impl BatchListIncomingTypedLinksResponse {
 
 /// <p>Represents the output of a <code>ListOutgoingTypedLinks</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListOutgoingTypedLinksResponse {
     /// <p>Returns a typed link specifier as output.</p>
     #[doc(hidden)]
@@ -7674,19 +7500,11 @@ impl BatchListOutgoingTypedLinksResponse {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for BatchListOutgoingTypedLinksResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListOutgoingTypedLinksResponse");
-        formatter.field("typed_link_specifiers", &self.typed_link_specifiers);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`BatchListOutgoingTypedLinksResponse`](crate::model::BatchListOutgoingTypedLinksResponse).
 pub mod batch_list_outgoing_typed_links_response {
 
     /// A builder for [`BatchListOutgoingTypedLinksResponse`](crate::model::BatchListOutgoingTypedLinksResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) typed_link_specifiers:
             std::option::Option<std::vec::Vec<crate::model::TypedLinkSpecifier>>,
@@ -7740,7 +7558,7 @@ impl BatchListOutgoingTypedLinksResponse {
 
 /// <p>Represents the output of a <code>ListIndex</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListIndexResponse {
     /// <p>The objects and indexed values attached to the index.</p>
     #[doc(hidden)]
@@ -7759,19 +7577,11 @@ impl BatchListIndexResponse {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for BatchListIndexResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListIndexResponse");
-        formatter.field("index_attachments", &self.index_attachments);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`BatchListIndexResponse`](crate::model::BatchListIndexResponse).
 pub mod batch_list_index_response {
 
     /// A builder for [`BatchListIndexResponse`](crate::model::BatchListIndexResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_attachments:
             std::option::Option<std::vec::Vec<crate::model::IndexAttachment>>,
@@ -7825,7 +7635,7 @@ impl BatchListIndexResponse {
 
 /// <p>Represents the output of a <code>LookupPolicy</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchLookupPolicyResponse {
     /// <p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
     #[doc(hidden)]
@@ -7844,19 +7654,11 @@ impl BatchLookupPolicyResponse {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for BatchLookupPolicyResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchLookupPolicyResponse");
-        formatter.field("policy_to_path_list", &self.policy_to_path_list);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`BatchLookupPolicyResponse`](crate::model::BatchLookupPolicyResponse).
 pub mod batch_lookup_policy_response {
 
     /// A builder for [`BatchLookupPolicyResponse`](crate::model::BatchLookupPolicyResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_to_path_list:
             std::option::Option<std::vec::Vec<crate::model::PolicyToPath>>,
@@ -7910,7 +7712,7 @@ impl BatchLookupPolicyResponse {
 
 /// <p>Represents the output of a <code>ListPolicyAttachments</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListPolicyAttachmentsResponse {
     /// <p>A list of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
     #[doc(hidden)]
@@ -7929,19 +7731,11 @@ impl BatchListPolicyAttachmentsResponse {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for BatchListPolicyAttachmentsResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListPolicyAttachmentsResponse");
-        formatter.field("object_identifiers", &self.object_identifiers);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`BatchListPolicyAttachmentsResponse`](crate::model::BatchListPolicyAttachmentsResponse).
 pub mod batch_list_policy_attachments_response {
 
     /// A builder for [`BatchListPolicyAttachmentsResponse`](crate::model::BatchListPolicyAttachmentsResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -7994,7 +7788,7 @@ impl BatchListPolicyAttachmentsResponse {
 
 /// <p>Represents the output of a <code>ListObjectPolicies</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListObjectPoliciesResponse {
     /// <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the object.</p>
     #[doc(hidden)]
@@ -8013,19 +7807,11 @@ impl BatchListObjectPoliciesResponse {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for BatchListObjectPoliciesResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListObjectPoliciesResponse");
-        formatter.field("attached_policy_ids", &self.attached_policy_ids);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`BatchListObjectPoliciesResponse`](crate::model::BatchListObjectPoliciesResponse).
 pub mod batch_list_object_policies_response {
 
     /// A builder for [`BatchListObjectPoliciesResponse`](crate::model::BatchListObjectPoliciesResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attached_policy_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -8078,7 +7864,7 @@ impl BatchListObjectPoliciesResponse {
 
 /// <p>Represents the output of a <code>ListObjectParentPaths</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListObjectParentPathsResponse {
     /// <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.</p>
     #[doc(hidden)]
@@ -8100,22 +7886,11 @@ impl BatchListObjectParentPathsResponse {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for BatchListObjectParentPathsResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListObjectParentPathsResponse");
-        formatter.field(
-            "path_to_object_identifiers_list",
-            &self.path_to_object_identifiers_list,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`BatchListObjectParentPathsResponse`](crate::model::BatchListObjectParentPathsResponse).
 pub mod batch_list_object_parent_paths_response {
 
     /// A builder for [`BatchListObjectParentPathsResponse`](crate::model::BatchListObjectParentPathsResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path_to_object_identifiers_list:
             std::option::Option<std::vec::Vec<crate::model::PathToObjectIdentifiers>>,
@@ -8172,7 +7947,7 @@ impl BatchListObjectParentPathsResponse {
 
 /// <p>Represents the output of a <code>ListAttachedIndices</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListAttachedIndicesResponse {
     /// <p>The indices attached to the specified object.</p>
     #[doc(hidden)]
@@ -8191,19 +7966,11 @@ impl BatchListAttachedIndicesResponse {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for BatchListAttachedIndicesResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListAttachedIndicesResponse");
-        formatter.field("index_attachments", &self.index_attachments);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`BatchListAttachedIndicesResponse`](crate::model::BatchListAttachedIndicesResponse).
 pub mod batch_list_attached_indices_response {
 
     /// A builder for [`BatchListAttachedIndicesResponse`](crate::model::BatchListAttachedIndicesResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_attachments:
             std::option::Option<std::vec::Vec<crate::model::IndexAttachment>>,
@@ -8257,7 +8024,7 @@ impl BatchListAttachedIndicesResponse {
 
 /// <p>Represents the output of a <code>GetObjectAttributes</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetObjectAttributesResponse {
     /// <p>The attribute values that are associated with an object.</p>
     #[doc(hidden)]
@@ -8269,18 +8036,11 @@ impl BatchGetObjectAttributesResponse {
         self.attributes.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetObjectAttributesResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetObjectAttributesResponse");
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
 /// See [`BatchGetObjectAttributesResponse`](crate::model::BatchGetObjectAttributesResponse).
 pub mod batch_get_object_attributes_response {
 
     /// A builder for [`BatchGetObjectAttributesResponse`](crate::model::BatchGetObjectAttributesResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes:
             std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
@@ -8322,7 +8082,7 @@ impl BatchGetObjectAttributesResponse {
 
 /// <p>Represents the output of a <code>GetObjectInformation</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetObjectInformationResponse {
     /// <p>The facets attached to the specified object.</p>
     #[doc(hidden)]
@@ -8341,19 +8101,11 @@ impl BatchGetObjectInformationResponse {
         self.object_identifier.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetObjectInformationResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetObjectInformationResponse");
-        formatter.field("schema_facets", &self.schema_facets);
-        formatter.field("object_identifier", &self.object_identifier);
-        formatter.finish()
-    }
-}
 /// See [`BatchGetObjectInformationResponse`](crate::model::BatchGetObjectInformationResponse).
 pub mod batch_get_object_information_response {
 
     /// A builder for [`BatchGetObjectInformationResponse`](crate::model::BatchGetObjectInformationResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_facets: std::option::Option<std::vec::Vec<crate::model::SchemaFacet>>,
         pub(crate) object_identifier: std::option::Option<std::string::String>,
@@ -8409,7 +8161,7 @@ impl BatchGetObjectInformationResponse {
 
 /// <p>Represents the output of a <code>ListObjectChildren</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListObjectChildrenResponse {
     /// <p>The children structure, which is a map with the key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the value.</p>
     #[doc(hidden)]
@@ -8432,19 +8184,11 @@ impl BatchListObjectChildrenResponse {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for BatchListObjectChildrenResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListObjectChildrenResponse");
-        formatter.field("children", &self.children);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`BatchListObjectChildrenResponse`](crate::model::BatchListObjectChildrenResponse).
 pub mod batch_list_object_children_response {
 
     /// A builder for [`BatchListObjectChildrenResponse`](crate::model::BatchListObjectChildrenResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) children: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -8505,7 +8249,7 @@ impl BatchListObjectChildrenResponse {
 
 /// <p>Represents the output of a <code>ListObjectAttributes</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListObjectAttributesResponse {
     /// <p>The attributes map that is associated with the object. <code>AttributeArn</code> is the key; attribute value is the value.</p>
     #[doc(hidden)]
@@ -8524,19 +8268,11 @@ impl BatchListObjectAttributesResponse {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for BatchListObjectAttributesResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListObjectAttributesResponse");
-        formatter.field("attributes", &self.attributes);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`BatchListObjectAttributesResponse`](crate::model::BatchListObjectAttributesResponse).
 pub mod batch_list_object_attributes_response {
 
     /// A builder for [`BatchListObjectAttributesResponse`](crate::model::BatchListObjectAttributesResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes:
             std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
@@ -8590,7 +8326,7 @@ impl BatchListObjectAttributesResponse {
 
 /// <p>Represents the output of a <code>BatchRead</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchReadOperation {
     /// <p>Lists all attributes that are associated with an object.</p>
     #[doc(hidden)]
@@ -8717,31 +8453,11 @@ impl BatchReadOperation {
         self.get_link_attributes.as_ref()
     }
 }
-impl std::fmt::Debug for BatchReadOperation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchReadOperation");
-        formatter.field("list_object_attributes", &self.list_object_attributes);
-        formatter.field("list_object_children", &self.list_object_children);
-        formatter.field("list_attached_indices", &self.list_attached_indices);
-        formatter.field("list_object_parent_paths", &self.list_object_parent_paths);
-        formatter.field("get_object_information", &self.get_object_information);
-        formatter.field("get_object_attributes", &self.get_object_attributes);
-        formatter.field("list_object_parents", &self.list_object_parents);
-        formatter.field("list_object_policies", &self.list_object_policies);
-        formatter.field("list_policy_attachments", &self.list_policy_attachments);
-        formatter.field("lookup_policy", &self.lookup_policy);
-        formatter.field("list_index", &self.list_index);
-        formatter.field("list_outgoing_typed_links", &self.list_outgoing_typed_links);
-        formatter.field("list_incoming_typed_links", &self.list_incoming_typed_links);
-        formatter.field("get_link_attributes", &self.get_link_attributes);
-        formatter.finish()
-    }
-}
 /// See [`BatchReadOperation`](crate::model::BatchReadOperation).
 pub mod batch_read_operation {
 
     /// A builder for [`BatchReadOperation`](crate::model::BatchReadOperation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) list_object_attributes:
             std::option::Option<crate::model::BatchListObjectAttributes>,
@@ -9009,7 +8725,7 @@ impl BatchReadOperation {
 
 /// <p>Retrieves attributes that are associated with a typed link inside a <code>BatchRead</code> operation. For more information, see <code>GetLinkAttributes</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetLinkAttributes {
     /// <p>Allows a typed link specifier to be accepted as input.</p>
     #[doc(hidden)]
@@ -9028,19 +8744,11 @@ impl BatchGetLinkAttributes {
         self.attribute_names.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetLinkAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetLinkAttributes");
-        formatter.field("typed_link_specifier", &self.typed_link_specifier);
-        formatter.field("attribute_names", &self.attribute_names);
-        formatter.finish()
-    }
-}
 /// See [`BatchGetLinkAttributes`](crate::model::BatchGetLinkAttributes).
 pub mod batch_get_link_attributes {
 
     /// A builder for [`BatchGetLinkAttributes`](crate::model::BatchGetLinkAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) typed_link_specifier: std::option::Option<crate::model::TypedLinkSpecifier>,
         pub(crate) attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9096,7 +8804,7 @@ impl BatchGetLinkAttributes {
 
 /// <p>Returns a paginated list of all the incoming <code>TypedLinkSpecifier</code> information for an object inside a <code>BatchRead</code> operation. For more information, see <code>ListIncomingTypedLinks</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListIncomingTypedLinks {
     /// <p>The reference that identifies the object whose attributes will be listed.</p>
     #[doc(hidden)]
@@ -9141,22 +8849,11 @@ impl BatchListIncomingTypedLinks {
         self.max_results
     }
 }
-impl std::fmt::Debug for BatchListIncomingTypedLinks {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListIncomingTypedLinks");
-        formatter.field("object_reference", &self.object_reference);
-        formatter.field("filter_attribute_ranges", &self.filter_attribute_ranges);
-        formatter.field("filter_typed_link", &self.filter_typed_link);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 /// See [`BatchListIncomingTypedLinks`](crate::model::BatchListIncomingTypedLinks).
 pub mod batch_list_incoming_typed_links {
 
     /// A builder for [`BatchListIncomingTypedLinks`](crate::model::BatchListIncomingTypedLinks).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) filter_attribute_ranges:
@@ -9259,7 +8956,7 @@ impl BatchListIncomingTypedLinks {
 
 /// <p>Returns a paginated list of all the outgoing <code>TypedLinkSpecifier</code> information for an object inside a <code>BatchRead</code> operation. For more information, see <code>ListOutgoingTypedLinks</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListOutgoingTypedLinks {
     /// <p>The reference that identifies the object whose attributes will be listed.</p>
     #[doc(hidden)]
@@ -9304,22 +9001,11 @@ impl BatchListOutgoingTypedLinks {
         self.max_results
     }
 }
-impl std::fmt::Debug for BatchListOutgoingTypedLinks {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListOutgoingTypedLinks");
-        formatter.field("object_reference", &self.object_reference);
-        formatter.field("filter_attribute_ranges", &self.filter_attribute_ranges);
-        formatter.field("filter_typed_link", &self.filter_typed_link);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 /// See [`BatchListOutgoingTypedLinks`](crate::model::BatchListOutgoingTypedLinks).
 pub mod batch_list_outgoing_typed_links {
 
     /// A builder for [`BatchListOutgoingTypedLinks`](crate::model::BatchListOutgoingTypedLinks).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) filter_attribute_ranges:
@@ -9422,7 +9108,7 @@ impl BatchListOutgoingTypedLinks {
 
 /// <p>Lists objects attached to the specified index inside a <code>BatchRead</code> operation. For more information, see <code>ListIndex</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListIndex {
     /// <p>Specifies the ranges of indexed values that you want to query.</p>
     #[doc(hidden)]
@@ -9458,21 +9144,11 @@ impl BatchListIndex {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for BatchListIndex {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListIndex");
-        formatter.field("ranges_on_indexed_values", &self.ranges_on_indexed_values);
-        formatter.field("index_reference", &self.index_reference);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`BatchListIndex`](crate::model::BatchListIndex).
 pub mod batch_list_index {
 
     /// A builder for [`BatchListIndex`](crate::model::BatchListIndex).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ranges_on_indexed_values:
             std::option::Option<std::vec::Vec<crate::model::ObjectAttributeRange>>,
@@ -9556,7 +9232,7 @@ impl BatchListIndex {
 
 /// <p>Lists all policies from the root of the Directory to the object specified inside a <code>BatchRead</code> operation. For more information, see <code>LookupPolicy</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchLookupPolicy {
     /// <p>Reference that identifies the object whose policies will be looked up.</p>
     #[doc(hidden)]
@@ -9582,20 +9258,11 @@ impl BatchLookupPolicy {
         self.max_results
     }
 }
-impl std::fmt::Debug for BatchLookupPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchLookupPolicy");
-        formatter.field("object_reference", &self.object_reference);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 /// See [`BatchLookupPolicy`](crate::model::BatchLookupPolicy).
 pub mod batch_lookup_policy {
 
     /// A builder for [`BatchLookupPolicy`](crate::model::BatchLookupPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -9654,7 +9321,7 @@ impl BatchLookupPolicy {
 
 /// <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached inside a <code>BatchRead</code> operation. For more information, see <code>ListPolicyAttachments</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListPolicyAttachments {
     /// <p>The reference that identifies the policy object.</p>
     #[doc(hidden)]
@@ -9680,20 +9347,11 @@ impl BatchListPolicyAttachments {
         self.max_results
     }
 }
-impl std::fmt::Debug for BatchListPolicyAttachments {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListPolicyAttachments");
-        formatter.field("policy_reference", &self.policy_reference);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 /// See [`BatchListPolicyAttachments`](crate::model::BatchListPolicyAttachments).
 pub mod batch_list_policy_attachments {
 
     /// A builder for [`BatchListPolicyAttachments`](crate::model::BatchListPolicyAttachments).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -9752,7 +9410,7 @@ impl BatchListPolicyAttachments {
 
 /// <p>Returns policies attached to an object in pagination fashion inside a <code>BatchRead</code> operation. For more information, see <code>ListObjectPolicies</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListObjectPolicies {
     /// <p>The reference that identifies the object whose attributes will be listed.</p>
     #[doc(hidden)]
@@ -9778,20 +9436,11 @@ impl BatchListObjectPolicies {
         self.max_results
     }
 }
-impl std::fmt::Debug for BatchListObjectPolicies {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListObjectPolicies");
-        formatter.field("object_reference", &self.object_reference);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 /// See [`BatchListObjectPolicies`](crate::model::BatchListObjectPolicies).
 pub mod batch_list_object_policies {
 
     /// A builder for [`BatchListObjectPolicies`](crate::model::BatchListObjectPolicies).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -9850,7 +9499,7 @@ impl BatchListObjectPolicies {
 
 /// <p>Lists parent objects that are associated with a given object in pagination fashion.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListObjectParents {
     /// <p>The reference that identifies an object.</p>
     #[doc(hidden)]
@@ -9876,20 +9525,11 @@ impl BatchListObjectParents {
         self.max_results
     }
 }
-impl std::fmt::Debug for BatchListObjectParents {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListObjectParents");
-        formatter.field("object_reference", &self.object_reference);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 /// See [`BatchListObjectParents`](crate::model::BatchListObjectParents).
 pub mod batch_list_object_parents {
 
     /// A builder for [`BatchListObjectParents`](crate::model::BatchListObjectParents).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -9948,7 +9588,7 @@ impl BatchListObjectParents {
 
 /// <p>Retrieves attributes within a facet that are associated with an object inside an <code>BatchRead</code> operation. For more information, see <code>GetObjectAttributes</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetObjectAttributes {
     /// <p>Reference that identifies the object whose attributes will be retrieved.</p>
     #[doc(hidden)]
@@ -9974,20 +9614,11 @@ impl BatchGetObjectAttributes {
         self.attribute_names.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetObjectAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetObjectAttributes");
-        formatter.field("object_reference", &self.object_reference);
-        formatter.field("schema_facet", &self.schema_facet);
-        formatter.field("attribute_names", &self.attribute_names);
-        formatter.finish()
-    }
-}
 /// See [`BatchGetObjectAttributes`](crate::model::BatchGetObjectAttributes).
 pub mod batch_get_object_attributes {
 
     /// A builder for [`BatchGetObjectAttributes`](crate::model::BatchGetObjectAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) schema_facet: std::option::Option<crate::model::SchemaFacet>,
@@ -10058,7 +9689,7 @@ impl BatchGetObjectAttributes {
 
 /// <p>Retrieves metadata about an object inside a <code>BatchRead</code> operation. For more information, see <code>GetObjectInformation</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetObjectInformation {
     /// <p>A reference to the object.</p>
     #[doc(hidden)]
@@ -10070,18 +9701,11 @@ impl BatchGetObjectInformation {
         self.object_reference.as_ref()
     }
 }
-impl std::fmt::Debug for BatchGetObjectInformation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetObjectInformation");
-        formatter.field("object_reference", &self.object_reference);
-        formatter.finish()
-    }
-}
 /// See [`BatchGetObjectInformation`](crate::model::BatchGetObjectInformation).
 pub mod batch_get_object_information {
 
     /// A builder for [`BatchGetObjectInformation`](crate::model::BatchGetObjectInformation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
     }
@@ -10116,7 +9740,7 @@ impl BatchGetObjectInformation {
 
 /// <p>Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects inside a <code>BatchRead</code> operation. For more information, see <code>ListObjectParentPaths</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListObjectParentPaths {
     /// <p>The reference that identifies the object whose attributes will be listed.</p>
     #[doc(hidden)]
@@ -10142,20 +9766,11 @@ impl BatchListObjectParentPaths {
         self.max_results
     }
 }
-impl std::fmt::Debug for BatchListObjectParentPaths {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListObjectParentPaths");
-        formatter.field("object_reference", &self.object_reference);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 /// See [`BatchListObjectParentPaths`](crate::model::BatchListObjectParentPaths).
 pub mod batch_list_object_parent_paths {
 
     /// A builder for [`BatchListObjectParentPaths`](crate::model::BatchListObjectParentPaths).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -10214,7 +9829,7 @@ impl BatchListObjectParentPaths {
 
 /// <p>Lists indices attached to an object inside a <code>BatchRead</code> operation. For more information, see <code>ListAttachedIndices</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListAttachedIndices {
     /// <p>A reference to the object that has indices attached.</p>
     #[doc(hidden)]
@@ -10240,20 +9855,11 @@ impl BatchListAttachedIndices {
         self.max_results
     }
 }
-impl std::fmt::Debug for BatchListAttachedIndices {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListAttachedIndices");
-        formatter.field("target_reference", &self.target_reference);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 /// See [`BatchListAttachedIndices`](crate::model::BatchListAttachedIndices).
 pub mod batch_list_attached_indices {
 
     /// A builder for [`BatchListAttachedIndices`](crate::model::BatchListAttachedIndices).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -10312,7 +9918,7 @@ impl BatchListAttachedIndices {
 
 /// <p>Represents the output of a <code>ListObjectChildren</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListObjectChildren {
     /// <p>Reference of the object for which child objects are being listed.</p>
     #[doc(hidden)]
@@ -10338,20 +9944,11 @@ impl BatchListObjectChildren {
         self.max_results
     }
 }
-impl std::fmt::Debug for BatchListObjectChildren {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListObjectChildren");
-        formatter.field("object_reference", &self.object_reference);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 /// See [`BatchListObjectChildren`](crate::model::BatchListObjectChildren).
 pub mod batch_list_object_children {
 
     /// A builder for [`BatchListObjectChildren`](crate::model::BatchListObjectChildren).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -10410,7 +10007,7 @@ impl BatchListObjectChildren {
 
 /// <p>Represents the output of a <code>ListObjectAttributes</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchListObjectAttributes {
     /// <p>Reference of the object whose attributes need to be listed.</p>
     #[doc(hidden)]
@@ -10443,21 +10040,11 @@ impl BatchListObjectAttributes {
         self.facet_filter.as_ref()
     }
 }
-impl std::fmt::Debug for BatchListObjectAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchListObjectAttributes");
-        formatter.field("object_reference", &self.object_reference);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("facet_filter", &self.facet_filter);
-        formatter.finish()
-    }
-}
 /// See [`BatchListObjectAttributes`](crate::model::BatchListObjectAttributes).
 pub mod batch_list_object_attributes {
 
     /// A builder for [`BatchListObjectAttributes`](crate::model::BatchListObjectAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) next_token: std::option::Option<std::string::String>,

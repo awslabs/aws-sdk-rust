@@ -3,7 +3,7 @@
 pub fn serialize_structure_crate_model_delete_cluster_snapshot_message(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::DeleteClusterSnapshotMessage,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("SnapshotIdentifier");
     if let Some(var_2) = &input.snapshot_identifier {
@@ -21,7 +21,7 @@ pub fn serialize_structure_crate_model_delete_cluster_snapshot_message(
 pub fn serialize_structure_crate_model_tag(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Tag,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("Key");
     if let Some(var_6) = &input.key {
@@ -39,7 +39,7 @@ pub fn serialize_structure_crate_model_tag(
 pub fn serialize_structure_crate_model_scheduled_action_type(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::ScheduledActionType,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_9 = writer.prefix("ResizeCluster");
     if let Some(var_10) = &input.resize_cluster {
@@ -62,7 +62,7 @@ pub fn serialize_structure_crate_model_scheduled_action_type(
 pub fn serialize_structure_crate_model_snapshot_sorting_entity(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::SnapshotSortingEntity,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_15 = writer.prefix("Attribute");
     if let Some(var_16) = &input.attribute {
@@ -80,7 +80,7 @@ pub fn serialize_structure_crate_model_snapshot_sorting_entity(
 pub fn serialize_structure_crate_model_node_configuration_options_filter(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::NodeConfigurationOptionsFilter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_19 = writer.prefix("Name");
     if let Some(var_20) = &input.name {
@@ -109,7 +109,7 @@ pub fn serialize_structure_crate_model_node_configuration_options_filter(
 pub fn serialize_structure_crate_model_scheduled_action_filter(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::ScheduledActionFilter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_28 = writer.prefix("Name");
     if let Some(var_29) = &input.name {
@@ -133,7 +133,7 @@ pub fn serialize_structure_crate_model_scheduled_action_filter(
 pub fn serialize_structure_crate_model_parameter(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Parameter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_35 = writer.prefix("ParameterName");
     if let Some(var_36) = &input.parameter_name {
@@ -186,7 +186,7 @@ pub fn serialize_structure_crate_model_parameter(
 pub fn serialize_structure_crate_model_resize_cluster_message(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::ResizeClusterMessage,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_52 = writer.prefix("ClusterIdentifier");
     if let Some(var_53) = &input.cluster_identifier {
@@ -232,7 +232,7 @@ pub fn serialize_structure_crate_model_resize_cluster_message(
 pub fn serialize_structure_crate_model_pause_cluster_message(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::PauseClusterMessage,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_66 = writer.prefix("ClusterIdentifier");
     if let Some(var_67) = &input.cluster_identifier {
@@ -245,7 +245,7 @@ pub fn serialize_structure_crate_model_pause_cluster_message(
 pub fn serialize_structure_crate_model_resume_cluster_message(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::ResumeClusterMessage,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_68 = writer.prefix("ClusterIdentifier");
     if let Some(var_69) = &input.cluster_identifier {

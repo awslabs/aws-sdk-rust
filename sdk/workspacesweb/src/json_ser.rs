@@ -2,12 +2,13 @@
 pub fn serialize_structure_crate_input_create_browser_settings_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateBrowserSettingsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.additional_encryption_context {
+        #[allow(unused_mut)]
         let mut object_2 = object.key("additionalEncryptionContext").start_object();
         for (key_3, value_4) in var_1 {
             {
-                object_2.key(key_3).string(value_4.as_str());
+                object_2.key(key_3.as_str()).string(value_4.as_str());
             }
         }
         object_2.finish();
@@ -25,6 +26,7 @@ pub fn serialize_structure_crate_input_create_browser_settings_input(
         let mut array_9 = object.key("tags").start_array();
         for item_10 in var_8 {
             {
+                #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_11, item_10)?;
                 object_11.finish();
@@ -38,15 +40,16 @@ pub fn serialize_structure_crate_input_create_browser_settings_input(
 pub fn serialize_structure_crate_input_create_identity_provider_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateIdentityProviderInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_12) = &input.client_token {
         object.key("clientToken").string(var_12.as_str());
     }
     if let Some(var_13) = &input.identity_provider_details {
+        #[allow(unused_mut)]
         let mut object_14 = object.key("identityProviderDetails").start_object();
         for (key_15, value_16) in var_13 {
             {
-                object_14.key(key_15).string(value_16.as_str());
+                object_14.key(key_15.as_str()).string(value_16.as_str());
             }
         }
         object_14.finish();
@@ -66,7 +69,7 @@ pub fn serialize_structure_crate_input_create_identity_provider_input(
 pub fn serialize_structure_crate_input_create_network_settings_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateNetworkSettingsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_20) = &input.client_token {
         object.key("clientToken").string(var_20.as_str());
     }
@@ -92,6 +95,7 @@ pub fn serialize_structure_crate_input_create_network_settings_input(
         let mut array_28 = object.key("tags").start_array();
         for item_29 in var_27 {
             {
+                #[allow(unused_mut)]
                 let mut object_30 = array_28.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_30, item_29)?;
                 object_30.finish();
@@ -108,12 +112,13 @@ pub fn serialize_structure_crate_input_create_network_settings_input(
 pub fn serialize_structure_crate_input_create_portal_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreatePortalInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_32) = &input.additional_encryption_context {
+        #[allow(unused_mut)]
         let mut object_33 = object.key("additionalEncryptionContext").start_object();
         for (key_34, value_35) in var_32 {
             {
-                object_33.key(key_34).string(value_35.as_str());
+                object_33.key(key_34.as_str()).string(value_35.as_str());
             }
         }
         object_33.finish();
@@ -131,6 +136,7 @@ pub fn serialize_structure_crate_input_create_portal_input(
         let mut array_40 = object.key("tags").start_array();
         for item_41 in var_39 {
             {
+                #[allow(unused_mut)]
                 let mut object_42 = array_40.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_42, item_41)?;
                 object_42.finish();
@@ -144,7 +150,7 @@ pub fn serialize_structure_crate_input_create_portal_input(
 pub fn serialize_structure_crate_input_create_trust_store_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateTrustStoreInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_43) = &input.certificate_list {
         let mut array_44 = object.key("certificateList").start_array();
         for item_45 in var_43 {
@@ -163,6 +169,7 @@ pub fn serialize_structure_crate_input_create_trust_store_input(
         let mut array_48 = object.key("tags").start_array();
         for item_49 in var_47 {
             {
+                #[allow(unused_mut)]
                 let mut object_50 = array_48.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_50, item_49)?;
                 object_50.finish();
@@ -176,7 +183,7 @@ pub fn serialize_structure_crate_input_create_trust_store_input(
 pub fn serialize_structure_crate_input_create_user_settings_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateUserSettingsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_51) = &input.client_token {
         object.key("clientToken").string(var_51.as_str());
     }
@@ -208,6 +215,7 @@ pub fn serialize_structure_crate_input_create_user_settings_input(
         let mut array_59 = object.key("tags").start_array();
         for item_60 in var_58 {
             {
+                #[allow(unused_mut)]
                 let mut object_61 = array_59.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_61, item_60)?;
                 object_61.finish();
@@ -224,7 +232,7 @@ pub fn serialize_structure_crate_input_create_user_settings_input(
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_63) = &input.client_token {
         object.key("clientToken").string(var_63.as_str());
     }
@@ -232,6 +240,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_65 = object.key("tags").start_array();
         for item_66 in var_64 {
             {
+                #[allow(unused_mut)]
                 let mut object_67 = array_65.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_67, item_66)?;
                 object_67.finish();
@@ -245,7 +254,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_input_update_browser_settings_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateBrowserSettingsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_68) = &input.browser_policy {
         object.key("browserPolicy").string(var_68.as_str());
     }
@@ -258,15 +267,16 @@ pub fn serialize_structure_crate_input_update_browser_settings_input(
 pub fn serialize_structure_crate_input_update_identity_provider_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateIdentityProviderInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_70) = &input.client_token {
         object.key("clientToken").string(var_70.as_str());
     }
     if let Some(var_71) = &input.identity_provider_details {
+        #[allow(unused_mut)]
         let mut object_72 = object.key("identityProviderDetails").start_object();
         for (key_73, value_74) in var_71 {
             {
-                object_72.key(key_73).string(value_74.as_str());
+                object_72.key(key_73.as_str()).string(value_74.as_str());
             }
         }
         object_72.finish();
@@ -283,7 +293,7 @@ pub fn serialize_structure_crate_input_update_identity_provider_input(
 pub fn serialize_structure_crate_input_update_network_settings_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateNetworkSettingsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_77) = &input.client_token {
         object.key("clientToken").string(var_77.as_str());
     }
@@ -314,7 +324,7 @@ pub fn serialize_structure_crate_input_update_network_settings_input(
 pub fn serialize_structure_crate_input_update_portal_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdatePortalInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_85) = &input.display_name {
         object.key("displayName").string(var_85.as_str());
     }
@@ -324,7 +334,7 @@ pub fn serialize_structure_crate_input_update_portal_input(
 pub fn serialize_structure_crate_input_update_trust_store_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateTrustStoreInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_86) = &input.certificates_to_add {
         let mut array_87 = object.key("certificatesToAdd").start_array();
         for item_88 in var_86 {
@@ -354,7 +364,7 @@ pub fn serialize_structure_crate_input_update_trust_store_input(
 pub fn serialize_structure_crate_input_update_user_settings_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateUserSettingsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_93) = &input.client_token {
         object.key("clientToken").string(var_93.as_str());
     }
@@ -391,7 +401,7 @@ pub fn serialize_structure_crate_input_update_user_settings_input(
 pub fn serialize_structure_crate_model_tag(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Tag,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_101) = &input.key {
         object.key("Key").string(var_101.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_describe_affected_accounts_for_organization_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeAffectedAccountsForOrganizationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.event_arn {
         object.key("eventArn").string(var_1.as_str());
     }
@@ -21,8 +21,9 @@ pub fn serialize_structure_crate_input_describe_affected_accounts_for_organizati
 pub fn serialize_structure_crate_input_describe_affected_entities_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeAffectedEntitiesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_4) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_5 = object.key("filter").start_object();
         crate::json_ser::serialize_structure_crate_model_entity_filter(&mut object_5, var_4)?;
         object_5.finish();
@@ -45,11 +46,12 @@ pub fn serialize_structure_crate_input_describe_affected_entities_input(
 pub fn serialize_structure_crate_input_describe_affected_entities_for_organization_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeAffectedEntitiesForOrganizationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_9) = &input.organization_entity_filters {
         let mut array_10 = object.key("organizationEntityFilters").start_array();
         for item_11 in var_9 {
             {
+                #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_event_account_filter(
                     &mut object_12,
@@ -78,7 +80,7 @@ pub fn serialize_structure_crate_input_describe_affected_entities_for_organizati
 pub fn serialize_structure_crate_input_describe_entity_aggregates_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeEntityAggregatesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_16) = &input.event_arns {
         let mut array_17 = object.key("eventArns").start_array();
         for item_18 in var_16 {
@@ -94,8 +96,9 @@ pub fn serialize_structure_crate_input_describe_entity_aggregates_input(
 pub fn serialize_structure_crate_input_describe_event_aggregates_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeEventAggregatesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_19) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_20 = object.key("filter").start_object();
         crate::json_ser::serialize_structure_crate_model_event_filter(&mut object_20, var_19)?;
         object_20.finish();
@@ -118,7 +121,7 @@ pub fn serialize_structure_crate_input_describe_event_aggregates_input(
 pub fn serialize_structure_crate_input_describe_event_details_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeEventDetailsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_24) = &input.event_arns {
         let mut array_25 = object.key("eventArns").start_array();
         for item_26 in var_24 {
@@ -137,11 +140,12 @@ pub fn serialize_structure_crate_input_describe_event_details_input(
 pub fn serialize_structure_crate_input_describe_event_details_for_organization_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeEventDetailsForOrganizationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_28) = &input.organization_event_detail_filters {
         let mut array_29 = object.key("organizationEventDetailFilters").start_array();
         for item_30 in var_28 {
             {
+                #[allow(unused_mut)]
                 let mut object_31 = array_29.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_event_account_filter(
                     &mut object_31,
@@ -161,8 +165,9 @@ pub fn serialize_structure_crate_input_describe_event_details_for_organization_i
 pub fn serialize_structure_crate_input_describe_events_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeEventsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_33) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_34 = object.key("filter").start_object();
         crate::json_ser::serialize_structure_crate_model_event_filter(&mut object_34, var_33)?;
         object_34.finish();
@@ -185,8 +190,9 @@ pub fn serialize_structure_crate_input_describe_events_input(
 pub fn serialize_structure_crate_input_describe_events_for_organization_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeEventsForOrganizationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_38) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_39 = object.key("filter").start_object();
         crate::json_ser::serialize_structure_crate_model_organization_event_filter(
             &mut object_39,
@@ -212,8 +218,9 @@ pub fn serialize_structure_crate_input_describe_events_for_organization_input(
 pub fn serialize_structure_crate_input_describe_event_types_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeEventTypesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_43) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_44 = object.key("filter").start_object();
         crate::json_ser::serialize_structure_crate_model_event_type_filter(&mut object_44, var_43)?;
         object_44.finish();
@@ -236,7 +243,7 @@ pub fn serialize_structure_crate_input_describe_event_types_input(
 pub fn serialize_structure_crate_model_entity_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::EntityFilter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_48) = &input.event_arns {
         let mut array_49 = object.key("eventArns").start_array();
         for item_50 in var_48 {
@@ -268,6 +275,7 @@ pub fn serialize_structure_crate_model_entity_filter(
         let mut array_58 = object.key("lastUpdatedTimes").start_array();
         for item_59 in var_57 {
             {
+                #[allow(unused_mut)]
                 let mut object_60 = array_58.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_date_time_range(
                     &mut object_60,
@@ -282,10 +290,11 @@ pub fn serialize_structure_crate_model_entity_filter(
         let mut array_62 = object.key("tags").start_array();
         for item_63 in var_61 {
             {
+                #[allow(unused_mut)]
                 let mut object_64 = array_62.value().start_object();
                 for (key_65, value_66) in item_63 {
                     {
-                        object_64.key(key_65).string(value_66.as_str());
+                        object_64.key(key_65.as_str()).string(value_66.as_str());
                     }
                 }
                 object_64.finish();
@@ -308,7 +317,7 @@ pub fn serialize_structure_crate_model_entity_filter(
 pub fn serialize_structure_crate_model_event_account_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::EventAccountFilter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_70) = &input.event_arn {
         object.key("eventArn").string(var_70.as_str());
     }
@@ -321,7 +330,7 @@ pub fn serialize_structure_crate_model_event_account_filter(
 pub fn serialize_structure_crate_model_event_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::EventFilter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_72) = &input.event_arns {
         let mut array_73 = object.key("eventArns").start_array();
         for item_74 in var_72 {
@@ -371,6 +380,7 @@ pub fn serialize_structure_crate_model_event_filter(
         let mut array_88 = object.key("startTimes").start_array();
         for item_89 in var_87 {
             {
+                #[allow(unused_mut)]
                 let mut object_90 = array_88.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_date_time_range(
                     &mut object_90,
@@ -385,6 +395,7 @@ pub fn serialize_structure_crate_model_event_filter(
         let mut array_92 = object.key("endTimes").start_array();
         for item_93 in var_91 {
             {
+                #[allow(unused_mut)]
                 let mut object_94 = array_92.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_date_time_range(
                     &mut object_94,
@@ -399,6 +410,7 @@ pub fn serialize_structure_crate_model_event_filter(
         let mut array_96 = object.key("lastUpdatedTimes").start_array();
         for item_97 in var_95 {
             {
+                #[allow(unused_mut)]
                 let mut object_98 = array_96.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_date_time_range(
                     &mut object_98,
@@ -440,10 +452,11 @@ pub fn serialize_structure_crate_model_event_filter(
         let mut array_109 = object.key("tags").start_array();
         for item_110 in var_108 {
             {
+                #[allow(unused_mut)]
                 let mut object_111 = array_109.value().start_object();
                 for (key_112, value_113) in item_110 {
                     {
-                        object_111.key(key_112).string(value_113.as_str());
+                        object_111.key(key_112.as_str()).string(value_113.as_str());
                     }
                 }
                 object_111.finish();
@@ -466,7 +479,7 @@ pub fn serialize_structure_crate_model_event_filter(
 pub fn serialize_structure_crate_model_organization_event_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::OrganizationEventFilter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_117) = &input.event_type_codes {
         let mut array_118 = object.key("eventTypeCodes").start_array();
         for item_119 in var_117 {
@@ -504,16 +517,19 @@ pub fn serialize_structure_crate_model_organization_event_filter(
         array_127.finish();
     }
     if let Some(var_129) = &input.start_time {
+        #[allow(unused_mut)]
         let mut object_130 = object.key("startTime").start_object();
         crate::json_ser::serialize_structure_crate_model_date_time_range(&mut object_130, var_129)?;
         object_130.finish();
     }
     if let Some(var_131) = &input.end_time {
+        #[allow(unused_mut)]
         let mut object_132 = object.key("endTime").start_object();
         crate::json_ser::serialize_structure_crate_model_date_time_range(&mut object_132, var_131)?;
         object_132.finish();
     }
     if let Some(var_133) = &input.last_updated_time {
+        #[allow(unused_mut)]
         let mut object_134 = object.key("lastUpdatedTime").start_object();
         crate::json_ser::serialize_structure_crate_model_date_time_range(&mut object_134, var_133)?;
         object_134.finish();
@@ -560,7 +576,7 @@ pub fn serialize_structure_crate_model_organization_event_filter(
 pub fn serialize_structure_crate_model_event_type_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::EventTypeFilter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_147) = &input.event_type_codes {
         let mut array_148 = object.key("eventTypeCodes").start_array();
         for item_149 in var_147 {
@@ -594,7 +610,7 @@ pub fn serialize_structure_crate_model_event_type_filter(
 pub fn serialize_structure_crate_model_date_time_range(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DateTimeRange,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_156) = &input.from {
         object
             .key("from")

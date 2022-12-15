@@ -1,0 +1,31 @@
+[package]
+name = "custom-root-certs"
+version = "0.1.0"
+authors = ["rcoh@amazon.com>"]
+edition = "2021"
+description = "An example demonstrating setting a custom root certificate with rustls"
+publish = false
+
+[dependencies]
+rustls = "0.20.7"
+
+[dependencies.aws-config]
+path = "../../sdk/aws-config"
+version = "0.52.0"
+
+[dependencies.aws-smithy-client]
+path = "../../sdk/aws-smithy-client"
+version = "0.52.0"
+
+[dependencies.aws-sdk-s3]
+default-features = false
+path = "../../sdk/s3"
+version = "0.22.0"
+
+[dependencies.tokio]
+version = "1.21.2"
+features = ["full"]
+
+[dependencies.hyper-rustls]
+version = "0.23.0"
+features = ["http2"]

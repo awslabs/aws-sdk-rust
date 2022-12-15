@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod complete_attachment_upload_input {
 
     /// A builder for [`CompleteAttachmentUploadInput`](crate::input::CompleteAttachmentUploadInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attachment_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -59,7 +59,7 @@ pub mod complete_attachment_upload_input {
             self,
         ) -> Result<
             crate::input::CompleteAttachmentUploadInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CompleteAttachmentUploadInput {
                 attachment_ids: self.attachment_ids,
@@ -82,7 +82,7 @@ impl CompleteAttachmentUploadInput {
             crate::operation::CompleteAttachmentUpload,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -91,7 +91,7 @@ impl CompleteAttachmentUploadInput {
             fn uri_base(
                 _input: &crate::input::CompleteAttachmentUploadInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/participant/complete-attachment-upload")
                     .expect("formatting should succeed");
                 Ok(())
@@ -100,8 +100,10 @@ impl CompleteAttachmentUploadInput {
             fn update_http_builder(
                 input: &crate::input::CompleteAttachmentUploadInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -189,7 +191,7 @@ impl CompleteAttachmentUploadInput {
 pub mod create_participant_connection_input {
 
     /// A builder for [`CreateParticipantConnectionInput`](crate::input::CreateParticipantConnectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::vec::Vec<crate::model::ConnectionType>>,
         pub(crate) participant_token: std::option::Option<std::string::String>,
@@ -245,7 +247,7 @@ pub mod create_participant_connection_input {
             self,
         ) -> Result<
             crate::input::CreateParticipantConnectionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateParticipantConnectionInput {
                 r#type: self.r#type,
@@ -268,13 +270,13 @@ impl CreateParticipantConnectionInput {
             crate::operation::CreateParticipantConnection,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateParticipantConnectionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/participant/connection").expect("formatting should succeed");
                 Ok(())
             }
@@ -282,8 +284,10 @@ impl CreateParticipantConnectionInput {
             fn update_http_builder(
                 input: &crate::input::CreateParticipantConnectionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -368,7 +372,7 @@ impl CreateParticipantConnectionInput {
 pub mod disconnect_participant_input {
 
     /// A builder for [`DisconnectParticipantInput`](crate::input::DisconnectParticipantInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) connection_token: std::option::Option<std::string::String>,
@@ -400,8 +404,10 @@ pub mod disconnect_participant_input {
         /// Consumes the builder and constructs a [`DisconnectParticipantInput`](crate::input::DisconnectParticipantInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DisconnectParticipantInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DisconnectParticipantInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DisconnectParticipantInput {
                 client_token: self.client_token,
                 connection_token: self.connection_token,
@@ -422,7 +428,7 @@ impl DisconnectParticipantInput {
             crate::operation::DisconnectParticipant,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -431,7 +437,7 @@ impl DisconnectParticipantInput {
             fn uri_base(
                 _input: &crate::input::DisconnectParticipantInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/participant/disconnect").expect("formatting should succeed");
                 Ok(())
             }
@@ -439,8 +445,10 @@ impl DisconnectParticipantInput {
             fn update_http_builder(
                 input: &crate::input::DisconnectParticipantInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -528,7 +536,7 @@ impl DisconnectParticipantInput {
 pub mod get_attachment_input {
 
     /// A builder for [`GetAttachmentInput`](crate::input::GetAttachmentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attachment_id: std::option::Option<std::string::String>,
         pub(crate) connection_token: std::option::Option<std::string::String>,
@@ -563,7 +571,7 @@ pub mod get_attachment_input {
         /// Consumes the builder and constructs a [`GetAttachmentInput`](crate::input::GetAttachmentInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetAttachmentInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetAttachmentInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetAttachmentInput {
                 attachment_id: self.attachment_id,
@@ -585,13 +593,13 @@ impl GetAttachmentInput {
             crate::operation::GetAttachment,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetAttachmentInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/participant/attachment").expect("formatting should succeed");
                 Ok(())
             }
@@ -599,8 +607,10 @@ impl GetAttachmentInput {
             fn update_http_builder(
                 input: &crate::input::GetAttachmentInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_get_attachment(input, builder)?;
@@ -685,7 +695,7 @@ impl GetAttachmentInput {
 pub mod get_transcript_input {
 
     /// A builder for [`GetTranscriptInput`](crate::input::GetTranscriptInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -778,7 +788,7 @@ pub mod get_transcript_input {
         /// Consumes the builder and constructs a [`GetTranscriptInput`](crate::input::GetTranscriptInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetTranscriptInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetTranscriptInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetTranscriptInput {
                 contact_id: self.contact_id,
@@ -805,13 +815,13 @@ impl GetTranscriptInput {
             crate::operation::GetTranscript,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetTranscriptInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/participant/transcript").expect("formatting should succeed");
                 Ok(())
             }
@@ -819,8 +829,10 @@ impl GetTranscriptInput {
             fn update_http_builder(
                 input: &crate::input::GetTranscriptInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_get_transcript(input, builder)?;
@@ -905,7 +917,7 @@ impl GetTranscriptInput {
 pub mod send_event_input {
 
     /// A builder for [`SendEventInput`](crate::input::SendEventInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_type: std::option::Option<std::string::String>,
         pub(crate) content: std::option::Option<std::string::String>,
@@ -967,7 +979,8 @@ pub mod send_event_input {
         /// Consumes the builder and constructs a [`SendEventInput`](crate::input::SendEventInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SendEventInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::SendEventInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::SendEventInput {
                 content_type: self.content_type,
                 content: self.content,
@@ -990,7 +1003,7 @@ impl SendEventInput {
             crate::operation::SendEvent,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -999,7 +1012,7 @@ impl SendEventInput {
             fn uri_base(
                 _input: &crate::input::SendEventInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/participant/event").expect("formatting should succeed");
                 Ok(())
             }
@@ -1007,8 +1020,10 @@ impl SendEventInput {
             fn update_http_builder(
                 input: &crate::input::SendEventInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_send_event(input, builder)?;
@@ -1091,7 +1106,7 @@ impl SendEventInput {
 pub mod send_message_input {
 
     /// A builder for [`SendMessageInput`](crate::input::SendMessageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_type: std::option::Option<std::string::String>,
         pub(crate) content: std::option::Option<std::string::String>,
@@ -1145,7 +1160,7 @@ pub mod send_message_input {
         /// Consumes the builder and constructs a [`SendMessageInput`](crate::input::SendMessageInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SendMessageInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::SendMessageInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::SendMessageInput {
                 content_type: self.content_type,
@@ -1169,7 +1184,7 @@ impl SendMessageInput {
             crate::operation::SendMessage,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -1178,7 +1193,7 @@ impl SendMessageInput {
             fn uri_base(
                 _input: &crate::input::SendMessageInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/participant/message").expect("formatting should succeed");
                 Ok(())
             }
@@ -1186,8 +1201,10 @@ impl SendMessageInput {
             fn update_http_builder(
                 input: &crate::input::SendMessageInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_send_message(input, builder)?;
@@ -1272,7 +1289,7 @@ impl SendMessageInput {
 pub mod start_attachment_upload_input {
 
     /// A builder for [`StartAttachmentUploadInput`](crate::input::StartAttachmentUploadInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_type: std::option::Option<std::string::String>,
         pub(crate) attachment_size_in_bytes: std::option::Option<i64>,
@@ -1340,8 +1357,10 @@ pub mod start_attachment_upload_input {
         /// Consumes the builder and constructs a [`StartAttachmentUploadInput`](crate::input::StartAttachmentUploadInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StartAttachmentUploadInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::StartAttachmentUploadInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::StartAttachmentUploadInput {
                 content_type: self.content_type,
                 attachment_size_in_bytes: self.attachment_size_in_bytes.unwrap_or_default(),
@@ -1365,7 +1384,7 @@ impl StartAttachmentUploadInput {
             crate::operation::StartAttachmentUpload,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -1374,7 +1393,7 @@ impl StartAttachmentUploadInput {
             fn uri_base(
                 _input: &crate::input::StartAttachmentUploadInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/participant/start-attachment-upload")
                     .expect("formatting should succeed");
                 Ok(())
@@ -1383,8 +1402,10 @@ impl StartAttachmentUploadInput {
             fn update_http_builder(
                 input: &crate::input::StartAttachmentUploadInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -1470,7 +1491,7 @@ impl StartAttachmentUploadInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartAttachmentUploadInput {
     /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     #[doc(hidden)]
@@ -1510,21 +1531,10 @@ impl StartAttachmentUploadInput {
         self.connection_token.as_deref()
     }
 }
-impl std::fmt::Debug for StartAttachmentUploadInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartAttachmentUploadInput");
-        formatter.field("content_type", &self.content_type);
-        formatter.field("attachment_size_in_bytes", &self.attachment_size_in_bytes);
-        formatter.field("attachment_name", &self.attachment_name);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("connection_token", &self.connection_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendMessageInput {
     /// <p>The type of the content. Supported types are text/plain.</p>
     #[doc(hidden)]
@@ -1557,20 +1567,10 @@ impl SendMessageInput {
         self.connection_token.as_deref()
     }
 }
-impl std::fmt::Debug for SendMessageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendMessageInput");
-        formatter.field("content_type", &self.content_type);
-        formatter.field("content", &self.content);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("connection_token", &self.connection_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendEventInput {
     /// <p>The content type of the request. Supported types are:</p>
     /// <ul>
@@ -1611,20 +1611,10 @@ impl SendEventInput {
         self.connection_token.as_deref()
     }
 }
-impl std::fmt::Debug for SendEventInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendEventInput");
-        formatter.field("content_type", &self.content_type);
-        formatter.field("content", &self.content);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("connection_token", &self.connection_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTranscriptInput {
     /// <p>The contactId from the current contact chain for which transcript is needed.</p>
     #[doc(hidden)]
@@ -1678,23 +1668,10 @@ impl GetTranscriptInput {
         self.connection_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetTranscriptInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTranscriptInput");
-        formatter.field("contact_id", &self.contact_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("scan_direction", &self.scan_direction);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.field("start_position", &self.start_position);
-        formatter.field("connection_token", &self.connection_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAttachmentInput {
     /// <p>A unique identifier for the attachment.</p>
     #[doc(hidden)]
@@ -1713,18 +1690,10 @@ impl GetAttachmentInput {
         self.connection_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetAttachmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAttachmentInput");
-        formatter.field("attachment_id", &self.attachment_id);
-        formatter.field("connection_token", &self.connection_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisconnectParticipantInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     #[doc(hidden)]
@@ -1743,18 +1712,10 @@ impl DisconnectParticipantInput {
         self.connection_token.as_deref()
     }
 }
-impl std::fmt::Debug for DisconnectParticipantInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisconnectParticipantInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("connection_token", &self.connection_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateParticipantConnectionInput {
     /// <p>Type of connection information required.</p>
     #[doc(hidden)]
@@ -1782,19 +1743,10 @@ impl CreateParticipantConnectionInput {
         self.connect_participant
     }
 }
-impl std::fmt::Debug for CreateParticipantConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateParticipantConnectionInput");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("participant_token", &self.participant_token);
-        formatter.field("connect_participant", &self.connect_participant);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CompleteAttachmentUploadInput {
     /// <p>A list of unique identifiers for the attachments.</p>
     #[doc(hidden)]
@@ -1818,14 +1770,5 @@ impl CompleteAttachmentUploadInput {
     /// <p>The authentication token associated with the participant's connection.</p>
     pub fn connection_token(&self) -> std::option::Option<&str> {
         self.connection_token.as_deref()
-    }
-}
-impl std::fmt::Debug for CompleteAttachmentUploadInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CompleteAttachmentUploadInput");
-        formatter.field("attachment_ids", &self.attachment_ids);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("connection_token", &self.connection_token);
-        formatter.finish()
     }
 }

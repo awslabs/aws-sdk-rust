@@ -7,7 +7,7 @@
 /// <li> <p>Each chunk's metadata includes a continuation token as a Matroska (MKV) tag (<code>AWS_KINESISVIDEO_CONTINUATION_TOKEN</code>). If your previous <code>GetMedia</code> request terminated, you can use this tag value in your next <code>GetMedia</code> request. The API then starts returning chunks starting where the last API ended.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartSelector {
     /// <p>Identifies the fragment on the Kinesis video stream where you want to start getting the data from.</p>
     /// <ul>
@@ -58,21 +58,11 @@ impl StartSelector {
         self.continuation_token.as_deref()
     }
 }
-impl std::fmt::Debug for StartSelector {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartSelector");
-        formatter.field("start_selector_type", &self.start_selector_type);
-        formatter.field("after_fragment_number", &self.after_fragment_number);
-        formatter.field("start_timestamp", &self.start_timestamp);
-        formatter.field("continuation_token", &self.continuation_token);
-        formatter.finish()
-    }
-}
 /// See [`StartSelector`](crate::model::StartSelector).
 pub mod start_selector {
 
     /// A builder for [`StartSelector`](crate::model::StartSelector).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_selector_type: std::option::Option<crate::model::StartSelectorType>,
         pub(crate) after_fragment_number: std::option::Option<std::string::String>,
@@ -168,6 +158,45 @@ impl StartSelector {
     }
 }
 
+/// When writing a match expression against `StartSelectorType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let startselectortype = unimplemented!();
+/// match startselectortype {
+///     StartSelectorType::ContinuationToken => { /* ... */ },
+///     StartSelectorType::Earliest => { /* ... */ },
+///     StartSelectorType::FragmentNumber => { /* ... */ },
+///     StartSelectorType::Now => { /* ... */ },
+///     StartSelectorType::ProducerTimestamp => { /* ... */ },
+///     StartSelectorType::ServerTimestamp => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `startselectortype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `StartSelectorType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `StartSelectorType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `StartSelectorType::NewFeature` is defined.
+/// Specifically, when `startselectortype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `StartSelectorType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -192,8 +221,8 @@ pub enum StartSelectorType {
     ProducerTimestamp,
     #[allow(missing_docs)] // documentation missing in model
     ServerTimestamp,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for StartSelectorType {
     fn from(s: &str) -> Self {
@@ -204,7 +233,9 @@ impl std::convert::From<&str> for StartSelectorType {
             "NOW" => StartSelectorType::Now,
             "PRODUCER_TIMESTAMP" => StartSelectorType::ProducerTimestamp,
             "SERVER_TIMESTAMP" => StartSelectorType::ServerTimestamp,
-            other => StartSelectorType::Unknown(other.to_owned()),
+            other => {
+                StartSelectorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -225,11 +256,11 @@ impl StartSelectorType {
             StartSelectorType::Now => "NOW",
             StartSelectorType::ProducerTimestamp => "PRODUCER_TIMESTAMP",
             StartSelectorType::ServerTimestamp => "SERVER_TIMESTAMP",
-            StartSelectorType::Unknown(s) => s.as_ref(),
+            StartSelectorType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CONTINUATION_TOKEN",
             "EARLIEST",

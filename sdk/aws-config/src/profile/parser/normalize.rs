@@ -3,12 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use std::borrow::Cow;
-use std::collections::HashMap;
-
 use crate::profile::parser::parse::{RawProfileSet, WHITESPACE};
 use crate::profile::profile_file::ProfileFileKind;
 use crate::profile::{Profile, ProfileSet, Property};
+use std::borrow::Cow;
+use std::collections::HashMap;
 
 const DEFAULT: &str = "default";
 const PROFILE_PREFIX: &str = "profile";
@@ -84,8 +83,8 @@ pub(super) fn merge_in(
     let valid_profiles = validated_profiles
         .filter_map(|(name, profile)| match name {
             Ok(profile_name) => Some((profile_name, profile)),
-            Err(e) => {
-                tracing::warn!("{}", e);
+            Err(err_str) => {
+                tracing::warn!("{}", err_str);
                 None
             }
         })
@@ -141,7 +140,7 @@ fn validate_identifier(input: &str) -> Result<&str, ()> {
                     .iter()
                     .any(|c| *c == ch)
         })
-        .then(|| input)
+        .then_some(input)
         .ok_or(())
 }
 

@@ -80,7 +80,7 @@ pub fn parse_create_bucket_error(
                     output = crate::xml_deser::deser_structure_crate_error_bucket_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateBucketError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -97,7 +97,7 @@ pub fn parse_create_bucket_error(
                     output = crate::xml_deser::deser_structure_crate_error_bucket_already_owned_by_you_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateBucketError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -158,7 +158,7 @@ pub fn parse_create_job_error(
                     output = crate::xml_deser::deser_structure_crate_error_bad_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -175,7 +175,7 @@ pub fn parse_create_job_error(
                     output = crate::xml_deser::deser_structure_crate_error_idempotency_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -192,7 +192,7 @@ pub fn parse_create_job_error(
                     output = crate::xml_deser::deser_structure_crate_error_internal_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -209,7 +209,7 @@ pub fn parse_create_job_error(
                     output = crate::xml_deser::deser_structure_crate_error_too_many_requests_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -505,7 +505,7 @@ pub fn parse_delete_job_tagging_error(
                     output = crate::xml_deser::deser_structure_crate_error_internal_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteJobTaggingError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -523,7 +523,7 @@ pub fn parse_delete_job_tagging_error(
                         output = crate::xml_deser::deser_structure_crate_error_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteJobTaggingError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -541,7 +541,7 @@ pub fn parse_delete_job_tagging_error(
                     output = crate::xml_deser::deser_structure_crate_error_too_many_requests_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteJobTaggingError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -708,7 +708,7 @@ pub fn parse_describe_job_error(
                     output = crate::xml_deser::deser_structure_crate_error_bad_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -725,7 +725,7 @@ pub fn parse_describe_job_error(
                     output = crate::xml_deser::deser_structure_crate_error_internal_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -743,7 +743,7 @@ pub fn parse_describe_job_error(
                         output = crate::xml_deser::deser_structure_crate_error_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeJobError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -761,7 +761,7 @@ pub fn parse_describe_job_error(
                     output = crate::xml_deser::deser_structure_crate_error_too_many_requests_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1200,7 +1200,7 @@ pub fn parse_get_job_tagging_error(
                     output = crate::xml_deser::deser_structure_crate_error_internal_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetJobTaggingError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1218,7 +1218,7 @@ pub fn parse_get_job_tagging_error(
                         output = crate::xml_deser::deser_structure_crate_error_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetJobTaggingError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1236,7 +1236,7 @@ pub fn parse_get_job_tagging_error(
                     output = crate::xml_deser::deser_structure_crate_error_too_many_requests_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetJobTaggingError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1389,7 +1389,7 @@ pub fn parse_get_public_access_block_error(
                         output = crate::xml_deser::deser_structure_crate_error_no_such_public_access_block_configuration_xml_err(response.body().as_ref(), output).map_err(crate::error::GetPublicAccessBlockError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1567,7 +1567,7 @@ pub fn parse_list_jobs_error(
                     output = crate::xml_deser::deser_structure_crate_error_internal_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListJobsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1584,7 +1584,7 @@ pub fn parse_list_jobs_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListJobsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1601,7 +1601,7 @@ pub fn parse_list_jobs_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListJobsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1935,7 +1935,7 @@ pub fn parse_put_job_tagging_error(
                     output = crate::xml_deser::deser_structure_crate_error_internal_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutJobTaggingError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1953,7 +1953,7 @@ pub fn parse_put_job_tagging_error(
                         output = crate::xml_deser::deser_structure_crate_error_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutJobTaggingError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1971,7 +1971,7 @@ pub fn parse_put_job_tagging_error(
                     output = crate::xml_deser::deser_structure_crate_error_too_many_requests_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutJobTaggingError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1988,7 +1988,7 @@ pub fn parse_put_job_tagging_error(
                     output = crate::xml_deser::deser_structure_crate_error_too_many_tags_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutJobTaggingError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2155,7 +2155,7 @@ pub fn parse_update_job_priority_error(
                     output = crate::xml_deser::deser_structure_crate_error_bad_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateJobPriorityError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2172,7 +2172,7 @@ pub fn parse_update_job_priority_error(
                     output = crate::xml_deser::deser_structure_crate_error_internal_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateJobPriorityError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2190,7 +2190,7 @@ pub fn parse_update_job_priority_error(
                         output = crate::xml_deser::deser_structure_crate_error_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateJobPriorityError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2208,7 +2208,7 @@ pub fn parse_update_job_priority_error(
                     output = crate::xml_deser::deser_structure_crate_error_too_many_requests_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateJobPriorityError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2260,7 +2260,7 @@ pub fn parse_update_job_status_error(
                     output = crate::xml_deser::deser_structure_crate_error_bad_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateJobStatusError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2277,7 +2277,7 @@ pub fn parse_update_job_status_error(
                     output = crate::xml_deser::deser_structure_crate_error_internal_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateJobStatusError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2295,7 +2295,7 @@ pub fn parse_update_job_status_error(
                         output = crate::xml_deser::deser_structure_crate_error_job_status_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateJobStatusError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2314,7 +2314,7 @@ pub fn parse_update_job_status_error(
                         output = crate::xml_deser::deser_structure_crate_error_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateJobStatusError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2332,7 +2332,7 @@ pub fn parse_update_job_status_error(
                     output = crate::xml_deser::deser_structure_crate_error_too_many_requests_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateJobStatusError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp

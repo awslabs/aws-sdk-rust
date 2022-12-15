@@ -7,15 +7,14 @@
 //!
 //! Client for direct access to IMDSv2.
 
-use std::borrow::Cow;
-use std::convert::TryFrom;
-use std::error::Error;
-use std::fmt::{Display, Formatter};
-use std::str::FromStr;
-use std::sync::Arc;
-use std::time::Duration;
-
+use crate::connector::expect_connector;
+use crate::imds::client::error::{BuildError, ImdsError, InnerImdsError, InvalidEndpointMode};
+use crate::imds::client::token::TokenMiddleware;
+use crate::provider_config::ProviderConfig;
+use crate::{profile, PKG_VERSION};
 use aws_http::user_agent::{ApiMetadata, AwsUserAgent, UserAgentStage};
+use aws_sdk_sso::config::timeout::TimeoutConfig;
+use aws_smithy_client::http_connector::ConnectorSettings;
 use aws_smithy_client::{erase::DynConnector, SdkSuccess};
 use aws_smithy_client::{retry, SdkError};
 use aws_smithy_http::body::SdkBody;
@@ -27,22 +26,19 @@ use aws_smithy_http::retry::ClassifyRetry;
 use aws_smithy_http_tower::map_request::{
     AsyncMapRequestLayer, AsyncMapRequestService, MapRequestLayer, MapRequestService,
 };
+use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_smithy_types::retry::{ErrorKind, RetryKind};
 use aws_types::os_shim_internal::{Env, Fs};
-
 use bytes::Bytes;
-use http::uri::InvalidUri;
 use http::{Response, Uri};
+use std::borrow::Cow;
+use std::error::Error;
+use std::str::FromStr;
+use std::sync::Arc;
+use std::time::Duration;
 use tokio::sync::OnceCell;
 
-use crate::connector::expect_connector;
-use crate::imds::client::token::TokenMiddleware;
-use crate::profile::credentials::ProfileFileError;
-use crate::provider_config::ProviderConfig;
-use crate::{profile, PKG_VERSION};
-use aws_sdk_sso::config::timeout::TimeoutConfig;
-use aws_smithy_client::http_connector::ConnectorSettings;
-
+pub mod error;
 mod token;
 
 // 6 hours
@@ -163,7 +159,7 @@ impl LazyClient {
             .get_or_init(|| async {
                 let client = builder.clone().build().await;
                 if let Err(err) = &client {
-                    tracing::warn!(err = % err, "failed to create IMDS client")
+                    tracing::warn!(err = %DisplayErrorContext(err), "failed to create IMDS client")
                 }
                 client
             })
@@ -205,23 +201,26 @@ impl Client {
             .call(operation)
             .await
             .map_err(|err| match err {
-                SdkError::ConstructionFailure(err) => match err.downcast::<ImdsError>() {
-                    Ok(token_failure) => *token_failure,
-                    Err(other) => ImdsError::Unexpected(other),
+                SdkError::ConstructionFailure(_) if err.source().is_some() => {
+                    match err.into_source().map(|e| e.downcast::<ImdsError>()) {
+                        Ok(Ok(token_failure)) => *token_failure,
+                        Ok(Err(err)) => ImdsError::unexpected(err),
+                        Err(err) => ImdsError::unexpected(err),
+                    }
+                }
+                SdkError::ConstructionFailure(_) => ImdsError::unexpected(err),
+                SdkError::ServiceError(context) => match context.err() {
+                    InnerImdsError::InvalidUtf8 => {
+                        ImdsError::unexpected("IMDS returned invalid UTF-8")
+                    }
+                    InnerImdsError::BadStatus => {
+                        ImdsError::error_response(context.into_raw().into_parts().0)
+                    }
                 },
-                SdkError::TimeoutError(err) => ImdsError::IoError(err),
-                SdkError::DispatchFailure(err) => ImdsError::IoError(err.into()),
-                SdkError::ResponseError { err, .. } => ImdsError::IoError(err),
-                SdkError::ServiceError {
-                    err: InnerImdsError::BadStatus,
-                    raw,
-                } => ImdsError::ErrorResponse {
-                    response: raw.into_parts().0,
-                },
-                SdkError::ServiceError {
-                    err: InnerImdsError::InvalidUtf8,
-                    ..
-                } => ImdsError::Unexpected("IMDS returned invalid UTF-8".into()),
+                SdkError::TimeoutError(_)
+                | SdkError::DispatchFailure(_)
+                | SdkError::ResponseError(_) => ImdsError::io_error(err),
+                _ => ImdsError::unexpected(err),
             })
     }
 
@@ -233,8 +232,13 @@ impl Client {
         &self,
         path: &str,
     ) -> Result<Operation<ImdsGetResponseHandler, ImdsResponseRetryClassifier>, ImdsError> {
-        let mut base_uri: Uri = path.parse().map_err(|_| ImdsError::InvalidPath)?;
-        self.inner.endpoint.set_endpoint(&mut base_uri, None);
+        let mut base_uri: Uri = path.parse().map_err(|_| {
+            ImdsError::unexpected("IMDS path was not a valid URI. Hint: does it begin with `/`?")
+        })?;
+        self.inner
+            .endpoint
+            .set_endpoint(&mut base_uri, None)
+            .map_err(ImdsError::unexpected)?;
         let request = http::Request::builder()
             .uri(base_uri)
             .body(SdkBody::empty())
@@ -244,74 +248,6 @@ impl Client {
         Ok(Operation::new(request, ImdsGetResponseHandler)
             .with_metadata(Metadata::new("get", "imds"))
             .with_retry_classifier(ImdsResponseRetryClassifier))
-    }
-}
-
-/// An error retrieving metadata from IMDS
-#[derive(Debug)]
-#[non_exhaustive]
-pub enum ImdsError {
-    /// An IMDSv2 Token could not be loaded
-    ///
-    /// Requests to IMDS must be accompanied by a token obtained via a `PUT` request. This is handled
-    /// transparently by the [`Client`].
-    FailedToLoadToken(SdkError<TokenError>),
-
-    /// The `path` was invalid for an IMDS request
-    ///
-    /// The `path` parameter must be a valid URI path segment, and it must begin with `/`.
-    InvalidPath,
-
-    /// An error response was returned from IMDS
-    #[non_exhaustive]
-    ErrorResponse {
-        /// The returned raw response
-        response: http::Response<SdkBody>,
-    },
-
-    /// IO Error
-    ///
-    /// An error occurred communication with IMDS
-    IoError(Box<dyn Error + Send + Sync + 'static>),
-
-    /// An unexpected error occurred communicating with IMDS
-    Unexpected(Box<dyn Error + Send + Sync + 'static>),
-}
-
-impl Display for ImdsError {
-    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
-        match self {
-            ImdsError::FailedToLoadToken(inner) => {
-                write!(f, "Failed to load session token: {}", inner)
-            }
-            ImdsError::InvalidPath => write!(
-                f,
-                "IMDS path was not a valid URI. Hint: Does it begin with `/`?"
-            ),
-            ImdsError::ErrorResponse { response } => write!(
-                f,
-                "Error response from IMDS (code: {}). {:?}",
-                response.status().as_u16(),
-                response
-            ),
-            ImdsError::IoError(err) => {
-                write!(f, "An IO error occurred communicating with IMDS: {}", err)
-            }
-            ImdsError::Unexpected(err) => write!(
-                f,
-                "An unexpected error occurred communicating with IMDS: {}",
-                err
-            ),
-        }
-    }
-}
-
-impl Error for ImdsError {
-    fn source(&self) -> Option<&(dyn Error + 'static)> {
-        match &self {
-            ImdsError::FailedToLoadToken(inner) => Some(inner),
-            _ => None,
-        }
     }
 }
 
@@ -334,23 +270,6 @@ impl<S> tower::Layer<S> for ImdsMiddleware {
 
 #[derive(Copy, Clone)]
 struct ImdsGetResponseHandler;
-
-#[derive(Debug)]
-enum InnerImdsError {
-    BadStatus,
-    InvalidUtf8,
-}
-
-impl Display for InnerImdsError {
-    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
-        match self {
-            InnerImdsError::BadStatus => write!(f, "failing status code returned from IMDS"),
-            InnerImdsError::InvalidUtf8 => write!(f, "IMDS did not return valid UTF-8"),
-        }
-    }
-}
-
-impl Error for InnerImdsError {}
 
 impl ParseStrictResponse for ImdsGetResponseHandler {
     type Output = Result<String, InnerImdsError>;
@@ -382,22 +301,6 @@ pub enum EndpointMode {
     IpV6,
 }
 
-/// Invalid Endpoint Mode
-#[derive(Debug, Clone)]
-pub struct InvalidEndpointMode(String);
-
-impl Display for InvalidEndpointMode {
-    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "`{}` is not a valid endpoint mode. Valid values are [`IPv4`, `IPv6`]",
-            &self.0
-        )
-    }
-}
-
-impl Error for InvalidEndpointMode {}
-
 impl FromStr for EndpointMode {
     type Err = InvalidEndpointMode;
 
@@ -405,7 +308,7 @@ impl FromStr for EndpointMode {
         match value {
             _ if value.eq_ignore_ascii_case("ipv4") => Ok(EndpointMode::IpV4),
             _ if value.eq_ignore_ascii_case("ipv6") => Ok(EndpointMode::IpV6),
-            other => Err(InvalidEndpointMode(other.to_owned())),
+            other => Err(InvalidEndpointMode::new(other.to_owned())),
         }
     }
 }
@@ -430,40 +333,6 @@ pub struct Builder {
     connect_timeout: Option<Duration>,
     read_timeout: Option<Duration>,
     config: Option<ProviderConfig>,
-}
-
-/// Error constructing IMDSv2 Client
-#[derive(Debug)]
-pub enum BuildError {
-    /// The endpoint mode was invalid
-    InvalidEndpointMode(InvalidEndpointMode),
-
-    /// The AWS Profile (e.g. `~/.aws/config`) was invalid
-    InvalidProfile(ProfileFileError),
-
-    /// The specified endpoint was not a valid URI
-    InvalidEndpointUri(InvalidUri),
-}
-
-impl Display for BuildError {
-    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
-        write!(f, "failed to build IMDS client: ")?;
-        match self {
-            BuildError::InvalidEndpointMode(e) => write!(f, "{}", e),
-            BuildError::InvalidProfile(e) => write!(f, "{}", e),
-            BuildError::InvalidEndpointUri(e) => write!(f, "{}", e),
-        }
-    }
-}
-
-impl Error for BuildError {
-    fn source(&self) -> Option<&(dyn Error + 'static)> {
-        match self {
-            BuildError::InvalidEndpointMode(e) => Some(e),
-            BuildError::InvalidProfile(e) => Some(e),
-            BuildError::InvalidEndpointUri(e) => Some(e),
-        }
-    }
 }
 
 impl Builder {
@@ -565,7 +434,7 @@ impl Builder {
             .endpoint
             .unwrap_or_else(|| EndpointSource::Env(config.env(), config.fs()));
         let endpoint = endpoint_source.endpoint(self.mode_override).await?;
-        let endpoint = Endpoint::immutable(endpoint);
+        let endpoint = Endpoint::immutable_uri(endpoint)?;
         let retry_config = retry::Config::default()
             .with_max_attempts(self.max_attempts.unwrap_or(DEFAULT_ATTEMPTS));
         let token_loader = token::TokenMiddleware::new(
@@ -628,14 +497,14 @@ impl EndpointSource {
                 // load an endpoint override from the environment
                 let profile = profile::load(fs, env, &Default::default())
                     .await
-                    .map_err(BuildError::InvalidProfile)?;
+                    .map_err(BuildError::invalid_profile)?;
                 let uri_override = if let Ok(uri) = env.get(env::ENDPOINT) {
                     Some(Cow::Owned(uri))
                 } else {
                     profile.get(profile_keys::ENDPOINT).map(Cow::Borrowed)
                 };
                 if let Some(uri) = uri_override {
-                    return Uri::try_from(uri.as_ref()).map_err(BuildError::InvalidEndpointUri);
+                    return Uri::try_from(uri.as_ref()).map_err(BuildError::invalid_endpoint_uri);
                 }
 
                 // if not, load a endpoint mode from the environment
@@ -643,10 +512,10 @@ impl EndpointSource {
                     mode
                 } else if let Ok(mode) = env.get(env::ENDPOINT_MODE) {
                     mode.parse::<EndpointMode>()
-                        .map_err(BuildError::InvalidEndpointMode)?
+                        .map_err(BuildError::invalid_endpoint_mode)?
                 } else if let Some(mode) = profile.get(profile_keys::ENDPOINT_MODE) {
                     mode.parse::<EndpointMode>()
-                        .map_err(BuildError::InvalidEndpointMode)?
+                        .map_err(BuildError::invalid_endpoint_mode)?
                 } else {
                     EndpointMode::IpV4
                 };
@@ -656,54 +525,6 @@ impl EndpointSource {
         }
     }
 }
-
-/// Error retrieving token from IMDS
-#[derive(Debug)]
-pub enum TokenError {
-    /// The token was invalid
-    ///
-    /// Because tokens must be eventually sent as a header, the token must be a valid header value.
-    InvalidToken,
-
-    /// No TTL was sent
-    ///
-    /// The token response must include a time-to-live indicating the lifespan of the token.
-    NoTtl,
-
-    /// The TTL was invalid
-    ///
-    /// The TTL must be a valid positive integer.
-    InvalidTtl,
-
-    /// Invalid Parameters
-    ///
-    /// The request to load a token was malformed. This indicates an SDK bug.
-    InvalidParameters,
-
-    /// Forbidden
-    ///
-    /// IMDS is disabled or has been disallowed via permissions.
-    Forbidden,
-}
-
-impl Display for TokenError {
-    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
-        match self {
-            TokenError::InvalidToken => write!(f, "Invalid Token"),
-            TokenError::NoTtl => write!(f, "Token response did not contain a TTL header"),
-            TokenError::InvalidTtl => write!(f, "The returned TTL was invalid"),
-            TokenError::InvalidParameters => {
-                write!(f, "Invalid request parameters. This indicates an SDK bug.")
-            }
-            TokenError::Forbidden => write!(
-                f,
-                "Request forbidden: IMDS is disabled or the caller has insufficient permissions."
-            ),
-        }
-    }
-}
-
-impl Error for TokenError {}
 
 #[derive(Clone)]
 struct ImdsResponseRetryClassifier;
@@ -734,9 +555,8 @@ impl<T, E> ClassifyRetry<SdkSuccess<T>, SdkError<E>> for ImdsResponseRetryClassi
     fn classify_retry(&self, response: Result<&SdkSuccess<T>, &SdkError<E>>) -> RetryKind {
         match response {
             Ok(_) => RetryKind::Unnecessary,
-            Err(SdkError::ResponseError { raw, .. }) | Err(SdkError::ServiceError { raw, .. }) => {
-                Self::classify(raw)
-            }
+            Err(SdkError::ResponseError(context)) => Self::classify(context.raw()),
+            Err(SdkError::ServiceError(context)) => Self::classify(context.raw()),
             _ => RetryKind::UnretryableFailure,
         }
     }
@@ -762,6 +582,21 @@ pub(crate) mod test {
     use std::io;
     use std::time::{Duration, UNIX_EPOCH};
     use tracing_test::traced_test;
+
+    macro_rules! assert_full_error_contains {
+        ($err:expr, $contains:expr) => {
+            let err = $err;
+            let message = format!(
+                "{}",
+                aws_smithy_types::error::display::DisplayErrorContext(&err)
+            );
+            assert!(
+                message.contains($contains),
+                "Error message '{message}' didn't contain text '{}'",
+                $contains
+            );
+        };
+    }
 
     const TOKEN_A: &str = "AQAEAFTNrA4eEGx0AQgJ1arIq_Cc-t4tWt3fB0Hd8RKhXlKc5ccvhg==";
     const TOKEN_B: &str = "alternatetoken==";
@@ -1026,7 +861,7 @@ pub(crate) mod test {
         )]);
         let client = make_client(&connection).await;
         let err = client.get("/latest/metadata").await.expect_err("no token");
-        assert!(format!("{}", err).contains("forbidden"), "{}", err);
+        assert_full_error_contains!(err, "forbidden");
         connection.assert_requests_match(&[]);
     }
 
@@ -1049,10 +884,10 @@ pub(crate) mod test {
         );
 
         // Emulate a failure to parse the response body (using an io error since it's easy to construct in a test)
-        let failure = SdkError::<()>::ResponseError {
-            err: Box::new(io::Error::new(io::ErrorKind::BrokenPipe, "fail to parse")),
-            raw: response_200(),
-        };
+        let failure = SdkError::<()>::response_error(
+            io::Error::new(io::ErrorKind::BrokenPipe, "fail to parse"),
+            response_200(),
+        );
         assert_eq!(
             RetryKind::UnretryableFailure,
             classifier.classify_retry(Err::<&SdkSuccess<()>, _>(&failure))
@@ -1068,7 +903,7 @@ pub(crate) mod test {
         )]);
         let client = make_client(&connection).await;
         let err = client.get("/latest/metadata").await.expect_err("no token");
-        assert!(format!("{}", err).contains("Invalid Token"), "{}", err);
+        assert_full_error_contains!(err, "invalid token");
         connection.assert_requests_match(&[]);
     }
 
@@ -1089,7 +924,7 @@ pub(crate) mod test {
         ]);
         let client = make_client(&connection).await;
         let err = client.get("/latest/metadata").await.expect_err("no token");
-        assert!(format!("{}", err).contains("invalid UTF-8"), "{}", err);
+        assert_full_error_contains!(err, "invalid UTF-8");
         connection.assert_requests_match(&[]);
     }
 
@@ -1098,6 +933,7 @@ pub(crate) mod test {
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     async fn one_second_connect_timeout() {
         use crate::imds::client::ImdsError;
+        use aws_smithy_types::error::display::DisplayErrorContext;
         use std::time::SystemTime;
 
         let client = Client::builder()
@@ -1123,7 +959,8 @@ pub(crate) mod test {
             time_elapsed
         );
         match resp {
-            ImdsError::FailedToLoadToken(err) if format!("{}", err).contains("timeout") => {} // ok,
+            err @ ImdsError::FailedToLoadToken(_)
+                if format!("{}", DisplayErrorContext(&err)).contains("timeout") => {} // ok,
             other => panic!(
                 "wrong error, expected construction failure with TimedOutError inside: {}",
                 other
@@ -1181,12 +1018,7 @@ pub(crate) mod test {
                 test, test_case.docs
             ),
             (Err(substr), Err(err)) => {
-                assert!(
-                    format!("{}", err).contains(substr),
-                    "`{}` did not contain `{}`",
-                    err,
-                    substr
-                );
+                assert_full_error_contains!(err, substr);
                 return;
             }
             (Ok(_uri), Err(e)) => panic!(

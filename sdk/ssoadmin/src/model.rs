@@ -2,7 +2,7 @@
 
 /// <p>Specifies the attributes to add to your attribute-based access control (ABAC) configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceAccessControlAttributeConfiguration {
     /// <p>Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.</p>
     #[doc(hidden)]
@@ -17,18 +17,11 @@ impl InstanceAccessControlAttributeConfiguration {
         self.access_control_attributes.as_deref()
     }
 }
-impl std::fmt::Debug for InstanceAccessControlAttributeConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceAccessControlAttributeConfiguration");
-        formatter.field("access_control_attributes", &self.access_control_attributes);
-        formatter.finish()
-    }
-}
 /// See [`InstanceAccessControlAttributeConfiguration`](crate::model::InstanceAccessControlAttributeConfiguration).
 pub mod instance_access_control_attribute_configuration {
 
     /// A builder for [`InstanceAccessControlAttributeConfiguration`](crate::model::InstanceAccessControlAttributeConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_control_attributes:
             std::option::Option<std::vec::Vec<crate::model::AccessControlAttribute>>,
@@ -73,7 +66,7 @@ impl InstanceAccessControlAttributeConfiguration {
 
 /// <p>These are IAM Identity Center identity store attributes that you can configure for use in attributes-based access control (ABAC). You can create permissions policies that determine who can access your AWS resources based upon the configured attribute values. When you enable ABAC and specify <code>AccessControlAttributes</code>, IAM Identity Center passes the attribute values of the authenticated user into IAM for use in policy evaluation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessControlAttribute {
     /// <p>The name of the attribute associated with your identities in your identity source. This is used to map a specified attribute in your identity source with an attribute in IAM Identity Center.</p>
     #[doc(hidden)]
@@ -92,19 +85,11 @@ impl AccessControlAttribute {
         self.value.as_ref()
     }
 }
-impl std::fmt::Debug for AccessControlAttribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessControlAttribute");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`AccessControlAttribute`](crate::model::AccessControlAttribute).
 pub mod access_control_attribute {
 
     /// A builder for [`AccessControlAttribute`](crate::model::AccessControlAttribute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<crate::model::AccessControlAttributeValue>,
@@ -151,7 +136,7 @@ impl AccessControlAttribute {
 
 /// <p>The value used for mapping a specified attribute to an identity source. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/attributemappingsconcept.html">Attribute mappings</a> in the <i>IAM Identity Center User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessControlAttributeValue {
     /// <p>The identity source to use when mapping a specified attribute to IAM Identity Center.</p>
     #[doc(hidden)]
@@ -163,18 +148,11 @@ impl AccessControlAttributeValue {
         self.source.as_deref()
     }
 }
-impl std::fmt::Debug for AccessControlAttributeValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessControlAttributeValue");
-        formatter.field("source", &self.source);
-        formatter.finish()
-    }
-}
 /// See [`AccessControlAttributeValue`](crate::model::AccessControlAttributeValue).
 pub mod access_control_attribute_value {
 
     /// A builder for [`AccessControlAttributeValue`](crate::model::AccessControlAttributeValue).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -215,7 +193,7 @@ impl AccessControlAttributeValue {
 
 /// <p>A set of key-value pairs that are used to manage the resource. Tags can only be applied to permission sets and cannot be applied to corresponding roles that IAM Identity Center creates in AWS accounts.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key for the tag.</p>
     #[doc(hidden)]
@@ -234,19 +212,11 @@ impl Tag {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -292,7 +262,7 @@ impl Tag {
 /// <p>Policies used as permissions boundaries don't provide permissions. You must also attach an IAM policy to the role. To learn how the effective permissions for a role are evaluated, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM JSON policy evaluation logic</a> in the <i>IAM User Guide</i>.</p>
 /// </important>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PermissionsBoundary {
     /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
     #[doc(hidden)]
@@ -314,22 +284,11 @@ impl PermissionsBoundary {
         self.managed_policy_arn.as_deref()
     }
 }
-impl std::fmt::Debug for PermissionsBoundary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PermissionsBoundary");
-        formatter.field(
-            "customer_managed_policy_reference",
-            &self.customer_managed_policy_reference,
-        );
-        formatter.field("managed_policy_arn", &self.managed_policy_arn);
-        formatter.finish()
-    }
-}
 /// See [`PermissionsBoundary`](crate::model::PermissionsBoundary).
 pub mod permissions_boundary {
 
     /// A builder for [`PermissionsBoundary`](crate::model::PermissionsBoundary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) customer_managed_policy_reference:
             std::option::Option<crate::model::CustomerManagedPolicyReference>,
@@ -383,7 +342,7 @@ impl PermissionsBoundary {
 
 /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomerManagedPolicyReference {
     /// <p>The name of the IAM policy that you have configured in each account where you want to deploy your permission set.</p>
     #[doc(hidden)]
@@ -402,19 +361,11 @@ impl CustomerManagedPolicyReference {
         self.path.as_deref()
     }
 }
-impl std::fmt::Debug for CustomerManagedPolicyReference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomerManagedPolicyReference");
-        formatter.field("name", &self.name);
-        formatter.field("path", &self.path);
-        formatter.finish()
-    }
-}
 /// See [`CustomerManagedPolicyReference`](crate::model::CustomerManagedPolicyReference).
 pub mod customer_managed_policy_reference {
 
     /// A builder for [`CustomerManagedPolicyReference`](crate::model::CustomerManagedPolicyReference).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) path: std::option::Option<std::string::String>,
@@ -458,7 +409,7 @@ impl CustomerManagedPolicyReference {
 
 /// <p>A structure that is used to provide the status of the provisioning operation for a specified permission set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PermissionSetProvisioningStatus {
     /// <p>The status of the permission set provisioning process.</p>
     #[doc(hidden)]
@@ -505,23 +456,11 @@ impl PermissionSetProvisioningStatus {
         self.created_date.as_ref()
     }
 }
-impl std::fmt::Debug for PermissionSetProvisioningStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PermissionSetProvisioningStatus");
-        formatter.field("status", &self.status);
-        formatter.field("request_id", &self.request_id);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("permission_set_arn", &self.permission_set_arn);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("created_date", &self.created_date);
-        formatter.finish()
-    }
-}
 /// See [`PermissionSetProvisioningStatus`](crate::model::PermissionSetProvisioningStatus).
 pub mod permission_set_provisioning_status {
 
     /// A builder for [`PermissionSetProvisioningStatus`](crate::model::PermissionSetProvisioningStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::StatusValues>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -623,6 +562,42 @@ impl PermissionSetProvisioningStatus {
     }
 }
 
+/// When writing a match expression against `StatusValues`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let statusvalues = unimplemented!();
+/// match statusvalues {
+///     StatusValues::Failed => { /* ... */ },
+///     StatusValues::InProgress => { /* ... */ },
+///     StatusValues::Succeeded => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `statusvalues` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `StatusValues::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `StatusValues::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `StatusValues::NewFeature` is defined.
+/// Specifically, when `statusvalues` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `StatusValues::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -641,8 +616,8 @@ pub enum StatusValues {
     InProgress,
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for StatusValues {
     fn from(s: &str) -> Self {
@@ -650,7 +625,7 @@ impl std::convert::From<&str> for StatusValues {
             "FAILED" => StatusValues::Failed,
             "IN_PROGRESS" => StatusValues::InProgress,
             "SUCCEEDED" => StatusValues::Succeeded,
-            other => StatusValues::Unknown(other.to_owned()),
+            other => StatusValues::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -668,11 +643,11 @@ impl StatusValues {
             StatusValues::Failed => "FAILED",
             StatusValues::InProgress => "IN_PROGRESS",
             StatusValues::Succeeded => "SUCCEEDED",
-            StatusValues::Unknown(s) => s.as_ref(),
+            StatusValues::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
     }
 }
@@ -682,6 +657,41 @@ impl AsRef<str> for StatusValues {
     }
 }
 
+/// When writing a match expression against `ProvisionTargetType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let provisiontargettype = unimplemented!();
+/// match provisiontargettype {
+///     ProvisionTargetType::AllProvisionedAccounts => { /* ... */ },
+///     ProvisionTargetType::AwsAccount => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `provisiontargettype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ProvisionTargetType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ProvisionTargetType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ProvisionTargetType::NewFeature` is defined.
+/// Specifically, when `provisiontargettype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ProvisionTargetType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -698,15 +708,17 @@ pub enum ProvisionTargetType {
     AllProvisionedAccounts,
     #[allow(missing_docs)] // documentation missing in model
     AwsAccount,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ProvisionTargetType {
     fn from(s: &str) -> Self {
         match s {
             "ALL_PROVISIONED_ACCOUNTS" => ProvisionTargetType::AllProvisionedAccounts,
             "AWS_ACCOUNT" => ProvisionTargetType::AwsAccount,
-            other => ProvisionTargetType::Unknown(other.to_owned()),
+            other => {
+                ProvisionTargetType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -723,11 +735,11 @@ impl ProvisionTargetType {
         match self {
             ProvisionTargetType::AllProvisionedAccounts => "ALL_PROVISIONED_ACCOUNTS",
             ProvisionTargetType::AwsAccount => "AWS_ACCOUNT",
-            ProvisionTargetType::Unknown(s) => s.as_ref(),
+            ProvisionTargetType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL_PROVISIONED_ACCOUNTS", "AWS_ACCOUNT"]
     }
 }
@@ -737,6 +749,41 @@ impl AsRef<str> for ProvisionTargetType {
     }
 }
 
+/// When writing a match expression against `ProvisioningStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let provisioningstatus = unimplemented!();
+/// match provisioningstatus {
+///     ProvisioningStatus::LatestPermissionSetNotProvisioned => { /* ... */ },
+///     ProvisioningStatus::LatestPermissionSetProvisioned => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `provisioningstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ProvisioningStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ProvisioningStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ProvisioningStatus::NewFeature` is defined.
+/// Specifically, when `provisioningstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ProvisioningStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -753,8 +800,8 @@ pub enum ProvisioningStatus {
     LatestPermissionSetNotProvisioned,
     #[allow(missing_docs)] // documentation missing in model
     LatestPermissionSetProvisioned,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ProvisioningStatus {
     fn from(s: &str) -> Self {
@@ -765,7 +812,9 @@ impl std::convert::From<&str> for ProvisioningStatus {
             "LATEST_PERMISSION_SET_PROVISIONED" => {
                 ProvisioningStatus::LatestPermissionSetProvisioned
             }
-            other => ProvisioningStatus::Unknown(other.to_owned()),
+            other => {
+                ProvisioningStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -786,11 +835,11 @@ impl ProvisioningStatus {
             ProvisioningStatus::LatestPermissionSetProvisioned => {
                 "LATEST_PERMISSION_SET_PROVISIONED"
             }
-            ProvisioningStatus::Unknown(s) => s.as_ref(),
+            ProvisioningStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "LATEST_PERMISSION_SET_NOT_PROVISIONED",
             "LATEST_PERMISSION_SET_PROVISIONED",
@@ -805,7 +854,7 @@ impl AsRef<str> for ProvisioningStatus {
 
 /// <p>Provides information about the permission set provisioning status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PermissionSetProvisioningStatusMetadata {
     /// <p>The status of the permission set provisioning process.</p>
     #[doc(hidden)]
@@ -831,20 +880,11 @@ impl PermissionSetProvisioningStatusMetadata {
         self.created_date.as_ref()
     }
 }
-impl std::fmt::Debug for PermissionSetProvisioningStatusMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PermissionSetProvisioningStatusMetadata");
-        formatter.field("status", &self.status);
-        formatter.field("request_id", &self.request_id);
-        formatter.field("created_date", &self.created_date);
-        formatter.finish()
-    }
-}
 /// See [`PermissionSetProvisioningStatusMetadata`](crate::model::PermissionSetProvisioningStatusMetadata).
 pub mod permission_set_provisioning_status_metadata {
 
     /// A builder for [`PermissionSetProvisioningStatusMetadata`](crate::model::PermissionSetProvisioningStatusMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::StatusValues>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -906,7 +946,7 @@ impl PermissionSetProvisioningStatusMetadata {
 
 /// <p>Filters he operation status list based on the passed attribute value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OperationStatusFilter {
     /// <p>Filters the list operations result based on the status attribute.</p>
     #[doc(hidden)]
@@ -918,18 +958,11 @@ impl OperationStatusFilter {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for OperationStatusFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OperationStatusFilter");
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 /// See [`OperationStatusFilter`](crate::model::OperationStatusFilter).
 pub mod operation_status_filter {
 
     /// A builder for [`OperationStatusFilter`](crate::model::OperationStatusFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::StatusValues>,
     }
@@ -964,7 +997,7 @@ impl OperationStatusFilter {
 
 /// <p>A structure that stores the details of the AWS managed policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachedManagedPolicy {
     /// <p>The name of the AWS managed policy.</p>
     #[doc(hidden)]
@@ -983,19 +1016,11 @@ impl AttachedManagedPolicy {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for AttachedManagedPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachedManagedPolicy");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 /// See [`AttachedManagedPolicy`](crate::model::AttachedManagedPolicy).
 pub mod attached_managed_policy {
 
     /// A builder for [`AttachedManagedPolicy`](crate::model::AttachedManagedPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1039,7 +1064,7 @@ impl AttachedManagedPolicy {
 
 /// <p>Provides information about the IAM Identity Center instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceMetadata {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
@@ -1058,19 +1083,11 @@ impl InstanceMetadata {
         self.identity_store_id.as_deref()
     }
 }
-impl std::fmt::Debug for InstanceMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceMetadata");
-        formatter.field("instance_arn", &self.instance_arn);
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.finish()
-    }
-}
 /// See [`InstanceMetadata`](crate::model::InstanceMetadata).
 pub mod instance_metadata {
 
     /// A builder for [`InstanceMetadata`](crate::model::InstanceMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
@@ -1119,7 +1136,7 @@ impl InstanceMetadata {
 /// <p>The term <i>principal</i> here refers to a user or group that is defined in IAM Identity Center.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountAssignment {
     /// <p>The identifier of the AWS account.</p>
     #[doc(hidden)]
@@ -1152,21 +1169,11 @@ impl AccountAssignment {
         self.principal_id.as_deref()
     }
 }
-impl std::fmt::Debug for AccountAssignment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountAssignment");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("permission_set_arn", &self.permission_set_arn);
-        formatter.field("principal_type", &self.principal_type);
-        formatter.field("principal_id", &self.principal_id);
-        formatter.finish()
-    }
-}
 /// See [`AccountAssignment`](crate::model::AccountAssignment).
 pub mod account_assignment {
 
     /// A builder for [`AccountAssignment`](crate::model::AccountAssignment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) permission_set_arn: std::option::Option<std::string::String>,
@@ -1238,6 +1245,41 @@ impl AccountAssignment {
     }
 }
 
+/// When writing a match expression against `PrincipalType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let principaltype = unimplemented!();
+/// match principaltype {
+///     PrincipalType::Group => { /* ... */ },
+///     PrincipalType::User => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `principaltype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PrincipalType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PrincipalType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PrincipalType::NewFeature` is defined.
+/// Specifically, when `principaltype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PrincipalType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1254,15 +1296,15 @@ pub enum PrincipalType {
     Group,
     #[allow(missing_docs)] // documentation missing in model
     User,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PrincipalType {
     fn from(s: &str) -> Self {
         match s {
             "GROUP" => PrincipalType::Group,
             "USER" => PrincipalType::User,
-            other => PrincipalType::Unknown(other.to_owned()),
+            other => PrincipalType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1279,11 +1321,11 @@ impl PrincipalType {
         match self {
             PrincipalType::Group => "GROUP",
             PrincipalType::User => "USER",
-            PrincipalType::Unknown(s) => s.as_ref(),
+            PrincipalType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GROUP", "USER"]
     }
 }
@@ -1295,7 +1337,7 @@ impl AsRef<str> for PrincipalType {
 
 /// <p>Provides information about the <code>AccountAssignment</code> creation request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountAssignmentOperationStatusMetadata {
     /// <p>The status of the permission set provisioning process.</p>
     #[doc(hidden)]
@@ -1321,20 +1363,11 @@ impl AccountAssignmentOperationStatusMetadata {
         self.created_date.as_ref()
     }
 }
-impl std::fmt::Debug for AccountAssignmentOperationStatusMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountAssignmentOperationStatusMetadata");
-        formatter.field("status", &self.status);
-        formatter.field("request_id", &self.request_id);
-        formatter.field("created_date", &self.created_date);
-        formatter.finish()
-    }
-}
 /// See [`AccountAssignmentOperationStatusMetadata`](crate::model::AccountAssignmentOperationStatusMetadata).
 pub mod account_assignment_operation_status_metadata {
 
     /// A builder for [`AccountAssignmentOperationStatusMetadata`](crate::model::AccountAssignmentOperationStatusMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::StatusValues>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -1396,7 +1429,7 @@ impl AccountAssignmentOperationStatusMetadata {
 
 /// <p>An entity that contains IAM policies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PermissionSet {
     /// <p>The name of the permission set.</p>
     #[doc(hidden)]
@@ -1443,23 +1476,11 @@ impl PermissionSet {
         self.relay_state.as_deref()
     }
 }
-impl std::fmt::Debug for PermissionSet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PermissionSet");
-        formatter.field("name", &self.name);
-        formatter.field("permission_set_arn", &self.permission_set_arn);
-        formatter.field("description", &self.description);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("session_duration", &self.session_duration);
-        formatter.field("relay_state", &self.relay_state);
-        formatter.finish()
-    }
-}
 /// See [`PermissionSet`](crate::model::PermissionSet).
 pub mod permission_set {
 
     /// A builder for [`PermissionSet`](crate::model::PermissionSet).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) permission_set_arn: std::option::Option<std::string::String>,
@@ -1558,6 +1579,42 @@ impl PermissionSet {
     }
 }
 
+/// When writing a match expression against `InstanceAccessControlAttributeConfigurationStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let instanceaccesscontrolattributeconfigurationstatus = unimplemented!();
+/// match instanceaccesscontrolattributeconfigurationstatus {
+///     InstanceAccessControlAttributeConfigurationStatus::CreationFailed => { /* ... */ },
+///     InstanceAccessControlAttributeConfigurationStatus::CreationInProgress => { /* ... */ },
+///     InstanceAccessControlAttributeConfigurationStatus::Enabled => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `instanceaccesscontrolattributeconfigurationstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `InstanceAccessControlAttributeConfigurationStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `InstanceAccessControlAttributeConfigurationStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `InstanceAccessControlAttributeConfigurationStatus::NewFeature` is defined.
+/// Specifically, when `instanceaccesscontrolattributeconfigurationstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `InstanceAccessControlAttributeConfigurationStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1576,8 +1633,8 @@ pub enum InstanceAccessControlAttributeConfigurationStatus {
     CreationInProgress,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for InstanceAccessControlAttributeConfigurationStatus {
     fn from(s: &str) -> Self {
@@ -1587,7 +1644,9 @@ impl std::convert::From<&str> for InstanceAccessControlAttributeConfigurationSta
                 InstanceAccessControlAttributeConfigurationStatus::CreationInProgress
             }
             "ENABLED" => InstanceAccessControlAttributeConfigurationStatus::Enabled,
-            other => InstanceAccessControlAttributeConfigurationStatus::Unknown(other.to_owned()),
+            other => InstanceAccessControlAttributeConfigurationStatus::Unknown(
+                crate::types::UnknownVariantValue(other.to_owned()),
+            ),
         }
     }
 }
@@ -1607,11 +1666,11 @@ impl InstanceAccessControlAttributeConfigurationStatus {
                 "CREATION_IN_PROGRESS"
             }
             InstanceAccessControlAttributeConfigurationStatus::Enabled => "ENABLED",
-            InstanceAccessControlAttributeConfigurationStatus::Unknown(s) => s.as_ref(),
+            InstanceAccessControlAttributeConfigurationStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATION_FAILED", "CREATION_IN_PROGRESS", "ENABLED"]
     }
 }
@@ -1623,7 +1682,7 @@ impl AsRef<str> for InstanceAccessControlAttributeConfigurationStatus {
 
 /// <p>The status of the creation or deletion operation of an assignment that a principal needs to access an account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountAssignmentOperationStatus {
     /// <p>The status of the permission set provisioning process.</p>
     #[doc(hidden)]
@@ -1691,26 +1750,11 @@ impl AccountAssignmentOperationStatus {
         self.created_date.as_ref()
     }
 }
-impl std::fmt::Debug for AccountAssignmentOperationStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountAssignmentOperationStatus");
-        formatter.field("status", &self.status);
-        formatter.field("request_id", &self.request_id);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.field("target_id", &self.target_id);
-        formatter.field("target_type", &self.target_type);
-        formatter.field("permission_set_arn", &self.permission_set_arn);
-        formatter.field("principal_type", &self.principal_type);
-        formatter.field("principal_id", &self.principal_id);
-        formatter.field("created_date", &self.created_date);
-        formatter.finish()
-    }
-}
 /// See [`AccountAssignmentOperationStatus`](crate::model::AccountAssignmentOperationStatus).
 pub mod account_assignment_operation_status {
 
     /// A builder for [`AccountAssignmentOperationStatus`](crate::model::AccountAssignmentOperationStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::StatusValues>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -1854,6 +1898,40 @@ impl AccountAssignmentOperationStatus {
     }
 }
 
+/// When writing a match expression against `TargetType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let targettype = unimplemented!();
+/// match targettype {
+///     TargetType::AwsAccount => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `targettype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `TargetType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `TargetType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `TargetType::NewFeature` is defined.
+/// Specifically, when `targettype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `TargetType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1868,14 +1946,14 @@ impl AccountAssignmentOperationStatus {
 pub enum TargetType {
     #[allow(missing_docs)] // documentation missing in model
     AwsAccount,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TargetType {
     fn from(s: &str) -> Self {
         match s {
             "AWS_ACCOUNT" => TargetType::AwsAccount,
-            other => TargetType::Unknown(other.to_owned()),
+            other => TargetType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1891,11 +1969,11 @@ impl TargetType {
     pub fn as_str(&self) -> &str {
         match self {
             TargetType::AwsAccount => "AWS_ACCOUNT",
-            TargetType::Unknown(s) => s.as_ref(),
+            TargetType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS_ACCOUNT"]
     }
 }

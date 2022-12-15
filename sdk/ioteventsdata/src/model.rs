@@ -2,7 +2,7 @@
 
 /// <p>Information about the detector (instance).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectorSummary {
     /// <p>The name of the detector model that created this detector (instance).</p>
     #[doc(hidden)]
@@ -49,23 +49,11 @@ impl DetectorSummary {
         self.last_update_time.as_ref()
     }
 }
-impl std::fmt::Debug for DetectorSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectorSummary");
-        formatter.field("detector_model_name", &self.detector_model_name);
-        formatter.field("key_value", &self.key_value);
-        formatter.field("detector_model_version", &self.detector_model_version);
-        formatter.field("state", &self.state);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.finish()
-    }
-}
 /// See [`DetectorSummary`](crate::model::DetectorSummary).
 pub mod detector_summary {
 
     /// A builder for [`DetectorSummary`](crate::model::DetectorSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector_model_name: std::option::Option<std::string::String>,
         pub(crate) key_value: std::option::Option<std::string::String>,
@@ -172,7 +160,7 @@ impl DetectorSummary {
 
 /// <p>Information about the detector state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectorStateSummary {
     /// <p>The name of the state.</p>
     #[doc(hidden)]
@@ -184,18 +172,11 @@ impl DetectorStateSummary {
         self.state_name.as_deref()
     }
 }
-impl std::fmt::Debug for DetectorStateSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectorStateSummary");
-        formatter.field("state_name", &self.state_name);
-        formatter.finish()
-    }
-}
 /// See [`DetectorStateSummary`](crate::model::DetectorStateSummary).
 pub mod detector_state_summary {
 
     /// A builder for [`DetectorStateSummary`](crate::model::DetectorStateSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state_name: std::option::Option<std::string::String>,
     }
@@ -227,7 +208,7 @@ impl DetectorStateSummary {
 
 /// <p>Contains a summary of an alarm.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AlarmSummary {
     /// <p>The name of the alarm model.</p>
     #[doc(hidden)]
@@ -290,23 +271,11 @@ impl AlarmSummary {
         self.last_update_time.as_ref()
     }
 }
-impl std::fmt::Debug for AlarmSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AlarmSummary");
-        formatter.field("alarm_model_name", &self.alarm_model_name);
-        formatter.field("alarm_model_version", &self.alarm_model_version);
-        formatter.field("key_value", &self.key_value);
-        formatter.field("state_name", &self.state_name);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.finish()
-    }
-}
 /// See [`AlarmSummary`](crate::model::AlarmSummary).
 pub mod alarm_summary {
 
     /// A builder for [`AlarmSummary`](crate::model::AlarmSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alarm_model_name: std::option::Option<std::string::String>,
         pub(crate) alarm_model_version: std::option::Option<std::string::String>,
@@ -427,6 +396,45 @@ impl AlarmSummary {
     }
 }
 
+/// When writing a match expression against `AlarmStateName`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let alarmstatename = unimplemented!();
+/// match alarmstatename {
+///     AlarmStateName::Acknowledged => { /* ... */ },
+///     AlarmStateName::Active => { /* ... */ },
+///     AlarmStateName::Disabled => { /* ... */ },
+///     AlarmStateName::Latched => { /* ... */ },
+///     AlarmStateName::Normal => { /* ... */ },
+///     AlarmStateName::SnoozeDisabled => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `alarmstatename` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `AlarmStateName::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `AlarmStateName::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `AlarmStateName::NewFeature` is defined.
+/// Specifically, when `alarmstatename` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `AlarmStateName::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -451,8 +459,8 @@ pub enum AlarmStateName {
     Normal,
     #[allow(missing_docs)] // documentation missing in model
     SnoozeDisabled,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AlarmStateName {
     fn from(s: &str) -> Self {
@@ -463,7 +471,7 @@ impl std::convert::From<&str> for AlarmStateName {
             "LATCHED" => AlarmStateName::Latched,
             "NORMAL" => AlarmStateName::Normal,
             "SNOOZE_DISABLED" => AlarmStateName::SnoozeDisabled,
-            other => AlarmStateName::Unknown(other.to_owned()),
+            other => AlarmStateName::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -484,11 +492,11 @@ impl AlarmStateName {
             AlarmStateName::Latched => "LATCHED",
             AlarmStateName::Normal => "NORMAL",
             AlarmStateName::SnoozeDisabled => "SNOOZE_DISABLED",
-            AlarmStateName::Unknown(s) => s.as_ref(),
+            AlarmStateName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACKNOWLEDGED",
             "ACTIVE",
@@ -507,7 +515,7 @@ impl AsRef<str> for AlarmStateName {
 
 /// <p>Information about the detector (instance).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Detector {
     /// <p>The name of the detector model that created this detector (instance).</p>
     #[doc(hidden)]
@@ -554,23 +562,11 @@ impl Detector {
         self.last_update_time.as_ref()
     }
 }
-impl std::fmt::Debug for Detector {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Detector");
-        formatter.field("detector_model_name", &self.detector_model_name);
-        formatter.field("key_value", &self.key_value);
-        formatter.field("detector_model_version", &self.detector_model_version);
-        formatter.field("state", &self.state);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.finish()
-    }
-}
 /// See [`Detector`](crate::model::Detector).
 pub mod detector {
 
     /// A builder for [`Detector`](crate::model::Detector).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector_model_name: std::option::Option<std::string::String>,
         pub(crate) key_value: std::option::Option<std::string::String>,
@@ -677,7 +673,7 @@ impl Detector {
 
 /// <p>Information about the current state of the detector instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectorState {
     /// <p>The name of the state.</p>
     #[doc(hidden)]
@@ -703,20 +699,11 @@ impl DetectorState {
         self.timers.as_deref()
     }
 }
-impl std::fmt::Debug for DetectorState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectorState");
-        formatter.field("state_name", &self.state_name);
-        formatter.field("variables", &self.variables);
-        formatter.field("timers", &self.timers);
-        formatter.finish()
-    }
-}
 /// See [`DetectorState`](crate::model::DetectorState).
 pub mod detector_state {
 
     /// A builder for [`DetectorState`](crate::model::DetectorState).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state_name: std::option::Option<std::string::String>,
         pub(crate) variables: std::option::Option<std::vec::Vec<crate::model::Variable>>,
@@ -790,7 +777,7 @@ impl DetectorState {
 
 /// <p>The current state of a timer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Timer {
     /// <p>The name of the timer.</p>
     #[doc(hidden)]
@@ -809,19 +796,11 @@ impl Timer {
         self.timestamp.as_ref()
     }
 }
-impl std::fmt::Debug for Timer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Timer");
-        formatter.field("name", &self.name);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.finish()
-    }
-}
 /// See [`Timer`](crate::model::Timer).
 pub mod timer {
 
     /// A builder for [`Timer`](crate::model::Timer).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -868,7 +847,7 @@ impl Timer {
 
 /// <p>The current state of the variable.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Variable {
     /// <p>The name of the variable.</p>
     #[doc(hidden)]
@@ -887,19 +866,11 @@ impl Variable {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Variable {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Variable");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`Variable`](crate::model::Variable).
 pub mod variable {
 
     /// A builder for [`Variable`](crate::model::Variable).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -943,7 +914,7 @@ impl Variable {
 
 /// <p>Contains information about an alarm.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Alarm {
     /// <p>The name of the alarm model.</p>
     #[doc(hidden)]
@@ -997,24 +968,11 @@ impl Alarm {
         self.last_update_time.as_ref()
     }
 }
-impl std::fmt::Debug for Alarm {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Alarm");
-        formatter.field("alarm_model_name", &self.alarm_model_name);
-        formatter.field("alarm_model_version", &self.alarm_model_version);
-        formatter.field("key_value", &self.key_value);
-        formatter.field("alarm_state", &self.alarm_state);
-        formatter.field("severity", &self.severity);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.finish()
-    }
-}
 /// See [`Alarm`](crate::model::Alarm).
 pub mod alarm {
 
     /// A builder for [`Alarm`](crate::model::Alarm).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alarm_model_name: std::option::Option<std::string::String>,
         pub(crate) alarm_model_version: std::option::Option<std::string::String>,
@@ -1133,7 +1091,7 @@ impl Alarm {
 
 /// <p>Contains information about the current state of the alarm.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AlarmState {
     /// <p>The name of the alarm state. The state name can be one of the following values:</p>
     /// <ul>
@@ -1182,21 +1140,11 @@ impl AlarmState {
         self.system_event.as_ref()
     }
 }
-impl std::fmt::Debug for AlarmState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AlarmState");
-        formatter.field("state_name", &self.state_name);
-        formatter.field("rule_evaluation", &self.rule_evaluation);
-        formatter.field("customer_action", &self.customer_action);
-        formatter.field("system_event", &self.system_event);
-        formatter.finish()
-    }
-}
 /// See [`AlarmState`](crate::model::AlarmState).
 pub mod alarm_state {
 
     /// A builder for [`AlarmState`](crate::model::AlarmState).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state_name: std::option::Option<crate::model::AlarmStateName>,
         pub(crate) rule_evaluation: std::option::Option<crate::model::RuleEvaluation>,
@@ -1292,7 +1240,7 @@ impl AlarmState {
 
 /// <p>Contains information about alarm state changes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SystemEvent {
     /// <p>The event type. If the value is <code>STATE_CHANGE</code>, the event contains information about alarm state changes.</p>
     #[doc(hidden)]
@@ -1313,22 +1261,11 @@ impl SystemEvent {
         self.state_change_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for SystemEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SystemEvent");
-        formatter.field("event_type", &self.event_type);
-        formatter.field(
-            "state_change_configuration",
-            &self.state_change_configuration,
-        );
-        formatter.finish()
-    }
-}
 /// See [`SystemEvent`](crate::model::SystemEvent).
 pub mod system_event {
 
     /// A builder for [`SystemEvent`](crate::model::SystemEvent).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_type: std::option::Option<crate::model::EventType>,
         pub(crate) state_change_configuration:
@@ -1382,7 +1319,7 @@ impl SystemEvent {
 
 /// <p>Contains the configuration information of alarm state changes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StateChangeConfiguration {
     /// <p>The trigger type. If the value is <code>SNOOZE_TIMEOUT</code>, the snooze duration ends and the alarm automatically changes to the <code>NORMAL</code> state.</p>
     #[doc(hidden)]
@@ -1394,18 +1331,11 @@ impl StateChangeConfiguration {
         self.trigger_type.as_ref()
     }
 }
-impl std::fmt::Debug for StateChangeConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StateChangeConfiguration");
-        formatter.field("trigger_type", &self.trigger_type);
-        formatter.finish()
-    }
-}
 /// See [`StateChangeConfiguration`](crate::model::StateChangeConfiguration).
 pub mod state_change_configuration {
 
     /// A builder for [`StateChangeConfiguration`](crate::model::StateChangeConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trigger_type: std::option::Option<crate::model::TriggerType>,
     }
@@ -1438,6 +1368,40 @@ impl StateChangeConfiguration {
     }
 }
 
+/// When writing a match expression against `TriggerType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let triggertype = unimplemented!();
+/// match triggertype {
+///     TriggerType::SnoozeTimeout => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `triggertype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `TriggerType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `TriggerType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `TriggerType::NewFeature` is defined.
+/// Specifically, when `triggertype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `TriggerType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1452,14 +1416,14 @@ impl StateChangeConfiguration {
 pub enum TriggerType {
     #[allow(missing_docs)] // documentation missing in model
     SnoozeTimeout,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TriggerType {
     fn from(s: &str) -> Self {
         match s {
             "SNOOZE_TIMEOUT" => TriggerType::SnoozeTimeout,
-            other => TriggerType::Unknown(other.to_owned()),
+            other => TriggerType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1475,11 +1439,11 @@ impl TriggerType {
     pub fn as_str(&self) -> &str {
         match self {
             TriggerType::SnoozeTimeout => "SNOOZE_TIMEOUT",
-            TriggerType::Unknown(s) => s.as_ref(),
+            TriggerType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SNOOZE_TIMEOUT"]
     }
 }
@@ -1489,6 +1453,40 @@ impl AsRef<str> for TriggerType {
     }
 }
 
+/// When writing a match expression against `EventType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let eventtype = unimplemented!();
+/// match eventtype {
+///     EventType::StateChange => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `eventtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EventType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EventType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EventType::NewFeature` is defined.
+/// Specifically, when `eventtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EventType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1503,14 +1501,14 @@ impl AsRef<str> for TriggerType {
 pub enum EventType {
     #[allow(missing_docs)] // documentation missing in model
     StateChange,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EventType {
     fn from(s: &str) -> Self {
         match s {
             "STATE_CHANGE" => EventType::StateChange,
-            other => EventType::Unknown(other.to_owned()),
+            other => EventType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1526,11 +1524,11 @@ impl EventType {
     pub fn as_str(&self) -> &str {
         match self {
             EventType::StateChange => "STATE_CHANGE",
-            EventType::Unknown(s) => s.as_ref(),
+            EventType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["STATE_CHANGE"]
     }
 }
@@ -1542,7 +1540,7 @@ impl AsRef<str> for EventType {
 
 /// <p>Contains information about the action that you can take to respond to the alarm.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomerAction {
     /// <p>The name of the action. The action name can be one of the following values:</p>
     /// <ul>
@@ -1616,38 +1614,11 @@ impl CustomerAction {
         self.reset_action_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for CustomerAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomerAction");
-        formatter.field("action_name", &self.action_name);
-        formatter.field(
-            "snooze_action_configuration",
-            &self.snooze_action_configuration,
-        );
-        formatter.field(
-            "enable_action_configuration",
-            &self.enable_action_configuration,
-        );
-        formatter.field(
-            "disable_action_configuration",
-            &self.disable_action_configuration,
-        );
-        formatter.field(
-            "acknowledge_action_configuration",
-            &self.acknowledge_action_configuration,
-        );
-        formatter.field(
-            "reset_action_configuration",
-            &self.reset_action_configuration,
-        );
-        formatter.finish()
-    }
-}
 /// See [`CustomerAction`](crate::model::CustomerAction).
 pub mod customer_action {
 
     /// A builder for [`CustomerAction`](crate::model::CustomerAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_name: std::option::Option<crate::model::CustomerActionName>,
         pub(crate) snooze_action_configuration:
@@ -1793,7 +1764,7 @@ impl CustomerAction {
 
 /// <p>Contains the configuration information of a reset action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResetActionConfiguration {
     /// <p>The note that you can leave when you reset the alarm.</p>
     #[doc(hidden)]
@@ -1805,18 +1776,11 @@ impl ResetActionConfiguration {
         self.note.as_deref()
     }
 }
-impl std::fmt::Debug for ResetActionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResetActionConfiguration");
-        formatter.field("note", &self.note);
-        formatter.finish()
-    }
-}
 /// See [`ResetActionConfiguration`](crate::model::ResetActionConfiguration).
 pub mod reset_action_configuration {
 
     /// A builder for [`ResetActionConfiguration`](crate::model::ResetActionConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) note: std::option::Option<std::string::String>,
     }
@@ -1846,7 +1810,7 @@ impl ResetActionConfiguration {
 
 /// <p>Contains the configuration information of an acknowledge action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcknowledgeActionConfiguration {
     /// <p>The note that you can leave when you acknowledge the alarm.</p>
     #[doc(hidden)]
@@ -1858,18 +1822,11 @@ impl AcknowledgeActionConfiguration {
         self.note.as_deref()
     }
 }
-impl std::fmt::Debug for AcknowledgeActionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcknowledgeActionConfiguration");
-        formatter.field("note", &self.note);
-        formatter.finish()
-    }
-}
 /// See [`AcknowledgeActionConfiguration`](crate::model::AcknowledgeActionConfiguration).
 pub mod acknowledge_action_configuration {
 
     /// A builder for [`AcknowledgeActionConfiguration`](crate::model::AcknowledgeActionConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) note: std::option::Option<std::string::String>,
     }
@@ -1899,7 +1856,7 @@ impl AcknowledgeActionConfiguration {
 
 /// <p>Contains the configuration information of a disable action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableActionConfiguration {
     /// <p>The note that you can leave when you disable the alarm.</p>
     #[doc(hidden)]
@@ -1911,18 +1868,11 @@ impl DisableActionConfiguration {
         self.note.as_deref()
     }
 }
-impl std::fmt::Debug for DisableActionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableActionConfiguration");
-        formatter.field("note", &self.note);
-        formatter.finish()
-    }
-}
 /// See [`DisableActionConfiguration`](crate::model::DisableActionConfiguration).
 pub mod disable_action_configuration {
 
     /// A builder for [`DisableActionConfiguration`](crate::model::DisableActionConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) note: std::option::Option<std::string::String>,
     }
@@ -1952,7 +1902,7 @@ impl DisableActionConfiguration {
 
 /// <p>Contains the configuration information of an enable action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableActionConfiguration {
     /// <p>The note that you can leave when you enable the alarm.</p>
     #[doc(hidden)]
@@ -1964,18 +1914,11 @@ impl EnableActionConfiguration {
         self.note.as_deref()
     }
 }
-impl std::fmt::Debug for EnableActionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableActionConfiguration");
-        formatter.field("note", &self.note);
-        formatter.finish()
-    }
-}
 /// See [`EnableActionConfiguration`](crate::model::EnableActionConfiguration).
 pub mod enable_action_configuration {
 
     /// A builder for [`EnableActionConfiguration`](crate::model::EnableActionConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) note: std::option::Option<std::string::String>,
     }
@@ -2005,7 +1948,7 @@ impl EnableActionConfiguration {
 
 /// <p>Contains the configuration information of a snooze action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnoozeActionConfiguration {
     /// <p>The snooze time in seconds. The alarm automatically changes to the <code>NORMAL</code> state after this duration.</p>
     #[doc(hidden)]
@@ -2024,19 +1967,11 @@ impl SnoozeActionConfiguration {
         self.note.as_deref()
     }
 }
-impl std::fmt::Debug for SnoozeActionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnoozeActionConfiguration");
-        formatter.field("snooze_duration", &self.snooze_duration);
-        formatter.field("note", &self.note);
-        formatter.finish()
-    }
-}
 /// See [`SnoozeActionConfiguration`](crate::model::SnoozeActionConfiguration).
 pub mod snooze_action_configuration {
 
     /// A builder for [`SnoozeActionConfiguration`](crate::model::SnoozeActionConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snooze_duration: std::option::Option<i32>,
         pub(crate) note: std::option::Option<std::string::String>,
@@ -2078,6 +2013,44 @@ impl SnoozeActionConfiguration {
     }
 }
 
+/// When writing a match expression against `CustomerActionName`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let customeractionname = unimplemented!();
+/// match customeractionname {
+///     CustomerActionName::Acknowledge => { /* ... */ },
+///     CustomerActionName::Disable => { /* ... */ },
+///     CustomerActionName::Enable => { /* ... */ },
+///     CustomerActionName::Reset => { /* ... */ },
+///     CustomerActionName::Snooze => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `customeractionname` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CustomerActionName::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CustomerActionName::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CustomerActionName::NewFeature` is defined.
+/// Specifically, when `customeractionname` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CustomerActionName::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2100,8 +2073,8 @@ pub enum CustomerActionName {
     Reset,
     #[allow(missing_docs)] // documentation missing in model
     Snooze,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CustomerActionName {
     fn from(s: &str) -> Self {
@@ -2111,7 +2084,9 @@ impl std::convert::From<&str> for CustomerActionName {
             "ENABLE" => CustomerActionName::Enable,
             "RESET" => CustomerActionName::Reset,
             "SNOOZE" => CustomerActionName::Snooze,
-            other => CustomerActionName::Unknown(other.to_owned()),
+            other => {
+                CustomerActionName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -2131,11 +2106,11 @@ impl CustomerActionName {
             CustomerActionName::Enable => "ENABLE",
             CustomerActionName::Reset => "RESET",
             CustomerActionName::Snooze => "SNOOZE",
-            CustomerActionName::Unknown(s) => s.as_ref(),
+            CustomerActionName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACKNOWLEDGE", "DISABLE", "ENABLE", "RESET", "SNOOZE"]
     }
 }
@@ -2147,7 +2122,7 @@ impl AsRef<str> for CustomerActionName {
 
 /// <p>Information needed to evaluate data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuleEvaluation {
     /// <p>Information needed to compare two values with a comparison operator.</p>
     #[doc(hidden)]
@@ -2161,18 +2136,11 @@ impl RuleEvaluation {
         self.simple_rule_evaluation.as_ref()
     }
 }
-impl std::fmt::Debug for RuleEvaluation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuleEvaluation");
-        formatter.field("simple_rule_evaluation", &self.simple_rule_evaluation);
-        formatter.finish()
-    }
-}
 /// See [`RuleEvaluation`](crate::model::RuleEvaluation).
 pub mod rule_evaluation {
 
     /// A builder for [`RuleEvaluation`](crate::model::RuleEvaluation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) simple_rule_evaluation: std::option::Option<crate::model::SimpleRuleEvaluation>,
     }
@@ -2207,7 +2175,7 @@ impl RuleEvaluation {
 
 /// <p>Information needed to compare two values with a comparison operator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SimpleRuleEvaluation {
     /// <p>The value of the input property, on the left side of the comparison operator.</p>
     #[doc(hidden)]
@@ -2233,20 +2201,11 @@ impl SimpleRuleEvaluation {
         self.threshold_value.as_deref()
     }
 }
-impl std::fmt::Debug for SimpleRuleEvaluation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SimpleRuleEvaluation");
-        formatter.field("input_property_value", &self.input_property_value);
-        formatter.field("operator", &self.operator);
-        formatter.field("threshold_value", &self.threshold_value);
-        formatter.finish()
-    }
-}
 /// See [`SimpleRuleEvaluation`](crate::model::SimpleRuleEvaluation).
 pub mod simple_rule_evaluation {
 
     /// A builder for [`SimpleRuleEvaluation`](crate::model::SimpleRuleEvaluation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_property_value: std::option::Option<std::string::String>,
         pub(crate) operator: std::option::Option<crate::model::ComparisonOperator>,
@@ -2309,6 +2268,45 @@ impl SimpleRuleEvaluation {
     }
 }
 
+/// When writing a match expression against `ComparisonOperator`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let comparisonoperator = unimplemented!();
+/// match comparisonoperator {
+///     ComparisonOperator::Equal => { /* ... */ },
+///     ComparisonOperator::Greater => { /* ... */ },
+///     ComparisonOperator::GreaterOrEqual => { /* ... */ },
+///     ComparisonOperator::Less => { /* ... */ },
+///     ComparisonOperator::LessOrEqual => { /* ... */ },
+///     ComparisonOperator::NotEqual => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `comparisonoperator` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ComparisonOperator::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ComparisonOperator::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ComparisonOperator::NewFeature` is defined.
+/// Specifically, when `comparisonoperator` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ComparisonOperator::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2333,8 +2331,8 @@ pub enum ComparisonOperator {
     LessOrEqual,
     #[allow(missing_docs)] // documentation missing in model
     NotEqual,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ComparisonOperator {
     fn from(s: &str) -> Self {
@@ -2345,7 +2343,9 @@ impl std::convert::From<&str> for ComparisonOperator {
             "LESS" => ComparisonOperator::Less,
             "LESS_OR_EQUAL" => ComparisonOperator::LessOrEqual,
             "NOT_EQUAL" => ComparisonOperator::NotEqual,
-            other => ComparisonOperator::Unknown(other.to_owned()),
+            other => {
+                ComparisonOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -2366,11 +2366,11 @@ impl ComparisonOperator {
             ComparisonOperator::Less => "LESS",
             ComparisonOperator::LessOrEqual => "LESS_OR_EQUAL",
             ComparisonOperator::NotEqual => "NOT_EQUAL",
-            ComparisonOperator::Unknown(s) => s.as_ref(),
+            ComparisonOperator::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "EQUAL",
             "GREATER",
@@ -2389,7 +2389,7 @@ impl AsRef<str> for ComparisonOperator {
 
 /// <p>Information about the error that occurred when attempting to update a detector.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchUpdateDetectorErrorEntry {
     /// <p>The <code>"messageId"</code> of the update request that caused the error. (The value of the <code>"messageId"</code> in the update request <code>"Detector"</code> object.)</p>
     #[doc(hidden)]
@@ -2415,20 +2415,11 @@ impl BatchUpdateDetectorErrorEntry {
         self.error_message.as_deref()
     }
 }
-impl std::fmt::Debug for BatchUpdateDetectorErrorEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchUpdateDetectorErrorEntry");
-        formatter.field("message_id", &self.message_id);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
-    }
-}
 /// See [`BatchUpdateDetectorErrorEntry`](crate::model::BatchUpdateDetectorErrorEntry).
 pub mod batch_update_detector_error_entry {
 
     /// A builder for [`BatchUpdateDetectorErrorEntry`](crate::model::BatchUpdateDetectorErrorEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
         pub(crate) error_code: std::option::Option<crate::model::ErrorCode>,
@@ -2488,6 +2479,44 @@ impl BatchUpdateDetectorErrorEntry {
     }
 }
 
+/// When writing a match expression against `ErrorCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let errorcode = unimplemented!();
+/// match errorcode {
+///     ErrorCode::InternalFailureException => { /* ... */ },
+///     ErrorCode::InvalidRequestException => { /* ... */ },
+///     ErrorCode::ResourceNotFoundException => { /* ... */ },
+///     ErrorCode::ServiceUnavailableException => { /* ... */ },
+///     ErrorCode::ThrottlingException => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `errorcode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ErrorCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ErrorCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ErrorCode::NewFeature` is defined.
+/// Specifically, when `errorcode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ErrorCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2510,8 +2539,8 @@ pub enum ErrorCode {
     ServiceUnavailableException,
     #[allow(missing_docs)] // documentation missing in model
     ThrottlingException,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ErrorCode {
     fn from(s: &str) -> Self {
@@ -2521,7 +2550,7 @@ impl std::convert::From<&str> for ErrorCode {
             "ResourceNotFoundException" => ErrorCode::ResourceNotFoundException,
             "ServiceUnavailableException" => ErrorCode::ServiceUnavailableException,
             "ThrottlingException" => ErrorCode::ThrottlingException,
-            other => ErrorCode::Unknown(other.to_owned()),
+            other => ErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2541,11 +2570,11 @@ impl ErrorCode {
             ErrorCode::ResourceNotFoundException => "ResourceNotFoundException",
             ErrorCode::ServiceUnavailableException => "ServiceUnavailableException",
             ErrorCode::ThrottlingException => "ThrottlingException",
-            ErrorCode::Unknown(s) => s.as_ref(),
+            ErrorCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "InternalFailureException",
             "InvalidRequestException",
@@ -2563,7 +2592,7 @@ impl AsRef<str> for ErrorCode {
 
 /// <p>Information used to update the detector (instance).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDetectorRequest {
     /// <p>The ID to assign to the detector update <code>"message"</code>. Each <code>"messageId"</code> must be unique within each batch sent.</p>
     #[doc(hidden)]
@@ -2596,21 +2625,11 @@ impl UpdateDetectorRequest {
         self.state.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateDetectorRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDetectorRequest");
-        formatter.field("message_id", &self.message_id);
-        formatter.field("detector_model_name", &self.detector_model_name);
-        formatter.field("key_value", &self.key_value);
-        formatter.field("state", &self.state);
-        formatter.finish()
-    }
-}
 /// See [`UpdateDetectorRequest`](crate::model::UpdateDetectorRequest).
 pub mod update_detector_request {
 
     /// A builder for [`UpdateDetectorRequest`](crate::model::UpdateDetectorRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
         pub(crate) detector_model_name: std::option::Option<std::string::String>,
@@ -2684,7 +2703,7 @@ impl UpdateDetectorRequest {
 
 /// <p>The new state, variable values, and timer settings of the detector (instance).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectorStateDefinition {
     /// <p>The name of the new state of the detector (instance).</p>
     #[doc(hidden)]
@@ -2710,20 +2729,11 @@ impl DetectorStateDefinition {
         self.timers.as_deref()
     }
 }
-impl std::fmt::Debug for DetectorStateDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectorStateDefinition");
-        formatter.field("state_name", &self.state_name);
-        formatter.field("variables", &self.variables);
-        formatter.field("timers", &self.timers);
-        formatter.finish()
-    }
-}
 /// See [`DetectorStateDefinition`](crate::model::DetectorStateDefinition).
 pub mod detector_state_definition {
 
     /// A builder for [`DetectorStateDefinition`](crate::model::DetectorStateDefinition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state_name: std::option::Option<std::string::String>,
         pub(crate) variables: std::option::Option<std::vec::Vec<crate::model::VariableDefinition>>,
@@ -2797,7 +2807,7 @@ impl DetectorStateDefinition {
 
 /// <p>The new setting of a timer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimerDefinition {
     /// <p>The name of the timer.</p>
     #[doc(hidden)]
@@ -2816,19 +2826,11 @@ impl TimerDefinition {
         self.seconds
     }
 }
-impl std::fmt::Debug for TimerDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimerDefinition");
-        formatter.field("name", &self.name);
-        formatter.field("seconds", &self.seconds);
-        formatter.finish()
-    }
-}
 /// See [`TimerDefinition`](crate::model::TimerDefinition).
 pub mod timer_definition {
 
     /// A builder for [`TimerDefinition`](crate::model::TimerDefinition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) seconds: std::option::Option<i32>,
@@ -2872,7 +2874,7 @@ impl TimerDefinition {
 
 /// <p>The new value of the variable.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VariableDefinition {
     /// <p>The name of the variable.</p>
     #[doc(hidden)]
@@ -2891,19 +2893,11 @@ impl VariableDefinition {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for VariableDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VariableDefinition");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`VariableDefinition`](crate::model::VariableDefinition).
 pub mod variable_definition {
 
     /// A builder for [`VariableDefinition`](crate::model::VariableDefinition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -2954,7 +2948,7 @@ impl VariableDefinition {
 /// <li> <p> <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchSnoozeAlarm.html">BatchSnoozeAlarm</a> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchAlarmActionErrorEntry {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
     #[doc(hidden)]
@@ -2980,20 +2974,11 @@ impl BatchAlarmActionErrorEntry {
         self.error_message.as_deref()
     }
 }
-impl std::fmt::Debug for BatchAlarmActionErrorEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchAlarmActionErrorEntry");
-        formatter.field("request_id", &self.request_id);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
-    }
-}
 /// See [`BatchAlarmActionErrorEntry`](crate::model::BatchAlarmActionErrorEntry).
 pub mod batch_alarm_action_error_entry {
 
     /// A builder for [`BatchAlarmActionErrorEntry`](crate::model::BatchAlarmActionErrorEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) error_code: std::option::Option<crate::model::ErrorCode>,
@@ -3055,7 +3040,7 @@ impl BatchAlarmActionErrorEntry {
 
 /// <p>Information needed to snooze the alarm.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnoozeAlarmActionRequest {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
     #[doc(hidden)]
@@ -3095,22 +3080,11 @@ impl SnoozeAlarmActionRequest {
         self.snooze_duration
     }
 }
-impl std::fmt::Debug for SnoozeAlarmActionRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnoozeAlarmActionRequest");
-        formatter.field("request_id", &self.request_id);
-        formatter.field("alarm_model_name", &self.alarm_model_name);
-        formatter.field("key_value", &self.key_value);
-        formatter.field("note", &self.note);
-        formatter.field("snooze_duration", &self.snooze_duration);
-        formatter.finish()
-    }
-}
 /// See [`SnoozeAlarmActionRequest`](crate::model::SnoozeAlarmActionRequest).
 pub mod snooze_alarm_action_request {
 
     /// A builder for [`SnoozeAlarmActionRequest`](crate::model::SnoozeAlarmActionRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) alarm_model_name: std::option::Option<std::string::String>,
@@ -3193,7 +3167,7 @@ impl SnoozeAlarmActionRequest {
 
 /// <p>Information needed to reset the alarm.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResetAlarmActionRequest {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
     #[doc(hidden)]
@@ -3226,21 +3200,11 @@ impl ResetAlarmActionRequest {
         self.note.as_deref()
     }
 }
-impl std::fmt::Debug for ResetAlarmActionRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResetAlarmActionRequest");
-        formatter.field("request_id", &self.request_id);
-        formatter.field("alarm_model_name", &self.alarm_model_name);
-        formatter.field("key_value", &self.key_value);
-        formatter.field("note", &self.note);
-        formatter.finish()
-    }
-}
 /// See [`ResetAlarmActionRequest`](crate::model::ResetAlarmActionRequest).
 pub mod reset_alarm_action_request {
 
     /// A builder for [`ResetAlarmActionRequest`](crate::model::ResetAlarmActionRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) alarm_model_name: std::option::Option<std::string::String>,
@@ -3311,7 +3275,7 @@ impl ResetAlarmActionRequest {
 
 /// <p>Contains information about the errors encountered.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchPutMessageErrorEntry {
     /// <p>The ID of the message that caused the error. (See the value corresponding to the <code>"messageId"</code> key in the <code>"message"</code> object.)</p>
     #[doc(hidden)]
@@ -3337,20 +3301,11 @@ impl BatchPutMessageErrorEntry {
         self.error_message.as_deref()
     }
 }
-impl std::fmt::Debug for BatchPutMessageErrorEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchPutMessageErrorEntry");
-        formatter.field("message_id", &self.message_id);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
-    }
-}
 /// See [`BatchPutMessageErrorEntry`](crate::model::BatchPutMessageErrorEntry).
 pub mod batch_put_message_error_entry {
 
     /// A builder for [`BatchPutMessageErrorEntry`](crate::model::BatchPutMessageErrorEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
         pub(crate) error_code: std::option::Option<crate::model::ErrorCode>,
@@ -3412,7 +3367,7 @@ impl BatchPutMessageErrorEntry {
 
 /// <p>Information about a message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Message {
     /// <p>The ID to assign to the message. Within each batch sent, each <code>"messageId"</code> must be unique.</p>
     #[doc(hidden)]
@@ -3445,21 +3400,11 @@ impl Message {
         self.timestamp.as_ref()
     }
 }
-impl std::fmt::Debug for Message {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Message");
-        formatter.field("message_id", &self.message_id);
-        formatter.field("input_name", &self.input_name);
-        formatter.field("payload", &self.payload);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.finish()
-    }
-}
 /// See [`Message`](crate::model::Message).
 pub mod message {
 
     /// A builder for [`Message`](crate::model::Message).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
         pub(crate) input_name: std::option::Option<std::string::String>,
@@ -3530,7 +3475,7 @@ impl Message {
 
 /// <p>Contains information about a timestamp.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimestampValue {
     /// <p>The value of the timestamp, in the Unix epoch format.</p>
     #[doc(hidden)]
@@ -3542,18 +3487,11 @@ impl TimestampValue {
         self.time_in_millis
     }
 }
-impl std::fmt::Debug for TimestampValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimestampValue");
-        formatter.field("time_in_millis", &self.time_in_millis);
-        formatter.finish()
-    }
-}
 /// See [`TimestampValue`](crate::model::TimestampValue).
 pub mod timestamp_value {
 
     /// A builder for [`TimestampValue`](crate::model::TimestampValue).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_in_millis: std::option::Option<i64>,
     }
@@ -3585,7 +3523,7 @@ impl TimestampValue {
 
 /// <p>Information needed to enable the alarm.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableAlarmActionRequest {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
     #[doc(hidden)]
@@ -3618,21 +3556,11 @@ impl EnableAlarmActionRequest {
         self.note.as_deref()
     }
 }
-impl std::fmt::Debug for EnableAlarmActionRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableAlarmActionRequest");
-        formatter.field("request_id", &self.request_id);
-        formatter.field("alarm_model_name", &self.alarm_model_name);
-        formatter.field("key_value", &self.key_value);
-        formatter.field("note", &self.note);
-        formatter.finish()
-    }
-}
 /// See [`EnableAlarmActionRequest`](crate::model::EnableAlarmActionRequest).
 pub mod enable_alarm_action_request {
 
     /// A builder for [`EnableAlarmActionRequest`](crate::model::EnableAlarmActionRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) alarm_model_name: std::option::Option<std::string::String>,
@@ -3703,7 +3631,7 @@ impl EnableAlarmActionRequest {
 
 /// <p>Information used to disable the alarm.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableAlarmActionRequest {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
     #[doc(hidden)]
@@ -3736,21 +3664,11 @@ impl DisableAlarmActionRequest {
         self.note.as_deref()
     }
 }
-impl std::fmt::Debug for DisableAlarmActionRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableAlarmActionRequest");
-        formatter.field("request_id", &self.request_id);
-        formatter.field("alarm_model_name", &self.alarm_model_name);
-        formatter.field("key_value", &self.key_value);
-        formatter.field("note", &self.note);
-        formatter.finish()
-    }
-}
 /// See [`DisableAlarmActionRequest`](crate::model::DisableAlarmActionRequest).
 pub mod disable_alarm_action_request {
 
     /// A builder for [`DisableAlarmActionRequest`](crate::model::DisableAlarmActionRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) alarm_model_name: std::option::Option<std::string::String>,
@@ -3821,7 +3739,7 @@ impl DisableAlarmActionRequest {
 
 /// <p>Contains error messages associated with the deletion request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDeleteDetectorErrorEntry {
     /// <p>The ID of the message that caused the error. (See the value of the <code>"messageId"</code> in the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchDeleteDetector.html#iotevents-iotevents-data_BatchDeleteDetector-request-detectors">detectors</a> object of the <code>DeleteDetectorRequest</code>.)</p>
     #[doc(hidden)]
@@ -3847,20 +3765,11 @@ impl BatchDeleteDetectorErrorEntry {
         self.error_message.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDeleteDetectorErrorEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDeleteDetectorErrorEntry");
-        formatter.field("message_id", &self.message_id);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
-    }
-}
 /// See [`BatchDeleteDetectorErrorEntry`](crate::model::BatchDeleteDetectorErrorEntry).
 pub mod batch_delete_detector_error_entry {
 
     /// A builder for [`BatchDeleteDetectorErrorEntry`](crate::model::BatchDeleteDetectorErrorEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
         pub(crate) error_code: std::option::Option<crate::model::ErrorCode>,
@@ -3922,7 +3831,7 @@ impl BatchDeleteDetectorErrorEntry {
 
 /// <p>Information used to delete the detector model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDetectorRequest {
     /// <p>The ID to assign to the <code>DeleteDetectorRequest</code>. Each <code>"messageId"</code> must be unique within each batch sent.</p>
     #[doc(hidden)]
@@ -3948,20 +3857,11 @@ impl DeleteDetectorRequest {
         self.key_value.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDetectorRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDetectorRequest");
-        formatter.field("message_id", &self.message_id);
-        formatter.field("detector_model_name", &self.detector_model_name);
-        formatter.field("key_value", &self.key_value);
-        formatter.finish()
-    }
-}
 /// See [`DeleteDetectorRequest`](crate::model::DeleteDetectorRequest).
 pub mod delete_detector_request {
 
     /// A builder for [`DeleteDetectorRequest`](crate::model::DeleteDetectorRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
         pub(crate) detector_model_name: std::option::Option<std::string::String>,
@@ -4020,7 +3920,7 @@ impl DeleteDetectorRequest {
 
 /// <p>Information needed to acknowledge the alarm.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcknowledgeAlarmActionRequest {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
     #[doc(hidden)]
@@ -4053,21 +3953,11 @@ impl AcknowledgeAlarmActionRequest {
         self.note.as_deref()
     }
 }
-impl std::fmt::Debug for AcknowledgeAlarmActionRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcknowledgeAlarmActionRequest");
-        formatter.field("request_id", &self.request_id);
-        formatter.field("alarm_model_name", &self.alarm_model_name);
-        formatter.field("key_value", &self.key_value);
-        formatter.field("note", &self.note);
-        formatter.finish()
-    }
-}
 /// See [`AcknowledgeAlarmActionRequest`](crate::model::AcknowledgeAlarmActionRequest).
 pub mod acknowledge_alarm_action_request {
 
     /// A builder for [`AcknowledgeAlarmActionRequest`](crate::model::AcknowledgeAlarmActionRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) alarm_model_name: std::option::Option<std::string::String>,

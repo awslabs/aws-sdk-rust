@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod batch_meter_usage_input {
 
     /// A builder for [`BatchMeterUsageInput`](crate::input::BatchMeterUsageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) usage_records: std::option::Option<std::vec::Vec<crate::model::UsageRecord>>,
         pub(crate) product_code: std::option::Option<std::string::String>,
@@ -43,7 +43,7 @@ pub mod batch_meter_usage_input {
         /// Consumes the builder and constructs a [`BatchMeterUsageInput`](crate::input::BatchMeterUsageInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::BatchMeterUsageInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::BatchMeterUsageInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::BatchMeterUsageInput {
                 usage_records: self.usage_records,
@@ -65,13 +65,13 @@ impl BatchMeterUsageInput {
             crate::operation::BatchMeterUsage,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::BatchMeterUsageInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -79,8 +79,10 @@ impl BatchMeterUsageInput {
             fn update_http_builder(
                 input: &crate::input::BatchMeterUsageInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -169,7 +171,7 @@ impl BatchMeterUsageInput {
 pub mod meter_usage_input {
 
     /// A builder for [`MeterUsageInput`](crate::input::MeterUsageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_code: std::option::Option<std::string::String>,
         pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -260,7 +262,8 @@ pub mod meter_usage_input {
         /// Consumes the builder and constructs a [`MeterUsageInput`](crate::input::MeterUsageInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::MeterUsageInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::MeterUsageInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::MeterUsageInput {
                 product_code: self.product_code,
                 timestamp: self.timestamp,
@@ -285,13 +288,13 @@ impl MeterUsageInput {
             crate::operation::MeterUsage,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::MeterUsageInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -299,8 +302,10 @@ impl MeterUsageInput {
             fn update_http_builder(
                 input: &crate::input::MeterUsageInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -389,7 +394,7 @@ impl MeterUsageInput {
 pub mod register_usage_input {
 
     /// A builder for [`RegisterUsageInput`](crate::input::RegisterUsageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_code: std::option::Option<std::string::String>,
         pub(crate) public_key_version: std::option::Option<i32>,
@@ -429,7 +434,7 @@ pub mod register_usage_input {
         /// Consumes the builder and constructs a [`RegisterUsageInput`](crate::input::RegisterUsageInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::RegisterUsageInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::RegisterUsageInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::RegisterUsageInput {
                 product_code: self.product_code,
@@ -452,13 +457,13 @@ impl RegisterUsageInput {
             crate::operation::RegisterUsage,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RegisterUsageInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -466,8 +471,10 @@ impl RegisterUsageInput {
             fn update_http_builder(
                 input: &crate::input::RegisterUsageInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -556,7 +563,7 @@ impl RegisterUsageInput {
 pub mod resolve_customer_input {
 
     /// A builder for [`ResolveCustomerInput`](crate::input::ResolveCustomerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registration_token: std::option::Option<std::string::String>,
     }
@@ -577,7 +584,7 @@ pub mod resolve_customer_input {
         /// Consumes the builder and constructs a [`ResolveCustomerInput`](crate::input::ResolveCustomerInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ResolveCustomerInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ResolveCustomerInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ResolveCustomerInput {
                 registration_token: self.registration_token,
@@ -598,13 +605,13 @@ impl ResolveCustomerInput {
             crate::operation::ResolveCustomer,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ResolveCustomerInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -612,8 +619,10 @@ impl ResolveCustomerInput {
             fn update_http_builder(
                 input: &crate::input::ResolveCustomerInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -700,7 +709,7 @@ impl ResolveCustomerInput {
 
 /// <p>Contains input to the <code>ResolveCustomer</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResolveCustomerInput {
     /// <p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a <code>CustomerIdentifier</code> along with the <code>CustomerAWSAccountId</code> and <code>ProductCode</code>.</p>
     #[doc(hidden)]
@@ -712,17 +721,10 @@ impl ResolveCustomerInput {
         self.registration_token.as_deref()
     }
 }
-impl std::fmt::Debug for ResolveCustomerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResolveCustomerInput");
-        formatter.field("registration_token", &self.registration_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterUsageInput {
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
     #[doc(hidden)]
@@ -748,19 +750,10 @@ impl RegisterUsageInput {
         self.nonce.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterUsageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterUsageInput");
-        formatter.field("product_code", &self.product_code);
-        formatter.field("public_key_version", &self.public_key_version);
-        formatter.field("nonce", &self.nonce);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MeterUsageInput {
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
     #[doc(hidden)]
@@ -809,22 +802,10 @@ impl MeterUsageInput {
         self.usage_allocations.as_deref()
     }
 }
-impl std::fmt::Debug for MeterUsageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MeterUsageInput");
-        formatter.field("product_code", &self.product_code);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("usage_dimension", &self.usage_dimension);
-        formatter.field("usage_quantity", &self.usage_quantity);
-        formatter.field("dry_run", &self.dry_run);
-        formatter.field("usage_allocations", &self.usage_allocations);
-        formatter.finish()
-    }
-}
 
 /// <p>A <code>BatchMeterUsageRequest</code> contains <code>UsageRecords</code>, which indicate quantities of usage within your application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchMeterUsageInput {
     /// <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code> accepts up to 25 <code>UsageRecords</code> at a time.</p>
     #[doc(hidden)]
@@ -841,13 +822,5 @@ impl BatchMeterUsageInput {
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
     pub fn product_code(&self) -> std::option::Option<&str> {
         self.product_code.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchMeterUsageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchMeterUsageInput");
-        formatter.field("usage_records", &self.usage_records);
-        formatter.field("product_code", &self.product_code);
-        formatter.finish()
     }
 }

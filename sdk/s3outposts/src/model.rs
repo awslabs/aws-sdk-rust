@@ -2,7 +2,7 @@
 
 /// <p>Amazon S3 on Outposts Access Points simplify managing data access at scale for shared datasets in S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets so that you can perform actions within your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/WorkingWithS3Outposts.html"> Accessing S3 on Outposts using VPC-only access points</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Endpoint {
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
     #[doc(hidden)]
@@ -84,28 +84,11 @@ impl Endpoint {
         self.customer_owned_ipv4_pool.as_deref()
     }
 }
-impl std::fmt::Debug for Endpoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Endpoint");
-        formatter.field("endpoint_arn", &self.endpoint_arn);
-        formatter.field("outposts_id", &self.outposts_id);
-        formatter.field("cidr_block", &self.cidr_block);
-        formatter.field("status", &self.status);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("network_interfaces", &self.network_interfaces);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.field("security_group_id", &self.security_group_id);
-        formatter.field("access_type", &self.access_type);
-        formatter.field("customer_owned_ipv4_pool", &self.customer_owned_ipv4_pool);
-        formatter.finish()
-    }
-}
 /// See [`Endpoint`](crate::model::Endpoint).
 pub mod endpoint {
 
     /// A builder for [`Endpoint`](crate::model::Endpoint).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_arn: std::option::Option<std::string::String>,
         pub(crate) outposts_id: std::option::Option<std::string::String>,
@@ -280,6 +263,41 @@ impl Endpoint {
     }
 }
 
+/// When writing a match expression against `EndpointAccessType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let endpointaccesstype = unimplemented!();
+/// match endpointaccesstype {
+///     EndpointAccessType::CustomerOwnedIp => { /* ... */ },
+///     EndpointAccessType::Private => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `endpointaccesstype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EndpointAccessType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EndpointAccessType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EndpointAccessType::NewFeature` is defined.
+/// Specifically, when `endpointaccesstype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EndpointAccessType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -296,15 +314,17 @@ pub enum EndpointAccessType {
     CustomerOwnedIp,
     #[allow(missing_docs)] // documentation missing in model
     Private,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EndpointAccessType {
     fn from(s: &str) -> Self {
         match s {
             "CustomerOwnedIp" => EndpointAccessType::CustomerOwnedIp,
             "Private" => EndpointAccessType::Private,
-            other => EndpointAccessType::Unknown(other.to_owned()),
+            other => {
+                EndpointAccessType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -321,11 +341,11 @@ impl EndpointAccessType {
         match self {
             EndpointAccessType::CustomerOwnedIp => "CustomerOwnedIp",
             EndpointAccessType::Private => "Private",
-            EndpointAccessType::Unknown(s) => s.as_ref(),
+            EndpointAccessType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CustomerOwnedIp", "Private"]
     }
 }
@@ -337,7 +357,7 @@ impl AsRef<str> for EndpointAccessType {
 
 /// <p>The container for the network interface.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkInterface {
     /// <p>The ID for the network interface.</p>
     #[doc(hidden)]
@@ -349,18 +369,11 @@ impl NetworkInterface {
         self.network_interface_id.as_deref()
     }
 }
-impl std::fmt::Debug for NetworkInterface {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkInterface");
-        formatter.field("network_interface_id", &self.network_interface_id);
-        formatter.finish()
-    }
-}
 /// See [`NetworkInterface`](crate::model::NetworkInterface).
 pub mod network_interface {
 
     /// A builder for [`NetworkInterface`](crate::model::NetworkInterface).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_interface_id: std::option::Option<std::string::String>,
     }
@@ -393,6 +406,42 @@ impl NetworkInterface {
     }
 }
 
+/// When writing a match expression against `EndpointStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let endpointstatus = unimplemented!();
+/// match endpointstatus {
+///     EndpointStatus::Available => { /* ... */ },
+///     EndpointStatus::Deleting => { /* ... */ },
+///     EndpointStatus::Pending => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `endpointstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EndpointStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EndpointStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EndpointStatus::NewFeature` is defined.
+/// Specifically, when `endpointstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EndpointStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -411,8 +460,8 @@ pub enum EndpointStatus {
     Deleting,
     #[allow(missing_docs)] // documentation missing in model
     Pending,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EndpointStatus {
     fn from(s: &str) -> Self {
@@ -420,7 +469,7 @@ impl std::convert::From<&str> for EndpointStatus {
             "Available" => EndpointStatus::Available,
             "Deleting" => EndpointStatus::Deleting,
             "Pending" => EndpointStatus::Pending,
-            other => EndpointStatus::Unknown(other.to_owned()),
+            other => EndpointStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -438,11 +487,11 @@ impl EndpointStatus {
             EndpointStatus::Available => "Available",
             EndpointStatus::Deleting => "Deleting",
             EndpointStatus::Pending => "Pending",
-            EndpointStatus::Unknown(s) => s.as_ref(),
+            EndpointStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Available", "Deleting", "Pending"]
     }
 }

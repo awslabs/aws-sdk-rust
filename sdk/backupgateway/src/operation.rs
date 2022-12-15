@@ -5,7 +5,7 @@
 /// [`associate_gateway_to_server`](crate::client::Client::associate_gateway_to_server).
 ///
 /// See [`crate::client::fluent_builders::AssociateGatewayToServer`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateGatewayToServer {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateGatewayToServer
 /// [`create_gateway`](crate::client::Client::create_gateway).
 ///
 /// See [`crate::client::fluent_builders::CreateGateway`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateGateway {
     _private: (),
 }
@@ -71,7 +71,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGateway {
 /// [`delete_gateway`](crate::client::Client::delete_gateway).
 ///
 /// See [`crate::client::fluent_builders::DeleteGateway`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteGateway {
     _private: (),
 }
@@ -103,7 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGateway {
 /// [`delete_hypervisor`](crate::client::Client::delete_hypervisor).
 ///
 /// See [`crate::client::fluent_builders::DeleteHypervisor`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteHypervisor {
     _private: (),
 }
@@ -137,7 +137,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteHypervisor {
 /// [`disassociate_gateway_from_server`](crate::client::Client::disassociate_gateway_from_server).
 ///
 /// See [`crate::client::fluent_builders::DisassociateGatewayFromServer`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateGatewayFromServer {
     _private: (),
 }
@@ -171,7 +171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateGatewayFromS
 /// [`get_gateway`](crate::client::Client::get_gateway).
 ///
 /// See [`crate::client::fluent_builders::GetGateway`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetGateway {
     _private: (),
 }
@@ -203,7 +203,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGateway {
 /// [`get_virtual_machine`](crate::client::Client::get_virtual_machine).
 ///
 /// See [`crate::client::fluent_builders::GetVirtualMachine`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetVirtualMachine {
     _private: (),
 }
@@ -237,7 +237,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVirtualMachine {
 /// [`import_hypervisor_configuration`](crate::client::Client::import_hypervisor_configuration).
 ///
 /// See [`crate::client::fluent_builders::ImportHypervisorConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ImportHypervisorConfiguration {
     _private: (),
 }
@@ -271,7 +271,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportHypervisorConfigur
 /// [`list_gateways`](crate::client::Client::list_gateways).
 ///
 /// See [`crate::client::fluent_builders::ListGateways`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListGateways {
     _private: (),
 }
@@ -303,7 +303,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGateways {
 /// [`list_hypervisors`](crate::client::Client::list_hypervisors).
 ///
 /// See [`crate::client::fluent_builders::ListHypervisors`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListHypervisors {
     _private: (),
 }
@@ -337,7 +337,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListHypervisors {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -371,7 +371,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`list_virtual_machines`](crate::client::Client::list_virtual_machines).
 ///
 /// See [`crate::client::fluent_builders::ListVirtualMachines`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListVirtualMachines {
     _private: (),
 }
@@ -405,7 +405,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVirtualMachines {
 /// [`put_maintenance_start_time`](crate::client::Client::put_maintenance_start_time).
 ///
 /// See [`crate::client::fluent_builders::PutMaintenanceStartTime`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutMaintenanceStartTime {
     _private: (),
 }
@@ -439,7 +439,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutMaintenanceStartTime 
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -471,7 +471,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`test_hypervisor_configuration`](crate::client::Client::test_hypervisor_configuration).
 ///
 /// See [`crate::client::fluent_builders::TestHypervisorConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TestHypervisorConfiguration {
     _private: (),
 }
@@ -505,7 +505,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TestHypervisorConfigurat
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -537,7 +537,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_gateway_information`](crate::client::Client::update_gateway_information).
 ///
 /// See [`crate::client::fluent_builders::UpdateGatewayInformation`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateGatewayInformation {
     _private: (),
 }
@@ -571,7 +571,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGatewayInformation
 /// [`update_gateway_software_now`](crate::client::Client::update_gateway_software_now).
 ///
 /// See [`crate::client::fluent_builders::UpdateGatewaySoftwareNow`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateGatewaySoftwareNow {
     _private: (),
 }
@@ -605,7 +605,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGatewaySoftwareNow
 /// [`update_hypervisor`](crate::client::Client::update_hypervisor).
 ///
 /// See [`crate::client::fluent_builders::UpdateHypervisor`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateHypervisor {
     _private: (),
 }

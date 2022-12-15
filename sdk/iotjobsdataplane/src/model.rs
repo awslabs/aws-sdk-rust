@@ -2,7 +2,7 @@
 
 /// <p>Contains data about the state of a job execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobExecutionState {
     /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED", "REJECTED", or "REMOVED".</p>
     #[doc(hidden)]
@@ -32,20 +32,11 @@ impl JobExecutionState {
         self.version_number
     }
 }
-impl std::fmt::Debug for JobExecutionState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobExecutionState");
-        formatter.field("status", &self.status);
-        formatter.field("status_details", &self.status_details);
-        formatter.field("version_number", &self.version_number);
-        formatter.finish()
-    }
-}
 /// See [`JobExecutionState`](crate::model::JobExecutionState).
 pub mod job_execution_state {
 
     /// A builder for [`JobExecutionState`](crate::model::JobExecutionState).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::JobExecutionStatus>,
         pub(crate) status_details: std::option::Option<
@@ -119,6 +110,47 @@ impl JobExecutionState {
     }
 }
 
+/// When writing a match expression against `JobExecutionStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let jobexecutionstatus = unimplemented!();
+/// match jobexecutionstatus {
+///     JobExecutionStatus::Canceled => { /* ... */ },
+///     JobExecutionStatus::Failed => { /* ... */ },
+///     JobExecutionStatus::InProgress => { /* ... */ },
+///     JobExecutionStatus::Queued => { /* ... */ },
+///     JobExecutionStatus::Rejected => { /* ... */ },
+///     JobExecutionStatus::Removed => { /* ... */ },
+///     JobExecutionStatus::Succeeded => { /* ... */ },
+///     JobExecutionStatus::TimedOut => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `jobexecutionstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `JobExecutionStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `JobExecutionStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `JobExecutionStatus::NewFeature` is defined.
+/// Specifically, when `jobexecutionstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `JobExecutionStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -147,8 +179,8 @@ pub enum JobExecutionStatus {
     Succeeded,
     #[allow(missing_docs)] // documentation missing in model
     TimedOut,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for JobExecutionStatus {
     fn from(s: &str) -> Self {
@@ -161,7 +193,9 @@ impl std::convert::From<&str> for JobExecutionStatus {
             "REMOVED" => JobExecutionStatus::Removed,
             "SUCCEEDED" => JobExecutionStatus::Succeeded,
             "TIMED_OUT" => JobExecutionStatus::TimedOut,
-            other => JobExecutionStatus::Unknown(other.to_owned()),
+            other => {
+                JobExecutionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -184,11 +218,11 @@ impl JobExecutionStatus {
             JobExecutionStatus::Removed => "REMOVED",
             JobExecutionStatus::Succeeded => "SUCCEEDED",
             JobExecutionStatus::TimedOut => "TIMED_OUT",
-            JobExecutionStatus::Unknown(s) => s.as_ref(),
+            JobExecutionStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELED",
             "FAILED",
@@ -209,7 +243,7 @@ impl AsRef<str> for JobExecutionStatus {
 
 /// <p>Contains data about a job execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobExecution {
     /// <p>The unique identifier you assigned to this job when it was created.</p>
     #[doc(hidden)]
@@ -295,31 +329,11 @@ impl JobExecution {
         self.job_document.as_deref()
     }
 }
-impl std::fmt::Debug for JobExecution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobExecution");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("thing_name", &self.thing_name);
-        formatter.field("status", &self.status);
-        formatter.field("status_details", &self.status_details);
-        formatter.field("queued_at", &self.queued_at);
-        formatter.field("started_at", &self.started_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field(
-            "approximate_seconds_before_timed_out",
-            &self.approximate_seconds_before_timed_out,
-        );
-        formatter.field("version_number", &self.version_number);
-        formatter.field("execution_number", &self.execution_number);
-        formatter.field("job_document", &self.job_document);
-        formatter.finish()
-    }
-}
 /// See [`JobExecution`](crate::model::JobExecution).
 pub mod job_execution {
 
     /// A builder for [`JobExecution`](crate::model::JobExecution).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) thing_name: std::option::Option<std::string::String>,
@@ -494,7 +508,7 @@ impl JobExecution {
 
 /// <p>Contains a subset of information about a job execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobExecutionSummary {
     /// <p>The unique identifier you assigned to this job when it was created.</p>
     #[doc(hidden)]
@@ -541,23 +555,11 @@ impl JobExecutionSummary {
         self.execution_number
     }
 }
-impl std::fmt::Debug for JobExecutionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobExecutionSummary");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("queued_at", &self.queued_at);
-        formatter.field("started_at", &self.started_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("version_number", &self.version_number);
-        formatter.field("execution_number", &self.execution_number);
-        formatter.finish()
-    }
-}
 /// See [`JobExecutionSummary`](crate::model::JobExecutionSummary).
 pub mod job_execution_summary {
 
     /// A builder for [`JobExecutionSummary`](crate::model::JobExecutionSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) queued_at: std::option::Option<i64>,

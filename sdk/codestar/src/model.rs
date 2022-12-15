@@ -49,7 +49,7 @@ impl std::fmt::Debug for UserProfileSummary {
 pub mod user_profile_summary {
 
     /// A builder for [`UserProfileSummary`](crate::model::UserProfileSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_arn: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
@@ -113,6 +113,16 @@ pub mod user_profile_summary {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_arn", &self.user_arn);
+            formatter.field("display_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("email_address", &"*** Sensitive Data Redacted ***");
+            formatter.field("ssh_public_key", &self.ssh_public_key);
+            formatter.finish()
+        }
+    }
 }
 impl UserProfileSummary {
     /// Creates a new builder-style object to manufacture [`UserProfileSummary`](crate::model::UserProfileSummary).
@@ -123,7 +133,7 @@ impl UserProfileSummary {
 
 /// <p>Information about a team member in a project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TeamMember {
     /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
     #[doc(hidden)]
@@ -149,20 +159,11 @@ impl TeamMember {
         self.remote_access_allowed
     }
 }
-impl std::fmt::Debug for TeamMember {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TeamMember");
-        formatter.field("user_arn", &self.user_arn);
-        formatter.field("project_role", &self.project_role);
-        formatter.field("remote_access_allowed", &self.remote_access_allowed);
-        formatter.finish()
-    }
-}
 /// See [`TeamMember`](crate::model::TeamMember).
 pub mod team_member {
 
     /// A builder for [`TeamMember`](crate::model::TeamMember).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_arn: std::option::Option<std::string::String>,
         pub(crate) project_role: std::option::Option<std::string::String>,
@@ -218,7 +219,7 @@ impl TeamMember {
 
 /// <p>Information about a resource for a project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Resource {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -230,18 +231,11 @@ impl Resource {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for Resource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Resource");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 /// See [`Resource`](crate::model::Resource).
 pub mod resource {
 
     /// A builder for [`Resource`](crate::model::Resource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -271,7 +265,7 @@ impl Resource {
 
 /// <p>Information about the metadata for a project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProjectSummary {
     /// <p>The ID of the project.</p>
     #[doc(hidden)]
@@ -290,19 +284,11 @@ impl ProjectSummary {
         self.project_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ProjectSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProjectSummary");
-        formatter.field("project_id", &self.project_id);
-        formatter.field("project_arn", &self.project_arn);
-        formatter.finish()
-    }
-}
 /// See [`ProjectSummary`](crate::model::ProjectSummary).
 pub mod project_summary {
 
     /// A builder for [`ProjectSummary`](crate::model::ProjectSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_id: std::option::Option<std::string::String>,
         pub(crate) project_arn: std::option::Option<std::string::String>,
@@ -346,7 +332,7 @@ impl ProjectSummary {
 
 /// <p>An indication of whether a project creation or deletion is failed or successful.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProjectStatus {
     /// <p>The phase of completion for a project creation or deletion.</p>
     #[doc(hidden)]
@@ -365,19 +351,11 @@ impl ProjectStatus {
         self.reason.as_deref()
     }
 }
-impl std::fmt::Debug for ProjectStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProjectStatus");
-        formatter.field("state", &self.state);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
-    }
-}
 /// See [`ProjectStatus`](crate::model::ProjectStatus).
 pub mod project_status {
 
     /// A builder for [`ProjectStatus`](crate::model::ProjectStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<std::string::String>,
         pub(crate) reason: std::option::Option<std::string::String>,
@@ -421,7 +399,7 @@ impl ProjectStatus {
 
 /// <p>The toolchain template file provided with the project request. AWS CodeStar uses the template to provision the toolchain stack in AWS CloudFormation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Toolchain {
     /// <p>The Amazon S3 location where the toolchain template file provided with the project request is stored. AWS CodeStar retrieves the file during project creation.</p>
     #[doc(hidden)]
@@ -451,20 +429,11 @@ impl Toolchain {
         self.stack_parameters.as_ref()
     }
 }
-impl std::fmt::Debug for Toolchain {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Toolchain");
-        formatter.field("source", &self.source);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("stack_parameters", &self.stack_parameters);
-        formatter.finish()
-    }
-}
 /// See [`Toolchain`](crate::model::Toolchain).
 pub mod toolchain {
 
     /// A builder for [`Toolchain`](crate::model::Toolchain).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<crate::model::ToolchainSource>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -540,7 +509,7 @@ impl Toolchain {
 
 /// <p>The Amazon S3 location where the toolchain template file provided with the project request is stored. AWS CodeStar retrieves the file during project creation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ToolchainSource {
     /// <p>The Amazon S3 bucket where the toolchain template file provided with the project request is stored.</p>
     #[doc(hidden)]
@@ -552,18 +521,11 @@ impl ToolchainSource {
         self.s3.as_ref()
     }
 }
-impl std::fmt::Debug for ToolchainSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ToolchainSource");
-        formatter.field("s3", &self.s3);
-        formatter.finish()
-    }
-}
 /// See [`ToolchainSource`](crate::model::ToolchainSource).
 pub mod toolchain_source {
 
     /// A builder for [`ToolchainSource`](crate::model::ToolchainSource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3: std::option::Option<crate::model::S3Location>,
     }
@@ -593,7 +555,7 @@ impl ToolchainSource {
 
 /// <p>The Amazon S3 location where the source code files provided with the project request are stored.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Location {
     /// <p>The Amazon S3 bucket name where the source code files provided with the project request are stored.</p>
     #[doc(hidden)]
@@ -612,19 +574,11 @@ impl S3Location {
         self.bucket_key.as_deref()
     }
 }
-impl std::fmt::Debug for S3Location {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Location");
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("bucket_key", &self.bucket_key);
-        formatter.finish()
-    }
-}
 /// See [`S3Location`](crate::model::S3Location).
 pub mod s3_location {
 
     /// A builder for [`S3Location`](crate::model::S3Location).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
         pub(crate) bucket_key: std::option::Option<std::string::String>,
@@ -668,7 +622,7 @@ impl S3Location {
 
 /// <p>Location and destination information about the source code files provided with the project request. The source code is uploaded to the new project source repository after project creation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Code {
     /// <p>The location where the source code files provided with the project request are stored. AWS CodeStar retrieves the files during project creation.</p>
     #[doc(hidden)]
@@ -687,19 +641,11 @@ impl Code {
         self.destination.as_ref()
     }
 }
-impl std::fmt::Debug for Code {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Code");
-        formatter.field("source", &self.source);
-        formatter.field("destination", &self.destination);
-        formatter.finish()
-    }
-}
 /// See [`Code`](crate::model::Code).
 pub mod code {
 
     /// A builder for [`Code`](crate::model::Code).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<crate::model::CodeSource>,
         pub(crate) destination: std::option::Option<crate::model::CodeDestination>,
@@ -746,7 +692,7 @@ impl Code {
 
 /// <p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the source code files provided with the project request are placed in the repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CodeDestination {
     /// <p>Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>
     #[doc(hidden)]
@@ -765,19 +711,11 @@ impl CodeDestination {
         self.git_hub.as_ref()
     }
 }
-impl std::fmt::Debug for CodeDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CodeDestination");
-        formatter.field("code_commit", &self.code_commit);
-        formatter.field("git_hub", &self.git_hub);
-        formatter.finish()
-    }
-}
 /// See [`CodeDestination`](crate::model::CodeDestination).
 pub mod code_destination {
 
     /// A builder for [`CodeDestination`](crate::model::CodeDestination).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code_commit: std::option::Option<crate::model::CodeCommitCodeDestination>,
         pub(crate) git_hub: std::option::Option<crate::model::GitHubCodeDestination>,
@@ -898,7 +836,7 @@ impl std::fmt::Debug for GitHubCodeDestination {
 pub mod git_hub_code_destination {
 
     /// A builder for [`GitHubCodeDestination`](crate::model::GitHubCodeDestination).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -992,6 +930,19 @@ pub mod git_hub_code_destination {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("description", &self.description);
+            formatter.field("r#type", &self.r#type);
+            formatter.field("owner", &self.owner);
+            formatter.field("private_repository", &self.private_repository);
+            formatter.field("issues_enabled", &self.issues_enabled);
+            formatter.field("token", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl GitHubCodeDestination {
     /// Creates a new builder-style object to manufacture [`GitHubCodeDestination`](crate::model::GitHubCodeDestination).
@@ -1002,7 +953,7 @@ impl GitHubCodeDestination {
 
 /// <p>Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CodeCommitCodeDestination {
     /// <p>The name of the AWS CodeCommit repository to be created in AWS CodeStar.</p>
     #[doc(hidden)]
@@ -1014,18 +965,11 @@ impl CodeCommitCodeDestination {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for CodeCommitCodeDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CodeCommitCodeDestination");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 /// See [`CodeCommitCodeDestination`](crate::model::CodeCommitCodeDestination).
 pub mod code_commit_code_destination {
 
     /// A builder for [`CodeCommitCodeDestination`](crate::model::CodeCommitCodeDestination).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -1055,7 +999,7 @@ impl CodeCommitCodeDestination {
 
 /// <p>The location where the source code files provided with the project request are stored. AWS CodeStar retrieves the files during project creation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CodeSource {
     /// <p>Information about the Amazon S3 location where the source code files provided with the project request are stored. </p>
     #[doc(hidden)]
@@ -1067,18 +1011,11 @@ impl CodeSource {
         self.s3.as_ref()
     }
 }
-impl std::fmt::Debug for CodeSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CodeSource");
-        formatter.field("s3", &self.s3);
-        formatter.finish()
-    }
-}
 /// See [`CodeSource`](crate::model::CodeSource).
 pub mod code_source {
 
     /// A builder for [`CodeSource`](crate::model::CodeSource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3: std::option::Option<crate::model::S3Location>,
     }

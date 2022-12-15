@@ -5,7 +5,7 @@
 /// [`delete_human_loop`](crate::client::Client::delete_human_loop).
 ///
 /// See [`crate::client::fluent_builders::DeleteHumanLoop`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteHumanLoop {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteHumanLoop {
 /// [`describe_human_loop`](crate::client::Client::describe_human_loop).
 ///
 /// See [`crate::client::fluent_builders::DescribeHumanLoop`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeHumanLoop {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeHumanLoop {
 /// [`list_human_loops`](crate::client::Client::list_human_loops).
 ///
 /// See [`crate::client::fluent_builders::ListHumanLoops`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListHumanLoops {
     _private: (),
 }
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListHumanLoops {
 /// [`start_human_loop`](crate::client::Client::start_human_loop).
 ///
 /// See [`crate::client::fluent_builders::StartHumanLoop`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartHumanLoop {
     _private: (),
 }
@@ -137,7 +137,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartHumanLoop {
 /// [`stop_human_loop`](crate::client::Client::stop_human_loop).
 ///
 /// See [`crate::client::fluent_builders::StopHumanLoop`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopHumanLoop {
     _private: (),
 }

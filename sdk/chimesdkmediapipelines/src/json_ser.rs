@@ -2,8 +2,9 @@
 pub fn serialize_structure_crate_input_create_media_capture_pipeline_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateMediaCapturePipelineInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.chime_sdk_meeting_configuration {
+        #[allow(unused_mut)]
         let mut object_2 = object.key("ChimeSdkMeetingConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_chime_sdk_meeting_configuration(
             &mut object_2,
@@ -30,6 +31,7 @@ pub fn serialize_structure_crate_input_create_media_capture_pipeline_input(
         let mut array_9 = object.key("Tags").start_array();
         for item_10 in var_8 {
             {
+                #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_11, item_10)?;
                 object_11.finish();
@@ -43,7 +45,7 @@ pub fn serialize_structure_crate_input_create_media_capture_pipeline_input(
 pub fn serialize_structure_crate_input_create_media_concatenation_pipeline_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateMediaConcatenationPipelineInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_12) = &input.client_request_token {
         object.key("ClientRequestToken").string(var_12.as_str());
     }
@@ -51,6 +53,7 @@ pub fn serialize_structure_crate_input_create_media_concatenation_pipeline_input
         let mut array_14 = object.key("Sinks").start_array();
         for item_15 in var_13 {
             {
+                #[allow(unused_mut)]
                 let mut object_16 = array_14.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_concatenation_sink(
                     &mut object_16,
@@ -65,6 +68,7 @@ pub fn serialize_structure_crate_input_create_media_concatenation_pipeline_input
         let mut array_18 = object.key("Sources").start_array();
         for item_19 in var_17 {
             {
+                #[allow(unused_mut)]
                 let mut object_20 = array_18.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_concatenation_source(
                     &mut object_20,
@@ -79,6 +83,7 @@ pub fn serialize_structure_crate_input_create_media_concatenation_pipeline_input
         let mut array_22 = object.key("Tags").start_array();
         for item_23 in var_21 {
             {
+                #[allow(unused_mut)]
                 let mut object_24 = array_22.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_24, item_23)?;
                 object_24.finish();
@@ -92,7 +97,7 @@ pub fn serialize_structure_crate_input_create_media_concatenation_pipeline_input
 pub fn serialize_structure_crate_input_create_media_live_connector_pipeline_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateMediaLiveConnectorPipelineInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_25) = &input.client_request_token {
         object.key("ClientRequestToken").string(var_25.as_str());
     }
@@ -100,6 +105,7 @@ pub fn serialize_structure_crate_input_create_media_live_connector_pipeline_inpu
         let mut array_27 = object.key("Sinks").start_array();
         for item_28 in var_26 {
             {
+                #[allow(unused_mut)]
                 let mut object_29 = array_27.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_live_connector_sink_configuration(
                     &mut object_29,
@@ -114,6 +120,7 @@ pub fn serialize_structure_crate_input_create_media_live_connector_pipeline_inpu
         let mut array_31 = object.key("Sources").start_array();
         for item_32 in var_30 {
             {
+                #[allow(unused_mut)]
                 let mut object_33 = array_31.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_live_connector_source_configuration(&mut object_33, item_32)?;
                 object_33.finish();
@@ -125,6 +132,7 @@ pub fn serialize_structure_crate_input_create_media_live_connector_pipeline_inpu
         let mut array_35 = object.key("Tags").start_array();
         for item_36 in var_34 {
             {
+                #[allow(unused_mut)]
                 let mut object_37 = array_35.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_37, item_36)?;
                 object_37.finish();
@@ -138,7 +146,7 @@ pub fn serialize_structure_crate_input_create_media_live_connector_pipeline_inpu
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_38) = &input.resource_arn {
         object.key("ResourceARN").string(var_38.as_str());
     }
@@ -146,6 +154,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_40 = object.key("Tags").start_array();
         for item_41 in var_39 {
             {
+                #[allow(unused_mut)]
                 let mut object_42 = array_40.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_42, item_41)?;
                 object_42.finish();
@@ -159,7 +168,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_input_untag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UntagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_43) = &input.resource_arn {
         object.key("ResourceARN").string(var_43.as_str());
     }
@@ -178,8 +187,9 @@ pub fn serialize_structure_crate_input_untag_resource_input(
 pub fn serialize_structure_crate_model_chime_sdk_meeting_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ChimeSdkMeetingConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_47) = &input.source_configuration {
+        #[allow(unused_mut)]
         let mut object_48 = object.key("SourceConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_source_configuration(
             &mut object_48,
@@ -188,6 +198,7 @@ pub fn serialize_structure_crate_model_chime_sdk_meeting_configuration(
         object_48.finish();
     }
     if let Some(var_49) = &input.artifacts_configuration {
+        #[allow(unused_mut)]
         let mut object_50 = object.key("ArtifactsConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_artifacts_configuration(
             &mut object_50,
@@ -201,7 +212,7 @@ pub fn serialize_structure_crate_model_chime_sdk_meeting_configuration(
 pub fn serialize_structure_crate_model_tag(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Tag,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_51) = &input.key {
         object.key("Key").string(var_51.as_str());
     }
@@ -214,11 +225,12 @@ pub fn serialize_structure_crate_model_tag(
 pub fn serialize_structure_crate_model_concatenation_sink(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ConcatenationSink,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_53) = &input.r#type {
         object.key("Type").string(var_53.as_str());
     }
     if let Some(var_54) = &input.s3_bucket_sink_configuration {
+        #[allow(unused_mut)]
         let mut object_55 = object.key("S3BucketSinkConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_bucket_sink_configuration(
             &mut object_55,
@@ -232,11 +244,12 @@ pub fn serialize_structure_crate_model_concatenation_sink(
 pub fn serialize_structure_crate_model_concatenation_source(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ConcatenationSource,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_56) = &input.r#type {
         object.key("Type").string(var_56.as_str());
     }
     if let Some(var_57) = &input.media_capture_pipeline_source_configuration {
+        #[allow(unused_mut)]
         let mut object_58 = object
             .key("MediaCapturePipelineSourceConfiguration")
             .start_object();
@@ -249,11 +262,12 @@ pub fn serialize_structure_crate_model_concatenation_source(
 pub fn serialize_structure_crate_model_live_connector_sink_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::LiveConnectorSinkConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_59) = &input.sink_type {
         object.key("SinkType").string(var_59.as_str());
     }
     if let Some(var_60) = &input.rtmp_configuration {
+        #[allow(unused_mut)]
         let mut object_61 = object.key("RTMPConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_live_connector_rtmp_configuration(
             &mut object_61,
@@ -267,11 +281,12 @@ pub fn serialize_structure_crate_model_live_connector_sink_configuration(
 pub fn serialize_structure_crate_model_live_connector_source_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::LiveConnectorSourceConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_62) = &input.source_type {
         object.key("SourceType").string(var_62.as_str());
     }
     if let Some(var_63) = &input.chime_sdk_meeting_live_connector_configuration {
+        #[allow(unused_mut)]
         let mut object_64 = object
             .key("ChimeSdkMeetingLiveConnectorConfiguration")
             .start_object();
@@ -284,8 +299,9 @@ pub fn serialize_structure_crate_model_live_connector_source_configuration(
 pub fn serialize_structure_crate_model_source_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SourceConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_65) = &input.selected_video_streams {
+        #[allow(unused_mut)]
         let mut object_66 = object.key("SelectedVideoStreams").start_object();
         crate::json_ser::serialize_structure_crate_model_selected_video_streams(
             &mut object_66,
@@ -299,8 +315,9 @@ pub fn serialize_structure_crate_model_source_configuration(
 pub fn serialize_structure_crate_model_artifacts_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ArtifactsConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_67) = &input.audio {
+        #[allow(unused_mut)]
         let mut object_68 = object.key("Audio").start_object();
         crate::json_ser::serialize_structure_crate_model_audio_artifacts_configuration(
             &mut object_68,
@@ -309,6 +326,7 @@ pub fn serialize_structure_crate_model_artifacts_configuration(
         object_68.finish();
     }
     if let Some(var_69) = &input.video {
+        #[allow(unused_mut)]
         let mut object_70 = object.key("Video").start_object();
         crate::json_ser::serialize_structure_crate_model_video_artifacts_configuration(
             &mut object_70,
@@ -317,6 +335,7 @@ pub fn serialize_structure_crate_model_artifacts_configuration(
         object_70.finish();
     }
     if let Some(var_71) = &input.content {
+        #[allow(unused_mut)]
         let mut object_72 = object.key("Content").start_object();
         crate::json_ser::serialize_structure_crate_model_content_artifacts_configuration(
             &mut object_72,
@@ -325,6 +344,7 @@ pub fn serialize_structure_crate_model_artifacts_configuration(
         object_72.finish();
     }
     if let Some(var_73) = &input.composited_video {
+        #[allow(unused_mut)]
         let mut object_74 = object.key("CompositedVideo").start_object();
         crate::json_ser::serialize_structure_crate_model_composited_video_artifacts_configuration(
             &mut object_74,
@@ -338,7 +358,7 @@ pub fn serialize_structure_crate_model_artifacts_configuration(
 pub fn serialize_structure_crate_model_s3_bucket_sink_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::S3BucketSinkConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_75) = &input.destination {
         object.key("Destination").string(var_75.as_str());
     }
@@ -348,11 +368,12 @@ pub fn serialize_structure_crate_model_s3_bucket_sink_configuration(
 pub fn serialize_structure_crate_model_media_capture_pipeline_source_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::MediaCapturePipelineSourceConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_76) = &input.media_pipeline_arn {
         object.key("MediaPipelineArn").string(var_76.as_str());
     }
     if let Some(var_77) = &input.chime_sdk_meeting_configuration {
+        #[allow(unused_mut)]
         let mut object_78 = object.key("ChimeSdkMeetingConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_chime_sdk_meeting_concatenation_configuration(&mut object_78, var_77)?;
         object_78.finish();
@@ -363,7 +384,7 @@ pub fn serialize_structure_crate_model_media_capture_pipeline_source_configurati
 pub fn serialize_structure_crate_model_live_connector_rtmp_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::LiveConnectorRtmpConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_79) = &input.url {
         object.key("Url").string(var_79.as_str());
     }
@@ -379,7 +400,7 @@ pub fn serialize_structure_crate_model_live_connector_rtmp_configuration(
 pub fn serialize_structure_crate_model_chime_sdk_meeting_live_connector_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ChimeSdkMeetingLiveConnectorConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_82) = &input.arn {
         object.key("Arn").string(var_82.as_str());
     }
@@ -387,6 +408,7 @@ pub fn serialize_structure_crate_model_chime_sdk_meeting_live_connector_configur
         object.key("MuxType").string(var_83.as_str());
     }
     if let Some(var_84) = &input.composited_video {
+        #[allow(unused_mut)]
         let mut object_85 = object.key("CompositedVideo").start_object();
         crate::json_ser::serialize_structure_crate_model_composited_video_artifacts_configuration(
             &mut object_85,
@@ -395,6 +417,7 @@ pub fn serialize_structure_crate_model_chime_sdk_meeting_live_connector_configur
         object_85.finish();
     }
     if let Some(var_86) = &input.source_configuration {
+        #[allow(unused_mut)]
         let mut object_87 = object.key("SourceConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_source_configuration(
             &mut object_87,
@@ -408,7 +431,7 @@ pub fn serialize_structure_crate_model_chime_sdk_meeting_live_connector_configur
 pub fn serialize_structure_crate_model_selected_video_streams(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SelectedVideoStreams,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_88) = &input.attendee_ids {
         let mut array_89 = object.key("AttendeeIds").start_array();
         for item_90 in var_88 {
@@ -433,7 +456,7 @@ pub fn serialize_structure_crate_model_selected_video_streams(
 pub fn serialize_structure_crate_model_audio_artifacts_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AudioArtifactsConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_94) = &input.mux_type {
         object.key("MuxType").string(var_94.as_str());
     }
@@ -443,7 +466,7 @@ pub fn serialize_structure_crate_model_audio_artifacts_configuration(
 pub fn serialize_structure_crate_model_video_artifacts_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VideoArtifactsConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_95) = &input.state {
         object.key("State").string(var_95.as_str());
     }
@@ -456,7 +479,7 @@ pub fn serialize_structure_crate_model_video_artifacts_configuration(
 pub fn serialize_structure_crate_model_content_artifacts_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ContentArtifactsConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_97) = &input.state {
         object.key("State").string(var_97.as_str());
     }
@@ -469,7 +492,7 @@ pub fn serialize_structure_crate_model_content_artifacts_configuration(
 pub fn serialize_structure_crate_model_composited_video_artifacts_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CompositedVideoArtifactsConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_99) = &input.layout {
         object.key("Layout").string(var_99.as_str());
     }
@@ -477,6 +500,7 @@ pub fn serialize_structure_crate_model_composited_video_artifacts_configuration(
         object.key("Resolution").string(var_100.as_str());
     }
     if let Some(var_101) = &input.grid_view_configuration {
+        #[allow(unused_mut)]
         let mut object_102 = object.key("GridViewConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_grid_view_configuration(
             &mut object_102,
@@ -490,8 +514,9 @@ pub fn serialize_structure_crate_model_composited_video_artifacts_configuration(
 pub fn serialize_structure_crate_model_chime_sdk_meeting_concatenation_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ChimeSdkMeetingConcatenationConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_103) = &input.artifacts_configuration {
+        #[allow(unused_mut)]
         let mut object_104 = object.key("ArtifactsConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_artifacts_concatenation_configuration(
             &mut object_104,
@@ -505,11 +530,12 @@ pub fn serialize_structure_crate_model_chime_sdk_meeting_concatenation_configura
 pub fn serialize_structure_crate_model_grid_view_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::GridViewConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_105) = &input.content_share_layout {
         object.key("ContentShareLayout").string(var_105.as_str());
     }
     if let Some(var_106) = &input.presenter_only_configuration {
+        #[allow(unused_mut)]
         let mut object_107 = object.key("PresenterOnlyConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_presenter_only_configuration(
             &mut object_107,
@@ -523,8 +549,9 @@ pub fn serialize_structure_crate_model_grid_view_configuration(
 pub fn serialize_structure_crate_model_artifacts_concatenation_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ArtifactsConcatenationConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_108) = &input.audio {
+        #[allow(unused_mut)]
         let mut object_109 = object.key("Audio").start_object();
         crate::json_ser::serialize_structure_crate_model_audio_concatenation_configuration(
             &mut object_109,
@@ -533,6 +560,7 @@ pub fn serialize_structure_crate_model_artifacts_concatenation_configuration(
         object_109.finish();
     }
     if let Some(var_110) = &input.video {
+        #[allow(unused_mut)]
         let mut object_111 = object.key("Video").start_object();
         crate::json_ser::serialize_structure_crate_model_video_concatenation_configuration(
             &mut object_111,
@@ -541,6 +569,7 @@ pub fn serialize_structure_crate_model_artifacts_concatenation_configuration(
         object_111.finish();
     }
     if let Some(var_112) = &input.content {
+        #[allow(unused_mut)]
         let mut object_113 = object.key("Content").start_object();
         crate::json_ser::serialize_structure_crate_model_content_concatenation_configuration(
             &mut object_113,
@@ -549,6 +578,7 @@ pub fn serialize_structure_crate_model_artifacts_concatenation_configuration(
         object_113.finish();
     }
     if let Some(var_114) = &input.data_channel {
+        #[allow(unused_mut)]
         let mut object_115 = object.key("DataChannel").start_object();
         crate::json_ser::serialize_structure_crate_model_data_channel_concatenation_configuration(
             &mut object_115,
@@ -557,16 +587,19 @@ pub fn serialize_structure_crate_model_artifacts_concatenation_configuration(
         object_115.finish();
     }
     if let Some(var_116) = &input.transcription_messages {
+        #[allow(unused_mut)]
         let mut object_117 = object.key("TranscriptionMessages").start_object();
         crate::json_ser::serialize_structure_crate_model_transcription_messages_concatenation_configuration(&mut object_117, var_116)?;
         object_117.finish();
     }
     if let Some(var_118) = &input.meeting_events {
+        #[allow(unused_mut)]
         let mut object_119 = object.key("MeetingEvents").start_object();
         crate::json_ser::serialize_structure_crate_model_meeting_events_concatenation_configuration(&mut object_119, var_118)?;
         object_119.finish();
     }
     if let Some(var_120) = &input.composited_video {
+        #[allow(unused_mut)]
         let mut object_121 = object.key("CompositedVideo").start_object();
         crate::json_ser::serialize_structure_crate_model_composited_video_concatenation_configuration(&mut object_121, var_120)?;
         object_121.finish();
@@ -577,7 +610,7 @@ pub fn serialize_structure_crate_model_artifacts_concatenation_configuration(
 pub fn serialize_structure_crate_model_presenter_only_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::PresenterOnlyConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_122) = &input.presenter_position {
         object.key("PresenterPosition").string(var_122.as_str());
     }
@@ -587,7 +620,7 @@ pub fn serialize_structure_crate_model_presenter_only_configuration(
 pub fn serialize_structure_crate_model_audio_concatenation_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AudioConcatenationConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_123) = &input.state {
         object.key("State").string(var_123.as_str());
     }
@@ -597,7 +630,7 @@ pub fn serialize_structure_crate_model_audio_concatenation_configuration(
 pub fn serialize_structure_crate_model_video_concatenation_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VideoConcatenationConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_124) = &input.state {
         object.key("State").string(var_124.as_str());
     }
@@ -607,7 +640,7 @@ pub fn serialize_structure_crate_model_video_concatenation_configuration(
 pub fn serialize_structure_crate_model_content_concatenation_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ContentConcatenationConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_125) = &input.state {
         object.key("State").string(var_125.as_str());
     }
@@ -617,7 +650,7 @@ pub fn serialize_structure_crate_model_content_concatenation_configuration(
 pub fn serialize_structure_crate_model_data_channel_concatenation_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DataChannelConcatenationConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_126) = &input.state {
         object.key("State").string(var_126.as_str());
     }
@@ -627,7 +660,7 @@ pub fn serialize_structure_crate_model_data_channel_concatenation_configuration(
 pub fn serialize_structure_crate_model_transcription_messages_concatenation_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TranscriptionMessagesConcatenationConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_127) = &input.state {
         object.key("State").string(var_127.as_str());
     }
@@ -637,7 +670,7 @@ pub fn serialize_structure_crate_model_transcription_messages_concatenation_conf
 pub fn serialize_structure_crate_model_meeting_events_concatenation_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::MeetingEventsConcatenationConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_128) = &input.state {
         object.key("State").string(var_128.as_str());
     }
@@ -647,7 +680,7 @@ pub fn serialize_structure_crate_model_meeting_events_concatenation_configuratio
 pub fn serialize_structure_crate_model_composited_video_concatenation_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CompositedVideoConcatenationConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_129) = &input.state {
         object.key("State").string(var_129.as_str());
     }

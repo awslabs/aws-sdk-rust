@@ -2,7 +2,7 @@
 
 /// <p>An object that represents a service mesh returned by a list operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MeshRef {
     /// <p>The name of the service mesh.</p>
     #[doc(hidden)]
@@ -56,24 +56,11 @@ impl MeshRef {
         self.last_updated_at.as_ref()
     }
 }
-impl std::fmt::Debug for MeshRef {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MeshRef");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.field("resource_owner", &self.resource_owner);
-        formatter.field("arn", &self.arn);
-        formatter.field("version", &self.version);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.finish()
-    }
-}
 /// See [`MeshRef`](crate::model::MeshRef).
 pub mod mesh_ref {
 
     /// A builder for [`MeshRef`](crate::model::MeshRef).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
         pub(crate) mesh_owner: std::option::Option<std::string::String>,
@@ -186,7 +173,7 @@ impl MeshRef {
 
 /// <p>An object that represents a service mesh returned by a describe operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MeshData {
     /// <p>The name of the service mesh.</p>
     #[doc(hidden)]
@@ -219,21 +206,11 @@ impl MeshData {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for MeshData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MeshData");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("spec", &self.spec);
-        formatter.field("metadata", &self.metadata);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 /// See [`MeshData`](crate::model::MeshData).
 pub mod mesh_data {
 
     /// A builder for [`MeshData`](crate::model::MeshData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
         pub(crate) spec: std::option::Option<crate::model::MeshSpec>,
@@ -304,7 +281,7 @@ impl MeshData {
 
 /// <p>An object that represents the status of a service mesh.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MeshStatus {
     /// <p>The current mesh status.</p>
     #[doc(hidden)]
@@ -316,18 +293,11 @@ impl MeshStatus {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for MeshStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MeshStatus");
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 /// See [`MeshStatus`](crate::model::MeshStatus).
 pub mod mesh_status {
 
     /// A builder for [`MeshStatus`](crate::model::MeshStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::MeshStatusCode>,
     }
@@ -360,6 +330,42 @@ impl MeshStatus {
     }
 }
 
+/// When writing a match expression against `MeshStatusCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let meshstatuscode = unimplemented!();
+/// match meshstatuscode {
+///     MeshStatusCode::Active => { /* ... */ },
+///     MeshStatusCode::Deleted => { /* ... */ },
+///     MeshStatusCode::Inactive => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `meshstatuscode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `MeshStatusCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `MeshStatusCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `MeshStatusCode::NewFeature` is defined.
+/// Specifically, when `meshstatuscode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `MeshStatusCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -378,8 +384,8 @@ pub enum MeshStatusCode {
     Deleted,
     #[allow(missing_docs)] // documentation missing in model
     Inactive,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for MeshStatusCode {
     fn from(s: &str) -> Self {
@@ -387,7 +393,7 @@ impl std::convert::From<&str> for MeshStatusCode {
             "ACTIVE" => MeshStatusCode::Active,
             "DELETED" => MeshStatusCode::Deleted,
             "INACTIVE" => MeshStatusCode::Inactive,
-            other => MeshStatusCode::Unknown(other.to_owned()),
+            other => MeshStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -405,11 +411,11 @@ impl MeshStatusCode {
             MeshStatusCode::Active => "ACTIVE",
             MeshStatusCode::Deleted => "DELETED",
             MeshStatusCode::Inactive => "INACTIVE",
-            MeshStatusCode::Unknown(s) => s.as_ref(),
+            MeshStatusCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETED", "INACTIVE"]
     }
 }
@@ -421,7 +427,7 @@ impl AsRef<str> for MeshStatusCode {
 
 /// <p>An object that represents metadata for a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceMetadata {
     /// <p>The full Amazon Resource Name (ARN) for the resource.</p>
     #[doc(hidden)]
@@ -475,24 +481,11 @@ impl ResourceMetadata {
         self.resource_owner.as_deref()
     }
 }
-impl std::fmt::Debug for ResourceMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceMetadata");
-        formatter.field("arn", &self.arn);
-        formatter.field("version", &self.version);
-        formatter.field("uid", &self.uid);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.field("resource_owner", &self.resource_owner);
-        formatter.finish()
-    }
-}
 /// See [`ResourceMetadata`](crate::model::ResourceMetadata).
 pub mod resource_metadata {
 
     /// A builder for [`ResourceMetadata`](crate::model::ResourceMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<i64>,
@@ -605,7 +598,7 @@ impl ResourceMetadata {
 
 /// <p>An object that represents the specification of a service mesh.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MeshSpec {
     /// <p>The egress filter rules for the service mesh.</p>
     #[doc(hidden)]
@@ -624,19 +617,11 @@ impl MeshSpec {
         self.service_discovery.as_ref()
     }
 }
-impl std::fmt::Debug for MeshSpec {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MeshSpec");
-        formatter.field("egress_filter", &self.egress_filter);
-        formatter.field("service_discovery", &self.service_discovery);
-        formatter.finish()
-    }
-}
 /// See [`MeshSpec`](crate::model::MeshSpec).
 pub mod mesh_spec {
 
     /// A builder for [`MeshSpec`](crate::model::MeshSpec).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) egress_filter: std::option::Option<crate::model::EgressFilter>,
         pub(crate) service_discovery: std::option::Option<crate::model::MeshServiceDiscovery>,
@@ -686,7 +671,7 @@ impl MeshSpec {
 
 /// <p>An object that represents the service discovery information for a service mesh.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MeshServiceDiscovery {
     /// <p>The IP version to use to control traffic within the mesh.</p>
     #[doc(hidden)]
@@ -698,18 +683,11 @@ impl MeshServiceDiscovery {
         self.ip_preference.as_ref()
     }
 }
-impl std::fmt::Debug for MeshServiceDiscovery {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MeshServiceDiscovery");
-        formatter.field("ip_preference", &self.ip_preference);
-        formatter.finish()
-    }
-}
 /// See [`MeshServiceDiscovery`](crate::model::MeshServiceDiscovery).
 pub mod mesh_service_discovery {
 
     /// A builder for [`MeshServiceDiscovery`](crate::model::MeshServiceDiscovery).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_preference: std::option::Option<crate::model::IpPreference>,
     }
@@ -742,6 +720,43 @@ impl MeshServiceDiscovery {
     }
 }
 
+/// When writing a match expression against `IpPreference`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let ippreference = unimplemented!();
+/// match ippreference {
+///     IpPreference::IPv4Only => { /* ... */ },
+///     IpPreference::IPv4Preferred => { /* ... */ },
+///     IpPreference::IPv6Only => { /* ... */ },
+///     IpPreference::IPv6Preferred => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `ippreference` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `IpPreference::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `IpPreference::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `IpPreference::NewFeature` is defined.
+/// Specifically, when `ippreference` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `IpPreference::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -762,8 +777,8 @@ pub enum IpPreference {
     IPv6Only,
     #[allow(missing_docs)] // documentation missing in model
     IPv6Preferred,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for IpPreference {
     fn from(s: &str) -> Self {
@@ -772,7 +787,7 @@ impl std::convert::From<&str> for IpPreference {
             "IPv4_PREFERRED" => IpPreference::IPv4Preferred,
             "IPv6_ONLY" => IpPreference::IPv6Only,
             "IPv6_PREFERRED" => IpPreference::IPv6Preferred,
-            other => IpPreference::Unknown(other.to_owned()),
+            other => IpPreference::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -791,11 +806,11 @@ impl IpPreference {
             IpPreference::IPv4Preferred => "IPv4_PREFERRED",
             IpPreference::IPv6Only => "IPv6_ONLY",
             IpPreference::IPv6Preferred => "IPv6_PREFERRED",
-            IpPreference::Unknown(s) => s.as_ref(),
+            IpPreference::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IPv4_ONLY", "IPv4_PREFERRED", "IPv6_ONLY", "IPv6_PREFERRED"]
     }
 }
@@ -807,7 +822,7 @@ impl AsRef<str> for IpPreference {
 
 /// <p>An object that represents the egress filter rules for a service mesh.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EgressFilter {
     /// <p>The egress filter type. By default, the type is <code>DROP_ALL</code>, which allows egress only from virtual nodes to other defined resources in the service mesh (and any traffic to <code>*.amazonaws.com</code> for Amazon Web Services API calls). You can set the egress filter type to <code>ALLOW_ALL</code> to allow egress to any endpoint inside or outside of the service mesh.</p>
     #[doc(hidden)]
@@ -819,18 +834,11 @@ impl EgressFilter {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for EgressFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EgressFilter");
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 /// See [`EgressFilter`](crate::model::EgressFilter).
 pub mod egress_filter {
 
     /// A builder for [`EgressFilter`](crate::model::EgressFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::EgressFilterType>,
     }
@@ -863,6 +871,41 @@ impl EgressFilter {
     }
 }
 
+/// When writing a match expression against `EgressFilterType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let egressfiltertype = unimplemented!();
+/// match egressfiltertype {
+///     EgressFilterType::AllowAll => { /* ... */ },
+///     EgressFilterType::DropAll => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `egressfiltertype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EgressFilterType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EgressFilterType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EgressFilterType::NewFeature` is defined.
+/// Specifically, when `egressfiltertype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EgressFilterType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -879,15 +922,15 @@ pub enum EgressFilterType {
     AllowAll,
     #[allow(missing_docs)] // documentation missing in model
     DropAll,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EgressFilterType {
     fn from(s: &str) -> Self {
         match s {
             "ALLOW_ALL" => EgressFilterType::AllowAll,
             "DROP_ALL" => EgressFilterType::DropAll,
-            other => EgressFilterType::Unknown(other.to_owned()),
+            other => EgressFilterType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -904,11 +947,11 @@ impl EgressFilterType {
         match self {
             EgressFilterType::AllowAll => "ALLOW_ALL",
             EgressFilterType::DropAll => "DROP_ALL",
-            EgressFilterType::Unknown(s) => s.as_ref(),
+            EgressFilterType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALLOW_ALL", "DROP_ALL"]
     }
 }
@@ -920,7 +963,7 @@ impl AsRef<str> for EgressFilterType {
 
 /// <p>Optional metadata that you apply to a resource to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagRef {
     /// <p>One part of a key-value pair that make up a tag. A <code>key</code> is a general label that acts like a category for more specific tag values.</p>
     #[doc(hidden)]
@@ -939,19 +982,11 @@ impl TagRef {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for TagRef {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagRef");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`TagRef`](crate::model::TagRef).
 pub mod tag_ref {
 
     /// A builder for [`TagRef`](crate::model::TagRef).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -995,7 +1030,7 @@ impl TagRef {
 
 /// <p>An object that represents a virtual service returned by a list operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualServiceRef {
     /// <p>The name of the service mesh that the virtual service resides in.</p>
     #[doc(hidden)]
@@ -1056,25 +1091,11 @@ impl VirtualServiceRef {
         self.last_updated_at.as_ref()
     }
 }
-impl std::fmt::Debug for VirtualServiceRef {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualServiceRef");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("virtual_service_name", &self.virtual_service_name);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.field("resource_owner", &self.resource_owner);
-        formatter.field("arn", &self.arn);
-        formatter.field("version", &self.version);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.finish()
-    }
-}
 /// See [`VirtualServiceRef`](crate::model::VirtualServiceRef).
 pub mod virtual_service_ref {
 
     /// A builder for [`VirtualServiceRef`](crate::model::VirtualServiceRef).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
         pub(crate) virtual_service_name: std::option::Option<std::string::String>,
@@ -1202,7 +1223,7 @@ impl VirtualServiceRef {
 
 /// <p>An object that represents a virtual service returned by a describe operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualServiceData {
     /// <p>The name of the service mesh that the virtual service resides in.</p>
     #[doc(hidden)]
@@ -1242,22 +1263,11 @@ impl VirtualServiceData {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for VirtualServiceData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualServiceData");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("virtual_service_name", &self.virtual_service_name);
-        formatter.field("spec", &self.spec);
-        formatter.field("metadata", &self.metadata);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 /// See [`VirtualServiceData`](crate::model::VirtualServiceData).
 pub mod virtual_service_data {
 
     /// A builder for [`VirtualServiceData`](crate::model::VirtualServiceData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
         pub(crate) virtual_service_name: std::option::Option<std::string::String>,
@@ -1349,7 +1359,7 @@ impl VirtualServiceData {
 
 /// <p>An object that represents the status of a virtual service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualServiceStatus {
     /// <p>The current status of the virtual service.</p>
     #[doc(hidden)]
@@ -1361,18 +1371,11 @@ impl VirtualServiceStatus {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for VirtualServiceStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualServiceStatus");
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 /// See [`VirtualServiceStatus`](crate::model::VirtualServiceStatus).
 pub mod virtual_service_status {
 
     /// A builder for [`VirtualServiceStatus`](crate::model::VirtualServiceStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::VirtualServiceStatusCode>,
     }
@@ -1405,6 +1408,42 @@ impl VirtualServiceStatus {
     }
 }
 
+/// When writing a match expression against `VirtualServiceStatusCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let virtualservicestatuscode = unimplemented!();
+/// match virtualservicestatuscode {
+///     VirtualServiceStatusCode::Active => { /* ... */ },
+///     VirtualServiceStatusCode::Deleted => { /* ... */ },
+///     VirtualServiceStatusCode::Inactive => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `virtualservicestatuscode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `VirtualServiceStatusCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `VirtualServiceStatusCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `VirtualServiceStatusCode::NewFeature` is defined.
+/// Specifically, when `virtualservicestatuscode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `VirtualServiceStatusCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1423,8 +1462,8 @@ pub enum VirtualServiceStatusCode {
     Deleted,
     #[allow(missing_docs)] // documentation missing in model
     Inactive,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for VirtualServiceStatusCode {
     fn from(s: &str) -> Self {
@@ -1432,7 +1471,9 @@ impl std::convert::From<&str> for VirtualServiceStatusCode {
             "ACTIVE" => VirtualServiceStatusCode::Active,
             "DELETED" => VirtualServiceStatusCode::Deleted,
             "INACTIVE" => VirtualServiceStatusCode::Inactive,
-            other => VirtualServiceStatusCode::Unknown(other.to_owned()),
+            other => VirtualServiceStatusCode::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -1450,11 +1491,11 @@ impl VirtualServiceStatusCode {
             VirtualServiceStatusCode::Active => "ACTIVE",
             VirtualServiceStatusCode::Deleted => "DELETED",
             VirtualServiceStatusCode::Inactive => "INACTIVE",
-            VirtualServiceStatusCode::Unknown(s) => s.as_ref(),
+            VirtualServiceStatusCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETED", "INACTIVE"]
     }
 }
@@ -1466,7 +1507,7 @@ impl AsRef<str> for VirtualServiceStatusCode {
 
 /// <p>An object that represents the specification of a virtual service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualServiceSpec {
     /// <p>The App Mesh object that is acting as the provider for a virtual service. You can specify a single virtual node or virtual router.</p>
     #[doc(hidden)]
@@ -1478,18 +1519,11 @@ impl VirtualServiceSpec {
         self.provider.as_ref()
     }
 }
-impl std::fmt::Debug for VirtualServiceSpec {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualServiceSpec");
-        formatter.field("provider", &self.provider);
-        formatter.finish()
-    }
-}
 /// See [`VirtualServiceSpec`](crate::model::VirtualServiceSpec).
 pub mod virtual_service_spec {
 
     /// A builder for [`VirtualServiceSpec`](crate::model::VirtualServiceSpec).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) provider: std::option::Option<crate::model::VirtualServiceProvider>,
     }
@@ -1579,7 +1613,7 @@ impl VirtualServiceProvider {
 
 /// <p>An object that represents a virtual node service provider.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualRouterServiceProvider {
     /// <p>The name of the virtual router that is acting as a service provider.</p>
     #[doc(hidden)]
@@ -1591,18 +1625,11 @@ impl VirtualRouterServiceProvider {
         self.virtual_router_name.as_deref()
     }
 }
-impl std::fmt::Debug for VirtualRouterServiceProvider {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualRouterServiceProvider");
-        formatter.field("virtual_router_name", &self.virtual_router_name);
-        formatter.finish()
-    }
-}
 /// See [`VirtualRouterServiceProvider`](crate::model::VirtualRouterServiceProvider).
 pub mod virtual_router_service_provider {
 
     /// A builder for [`VirtualRouterServiceProvider`](crate::model::VirtualRouterServiceProvider).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_router_name: std::option::Option<std::string::String>,
     }
@@ -1637,7 +1664,7 @@ impl VirtualRouterServiceProvider {
 
 /// <p>An object that represents a virtual node service provider.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualNodeServiceProvider {
     /// <p>The name of the virtual node that is acting as a service provider.</p>
     #[doc(hidden)]
@@ -1649,18 +1676,11 @@ impl VirtualNodeServiceProvider {
         self.virtual_node_name.as_deref()
     }
 }
-impl std::fmt::Debug for VirtualNodeServiceProvider {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualNodeServiceProvider");
-        formatter.field("virtual_node_name", &self.virtual_node_name);
-        formatter.finish()
-    }
-}
 /// See [`VirtualNodeServiceProvider`](crate::model::VirtualNodeServiceProvider).
 pub mod virtual_node_service_provider {
 
     /// A builder for [`VirtualNodeServiceProvider`](crate::model::VirtualNodeServiceProvider).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_node_name: std::option::Option<std::string::String>,
     }
@@ -1695,7 +1715,7 @@ impl VirtualNodeServiceProvider {
 
 /// <p>An object that represents a virtual router returned by a list operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualRouterRef {
     /// <p>The name of the service mesh that the virtual router resides in.</p>
     #[doc(hidden)]
@@ -1756,25 +1776,11 @@ impl VirtualRouterRef {
         self.last_updated_at.as_ref()
     }
 }
-impl std::fmt::Debug for VirtualRouterRef {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualRouterRef");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("virtual_router_name", &self.virtual_router_name);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.field("resource_owner", &self.resource_owner);
-        formatter.field("arn", &self.arn);
-        formatter.field("version", &self.version);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.finish()
-    }
-}
 /// See [`VirtualRouterRef`](crate::model::VirtualRouterRef).
 pub mod virtual_router_ref {
 
     /// A builder for [`VirtualRouterRef`](crate::model::VirtualRouterRef).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
         pub(crate) virtual_router_name: std::option::Option<std::string::String>,
@@ -1902,7 +1908,7 @@ impl VirtualRouterRef {
 
 /// <p>An object that represents a virtual router returned by a describe operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualRouterData {
     /// <p>The name of the service mesh that the virtual router resides in.</p>
     #[doc(hidden)]
@@ -1942,22 +1948,11 @@ impl VirtualRouterData {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for VirtualRouterData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualRouterData");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("virtual_router_name", &self.virtual_router_name);
-        formatter.field("spec", &self.spec);
-        formatter.field("metadata", &self.metadata);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 /// See [`VirtualRouterData`](crate::model::VirtualRouterData).
 pub mod virtual_router_data {
 
     /// A builder for [`VirtualRouterData`](crate::model::VirtualRouterData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
         pub(crate) virtual_router_name: std::option::Option<std::string::String>,
@@ -2049,7 +2044,7 @@ impl VirtualRouterData {
 
 /// <p>An object that represents the status of a virtual router. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualRouterStatus {
     /// <p>The current status of the virtual router.</p>
     #[doc(hidden)]
@@ -2061,18 +2056,11 @@ impl VirtualRouterStatus {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for VirtualRouterStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualRouterStatus");
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 /// See [`VirtualRouterStatus`](crate::model::VirtualRouterStatus).
 pub mod virtual_router_status {
 
     /// A builder for [`VirtualRouterStatus`](crate::model::VirtualRouterStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::VirtualRouterStatusCode>,
     }
@@ -2105,6 +2093,42 @@ impl VirtualRouterStatus {
     }
 }
 
+/// When writing a match expression against `VirtualRouterStatusCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let virtualrouterstatuscode = unimplemented!();
+/// match virtualrouterstatuscode {
+///     VirtualRouterStatusCode::Active => { /* ... */ },
+///     VirtualRouterStatusCode::Deleted => { /* ... */ },
+///     VirtualRouterStatusCode::Inactive => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `virtualrouterstatuscode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `VirtualRouterStatusCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `VirtualRouterStatusCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `VirtualRouterStatusCode::NewFeature` is defined.
+/// Specifically, when `virtualrouterstatuscode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `VirtualRouterStatusCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2123,8 +2147,8 @@ pub enum VirtualRouterStatusCode {
     Deleted,
     #[allow(missing_docs)] // documentation missing in model
     Inactive,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for VirtualRouterStatusCode {
     fn from(s: &str) -> Self {
@@ -2132,7 +2156,9 @@ impl std::convert::From<&str> for VirtualRouterStatusCode {
             "ACTIVE" => VirtualRouterStatusCode::Active,
             "DELETED" => VirtualRouterStatusCode::Deleted,
             "INACTIVE" => VirtualRouterStatusCode::Inactive,
-            other => VirtualRouterStatusCode::Unknown(other.to_owned()),
+            other => VirtualRouterStatusCode::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -2150,11 +2176,11 @@ impl VirtualRouterStatusCode {
             VirtualRouterStatusCode::Active => "ACTIVE",
             VirtualRouterStatusCode::Deleted => "DELETED",
             VirtualRouterStatusCode::Inactive => "INACTIVE",
-            VirtualRouterStatusCode::Unknown(s) => s.as_ref(),
+            VirtualRouterStatusCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETED", "INACTIVE"]
     }
 }
@@ -2166,7 +2192,7 @@ impl AsRef<str> for VirtualRouterStatusCode {
 
 /// <p>An object that represents the specification of a virtual router.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualRouterSpec {
     /// <p>The listeners that the virtual router is expected to receive inbound traffic from. You can specify one listener.</p>
     #[doc(hidden)]
@@ -2178,18 +2204,11 @@ impl VirtualRouterSpec {
         self.listeners.as_deref()
     }
 }
-impl std::fmt::Debug for VirtualRouterSpec {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualRouterSpec");
-        formatter.field("listeners", &self.listeners);
-        formatter.finish()
-    }
-}
 /// See [`VirtualRouterSpec`](crate::model::VirtualRouterSpec).
 pub mod virtual_router_spec {
 
     /// A builder for [`VirtualRouterSpec`](crate::model::VirtualRouterSpec).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) listeners:
             std::option::Option<std::vec::Vec<crate::model::VirtualRouterListener>>,
@@ -2231,7 +2250,7 @@ impl VirtualRouterSpec {
 
 /// <p>An object that represents a virtual router listener.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualRouterListener {
     /// <p>An object that represents a port mapping.</p>
     #[doc(hidden)]
@@ -2243,18 +2262,11 @@ impl VirtualRouterListener {
         self.port_mapping.as_ref()
     }
 }
-impl std::fmt::Debug for VirtualRouterListener {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualRouterListener");
-        formatter.field("port_mapping", &self.port_mapping);
-        formatter.finish()
-    }
-}
 /// See [`VirtualRouterListener`](crate::model::VirtualRouterListener).
 pub mod virtual_router_listener {
 
     /// A builder for [`VirtualRouterListener`](crate::model::VirtualRouterListener).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) port_mapping: std::option::Option<crate::model::PortMapping>,
     }
@@ -2289,7 +2301,7 @@ impl VirtualRouterListener {
 
 /// <p>An object that represents a port mapping.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PortMapping {
     /// <p>The port used for the port mapping.</p>
     #[doc(hidden)]
@@ -2308,19 +2320,11 @@ impl PortMapping {
         self.protocol.as_ref()
     }
 }
-impl std::fmt::Debug for PortMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PortMapping");
-        formatter.field("port", &self.port);
-        formatter.field("protocol", &self.protocol);
-        formatter.finish()
-    }
-}
 /// See [`PortMapping`](crate::model::PortMapping).
 pub mod port_mapping {
 
     /// A builder for [`PortMapping`](crate::model::PortMapping).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) port: std::option::Option<i32>,
         pub(crate) protocol: std::option::Option<crate::model::PortProtocol>,
@@ -2365,6 +2369,43 @@ impl PortMapping {
     }
 }
 
+/// When writing a match expression against `PortProtocol`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let portprotocol = unimplemented!();
+/// match portprotocol {
+///     PortProtocol::Grpc => { /* ... */ },
+///     PortProtocol::Http => { /* ... */ },
+///     PortProtocol::Http2 => { /* ... */ },
+///     PortProtocol::Tcp => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `portprotocol` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PortProtocol::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PortProtocol::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PortProtocol::NewFeature` is defined.
+/// Specifically, when `portprotocol` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PortProtocol::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2385,8 +2426,8 @@ pub enum PortProtocol {
     Http2,
     #[allow(missing_docs)] // documentation missing in model
     Tcp,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PortProtocol {
     fn from(s: &str) -> Self {
@@ -2395,7 +2436,7 @@ impl std::convert::From<&str> for PortProtocol {
             "http" => PortProtocol::Http,
             "http2" => PortProtocol::Http2,
             "tcp" => PortProtocol::Tcp,
-            other => PortProtocol::Unknown(other.to_owned()),
+            other => PortProtocol::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2414,11 +2455,11 @@ impl PortProtocol {
             PortProtocol::Http => "http",
             PortProtocol::Http2 => "http2",
             PortProtocol::Tcp => "tcp",
-            PortProtocol::Unknown(s) => s.as_ref(),
+            PortProtocol::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["grpc", "http", "http2", "tcp"]
     }
 }
@@ -2430,7 +2471,7 @@ impl AsRef<str> for PortProtocol {
 
 /// <p>An object that represents a route returned by a list operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RouteRef {
     /// <p>The name of the service mesh that the route resides in.</p>
     #[doc(hidden)]
@@ -2498,26 +2539,11 @@ impl RouteRef {
         self.last_updated_at.as_ref()
     }
 }
-impl std::fmt::Debug for RouteRef {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RouteRef");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("virtual_router_name", &self.virtual_router_name);
-        formatter.field("route_name", &self.route_name);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.field("resource_owner", &self.resource_owner);
-        formatter.field("arn", &self.arn);
-        formatter.field("version", &self.version);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.finish()
-    }
-}
 /// See [`RouteRef`](crate::model::RouteRef).
 pub mod route_ref {
 
     /// A builder for [`RouteRef`](crate::model::RouteRef).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
         pub(crate) virtual_router_name: std::option::Option<std::string::String>,
@@ -2657,7 +2683,7 @@ impl RouteRef {
 
 /// <p>An object that represents a route returned by a describe operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RouteData {
     /// <p>The name of the service mesh that the route resides in.</p>
     #[doc(hidden)]
@@ -2704,23 +2730,11 @@ impl RouteData {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for RouteData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RouteData");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("virtual_router_name", &self.virtual_router_name);
-        formatter.field("route_name", &self.route_name);
-        formatter.field("spec", &self.spec);
-        formatter.field("metadata", &self.metadata);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 /// See [`RouteData`](crate::model::RouteData).
 pub mod route_data {
 
     /// A builder for [`RouteData`](crate::model::RouteData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
         pub(crate) virtual_router_name: std::option::Option<std::string::String>,
@@ -2818,7 +2832,7 @@ impl RouteData {
 
 /// <p>An object that represents the current status of a route.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RouteStatus {
     /// <p>The current status for the route.</p>
     #[doc(hidden)]
@@ -2830,18 +2844,11 @@ impl RouteStatus {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for RouteStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RouteStatus");
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 /// See [`RouteStatus`](crate::model::RouteStatus).
 pub mod route_status {
 
     /// A builder for [`RouteStatus`](crate::model::RouteStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::RouteStatusCode>,
     }
@@ -2874,6 +2881,42 @@ impl RouteStatus {
     }
 }
 
+/// When writing a match expression against `RouteStatusCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let routestatuscode = unimplemented!();
+/// match routestatuscode {
+///     RouteStatusCode::Active => { /* ... */ },
+///     RouteStatusCode::Deleted => { /* ... */ },
+///     RouteStatusCode::Inactive => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `routestatuscode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RouteStatusCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RouteStatusCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RouteStatusCode::NewFeature` is defined.
+/// Specifically, when `routestatuscode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RouteStatusCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2892,8 +2935,8 @@ pub enum RouteStatusCode {
     Deleted,
     #[allow(missing_docs)] // documentation missing in model
     Inactive,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for RouteStatusCode {
     fn from(s: &str) -> Self {
@@ -2901,7 +2944,7 @@ impl std::convert::From<&str> for RouteStatusCode {
             "ACTIVE" => RouteStatusCode::Active,
             "DELETED" => RouteStatusCode::Deleted,
             "INACTIVE" => RouteStatusCode::Inactive,
-            other => RouteStatusCode::Unknown(other.to_owned()),
+            other => RouteStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2919,11 +2962,11 @@ impl RouteStatusCode {
             RouteStatusCode::Active => "ACTIVE",
             RouteStatusCode::Deleted => "DELETED",
             RouteStatusCode::Inactive => "INACTIVE",
-            RouteStatusCode::Unknown(s) => s.as_ref(),
+            RouteStatusCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETED", "INACTIVE"]
     }
 }
@@ -2935,7 +2978,7 @@ impl AsRef<str> for RouteStatusCode {
 
 /// <p>An object that represents a route specification. Specify one route type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RouteSpec {
     /// <p>The priority for the route. Routes are matched based on the specified value, where 0 is the highest priority.</p>
     #[doc(hidden)]
@@ -2975,22 +3018,11 @@ impl RouteSpec {
         self.grpc_route.as_ref()
     }
 }
-impl std::fmt::Debug for RouteSpec {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RouteSpec");
-        formatter.field("priority", &self.priority);
-        formatter.field("http_route", &self.http_route);
-        formatter.field("tcp_route", &self.tcp_route);
-        formatter.field("http2_route", &self.http2_route);
-        formatter.field("grpc_route", &self.grpc_route);
-        formatter.finish()
-    }
-}
 /// See [`RouteSpec`](crate::model::RouteSpec).
 pub mod route_spec {
 
     /// A builder for [`RouteSpec`](crate::model::RouteSpec).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) priority: std::option::Option<i32>,
         pub(crate) http_route: std::option::Option<crate::model::HttpRoute>,
@@ -3079,7 +3111,7 @@ impl RouteSpec {
 
 /// <p>An object that represents a gRPC route type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GrpcRoute {
     /// <p>An object that represents the action to take if a match is determined.</p>
     #[doc(hidden)]
@@ -3112,21 +3144,11 @@ impl GrpcRoute {
         self.timeout.as_ref()
     }
 }
-impl std::fmt::Debug for GrpcRoute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GrpcRoute");
-        formatter.field("action", &self.action);
-        formatter.field("r#match", &self.r#match);
-        formatter.field("retry_policy", &self.retry_policy);
-        formatter.field("timeout", &self.timeout);
-        formatter.finish()
-    }
-}
 /// See [`GrpcRoute`](crate::model::GrpcRoute).
 pub mod grpc_route {
 
     /// A builder for [`GrpcRoute`](crate::model::GrpcRoute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::GrpcRouteAction>,
         pub(crate) r#match: std::option::Option<crate::model::GrpcRouteMatch>,
@@ -3206,7 +3228,7 @@ impl GrpcRoute {
 
 /// <p>An object that represents types of timeouts. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GrpcTimeout {
     /// <p>An object that represents a per request timeout. The default value is 15 seconds. If you set a higher timeout, then make sure that the higher value is set for each App Mesh resource in a conversation. For example, if a virtual node backend uses a virtual router provider to route to another virtual node, then the timeout should be greater than 15 seconds for the source and destination virtual node and the route.</p>
     #[doc(hidden)]
@@ -3225,19 +3247,11 @@ impl GrpcTimeout {
         self.idle.as_ref()
     }
 }
-impl std::fmt::Debug for GrpcTimeout {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GrpcTimeout");
-        formatter.field("per_request", &self.per_request);
-        formatter.field("idle", &self.idle);
-        formatter.finish()
-    }
-}
 /// See [`GrpcTimeout`](crate::model::GrpcTimeout).
 pub mod grpc_timeout {
 
     /// A builder for [`GrpcTimeout`](crate::model::GrpcTimeout).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) per_request: std::option::Option<crate::model::Duration>,
         pub(crate) idle: std::option::Option<crate::model::Duration>,
@@ -3284,7 +3298,7 @@ impl GrpcTimeout {
 
 /// <p>An object that represents a duration of time.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Duration {
     /// <p>A number of time units.</p>
     #[doc(hidden)]
@@ -3303,19 +3317,11 @@ impl Duration {
         self.unit.as_ref()
     }
 }
-impl std::fmt::Debug for Duration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Duration");
-        formatter.field("value", &self.value);
-        formatter.field("unit", &self.unit);
-        formatter.finish()
-    }
-}
 /// See [`Duration`](crate::model::Duration).
 pub mod duration {
 
     /// A builder for [`Duration`](crate::model::Duration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<i64>,
         pub(crate) unit: std::option::Option<crate::model::DurationUnit>,
@@ -3357,6 +3363,41 @@ impl Duration {
     }
 }
 
+/// When writing a match expression against `DurationUnit`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let durationunit = unimplemented!();
+/// match durationunit {
+///     DurationUnit::Ms => { /* ... */ },
+///     DurationUnit::S => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `durationunit` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DurationUnit::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DurationUnit::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DurationUnit::NewFeature` is defined.
+/// Specifically, when `durationunit` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DurationUnit::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3373,15 +3414,15 @@ pub enum DurationUnit {
     Ms,
     #[allow(missing_docs)] // documentation missing in model
     S,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DurationUnit {
     fn from(s: &str) -> Self {
         match s {
             "ms" => DurationUnit::Ms,
             "s" => DurationUnit::S,
-            other => DurationUnit::Unknown(other.to_owned()),
+            other => DurationUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -3398,11 +3439,11 @@ impl DurationUnit {
         match self {
             DurationUnit::Ms => "ms",
             DurationUnit::S => "s",
-            DurationUnit::Unknown(s) => s.as_ref(),
+            DurationUnit::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ms", "s"]
     }
 }
@@ -3414,7 +3455,7 @@ impl AsRef<str> for DurationUnit {
 
 /// <p>An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>. Both <code>server-error</code> and <code>gateway-error</code> under <code>httpRetryEvents</code> include the Envoy <code>reset</code> policy. For more information on the <code>reset</code> policy, see the <a href="https://www.envoyproxy.io/docs/envoy/latest/configuration/http/http_filters/router_filter#x-envoy-retry-on">Envoy documentation</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GrpcRetryPolicy {
     /// <p>The timeout for each retry attempt.</p>
     #[doc(hidden)]
@@ -3466,22 +3507,11 @@ impl GrpcRetryPolicy {
         self.grpc_retry_events.as_deref()
     }
 }
-impl std::fmt::Debug for GrpcRetryPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GrpcRetryPolicy");
-        formatter.field("per_retry_timeout", &self.per_retry_timeout);
-        formatter.field("max_retries", &self.max_retries);
-        formatter.field("http_retry_events", &self.http_retry_events);
-        formatter.field("tcp_retry_events", &self.tcp_retry_events);
-        formatter.field("grpc_retry_events", &self.grpc_retry_events);
-        formatter.finish()
-    }
-}
 /// See [`GrpcRetryPolicy`](crate::model::GrpcRetryPolicy).
 pub mod grpc_retry_policy {
 
     /// A builder for [`GrpcRetryPolicy`](crate::model::GrpcRetryPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) per_retry_timeout: std::option::Option<crate::model::Duration>,
         pub(crate) max_retries: std::option::Option<i64>,
@@ -3603,6 +3633,44 @@ impl GrpcRetryPolicy {
     }
 }
 
+/// When writing a match expression against `GrpcRetryPolicyEvent`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let grpcretrypolicyevent = unimplemented!();
+/// match grpcretrypolicyevent {
+///     GrpcRetryPolicyEvent::Cancelled => { /* ... */ },
+///     GrpcRetryPolicyEvent::DeadlineExceeded => { /* ... */ },
+///     GrpcRetryPolicyEvent::Internal => { /* ... */ },
+///     GrpcRetryPolicyEvent::ResourceExhausted => { /* ... */ },
+///     GrpcRetryPolicyEvent::Unavailable => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `grpcretrypolicyevent` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `GrpcRetryPolicyEvent::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `GrpcRetryPolicyEvent::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `GrpcRetryPolicyEvent::NewFeature` is defined.
+/// Specifically, when `grpcretrypolicyevent` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `GrpcRetryPolicyEvent::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3625,8 +3693,8 @@ pub enum GrpcRetryPolicyEvent {
     ResourceExhausted,
     #[allow(missing_docs)] // documentation missing in model
     Unavailable,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for GrpcRetryPolicyEvent {
     fn from(s: &str) -> Self {
@@ -3636,7 +3704,9 @@ impl std::convert::From<&str> for GrpcRetryPolicyEvent {
             "internal" => GrpcRetryPolicyEvent::Internal,
             "resource-exhausted" => GrpcRetryPolicyEvent::ResourceExhausted,
             "unavailable" => GrpcRetryPolicyEvent::Unavailable,
-            other => GrpcRetryPolicyEvent::Unknown(other.to_owned()),
+            other => {
+                GrpcRetryPolicyEvent::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -3656,11 +3726,11 @@ impl GrpcRetryPolicyEvent {
             GrpcRetryPolicyEvent::Internal => "internal",
             GrpcRetryPolicyEvent::ResourceExhausted => "resource-exhausted",
             GrpcRetryPolicyEvent::Unavailable => "unavailable",
-            GrpcRetryPolicyEvent::Unknown(s) => s.as_ref(),
+            GrpcRetryPolicyEvent::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "cancelled",
             "deadline-exceeded",
@@ -3676,6 +3746,40 @@ impl AsRef<str> for GrpcRetryPolicyEvent {
     }
 }
 
+/// When writing a match expression against `TcpRetryPolicyEvent`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let tcpretrypolicyevent = unimplemented!();
+/// match tcpretrypolicyevent {
+///     TcpRetryPolicyEvent::ConnectionError => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `tcpretrypolicyevent` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `TcpRetryPolicyEvent::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `TcpRetryPolicyEvent::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `TcpRetryPolicyEvent::NewFeature` is defined.
+/// Specifically, when `tcpretrypolicyevent` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `TcpRetryPolicyEvent::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3690,14 +3794,16 @@ impl AsRef<str> for GrpcRetryPolicyEvent {
 pub enum TcpRetryPolicyEvent {
     #[allow(missing_docs)] // documentation missing in model
     ConnectionError,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TcpRetryPolicyEvent {
     fn from(s: &str) -> Self {
         match s {
             "connection-error" => TcpRetryPolicyEvent::ConnectionError,
-            other => TcpRetryPolicyEvent::Unknown(other.to_owned()),
+            other => {
+                TcpRetryPolicyEvent::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -3713,11 +3819,11 @@ impl TcpRetryPolicyEvent {
     pub fn as_str(&self) -> &str {
         match self {
             TcpRetryPolicyEvent::ConnectionError => "connection-error",
-            TcpRetryPolicyEvent::Unknown(s) => s.as_ref(),
+            TcpRetryPolicyEvent::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["connection-error"]
     }
 }
@@ -3729,7 +3835,7 @@ impl AsRef<str> for TcpRetryPolicyEvent {
 
 /// <p>An object that represents the criteria for determining a request match.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GrpcRouteMatch {
     /// <p>The fully qualified domain name for the service to match from the request.</p>
     #[doc(hidden)]
@@ -3762,21 +3868,11 @@ impl GrpcRouteMatch {
         self.port
     }
 }
-impl std::fmt::Debug for GrpcRouteMatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GrpcRouteMatch");
-        formatter.field("service_name", &self.service_name);
-        formatter.field("method_name", &self.method_name);
-        formatter.field("metadata", &self.metadata);
-        formatter.field("port", &self.port);
-        formatter.finish()
-    }
-}
 /// See [`GrpcRouteMatch`](crate::model::GrpcRouteMatch).
 pub mod grpc_route_match {
 
     /// A builder for [`GrpcRouteMatch`](crate::model::GrpcRouteMatch).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_name: std::option::Option<std::string::String>,
         pub(crate) method_name: std::option::Option<std::string::String>,
@@ -3853,7 +3949,7 @@ impl GrpcRouteMatch {
 
 /// <p>An object that represents the match metadata for the route.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GrpcRouteMetadata {
     /// <p>The name of the route.</p>
     #[doc(hidden)]
@@ -3879,20 +3975,11 @@ impl GrpcRouteMetadata {
         self.r#match.as_ref()
     }
 }
-impl std::fmt::Debug for GrpcRouteMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GrpcRouteMetadata");
-        formatter.field("name", &self.name);
-        formatter.field("invert", &self.invert);
-        formatter.field("r#match", &self.r#match);
-        formatter.finish()
-    }
-}
 /// See [`GrpcRouteMetadata`](crate::model::GrpcRouteMetadata).
 pub mod grpc_route_metadata {
 
     /// A builder for [`GrpcRouteMetadata`](crate::model::GrpcRouteMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) invert: std::option::Option<bool>,
@@ -4047,7 +4134,7 @@ impl GrpcRouteMetadataMatchMethod {
 
 /// <p>An object that represents the range of values to match on. The first character of the range is included in the range, though the last character is not. For example, if the range specified were 1-100, only values 1-99 would be matched.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MatchRange {
     /// <p>The start of the range.</p>
     #[doc(hidden)]
@@ -4066,19 +4153,11 @@ impl MatchRange {
         self.end
     }
 }
-impl std::fmt::Debug for MatchRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MatchRange");
-        formatter.field("start", &self.start);
-        formatter.field("end", &self.end);
-        formatter.finish()
-    }
-}
 /// See [`MatchRange`](crate::model::MatchRange).
 pub mod match_range {
 
     /// A builder for [`MatchRange`](crate::model::MatchRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start: std::option::Option<i64>,
         pub(crate) end: std::option::Option<i64>,
@@ -4122,7 +4201,7 @@ impl MatchRange {
 
 /// <p>An object that represents the action to take if a match is determined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GrpcRouteAction {
     /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
     #[doc(hidden)]
@@ -4134,18 +4213,11 @@ impl GrpcRouteAction {
         self.weighted_targets.as_deref()
     }
 }
-impl std::fmt::Debug for GrpcRouteAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GrpcRouteAction");
-        formatter.field("weighted_targets", &self.weighted_targets);
-        formatter.finish()
-    }
-}
 /// See [`GrpcRouteAction`](crate::model::GrpcRouteAction).
 pub mod grpc_route_action {
 
     /// A builder for [`GrpcRouteAction`](crate::model::GrpcRouteAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) weighted_targets:
             std::option::Option<std::vec::Vec<crate::model::WeightedTarget>>,
@@ -4187,7 +4259,7 @@ impl GrpcRouteAction {
 
 /// <p>An object that represents a target and its relative weight. Traffic is distributed across targets according to their relative weight. For example, a weighted target with a relative weight of 50 receives five times as much traffic as one with a relative weight of 10. The total weight for all targets combined must be less than or equal to 100.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WeightedTarget {
     /// <p>The virtual node to associate with the weighted target.</p>
     #[doc(hidden)]
@@ -4213,20 +4285,11 @@ impl WeightedTarget {
         self.port
     }
 }
-impl std::fmt::Debug for WeightedTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WeightedTarget");
-        formatter.field("virtual_node", &self.virtual_node);
-        formatter.field("weight", &self.weight);
-        formatter.field("port", &self.port);
-        formatter.finish()
-    }
-}
 /// See [`WeightedTarget`](crate::model::WeightedTarget).
 pub mod weighted_target {
 
     /// A builder for [`WeightedTarget`](crate::model::WeightedTarget).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_node: std::option::Option<std::string::String>,
         pub(crate) weight: std::option::Option<i32>,
@@ -4282,7 +4345,7 @@ impl WeightedTarget {
 
 /// <p>An object that represents an HTTP or HTTP/2 route type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpRoute {
     /// <p>An object that represents the criteria for determining a request match.</p>
     #[doc(hidden)]
@@ -4315,21 +4378,11 @@ impl HttpRoute {
         self.timeout.as_ref()
     }
 }
-impl std::fmt::Debug for HttpRoute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpRoute");
-        formatter.field("r#match", &self.r#match);
-        formatter.field("action", &self.action);
-        formatter.field("retry_policy", &self.retry_policy);
-        formatter.field("timeout", &self.timeout);
-        formatter.finish()
-    }
-}
 /// See [`HttpRoute`](crate::model::HttpRoute).
 pub mod http_route {
 
     /// A builder for [`HttpRoute`](crate::model::HttpRoute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#match: std::option::Option<crate::model::HttpRouteMatch>,
         pub(crate) action: std::option::Option<crate::model::HttpRouteAction>,
@@ -4409,7 +4462,7 @@ impl HttpRoute {
 
 /// <p>An object that represents types of timeouts. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpTimeout {
     /// <p>An object that represents a per request timeout. The default value is 15 seconds. If you set a higher timeout, then make sure that the higher value is set for each App Mesh resource in a conversation. For example, if a virtual node backend uses a virtual router provider to route to another virtual node, then the timeout should be greater than 15 seconds for the source and destination virtual node and the route.</p>
     #[doc(hidden)]
@@ -4428,19 +4481,11 @@ impl HttpTimeout {
         self.idle.as_ref()
     }
 }
-impl std::fmt::Debug for HttpTimeout {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpTimeout");
-        formatter.field("per_request", &self.per_request);
-        formatter.field("idle", &self.idle);
-        formatter.finish()
-    }
-}
 /// See [`HttpTimeout`](crate::model::HttpTimeout).
 pub mod http_timeout {
 
     /// A builder for [`HttpTimeout`](crate::model::HttpTimeout).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) per_request: std::option::Option<crate::model::Duration>,
         pub(crate) idle: std::option::Option<crate::model::Duration>,
@@ -4487,7 +4532,7 @@ impl HttpTimeout {
 
 /// <p>An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>. Both <code>server-error</code> and <code>gateway-error</code> under <code>httpRetryEvents</code> include the Envoy <code>reset</code> policy. For more information on the <code>reset</code> policy, see the <a href="https://www.envoyproxy.io/docs/envoy/latest/configuration/http/http_filters/router_filter#x-envoy-retry-on">Envoy documentation</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpRetryPolicy {
     /// <p>The timeout for each retry attempt.</p>
     #[doc(hidden)]
@@ -4532,21 +4577,11 @@ impl HttpRetryPolicy {
         self.tcp_retry_events.as_deref()
     }
 }
-impl std::fmt::Debug for HttpRetryPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpRetryPolicy");
-        formatter.field("per_retry_timeout", &self.per_retry_timeout);
-        formatter.field("max_retries", &self.max_retries);
-        formatter.field("http_retry_events", &self.http_retry_events);
-        formatter.field("tcp_retry_events", &self.tcp_retry_events);
-        formatter.finish()
-    }
-}
 /// See [`HttpRetryPolicy`](crate::model::HttpRetryPolicy).
 pub mod http_retry_policy {
 
     /// A builder for [`HttpRetryPolicy`](crate::model::HttpRetryPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) per_retry_timeout: std::option::Option<crate::model::Duration>,
         pub(crate) max_retries: std::option::Option<i64>,
@@ -4648,7 +4683,7 @@ impl HttpRetryPolicy {
 
 /// <p>An object that represents the action to take if a match is determined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpRouteAction {
     /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
     #[doc(hidden)]
@@ -4660,18 +4695,11 @@ impl HttpRouteAction {
         self.weighted_targets.as_deref()
     }
 }
-impl std::fmt::Debug for HttpRouteAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpRouteAction");
-        formatter.field("weighted_targets", &self.weighted_targets);
-        formatter.finish()
-    }
-}
 /// See [`HttpRouteAction`](crate::model::HttpRouteAction).
 pub mod http_route_action {
 
     /// A builder for [`HttpRouteAction`](crate::model::HttpRouteAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) weighted_targets:
             std::option::Option<std::vec::Vec<crate::model::WeightedTarget>>,
@@ -4713,7 +4741,7 @@ impl HttpRouteAction {
 
 /// <p>An object that represents the requirements for a route to match HTTP requests for a virtual router.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpRouteMatch {
     /// <p>Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself matches all requests to the virtual service name. You can also match for path-based routing of requests. For example, if your virtual service name is <code>my-service.local</code> and you want the route to match requests to <code>my-service.local/metrics</code>, your prefix should be <code>/metrics</code>.</p>
     #[doc(hidden)]
@@ -4767,24 +4795,11 @@ impl HttpRouteMatch {
         self.port
     }
 }
-impl std::fmt::Debug for HttpRouteMatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpRouteMatch");
-        formatter.field("prefix", &self.prefix);
-        formatter.field("path", &self.path);
-        formatter.field("query_parameters", &self.query_parameters);
-        formatter.field("method", &self.method);
-        formatter.field("scheme", &self.scheme);
-        formatter.field("headers", &self.headers);
-        formatter.field("port", &self.port);
-        formatter.finish()
-    }
-}
 /// See [`HttpRouteMatch`](crate::model::HttpRouteMatch).
 pub mod http_route_match {
 
     /// A builder for [`HttpRouteMatch`](crate::model::HttpRouteMatch).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) prefix: std::option::Option<std::string::String>,
         pub(crate) path: std::option::Option<crate::model::HttpPathMatch>,
@@ -4907,7 +4922,7 @@ impl HttpRouteMatch {
 
 /// <p>An object that represents the HTTP header in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpRouteHeader {
     /// <p>A name for the HTTP header in the client request that will be matched on.</p>
     #[doc(hidden)]
@@ -4933,20 +4948,11 @@ impl HttpRouteHeader {
         self.r#match.as_ref()
     }
 }
-impl std::fmt::Debug for HttpRouteHeader {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpRouteHeader");
-        formatter.field("name", &self.name);
-        formatter.field("invert", &self.invert);
-        formatter.field("r#match", &self.r#match);
-        formatter.finish()
-    }
-}
 /// See [`HttpRouteHeader`](crate::model::HttpRouteHeader).
 pub mod http_route_header {
 
     /// A builder for [`HttpRouteHeader`](crate::model::HttpRouteHeader).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) invert: std::option::Option<bool>,
@@ -5099,6 +5105,41 @@ impl HeaderMatchMethod {
     }
 }
 
+/// When writing a match expression against `HttpScheme`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let httpscheme = unimplemented!();
+/// match httpscheme {
+///     HttpScheme::Http => { /* ... */ },
+///     HttpScheme::Https => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `httpscheme` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `HttpScheme::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `HttpScheme::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `HttpScheme::NewFeature` is defined.
+/// Specifically, when `httpscheme` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `HttpScheme::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -5115,15 +5156,15 @@ pub enum HttpScheme {
     Http,
     #[allow(missing_docs)] // documentation missing in model
     Https,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for HttpScheme {
     fn from(s: &str) -> Self {
         match s {
             "http" => HttpScheme::Http,
             "https" => HttpScheme::Https,
-            other => HttpScheme::Unknown(other.to_owned()),
+            other => HttpScheme::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -5140,11 +5181,11 @@ impl HttpScheme {
         match self {
             HttpScheme::Http => "http",
             HttpScheme::Https => "https",
-            HttpScheme::Unknown(s) => s.as_ref(),
+            HttpScheme::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["http", "https"]
     }
 }
@@ -5154,6 +5195,48 @@ impl AsRef<str> for HttpScheme {
     }
 }
 
+/// When writing a match expression against `HttpMethod`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let httpmethod = unimplemented!();
+/// match httpmethod {
+///     HttpMethod::Connect => { /* ... */ },
+///     HttpMethod::Delete => { /* ... */ },
+///     HttpMethod::Get => { /* ... */ },
+///     HttpMethod::Head => { /* ... */ },
+///     HttpMethod::Options => { /* ... */ },
+///     HttpMethod::Patch => { /* ... */ },
+///     HttpMethod::Post => { /* ... */ },
+///     HttpMethod::Put => { /* ... */ },
+///     HttpMethod::Trace => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `httpmethod` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `HttpMethod::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `HttpMethod::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `HttpMethod::NewFeature` is defined.
+/// Specifically, when `httpmethod` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `HttpMethod::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -5184,8 +5267,8 @@ pub enum HttpMethod {
     Put,
     #[allow(missing_docs)] // documentation missing in model
     Trace,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for HttpMethod {
     fn from(s: &str) -> Self {
@@ -5199,7 +5282,7 @@ impl std::convert::From<&str> for HttpMethod {
             "POST" => HttpMethod::Post,
             "PUT" => HttpMethod::Put,
             "TRACE" => HttpMethod::Trace,
-            other => HttpMethod::Unknown(other.to_owned()),
+            other => HttpMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -5223,11 +5306,11 @@ impl HttpMethod {
             HttpMethod::Post => "POST",
             HttpMethod::Put => "PUT",
             HttpMethod::Trace => "TRACE",
-            HttpMethod::Unknown(s) => s.as_ref(),
+            HttpMethod::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CONNECT", "DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT", "TRACE",
         ]
@@ -5241,7 +5324,7 @@ impl AsRef<str> for HttpMethod {
 
 /// <p>An object that represents the query parameter in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpQueryParameter {
     /// <p>A name for the query parameter that will be matched on.</p>
     #[doc(hidden)]
@@ -5260,19 +5343,11 @@ impl HttpQueryParameter {
         self.r#match.as_ref()
     }
 }
-impl std::fmt::Debug for HttpQueryParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpQueryParameter");
-        formatter.field("name", &self.name);
-        formatter.field("r#match", &self.r#match);
-        formatter.finish()
-    }
-}
 /// See [`HttpQueryParameter`](crate::model::HttpQueryParameter).
 pub mod http_query_parameter {
 
     /// A builder for [`HttpQueryParameter`](crate::model::HttpQueryParameter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#match: std::option::Option<crate::model::QueryParameterMatch>,
@@ -5319,7 +5394,7 @@ impl HttpQueryParameter {
 
 /// <p>An object representing the query parameter to match.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryParameterMatch {
     /// <p>The exact query parameter to match on.</p>
     #[doc(hidden)]
@@ -5331,18 +5406,11 @@ impl QueryParameterMatch {
         self.exact.as_deref()
     }
 }
-impl std::fmt::Debug for QueryParameterMatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryParameterMatch");
-        formatter.field("exact", &self.exact);
-        formatter.finish()
-    }
-}
 /// See [`QueryParameterMatch`](crate::model::QueryParameterMatch).
 pub mod query_parameter_match {
 
     /// A builder for [`QueryParameterMatch`](crate::model::QueryParameterMatch).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) exact: std::option::Option<std::string::String>,
     }
@@ -5372,7 +5440,7 @@ impl QueryParameterMatch {
 
 /// <p>An object representing the path to match in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpPathMatch {
     /// <p>The exact path to match on.</p>
     #[doc(hidden)]
@@ -5391,19 +5459,11 @@ impl HttpPathMatch {
         self.regex.as_deref()
     }
 }
-impl std::fmt::Debug for HttpPathMatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpPathMatch");
-        formatter.field("exact", &self.exact);
-        formatter.field("regex", &self.regex);
-        formatter.finish()
-    }
-}
 /// See [`HttpPathMatch`](crate::model::HttpPathMatch).
 pub mod http_path_match {
 
     /// A builder for [`HttpPathMatch`](crate::model::HttpPathMatch).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) exact: std::option::Option<std::string::String>,
         pub(crate) regex: std::option::Option<std::string::String>,
@@ -5447,7 +5507,7 @@ impl HttpPathMatch {
 
 /// <p>An object that represents a TCP route type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TcpRoute {
     /// <p>The action to take if a match is determined.</p>
     #[doc(hidden)]
@@ -5473,20 +5533,11 @@ impl TcpRoute {
         self.r#match.as_ref()
     }
 }
-impl std::fmt::Debug for TcpRoute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TcpRoute");
-        formatter.field("action", &self.action);
-        formatter.field("timeout", &self.timeout);
-        formatter.field("r#match", &self.r#match);
-        formatter.finish()
-    }
-}
 /// See [`TcpRoute`](crate::model::TcpRoute).
 pub mod tcp_route {
 
     /// A builder for [`TcpRoute`](crate::model::TcpRoute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::TcpRouteAction>,
         pub(crate) timeout: std::option::Option<crate::model::TcpTimeout>,
@@ -5548,7 +5599,7 @@ impl TcpRoute {
 
 /// <p>An object representing the TCP route to match.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TcpRouteMatch {
     /// <p>The port number to match on.</p>
     #[doc(hidden)]
@@ -5560,18 +5611,11 @@ impl TcpRouteMatch {
         self.port
     }
 }
-impl std::fmt::Debug for TcpRouteMatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TcpRouteMatch");
-        formatter.field("port", &self.port);
-        formatter.finish()
-    }
-}
 /// See [`TcpRouteMatch`](crate::model::TcpRouteMatch).
 pub mod tcp_route_match {
 
     /// A builder for [`TcpRouteMatch`](crate::model::TcpRouteMatch).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) port: std::option::Option<i32>,
     }
@@ -5601,7 +5645,7 @@ impl TcpRouteMatch {
 
 /// <p>An object that represents types of timeouts. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TcpTimeout {
     /// <p>An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be idle. The default value is none.</p>
     #[doc(hidden)]
@@ -5613,18 +5657,11 @@ impl TcpTimeout {
         self.idle.as_ref()
     }
 }
-impl std::fmt::Debug for TcpTimeout {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TcpTimeout");
-        formatter.field("idle", &self.idle);
-        formatter.finish()
-    }
-}
 /// See [`TcpTimeout`](crate::model::TcpTimeout).
 pub mod tcp_timeout {
 
     /// A builder for [`TcpTimeout`](crate::model::TcpTimeout).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) idle: std::option::Option<crate::model::Duration>,
     }
@@ -5654,7 +5691,7 @@ impl TcpTimeout {
 
 /// <p>An object that represents the action to take if a match is determined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TcpRouteAction {
     /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
     #[doc(hidden)]
@@ -5666,18 +5703,11 @@ impl TcpRouteAction {
         self.weighted_targets.as_deref()
     }
 }
-impl std::fmt::Debug for TcpRouteAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TcpRouteAction");
-        formatter.field("weighted_targets", &self.weighted_targets);
-        formatter.finish()
-    }
-}
 /// See [`TcpRouteAction`](crate::model::TcpRouteAction).
 pub mod tcp_route_action {
 
     /// A builder for [`TcpRouteAction`](crate::model::TcpRouteAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) weighted_targets:
             std::option::Option<std::vec::Vec<crate::model::WeightedTarget>>,
@@ -5719,7 +5749,7 @@ impl TcpRouteAction {
 
 /// <p>An object that represents a virtual node returned by a list operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualNodeRef {
     /// <p>The name of the service mesh that the virtual node resides in.</p>
     #[doc(hidden)]
@@ -5780,25 +5810,11 @@ impl VirtualNodeRef {
         self.last_updated_at.as_ref()
     }
 }
-impl std::fmt::Debug for VirtualNodeRef {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualNodeRef");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("virtual_node_name", &self.virtual_node_name);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.field("resource_owner", &self.resource_owner);
-        formatter.field("arn", &self.arn);
-        formatter.field("version", &self.version);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.finish()
-    }
-}
 /// See [`VirtualNodeRef`](crate::model::VirtualNodeRef).
 pub mod virtual_node_ref {
 
     /// A builder for [`VirtualNodeRef`](crate::model::VirtualNodeRef).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
         pub(crate) virtual_node_name: std::option::Option<std::string::String>,
@@ -5926,7 +5942,7 @@ impl VirtualNodeRef {
 
 /// <p>An object that represents a virtual node returned by a describe operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualNodeData {
     /// <p>The name of the service mesh that the virtual node resides in.</p>
     #[doc(hidden)]
@@ -5966,22 +5982,11 @@ impl VirtualNodeData {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for VirtualNodeData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualNodeData");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("virtual_node_name", &self.virtual_node_name);
-        formatter.field("spec", &self.spec);
-        formatter.field("metadata", &self.metadata);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 /// See [`VirtualNodeData`](crate::model::VirtualNodeData).
 pub mod virtual_node_data {
 
     /// A builder for [`VirtualNodeData`](crate::model::VirtualNodeData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
         pub(crate) virtual_node_name: std::option::Option<std::string::String>,
@@ -6073,7 +6078,7 @@ impl VirtualNodeData {
 
 /// <p>An object that represents the current status of the virtual node.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualNodeStatus {
     /// <p>The current status of the virtual node.</p>
     #[doc(hidden)]
@@ -6085,18 +6090,11 @@ impl VirtualNodeStatus {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for VirtualNodeStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualNodeStatus");
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 /// See [`VirtualNodeStatus`](crate::model::VirtualNodeStatus).
 pub mod virtual_node_status {
 
     /// A builder for [`VirtualNodeStatus`](crate::model::VirtualNodeStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::VirtualNodeStatusCode>,
     }
@@ -6129,6 +6127,42 @@ impl VirtualNodeStatus {
     }
 }
 
+/// When writing a match expression against `VirtualNodeStatusCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let virtualnodestatuscode = unimplemented!();
+/// match virtualnodestatuscode {
+///     VirtualNodeStatusCode::Active => { /* ... */ },
+///     VirtualNodeStatusCode::Deleted => { /* ... */ },
+///     VirtualNodeStatusCode::Inactive => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `virtualnodestatuscode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `VirtualNodeStatusCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `VirtualNodeStatusCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `VirtualNodeStatusCode::NewFeature` is defined.
+/// Specifically, when `virtualnodestatuscode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `VirtualNodeStatusCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -6147,8 +6181,8 @@ pub enum VirtualNodeStatusCode {
     Deleted,
     #[allow(missing_docs)] // documentation missing in model
     Inactive,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for VirtualNodeStatusCode {
     fn from(s: &str) -> Self {
@@ -6156,7 +6190,9 @@ impl std::convert::From<&str> for VirtualNodeStatusCode {
             "ACTIVE" => VirtualNodeStatusCode::Active,
             "DELETED" => VirtualNodeStatusCode::Deleted,
             "INACTIVE" => VirtualNodeStatusCode::Inactive,
-            other => VirtualNodeStatusCode::Unknown(other.to_owned()),
+            other => {
+                VirtualNodeStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -6174,11 +6210,11 @@ impl VirtualNodeStatusCode {
             VirtualNodeStatusCode::Active => "ACTIVE",
             VirtualNodeStatusCode::Deleted => "DELETED",
             VirtualNodeStatusCode::Inactive => "INACTIVE",
-            VirtualNodeStatusCode::Unknown(s) => s.as_ref(),
+            VirtualNodeStatusCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETED", "INACTIVE"]
     }
 }
@@ -6190,7 +6226,7 @@ impl AsRef<str> for VirtualNodeStatusCode {
 
 /// <p>An object that represents the specification of a virtual node.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualNodeSpec {
     /// <p>The service discovery information for the virtual node. If your virtual node does not expect ingress traffic, you can omit this parameter. If you specify a <code>listener</code>, then you must specify service discovery information.</p>
     #[doc(hidden)]
@@ -6230,22 +6266,11 @@ impl VirtualNodeSpec {
         self.logging.as_ref()
     }
 }
-impl std::fmt::Debug for VirtualNodeSpec {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualNodeSpec");
-        formatter.field("service_discovery", &self.service_discovery);
-        formatter.field("listeners", &self.listeners);
-        formatter.field("backends", &self.backends);
-        formatter.field("backend_defaults", &self.backend_defaults);
-        formatter.field("logging", &self.logging);
-        formatter.finish()
-    }
-}
 /// See [`VirtualNodeSpec`](crate::model::VirtualNodeSpec).
 pub mod virtual_node_spec {
 
     /// A builder for [`VirtualNodeSpec`](crate::model::VirtualNodeSpec).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_discovery: std::option::Option<crate::model::ServiceDiscovery>,
         pub(crate) listeners: std::option::Option<std::vec::Vec<crate::model::Listener>>,
@@ -6349,7 +6374,7 @@ impl VirtualNodeSpec {
 
 /// <p>An object that represents the logging information for a virtual node.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Logging {
     /// <p>The access log configuration for a virtual node.</p>
     #[doc(hidden)]
@@ -6361,18 +6386,11 @@ impl Logging {
         self.access_log.as_ref()
     }
 }
-impl std::fmt::Debug for Logging {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Logging");
-        formatter.field("access_log", &self.access_log);
-        formatter.finish()
-    }
-}
 /// See [`Logging`](crate::model::Logging).
 pub mod logging {
 
     /// A builder for [`Logging`](crate::model::Logging).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_log: std::option::Option<crate::model::AccessLog>,
     }
@@ -6444,7 +6462,7 @@ impl AccessLog {
 
 /// <p>An object that represents an access log file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileAccessLog {
     /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p> <note>
     /// <p>The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to bootstrap properly.</p>
@@ -6467,19 +6485,11 @@ impl FileAccessLog {
         self.format.as_ref()
     }
 }
-impl std::fmt::Debug for FileAccessLog {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileAccessLog");
-        formatter.field("path", &self.path);
-        formatter.field("format", &self.format);
-        formatter.finish()
-    }
-}
 /// See [`FileAccessLog`](crate::model::FileAccessLog).
 pub mod file_access_log {
 
     /// A builder for [`FileAccessLog`](crate::model::FileAccessLog).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
         pub(crate) format: std::option::Option<crate::model::LoggingFormat>,
@@ -6583,7 +6593,7 @@ impl LoggingFormat {
 
 /// <p>An object that represents the key value pairs for the JSON.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JsonFormatRef {
     /// <p>The specified key for the JSON.</p>
     #[doc(hidden)]
@@ -6602,19 +6612,11 @@ impl JsonFormatRef {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for JsonFormatRef {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JsonFormatRef");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`JsonFormatRef`](crate::model::JsonFormatRef).
 pub mod json_format_ref {
 
     /// A builder for [`JsonFormatRef`](crate::model::JsonFormatRef).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -6658,7 +6660,7 @@ impl JsonFormatRef {
 
 /// <p>An object that represents the default properties for a backend.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackendDefaults {
     /// <p>A reference to an object that represents a client policy.</p>
     #[doc(hidden)]
@@ -6670,18 +6672,11 @@ impl BackendDefaults {
         self.client_policy.as_ref()
     }
 }
-impl std::fmt::Debug for BackendDefaults {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackendDefaults");
-        formatter.field("client_policy", &self.client_policy);
-        formatter.finish()
-    }
-}
 /// See [`BackendDefaults`](crate::model::BackendDefaults).
 pub mod backend_defaults {
 
     /// A builder for [`BackendDefaults`](crate::model::BackendDefaults).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_policy: std::option::Option<crate::model::ClientPolicy>,
     }
@@ -6716,7 +6711,7 @@ impl BackendDefaults {
 
 /// <p>An object that represents a client policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClientPolicy {
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) client policy.</p>
     #[doc(hidden)]
@@ -6728,18 +6723,11 @@ impl ClientPolicy {
         self.tls.as_ref()
     }
 }
-impl std::fmt::Debug for ClientPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClientPolicy");
-        formatter.field("tls", &self.tls);
-        formatter.finish()
-    }
-}
 /// See [`ClientPolicy`](crate::model::ClientPolicy).
 pub mod client_policy {
 
     /// A builder for [`ClientPolicy`](crate::model::ClientPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tls: std::option::Option<crate::model::ClientPolicyTls>,
     }
@@ -6772,7 +6760,7 @@ impl ClientPolicy {
 
 /// <p>A reference to an object that represents a Transport Layer Security (TLS) client policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClientPolicyTls {
     /// <p>Whether the policy is enforced. The default is <code>True</code>, if a value isn't specified.</p>
     #[doc(hidden)]
@@ -6805,21 +6793,11 @@ impl ClientPolicyTls {
         self.validation.as_ref()
     }
 }
-impl std::fmt::Debug for ClientPolicyTls {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClientPolicyTls");
-        formatter.field("enforce", &self.enforce);
-        formatter.field("ports", &self.ports);
-        formatter.field("certificate", &self.certificate);
-        formatter.field("validation", &self.validation);
-        formatter.finish()
-    }
-}
 /// See [`ClientPolicyTls`](crate::model::ClientPolicyTls).
 pub mod client_policy_tls {
 
     /// A builder for [`ClientPolicyTls`](crate::model::ClientPolicyTls).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enforce: std::option::Option<bool>,
         pub(crate) ports: std::option::Option<std::vec::Vec<i32>>,
@@ -6899,7 +6877,7 @@ impl ClientPolicyTls {
 
 /// <p>An object that represents how the proxy will validate its peer during Transport Layer Security (TLS) negotiation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TlsValidationContext {
     /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
     #[doc(hidden)]
@@ -6920,19 +6898,11 @@ impl TlsValidationContext {
         self.subject_alternative_names.as_ref()
     }
 }
-impl std::fmt::Debug for TlsValidationContext {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TlsValidationContext");
-        formatter.field("trust", &self.trust);
-        formatter.field("subject_alternative_names", &self.subject_alternative_names);
-        formatter.finish()
-    }
-}
 /// See [`TlsValidationContext`](crate::model::TlsValidationContext).
 pub mod tls_validation_context {
 
     /// A builder for [`TlsValidationContext`](crate::model::TlsValidationContext).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust: std::option::Option<crate::model::TlsValidationContextTrust>,
         pub(crate) subject_alternative_names:
@@ -6986,7 +6956,7 @@ impl TlsValidationContext {
 
 /// <p>An object that represents the subject alternative names secured by the certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubjectAlternativeNames {
     /// <p>An object that represents the criteria for determining a SANs match.</p>
     #[doc(hidden)]
@@ -6998,18 +6968,11 @@ impl SubjectAlternativeNames {
         self.r#match.as_ref()
     }
 }
-impl std::fmt::Debug for SubjectAlternativeNames {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubjectAlternativeNames");
-        formatter.field("r#match", &self.r#match);
-        formatter.finish()
-    }
-}
 /// See [`SubjectAlternativeNames`](crate::model::SubjectAlternativeNames).
 pub mod subject_alternative_names {
 
     /// A builder for [`SubjectAlternativeNames`](crate::model::SubjectAlternativeNames).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#match: std::option::Option<crate::model::SubjectAlternativeNameMatchers>,
     }
@@ -7044,7 +7007,7 @@ impl SubjectAlternativeNames {
 
 /// <p>An object that represents the methods by which a subject alternative name on a peer Transport Layer Security (TLS) certificate can be matched.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubjectAlternativeNameMatchers {
     /// <p>The values sent must match the specified values exactly.</p>
     #[doc(hidden)]
@@ -7056,18 +7019,11 @@ impl SubjectAlternativeNameMatchers {
         self.exact.as_deref()
     }
 }
-impl std::fmt::Debug for SubjectAlternativeNameMatchers {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubjectAlternativeNameMatchers");
-        formatter.field("exact", &self.exact);
-        formatter.finish()
-    }
-}
 /// See [`SubjectAlternativeNameMatchers`](crate::model::SubjectAlternativeNameMatchers).
 pub mod subject_alternative_name_matchers {
 
     /// A builder for [`SubjectAlternativeNameMatchers`](crate::model::SubjectAlternativeNameMatchers).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) exact: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -7178,7 +7134,7 @@ impl TlsValidationContextTrust {
 
 /// <p>An object that represents a Transport Layer Security (TLS) Secret Discovery Service validation context trust. The proxy must be configured with a local SDS provider via a Unix Domain Socket. See App Mesh <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html">TLS documentation</a> for more info.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TlsValidationContextSdsTrust {
     /// <p>A reference to an object that represents the name of the secret for a Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
     #[doc(hidden)]
@@ -7190,18 +7146,11 @@ impl TlsValidationContextSdsTrust {
         self.secret_name.as_deref()
     }
 }
-impl std::fmt::Debug for TlsValidationContextSdsTrust {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TlsValidationContextSdsTrust");
-        formatter.field("secret_name", &self.secret_name);
-        formatter.finish()
-    }
-}
 /// See [`TlsValidationContextSdsTrust`](crate::model::TlsValidationContextSdsTrust).
 pub mod tls_validation_context_sds_trust {
 
     /// A builder for [`TlsValidationContextSdsTrust`](crate::model::TlsValidationContextSdsTrust).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) secret_name: std::option::Option<std::string::String>,
     }
@@ -7233,7 +7182,7 @@ impl TlsValidationContextSdsTrust {
 
 /// <p>An object that represents a Transport Layer Security (TLS) validation context trust for a local file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TlsValidationContextFileTrust {
     /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
     #[doc(hidden)]
@@ -7245,18 +7194,11 @@ impl TlsValidationContextFileTrust {
         self.certificate_chain.as_deref()
     }
 }
-impl std::fmt::Debug for TlsValidationContextFileTrust {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TlsValidationContextFileTrust");
-        formatter.field("certificate_chain", &self.certificate_chain);
-        formatter.finish()
-    }
-}
 /// See [`TlsValidationContextFileTrust`](crate::model::TlsValidationContextFileTrust).
 pub mod tls_validation_context_file_trust {
 
     /// A builder for [`TlsValidationContextFileTrust`](crate::model::TlsValidationContextFileTrust).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_chain: std::option::Option<std::string::String>,
     }
@@ -7291,7 +7233,7 @@ impl TlsValidationContextFileTrust {
 
 /// <p>An object that represents a Transport Layer Security (TLS) validation context trust for an Certificate Manager certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TlsValidationContextAcmTrust {
     /// <p>One or more ACM Amazon Resource Name (ARN)s.</p>
     #[doc(hidden)]
@@ -7303,21 +7245,11 @@ impl TlsValidationContextAcmTrust {
         self.certificate_authority_arns.as_deref()
     }
 }
-impl std::fmt::Debug for TlsValidationContextAcmTrust {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TlsValidationContextAcmTrust");
-        formatter.field(
-            "certificate_authority_arns",
-            &self.certificate_authority_arns,
-        );
-        formatter.finish()
-    }
-}
 /// See [`TlsValidationContextAcmTrust`](crate::model::TlsValidationContextAcmTrust).
 pub mod tls_validation_context_acm_trust {
 
     /// A builder for [`TlsValidationContextAcmTrust`](crate::model::TlsValidationContextAcmTrust).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_authority_arns:
             std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7410,7 +7342,7 @@ impl ClientTlsCertificate {
 
 /// <p>An object that represents the listener's Secret Discovery Service certificate. The proxy must be configured with a local SDS provider via a Unix Domain Socket. See App Mesh <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html">TLS documentation</a> for more info.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListenerTlsSdsCertificate {
     /// <p>A reference to an object that represents the name of the secret requested from the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or certificate chain.</p>
     #[doc(hidden)]
@@ -7422,18 +7354,11 @@ impl ListenerTlsSdsCertificate {
         self.secret_name.as_deref()
     }
 }
-impl std::fmt::Debug for ListenerTlsSdsCertificate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListenerTlsSdsCertificate");
-        formatter.field("secret_name", &self.secret_name);
-        formatter.finish()
-    }
-}
 /// See [`ListenerTlsSdsCertificate`](crate::model::ListenerTlsSdsCertificate).
 pub mod listener_tls_sds_certificate {
 
     /// A builder for [`ListenerTlsSdsCertificate`](crate::model::ListenerTlsSdsCertificate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) secret_name: std::option::Option<std::string::String>,
     }
@@ -7465,7 +7390,7 @@ impl ListenerTlsSdsCertificate {
 
 /// <p>An object that represents a local file certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListenerTlsFileCertificate {
     /// <p>The certificate chain for the certificate.</p>
     #[doc(hidden)]
@@ -7484,19 +7409,11 @@ impl ListenerTlsFileCertificate {
         self.private_key.as_deref()
     }
 }
-impl std::fmt::Debug for ListenerTlsFileCertificate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListenerTlsFileCertificate");
-        formatter.field("certificate_chain", &self.certificate_chain);
-        formatter.field("private_key", &self.private_key);
-        formatter.finish()
-    }
-}
 /// See [`ListenerTlsFileCertificate`](crate::model::ListenerTlsFileCertificate).
 pub mod listener_tls_file_certificate {
 
     /// A builder for [`ListenerTlsFileCertificate`](crate::model::ListenerTlsFileCertificate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_chain: std::option::Option<std::string::String>,
         pub(crate) private_key: std::option::Option<std::string::String>,
@@ -7582,7 +7499,7 @@ impl Backend {
 
 /// <p>An object that represents a virtual service backend for a virtual node.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualServiceBackend {
     /// <p>The name of the virtual service that is acting as a virtual node backend.</p>
     #[doc(hidden)]
@@ -7601,19 +7518,11 @@ impl VirtualServiceBackend {
         self.client_policy.as_ref()
     }
 }
-impl std::fmt::Debug for VirtualServiceBackend {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualServiceBackend");
-        formatter.field("virtual_service_name", &self.virtual_service_name);
-        formatter.field("client_policy", &self.client_policy);
-        formatter.finish()
-    }
-}
 /// See [`VirtualServiceBackend`](crate::model::VirtualServiceBackend).
 pub mod virtual_service_backend {
 
     /// A builder for [`VirtualServiceBackend`](crate::model::VirtualServiceBackend).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_service_name: std::option::Option<std::string::String>,
         pub(crate) client_policy: std::option::Option<crate::model::ClientPolicy>,
@@ -7663,7 +7572,7 @@ impl VirtualServiceBackend {
 
 /// <p>An object that represents a listener for a virtual node.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Listener {
     /// <p>The port mapping information for the listener.</p>
     #[doc(hidden)]
@@ -7710,23 +7619,11 @@ impl Listener {
         self.connection_pool.as_ref()
     }
 }
-impl std::fmt::Debug for Listener {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Listener");
-        formatter.field("port_mapping", &self.port_mapping);
-        formatter.field("tls", &self.tls);
-        formatter.field("health_check", &self.health_check);
-        formatter.field("timeout", &self.timeout);
-        formatter.field("outlier_detection", &self.outlier_detection);
-        formatter.field("connection_pool", &self.connection_pool);
-        formatter.finish()
-    }
-}
 /// See [`Listener`](crate::model::Listener).
 pub mod listener {
 
     /// A builder for [`Listener`](crate::model::Listener).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) port_mapping: std::option::Option<crate::model::PortMapping>,
         pub(crate) tls: std::option::Option<crate::model::ListenerTls>,
@@ -7925,7 +7822,7 @@ impl VirtualNodeConnectionPool {
 
 /// <p>An object that represents a type of connection pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualNodeGrpcConnectionPool {
     /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
     #[doc(hidden)]
@@ -7937,18 +7834,11 @@ impl VirtualNodeGrpcConnectionPool {
         self.max_requests
     }
 }
-impl std::fmt::Debug for VirtualNodeGrpcConnectionPool {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualNodeGrpcConnectionPool");
-        formatter.field("max_requests", &self.max_requests);
-        formatter.finish()
-    }
-}
 /// See [`VirtualNodeGrpcConnectionPool`](crate::model::VirtualNodeGrpcConnectionPool).
 pub mod virtual_node_grpc_connection_pool {
 
     /// A builder for [`VirtualNodeGrpcConnectionPool`](crate::model::VirtualNodeGrpcConnectionPool).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_requests: std::option::Option<i32>,
     }
@@ -7980,7 +7870,7 @@ impl VirtualNodeGrpcConnectionPool {
 
 /// <p>An object that represents a type of connection pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualNodeHttp2ConnectionPool {
     /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
     #[doc(hidden)]
@@ -7992,18 +7882,11 @@ impl VirtualNodeHttp2ConnectionPool {
         self.max_requests
     }
 }
-impl std::fmt::Debug for VirtualNodeHttp2ConnectionPool {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualNodeHttp2ConnectionPool");
-        formatter.field("max_requests", &self.max_requests);
-        formatter.finish()
-    }
-}
 /// See [`VirtualNodeHttp2ConnectionPool`](crate::model::VirtualNodeHttp2ConnectionPool).
 pub mod virtual_node_http2_connection_pool {
 
     /// A builder for [`VirtualNodeHttp2ConnectionPool`](crate::model::VirtualNodeHttp2ConnectionPool).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_requests: std::option::Option<i32>,
     }
@@ -8035,7 +7918,7 @@ impl VirtualNodeHttp2ConnectionPool {
 
 /// <p>An object that represents a type of connection pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualNodeHttpConnectionPool {
     /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
     #[doc(hidden)]
@@ -8054,19 +7937,11 @@ impl VirtualNodeHttpConnectionPool {
         self.max_pending_requests
     }
 }
-impl std::fmt::Debug for VirtualNodeHttpConnectionPool {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualNodeHttpConnectionPool");
-        formatter.field("max_connections", &self.max_connections);
-        formatter.field("max_pending_requests", &self.max_pending_requests);
-        formatter.finish()
-    }
-}
 /// See [`VirtualNodeHttpConnectionPool`](crate::model::VirtualNodeHttpConnectionPool).
 pub mod virtual_node_http_connection_pool {
 
     /// A builder for [`VirtualNodeHttpConnectionPool`](crate::model::VirtualNodeHttpConnectionPool).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_connections: std::option::Option<i32>,
         pub(crate) max_pending_requests: std::option::Option<i32>,
@@ -8110,7 +7985,7 @@ impl VirtualNodeHttpConnectionPool {
 
 /// <p>An object that represents a type of connection pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualNodeTcpConnectionPool {
     /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
     #[doc(hidden)]
@@ -8122,18 +7997,11 @@ impl VirtualNodeTcpConnectionPool {
         self.max_connections
     }
 }
-impl std::fmt::Debug for VirtualNodeTcpConnectionPool {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualNodeTcpConnectionPool");
-        formatter.field("max_connections", &self.max_connections);
-        formatter.finish()
-    }
-}
 /// See [`VirtualNodeTcpConnectionPool`](crate::model::VirtualNodeTcpConnectionPool).
 pub mod virtual_node_tcp_connection_pool {
 
     /// A builder for [`VirtualNodeTcpConnectionPool`](crate::model::VirtualNodeTcpConnectionPool).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_connections: std::option::Option<i32>,
     }
@@ -8165,7 +8033,7 @@ impl VirtualNodeTcpConnectionPool {
 
 /// <p>An object that represents the outlier detection for a virtual node's listener.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutlierDetection {
     /// <p>Number of consecutive <code>5xx</code> errors required for ejection. </p>
     #[doc(hidden)]
@@ -8198,21 +8066,11 @@ impl OutlierDetection {
         self.max_ejection_percent
     }
 }
-impl std::fmt::Debug for OutlierDetection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutlierDetection");
-        formatter.field("max_server_errors", &self.max_server_errors);
-        formatter.field("interval", &self.interval);
-        formatter.field("base_ejection_duration", &self.base_ejection_duration);
-        formatter.field("max_ejection_percent", &self.max_ejection_percent);
-        formatter.finish()
-    }
-}
 /// See [`OutlierDetection`](crate::model::OutlierDetection).
 pub mod outlier_detection {
 
     /// A builder for [`OutlierDetection`](crate::model::OutlierDetection).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_server_errors: std::option::Option<i64>,
         pub(crate) interval: std::option::Option<crate::model::Duration>,
@@ -8364,7 +8222,7 @@ impl ListenerTimeout {
 
 /// <p>An object that represents the health check policy for a virtual node's listener.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HealthCheckPolicy {
     /// <p>The amount of time to wait when receiving a response from the health check, in milliseconds.</p>
     #[doc(hidden)]
@@ -8418,24 +8276,11 @@ impl HealthCheckPolicy {
         self.unhealthy_threshold
     }
 }
-impl std::fmt::Debug for HealthCheckPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HealthCheckPolicy");
-        formatter.field("timeout_millis", &self.timeout_millis);
-        formatter.field("interval_millis", &self.interval_millis);
-        formatter.field("protocol", &self.protocol);
-        formatter.field("port", &self.port);
-        formatter.field("path", &self.path);
-        formatter.field("healthy_threshold", &self.healthy_threshold);
-        formatter.field("unhealthy_threshold", &self.unhealthy_threshold);
-        formatter.finish()
-    }
-}
 /// See [`HealthCheckPolicy`](crate::model::HealthCheckPolicy).
 pub mod health_check_policy {
 
     /// A builder for [`HealthCheckPolicy`](crate::model::HealthCheckPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timeout_millis: std::option::Option<i64>,
         pub(crate) interval_millis: std::option::Option<i64>,
@@ -8542,7 +8387,7 @@ impl HealthCheckPolicy {
 
 /// <p>An object that represents the Transport Layer Security (TLS) properties for a listener.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListenerTls {
     /// <p>Specify one of the following modes.</p>
     /// <ul>
@@ -8578,20 +8423,11 @@ impl ListenerTls {
         self.validation.as_ref()
     }
 }
-impl std::fmt::Debug for ListenerTls {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListenerTls");
-        formatter.field("mode", &self.mode);
-        formatter.field("certificate", &self.certificate);
-        formatter.field("validation", &self.validation);
-        formatter.finish()
-    }
-}
 /// See [`ListenerTls`](crate::model::ListenerTls).
 pub mod listener_tls {
 
     /// A builder for [`ListenerTls`](crate::model::ListenerTls).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mode: std::option::Option<crate::model::ListenerTlsMode>,
         pub(crate) certificate: std::option::Option<crate::model::ListenerTlsCertificate>,
@@ -8666,7 +8502,7 @@ impl ListenerTls {
 
 /// <p>An object that represents a listener's Transport Layer Security (TLS) validation context.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListenerTlsValidationContext {
     /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
     #[doc(hidden)]
@@ -8687,19 +8523,11 @@ impl ListenerTlsValidationContext {
         self.subject_alternative_names.as_ref()
     }
 }
-impl std::fmt::Debug for ListenerTlsValidationContext {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListenerTlsValidationContext");
-        formatter.field("trust", &self.trust);
-        formatter.field("subject_alternative_names", &self.subject_alternative_names);
-        formatter.finish()
-    }
-}
 /// See [`ListenerTlsValidationContext`](crate::model::ListenerTlsValidationContext).
 pub mod listener_tls_validation_context {
 
     /// A builder for [`ListenerTlsValidationContext`](crate::model::ListenerTlsValidationContext).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust: std::option::Option<crate::model::ListenerTlsValidationContextTrust>,
         pub(crate) subject_alternative_names:
@@ -8874,7 +8702,7 @@ impl ListenerTlsCertificate {
 
 /// <p>An object that represents an Certificate Manager certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListenerTlsAcmCertificate {
     /// <p>The Amazon Resource Name (ARN) for the certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
     #[doc(hidden)]
@@ -8886,18 +8714,11 @@ impl ListenerTlsAcmCertificate {
         self.certificate_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListenerTlsAcmCertificate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListenerTlsAcmCertificate");
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.finish()
-    }
-}
 /// See [`ListenerTlsAcmCertificate`](crate::model::ListenerTlsAcmCertificate).
 pub mod listener_tls_acm_certificate {
 
     /// A builder for [`ListenerTlsAcmCertificate`](crate::model::ListenerTlsAcmCertificate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
     }
@@ -8930,6 +8751,42 @@ impl ListenerTlsAcmCertificate {
     }
 }
 
+/// When writing a match expression against `ListenerTlsMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let listenertlsmode = unimplemented!();
+/// match listenertlsmode {
+///     ListenerTlsMode::Disabled => { /* ... */ },
+///     ListenerTlsMode::Permissive => { /* ... */ },
+///     ListenerTlsMode::Strict => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `listenertlsmode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ListenerTlsMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ListenerTlsMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ListenerTlsMode::NewFeature` is defined.
+/// Specifically, when `listenertlsmode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ListenerTlsMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -8948,8 +8805,8 @@ pub enum ListenerTlsMode {
     Permissive,
     #[allow(missing_docs)] // documentation missing in model
     Strict,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ListenerTlsMode {
     fn from(s: &str) -> Self {
@@ -8957,7 +8814,7 @@ impl std::convert::From<&str> for ListenerTlsMode {
             "DISABLED" => ListenerTlsMode::Disabled,
             "PERMISSIVE" => ListenerTlsMode::Permissive,
             "STRICT" => ListenerTlsMode::Strict,
-            other => ListenerTlsMode::Unknown(other.to_owned()),
+            other => ListenerTlsMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -8975,11 +8832,11 @@ impl ListenerTlsMode {
             ListenerTlsMode::Disabled => "DISABLED",
             ListenerTlsMode::Permissive => "PERMISSIVE",
             ListenerTlsMode::Strict => "STRICT",
-            ListenerTlsMode::Unknown(s) => s.as_ref(),
+            ListenerTlsMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "PERMISSIVE", "STRICT"]
     }
 }
@@ -9046,7 +8903,7 @@ impl ServiceDiscovery {
 /// <p>Cloud Map is not available in the eu-south-1 Region.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AwsCloudMapServiceDiscovery {
     /// <p>The name of the Cloud Map namespace to use.</p>
     #[doc(hidden)]
@@ -9079,21 +8936,11 @@ impl AwsCloudMapServiceDiscovery {
         self.ip_preference.as_ref()
     }
 }
-impl std::fmt::Debug for AwsCloudMapServiceDiscovery {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AwsCloudMapServiceDiscovery");
-        formatter.field("namespace_name", &self.namespace_name);
-        formatter.field("service_name", &self.service_name);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("ip_preference", &self.ip_preference);
-        formatter.finish()
-    }
-}
 /// See [`AwsCloudMapServiceDiscovery`](crate::model::AwsCloudMapServiceDiscovery).
 pub mod aws_cloud_map_service_discovery {
 
     /// A builder for [`AwsCloudMapServiceDiscovery`](crate::model::AwsCloudMapServiceDiscovery).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace_name: std::option::Option<std::string::String>,
         pub(crate) service_name: std::option::Option<std::string::String>,
@@ -9179,7 +9026,7 @@ impl AwsCloudMapServiceDiscovery {
 /// <p>Cloud Map is not available in the eu-south-1 Region.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AwsCloudMapInstanceAttribute {
     /// <p>The name of an Cloud Map service instance attribute key. Any Cloud Map service instance that contains the specified key and value is returned.</p>
     #[doc(hidden)]
@@ -9198,19 +9045,11 @@ impl AwsCloudMapInstanceAttribute {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for AwsCloudMapInstanceAttribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AwsCloudMapInstanceAttribute");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`AwsCloudMapInstanceAttribute`](crate::model::AwsCloudMapInstanceAttribute).
 pub mod aws_cloud_map_instance_attribute {
 
     /// A builder for [`AwsCloudMapInstanceAttribute`](crate::model::AwsCloudMapInstanceAttribute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -9254,7 +9093,7 @@ impl AwsCloudMapInstanceAttribute {
 
 /// <p>An object that represents the DNS service discovery information for your virtual node.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DnsServiceDiscovery {
     /// <p>Specifies the DNS service discovery hostname for the virtual node. </p>
     #[doc(hidden)]
@@ -9280,20 +9119,11 @@ impl DnsServiceDiscovery {
         self.ip_preference.as_ref()
     }
 }
-impl std::fmt::Debug for DnsServiceDiscovery {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DnsServiceDiscovery");
-        formatter.field("hostname", &self.hostname);
-        formatter.field("response_type", &self.response_type);
-        formatter.field("ip_preference", &self.ip_preference);
-        formatter.finish()
-    }
-}
 /// See [`DnsServiceDiscovery`](crate::model::DnsServiceDiscovery).
 pub mod dns_service_discovery {
 
     /// A builder for [`DnsServiceDiscovery`](crate::model::DnsServiceDiscovery).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hostname: std::option::Option<std::string::String>,
         pub(crate) response_type: std::option::Option<crate::model::DnsResponseType>,
@@ -9353,6 +9183,41 @@ impl DnsServiceDiscovery {
     }
 }
 
+/// When writing a match expression against `DnsResponseType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let dnsresponsetype = unimplemented!();
+/// match dnsresponsetype {
+///     DnsResponseType::Endpoints => { /* ... */ },
+///     DnsResponseType::Loadbalancer => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `dnsresponsetype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DnsResponseType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DnsResponseType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DnsResponseType::NewFeature` is defined.
+/// Specifically, when `dnsresponsetype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DnsResponseType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -9369,15 +9234,15 @@ pub enum DnsResponseType {
     Endpoints,
     #[allow(missing_docs)] // documentation missing in model
     Loadbalancer,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DnsResponseType {
     fn from(s: &str) -> Self {
         match s {
             "ENDPOINTS" => DnsResponseType::Endpoints,
             "LOADBALANCER" => DnsResponseType::Loadbalancer,
-            other => DnsResponseType::Unknown(other.to_owned()),
+            other => DnsResponseType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -9394,11 +9259,11 @@ impl DnsResponseType {
         match self {
             DnsResponseType::Endpoints => "ENDPOINTS",
             DnsResponseType::Loadbalancer => "LOADBALANCER",
-            DnsResponseType::Unknown(s) => s.as_ref(),
+            DnsResponseType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ENDPOINTS", "LOADBALANCER"]
     }
 }
@@ -9410,7 +9275,7 @@ impl AsRef<str> for DnsResponseType {
 
 /// <p>An object that represents a virtual gateway returned by a list operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayRef {
     /// <p>The name of the service mesh that the resource resides in.</p>
     #[doc(hidden)]
@@ -9471,25 +9336,11 @@ impl VirtualGatewayRef {
         self.last_updated_at.as_ref()
     }
 }
-impl std::fmt::Debug for VirtualGatewayRef {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayRef");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("virtual_gateway_name", &self.virtual_gateway_name);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.field("resource_owner", &self.resource_owner);
-        formatter.field("arn", &self.arn);
-        formatter.field("version", &self.version);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.finish()
-    }
-}
 /// See [`VirtualGatewayRef`](crate::model::VirtualGatewayRef).
 pub mod virtual_gateway_ref {
 
     /// A builder for [`VirtualGatewayRef`](crate::model::VirtualGatewayRef).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
         pub(crate) virtual_gateway_name: std::option::Option<std::string::String>,
@@ -9617,7 +9468,7 @@ impl VirtualGatewayRef {
 
 /// <p>An object that represents a virtual gateway returned by a describe operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayData {
     /// <p>The name of the service mesh that the virtual gateway resides in.</p>
     #[doc(hidden)]
@@ -9657,22 +9508,11 @@ impl VirtualGatewayData {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for VirtualGatewayData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayData");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("virtual_gateway_name", &self.virtual_gateway_name);
-        formatter.field("spec", &self.spec);
-        formatter.field("metadata", &self.metadata);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 /// See [`VirtualGatewayData`](crate::model::VirtualGatewayData).
 pub mod virtual_gateway_data {
 
     /// A builder for [`VirtualGatewayData`](crate::model::VirtualGatewayData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
         pub(crate) virtual_gateway_name: std::option::Option<std::string::String>,
@@ -9764,7 +9604,7 @@ impl VirtualGatewayData {
 
 /// <p>An object that represents the status of the mesh resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayStatus {
     /// <p>The current status.</p>
     #[doc(hidden)]
@@ -9776,18 +9616,11 @@ impl VirtualGatewayStatus {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for VirtualGatewayStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayStatus");
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 /// See [`VirtualGatewayStatus`](crate::model::VirtualGatewayStatus).
 pub mod virtual_gateway_status {
 
     /// A builder for [`VirtualGatewayStatus`](crate::model::VirtualGatewayStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::VirtualGatewayStatusCode>,
     }
@@ -9820,6 +9653,42 @@ impl VirtualGatewayStatus {
     }
 }
 
+/// When writing a match expression against `VirtualGatewayStatusCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let virtualgatewaystatuscode = unimplemented!();
+/// match virtualgatewaystatuscode {
+///     VirtualGatewayStatusCode::Active => { /* ... */ },
+///     VirtualGatewayStatusCode::Deleted => { /* ... */ },
+///     VirtualGatewayStatusCode::Inactive => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `virtualgatewaystatuscode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `VirtualGatewayStatusCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `VirtualGatewayStatusCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `VirtualGatewayStatusCode::NewFeature` is defined.
+/// Specifically, when `virtualgatewaystatuscode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `VirtualGatewayStatusCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -9838,8 +9707,8 @@ pub enum VirtualGatewayStatusCode {
     Deleted,
     #[allow(missing_docs)] // documentation missing in model
     Inactive,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for VirtualGatewayStatusCode {
     fn from(s: &str) -> Self {
@@ -9847,7 +9716,9 @@ impl std::convert::From<&str> for VirtualGatewayStatusCode {
             "ACTIVE" => VirtualGatewayStatusCode::Active,
             "DELETED" => VirtualGatewayStatusCode::Deleted,
             "INACTIVE" => VirtualGatewayStatusCode::Inactive,
-            other => VirtualGatewayStatusCode::Unknown(other.to_owned()),
+            other => VirtualGatewayStatusCode::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -9865,11 +9736,11 @@ impl VirtualGatewayStatusCode {
             VirtualGatewayStatusCode::Active => "ACTIVE",
             VirtualGatewayStatusCode::Deleted => "DELETED",
             VirtualGatewayStatusCode::Inactive => "INACTIVE",
-            VirtualGatewayStatusCode::Unknown(s) => s.as_ref(),
+            VirtualGatewayStatusCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETED", "INACTIVE"]
     }
 }
@@ -9881,7 +9752,7 @@ impl AsRef<str> for VirtualGatewayStatusCode {
 
 /// <p>An object that represents the specification of a service mesh resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewaySpec {
     /// <p>A reference to an object that represents the defaults for backends.</p>
     #[doc(hidden)]
@@ -9909,20 +9780,11 @@ impl VirtualGatewaySpec {
         self.logging.as_ref()
     }
 }
-impl std::fmt::Debug for VirtualGatewaySpec {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewaySpec");
-        formatter.field("backend_defaults", &self.backend_defaults);
-        formatter.field("listeners", &self.listeners);
-        formatter.field("logging", &self.logging);
-        formatter.finish()
-    }
-}
 /// See [`VirtualGatewaySpec`](crate::model::VirtualGatewaySpec).
 pub mod virtual_gateway_spec {
 
     /// A builder for [`VirtualGatewaySpec`](crate::model::VirtualGatewaySpec).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backend_defaults:
             std::option::Option<crate::model::VirtualGatewayBackendDefaults>,
@@ -9998,7 +9860,7 @@ impl VirtualGatewaySpec {
 
 /// <p>An object that represents logging information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayLogging {
     /// <p>The access log configuration.</p>
     #[doc(hidden)]
@@ -10010,18 +9872,11 @@ impl VirtualGatewayLogging {
         self.access_log.as_ref()
     }
 }
-impl std::fmt::Debug for VirtualGatewayLogging {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayLogging");
-        formatter.field("access_log", &self.access_log);
-        formatter.finish()
-    }
-}
 /// See [`VirtualGatewayLogging`](crate::model::VirtualGatewayLogging).
 pub mod virtual_gateway_logging {
 
     /// A builder for [`VirtualGatewayLogging`](crate::model::VirtualGatewayLogging).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_log: std::option::Option<crate::model::VirtualGatewayAccessLog>,
     }
@@ -10095,7 +9950,7 @@ impl VirtualGatewayAccessLog {
 
 /// <p>An object that represents an access log file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayFileAccessLog {
     /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p>
     #[doc(hidden)]
@@ -10114,19 +9969,11 @@ impl VirtualGatewayFileAccessLog {
         self.format.as_ref()
     }
 }
-impl std::fmt::Debug for VirtualGatewayFileAccessLog {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayFileAccessLog");
-        formatter.field("path", &self.path);
-        formatter.field("format", &self.format);
-        formatter.finish()
-    }
-}
 /// See [`VirtualGatewayFileAccessLog`](crate::model::VirtualGatewayFileAccessLog).
 pub mod virtual_gateway_file_access_log {
 
     /// A builder for [`VirtualGatewayFileAccessLog`](crate::model::VirtualGatewayFileAccessLog).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
         pub(crate) format: std::option::Option<crate::model::LoggingFormat>,
@@ -10173,7 +10020,7 @@ impl VirtualGatewayFileAccessLog {
 
 /// <p>An object that represents a listener for a virtual gateway.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayListener {
     /// <p>The health check information for the listener.</p>
     #[doc(hidden)]
@@ -10210,21 +10057,11 @@ impl VirtualGatewayListener {
         self.connection_pool.as_ref()
     }
 }
-impl std::fmt::Debug for VirtualGatewayListener {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayListener");
-        formatter.field("health_check", &self.health_check);
-        formatter.field("port_mapping", &self.port_mapping);
-        formatter.field("tls", &self.tls);
-        formatter.field("connection_pool", &self.connection_pool);
-        formatter.finish()
-    }
-}
 /// See [`VirtualGatewayListener`](crate::model::VirtualGatewayListener).
 pub mod virtual_gateway_listener {
 
     /// A builder for [`VirtualGatewayListener`](crate::model::VirtualGatewayListener).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) health_check: std::option::Option<crate::model::VirtualGatewayHealthCheckPolicy>,
         pub(crate) port_mapping: std::option::Option<crate::model::VirtualGatewayPortMapping>,
@@ -10384,7 +10221,7 @@ impl VirtualGatewayConnectionPool {
 
 /// <p>An object that represents a type of connection pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayGrpcConnectionPool {
     /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
     #[doc(hidden)]
@@ -10396,18 +10233,11 @@ impl VirtualGatewayGrpcConnectionPool {
         self.max_requests
     }
 }
-impl std::fmt::Debug for VirtualGatewayGrpcConnectionPool {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayGrpcConnectionPool");
-        formatter.field("max_requests", &self.max_requests);
-        formatter.finish()
-    }
-}
 /// See [`VirtualGatewayGrpcConnectionPool`](crate::model::VirtualGatewayGrpcConnectionPool).
 pub mod virtual_gateway_grpc_connection_pool {
 
     /// A builder for [`VirtualGatewayGrpcConnectionPool`](crate::model::VirtualGatewayGrpcConnectionPool).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_requests: std::option::Option<i32>,
     }
@@ -10439,7 +10269,7 @@ impl VirtualGatewayGrpcConnectionPool {
 
 /// <p>An object that represents a type of connection pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayHttp2ConnectionPool {
     /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
     #[doc(hidden)]
@@ -10451,18 +10281,11 @@ impl VirtualGatewayHttp2ConnectionPool {
         self.max_requests
     }
 }
-impl std::fmt::Debug for VirtualGatewayHttp2ConnectionPool {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayHttp2ConnectionPool");
-        formatter.field("max_requests", &self.max_requests);
-        formatter.finish()
-    }
-}
 /// See [`VirtualGatewayHttp2ConnectionPool`](crate::model::VirtualGatewayHttp2ConnectionPool).
 pub mod virtual_gateway_http2_connection_pool {
 
     /// A builder for [`VirtualGatewayHttp2ConnectionPool`](crate::model::VirtualGatewayHttp2ConnectionPool).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_requests: std::option::Option<i32>,
     }
@@ -10494,7 +10317,7 @@ impl VirtualGatewayHttp2ConnectionPool {
 
 /// <p>An object that represents a type of connection pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayHttpConnectionPool {
     /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
     #[doc(hidden)]
@@ -10513,19 +10336,11 @@ impl VirtualGatewayHttpConnectionPool {
         self.max_pending_requests
     }
 }
-impl std::fmt::Debug for VirtualGatewayHttpConnectionPool {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayHttpConnectionPool");
-        formatter.field("max_connections", &self.max_connections);
-        formatter.field("max_pending_requests", &self.max_pending_requests);
-        formatter.finish()
-    }
-}
 /// See [`VirtualGatewayHttpConnectionPool`](crate::model::VirtualGatewayHttpConnectionPool).
 pub mod virtual_gateway_http_connection_pool {
 
     /// A builder for [`VirtualGatewayHttpConnectionPool`](crate::model::VirtualGatewayHttpConnectionPool).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_connections: std::option::Option<i32>,
         pub(crate) max_pending_requests: std::option::Option<i32>,
@@ -10569,7 +10384,7 @@ impl VirtualGatewayHttpConnectionPool {
 
 /// <p>An object that represents the Transport Layer Security (TLS) properties for a listener.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayListenerTls {
     /// <p>Specify one of the following modes.</p>
     /// <ul>
@@ -10609,20 +10424,11 @@ impl VirtualGatewayListenerTls {
         self.certificate.as_ref()
     }
 }
-impl std::fmt::Debug for VirtualGatewayListenerTls {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayListenerTls");
-        formatter.field("mode", &self.mode);
-        formatter.field("validation", &self.validation);
-        formatter.field("certificate", &self.certificate);
-        formatter.finish()
-    }
-}
 /// See [`VirtualGatewayListenerTls`](crate::model::VirtualGatewayListenerTls).
 pub mod virtual_gateway_listener_tls {
 
     /// A builder for [`VirtualGatewayListenerTls`](crate::model::VirtualGatewayListenerTls).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mode: std::option::Option<crate::model::VirtualGatewayListenerTlsMode>,
         pub(crate) validation:
@@ -10777,7 +10583,7 @@ impl VirtualGatewayListenerTlsCertificate {
 
 /// <p>An object that represents the virtual gateway's listener's Secret Discovery Service certificate.The proxy must be configured with a local SDS provider via a Unix Domain Socket. See App Mesh<a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html">TLS documentation</a> for more info. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayListenerTlsSdsCertificate {
     /// <p>A reference to an object that represents the name of the secret secret requested from the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or certificate chain.</p>
     #[doc(hidden)]
@@ -10789,18 +10595,11 @@ impl VirtualGatewayListenerTlsSdsCertificate {
         self.secret_name.as_deref()
     }
 }
-impl std::fmt::Debug for VirtualGatewayListenerTlsSdsCertificate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayListenerTlsSdsCertificate");
-        formatter.field("secret_name", &self.secret_name);
-        formatter.finish()
-    }
-}
 /// See [`VirtualGatewayListenerTlsSdsCertificate`](crate::model::VirtualGatewayListenerTlsSdsCertificate).
 pub mod virtual_gateway_listener_tls_sds_certificate {
 
     /// A builder for [`VirtualGatewayListenerTlsSdsCertificate`](crate::model::VirtualGatewayListenerTlsSdsCertificate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) secret_name: std::option::Option<std::string::String>,
     }
@@ -10832,7 +10631,7 @@ impl VirtualGatewayListenerTlsSdsCertificate {
 
 /// <p>An object that represents a local file certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayListenerTlsFileCertificate {
     /// <p>The certificate chain for the certificate.</p>
     #[doc(hidden)]
@@ -10851,19 +10650,11 @@ impl VirtualGatewayListenerTlsFileCertificate {
         self.private_key.as_deref()
     }
 }
-impl std::fmt::Debug for VirtualGatewayListenerTlsFileCertificate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayListenerTlsFileCertificate");
-        formatter.field("certificate_chain", &self.certificate_chain);
-        formatter.field("private_key", &self.private_key);
-        formatter.finish()
-    }
-}
 /// See [`VirtualGatewayListenerTlsFileCertificate`](crate::model::VirtualGatewayListenerTlsFileCertificate).
 pub mod virtual_gateway_listener_tls_file_certificate {
 
     /// A builder for [`VirtualGatewayListenerTlsFileCertificate`](crate::model::VirtualGatewayListenerTlsFileCertificate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_chain: std::option::Option<std::string::String>,
         pub(crate) private_key: std::option::Option<std::string::String>,
@@ -10910,7 +10701,7 @@ impl VirtualGatewayListenerTlsFileCertificate {
 
 /// <p>An object that represents an Certificate Manager certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayListenerTlsAcmCertificate {
     /// <p>The Amazon Resource Name (ARN) for the certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
     #[doc(hidden)]
@@ -10922,18 +10713,11 @@ impl VirtualGatewayListenerTlsAcmCertificate {
         self.certificate_arn.as_deref()
     }
 }
-impl std::fmt::Debug for VirtualGatewayListenerTlsAcmCertificate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayListenerTlsAcmCertificate");
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.finish()
-    }
-}
 /// See [`VirtualGatewayListenerTlsAcmCertificate`](crate::model::VirtualGatewayListenerTlsAcmCertificate).
 pub mod virtual_gateway_listener_tls_acm_certificate {
 
     /// A builder for [`VirtualGatewayListenerTlsAcmCertificate`](crate::model::VirtualGatewayListenerTlsAcmCertificate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
     }
@@ -10968,7 +10752,7 @@ impl VirtualGatewayListenerTlsAcmCertificate {
 
 /// <p>An object that represents a virtual gateway's listener's Transport Layer Security (TLS) validation context.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayListenerTlsValidationContext {
     /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
     #[doc(hidden)]
@@ -10991,19 +10775,11 @@ impl VirtualGatewayListenerTlsValidationContext {
         self.subject_alternative_names.as_ref()
     }
 }
-impl std::fmt::Debug for VirtualGatewayListenerTlsValidationContext {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayListenerTlsValidationContext");
-        formatter.field("trust", &self.trust);
-        formatter.field("subject_alternative_names", &self.subject_alternative_names);
-        formatter.finish()
-    }
-}
 /// See [`VirtualGatewayListenerTlsValidationContext`](crate::model::VirtualGatewayListenerTlsValidationContext).
 pub mod virtual_gateway_listener_tls_validation_context {
 
     /// A builder for [`VirtualGatewayListenerTlsValidationContext`](crate::model::VirtualGatewayListenerTlsValidationContext).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust:
             std::option::Option<crate::model::VirtualGatewayListenerTlsValidationContextTrust>,
@@ -11119,7 +10895,7 @@ impl VirtualGatewayListenerTlsValidationContextTrust {
 
 /// <p>An object that represents a virtual gateway's listener's Transport Layer Security (TLS) Secret Discovery Service validation context trust. The proxy must be configured with a local SDS provider via a Unix Domain Socket. See App Mesh <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html">TLS documentation</a> for more info.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayTlsValidationContextSdsTrust {
     /// <p>A reference to an object that represents the name of the secret for a virtual gateway's Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
     #[doc(hidden)]
@@ -11131,18 +10907,11 @@ impl VirtualGatewayTlsValidationContextSdsTrust {
         self.secret_name.as_deref()
     }
 }
-impl std::fmt::Debug for VirtualGatewayTlsValidationContextSdsTrust {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayTlsValidationContextSdsTrust");
-        formatter.field("secret_name", &self.secret_name);
-        formatter.finish()
-    }
-}
 /// See [`VirtualGatewayTlsValidationContextSdsTrust`](crate::model::VirtualGatewayTlsValidationContextSdsTrust).
 pub mod virtual_gateway_tls_validation_context_sds_trust {
 
     /// A builder for [`VirtualGatewayTlsValidationContextSdsTrust`](crate::model::VirtualGatewayTlsValidationContextSdsTrust).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) secret_name: std::option::Option<std::string::String>,
     }
@@ -11174,7 +10943,7 @@ impl VirtualGatewayTlsValidationContextSdsTrust {
 
 /// <p>An object that represents a Transport Layer Security (TLS) validation context trust for a local file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayTlsValidationContextFileTrust {
     /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
     #[doc(hidden)]
@@ -11186,18 +10955,11 @@ impl VirtualGatewayTlsValidationContextFileTrust {
         self.certificate_chain.as_deref()
     }
 }
-impl std::fmt::Debug for VirtualGatewayTlsValidationContextFileTrust {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayTlsValidationContextFileTrust");
-        formatter.field("certificate_chain", &self.certificate_chain);
-        formatter.finish()
-    }
-}
 /// See [`VirtualGatewayTlsValidationContextFileTrust`](crate::model::VirtualGatewayTlsValidationContextFileTrust).
 pub mod virtual_gateway_tls_validation_context_file_trust {
 
     /// A builder for [`VirtualGatewayTlsValidationContextFileTrust`](crate::model::VirtualGatewayTlsValidationContextFileTrust).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_chain: std::option::Option<std::string::String>,
     }
@@ -11230,6 +10992,42 @@ impl VirtualGatewayTlsValidationContextFileTrust {
     }
 }
 
+/// When writing a match expression against `VirtualGatewayListenerTlsMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let virtualgatewaylistenertlsmode = unimplemented!();
+/// match virtualgatewaylistenertlsmode {
+///     VirtualGatewayListenerTlsMode::Disabled => { /* ... */ },
+///     VirtualGatewayListenerTlsMode::Permissive => { /* ... */ },
+///     VirtualGatewayListenerTlsMode::Strict => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `virtualgatewaylistenertlsmode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `VirtualGatewayListenerTlsMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `VirtualGatewayListenerTlsMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `VirtualGatewayListenerTlsMode::NewFeature` is defined.
+/// Specifically, when `virtualgatewaylistenertlsmode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `VirtualGatewayListenerTlsMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -11248,8 +11046,8 @@ pub enum VirtualGatewayListenerTlsMode {
     Permissive,
     #[allow(missing_docs)] // documentation missing in model
     Strict,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for VirtualGatewayListenerTlsMode {
     fn from(s: &str) -> Self {
@@ -11257,7 +11055,9 @@ impl std::convert::From<&str> for VirtualGatewayListenerTlsMode {
             "DISABLED" => VirtualGatewayListenerTlsMode::Disabled,
             "PERMISSIVE" => VirtualGatewayListenerTlsMode::Permissive,
             "STRICT" => VirtualGatewayListenerTlsMode::Strict,
-            other => VirtualGatewayListenerTlsMode::Unknown(other.to_owned()),
+            other => VirtualGatewayListenerTlsMode::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -11275,11 +11075,11 @@ impl VirtualGatewayListenerTlsMode {
             VirtualGatewayListenerTlsMode::Disabled => "DISABLED",
             VirtualGatewayListenerTlsMode::Permissive => "PERMISSIVE",
             VirtualGatewayListenerTlsMode::Strict => "STRICT",
-            VirtualGatewayListenerTlsMode::Unknown(s) => s.as_ref(),
+            VirtualGatewayListenerTlsMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "PERMISSIVE", "STRICT"]
     }
 }
@@ -11291,7 +11091,7 @@ impl AsRef<str> for VirtualGatewayListenerTlsMode {
 
 /// <p>An object that represents a port mapping.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayPortMapping {
     /// <p>The port used for the port mapping. Specify one protocol.</p>
     #[doc(hidden)]
@@ -11310,19 +11110,11 @@ impl VirtualGatewayPortMapping {
         self.protocol.as_ref()
     }
 }
-impl std::fmt::Debug for VirtualGatewayPortMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayPortMapping");
-        formatter.field("port", &self.port);
-        formatter.field("protocol", &self.protocol);
-        formatter.finish()
-    }
-}
 /// See [`VirtualGatewayPortMapping`](crate::model::VirtualGatewayPortMapping).
 pub mod virtual_gateway_port_mapping {
 
     /// A builder for [`VirtualGatewayPortMapping`](crate::model::VirtualGatewayPortMapping).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) port: std::option::Option<i32>,
         pub(crate) protocol: std::option::Option<crate::model::VirtualGatewayPortProtocol>,
@@ -11367,6 +11159,42 @@ impl VirtualGatewayPortMapping {
     }
 }
 
+/// When writing a match expression against `VirtualGatewayPortProtocol`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let virtualgatewayportprotocol = unimplemented!();
+/// match virtualgatewayportprotocol {
+///     VirtualGatewayPortProtocol::Grpc => { /* ... */ },
+///     VirtualGatewayPortProtocol::Http => { /* ... */ },
+///     VirtualGatewayPortProtocol::Http2 => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `virtualgatewayportprotocol` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `VirtualGatewayPortProtocol::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `VirtualGatewayPortProtocol::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `VirtualGatewayPortProtocol::NewFeature` is defined.
+/// Specifically, when `virtualgatewayportprotocol` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `VirtualGatewayPortProtocol::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -11385,8 +11213,8 @@ pub enum VirtualGatewayPortProtocol {
     Http,
     #[allow(missing_docs)] // documentation missing in model
     Http2,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for VirtualGatewayPortProtocol {
     fn from(s: &str) -> Self {
@@ -11394,7 +11222,9 @@ impl std::convert::From<&str> for VirtualGatewayPortProtocol {
             "grpc" => VirtualGatewayPortProtocol::Grpc,
             "http" => VirtualGatewayPortProtocol::Http,
             "http2" => VirtualGatewayPortProtocol::Http2,
-            other => VirtualGatewayPortProtocol::Unknown(other.to_owned()),
+            other => VirtualGatewayPortProtocol::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -11412,11 +11242,11 @@ impl VirtualGatewayPortProtocol {
             VirtualGatewayPortProtocol::Grpc => "grpc",
             VirtualGatewayPortProtocol::Http => "http",
             VirtualGatewayPortProtocol::Http2 => "http2",
-            VirtualGatewayPortProtocol::Unknown(s) => s.as_ref(),
+            VirtualGatewayPortProtocol::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["grpc", "http", "http2"]
     }
 }
@@ -11428,7 +11258,7 @@ impl AsRef<str> for VirtualGatewayPortProtocol {
 
 /// <p>An object that represents the health check policy for a virtual gateway's listener.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayHealthCheckPolicy {
     /// <p>The amount of time to wait when receiving a response from the health check, in milliseconds.</p>
     #[doc(hidden)]
@@ -11482,24 +11312,11 @@ impl VirtualGatewayHealthCheckPolicy {
         self.unhealthy_threshold
     }
 }
-impl std::fmt::Debug for VirtualGatewayHealthCheckPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayHealthCheckPolicy");
-        formatter.field("timeout_millis", &self.timeout_millis);
-        formatter.field("interval_millis", &self.interval_millis);
-        formatter.field("protocol", &self.protocol);
-        formatter.field("port", &self.port);
-        formatter.field("path", &self.path);
-        formatter.field("healthy_threshold", &self.healthy_threshold);
-        formatter.field("unhealthy_threshold", &self.unhealthy_threshold);
-        formatter.finish()
-    }
-}
 /// See [`VirtualGatewayHealthCheckPolicy`](crate::model::VirtualGatewayHealthCheckPolicy).
 pub mod virtual_gateway_health_check_policy {
 
     /// A builder for [`VirtualGatewayHealthCheckPolicy`](crate::model::VirtualGatewayHealthCheckPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timeout_millis: std::option::Option<i64>,
         pub(crate) interval_millis: std::option::Option<i64>,
@@ -11606,7 +11423,7 @@ impl VirtualGatewayHealthCheckPolicy {
 
 /// <p>An object that represents the default properties for a backend.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayBackendDefaults {
     /// <p>A reference to an object that represents a client policy.</p>
     #[doc(hidden)]
@@ -11618,18 +11435,11 @@ impl VirtualGatewayBackendDefaults {
         self.client_policy.as_ref()
     }
 }
-impl std::fmt::Debug for VirtualGatewayBackendDefaults {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayBackendDefaults");
-        formatter.field("client_policy", &self.client_policy);
-        formatter.finish()
-    }
-}
 /// See [`VirtualGatewayBackendDefaults`](crate::model::VirtualGatewayBackendDefaults).
 pub mod virtual_gateway_backend_defaults {
 
     /// A builder for [`VirtualGatewayBackendDefaults`](crate::model::VirtualGatewayBackendDefaults).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_policy: std::option::Option<crate::model::VirtualGatewayClientPolicy>,
     }
@@ -11664,7 +11474,7 @@ impl VirtualGatewayBackendDefaults {
 
 /// <p>An object that represents a client policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayClientPolicy {
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) client policy.</p>
     #[doc(hidden)]
@@ -11676,18 +11486,11 @@ impl VirtualGatewayClientPolicy {
         self.tls.as_ref()
     }
 }
-impl std::fmt::Debug for VirtualGatewayClientPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayClientPolicy");
-        formatter.field("tls", &self.tls);
-        formatter.finish()
-    }
-}
 /// See [`VirtualGatewayClientPolicy`](crate::model::VirtualGatewayClientPolicy).
 pub mod virtual_gateway_client_policy {
 
     /// A builder for [`VirtualGatewayClientPolicy`](crate::model::VirtualGatewayClientPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tls: std::option::Option<crate::model::VirtualGatewayClientPolicyTls>,
     }
@@ -11720,7 +11523,7 @@ impl VirtualGatewayClientPolicy {
 
 /// <p>An object that represents a Transport Layer Security (TLS) client policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayClientPolicyTls {
     /// <p>Whether the policy is enforced. The default is <code>True</code>, if a value isn't specified.</p>
     #[doc(hidden)]
@@ -11757,21 +11560,11 @@ impl VirtualGatewayClientPolicyTls {
         self.validation.as_ref()
     }
 }
-impl std::fmt::Debug for VirtualGatewayClientPolicyTls {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayClientPolicyTls");
-        formatter.field("enforce", &self.enforce);
-        formatter.field("ports", &self.ports);
-        formatter.field("certificate", &self.certificate);
-        formatter.field("validation", &self.validation);
-        formatter.finish()
-    }
-}
 /// See [`VirtualGatewayClientPolicyTls`](crate::model::VirtualGatewayClientPolicyTls).
 pub mod virtual_gateway_client_policy_tls {
 
     /// A builder for [`VirtualGatewayClientPolicyTls`](crate::model::VirtualGatewayClientPolicyTls).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enforce: std::option::Option<bool>,
         pub(crate) ports: std::option::Option<std::vec::Vec<i32>>,
@@ -11859,7 +11652,7 @@ impl VirtualGatewayClientPolicyTls {
 
 /// <p>An object that represents a Transport Layer Security (TLS) validation context.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayTlsValidationContext {
     /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
     #[doc(hidden)]
@@ -11882,19 +11675,11 @@ impl VirtualGatewayTlsValidationContext {
         self.subject_alternative_names.as_ref()
     }
 }
-impl std::fmt::Debug for VirtualGatewayTlsValidationContext {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayTlsValidationContext");
-        formatter.field("trust", &self.trust);
-        formatter.field("subject_alternative_names", &self.subject_alternative_names);
-        formatter.finish()
-    }
-}
 /// See [`VirtualGatewayTlsValidationContext`](crate::model::VirtualGatewayTlsValidationContext).
 pub mod virtual_gateway_tls_validation_context {
 
     /// A builder for [`VirtualGatewayTlsValidationContext`](crate::model::VirtualGatewayTlsValidationContext).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust:
             std::option::Option<crate::model::VirtualGatewayTlsValidationContextTrust>,
@@ -12025,7 +11810,7 @@ impl VirtualGatewayTlsValidationContextTrust {
 
 /// <p>An object that represents a Transport Layer Security (TLS) validation context trust for an Certificate Manager certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayTlsValidationContextAcmTrust {
     /// <p>One or more ACM Amazon Resource Name (ARN)s.</p>
     #[doc(hidden)]
@@ -12037,21 +11822,11 @@ impl VirtualGatewayTlsValidationContextAcmTrust {
         self.certificate_authority_arns.as_deref()
     }
 }
-impl std::fmt::Debug for VirtualGatewayTlsValidationContextAcmTrust {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayTlsValidationContextAcmTrust");
-        formatter.field(
-            "certificate_authority_arns",
-            &self.certificate_authority_arns,
-        );
-        formatter.finish()
-    }
-}
 /// See [`VirtualGatewayTlsValidationContextAcmTrust`](crate::model::VirtualGatewayTlsValidationContextAcmTrust).
 pub mod virtual_gateway_tls_validation_context_acm_trust {
 
     /// A builder for [`VirtualGatewayTlsValidationContextAcmTrust`](crate::model::VirtualGatewayTlsValidationContextAcmTrust).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_authority_arns:
             std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12148,7 +11923,7 @@ impl VirtualGatewayClientTlsCertificate {
 
 /// <p>An object that represents a gateway route returned by a list operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GatewayRouteRef {
     /// <p>The name of the service mesh that the resource resides in. </p>
     #[doc(hidden)]
@@ -12216,26 +11991,11 @@ impl GatewayRouteRef {
         self.last_updated_at.as_ref()
     }
 }
-impl std::fmt::Debug for GatewayRouteRef {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GatewayRouteRef");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("gateway_route_name", &self.gateway_route_name);
-        formatter.field("virtual_gateway_name", &self.virtual_gateway_name);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.field("resource_owner", &self.resource_owner);
-        formatter.field("arn", &self.arn);
-        formatter.field("version", &self.version);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.finish()
-    }
-}
 /// See [`GatewayRouteRef`](crate::model::GatewayRouteRef).
 pub mod gateway_route_ref {
 
     /// A builder for [`GatewayRouteRef`](crate::model::GatewayRouteRef).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
         pub(crate) gateway_route_name: std::option::Option<std::string::String>,
@@ -12378,7 +12138,7 @@ impl GatewayRouteRef {
 
 /// <p>An object that represents a gateway route returned by a describe operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GatewayRouteData {
     /// <p>The name of the service mesh that the resource resides in. </p>
     #[doc(hidden)]
@@ -12425,23 +12185,11 @@ impl GatewayRouteData {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for GatewayRouteData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GatewayRouteData");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("gateway_route_name", &self.gateway_route_name);
-        formatter.field("virtual_gateway_name", &self.virtual_gateway_name);
-        formatter.field("spec", &self.spec);
-        formatter.field("metadata", &self.metadata);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 /// See [`GatewayRouteData`](crate::model::GatewayRouteData).
 pub mod gateway_route_data {
 
     /// A builder for [`GatewayRouteData`](crate::model::GatewayRouteData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
         pub(crate) gateway_route_name: std::option::Option<std::string::String>,
@@ -12548,7 +12296,7 @@ impl GatewayRouteData {
 
 /// <p>An object that represents the current status of a gateway route.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GatewayRouteStatus {
     /// <p>The current status for the gateway route.</p>
     #[doc(hidden)]
@@ -12560,18 +12308,11 @@ impl GatewayRouteStatus {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for GatewayRouteStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GatewayRouteStatus");
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 /// See [`GatewayRouteStatus`](crate::model::GatewayRouteStatus).
 pub mod gateway_route_status {
 
     /// A builder for [`GatewayRouteStatus`](crate::model::GatewayRouteStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::GatewayRouteStatusCode>,
     }
@@ -12604,6 +12345,42 @@ impl GatewayRouteStatus {
     }
 }
 
+/// When writing a match expression against `GatewayRouteStatusCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let gatewayroutestatuscode = unimplemented!();
+/// match gatewayroutestatuscode {
+///     GatewayRouteStatusCode::Active => { /* ... */ },
+///     GatewayRouteStatusCode::Deleted => { /* ... */ },
+///     GatewayRouteStatusCode::Inactive => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `gatewayroutestatuscode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `GatewayRouteStatusCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `GatewayRouteStatusCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `GatewayRouteStatusCode::NewFeature` is defined.
+/// Specifically, when `gatewayroutestatuscode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `GatewayRouteStatusCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -12622,8 +12399,8 @@ pub enum GatewayRouteStatusCode {
     Deleted,
     #[allow(missing_docs)] // documentation missing in model
     Inactive,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for GatewayRouteStatusCode {
     fn from(s: &str) -> Self {
@@ -12631,7 +12408,9 @@ impl std::convert::From<&str> for GatewayRouteStatusCode {
             "ACTIVE" => GatewayRouteStatusCode::Active,
             "DELETED" => GatewayRouteStatusCode::Deleted,
             "INACTIVE" => GatewayRouteStatusCode::Inactive,
-            other => GatewayRouteStatusCode::Unknown(other.to_owned()),
+            other => {
+                GatewayRouteStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -12649,11 +12428,11 @@ impl GatewayRouteStatusCode {
             GatewayRouteStatusCode::Active => "ACTIVE",
             GatewayRouteStatusCode::Deleted => "DELETED",
             GatewayRouteStatusCode::Inactive => "INACTIVE",
-            GatewayRouteStatusCode::Unknown(s) => s.as_ref(),
+            GatewayRouteStatusCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETED", "INACTIVE"]
     }
 }
@@ -12665,7 +12444,7 @@ impl AsRef<str> for GatewayRouteStatusCode {
 
 /// <p>An object that represents a gateway route specification. Specify one gateway route type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GatewayRouteSpec {
     /// <p>The ordering of the gateway routes spec.</p>
     #[doc(hidden)]
@@ -12698,21 +12477,11 @@ impl GatewayRouteSpec {
         self.grpc_route.as_ref()
     }
 }
-impl std::fmt::Debug for GatewayRouteSpec {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GatewayRouteSpec");
-        formatter.field("priority", &self.priority);
-        formatter.field("http_route", &self.http_route);
-        formatter.field("http2_route", &self.http2_route);
-        formatter.field("grpc_route", &self.grpc_route);
-        formatter.finish()
-    }
-}
 /// See [`GatewayRouteSpec`](crate::model::GatewayRouteSpec).
 pub mod gateway_route_spec {
 
     /// A builder for [`GatewayRouteSpec`](crate::model::GatewayRouteSpec).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) priority: std::option::Option<i32>,
         pub(crate) http_route: std::option::Option<crate::model::HttpGatewayRoute>,
@@ -12789,7 +12558,7 @@ impl GatewayRouteSpec {
 
 /// <p>An object that represents a gRPC gateway route.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GrpcGatewayRoute {
     /// <p>An object that represents the criteria for determining a request match.</p>
     #[doc(hidden)]
@@ -12808,19 +12577,11 @@ impl GrpcGatewayRoute {
         self.action.as_ref()
     }
 }
-impl std::fmt::Debug for GrpcGatewayRoute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GrpcGatewayRoute");
-        formatter.field("r#match", &self.r#match);
-        formatter.field("action", &self.action);
-        formatter.finish()
-    }
-}
 /// See [`GrpcGatewayRoute`](crate::model::GrpcGatewayRoute).
 pub mod grpc_gateway_route {
 
     /// A builder for [`GrpcGatewayRoute`](crate::model::GrpcGatewayRoute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#match: std::option::Option<crate::model::GrpcGatewayRouteMatch>,
         pub(crate) action: std::option::Option<crate::model::GrpcGatewayRouteAction>,
@@ -12870,7 +12631,7 @@ impl GrpcGatewayRoute {
 
 /// <p>An object that represents the action to take if a match is determined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GrpcGatewayRouteAction {
     /// <p>An object that represents the target that traffic is routed to when a request matches the gateway route.</p>
     #[doc(hidden)]
@@ -12889,19 +12650,11 @@ impl GrpcGatewayRouteAction {
         self.rewrite.as_ref()
     }
 }
-impl std::fmt::Debug for GrpcGatewayRouteAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GrpcGatewayRouteAction");
-        formatter.field("target", &self.target);
-        formatter.field("rewrite", &self.rewrite);
-        formatter.finish()
-    }
-}
 /// See [`GrpcGatewayRouteAction`](crate::model::GrpcGatewayRouteAction).
 pub mod grpc_gateway_route_action {
 
     /// A builder for [`GrpcGatewayRouteAction`](crate::model::GrpcGatewayRouteAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target: std::option::Option<crate::model::GatewayRouteTarget>,
         pub(crate) rewrite: std::option::Option<crate::model::GrpcGatewayRouteRewrite>,
@@ -12951,7 +12704,7 @@ impl GrpcGatewayRouteAction {
 
 /// <p>An object that represents the gateway route to rewrite.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GrpcGatewayRouteRewrite {
     /// <p>The host name of the gateway route to rewrite.</p>
     #[doc(hidden)]
@@ -12963,18 +12716,11 @@ impl GrpcGatewayRouteRewrite {
         self.hostname.as_ref()
     }
 }
-impl std::fmt::Debug for GrpcGatewayRouteRewrite {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GrpcGatewayRouteRewrite");
-        formatter.field("hostname", &self.hostname);
-        formatter.finish()
-    }
-}
 /// See [`GrpcGatewayRouteRewrite`](crate::model::GrpcGatewayRouteRewrite).
 pub mod grpc_gateway_route_rewrite {
 
     /// A builder for [`GrpcGatewayRouteRewrite`](crate::model::GrpcGatewayRouteRewrite).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hostname: std::option::Option<crate::model::GatewayRouteHostnameRewrite>,
     }
@@ -13009,7 +12755,7 @@ impl GrpcGatewayRouteRewrite {
 
 /// <p>An object representing the gateway route host name to rewrite.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GatewayRouteHostnameRewrite {
     /// <p>The default target host name to write to.</p>
     #[doc(hidden)]
@@ -13023,18 +12769,11 @@ impl GatewayRouteHostnameRewrite {
         self.default_target_hostname.as_ref()
     }
 }
-impl std::fmt::Debug for GatewayRouteHostnameRewrite {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GatewayRouteHostnameRewrite");
-        formatter.field("default_target_hostname", &self.default_target_hostname);
-        formatter.finish()
-    }
-}
 /// See [`GatewayRouteHostnameRewrite`](crate::model::GatewayRouteHostnameRewrite).
 pub mod gateway_route_hostname_rewrite {
 
     /// A builder for [`GatewayRouteHostnameRewrite`](crate::model::GatewayRouteHostnameRewrite).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_target_hostname:
             std::option::Option<crate::model::DefaultGatewayRouteRewrite>,
@@ -13071,6 +12810,41 @@ impl GatewayRouteHostnameRewrite {
     }
 }
 
+/// When writing a match expression against `DefaultGatewayRouteRewrite`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let defaultgatewayrouterewrite = unimplemented!();
+/// match defaultgatewayrouterewrite {
+///     DefaultGatewayRouteRewrite::Disabled => { /* ... */ },
+///     DefaultGatewayRouteRewrite::Enabled => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `defaultgatewayrouterewrite` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DefaultGatewayRouteRewrite::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DefaultGatewayRouteRewrite::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DefaultGatewayRouteRewrite::NewFeature` is defined.
+/// Specifically, when `defaultgatewayrouterewrite` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DefaultGatewayRouteRewrite::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -13087,15 +12861,17 @@ pub enum DefaultGatewayRouteRewrite {
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DefaultGatewayRouteRewrite {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => DefaultGatewayRouteRewrite::Disabled,
             "ENABLED" => DefaultGatewayRouteRewrite::Enabled,
-            other => DefaultGatewayRouteRewrite::Unknown(other.to_owned()),
+            other => DefaultGatewayRouteRewrite::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -13112,11 +12888,11 @@ impl DefaultGatewayRouteRewrite {
         match self {
             DefaultGatewayRouteRewrite::Disabled => "DISABLED",
             DefaultGatewayRouteRewrite::Enabled => "ENABLED",
-            DefaultGatewayRouteRewrite::Unknown(s) => s.as_ref(),
+            DefaultGatewayRouteRewrite::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -13128,7 +12904,7 @@ impl AsRef<str> for DefaultGatewayRouteRewrite {
 
 /// <p>An object that represents a gateway route target.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GatewayRouteTarget {
     /// <p>An object that represents a virtual service gateway route target.</p>
     #[doc(hidden)]
@@ -13149,19 +12925,11 @@ impl GatewayRouteTarget {
         self.port
     }
 }
-impl std::fmt::Debug for GatewayRouteTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GatewayRouteTarget");
-        formatter.field("virtual_service", &self.virtual_service);
-        formatter.field("port", &self.port);
-        formatter.finish()
-    }
-}
 /// See [`GatewayRouteTarget`](crate::model::GatewayRouteTarget).
 pub mod gateway_route_target {
 
     /// A builder for [`GatewayRouteTarget`](crate::model::GatewayRouteTarget).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_service: std::option::Option<crate::model::GatewayRouteVirtualService>,
         pub(crate) port: std::option::Option<i32>,
@@ -13208,7 +12976,7 @@ impl GatewayRouteTarget {
 
 /// <p>An object that represents the virtual service that traffic is routed to.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GatewayRouteVirtualService {
     /// <p>The name of the virtual service that traffic is routed to.</p>
     #[doc(hidden)]
@@ -13220,18 +12988,11 @@ impl GatewayRouteVirtualService {
         self.virtual_service_name.as_deref()
     }
 }
-impl std::fmt::Debug for GatewayRouteVirtualService {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GatewayRouteVirtualService");
-        formatter.field("virtual_service_name", &self.virtual_service_name);
-        formatter.finish()
-    }
-}
 /// See [`GatewayRouteVirtualService`](crate::model::GatewayRouteVirtualService).
 pub mod gateway_route_virtual_service {
 
     /// A builder for [`GatewayRouteVirtualService`](crate::model::GatewayRouteVirtualService).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_service_name: std::option::Option<std::string::String>,
     }
@@ -13266,7 +13027,7 @@ impl GatewayRouteVirtualService {
 
 /// <p>An object that represents the criteria for determining a request match.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GrpcGatewayRouteMatch {
     /// <p>The fully qualified domain name for the service to match from the request.</p>
     #[doc(hidden)]
@@ -13299,21 +13060,11 @@ impl GrpcGatewayRouteMatch {
         self.port
     }
 }
-impl std::fmt::Debug for GrpcGatewayRouteMatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GrpcGatewayRouteMatch");
-        formatter.field("service_name", &self.service_name);
-        formatter.field("hostname", &self.hostname);
-        formatter.field("metadata", &self.metadata);
-        formatter.field("port", &self.port);
-        formatter.finish()
-    }
-}
 /// See [`GrpcGatewayRouteMatch`](crate::model::GrpcGatewayRouteMatch).
 pub mod grpc_gateway_route_match {
 
     /// A builder for [`GrpcGatewayRouteMatch`](crate::model::GrpcGatewayRouteMatch).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_name: std::option::Option<std::string::String>,
         pub(crate) hostname: std::option::Option<crate::model::GatewayRouteHostnameMatch>,
@@ -13394,7 +13145,7 @@ impl GrpcGatewayRouteMatch {
 
 /// <p>An object representing the metadata of the gateway route.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GrpcGatewayRouteMetadata {
     /// <p>A name for the gateway route metadata.</p>
     #[doc(hidden)]
@@ -13420,20 +13171,11 @@ impl GrpcGatewayRouteMetadata {
         self.r#match.as_ref()
     }
 }
-impl std::fmt::Debug for GrpcGatewayRouteMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GrpcGatewayRouteMetadata");
-        formatter.field("name", &self.name);
-        formatter.field("invert", &self.invert);
-        formatter.field("r#match", &self.r#match);
-        formatter.finish()
-    }
-}
 /// See [`GrpcGatewayRouteMetadata`](crate::model::GrpcGatewayRouteMetadata).
 pub mod grpc_gateway_route_metadata {
 
     /// A builder for [`GrpcGatewayRouteMetadata`](crate::model::GrpcGatewayRouteMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) invert: std::option::Option<bool>,
@@ -13588,7 +13330,7 @@ impl GrpcMetadataMatchMethod {
 
 /// <p>An object representing the gateway route host name to match.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GatewayRouteHostnameMatch {
     /// <p>The exact host name to match on.</p>
     #[doc(hidden)]
@@ -13607,19 +13349,11 @@ impl GatewayRouteHostnameMatch {
         self.suffix.as_deref()
     }
 }
-impl std::fmt::Debug for GatewayRouteHostnameMatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GatewayRouteHostnameMatch");
-        formatter.field("exact", &self.exact);
-        formatter.field("suffix", &self.suffix);
-        formatter.finish()
-    }
-}
 /// See [`GatewayRouteHostnameMatch`](crate::model::GatewayRouteHostnameMatch).
 pub mod gateway_route_hostname_match {
 
     /// A builder for [`GatewayRouteHostnameMatch`](crate::model::GatewayRouteHostnameMatch).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) exact: std::option::Option<std::string::String>,
         pub(crate) suffix: std::option::Option<std::string::String>,
@@ -13663,7 +13397,7 @@ impl GatewayRouteHostnameMatch {
 
 /// <p>An object that represents an HTTP gateway route.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpGatewayRoute {
     /// <p>An object that represents the criteria for determining a request match.</p>
     #[doc(hidden)]
@@ -13682,19 +13416,11 @@ impl HttpGatewayRoute {
         self.action.as_ref()
     }
 }
-impl std::fmt::Debug for HttpGatewayRoute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpGatewayRoute");
-        formatter.field("r#match", &self.r#match);
-        formatter.field("action", &self.action);
-        formatter.finish()
-    }
-}
 /// See [`HttpGatewayRoute`](crate::model::HttpGatewayRoute).
 pub mod http_gateway_route {
 
     /// A builder for [`HttpGatewayRoute`](crate::model::HttpGatewayRoute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#match: std::option::Option<crate::model::HttpGatewayRouteMatch>,
         pub(crate) action: std::option::Option<crate::model::HttpGatewayRouteAction>,
@@ -13744,7 +13470,7 @@ impl HttpGatewayRoute {
 
 /// <p>An object that represents the action to take if a match is determined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpGatewayRouteAction {
     /// <p>An object that represents the target that traffic is routed to when a request matches the gateway route.</p>
     #[doc(hidden)]
@@ -13763,19 +13489,11 @@ impl HttpGatewayRouteAction {
         self.rewrite.as_ref()
     }
 }
-impl std::fmt::Debug for HttpGatewayRouteAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpGatewayRouteAction");
-        formatter.field("target", &self.target);
-        formatter.field("rewrite", &self.rewrite);
-        formatter.finish()
-    }
-}
 /// See [`HttpGatewayRouteAction`](crate::model::HttpGatewayRouteAction).
 pub mod http_gateway_route_action {
 
     /// A builder for [`HttpGatewayRouteAction`](crate::model::HttpGatewayRouteAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target: std::option::Option<crate::model::GatewayRouteTarget>,
         pub(crate) rewrite: std::option::Option<crate::model::HttpGatewayRouteRewrite>,
@@ -13825,7 +13543,7 @@ impl HttpGatewayRouteAction {
 
 /// <p>An object representing the gateway route to rewrite.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpGatewayRouteRewrite {
     /// <p>The specified beginning characters to rewrite.</p>
     #[doc(hidden)]
@@ -13851,20 +13569,11 @@ impl HttpGatewayRouteRewrite {
         self.hostname.as_ref()
     }
 }
-impl std::fmt::Debug for HttpGatewayRouteRewrite {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpGatewayRouteRewrite");
-        formatter.field("prefix", &self.prefix);
-        formatter.field("path", &self.path);
-        formatter.field("hostname", &self.hostname);
-        formatter.finish()
-    }
-}
 /// See [`HttpGatewayRouteRewrite`](crate::model::HttpGatewayRouteRewrite).
 pub mod http_gateway_route_rewrite {
 
     /// A builder for [`HttpGatewayRouteRewrite`](crate::model::HttpGatewayRouteRewrite).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) prefix: std::option::Option<crate::model::HttpGatewayRoutePrefixRewrite>,
         pub(crate) path: std::option::Option<crate::model::HttpGatewayRoutePathRewrite>,
@@ -13929,7 +13638,7 @@ impl HttpGatewayRouteRewrite {
 
 /// <p>An object that represents the path to rewrite.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpGatewayRoutePathRewrite {
     /// <p>The exact path to rewrite.</p>
     #[doc(hidden)]
@@ -13941,18 +13650,11 @@ impl HttpGatewayRoutePathRewrite {
         self.exact.as_deref()
     }
 }
-impl std::fmt::Debug for HttpGatewayRoutePathRewrite {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpGatewayRoutePathRewrite");
-        formatter.field("exact", &self.exact);
-        formatter.finish()
-    }
-}
 /// See [`HttpGatewayRoutePathRewrite`](crate::model::HttpGatewayRoutePathRewrite).
 pub mod http_gateway_route_path_rewrite {
 
     /// A builder for [`HttpGatewayRoutePathRewrite`](crate::model::HttpGatewayRoutePathRewrite).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) exact: std::option::Option<std::string::String>,
     }
@@ -13982,7 +13684,7 @@ impl HttpGatewayRoutePathRewrite {
 
 /// <p>An object representing the beginning characters of the route to rewrite.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpGatewayRoutePrefixRewrite {
     /// <p>The default prefix used to replace the incoming route prefix when rewritten.</p>
     #[doc(hidden)]
@@ -14001,19 +13703,11 @@ impl HttpGatewayRoutePrefixRewrite {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for HttpGatewayRoutePrefixRewrite {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpGatewayRoutePrefixRewrite");
-        formatter.field("default_prefix", &self.default_prefix);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`HttpGatewayRoutePrefixRewrite`](crate::model::HttpGatewayRoutePrefixRewrite).
 pub mod http_gateway_route_prefix_rewrite {
 
     /// A builder for [`HttpGatewayRoutePrefixRewrite`](crate::model::HttpGatewayRoutePrefixRewrite).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_prefix: std::option::Option<crate::model::DefaultGatewayRouteRewrite>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -14060,7 +13754,7 @@ impl HttpGatewayRoutePrefixRewrite {
 
 /// <p>An object that represents the criteria for determining a request match.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpGatewayRouteMatch {
     /// <p>Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself matches all requests to the virtual service name. You can also match for path-based routing of requests. For example, if your virtual service name is <code>my-service.local</code> and you want the route to match requests to <code>my-service.local/metrics</code>, your prefix should be <code>/metrics</code>.</p>
     #[doc(hidden)]
@@ -14114,24 +13808,11 @@ impl HttpGatewayRouteMatch {
         self.port
     }
 }
-impl std::fmt::Debug for HttpGatewayRouteMatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpGatewayRouteMatch");
-        formatter.field("prefix", &self.prefix);
-        formatter.field("path", &self.path);
-        formatter.field("query_parameters", &self.query_parameters);
-        formatter.field("method", &self.method);
-        formatter.field("hostname", &self.hostname);
-        formatter.field("headers", &self.headers);
-        formatter.field("port", &self.port);
-        formatter.finish()
-    }
-}
 /// See [`HttpGatewayRouteMatch`](crate::model::HttpGatewayRouteMatch).
 pub mod http_gateway_route_match {
 
     /// A builder for [`HttpGatewayRouteMatch`](crate::model::HttpGatewayRouteMatch).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) prefix: std::option::Option<std::string::String>,
         pub(crate) path: std::option::Option<crate::model::HttpPathMatch>,
@@ -14258,7 +13939,7 @@ impl HttpGatewayRouteMatch {
 
 /// <p>An object that represents the HTTP header in the gateway route.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpGatewayRouteHeader {
     /// <p>A name for the HTTP header in the gateway route that will be matched on.</p>
     #[doc(hidden)]
@@ -14284,20 +13965,11 @@ impl HttpGatewayRouteHeader {
         self.r#match.as_ref()
     }
 }
-impl std::fmt::Debug for HttpGatewayRouteHeader {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpGatewayRouteHeader");
-        formatter.field("name", &self.name);
-        formatter.field("invert", &self.invert);
-        formatter.field("r#match", &self.r#match);
-        formatter.finish()
-    }
-}
 /// See [`HttpGatewayRouteHeader`](crate::model::HttpGatewayRouteHeader).
 pub mod http_gateway_route_header {
 
     /// A builder for [`HttpGatewayRouteHeader`](crate::model::HttpGatewayRouteHeader).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) invert: std::option::Option<bool>,

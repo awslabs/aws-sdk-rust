@@ -2,7 +2,7 @@
 
 /// <p>A complex data type that contains a tag key and tag value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>A string that contains a tag key. The string length should be between 1 and 128 characters. Valid characters include a-z, A-Z, 0-9, space, and the special characters _ - . : / = + @.</p>
     #[doc(hidden)]
@@ -21,19 +21,11 @@ impl Tag {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -77,7 +69,7 @@ impl Tag {
 
 /// <p>Information about a quota increase request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequestedServiceQuotaChange {
     /// <p>The unique identifier.</p>
     #[doc(hidden)]
@@ -180,31 +172,11 @@ impl RequestedServiceQuotaChange {
         self.unit.as_deref()
     }
 }
-impl std::fmt::Debug for RequestedServiceQuotaChange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RequestedServiceQuotaChange");
-        formatter.field("id", &self.id);
-        formatter.field("case_id", &self.case_id);
-        formatter.field("service_code", &self.service_code);
-        formatter.field("service_name", &self.service_name);
-        formatter.field("quota_code", &self.quota_code);
-        formatter.field("quota_name", &self.quota_name);
-        formatter.field("desired_value", &self.desired_value);
-        formatter.field("status", &self.status);
-        formatter.field("created", &self.created);
-        formatter.field("last_updated", &self.last_updated);
-        formatter.field("requester", &self.requester);
-        formatter.field("quota_arn", &self.quota_arn);
-        formatter.field("global_quota", &self.global_quota);
-        formatter.field("unit", &self.unit);
-        formatter.finish()
-    }
-}
 /// See [`RequestedServiceQuotaChange`](crate::model::RequestedServiceQuotaChange).
 pub mod requested_service_quota_change {
 
     /// A builder for [`RequestedServiceQuotaChange`](crate::model::RequestedServiceQuotaChange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) case_id: std::option::Option<std::string::String>,
@@ -399,6 +371,44 @@ impl RequestedServiceQuotaChange {
     }
 }
 
+/// When writing a match expression against `RequestStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let requeststatus = unimplemented!();
+/// match requeststatus {
+///     RequestStatus::Approved => { /* ... */ },
+///     RequestStatus::CaseClosed => { /* ... */ },
+///     RequestStatus::CaseOpened => { /* ... */ },
+///     RequestStatus::Denied => { /* ... */ },
+///     RequestStatus::Pending => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `requeststatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RequestStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RequestStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RequestStatus::NewFeature` is defined.
+/// Specifically, when `requeststatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RequestStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -421,8 +431,8 @@ pub enum RequestStatus {
     Denied,
     #[allow(missing_docs)] // documentation missing in model
     Pending,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for RequestStatus {
     fn from(s: &str) -> Self {
@@ -432,7 +442,7 @@ impl std::convert::From<&str> for RequestStatus {
             "CASE_OPENED" => RequestStatus::CaseOpened,
             "DENIED" => RequestStatus::Denied,
             "PENDING" => RequestStatus::Pending,
-            other => RequestStatus::Unknown(other.to_owned()),
+            other => RequestStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -452,11 +462,11 @@ impl RequestStatus {
             RequestStatus::CaseOpened => "CASE_OPENED",
             RequestStatus::Denied => "DENIED",
             RequestStatus::Pending => "PENDING",
-            RequestStatus::Unknown(s) => s.as_ref(),
+            RequestStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "APPROVED",
             "CASE_CLOSED",
@@ -474,7 +484,7 @@ impl AsRef<str> for RequestStatus {
 
 /// <p>Information about a quota increase request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceQuotaIncreaseRequestInTemplate {
     /// <p>The service identifier.</p>
     #[doc(hidden)]
@@ -535,25 +545,11 @@ impl ServiceQuotaIncreaseRequestInTemplate {
         self.global_quota
     }
 }
-impl std::fmt::Debug for ServiceQuotaIncreaseRequestInTemplate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceQuotaIncreaseRequestInTemplate");
-        formatter.field("service_code", &self.service_code);
-        formatter.field("service_name", &self.service_name);
-        formatter.field("quota_code", &self.quota_code);
-        formatter.field("quota_name", &self.quota_name);
-        formatter.field("desired_value", &self.desired_value);
-        formatter.field("aws_region", &self.aws_region);
-        formatter.field("unit", &self.unit);
-        formatter.field("global_quota", &self.global_quota);
-        formatter.finish()
-    }
-}
 /// See [`ServiceQuotaIncreaseRequestInTemplate`](crate::model::ServiceQuotaIncreaseRequestInTemplate).
 pub mod service_quota_increase_request_in_template {
 
     /// A builder for [`ServiceQuotaIncreaseRequestInTemplate`](crate::model::ServiceQuotaIncreaseRequestInTemplate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
         pub(crate) service_name: std::option::Option<std::string::String>,
@@ -669,7 +665,7 @@ impl ServiceQuotaIncreaseRequestInTemplate {
 
 /// <p>Information about a service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceInfo {
     /// <p>The service identifier.</p>
     #[doc(hidden)]
@@ -688,19 +684,11 @@ impl ServiceInfo {
         self.service_name.as_deref()
     }
 }
-impl std::fmt::Debug for ServiceInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceInfo");
-        formatter.field("service_code", &self.service_code);
-        formatter.field("service_name", &self.service_name);
-        formatter.finish()
-    }
-}
 /// See [`ServiceInfo`](crate::model::ServiceInfo).
 pub mod service_info {
 
     /// A builder for [`ServiceInfo`](crate::model::ServiceInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
         pub(crate) service_name: std::option::Option<std::string::String>,
@@ -744,7 +732,7 @@ impl ServiceInfo {
 
 /// <p>Information about a quota.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceQuota {
     /// <p>The service identifier.</p>
     #[doc(hidden)]
@@ -833,29 +821,11 @@ impl ServiceQuota {
         self.error_reason.as_ref()
     }
 }
-impl std::fmt::Debug for ServiceQuota {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceQuota");
-        formatter.field("service_code", &self.service_code);
-        formatter.field("service_name", &self.service_name);
-        formatter.field("quota_arn", &self.quota_arn);
-        formatter.field("quota_code", &self.quota_code);
-        formatter.field("quota_name", &self.quota_name);
-        formatter.field("value", &self.value);
-        formatter.field("unit", &self.unit);
-        formatter.field("adjustable", &self.adjustable);
-        formatter.field("global_quota", &self.global_quota);
-        formatter.field("usage_metric", &self.usage_metric);
-        formatter.field("period", &self.period);
-        formatter.field("error_reason", &self.error_reason);
-        formatter.finish()
-    }
-}
 /// See [`ServiceQuota`](crate::model::ServiceQuota).
 pub mod service_quota {
 
     /// A builder for [`ServiceQuota`](crate::model::ServiceQuota).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
         pub(crate) service_name: std::option::Option<std::string::String>,
@@ -1025,7 +995,7 @@ impl ServiceQuota {
 
 /// <p>An error that explains why an action did not succeed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ErrorReason {
     /// <p>Service Quotas returns the following error values:</p>
     /// <ul>
@@ -1056,19 +1026,11 @@ impl ErrorReason {
         self.error_message.as_deref()
     }
 }
-impl std::fmt::Debug for ErrorReason {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ErrorReason");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
-    }
-}
 /// See [`ErrorReason`](crate::model::ErrorReason).
 pub mod error_reason {
 
     /// A builder for [`ErrorReason`](crate::model::ErrorReason).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<crate::model::ErrorCode>,
         pub(crate) error_message: std::option::Option<std::string::String>,
@@ -1128,6 +1090,43 @@ impl ErrorReason {
     }
 }
 
+/// When writing a match expression against `ErrorCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let errorcode = unimplemented!();
+/// match errorcode {
+///     ErrorCode::DependencyAccessDeniedError => { /* ... */ },
+///     ErrorCode::DependencyServiceError => { /* ... */ },
+///     ErrorCode::DependencyThrottlingError => { /* ... */ },
+///     ErrorCode::ServiceQuotaNotAvailableError => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `errorcode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ErrorCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ErrorCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ErrorCode::NewFeature` is defined.
+/// Specifically, when `errorcode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ErrorCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1148,8 +1147,8 @@ pub enum ErrorCode {
     DependencyThrottlingError,
     #[allow(missing_docs)] // documentation missing in model
     ServiceQuotaNotAvailableError,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ErrorCode {
     fn from(s: &str) -> Self {
@@ -1158,7 +1157,7 @@ impl std::convert::From<&str> for ErrorCode {
             "DEPENDENCY_SERVICE_ERROR" => ErrorCode::DependencyServiceError,
             "DEPENDENCY_THROTTLING_ERROR" => ErrorCode::DependencyThrottlingError,
             "SERVICE_QUOTA_NOT_AVAILABLE_ERROR" => ErrorCode::ServiceQuotaNotAvailableError,
-            other => ErrorCode::Unknown(other.to_owned()),
+            other => ErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1177,11 +1176,11 @@ impl ErrorCode {
             ErrorCode::DependencyServiceError => "DEPENDENCY_SERVICE_ERROR",
             ErrorCode::DependencyThrottlingError => "DEPENDENCY_THROTTLING_ERROR",
             ErrorCode::ServiceQuotaNotAvailableError => "SERVICE_QUOTA_NOT_AVAILABLE_ERROR",
-            ErrorCode::Unknown(s) => s.as_ref(),
+            ErrorCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DEPENDENCY_ACCESS_DENIED_ERROR",
             "DEPENDENCY_SERVICE_ERROR",
@@ -1198,7 +1197,7 @@ impl AsRef<str> for ErrorCode {
 
 /// <p>Information about the quota period.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QuotaPeriod {
     /// <p>The value.</p>
     #[doc(hidden)]
@@ -1217,19 +1216,11 @@ impl QuotaPeriod {
         self.period_unit.as_ref()
     }
 }
-impl std::fmt::Debug for QuotaPeriod {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QuotaPeriod");
-        formatter.field("period_value", &self.period_value);
-        formatter.field("period_unit", &self.period_unit);
-        formatter.finish()
-    }
-}
 /// See [`QuotaPeriod`](crate::model::QuotaPeriod).
 pub mod quota_period {
 
     /// A builder for [`QuotaPeriod`](crate::model::QuotaPeriod).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) period_value: std::option::Option<i32>,
         pub(crate) period_unit: std::option::Option<crate::model::PeriodUnit>,
@@ -1274,6 +1265,46 @@ impl QuotaPeriod {
     }
 }
 
+/// When writing a match expression against `PeriodUnit`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let periodunit = unimplemented!();
+/// match periodunit {
+///     PeriodUnit::Day => { /* ... */ },
+///     PeriodUnit::Hour => { /* ... */ },
+///     PeriodUnit::Microsecond => { /* ... */ },
+///     PeriodUnit::Millisecond => { /* ... */ },
+///     PeriodUnit::Minute => { /* ... */ },
+///     PeriodUnit::Second => { /* ... */ },
+///     PeriodUnit::Week => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `periodunit` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PeriodUnit::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PeriodUnit::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PeriodUnit::NewFeature` is defined.
+/// Specifically, when `periodunit` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PeriodUnit::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1300,8 +1331,8 @@ pub enum PeriodUnit {
     Second,
     #[allow(missing_docs)] // documentation missing in model
     Week,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PeriodUnit {
     fn from(s: &str) -> Self {
@@ -1313,7 +1344,7 @@ impl std::convert::From<&str> for PeriodUnit {
             "MINUTE" => PeriodUnit::Minute,
             "SECOND" => PeriodUnit::Second,
             "WEEK" => PeriodUnit::Week,
-            other => PeriodUnit::Unknown(other.to_owned()),
+            other => PeriodUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1335,11 +1366,11 @@ impl PeriodUnit {
             PeriodUnit::Minute => "MINUTE",
             PeriodUnit::Second => "SECOND",
             PeriodUnit::Week => "WEEK",
-            PeriodUnit::Unknown(s) => s.as_ref(),
+            PeriodUnit::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DAY",
             "HOUR",
@@ -1359,7 +1390,7 @@ impl AsRef<str> for PeriodUnit {
 
 /// <p>Information about the CloudWatch metric that reflects quota usage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricInfo {
     /// <p>The namespace of the metric.</p>
     #[doc(hidden)]
@@ -1396,24 +1427,11 @@ impl MetricInfo {
         self.metric_statistic_recommendation.as_deref()
     }
 }
-impl std::fmt::Debug for MetricInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricInfo");
-        formatter.field("metric_namespace", &self.metric_namespace);
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("metric_dimensions", &self.metric_dimensions);
-        formatter.field(
-            "metric_statistic_recommendation",
-            &self.metric_statistic_recommendation,
-        );
-        formatter.finish()
-    }
-}
 /// See [`MetricInfo`](crate::model::MetricInfo).
 pub mod metric_info {
 
     /// A builder for [`MetricInfo`](crate::model::MetricInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_namespace: std::option::Option<std::string::String>,
         pub(crate) metric_name: std::option::Option<std::string::String>,
@@ -1505,6 +1523,41 @@ impl MetricInfo {
     }
 }
 
+/// When writing a match expression against `ServiceQuotaTemplateAssociationStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let servicequotatemplateassociationstatus = unimplemented!();
+/// match servicequotatemplateassociationstatus {
+///     ServiceQuotaTemplateAssociationStatus::Associated => { /* ... */ },
+///     ServiceQuotaTemplateAssociationStatus::Disassociated => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `servicequotatemplateassociationstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ServiceQuotaTemplateAssociationStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ServiceQuotaTemplateAssociationStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ServiceQuotaTemplateAssociationStatus::NewFeature` is defined.
+/// Specifically, when `servicequotatemplateassociationstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ServiceQuotaTemplateAssociationStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1521,15 +1574,17 @@ pub enum ServiceQuotaTemplateAssociationStatus {
     Associated,
     #[allow(missing_docs)] // documentation missing in model
     Disassociated,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ServiceQuotaTemplateAssociationStatus {
     fn from(s: &str) -> Self {
         match s {
             "ASSOCIATED" => ServiceQuotaTemplateAssociationStatus::Associated,
             "DISASSOCIATED" => ServiceQuotaTemplateAssociationStatus::Disassociated,
-            other => ServiceQuotaTemplateAssociationStatus::Unknown(other.to_owned()),
+            other => ServiceQuotaTemplateAssociationStatus::Unknown(
+                crate::types::UnknownVariantValue(other.to_owned()),
+            ),
         }
     }
 }
@@ -1546,11 +1601,11 @@ impl ServiceQuotaTemplateAssociationStatus {
         match self {
             ServiceQuotaTemplateAssociationStatus::Associated => "ASSOCIATED",
             ServiceQuotaTemplateAssociationStatus::Disassociated => "DISASSOCIATED",
-            ServiceQuotaTemplateAssociationStatus::Unknown(s) => s.as_ref(),
+            ServiceQuotaTemplateAssociationStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ASSOCIATED", "DISASSOCIATED"]
     }
 }

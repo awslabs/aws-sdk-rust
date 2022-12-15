@@ -5,7 +5,7 @@
 /// [`associate_member_account`](crate::client::Client::associate_member_account).
 ///
 /// See [`crate::client::fluent_builders::AssociateMemberAccount`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateMemberAccount {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateMemberAccount {
 /// [`associate_s3_resources`](crate::client::Client::associate_s3_resources).
 ///
 /// See [`crate::client::fluent_builders::AssociateS3Resources`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateS3Resources {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateS3Resources {
 /// [`disassociate_member_account`](crate::client::Client::disassociate_member_account).
 ///
 /// See [`crate::client::fluent_builders::DisassociateMemberAccount`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateMemberAccount {
     _private: (),
 }
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateMemberAccoun
 /// [`disassociate_s3_resources`](crate::client::Client::disassociate_s3_resources).
 ///
 /// See [`crate::client::fluent_builders::DisassociateS3Resources`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateS3Resources {
     _private: (),
 }
@@ -141,7 +141,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateS3Resources 
 /// [`list_member_accounts`](crate::client::Client::list_member_accounts).
 ///
 /// See [`crate::client::fluent_builders::ListMemberAccounts`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListMemberAccounts {
     _private: (),
 }
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMemberAccounts {
 /// [`list_s3_resources`](crate::client::Client::list_s3_resources).
 ///
 /// See [`crate::client::fluent_builders::ListS3Resources`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListS3Resources {
     _private: (),
 }
@@ -209,7 +209,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListS3Resources {
 /// [`update_s3_resources`](crate::client::Client::update_s3_resources).
 ///
 /// See [`crate::client::fluent_builders::UpdateS3Resources`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateS3Resources {
     _private: (),
 }

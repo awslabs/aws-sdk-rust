@@ -191,7 +191,7 @@ pub mod start_medical_stream_transcription_input {
             self,
         ) -> Result<
             crate::input::StartMedicalStreamTranscriptionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(
                 crate::input::StartMedicalStreamTranscriptionInput {
@@ -213,8 +213,8 @@ pub mod start_medical_stream_transcription_input {
                     session_id: self.session_id
                     ,
                     audio_stream: self.audio_stream
-                        .ok_or(
-                            aws_smithy_http::operation::BuildError::MissingField { field: "audio_stream", details: "audio_stream was not specified but it is required when building StartMedicalStreamTranscriptionInput" }
+                        .ok_or_else(||
+                            aws_smithy_http::operation::error::BuildError::missing_field("audio_stream", "audio_stream was not specified but it is required when building StartMedicalStreamTranscriptionInput")
                         )?
                     ,
                     enable_channel_identification: self.enable_channel_identification
@@ -242,13 +242,13 @@ impl StartMedicalStreamTranscriptionInput {
             crate::operation::StartMedicalStreamTranscription,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StartMedicalStreamTranscriptionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/medical-stream-transcription").expect("formatting should succeed");
                 Ok(())
             }
@@ -256,8 +256,10 @@ impl StartMedicalStreamTranscriptionInput {
             fn update_http_builder(
                 input: &crate::input::StartMedicalStreamTranscriptionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_start_medical_stream_transcription(
@@ -710,7 +712,7 @@ pub mod start_stream_transcription_input {
             self,
         ) -> Result<
             crate::input::StartStreamTranscriptionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(
                 crate::input::StartStreamTranscriptionInput {
@@ -725,8 +727,8 @@ pub mod start_stream_transcription_input {
                     session_id: self.session_id
                     ,
                     audio_stream: self.audio_stream
-                        .ok_or(
-                            aws_smithy_http::operation::BuildError::MissingField { field: "audio_stream", details: "audio_stream was not specified but it is required when building StartStreamTranscriptionInput" }
+                        .ok_or_else(||
+                            aws_smithy_http::operation::error::BuildError::missing_field("audio_stream", "audio_stream was not specified but it is required when building StartStreamTranscriptionInput")
                         )?
                     ,
                     vocabulary_filter_name: self.vocabulary_filter_name
@@ -783,13 +785,13 @@ impl StartStreamTranscriptionInput {
             crate::operation::StartStreamTranscription,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StartStreamTranscriptionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/stream-transcription").expect("formatting should succeed");
                 Ok(())
             }
@@ -797,8 +799,10 @@ impl StartStreamTranscriptionInput {
             fn update_http_builder(
                 input: &crate::input::StartStreamTranscriptionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -890,6 +894,7 @@ impl StartStreamTranscriptionInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct StartStreamTranscriptionInput {
     /// <p>The language code of the input audio stream.</p>
     #[doc(hidden)]
@@ -1091,46 +1096,10 @@ impl StartStreamTranscriptionInput {
         self.vocabulary_filter_names.as_deref()
     }
 }
-impl std::fmt::Debug for StartStreamTranscriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartStreamTranscriptionInput");
-        formatter.field("language_code", &self.language_code);
-        formatter.field("media_sample_rate_hertz", &self.media_sample_rate_hertz);
-        formatter.field("media_encoding", &self.media_encoding);
-        formatter.field("vocabulary_name", &self.vocabulary_name);
-        formatter.field("session_id", &self.session_id);
-        formatter.field("audio_stream", &self.audio_stream);
-        formatter.field("vocabulary_filter_name", &self.vocabulary_filter_name);
-        formatter.field("vocabulary_filter_method", &self.vocabulary_filter_method);
-        formatter.field("show_speaker_label", &self.show_speaker_label);
-        formatter.field(
-            "enable_channel_identification",
-            &self.enable_channel_identification,
-        );
-        formatter.field("number_of_channels", &self.number_of_channels);
-        formatter.field(
-            "enable_partial_results_stabilization",
-            &self.enable_partial_results_stabilization,
-        );
-        formatter.field("partial_results_stability", &self.partial_results_stability);
-        formatter.field(
-            "content_identification_type",
-            &self.content_identification_type,
-        );
-        formatter.field("content_redaction_type", &self.content_redaction_type);
-        formatter.field("pii_entity_types", &self.pii_entity_types);
-        formatter.field("language_model_name", &self.language_model_name);
-        formatter.field("identify_language", &self.identify_language);
-        formatter.field("language_options", &self.language_options);
-        formatter.field("preferred_language", &self.preferred_language);
-        formatter.field("vocabulary_names", &self.vocabulary_names);
-        formatter.field("vocabulary_filter_names", &self.vocabulary_filter_names);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct StartMedicalStreamTranscriptionInput {
     /// <p> Indicates the source language used in the input audio stream. For Amazon Transcribe Medical, this is US English (en-US). </p>
     #[doc(hidden)]
@@ -1231,29 +1200,5 @@ impl StartMedicalStreamTranscriptionInput {
         &self,
     ) -> std::option::Option<&crate::model::MedicalContentIdentificationType> {
         self.content_identification_type.as_ref()
-    }
-}
-impl std::fmt::Debug for StartMedicalStreamTranscriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartMedicalStreamTranscriptionInput");
-        formatter.field("language_code", &self.language_code);
-        formatter.field("media_sample_rate_hertz", &self.media_sample_rate_hertz);
-        formatter.field("media_encoding", &self.media_encoding);
-        formatter.field("vocabulary_name", &self.vocabulary_name);
-        formatter.field("specialty", &self.specialty);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("show_speaker_label", &self.show_speaker_label);
-        formatter.field("session_id", &self.session_id);
-        formatter.field("audio_stream", &self.audio_stream);
-        formatter.field(
-            "enable_channel_identification",
-            &self.enable_channel_identification,
-        );
-        formatter.field("number_of_channels", &self.number_of_channels);
-        formatter.field(
-            "content_identification_type",
-            &self.content_identification_type,
-        );
-        formatter.finish()
     }
 }

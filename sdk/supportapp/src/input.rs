@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_slack_channel_configuration_input {
 
     /// A builder for [`CreateSlackChannelConfigurationInput`](crate::input::CreateSlackChannelConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) team_id: std::option::Option<std::string::String>,
         pub(crate) channel_id: std::option::Option<std::string::String>,
@@ -146,7 +146,7 @@ pub mod create_slack_channel_configuration_input {
             self,
         ) -> Result<
             crate::input::CreateSlackChannelConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateSlackChannelConfigurationInput {
                 team_id: self.team_id,
@@ -174,13 +174,13 @@ impl CreateSlackChannelConfigurationInput {
             crate::operation::CreateSlackChannelConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateSlackChannelConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/control/create-slack-channel-configuration")
                     .expect("formatting should succeed");
                 Ok(())
@@ -189,8 +189,10 @@ impl CreateSlackChannelConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::CreateSlackChannelConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -273,14 +275,16 @@ impl CreateSlackChannelConfigurationInput {
 pub mod delete_account_alias_input {
 
     /// A builder for [`DeleteAccountAliasInput`](crate::input::DeleteAccountAliasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAccountAliasInput`](crate::input::DeleteAccountAliasInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteAccountAliasInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteAccountAliasInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteAccountAliasInput {})
         }
     }
@@ -298,13 +302,13 @@ impl DeleteAccountAliasInput {
             crate::operation::DeleteAccountAlias,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteAccountAliasInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/control/delete-account-alias").expect("formatting should succeed");
                 Ok(())
             }
@@ -312,8 +316,10 @@ impl DeleteAccountAliasInput {
             fn update_http_builder(
                 input: &crate::input::DeleteAccountAliasInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -383,7 +389,7 @@ impl DeleteAccountAliasInput {
 pub mod delete_slack_channel_configuration_input {
 
     /// A builder for [`DeleteSlackChannelConfigurationInput`](crate::input::DeleteSlackChannelConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) team_id: std::option::Option<std::string::String>,
         pub(crate) channel_id: std::option::Option<std::string::String>,
@@ -414,7 +420,7 @@ pub mod delete_slack_channel_configuration_input {
             self,
         ) -> Result<
             crate::input::DeleteSlackChannelConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteSlackChannelConfigurationInput {
                 team_id: self.team_id,
@@ -436,13 +442,13 @@ impl DeleteSlackChannelConfigurationInput {
             crate::operation::DeleteSlackChannelConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteSlackChannelConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/control/delete-slack-channel-configuration")
                     .expect("formatting should succeed");
                 Ok(())
@@ -451,8 +457,10 @@ impl DeleteSlackChannelConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::DeleteSlackChannelConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -535,7 +543,7 @@ impl DeleteSlackChannelConfigurationInput {
 pub mod delete_slack_workspace_configuration_input {
 
     /// A builder for [`DeleteSlackWorkspaceConfigurationInput`](crate::input::DeleteSlackWorkspaceConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) team_id: std::option::Option<std::string::String>,
     }
@@ -555,7 +563,7 @@ pub mod delete_slack_workspace_configuration_input {
             self,
         ) -> Result<
             crate::input::DeleteSlackWorkspaceConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteSlackWorkspaceConfigurationInput {
                 team_id: self.team_id,
@@ -576,13 +584,13 @@ impl DeleteSlackWorkspaceConfigurationInput {
             crate::operation::DeleteSlackWorkspaceConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteSlackWorkspaceConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/control/delete-slack-workspace-configuration")
                     .expect("formatting should succeed");
                 Ok(())
@@ -591,8 +599,10 @@ impl DeleteSlackWorkspaceConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::DeleteSlackWorkspaceConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -675,13 +685,13 @@ impl DeleteSlackWorkspaceConfigurationInput {
 pub mod get_account_alias_input {
 
     /// A builder for [`GetAccountAliasInput`](crate::input::GetAccountAliasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetAccountAliasInput`](crate::input::GetAccountAliasInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetAccountAliasInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetAccountAliasInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetAccountAliasInput {})
         }
@@ -700,13 +710,13 @@ impl GetAccountAliasInput {
             crate::operation::GetAccountAlias,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetAccountAliasInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/control/get-account-alias").expect("formatting should succeed");
                 Ok(())
             }
@@ -714,8 +724,10 @@ impl GetAccountAliasInput {
             fn update_http_builder(
                 input: &crate::input::GetAccountAliasInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -785,7 +797,7 @@ impl GetAccountAliasInput {
 pub mod list_slack_channel_configurations_input {
 
     /// A builder for [`ListSlackChannelConfigurationsInput`](crate::input::ListSlackChannelConfigurationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
@@ -805,7 +817,7 @@ pub mod list_slack_channel_configurations_input {
             self,
         ) -> Result<
             crate::input::ListSlackChannelConfigurationsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListSlackChannelConfigurationsInput {
                 next_token: self.next_token,
@@ -826,13 +838,13 @@ impl ListSlackChannelConfigurationsInput {
             crate::operation::ListSlackChannelConfigurations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListSlackChannelConfigurationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/control/list-slack-channel-configurations")
                     .expect("formatting should succeed");
                 Ok(())
@@ -841,8 +853,10 @@ impl ListSlackChannelConfigurationsInput {
             fn update_http_builder(
                 input: &crate::input::ListSlackChannelConfigurationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -925,7 +939,7 @@ impl ListSlackChannelConfigurationsInput {
 pub mod list_slack_workspace_configurations_input {
 
     /// A builder for [`ListSlackWorkspaceConfigurationsInput`](crate::input::ListSlackWorkspaceConfigurationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
@@ -945,7 +959,7 @@ pub mod list_slack_workspace_configurations_input {
             self,
         ) -> Result<
             crate::input::ListSlackWorkspaceConfigurationsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListSlackWorkspaceConfigurationsInput {
                 next_token: self.next_token,
@@ -966,13 +980,13 @@ impl ListSlackWorkspaceConfigurationsInput {
             crate::operation::ListSlackWorkspaceConfigurations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListSlackWorkspaceConfigurationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/control/list-slack-workspace-configurations")
                     .expect("formatting should succeed");
                 Ok(())
@@ -981,8 +995,10 @@ impl ListSlackWorkspaceConfigurationsInput {
             fn update_http_builder(
                 input: &crate::input::ListSlackWorkspaceConfigurationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1065,7 +1081,7 @@ impl ListSlackWorkspaceConfigurationsInput {
 pub mod put_account_alias_input {
 
     /// A builder for [`PutAccountAliasInput`](crate::input::PutAccountAliasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_alias: std::option::Option<std::string::String>,
     }
@@ -1086,7 +1102,7 @@ pub mod put_account_alias_input {
         /// Consumes the builder and constructs a [`PutAccountAliasInput`](crate::input::PutAccountAliasInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutAccountAliasInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::PutAccountAliasInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::PutAccountAliasInput {
                 account_alias: self.account_alias,
@@ -1107,13 +1123,13 @@ impl PutAccountAliasInput {
             crate::operation::PutAccountAlias,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutAccountAliasInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/control/put-account-alias").expect("formatting should succeed");
                 Ok(())
             }
@@ -1121,8 +1137,10 @@ impl PutAccountAliasInput {
             fn update_http_builder(
                 input: &crate::input::PutAccountAliasInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1206,7 +1224,7 @@ impl PutAccountAliasInput {
 pub mod update_slack_channel_configuration_input {
 
     /// A builder for [`UpdateSlackChannelConfigurationInput`](crate::input::UpdateSlackChannelConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) team_id: std::option::Option<std::string::String>,
         pub(crate) channel_id: std::option::Option<std::string::String>,
@@ -1347,7 +1365,7 @@ pub mod update_slack_channel_configuration_input {
             self,
         ) -> Result<
             crate::input::UpdateSlackChannelConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateSlackChannelConfigurationInput {
                 team_id: self.team_id,
@@ -1375,13 +1393,13 @@ impl UpdateSlackChannelConfigurationInput {
             crate::operation::UpdateSlackChannelConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateSlackChannelConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/control/update-slack-channel-configuration")
                     .expect("formatting should succeed");
                 Ok(())
@@ -1390,8 +1408,10 @@ impl UpdateSlackChannelConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::UpdateSlackChannelConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1472,7 +1492,7 @@ impl UpdateSlackChannelConfigurationInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSlackChannelConfigurationInput {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
     #[doc(hidden)]
@@ -1563,30 +1583,10 @@ impl UpdateSlackChannelConfigurationInput {
         self.channel_role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateSlackChannelConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSlackChannelConfigurationInput");
-        formatter.field("team_id", &self.team_id);
-        formatter.field("channel_id", &self.channel_id);
-        formatter.field("channel_name", &self.channel_name);
-        formatter.field(
-            "notify_on_create_or_reopen_case",
-            &self.notify_on_create_or_reopen_case,
-        );
-        formatter.field(
-            "notify_on_add_correspondence_to_case",
-            &self.notify_on_add_correspondence_to_case,
-        );
-        formatter.field("notify_on_resolve_case", &self.notify_on_resolve_case);
-        formatter.field("notify_on_case_severity", &self.notify_on_case_severity);
-        formatter.field("channel_role_arn", &self.channel_role_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutAccountAliasInput {
     /// <p>An alias or short name for an Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -1598,17 +1598,10 @@ impl PutAccountAliasInput {
         self.account_alias.as_deref()
     }
 }
-impl std::fmt::Debug for PutAccountAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutAccountAliasInput");
-        formatter.field("account_alias", &self.account_alias);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSlackWorkspaceConfigurationsInput {
     /// <p>If the results of a search are large, the API only returns a portion of the results and includes a <code>nextToken</code> pagination token in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When the API returns the last set of results, the response doesn't include a pagination token value.</p>
     #[doc(hidden)]
@@ -1620,17 +1613,10 @@ impl ListSlackWorkspaceConfigurationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListSlackWorkspaceConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSlackWorkspaceConfigurationsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSlackChannelConfigurationsInput {
     /// <p>If the results of a search are large, the API only returns a portion of the results and includes a <code>nextToken</code> pagination token in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When the API returns the last set of results, the response doesn't include a pagination token value.</p>
     #[doc(hidden)]
@@ -1642,28 +1628,15 @@ impl ListSlackChannelConfigurationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListSlackChannelConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSlackChannelConfigurationsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccountAliasInput {}
-impl std::fmt::Debug for GetAccountAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccountAliasInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSlackWorkspaceConfigurationInput {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
     #[doc(hidden)]
@@ -1675,17 +1648,10 @@ impl DeleteSlackWorkspaceConfigurationInput {
         self.team_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSlackWorkspaceConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSlackWorkspaceConfigurationInput");
-        formatter.field("team_id", &self.team_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSlackChannelConfigurationInput {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
     #[doc(hidden)]
@@ -1704,29 +1670,15 @@ impl DeleteSlackChannelConfigurationInput {
         self.channel_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSlackChannelConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSlackChannelConfigurationInput");
-        formatter.field("team_id", &self.team_id);
-        formatter.field("channel_id", &self.channel_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAccountAliasInput {}
-impl std::fmt::Debug for DeleteAccountAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAccountAliasInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSlackChannelConfigurationInput {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
     #[doc(hidden)]
@@ -1815,25 +1767,5 @@ impl CreateSlackChannelConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
     pub fn channel_role_arn(&self) -> std::option::Option<&str> {
         self.channel_role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateSlackChannelConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSlackChannelConfigurationInput");
-        formatter.field("team_id", &self.team_id);
-        formatter.field("channel_id", &self.channel_id);
-        formatter.field("channel_name", &self.channel_name);
-        formatter.field(
-            "notify_on_create_or_reopen_case",
-            &self.notify_on_create_or_reopen_case,
-        );
-        formatter.field(
-            "notify_on_add_correspondence_to_case",
-            &self.notify_on_add_correspondence_to_case,
-        );
-        formatter.field("notify_on_resolve_case", &self.notify_on_resolve_case);
-        formatter.field("notify_on_case_severity", &self.notify_on_case_severity);
-        formatter.field("channel_role_arn", &self.channel_role_arn);
-        formatter.finish()
     }
 }

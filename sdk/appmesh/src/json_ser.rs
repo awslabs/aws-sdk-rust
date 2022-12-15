@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_create_gateway_route_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateGatewayRouteInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.client_token {
         object.key("clientToken").string(var_1.as_str());
     }
@@ -10,6 +10,7 @@ pub fn serialize_structure_crate_input_create_gateway_route_input(
         object.key("gatewayRouteName").string(var_2.as_str());
     }
     if let Some(var_3) = &input.spec {
+        #[allow(unused_mut)]
         let mut object_4 = object.key("spec").start_object();
         crate::json_ser::serialize_structure_crate_model_gateway_route_spec(&mut object_4, var_3)?;
         object_4.finish();
@@ -18,6 +19,7 @@ pub fn serialize_structure_crate_input_create_gateway_route_input(
         let mut array_6 = object.key("tags").start_array();
         for item_7 in var_5 {
             {
+                #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag_ref(&mut object_8, item_7)?;
                 object_8.finish();
@@ -31,7 +33,7 @@ pub fn serialize_structure_crate_input_create_gateway_route_input(
 pub fn serialize_structure_crate_input_create_mesh_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateMeshInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_9) = &input.client_token {
         object.key("clientToken").string(var_9.as_str());
     }
@@ -39,6 +41,7 @@ pub fn serialize_structure_crate_input_create_mesh_input(
         object.key("meshName").string(var_10.as_str());
     }
     if let Some(var_11) = &input.spec {
+        #[allow(unused_mut)]
         let mut object_12 = object.key("spec").start_object();
         crate::json_ser::serialize_structure_crate_model_mesh_spec(&mut object_12, var_11)?;
         object_12.finish();
@@ -47,6 +50,7 @@ pub fn serialize_structure_crate_input_create_mesh_input(
         let mut array_14 = object.key("tags").start_array();
         for item_15 in var_13 {
             {
+                #[allow(unused_mut)]
                 let mut object_16 = array_14.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag_ref(&mut object_16, item_15)?;
                 object_16.finish();
@@ -60,7 +64,7 @@ pub fn serialize_structure_crate_input_create_mesh_input(
 pub fn serialize_structure_crate_input_create_route_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateRouteInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_17) = &input.client_token {
         object.key("clientToken").string(var_17.as_str());
     }
@@ -68,6 +72,7 @@ pub fn serialize_structure_crate_input_create_route_input(
         object.key("routeName").string(var_18.as_str());
     }
     if let Some(var_19) = &input.spec {
+        #[allow(unused_mut)]
         let mut object_20 = object.key("spec").start_object();
         crate::json_ser::serialize_structure_crate_model_route_spec(&mut object_20, var_19)?;
         object_20.finish();
@@ -76,6 +81,7 @@ pub fn serialize_structure_crate_input_create_route_input(
         let mut array_22 = object.key("tags").start_array();
         for item_23 in var_21 {
             {
+                #[allow(unused_mut)]
                 let mut object_24 = array_22.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag_ref(&mut object_24, item_23)?;
                 object_24.finish();
@@ -89,11 +95,12 @@ pub fn serialize_structure_crate_input_create_route_input(
 pub fn serialize_structure_crate_input_create_virtual_gateway_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateVirtualGatewayInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_25) = &input.client_token {
         object.key("clientToken").string(var_25.as_str());
     }
     if let Some(var_26) = &input.spec {
+        #[allow(unused_mut)]
         let mut object_27 = object.key("spec").start_object();
         crate::json_ser::serialize_structure_crate_model_virtual_gateway_spec(
             &mut object_27,
@@ -105,6 +112,7 @@ pub fn serialize_structure_crate_input_create_virtual_gateway_input(
         let mut array_29 = object.key("tags").start_array();
         for item_30 in var_28 {
             {
+                #[allow(unused_mut)]
                 let mut object_31 = array_29.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag_ref(&mut object_31, item_30)?;
                 object_31.finish();
@@ -121,11 +129,12 @@ pub fn serialize_structure_crate_input_create_virtual_gateway_input(
 pub fn serialize_structure_crate_input_create_virtual_node_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateVirtualNodeInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_33) = &input.client_token {
         object.key("clientToken").string(var_33.as_str());
     }
     if let Some(var_34) = &input.spec {
+        #[allow(unused_mut)]
         let mut object_35 = object.key("spec").start_object();
         crate::json_ser::serialize_structure_crate_model_virtual_node_spec(&mut object_35, var_34)?;
         object_35.finish();
@@ -134,6 +143,7 @@ pub fn serialize_structure_crate_input_create_virtual_node_input(
         let mut array_37 = object.key("tags").start_array();
         for item_38 in var_36 {
             {
+                #[allow(unused_mut)]
                 let mut object_39 = array_37.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag_ref(&mut object_39, item_38)?;
                 object_39.finish();
@@ -150,11 +160,12 @@ pub fn serialize_structure_crate_input_create_virtual_node_input(
 pub fn serialize_structure_crate_input_create_virtual_router_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateVirtualRouterInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_41) = &input.client_token {
         object.key("clientToken").string(var_41.as_str());
     }
     if let Some(var_42) = &input.spec {
+        #[allow(unused_mut)]
         let mut object_43 = object.key("spec").start_object();
         crate::json_ser::serialize_structure_crate_model_virtual_router_spec(
             &mut object_43,
@@ -166,6 +177,7 @@ pub fn serialize_structure_crate_input_create_virtual_router_input(
         let mut array_45 = object.key("tags").start_array();
         for item_46 in var_44 {
             {
+                #[allow(unused_mut)]
                 let mut object_47 = array_45.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag_ref(&mut object_47, item_46)?;
                 object_47.finish();
@@ -182,11 +194,12 @@ pub fn serialize_structure_crate_input_create_virtual_router_input(
 pub fn serialize_structure_crate_input_create_virtual_service_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateVirtualServiceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_49) = &input.client_token {
         object.key("clientToken").string(var_49.as_str());
     }
     if let Some(var_50) = &input.spec {
+        #[allow(unused_mut)]
         let mut object_51 = object.key("spec").start_object();
         crate::json_ser::serialize_structure_crate_model_virtual_service_spec(
             &mut object_51,
@@ -198,6 +211,7 @@ pub fn serialize_structure_crate_input_create_virtual_service_input(
         let mut array_53 = object.key("tags").start_array();
         for item_54 in var_52 {
             {
+                #[allow(unused_mut)]
                 let mut object_55 = array_53.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag_ref(&mut object_55, item_54)?;
                 object_55.finish();
@@ -214,11 +228,12 @@ pub fn serialize_structure_crate_input_create_virtual_service_input(
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_57) = &input.tags {
         let mut array_58 = object.key("tags").start_array();
         for item_59 in var_57 {
             {
+                #[allow(unused_mut)]
                 let mut object_60 = array_58.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag_ref(&mut object_60, item_59)?;
                 object_60.finish();
@@ -232,7 +247,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_input_untag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UntagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_61) = &input.tag_keys {
         let mut array_62 = object.key("tagKeys").start_array();
         for item_63 in var_61 {
@@ -248,11 +263,12 @@ pub fn serialize_structure_crate_input_untag_resource_input(
 pub fn serialize_structure_crate_input_update_gateway_route_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateGatewayRouteInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_64) = &input.client_token {
         object.key("clientToken").string(var_64.as_str());
     }
     if let Some(var_65) = &input.spec {
+        #[allow(unused_mut)]
         let mut object_66 = object.key("spec").start_object();
         crate::json_ser::serialize_structure_crate_model_gateway_route_spec(
             &mut object_66,
@@ -266,11 +282,12 @@ pub fn serialize_structure_crate_input_update_gateway_route_input(
 pub fn serialize_structure_crate_input_update_mesh_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateMeshInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_67) = &input.client_token {
         object.key("clientToken").string(var_67.as_str());
     }
     if let Some(var_68) = &input.spec {
+        #[allow(unused_mut)]
         let mut object_69 = object.key("spec").start_object();
         crate::json_ser::serialize_structure_crate_model_mesh_spec(&mut object_69, var_68)?;
         object_69.finish();
@@ -281,11 +298,12 @@ pub fn serialize_structure_crate_input_update_mesh_input(
 pub fn serialize_structure_crate_input_update_route_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateRouteInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_70) = &input.client_token {
         object.key("clientToken").string(var_70.as_str());
     }
     if let Some(var_71) = &input.spec {
+        #[allow(unused_mut)]
         let mut object_72 = object.key("spec").start_object();
         crate::json_ser::serialize_structure_crate_model_route_spec(&mut object_72, var_71)?;
         object_72.finish();
@@ -296,11 +314,12 @@ pub fn serialize_structure_crate_input_update_route_input(
 pub fn serialize_structure_crate_input_update_virtual_gateway_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateVirtualGatewayInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_73) = &input.client_token {
         object.key("clientToken").string(var_73.as_str());
     }
     if let Some(var_74) = &input.spec {
+        #[allow(unused_mut)]
         let mut object_75 = object.key("spec").start_object();
         crate::json_ser::serialize_structure_crate_model_virtual_gateway_spec(
             &mut object_75,
@@ -314,11 +333,12 @@ pub fn serialize_structure_crate_input_update_virtual_gateway_input(
 pub fn serialize_structure_crate_input_update_virtual_node_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateVirtualNodeInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_76) = &input.client_token {
         object.key("clientToken").string(var_76.as_str());
     }
     if let Some(var_77) = &input.spec {
+        #[allow(unused_mut)]
         let mut object_78 = object.key("spec").start_object();
         crate::json_ser::serialize_structure_crate_model_virtual_node_spec(&mut object_78, var_77)?;
         object_78.finish();
@@ -329,11 +349,12 @@ pub fn serialize_structure_crate_input_update_virtual_node_input(
 pub fn serialize_structure_crate_input_update_virtual_router_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateVirtualRouterInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_79) = &input.client_token {
         object.key("clientToken").string(var_79.as_str());
     }
     if let Some(var_80) = &input.spec {
+        #[allow(unused_mut)]
         let mut object_81 = object.key("spec").start_object();
         crate::json_ser::serialize_structure_crate_model_virtual_router_spec(
             &mut object_81,
@@ -347,11 +368,12 @@ pub fn serialize_structure_crate_input_update_virtual_router_input(
 pub fn serialize_structure_crate_input_update_virtual_service_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateVirtualServiceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_82) = &input.client_token {
         object.key("clientToken").string(var_82.as_str());
     }
     if let Some(var_83) = &input.spec {
+        #[allow(unused_mut)]
         let mut object_84 = object.key("spec").start_object();
         crate::json_ser::serialize_structure_crate_model_virtual_service_spec(
             &mut object_84,
@@ -365,7 +387,7 @@ pub fn serialize_structure_crate_input_update_virtual_service_input(
 pub fn serialize_structure_crate_model_gateway_route_spec(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::GatewayRouteSpec,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_85) = &input.priority {
         object.key("priority").number(
             #[allow(clippy::useless_conversion)]
@@ -373,6 +395,7 @@ pub fn serialize_structure_crate_model_gateway_route_spec(
         );
     }
     if let Some(var_86) = &input.http_route {
+        #[allow(unused_mut)]
         let mut object_87 = object.key("httpRoute").start_object();
         crate::json_ser::serialize_structure_crate_model_http_gateway_route(
             &mut object_87,
@@ -381,6 +404,7 @@ pub fn serialize_structure_crate_model_gateway_route_spec(
         object_87.finish();
     }
     if let Some(var_88) = &input.http2_route {
+        #[allow(unused_mut)]
         let mut object_89 = object.key("http2Route").start_object();
         crate::json_ser::serialize_structure_crate_model_http_gateway_route(
             &mut object_89,
@@ -389,6 +413,7 @@ pub fn serialize_structure_crate_model_gateway_route_spec(
         object_89.finish();
     }
     if let Some(var_90) = &input.grpc_route {
+        #[allow(unused_mut)]
         let mut object_91 = object.key("grpcRoute").start_object();
         crate::json_ser::serialize_structure_crate_model_grpc_gateway_route(
             &mut object_91,
@@ -402,7 +427,7 @@ pub fn serialize_structure_crate_model_gateway_route_spec(
 pub fn serialize_structure_crate_model_tag_ref(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TagRef,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_92) = &input.key {
         object.key("key").string(var_92.as_str());
     }
@@ -415,13 +440,15 @@ pub fn serialize_structure_crate_model_tag_ref(
 pub fn serialize_structure_crate_model_mesh_spec(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::MeshSpec,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_94) = &input.egress_filter {
+        #[allow(unused_mut)]
         let mut object_95 = object.key("egressFilter").start_object();
         crate::json_ser::serialize_structure_crate_model_egress_filter(&mut object_95, var_94)?;
         object_95.finish();
     }
     if let Some(var_96) = &input.service_discovery {
+        #[allow(unused_mut)]
         let mut object_97 = object.key("serviceDiscovery").start_object();
         crate::json_ser::serialize_structure_crate_model_mesh_service_discovery(
             &mut object_97,
@@ -435,7 +462,7 @@ pub fn serialize_structure_crate_model_mesh_spec(
 pub fn serialize_structure_crate_model_route_spec(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RouteSpec,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_98) = &input.priority {
         object.key("priority").number(
             #[allow(clippy::useless_conversion)]
@@ -443,21 +470,25 @@ pub fn serialize_structure_crate_model_route_spec(
         );
     }
     if let Some(var_99) = &input.http_route {
+        #[allow(unused_mut)]
         let mut object_100 = object.key("httpRoute").start_object();
         crate::json_ser::serialize_structure_crate_model_http_route(&mut object_100, var_99)?;
         object_100.finish();
     }
     if let Some(var_101) = &input.tcp_route {
+        #[allow(unused_mut)]
         let mut object_102 = object.key("tcpRoute").start_object();
         crate::json_ser::serialize_structure_crate_model_tcp_route(&mut object_102, var_101)?;
         object_102.finish();
     }
     if let Some(var_103) = &input.http2_route {
+        #[allow(unused_mut)]
         let mut object_104 = object.key("http2Route").start_object();
         crate::json_ser::serialize_structure_crate_model_http_route(&mut object_104, var_103)?;
         object_104.finish();
     }
     if let Some(var_105) = &input.grpc_route {
+        #[allow(unused_mut)]
         let mut object_106 = object.key("grpcRoute").start_object();
         crate::json_ser::serialize_structure_crate_model_grpc_route(&mut object_106, var_105)?;
         object_106.finish();
@@ -468,8 +499,9 @@ pub fn serialize_structure_crate_model_route_spec(
 pub fn serialize_structure_crate_model_virtual_gateway_spec(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualGatewaySpec,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_107) = &input.backend_defaults {
+        #[allow(unused_mut)]
         let mut object_108 = object.key("backendDefaults").start_object();
         crate::json_ser::serialize_structure_crate_model_virtual_gateway_backend_defaults(
             &mut object_108,
@@ -481,6 +513,7 @@ pub fn serialize_structure_crate_model_virtual_gateway_spec(
         let mut array_110 = object.key("listeners").start_array();
         for item_111 in var_109 {
             {
+                #[allow(unused_mut)]
                 let mut object_112 = array_110.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_virtual_gateway_listener(
                     &mut object_112,
@@ -492,6 +525,7 @@ pub fn serialize_structure_crate_model_virtual_gateway_spec(
         array_110.finish();
     }
     if let Some(var_113) = &input.logging {
+        #[allow(unused_mut)]
         let mut object_114 = object.key("logging").start_object();
         crate::json_ser::serialize_structure_crate_model_virtual_gateway_logging(
             &mut object_114,
@@ -505,8 +539,9 @@ pub fn serialize_structure_crate_model_virtual_gateway_spec(
 pub fn serialize_structure_crate_model_virtual_node_spec(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualNodeSpec,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_115) = &input.service_discovery {
+        #[allow(unused_mut)]
         let mut object_116 = object.key("serviceDiscovery").start_object();
         crate::json_ser::serialize_union_crate_model_service_discovery(&mut object_116, var_115)?;
         object_116.finish();
@@ -515,6 +550,7 @@ pub fn serialize_structure_crate_model_virtual_node_spec(
         let mut array_118 = object.key("listeners").start_array();
         for item_119 in var_117 {
             {
+                #[allow(unused_mut)]
                 let mut object_120 = array_118.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_listener(
                     &mut object_120,
@@ -529,6 +565,7 @@ pub fn serialize_structure_crate_model_virtual_node_spec(
         let mut array_122 = object.key("backends").start_array();
         for item_123 in var_121 {
             {
+                #[allow(unused_mut)]
                 let mut object_124 = array_122.value().start_object();
                 crate::json_ser::serialize_union_crate_model_backend(&mut object_124, item_123)?;
                 object_124.finish();
@@ -537,6 +574,7 @@ pub fn serialize_structure_crate_model_virtual_node_spec(
         array_122.finish();
     }
     if let Some(var_125) = &input.backend_defaults {
+        #[allow(unused_mut)]
         let mut object_126 = object.key("backendDefaults").start_object();
         crate::json_ser::serialize_structure_crate_model_backend_defaults(
             &mut object_126,
@@ -545,6 +583,7 @@ pub fn serialize_structure_crate_model_virtual_node_spec(
         object_126.finish();
     }
     if let Some(var_127) = &input.logging {
+        #[allow(unused_mut)]
         let mut object_128 = object.key("logging").start_object();
         crate::json_ser::serialize_structure_crate_model_logging(&mut object_128, var_127)?;
         object_128.finish();
@@ -555,11 +594,12 @@ pub fn serialize_structure_crate_model_virtual_node_spec(
 pub fn serialize_structure_crate_model_virtual_router_spec(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualRouterSpec,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_129) = &input.listeners {
         let mut array_130 = object.key("listeners").start_array();
         for item_131 in var_129 {
             {
+                #[allow(unused_mut)]
                 let mut object_132 = array_130.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_virtual_router_listener(
                     &mut object_132,
@@ -576,8 +616,9 @@ pub fn serialize_structure_crate_model_virtual_router_spec(
 pub fn serialize_structure_crate_model_virtual_service_spec(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualServiceSpec,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_133) = &input.provider {
+        #[allow(unused_mut)]
         let mut object_134 = object.key("provider").start_object();
         crate::json_ser::serialize_union_crate_model_virtual_service_provider(
             &mut object_134,
@@ -591,8 +632,9 @@ pub fn serialize_structure_crate_model_virtual_service_spec(
 pub fn serialize_structure_crate_model_http_gateway_route(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::HttpGatewayRoute,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_135) = &input.r#match {
+        #[allow(unused_mut)]
         let mut object_136 = object.key("match").start_object();
         crate::json_ser::serialize_structure_crate_model_http_gateway_route_match(
             &mut object_136,
@@ -601,6 +643,7 @@ pub fn serialize_structure_crate_model_http_gateway_route(
         object_136.finish();
     }
     if let Some(var_137) = &input.action {
+        #[allow(unused_mut)]
         let mut object_138 = object.key("action").start_object();
         crate::json_ser::serialize_structure_crate_model_http_gateway_route_action(
             &mut object_138,
@@ -614,8 +657,9 @@ pub fn serialize_structure_crate_model_http_gateway_route(
 pub fn serialize_structure_crate_model_grpc_gateway_route(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::GrpcGatewayRoute,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_139) = &input.r#match {
+        #[allow(unused_mut)]
         let mut object_140 = object.key("match").start_object();
         crate::json_ser::serialize_structure_crate_model_grpc_gateway_route_match(
             &mut object_140,
@@ -624,6 +668,7 @@ pub fn serialize_structure_crate_model_grpc_gateway_route(
         object_140.finish();
     }
     if let Some(var_141) = &input.action {
+        #[allow(unused_mut)]
         let mut object_142 = object.key("action").start_object();
         crate::json_ser::serialize_structure_crate_model_grpc_gateway_route_action(
             &mut object_142,
@@ -637,7 +682,7 @@ pub fn serialize_structure_crate_model_grpc_gateway_route(
 pub fn serialize_structure_crate_model_egress_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::EgressFilter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_143) = &input.r#type {
         object.key("type").string(var_143.as_str());
     }
@@ -647,7 +692,7 @@ pub fn serialize_structure_crate_model_egress_filter(
 pub fn serialize_structure_crate_model_mesh_service_discovery(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::MeshServiceDiscovery,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_144) = &input.ip_preference {
         object.key("ipPreference").string(var_144.as_str());
     }
@@ -657,8 +702,9 @@ pub fn serialize_structure_crate_model_mesh_service_discovery(
 pub fn serialize_structure_crate_model_http_route(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::HttpRoute,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_145) = &input.r#match {
+        #[allow(unused_mut)]
         let mut object_146 = object.key("match").start_object();
         crate::json_ser::serialize_structure_crate_model_http_route_match(
             &mut object_146,
@@ -667,6 +713,7 @@ pub fn serialize_structure_crate_model_http_route(
         object_146.finish();
     }
     if let Some(var_147) = &input.action {
+        #[allow(unused_mut)]
         let mut object_148 = object.key("action").start_object();
         crate::json_ser::serialize_structure_crate_model_http_route_action(
             &mut object_148,
@@ -675,6 +722,7 @@ pub fn serialize_structure_crate_model_http_route(
         object_148.finish();
     }
     if let Some(var_149) = &input.retry_policy {
+        #[allow(unused_mut)]
         let mut object_150 = object.key("retryPolicy").start_object();
         crate::json_ser::serialize_structure_crate_model_http_retry_policy(
             &mut object_150,
@@ -683,6 +731,7 @@ pub fn serialize_structure_crate_model_http_route(
         object_150.finish();
     }
     if let Some(var_151) = &input.timeout {
+        #[allow(unused_mut)]
         let mut object_152 = object.key("timeout").start_object();
         crate::json_ser::serialize_structure_crate_model_http_timeout(&mut object_152, var_151)?;
         object_152.finish();
@@ -693,8 +742,9 @@ pub fn serialize_structure_crate_model_http_route(
 pub fn serialize_structure_crate_model_tcp_route(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TcpRoute,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_153) = &input.action {
+        #[allow(unused_mut)]
         let mut object_154 = object.key("action").start_object();
         crate::json_ser::serialize_structure_crate_model_tcp_route_action(
             &mut object_154,
@@ -703,11 +753,13 @@ pub fn serialize_structure_crate_model_tcp_route(
         object_154.finish();
     }
     if let Some(var_155) = &input.timeout {
+        #[allow(unused_mut)]
         let mut object_156 = object.key("timeout").start_object();
         crate::json_ser::serialize_structure_crate_model_tcp_timeout(&mut object_156, var_155)?;
         object_156.finish();
     }
     if let Some(var_157) = &input.r#match {
+        #[allow(unused_mut)]
         let mut object_158 = object.key("match").start_object();
         crate::json_ser::serialize_structure_crate_model_tcp_route_match(&mut object_158, var_157)?;
         object_158.finish();
@@ -718,8 +770,9 @@ pub fn serialize_structure_crate_model_tcp_route(
 pub fn serialize_structure_crate_model_grpc_route(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::GrpcRoute,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_159) = &input.action {
+        #[allow(unused_mut)]
         let mut object_160 = object.key("action").start_object();
         crate::json_ser::serialize_structure_crate_model_grpc_route_action(
             &mut object_160,
@@ -728,6 +781,7 @@ pub fn serialize_structure_crate_model_grpc_route(
         object_160.finish();
     }
     if let Some(var_161) = &input.r#match {
+        #[allow(unused_mut)]
         let mut object_162 = object.key("match").start_object();
         crate::json_ser::serialize_structure_crate_model_grpc_route_match(
             &mut object_162,
@@ -736,6 +790,7 @@ pub fn serialize_structure_crate_model_grpc_route(
         object_162.finish();
     }
     if let Some(var_163) = &input.retry_policy {
+        #[allow(unused_mut)]
         let mut object_164 = object.key("retryPolicy").start_object();
         crate::json_ser::serialize_structure_crate_model_grpc_retry_policy(
             &mut object_164,
@@ -744,6 +799,7 @@ pub fn serialize_structure_crate_model_grpc_route(
         object_164.finish();
     }
     if let Some(var_165) = &input.timeout {
+        #[allow(unused_mut)]
         let mut object_166 = object.key("timeout").start_object();
         crate::json_ser::serialize_structure_crate_model_grpc_timeout(&mut object_166, var_165)?;
         object_166.finish();
@@ -754,8 +810,9 @@ pub fn serialize_structure_crate_model_grpc_route(
 pub fn serialize_structure_crate_model_virtual_gateway_backend_defaults(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualGatewayBackendDefaults,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_167) = &input.client_policy {
+        #[allow(unused_mut)]
         let mut object_168 = object.key("clientPolicy").start_object();
         crate::json_ser::serialize_structure_crate_model_virtual_gateway_client_policy(
             &mut object_168,
@@ -769,8 +826,9 @@ pub fn serialize_structure_crate_model_virtual_gateway_backend_defaults(
 pub fn serialize_structure_crate_model_virtual_gateway_listener(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualGatewayListener,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_169) = &input.health_check {
+        #[allow(unused_mut)]
         let mut object_170 = object.key("healthCheck").start_object();
         crate::json_ser::serialize_structure_crate_model_virtual_gateway_health_check_policy(
             &mut object_170,
@@ -779,6 +837,7 @@ pub fn serialize_structure_crate_model_virtual_gateway_listener(
         object_170.finish();
     }
     if let Some(var_171) = &input.port_mapping {
+        #[allow(unused_mut)]
         let mut object_172 = object.key("portMapping").start_object();
         crate::json_ser::serialize_structure_crate_model_virtual_gateway_port_mapping(
             &mut object_172,
@@ -787,6 +846,7 @@ pub fn serialize_structure_crate_model_virtual_gateway_listener(
         object_172.finish();
     }
     if let Some(var_173) = &input.tls {
+        #[allow(unused_mut)]
         let mut object_174 = object.key("tls").start_object();
         crate::json_ser::serialize_structure_crate_model_virtual_gateway_listener_tls(
             &mut object_174,
@@ -795,6 +855,7 @@ pub fn serialize_structure_crate_model_virtual_gateway_listener(
         object_174.finish();
     }
     if let Some(var_175) = &input.connection_pool {
+        #[allow(unused_mut)]
         let mut object_176 = object.key("connectionPool").start_object();
         crate::json_ser::serialize_union_crate_model_virtual_gateway_connection_pool(
             &mut object_176,
@@ -808,8 +869,9 @@ pub fn serialize_structure_crate_model_virtual_gateway_listener(
 pub fn serialize_structure_crate_model_virtual_gateway_logging(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualGatewayLogging,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_177) = &input.access_log {
+        #[allow(unused_mut)]
         let mut object_178 = object.key("accessLog").start_object();
         crate::json_ser::serialize_union_crate_model_virtual_gateway_access_log(
             &mut object_178,
@@ -823,9 +885,10 @@ pub fn serialize_structure_crate_model_virtual_gateway_logging(
 pub fn serialize_union_crate_model_service_discovery(
     object_116: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ServiceDiscovery,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::ServiceDiscovery::Dns(inner) => {
+            #[allow(unused_mut)]
             let mut object_179 = object_116.key("dns").start_object();
             crate::json_ser::serialize_structure_crate_model_dns_service_discovery(
                 &mut object_179,
@@ -834,6 +897,7 @@ pub fn serialize_union_crate_model_service_discovery(
             object_179.finish();
         }
         crate::model::ServiceDiscovery::AwsCloudMap(inner) => {
+            #[allow(unused_mut)]
             let mut object_180 = object_116.key("awsCloudMap").start_object();
             crate::json_ser::serialize_structure_crate_model_aws_cloud_map_service_discovery(
                 &mut object_180,
@@ -843,7 +907,9 @@ pub fn serialize_union_crate_model_service_discovery(
         }
         crate::model::ServiceDiscovery::Unknown => {
             return Err(
-                aws_smithy_http::operation::SerializationError::unknown_variant("ServiceDiscovery"),
+                aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                    "ServiceDiscovery",
+                ),
             )
         }
     }
@@ -853,18 +919,21 @@ pub fn serialize_union_crate_model_service_discovery(
 pub fn serialize_structure_crate_model_listener(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Listener,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_181) = &input.port_mapping {
+        #[allow(unused_mut)]
         let mut object_182 = object.key("portMapping").start_object();
         crate::json_ser::serialize_structure_crate_model_port_mapping(&mut object_182, var_181)?;
         object_182.finish();
     }
     if let Some(var_183) = &input.tls {
+        #[allow(unused_mut)]
         let mut object_184 = object.key("tls").start_object();
         crate::json_ser::serialize_structure_crate_model_listener_tls(&mut object_184, var_183)?;
         object_184.finish();
     }
     if let Some(var_185) = &input.health_check {
+        #[allow(unused_mut)]
         let mut object_186 = object.key("healthCheck").start_object();
         crate::json_ser::serialize_structure_crate_model_health_check_policy(
             &mut object_186,
@@ -873,11 +942,13 @@ pub fn serialize_structure_crate_model_listener(
         object_186.finish();
     }
     if let Some(var_187) = &input.timeout {
+        #[allow(unused_mut)]
         let mut object_188 = object.key("timeout").start_object();
         crate::json_ser::serialize_union_crate_model_listener_timeout(&mut object_188, var_187)?;
         object_188.finish();
     }
     if let Some(var_189) = &input.outlier_detection {
+        #[allow(unused_mut)]
         let mut object_190 = object.key("outlierDetection").start_object();
         crate::json_ser::serialize_structure_crate_model_outlier_detection(
             &mut object_190,
@@ -886,6 +957,7 @@ pub fn serialize_structure_crate_model_listener(
         object_190.finish();
     }
     if let Some(var_191) = &input.connection_pool {
+        #[allow(unused_mut)]
         let mut object_192 = object.key("connectionPool").start_object();
         crate::json_ser::serialize_union_crate_model_virtual_node_connection_pool(
             &mut object_192,
@@ -899,9 +971,10 @@ pub fn serialize_structure_crate_model_listener(
 pub fn serialize_union_crate_model_backend(
     object_124: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Backend,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::Backend::VirtualService(inner) => {
+            #[allow(unused_mut)]
             let mut object_193 = object_124.key("virtualService").start_object();
             crate::json_ser::serialize_structure_crate_model_virtual_service_backend(
                 &mut object_193,
@@ -910,7 +983,9 @@ pub fn serialize_union_crate_model_backend(
             object_193.finish();
         }
         crate::model::Backend::Unknown => {
-            return Err(aws_smithy_http::operation::SerializationError::unknown_variant("Backend"))
+            return Err(
+                aws_smithy_http::operation::error::SerializationError::unknown_variant("Backend"),
+            )
         }
     }
     Ok(())
@@ -919,8 +994,9 @@ pub fn serialize_union_crate_model_backend(
 pub fn serialize_structure_crate_model_backend_defaults(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::BackendDefaults,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_194) = &input.client_policy {
+        #[allow(unused_mut)]
         let mut object_195 = object.key("clientPolicy").start_object();
         crate::json_ser::serialize_structure_crate_model_client_policy(&mut object_195, var_194)?;
         object_195.finish();
@@ -931,8 +1007,9 @@ pub fn serialize_structure_crate_model_backend_defaults(
 pub fn serialize_structure_crate_model_logging(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Logging,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_196) = &input.access_log {
+        #[allow(unused_mut)]
         let mut object_197 = object.key("accessLog").start_object();
         crate::json_ser::serialize_union_crate_model_access_log(&mut object_197, var_196)?;
         object_197.finish();
@@ -943,8 +1020,9 @@ pub fn serialize_structure_crate_model_logging(
 pub fn serialize_structure_crate_model_virtual_router_listener(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualRouterListener,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_198) = &input.port_mapping {
+        #[allow(unused_mut)]
         let mut object_199 = object.key("portMapping").start_object();
         crate::json_ser::serialize_structure_crate_model_port_mapping(&mut object_199, var_198)?;
         object_199.finish();
@@ -955,9 +1033,10 @@ pub fn serialize_structure_crate_model_virtual_router_listener(
 pub fn serialize_union_crate_model_virtual_service_provider(
     object_134: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualServiceProvider,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::VirtualServiceProvider::VirtualNode(inner) => {
+            #[allow(unused_mut)]
             let mut object_200 = object_134.key("virtualNode").start_object();
             crate::json_ser::serialize_structure_crate_model_virtual_node_service_provider(
                 &mut object_200,
@@ -966,6 +1045,7 @@ pub fn serialize_union_crate_model_virtual_service_provider(
             object_200.finish();
         }
         crate::model::VirtualServiceProvider::VirtualRouter(inner) => {
+            #[allow(unused_mut)]
             let mut object_201 = object_134.key("virtualRouter").start_object();
             crate::json_ser::serialize_structure_crate_model_virtual_router_service_provider(
                 &mut object_201,
@@ -975,7 +1055,7 @@ pub fn serialize_union_crate_model_virtual_service_provider(
         }
         crate::model::VirtualServiceProvider::Unknown => {
             return Err(
-                aws_smithy_http::operation::SerializationError::unknown_variant(
+                aws_smithy_http::operation::error::SerializationError::unknown_variant(
                     "VirtualServiceProvider",
                 ),
             )
@@ -987,11 +1067,12 @@ pub fn serialize_union_crate_model_virtual_service_provider(
 pub fn serialize_structure_crate_model_http_gateway_route_match(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::HttpGatewayRouteMatch,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_202) = &input.prefix {
         object.key("prefix").string(var_202.as_str());
     }
     if let Some(var_203) = &input.path {
+        #[allow(unused_mut)]
         let mut object_204 = object.key("path").start_object();
         crate::json_ser::serialize_structure_crate_model_http_path_match(&mut object_204, var_203)?;
         object_204.finish();
@@ -1000,6 +1081,7 @@ pub fn serialize_structure_crate_model_http_gateway_route_match(
         let mut array_206 = object.key("queryParameters").start_array();
         for item_207 in var_205 {
             {
+                #[allow(unused_mut)]
                 let mut object_208 = array_206.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_http_query_parameter(
                     &mut object_208,
@@ -1014,6 +1096,7 @@ pub fn serialize_structure_crate_model_http_gateway_route_match(
         object.key("method").string(var_209.as_str());
     }
     if let Some(var_210) = &input.hostname {
+        #[allow(unused_mut)]
         let mut object_211 = object.key("hostname").start_object();
         crate::json_ser::serialize_structure_crate_model_gateway_route_hostname_match(
             &mut object_211,
@@ -1025,6 +1108,7 @@ pub fn serialize_structure_crate_model_http_gateway_route_match(
         let mut array_213 = object.key("headers").start_array();
         for item_214 in var_212 {
             {
+                #[allow(unused_mut)]
                 let mut object_215 = array_213.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_http_gateway_route_header(
                     &mut object_215,
@@ -1047,8 +1131,9 @@ pub fn serialize_structure_crate_model_http_gateway_route_match(
 pub fn serialize_structure_crate_model_http_gateway_route_action(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::HttpGatewayRouteAction,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_217) = &input.target {
+        #[allow(unused_mut)]
         let mut object_218 = object.key("target").start_object();
         crate::json_ser::serialize_structure_crate_model_gateway_route_target(
             &mut object_218,
@@ -1057,6 +1142,7 @@ pub fn serialize_structure_crate_model_http_gateway_route_action(
         object_218.finish();
     }
     if let Some(var_219) = &input.rewrite {
+        #[allow(unused_mut)]
         let mut object_220 = object.key("rewrite").start_object();
         crate::json_ser::serialize_structure_crate_model_http_gateway_route_rewrite(
             &mut object_220,
@@ -1070,11 +1156,12 @@ pub fn serialize_structure_crate_model_http_gateway_route_action(
 pub fn serialize_structure_crate_model_grpc_gateway_route_match(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::GrpcGatewayRouteMatch,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_221) = &input.service_name {
         object.key("serviceName").string(var_221.as_str());
     }
     if let Some(var_222) = &input.hostname {
+        #[allow(unused_mut)]
         let mut object_223 = object.key("hostname").start_object();
         crate::json_ser::serialize_structure_crate_model_gateway_route_hostname_match(
             &mut object_223,
@@ -1086,6 +1173,7 @@ pub fn serialize_structure_crate_model_grpc_gateway_route_match(
         let mut array_225 = object.key("metadata").start_array();
         for item_226 in var_224 {
             {
+                #[allow(unused_mut)]
                 let mut object_227 = array_225.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_grpc_gateway_route_metadata(
                     &mut object_227,
@@ -1108,8 +1196,9 @@ pub fn serialize_structure_crate_model_grpc_gateway_route_match(
 pub fn serialize_structure_crate_model_grpc_gateway_route_action(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::GrpcGatewayRouteAction,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_229) = &input.target {
+        #[allow(unused_mut)]
         let mut object_230 = object.key("target").start_object();
         crate::json_ser::serialize_structure_crate_model_gateway_route_target(
             &mut object_230,
@@ -1118,6 +1207,7 @@ pub fn serialize_structure_crate_model_grpc_gateway_route_action(
         object_230.finish();
     }
     if let Some(var_231) = &input.rewrite {
+        #[allow(unused_mut)]
         let mut object_232 = object.key("rewrite").start_object();
         crate::json_ser::serialize_structure_crate_model_grpc_gateway_route_rewrite(
             &mut object_232,
@@ -1131,11 +1221,12 @@ pub fn serialize_structure_crate_model_grpc_gateway_route_action(
 pub fn serialize_structure_crate_model_http_route_match(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::HttpRouteMatch,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_233) = &input.prefix {
         object.key("prefix").string(var_233.as_str());
     }
     if let Some(var_234) = &input.path {
+        #[allow(unused_mut)]
         let mut object_235 = object.key("path").start_object();
         crate::json_ser::serialize_structure_crate_model_http_path_match(&mut object_235, var_234)?;
         object_235.finish();
@@ -1144,6 +1235,7 @@ pub fn serialize_structure_crate_model_http_route_match(
         let mut array_237 = object.key("queryParameters").start_array();
         for item_238 in var_236 {
             {
+                #[allow(unused_mut)]
                 let mut object_239 = array_237.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_http_query_parameter(
                     &mut object_239,
@@ -1164,6 +1256,7 @@ pub fn serialize_structure_crate_model_http_route_match(
         let mut array_243 = object.key("headers").start_array();
         for item_244 in var_242 {
             {
+                #[allow(unused_mut)]
                 let mut object_245 = array_243.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_http_route_header(
                     &mut object_245,
@@ -1186,11 +1279,12 @@ pub fn serialize_structure_crate_model_http_route_match(
 pub fn serialize_structure_crate_model_http_route_action(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::HttpRouteAction,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_247) = &input.weighted_targets {
         let mut array_248 = object.key("weightedTargets").start_array();
         for item_249 in var_247 {
             {
+                #[allow(unused_mut)]
                 let mut object_250 = array_248.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_weighted_target(
                     &mut object_250,
@@ -1207,8 +1301,9 @@ pub fn serialize_structure_crate_model_http_route_action(
 pub fn serialize_structure_crate_model_http_retry_policy(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::HttpRetryPolicy,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_251) = &input.per_retry_timeout {
+        #[allow(unused_mut)]
         let mut object_252 = object.key("perRetryTimeout").start_object();
         crate::json_ser::serialize_structure_crate_model_duration(&mut object_252, var_251)?;
         object_252.finish();
@@ -1243,13 +1338,15 @@ pub fn serialize_structure_crate_model_http_retry_policy(
 pub fn serialize_structure_crate_model_http_timeout(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::HttpTimeout,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_260) = &input.per_request {
+        #[allow(unused_mut)]
         let mut object_261 = object.key("perRequest").start_object();
         crate::json_ser::serialize_structure_crate_model_duration(&mut object_261, var_260)?;
         object_261.finish();
     }
     if let Some(var_262) = &input.idle {
+        #[allow(unused_mut)]
         let mut object_263 = object.key("idle").start_object();
         crate::json_ser::serialize_structure_crate_model_duration(&mut object_263, var_262)?;
         object_263.finish();
@@ -1260,11 +1357,12 @@ pub fn serialize_structure_crate_model_http_timeout(
 pub fn serialize_structure_crate_model_tcp_route_action(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TcpRouteAction,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_264) = &input.weighted_targets {
         let mut array_265 = object.key("weightedTargets").start_array();
         for item_266 in var_264 {
             {
+                #[allow(unused_mut)]
                 let mut object_267 = array_265.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_weighted_target(
                     &mut object_267,
@@ -1281,8 +1379,9 @@ pub fn serialize_structure_crate_model_tcp_route_action(
 pub fn serialize_structure_crate_model_tcp_timeout(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TcpTimeout,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_268) = &input.idle {
+        #[allow(unused_mut)]
         let mut object_269 = object.key("idle").start_object();
         crate::json_ser::serialize_structure_crate_model_duration(&mut object_269, var_268)?;
         object_269.finish();
@@ -1293,7 +1392,7 @@ pub fn serialize_structure_crate_model_tcp_timeout(
 pub fn serialize_structure_crate_model_tcp_route_match(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TcpRouteMatch,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_270) = &input.port {
         object.key("port").number(
             #[allow(clippy::useless_conversion)]
@@ -1306,11 +1405,12 @@ pub fn serialize_structure_crate_model_tcp_route_match(
 pub fn serialize_structure_crate_model_grpc_route_action(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::GrpcRouteAction,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_271) = &input.weighted_targets {
         let mut array_272 = object.key("weightedTargets").start_array();
         for item_273 in var_271 {
             {
+                #[allow(unused_mut)]
                 let mut object_274 = array_272.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_weighted_target(
                     &mut object_274,
@@ -1327,7 +1427,7 @@ pub fn serialize_structure_crate_model_grpc_route_action(
 pub fn serialize_structure_crate_model_grpc_route_match(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::GrpcRouteMatch,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_275) = &input.service_name {
         object.key("serviceName").string(var_275.as_str());
     }
@@ -1338,6 +1438,7 @@ pub fn serialize_structure_crate_model_grpc_route_match(
         let mut array_278 = object.key("metadata").start_array();
         for item_279 in var_277 {
             {
+                #[allow(unused_mut)]
                 let mut object_280 = array_278.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_grpc_route_metadata(
                     &mut object_280,
@@ -1360,8 +1461,9 @@ pub fn serialize_structure_crate_model_grpc_route_match(
 pub fn serialize_structure_crate_model_grpc_retry_policy(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::GrpcRetryPolicy,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_282) = &input.per_retry_timeout {
+        #[allow(unused_mut)]
         let mut object_283 = object.key("perRetryTimeout").start_object();
         crate::json_ser::serialize_structure_crate_model_duration(&mut object_283, var_282)?;
         object_283.finish();
@@ -1405,13 +1507,15 @@ pub fn serialize_structure_crate_model_grpc_retry_policy(
 pub fn serialize_structure_crate_model_grpc_timeout(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::GrpcTimeout,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_294) = &input.per_request {
+        #[allow(unused_mut)]
         let mut object_295 = object.key("perRequest").start_object();
         crate::json_ser::serialize_structure_crate_model_duration(&mut object_295, var_294)?;
         object_295.finish();
     }
     if let Some(var_296) = &input.idle {
+        #[allow(unused_mut)]
         let mut object_297 = object.key("idle").start_object();
         crate::json_ser::serialize_structure_crate_model_duration(&mut object_297, var_296)?;
         object_297.finish();
@@ -1422,8 +1526,9 @@ pub fn serialize_structure_crate_model_grpc_timeout(
 pub fn serialize_structure_crate_model_virtual_gateway_client_policy(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualGatewayClientPolicy,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_298) = &input.tls {
+        #[allow(unused_mut)]
         let mut object_299 = object.key("tls").start_object();
         crate::json_ser::serialize_structure_crate_model_virtual_gateway_client_policy_tls(
             &mut object_299,
@@ -1437,7 +1542,7 @@ pub fn serialize_structure_crate_model_virtual_gateway_client_policy(
 pub fn serialize_structure_crate_model_virtual_gateway_health_check_policy(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualGatewayHealthCheckPolicy,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_300) = &input.timeout_millis {
         object.key("timeoutMillis").number(
             #[allow(clippy::useless_conversion)]
@@ -1480,7 +1585,7 @@ pub fn serialize_structure_crate_model_virtual_gateway_health_check_policy(
 pub fn serialize_structure_crate_model_virtual_gateway_port_mapping(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualGatewayPortMapping,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     {
         object.key("port").number(
             #[allow(clippy::useless_conversion)]
@@ -1496,16 +1601,18 @@ pub fn serialize_structure_crate_model_virtual_gateway_port_mapping(
 pub fn serialize_structure_crate_model_virtual_gateway_listener_tls(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualGatewayListenerTls,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_305) = &input.mode {
         object.key("mode").string(var_305.as_str());
     }
     if let Some(var_306) = &input.validation {
+        #[allow(unused_mut)]
         let mut object_307 = object.key("validation").start_object();
         crate::json_ser::serialize_structure_crate_model_virtual_gateway_listener_tls_validation_context(&mut object_307, var_306)?;
         object_307.finish();
     }
     if let Some(var_308) = &input.certificate {
+        #[allow(unused_mut)]
         let mut object_309 = object.key("certificate").start_object();
         crate::json_ser::serialize_union_crate_model_virtual_gateway_listener_tls_certificate(
             &mut object_309,
@@ -1519,9 +1626,10 @@ pub fn serialize_structure_crate_model_virtual_gateway_listener_tls(
 pub fn serialize_union_crate_model_virtual_gateway_connection_pool(
     object_176: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualGatewayConnectionPool,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::VirtualGatewayConnectionPool::Http(inner) => {
+            #[allow(unused_mut)]
             let mut object_310 = object_176.key("http").start_object();
             crate::json_ser::serialize_structure_crate_model_virtual_gateway_http_connection_pool(
                 &mut object_310,
@@ -1530,6 +1638,7 @@ pub fn serialize_union_crate_model_virtual_gateway_connection_pool(
             object_310.finish();
         }
         crate::model::VirtualGatewayConnectionPool::Http2(inner) => {
+            #[allow(unused_mut)]
             let mut object_311 = object_176.key("http2").start_object();
             crate::json_ser::serialize_structure_crate_model_virtual_gateway_http2_connection_pool(
                 &mut object_311,
@@ -1538,6 +1647,7 @@ pub fn serialize_union_crate_model_virtual_gateway_connection_pool(
             object_311.finish();
         }
         crate::model::VirtualGatewayConnectionPool::Grpc(inner) => {
+            #[allow(unused_mut)]
             let mut object_312 = object_176.key("grpc").start_object();
             crate::json_ser::serialize_structure_crate_model_virtual_gateway_grpc_connection_pool(
                 &mut object_312,
@@ -1547,7 +1657,7 @@ pub fn serialize_union_crate_model_virtual_gateway_connection_pool(
         }
         crate::model::VirtualGatewayConnectionPool::Unknown => {
             return Err(
-                aws_smithy_http::operation::SerializationError::unknown_variant(
+                aws_smithy_http::operation::error::SerializationError::unknown_variant(
                     "VirtualGatewayConnectionPool",
                 ),
             )
@@ -1559,9 +1669,10 @@ pub fn serialize_union_crate_model_virtual_gateway_connection_pool(
 pub fn serialize_union_crate_model_virtual_gateway_access_log(
     object_178: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualGatewayAccessLog,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::VirtualGatewayAccessLog::File(inner) => {
+            #[allow(unused_mut)]
             let mut object_313 = object_178.key("file").start_object();
             crate::json_ser::serialize_structure_crate_model_virtual_gateway_file_access_log(
                 &mut object_313,
@@ -1571,7 +1682,7 @@ pub fn serialize_union_crate_model_virtual_gateway_access_log(
         }
         crate::model::VirtualGatewayAccessLog::Unknown => {
             return Err(
-                aws_smithy_http::operation::SerializationError::unknown_variant(
+                aws_smithy_http::operation::error::SerializationError::unknown_variant(
                     "VirtualGatewayAccessLog",
                 ),
             )
@@ -1583,7 +1694,7 @@ pub fn serialize_union_crate_model_virtual_gateway_access_log(
 pub fn serialize_structure_crate_model_dns_service_discovery(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DnsServiceDiscovery,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_314) = &input.hostname {
         object.key("hostname").string(var_314.as_str());
     }
@@ -1599,7 +1710,7 @@ pub fn serialize_structure_crate_model_dns_service_discovery(
 pub fn serialize_structure_crate_model_aws_cloud_map_service_discovery(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsCloudMapServiceDiscovery,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_317) = &input.namespace_name {
         object.key("namespaceName").string(var_317.as_str());
     }
@@ -1610,6 +1721,7 @@ pub fn serialize_structure_crate_model_aws_cloud_map_service_discovery(
         let mut array_320 = object.key("attributes").start_array();
         for item_321 in var_319 {
             {
+                #[allow(unused_mut)]
                 let mut object_322 = array_320.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_aws_cloud_map_instance_attribute(
                     &mut object_322,
@@ -1629,7 +1741,7 @@ pub fn serialize_structure_crate_model_aws_cloud_map_service_discovery(
 pub fn serialize_structure_crate_model_port_mapping(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::PortMapping,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     {
         object.key("port").number(
             #[allow(clippy::useless_conversion)]
@@ -1645,11 +1757,12 @@ pub fn serialize_structure_crate_model_port_mapping(
 pub fn serialize_structure_crate_model_listener_tls(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ListenerTls,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_325) = &input.mode {
         object.key("mode").string(var_325.as_str());
     }
     if let Some(var_326) = &input.certificate {
+        #[allow(unused_mut)]
         let mut object_327 = object.key("certificate").start_object();
         crate::json_ser::serialize_union_crate_model_listener_tls_certificate(
             &mut object_327,
@@ -1658,6 +1771,7 @@ pub fn serialize_structure_crate_model_listener_tls(
         object_327.finish();
     }
     if let Some(var_328) = &input.validation {
+        #[allow(unused_mut)]
         let mut object_329 = object.key("validation").start_object();
         crate::json_ser::serialize_structure_crate_model_listener_tls_validation_context(
             &mut object_329,
@@ -1671,7 +1785,7 @@ pub fn serialize_structure_crate_model_listener_tls(
 pub fn serialize_structure_crate_model_health_check_policy(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::HealthCheckPolicy,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_330) = &input.timeout_millis {
         object.key("timeoutMillis").number(
             #[allow(clippy::useless_conversion)]
@@ -1714,31 +1828,37 @@ pub fn serialize_structure_crate_model_health_check_policy(
 pub fn serialize_union_crate_model_listener_timeout(
     object_188: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ListenerTimeout,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::ListenerTimeout::Tcp(inner) => {
+            #[allow(unused_mut)]
             let mut object_334 = object_188.key("tcp").start_object();
             crate::json_ser::serialize_structure_crate_model_tcp_timeout(&mut object_334, inner)?;
             object_334.finish();
         }
         crate::model::ListenerTimeout::Http(inner) => {
+            #[allow(unused_mut)]
             let mut object_335 = object_188.key("http").start_object();
             crate::json_ser::serialize_structure_crate_model_http_timeout(&mut object_335, inner)?;
             object_335.finish();
         }
         crate::model::ListenerTimeout::Http2(inner) => {
+            #[allow(unused_mut)]
             let mut object_336 = object_188.key("http2").start_object();
             crate::json_ser::serialize_structure_crate_model_http_timeout(&mut object_336, inner)?;
             object_336.finish();
         }
         crate::model::ListenerTimeout::Grpc(inner) => {
+            #[allow(unused_mut)]
             let mut object_337 = object_188.key("grpc").start_object();
             crate::json_ser::serialize_structure_crate_model_grpc_timeout(&mut object_337, inner)?;
             object_337.finish();
         }
         crate::model::ListenerTimeout::Unknown => {
             return Err(
-                aws_smithy_http::operation::SerializationError::unknown_variant("ListenerTimeout"),
+                aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                    "ListenerTimeout",
+                ),
             )
         }
     }
@@ -1748,7 +1868,7 @@ pub fn serialize_union_crate_model_listener_timeout(
 pub fn serialize_structure_crate_model_outlier_detection(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::OutlierDetection,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_338) = &input.max_server_errors {
         object.key("maxServerErrors").number(
             #[allow(clippy::useless_conversion)]
@@ -1756,11 +1876,13 @@ pub fn serialize_structure_crate_model_outlier_detection(
         );
     }
     if let Some(var_339) = &input.interval {
+        #[allow(unused_mut)]
         let mut object_340 = object.key("interval").start_object();
         crate::json_ser::serialize_structure_crate_model_duration(&mut object_340, var_339)?;
         object_340.finish();
     }
     if let Some(var_341) = &input.base_ejection_duration {
+        #[allow(unused_mut)]
         let mut object_342 = object.key("baseEjectionDuration").start_object();
         crate::json_ser::serialize_structure_crate_model_duration(&mut object_342, var_341)?;
         object_342.finish();
@@ -1777,9 +1899,10 @@ pub fn serialize_structure_crate_model_outlier_detection(
 pub fn serialize_union_crate_model_virtual_node_connection_pool(
     object_192: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualNodeConnectionPool,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::VirtualNodeConnectionPool::Tcp(inner) => {
+            #[allow(unused_mut)]
             let mut object_344 = object_192.key("tcp").start_object();
             crate::json_ser::serialize_structure_crate_model_virtual_node_tcp_connection_pool(
                 &mut object_344,
@@ -1788,6 +1911,7 @@ pub fn serialize_union_crate_model_virtual_node_connection_pool(
             object_344.finish();
         }
         crate::model::VirtualNodeConnectionPool::Http(inner) => {
+            #[allow(unused_mut)]
             let mut object_345 = object_192.key("http").start_object();
             crate::json_ser::serialize_structure_crate_model_virtual_node_http_connection_pool(
                 &mut object_345,
@@ -1796,6 +1920,7 @@ pub fn serialize_union_crate_model_virtual_node_connection_pool(
             object_345.finish();
         }
         crate::model::VirtualNodeConnectionPool::Http2(inner) => {
+            #[allow(unused_mut)]
             let mut object_346 = object_192.key("http2").start_object();
             crate::json_ser::serialize_structure_crate_model_virtual_node_http2_connection_pool(
                 &mut object_346,
@@ -1804,6 +1929,7 @@ pub fn serialize_union_crate_model_virtual_node_connection_pool(
             object_346.finish();
         }
         crate::model::VirtualNodeConnectionPool::Grpc(inner) => {
+            #[allow(unused_mut)]
             let mut object_347 = object_192.key("grpc").start_object();
             crate::json_ser::serialize_structure_crate_model_virtual_node_grpc_connection_pool(
                 &mut object_347,
@@ -1813,7 +1939,7 @@ pub fn serialize_union_crate_model_virtual_node_connection_pool(
         }
         crate::model::VirtualNodeConnectionPool::Unknown => {
             return Err(
-                aws_smithy_http::operation::SerializationError::unknown_variant(
+                aws_smithy_http::operation::error::SerializationError::unknown_variant(
                     "VirtualNodeConnectionPool",
                 ),
             )
@@ -1825,11 +1951,12 @@ pub fn serialize_union_crate_model_virtual_node_connection_pool(
 pub fn serialize_structure_crate_model_virtual_service_backend(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualServiceBackend,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_348) = &input.virtual_service_name {
         object.key("virtualServiceName").string(var_348.as_str());
     }
     if let Some(var_349) = &input.client_policy {
+        #[allow(unused_mut)]
         let mut object_350 = object.key("clientPolicy").start_object();
         crate::json_ser::serialize_structure_crate_model_client_policy(&mut object_350, var_349)?;
         object_350.finish();
@@ -1840,8 +1967,9 @@ pub fn serialize_structure_crate_model_virtual_service_backend(
 pub fn serialize_structure_crate_model_client_policy(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ClientPolicy,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_351) = &input.tls {
+        #[allow(unused_mut)]
         let mut object_352 = object.key("tls").start_object();
         crate::json_ser::serialize_structure_crate_model_client_policy_tls(
             &mut object_352,
@@ -1855,9 +1983,10 @@ pub fn serialize_structure_crate_model_client_policy(
 pub fn serialize_union_crate_model_access_log(
     object_197: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AccessLog,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::AccessLog::File(inner) => {
+            #[allow(unused_mut)]
             let mut object_353 = object_197.key("file").start_object();
             crate::json_ser::serialize_structure_crate_model_file_access_log(
                 &mut object_353,
@@ -1867,7 +1996,7 @@ pub fn serialize_union_crate_model_access_log(
         }
         crate::model::AccessLog::Unknown => {
             return Err(
-                aws_smithy_http::operation::SerializationError::unknown_variant("AccessLog"),
+                aws_smithy_http::operation::error::SerializationError::unknown_variant("AccessLog"),
             )
         }
     }
@@ -1877,7 +2006,7 @@ pub fn serialize_union_crate_model_access_log(
 pub fn serialize_structure_crate_model_virtual_node_service_provider(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualNodeServiceProvider,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_354) = &input.virtual_node_name {
         object.key("virtualNodeName").string(var_354.as_str());
     }
@@ -1887,7 +2016,7 @@ pub fn serialize_structure_crate_model_virtual_node_service_provider(
 pub fn serialize_structure_crate_model_virtual_router_service_provider(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualRouterServiceProvider,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_355) = &input.virtual_router_name {
         object.key("virtualRouterName").string(var_355.as_str());
     }
@@ -1897,7 +2026,7 @@ pub fn serialize_structure_crate_model_virtual_router_service_provider(
 pub fn serialize_structure_crate_model_http_path_match(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::HttpPathMatch,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_356) = &input.exact {
         object.key("exact").string(var_356.as_str());
     }
@@ -1910,11 +2039,12 @@ pub fn serialize_structure_crate_model_http_path_match(
 pub fn serialize_structure_crate_model_http_query_parameter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::HttpQueryParameter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_358) = &input.name {
         object.key("name").string(var_358.as_str());
     }
     if let Some(var_359) = &input.r#match {
+        #[allow(unused_mut)]
         let mut object_360 = object.key("match").start_object();
         crate::json_ser::serialize_structure_crate_model_query_parameter_match(
             &mut object_360,
@@ -1928,7 +2058,7 @@ pub fn serialize_structure_crate_model_http_query_parameter(
 pub fn serialize_structure_crate_model_gateway_route_hostname_match(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::GatewayRouteHostnameMatch,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_361) = &input.exact {
         object.key("exact").string(var_361.as_str());
     }
@@ -1941,7 +2071,7 @@ pub fn serialize_structure_crate_model_gateway_route_hostname_match(
 pub fn serialize_structure_crate_model_http_gateway_route_header(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::HttpGatewayRouteHeader,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_363) = &input.name {
         object.key("name").string(var_363.as_str());
     }
@@ -1949,6 +2079,7 @@ pub fn serialize_structure_crate_model_http_gateway_route_header(
         object.key("invert").boolean(*var_364);
     }
     if let Some(var_365) = &input.r#match {
+        #[allow(unused_mut)]
         let mut object_366 = object.key("match").start_object();
         crate::json_ser::serialize_union_crate_model_header_match_method(&mut object_366, var_365)?;
         object_366.finish();
@@ -1959,8 +2090,9 @@ pub fn serialize_structure_crate_model_http_gateway_route_header(
 pub fn serialize_structure_crate_model_gateway_route_target(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::GatewayRouteTarget,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_367) = &input.virtual_service {
+        #[allow(unused_mut)]
         let mut object_368 = object.key("virtualService").start_object();
         crate::json_ser::serialize_structure_crate_model_gateway_route_virtual_service(
             &mut object_368,
@@ -1980,8 +2112,9 @@ pub fn serialize_structure_crate_model_gateway_route_target(
 pub fn serialize_structure_crate_model_http_gateway_route_rewrite(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::HttpGatewayRouteRewrite,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_370) = &input.prefix {
+        #[allow(unused_mut)]
         let mut object_371 = object.key("prefix").start_object();
         crate::json_ser::serialize_structure_crate_model_http_gateway_route_prefix_rewrite(
             &mut object_371,
@@ -1990,6 +2123,7 @@ pub fn serialize_structure_crate_model_http_gateway_route_rewrite(
         object_371.finish();
     }
     if let Some(var_372) = &input.path {
+        #[allow(unused_mut)]
         let mut object_373 = object.key("path").start_object();
         crate::json_ser::serialize_structure_crate_model_http_gateway_route_path_rewrite(
             &mut object_373,
@@ -1998,6 +2132,7 @@ pub fn serialize_structure_crate_model_http_gateway_route_rewrite(
         object_373.finish();
     }
     if let Some(var_374) = &input.hostname {
+        #[allow(unused_mut)]
         let mut object_375 = object.key("hostname").start_object();
         crate::json_ser::serialize_structure_crate_model_gateway_route_hostname_rewrite(
             &mut object_375,
@@ -2011,7 +2146,7 @@ pub fn serialize_structure_crate_model_http_gateway_route_rewrite(
 pub fn serialize_structure_crate_model_grpc_gateway_route_metadata(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::GrpcGatewayRouteMetadata,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_376) = &input.name {
         object.key("name").string(var_376.as_str());
     }
@@ -2019,6 +2154,7 @@ pub fn serialize_structure_crate_model_grpc_gateway_route_metadata(
         object.key("invert").boolean(*var_377);
     }
     if let Some(var_378) = &input.r#match {
+        #[allow(unused_mut)]
         let mut object_379 = object.key("match").start_object();
         crate::json_ser::serialize_union_crate_model_grpc_metadata_match_method(
             &mut object_379,
@@ -2032,8 +2168,9 @@ pub fn serialize_structure_crate_model_grpc_gateway_route_metadata(
 pub fn serialize_structure_crate_model_grpc_gateway_route_rewrite(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::GrpcGatewayRouteRewrite,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_380) = &input.hostname {
+        #[allow(unused_mut)]
         let mut object_381 = object.key("hostname").start_object();
         crate::json_ser::serialize_structure_crate_model_gateway_route_hostname_rewrite(
             &mut object_381,
@@ -2047,7 +2184,7 @@ pub fn serialize_structure_crate_model_grpc_gateway_route_rewrite(
 pub fn serialize_structure_crate_model_http_route_header(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::HttpRouteHeader,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_382) = &input.name {
         object.key("name").string(var_382.as_str());
     }
@@ -2055,6 +2192,7 @@ pub fn serialize_structure_crate_model_http_route_header(
         object.key("invert").boolean(*var_383);
     }
     if let Some(var_384) = &input.r#match {
+        #[allow(unused_mut)]
         let mut object_385 = object.key("match").start_object();
         crate::json_ser::serialize_union_crate_model_header_match_method(&mut object_385, var_384)?;
         object_385.finish();
@@ -2065,7 +2203,7 @@ pub fn serialize_structure_crate_model_http_route_header(
 pub fn serialize_structure_crate_model_weighted_target(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::WeightedTarget,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_386) = &input.virtual_node {
         object.key("virtualNode").string(var_386.as_str());
     }
@@ -2087,7 +2225,7 @@ pub fn serialize_structure_crate_model_weighted_target(
 pub fn serialize_structure_crate_model_duration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Duration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_388) = &input.value {
         object.key("value").number(
             #[allow(clippy::useless_conversion)]
@@ -2103,7 +2241,7 @@ pub fn serialize_structure_crate_model_duration(
 pub fn serialize_structure_crate_model_grpc_route_metadata(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::GrpcRouteMetadata,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_390) = &input.name {
         object.key("name").string(var_390.as_str());
     }
@@ -2111,6 +2249,7 @@ pub fn serialize_structure_crate_model_grpc_route_metadata(
         object.key("invert").boolean(*var_391);
     }
     if let Some(var_392) = &input.r#match {
+        #[allow(unused_mut)]
         let mut object_393 = object.key("match").start_object();
         crate::json_ser::serialize_union_crate_model_grpc_route_metadata_match_method(
             &mut object_393,
@@ -2124,7 +2263,7 @@ pub fn serialize_structure_crate_model_grpc_route_metadata(
 pub fn serialize_structure_crate_model_virtual_gateway_client_policy_tls(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualGatewayClientPolicyTls,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_394) = &input.enforce {
         object.key("enforce").boolean(*var_394);
     }
@@ -2141,6 +2280,7 @@ pub fn serialize_structure_crate_model_virtual_gateway_client_policy_tls(
         array_396.finish();
     }
     if let Some(var_398) = &input.certificate {
+        #[allow(unused_mut)]
         let mut object_399 = object.key("certificate").start_object();
         crate::json_ser::serialize_union_crate_model_virtual_gateway_client_tls_certificate(
             &mut object_399,
@@ -2149,6 +2289,7 @@ pub fn serialize_structure_crate_model_virtual_gateway_client_policy_tls(
         object_399.finish();
     }
     if let Some(var_400) = &input.validation {
+        #[allow(unused_mut)]
         let mut object_401 = object.key("validation").start_object();
         crate::json_ser::serialize_structure_crate_model_virtual_gateway_tls_validation_context(
             &mut object_401,
@@ -2162,13 +2303,15 @@ pub fn serialize_structure_crate_model_virtual_gateway_client_policy_tls(
 pub fn serialize_structure_crate_model_virtual_gateway_listener_tls_validation_context(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualGatewayListenerTlsValidationContext,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_402) = &input.trust {
+        #[allow(unused_mut)]
         let mut object_403 = object.key("trust").start_object();
         crate::json_ser::serialize_union_crate_model_virtual_gateway_listener_tls_validation_context_trust(&mut object_403, var_402)?;
         object_403.finish();
     }
     if let Some(var_404) = &input.subject_alternative_names {
+        #[allow(unused_mut)]
         let mut object_405 = object.key("subjectAlternativeNames").start_object();
         crate::json_ser::serialize_structure_crate_model_subject_alternative_names(
             &mut object_405,
@@ -2182,26 +2325,29 @@ pub fn serialize_structure_crate_model_virtual_gateway_listener_tls_validation_c
 pub fn serialize_union_crate_model_virtual_gateway_listener_tls_certificate(
     object_309: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualGatewayListenerTlsCertificate,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::VirtualGatewayListenerTlsCertificate::Acm(inner) => {
+            #[allow(unused_mut)]
             let mut object_406 = object_309.key("acm").start_object();
             crate::json_ser::serialize_structure_crate_model_virtual_gateway_listener_tls_acm_certificate(&mut object_406, inner)?;
             object_406.finish();
         }
         crate::model::VirtualGatewayListenerTlsCertificate::File(inner) => {
+            #[allow(unused_mut)]
             let mut object_407 = object_309.key("file").start_object();
             crate::json_ser::serialize_structure_crate_model_virtual_gateway_listener_tls_file_certificate(&mut object_407, inner)?;
             object_407.finish();
         }
         crate::model::VirtualGatewayListenerTlsCertificate::Sds(inner) => {
+            #[allow(unused_mut)]
             let mut object_408 = object_309.key("sds").start_object();
             crate::json_ser::serialize_structure_crate_model_virtual_gateway_listener_tls_sds_certificate(&mut object_408, inner)?;
             object_408.finish();
         }
         crate::model::VirtualGatewayListenerTlsCertificate::Unknown => {
             return Err(
-                aws_smithy_http::operation::SerializationError::unknown_variant(
+                aws_smithy_http::operation::error::SerializationError::unknown_variant(
                     "VirtualGatewayListenerTlsCertificate",
                 ),
             )
@@ -2213,7 +2359,7 @@ pub fn serialize_union_crate_model_virtual_gateway_listener_tls_certificate(
 pub fn serialize_structure_crate_model_virtual_gateway_http_connection_pool(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualGatewayHttpConnectionPool,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     {
         object.key("maxConnections").number(
             #[allow(clippy::useless_conversion)]
@@ -2232,7 +2378,7 @@ pub fn serialize_structure_crate_model_virtual_gateway_http_connection_pool(
 pub fn serialize_structure_crate_model_virtual_gateway_http2_connection_pool(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualGatewayHttp2ConnectionPool,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     {
         object.key("maxRequests").number(
             #[allow(clippy::useless_conversion)]
@@ -2245,7 +2391,7 @@ pub fn serialize_structure_crate_model_virtual_gateway_http2_connection_pool(
 pub fn serialize_structure_crate_model_virtual_gateway_grpc_connection_pool(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualGatewayGrpcConnectionPool,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     {
         object.key("maxRequests").number(
             #[allow(clippy::useless_conversion)]
@@ -2258,11 +2404,12 @@ pub fn serialize_structure_crate_model_virtual_gateway_grpc_connection_pool(
 pub fn serialize_structure_crate_model_virtual_gateway_file_access_log(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualGatewayFileAccessLog,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_410) = &input.path {
         object.key("path").string(var_410.as_str());
     }
     if let Some(var_411) = &input.format {
+        #[allow(unused_mut)]
         let mut object_412 = object.key("format").start_object();
         crate::json_ser::serialize_union_crate_model_logging_format(&mut object_412, var_411)?;
         object_412.finish();
@@ -2273,7 +2420,7 @@ pub fn serialize_structure_crate_model_virtual_gateway_file_access_log(
 pub fn serialize_structure_crate_model_aws_cloud_map_instance_attribute(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsCloudMapInstanceAttribute,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_413) = &input.key {
         object.key("key").string(var_413.as_str());
     }
@@ -2286,9 +2433,10 @@ pub fn serialize_structure_crate_model_aws_cloud_map_instance_attribute(
 pub fn serialize_union_crate_model_listener_tls_certificate(
     object_327: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ListenerTlsCertificate,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::ListenerTlsCertificate::Acm(inner) => {
+            #[allow(unused_mut)]
             let mut object_415 = object_327.key("acm").start_object();
             crate::json_ser::serialize_structure_crate_model_listener_tls_acm_certificate(
                 &mut object_415,
@@ -2297,6 +2445,7 @@ pub fn serialize_union_crate_model_listener_tls_certificate(
             object_415.finish();
         }
         crate::model::ListenerTlsCertificate::File(inner) => {
+            #[allow(unused_mut)]
             let mut object_416 = object_327.key("file").start_object();
             crate::json_ser::serialize_structure_crate_model_listener_tls_file_certificate(
                 &mut object_416,
@@ -2305,6 +2454,7 @@ pub fn serialize_union_crate_model_listener_tls_certificate(
             object_416.finish();
         }
         crate::model::ListenerTlsCertificate::Sds(inner) => {
+            #[allow(unused_mut)]
             let mut object_417 = object_327.key("sds").start_object();
             crate::json_ser::serialize_structure_crate_model_listener_tls_sds_certificate(
                 &mut object_417,
@@ -2314,7 +2464,7 @@ pub fn serialize_union_crate_model_listener_tls_certificate(
         }
         crate::model::ListenerTlsCertificate::Unknown => {
             return Err(
-                aws_smithy_http::operation::SerializationError::unknown_variant(
+                aws_smithy_http::operation::error::SerializationError::unknown_variant(
                     "ListenerTlsCertificate",
                 ),
             )
@@ -2326,8 +2476,9 @@ pub fn serialize_union_crate_model_listener_tls_certificate(
 pub fn serialize_structure_crate_model_listener_tls_validation_context(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ListenerTlsValidationContext,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_418) = &input.trust {
+        #[allow(unused_mut)]
         let mut object_419 = object.key("trust").start_object();
         crate::json_ser::serialize_union_crate_model_listener_tls_validation_context_trust(
             &mut object_419,
@@ -2336,6 +2487,7 @@ pub fn serialize_structure_crate_model_listener_tls_validation_context(
         object_419.finish();
     }
     if let Some(var_420) = &input.subject_alternative_names {
+        #[allow(unused_mut)]
         let mut object_421 = object.key("subjectAlternativeNames").start_object();
         crate::json_ser::serialize_structure_crate_model_subject_alternative_names(
             &mut object_421,
@@ -2349,7 +2501,7 @@ pub fn serialize_structure_crate_model_listener_tls_validation_context(
 pub fn serialize_structure_crate_model_virtual_node_tcp_connection_pool(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualNodeTcpConnectionPool,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     {
         object.key("maxConnections").number(
             #[allow(clippy::useless_conversion)]
@@ -2362,7 +2514,7 @@ pub fn serialize_structure_crate_model_virtual_node_tcp_connection_pool(
 pub fn serialize_structure_crate_model_virtual_node_http_connection_pool(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualNodeHttpConnectionPool,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     {
         object.key("maxConnections").number(
             #[allow(clippy::useless_conversion)]
@@ -2381,7 +2533,7 @@ pub fn serialize_structure_crate_model_virtual_node_http_connection_pool(
 pub fn serialize_structure_crate_model_virtual_node_http2_connection_pool(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualNodeHttp2ConnectionPool,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     {
         object.key("maxRequests").number(
             #[allow(clippy::useless_conversion)]
@@ -2394,7 +2546,7 @@ pub fn serialize_structure_crate_model_virtual_node_http2_connection_pool(
 pub fn serialize_structure_crate_model_virtual_node_grpc_connection_pool(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualNodeGrpcConnectionPool,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     {
         object.key("maxRequests").number(
             #[allow(clippy::useless_conversion)]
@@ -2407,7 +2559,7 @@ pub fn serialize_structure_crate_model_virtual_node_grpc_connection_pool(
 pub fn serialize_structure_crate_model_client_policy_tls(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ClientPolicyTls,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_423) = &input.enforce {
         object.key("enforce").boolean(*var_423);
     }
@@ -2424,6 +2576,7 @@ pub fn serialize_structure_crate_model_client_policy_tls(
         array_425.finish();
     }
     if let Some(var_427) = &input.certificate {
+        #[allow(unused_mut)]
         let mut object_428 = object.key("certificate").start_object();
         crate::json_ser::serialize_union_crate_model_client_tls_certificate(
             &mut object_428,
@@ -2432,6 +2585,7 @@ pub fn serialize_structure_crate_model_client_policy_tls(
         object_428.finish();
     }
     if let Some(var_429) = &input.validation {
+        #[allow(unused_mut)]
         let mut object_430 = object.key("validation").start_object();
         crate::json_ser::serialize_structure_crate_model_tls_validation_context(
             &mut object_430,
@@ -2445,11 +2599,12 @@ pub fn serialize_structure_crate_model_client_policy_tls(
 pub fn serialize_structure_crate_model_file_access_log(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::FileAccessLog,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_431) = &input.path {
         object.key("path").string(var_431.as_str());
     }
     if let Some(var_432) = &input.format {
+        #[allow(unused_mut)]
         let mut object_433 = object.key("format").start_object();
         crate::json_ser::serialize_union_crate_model_logging_format(&mut object_433, var_432)?;
         object_433.finish();
@@ -2460,7 +2615,7 @@ pub fn serialize_structure_crate_model_file_access_log(
 pub fn serialize_structure_crate_model_query_parameter_match(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::QueryParameterMatch,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_434) = &input.exact {
         object.key("exact").string(var_434.as_str());
     }
@@ -2470,7 +2625,7 @@ pub fn serialize_structure_crate_model_query_parameter_match(
 pub fn serialize_union_crate_model_header_match_method(
     object_366: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::HeaderMatchMethod,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::HeaderMatchMethod::Exact(inner) => {
             object_366.key("exact").string(inner.as_str());
@@ -2479,6 +2634,7 @@ pub fn serialize_union_crate_model_header_match_method(
             object_366.key("regex").string(inner.as_str());
         }
         crate::model::HeaderMatchMethod::Range(inner) => {
+            #[allow(unused_mut)]
             let mut object_435 = object_366.key("range").start_object();
             crate::json_ser::serialize_structure_crate_model_match_range(&mut object_435, inner)?;
             object_435.finish();
@@ -2491,7 +2647,7 @@ pub fn serialize_union_crate_model_header_match_method(
         }
         crate::model::HeaderMatchMethod::Unknown => {
             return Err(
-                aws_smithy_http::operation::SerializationError::unknown_variant(
+                aws_smithy_http::operation::error::SerializationError::unknown_variant(
                     "HeaderMatchMethod",
                 ),
             )
@@ -2503,7 +2659,7 @@ pub fn serialize_union_crate_model_header_match_method(
 pub fn serialize_structure_crate_model_gateway_route_virtual_service(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::GatewayRouteVirtualService,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_436) = &input.virtual_service_name {
         object.key("virtualServiceName").string(var_436.as_str());
     }
@@ -2513,7 +2669,7 @@ pub fn serialize_structure_crate_model_gateway_route_virtual_service(
 pub fn serialize_structure_crate_model_http_gateway_route_prefix_rewrite(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::HttpGatewayRoutePrefixRewrite,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_437) = &input.default_prefix {
         object.key("defaultPrefix").string(var_437.as_str());
     }
@@ -2526,7 +2682,7 @@ pub fn serialize_structure_crate_model_http_gateway_route_prefix_rewrite(
 pub fn serialize_structure_crate_model_http_gateway_route_path_rewrite(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::HttpGatewayRoutePathRewrite,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_439) = &input.exact {
         object.key("exact").string(var_439.as_str());
     }
@@ -2536,7 +2692,7 @@ pub fn serialize_structure_crate_model_http_gateway_route_path_rewrite(
 pub fn serialize_structure_crate_model_gateway_route_hostname_rewrite(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::GatewayRouteHostnameRewrite,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_440) = &input.default_target_hostname {
         object.key("defaultTargetHostname").string(var_440.as_str());
     }
@@ -2546,7 +2702,7 @@ pub fn serialize_structure_crate_model_gateway_route_hostname_rewrite(
 pub fn serialize_union_crate_model_grpc_metadata_match_method(
     object_379: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::GrpcMetadataMatchMethod,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::GrpcMetadataMatchMethod::Exact(inner) => {
             object_379.key("exact").string(inner.as_str());
@@ -2555,6 +2711,7 @@ pub fn serialize_union_crate_model_grpc_metadata_match_method(
             object_379.key("regex").string(inner.as_str());
         }
         crate::model::GrpcMetadataMatchMethod::Range(inner) => {
+            #[allow(unused_mut)]
             let mut object_441 = object_379.key("range").start_object();
             crate::json_ser::serialize_structure_crate_model_match_range(&mut object_441, inner)?;
             object_441.finish();
@@ -2567,7 +2724,7 @@ pub fn serialize_union_crate_model_grpc_metadata_match_method(
         }
         crate::model::GrpcMetadataMatchMethod::Unknown => {
             return Err(
-                aws_smithy_http::operation::SerializationError::unknown_variant(
+                aws_smithy_http::operation::error::SerializationError::unknown_variant(
                     "GrpcMetadataMatchMethod",
                 ),
             )
@@ -2579,7 +2736,7 @@ pub fn serialize_union_crate_model_grpc_metadata_match_method(
 pub fn serialize_union_crate_model_grpc_route_metadata_match_method(
     object_393: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::GrpcRouteMetadataMatchMethod,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::GrpcRouteMetadataMatchMethod::Exact(inner) => {
             object_393.key("exact").string(inner.as_str());
@@ -2588,6 +2745,7 @@ pub fn serialize_union_crate_model_grpc_route_metadata_match_method(
             object_393.key("regex").string(inner.as_str());
         }
         crate::model::GrpcRouteMetadataMatchMethod::Range(inner) => {
+            #[allow(unused_mut)]
             let mut object_442 = object_393.key("range").start_object();
             crate::json_ser::serialize_structure_crate_model_match_range(&mut object_442, inner)?;
             object_442.finish();
@@ -2600,7 +2758,7 @@ pub fn serialize_union_crate_model_grpc_route_metadata_match_method(
         }
         crate::model::GrpcRouteMetadataMatchMethod::Unknown => {
             return Err(
-                aws_smithy_http::operation::SerializationError::unknown_variant(
+                aws_smithy_http::operation::error::SerializationError::unknown_variant(
                     "GrpcRouteMetadataMatchMethod",
                 ),
             )
@@ -2612,21 +2770,23 @@ pub fn serialize_union_crate_model_grpc_route_metadata_match_method(
 pub fn serialize_union_crate_model_virtual_gateway_client_tls_certificate(
     object_399: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualGatewayClientTlsCertificate,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::VirtualGatewayClientTlsCertificate::File(inner) => {
+            #[allow(unused_mut)]
             let mut object_443 = object_399.key("file").start_object();
             crate::json_ser::serialize_structure_crate_model_virtual_gateway_listener_tls_file_certificate(&mut object_443, inner)?;
             object_443.finish();
         }
         crate::model::VirtualGatewayClientTlsCertificate::Sds(inner) => {
+            #[allow(unused_mut)]
             let mut object_444 = object_399.key("sds").start_object();
             crate::json_ser::serialize_structure_crate_model_virtual_gateway_listener_tls_sds_certificate(&mut object_444, inner)?;
             object_444.finish();
         }
         crate::model::VirtualGatewayClientTlsCertificate::Unknown => {
             return Err(
-                aws_smithy_http::operation::SerializationError::unknown_variant(
+                aws_smithy_http::operation::error::SerializationError::unknown_variant(
                     "VirtualGatewayClientTlsCertificate",
                 ),
             )
@@ -2638,8 +2798,9 @@ pub fn serialize_union_crate_model_virtual_gateway_client_tls_certificate(
 pub fn serialize_structure_crate_model_virtual_gateway_tls_validation_context(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualGatewayTlsValidationContext,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_445) = &input.trust {
+        #[allow(unused_mut)]
         let mut object_446 = object.key("trust").start_object();
         crate::json_ser::serialize_union_crate_model_virtual_gateway_tls_validation_context_trust(
             &mut object_446,
@@ -2648,6 +2809,7 @@ pub fn serialize_structure_crate_model_virtual_gateway_tls_validation_context(
         object_446.finish();
     }
     if let Some(var_447) = &input.subject_alternative_names {
+        #[allow(unused_mut)]
         let mut object_448 = object.key("subjectAlternativeNames").start_object();
         crate::json_ser::serialize_structure_crate_model_subject_alternative_names(
             &mut object_448,
@@ -2661,21 +2823,23 @@ pub fn serialize_structure_crate_model_virtual_gateway_tls_validation_context(
 pub fn serialize_union_crate_model_virtual_gateway_listener_tls_validation_context_trust(
     object_403: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualGatewayListenerTlsValidationContextTrust,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::VirtualGatewayListenerTlsValidationContextTrust::File(inner) => {
+            #[allow(unused_mut)]
             let mut object_449 = object_403.key("file").start_object();
             crate::json_ser::serialize_structure_crate_model_virtual_gateway_tls_validation_context_file_trust(&mut object_449, inner)?;
             object_449.finish();
         }
         crate::model::VirtualGatewayListenerTlsValidationContextTrust::Sds(inner) => {
+            #[allow(unused_mut)]
             let mut object_450 = object_403.key("sds").start_object();
             crate::json_ser::serialize_structure_crate_model_virtual_gateway_tls_validation_context_sds_trust(&mut object_450, inner)?;
             object_450.finish();
         }
         crate::model::VirtualGatewayListenerTlsValidationContextTrust::Unknown => {
             return Err(
-                aws_smithy_http::operation::SerializationError::unknown_variant(
+                aws_smithy_http::operation::error::SerializationError::unknown_variant(
                     "VirtualGatewayListenerTlsValidationContextTrust",
                 ),
             )
@@ -2687,8 +2851,9 @@ pub fn serialize_union_crate_model_virtual_gateway_listener_tls_validation_conte
 pub fn serialize_structure_crate_model_subject_alternative_names(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SubjectAlternativeNames,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_451) = &input.r#match {
+        #[allow(unused_mut)]
         let mut object_452 = object.key("match").start_object();
         crate::json_ser::serialize_structure_crate_model_subject_alternative_name_matchers(
             &mut object_452,
@@ -2702,7 +2867,7 @@ pub fn serialize_structure_crate_model_subject_alternative_names(
 pub fn serialize_structure_crate_model_virtual_gateway_listener_tls_acm_certificate(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualGatewayListenerTlsAcmCertificate,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_453) = &input.certificate_arn {
         object.key("certificateArn").string(var_453.as_str());
     }
@@ -2712,7 +2877,7 @@ pub fn serialize_structure_crate_model_virtual_gateway_listener_tls_acm_certific
 pub fn serialize_structure_crate_model_virtual_gateway_listener_tls_file_certificate(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualGatewayListenerTlsFileCertificate,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_454) = &input.certificate_chain {
         object.key("certificateChain").string(var_454.as_str());
     }
@@ -2725,7 +2890,7 @@ pub fn serialize_structure_crate_model_virtual_gateway_listener_tls_file_certifi
 pub fn serialize_structure_crate_model_virtual_gateway_listener_tls_sds_certificate(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualGatewayListenerTlsSdsCertificate,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_456) = &input.secret_name {
         object.key("secretName").string(var_456.as_str());
     }
@@ -2735,7 +2900,7 @@ pub fn serialize_structure_crate_model_virtual_gateway_listener_tls_sds_certific
 pub fn serialize_union_crate_model_logging_format(
     object_412: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::LoggingFormat,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::LoggingFormat::Text(inner) => {
             object_412.key("text").string(inner.as_str());
@@ -2744,6 +2909,7 @@ pub fn serialize_union_crate_model_logging_format(
             let mut array_457 = object_412.key("json").start_array();
             for item_458 in inner {
                 {
+                    #[allow(unused_mut)]
                     let mut object_459 = array_457.value().start_object();
                     crate::json_ser::serialize_structure_crate_model_json_format_ref(
                         &mut object_459,
@@ -2756,7 +2922,9 @@ pub fn serialize_union_crate_model_logging_format(
         }
         crate::model::LoggingFormat::Unknown => {
             return Err(
-                aws_smithy_http::operation::SerializationError::unknown_variant("LoggingFormat"),
+                aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                    "LoggingFormat",
+                ),
             )
         }
     }
@@ -2766,7 +2934,7 @@ pub fn serialize_union_crate_model_logging_format(
 pub fn serialize_structure_crate_model_listener_tls_acm_certificate(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ListenerTlsAcmCertificate,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_460) = &input.certificate_arn {
         object.key("certificateArn").string(var_460.as_str());
     }
@@ -2776,7 +2944,7 @@ pub fn serialize_structure_crate_model_listener_tls_acm_certificate(
 pub fn serialize_structure_crate_model_listener_tls_file_certificate(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ListenerTlsFileCertificate,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_461) = &input.certificate_chain {
         object.key("certificateChain").string(var_461.as_str());
     }
@@ -2789,7 +2957,7 @@ pub fn serialize_structure_crate_model_listener_tls_file_certificate(
 pub fn serialize_structure_crate_model_listener_tls_sds_certificate(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ListenerTlsSdsCertificate,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_463) = &input.secret_name {
         object.key("secretName").string(var_463.as_str());
     }
@@ -2799,9 +2967,10 @@ pub fn serialize_structure_crate_model_listener_tls_sds_certificate(
 pub fn serialize_union_crate_model_listener_tls_validation_context_trust(
     object_419: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ListenerTlsValidationContextTrust,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::ListenerTlsValidationContextTrust::File(inner) => {
+            #[allow(unused_mut)]
             let mut object_464 = object_419.key("file").start_object();
             crate::json_ser::serialize_structure_crate_model_tls_validation_context_file_trust(
                 &mut object_464,
@@ -2810,6 +2979,7 @@ pub fn serialize_union_crate_model_listener_tls_validation_context_trust(
             object_464.finish();
         }
         crate::model::ListenerTlsValidationContextTrust::Sds(inner) => {
+            #[allow(unused_mut)]
             let mut object_465 = object_419.key("sds").start_object();
             crate::json_ser::serialize_structure_crate_model_tls_validation_context_sds_trust(
                 &mut object_465,
@@ -2819,7 +2989,7 @@ pub fn serialize_union_crate_model_listener_tls_validation_context_trust(
         }
         crate::model::ListenerTlsValidationContextTrust::Unknown => {
             return Err(
-                aws_smithy_http::operation::SerializationError::unknown_variant(
+                aws_smithy_http::operation::error::SerializationError::unknown_variant(
                     "ListenerTlsValidationContextTrust",
                 ),
             )
@@ -2831,9 +3001,10 @@ pub fn serialize_union_crate_model_listener_tls_validation_context_trust(
 pub fn serialize_union_crate_model_client_tls_certificate(
     object_428: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ClientTlsCertificate,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::ClientTlsCertificate::File(inner) => {
+            #[allow(unused_mut)]
             let mut object_466 = object_428.key("file").start_object();
             crate::json_ser::serialize_structure_crate_model_listener_tls_file_certificate(
                 &mut object_466,
@@ -2842,6 +3013,7 @@ pub fn serialize_union_crate_model_client_tls_certificate(
             object_466.finish();
         }
         crate::model::ClientTlsCertificate::Sds(inner) => {
+            #[allow(unused_mut)]
             let mut object_467 = object_428.key("sds").start_object();
             crate::json_ser::serialize_structure_crate_model_listener_tls_sds_certificate(
                 &mut object_467,
@@ -2851,7 +3023,7 @@ pub fn serialize_union_crate_model_client_tls_certificate(
         }
         crate::model::ClientTlsCertificate::Unknown => {
             return Err(
-                aws_smithy_http::operation::SerializationError::unknown_variant(
+                aws_smithy_http::operation::error::SerializationError::unknown_variant(
                     "ClientTlsCertificate",
                 ),
             )
@@ -2863,8 +3035,9 @@ pub fn serialize_union_crate_model_client_tls_certificate(
 pub fn serialize_structure_crate_model_tls_validation_context(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TlsValidationContext,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_468) = &input.trust {
+        #[allow(unused_mut)]
         let mut object_469 = object.key("trust").start_object();
         crate::json_ser::serialize_union_crate_model_tls_validation_context_trust(
             &mut object_469,
@@ -2873,6 +3046,7 @@ pub fn serialize_structure_crate_model_tls_validation_context(
         object_469.finish();
     }
     if let Some(var_470) = &input.subject_alternative_names {
+        #[allow(unused_mut)]
         let mut object_471 = object.key("subjectAlternativeNames").start_object();
         crate::json_ser::serialize_structure_crate_model_subject_alternative_names(
             &mut object_471,
@@ -2886,7 +3060,7 @@ pub fn serialize_structure_crate_model_tls_validation_context(
 pub fn serialize_structure_crate_model_match_range(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::MatchRange,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_472) = &input.start {
         object.key("start").number(
             #[allow(clippy::useless_conversion)]
@@ -2905,26 +3079,29 @@ pub fn serialize_structure_crate_model_match_range(
 pub fn serialize_union_crate_model_virtual_gateway_tls_validation_context_trust(
     object_446: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualGatewayTlsValidationContextTrust,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::VirtualGatewayTlsValidationContextTrust::Acm(inner) => {
+            #[allow(unused_mut)]
             let mut object_474 = object_446.key("acm").start_object();
             crate::json_ser::serialize_structure_crate_model_virtual_gateway_tls_validation_context_acm_trust(&mut object_474, inner)?;
             object_474.finish();
         }
         crate::model::VirtualGatewayTlsValidationContextTrust::File(inner) => {
+            #[allow(unused_mut)]
             let mut object_475 = object_446.key("file").start_object();
             crate::json_ser::serialize_structure_crate_model_virtual_gateway_tls_validation_context_file_trust(&mut object_475, inner)?;
             object_475.finish();
         }
         crate::model::VirtualGatewayTlsValidationContextTrust::Sds(inner) => {
+            #[allow(unused_mut)]
             let mut object_476 = object_446.key("sds").start_object();
             crate::json_ser::serialize_structure_crate_model_virtual_gateway_tls_validation_context_sds_trust(&mut object_476, inner)?;
             object_476.finish();
         }
         crate::model::VirtualGatewayTlsValidationContextTrust::Unknown => {
             return Err(
-                aws_smithy_http::operation::SerializationError::unknown_variant(
+                aws_smithy_http::operation::error::SerializationError::unknown_variant(
                     "VirtualGatewayTlsValidationContextTrust",
                 ),
             )
@@ -2936,7 +3113,7 @@ pub fn serialize_union_crate_model_virtual_gateway_tls_validation_context_trust(
 pub fn serialize_structure_crate_model_virtual_gateway_tls_validation_context_file_trust(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualGatewayTlsValidationContextFileTrust,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_477) = &input.certificate_chain {
         object.key("certificateChain").string(var_477.as_str());
     }
@@ -2946,7 +3123,7 @@ pub fn serialize_structure_crate_model_virtual_gateway_tls_validation_context_fi
 pub fn serialize_structure_crate_model_virtual_gateway_tls_validation_context_sds_trust(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualGatewayTlsValidationContextSdsTrust,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_478) = &input.secret_name {
         object.key("secretName").string(var_478.as_str());
     }
@@ -2956,7 +3133,7 @@ pub fn serialize_structure_crate_model_virtual_gateway_tls_validation_context_sd
 pub fn serialize_structure_crate_model_subject_alternative_name_matchers(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SubjectAlternativeNameMatchers,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_479) = &input.exact {
         let mut array_480 = object.key("exact").start_array();
         for item_481 in var_479 {
@@ -2972,7 +3149,7 @@ pub fn serialize_structure_crate_model_subject_alternative_name_matchers(
 pub fn serialize_structure_crate_model_json_format_ref(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::JsonFormatRef,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_482) = &input.key {
         object.key("key").string(var_482.as_str());
     }
@@ -2985,7 +3162,7 @@ pub fn serialize_structure_crate_model_json_format_ref(
 pub fn serialize_structure_crate_model_tls_validation_context_file_trust(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TlsValidationContextFileTrust,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_484) = &input.certificate_chain {
         object.key("certificateChain").string(var_484.as_str());
     }
@@ -2995,7 +3172,7 @@ pub fn serialize_structure_crate_model_tls_validation_context_file_trust(
 pub fn serialize_structure_crate_model_tls_validation_context_sds_trust(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TlsValidationContextSdsTrust,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_485) = &input.secret_name {
         object.key("secretName").string(var_485.as_str());
     }
@@ -3005,9 +3182,10 @@ pub fn serialize_structure_crate_model_tls_validation_context_sds_trust(
 pub fn serialize_union_crate_model_tls_validation_context_trust(
     object_469: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TlsValidationContextTrust,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::TlsValidationContextTrust::Acm(inner) => {
+            #[allow(unused_mut)]
             let mut object_486 = object_469.key("acm").start_object();
             crate::json_ser::serialize_structure_crate_model_tls_validation_context_acm_trust(
                 &mut object_486,
@@ -3016,6 +3194,7 @@ pub fn serialize_union_crate_model_tls_validation_context_trust(
             object_486.finish();
         }
         crate::model::TlsValidationContextTrust::File(inner) => {
+            #[allow(unused_mut)]
             let mut object_487 = object_469.key("file").start_object();
             crate::json_ser::serialize_structure_crate_model_tls_validation_context_file_trust(
                 &mut object_487,
@@ -3024,6 +3203,7 @@ pub fn serialize_union_crate_model_tls_validation_context_trust(
             object_487.finish();
         }
         crate::model::TlsValidationContextTrust::Sds(inner) => {
+            #[allow(unused_mut)]
             let mut object_488 = object_469.key("sds").start_object();
             crate::json_ser::serialize_structure_crate_model_tls_validation_context_sds_trust(
                 &mut object_488,
@@ -3033,7 +3213,7 @@ pub fn serialize_union_crate_model_tls_validation_context_trust(
         }
         crate::model::TlsValidationContextTrust::Unknown => {
             return Err(
-                aws_smithy_http::operation::SerializationError::unknown_variant(
+                aws_smithy_http::operation::error::SerializationError::unknown_variant(
                     "TlsValidationContextTrust",
                 ),
             )
@@ -3045,7 +3225,7 @@ pub fn serialize_union_crate_model_tls_validation_context_trust(
 pub fn serialize_structure_crate_model_virtual_gateway_tls_validation_context_acm_trust(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VirtualGatewayTlsValidationContextAcmTrust,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_489) = &input.certificate_authority_arns {
         let mut array_490 = object.key("certificateAuthorityArns").start_array();
         for item_491 in var_489 {
@@ -3061,7 +3241,7 @@ pub fn serialize_structure_crate_model_virtual_gateway_tls_validation_context_ac
 pub fn serialize_structure_crate_model_tls_validation_context_acm_trust(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TlsValidationContextAcmTrust,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_492) = &input.certificate_authority_arns {
         let mut array_493 = object.key("certificateAuthorityArns").start_array();
         for item_494 in var_492 {

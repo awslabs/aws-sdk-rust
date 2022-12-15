@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod abort_multipart_upload_input {
 
     /// A builder for [`AbortMultipartUploadInput`](crate::input::AbortMultipartUploadInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
@@ -77,8 +77,10 @@ pub mod abort_multipart_upload_input {
         /// Consumes the builder and constructs a [`AbortMultipartUploadInput`](crate::input::AbortMultipartUploadInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::AbortMultipartUploadInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::AbortMultipartUploadInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::AbortMultipartUploadInput {
                 bucket: self.bucket,
                 key: self.key,
@@ -102,40 +104,50 @@ impl AbortMultipartUploadInput {
             crate::operation::AbortMultipartUpload,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AbortMultipartUploadInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.bucket;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_1, false);
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_2 = &_input.key;
-                let input_2 = input_2.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let key = aws_smithy_http::label::fmt_string(input_2, true);
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "key",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let key = aws_smithy_http::label::fmt_string(
+                    input_2,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
                 if key.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "key",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
                     .expect("formatting should succeed");
@@ -144,20 +156,35 @@ impl AbortMultipartUploadInput {
             fn uri_query(
                 _input: &crate::input::AbortMultipartUploadInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("x-id", "AbortMultipartUpload");
-                if let Some(inner_3) = &_input.upload_id {
-                    query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_3));
+                let inner_3 = &_input.upload_id;
+                let inner_3 = inner_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "upload_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_3.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "upload_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_3));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::AbortMultipartUploadInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -187,6 +214,7 @@ impl AbortMultipartUploadInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -232,7 +260,7 @@ impl AbortMultipartUploadInput {
 pub mod complete_multipart_upload_input {
 
     /// A builder for [`CompleteMultipartUploadInput`](crate::input::CompleteMultipartUploadInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
@@ -418,7 +446,7 @@ pub mod complete_multipart_upload_input {
             self,
         ) -> Result<
             crate::input::CompleteMultipartUploadInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CompleteMultipartUploadInput {
                 bucket: self.bucket,
@@ -437,6 +465,25 @@ pub mod complete_multipart_upload_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("bucket", &self.bucket);
+            formatter.field("key", &self.key);
+            formatter.field("multipart_upload", &self.multipart_upload);
+            formatter.field("upload_id", &self.upload_id);
+            formatter.field("checksum_crc32", &self.checksum_crc32);
+            formatter.field("checksum_crc32_c", &self.checksum_crc32_c);
+            formatter.field("checksum_sha1", &self.checksum_sha1);
+            formatter.field("checksum_sha256", &self.checksum_sha256);
+            formatter.field("request_payer", &self.request_payer);
+            formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
+            formatter.field("sse_customer_algorithm", &self.sse_customer_algorithm);
+            formatter.field("sse_customer_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("sse_customer_key_md5", &self.sse_customer_key_md5);
+            formatter.finish()
+        }
+    }
 }
 impl CompleteMultipartUploadInput {
     /// Consumes the builder and constructs an Operation<[`CompleteMultipartUpload`](crate::operation::CompleteMultipartUpload)>
@@ -451,40 +498,50 @@ impl CompleteMultipartUploadInput {
             crate::operation::CompleteMultipartUpload,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CompleteMultipartUploadInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_4 = &_input.bucket;
-                let input_4 = input_4.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_4, false);
+                let input_4 = input_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_4,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_5 = &_input.key;
-                let input_5 = input_5.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let key = aws_smithy_http::label::fmt_string(input_5, true);
+                let input_5 = input_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "key",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let key = aws_smithy_http::label::fmt_string(
+                    input_5,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
                 if key.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "key",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
                     .expect("formatting should succeed");
@@ -493,20 +550,35 @@ impl CompleteMultipartUploadInput {
             fn uri_query(
                 _input: &crate::input::CompleteMultipartUploadInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("x-id", "CompleteMultipartUpload");
-                if let Some(inner_6) = &_input.upload_id {
-                    query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_6));
+                let inner_6 = &_input.upload_id;
+                let inner_6 = inner_6.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "upload_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_6.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "upload_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_6));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::CompleteMultipartUploadInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -552,6 +624,7 @@ impl CompleteMultipartUploadInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -597,7 +670,7 @@ impl CompleteMultipartUploadInput {
 pub mod copy_object_input {
 
     /// A builder for [`CopyObjectInput`](crate::input::CopyObjectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) acl: std::option::Option<crate::model::ObjectCannedAcl>,
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -1262,7 +1335,8 @@ pub mod copy_object_input {
         /// Consumes the builder and constructs a [`CopyObjectInput`](crate::input::CopyObjectInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CopyObjectInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::CopyObjectInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::CopyObjectInput {
                 acl: self.acl,
                 bucket: self.bucket,
@@ -1308,6 +1382,80 @@ pub mod copy_object_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("acl", &self.acl);
+            formatter.field("bucket", &self.bucket);
+            formatter.field("cache_control", &self.cache_control);
+            formatter.field("checksum_algorithm", &self.checksum_algorithm);
+            formatter.field("content_disposition", &self.content_disposition);
+            formatter.field("content_encoding", &self.content_encoding);
+            formatter.field("content_language", &self.content_language);
+            formatter.field("content_type", &self.content_type);
+            formatter.field("copy_source", &self.copy_source);
+            formatter.field("copy_source_if_match", &self.copy_source_if_match);
+            formatter.field(
+                "copy_source_if_modified_since",
+                &self.copy_source_if_modified_since,
+            );
+            formatter.field("copy_source_if_none_match", &self.copy_source_if_none_match);
+            formatter.field(
+                "copy_source_if_unmodified_since",
+                &self.copy_source_if_unmodified_since,
+            );
+            formatter.field("expires", &self.expires);
+            formatter.field("grant_full_control", &self.grant_full_control);
+            formatter.field("grant_read", &self.grant_read);
+            formatter.field("grant_read_acp", &self.grant_read_acp);
+            formatter.field("grant_write_acp", &self.grant_write_acp);
+            formatter.field("key", &self.key);
+            formatter.field("metadata", &self.metadata);
+            formatter.field("metadata_directive", &self.metadata_directive);
+            formatter.field("tagging_directive", &self.tagging_directive);
+            formatter.field("server_side_encryption", &self.server_side_encryption);
+            formatter.field("storage_class", &self.storage_class);
+            formatter.field("website_redirect_location", &self.website_redirect_location);
+            formatter.field("sse_customer_algorithm", &self.sse_customer_algorithm);
+            formatter.field("sse_customer_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("sse_customer_key_md5", &self.sse_customer_key_md5);
+            formatter.field("ssekms_key_id", &"*** Sensitive Data Redacted ***");
+            formatter.field(
+                "ssekms_encryption_context",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field("bucket_key_enabled", &self.bucket_key_enabled);
+            formatter.field(
+                "copy_source_sse_customer_algorithm",
+                &self.copy_source_sse_customer_algorithm,
+            );
+            formatter.field(
+                "copy_source_sse_customer_key",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field(
+                "copy_source_sse_customer_key_md5",
+                &self.copy_source_sse_customer_key_md5,
+            );
+            formatter.field("request_payer", &self.request_payer);
+            formatter.field("tagging", &self.tagging);
+            formatter.field("object_lock_mode", &self.object_lock_mode);
+            formatter.field(
+                "object_lock_retain_until_date",
+                &self.object_lock_retain_until_date,
+            );
+            formatter.field(
+                "object_lock_legal_hold_status",
+                &self.object_lock_legal_hold_status,
+            );
+            formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
+            formatter.field(
+                "expected_source_bucket_owner",
+                &self.expected_source_bucket_owner,
+            );
+            formatter.finish()
+        }
+    }
 }
 impl CopyObjectInput {
     /// Consumes the builder and constructs an Operation<[`CopyObject`](crate::operation::CopyObject)>
@@ -1322,40 +1470,50 @@ impl CopyObjectInput {
             crate::operation::CopyObject,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CopyObjectInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_7 = &_input.bucket;
-                let input_7 = input_7.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_7, false);
+                let input_7 = input_7.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_7,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_8 = &_input.key;
-                let input_8 = input_8.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let key = aws_smithy_http::label::fmt_string(input_8, true);
+                let input_8 = input_8.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "key",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let key = aws_smithy_http::label::fmt_string(
+                    input_8,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
                 if key.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "key",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
                     .expect("formatting should succeed");
@@ -1364,7 +1522,7 @@ impl CopyObjectInput {
             fn uri_query(
                 _input: &crate::input::CopyObjectInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("x-id", "CopyObject");
                 Ok(())
@@ -1373,8 +1531,10 @@ impl CopyObjectInput {
             fn update_http_builder(
                 input: &crate::input::CopyObjectInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1403,6 +1563,7 @@ impl CopyObjectInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -1448,7 +1609,7 @@ impl CopyObjectInput {
 pub mod create_bucket_input {
 
     /// A builder for [`CreateBucketInput`](crate::input::CreateBucketInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) acl: std::option::Option<crate::model::BucketCannedAcl>,
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -1598,7 +1759,7 @@ pub mod create_bucket_input {
         /// Consumes the builder and constructs a [`CreateBucketInput`](crate::input::CreateBucketInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateBucketInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateBucketInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateBucketInput {
                 acl: self.acl,
@@ -1630,26 +1791,31 @@ impl CreateBucketInput {
             crate::operation::CreateBucket,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateBucketInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_9 = &_input.bucket;
-                let input_9 = input_9.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_9, false);
+                let input_9 = input_9.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_9,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -1658,8 +1824,10 @@ impl CreateBucketInput {
             fn update_http_builder(
                 input: &crate::input::CreateBucketInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_create_bucket(input, builder)?;
@@ -1703,6 +1871,7 @@ impl CreateBucketInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -1748,7 +1917,7 @@ impl CreateBucketInput {
 pub mod create_multipart_upload_input {
 
     /// A builder for [`CreateMultipartUploadInput`](crate::input::CreateMultipartUploadInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) acl: std::option::Option<crate::model::ObjectCannedAcl>,
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -2191,8 +2360,10 @@ pub mod create_multipart_upload_input {
         /// Consumes the builder and constructs a [`CreateMultipartUploadInput`](crate::input::CreateMultipartUploadInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateMultipartUploadInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateMultipartUploadInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateMultipartUploadInput {
                 acl: self.acl,
                 bucket: self.bucket,
@@ -2227,6 +2398,51 @@ pub mod create_multipart_upload_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("acl", &self.acl);
+            formatter.field("bucket", &self.bucket);
+            formatter.field("cache_control", &self.cache_control);
+            formatter.field("content_disposition", &self.content_disposition);
+            formatter.field("content_encoding", &self.content_encoding);
+            formatter.field("content_language", &self.content_language);
+            formatter.field("content_type", &self.content_type);
+            formatter.field("expires", &self.expires);
+            formatter.field("grant_full_control", &self.grant_full_control);
+            formatter.field("grant_read", &self.grant_read);
+            formatter.field("grant_read_acp", &self.grant_read_acp);
+            formatter.field("grant_write_acp", &self.grant_write_acp);
+            formatter.field("key", &self.key);
+            formatter.field("metadata", &self.metadata);
+            formatter.field("server_side_encryption", &self.server_side_encryption);
+            formatter.field("storage_class", &self.storage_class);
+            formatter.field("website_redirect_location", &self.website_redirect_location);
+            formatter.field("sse_customer_algorithm", &self.sse_customer_algorithm);
+            formatter.field("sse_customer_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("sse_customer_key_md5", &self.sse_customer_key_md5);
+            formatter.field("ssekms_key_id", &"*** Sensitive Data Redacted ***");
+            formatter.field(
+                "ssekms_encryption_context",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field("bucket_key_enabled", &self.bucket_key_enabled);
+            formatter.field("request_payer", &self.request_payer);
+            formatter.field("tagging", &self.tagging);
+            formatter.field("object_lock_mode", &self.object_lock_mode);
+            formatter.field(
+                "object_lock_retain_until_date",
+                &self.object_lock_retain_until_date,
+            );
+            formatter.field(
+                "object_lock_legal_hold_status",
+                &self.object_lock_legal_hold_status,
+            );
+            formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
+            formatter.field("checksum_algorithm", &self.checksum_algorithm);
+            formatter.finish()
+        }
+    }
 }
 impl CreateMultipartUploadInput {
     /// Consumes the builder and constructs an Operation<[`CreateMultipartUpload`](crate::operation::CreateMultipartUpload)>
@@ -2241,40 +2457,50 @@ impl CreateMultipartUploadInput {
             crate::operation::CreateMultipartUpload,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateMultipartUploadInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_10 = &_input.bucket;
-                let input_10 = input_10.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_10, false);
+                let input_10 = input_10.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_10,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_11 = &_input.key;
-                let input_11 = input_11.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let key = aws_smithy_http::label::fmt_string(input_11, true);
+                let input_11 = input_11.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "key",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let key = aws_smithy_http::label::fmt_string(
+                    input_11,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
                 if key.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "key",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
                     .expect("formatting should succeed");
@@ -2283,7 +2509,7 @@ impl CreateMultipartUploadInput {
             fn uri_query(
                 _input: &crate::input::CreateMultipartUploadInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("uploads");
                 query.push_kv("x-id", "CreateMultipartUpload");
@@ -2293,8 +2519,10 @@ impl CreateMultipartUploadInput {
             fn update_http_builder(
                 input: &crate::input::CreateMultipartUploadInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2324,6 +2552,7 @@ impl CreateMultipartUploadInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -2369,7 +2598,7 @@ impl CreateMultipartUploadInput {
 pub mod delete_bucket_input {
 
     /// A builder for [`DeleteBucketInput`](crate::input::DeleteBucketInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
@@ -2401,7 +2630,7 @@ pub mod delete_bucket_input {
         /// Consumes the builder and constructs a [`DeleteBucketInput`](crate::input::DeleteBucketInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteBucketInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteBucketInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteBucketInput {
                 bucket: self.bucket,
@@ -2423,26 +2652,31 @@ impl DeleteBucketInput {
             crate::operation::DeleteBucket,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBucketInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_12 = &_input.bucket;
-                let input_12 = input_12.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_12, false);
+                let input_12 = input_12.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_12,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -2451,8 +2685,10 @@ impl DeleteBucketInput {
             fn update_http_builder(
                 input: &crate::input::DeleteBucketInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_delete_bucket(input, builder)?;
@@ -2480,6 +2716,7 @@ impl DeleteBucketInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -2525,7 +2762,7 @@ impl DeleteBucketInput {
 pub mod delete_bucket_analytics_configuration_input {
 
     /// A builder for [`DeleteBucketAnalyticsConfigurationInput`](crate::input::DeleteBucketAnalyticsConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2570,7 +2807,7 @@ pub mod delete_bucket_analytics_configuration_input {
             self,
         ) -> Result<
             crate::input::DeleteBucketAnalyticsConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteBucketAnalyticsConfigurationInput {
                 bucket: self.bucket,
@@ -2593,26 +2830,31 @@ impl DeleteBucketAnalyticsConfigurationInput {
             crate::operation::DeleteBucketAnalyticsConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBucketAnalyticsConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_13 = &_input.bucket;
-                let input_13 = input_13.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_13, false);
+                let input_13 = input_13.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_13,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -2620,20 +2862,35 @@ impl DeleteBucketAnalyticsConfigurationInput {
             fn uri_query(
                 _input: &crate::input::DeleteBucketAnalyticsConfigurationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("analytics");
-                if let Some(inner_14) = &_input.id {
-                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_14));
+                let inner_14 = &_input.id;
+                let inner_14 = inner_14.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_14.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_14));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::DeleteBucketAnalyticsConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2664,6 +2921,7 @@ impl DeleteBucketAnalyticsConfigurationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -2709,7 +2967,7 @@ impl DeleteBucketAnalyticsConfigurationInput {
 pub mod delete_bucket_cors_input {
 
     /// A builder for [`DeleteBucketCorsInput`](crate::input::DeleteBucketCorsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
@@ -2741,8 +2999,10 @@ pub mod delete_bucket_cors_input {
         /// Consumes the builder and constructs a [`DeleteBucketCorsInput`](crate::input::DeleteBucketCorsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteBucketCorsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteBucketCorsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteBucketCorsInput {
                 bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -2763,26 +3023,31 @@ impl DeleteBucketCorsInput {
             crate::operation::DeleteBucketCors,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBucketCorsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_15 = &_input.bucket;
-                let input_15 = input_15.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_15, false);
+                let input_15 = input_15.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_15,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -2790,7 +3055,7 @@ impl DeleteBucketCorsInput {
             fn uri_query(
                 _input: &crate::input::DeleteBucketCorsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("cors");
                 Ok(())
@@ -2799,8 +3064,10 @@ impl DeleteBucketCorsInput {
             fn update_http_builder(
                 input: &crate::input::DeleteBucketCorsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2829,6 +3096,7 @@ impl DeleteBucketCorsInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -2874,7 +3142,7 @@ impl DeleteBucketCorsInput {
 pub mod delete_bucket_encryption_input {
 
     /// A builder for [`DeleteBucketEncryptionInput`](crate::input::DeleteBucketEncryptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
@@ -2906,8 +3174,10 @@ pub mod delete_bucket_encryption_input {
         /// Consumes the builder and constructs a [`DeleteBucketEncryptionInput`](crate::input::DeleteBucketEncryptionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteBucketEncryptionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteBucketEncryptionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteBucketEncryptionInput {
                 bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -2928,26 +3198,31 @@ impl DeleteBucketEncryptionInput {
             crate::operation::DeleteBucketEncryption,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBucketEncryptionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_16 = &_input.bucket;
-                let input_16 = input_16.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_16, false);
+                let input_16 = input_16.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_16,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -2955,7 +3230,7 @@ impl DeleteBucketEncryptionInput {
             fn uri_query(
                 _input: &crate::input::DeleteBucketEncryptionInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("encryption");
                 Ok(())
@@ -2964,8 +3239,10 @@ impl DeleteBucketEncryptionInput {
             fn update_http_builder(
                 input: &crate::input::DeleteBucketEncryptionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2995,6 +3272,7 @@ impl DeleteBucketEncryptionInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -3040,7 +3318,7 @@ impl DeleteBucketEncryptionInput {
 pub mod delete_bucket_intelligent_tiering_configuration_input {
 
     /// A builder for [`DeleteBucketIntelligentTieringConfigurationInput`](crate::input::DeleteBucketIntelligentTieringConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3071,7 +3349,7 @@ pub mod delete_bucket_intelligent_tiering_configuration_input {
             self,
         ) -> Result<
             crate::input::DeleteBucketIntelligentTieringConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(
                 crate::input::DeleteBucketIntelligentTieringConfigurationInput {
@@ -3095,26 +3373,31 @@ impl DeleteBucketIntelligentTieringConfigurationInput {
             crate::operation::DeleteBucketIntelligentTieringConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBucketIntelligentTieringConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_17 = &_input.bucket;
-                let input_17 = input_17.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_17, false);
+                let input_17 = input_17.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_17,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -3122,20 +3405,35 @@ impl DeleteBucketIntelligentTieringConfigurationInput {
             fn uri_query(
                 _input: &crate::input::DeleteBucketIntelligentTieringConfigurationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("intelligent-tiering");
-                if let Some(inner_18) = &_input.id {
-                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_18));
+                let inner_18 = &_input.id;
+                let inner_18 = inner_18.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_18.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_18));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::DeleteBucketIntelligentTieringConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3163,6 +3461,7 @@ impl DeleteBucketIntelligentTieringConfigurationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -3209,7 +3508,7 @@ impl DeleteBucketIntelligentTieringConfigurationInput {
 pub mod delete_bucket_inventory_configuration_input {
 
     /// A builder for [`DeleteBucketInventoryConfigurationInput`](crate::input::DeleteBucketInventoryConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3254,7 +3553,7 @@ pub mod delete_bucket_inventory_configuration_input {
             self,
         ) -> Result<
             crate::input::DeleteBucketInventoryConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteBucketInventoryConfigurationInput {
                 bucket: self.bucket,
@@ -3277,26 +3576,31 @@ impl DeleteBucketInventoryConfigurationInput {
             crate::operation::DeleteBucketInventoryConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBucketInventoryConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_19 = &_input.bucket;
-                let input_19 = input_19.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_19, false);
+                let input_19 = input_19.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_19,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -3304,20 +3608,35 @@ impl DeleteBucketInventoryConfigurationInput {
             fn uri_query(
                 _input: &crate::input::DeleteBucketInventoryConfigurationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("inventory");
-                if let Some(inner_20) = &_input.id {
-                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_20));
+                let inner_20 = &_input.id;
+                let inner_20 = inner_20.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_20.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_20));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::DeleteBucketInventoryConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3348,6 +3667,7 @@ impl DeleteBucketInventoryConfigurationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -3393,7 +3713,7 @@ impl DeleteBucketInventoryConfigurationInput {
 pub mod delete_bucket_lifecycle_input {
 
     /// A builder for [`DeleteBucketLifecycleInput`](crate::input::DeleteBucketLifecycleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
@@ -3425,8 +3745,10 @@ pub mod delete_bucket_lifecycle_input {
         /// Consumes the builder and constructs a [`DeleteBucketLifecycleInput`](crate::input::DeleteBucketLifecycleInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteBucketLifecycleInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteBucketLifecycleInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteBucketLifecycleInput {
                 bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -3447,26 +3769,31 @@ impl DeleteBucketLifecycleInput {
             crate::operation::DeleteBucketLifecycle,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBucketLifecycleInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_21 = &_input.bucket;
-                let input_21 = input_21.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_21, false);
+                let input_21 = input_21.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_21,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -3474,7 +3801,7 @@ impl DeleteBucketLifecycleInput {
             fn uri_query(
                 _input: &crate::input::DeleteBucketLifecycleInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("lifecycle");
                 Ok(())
@@ -3483,8 +3810,10 @@ impl DeleteBucketLifecycleInput {
             fn update_http_builder(
                 input: &crate::input::DeleteBucketLifecycleInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3514,6 +3843,7 @@ impl DeleteBucketLifecycleInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -3559,7 +3889,7 @@ impl DeleteBucketLifecycleInput {
 pub mod delete_bucket_metrics_configuration_input {
 
     /// A builder for [`DeleteBucketMetricsConfigurationInput`](crate::input::DeleteBucketMetricsConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3604,7 +3934,7 @@ pub mod delete_bucket_metrics_configuration_input {
             self,
         ) -> Result<
             crate::input::DeleteBucketMetricsConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteBucketMetricsConfigurationInput {
                 bucket: self.bucket,
@@ -3627,26 +3957,31 @@ impl DeleteBucketMetricsConfigurationInput {
             crate::operation::DeleteBucketMetricsConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBucketMetricsConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_22 = &_input.bucket;
-                let input_22 = input_22.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_22, false);
+                let input_22 = input_22.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_22,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -3654,20 +3989,35 @@ impl DeleteBucketMetricsConfigurationInput {
             fn uri_query(
                 _input: &crate::input::DeleteBucketMetricsConfigurationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("metrics");
-                if let Some(inner_23) = &_input.id {
-                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_23));
+                let inner_23 = &_input.id;
+                let inner_23 = inner_23.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_23.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_23));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::DeleteBucketMetricsConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3698,6 +4048,7 @@ impl DeleteBucketMetricsConfigurationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -3743,7 +4094,7 @@ impl DeleteBucketMetricsConfigurationInput {
 pub mod delete_bucket_ownership_controls_input {
 
     /// A builder for [`DeleteBucketOwnershipControlsInput`](crate::input::DeleteBucketOwnershipControlsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
@@ -3777,7 +4128,7 @@ pub mod delete_bucket_ownership_controls_input {
             self,
         ) -> Result<
             crate::input::DeleteBucketOwnershipControlsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteBucketOwnershipControlsInput {
                 bucket: self.bucket,
@@ -3799,26 +4150,31 @@ impl DeleteBucketOwnershipControlsInput {
             crate::operation::DeleteBucketOwnershipControls,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBucketOwnershipControlsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_24 = &_input.bucket;
-                let input_24 = input_24.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_24, false);
+                let input_24 = input_24.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_24,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -3826,7 +4182,7 @@ impl DeleteBucketOwnershipControlsInput {
             fn uri_query(
                 _input: &crate::input::DeleteBucketOwnershipControlsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("ownershipControls");
                 Ok(())
@@ -3835,8 +4191,10 @@ impl DeleteBucketOwnershipControlsInput {
             fn update_http_builder(
                 input: &crate::input::DeleteBucketOwnershipControlsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3867,6 +4225,7 @@ impl DeleteBucketOwnershipControlsInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -3912,7 +4271,7 @@ impl DeleteBucketOwnershipControlsInput {
 pub mod delete_bucket_policy_input {
 
     /// A builder for [`DeleteBucketPolicyInput`](crate::input::DeleteBucketPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
@@ -3944,8 +4303,10 @@ pub mod delete_bucket_policy_input {
         /// Consumes the builder and constructs a [`DeleteBucketPolicyInput`](crate::input::DeleteBucketPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteBucketPolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteBucketPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteBucketPolicyInput {
                 bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -3966,26 +4327,31 @@ impl DeleteBucketPolicyInput {
             crate::operation::DeleteBucketPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBucketPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_25 = &_input.bucket;
-                let input_25 = input_25.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_25, false);
+                let input_25 = input_25.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_25,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -3993,7 +4359,7 @@ impl DeleteBucketPolicyInput {
             fn uri_query(
                 _input: &crate::input::DeleteBucketPolicyInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("policy");
                 Ok(())
@@ -4002,8 +4368,10 @@ impl DeleteBucketPolicyInput {
             fn update_http_builder(
                 input: &crate::input::DeleteBucketPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4032,6 +4400,7 @@ impl DeleteBucketPolicyInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -4077,7 +4446,7 @@ impl DeleteBucketPolicyInput {
 pub mod delete_bucket_replication_input {
 
     /// A builder for [`DeleteBucketReplicationInput`](crate::input::DeleteBucketReplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
@@ -4111,7 +4480,7 @@ pub mod delete_bucket_replication_input {
             self,
         ) -> Result<
             crate::input::DeleteBucketReplicationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteBucketReplicationInput {
                 bucket: self.bucket,
@@ -4133,26 +4502,31 @@ impl DeleteBucketReplicationInput {
             crate::operation::DeleteBucketReplication,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBucketReplicationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_26 = &_input.bucket;
-                let input_26 = input_26.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_26, false);
+                let input_26 = input_26.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_26,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -4160,7 +4534,7 @@ impl DeleteBucketReplicationInput {
             fn uri_query(
                 _input: &crate::input::DeleteBucketReplicationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("replication");
                 Ok(())
@@ -4169,8 +4543,10 @@ impl DeleteBucketReplicationInput {
             fn update_http_builder(
                 input: &crate::input::DeleteBucketReplicationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4200,6 +4576,7 @@ impl DeleteBucketReplicationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -4245,7 +4622,7 @@ impl DeleteBucketReplicationInput {
 pub mod delete_bucket_tagging_input {
 
     /// A builder for [`DeleteBucketTaggingInput`](crate::input::DeleteBucketTaggingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
@@ -4277,8 +4654,10 @@ pub mod delete_bucket_tagging_input {
         /// Consumes the builder and constructs a [`DeleteBucketTaggingInput`](crate::input::DeleteBucketTaggingInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteBucketTaggingInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteBucketTaggingInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteBucketTaggingInput {
                 bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -4299,26 +4678,31 @@ impl DeleteBucketTaggingInput {
             crate::operation::DeleteBucketTagging,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBucketTaggingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_27 = &_input.bucket;
-                let input_27 = input_27.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_27, false);
+                let input_27 = input_27.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_27,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -4326,7 +4710,7 @@ impl DeleteBucketTaggingInput {
             fn uri_query(
                 _input: &crate::input::DeleteBucketTaggingInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("tagging");
                 Ok(())
@@ -4335,8 +4719,10 @@ impl DeleteBucketTaggingInput {
             fn update_http_builder(
                 input: &crate::input::DeleteBucketTaggingInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4365,6 +4751,7 @@ impl DeleteBucketTaggingInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -4410,7 +4797,7 @@ impl DeleteBucketTaggingInput {
 pub mod delete_bucket_website_input {
 
     /// A builder for [`DeleteBucketWebsiteInput`](crate::input::DeleteBucketWebsiteInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
@@ -4442,8 +4829,10 @@ pub mod delete_bucket_website_input {
         /// Consumes the builder and constructs a [`DeleteBucketWebsiteInput`](crate::input::DeleteBucketWebsiteInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteBucketWebsiteInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteBucketWebsiteInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteBucketWebsiteInput {
                 bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -4464,26 +4853,31 @@ impl DeleteBucketWebsiteInput {
             crate::operation::DeleteBucketWebsite,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBucketWebsiteInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_28 = &_input.bucket;
-                let input_28 = input_28.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_28, false);
+                let input_28 = input_28.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_28,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -4491,7 +4885,7 @@ impl DeleteBucketWebsiteInput {
             fn uri_query(
                 _input: &crate::input::DeleteBucketWebsiteInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("website");
                 Ok(())
@@ -4500,8 +4894,10 @@ impl DeleteBucketWebsiteInput {
             fn update_http_builder(
                 input: &crate::input::DeleteBucketWebsiteInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4530,6 +4926,7 @@ impl DeleteBucketWebsiteInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -4575,7 +4972,7 @@ impl DeleteBucketWebsiteInput {
 pub mod delete_object_input {
 
     /// A builder for [`DeleteObjectInput`](crate::input::DeleteObjectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
@@ -4669,7 +5066,7 @@ pub mod delete_object_input {
         /// Consumes the builder and constructs a [`DeleteObjectInput`](crate::input::DeleteObjectInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteObjectInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteObjectInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteObjectInput {
                 bucket: self.bucket,
@@ -4696,40 +5093,50 @@ impl DeleteObjectInput {
             crate::operation::DeleteObject,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteObjectInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_29 = &_input.bucket;
-                let input_29 = input_29.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_29, false);
+                let input_29 = input_29.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_29,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_30 = &_input.key;
-                let input_30 = input_30.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let key = aws_smithy_http::label::fmt_string(input_30, true);
+                let input_30 = input_30.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "key",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let key = aws_smithy_http::label::fmt_string(
+                    input_30,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
                 if key.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "key",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
                     .expect("formatting should succeed");
@@ -4738,11 +5145,13 @@ impl DeleteObjectInput {
             fn uri_query(
                 _input: &crate::input::DeleteObjectInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("x-id", "DeleteObject");
                 if let Some(inner_31) = &_input.version_id {
-                    query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_31));
+                    {
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_31));
+                    }
                 }
                 Ok(())
             }
@@ -4750,8 +5159,10 @@ impl DeleteObjectInput {
             fn update_http_builder(
                 input: &crate::input::DeleteObjectInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4780,6 +5191,7 @@ impl DeleteObjectInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -4836,7 +5248,7 @@ impl DeleteObjectInput {
         let (mut request, _) = self
             ._make_presigned_operation(config)
             .await
-            .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
             .into_request_response();
         {
             // Change signature type to query params and wire up presigning config
@@ -4869,40 +5281,50 @@ impl DeleteObjectInput {
             crate::operation::DeleteObject,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteObjectInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_32 = &_input.bucket;
-                let input_32 = input_32.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_32, false);
+                let input_32 = input_32.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_32,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_33 = &_input.key;
-                let input_33 = input_33.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let key = aws_smithy_http::label::fmt_string(input_33, true);
+                let input_33 = input_33.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "key",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let key = aws_smithy_http::label::fmt_string(
+                    input_33,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
                 if key.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "key",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
                     .expect("formatting should succeed");
@@ -4911,11 +5333,13 @@ impl DeleteObjectInput {
             fn uri_query(
                 _input: &crate::input::DeleteObjectInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("x-id", "DeleteObject");
                 if let Some(inner_34) = &_input.version_id {
-                    query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_34));
+                    {
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_34));
+                    }
                 }
                 Ok(())
             }
@@ -4923,8 +5347,10 @@ impl DeleteObjectInput {
             fn update_http_builder(
                 input: &crate::input::DeleteObjectInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4953,6 +5379,7 @@ impl DeleteObjectInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -4998,7 +5425,7 @@ impl DeleteObjectInput {
 pub mod delete_objects_input {
 
     /// A builder for [`DeleteObjectsInput`](crate::input::DeleteObjectsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) delete: std::option::Option<crate::model::Delete>,
@@ -5099,7 +5526,7 @@ pub mod delete_objects_input {
         /// Consumes the builder and constructs a [`DeleteObjectsInput`](crate::input::DeleteObjectsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteObjectsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteObjectsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteObjectsInput {
                 bucket: self.bucket,
@@ -5126,27 +5553,32 @@ impl DeleteObjectsInput {
             crate::operation::DeleteObjects,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteObjectsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_35 = &_input.bucket;
-                let input_35 = input_35.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_35, false);
+                let input_35 = input_35.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_35,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -5154,7 +5586,7 @@ impl DeleteObjectsInput {
             fn uri_query(
                 _input: &crate::input::DeleteObjectsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("delete");
                 query.push_kv("x-id", "DeleteObjects");
@@ -5164,8 +5596,10 @@ impl DeleteObjectsInput {
             fn update_http_builder(
                 input: &crate::input::DeleteObjectsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5213,9 +5647,7 @@ impl DeleteObjectsInput {
             let checksum_algorithm = match checksum_algorithm {
                 Some(algo) => Some(
                     algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
-                        .map_err(|err| {
-                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
-                        })?,
+                        .map_err(aws_smithy_http::operation::error::BuildError::other)?,
                 ),
                 None => None,
             };
@@ -5226,11 +5658,12 @@ impl DeleteObjectsInput {
                     checksum_algorithm,
                 )?;
             }
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -5276,7 +5709,7 @@ impl DeleteObjectsInput {
 pub mod delete_object_tagging_input {
 
     /// A builder for [`DeleteObjectTaggingInput`](crate::input::DeleteObjectTaggingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
@@ -5334,8 +5767,10 @@ pub mod delete_object_tagging_input {
         /// Consumes the builder and constructs a [`DeleteObjectTaggingInput`](crate::input::DeleteObjectTaggingInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteObjectTaggingInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteObjectTaggingInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteObjectTaggingInput {
                 bucket: self.bucket,
                 key: self.key,
@@ -5358,40 +5793,50 @@ impl DeleteObjectTaggingInput {
             crate::operation::DeleteObjectTagging,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteObjectTaggingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_36 = &_input.bucket;
-                let input_36 = input_36.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_36, false);
+                let input_36 = input_36.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_36,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_37 = &_input.key;
-                let input_37 = input_37.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let key = aws_smithy_http::label::fmt_string(input_37, true);
+                let input_37 = input_37.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "key",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let key = aws_smithy_http::label::fmt_string(
+                    input_37,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
                 if key.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "key",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
                     .expect("formatting should succeed");
@@ -5400,11 +5845,13 @@ impl DeleteObjectTaggingInput {
             fn uri_query(
                 _input: &crate::input::DeleteObjectTaggingInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("tagging");
                 if let Some(inner_38) = &_input.version_id {
-                    query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_38));
+                    {
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_38));
+                    }
                 }
                 Ok(())
             }
@@ -5412,8 +5859,10 @@ impl DeleteObjectTaggingInput {
             fn update_http_builder(
                 input: &crate::input::DeleteObjectTaggingInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5442,6 +5891,7 @@ impl DeleteObjectTaggingInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -5487,7 +5937,7 @@ impl DeleteObjectTaggingInput {
 pub mod delete_public_access_block_input {
 
     /// A builder for [`DeletePublicAccessBlockInput`](crate::input::DeletePublicAccessBlockInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
@@ -5521,7 +5971,7 @@ pub mod delete_public_access_block_input {
             self,
         ) -> Result<
             crate::input::DeletePublicAccessBlockInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeletePublicAccessBlockInput {
                 bucket: self.bucket,
@@ -5543,26 +5993,31 @@ impl DeletePublicAccessBlockInput {
             crate::operation::DeletePublicAccessBlock,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeletePublicAccessBlockInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_39 = &_input.bucket;
-                let input_39 = input_39.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_39, false);
+                let input_39 = input_39.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_39,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -5570,7 +6025,7 @@ impl DeletePublicAccessBlockInput {
             fn uri_query(
                 _input: &crate::input::DeletePublicAccessBlockInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("publicAccessBlock");
                 Ok(())
@@ -5579,8 +6034,10 @@ impl DeletePublicAccessBlockInput {
             fn update_http_builder(
                 input: &crate::input::DeletePublicAccessBlockInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5610,6 +6067,7 @@ impl DeletePublicAccessBlockInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -5655,7 +6113,7 @@ impl DeletePublicAccessBlockInput {
 pub mod get_bucket_accelerate_configuration_input {
 
     /// A builder for [`GetBucketAccelerateConfigurationInput`](crate::input::GetBucketAccelerateConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
@@ -5689,7 +6147,7 @@ pub mod get_bucket_accelerate_configuration_input {
             self,
         ) -> Result<
             crate::input::GetBucketAccelerateConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetBucketAccelerateConfigurationInput {
                 bucket: self.bucket,
@@ -5711,26 +6169,31 @@ impl GetBucketAccelerateConfigurationInput {
             crate::operation::GetBucketAccelerateConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketAccelerateConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_40 = &_input.bucket;
-                let input_40 = input_40.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_40, false);
+                let input_40 = input_40.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_40,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -5738,7 +6201,7 @@ impl GetBucketAccelerateConfigurationInput {
             fn uri_query(
                 _input: &crate::input::GetBucketAccelerateConfigurationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("accelerate");
                 Ok(())
@@ -5747,8 +6210,10 @@ impl GetBucketAccelerateConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::GetBucketAccelerateConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5779,6 +6244,7 @@ impl GetBucketAccelerateConfigurationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -5824,7 +6290,7 @@ impl GetBucketAccelerateConfigurationInput {
 pub mod get_bucket_acl_input {
 
     /// A builder for [`GetBucketAclInput`](crate::input::GetBucketAclInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
@@ -5856,7 +6322,7 @@ pub mod get_bucket_acl_input {
         /// Consumes the builder and constructs a [`GetBucketAclInput`](crate::input::GetBucketAclInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBucketAclInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetBucketAclInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetBucketAclInput {
                 bucket: self.bucket,
@@ -5878,26 +6344,31 @@ impl GetBucketAclInput {
             crate::operation::GetBucketAcl,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketAclInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_41 = &_input.bucket;
-                let input_41 = input_41.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_41, false);
+                let input_41 = input_41.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_41,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -5905,7 +6376,7 @@ impl GetBucketAclInput {
             fn uri_query(
                 _input: &crate::input::GetBucketAclInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("acl");
                 Ok(())
@@ -5914,8 +6385,10 @@ impl GetBucketAclInput {
             fn update_http_builder(
                 input: &crate::input::GetBucketAclInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5944,6 +6417,7 @@ impl GetBucketAclInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -5989,7 +6463,7 @@ impl GetBucketAclInput {
 pub mod get_bucket_analytics_configuration_input {
 
     /// A builder for [`GetBucketAnalyticsConfigurationInput`](crate::input::GetBucketAnalyticsConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -6034,7 +6508,7 @@ pub mod get_bucket_analytics_configuration_input {
             self,
         ) -> Result<
             crate::input::GetBucketAnalyticsConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetBucketAnalyticsConfigurationInput {
                 bucket: self.bucket,
@@ -6057,26 +6531,31 @@ impl GetBucketAnalyticsConfigurationInput {
             crate::operation::GetBucketAnalyticsConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketAnalyticsConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_42 = &_input.bucket;
-                let input_42 = input_42.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_42, false);
+                let input_42 = input_42.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_42,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -6084,21 +6563,36 @@ impl GetBucketAnalyticsConfigurationInput {
             fn uri_query(
                 _input: &crate::input::GetBucketAnalyticsConfigurationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("analytics");
                 query.push_kv("x-id", "GetBucketAnalyticsConfiguration");
-                if let Some(inner_43) = &_input.id {
-                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_43));
+                let inner_43 = &_input.id;
+                let inner_43 = inner_43.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_43.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_43));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::GetBucketAnalyticsConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -6129,6 +6623,7 @@ impl GetBucketAnalyticsConfigurationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -6174,7 +6669,7 @@ impl GetBucketAnalyticsConfigurationInput {
 pub mod get_bucket_cors_input {
 
     /// A builder for [`GetBucketCorsInput`](crate::input::GetBucketCorsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
@@ -6206,7 +6701,7 @@ pub mod get_bucket_cors_input {
         /// Consumes the builder and constructs a [`GetBucketCorsInput`](crate::input::GetBucketCorsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBucketCorsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetBucketCorsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetBucketCorsInput {
                 bucket: self.bucket,
@@ -6228,26 +6723,31 @@ impl GetBucketCorsInput {
             crate::operation::GetBucketCors,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketCorsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_44 = &_input.bucket;
-                let input_44 = input_44.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_44, false);
+                let input_44 = input_44.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_44,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -6255,7 +6755,7 @@ impl GetBucketCorsInput {
             fn uri_query(
                 _input: &crate::input::GetBucketCorsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("cors");
                 Ok(())
@@ -6264,8 +6764,10 @@ impl GetBucketCorsInput {
             fn update_http_builder(
                 input: &crate::input::GetBucketCorsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -6294,6 +6796,7 @@ impl GetBucketCorsInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -6339,7 +6842,7 @@ impl GetBucketCorsInput {
 pub mod get_bucket_encryption_input {
 
     /// A builder for [`GetBucketEncryptionInput`](crate::input::GetBucketEncryptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
@@ -6371,8 +6874,10 @@ pub mod get_bucket_encryption_input {
         /// Consumes the builder and constructs a [`GetBucketEncryptionInput`](crate::input::GetBucketEncryptionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBucketEncryptionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetBucketEncryptionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetBucketEncryptionInput {
                 bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -6393,26 +6898,31 @@ impl GetBucketEncryptionInput {
             crate::operation::GetBucketEncryption,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketEncryptionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_45 = &_input.bucket;
-                let input_45 = input_45.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_45, false);
+                let input_45 = input_45.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_45,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -6420,7 +6930,7 @@ impl GetBucketEncryptionInput {
             fn uri_query(
                 _input: &crate::input::GetBucketEncryptionInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("encryption");
                 Ok(())
@@ -6429,8 +6939,10 @@ impl GetBucketEncryptionInput {
             fn update_http_builder(
                 input: &crate::input::GetBucketEncryptionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -6459,6 +6971,7 @@ impl GetBucketEncryptionInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -6504,7 +7017,7 @@ impl GetBucketEncryptionInput {
 pub mod get_bucket_intelligent_tiering_configuration_input {
 
     /// A builder for [`GetBucketIntelligentTieringConfigurationInput`](crate::input::GetBucketIntelligentTieringConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -6535,7 +7048,7 @@ pub mod get_bucket_intelligent_tiering_configuration_input {
             self,
         ) -> Result<
             crate::input::GetBucketIntelligentTieringConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(
                 crate::input::GetBucketIntelligentTieringConfigurationInput {
@@ -6559,26 +7072,31 @@ impl GetBucketIntelligentTieringConfigurationInput {
             crate::operation::GetBucketIntelligentTieringConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketIntelligentTieringConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_46 = &_input.bucket;
-                let input_46 = input_46.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_46, false);
+                let input_46 = input_46.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_46,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -6586,21 +7104,36 @@ impl GetBucketIntelligentTieringConfigurationInput {
             fn uri_query(
                 _input: &crate::input::GetBucketIntelligentTieringConfigurationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("intelligent-tiering");
                 query.push_kv("x-id", "GetBucketIntelligentTieringConfiguration");
-                if let Some(inner_47) = &_input.id {
-                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_47));
+                let inner_47 = &_input.id;
+                let inner_47 = inner_47.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_47.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_47));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::GetBucketIntelligentTieringConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -6628,6 +7161,7 @@ impl GetBucketIntelligentTieringConfigurationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -6673,7 +7207,7 @@ impl GetBucketIntelligentTieringConfigurationInput {
 pub mod get_bucket_inventory_configuration_input {
 
     /// A builder for [`GetBucketInventoryConfigurationInput`](crate::input::GetBucketInventoryConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -6718,7 +7252,7 @@ pub mod get_bucket_inventory_configuration_input {
             self,
         ) -> Result<
             crate::input::GetBucketInventoryConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetBucketInventoryConfigurationInput {
                 bucket: self.bucket,
@@ -6741,26 +7275,31 @@ impl GetBucketInventoryConfigurationInput {
             crate::operation::GetBucketInventoryConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketInventoryConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_48 = &_input.bucket;
-                let input_48 = input_48.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_48, false);
+                let input_48 = input_48.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_48,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -6768,21 +7307,36 @@ impl GetBucketInventoryConfigurationInput {
             fn uri_query(
                 _input: &crate::input::GetBucketInventoryConfigurationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("inventory");
                 query.push_kv("x-id", "GetBucketInventoryConfiguration");
-                if let Some(inner_49) = &_input.id {
-                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_49));
+                let inner_49 = &_input.id;
+                let inner_49 = inner_49.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_49.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_49));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::GetBucketInventoryConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -6813,6 +7367,7 @@ impl GetBucketInventoryConfigurationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -6858,7 +7413,7 @@ impl GetBucketInventoryConfigurationInput {
 pub mod get_bucket_lifecycle_configuration_input {
 
     /// A builder for [`GetBucketLifecycleConfigurationInput`](crate::input::GetBucketLifecycleConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
@@ -6892,7 +7447,7 @@ pub mod get_bucket_lifecycle_configuration_input {
             self,
         ) -> Result<
             crate::input::GetBucketLifecycleConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetBucketLifecycleConfigurationInput {
                 bucket: self.bucket,
@@ -6914,26 +7469,31 @@ impl GetBucketLifecycleConfigurationInput {
             crate::operation::GetBucketLifecycleConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketLifecycleConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_50 = &_input.bucket;
-                let input_50 = input_50.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_50, false);
+                let input_50 = input_50.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_50,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -6941,7 +7501,7 @@ impl GetBucketLifecycleConfigurationInput {
             fn uri_query(
                 _input: &crate::input::GetBucketLifecycleConfigurationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("lifecycle");
                 Ok(())
@@ -6950,8 +7510,10 @@ impl GetBucketLifecycleConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::GetBucketLifecycleConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -6982,6 +7544,7 @@ impl GetBucketLifecycleConfigurationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -7027,7 +7590,7 @@ impl GetBucketLifecycleConfigurationInput {
 pub mod get_bucket_location_input {
 
     /// A builder for [`GetBucketLocationInput`](crate::input::GetBucketLocationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
@@ -7059,8 +7622,10 @@ pub mod get_bucket_location_input {
         /// Consumes the builder and constructs a [`GetBucketLocationInput`](crate::input::GetBucketLocationInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBucketLocationInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetBucketLocationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetBucketLocationInput {
                 bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -7081,26 +7646,31 @@ impl GetBucketLocationInput {
             crate::operation::GetBucketLocation,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketLocationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_51 = &_input.bucket;
-                let input_51 = input_51.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_51, false);
+                let input_51 = input_51.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_51,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -7108,7 +7678,7 @@ impl GetBucketLocationInput {
             fn uri_query(
                 _input: &crate::input::GetBucketLocationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("location");
                 Ok(())
@@ -7117,8 +7687,10 @@ impl GetBucketLocationInput {
             fn update_http_builder(
                 input: &crate::input::GetBucketLocationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -7147,6 +7719,7 @@ impl GetBucketLocationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -7192,7 +7765,7 @@ impl GetBucketLocationInput {
 pub mod get_bucket_logging_input {
 
     /// A builder for [`GetBucketLoggingInput`](crate::input::GetBucketLoggingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
@@ -7224,8 +7797,10 @@ pub mod get_bucket_logging_input {
         /// Consumes the builder and constructs a [`GetBucketLoggingInput`](crate::input::GetBucketLoggingInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBucketLoggingInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetBucketLoggingInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetBucketLoggingInput {
                 bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -7246,26 +7821,31 @@ impl GetBucketLoggingInput {
             crate::operation::GetBucketLogging,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketLoggingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_52 = &_input.bucket;
-                let input_52 = input_52.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_52, false);
+                let input_52 = input_52.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_52,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -7273,7 +7853,7 @@ impl GetBucketLoggingInput {
             fn uri_query(
                 _input: &crate::input::GetBucketLoggingInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("logging");
                 Ok(())
@@ -7282,8 +7862,10 @@ impl GetBucketLoggingInput {
             fn update_http_builder(
                 input: &crate::input::GetBucketLoggingInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -7312,6 +7894,7 @@ impl GetBucketLoggingInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -7357,7 +7940,7 @@ impl GetBucketLoggingInput {
 pub mod get_bucket_metrics_configuration_input {
 
     /// A builder for [`GetBucketMetricsConfigurationInput`](crate::input::GetBucketMetricsConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -7402,7 +7985,7 @@ pub mod get_bucket_metrics_configuration_input {
             self,
         ) -> Result<
             crate::input::GetBucketMetricsConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetBucketMetricsConfigurationInput {
                 bucket: self.bucket,
@@ -7425,26 +8008,31 @@ impl GetBucketMetricsConfigurationInput {
             crate::operation::GetBucketMetricsConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketMetricsConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_53 = &_input.bucket;
-                let input_53 = input_53.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_53, false);
+                let input_53 = input_53.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_53,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -7452,21 +8040,36 @@ impl GetBucketMetricsConfigurationInput {
             fn uri_query(
                 _input: &crate::input::GetBucketMetricsConfigurationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("metrics");
                 query.push_kv("x-id", "GetBucketMetricsConfiguration");
-                if let Some(inner_54) = &_input.id {
-                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_54));
+                let inner_54 = &_input.id;
+                let inner_54 = inner_54.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_54.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_54));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::GetBucketMetricsConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -7497,6 +8100,7 @@ impl GetBucketMetricsConfigurationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -7542,7 +8146,7 @@ impl GetBucketMetricsConfigurationInput {
 pub mod get_bucket_notification_configuration_input {
 
     /// A builder for [`GetBucketNotificationConfigurationInput`](crate::input::GetBucketNotificationConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
@@ -7576,7 +8180,7 @@ pub mod get_bucket_notification_configuration_input {
             self,
         ) -> Result<
             crate::input::GetBucketNotificationConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetBucketNotificationConfigurationInput {
                 bucket: self.bucket,
@@ -7598,26 +8202,31 @@ impl GetBucketNotificationConfigurationInput {
             crate::operation::GetBucketNotificationConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketNotificationConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_55 = &_input.bucket;
-                let input_55 = input_55.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_55, false);
+                let input_55 = input_55.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_55,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -7625,7 +8234,7 @@ impl GetBucketNotificationConfigurationInput {
             fn uri_query(
                 _input: &crate::input::GetBucketNotificationConfigurationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("notification");
                 Ok(())
@@ -7634,8 +8243,10 @@ impl GetBucketNotificationConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::GetBucketNotificationConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -7666,6 +8277,7 @@ impl GetBucketNotificationConfigurationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -7711,7 +8323,7 @@ impl GetBucketNotificationConfigurationInput {
 pub mod get_bucket_ownership_controls_input {
 
     /// A builder for [`GetBucketOwnershipControlsInput`](crate::input::GetBucketOwnershipControlsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
@@ -7745,7 +8357,7 @@ pub mod get_bucket_ownership_controls_input {
             self,
         ) -> Result<
             crate::input::GetBucketOwnershipControlsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetBucketOwnershipControlsInput {
                 bucket: self.bucket,
@@ -7767,26 +8379,31 @@ impl GetBucketOwnershipControlsInput {
             crate::operation::GetBucketOwnershipControls,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketOwnershipControlsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_56 = &_input.bucket;
-                let input_56 = input_56.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_56, false);
+                let input_56 = input_56.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_56,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -7794,7 +8411,7 @@ impl GetBucketOwnershipControlsInput {
             fn uri_query(
                 _input: &crate::input::GetBucketOwnershipControlsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("ownershipControls");
                 Ok(())
@@ -7803,8 +8420,10 @@ impl GetBucketOwnershipControlsInput {
             fn update_http_builder(
                 input: &crate::input::GetBucketOwnershipControlsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -7834,6 +8453,7 @@ impl GetBucketOwnershipControlsInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -7879,7 +8499,7 @@ impl GetBucketOwnershipControlsInput {
 pub mod get_bucket_policy_input {
 
     /// A builder for [`GetBucketPolicyInput`](crate::input::GetBucketPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
@@ -7911,7 +8531,7 @@ pub mod get_bucket_policy_input {
         /// Consumes the builder and constructs a [`GetBucketPolicyInput`](crate::input::GetBucketPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBucketPolicyInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetBucketPolicyInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetBucketPolicyInput {
                 bucket: self.bucket,
@@ -7933,26 +8553,31 @@ impl GetBucketPolicyInput {
             crate::operation::GetBucketPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_57 = &_input.bucket;
-                let input_57 = input_57.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_57, false);
+                let input_57 = input_57.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_57,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -7960,7 +8585,7 @@ impl GetBucketPolicyInput {
             fn uri_query(
                 _input: &crate::input::GetBucketPolicyInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("policy");
                 Ok(())
@@ -7969,8 +8594,10 @@ impl GetBucketPolicyInput {
             fn update_http_builder(
                 input: &crate::input::GetBucketPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -7999,6 +8626,7 @@ impl GetBucketPolicyInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -8044,7 +8672,7 @@ impl GetBucketPolicyInput {
 pub mod get_bucket_policy_status_input {
 
     /// A builder for [`GetBucketPolicyStatusInput`](crate::input::GetBucketPolicyStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
@@ -8076,8 +8704,10 @@ pub mod get_bucket_policy_status_input {
         /// Consumes the builder and constructs a [`GetBucketPolicyStatusInput`](crate::input::GetBucketPolicyStatusInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBucketPolicyStatusInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetBucketPolicyStatusInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetBucketPolicyStatusInput {
                 bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -8098,26 +8728,31 @@ impl GetBucketPolicyStatusInput {
             crate::operation::GetBucketPolicyStatus,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketPolicyStatusInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_58 = &_input.bucket;
-                let input_58 = input_58.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_58, false);
+                let input_58 = input_58.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_58,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -8125,7 +8760,7 @@ impl GetBucketPolicyStatusInput {
             fn uri_query(
                 _input: &crate::input::GetBucketPolicyStatusInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("policyStatus");
                 Ok(())
@@ -8134,8 +8769,10 @@ impl GetBucketPolicyStatusInput {
             fn update_http_builder(
                 input: &crate::input::GetBucketPolicyStatusInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -8165,6 +8802,7 @@ impl GetBucketPolicyStatusInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -8210,7 +8848,7 @@ impl GetBucketPolicyStatusInput {
 pub mod get_bucket_replication_input {
 
     /// A builder for [`GetBucketReplicationInput`](crate::input::GetBucketReplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
@@ -8242,8 +8880,10 @@ pub mod get_bucket_replication_input {
         /// Consumes the builder and constructs a [`GetBucketReplicationInput`](crate::input::GetBucketReplicationInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBucketReplicationInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetBucketReplicationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetBucketReplicationInput {
                 bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -8264,26 +8904,31 @@ impl GetBucketReplicationInput {
             crate::operation::GetBucketReplication,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketReplicationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_59 = &_input.bucket;
-                let input_59 = input_59.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_59, false);
+                let input_59 = input_59.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_59,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -8291,7 +8936,7 @@ impl GetBucketReplicationInput {
             fn uri_query(
                 _input: &crate::input::GetBucketReplicationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("replication");
                 Ok(())
@@ -8300,8 +8945,10 @@ impl GetBucketReplicationInput {
             fn update_http_builder(
                 input: &crate::input::GetBucketReplicationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -8331,6 +8978,7 @@ impl GetBucketReplicationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -8376,7 +9024,7 @@ impl GetBucketReplicationInput {
 pub mod get_bucket_request_payment_input {
 
     /// A builder for [`GetBucketRequestPaymentInput`](crate::input::GetBucketRequestPaymentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
@@ -8410,7 +9058,7 @@ pub mod get_bucket_request_payment_input {
             self,
         ) -> Result<
             crate::input::GetBucketRequestPaymentInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetBucketRequestPaymentInput {
                 bucket: self.bucket,
@@ -8432,26 +9080,31 @@ impl GetBucketRequestPaymentInput {
             crate::operation::GetBucketRequestPayment,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketRequestPaymentInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_60 = &_input.bucket;
-                let input_60 = input_60.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_60, false);
+                let input_60 = input_60.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_60,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -8459,7 +9112,7 @@ impl GetBucketRequestPaymentInput {
             fn uri_query(
                 _input: &crate::input::GetBucketRequestPaymentInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("requestPayment");
                 Ok(())
@@ -8468,8 +9121,10 @@ impl GetBucketRequestPaymentInput {
             fn update_http_builder(
                 input: &crate::input::GetBucketRequestPaymentInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -8499,6 +9154,7 @@ impl GetBucketRequestPaymentInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -8544,7 +9200,7 @@ impl GetBucketRequestPaymentInput {
 pub mod get_bucket_tagging_input {
 
     /// A builder for [`GetBucketTaggingInput`](crate::input::GetBucketTaggingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
@@ -8576,8 +9232,10 @@ pub mod get_bucket_tagging_input {
         /// Consumes the builder and constructs a [`GetBucketTaggingInput`](crate::input::GetBucketTaggingInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBucketTaggingInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetBucketTaggingInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetBucketTaggingInput {
                 bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -8598,26 +9256,31 @@ impl GetBucketTaggingInput {
             crate::operation::GetBucketTagging,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketTaggingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_61 = &_input.bucket;
-                let input_61 = input_61.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_61, false);
+                let input_61 = input_61.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_61,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -8625,7 +9288,7 @@ impl GetBucketTaggingInput {
             fn uri_query(
                 _input: &crate::input::GetBucketTaggingInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("tagging");
                 Ok(())
@@ -8634,8 +9297,10 @@ impl GetBucketTaggingInput {
             fn update_http_builder(
                 input: &crate::input::GetBucketTaggingInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -8664,6 +9329,7 @@ impl GetBucketTaggingInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -8709,7 +9375,7 @@ impl GetBucketTaggingInput {
 pub mod get_bucket_versioning_input {
 
     /// A builder for [`GetBucketVersioningInput`](crate::input::GetBucketVersioningInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
@@ -8741,8 +9407,10 @@ pub mod get_bucket_versioning_input {
         /// Consumes the builder and constructs a [`GetBucketVersioningInput`](crate::input::GetBucketVersioningInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBucketVersioningInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetBucketVersioningInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetBucketVersioningInput {
                 bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -8763,26 +9431,31 @@ impl GetBucketVersioningInput {
             crate::operation::GetBucketVersioning,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketVersioningInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_62 = &_input.bucket;
-                let input_62 = input_62.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_62, false);
+                let input_62 = input_62.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_62,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -8790,7 +9463,7 @@ impl GetBucketVersioningInput {
             fn uri_query(
                 _input: &crate::input::GetBucketVersioningInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("versioning");
                 Ok(())
@@ -8799,8 +9472,10 @@ impl GetBucketVersioningInput {
             fn update_http_builder(
                 input: &crate::input::GetBucketVersioningInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -8829,6 +9504,7 @@ impl GetBucketVersioningInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -8874,7 +9550,7 @@ impl GetBucketVersioningInput {
 pub mod get_bucket_website_input {
 
     /// A builder for [`GetBucketWebsiteInput`](crate::input::GetBucketWebsiteInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
@@ -8906,8 +9582,10 @@ pub mod get_bucket_website_input {
         /// Consumes the builder and constructs a [`GetBucketWebsiteInput`](crate::input::GetBucketWebsiteInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBucketWebsiteInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetBucketWebsiteInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetBucketWebsiteInput {
                 bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -8928,26 +9606,31 @@ impl GetBucketWebsiteInput {
             crate::operation::GetBucketWebsite,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketWebsiteInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_63 = &_input.bucket;
-                let input_63 = input_63.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_63, false);
+                let input_63 = input_63.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_63,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -8955,7 +9638,7 @@ impl GetBucketWebsiteInput {
             fn uri_query(
                 _input: &crate::input::GetBucketWebsiteInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("website");
                 Ok(())
@@ -8964,8 +9647,10 @@ impl GetBucketWebsiteInput {
             fn update_http_builder(
                 input: &crate::input::GetBucketWebsiteInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -8994,6 +9679,7 @@ impl GetBucketWebsiteInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -9039,7 +9725,7 @@ impl GetBucketWebsiteInput {
 pub mod get_object_input {
 
     /// A builder for [`GetObjectInput`](crate::input::GetObjectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) if_match: std::option::Option<std::string::String>,
@@ -9335,7 +10021,8 @@ pub mod get_object_input {
         /// Consumes the builder and constructs a [`GetObjectInput`](crate::input::GetObjectInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetObjectInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::GetObjectInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::GetObjectInput {
                 bucket: self.bucket,
                 if_match: self.if_match,
@@ -9361,6 +10048,36 @@ pub mod get_object_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("bucket", &self.bucket);
+            formatter.field("if_match", &self.if_match);
+            formatter.field("if_modified_since", &self.if_modified_since);
+            formatter.field("if_none_match", &self.if_none_match);
+            formatter.field("if_unmodified_since", &self.if_unmodified_since);
+            formatter.field("key", &self.key);
+            formatter.field("range", &self.range);
+            formatter.field("response_cache_control", &self.response_cache_control);
+            formatter.field(
+                "response_content_disposition",
+                &self.response_content_disposition,
+            );
+            formatter.field("response_content_encoding", &self.response_content_encoding);
+            formatter.field("response_content_language", &self.response_content_language);
+            formatter.field("response_content_type", &self.response_content_type);
+            formatter.field("response_expires", &self.response_expires);
+            formatter.field("version_id", &self.version_id);
+            formatter.field("sse_customer_algorithm", &self.sse_customer_algorithm);
+            formatter.field("sse_customer_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("sse_customer_key_md5", &self.sse_customer_key_md5);
+            formatter.field("request_payer", &self.request_payer);
+            formatter.field("part_number", &self.part_number);
+            formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
+            formatter.field("checksum_mode", &self.checksum_mode);
+            formatter.finish()
+        }
+    }
 }
 impl GetObjectInput {
     /// Consumes the builder and constructs an Operation<[`GetObject`](crate::operation::GetObject)>
@@ -9375,40 +10092,50 @@ impl GetObjectInput {
             crate::operation::GetObject,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetObjectInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_64 = &_input.bucket;
-                let input_64 = input_64.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_64, false);
+                let input_64 = input_64.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_64,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_65 = &_input.key;
-                let input_65 = input_65.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let key = aws_smithy_http::label::fmt_string(input_65, true);
+                let input_65 = input_65.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "key",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let key = aws_smithy_http::label::fmt_string(
+                    input_65,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
                 if key.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "key",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
                     .expect("formatting should succeed");
@@ -9417,50 +10144,64 @@ impl GetObjectInput {
             fn uri_query(
                 _input: &crate::input::GetObjectInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("x-id", "GetObject");
                 if let Some(inner_66) = &_input.response_cache_control {
-                    query.push_kv(
-                        "response-cache-control",
-                        &aws_smithy_http::query::fmt_string(&inner_66),
-                    );
+                    {
+                        query.push_kv(
+                            "response-cache-control",
+                            &aws_smithy_http::query::fmt_string(&inner_66),
+                        );
+                    }
                 }
                 if let Some(inner_67) = &_input.response_content_disposition {
-                    query.push_kv(
-                        "response-content-disposition",
-                        &aws_smithy_http::query::fmt_string(&inner_67),
-                    );
+                    {
+                        query.push_kv(
+                            "response-content-disposition",
+                            &aws_smithy_http::query::fmt_string(&inner_67),
+                        );
+                    }
                 }
                 if let Some(inner_68) = &_input.response_content_encoding {
-                    query.push_kv(
-                        "response-content-encoding",
-                        &aws_smithy_http::query::fmt_string(&inner_68),
-                    );
+                    {
+                        query.push_kv(
+                            "response-content-encoding",
+                            &aws_smithy_http::query::fmt_string(&inner_68),
+                        );
+                    }
                 }
                 if let Some(inner_69) = &_input.response_content_language {
-                    query.push_kv(
-                        "response-content-language",
-                        &aws_smithy_http::query::fmt_string(&inner_69),
-                    );
+                    {
+                        query.push_kv(
+                            "response-content-language",
+                            &aws_smithy_http::query::fmt_string(&inner_69),
+                        );
+                    }
                 }
                 if let Some(inner_70) = &_input.response_content_type {
-                    query.push_kv(
-                        "response-content-type",
-                        &aws_smithy_http::query::fmt_string(&inner_70),
-                    );
+                    {
+                        query.push_kv(
+                            "response-content-type",
+                            &aws_smithy_http::query::fmt_string(&inner_70),
+                        );
+                    }
                 }
                 if let Some(inner_71) = &_input.response_expires {
-                    query.push_kv(
-                        "response-expires",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_71,
-                            aws_smithy_types::date_time::Format::HttpDate,
-                        )?,
-                    );
+                    {
+                        query.push_kv(
+                            "response-expires",
+                            &aws_smithy_http::query::fmt_timestamp(
+                                inner_71,
+                                aws_smithy_types::date_time::Format::HttpDate,
+                            )?,
+                        );
+                    }
                 }
                 if let Some(inner_72) = &_input.version_id {
-                    query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_72));
+                    {
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_72));
+                    }
                 }
                 if _input.part_number != 0 {
                     query.push_kv(
@@ -9474,8 +10215,10 @@ impl GetObjectInput {
             fn update_http_builder(
                 input: &crate::input::GetObjectInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -9511,6 +10254,7 @@ impl GetObjectInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -9562,7 +10306,7 @@ impl GetObjectInput {
         let (mut request, _) = self
             ._make_presigned_operation(config)
             .await
-            .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
             .into_request_response();
         {
             // Change signature type to query params and wire up presigning config
@@ -9595,40 +10339,50 @@ impl GetObjectInput {
             crate::operation::GetObject,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetObjectInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_73 = &_input.bucket;
-                let input_73 = input_73.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_73, false);
+                let input_73 = input_73.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_73,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_74 = &_input.key;
-                let input_74 = input_74.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let key = aws_smithy_http::label::fmt_string(input_74, true);
+                let input_74 = input_74.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "key",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let key = aws_smithy_http::label::fmt_string(
+                    input_74,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
                 if key.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "key",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
                     .expect("formatting should succeed");
@@ -9637,50 +10391,64 @@ impl GetObjectInput {
             fn uri_query(
                 _input: &crate::input::GetObjectInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("x-id", "GetObject");
                 if let Some(inner_75) = &_input.response_cache_control {
-                    query.push_kv(
-                        "response-cache-control",
-                        &aws_smithy_http::query::fmt_string(&inner_75),
-                    );
+                    {
+                        query.push_kv(
+                            "response-cache-control",
+                            &aws_smithy_http::query::fmt_string(&inner_75),
+                        );
+                    }
                 }
                 if let Some(inner_76) = &_input.response_content_disposition {
-                    query.push_kv(
-                        "response-content-disposition",
-                        &aws_smithy_http::query::fmt_string(&inner_76),
-                    );
+                    {
+                        query.push_kv(
+                            "response-content-disposition",
+                            &aws_smithy_http::query::fmt_string(&inner_76),
+                        );
+                    }
                 }
                 if let Some(inner_77) = &_input.response_content_encoding {
-                    query.push_kv(
-                        "response-content-encoding",
-                        &aws_smithy_http::query::fmt_string(&inner_77),
-                    );
+                    {
+                        query.push_kv(
+                            "response-content-encoding",
+                            &aws_smithy_http::query::fmt_string(&inner_77),
+                        );
+                    }
                 }
                 if let Some(inner_78) = &_input.response_content_language {
-                    query.push_kv(
-                        "response-content-language",
-                        &aws_smithy_http::query::fmt_string(&inner_78),
-                    );
+                    {
+                        query.push_kv(
+                            "response-content-language",
+                            &aws_smithy_http::query::fmt_string(&inner_78),
+                        );
+                    }
                 }
                 if let Some(inner_79) = &_input.response_content_type {
-                    query.push_kv(
-                        "response-content-type",
-                        &aws_smithy_http::query::fmt_string(&inner_79),
-                    );
+                    {
+                        query.push_kv(
+                            "response-content-type",
+                            &aws_smithy_http::query::fmt_string(&inner_79),
+                        );
+                    }
                 }
                 if let Some(inner_80) = &_input.response_expires {
-                    query.push_kv(
-                        "response-expires",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_80,
-                            aws_smithy_types::date_time::Format::HttpDate,
-                        )?,
-                    );
+                    {
+                        query.push_kv(
+                            "response-expires",
+                            &aws_smithy_http::query::fmt_timestamp(
+                                inner_80,
+                                aws_smithy_types::date_time::Format::HttpDate,
+                            )?,
+                        );
+                    }
                 }
                 if let Some(inner_81) = &_input.version_id {
-                    query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_81));
+                    {
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_81));
+                    }
                 }
                 if _input.part_number != 0 {
                     query.push_kv(
@@ -9694,8 +10462,10 @@ impl GetObjectInput {
             fn update_http_builder(
                 input: &crate::input::GetObjectInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -9731,6 +10501,7 @@ impl GetObjectInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -9771,7 +10542,7 @@ impl GetObjectInput {
 pub mod get_object_acl_input {
 
     /// A builder for [`GetObjectAclInput`](crate::input::GetObjectAclInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
@@ -9841,7 +10612,7 @@ pub mod get_object_acl_input {
         /// Consumes the builder and constructs a [`GetObjectAclInput`](crate::input::GetObjectAclInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetObjectAclInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetObjectAclInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetObjectAclInput {
                 bucket: self.bucket,
@@ -9866,40 +10637,50 @@ impl GetObjectAclInput {
             crate::operation::GetObjectAcl,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetObjectAclInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_82 = &_input.bucket;
-                let input_82 = input_82.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_82, false);
+                let input_82 = input_82.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_82,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_83 = &_input.key;
-                let input_83 = input_83.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let key = aws_smithy_http::label::fmt_string(input_83, true);
+                let input_83 = input_83.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "key",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let key = aws_smithy_http::label::fmt_string(
+                    input_83,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
                 if key.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "key",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
                     .expect("formatting should succeed");
@@ -9908,11 +10689,13 @@ impl GetObjectAclInput {
             fn uri_query(
                 _input: &crate::input::GetObjectAclInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("acl");
                 if let Some(inner_84) = &_input.version_id {
-                    query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_84));
+                    {
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_84));
+                    }
                 }
                 Ok(())
             }
@@ -9920,8 +10703,10 @@ impl GetObjectAclInput {
             fn update_http_builder(
                 input: &crate::input::GetObjectAclInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -9950,6 +10735,7 @@ impl GetObjectAclInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -9995,7 +10781,7 @@ impl GetObjectAclInput {
 pub mod get_object_attributes_input {
 
     /// A builder for [`GetObjectAttributesInput`](crate::input::GetObjectAttributesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
@@ -10155,8 +10941,10 @@ pub mod get_object_attributes_input {
         /// Consumes the builder and constructs a [`GetObjectAttributesInput`](crate::input::GetObjectAttributesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetObjectAttributesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetObjectAttributesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetObjectAttributesInput {
                 bucket: self.bucket,
                 key: self.key,
@@ -10170,6 +10958,23 @@ pub mod get_object_attributes_input {
                 expected_bucket_owner: self.expected_bucket_owner,
                 object_attributes: self.object_attributes,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("bucket", &self.bucket);
+            formatter.field("key", &self.key);
+            formatter.field("version_id", &self.version_id);
+            formatter.field("max_parts", &self.max_parts);
+            formatter.field("part_number_marker", &self.part_number_marker);
+            formatter.field("sse_customer_algorithm", &self.sse_customer_algorithm);
+            formatter.field("sse_customer_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("sse_customer_key_md5", &self.sse_customer_key_md5);
+            formatter.field("request_payer", &self.request_payer);
+            formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
+            formatter.field("object_attributes", &self.object_attributes);
+            formatter.finish()
         }
     }
 }
@@ -10186,40 +10991,50 @@ impl GetObjectAttributesInput {
             crate::operation::GetObjectAttributes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetObjectAttributesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_85 = &_input.bucket;
-                let input_85 = input_85.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_85, false);
+                let input_85 = input_85.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_85,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_86 = &_input.key;
-                let input_86 = input_86.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let key = aws_smithy_http::label::fmt_string(input_86, true);
+                let input_86 = input_86.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "key",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let key = aws_smithy_http::label::fmt_string(
+                    input_86,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
                 if key.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "key",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
                     .expect("formatting should succeed");
@@ -10228,11 +11043,13 @@ impl GetObjectAttributesInput {
             fn uri_query(
                 _input: &crate::input::GetObjectAttributesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("attributes");
                 if let Some(inner_87) = &_input.version_id {
-                    query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_87));
+                    {
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_87));
+                    }
                 }
                 Ok(())
             }
@@ -10240,8 +11057,10 @@ impl GetObjectAttributesInput {
             fn update_http_builder(
                 input: &crate::input::GetObjectAttributesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -10270,6 +11089,7 @@ impl GetObjectAttributesInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -10315,7 +11135,7 @@ impl GetObjectAttributesInput {
 pub mod get_object_legal_hold_input {
 
     /// A builder for [`GetObjectLegalHoldInput`](crate::input::GetObjectLegalHoldInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
@@ -10385,8 +11205,10 @@ pub mod get_object_legal_hold_input {
         /// Consumes the builder and constructs a [`GetObjectLegalHoldInput`](crate::input::GetObjectLegalHoldInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetObjectLegalHoldInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetObjectLegalHoldInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetObjectLegalHoldInput {
                 bucket: self.bucket,
                 key: self.key,
@@ -10410,40 +11232,50 @@ impl GetObjectLegalHoldInput {
             crate::operation::GetObjectLegalHold,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetObjectLegalHoldInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_88 = &_input.bucket;
-                let input_88 = input_88.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_88, false);
+                let input_88 = input_88.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_88,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_89 = &_input.key;
-                let input_89 = input_89.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let key = aws_smithy_http::label::fmt_string(input_89, true);
+                let input_89 = input_89.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "key",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let key = aws_smithy_http::label::fmt_string(
+                    input_89,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
                 if key.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "key",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
                     .expect("formatting should succeed");
@@ -10452,11 +11284,13 @@ impl GetObjectLegalHoldInput {
             fn uri_query(
                 _input: &crate::input::GetObjectLegalHoldInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("legal-hold");
                 if let Some(inner_90) = &_input.version_id {
-                    query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_90));
+                    {
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_90));
+                    }
                 }
                 Ok(())
             }
@@ -10464,8 +11298,10 @@ impl GetObjectLegalHoldInput {
             fn update_http_builder(
                 input: &crate::input::GetObjectLegalHoldInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -10494,6 +11330,7 @@ impl GetObjectLegalHoldInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -10539,7 +11376,7 @@ impl GetObjectLegalHoldInput {
 pub mod get_object_lock_configuration_input {
 
     /// A builder for [`GetObjectLockConfigurationInput`](crate::input::GetObjectLockConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
@@ -10575,7 +11412,7 @@ pub mod get_object_lock_configuration_input {
             self,
         ) -> Result<
             crate::input::GetObjectLockConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetObjectLockConfigurationInput {
                 bucket: self.bucket,
@@ -10597,26 +11434,31 @@ impl GetObjectLockConfigurationInput {
             crate::operation::GetObjectLockConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetObjectLockConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_91 = &_input.bucket;
-                let input_91 = input_91.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_91, false);
+                let input_91 = input_91.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_91,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -10624,7 +11466,7 @@ impl GetObjectLockConfigurationInput {
             fn uri_query(
                 _input: &crate::input::GetObjectLockConfigurationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("object-lock");
                 Ok(())
@@ -10633,8 +11475,10 @@ impl GetObjectLockConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::GetObjectLockConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -10664,6 +11508,7 @@ impl GetObjectLockConfigurationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -10709,7 +11554,7 @@ impl GetObjectLockConfigurationInput {
 pub mod get_object_retention_input {
 
     /// A builder for [`GetObjectRetentionInput`](crate::input::GetObjectRetentionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
@@ -10779,8 +11624,10 @@ pub mod get_object_retention_input {
         /// Consumes the builder and constructs a [`GetObjectRetentionInput`](crate::input::GetObjectRetentionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetObjectRetentionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetObjectRetentionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetObjectRetentionInput {
                 bucket: self.bucket,
                 key: self.key,
@@ -10804,40 +11651,50 @@ impl GetObjectRetentionInput {
             crate::operation::GetObjectRetention,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetObjectRetentionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_92 = &_input.bucket;
-                let input_92 = input_92.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_92, false);
+                let input_92 = input_92.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_92,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_93 = &_input.key;
-                let input_93 = input_93.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let key = aws_smithy_http::label::fmt_string(input_93, true);
+                let input_93 = input_93.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "key",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let key = aws_smithy_http::label::fmt_string(
+                    input_93,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
                 if key.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "key",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
                     .expect("formatting should succeed");
@@ -10846,11 +11703,13 @@ impl GetObjectRetentionInput {
             fn uri_query(
                 _input: &crate::input::GetObjectRetentionInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("retention");
                 if let Some(inner_94) = &_input.version_id {
-                    query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_94));
+                    {
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_94));
+                    }
                 }
                 Ok(())
             }
@@ -10858,8 +11717,10 @@ impl GetObjectRetentionInput {
             fn update_http_builder(
                 input: &crate::input::GetObjectRetentionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -10888,6 +11749,7 @@ impl GetObjectRetentionInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -10933,7 +11795,7 @@ impl GetObjectRetentionInput {
 pub mod get_object_tagging_input {
 
     /// A builder for [`GetObjectTaggingInput`](crate::input::GetObjectTaggingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
@@ -11005,8 +11867,10 @@ pub mod get_object_tagging_input {
         /// Consumes the builder and constructs a [`GetObjectTaggingInput`](crate::input::GetObjectTaggingInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetObjectTaggingInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetObjectTaggingInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetObjectTaggingInput {
                 bucket: self.bucket,
                 key: self.key,
@@ -11030,40 +11894,50 @@ impl GetObjectTaggingInput {
             crate::operation::GetObjectTagging,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetObjectTaggingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_95 = &_input.bucket;
-                let input_95 = input_95.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_95, false);
+                let input_95 = input_95.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_95,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_96 = &_input.key;
-                let input_96 = input_96.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let key = aws_smithy_http::label::fmt_string(input_96, true);
+                let input_96 = input_96.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "key",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let key = aws_smithy_http::label::fmt_string(
+                    input_96,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
                 if key.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "key",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
                     .expect("formatting should succeed");
@@ -11072,11 +11946,13 @@ impl GetObjectTaggingInput {
             fn uri_query(
                 _input: &crate::input::GetObjectTaggingInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("tagging");
                 if let Some(inner_97) = &_input.version_id {
-                    query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_97));
+                    {
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_97));
+                    }
                 }
                 Ok(())
             }
@@ -11084,8 +11960,10 @@ impl GetObjectTaggingInput {
             fn update_http_builder(
                 input: &crate::input::GetObjectTaggingInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -11114,6 +11992,7 @@ impl GetObjectTaggingInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -11159,7 +12038,7 @@ impl GetObjectTaggingInput {
 pub mod get_object_torrent_input {
 
     /// A builder for [`GetObjectTorrentInput`](crate::input::GetObjectTorrentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
@@ -11216,8 +12095,10 @@ pub mod get_object_torrent_input {
         /// Consumes the builder and constructs a [`GetObjectTorrentInput`](crate::input::GetObjectTorrentInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetObjectTorrentInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetObjectTorrentInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetObjectTorrentInput {
                 bucket: self.bucket,
                 key: self.key,
@@ -11240,40 +12121,50 @@ impl GetObjectTorrentInput {
             crate::operation::GetObjectTorrent,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetObjectTorrentInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_98 = &_input.bucket;
-                let input_98 = input_98.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_98, false);
+                let input_98 = input_98.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_98,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_99 = &_input.key;
-                let input_99 = input_99.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let key = aws_smithy_http::label::fmt_string(input_99, true);
+                let input_99 = input_99.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "key",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let key = aws_smithy_http::label::fmt_string(
+                    input_99,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
                 if key.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "key",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
                     .expect("formatting should succeed");
@@ -11282,7 +12173,7 @@ impl GetObjectTorrentInput {
             fn uri_query(
                 _input: &crate::input::GetObjectTorrentInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("torrent");
                 Ok(())
@@ -11291,8 +12182,10 @@ impl GetObjectTorrentInput {
             fn update_http_builder(
                 input: &crate::input::GetObjectTorrentInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -11321,6 +12214,7 @@ impl GetObjectTorrentInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -11366,7 +12260,7 @@ impl GetObjectTorrentInput {
 pub mod get_public_access_block_input {
 
     /// A builder for [`GetPublicAccessBlockInput`](crate::input::GetPublicAccessBlockInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
@@ -11398,8 +12292,10 @@ pub mod get_public_access_block_input {
         /// Consumes the builder and constructs a [`GetPublicAccessBlockInput`](crate::input::GetPublicAccessBlockInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetPublicAccessBlockInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetPublicAccessBlockInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetPublicAccessBlockInput {
                 bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -11420,26 +12316,31 @@ impl GetPublicAccessBlockInput {
             crate::operation::GetPublicAccessBlock,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetPublicAccessBlockInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_100 = &_input.bucket;
-                let input_100 = input_100.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_100, false);
+                let input_100 = input_100.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_100,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -11447,7 +12348,7 @@ impl GetPublicAccessBlockInput {
             fn uri_query(
                 _input: &crate::input::GetPublicAccessBlockInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("publicAccessBlock");
                 Ok(())
@@ -11456,8 +12357,10 @@ impl GetPublicAccessBlockInput {
             fn update_http_builder(
                 input: &crate::input::GetPublicAccessBlockInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -11487,6 +12390,7 @@ impl GetPublicAccessBlockInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -11532,7 +12436,7 @@ impl GetPublicAccessBlockInput {
 pub mod head_bucket_input {
 
     /// A builder for [`HeadBucketInput`](crate::input::HeadBucketInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
@@ -11568,7 +12472,8 @@ pub mod head_bucket_input {
         /// Consumes the builder and constructs a [`HeadBucketInput`](crate::input::HeadBucketInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::HeadBucketInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::HeadBucketInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::HeadBucketInput {
                 bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -11589,26 +12494,31 @@ impl HeadBucketInput {
             crate::operation::HeadBucket,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::HeadBucketInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_101 = &_input.bucket;
-                let input_101 = input_101.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_101, false);
+                let input_101 = input_101.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_101,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -11617,8 +12527,10 @@ impl HeadBucketInput {
             fn update_http_builder(
                 input: &crate::input::HeadBucketInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_head_bucket(input, builder)?;
@@ -11646,6 +12558,7 @@ impl HeadBucketInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -11691,7 +12604,7 @@ impl HeadBucketInput {
 pub mod head_object_input {
 
     /// A builder for [`HeadObjectInput`](crate::input::HeadObjectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) if_match: std::option::Option<std::string::String>,
@@ -11896,7 +12809,8 @@ pub mod head_object_input {
         /// Consumes the builder and constructs a [`HeadObjectInput`](crate::input::HeadObjectInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::HeadObjectInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::HeadObjectInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::HeadObjectInput {
                 bucket: self.bucket,
                 if_match: self.if_match,
@@ -11916,6 +12830,27 @@ pub mod head_object_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("bucket", &self.bucket);
+            formatter.field("if_match", &self.if_match);
+            formatter.field("if_modified_since", &self.if_modified_since);
+            formatter.field("if_none_match", &self.if_none_match);
+            formatter.field("if_unmodified_since", &self.if_unmodified_since);
+            formatter.field("key", &self.key);
+            formatter.field("range", &self.range);
+            formatter.field("version_id", &self.version_id);
+            formatter.field("sse_customer_algorithm", &self.sse_customer_algorithm);
+            formatter.field("sse_customer_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("sse_customer_key_md5", &self.sse_customer_key_md5);
+            formatter.field("request_payer", &self.request_payer);
+            formatter.field("part_number", &self.part_number);
+            formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
+            formatter.field("checksum_mode", &self.checksum_mode);
+            formatter.finish()
+        }
+    }
 }
 impl HeadObjectInput {
     /// Consumes the builder and constructs an Operation<[`HeadObject`](crate::operation::HeadObject)>
@@ -11930,40 +12865,50 @@ impl HeadObjectInput {
             crate::operation::HeadObject,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::HeadObjectInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_102 = &_input.bucket;
-                let input_102 = input_102.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_102, false);
+                let input_102 = input_102.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_102,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_103 = &_input.key;
-                let input_103 = input_103.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let key = aws_smithy_http::label::fmt_string(input_103, true);
+                let input_103 = input_103.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "key",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let key = aws_smithy_http::label::fmt_string(
+                    input_103,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
                 if key.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "key",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
                     .expect("formatting should succeed");
@@ -11972,10 +12917,12 @@ impl HeadObjectInput {
             fn uri_query(
                 _input: &crate::input::HeadObjectInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_104) = &_input.version_id {
-                    query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_104));
+                    {
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_104));
+                    }
                 }
                 if _input.part_number != 0 {
                     query.push_kv(
@@ -11989,8 +12936,10 @@ impl HeadObjectInput {
             fn update_http_builder(
                 input: &crate::input::HeadObjectInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -12019,6 +12968,7 @@ impl HeadObjectInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -12064,7 +13014,7 @@ impl HeadObjectInput {
 pub mod list_bucket_analytics_configurations_input {
 
     /// A builder for [`ListBucketAnalyticsConfigurationsInput`](crate::input::ListBucketAnalyticsConfigurationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) continuation_token: std::option::Option<std::string::String>,
@@ -12112,7 +13062,7 @@ pub mod list_bucket_analytics_configurations_input {
             self,
         ) -> Result<
             crate::input::ListBucketAnalyticsConfigurationsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListBucketAnalyticsConfigurationsInput {
                 bucket: self.bucket,
@@ -12135,26 +13085,31 @@ impl ListBucketAnalyticsConfigurationsInput {
             crate::operation::ListBucketAnalyticsConfigurations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListBucketAnalyticsConfigurationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_105 = &_input.bucket;
-                let input_105 = input_105.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_105, false);
+                let input_105 = input_105.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_105,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -12162,15 +13117,17 @@ impl ListBucketAnalyticsConfigurationsInput {
             fn uri_query(
                 _input: &crate::input::ListBucketAnalyticsConfigurationsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("analytics");
                 query.push_kv("x-id", "ListBucketAnalyticsConfigurations");
                 if let Some(inner_106) = &_input.continuation_token {
-                    query.push_kv(
-                        "continuation-token",
-                        &aws_smithy_http::query::fmt_string(&inner_106),
-                    );
+                    {
+                        query.push_kv(
+                            "continuation-token",
+                            &aws_smithy_http::query::fmt_string(&inner_106),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -12178,8 +13135,10 @@ impl ListBucketAnalyticsConfigurationsInput {
             fn update_http_builder(
                 input: &crate::input::ListBucketAnalyticsConfigurationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -12210,6 +13169,7 @@ impl ListBucketAnalyticsConfigurationsInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -12255,7 +13215,7 @@ impl ListBucketAnalyticsConfigurationsInput {
 pub mod list_bucket_intelligent_tiering_configurations_input {
 
     /// A builder for [`ListBucketIntelligentTieringConfigurationsInput`](crate::input::ListBucketIntelligentTieringConfigurationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) continuation_token: std::option::Option<std::string::String>,
@@ -12289,7 +13249,7 @@ pub mod list_bucket_intelligent_tiering_configurations_input {
             self,
         ) -> Result<
             crate::input::ListBucketIntelligentTieringConfigurationsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(
                 crate::input::ListBucketIntelligentTieringConfigurationsInput {
@@ -12313,26 +13273,31 @@ impl ListBucketIntelligentTieringConfigurationsInput {
             crate::operation::ListBucketIntelligentTieringConfigurations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListBucketIntelligentTieringConfigurationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_107 = &_input.bucket;
-                let input_107 = input_107.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_107, false);
+                let input_107 = input_107.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_107,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -12340,15 +13305,17 @@ impl ListBucketIntelligentTieringConfigurationsInput {
             fn uri_query(
                 _input: &crate::input::ListBucketIntelligentTieringConfigurationsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("intelligent-tiering");
                 query.push_kv("x-id", "ListBucketIntelligentTieringConfigurations");
                 if let Some(inner_108) = &_input.continuation_token {
-                    query.push_kv(
-                        "continuation-token",
-                        &aws_smithy_http::query::fmt_string(&inner_108),
-                    );
+                    {
+                        query.push_kv(
+                            "continuation-token",
+                            &aws_smithy_http::query::fmt_string(&inner_108),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -12356,8 +13323,10 @@ impl ListBucketIntelligentTieringConfigurationsInput {
             fn update_http_builder(
                 input: &crate::input::ListBucketIntelligentTieringConfigurationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -12385,6 +13354,7 @@ impl ListBucketIntelligentTieringConfigurationsInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -12431,7 +13401,7 @@ impl ListBucketIntelligentTieringConfigurationsInput {
 pub mod list_bucket_inventory_configurations_input {
 
     /// A builder for [`ListBucketInventoryConfigurationsInput`](crate::input::ListBucketInventoryConfigurationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) continuation_token: std::option::Option<std::string::String>,
@@ -12479,7 +13449,7 @@ pub mod list_bucket_inventory_configurations_input {
             self,
         ) -> Result<
             crate::input::ListBucketInventoryConfigurationsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListBucketInventoryConfigurationsInput {
                 bucket: self.bucket,
@@ -12502,26 +13472,31 @@ impl ListBucketInventoryConfigurationsInput {
             crate::operation::ListBucketInventoryConfigurations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListBucketInventoryConfigurationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_109 = &_input.bucket;
-                let input_109 = input_109.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_109, false);
+                let input_109 = input_109.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_109,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -12529,15 +13504,17 @@ impl ListBucketInventoryConfigurationsInput {
             fn uri_query(
                 _input: &crate::input::ListBucketInventoryConfigurationsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("inventory");
                 query.push_kv("x-id", "ListBucketInventoryConfigurations");
                 if let Some(inner_110) = &_input.continuation_token {
-                    query.push_kv(
-                        "continuation-token",
-                        &aws_smithy_http::query::fmt_string(&inner_110),
-                    );
+                    {
+                        query.push_kv(
+                            "continuation-token",
+                            &aws_smithy_http::query::fmt_string(&inner_110),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -12545,8 +13522,10 @@ impl ListBucketInventoryConfigurationsInput {
             fn update_http_builder(
                 input: &crate::input::ListBucketInventoryConfigurationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -12577,6 +13556,7 @@ impl ListBucketInventoryConfigurationsInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -12622,7 +13602,7 @@ impl ListBucketInventoryConfigurationsInput {
 pub mod list_bucket_metrics_configurations_input {
 
     /// A builder for [`ListBucketMetricsConfigurationsInput`](crate::input::ListBucketMetricsConfigurationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) continuation_token: std::option::Option<std::string::String>,
@@ -12670,7 +13650,7 @@ pub mod list_bucket_metrics_configurations_input {
             self,
         ) -> Result<
             crate::input::ListBucketMetricsConfigurationsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListBucketMetricsConfigurationsInput {
                 bucket: self.bucket,
@@ -12693,26 +13673,31 @@ impl ListBucketMetricsConfigurationsInput {
             crate::operation::ListBucketMetricsConfigurations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListBucketMetricsConfigurationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_111 = &_input.bucket;
-                let input_111 = input_111.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_111, false);
+                let input_111 = input_111.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_111,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -12720,15 +13705,17 @@ impl ListBucketMetricsConfigurationsInput {
             fn uri_query(
                 _input: &crate::input::ListBucketMetricsConfigurationsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("metrics");
                 query.push_kv("x-id", "ListBucketMetricsConfigurations");
                 if let Some(inner_112) = &_input.continuation_token {
-                    query.push_kv(
-                        "continuation-token",
-                        &aws_smithy_http::query::fmt_string(&inner_112),
-                    );
+                    {
+                        query.push_kv(
+                            "continuation-token",
+                            &aws_smithy_http::query::fmt_string(&inner_112),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -12736,8 +13723,10 @@ impl ListBucketMetricsConfigurationsInput {
             fn update_http_builder(
                 input: &crate::input::ListBucketMetricsConfigurationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -12768,6 +13757,7 @@ impl ListBucketMetricsConfigurationsInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -12813,13 +13803,13 @@ impl ListBucketMetricsConfigurationsInput {
 pub mod list_buckets_input {
 
     /// A builder for [`ListBucketsInput`](crate::input::ListBucketsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`ListBucketsInput`](crate::input::ListBucketsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListBucketsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListBucketsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListBucketsInput {})
         }
@@ -12838,13 +13828,13 @@ impl ListBucketsInput {
             crate::operation::ListBuckets,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListBucketsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -12852,8 +13842,10 @@ impl ListBucketsInput {
             fn update_http_builder(
                 input: &crate::input::ListBucketsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -12880,6 +13872,7 @@ impl ListBucketsInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -12925,7 +13918,7 @@ impl ListBucketsInput {
 pub mod list_multipart_uploads_input {
 
     /// A builder for [`ListMultipartUploadsInput`](crate::input::ListMultipartUploadsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) delimiter: std::option::Option<std::string::String>,
@@ -13039,8 +14032,10 @@ pub mod list_multipart_uploads_input {
         /// Consumes the builder and constructs a [`ListMultipartUploadsInput`](crate::input::ListMultipartUploadsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListMultipartUploadsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListMultipartUploadsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListMultipartUploadsInput {
                 bucket: self.bucket,
                 delimiter: self.delimiter,
@@ -13067,26 +14062,31 @@ impl ListMultipartUploadsInput {
             crate::operation::ListMultipartUploads,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListMultipartUploadsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_113 = &_input.bucket;
-                let input_113 = input_113.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_113, false);
+                let input_113 = input_113.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_113,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -13094,23 +14094,29 @@ impl ListMultipartUploadsInput {
             fn uri_query(
                 _input: &crate::input::ListMultipartUploadsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("uploads");
                 if let Some(inner_114) = &_input.delimiter {
-                    query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_114));
+                    {
+                        query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_114));
+                    }
                 }
                 if let Some(inner_115) = &_input.encoding_type {
-                    query.push_kv(
-                        "encoding-type",
-                        &aws_smithy_http::query::fmt_string(&inner_115),
-                    );
+                    {
+                        query.push_kv(
+                            "encoding-type",
+                            &aws_smithy_http::query::fmt_string(&inner_115),
+                        );
+                    }
                 }
                 if let Some(inner_116) = &_input.key_marker {
-                    query.push_kv(
-                        "key-marker",
-                        &aws_smithy_http::query::fmt_string(&inner_116),
-                    );
+                    {
+                        query.push_kv(
+                            "key-marker",
+                            &aws_smithy_http::query::fmt_string(&inner_116),
+                        );
+                    }
                 }
                 if _input.max_uploads != 0 {
                     query.push_kv(
@@ -13119,13 +14125,17 @@ impl ListMultipartUploadsInput {
                     );
                 }
                 if let Some(inner_117) = &_input.prefix {
-                    query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_117));
+                    {
+                        query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_117));
+                    }
                 }
                 if let Some(inner_118) = &_input.upload_id_marker {
-                    query.push_kv(
-                        "upload-id-marker",
-                        &aws_smithy_http::query::fmt_string(&inner_118),
-                    );
+                    {
+                        query.push_kv(
+                            "upload-id-marker",
+                            &aws_smithy_http::query::fmt_string(&inner_118),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -13133,8 +14143,10 @@ impl ListMultipartUploadsInput {
             fn update_http_builder(
                 input: &crate::input::ListMultipartUploadsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -13164,6 +14176,7 @@ impl ListMultipartUploadsInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -13209,7 +14222,7 @@ impl ListMultipartUploadsInput {
 pub mod list_objects_input {
 
     /// A builder for [`ListObjectsInput`](crate::input::ListObjectsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) delimiter: std::option::Option<std::string::String>,
@@ -13317,7 +14330,7 @@ pub mod list_objects_input {
         /// Consumes the builder and constructs a [`ListObjectsInput`](crate::input::ListObjectsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListObjectsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListObjectsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListObjectsInput {
                 bucket: self.bucket,
@@ -13345,26 +14358,31 @@ impl ListObjectsInput {
             crate::operation::ListObjects,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListObjectsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_119 = &_input.bucket;
-                let input_119 = input_119.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_119, false);
+                let input_119 = input_119.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_119,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -13372,19 +14390,25 @@ impl ListObjectsInput {
             fn uri_query(
                 _input: &crate::input::ListObjectsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_120) = &_input.delimiter {
-                    query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_120));
+                    {
+                        query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_120));
+                    }
                 }
                 if let Some(inner_121) = &_input.encoding_type {
-                    query.push_kv(
-                        "encoding-type",
-                        &aws_smithy_http::query::fmt_string(&inner_121),
-                    );
+                    {
+                        query.push_kv(
+                            "encoding-type",
+                            &aws_smithy_http::query::fmt_string(&inner_121),
+                        );
+                    }
                 }
                 if let Some(inner_122) = &_input.marker {
-                    query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_122));
+                    {
+                        query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_122));
+                    }
                 }
                 if _input.max_keys != 0 {
                     query.push_kv(
@@ -13393,7 +14417,9 @@ impl ListObjectsInput {
                     );
                 }
                 if let Some(inner_123) = &_input.prefix {
-                    query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_123));
+                    {
+                        query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_123));
+                    }
                 }
                 Ok(())
             }
@@ -13401,8 +14427,10 @@ impl ListObjectsInput {
             fn update_http_builder(
                 input: &crate::input::ListObjectsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -13431,6 +14459,7 @@ impl ListObjectsInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -13476,7 +14505,7 @@ impl ListObjectsInput {
 pub mod list_objects_v2_input {
 
     /// A builder for [`ListObjectsV2Input`](crate::input::ListObjectsV2Input).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) delimiter: std::option::Option<std::string::String>,
@@ -13609,7 +14638,7 @@ pub mod list_objects_v2_input {
         /// Consumes the builder and constructs a [`ListObjectsV2Input`](crate::input::ListObjectsV2Input).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListObjectsV2Input, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListObjectsV2Input, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListObjectsV2Input {
                 bucket: self.bucket,
@@ -13639,26 +14668,31 @@ impl ListObjectsV2Input {
             crate::operation::ListObjectsV2,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListObjectsV2Input,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_124 = &_input.bucket;
-                let input_124 = input_124.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_124, false);
+                let input_124 = input_124.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_124,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -13666,17 +14700,21 @@ impl ListObjectsV2Input {
             fn uri_query(
                 _input: &crate::input::ListObjectsV2Input,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("list-type", "2");
                 if let Some(inner_125) = &_input.delimiter {
-                    query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_125));
+                    {
+                        query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_125));
+                    }
                 }
                 if let Some(inner_126) = &_input.encoding_type {
-                    query.push_kv(
-                        "encoding-type",
-                        &aws_smithy_http::query::fmt_string(&inner_126),
-                    );
+                    {
+                        query.push_kv(
+                            "encoding-type",
+                            &aws_smithy_http::query::fmt_string(&inner_126),
+                        );
+                    }
                 }
                 if _input.max_keys != 0 {
                     query.push_kv(
@@ -13685,13 +14723,17 @@ impl ListObjectsV2Input {
                     );
                 }
                 if let Some(inner_127) = &_input.prefix {
-                    query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_127));
+                    {
+                        query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_127));
+                    }
                 }
                 if let Some(inner_128) = &_input.continuation_token {
-                    query.push_kv(
-                        "continuation-token",
-                        &aws_smithy_http::query::fmt_string(&inner_128),
-                    );
+                    {
+                        query.push_kv(
+                            "continuation-token",
+                            &aws_smithy_http::query::fmt_string(&inner_128),
+                        );
+                    }
                 }
                 if _input.fetch_owner {
                     query.push_kv(
@@ -13700,10 +14742,12 @@ impl ListObjectsV2Input {
                     );
                 }
                 if let Some(inner_129) = &_input.start_after {
-                    query.push_kv(
-                        "start-after",
-                        &aws_smithy_http::query::fmt_string(&inner_129),
-                    );
+                    {
+                        query.push_kv(
+                            "start-after",
+                            &aws_smithy_http::query::fmt_string(&inner_129),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -13711,8 +14755,10 @@ impl ListObjectsV2Input {
             fn update_http_builder(
                 input: &crate::input::ListObjectsV2Input,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -13741,6 +14787,7 @@ impl ListObjectsV2Input {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -13786,7 +14833,7 @@ impl ListObjectsV2Input {
 pub mod list_object_versions_input {
 
     /// A builder for [`ListObjectVersionsInput`](crate::input::ListObjectVersionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) delimiter: std::option::Option<std::string::String>,
@@ -13894,8 +14941,10 @@ pub mod list_object_versions_input {
         /// Consumes the builder and constructs a [`ListObjectVersionsInput`](crate::input::ListObjectVersionsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListObjectVersionsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListObjectVersionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListObjectVersionsInput {
                 bucket: self.bucket,
                 delimiter: self.delimiter,
@@ -13922,26 +14971,31 @@ impl ListObjectVersionsInput {
             crate::operation::ListObjectVersions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListObjectVersionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_130 = &_input.bucket;
-                let input_130 = input_130.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_130, false);
+                let input_130 = input_130.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_130,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -13949,23 +15003,29 @@ impl ListObjectVersionsInput {
             fn uri_query(
                 _input: &crate::input::ListObjectVersionsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("versions");
                 if let Some(inner_131) = &_input.delimiter {
-                    query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_131));
+                    {
+                        query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_131));
+                    }
                 }
                 if let Some(inner_132) = &_input.encoding_type {
-                    query.push_kv(
-                        "encoding-type",
-                        &aws_smithy_http::query::fmt_string(&inner_132),
-                    );
+                    {
+                        query.push_kv(
+                            "encoding-type",
+                            &aws_smithy_http::query::fmt_string(&inner_132),
+                        );
+                    }
                 }
                 if let Some(inner_133) = &_input.key_marker {
-                    query.push_kv(
-                        "key-marker",
-                        &aws_smithy_http::query::fmt_string(&inner_133),
-                    );
+                    {
+                        query.push_kv(
+                            "key-marker",
+                            &aws_smithy_http::query::fmt_string(&inner_133),
+                        );
+                    }
                 }
                 if _input.max_keys != 0 {
                     query.push_kv(
@@ -13974,13 +15034,17 @@ impl ListObjectVersionsInput {
                     );
                 }
                 if let Some(inner_134) = &_input.prefix {
-                    query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_134));
+                    {
+                        query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_134));
+                    }
                 }
                 if let Some(inner_135) = &_input.version_id_marker {
-                    query.push_kv(
-                        "version-id-marker",
-                        &aws_smithy_http::query::fmt_string(&inner_135),
-                    );
+                    {
+                        query.push_kv(
+                            "version-id-marker",
+                            &aws_smithy_http::query::fmt_string(&inner_135),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -13988,8 +15052,10 @@ impl ListObjectVersionsInput {
             fn update_http_builder(
                 input: &crate::input::ListObjectVersionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -14018,6 +15084,7 @@ impl ListObjectVersionsInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -14063,7 +15130,7 @@ impl ListObjectVersionsInput {
 pub mod list_parts_input {
 
     /// A builder for [`ListPartsInput`](crate::input::ListPartsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
@@ -14202,7 +15269,8 @@ pub mod list_parts_input {
         /// Consumes the builder and constructs a [`ListPartsInput`](crate::input::ListPartsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListPartsInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ListPartsInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ListPartsInput {
                 bucket: self.bucket,
                 key: self.key,
@@ -14215,6 +15283,22 @@ pub mod list_parts_input {
                 sse_customer_key: self.sse_customer_key,
                 sse_customer_key_md5: self.sse_customer_key_md5,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("bucket", &self.bucket);
+            formatter.field("key", &self.key);
+            formatter.field("max_parts", &self.max_parts);
+            formatter.field("part_number_marker", &self.part_number_marker);
+            formatter.field("upload_id", &self.upload_id);
+            formatter.field("request_payer", &self.request_payer);
+            formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
+            formatter.field("sse_customer_algorithm", &self.sse_customer_algorithm);
+            formatter.field("sse_customer_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("sse_customer_key_md5", &self.sse_customer_key_md5);
+            formatter.finish()
         }
     }
 }
@@ -14231,40 +15315,50 @@ impl ListPartsInput {
             crate::operation::ListParts,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListPartsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_136 = &_input.bucket;
-                let input_136 = input_136.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_136, false);
+                let input_136 = input_136.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_136,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_137 = &_input.key;
-                let input_137 = input_137.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let key = aws_smithy_http::label::fmt_string(input_137, true);
+                let input_137 = input_137.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "key",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let key = aws_smithy_http::label::fmt_string(
+                    input_137,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
                 if key.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "key",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
                     .expect("formatting should succeed");
@@ -14273,7 +15367,7 @@ impl ListPartsInput {
             fn uri_query(
                 _input: &crate::input::ListPartsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("x-id", "ListParts");
                 if _input.max_parts != 0 {
@@ -14283,22 +15377,39 @@ impl ListPartsInput {
                     );
                 }
                 if let Some(inner_138) = &_input.part_number_marker {
-                    query.push_kv(
-                        "part-number-marker",
-                        &aws_smithy_http::query::fmt_string(&inner_138),
+                    {
+                        query.push_kv(
+                            "part-number-marker",
+                            &aws_smithy_http::query::fmt_string(&inner_138),
+                        );
+                    }
+                }
+                let inner_139 = &_input.upload_id;
+                let inner_139 = inner_139.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "upload_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_139.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "upload_id",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_139) = &_input.upload_id {
-                    query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_139));
-                }
+                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_139));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::ListPartsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -14327,6 +15438,7 @@ impl ListPartsInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -14367,7 +15479,7 @@ impl ListPartsInput {
 pub mod put_bucket_accelerate_configuration_input {
 
     /// A builder for [`PutBucketAccelerateConfigurationInput`](crate::input::PutBucketAccelerateConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) accelerate_configuration:
@@ -14435,7 +15547,7 @@ pub mod put_bucket_accelerate_configuration_input {
             self,
         ) -> Result<
             crate::input::PutBucketAccelerateConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::PutBucketAccelerateConfigurationInput {
                 bucket: self.bucket,
@@ -14459,27 +15571,32 @@ impl PutBucketAccelerateConfigurationInput {
             crate::operation::PutBucketAccelerateConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketAccelerateConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_140 = &_input.bucket;
-                let input_140 = input_140.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_140, false);
+                let input_140 = input_140.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_140,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -14487,7 +15604,7 @@ impl PutBucketAccelerateConfigurationInput {
             fn uri_query(
                 _input: &crate::input::PutBucketAccelerateConfigurationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("accelerate");
                 Ok(())
@@ -14496,8 +15613,10 @@ impl PutBucketAccelerateConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::PutBucketAccelerateConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -14547,9 +15666,7 @@ impl PutBucketAccelerateConfigurationInput {
             let checksum_algorithm = match checksum_algorithm {
                 Some(algo) => Some(
                     algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
-                        .map_err(|err| {
-                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
-                        })?,
+                        .map_err(aws_smithy_http::operation::error::BuildError::other)?,
                 ),
                 None => None,
             };
@@ -14560,11 +15677,12 @@ impl PutBucketAccelerateConfigurationInput {
                     checksum_algorithm,
                 )?;
             }
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -14610,7 +15728,7 @@ impl PutBucketAccelerateConfigurationInput {
 pub mod put_bucket_acl_input {
 
     /// A builder for [`PutBucketAclInput`](crate::input::PutBucketAclInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) acl: std::option::Option<crate::model::BucketCannedAcl>,
         pub(crate) access_control_policy: std::option::Option<crate::model::AccessControlPolicy>,
@@ -14765,7 +15883,7 @@ pub mod put_bucket_acl_input {
         /// Consumes the builder and constructs a [`PutBucketAclInput`](crate::input::PutBucketAclInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutBucketAclInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::PutBucketAclInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::PutBucketAclInput {
                 acl: self.acl,
@@ -14796,27 +15914,32 @@ impl PutBucketAclInput {
             crate::operation::PutBucketAcl,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketAclInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_141 = &_input.bucket;
-                let input_141 = input_141.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_141, false);
+                let input_141 = input_141.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_141,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -14824,7 +15947,7 @@ impl PutBucketAclInput {
             fn uri_query(
                 _input: &crate::input::PutBucketAclInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("acl");
                 Ok(())
@@ -14833,8 +15956,10 @@ impl PutBucketAclInput {
             fn update_http_builder(
                 input: &crate::input::PutBucketAclInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -14884,9 +16009,7 @@ impl PutBucketAclInput {
             let checksum_algorithm = match checksum_algorithm {
                 Some(algo) => Some(
                     algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
-                        .map_err(|err| {
-                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
-                        })?,
+                        .map_err(aws_smithy_http::operation::error::BuildError::other)?,
                 ),
                 None => None,
             };
@@ -14897,11 +16020,12 @@ impl PutBucketAclInput {
                     checksum_algorithm,
                 )?;
             }
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -14947,7 +16071,7 @@ impl PutBucketAclInput {
 pub mod put_bucket_analytics_configuration_input {
 
     /// A builder for [`PutBucketAnalyticsConfigurationInput`](crate::input::PutBucketAnalyticsConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -15010,7 +16134,7 @@ pub mod put_bucket_analytics_configuration_input {
             self,
         ) -> Result<
             crate::input::PutBucketAnalyticsConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::PutBucketAnalyticsConfigurationInput {
                 bucket: self.bucket,
@@ -15034,26 +16158,31 @@ impl PutBucketAnalyticsConfigurationInput {
             crate::operation::PutBucketAnalyticsConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketAnalyticsConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_142 = &_input.bucket;
-                let input_142 = input_142.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_142, false);
+                let input_142 = input_142.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_142,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -15061,20 +16190,35 @@ impl PutBucketAnalyticsConfigurationInput {
             fn uri_query(
                 _input: &crate::input::PutBucketAnalyticsConfigurationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("analytics");
-                if let Some(inner_143) = &_input.id {
-                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_143));
+                let inner_143 = &_input.id;
+                let inner_143 = inner_143.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_143.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_143));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::PutBucketAnalyticsConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -15121,6 +16265,7 @@ impl PutBucketAnalyticsConfigurationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -15166,7 +16311,7 @@ impl PutBucketAnalyticsConfigurationInput {
 pub mod put_bucket_cors_input {
 
     /// A builder for [`PutBucketCorsInput`](crate::input::PutBucketCorsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) cors_configuration: std::option::Option<crate::model::CorsConfiguration>,
@@ -15241,7 +16386,7 @@ pub mod put_bucket_cors_input {
         /// Consumes the builder and constructs a [`PutBucketCorsInput`](crate::input::PutBucketCorsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutBucketCorsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::PutBucketCorsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::PutBucketCorsInput {
                 bucket: self.bucket,
@@ -15266,27 +16411,32 @@ impl PutBucketCorsInput {
             crate::operation::PutBucketCors,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketCorsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_144 = &_input.bucket;
-                let input_144 = input_144.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_144, false);
+                let input_144 = input_144.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_144,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -15294,7 +16444,7 @@ impl PutBucketCorsInput {
             fn uri_query(
                 _input: &crate::input::PutBucketCorsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("cors");
                 Ok(())
@@ -15303,8 +16453,10 @@ impl PutBucketCorsInput {
             fn update_http_builder(
                 input: &crate::input::PutBucketCorsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -15354,9 +16506,7 @@ impl PutBucketCorsInput {
             let checksum_algorithm = match checksum_algorithm {
                 Some(algo) => Some(
                     algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
-                        .map_err(|err| {
-                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
-                        })?,
+                        .map_err(aws_smithy_http::operation::error::BuildError::other)?,
                 ),
                 None => None,
             };
@@ -15367,11 +16517,12 @@ impl PutBucketCorsInput {
                     checksum_algorithm,
                 )?;
             }
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -15417,7 +16568,7 @@ impl PutBucketCorsInput {
 pub mod put_bucket_encryption_input {
 
     /// A builder for [`PutBucketEncryptionInput`](crate::input::PutBucketEncryptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) content_md5: std::option::Option<std::string::String>,
@@ -15496,8 +16647,10 @@ pub mod put_bucket_encryption_input {
         /// Consumes the builder and constructs a [`PutBucketEncryptionInput`](crate::input::PutBucketEncryptionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutBucketEncryptionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutBucketEncryptionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutBucketEncryptionInput {
                 bucket: self.bucket,
                 content_md5: self.content_md5,
@@ -15521,27 +16674,32 @@ impl PutBucketEncryptionInput {
             crate::operation::PutBucketEncryption,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketEncryptionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_145 = &_input.bucket;
-                let input_145 = input_145.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_145, false);
+                let input_145 = input_145.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_145,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -15549,7 +16707,7 @@ impl PutBucketEncryptionInput {
             fn uri_query(
                 _input: &crate::input::PutBucketEncryptionInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("encryption");
                 Ok(())
@@ -15558,8 +16716,10 @@ impl PutBucketEncryptionInput {
             fn update_http_builder(
                 input: &crate::input::PutBucketEncryptionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -15609,9 +16769,7 @@ impl PutBucketEncryptionInput {
             let checksum_algorithm = match checksum_algorithm {
                 Some(algo) => Some(
                     algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
-                        .map_err(|err| {
-                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
-                        })?,
+                        .map_err(aws_smithy_http::operation::error::BuildError::other)?,
                 ),
                 None => None,
             };
@@ -15622,11 +16780,12 @@ impl PutBucketEncryptionInput {
                     checksum_algorithm,
                 )?;
             }
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -15672,7 +16831,7 @@ impl PutBucketEncryptionInput {
 pub mod put_bucket_intelligent_tiering_configuration_input {
 
     /// A builder for [`PutBucketIntelligentTieringConfigurationInput`](crate::input::PutBucketIntelligentTieringConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -15721,7 +16880,7 @@ pub mod put_bucket_intelligent_tiering_configuration_input {
             self,
         ) -> Result<
             crate::input::PutBucketIntelligentTieringConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(
                 crate::input::PutBucketIntelligentTieringConfigurationInput {
@@ -15746,26 +16905,31 @@ impl PutBucketIntelligentTieringConfigurationInput {
             crate::operation::PutBucketIntelligentTieringConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketIntelligentTieringConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_146 = &_input.bucket;
-                let input_146 = input_146.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_146, false);
+                let input_146 = input_146.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_146,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -15773,20 +16937,35 @@ impl PutBucketIntelligentTieringConfigurationInput {
             fn uri_query(
                 _input: &crate::input::PutBucketIntelligentTieringConfigurationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("intelligent-tiering");
-                if let Some(inner_147) = &_input.id {
-                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_147));
+                let inner_147 = &_input.id;
+                let inner_147 = inner_147.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_147.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_147));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::PutBucketIntelligentTieringConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -15827,6 +17006,7 @@ impl PutBucketIntelligentTieringConfigurationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -15872,7 +17052,7 @@ impl PutBucketIntelligentTieringConfigurationInput {
 pub mod put_bucket_inventory_configuration_input {
 
     /// A builder for [`PutBucketInventoryConfigurationInput`](crate::input::PutBucketInventoryConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -15935,7 +17115,7 @@ pub mod put_bucket_inventory_configuration_input {
             self,
         ) -> Result<
             crate::input::PutBucketInventoryConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::PutBucketInventoryConfigurationInput {
                 bucket: self.bucket,
@@ -15959,26 +17139,31 @@ impl PutBucketInventoryConfigurationInput {
             crate::operation::PutBucketInventoryConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketInventoryConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_148 = &_input.bucket;
-                let input_148 = input_148.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_148, false);
+                let input_148 = input_148.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_148,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -15986,20 +17171,35 @@ impl PutBucketInventoryConfigurationInput {
             fn uri_query(
                 _input: &crate::input::PutBucketInventoryConfigurationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("inventory");
-                if let Some(inner_149) = &_input.id {
-                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_149));
+                let inner_149 = &_input.id;
+                let inner_149 = inner_149.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_149.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_149));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::PutBucketInventoryConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -16046,6 +17246,7 @@ impl PutBucketInventoryConfigurationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -16091,7 +17292,7 @@ impl PutBucketInventoryConfigurationInput {
 pub mod put_bucket_lifecycle_configuration_input {
 
     /// A builder for [`PutBucketLifecycleConfigurationInput`](crate::input::PutBucketLifecycleConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
@@ -16159,7 +17360,7 @@ pub mod put_bucket_lifecycle_configuration_input {
             self,
         ) -> Result<
             crate::input::PutBucketLifecycleConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::PutBucketLifecycleConfigurationInput {
                 bucket: self.bucket,
@@ -16183,27 +17384,32 @@ impl PutBucketLifecycleConfigurationInput {
             crate::operation::PutBucketLifecycleConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketLifecycleConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_150 = &_input.bucket;
-                let input_150 = input_150.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_150, false);
+                let input_150 = input_150.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_150,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -16211,7 +17417,7 @@ impl PutBucketLifecycleConfigurationInput {
             fn uri_query(
                 _input: &crate::input::PutBucketLifecycleConfigurationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("lifecycle");
                 Ok(())
@@ -16220,8 +17426,10 @@ impl PutBucketLifecycleConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::PutBucketLifecycleConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -16273,9 +17481,7 @@ impl PutBucketLifecycleConfigurationInput {
             let checksum_algorithm = match checksum_algorithm {
                 Some(algo) => Some(
                     algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
-                        .map_err(|err| {
-                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
-                        })?,
+                        .map_err(aws_smithy_http::operation::error::BuildError::other)?,
                 ),
                 None => None,
             };
@@ -16286,11 +17492,12 @@ impl PutBucketLifecycleConfigurationInput {
                     checksum_algorithm,
                 )?;
             }
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -16336,7 +17543,7 @@ impl PutBucketLifecycleConfigurationInput {
 pub mod put_bucket_logging_input {
 
     /// A builder for [`PutBucketLoggingInput`](crate::input::PutBucketLoggingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) bucket_logging_status: std::option::Option<crate::model::BucketLoggingStatus>,
@@ -16411,8 +17618,10 @@ pub mod put_bucket_logging_input {
         /// Consumes the builder and constructs a [`PutBucketLoggingInput`](crate::input::PutBucketLoggingInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutBucketLoggingInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutBucketLoggingInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutBucketLoggingInput {
                 bucket: self.bucket,
                 bucket_logging_status: self.bucket_logging_status,
@@ -16436,27 +17645,32 @@ impl PutBucketLoggingInput {
             crate::operation::PutBucketLogging,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketLoggingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_151 = &_input.bucket;
-                let input_151 = input_151.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_151, false);
+                let input_151 = input_151.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_151,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -16464,7 +17678,7 @@ impl PutBucketLoggingInput {
             fn uri_query(
                 _input: &crate::input::PutBucketLoggingInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("logging");
                 Ok(())
@@ -16473,8 +17687,10 @@ impl PutBucketLoggingInput {
             fn update_http_builder(
                 input: &crate::input::PutBucketLoggingInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -16524,9 +17740,7 @@ impl PutBucketLoggingInput {
             let checksum_algorithm = match checksum_algorithm {
                 Some(algo) => Some(
                     algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
-                        .map_err(|err| {
-                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
-                        })?,
+                        .map_err(aws_smithy_http::operation::error::BuildError::other)?,
                 ),
                 None => None,
             };
@@ -16537,11 +17751,12 @@ impl PutBucketLoggingInput {
                     checksum_algorithm,
                 )?;
             }
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -16587,7 +17802,7 @@ impl PutBucketLoggingInput {
 pub mod put_bucket_metrics_configuration_input {
 
     /// A builder for [`PutBucketMetricsConfigurationInput`](crate::input::PutBucketMetricsConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -16646,7 +17861,7 @@ pub mod put_bucket_metrics_configuration_input {
             self,
         ) -> Result<
             crate::input::PutBucketMetricsConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::PutBucketMetricsConfigurationInput {
                 bucket: self.bucket,
@@ -16670,26 +17885,31 @@ impl PutBucketMetricsConfigurationInput {
             crate::operation::PutBucketMetricsConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketMetricsConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_152 = &_input.bucket;
-                let input_152 = input_152.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_152, false);
+                let input_152 = input_152.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_152,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -16697,20 +17917,35 @@ impl PutBucketMetricsConfigurationInput {
             fn uri_query(
                 _input: &crate::input::PutBucketMetricsConfigurationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("metrics");
-                if let Some(inner_153) = &_input.id {
-                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_153));
+                let inner_153 = &_input.id;
+                let inner_153 = inner_153.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_153.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_153));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::PutBucketMetricsConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -16757,6 +17992,7 @@ impl PutBucketMetricsConfigurationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -16802,7 +18038,7 @@ impl PutBucketMetricsConfigurationInput {
 pub mod put_bucket_notification_configuration_input {
 
     /// A builder for [`PutBucketNotificationConfigurationInput`](crate::input::PutBucketNotificationConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) notification_configuration:
@@ -16865,7 +18101,7 @@ pub mod put_bucket_notification_configuration_input {
             self,
         ) -> Result<
             crate::input::PutBucketNotificationConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::PutBucketNotificationConfigurationInput {
                 bucket: self.bucket,
@@ -16889,26 +18125,31 @@ impl PutBucketNotificationConfigurationInput {
             crate::operation::PutBucketNotificationConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketNotificationConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_154 = &_input.bucket;
-                let input_154 = input_154.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_154, false);
+                let input_154 = input_154.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_154,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -16916,7 +18157,7 @@ impl PutBucketNotificationConfigurationInput {
             fn uri_query(
                 _input: &crate::input::PutBucketNotificationConfigurationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("notification");
                 Ok(())
@@ -16925,8 +18166,10 @@ impl PutBucketNotificationConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::PutBucketNotificationConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -16973,6 +18216,7 @@ impl PutBucketNotificationConfigurationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -17018,7 +18262,7 @@ impl PutBucketNotificationConfigurationInput {
 pub mod put_bucket_ownership_controls_input {
 
     /// A builder for [`PutBucketOwnershipControlsInput`](crate::input::PutBucketOwnershipControlsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) content_md5: std::option::Option<std::string::String>,
@@ -17079,7 +18323,7 @@ pub mod put_bucket_ownership_controls_input {
             self,
         ) -> Result<
             crate::input::PutBucketOwnershipControlsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::PutBucketOwnershipControlsInput {
                 bucket: self.bucket,
@@ -17103,26 +18347,31 @@ impl PutBucketOwnershipControlsInput {
             crate::operation::PutBucketOwnershipControls,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketOwnershipControlsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_155 = &_input.bucket;
-                let input_155 = input_155.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_155, false);
+                let input_155 = input_155.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_155,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -17130,7 +18379,7 @@ impl PutBucketOwnershipControlsInput {
             fn uri_query(
                 _input: &crate::input::PutBucketOwnershipControlsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("ownershipControls");
                 Ok(())
@@ -17139,8 +18388,10 @@ impl PutBucketOwnershipControlsInput {
             fn update_http_builder(
                 input: &crate::input::PutBucketOwnershipControlsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -17188,9 +18439,7 @@ impl PutBucketOwnershipControlsInput {
             let checksum_algorithm = match checksum_algorithm {
                 Some(algo) => Some(
                     algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
-                        .map_err(|err| {
-                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
-                        })?,
+                        .map_err(aws_smithy_http::operation::error::BuildError::other)?,
                 ),
                 None => None,
             };
@@ -17201,11 +18450,12 @@ impl PutBucketOwnershipControlsInput {
                     checksum_algorithm,
                 )?;
             }
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -17251,7 +18501,7 @@ impl PutBucketOwnershipControlsInput {
 pub mod put_bucket_policy_input {
 
     /// A builder for [`PutBucketPolicyInput`](crate::input::PutBucketPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) content_md5: std::option::Option<std::string::String>,
@@ -17337,7 +18587,7 @@ pub mod put_bucket_policy_input {
         /// Consumes the builder and constructs a [`PutBucketPolicyInput`](crate::input::PutBucketPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutBucketPolicyInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::PutBucketPolicyInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::PutBucketPolicyInput {
                 bucket: self.bucket,
@@ -17365,27 +18615,32 @@ impl PutBucketPolicyInput {
             crate::operation::PutBucketPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_156 = &_input.bucket;
-                let input_156 = input_156.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_156, false);
+                let input_156 = input_156.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_156,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -17393,7 +18648,7 @@ impl PutBucketPolicyInput {
             fn uri_query(
                 _input: &crate::input::PutBucketPolicyInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("policy");
                 Ok(())
@@ -17402,8 +18657,10 @@ impl PutBucketPolicyInput {
             fn update_http_builder(
                 input: &crate::input::PutBucketPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -17451,9 +18708,7 @@ impl PutBucketPolicyInput {
             let checksum_algorithm = match checksum_algorithm {
                 Some(algo) => Some(
                     algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
-                        .map_err(|err| {
-                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
-                        })?,
+                        .map_err(aws_smithy_http::operation::error::BuildError::other)?,
                 ),
                 None => None,
             };
@@ -17464,11 +18719,12 @@ impl PutBucketPolicyInput {
                     checksum_algorithm,
                 )?;
             }
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -17514,7 +18770,7 @@ impl PutBucketPolicyInput {
 pub mod put_bucket_replication_input {
 
     /// A builder for [`PutBucketReplicationInput`](crate::input::PutBucketReplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) content_md5: std::option::Option<std::string::String>,
@@ -17604,8 +18860,10 @@ pub mod put_bucket_replication_input {
         /// Consumes the builder and constructs a [`PutBucketReplicationInput`](crate::input::PutBucketReplicationInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutBucketReplicationInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutBucketReplicationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutBucketReplicationInput {
                 bucket: self.bucket,
                 content_md5: self.content_md5,
@@ -17630,27 +18888,32 @@ impl PutBucketReplicationInput {
             crate::operation::PutBucketReplication,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketReplicationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_157 = &_input.bucket;
-                let input_157 = input_157.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_157, false);
+                let input_157 = input_157.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_157,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -17658,7 +18921,7 @@ impl PutBucketReplicationInput {
             fn uri_query(
                 _input: &crate::input::PutBucketReplicationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("replication");
                 Ok(())
@@ -17667,8 +18930,10 @@ impl PutBucketReplicationInput {
             fn update_http_builder(
                 input: &crate::input::PutBucketReplicationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -17719,9 +18984,7 @@ impl PutBucketReplicationInput {
             let checksum_algorithm = match checksum_algorithm {
                 Some(algo) => Some(
                     algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
-                        .map_err(|err| {
-                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
-                        })?,
+                        .map_err(aws_smithy_http::operation::error::BuildError::other)?,
                 ),
                 None => None,
             };
@@ -17732,11 +18995,12 @@ impl PutBucketReplicationInput {
                     checksum_algorithm,
                 )?;
             }
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -17782,7 +19046,7 @@ impl PutBucketReplicationInput {
 pub mod put_bucket_request_payment_input {
 
     /// A builder for [`PutBucketRequestPaymentInput`](crate::input::PutBucketRequestPaymentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) content_md5: std::option::Option<std::string::String>,
@@ -17863,7 +19127,7 @@ pub mod put_bucket_request_payment_input {
             self,
         ) -> Result<
             crate::input::PutBucketRequestPaymentInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::PutBucketRequestPaymentInput {
                 bucket: self.bucket,
@@ -17888,27 +19152,32 @@ impl PutBucketRequestPaymentInput {
             crate::operation::PutBucketRequestPayment,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketRequestPaymentInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_158 = &_input.bucket;
-                let input_158 = input_158.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_158, false);
+                let input_158 = input_158.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_158,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -17916,7 +19185,7 @@ impl PutBucketRequestPaymentInput {
             fn uri_query(
                 _input: &crate::input::PutBucketRequestPaymentInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("requestPayment");
                 Ok(())
@@ -17925,8 +19194,10 @@ impl PutBucketRequestPaymentInput {
             fn update_http_builder(
                 input: &crate::input::PutBucketRequestPaymentInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -17977,9 +19248,7 @@ impl PutBucketRequestPaymentInput {
             let checksum_algorithm = match checksum_algorithm {
                 Some(algo) => Some(
                     algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
-                        .map_err(|err| {
-                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
-                        })?,
+                        .map_err(aws_smithy_http::operation::error::BuildError::other)?,
                 ),
                 None => None,
             };
@@ -17990,11 +19259,12 @@ impl PutBucketRequestPaymentInput {
                     checksum_algorithm,
                 )?;
             }
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -18040,7 +19310,7 @@ impl PutBucketRequestPaymentInput {
 pub mod put_bucket_tagging_input {
 
     /// A builder for [`PutBucketTaggingInput`](crate::input::PutBucketTaggingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) content_md5: std::option::Option<std::string::String>,
@@ -18112,8 +19382,10 @@ pub mod put_bucket_tagging_input {
         /// Consumes the builder and constructs a [`PutBucketTaggingInput`](crate::input::PutBucketTaggingInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutBucketTaggingInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutBucketTaggingInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutBucketTaggingInput {
                 bucket: self.bucket,
                 content_md5: self.content_md5,
@@ -18137,27 +19409,32 @@ impl PutBucketTaggingInput {
             crate::operation::PutBucketTagging,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketTaggingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_159 = &_input.bucket;
-                let input_159 = input_159.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_159, false);
+                let input_159 = input_159.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_159,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -18165,7 +19442,7 @@ impl PutBucketTaggingInput {
             fn uri_query(
                 _input: &crate::input::PutBucketTaggingInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("tagging");
                 Ok(())
@@ -18174,8 +19451,10 @@ impl PutBucketTaggingInput {
             fn update_http_builder(
                 input: &crate::input::PutBucketTaggingInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -18223,9 +19502,7 @@ impl PutBucketTaggingInput {
             let checksum_algorithm = match checksum_algorithm {
                 Some(algo) => Some(
                     algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
-                        .map_err(|err| {
-                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
-                        })?,
+                        .map_err(aws_smithy_http::operation::error::BuildError::other)?,
                 ),
                 None => None,
             };
@@ -18236,11 +19513,12 @@ impl PutBucketTaggingInput {
                     checksum_algorithm,
                 )?;
             }
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -18286,7 +19564,7 @@ impl PutBucketTaggingInput {
 pub mod put_bucket_versioning_input {
 
     /// A builder for [`PutBucketVersioningInput`](crate::input::PutBucketVersioningInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) content_md5: std::option::Option<std::string::String>,
@@ -18376,8 +19654,10 @@ pub mod put_bucket_versioning_input {
         /// Consumes the builder and constructs a [`PutBucketVersioningInput`](crate::input::PutBucketVersioningInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutBucketVersioningInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutBucketVersioningInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutBucketVersioningInput {
                 bucket: self.bucket,
                 content_md5: self.content_md5,
@@ -18402,27 +19682,32 @@ impl PutBucketVersioningInput {
             crate::operation::PutBucketVersioning,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketVersioningInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_160 = &_input.bucket;
-                let input_160 = input_160.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_160, false);
+                let input_160 = input_160.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_160,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -18430,7 +19715,7 @@ impl PutBucketVersioningInput {
             fn uri_query(
                 _input: &crate::input::PutBucketVersioningInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("versioning");
                 Ok(())
@@ -18439,8 +19724,10 @@ impl PutBucketVersioningInput {
             fn update_http_builder(
                 input: &crate::input::PutBucketVersioningInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -18490,9 +19777,7 @@ impl PutBucketVersioningInput {
             let checksum_algorithm = match checksum_algorithm {
                 Some(algo) => Some(
                     algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
-                        .map_err(|err| {
-                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
-                        })?,
+                        .map_err(aws_smithy_http::operation::error::BuildError::other)?,
                 ),
                 None => None,
             };
@@ -18503,11 +19788,12 @@ impl PutBucketVersioningInput {
                     checksum_algorithm,
                 )?;
             }
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -18553,7 +19839,7 @@ impl PutBucketVersioningInput {
 pub mod put_bucket_website_input {
 
     /// A builder for [`PutBucketWebsiteInput`](crate::input::PutBucketWebsiteInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) content_md5: std::option::Option<std::string::String>,
@@ -18628,8 +19914,10 @@ pub mod put_bucket_website_input {
         /// Consumes the builder and constructs a [`PutBucketWebsiteInput`](crate::input::PutBucketWebsiteInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutBucketWebsiteInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutBucketWebsiteInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutBucketWebsiteInput {
                 bucket: self.bucket,
                 content_md5: self.content_md5,
@@ -18653,27 +19941,32 @@ impl PutBucketWebsiteInput {
             crate::operation::PutBucketWebsite,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketWebsiteInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_161 = &_input.bucket;
-                let input_161 = input_161.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_161, false);
+                let input_161 = input_161.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_161,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -18681,7 +19974,7 @@ impl PutBucketWebsiteInput {
             fn uri_query(
                 _input: &crate::input::PutBucketWebsiteInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("website");
                 Ok(())
@@ -18690,8 +19983,10 @@ impl PutBucketWebsiteInput {
             fn update_http_builder(
                 input: &crate::input::PutBucketWebsiteInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -18741,9 +20036,7 @@ impl PutBucketWebsiteInput {
             let checksum_algorithm = match checksum_algorithm {
                 Some(algo) => Some(
                     algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
-                        .map_err(|err| {
-                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
-                        })?,
+                        .map_err(aws_smithy_http::operation::error::BuildError::other)?,
                 ),
                 None => None,
             };
@@ -18754,11 +20047,12 @@ impl PutBucketWebsiteInput {
                     checksum_algorithm,
                 )?;
             }
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -18804,7 +20098,7 @@ impl PutBucketWebsiteInput {
 pub mod put_object_input {
 
     /// A builder for [`PutObjectInput`](crate::input::PutObjectInput).
-    #[derive(std::default::Default, std::fmt::Debug)]
+    #[derive(std::default::Default)]
     pub struct Builder {
         pub(crate) acl: std::option::Option<crate::model::ObjectCannedAcl>,
         pub(crate) body: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
@@ -19351,7 +20645,8 @@ pub mod put_object_input {
         /// Consumes the builder and constructs a [`PutObjectInput`](crate::input::PutObjectInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutObjectInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::PutObjectInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::PutObjectInput {
                 acl: self.acl,
                 body: self.body.unwrap_or_default(),
@@ -19393,6 +20688,58 @@ pub mod put_object_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("acl", &self.acl);
+            formatter.field("body", &self.body);
+            formatter.field("bucket", &self.bucket);
+            formatter.field("cache_control", &self.cache_control);
+            formatter.field("content_disposition", &self.content_disposition);
+            formatter.field("content_encoding", &self.content_encoding);
+            formatter.field("content_language", &self.content_language);
+            formatter.field("content_length", &self.content_length);
+            formatter.field("content_md5", &self.content_md5);
+            formatter.field("content_type", &self.content_type);
+            formatter.field("checksum_algorithm", &self.checksum_algorithm);
+            formatter.field("checksum_crc32", &self.checksum_crc32);
+            formatter.field("checksum_crc32_c", &self.checksum_crc32_c);
+            formatter.field("checksum_sha1", &self.checksum_sha1);
+            formatter.field("checksum_sha256", &self.checksum_sha256);
+            formatter.field("expires", &self.expires);
+            formatter.field("grant_full_control", &self.grant_full_control);
+            formatter.field("grant_read", &self.grant_read);
+            formatter.field("grant_read_acp", &self.grant_read_acp);
+            formatter.field("grant_write_acp", &self.grant_write_acp);
+            formatter.field("key", &self.key);
+            formatter.field("metadata", &self.metadata);
+            formatter.field("server_side_encryption", &self.server_side_encryption);
+            formatter.field("storage_class", &self.storage_class);
+            formatter.field("website_redirect_location", &self.website_redirect_location);
+            formatter.field("sse_customer_algorithm", &self.sse_customer_algorithm);
+            formatter.field("sse_customer_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("sse_customer_key_md5", &self.sse_customer_key_md5);
+            formatter.field("ssekms_key_id", &"*** Sensitive Data Redacted ***");
+            formatter.field(
+                "ssekms_encryption_context",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field("bucket_key_enabled", &self.bucket_key_enabled);
+            formatter.field("request_payer", &self.request_payer);
+            formatter.field("tagging", &self.tagging);
+            formatter.field("object_lock_mode", &self.object_lock_mode);
+            formatter.field(
+                "object_lock_retain_until_date",
+                &self.object_lock_retain_until_date,
+            );
+            formatter.field(
+                "object_lock_legal_hold_status",
+                &self.object_lock_legal_hold_status,
+            );
+            formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
+            formatter.finish()
+        }
+    }
 }
 impl PutObjectInput {
     /// Consumes the builder and constructs an Operation<[`PutObject`](crate::operation::PutObject)>
@@ -19407,41 +20754,51 @@ impl PutObjectInput {
             crate::operation::PutObject,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutObjectInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_162 = &_input.bucket;
-                let input_162 = input_162.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_162, false);
+                let input_162 = input_162.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_162,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_163 = &_input.key;
-                let input_163 = input_163.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let key = aws_smithy_http::label::fmt_string(input_163, true);
+                let input_163 = input_163.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "key",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let key = aws_smithy_http::label::fmt_string(
+                    input_163,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
                 if key.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "key",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
                     .expect("formatting should succeed");
@@ -19450,7 +20807,7 @@ impl PutObjectInput {
             fn uri_query(
                 _input: &crate::input::PutObjectInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("x-id", "PutObject");
                 Ok(())
@@ -19459,8 +20816,10 @@ impl PutObjectInput {
             fn update_http_builder(
                 input: &crate::input::PutObjectInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -19494,9 +20853,7 @@ impl PutObjectInput {
             let checksum_algorithm = match checksum_algorithm {
                 Some(algo) => Some(
                     algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
-                        .map_err(|err| {
-                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
-                        })?,
+                        .map_err(aws_smithy_http::operation::error::BuildError::other)?,
                 ),
                 None => None,
             };
@@ -19507,11 +20864,12 @@ impl PutObjectInput {
                     checksum_algorithm,
                 )?;
             }
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -19563,7 +20921,7 @@ impl PutObjectInput {
         let (mut request, _) = self
             ._make_presigned_operation(config)
             .await
-            .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
             .into_request_response();
         {
             // Change signature type to query params and wire up presigning config
@@ -19596,41 +20954,51 @@ impl PutObjectInput {
             crate::operation::PutObject,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutObjectInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_164 = &_input.bucket;
-                let input_164 = input_164.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_164, false);
+                let input_164 = input_164.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_164,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_165 = &_input.key;
-                let input_165 = input_165.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let key = aws_smithy_http::label::fmt_string(input_165, true);
+                let input_165 = input_165.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "key",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let key = aws_smithy_http::label::fmt_string(
+                    input_165,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
                 if key.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "key",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
                     .expect("formatting should succeed");
@@ -19639,7 +21007,7 @@ impl PutObjectInput {
             fn uri_query(
                 _input: &crate::input::PutObjectInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("x-id", "PutObject");
                 Ok(())
@@ -19648,8 +21016,10 @@ impl PutObjectInput {
             fn update_http_builder(
                 input: &crate::input::PutObjectInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -19695,9 +21065,7 @@ impl PutObjectInput {
             let checksum_algorithm = match checksum_algorithm {
                 Some(algo) => Some(
                     algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
-                        .map_err(|err| {
-                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
-                        })?,
+                        .map_err(aws_smithy_http::operation::error::BuildError::other)?,
                 ),
                 None => None,
             };
@@ -19708,11 +21076,12 @@ impl PutObjectInput {
                     checksum_algorithm,
                 )?;
             }
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -19753,7 +21122,7 @@ impl PutObjectInput {
 pub mod put_object_acl_input {
 
     /// A builder for [`PutObjectAclInput`](crate::input::PutObjectAclInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) acl: std::option::Option<crate::model::ObjectCannedAcl>,
         pub(crate) access_control_policy: std::option::Option<crate::model::AccessControlPolicy>,
@@ -19958,7 +21327,7 @@ pub mod put_object_acl_input {
         /// Consumes the builder and constructs a [`PutObjectAclInput`](crate::input::PutObjectAclInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutObjectAclInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::PutObjectAclInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::PutObjectAclInput {
                 acl: self.acl,
@@ -19992,41 +21361,51 @@ impl PutObjectAclInput {
             crate::operation::PutObjectAcl,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutObjectAclInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_166 = &_input.bucket;
-                let input_166 = input_166.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_166, false);
+                let input_166 = input_166.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_166,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_167 = &_input.key;
-                let input_167 = input_167.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let key = aws_smithy_http::label::fmt_string(input_167, true);
+                let input_167 = input_167.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "key",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let key = aws_smithy_http::label::fmt_string(
+                    input_167,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
                 if key.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "key",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
                     .expect("formatting should succeed");
@@ -20035,11 +21414,13 @@ impl PutObjectAclInput {
             fn uri_query(
                 _input: &crate::input::PutObjectAclInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("acl");
                 if let Some(inner_168) = &_input.version_id {
-                    query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_168));
+                    {
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_168));
+                    }
                 }
                 Ok(())
             }
@@ -20047,8 +21428,10 @@ impl PutObjectAclInput {
             fn update_http_builder(
                 input: &crate::input::PutObjectAclInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -20098,9 +21481,7 @@ impl PutObjectAclInput {
             let checksum_algorithm = match checksum_algorithm {
                 Some(algo) => Some(
                     algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
-                        .map_err(|err| {
-                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
-                        })?,
+                        .map_err(aws_smithy_http::operation::error::BuildError::other)?,
                 ),
                 None => None,
             };
@@ -20111,11 +21492,12 @@ impl PutObjectAclInput {
                     checksum_algorithm,
                 )?;
             }
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -20161,7 +21543,7 @@ impl PutObjectAclInput {
 pub mod put_object_legal_hold_input {
 
     /// A builder for [`PutObjectLegalHoldInput`](crate::input::PutObjectLegalHoldInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
@@ -20274,8 +21656,10 @@ pub mod put_object_legal_hold_input {
         /// Consumes the builder and constructs a [`PutObjectLegalHoldInput`](crate::input::PutObjectLegalHoldInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutObjectLegalHoldInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutObjectLegalHoldInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutObjectLegalHoldInput {
                 bucket: self.bucket,
                 key: self.key,
@@ -20302,41 +21686,51 @@ impl PutObjectLegalHoldInput {
             crate::operation::PutObjectLegalHold,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutObjectLegalHoldInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_169 = &_input.bucket;
-                let input_169 = input_169.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_169, false);
+                let input_169 = input_169.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_169,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_170 = &_input.key;
-                let input_170 = input_170.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let key = aws_smithy_http::label::fmt_string(input_170, true);
+                let input_170 = input_170.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "key",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let key = aws_smithy_http::label::fmt_string(
+                    input_170,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
                 if key.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "key",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
                     .expect("formatting should succeed");
@@ -20345,11 +21739,13 @@ impl PutObjectLegalHoldInput {
             fn uri_query(
                 _input: &crate::input::PutObjectLegalHoldInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("legal-hold");
                 if let Some(inner_171) = &_input.version_id {
-                    query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_171));
+                    {
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_171));
+                    }
                 }
                 Ok(())
             }
@@ -20357,8 +21753,10 @@ impl PutObjectLegalHoldInput {
             fn update_http_builder(
                 input: &crate::input::PutObjectLegalHoldInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -20406,9 +21804,7 @@ impl PutObjectLegalHoldInput {
             let checksum_algorithm = match checksum_algorithm {
                 Some(algo) => Some(
                     algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
-                        .map_err(|err| {
-                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
-                        })?,
+                        .map_err(aws_smithy_http::operation::error::BuildError::other)?,
                 ),
                 None => None,
             };
@@ -20419,11 +21815,12 @@ impl PutObjectLegalHoldInput {
                     checksum_algorithm,
                 )?;
             }
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -20469,7 +21866,7 @@ impl PutObjectLegalHoldInput {
 pub mod put_object_lock_configuration_input {
 
     /// A builder for [`PutObjectLockConfigurationInput`](crate::input::PutObjectLockConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) object_lock_configuration:
@@ -20575,7 +21972,7 @@ pub mod put_object_lock_configuration_input {
             self,
         ) -> Result<
             crate::input::PutObjectLockConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::PutObjectLockConfigurationInput {
                 bucket: self.bucket,
@@ -20602,27 +21999,32 @@ impl PutObjectLockConfigurationInput {
             crate::operation::PutObjectLockConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutObjectLockConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_172 = &_input.bucket;
-                let input_172 = input_172.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_172, false);
+                let input_172 = input_172.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_172,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -20630,7 +22032,7 @@ impl PutObjectLockConfigurationInput {
             fn uri_query(
                 _input: &crate::input::PutObjectLockConfigurationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("object-lock");
                 Ok(())
@@ -20639,8 +22041,10 @@ impl PutObjectLockConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::PutObjectLockConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -20691,9 +22095,7 @@ impl PutObjectLockConfigurationInput {
             let checksum_algorithm = match checksum_algorithm {
                 Some(algo) => Some(
                     algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
-                        .map_err(|err| {
-                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
-                        })?,
+                        .map_err(aws_smithy_http::operation::error::BuildError::other)?,
                 ),
                 None => None,
             };
@@ -20704,11 +22106,12 @@ impl PutObjectLockConfigurationInput {
                     checksum_algorithm,
                 )?;
             }
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -20754,7 +22157,7 @@ impl PutObjectLockConfigurationInput {
 pub mod put_object_retention_input {
 
     /// A builder for [`PutObjectRetentionInput`](crate::input::PutObjectRetentionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
@@ -20878,8 +22281,10 @@ pub mod put_object_retention_input {
         /// Consumes the builder and constructs a [`PutObjectRetentionInput`](crate::input::PutObjectRetentionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutObjectRetentionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutObjectRetentionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutObjectRetentionInput {
                 bucket: self.bucket,
                 key: self.key,
@@ -20907,41 +22312,51 @@ impl PutObjectRetentionInput {
             crate::operation::PutObjectRetention,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutObjectRetentionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_173 = &_input.bucket;
-                let input_173 = input_173.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_173, false);
+                let input_173 = input_173.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_173,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_174 = &_input.key;
-                let input_174 = input_174.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let key = aws_smithy_http::label::fmt_string(input_174, true);
+                let input_174 = input_174.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "key",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let key = aws_smithy_http::label::fmt_string(
+                    input_174,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
                 if key.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "key",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
                     .expect("formatting should succeed");
@@ -20950,11 +22365,13 @@ impl PutObjectRetentionInput {
             fn uri_query(
                 _input: &crate::input::PutObjectRetentionInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("retention");
                 if let Some(inner_175) = &_input.version_id {
-                    query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_175));
+                    {
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_175));
+                    }
                 }
                 Ok(())
             }
@@ -20962,8 +22379,10 @@ impl PutObjectRetentionInput {
             fn update_http_builder(
                 input: &crate::input::PutObjectRetentionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -21011,9 +22430,7 @@ impl PutObjectRetentionInput {
             let checksum_algorithm = match checksum_algorithm {
                 Some(algo) => Some(
                     algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
-                        .map_err(|err| {
-                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
-                        })?,
+                        .map_err(aws_smithy_http::operation::error::BuildError::other)?,
                 ),
                 None => None,
             };
@@ -21024,11 +22441,12 @@ impl PutObjectRetentionInput {
                     checksum_algorithm,
                 )?;
             }
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -21074,7 +22492,7 @@ impl PutObjectRetentionInput {
 pub mod put_object_tagging_input {
 
     /// A builder for [`PutObjectTaggingInput`](crate::input::PutObjectTaggingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
@@ -21186,8 +22604,10 @@ pub mod put_object_tagging_input {
         /// Consumes the builder and constructs a [`PutObjectTaggingInput`](crate::input::PutObjectTaggingInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutObjectTaggingInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutObjectTaggingInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutObjectTaggingInput {
                 bucket: self.bucket,
                 key: self.key,
@@ -21214,41 +22634,51 @@ impl PutObjectTaggingInput {
             crate::operation::PutObjectTagging,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutObjectTaggingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_176 = &_input.bucket;
-                let input_176 = input_176.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_176, false);
+                let input_176 = input_176.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_176,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_177 = &_input.key;
-                let input_177 = input_177.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let key = aws_smithy_http::label::fmt_string(input_177, true);
+                let input_177 = input_177.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "key",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let key = aws_smithy_http::label::fmt_string(
+                    input_177,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
                 if key.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "key",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
                     .expect("formatting should succeed");
@@ -21257,11 +22687,13 @@ impl PutObjectTaggingInput {
             fn uri_query(
                 _input: &crate::input::PutObjectTaggingInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("tagging");
                 if let Some(inner_178) = &_input.version_id {
-                    query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_178));
+                    {
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_178));
+                    }
                 }
                 Ok(())
             }
@@ -21269,8 +22701,10 @@ impl PutObjectTaggingInput {
             fn update_http_builder(
                 input: &crate::input::PutObjectTaggingInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -21318,9 +22752,7 @@ impl PutObjectTaggingInput {
             let checksum_algorithm = match checksum_algorithm {
                 Some(algo) => Some(
                     algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
-                        .map_err(|err| {
-                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
-                        })?,
+                        .map_err(aws_smithy_http::operation::error::BuildError::other)?,
                 ),
                 None => None,
             };
@@ -21331,11 +22763,12 @@ impl PutObjectTaggingInput {
                     checksum_algorithm,
                 )?;
             }
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -21381,7 +22814,7 @@ impl PutObjectTaggingInput {
 pub mod put_public_access_block_input {
 
     /// A builder for [`PutPublicAccessBlockInput`](crate::input::PutPublicAccessBlockInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) content_md5: std::option::Option<std::string::String>,
@@ -21460,8 +22893,10 @@ pub mod put_public_access_block_input {
         /// Consumes the builder and constructs a [`PutPublicAccessBlockInput`](crate::input::PutPublicAccessBlockInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutPublicAccessBlockInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutPublicAccessBlockInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutPublicAccessBlockInput {
                 bucket: self.bucket,
                 content_md5: self.content_md5,
@@ -21485,27 +22920,32 @@ impl PutPublicAccessBlockInput {
             crate::operation::PutPublicAccessBlock,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutPublicAccessBlockInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_179 = &_input.bucket;
-                let input_179 = input_179.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_179, false);
+                let input_179 = input_179.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_179,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
                 Ok(())
@@ -21513,7 +22953,7 @@ impl PutPublicAccessBlockInput {
             fn uri_query(
                 _input: &crate::input::PutPublicAccessBlockInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("publicAccessBlock");
                 Ok(())
@@ -21522,8 +22962,10 @@ impl PutPublicAccessBlockInput {
             fn update_http_builder(
                 input: &crate::input::PutPublicAccessBlockInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -21574,9 +23016,7 @@ impl PutPublicAccessBlockInput {
             let checksum_algorithm = match checksum_algorithm {
                 Some(algo) => Some(
                     algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
-                        .map_err(|err| {
-                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
-                        })?,
+                        .map_err(aws_smithy_http::operation::error::BuildError::other)?,
                 ),
                 None => None,
             };
@@ -21587,11 +23027,12 @@ impl PutPublicAccessBlockInput {
                     checksum_algorithm,
                 )?;
             }
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -21637,7 +23078,7 @@ impl PutPublicAccessBlockInput {
 pub mod restore_object_input {
 
     /// A builder for [`RestoreObjectInput`](crate::input::RestoreObjectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
@@ -21739,7 +23180,7 @@ pub mod restore_object_input {
         /// Consumes the builder and constructs a [`RestoreObjectInput`](crate::input::RestoreObjectInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::RestoreObjectInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::RestoreObjectInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::RestoreObjectInput {
                 bucket: self.bucket,
@@ -21766,41 +23207,51 @@ impl RestoreObjectInput {
             crate::operation::RestoreObject,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RestoreObjectInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_180 = &_input.bucket;
-                let input_180 = input_180.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_180, false);
+                let input_180 = input_180.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_180,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_181 = &_input.key;
-                let input_181 = input_181.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let key = aws_smithy_http::label::fmt_string(input_181, true);
+                let input_181 = input_181.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "key",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let key = aws_smithy_http::label::fmt_string(
+                    input_181,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
                 if key.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "key",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
                     .expect("formatting should succeed");
@@ -21809,12 +23260,14 @@ impl RestoreObjectInput {
             fn uri_query(
                 _input: &crate::input::RestoreObjectInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("restore");
                 query.push_kv("x-id", "RestoreObject");
                 if let Some(inner_182) = &_input.version_id {
-                    query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_182));
+                    {
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_182));
+                    }
                 }
                 Ok(())
             }
@@ -21822,8 +23275,10 @@ impl RestoreObjectInput {
             fn update_http_builder(
                 input: &crate::input::RestoreObjectInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -21869,9 +23324,7 @@ impl RestoreObjectInput {
             let checksum_algorithm = match checksum_algorithm {
                 Some(algo) => Some(
                     algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
-                        .map_err(|err| {
-                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
-                        })?,
+                        .map_err(aws_smithy_http::operation::error::BuildError::other)?,
                 ),
                 None => None,
             };
@@ -21882,11 +23335,12 @@ impl RestoreObjectInput {
                     checksum_algorithm,
                 )?;
             }
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -21932,7 +23386,7 @@ impl RestoreObjectInput {
 pub mod select_object_content_input {
 
     /// A builder for [`SelectObjectContentInput`](crate::input::SelectObjectContentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
@@ -22146,8 +23600,10 @@ pub mod select_object_content_input {
         /// Consumes the builder and constructs a [`SelectObjectContentInput`](crate::input::SelectObjectContentInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SelectObjectContentInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::SelectObjectContentInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::SelectObjectContentInput {
                 bucket: self.bucket,
                 key: self.key,
@@ -22164,6 +23620,24 @@ pub mod select_object_content_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("bucket", &self.bucket);
+            formatter.field("key", &self.key);
+            formatter.field("sse_customer_algorithm", &self.sse_customer_algorithm);
+            formatter.field("sse_customer_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("sse_customer_key_md5", &self.sse_customer_key_md5);
+            formatter.field("expression", &self.expression);
+            formatter.field("expression_type", &self.expression_type);
+            formatter.field("request_progress", &self.request_progress);
+            formatter.field("input_serialization", &self.input_serialization);
+            formatter.field("output_serialization", &self.output_serialization);
+            formatter.field("scan_range", &self.scan_range);
+            formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
+            formatter.finish()
+        }
+    }
 }
 impl SelectObjectContentInput {
     /// Consumes the builder and constructs an Operation<[`SelectObjectContent`](crate::operation::SelectObjectContent)>
@@ -22178,40 +23652,50 @@ impl SelectObjectContentInput {
             crate::operation::SelectObjectContent,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SelectObjectContentInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_183 = &_input.bucket;
-                let input_183 = input_183.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_183, false);
+                let input_183 = input_183.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_183,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_184 = &_input.key;
-                let input_184 = input_184.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let key = aws_smithy_http::label::fmt_string(input_184, true);
+                let input_184 = input_184.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "key",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let key = aws_smithy_http::label::fmt_string(
+                    input_184,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
                 if key.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "key",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
                     .expect("formatting should succeed");
@@ -22220,7 +23704,7 @@ impl SelectObjectContentInput {
             fn uri_query(
                 _input: &crate::input::SelectObjectContentInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("select");
                 query.push_kv("select-type", "2");
@@ -22231,8 +23715,10 @@ impl SelectObjectContentInput {
             fn update_http_builder(
                 input: &crate::input::SelectObjectContentInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -22275,6 +23761,7 @@ impl SelectObjectContentInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -22320,7 +23807,7 @@ impl SelectObjectContentInput {
 pub mod upload_part_input {
 
     /// A builder for [`UploadPartInput`](crate::input::UploadPartInput).
-    #[derive(std::default::Default, std::fmt::Debug)]
+    #[derive(std::default::Default)]
     pub struct Builder {
         pub(crate) body: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -22555,7 +24042,8 @@ pub mod upload_part_input {
         /// Consumes the builder and constructs a [`UploadPartInput`](crate::input::UploadPartInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UploadPartInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::UploadPartInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::UploadPartInput {
                 body: self.body.unwrap_or_default(),
                 bucket: self.bucket,
@@ -22577,6 +24065,29 @@ pub mod upload_part_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("body", &self.body);
+            formatter.field("bucket", &self.bucket);
+            formatter.field("content_length", &self.content_length);
+            formatter.field("content_md5", &self.content_md5);
+            formatter.field("checksum_algorithm", &self.checksum_algorithm);
+            formatter.field("checksum_crc32", &self.checksum_crc32);
+            formatter.field("checksum_crc32_c", &self.checksum_crc32_c);
+            formatter.field("checksum_sha1", &self.checksum_sha1);
+            formatter.field("checksum_sha256", &self.checksum_sha256);
+            formatter.field("key", &self.key);
+            formatter.field("part_number", &self.part_number);
+            formatter.field("upload_id", &self.upload_id);
+            formatter.field("sse_customer_algorithm", &self.sse_customer_algorithm);
+            formatter.field("sse_customer_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("sse_customer_key_md5", &self.sse_customer_key_md5);
+            formatter.field("request_payer", &self.request_payer);
+            formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
+            formatter.finish()
+        }
+    }
 }
 impl UploadPartInput {
     /// Consumes the builder and constructs an Operation<[`UploadPart`](crate::operation::UploadPart)>
@@ -22591,41 +24102,51 @@ impl UploadPartInput {
             crate::operation::UploadPart,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UploadPartInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_185 = &_input.bucket;
-                let input_185 = input_185.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_185, false);
+                let input_185 = input_185.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_185,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_186 = &_input.key;
-                let input_186 = input_186.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let key = aws_smithy_http::label::fmt_string(input_186, true);
+                let input_186 = input_186.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "key",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let key = aws_smithy_http::label::fmt_string(
+                    input_186,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
                 if key.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "key",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
                     .expect("formatting should succeed");
@@ -22634,26 +24155,40 @@ impl UploadPartInput {
             fn uri_query(
                 _input: &crate::input::UploadPartInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("x-id", "UploadPart");
-                if _input.part_number != 0 {
-                    query.push_kv(
-                        "partNumber",
-                        aws_smithy_types::primitive::Encoder::from(_input.part_number).encode(),
+                let inner_187 = &_input.part_number;
+                query.push_kv(
+                    "partNumber",
+                    aws_smithy_types::primitive::Encoder::from(*inner_187).encode(),
+                );
+                let inner_188 = &_input.upload_id;
+                let inner_188 = inner_188.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "upload_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_188.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "upload_id",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_187) = &_input.upload_id {
-                    query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_187));
-                }
+                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_188));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::UploadPartInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -22687,9 +24222,7 @@ impl UploadPartInput {
             let checksum_algorithm = match checksum_algorithm {
                 Some(algo) => Some(
                     algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
-                        .map_err(|err| {
-                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
-                        })?,
+                        .map_err(aws_smithy_http::operation::error::BuildError::other)?,
                 ),
                 None => None,
             };
@@ -22700,11 +24233,12 @@ impl UploadPartInput {
                     checksum_algorithm,
                 )?;
             }
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -22761,7 +24295,7 @@ impl UploadPartInput {
         let (mut request, _) = self
             ._make_presigned_operation(config)
             .await
-            .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
             .into_request_response();
         {
             // Change signature type to query params and wire up presigning config
@@ -22794,41 +24328,51 @@ impl UploadPartInput {
             crate::operation::UploadPart,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UploadPartInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_188 = &_input.bucket;
-                let input_188 = input_188.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_188, false);
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_189 = &_input.bucket;
+                let input_189 = input_189.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_189,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                let input_189 = &_input.key;
-                let input_189 = input_189.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let key = aws_smithy_http::label::fmt_string(input_189, true);
+                let input_190 = &_input.key;
+                let input_190 = input_190.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "key",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let key = aws_smithy_http::label::fmt_string(
+                    input_190,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
                 if key.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "key",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
                     .expect("formatting should succeed");
@@ -22837,26 +24381,40 @@ impl UploadPartInput {
             fn uri_query(
                 _input: &crate::input::UploadPartInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("x-id", "UploadPart");
-                if _input.part_number != 0 {
-                    query.push_kv(
-                        "partNumber",
-                        aws_smithy_types::primitive::Encoder::from(_input.part_number).encode(),
+                let inner_191 = &_input.part_number;
+                query.push_kv(
+                    "partNumber",
+                    aws_smithy_types::primitive::Encoder::from(*inner_191).encode(),
+                );
+                let inner_192 = &_input.upload_id;
+                let inner_192 = inner_192.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "upload_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_192.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "upload_id",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_190) = &_input.upload_id {
-                    query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_190));
-                }
+                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_192));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::UploadPartInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -22902,9 +24460,7 @@ impl UploadPartInput {
             let checksum_algorithm = match checksum_algorithm {
                 Some(algo) => Some(
                     algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
-                        .map_err(|err| {
-                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
-                        })?,
+                        .map_err(aws_smithy_http::operation::error::BuildError::other)?,
                 ),
                 None => None,
             };
@@ -22915,11 +24471,12 @@ impl UploadPartInput {
                     checksum_algorithm,
                 )?;
             }
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -22965,7 +24522,7 @@ impl UploadPartInput {
 pub mod upload_part_copy_input {
 
     /// A builder for [`UploadPartCopyInput`](crate::input::UploadPartCopyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) copy_source: std::option::Option<std::string::String>,
@@ -23298,7 +24855,7 @@ pub mod upload_part_copy_input {
         /// Consumes the builder and constructs a [`UploadPartCopyInput`](crate::input::UploadPartCopyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UploadPartCopyInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UploadPartCopyInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UploadPartCopyInput {
                 bucket: self.bucket,
@@ -23323,6 +24880,49 @@ pub mod upload_part_copy_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("bucket", &self.bucket);
+            formatter.field("copy_source", &self.copy_source);
+            formatter.field("copy_source_if_match", &self.copy_source_if_match);
+            formatter.field(
+                "copy_source_if_modified_since",
+                &self.copy_source_if_modified_since,
+            );
+            formatter.field("copy_source_if_none_match", &self.copy_source_if_none_match);
+            formatter.field(
+                "copy_source_if_unmodified_since",
+                &self.copy_source_if_unmodified_since,
+            );
+            formatter.field("copy_source_range", &self.copy_source_range);
+            formatter.field("key", &self.key);
+            formatter.field("part_number", &self.part_number);
+            formatter.field("upload_id", &self.upload_id);
+            formatter.field("sse_customer_algorithm", &self.sse_customer_algorithm);
+            formatter.field("sse_customer_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("sse_customer_key_md5", &self.sse_customer_key_md5);
+            formatter.field(
+                "copy_source_sse_customer_algorithm",
+                &self.copy_source_sse_customer_algorithm,
+            );
+            formatter.field(
+                "copy_source_sse_customer_key",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field(
+                "copy_source_sse_customer_key_md5",
+                &self.copy_source_sse_customer_key_md5,
+            );
+            formatter.field("request_payer", &self.request_payer);
+            formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
+            formatter.field(
+                "expected_source_bucket_owner",
+                &self.expected_source_bucket_owner,
+            );
+            formatter.finish()
+        }
+    }
 }
 impl UploadPartCopyInput {
     /// Consumes the builder and constructs an Operation<[`UploadPartCopy`](crate::operation::UploadPartCopy)>
@@ -23337,40 +24937,50 @@ impl UploadPartCopyInput {
             crate::operation::UploadPartCopy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UploadPartCopyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_191 = &_input.bucket;
-                let input_191 = input_191.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_191, false);
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_193 = &_input.bucket;
+                let input_193 = input_193.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_193,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
-                let input_192 = &_input.key;
-                let input_192 = input_192.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let key = aws_smithy_http::label::fmt_string(input_192, true);
+                let input_194 = &_input.key;
+                let input_194 = input_194.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "key",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let key = aws_smithy_http::label::fmt_string(
+                    input_194,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
                 if key.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "key",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "key",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
                     .expect("formatting should succeed");
@@ -23379,26 +24989,40 @@ impl UploadPartCopyInput {
             fn uri_query(
                 _input: &crate::input::UploadPartCopyInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("x-id", "UploadPartCopy");
-                if _input.part_number != 0 {
-                    query.push_kv(
-                        "partNumber",
-                        aws_smithy_types::primitive::Encoder::from(_input.part_number).encode(),
+                let inner_195 = &_input.part_number;
+                query.push_kv(
+                    "partNumber",
+                    aws_smithy_types::primitive::Encoder::from(*inner_195).encode(),
+                );
+                let inner_196 = &_input.upload_id;
+                let inner_196 = inner_196.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "upload_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_196.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "upload_id",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_193) = &_input.upload_id {
-                    query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_193));
-                }
+                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_196));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::UploadPartCopyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -23427,6 +25051,7 @@ impl UploadPartCopyInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -23472,7 +25097,7 @@ impl UploadPartCopyInput {
 pub mod write_get_object_response_input {
 
     /// A builder for [`WriteGetObjectResponseInput`](crate::input::WriteGetObjectResponseInput).
-    #[derive(std::default::Default, std::fmt::Debug)]
+    #[derive(std::default::Default)]
     pub struct Builder {
         pub(crate) request_route: std::option::Option<std::string::String>,
         pub(crate) request_token: std::option::Option<std::string::String>,
@@ -24072,8 +25697,10 @@ pub mod write_get_object_response_input {
         /// Consumes the builder and constructs a [`WriteGetObjectResponseInput`](crate::input::WriteGetObjectResponseInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::WriteGetObjectResponseInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::WriteGetObjectResponseInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::WriteGetObjectResponseInput {
                 request_route: self.request_route,
                 request_token: self.request_token,
@@ -24118,6 +25745,58 @@ pub mod write_get_object_response_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("request_route", &self.request_route);
+            formatter.field("request_token", &self.request_token);
+            formatter.field("body", &self.body);
+            formatter.field("status_code", &self.status_code);
+            formatter.field("error_code", &self.error_code);
+            formatter.field("error_message", &self.error_message);
+            formatter.field("accept_ranges", &self.accept_ranges);
+            formatter.field("cache_control", &self.cache_control);
+            formatter.field("content_disposition", &self.content_disposition);
+            formatter.field("content_encoding", &self.content_encoding);
+            formatter.field("content_language", &self.content_language);
+            formatter.field("content_length", &self.content_length);
+            formatter.field("content_range", &self.content_range);
+            formatter.field("content_type", &self.content_type);
+            formatter.field("checksum_crc32", &self.checksum_crc32);
+            formatter.field("checksum_crc32_c", &self.checksum_crc32_c);
+            formatter.field("checksum_sha1", &self.checksum_sha1);
+            formatter.field("checksum_sha256", &self.checksum_sha256);
+            formatter.field("delete_marker", &self.delete_marker);
+            formatter.field("e_tag", &self.e_tag);
+            formatter.field("expires", &self.expires);
+            formatter.field("expiration", &self.expiration);
+            formatter.field("last_modified", &self.last_modified);
+            formatter.field("missing_meta", &self.missing_meta);
+            formatter.field("metadata", &self.metadata);
+            formatter.field("object_lock_mode", &self.object_lock_mode);
+            formatter.field(
+                "object_lock_legal_hold_status",
+                &self.object_lock_legal_hold_status,
+            );
+            formatter.field(
+                "object_lock_retain_until_date",
+                &self.object_lock_retain_until_date,
+            );
+            formatter.field("parts_count", &self.parts_count);
+            formatter.field("replication_status", &self.replication_status);
+            formatter.field("request_charged", &self.request_charged);
+            formatter.field("restore", &self.restore);
+            formatter.field("server_side_encryption", &self.server_side_encryption);
+            formatter.field("sse_customer_algorithm", &self.sse_customer_algorithm);
+            formatter.field("ssekms_key_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("sse_customer_key_md5", &self.sse_customer_key_md5);
+            formatter.field("storage_class", &self.storage_class);
+            formatter.field("tag_count", &self.tag_count);
+            formatter.field("version_id", &self.version_id);
+            formatter.field("bucket_key_enabled", &self.bucket_key_enabled);
+            formatter.finish()
+        }
+    }
 }
 impl WriteGetObjectResponseInput {
     /// Consumes the builder and constructs an Operation<[`WriteGetObjectResponse`](crate::operation::WriteGetObjectResponse)>
@@ -24132,20 +25811,20 @@ impl WriteGetObjectResponseInput {
             crate::operation::WriteGetObjectResponse,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::WriteGetObjectResponseInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/WriteGetObjectResponse").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::WriteGetObjectResponseInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("x-id", "WriteGetObjectResponse");
                 Ok(())
@@ -24154,8 +25833,10 @@ impl WriteGetObjectResponseInput {
             fn update_http_builder(
                 input: &crate::input::WriteGetObjectResponseInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -24189,7 +25870,7 @@ impl WriteGetObjectResponseInput {
         let endpoint_prefix = {
             let request_route = self.request_route.as_deref().unwrap_or_default();
             if request_route.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "request_route", details: "request_route was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("request_route", "request_route was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{RequestRoute}.",
@@ -24211,6 +25892,7 @@ impl WriteGetObjectResponseInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         signing_config.signing_options.content_sha256_header = true;
         request
             .properties_mut()
@@ -25222,7 +26904,7 @@ impl std::fmt::Debug for SelectObjectContentInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestoreObjectInput {
     /// <p>The bucket name containing the object to restore. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -25282,23 +26964,10 @@ impl RestoreObjectInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for RestoreObjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestoreObjectInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("version_id", &self.version_id);
-        formatter.field("restore_request", &self.restore_request);
-        formatter.field("request_payer", &self.request_payer);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutPublicAccessBlockInput {
     /// <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want to set.</p>
     #[doc(hidden)]
@@ -25345,24 +27014,10 @@ impl PutPublicAccessBlockInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for PutPublicAccessBlockInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutPublicAccessBlockInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("content_md5", &self.content_md5);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field(
-            "public_access_block_configuration",
-            &self.public_access_block_configuration,
-        );
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutObjectTaggingInput {
     /// <p>The bucket name containing the object. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -25431,24 +27086,10 @@ impl PutObjectTaggingInput {
         self.request_payer.as_ref()
     }
 }
-impl std::fmt::Debug for PutObjectTaggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutObjectTaggingInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("version_id", &self.version_id);
-        formatter.field("content_md5", &self.content_md5);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field("tagging", &self.tagging);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.field("request_payer", &self.request_payer);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutObjectRetentionInput {
     /// <p>The bucket name that contains the object you want to apply this Object Retention configuration to. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -25522,28 +27163,10 @@ impl PutObjectRetentionInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for PutObjectRetentionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutObjectRetentionInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("retention", &self.retention);
-        formatter.field("request_payer", &self.request_payer);
-        formatter.field("version_id", &self.version_id);
-        formatter.field(
-            "bypass_governance_retention",
-            &self.bypass_governance_retention,
-        );
-        formatter.field("content_md5", &self.content_md5);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutObjectLockConfigurationInput {
     /// <p>The bucket whose Object Lock configuration you want to create or replace.</p>
     #[doc(hidden)]
@@ -25603,23 +27226,10 @@ impl PutObjectLockConfigurationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for PutObjectLockConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutObjectLockConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("object_lock_configuration", &self.object_lock_configuration);
-        formatter.field("request_payer", &self.request_payer);
-        formatter.field("token", &self.token);
-        formatter.field("content_md5", &self.content_md5);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutObjectLegalHoldInput {
     /// <p>The bucket name containing the object that you want to place a legal hold on. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -25686,24 +27296,10 @@ impl PutObjectLegalHoldInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for PutObjectLegalHoldInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutObjectLegalHoldInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("legal_hold", &self.legal_hold);
-        formatter.field("request_payer", &self.request_payer);
-        formatter.field("version_id", &self.version_id);
-        formatter.field("content_md5", &self.content_md5);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutObjectAclInput {
     /// <p>The canned ACL to apply to the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned ACL</a>.</p>
     #[doc(hidden)]
@@ -25824,26 +27420,6 @@ impl PutObjectAclInput {
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
-    }
-}
-impl std::fmt::Debug for PutObjectAclInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutObjectAclInput");
-        formatter.field("acl", &self.acl);
-        formatter.field("access_control_policy", &self.access_control_policy);
-        formatter.field("bucket", &self.bucket);
-        formatter.field("content_md5", &self.content_md5);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field("grant_full_control", &self.grant_full_control);
-        formatter.field("grant_read", &self.grant_read);
-        formatter.field("grant_read_acp", &self.grant_read_acp);
-        formatter.field("grant_write", &self.grant_write);
-        formatter.field("grant_write_acp", &self.grant_write_acp);
-        formatter.field("key", &self.key);
-        formatter.field("request_payer", &self.request_payer);
-        formatter.field("version_id", &self.version_id);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
     }
 }
 
@@ -26204,7 +27780,7 @@ impl std::fmt::Debug for PutObjectInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketWebsiteInput {
     /// <p>The bucket name.</p>
     #[doc(hidden)]
@@ -26250,21 +27826,10 @@ impl PutBucketWebsiteInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for PutBucketWebsiteInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketWebsiteInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("content_md5", &self.content_md5);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field("website_configuration", &self.website_configuration);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketVersioningInput {
     /// <p>The bucket name.</p>
     #[doc(hidden)]
@@ -26317,22 +27882,10 @@ impl PutBucketVersioningInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for PutBucketVersioningInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketVersioningInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("content_md5", &self.content_md5);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field("mfa", &self.mfa);
-        formatter.field("versioning_configuration", &self.versioning_configuration);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketTaggingInput {
     /// <p>The bucket name.</p>
     #[doc(hidden)]
@@ -26376,21 +27929,10 @@ impl PutBucketTaggingInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for PutBucketTaggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketTaggingInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("content_md5", &self.content_md5);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field("tagging", &self.tagging);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketRequestPaymentInput {
     /// <p>The bucket name.</p>
     #[doc(hidden)]
@@ -26437,24 +27979,10 @@ impl PutBucketRequestPaymentInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for PutBucketRequestPaymentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketRequestPaymentInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("content_md5", &self.content_md5);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field(
-            "request_payment_configuration",
-            &self.request_payment_configuration,
-        );
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketReplicationInput {
     /// <p>The name of the bucket</p>
     #[doc(hidden)]
@@ -26507,22 +28035,10 @@ impl PutBucketReplicationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for PutBucketReplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketReplicationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("content_md5", &self.content_md5);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field("replication_configuration", &self.replication_configuration);
-        formatter.field("token", &self.token);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketPolicyInput {
     /// <p>The name of the bucket.</p>
     #[doc(hidden)]
@@ -26573,25 +28089,10 @@ impl PutBucketPolicyInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for PutBucketPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketPolicyInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("content_md5", &self.content_md5);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field(
-            "confirm_remove_self_bucket_access",
-            &self.confirm_remove_self_bucket_access,
-        );
-        formatter.field("policy", &self.policy);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketOwnershipControlsInput {
     /// <p>The name of the Amazon S3 bucket whose <code>OwnershipControls</code> you want to set.</p>
     #[doc(hidden)]
@@ -26626,20 +28127,10 @@ impl PutBucketOwnershipControlsInput {
         self.ownership_controls.as_ref()
     }
 }
-impl std::fmt::Debug for PutBucketOwnershipControlsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketOwnershipControlsInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("content_md5", &self.content_md5);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.field("ownership_controls", &self.ownership_controls);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketNotificationConfigurationInput {
     /// <p>The name of the bucket.</p>
     #[doc(hidden)]
@@ -26674,26 +28165,10 @@ impl PutBucketNotificationConfigurationInput {
         self.skip_destination_validation
     }
 }
-impl std::fmt::Debug for PutBucketNotificationConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketNotificationConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field(
-            "notification_configuration",
-            &self.notification_configuration,
-        );
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.field(
-            "skip_destination_validation",
-            &self.skip_destination_validation,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketMetricsConfigurationInput {
     /// <p>The name of the bucket for which the metrics configuration is set.</p>
     #[doc(hidden)]
@@ -26728,20 +28203,10 @@ impl PutBucketMetricsConfigurationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for PutBucketMetricsConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketMetricsConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("id", &self.id);
-        formatter.field("metrics_configuration", &self.metrics_configuration);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketLoggingInput {
     /// <p>The name of the bucket for which to set the logging parameters.</p>
     #[doc(hidden)]
@@ -26785,21 +28250,10 @@ impl PutBucketLoggingInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for PutBucketLoggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketLoggingInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("bucket_logging_status", &self.bucket_logging_status);
-        formatter.field("content_md5", &self.content_md5);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketLifecycleConfigurationInput {
     /// <p>The name of the bucket for which to set the configuration.</p>
     #[doc(hidden)]
@@ -26836,20 +28290,10 @@ impl PutBucketLifecycleConfigurationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for PutBucketLifecycleConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketLifecycleConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field("lifecycle_configuration", &self.lifecycle_configuration);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketInventoryConfigurationInput {
     /// <p>The name of the bucket where the inventory configuration will be stored.</p>
     #[doc(hidden)]
@@ -26884,20 +28328,10 @@ impl PutBucketInventoryConfigurationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for PutBucketInventoryConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketInventoryConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("id", &self.id);
-        formatter.field("inventory_configuration", &self.inventory_configuration);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketIntelligentTieringConfigurationInput {
     /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
     #[doc(hidden)]
@@ -26926,22 +28360,10 @@ impl PutBucketIntelligentTieringConfigurationInput {
         self.intelligent_tiering_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for PutBucketIntelligentTieringConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketIntelligentTieringConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("id", &self.id);
-        formatter.field(
-            "intelligent_tiering_configuration",
-            &self.intelligent_tiering_configuration,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketEncryptionInput {
     /// <p>Specifies default encryption for a bucket using server-side encryption with Amazon S3-managed keys (SSE-S3) or customer managed keys (SSE-KMS). For information about the Amazon S3 default encryption feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon S3 Default Bucket Encryption</a> in the <i>Amazon S3 User Guide</i>.</p>
     #[doc(hidden)]
@@ -26988,24 +28410,10 @@ impl PutBucketEncryptionInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for PutBucketEncryptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketEncryptionInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("content_md5", &self.content_md5);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field(
-            "server_side_encryption_configuration",
-            &self.server_side_encryption_configuration,
-        );
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketCorsInput {
     /// <p>Specifies the bucket impacted by the <code>cors</code>configuration.</p>
     #[doc(hidden)]
@@ -27049,21 +28457,10 @@ impl PutBucketCorsInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for PutBucketCorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketCorsInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("cors_configuration", &self.cors_configuration);
-        formatter.field("content_md5", &self.content_md5);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketAnalyticsConfigurationInput {
     /// <p>The name of the bucket to which an analytics configuration is stored.</p>
     #[doc(hidden)]
@@ -27098,20 +28495,10 @@ impl PutBucketAnalyticsConfigurationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for PutBucketAnalyticsConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketAnalyticsConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("id", &self.id);
-        formatter.field("analytics_configuration", &self.analytics_configuration);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketAclInput {
     /// <p>The canned ACL to apply to the bucket.</p>
     #[doc(hidden)]
@@ -27199,27 +28586,10 @@ impl PutBucketAclInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for PutBucketAclInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketAclInput");
-        formatter.field("acl", &self.acl);
-        formatter.field("access_control_policy", &self.access_control_policy);
-        formatter.field("bucket", &self.bucket);
-        formatter.field("content_md5", &self.content_md5);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.field("grant_full_control", &self.grant_full_control);
-        formatter.field("grant_read", &self.grant_read);
-        formatter.field("grant_read_acp", &self.grant_read_acp);
-        formatter.field("grant_write", &self.grant_write);
-        formatter.field("grant_write_acp", &self.grant_write_acp);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketAccelerateConfigurationInput {
     /// <p>The name of the bucket for which the accelerate configuration is set.</p>
     #[doc(hidden)]
@@ -27254,16 +28624,6 @@ impl PutBucketAccelerateConfigurationInput {
     /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
     pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::ChecksumAlgorithm> {
         self.checksum_algorithm.as_ref()
-    }
-}
-impl std::fmt::Debug for PutBucketAccelerateConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketAccelerateConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("accelerate_configuration", &self.accelerate_configuration);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.finish()
     }
 }
 
@@ -27367,7 +28727,7 @@ impl std::fmt::Debug for ListPartsInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListObjectVersionsInput {
     /// <p>The bucket name that contains the objects. </p>
     #[doc(hidden)]
@@ -27432,24 +28792,10 @@ impl ListObjectVersionsInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for ListObjectVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListObjectVersionsInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("delimiter", &self.delimiter);
-        formatter.field("encoding_type", &self.encoding_type);
-        formatter.field("key_marker", &self.key_marker);
-        formatter.field("max_keys", &self.max_keys);
-        formatter.field("prefix", &self.prefix);
-        formatter.field("version_id_marker", &self.version_id_marker);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListObjectsV2Input {
     /// <p>Bucket name to list. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -27528,26 +28874,10 @@ impl ListObjectsV2Input {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for ListObjectsV2Input {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListObjectsV2Input");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("delimiter", &self.delimiter);
-        formatter.field("encoding_type", &self.encoding_type);
-        formatter.field("max_keys", &self.max_keys);
-        formatter.field("prefix", &self.prefix);
-        formatter.field("continuation_token", &self.continuation_token);
-        formatter.field("fetch_owner", &self.fetch_owner);
-        formatter.field("start_after", &self.start_after);
-        formatter.field("request_payer", &self.request_payer);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListObjectsInput {
     /// <p>The name of the bucket containing the objects.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -27612,24 +28942,10 @@ impl ListObjectsInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for ListObjectsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListObjectsInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("delimiter", &self.delimiter);
-        formatter.field("encoding_type", &self.encoding_type);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_keys", &self.max_keys);
-        formatter.field("prefix", &self.prefix);
-        formatter.field("request_payer", &self.request_payer);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMultipartUploadsInput {
     /// <p>The name of the bucket to which the multipart upload was initiated. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -27700,35 +29016,15 @@ impl ListMultipartUploadsInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for ListMultipartUploadsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMultipartUploadsInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("delimiter", &self.delimiter);
-        formatter.field("encoding_type", &self.encoding_type);
-        formatter.field("key_marker", &self.key_marker);
-        formatter.field("max_uploads", &self.max_uploads);
-        formatter.field("prefix", &self.prefix);
-        formatter.field("upload_id_marker", &self.upload_id_marker);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBucketsInput {}
-impl std::fmt::Debug for ListBucketsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBucketsInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBucketMetricsConfigurationsInput {
     /// <p>The name of the bucket containing the metrics configurations to retrieve.</p>
     #[doc(hidden)]
@@ -27754,19 +29050,10 @@ impl ListBucketMetricsConfigurationsInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for ListBucketMetricsConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBucketMetricsConfigurationsInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("continuation_token", &self.continuation_token);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBucketInventoryConfigurationsInput {
     /// <p>The name of the bucket containing the inventory configurations to retrieve.</p>
     #[doc(hidden)]
@@ -27792,19 +29079,10 @@ impl ListBucketInventoryConfigurationsInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for ListBucketInventoryConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBucketInventoryConfigurationsInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("continuation_token", &self.continuation_token);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBucketIntelligentTieringConfigurationsInput {
     /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
     #[doc(hidden)]
@@ -27823,18 +29101,10 @@ impl ListBucketIntelligentTieringConfigurationsInput {
         self.continuation_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListBucketIntelligentTieringConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBucketIntelligentTieringConfigurationsInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("continuation_token", &self.continuation_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBucketAnalyticsConfigurationsInput {
     /// <p>The name of the bucket from which analytics configurations are retrieved.</p>
     #[doc(hidden)]
@@ -27858,15 +29128,6 @@ impl ListBucketAnalyticsConfigurationsInput {
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
-    }
-}
-impl std::fmt::Debug for ListBucketAnalyticsConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBucketAnalyticsConfigurationsInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("continuation_token", &self.continuation_token);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
     }
 }
 
@@ -28012,7 +29273,7 @@ impl std::fmt::Debug for HeadObjectInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HeadBucketInput {
     /// <p>The bucket name.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -28035,18 +29296,10 @@ impl HeadBucketInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for HeadBucketInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HeadBucketInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPublicAccessBlockInput {
     /// <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want to retrieve. </p>
     #[doc(hidden)]
@@ -28065,18 +29318,10 @@ impl GetPublicAccessBlockInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetPublicAccessBlockInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPublicAccessBlockInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetObjectTorrentInput {
     /// <p>The name of the bucket containing the object for which to get the torrent files.</p>
     #[doc(hidden)]
@@ -28109,20 +29354,10 @@ impl GetObjectTorrentInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetObjectTorrentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetObjectTorrentInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("request_payer", &self.request_payer);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetObjectTaggingInput {
     /// <p>The bucket name containing the object for which to get the tagging information. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -28166,21 +29401,10 @@ impl GetObjectTaggingInput {
         self.request_payer.as_ref()
     }
 }
-impl std::fmt::Debug for GetObjectTaggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetObjectTaggingInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("version_id", &self.version_id);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.field("request_payer", &self.request_payer);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetObjectRetentionInput {
     /// <p>The bucket name containing the object whose retention settings you want to retrieve. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -28222,21 +29446,10 @@ impl GetObjectRetentionInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetObjectRetentionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetObjectRetentionInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("version_id", &self.version_id);
-        formatter.field("request_payer", &self.request_payer);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetObjectLockConfigurationInput {
     /// <p>The bucket whose Object Lock configuration you want to retrieve.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -28257,18 +29470,10 @@ impl GetObjectLockConfigurationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetObjectLockConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetObjectLockConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetObjectLegalHoldInput {
     /// <p>The bucket name containing the object whose legal hold status you want to retrieve. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -28308,17 +29513,6 @@ impl GetObjectLegalHoldInput {
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
-    }
-}
-impl std::fmt::Debug for GetObjectLegalHoldInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetObjectLegalHoldInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("version_id", &self.version_id);
-        formatter.field("request_payer", &self.request_payer);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
     }
 }
 
@@ -28430,7 +29624,7 @@ impl std::fmt::Debug for GetObjectAttributesInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetObjectAclInput {
     /// <p>The bucket name that contains the object for which to get the ACL information. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -28470,17 +29664,6 @@ impl GetObjectAclInput {
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
-    }
-}
-impl std::fmt::Debug for GetObjectAclInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetObjectAclInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("version_id", &self.version_id);
-        formatter.field("request_payer", &self.request_payer);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
     }
 }
 
@@ -28681,7 +29864,7 @@ impl std::fmt::Debug for GetObjectInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketWebsiteInput {
     /// <p>The bucket name for which to get the website configuration.</p>
     #[doc(hidden)]
@@ -28700,18 +29883,10 @@ impl GetBucketWebsiteInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketWebsiteInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketWebsiteInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketVersioningInput {
     /// <p>The name of the bucket for which to get the versioning information.</p>
     #[doc(hidden)]
@@ -28730,18 +29905,10 @@ impl GetBucketVersioningInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketVersioningInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketVersioningInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketTaggingInput {
     /// <p>The name of the bucket for which to get the tagging information.</p>
     #[doc(hidden)]
@@ -28760,18 +29927,10 @@ impl GetBucketTaggingInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketTaggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketTaggingInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketRequestPaymentInput {
     /// <p>The name of the bucket for which to get the payment request configuration</p>
     #[doc(hidden)]
@@ -28790,18 +29949,10 @@ impl GetBucketRequestPaymentInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketRequestPaymentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketRequestPaymentInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketReplicationInput {
     /// <p>The bucket name for which to get the replication information.</p>
     #[doc(hidden)]
@@ -28820,18 +29971,10 @@ impl GetBucketReplicationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketReplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketReplicationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketPolicyStatusInput {
     /// <p>The name of the Amazon S3 bucket whose policy status you want to retrieve.</p>
     #[doc(hidden)]
@@ -28850,18 +29993,10 @@ impl GetBucketPolicyStatusInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketPolicyStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketPolicyStatusInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketPolicyInput {
     /// <p>The bucket name for which to get the bucket policy.</p>
     #[doc(hidden)]
@@ -28880,18 +30015,10 @@ impl GetBucketPolicyInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketPolicyInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketOwnershipControlsInput {
     /// <p>The name of the Amazon S3 bucket whose <code>OwnershipControls</code> you want to retrieve. </p>
     #[doc(hidden)]
@@ -28910,18 +30037,10 @@ impl GetBucketOwnershipControlsInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketOwnershipControlsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketOwnershipControlsInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketNotificationConfigurationInput {
     /// <p>The name of the bucket for which to get the notification configuration.</p>
     #[doc(hidden)]
@@ -28940,18 +30059,10 @@ impl GetBucketNotificationConfigurationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketNotificationConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketNotificationConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketMetricsConfigurationInput {
     /// <p>The name of the bucket containing the metrics configuration to retrieve.</p>
     #[doc(hidden)]
@@ -28977,19 +30088,10 @@ impl GetBucketMetricsConfigurationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketMetricsConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketMetricsConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("id", &self.id);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketLoggingInput {
     /// <p>The bucket name for which to get the logging information.</p>
     #[doc(hidden)]
@@ -29008,18 +30110,10 @@ impl GetBucketLoggingInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketLoggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketLoggingInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketLocationInput {
     /// <p>The name of the bucket for which to get the location.</p>
     #[doc(hidden)]
@@ -29038,18 +30132,10 @@ impl GetBucketLocationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketLocationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketLocationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketLifecycleConfigurationInput {
     /// <p>The name of the bucket for which to get the lifecycle information.</p>
     #[doc(hidden)]
@@ -29068,18 +30154,10 @@ impl GetBucketLifecycleConfigurationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketLifecycleConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketLifecycleConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketInventoryConfigurationInput {
     /// <p>The name of the bucket containing the inventory configuration to retrieve.</p>
     #[doc(hidden)]
@@ -29105,19 +30183,10 @@ impl GetBucketInventoryConfigurationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketInventoryConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketInventoryConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("id", &self.id);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketIntelligentTieringConfigurationInput {
     /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
     #[doc(hidden)]
@@ -29136,18 +30205,10 @@ impl GetBucketIntelligentTieringConfigurationInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketIntelligentTieringConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketIntelligentTieringConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketEncryptionInput {
     /// <p>The name of the bucket from which the server-side encryption configuration is retrieved.</p>
     #[doc(hidden)]
@@ -29166,18 +30227,10 @@ impl GetBucketEncryptionInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketEncryptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketEncryptionInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketCorsInput {
     /// <p>The bucket name for which to get the cors configuration.</p>
     #[doc(hidden)]
@@ -29196,18 +30249,10 @@ impl GetBucketCorsInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketCorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketCorsInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketAnalyticsConfigurationInput {
     /// <p>The name of the bucket from which an analytics configuration is retrieved.</p>
     #[doc(hidden)]
@@ -29233,19 +30278,10 @@ impl GetBucketAnalyticsConfigurationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketAnalyticsConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketAnalyticsConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("id", &self.id);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketAclInput {
     /// <p>Specifies the S3 bucket whose ACL is being requested.</p>
     #[doc(hidden)]
@@ -29264,18 +30300,10 @@ impl GetBucketAclInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketAclInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketAclInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketAccelerateConfigurationInput {
     /// <p>The name of the bucket for which the accelerate configuration is retrieved.</p>
     #[doc(hidden)]
@@ -29294,18 +30322,10 @@ impl GetBucketAccelerateConfigurationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketAccelerateConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketAccelerateConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePublicAccessBlockInput {
     /// <p>The Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want to delete. </p>
     #[doc(hidden)]
@@ -29324,18 +30344,10 @@ impl DeletePublicAccessBlockInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePublicAccessBlockInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePublicAccessBlockInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteObjectTaggingInput {
     /// <p>The bucket name containing the objects from which to remove the tags. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -29372,20 +30384,10 @@ impl DeleteObjectTaggingInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteObjectTaggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteObjectTaggingInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("version_id", &self.version_id);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteObjectsInput {
     /// <p>The bucket name containing the objects to delete. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -29447,26 +30449,10 @@ impl DeleteObjectsInput {
         self.checksum_algorithm.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteObjectsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteObjectsInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("delete", &self.delete);
-        formatter.field("mfa", &self.mfa);
-        formatter.field("request_payer", &self.request_payer);
-        formatter.field(
-            "bypass_governance_retention",
-            &self.bypass_governance_retention,
-        );
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteObjectInput {
     /// <p>The bucket name of the bucket containing the object. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -29524,26 +30510,10 @@ impl DeleteObjectInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteObjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteObjectInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("mfa", &self.mfa);
-        formatter.field("version_id", &self.version_id);
-        formatter.field("request_payer", &self.request_payer);
-        formatter.field(
-            "bypass_governance_retention",
-            &self.bypass_governance_retention,
-        );
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketWebsiteInput {
     /// <p>The bucket name for which you want to remove the website configuration. </p>
     #[doc(hidden)]
@@ -29562,18 +30532,10 @@ impl DeleteBucketWebsiteInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBucketWebsiteInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBucketWebsiteInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketTaggingInput {
     /// <p>The bucket that has the tag set to be removed.</p>
     #[doc(hidden)]
@@ -29592,18 +30554,10 @@ impl DeleteBucketTaggingInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBucketTaggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBucketTaggingInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketReplicationInput {
     /// <p> The bucket name. </p>
     #[doc(hidden)]
@@ -29622,18 +30576,10 @@ impl DeleteBucketReplicationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBucketReplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBucketReplicationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketPolicyInput {
     /// <p>The bucket name.</p>
     #[doc(hidden)]
@@ -29652,18 +30598,10 @@ impl DeleteBucketPolicyInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBucketPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBucketPolicyInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketOwnershipControlsInput {
     /// <p>The Amazon S3 bucket whose <code>OwnershipControls</code> you want to delete. </p>
     #[doc(hidden)]
@@ -29682,18 +30620,10 @@ impl DeleteBucketOwnershipControlsInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBucketOwnershipControlsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBucketOwnershipControlsInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketMetricsConfigurationInput {
     /// <p>The name of the bucket containing the metrics configuration to delete.</p>
     #[doc(hidden)]
@@ -29719,19 +30649,10 @@ impl DeleteBucketMetricsConfigurationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBucketMetricsConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBucketMetricsConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("id", &self.id);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketLifecycleInput {
     /// <p>The bucket name of the lifecycle to delete.</p>
     #[doc(hidden)]
@@ -29750,18 +30671,10 @@ impl DeleteBucketLifecycleInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBucketLifecycleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBucketLifecycleInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketInventoryConfigurationInput {
     /// <p>The name of the bucket containing the inventory configuration to delete.</p>
     #[doc(hidden)]
@@ -29787,19 +30700,10 @@ impl DeleteBucketInventoryConfigurationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBucketInventoryConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBucketInventoryConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("id", &self.id);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketIntelligentTieringConfigurationInput {
     /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
     #[doc(hidden)]
@@ -29818,18 +30722,10 @@ impl DeleteBucketIntelligentTieringConfigurationInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBucketIntelligentTieringConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBucketIntelligentTieringConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketEncryptionInput {
     /// <p>The name of the bucket containing the server-side encryption configuration to delete.</p>
     #[doc(hidden)]
@@ -29848,18 +30744,10 @@ impl DeleteBucketEncryptionInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBucketEncryptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBucketEncryptionInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketCorsInput {
     /// <p>Specifies the bucket whose <code>cors</code> configuration is being deleted.</p>
     #[doc(hidden)]
@@ -29878,18 +30766,10 @@ impl DeleteBucketCorsInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBucketCorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBucketCorsInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketAnalyticsConfigurationInput {
     /// <p>The name of the bucket from which an analytics configuration is deleted.</p>
     #[doc(hidden)]
@@ -29915,19 +30795,10 @@ impl DeleteBucketAnalyticsConfigurationInput {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBucketAnalyticsConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBucketAnalyticsConfigurationInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("id", &self.id);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketInput {
     /// <p>Specifies the bucket being deleted.</p>
     #[doc(hidden)]
@@ -29944,14 +30815,6 @@ impl DeleteBucketInput {
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteBucketInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBucketInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
     }
 }
 
@@ -30246,7 +31109,7 @@ impl std::fmt::Debug for CreateMultipartUploadInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBucketInput {
     /// <p>The canned ACL to apply to the bucket.</p>
     #[doc(hidden)]
@@ -30329,28 +31192,6 @@ impl CreateBucketInput {
     /// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions. The bucket owner automatically owns and has full control over every object in the bucket. The bucket only accepts PUT requests that don't specify an ACL or bucket owner full control ACLs, such as the <code>bucket-owner-full-control</code> canned ACL or an equivalent form of this ACL expressed in the XML format.</p>
     pub fn object_ownership(&self) -> std::option::Option<&crate::model::ObjectOwnership> {
         self.object_ownership.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateBucketInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBucketInput");
-        formatter.field("acl", &self.acl);
-        formatter.field("bucket", &self.bucket);
-        formatter.field(
-            "create_bucket_configuration",
-            &self.create_bucket_configuration,
-        );
-        formatter.field("grant_full_control", &self.grant_full_control);
-        formatter.field("grant_read", &self.grant_read);
-        formatter.field("grant_read_acp", &self.grant_read_acp);
-        formatter.field("grant_write", &self.grant_write);
-        formatter.field("grant_write_acp", &self.grant_write_acp);
-        formatter.field(
-            "object_lock_enabled_for_bucket",
-            &self.object_lock_enabled_for_bucket,
-        );
-        formatter.field("object_ownership", &self.object_ownership);
-        formatter.finish()
     }
 }
 
@@ -30933,7 +31774,7 @@ impl std::fmt::Debug for CompleteMultipartUploadInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AbortMultipartUploadInput {
     /// <p>The bucket name to which the upload was taking place. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -30975,16 +31816,5 @@ impl AbortMultipartUploadInput {
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
-    }
-}
-impl std::fmt::Debug for AbortMultipartUploadInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AbortMultipartUploadInput");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("upload_id", &self.upload_id);
-        formatter.field("request_payer", &self.request_payer);
-        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
-        formatter.finish()
     }
 }

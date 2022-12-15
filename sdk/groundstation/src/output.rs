@@ -2,7 +2,7 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSatellitesOutput {
     /// <p>Next token that can be supplied in the next call to get the next page of satellites.</p>
     #[doc(hidden)]
@@ -21,19 +21,11 @@ impl ListSatellitesOutput {
         self.satellites.as_deref()
     }
 }
-impl std::fmt::Debug for ListSatellitesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSatellitesOutput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("satellites", &self.satellites);
-        formatter.finish()
-    }
-}
 /// See [`ListSatellitesOutput`](crate::output::ListSatellitesOutput).
 pub mod list_satellites_output {
 
     /// A builder for [`ListSatellitesOutput`](crate::output::ListSatellitesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) satellites: std::option::Option<std::vec::Vec<crate::model::SatelliteListItem>>,
@@ -86,7 +78,7 @@ impl ListSatellitesOutput {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSatelliteOutput {
     /// <p>UUID of a satellite.</p>
     #[doc(hidden)]
@@ -119,21 +111,11 @@ impl GetSatelliteOutput {
         self.ground_stations.as_deref()
     }
 }
-impl std::fmt::Debug for GetSatelliteOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSatelliteOutput");
-        formatter.field("satellite_id", &self.satellite_id);
-        formatter.field("satellite_arn", &self.satellite_arn);
-        formatter.field("norad_satellite_id", &self.norad_satellite_id);
-        formatter.field("ground_stations", &self.ground_stations);
-        formatter.finish()
-    }
-}
 /// See [`GetSatelliteOutput`](crate::output::GetSatelliteOutput).
 pub mod get_satellite_output {
 
     /// A builder for [`GetSatelliteOutput`](crate::output::GetSatelliteOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) satellite_id: std::option::Option<std::string::String>,
         pub(crate) satellite_arn: std::option::Option<std::string::String>,
@@ -213,7 +195,7 @@ impl GetSatelliteOutput {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMissionProfilesOutput {
     /// <p>Next token returned in the response of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
     #[doc(hidden)]
@@ -235,19 +217,11 @@ impl ListMissionProfilesOutput {
         self.mission_profile_list.as_deref()
     }
 }
-impl std::fmt::Debug for ListMissionProfilesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMissionProfilesOutput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("mission_profile_list", &self.mission_profile_list);
-        formatter.finish()
-    }
-}
 /// See [`ListMissionProfilesOutput`](crate::output::ListMissionProfilesOutput).
 pub mod list_mission_profiles_output {
 
     /// A builder for [`ListMissionProfilesOutput`](crate::output::ListMissionProfilesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) mission_profile_list:
@@ -301,7 +275,7 @@ impl ListMissionProfilesOutput {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateMissionProfileOutput {
     /// <p>UUID of a mission profile.</p>
     #[doc(hidden)]
@@ -313,18 +287,11 @@ impl CreateMissionProfileOutput {
         self.mission_profile_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateMissionProfileOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateMissionProfileOutput");
-        formatter.field("mission_profile_id", &self.mission_profile_id);
-        formatter.finish()
-    }
-}
 /// See [`CreateMissionProfileOutput`](crate::output::CreateMissionProfileOutput).
 pub mod create_mission_profile_output {
 
     /// A builder for [`CreateMissionProfileOutput`](crate::output::CreateMissionProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mission_profile_id: std::option::Option<std::string::String>,
     }
@@ -359,7 +326,7 @@ impl CreateMissionProfileOutput {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMissionProfileOutput {
     /// <p>UUID of a mission profile.</p>
     #[doc(hidden)]
@@ -371,18 +338,11 @@ impl DeleteMissionProfileOutput {
         self.mission_profile_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMissionProfileOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMissionProfileOutput");
-        formatter.field("mission_profile_id", &self.mission_profile_id);
-        formatter.finish()
-    }
-}
 /// See [`DeleteMissionProfileOutput`](crate::output::DeleteMissionProfileOutput).
 pub mod delete_mission_profile_output {
 
     /// A builder for [`DeleteMissionProfileOutput`](crate::output::DeleteMissionProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mission_profile_id: std::option::Option<std::string::String>,
     }
@@ -417,7 +377,7 @@ impl DeleteMissionProfileOutput {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateMissionProfileOutput {
     /// <p>UUID of a mission profile.</p>
     #[doc(hidden)]
@@ -429,18 +389,11 @@ impl UpdateMissionProfileOutput {
         self.mission_profile_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateMissionProfileOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateMissionProfileOutput");
-        formatter.field("mission_profile_id", &self.mission_profile_id);
-        formatter.finish()
-    }
-}
 /// See [`UpdateMissionProfileOutput`](crate::output::UpdateMissionProfileOutput).
 pub mod update_mission_profile_output {
 
     /// A builder for [`UpdateMissionProfileOutput`](crate::output::UpdateMissionProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mission_profile_id: std::option::Option<std::string::String>,
     }
@@ -475,7 +428,7 @@ impl UpdateMissionProfileOutput {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMissionProfileOutput {
     /// <p>UUID of a mission profile.</p>
     #[doc(hidden)]
@@ -554,36 +507,11 @@ impl GetMissionProfileOutput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for GetMissionProfileOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMissionProfileOutput");
-        formatter.field("mission_profile_id", &self.mission_profile_id);
-        formatter.field("mission_profile_arn", &self.mission_profile_arn);
-        formatter.field("name", &self.name);
-        formatter.field("region", &self.region);
-        formatter.field(
-            "contact_pre_pass_duration_seconds",
-            &self.contact_pre_pass_duration_seconds,
-        );
-        formatter.field(
-            "contact_post_pass_duration_seconds",
-            &self.contact_post_pass_duration_seconds,
-        );
-        formatter.field(
-            "minimum_viable_contact_duration_seconds",
-            &self.minimum_viable_contact_duration_seconds,
-        );
-        formatter.field("dataflow_edges", &self.dataflow_edges);
-        formatter.field("tracking_config_arn", &self.tracking_config_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`GetMissionProfileOutput`](crate::output::GetMissionProfileOutput).
 pub mod get_mission_profile_output {
 
     /// A builder for [`GetMissionProfileOutput`](crate::output::GetMissionProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mission_profile_id: std::option::Option<std::string::String>,
         pub(crate) mission_profile_arn: std::option::Option<std::string::String>,
@@ -769,7 +697,7 @@ impl GetMissionProfileOutput {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGroundStationsOutput {
     /// <p>Next token that can be supplied in the next call to get the next page of ground stations.</p>
     #[doc(hidden)]
@@ -788,19 +716,11 @@ impl ListGroundStationsOutput {
         self.ground_station_list.as_deref()
     }
 }
-impl std::fmt::Debug for ListGroundStationsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGroundStationsOutput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("ground_station_list", &self.ground_station_list);
-        formatter.finish()
-    }
-}
 /// See [`ListGroundStationsOutput`](crate::output::ListGroundStationsOutput).
 pub mod list_ground_stations_output {
 
     /// A builder for [`ListGroundStationsOutput`](crate::output::ListGroundStationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) ground_station_list:
@@ -854,7 +774,7 @@ impl ListGroundStationsOutput {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDataflowEndpointGroupsOutput {
     /// <p>Next token returned in the response of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.</p>
     #[doc(hidden)]
@@ -876,22 +796,11 @@ impl ListDataflowEndpointGroupsOutput {
         self.dataflow_endpoint_group_list.as_deref()
     }
 }
-impl std::fmt::Debug for ListDataflowEndpointGroupsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDataflowEndpointGroupsOutput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field(
-            "dataflow_endpoint_group_list",
-            &self.dataflow_endpoint_group_list,
-        );
-        formatter.finish()
-    }
-}
 /// See [`ListDataflowEndpointGroupsOutput`](crate::output::ListDataflowEndpointGroupsOutput).
 pub mod list_dataflow_endpoint_groups_output {
 
     /// A builder for [`ListDataflowEndpointGroupsOutput`](crate::output::ListDataflowEndpointGroupsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) dataflow_endpoint_group_list:
@@ -948,7 +857,7 @@ impl ListDataflowEndpointGroupsOutput {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDataflowEndpointGroupOutput {
     /// <p>UUID of a dataflow endpoint group.</p>
     #[doc(hidden)]
@@ -960,21 +869,11 @@ impl CreateDataflowEndpointGroupOutput {
         self.dataflow_endpoint_group_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDataflowEndpointGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDataflowEndpointGroupOutput");
-        formatter.field(
-            "dataflow_endpoint_group_id",
-            &self.dataflow_endpoint_group_id,
-        );
-        formatter.finish()
-    }
-}
 /// See [`CreateDataflowEndpointGroupOutput`](crate::output::CreateDataflowEndpointGroupOutput).
 pub mod create_dataflow_endpoint_group_output {
 
     /// A builder for [`CreateDataflowEndpointGroupOutput`](crate::output::CreateDataflowEndpointGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataflow_endpoint_group_id: std::option::Option<std::string::String>,
     }
@@ -1009,7 +908,7 @@ impl CreateDataflowEndpointGroupOutput {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDataflowEndpointGroupOutput {
     /// <p>UUID of a dataflow endpoint group.</p>
     #[doc(hidden)]
@@ -1021,21 +920,11 @@ impl DeleteDataflowEndpointGroupOutput {
         self.dataflow_endpoint_group_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDataflowEndpointGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDataflowEndpointGroupOutput");
-        formatter.field(
-            "dataflow_endpoint_group_id",
-            &self.dataflow_endpoint_group_id,
-        );
-        formatter.finish()
-    }
-}
 /// See [`DeleteDataflowEndpointGroupOutput`](crate::output::DeleteDataflowEndpointGroupOutput).
 pub mod delete_dataflow_endpoint_group_output {
 
     /// A builder for [`DeleteDataflowEndpointGroupOutput`](crate::output::DeleteDataflowEndpointGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataflow_endpoint_group_id: std::option::Option<std::string::String>,
     }
@@ -1070,7 +959,7 @@ impl DeleteDataflowEndpointGroupOutput {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDataflowEndpointGroupOutput {
     /// <p>UUID of a dataflow endpoint group.</p>
     #[doc(hidden)]
@@ -1107,27 +996,11 @@ impl GetDataflowEndpointGroupOutput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for GetDataflowEndpointGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDataflowEndpointGroupOutput");
-        formatter.field(
-            "dataflow_endpoint_group_id",
-            &self.dataflow_endpoint_group_id,
-        );
-        formatter.field(
-            "dataflow_endpoint_group_arn",
-            &self.dataflow_endpoint_group_arn,
-        );
-        formatter.field("endpoints_details", &self.endpoints_details);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`GetDataflowEndpointGroupOutput`](crate::output::GetDataflowEndpointGroupOutput).
 pub mod get_dataflow_endpoint_group_output {
 
     /// A builder for [`GetDataflowEndpointGroupOutput`](crate::output::GetDataflowEndpointGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataflow_endpoint_group_id: std::option::Option<std::string::String>,
         pub(crate) dataflow_endpoint_group_arn: std::option::Option<std::string::String>,
@@ -1231,7 +1104,7 @@ impl GetDataflowEndpointGroupOutput {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListContactsOutput {
     /// <p>Next token returned in the response of a previous <code>ListContacts</code> call. Used to get the next page of results.</p>
     #[doc(hidden)]
@@ -1250,19 +1123,11 @@ impl ListContactsOutput {
         self.contact_list.as_deref()
     }
 }
-impl std::fmt::Debug for ListContactsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListContactsOutput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("contact_list", &self.contact_list);
-        formatter.finish()
-    }
-}
 /// See [`ListContactsOutput`](crate::output::ListContactsOutput).
 pub mod list_contacts_output {
 
     /// A builder for [`ListContactsOutput`](crate::output::ListContactsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) contact_list: std::option::Option<std::vec::Vec<crate::model::ContactData>>,
@@ -1315,7 +1180,7 @@ impl ListContactsOutput {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReserveContactOutput {
     /// <p>UUID of a contact.</p>
     #[doc(hidden)]
@@ -1327,18 +1192,11 @@ impl ReserveContactOutput {
         self.contact_id.as_deref()
     }
 }
-impl std::fmt::Debug for ReserveContactOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReserveContactOutput");
-        formatter.field("contact_id", &self.contact_id);
-        formatter.finish()
-    }
-}
 /// See [`ReserveContactOutput`](crate::output::ReserveContactOutput).
 pub mod reserve_contact_output {
 
     /// A builder for [`ReserveContactOutput`](crate::output::ReserveContactOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_id: std::option::Option<std::string::String>,
     }
@@ -1370,7 +1228,7 @@ impl ReserveContactOutput {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelContactOutput {
     /// <p>UUID of a contact.</p>
     #[doc(hidden)]
@@ -1382,18 +1240,11 @@ impl CancelContactOutput {
         self.contact_id.as_deref()
     }
 }
-impl std::fmt::Debug for CancelContactOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelContactOutput");
-        formatter.field("contact_id", &self.contact_id);
-        formatter.finish()
-    }
-}
 /// See [`CancelContactOutput`](crate::output::CancelContactOutput).
 pub mod cancel_contact_output {
 
     /// A builder for [`CancelContactOutput`](crate::output::CancelContactOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_id: std::option::Option<std::string::String>,
     }
@@ -1425,7 +1276,7 @@ impl CancelContactOutput {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeContactOutput {
     /// <p>UUID of a contact.</p>
     #[doc(hidden)]
@@ -1532,31 +1383,11 @@ impl DescribeContactOutput {
         self.dataflow_list.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeContactOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeContactOutput");
-        formatter.field("contact_id", &self.contact_id);
-        formatter.field("mission_profile_arn", &self.mission_profile_arn);
-        formatter.field("satellite_arn", &self.satellite_arn);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("pre_pass_start_time", &self.pre_pass_start_time);
-        formatter.field("post_pass_end_time", &self.post_pass_end_time);
-        formatter.field("ground_station", &self.ground_station);
-        formatter.field("contact_status", &self.contact_status);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("maximum_elevation", &self.maximum_elevation);
-        formatter.field("tags", &self.tags);
-        formatter.field("region", &self.region);
-        formatter.field("dataflow_list", &self.dataflow_list);
-        formatter.finish()
-    }
-}
 /// See [`DescribeContactOutput`](crate::output::DescribeContactOutput).
 pub mod describe_contact_output {
 
     /// A builder for [`DescribeContactOutput`](crate::output::DescribeContactOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_id: std::option::Option<std::string::String>,
         pub(crate) mission_profile_arn: std::option::Option<std::string::String>,
@@ -1800,7 +1631,7 @@ impl DescribeContactOutput {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListConfigsOutput {
     /// <p>Next token returned in the response of a previous <code>ListConfigs</code> call. Used to get the next page of results.</p>
     #[doc(hidden)]
@@ -1819,19 +1650,11 @@ impl ListConfigsOutput {
         self.config_list.as_deref()
     }
 }
-impl std::fmt::Debug for ListConfigsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListConfigsOutput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("config_list", &self.config_list);
-        formatter.finish()
-    }
-}
 /// See [`ListConfigsOutput`](crate::output::ListConfigsOutput).
 pub mod list_configs_output {
 
     /// A builder for [`ListConfigsOutput`](crate::output::ListConfigsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) config_list: std::option::Option<std::vec::Vec<crate::model::ConfigListItem>>,
@@ -1884,7 +1707,7 @@ impl ListConfigsOutput {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConfigOutput {
     /// <p>UUID of a <code>Config</code>.</p>
     #[doc(hidden)]
@@ -1910,20 +1733,11 @@ impl CreateConfigOutput {
         self.config_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CreateConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConfigOutput");
-        formatter.field("config_id", &self.config_id);
-        formatter.field("config_type", &self.config_type);
-        formatter.field("config_arn", &self.config_arn);
-        formatter.finish()
-    }
-}
 /// See [`CreateConfigOutput`](crate::output::CreateConfigOutput).
 pub mod create_config_output {
 
     /// A builder for [`CreateConfigOutput`](crate::output::CreateConfigOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_id: std::option::Option<std::string::String>,
         pub(crate) config_type: std::option::Option<crate::model::ConfigCapabilityType>,
@@ -1982,7 +1796,7 @@ impl CreateConfigOutput {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConfigOutput {
     /// <p>UUID of a <code>Config</code>.</p>
     #[doc(hidden)]
@@ -2008,20 +1822,11 @@ impl DeleteConfigOutput {
         self.config_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConfigOutput");
-        formatter.field("config_id", &self.config_id);
-        formatter.field("config_type", &self.config_type);
-        formatter.field("config_arn", &self.config_arn);
-        formatter.finish()
-    }
-}
 /// See [`DeleteConfigOutput`](crate::output::DeleteConfigOutput).
 pub mod delete_config_output {
 
     /// A builder for [`DeleteConfigOutput`](crate::output::DeleteConfigOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_id: std::option::Option<std::string::String>,
         pub(crate) config_type: std::option::Option<crate::model::ConfigCapabilityType>,
@@ -2080,7 +1885,7 @@ impl DeleteConfigOutput {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConfigOutput {
     /// <p>UUID of a <code>Config</code>.</p>
     #[doc(hidden)]
@@ -2106,20 +1911,11 @@ impl UpdateConfigOutput {
         self.config_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConfigOutput");
-        formatter.field("config_id", &self.config_id);
-        formatter.field("config_type", &self.config_type);
-        formatter.field("config_arn", &self.config_arn);
-        formatter.finish()
-    }
-}
 /// See [`UpdateConfigOutput`](crate::output::UpdateConfigOutput).
 pub mod update_config_output {
 
     /// A builder for [`UpdateConfigOutput`](crate::output::UpdateConfigOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_id: std::option::Option<std::string::String>,
         pub(crate) config_type: std::option::Option<crate::model::ConfigCapabilityType>,
@@ -2178,7 +1974,7 @@ impl UpdateConfigOutput {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetConfigOutput {
     /// <p>UUID of a <code>Config</code>.</p>
     #[doc(hidden)]
@@ -2229,23 +2025,11 @@ impl GetConfigOutput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for GetConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetConfigOutput");
-        formatter.field("config_id", &self.config_id);
-        formatter.field("config_arn", &self.config_arn);
-        formatter.field("name", &self.name);
-        formatter.field("config_type", &self.config_type);
-        formatter.field("config_data", &self.config_data);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`GetConfigOutput`](crate::output::GetConfigOutput).
 pub mod get_config_output {
 
     /// A builder for [`GetConfigOutput`](crate::output::GetConfigOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_id: std::option::Option<std::string::String>,
         pub(crate) config_arn: std::option::Option<std::string::String>,
@@ -2360,19 +2144,13 @@ impl GetConfigOutput {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput {}
-impl std::fmt::Debug for UntagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -2390,19 +2168,13 @@ impl UntagResourceOutput {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput {}
-impl std::fmt::Debug for TagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -2420,7 +2192,7 @@ impl TagResourceOutput {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
     /// <p>Tags assigned to a resource.</p>
     #[doc(hidden)]
@@ -2436,18 +2208,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceOutput");
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -2494,7 +2259,7 @@ impl ListTagsForResourceOutput {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMinuteUsageOutput {
     /// <p>Returns whether or not an account has signed up for the reserved minutes pricing plan, specific to the month being requested.</p>
     #[doc(hidden)]
@@ -2534,34 +2299,11 @@ impl GetMinuteUsageOutput {
         self.estimated_minutes_remaining
     }
 }
-impl std::fmt::Debug for GetMinuteUsageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMinuteUsageOutput");
-        formatter.field(
-            "is_reserved_minutes_customer",
-            &self.is_reserved_minutes_customer,
-        );
-        formatter.field(
-            "total_reserved_minute_allocation",
-            &self.total_reserved_minute_allocation,
-        );
-        formatter.field(
-            "upcoming_minutes_scheduled",
-            &self.upcoming_minutes_scheduled,
-        );
-        formatter.field("total_scheduled_minutes", &self.total_scheduled_minutes);
-        formatter.field(
-            "estimated_minutes_remaining",
-            &self.estimated_minutes_remaining,
-        );
-        formatter.finish()
-    }
-}
 /// See [`GetMinuteUsageOutput`](crate::output::GetMinuteUsageOutput).
 pub mod get_minute_usage_output {
 
     /// A builder for [`GetMinuteUsageOutput`](crate::output::GetMinuteUsageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) is_reserved_minutes_customer: std::option::Option<bool>,
         pub(crate) total_reserved_minute_allocation: std::option::Option<i32>,

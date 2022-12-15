@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod batch_put_property_values_input {
 
     /// A builder for [`BatchPutPropertyValuesInput`](crate::input::BatchPutPropertyValuesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) entries: std::option::Option<std::vec::Vec<crate::model::PropertyValueEntry>>,
@@ -43,8 +43,10 @@ pub mod batch_put_property_values_input {
         /// Consumes the builder and constructs a [`BatchPutPropertyValuesInput`](crate::input::BatchPutPropertyValuesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::BatchPutPropertyValuesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::BatchPutPropertyValuesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::BatchPutPropertyValuesInput {
                 workspace_id: self.workspace_id,
                 entries: self.entries,
@@ -65,26 +67,31 @@ impl BatchPutPropertyValuesInput {
             crate::operation::BatchPutPropertyValues,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::BatchPutPropertyValuesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.workspace_id;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_1, false);
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "workspace_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let workspace_id = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if workspace_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "workspace_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -98,8 +105,10 @@ impl BatchPutPropertyValuesInput {
             fn update_http_builder(
                 input: &crate::input::BatchPutPropertyValuesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -187,7 +196,7 @@ impl BatchPutPropertyValuesInput {
 pub mod create_component_type_input {
 
     /// A builder for [`CreateComponentTypeInput`](crate::input::CreateComponentTypeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) is_singleton: std::option::Option<bool>,
@@ -348,8 +357,10 @@ pub mod create_component_type_input {
         /// Consumes the builder and constructs a [`CreateComponentTypeInput`](crate::input::CreateComponentTypeInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateComponentTypeInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateComponentTypeInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateComponentTypeInput {
                 workspace_id: self.workspace_id,
                 is_singleton: self.is_singleton,
@@ -376,40 +387,50 @@ impl CreateComponentTypeInput {
             crate::operation::CreateComponentType,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateComponentTypeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_2 = &_input.workspace_id;
-                let input_2 = input_2.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_2, false);
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "workspace_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let workspace_id = aws_smithy_http::label::fmt_string(
+                    input_2,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if workspace_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "workspace_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_3 = &_input.component_type_id;
-                let input_3 = input_3.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "component_type_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let component_type_id = aws_smithy_http::label::fmt_string(input_3, false);
+                let input_3 = input_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "component_type_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let component_type_id = aws_smithy_http::label::fmt_string(
+                    input_3,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if component_type_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "component_type_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "component_type_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -424,8 +445,10 @@ impl CreateComponentTypeInput {
             fn update_http_builder(
                 input: &crate::input::CreateComponentTypeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -511,7 +534,7 @@ impl CreateComponentTypeInput {
 pub mod create_entity_input {
 
     /// A builder for [`CreateEntityInput`](crate::input::CreateEntityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) entity_id: std::option::Option<std::string::String>,
@@ -632,7 +655,7 @@ pub mod create_entity_input {
         /// Consumes the builder and constructs a [`CreateEntityInput`](crate::input::CreateEntityInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateEntityInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateEntityInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateEntityInput {
                 workspace_id: self.workspace_id,
@@ -659,26 +682,31 @@ impl CreateEntityInput {
             crate::operation::CreateEntity,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateEntityInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_4 = &_input.workspace_id;
-                let input_4 = input_4.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_4, false);
+                let input_4 = input_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "workspace_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let workspace_id = aws_smithy_http::label::fmt_string(
+                    input_4,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if workspace_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "workspace_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -692,8 +720,10 @@ impl CreateEntityInput {
             fn update_http_builder(
                 input: &crate::input::CreateEntityInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -779,7 +809,7 @@ impl CreateEntityInput {
 pub mod create_scene_input {
 
     /// A builder for [`CreateSceneInput`](crate::input::CreateSceneInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) scene_id: std::option::Option<std::string::String>,
@@ -881,7 +911,7 @@ pub mod create_scene_input {
         /// Consumes the builder and constructs a [`CreateSceneInput`](crate::input::CreateSceneInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateSceneInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateSceneInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateSceneInput {
                 workspace_id: self.workspace_id,
@@ -907,26 +937,31 @@ impl CreateSceneInput {
             crate::operation::CreateScene,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateSceneInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_5 = &_input.workspace_id;
-                let input_5 = input_5.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_5, false);
+                let input_5 = input_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "workspace_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let workspace_id = aws_smithy_http::label::fmt_string(
+                    input_5,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if workspace_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "workspace_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -940,8 +975,10 @@ impl CreateSceneInput {
             fn update_http_builder(
                 input: &crate::input::CreateSceneInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1027,7 +1064,7 @@ impl CreateSceneInput {
 pub mod create_workspace_input {
 
     /// A builder for [`CreateWorkspaceInput`](crate::input::CreateWorkspaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1106,7 +1143,7 @@ pub mod create_workspace_input {
         /// Consumes the builder and constructs a [`CreateWorkspaceInput`](crate::input::CreateWorkspaceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateWorkspaceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateWorkspaceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateWorkspaceInput {
                 workspace_id: self.workspace_id,
@@ -1131,26 +1168,31 @@ impl CreateWorkspaceInput {
             crate::operation::CreateWorkspace,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateWorkspaceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_6 = &_input.workspace_id;
-                let input_6 = input_6.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_6, false);
+                let input_6 = input_6.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "workspace_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let workspace_id = aws_smithy_http::label::fmt_string(
+                    input_6,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if workspace_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "workspace_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1164,8 +1206,10 @@ impl CreateWorkspaceInput {
             fn update_http_builder(
                 input: &crate::input::CreateWorkspaceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1251,7 +1295,7 @@ impl CreateWorkspaceInput {
 pub mod delete_component_type_input {
 
     /// A builder for [`DeleteComponentTypeInput`](crate::input::DeleteComponentTypeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) component_type_id: std::option::Option<std::string::String>,
@@ -1283,8 +1327,10 @@ pub mod delete_component_type_input {
         /// Consumes the builder and constructs a [`DeleteComponentTypeInput`](crate::input::DeleteComponentTypeInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteComponentTypeInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteComponentTypeInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteComponentTypeInput {
                 workspace_id: self.workspace_id,
                 component_type_id: self.component_type_id,
@@ -1305,40 +1351,50 @@ impl DeleteComponentTypeInput {
             crate::operation::DeleteComponentType,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteComponentTypeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_7 = &_input.workspace_id;
-                let input_7 = input_7.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_7, false);
+                let input_7 = input_7.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "workspace_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let workspace_id = aws_smithy_http::label::fmt_string(
+                    input_7,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if workspace_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "workspace_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_8 = &_input.component_type_id;
-                let input_8 = input_8.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "component_type_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let component_type_id = aws_smithy_http::label::fmt_string(input_8, false);
+                let input_8 = input_8.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "component_type_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let component_type_id = aws_smithy_http::label::fmt_string(
+                    input_8,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if component_type_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "component_type_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "component_type_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1353,8 +1409,10 @@ impl DeleteComponentTypeInput {
             fn update_http_builder(
                 input: &crate::input::DeleteComponentTypeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1426,7 +1484,7 @@ impl DeleteComponentTypeInput {
 pub mod delete_entity_input {
 
     /// A builder for [`DeleteEntityInput`](crate::input::DeleteEntityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) entity_id: std::option::Option<std::string::String>,
@@ -1466,7 +1524,7 @@ pub mod delete_entity_input {
         /// Consumes the builder and constructs a [`DeleteEntityInput`](crate::input::DeleteEntityInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteEntityInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteEntityInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteEntityInput {
                 workspace_id: self.workspace_id,
@@ -1489,40 +1547,50 @@ impl DeleteEntityInput {
             crate::operation::DeleteEntity,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteEntityInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_9 = &_input.workspace_id;
-                let input_9 = input_9.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_9, false);
+                let input_9 = input_9.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "workspace_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let workspace_id = aws_smithy_http::label::fmt_string(
+                    input_9,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if workspace_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "workspace_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_10 = &_input.entity_id;
-                let input_10 = input_10.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "entity_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let entity_id = aws_smithy_http::label::fmt_string(input_10, false);
+                let input_10 = input_10.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "entity_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let entity_id = aws_smithy_http::label::fmt_string(
+                    input_10,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if entity_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "entity_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "entity_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1536,13 +1604,15 @@ impl DeleteEntityInput {
             fn uri_query(
                 _input: &crate::input::DeleteEntityInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_11) = &_input.is_recursive {
-                    query.push_kv(
-                        "isRecursive",
-                        aws_smithy_types::primitive::Encoder::from(*inner_11).encode(),
-                    );
+                    if *inner_11 {
+                        query.push_kv(
+                            "isRecursive",
+                            aws_smithy_types::primitive::Encoder::from(*inner_11).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -1550,8 +1620,10 @@ impl DeleteEntityInput {
             fn update_http_builder(
                 input: &crate::input::DeleteEntityInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1624,7 +1696,7 @@ impl DeleteEntityInput {
 pub mod delete_scene_input {
 
     /// A builder for [`DeleteSceneInput`](crate::input::DeleteSceneInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) scene_id: std::option::Option<std::string::String>,
@@ -1653,7 +1725,7 @@ pub mod delete_scene_input {
         /// Consumes the builder and constructs a [`DeleteSceneInput`](crate::input::DeleteSceneInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteSceneInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteSceneInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteSceneInput {
                 workspace_id: self.workspace_id,
@@ -1675,40 +1747,50 @@ impl DeleteSceneInput {
             crate::operation::DeleteScene,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteSceneInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_12 = &_input.workspace_id;
-                let input_12 = input_12.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_12, false);
+                let input_12 = input_12.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "workspace_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let workspace_id = aws_smithy_http::label::fmt_string(
+                    input_12,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if workspace_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "workspace_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_13 = &_input.scene_id;
-                let input_13 = input_13.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "scene_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let scene_id = aws_smithy_http::label::fmt_string(input_13, false);
+                let input_13 = input_13.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "scene_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let scene_id = aws_smithy_http::label::fmt_string(
+                    input_13,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if scene_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "scene_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "scene_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1723,8 +1805,10 @@ impl DeleteSceneInput {
             fn update_http_builder(
                 input: &crate::input::DeleteSceneInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1796,7 +1880,7 @@ impl DeleteSceneInput {
 pub mod delete_workspace_input {
 
     /// A builder for [`DeleteWorkspaceInput`](crate::input::DeleteWorkspaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
     }
@@ -1814,7 +1898,7 @@ pub mod delete_workspace_input {
         /// Consumes the builder and constructs a [`DeleteWorkspaceInput`](crate::input::DeleteWorkspaceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteWorkspaceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteWorkspaceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteWorkspaceInput {
                 workspace_id: self.workspace_id,
@@ -1835,26 +1919,31 @@ impl DeleteWorkspaceInput {
             crate::operation::DeleteWorkspace,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteWorkspaceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_14 = &_input.workspace_id;
-                let input_14 = input_14.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_14, false);
+                let input_14 = input_14.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "workspace_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let workspace_id = aws_smithy_http::label::fmt_string(
+                    input_14,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if workspace_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "workspace_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1868,8 +1957,10 @@ impl DeleteWorkspaceInput {
             fn update_http_builder(
                 input: &crate::input::DeleteWorkspaceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1941,7 +2032,7 @@ impl DeleteWorkspaceInput {
 pub mod get_component_type_input {
 
     /// A builder for [`GetComponentTypeInput`](crate::input::GetComponentTypeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) component_type_id: std::option::Option<std::string::String>,
@@ -1973,8 +2064,10 @@ pub mod get_component_type_input {
         /// Consumes the builder and constructs a [`GetComponentTypeInput`](crate::input::GetComponentTypeInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetComponentTypeInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetComponentTypeInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetComponentTypeInput {
                 workspace_id: self.workspace_id,
                 component_type_id: self.component_type_id,
@@ -1995,40 +2088,50 @@ impl GetComponentTypeInput {
             crate::operation::GetComponentType,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetComponentTypeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_15 = &_input.workspace_id;
-                let input_15 = input_15.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_15, false);
+                let input_15 = input_15.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "workspace_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let workspace_id = aws_smithy_http::label::fmt_string(
+                    input_15,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if workspace_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "workspace_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_16 = &_input.component_type_id;
-                let input_16 = input_16.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "component_type_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let component_type_id = aws_smithy_http::label::fmt_string(input_16, false);
+                let input_16 = input_16.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "component_type_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let component_type_id = aws_smithy_http::label::fmt_string(
+                    input_16,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if component_type_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "component_type_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "component_type_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2043,8 +2146,10 @@ impl GetComponentTypeInput {
             fn update_http_builder(
                 input: &crate::input::GetComponentTypeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2116,7 +2221,7 @@ impl GetComponentTypeInput {
 pub mod get_entity_input {
 
     /// A builder for [`GetEntityInput`](crate::input::GetEntityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) entity_id: std::option::Option<std::string::String>,
@@ -2145,7 +2250,8 @@ pub mod get_entity_input {
         /// Consumes the builder and constructs a [`GetEntityInput`](crate::input::GetEntityInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetEntityInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::GetEntityInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::GetEntityInput {
                 workspace_id: self.workspace_id,
                 entity_id: self.entity_id,
@@ -2166,40 +2272,50 @@ impl GetEntityInput {
             crate::operation::GetEntity,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetEntityInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_17 = &_input.workspace_id;
-                let input_17 = input_17.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_17, false);
+                let input_17 = input_17.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "workspace_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let workspace_id = aws_smithy_http::label::fmt_string(
+                    input_17,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if workspace_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "workspace_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_18 = &_input.entity_id;
-                let input_18 = input_18.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "entity_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let entity_id = aws_smithy_http::label::fmt_string(input_18, false);
+                let input_18 = input_18.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "entity_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let entity_id = aws_smithy_http::label::fmt_string(
+                    input_18,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if entity_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "entity_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "entity_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2214,8 +2330,10 @@ impl GetEntityInput {
             fn update_http_builder(
                 input: &crate::input::GetEntityInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2285,7 +2403,7 @@ impl GetEntityInput {
 pub mod get_property_value_input {
 
     /// A builder for [`GetPropertyValueInput`](crate::input::GetPropertyValueInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component_name: std::option::Option<std::string::String>,
         pub(crate) component_type_id: std::option::Option<std::string::String>,
@@ -2362,8 +2480,10 @@ pub mod get_property_value_input {
         /// Consumes the builder and constructs a [`GetPropertyValueInput`](crate::input::GetPropertyValueInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetPropertyValueInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetPropertyValueInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetPropertyValueInput {
                 component_name: self.component_name,
                 component_type_id: self.component_type_id,
@@ -2387,26 +2507,31 @@ impl GetPropertyValueInput {
             crate::operation::GetPropertyValue,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetPropertyValueInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_19 = &_input.workspace_id;
-                let input_19 = input_19.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_19, false);
+                let input_19 = input_19.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "workspace_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let workspace_id = aws_smithy_http::label::fmt_string(
+                    input_19,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if workspace_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "workspace_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2420,8 +2545,10 @@ impl GetPropertyValueInput {
             fn update_http_builder(
                 input: &crate::input::GetPropertyValueInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2507,7 +2634,7 @@ impl GetPropertyValueInput {
 pub mod get_property_value_history_input {
 
     /// A builder for [`GetPropertyValueHistoryInput`](crate::input::GetPropertyValueHistoryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) entity_id: std::option::Option<std::string::String>,
@@ -2723,7 +2850,7 @@ pub mod get_property_value_history_input {
             self,
         ) -> Result<
             crate::input::GetPropertyValueHistoryInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetPropertyValueHistoryInput {
                 workspace_id: self.workspace_id,
@@ -2757,26 +2884,31 @@ impl GetPropertyValueHistoryInput {
             crate::operation::GetPropertyValueHistory,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetPropertyValueHistoryInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_20 = &_input.workspace_id;
-                let input_20 = input_20.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_20, false);
+                let input_20 = input_20.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "workspace_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let workspace_id = aws_smithy_http::label::fmt_string(
+                    input_20,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if workspace_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "workspace_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2790,8 +2922,10 @@ impl GetPropertyValueHistoryInput {
             fn update_http_builder(
                 input: &crate::input::GetPropertyValueHistoryInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2879,7 +3013,7 @@ impl GetPropertyValueHistoryInput {
 pub mod get_scene_input {
 
     /// A builder for [`GetSceneInput`](crate::input::GetSceneInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) scene_id: std::option::Option<std::string::String>,
@@ -2908,7 +3042,8 @@ pub mod get_scene_input {
         /// Consumes the builder and constructs a [`GetSceneInput`](crate::input::GetSceneInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetSceneInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::GetSceneInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::GetSceneInput {
                 workspace_id: self.workspace_id,
                 scene_id: self.scene_id,
@@ -2929,40 +3064,50 @@ impl GetSceneInput {
             crate::operation::GetScene,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetSceneInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_21 = &_input.workspace_id;
-                let input_21 = input_21.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_21, false);
+                let input_21 = input_21.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "workspace_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let workspace_id = aws_smithy_http::label::fmt_string(
+                    input_21,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if workspace_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "workspace_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_22 = &_input.scene_id;
-                let input_22 = input_22.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "scene_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let scene_id = aws_smithy_http::label::fmt_string(input_22, false);
+                let input_22 = input_22.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "scene_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let scene_id = aws_smithy_http::label::fmt_string(
+                    input_22,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if scene_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "scene_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "scene_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2977,8 +3122,10 @@ impl GetSceneInput {
             fn update_http_builder(
                 input: &crate::input::GetSceneInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -3048,7 +3195,7 @@ impl GetSceneInput {
 pub mod get_workspace_input {
 
     /// A builder for [`GetWorkspaceInput`](crate::input::GetWorkspaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
     }
@@ -3066,7 +3213,7 @@ pub mod get_workspace_input {
         /// Consumes the builder and constructs a [`GetWorkspaceInput`](crate::input::GetWorkspaceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetWorkspaceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetWorkspaceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetWorkspaceInput {
                 workspace_id: self.workspace_id,
@@ -3087,26 +3234,31 @@ impl GetWorkspaceInput {
             crate::operation::GetWorkspace,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetWorkspaceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_23 = &_input.workspace_id;
-                let input_23 = input_23.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_23, false);
+                let input_23 = input_23.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "workspace_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let workspace_id = aws_smithy_http::label::fmt_string(
+                    input_23,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if workspace_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "workspace_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3120,8 +3272,10 @@ impl GetWorkspaceInput {
             fn update_http_builder(
                 input: &crate::input::GetWorkspaceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -3193,7 +3347,7 @@ impl GetWorkspaceInput {
 pub mod list_component_types_input {
 
     /// A builder for [`ListComponentTypesInput`](crate::input::ListComponentTypesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) filters:
@@ -3254,8 +3408,10 @@ pub mod list_component_types_input {
         /// Consumes the builder and constructs a [`ListComponentTypesInput`](crate::input::ListComponentTypesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListComponentTypesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListComponentTypesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListComponentTypesInput {
                 workspace_id: self.workspace_id,
                 filters: self.filters,
@@ -3278,26 +3434,31 @@ impl ListComponentTypesInput {
             crate::operation::ListComponentTypes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListComponentTypesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_24 = &_input.workspace_id;
-                let input_24 = input_24.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_24, false);
+                let input_24 = input_24.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "workspace_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let workspace_id = aws_smithy_http::label::fmt_string(
+                    input_24,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if workspace_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "workspace_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3311,8 +3472,10 @@ impl ListComponentTypesInput {
             fn update_http_builder(
                 input: &crate::input::ListComponentTypesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3398,7 +3561,7 @@ impl ListComponentTypesInput {
 pub mod list_entities_input {
 
     /// A builder for [`ListEntitiesInput`](crate::input::ListEntitiesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::ListEntitiesFilter>>,
@@ -3462,7 +3625,7 @@ pub mod list_entities_input {
         /// Consumes the builder and constructs a [`ListEntitiesInput`](crate::input::ListEntitiesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListEntitiesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListEntitiesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListEntitiesInput {
                 workspace_id: self.workspace_id,
@@ -3486,26 +3649,31 @@ impl ListEntitiesInput {
             crate::operation::ListEntities,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListEntitiesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_25 = &_input.workspace_id;
-                let input_25 = input_25.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_25, false);
+                let input_25 = input_25.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "workspace_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let workspace_id = aws_smithy_http::label::fmt_string(
+                    input_25,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if workspace_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "workspace_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3519,8 +3687,10 @@ impl ListEntitiesInput {
             fn update_http_builder(
                 input: &crate::input::ListEntitiesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3606,7 +3776,7 @@ impl ListEntitiesInput {
 pub mod list_scenes_input {
 
     /// A builder for [`ListScenesInput`](crate::input::ListScenesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3646,7 +3816,8 @@ pub mod list_scenes_input {
         /// Consumes the builder and constructs a [`ListScenesInput`](crate::input::ListScenesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListScenesInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ListScenesInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ListScenesInput {
                 workspace_id: self.workspace_id,
                 max_results: self.max_results,
@@ -3668,26 +3839,31 @@ impl ListScenesInput {
             crate::operation::ListScenes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListScenesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_26 = &_input.workspace_id;
-                let input_26 = input_26.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_26, false);
+                let input_26 = input_26.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "workspace_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let workspace_id = aws_smithy_http::label::fmt_string(
+                    input_26,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if workspace_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "workspace_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3701,8 +3877,10 @@ impl ListScenesInput {
             fn update_http_builder(
                 input: &crate::input::ListScenesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3788,7 +3966,7 @@ impl ListScenesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3828,8 +4006,10 @@ pub mod list_tags_for_resource_input {
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
                 max_results: self.max_results,
@@ -3851,13 +4031,13 @@ impl ListTagsForResourceInput {
             crate::operation::ListTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/tags-list").expect("formatting should succeed");
                 Ok(())
             }
@@ -3865,8 +4045,10 @@ impl ListTagsForResourceInput {
             fn update_http_builder(
                 input: &crate::input::ListTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3954,7 +4136,7 @@ impl ListTagsForResourceInput {
 pub mod list_workspaces_input {
 
     /// A builder for [`ListWorkspacesInput`](crate::input::ListWorkspacesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3983,7 +4165,7 @@ pub mod list_workspaces_input {
         /// Consumes the builder and constructs a [`ListWorkspacesInput`](crate::input::ListWorkspacesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListWorkspacesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListWorkspacesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListWorkspacesInput {
                 max_results: self.max_results,
@@ -4005,13 +4187,13 @@ impl ListWorkspacesInput {
             crate::operation::ListWorkspaces,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListWorkspacesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/workspaces-list").expect("formatting should succeed");
                 Ok(())
             }
@@ -4019,8 +4201,10 @@ impl ListWorkspacesInput {
             fn update_http_builder(
                 input: &crate::input::ListWorkspacesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4106,7 +4290,7 @@ impl ListWorkspacesInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -4152,7 +4336,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
@@ -4174,13 +4358,13 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/tags").expect("formatting should succeed");
                 Ok(())
             }
@@ -4188,8 +4372,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4275,7 +4461,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4313,7 +4499,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
@@ -4335,31 +4521,49 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/tags").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::UntagResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_27) = &_input.resource_arn {
-                    query.push_kv(
-                        "resourceARN",
-                        &aws_smithy_http::query::fmt_string(&inner_27),
+                let inner_27 = &_input.resource_arn;
+                let inner_27 = inner_27.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_27.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_28) = &_input.tag_keys {
-                    for inner_29 in inner_28 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_29));
-                    }
+                query.push_kv(
+                    "resourceARN",
+                    &aws_smithy_http::query::fmt_string(&inner_27),
+                );
+                let inner_28 = &_input.tag_keys;
+                let inner_28 = inner_28.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_29 in inner_28 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_29));
                 }
                 Ok(())
             }
@@ -4367,8 +4571,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4441,7 +4647,7 @@ impl UntagResourceInput {
 pub mod update_component_type_input {
 
     /// A builder for [`UpdateComponentTypeInput`](crate::input::UpdateComponentTypeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) is_singleton: std::option::Option<bool>,
@@ -4574,8 +4780,10 @@ pub mod update_component_type_input {
         /// Consumes the builder and constructs a [`UpdateComponentTypeInput`](crate::input::UpdateComponentTypeInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateComponentTypeInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateComponentTypeInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateComponentTypeInput {
                 workspace_id: self.workspace_id,
                 is_singleton: self.is_singleton,
@@ -4601,40 +4809,50 @@ impl UpdateComponentTypeInput {
             crate::operation::UpdateComponentType,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateComponentTypeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_30 = &_input.workspace_id;
-                let input_30 = input_30.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_30, false);
+                let input_30 = input_30.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "workspace_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let workspace_id = aws_smithy_http::label::fmt_string(
+                    input_30,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if workspace_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "workspace_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_31 = &_input.component_type_id;
-                let input_31 = input_31.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "component_type_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let component_type_id = aws_smithy_http::label::fmt_string(input_31, false);
+                let input_31 = input_31.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "component_type_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let component_type_id = aws_smithy_http::label::fmt_string(
+                    input_31,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if component_type_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "component_type_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "component_type_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4649,8 +4867,10 @@ impl UpdateComponentTypeInput {
             fn update_http_builder(
                 input: &crate::input::UpdateComponentTypeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -4736,7 +4956,7 @@ impl UpdateComponentTypeInput {
 pub mod update_entity_input {
 
     /// A builder for [`UpdateEntityInput`](crate::input::UpdateEntityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) entity_id: std::option::Option<std::string::String>,
@@ -4836,7 +5056,7 @@ pub mod update_entity_input {
         /// Consumes the builder and constructs a [`UpdateEntityInput`](crate::input::UpdateEntityInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateEntityInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateEntityInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateEntityInput {
                 workspace_id: self.workspace_id,
@@ -4862,40 +5082,50 @@ impl UpdateEntityInput {
             crate::operation::UpdateEntity,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateEntityInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_32 = &_input.workspace_id;
-                let input_32 = input_32.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_32, false);
+                let input_32 = input_32.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "workspace_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let workspace_id = aws_smithy_http::label::fmt_string(
+                    input_32,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if workspace_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "workspace_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_33 = &_input.entity_id;
-                let input_33 = input_33.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "entity_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let entity_id = aws_smithy_http::label::fmt_string(input_33, false);
+                let input_33 = input_33.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "entity_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let entity_id = aws_smithy_http::label::fmt_string(
+                    input_33,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if entity_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "entity_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "entity_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4910,8 +5140,10 @@ impl UpdateEntityInput {
             fn update_http_builder(
                 input: &crate::input::UpdateEntityInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -4997,7 +5229,7 @@ impl UpdateEntityInput {
 pub mod update_scene_input {
 
     /// A builder for [`UpdateSceneInput`](crate::input::UpdateSceneInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) scene_id: std::option::Option<std::string::String>,
@@ -5071,7 +5303,7 @@ pub mod update_scene_input {
         /// Consumes the builder and constructs a [`UpdateSceneInput`](crate::input::UpdateSceneInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateSceneInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateSceneInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateSceneInput {
                 workspace_id: self.workspace_id,
@@ -5096,40 +5328,50 @@ impl UpdateSceneInput {
             crate::operation::UpdateScene,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateSceneInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_34 = &_input.workspace_id;
-                let input_34 = input_34.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_34, false);
+                let input_34 = input_34.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "workspace_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let workspace_id = aws_smithy_http::label::fmt_string(
+                    input_34,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if workspace_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "workspace_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_35 = &_input.scene_id;
-                let input_35 = input_35.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "scene_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let scene_id = aws_smithy_http::label::fmt_string(input_35, false);
+                let input_35 = input_35.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "scene_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let scene_id = aws_smithy_http::label::fmt_string(
+                    input_35,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if scene_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "scene_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "scene_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5144,8 +5386,10 @@ impl UpdateSceneInput {
             fn update_http_builder(
                 input: &crate::input::UpdateSceneInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -5231,7 +5475,7 @@ impl UpdateSceneInput {
 pub mod update_workspace_input {
 
     /// A builder for [`UpdateWorkspaceInput`](crate::input::UpdateWorkspaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -5271,7 +5515,7 @@ pub mod update_workspace_input {
         /// Consumes the builder and constructs a [`UpdateWorkspaceInput`](crate::input::UpdateWorkspaceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateWorkspaceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateWorkspaceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateWorkspaceInput {
                 workspace_id: self.workspace_id,
@@ -5294,26 +5538,31 @@ impl UpdateWorkspaceInput {
             crate::operation::UpdateWorkspace,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateWorkspaceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_36 = &_input.workspace_id;
-                let input_36 = input_36.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_36, false);
+                let input_36 = input_36.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "workspace_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let workspace_id = aws_smithy_http::label::fmt_string(
+                    input_36,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if workspace_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "workspace_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "workspace_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5327,8 +5576,10 @@ impl UpdateWorkspaceInput {
             fn update_http_builder(
                 input: &crate::input::UpdateWorkspaceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -5412,7 +5663,7 @@ impl UpdateWorkspaceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateWorkspaceInput {
     /// <p>The ID of the workspace.</p>
     #[doc(hidden)]
@@ -5438,19 +5689,10 @@ impl UpdateWorkspaceInput {
         self.role.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateWorkspaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateWorkspaceInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("description", &self.description);
-        formatter.field("role", &self.role);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSceneInput {
     /// <p>The ID of the workspace that contains the scene.</p>
     #[doc(hidden)]
@@ -5490,21 +5732,10 @@ impl UpdateSceneInput {
         self.capabilities.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateSceneInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSceneInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("scene_id", &self.scene_id);
-        formatter.field("content_location", &self.content_location);
-        formatter.field("description", &self.description);
-        formatter.field("capabilities", &self.capabilities);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEntityInput {
     /// <p>The ID of the workspace that contains the entity.</p>
     #[doc(hidden)]
@@ -5559,22 +5790,10 @@ impl UpdateEntityInput {
         self.parent_entity_update.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateEntityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateEntityInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("entity_name", &self.entity_name);
-        formatter.field("description", &self.description);
-        formatter.field("component_updates", &self.component_updates);
-        formatter.field("parent_entity_update", &self.parent_entity_update);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateComponentTypeInput {
     /// <p>The ID of the workspace that contains the component type.</p>
     #[doc(hidden)]
@@ -5640,23 +5859,10 @@ impl UpdateComponentTypeInput {
         self.functions.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateComponentTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateComponentTypeInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("is_singleton", &self.is_singleton);
-        formatter.field("component_type_id", &self.component_type_id);
-        formatter.field("description", &self.description);
-        formatter.field("property_definitions", &self.property_definitions);
-        formatter.field("extends_from", &self.extends_from);
-        formatter.field("functions", &self.functions);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -5675,18 +5881,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -5709,18 +5907,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWorkspacesInput {
     /// <p>The maximum number of results to display.</p>
     #[doc(hidden)]
@@ -5739,18 +5929,10 @@ impl ListWorkspacesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListWorkspacesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWorkspacesInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -5776,19 +5958,10 @@ impl ListTagsForResourceInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListScenesInput {
     /// <p>The ID of the workspace that contains the scenes.</p>
     #[doc(hidden)]
@@ -5814,19 +5987,10 @@ impl ListScenesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListScenesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListScenesInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEntitiesInput {
     /// <p>The ID of the workspace.</p>
     #[doc(hidden)]
@@ -5863,20 +6027,10 @@ impl ListEntitiesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListEntitiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEntitiesInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListComponentTypesInput {
     /// <p>The ID of the workspace.</p>
     #[doc(hidden)]
@@ -5909,20 +6063,10 @@ impl ListComponentTypesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListComponentTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListComponentTypesInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWorkspaceInput {
     /// <p>The ID of the workspace.</p>
     #[doc(hidden)]
@@ -5934,17 +6078,10 @@ impl GetWorkspaceInput {
         self.workspace_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetWorkspaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWorkspaceInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSceneInput {
     /// <p>The ID of the workspace that contains the scene.</p>
     #[doc(hidden)]
@@ -5963,18 +6100,10 @@ impl GetSceneInput {
         self.scene_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetSceneInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSceneInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("scene_id", &self.scene_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPropertyValueHistoryInput {
     /// <p>The ID of the workspace.</p>
     #[doc(hidden)]
@@ -6093,30 +6222,10 @@ impl GetPropertyValueHistoryInput {
         self.end_time.as_deref()
     }
 }
-impl std::fmt::Debug for GetPropertyValueHistoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPropertyValueHistoryInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("component_name", &self.component_name);
-        formatter.field("component_type_id", &self.component_type_id);
-        formatter.field("selected_properties", &self.selected_properties);
-        formatter.field("property_filters", &self.property_filters);
-        formatter.field("start_date_time", &self.start_date_time);
-        formatter.field("end_date_time", &self.end_date_time);
-        formatter.field("interpolation", &self.interpolation);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("order_by_time", &self.order_by_time);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPropertyValueInput {
     /// <p>The name of the component whose property values the operation returns.</p>
     #[doc(hidden)]
@@ -6156,21 +6265,10 @@ impl GetPropertyValueInput {
         self.workspace_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetPropertyValueInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPropertyValueInput");
-        formatter.field("component_name", &self.component_name);
-        formatter.field("component_type_id", &self.component_type_id);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("selected_properties", &self.selected_properties);
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEntityInput {
     /// <p>The ID of the workspace.</p>
     #[doc(hidden)]
@@ -6189,18 +6287,10 @@ impl GetEntityInput {
         self.entity_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetEntityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEntityInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetComponentTypeInput {
     /// <p>The ID of the workspace that contains the component type.</p>
     #[doc(hidden)]
@@ -6219,18 +6309,10 @@ impl GetComponentTypeInput {
         self.component_type_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetComponentTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetComponentTypeInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("component_type_id", &self.component_type_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWorkspaceInput {
     /// <p>The ID of the workspace to delete.</p>
     #[doc(hidden)]
@@ -6242,17 +6324,10 @@ impl DeleteWorkspaceInput {
         self.workspace_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteWorkspaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWorkspaceInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSceneInput {
     /// <p>The ID of the workspace.</p>
     #[doc(hidden)]
@@ -6271,18 +6346,10 @@ impl DeleteSceneInput {
         self.scene_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSceneInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSceneInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("scene_id", &self.scene_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEntityInput {
     /// <p>The ID of the workspace that contains the entity to delete.</p>
     #[doc(hidden)]
@@ -6308,19 +6375,10 @@ impl DeleteEntityInput {
         self.is_recursive
     }
 }
-impl std::fmt::Debug for DeleteEntityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEntityInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("is_recursive", &self.is_recursive);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteComponentTypeInput {
     /// <p>The ID of the workspace that contains the component type.</p>
     #[doc(hidden)]
@@ -6339,18 +6397,10 @@ impl DeleteComponentTypeInput {
         self.component_type_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteComponentTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteComponentTypeInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("component_type_id", &self.component_type_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWorkspaceInput {
     /// <p>The ID of the workspace.</p>
     #[doc(hidden)]
@@ -6394,21 +6444,10 @@ impl CreateWorkspaceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateWorkspaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWorkspaceInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("description", &self.description);
-        formatter.field("s3_location", &self.s3_location);
-        formatter.field("role", &self.role);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSceneInput {
     /// <p>The ID of the workspace that contains the scene.</p>
     #[doc(hidden)]
@@ -6459,22 +6498,10 @@ impl CreateSceneInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateSceneInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSceneInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("scene_id", &self.scene_id);
-        formatter.field("content_location", &self.content_location);
-        formatter.field("description", &self.description);
-        formatter.field("capabilities", &self.capabilities);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateEntityInput {
     /// <p>The ID of the workspace that contains the entity.</p>
     #[doc(hidden)]
@@ -6538,23 +6565,10 @@ impl CreateEntityInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateEntityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateEntityInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("entity_name", &self.entity_name);
-        formatter.field("description", &self.description);
-        formatter.field("components", &self.components);
-        formatter.field("parent_entity_id", &self.parent_entity_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateComponentTypeInput {
     /// <p>The ID of the workspace that contains the component type.</p>
     #[doc(hidden)]
@@ -6631,24 +6645,10 @@ impl CreateComponentTypeInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateComponentTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateComponentTypeInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("is_singleton", &self.is_singleton);
-        formatter.field("component_type_id", &self.component_type_id);
-        formatter.field("description", &self.description);
-        formatter.field("property_definitions", &self.property_definitions);
-        formatter.field("extends_from", &self.extends_from);
-        formatter.field("functions", &self.functions);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchPutPropertyValuesInput {
     /// <p>The ID of the workspace that contains the properties to set.</p>
     #[doc(hidden)]
@@ -6665,13 +6665,5 @@ impl BatchPutPropertyValuesInput {
     /// <p>An object that maps strings to the property value entries to set. Each string in the mapping must be unique to this object.</p>
     pub fn entries(&self) -> std::option::Option<&[crate::model::PropertyValueEntry]> {
         self.entries.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchPutPropertyValuesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchPutPropertyValuesInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("entries", &self.entries);
-        formatter.finish()
     }
 }

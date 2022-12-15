@@ -2,19 +2,13 @@
 
 /// <p>The destination phone number's verification status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VerifySmsSandboxPhoneNumberOutput {}
-impl std::fmt::Debug for VerifySmsSandboxPhoneNumberOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VerifySmsSandboxPhoneNumberOutput");
-        formatter.finish()
-    }
-}
 /// See [`VerifySmsSandboxPhoneNumberOutput`](crate::output::VerifySmsSandboxPhoneNumberOutput).
 pub mod verify_sms_sandbox_phone_number_output {
 
     /// A builder for [`VerifySmsSandboxPhoneNumberOutput`](crate::output::VerifySmsSandboxPhoneNumberOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`VerifySmsSandboxPhoneNumberOutput`](crate::output::VerifySmsSandboxPhoneNumberOutput).
@@ -32,19 +26,13 @@ impl VerifySmsSandboxPhoneNumberOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput {}
-impl std::fmt::Debug for UntagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -62,19 +50,13 @@ impl UntagResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnsubscribeOutput {}
-impl std::fmt::Debug for UnsubscribeOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsubscribeOutput");
-        formatter.finish()
-    }
-}
 /// See [`UnsubscribeOutput`](crate::output::UnsubscribeOutput).
 pub mod unsubscribe_output {
 
     /// A builder for [`UnsubscribeOutput`](crate::output::UnsubscribeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UnsubscribeOutput`](crate::output::UnsubscribeOutput).
@@ -92,19 +74,13 @@ impl UnsubscribeOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput {}
-impl std::fmt::Debug for TagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -122,7 +98,7 @@ impl TagResourceOutput {
 
 /// <p>Response for Subscribe action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubscribeOutput {
     /// <p>The ARN of the subscription if it is confirmed, or the string "pending confirmation" if the subscription requires confirmation. However, if the API request parameter <code>ReturnSubscriptionArn</code> is true, then the value is always the subscription ARN, even if the subscription requires confirmation.</p>
     #[doc(hidden)]
@@ -134,18 +110,11 @@ impl SubscribeOutput {
         self.subscription_arn.as_deref()
     }
 }
-impl std::fmt::Debug for SubscribeOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubscribeOutput");
-        formatter.field("subscription_arn", &self.subscription_arn);
-        formatter.finish()
-    }
-}
 /// See [`SubscribeOutput`](crate::output::SubscribeOutput).
 pub mod subscribe_output {
 
     /// A builder for [`SubscribeOutput`](crate::output::SubscribeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_arn: std::option::Option<std::string::String>,
     }
@@ -180,19 +149,13 @@ impl SubscribeOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetTopicAttributesOutput {}
-impl std::fmt::Debug for SetTopicAttributesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetTopicAttributesOutput");
-        formatter.finish()
-    }
-}
 /// See [`SetTopicAttributesOutput`](crate::output::SetTopicAttributesOutput).
 pub mod set_topic_attributes_output {
 
     /// A builder for [`SetTopicAttributesOutput`](crate::output::SetTopicAttributesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SetTopicAttributesOutput`](crate::output::SetTopicAttributesOutput).
@@ -210,19 +173,13 @@ impl SetTopicAttributesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetSubscriptionAttributesOutput {}
-impl std::fmt::Debug for SetSubscriptionAttributesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetSubscriptionAttributesOutput");
-        formatter.finish()
-    }
-}
 /// See [`SetSubscriptionAttributesOutput`](crate::output::SetSubscriptionAttributesOutput).
 pub mod set_subscription_attributes_output {
 
     /// A builder for [`SetSubscriptionAttributesOutput`](crate::output::SetSubscriptionAttributesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SetSubscriptionAttributesOutput`](crate::output::SetSubscriptionAttributesOutput).
@@ -240,19 +197,13 @@ impl SetSubscriptionAttributesOutput {
 
 /// <p>The response for the SetSMSAttributes action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetSmsAttributesOutput {}
-impl std::fmt::Debug for SetSmsAttributesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetSmsAttributesOutput");
-        formatter.finish()
-    }
-}
 /// See [`SetSmsAttributesOutput`](crate::output::SetSmsAttributesOutput).
 pub mod set_sms_attributes_output {
 
     /// A builder for [`SetSmsAttributesOutput`](crate::output::SetSmsAttributesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SetSmsAttributesOutput`](crate::output::SetSmsAttributesOutput).
@@ -270,19 +221,13 @@ impl SetSmsAttributesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetPlatformApplicationAttributesOutput {}
-impl std::fmt::Debug for SetPlatformApplicationAttributesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetPlatformApplicationAttributesOutput");
-        formatter.finish()
-    }
-}
 /// See [`SetPlatformApplicationAttributesOutput`](crate::output::SetPlatformApplicationAttributesOutput).
 pub mod set_platform_application_attributes_output {
 
     /// A builder for [`SetPlatformApplicationAttributesOutput`](crate::output::SetPlatformApplicationAttributesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SetPlatformApplicationAttributesOutput`](crate::output::SetPlatformApplicationAttributesOutput).
@@ -300,19 +245,13 @@ impl SetPlatformApplicationAttributesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetEndpointAttributesOutput {}
-impl std::fmt::Debug for SetEndpointAttributesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetEndpointAttributesOutput");
-        formatter.finish()
-    }
-}
 /// See [`SetEndpointAttributesOutput`](crate::output::SetEndpointAttributesOutput).
 pub mod set_endpoint_attributes_output {
 
     /// A builder for [`SetEndpointAttributesOutput`](crate::output::SetEndpointAttributesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SetEndpointAttributesOutput`](crate::output::SetEndpointAttributesOutput).
@@ -330,19 +269,13 @@ impl SetEndpointAttributesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemovePermissionOutput {}
-impl std::fmt::Debug for RemovePermissionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemovePermissionOutput");
-        formatter.finish()
-    }
-}
 /// See [`RemovePermissionOutput`](crate::output::RemovePermissionOutput).
 pub mod remove_permission_output {
 
     /// A builder for [`RemovePermissionOutput`](crate::output::RemovePermissionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RemovePermissionOutput`](crate::output::RemovePermissionOutput).
@@ -360,19 +293,13 @@ impl RemovePermissionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutDataProtectionPolicyOutput {}
-impl std::fmt::Debug for PutDataProtectionPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutDataProtectionPolicyOutput");
-        formatter.finish()
-    }
-}
 /// See [`PutDataProtectionPolicyOutput`](crate::output::PutDataProtectionPolicyOutput).
 pub mod put_data_protection_policy_output {
 
     /// A builder for [`PutDataProtectionPolicyOutput`](crate::output::PutDataProtectionPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PutDataProtectionPolicyOutput`](crate::output::PutDataProtectionPolicyOutput).
@@ -390,7 +317,7 @@ impl PutDataProtectionPolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublishBatchOutput {
     /// <p>A list of successful <code>PublishBatch</code> responses.</p>
     #[doc(hidden)]
@@ -409,19 +336,11 @@ impl PublishBatchOutput {
         self.failed.as_deref()
     }
 }
-impl std::fmt::Debug for PublishBatchOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublishBatchOutput");
-        formatter.field("successful", &self.successful);
-        formatter.field("failed", &self.failed);
-        formatter.finish()
-    }
-}
 /// See [`PublishBatchOutput`](crate::output::PublishBatchOutput).
 pub mod publish_batch_output {
 
     /// A builder for [`PublishBatchOutput`](crate::output::PublishBatchOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) successful:
             std::option::Option<std::vec::Vec<crate::model::PublishBatchResultEntry>>,
@@ -484,7 +403,7 @@ impl PublishBatchOutput {
 
 /// <p>Response for Publish action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublishOutput {
     /// <p>Unique identifier assigned to the published message.</p>
     /// <p>Length Constraint: Maximum 100 characters</p>
@@ -507,19 +426,11 @@ impl PublishOutput {
         self.sequence_number.as_deref()
     }
 }
-impl std::fmt::Debug for PublishOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublishOutput");
-        formatter.field("message_id", &self.message_id);
-        formatter.field("sequence_number", &self.sequence_number);
-        formatter.finish()
-    }
-}
 /// See [`PublishOutput`](crate::output::PublishOutput).
 pub mod publish_output {
 
     /// A builder for [`PublishOutput`](crate::output::PublishOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
         pub(crate) sequence_number: std::option::Option<std::string::String>,
@@ -570,19 +481,13 @@ impl PublishOutput {
 
 /// <p>The response for the OptInPhoneNumber action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OptInPhoneNumberOutput {}
-impl std::fmt::Debug for OptInPhoneNumberOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OptInPhoneNumberOutput");
-        formatter.finish()
-    }
-}
 /// See [`OptInPhoneNumberOutput`](crate::output::OptInPhoneNumberOutput).
 pub mod opt_in_phone_number_output {
 
     /// A builder for [`OptInPhoneNumberOutput`](crate::output::OptInPhoneNumberOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`OptInPhoneNumberOutput`](crate::output::OptInPhoneNumberOutput).
@@ -600,7 +505,7 @@ impl OptInPhoneNumberOutput {
 
 /// <p>Response for ListTopics action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTopicsOutput {
     /// <p>A list of topic ARNs.</p>
     #[doc(hidden)]
@@ -619,19 +524,11 @@ impl ListTopicsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTopicsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTopicsOutput");
-        formatter.field("topics", &self.topics);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListTopicsOutput`](crate::output::ListTopicsOutput).
 pub mod list_topics_output {
 
     /// A builder for [`ListTopicsOutput`](crate::output::ListTopicsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topics: std::option::Option<std::vec::Vec<crate::model::Topic>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -684,7 +581,7 @@ impl ListTopicsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags associated with the specified topic.</p>
     #[doc(hidden)]
@@ -696,18 +593,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceOutput");
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -746,7 +636,7 @@ impl ListTagsForResourceOutput {
 
 /// <p>Response for ListSubscriptionsByTopic action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSubscriptionsByTopicOutput {
     /// <p>A list of subscriptions.</p>
     #[doc(hidden)]
@@ -765,19 +655,11 @@ impl ListSubscriptionsByTopicOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListSubscriptionsByTopicOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSubscriptionsByTopicOutput");
-        formatter.field("subscriptions", &self.subscriptions);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListSubscriptionsByTopicOutput`](crate::output::ListSubscriptionsByTopicOutput).
 pub mod list_subscriptions_by_topic_output {
 
     /// A builder for [`ListSubscriptionsByTopicOutput`](crate::output::ListSubscriptionsByTopicOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscriptions: std::option::Option<std::vec::Vec<crate::model::Subscription>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -830,7 +712,7 @@ impl ListSubscriptionsByTopicOutput {
 
 /// <p>Response for ListSubscriptions action</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSubscriptionsOutput {
     /// <p>A list of subscriptions.</p>
     #[doc(hidden)]
@@ -849,19 +731,11 @@ impl ListSubscriptionsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListSubscriptionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSubscriptionsOutput");
-        formatter.field("subscriptions", &self.subscriptions);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListSubscriptionsOutput`](crate::output::ListSubscriptionsOutput).
 pub mod list_subscriptions_output {
 
     /// A builder for [`ListSubscriptionsOutput`](crate::output::ListSubscriptionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscriptions: std::option::Option<std::vec::Vec<crate::model::Subscription>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -914,7 +788,7 @@ impl ListSubscriptionsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSmsSandboxPhoneNumbersOutput {
     /// <p>A list of the calling account's pending and verified phone numbers.</p>
     #[doc(hidden)]
@@ -933,19 +807,11 @@ impl ListSmsSandboxPhoneNumbersOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListSmsSandboxPhoneNumbersOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSmsSandboxPhoneNumbersOutput");
-        formatter.field("phone_numbers", &self.phone_numbers);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListSmsSandboxPhoneNumbersOutput`](crate::output::ListSmsSandboxPhoneNumbersOutput).
 pub mod list_sms_sandbox_phone_numbers_output {
 
     /// A builder for [`ListSmsSandboxPhoneNumbersOutput`](crate::output::ListSmsSandboxPhoneNumbersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_numbers:
             std::option::Option<std::vec::Vec<crate::model::SmsSandboxPhoneNumber>>,
@@ -999,7 +865,7 @@ impl ListSmsSandboxPhoneNumbersOutput {
 
 /// <p>Response for ListPlatformApplications action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPlatformApplicationsOutput {
     /// <p>Platform applications returned when calling ListPlatformApplications action.</p>
     #[doc(hidden)]
@@ -1021,19 +887,11 @@ impl ListPlatformApplicationsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPlatformApplicationsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPlatformApplicationsOutput");
-        formatter.field("platform_applications", &self.platform_applications);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListPlatformApplicationsOutput`](crate::output::ListPlatformApplicationsOutput).
 pub mod list_platform_applications_output {
 
     /// A builder for [`ListPlatformApplicationsOutput`](crate::output::ListPlatformApplicationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) platform_applications:
             std::option::Option<std::vec::Vec<crate::model::PlatformApplication>>,
@@ -1087,7 +945,7 @@ impl ListPlatformApplicationsOutput {
 
 /// <p>The response from the <code>ListPhoneNumbersOptedOut</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPhoneNumbersOptedOutOutput {
     /// <p>A list of phone numbers that are opted out of receiving SMS messages. The list is paginated, and each page can contain up to 100 phone numbers.</p>
     #[doc(hidden)]
@@ -1106,19 +964,11 @@ impl ListPhoneNumbersOptedOutOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPhoneNumbersOptedOutOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPhoneNumbersOptedOutOutput");
-        formatter.field("phone_numbers", &self.phone_numbers);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListPhoneNumbersOptedOutOutput`](crate::output::ListPhoneNumbersOptedOutOutput).
 pub mod list_phone_numbers_opted_out_output {
 
     /// A builder for [`ListPhoneNumbersOptedOutOutput`](crate::output::ListPhoneNumbersOptedOutOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_numbers: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1171,7 +1021,7 @@ impl ListPhoneNumbersOptedOutOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOriginationNumbersOutput {
     /// <p>A <code>NextToken</code> string is returned when you call the <code>ListOriginationNumbers</code> operation if additional pages of records are available.</p>
     #[doc(hidden)]
@@ -1190,19 +1040,11 @@ impl ListOriginationNumbersOutput {
         self.phone_numbers.as_deref()
     }
 }
-impl std::fmt::Debug for ListOriginationNumbersOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOriginationNumbersOutput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("phone_numbers", &self.phone_numbers);
-        formatter.finish()
-    }
-}
 /// See [`ListOriginationNumbersOutput`](crate::output::ListOriginationNumbersOutput).
 pub mod list_origination_numbers_output {
 
     /// A builder for [`ListOriginationNumbersOutput`](crate::output::ListOriginationNumbersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) phone_numbers:
@@ -1256,7 +1098,7 @@ impl ListOriginationNumbersOutput {
 
 /// <p>Response for ListEndpointsByPlatformApplication action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEndpointsByPlatformApplicationOutput {
     /// <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
     #[doc(hidden)]
@@ -1275,19 +1117,11 @@ impl ListEndpointsByPlatformApplicationOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListEndpointsByPlatformApplicationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEndpointsByPlatformApplicationOutput");
-        formatter.field("endpoints", &self.endpoints);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListEndpointsByPlatformApplicationOutput`](crate::output::ListEndpointsByPlatformApplicationOutput).
 pub mod list_endpoints_by_platform_application_output {
 
     /// A builder for [`ListEndpointsByPlatformApplicationOutput`](crate::output::ListEndpointsByPlatformApplicationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1340,7 +1174,7 @@ impl ListEndpointsByPlatformApplicationOutput {
 
 /// <p>Response for GetTopicAttributes action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTopicAttributesOutput {
     /// <p>A map of the topic's attributes. Attributes in this map include the following:</p>
     /// <ul>
@@ -1404,18 +1238,11 @@ impl GetTopicAttributesOutput {
         self.attributes.as_ref()
     }
 }
-impl std::fmt::Debug for GetTopicAttributesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTopicAttributesOutput");
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
 /// See [`GetTopicAttributesOutput`](crate::output::GetTopicAttributesOutput).
 pub mod get_topic_attributes_output {
 
     /// A builder for [`GetTopicAttributesOutput`](crate::output::GetTopicAttributesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -1512,7 +1339,7 @@ impl GetTopicAttributesOutput {
 
 /// <p>Response for GetSubscriptionAttributes action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSubscriptionAttributesOutput {
     /// <p>A map of the subscription's attributes. Attributes in this map include the following:</p>
     /// <ul>
@@ -1568,18 +1395,11 @@ impl GetSubscriptionAttributesOutput {
         self.attributes.as_ref()
     }
 }
-impl std::fmt::Debug for GetSubscriptionAttributesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSubscriptionAttributesOutput");
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
 /// See [`GetSubscriptionAttributesOutput`](crate::output::GetSubscriptionAttributesOutput).
 pub mod get_subscription_attributes_output {
 
     /// A builder for [`GetSubscriptionAttributesOutput`](crate::output::GetSubscriptionAttributesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -1668,7 +1488,7 @@ impl GetSubscriptionAttributesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSmsSandboxAccountStatusOutput {
     /// <p>Indicates whether the calling Amazon Web Services account is in the SMS sandbox.</p>
     #[doc(hidden)]
@@ -1680,18 +1500,11 @@ impl GetSmsSandboxAccountStatusOutput {
         self.is_in_sandbox
     }
 }
-impl std::fmt::Debug for GetSmsSandboxAccountStatusOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSmsSandboxAccountStatusOutput");
-        formatter.field("is_in_sandbox", &self.is_in_sandbox);
-        formatter.finish()
-    }
-}
 /// See [`GetSmsSandboxAccountStatusOutput`](crate::output::GetSmsSandboxAccountStatusOutput).
 pub mod get_sms_sandbox_account_status_output {
 
     /// A builder for [`GetSmsSandboxAccountStatusOutput`](crate::output::GetSmsSandboxAccountStatusOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) is_in_sandbox: std::option::Option<bool>,
     }
@@ -1723,7 +1536,7 @@ impl GetSmsSandboxAccountStatusOutput {
 
 /// <p>The response from the <code>GetSMSAttributes</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSmsAttributesOutput {
     /// <p>The SMS attribute names and their values.</p>
     #[doc(hidden)]
@@ -1739,18 +1552,11 @@ impl GetSmsAttributesOutput {
         self.attributes.as_ref()
     }
 }
-impl std::fmt::Debug for GetSmsAttributesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSmsAttributesOutput");
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
 /// See [`GetSmsAttributesOutput`](crate::output::GetSmsAttributesOutput).
 pub mod get_sms_attributes_output {
 
     /// A builder for [`GetSmsAttributesOutput`](crate::output::GetSmsAttributesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -1799,7 +1605,7 @@ impl GetSmsAttributesOutput {
 
 /// <p>Response for GetPlatformApplicationAttributes action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPlatformApplicationAttributesOutput {
     /// <p>Attributes include the following:</p>
     /// <ul>
@@ -1833,18 +1639,11 @@ impl GetPlatformApplicationAttributesOutput {
         self.attributes.as_ref()
     }
 }
-impl std::fmt::Debug for GetPlatformApplicationAttributesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPlatformApplicationAttributesOutput");
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
 /// See [`GetPlatformApplicationAttributesOutput`](crate::output::GetPlatformApplicationAttributesOutput).
 pub mod get_platform_application_attributes_output {
 
     /// A builder for [`GetPlatformApplicationAttributesOutput`](crate::output::GetPlatformApplicationAttributesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -1911,7 +1710,7 @@ impl GetPlatformApplicationAttributesOutput {
 
 /// <p>Response from GetEndpointAttributes of the EndpointArn.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEndpointAttributesOutput {
     /// <p>Attributes include the following:</p>
     /// <ul>
@@ -1941,18 +1740,11 @@ impl GetEndpointAttributesOutput {
         self.attributes.as_ref()
     }
 }
-impl std::fmt::Debug for GetEndpointAttributesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEndpointAttributesOutput");
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
 /// See [`GetEndpointAttributesOutput`](crate::output::GetEndpointAttributesOutput).
 pub mod get_endpoint_attributes_output {
 
     /// A builder for [`GetEndpointAttributesOutput`](crate::output::GetEndpointAttributesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -2015,7 +1807,7 @@ impl GetEndpointAttributesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDataProtectionPolicyOutput {
     /// <p>Retrieves the <code>DataProtectionPolicy</code> in JSON string format.</p>
     #[doc(hidden)]
@@ -2027,18 +1819,11 @@ impl GetDataProtectionPolicyOutput {
         self.data_protection_policy.as_deref()
     }
 }
-impl std::fmt::Debug for GetDataProtectionPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDataProtectionPolicyOutput");
-        formatter.field("data_protection_policy", &self.data_protection_policy);
-        formatter.finish()
-    }
-}
 /// See [`GetDataProtectionPolicyOutput`](crate::output::GetDataProtectionPolicyOutput).
 pub mod get_data_protection_policy_output {
 
     /// A builder for [`GetDataProtectionPolicyOutput`](crate::output::GetDataProtectionPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_protection_policy: std::option::Option<std::string::String>,
     }
@@ -2073,19 +1858,13 @@ impl GetDataProtectionPolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTopicOutput {}
-impl std::fmt::Debug for DeleteTopicOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTopicOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteTopicOutput`](crate::output::DeleteTopicOutput).
 pub mod delete_topic_output {
 
     /// A builder for [`DeleteTopicOutput`](crate::output::DeleteTopicOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteTopicOutput`](crate::output::DeleteTopicOutput).
@@ -2103,19 +1882,13 @@ impl DeleteTopicOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSmsSandboxPhoneNumberOutput {}
-impl std::fmt::Debug for DeleteSmsSandboxPhoneNumberOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSmsSandboxPhoneNumberOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteSmsSandboxPhoneNumberOutput`](crate::output::DeleteSmsSandboxPhoneNumberOutput).
 pub mod delete_sms_sandbox_phone_number_output {
 
     /// A builder for [`DeleteSmsSandboxPhoneNumberOutput`](crate::output::DeleteSmsSandboxPhoneNumberOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSmsSandboxPhoneNumberOutput`](crate::output::DeleteSmsSandboxPhoneNumberOutput).
@@ -2133,19 +1906,13 @@ impl DeleteSmsSandboxPhoneNumberOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePlatformApplicationOutput {}
-impl std::fmt::Debug for DeletePlatformApplicationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePlatformApplicationOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeletePlatformApplicationOutput`](crate::output::DeletePlatformApplicationOutput).
 pub mod delete_platform_application_output {
 
     /// A builder for [`DeletePlatformApplicationOutput`](crate::output::DeletePlatformApplicationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeletePlatformApplicationOutput`](crate::output::DeletePlatformApplicationOutput).
@@ -2163,19 +1930,13 @@ impl DeletePlatformApplicationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEndpointOutput {}
-impl std::fmt::Debug for DeleteEndpointOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEndpointOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
 pub mod delete_endpoint_output {
 
     /// A builder for [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
@@ -2193,7 +1954,7 @@ impl DeleteEndpointOutput {
 
 /// <p>Response from CreateTopic action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTopicOutput {
     /// <p>The Amazon Resource Name (ARN) assigned to the created topic.</p>
     #[doc(hidden)]
@@ -2205,18 +1966,11 @@ impl CreateTopicOutput {
         self.topic_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CreateTopicOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTopicOutput");
-        formatter.field("topic_arn", &self.topic_arn);
-        formatter.finish()
-    }
-}
 /// See [`CreateTopicOutput`](crate::output::CreateTopicOutput).
 pub mod create_topic_output {
 
     /// A builder for [`CreateTopicOutput`](crate::output::CreateTopicOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic_arn: std::option::Option<std::string::String>,
     }
@@ -2248,19 +2002,13 @@ impl CreateTopicOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSmsSandboxPhoneNumberOutput {}
-impl std::fmt::Debug for CreateSmsSandboxPhoneNumberOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSmsSandboxPhoneNumberOutput");
-        formatter.finish()
-    }
-}
 /// See [`CreateSmsSandboxPhoneNumberOutput`](crate::output::CreateSmsSandboxPhoneNumberOutput).
 pub mod create_sms_sandbox_phone_number_output {
 
     /// A builder for [`CreateSmsSandboxPhoneNumberOutput`](crate::output::CreateSmsSandboxPhoneNumberOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CreateSmsSandboxPhoneNumberOutput`](crate::output::CreateSmsSandboxPhoneNumberOutput).
@@ -2278,7 +2026,7 @@ impl CreateSmsSandboxPhoneNumberOutput {
 
 /// <p>Response from CreateEndpoint action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePlatformEndpointOutput {
     /// <p>EndpointArn returned from CreateEndpoint action.</p>
     #[doc(hidden)]
@@ -2290,18 +2038,11 @@ impl CreatePlatformEndpointOutput {
         self.endpoint_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CreatePlatformEndpointOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePlatformEndpointOutput");
-        formatter.field("endpoint_arn", &self.endpoint_arn);
-        formatter.finish()
-    }
-}
 /// See [`CreatePlatformEndpointOutput`](crate::output::CreatePlatformEndpointOutput).
 pub mod create_platform_endpoint_output {
 
     /// A builder for [`CreatePlatformEndpointOutput`](crate::output::CreatePlatformEndpointOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_arn: std::option::Option<std::string::String>,
     }
@@ -2333,7 +2074,7 @@ impl CreatePlatformEndpointOutput {
 
 /// <p>Response from CreatePlatformApplication action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePlatformApplicationOutput {
     /// <p>PlatformApplicationArn is returned.</p>
     #[doc(hidden)]
@@ -2345,18 +2086,11 @@ impl CreatePlatformApplicationOutput {
         self.platform_application_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CreatePlatformApplicationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePlatformApplicationOutput");
-        formatter.field("platform_application_arn", &self.platform_application_arn);
-        formatter.finish()
-    }
-}
 /// See [`CreatePlatformApplicationOutput`](crate::output::CreatePlatformApplicationOutput).
 pub mod create_platform_application_output {
 
     /// A builder for [`CreatePlatformApplicationOutput`](crate::output::CreatePlatformApplicationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) platform_application_arn: std::option::Option<std::string::String>,
     }
@@ -2391,7 +2125,7 @@ impl CreatePlatformApplicationOutput {
 
 /// <p>Response for ConfirmSubscriptions action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfirmSubscriptionOutput {
     /// <p>The ARN of the created subscription.</p>
     #[doc(hidden)]
@@ -2403,18 +2137,11 @@ impl ConfirmSubscriptionOutput {
         self.subscription_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ConfirmSubscriptionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfirmSubscriptionOutput");
-        formatter.field("subscription_arn", &self.subscription_arn);
-        formatter.finish()
-    }
-}
 /// See [`ConfirmSubscriptionOutput`](crate::output::ConfirmSubscriptionOutput).
 pub mod confirm_subscription_output {
 
     /// A builder for [`ConfirmSubscriptionOutput`](crate::output::ConfirmSubscriptionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_arn: std::option::Option<std::string::String>,
     }
@@ -2449,7 +2176,7 @@ impl ConfirmSubscriptionOutput {
 
 /// <p>The response from the <code>CheckIfPhoneNumberIsOptedOut</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CheckIfPhoneNumberIsOptedOutOutput {
     /// <p>Indicates whether the phone number is opted out:</p>
     /// <ul>
@@ -2469,18 +2196,11 @@ impl CheckIfPhoneNumberIsOptedOutOutput {
         self.is_opted_out
     }
 }
-impl std::fmt::Debug for CheckIfPhoneNumberIsOptedOutOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CheckIfPhoneNumberIsOptedOutOutput");
-        formatter.field("is_opted_out", &self.is_opted_out);
-        formatter.finish()
-    }
-}
 /// See [`CheckIfPhoneNumberIsOptedOutOutput`](crate::output::CheckIfPhoneNumberIsOptedOutOutput).
 pub mod check_if_phone_number_is_opted_out_output {
 
     /// A builder for [`CheckIfPhoneNumberIsOptedOutOutput`](crate::output::CheckIfPhoneNumberIsOptedOutOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) is_opted_out: std::option::Option<bool>,
     }
@@ -2520,19 +2240,13 @@ impl CheckIfPhoneNumberIsOptedOutOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddPermissionOutput {}
-impl std::fmt::Debug for AddPermissionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddPermissionOutput");
-        formatter.finish()
-    }
-}
 /// See [`AddPermissionOutput`](crate::output::AddPermissionOutput).
 pub mod add_permission_output {
 
     /// A builder for [`AddPermissionOutput`](crate::output::AddPermissionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AddPermissionOutput`](crate::output::AddPermissionOutput).

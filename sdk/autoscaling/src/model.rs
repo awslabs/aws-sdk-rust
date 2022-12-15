@@ -2,7 +2,7 @@
 
 /// <p>Describes a mixed instances policy. A mixed instances policy contains the instance types that Amazon EC2 Auto Scaling can launch and other information that Amazon EC2 Auto Scaling can use to launch instances and help optimize your costs. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MixedInstancesPolicy {
     /// <p>One or more launch templates and the instance types (overrides) that are used to launch EC2 instances to fulfill On-Demand and Spot capacities.</p>
     #[doc(hidden)]
@@ -23,19 +23,11 @@ impl MixedInstancesPolicy {
         self.instances_distribution.as_ref()
     }
 }
-impl std::fmt::Debug for MixedInstancesPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MixedInstancesPolicy");
-        formatter.field("launch_template", &self.launch_template);
-        formatter.field("instances_distribution", &self.instances_distribution);
-        formatter.finish()
-    }
-}
 /// See [`MixedInstancesPolicy`](crate::model::MixedInstancesPolicy).
 pub mod mixed_instances_policy {
 
     /// A builder for [`MixedInstancesPolicy`](crate::model::MixedInstancesPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) launch_template: std::option::Option<crate::model::LaunchTemplate>,
         pub(crate) instances_distribution: std::option::Option<crate::model::InstancesDistribution>,
@@ -88,7 +80,7 @@ impl MixedInstancesPolicy {
 
 /// <p>Describes an instances distribution for an Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstancesDistribution {
     /// <p>The order of the launch template overrides to use in fulfilling On-Demand capacity. </p>
     /// <p>If you specify <code>lowest-price</code>, Amazon EC2 Auto Scaling uses price to determine the order, launching the lowest price first. </p>
@@ -165,29 +157,11 @@ impl InstancesDistribution {
         self.spot_max_price.as_deref()
     }
 }
-impl std::fmt::Debug for InstancesDistribution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstancesDistribution");
-        formatter.field(
-            "on_demand_allocation_strategy",
-            &self.on_demand_allocation_strategy,
-        );
-        formatter.field("on_demand_base_capacity", &self.on_demand_base_capacity);
-        formatter.field(
-            "on_demand_percentage_above_base_capacity",
-            &self.on_demand_percentage_above_base_capacity,
-        );
-        formatter.field("spot_allocation_strategy", &self.spot_allocation_strategy);
-        formatter.field("spot_instance_pools", &self.spot_instance_pools);
-        formatter.field("spot_max_price", &self.spot_max_price);
-        formatter.finish()
-    }
-}
 /// See [`InstancesDistribution`](crate::model::InstancesDistribution).
 pub mod instances_distribution {
 
     /// A builder for [`InstancesDistribution`](crate::model::InstancesDistribution).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) on_demand_allocation_strategy: std::option::Option<std::string::String>,
         pub(crate) on_demand_base_capacity: std::option::Option<i32>,
@@ -325,7 +299,7 @@ impl InstancesDistribution {
 
 /// <p>Describes a launch template and overrides. You specify these properties as part of a mixed instances policy. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LaunchTemplate {
     /// <p>The launch template to use.</p>
     #[doc(hidden)]
@@ -349,22 +323,11 @@ impl LaunchTemplate {
         self.overrides.as_deref()
     }
 }
-impl std::fmt::Debug for LaunchTemplate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LaunchTemplate");
-        formatter.field(
-            "launch_template_specification",
-            &self.launch_template_specification,
-        );
-        formatter.field("overrides", &self.overrides);
-        formatter.finish()
-    }
-}
 /// See [`LaunchTemplate`](crate::model::LaunchTemplate).
 pub mod launch_template {
 
     /// A builder for [`LaunchTemplate`](crate::model::LaunchTemplate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) launch_template_specification:
             std::option::Option<crate::model::LaunchTemplateSpecification>,
@@ -427,7 +390,7 @@ impl LaunchTemplate {
 
 /// <p>Describes an override for a launch template. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-configuring-overrides.html">Configuring overrides</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LaunchTemplateOverrides {
     /// <p>The instance type, such as <code>m3.xlarge</code>. You must use an instance type that is supported in your requested Region and Availability Zones. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     #[doc(hidden)]
@@ -465,24 +428,11 @@ impl LaunchTemplateOverrides {
         self.instance_requirements.as_ref()
     }
 }
-impl std::fmt::Debug for LaunchTemplateOverrides {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LaunchTemplateOverrides");
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("weighted_capacity", &self.weighted_capacity);
-        formatter.field(
-            "launch_template_specification",
-            &self.launch_template_specification,
-        );
-        formatter.field("instance_requirements", &self.instance_requirements);
-        formatter.finish()
-    }
-}
 /// See [`LaunchTemplateOverrides`](crate::model::LaunchTemplateOverrides).
 pub mod launch_template_overrides {
 
     /// A builder for [`LaunchTemplateOverrides`](crate::model::LaunchTemplateOverrides).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_type: std::option::Option<std::string::String>,
         pub(crate) weighted_capacity: std::option::Option<std::string::String>,
@@ -567,7 +517,7 @@ impl LaunchTemplateOverrides {
 /// <p>When you specify multiple parameters, you get instance types that satisfy all of the specified parameters. If you specify multiple values for a parameter, you get instance types that satisfy any of the specified values.</p>
 /// <p>Represents requirements for the types of instances that can be launched. You must specify <code>VCpuCount</code> and <code>MemoryMiB</code>, but all other parameters are optional. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating an Auto Scaling group using attribute-based instance type selection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceRequirements {
     /// <p>The minimum and maximum number of vCPUs for an instance type.</p>
     #[doc(hidden)]
@@ -852,50 +802,11 @@ impl InstanceRequirements {
         self.accelerator_total_memory_mi_b.as_ref()
     }
 }
-impl std::fmt::Debug for InstanceRequirements {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceRequirements");
-        formatter.field("v_cpu_count", &self.v_cpu_count);
-        formatter.field("memory_mi_b", &self.memory_mi_b);
-        formatter.field("cpu_manufacturers", &self.cpu_manufacturers);
-        formatter.field("memory_gi_b_per_v_cpu", &self.memory_gi_b_per_v_cpu);
-        formatter.field("excluded_instance_types", &self.excluded_instance_types);
-        formatter.field("instance_generations", &self.instance_generations);
-        formatter.field(
-            "spot_max_price_percentage_over_lowest_price",
-            &self.spot_max_price_percentage_over_lowest_price,
-        );
-        formatter.field(
-            "on_demand_max_price_percentage_over_lowest_price",
-            &self.on_demand_max_price_percentage_over_lowest_price,
-        );
-        formatter.field("bare_metal", &self.bare_metal);
-        formatter.field("burstable_performance", &self.burstable_performance);
-        formatter.field("require_hibernate_support", &self.require_hibernate_support);
-        formatter.field("network_interface_count", &self.network_interface_count);
-        formatter.field("local_storage", &self.local_storage);
-        formatter.field("local_storage_types", &self.local_storage_types);
-        formatter.field("total_local_storage_gb", &self.total_local_storage_gb);
-        formatter.field(
-            "baseline_ebs_bandwidth_mbps",
-            &self.baseline_ebs_bandwidth_mbps,
-        );
-        formatter.field("accelerator_types", &self.accelerator_types);
-        formatter.field("accelerator_count", &self.accelerator_count);
-        formatter.field("accelerator_manufacturers", &self.accelerator_manufacturers);
-        formatter.field("accelerator_names", &self.accelerator_names);
-        formatter.field(
-            "accelerator_total_memory_mi_b",
-            &self.accelerator_total_memory_mi_b,
-        );
-        formatter.finish()
-    }
-}
 /// See [`InstanceRequirements`](crate::model::InstanceRequirements).
 pub mod instance_requirements {
 
     /// A builder for [`InstanceRequirements`](crate::model::InstanceRequirements).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) v_cpu_count: std::option::Option<crate::model::VCpuCountRequest>,
         pub(crate) memory_mi_b: std::option::Option<crate::model::MemoryMiBRequest>,
@@ -1416,7 +1327,7 @@ impl InstanceRequirements {
 
 /// <p>Specifies the minimum and maximum for the <code>AcceleratorTotalMemoryMiB</code> object when you specify <code>InstanceRequirements</code> for an Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceleratorTotalMemoryMiBRequest {
     /// <p>The memory minimum in MiB.</p>
     #[doc(hidden)]
@@ -1435,19 +1346,11 @@ impl AcceleratorTotalMemoryMiBRequest {
         self.max
     }
 }
-impl std::fmt::Debug for AcceleratorTotalMemoryMiBRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceleratorTotalMemoryMiBRequest");
-        formatter.field("min", &self.min);
-        formatter.field("max", &self.max);
-        formatter.finish()
-    }
-}
 /// See [`AcceleratorTotalMemoryMiBRequest`](crate::model::AcceleratorTotalMemoryMiBRequest).
 pub mod accelerator_total_memory_mi_b_request {
 
     /// A builder for [`AcceleratorTotalMemoryMiBRequest`](crate::model::AcceleratorTotalMemoryMiBRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) min: std::option::Option<i32>,
         pub(crate) max: std::option::Option<i32>,
@@ -1489,6 +1392,46 @@ impl AcceleratorTotalMemoryMiBRequest {
     }
 }
 
+/// When writing a match expression against `AcceleratorName`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let acceleratorname = unimplemented!();
+/// match acceleratorname {
+///     AcceleratorName::A100 => { /* ... */ },
+///     AcceleratorName::K80 => { /* ... */ },
+///     AcceleratorName::M60 => { /* ... */ },
+///     AcceleratorName::RadeonProV520 => { /* ... */ },
+///     AcceleratorName::T4 => { /* ... */ },
+///     AcceleratorName::V100 => { /* ... */ },
+///     AcceleratorName::Vu9P => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `acceleratorname` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `AcceleratorName::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `AcceleratorName::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `AcceleratorName::NewFeature` is defined.
+/// Specifically, when `acceleratorname` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `AcceleratorName::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1515,8 +1458,8 @@ pub enum AcceleratorName {
     V100,
     #[allow(missing_docs)] // documentation missing in model
     Vu9P,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AcceleratorName {
     fn from(s: &str) -> Self {
@@ -1528,7 +1471,7 @@ impl std::convert::From<&str> for AcceleratorName {
             "t4" => AcceleratorName::T4,
             "v100" => AcceleratorName::V100,
             "vu9p" => AcceleratorName::Vu9P,
-            other => AcceleratorName::Unknown(other.to_owned()),
+            other => AcceleratorName::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1550,11 +1493,11 @@ impl AcceleratorName {
             AcceleratorName::T4 => "t4",
             AcceleratorName::V100 => "v100",
             AcceleratorName::Vu9P => "vu9p",
-            AcceleratorName::Unknown(s) => s.as_ref(),
+            AcceleratorName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "a100",
             "k80",
@@ -1572,6 +1515,43 @@ impl AsRef<str> for AcceleratorName {
     }
 }
 
+/// When writing a match expression against `AcceleratorManufacturer`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let acceleratormanufacturer = unimplemented!();
+/// match acceleratormanufacturer {
+///     AcceleratorManufacturer::AmazonWebServices => { /* ... */ },
+///     AcceleratorManufacturer::Amd => { /* ... */ },
+///     AcceleratorManufacturer::Nvidia => { /* ... */ },
+///     AcceleratorManufacturer::Xilinx => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `acceleratormanufacturer` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `AcceleratorManufacturer::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `AcceleratorManufacturer::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `AcceleratorManufacturer::NewFeature` is defined.
+/// Specifically, when `acceleratormanufacturer` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `AcceleratorManufacturer::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1592,8 +1572,8 @@ pub enum AcceleratorManufacturer {
     Nvidia,
     #[allow(missing_docs)] // documentation missing in model
     Xilinx,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AcceleratorManufacturer {
     fn from(s: &str) -> Self {
@@ -1602,7 +1582,9 @@ impl std::convert::From<&str> for AcceleratorManufacturer {
             "amd" => AcceleratorManufacturer::Amd,
             "nvidia" => AcceleratorManufacturer::Nvidia,
             "xilinx" => AcceleratorManufacturer::Xilinx,
-            other => AcceleratorManufacturer::Unknown(other.to_owned()),
+            other => AcceleratorManufacturer::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -1621,11 +1603,11 @@ impl AcceleratorManufacturer {
             AcceleratorManufacturer::Amd => "amd",
             AcceleratorManufacturer::Nvidia => "nvidia",
             AcceleratorManufacturer::Xilinx => "xilinx",
-            AcceleratorManufacturer::Unknown(s) => s.as_ref(),
+            AcceleratorManufacturer::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["amazon-web-services", "amd", "nvidia", "xilinx"]
     }
 }
@@ -1637,7 +1619,7 @@ impl AsRef<str> for AcceleratorManufacturer {
 
 /// <p>Specifies the minimum and maximum for the <code>AcceleratorCount</code> object when you specify <code>InstanceRequirements</code> for an Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceleratorCountRequest {
     /// <p>The minimum value.</p>
     #[doc(hidden)]
@@ -1656,19 +1638,11 @@ impl AcceleratorCountRequest {
         self.max
     }
 }
-impl std::fmt::Debug for AcceleratorCountRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceleratorCountRequest");
-        formatter.field("min", &self.min);
-        formatter.field("max", &self.max);
-        formatter.finish()
-    }
-}
 /// See [`AcceleratorCountRequest`](crate::model::AcceleratorCountRequest).
 pub mod accelerator_count_request {
 
     /// A builder for [`AcceleratorCountRequest`](crate::model::AcceleratorCountRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) min: std::option::Option<i32>,
         pub(crate) max: std::option::Option<i32>,
@@ -1710,6 +1684,42 @@ impl AcceleratorCountRequest {
     }
 }
 
+/// When writing a match expression against `AcceleratorType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let acceleratortype = unimplemented!();
+/// match acceleratortype {
+///     AcceleratorType::Fpga => { /* ... */ },
+///     AcceleratorType::Gpu => { /* ... */ },
+///     AcceleratorType::Inference => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `acceleratortype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `AcceleratorType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `AcceleratorType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `AcceleratorType::NewFeature` is defined.
+/// Specifically, when `acceleratortype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `AcceleratorType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1728,8 +1738,8 @@ pub enum AcceleratorType {
     Gpu,
     #[allow(missing_docs)] // documentation missing in model
     Inference,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AcceleratorType {
     fn from(s: &str) -> Self {
@@ -1737,7 +1747,7 @@ impl std::convert::From<&str> for AcceleratorType {
             "fpga" => AcceleratorType::Fpga,
             "gpu" => AcceleratorType::Gpu,
             "inference" => AcceleratorType::Inference,
-            other => AcceleratorType::Unknown(other.to_owned()),
+            other => AcceleratorType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1755,11 +1765,11 @@ impl AcceleratorType {
             AcceleratorType::Fpga => "fpga",
             AcceleratorType::Gpu => "gpu",
             AcceleratorType::Inference => "inference",
-            AcceleratorType::Unknown(s) => s.as_ref(),
+            AcceleratorType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["fpga", "gpu", "inference"]
     }
 }
@@ -1771,7 +1781,7 @@ impl AsRef<str> for AcceleratorType {
 
 /// <p>Specifies the minimum and maximum for the <code>BaselineEbsBandwidthMbps</code> object when you specify <code>InstanceRequirements</code> for an Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BaselineEbsBandwidthMbpsRequest {
     /// <p>The minimum value in Mbps.</p>
     #[doc(hidden)]
@@ -1790,19 +1800,11 @@ impl BaselineEbsBandwidthMbpsRequest {
         self.max
     }
 }
-impl std::fmt::Debug for BaselineEbsBandwidthMbpsRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BaselineEbsBandwidthMbpsRequest");
-        formatter.field("min", &self.min);
-        formatter.field("max", &self.max);
-        formatter.finish()
-    }
-}
 /// See [`BaselineEbsBandwidthMbpsRequest`](crate::model::BaselineEbsBandwidthMbpsRequest).
 pub mod baseline_ebs_bandwidth_mbps_request {
 
     /// A builder for [`BaselineEbsBandwidthMbpsRequest`](crate::model::BaselineEbsBandwidthMbpsRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) min: std::option::Option<i32>,
         pub(crate) max: std::option::Option<i32>,
@@ -1846,7 +1848,7 @@ impl BaselineEbsBandwidthMbpsRequest {
 
 /// <p>Specifies the minimum and maximum for the <code>TotalLocalStorageGB</code> object when you specify <code>InstanceRequirements</code> for an Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TotalLocalStorageGbRequest {
     /// <p>The storage minimum in GB.</p>
     #[doc(hidden)]
@@ -1865,19 +1867,11 @@ impl TotalLocalStorageGbRequest {
         self.max
     }
 }
-impl std::fmt::Debug for TotalLocalStorageGbRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TotalLocalStorageGbRequest");
-        formatter.field("min", &self.min);
-        formatter.field("max", &self.max);
-        formatter.finish()
-    }
-}
 /// See [`TotalLocalStorageGbRequest`](crate::model::TotalLocalStorageGbRequest).
 pub mod total_local_storage_gb_request {
 
     /// A builder for [`TotalLocalStorageGbRequest`](crate::model::TotalLocalStorageGbRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) min: std::option::Option<f64>,
         pub(crate) max: std::option::Option<f64>,
@@ -1919,6 +1913,41 @@ impl TotalLocalStorageGbRequest {
     }
 }
 
+/// When writing a match expression against `LocalStorageType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let localstoragetype = unimplemented!();
+/// match localstoragetype {
+///     LocalStorageType::Hdd => { /* ... */ },
+///     LocalStorageType::Ssd => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `localstoragetype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `LocalStorageType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `LocalStorageType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `LocalStorageType::NewFeature` is defined.
+/// Specifically, when `localstoragetype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `LocalStorageType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1935,15 +1964,15 @@ pub enum LocalStorageType {
     Hdd,
     #[allow(missing_docs)] // documentation missing in model
     Ssd,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for LocalStorageType {
     fn from(s: &str) -> Self {
         match s {
             "hdd" => LocalStorageType::Hdd,
             "ssd" => LocalStorageType::Ssd,
-            other => LocalStorageType::Unknown(other.to_owned()),
+            other => LocalStorageType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1960,11 +1989,11 @@ impl LocalStorageType {
         match self {
             LocalStorageType::Hdd => "hdd",
             LocalStorageType::Ssd => "ssd",
-            LocalStorageType::Unknown(s) => s.as_ref(),
+            LocalStorageType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["hdd", "ssd"]
     }
 }
@@ -1974,6 +2003,42 @@ impl AsRef<str> for LocalStorageType {
     }
 }
 
+/// When writing a match expression against `LocalStorage`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let localstorage = unimplemented!();
+/// match localstorage {
+///     LocalStorage::Excluded => { /* ... */ },
+///     LocalStorage::Included => { /* ... */ },
+///     LocalStorage::Required => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `localstorage` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `LocalStorage::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `LocalStorage::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `LocalStorage::NewFeature` is defined.
+/// Specifically, when `localstorage` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `LocalStorage::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1992,8 +2057,8 @@ pub enum LocalStorage {
     Included,
     #[allow(missing_docs)] // documentation missing in model
     Required,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for LocalStorage {
     fn from(s: &str) -> Self {
@@ -2001,7 +2066,7 @@ impl std::convert::From<&str> for LocalStorage {
             "excluded" => LocalStorage::Excluded,
             "included" => LocalStorage::Included,
             "required" => LocalStorage::Required,
-            other => LocalStorage::Unknown(other.to_owned()),
+            other => LocalStorage::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2019,11 +2084,11 @@ impl LocalStorage {
             LocalStorage::Excluded => "excluded",
             LocalStorage::Included => "included",
             LocalStorage::Required => "required",
-            LocalStorage::Unknown(s) => s.as_ref(),
+            LocalStorage::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["excluded", "included", "required"]
     }
 }
@@ -2035,7 +2100,7 @@ impl AsRef<str> for LocalStorage {
 
 /// <p>Specifies the minimum and maximum for the <code>NetworkInterfaceCount</code> object when you specify <code>InstanceRequirements</code> for an Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkInterfaceCountRequest {
     /// <p>The minimum number of network interfaces.</p>
     #[doc(hidden)]
@@ -2054,19 +2119,11 @@ impl NetworkInterfaceCountRequest {
         self.max
     }
 }
-impl std::fmt::Debug for NetworkInterfaceCountRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkInterfaceCountRequest");
-        formatter.field("min", &self.min);
-        formatter.field("max", &self.max);
-        formatter.finish()
-    }
-}
 /// See [`NetworkInterfaceCountRequest`](crate::model::NetworkInterfaceCountRequest).
 pub mod network_interface_count_request {
 
     /// A builder for [`NetworkInterfaceCountRequest`](crate::model::NetworkInterfaceCountRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) min: std::option::Option<i32>,
         pub(crate) max: std::option::Option<i32>,
@@ -2108,6 +2165,42 @@ impl NetworkInterfaceCountRequest {
     }
 }
 
+/// When writing a match expression against `BurstablePerformance`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let burstableperformance = unimplemented!();
+/// match burstableperformance {
+///     BurstablePerformance::Excluded => { /* ... */ },
+///     BurstablePerformance::Included => { /* ... */ },
+///     BurstablePerformance::Required => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `burstableperformance` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `BurstablePerformance::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `BurstablePerformance::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `BurstablePerformance::NewFeature` is defined.
+/// Specifically, when `burstableperformance` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `BurstablePerformance::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2126,8 +2219,8 @@ pub enum BurstablePerformance {
     Included,
     #[allow(missing_docs)] // documentation missing in model
     Required,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for BurstablePerformance {
     fn from(s: &str) -> Self {
@@ -2135,7 +2228,9 @@ impl std::convert::From<&str> for BurstablePerformance {
             "excluded" => BurstablePerformance::Excluded,
             "included" => BurstablePerformance::Included,
             "required" => BurstablePerformance::Required,
-            other => BurstablePerformance::Unknown(other.to_owned()),
+            other => {
+                BurstablePerformance::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -2153,11 +2248,11 @@ impl BurstablePerformance {
             BurstablePerformance::Excluded => "excluded",
             BurstablePerformance::Included => "included",
             BurstablePerformance::Required => "required",
-            BurstablePerformance::Unknown(s) => s.as_ref(),
+            BurstablePerformance::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["excluded", "included", "required"]
     }
 }
@@ -2167,6 +2262,42 @@ impl AsRef<str> for BurstablePerformance {
     }
 }
 
+/// When writing a match expression against `BareMetal`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let baremetal = unimplemented!();
+/// match baremetal {
+///     BareMetal::Excluded => { /* ... */ },
+///     BareMetal::Included => { /* ... */ },
+///     BareMetal::Required => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `baremetal` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `BareMetal::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `BareMetal::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `BareMetal::NewFeature` is defined.
+/// Specifically, when `baremetal` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `BareMetal::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2185,8 +2316,8 @@ pub enum BareMetal {
     Included,
     #[allow(missing_docs)] // documentation missing in model
     Required,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for BareMetal {
     fn from(s: &str) -> Self {
@@ -2194,7 +2325,7 @@ impl std::convert::From<&str> for BareMetal {
             "excluded" => BareMetal::Excluded,
             "included" => BareMetal::Included,
             "required" => BareMetal::Required,
-            other => BareMetal::Unknown(other.to_owned()),
+            other => BareMetal::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2212,11 +2343,11 @@ impl BareMetal {
             BareMetal::Excluded => "excluded",
             BareMetal::Included => "included",
             BareMetal::Required => "required",
-            BareMetal::Unknown(s) => s.as_ref(),
+            BareMetal::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["excluded", "included", "required"]
     }
 }
@@ -2226,6 +2357,41 @@ impl AsRef<str> for BareMetal {
     }
 }
 
+/// When writing a match expression against `InstanceGeneration`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let instancegeneration = unimplemented!();
+/// match instancegeneration {
+///     InstanceGeneration::Current => { /* ... */ },
+///     InstanceGeneration::Previous => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `instancegeneration` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `InstanceGeneration::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `InstanceGeneration::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `InstanceGeneration::NewFeature` is defined.
+/// Specifically, when `instancegeneration` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `InstanceGeneration::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2242,15 +2408,17 @@ pub enum InstanceGeneration {
     Current,
     #[allow(missing_docs)] // documentation missing in model
     Previous,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for InstanceGeneration {
     fn from(s: &str) -> Self {
         match s {
             "current" => InstanceGeneration::Current,
             "previous" => InstanceGeneration::Previous,
-            other => InstanceGeneration::Unknown(other.to_owned()),
+            other => {
+                InstanceGeneration::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -2267,11 +2435,11 @@ impl InstanceGeneration {
         match self {
             InstanceGeneration::Current => "current",
             InstanceGeneration::Previous => "previous",
-            InstanceGeneration::Unknown(s) => s.as_ref(),
+            InstanceGeneration::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["current", "previous"]
     }
 }
@@ -2283,7 +2451,7 @@ impl AsRef<str> for InstanceGeneration {
 
 /// <p>Specifies the minimum and maximum for the <code>MemoryGiBPerVCpu</code> object when you specify <code>InstanceRequirements</code> for an Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MemoryGiBPerVCpuRequest {
     /// <p>The memory minimum in GiB.</p>
     #[doc(hidden)]
@@ -2302,19 +2470,11 @@ impl MemoryGiBPerVCpuRequest {
         self.max
     }
 }
-impl std::fmt::Debug for MemoryGiBPerVCpuRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MemoryGiBPerVCpuRequest");
-        formatter.field("min", &self.min);
-        formatter.field("max", &self.max);
-        formatter.finish()
-    }
-}
 /// See [`MemoryGiBPerVCpuRequest`](crate::model::MemoryGiBPerVCpuRequest).
 pub mod memory_gi_b_per_v_cpu_request {
 
     /// A builder for [`MemoryGiBPerVCpuRequest`](crate::model::MemoryGiBPerVCpuRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) min: std::option::Option<f64>,
         pub(crate) max: std::option::Option<f64>,
@@ -2356,6 +2516,42 @@ impl MemoryGiBPerVCpuRequest {
     }
 }
 
+/// When writing a match expression against `CpuManufacturer`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let cpumanufacturer = unimplemented!();
+/// match cpumanufacturer {
+///     CpuManufacturer::AmazonWebServices => { /* ... */ },
+///     CpuManufacturer::Amd => { /* ... */ },
+///     CpuManufacturer::Intel => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `cpumanufacturer` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CpuManufacturer::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CpuManufacturer::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CpuManufacturer::NewFeature` is defined.
+/// Specifically, when `cpumanufacturer` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CpuManufacturer::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2374,8 +2570,8 @@ pub enum CpuManufacturer {
     Amd,
     #[allow(missing_docs)] // documentation missing in model
     Intel,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CpuManufacturer {
     fn from(s: &str) -> Self {
@@ -2383,7 +2579,7 @@ impl std::convert::From<&str> for CpuManufacturer {
             "amazon-web-services" => CpuManufacturer::AmazonWebServices,
             "amd" => CpuManufacturer::Amd,
             "intel" => CpuManufacturer::Intel,
-            other => CpuManufacturer::Unknown(other.to_owned()),
+            other => CpuManufacturer::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2401,11 +2597,11 @@ impl CpuManufacturer {
             CpuManufacturer::AmazonWebServices => "amazon-web-services",
             CpuManufacturer::Amd => "amd",
             CpuManufacturer::Intel => "intel",
-            CpuManufacturer::Unknown(s) => s.as_ref(),
+            CpuManufacturer::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["amazon-web-services", "amd", "intel"]
     }
 }
@@ -2417,7 +2613,7 @@ impl AsRef<str> for CpuManufacturer {
 
 /// <p>Specifies the minimum and maximum for the <code>MemoryMiB</code> object when you specify <code>InstanceRequirements</code> for an Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MemoryMiBRequest {
     /// <p>The memory minimum in MiB.</p>
     #[doc(hidden)]
@@ -2436,19 +2632,11 @@ impl MemoryMiBRequest {
         self.max
     }
 }
-impl std::fmt::Debug for MemoryMiBRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MemoryMiBRequest");
-        formatter.field("min", &self.min);
-        formatter.field("max", &self.max);
-        formatter.finish()
-    }
-}
 /// See [`MemoryMiBRequest`](crate::model::MemoryMiBRequest).
 pub mod memory_mi_b_request {
 
     /// A builder for [`MemoryMiBRequest`](crate::model::MemoryMiBRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) min: std::option::Option<i32>,
         pub(crate) max: std::option::Option<i32>,
@@ -2492,7 +2680,7 @@ impl MemoryMiBRequest {
 
 /// <p>Specifies the minimum and maximum for the <code>VCpuCount</code> object when you specify <code>InstanceRequirements</code> for an Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VCpuCountRequest {
     /// <p>The minimum number of vCPUs.</p>
     #[doc(hidden)]
@@ -2511,19 +2699,11 @@ impl VCpuCountRequest {
         self.max
     }
 }
-impl std::fmt::Debug for VCpuCountRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VCpuCountRequest");
-        formatter.field("min", &self.min);
-        formatter.field("max", &self.max);
-        formatter.finish()
-    }
-}
 /// See [`VCpuCountRequest`](crate::model::VCpuCountRequest).
 pub mod v_cpu_count_request {
 
     /// A builder for [`VCpuCountRequest`](crate::model::VCpuCountRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) min: std::option::Option<i32>,
         pub(crate) max: std::option::Option<i32>,
@@ -2567,7 +2747,7 @@ impl VCpuCountRequest {
 
 /// <p>Describes the launch template and the version of the launch template that Amazon EC2 Auto Scaling uses to launch Amazon EC2 instances. For more information about launch templates, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchTemplates.html">Launch templates</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LaunchTemplateSpecification {
     /// <p>The ID of the launch template. To get the template ID, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a> API operation. New launch templates can be created using the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a> API. </p>
     /// <p>Conditional: You must specify either a <code>LaunchTemplateId</code> or a <code>LaunchTemplateName</code>.</p>
@@ -2597,20 +2777,11 @@ impl LaunchTemplateSpecification {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for LaunchTemplateSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LaunchTemplateSpecification");
-        formatter.field("launch_template_id", &self.launch_template_id);
-        formatter.field("launch_template_name", &self.launch_template_name);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 /// See [`LaunchTemplateSpecification`](crate::model::LaunchTemplateSpecification).
 pub mod launch_template_specification {
 
     /// A builder for [`LaunchTemplateSpecification`](crate::model::LaunchTemplateSpecification).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) launch_template_id: std::option::Option<std::string::String>,
         pub(crate) launch_template_name: std::option::Option<std::string::String>,
@@ -2676,7 +2847,7 @@ impl LaunchTemplateSpecification {
 
 /// <p>Describes scaling activity, which is a long-running process that represents a change to your Auto Scaling group, such as changing its size or replacing an instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Activity {
     /// <p>The ID of the activity.</p>
     #[doc(hidden)]
@@ -2765,29 +2936,11 @@ impl Activity {
         self.auto_scaling_group_arn.as_deref()
     }
 }
-impl std::fmt::Debug for Activity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Activity");
-        formatter.field("activity_id", &self.activity_id);
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("description", &self.description);
-        formatter.field("cause", &self.cause);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("status_code", &self.status_code);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("progress", &self.progress);
-        formatter.field("details", &self.details);
-        formatter.field("auto_scaling_group_state", &self.auto_scaling_group_state);
-        formatter.field("auto_scaling_group_arn", &self.auto_scaling_group_arn);
-        formatter.finish()
-    }
-}
 /// See [`Activity`](crate::model::Activity).
 pub mod activity {
 
     /// A builder for [`Activity`](crate::model::Activity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activity_id: std::option::Option<std::string::String>,
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -2970,6 +3123,51 @@ impl Activity {
     }
 }
 
+/// When writing a match expression against `ScalingActivityStatusCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let scalingactivitystatuscode = unimplemented!();
+/// match scalingactivitystatuscode {
+///     ScalingActivityStatusCode::Cancelled => { /* ... */ },
+///     ScalingActivityStatusCode::Failed => { /* ... */ },
+///     ScalingActivityStatusCode::InProgress => { /* ... */ },
+///     ScalingActivityStatusCode::MidLifecycleAction => { /* ... */ },
+///     ScalingActivityStatusCode::PendingSpotBidPlacement => { /* ... */ },
+///     ScalingActivityStatusCode::PreInService => { /* ... */ },
+///     ScalingActivityStatusCode::Successful => { /* ... */ },
+///     ScalingActivityStatusCode::WaitingForElbConnectionDraining => { /* ... */ },
+///     ScalingActivityStatusCode::WaitingForInstanceId => { /* ... */ },
+///     ScalingActivityStatusCode::WaitingForInstanceWarmup => { /* ... */ },
+///     ScalingActivityStatusCode::WaitingForSpotInstanceId => { /* ... */ },
+///     ScalingActivityStatusCode::WaitingForSpotInstanceRequestId => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `scalingactivitystatuscode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ScalingActivityStatusCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ScalingActivityStatusCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ScalingActivityStatusCode::NewFeature` is defined.
+/// Specifically, when `scalingactivitystatuscode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ScalingActivityStatusCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3006,8 +3204,8 @@ pub enum ScalingActivityStatusCode {
     WaitingForSpotInstanceId,
     #[allow(missing_docs)] // documentation missing in model
     WaitingForSpotInstanceRequestId,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ScalingActivityStatusCode {
     fn from(s: &str) -> Self {
@@ -3028,7 +3226,9 @@ impl std::convert::From<&str> for ScalingActivityStatusCode {
             "WaitingForSpotInstanceRequestId" => {
                 ScalingActivityStatusCode::WaitingForSpotInstanceRequestId
             }
-            other => ScalingActivityStatusCode::Unknown(other.to_owned()),
+            other => ScalingActivityStatusCode::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -3059,11 +3259,11 @@ impl ScalingActivityStatusCode {
             ScalingActivityStatusCode::WaitingForSpotInstanceRequestId => {
                 "WaitingForSpotInstanceRequestId"
             }
-            ScalingActivityStatusCode::Unknown(s) => s.as_ref(),
+            ScalingActivityStatusCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Cancelled",
             "Failed",
@@ -3088,7 +3288,7 @@ impl AsRef<str> for ScalingActivityStatusCode {
 
 /// <p>Describes the preferences for an instance refresh.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RefreshPreferences {
     /// <p>The amount of capacity in the Auto Scaling group that must pass your group's health checks to allow the operation to continue. The value is expressed as a percentage of the desired capacity of the Auto Scaling group (rounded up to the nearest integer). The default is <code>90</code>.</p>
     /// <p>Setting the minimum healthy percentage to 100 percent limits the rate of replacement to one instance at a time. In contrast, setting it to 0 percent has the effect of replacing all instances at the same time. </p>
@@ -3138,22 +3338,11 @@ impl RefreshPreferences {
         self.skip_matching
     }
 }
-impl std::fmt::Debug for RefreshPreferences {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RefreshPreferences");
-        formatter.field("min_healthy_percentage", &self.min_healthy_percentage);
-        formatter.field("instance_warmup", &self.instance_warmup);
-        formatter.field("checkpoint_percentages", &self.checkpoint_percentages);
-        formatter.field("checkpoint_delay", &self.checkpoint_delay);
-        formatter.field("skip_matching", &self.skip_matching);
-        formatter.finish()
-    }
-}
 /// See [`RefreshPreferences`](crate::model::RefreshPreferences).
 pub mod refresh_preferences {
 
     /// A builder for [`RefreshPreferences`](crate::model::RefreshPreferences).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) min_healthy_percentage: std::option::Option<i32>,
         pub(crate) instance_warmup: std::option::Option<i32>,
@@ -3253,7 +3442,7 @@ impl RefreshPreferences {
 /// <p>Describes the desired configuration for an instance refresh. </p>
 /// <p>If you specify a desired configuration, you must specify either a <code>LaunchTemplate</code> or a <code>MixedInstancesPolicy</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DesiredConfiguration {
     /// <p>Describes the launch template and the version of the launch template that Amazon EC2 Auto Scaling uses to launch Amazon EC2 instances. For more information about launch templates, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchTemplates.html">Launch templates</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     #[doc(hidden)]
@@ -3276,19 +3465,11 @@ impl DesiredConfiguration {
         self.mixed_instances_policy.as_ref()
     }
 }
-impl std::fmt::Debug for DesiredConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DesiredConfiguration");
-        formatter.field("launch_template", &self.launch_template);
-        formatter.field("mixed_instances_policy", &self.mixed_instances_policy);
-        formatter.finish()
-    }
-}
 /// See [`DesiredConfiguration`](crate::model::DesiredConfiguration).
 pub mod desired_configuration {
 
     /// A builder for [`DesiredConfiguration`](crate::model::DesiredConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) launch_template: std::option::Option<crate::model::LaunchTemplateSpecification>,
         pub(crate) mixed_instances_policy: std::option::Option<crate::model::MixedInstancesPolicy>,
@@ -3336,6 +3517,40 @@ impl DesiredConfiguration {
     }
 }
 
+/// When writing a match expression against `RefreshStrategy`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let refreshstrategy = unimplemented!();
+/// match refreshstrategy {
+///     RefreshStrategy::Rolling => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `refreshstrategy` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RefreshStrategy::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RefreshStrategy::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RefreshStrategy::NewFeature` is defined.
+/// Specifically, when `refreshstrategy` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RefreshStrategy::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3350,14 +3565,14 @@ impl DesiredConfiguration {
 pub enum RefreshStrategy {
     #[allow(missing_docs)] // documentation missing in model
     Rolling,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for RefreshStrategy {
     fn from(s: &str) -> Self {
         match s {
             "Rolling" => RefreshStrategy::Rolling,
-            other => RefreshStrategy::Unknown(other.to_owned()),
+            other => RefreshStrategy::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -3373,11 +3588,11 @@ impl RefreshStrategy {
     pub fn as_str(&self) -> &str {
         match self {
             RefreshStrategy::Rolling => "Rolling",
-            RefreshStrategy::Unknown(s) => s.as_ref(),
+            RefreshStrategy::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Rolling"]
     }
 }
@@ -3390,7 +3605,7 @@ impl AsRef<str> for RefreshStrategy {
 /// <p>Describes an instance reuse policy for a warm pool. </p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-warm-pools.html">Warm pools for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceReusePolicy {
     /// <p>Specifies whether instances in the Auto Scaling group can be returned to the warm pool on scale in. </p>
     #[doc(hidden)]
@@ -3402,18 +3617,11 @@ impl InstanceReusePolicy {
         self.reuse_on_scale_in
     }
 }
-impl std::fmt::Debug for InstanceReusePolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceReusePolicy");
-        formatter.field("reuse_on_scale_in", &self.reuse_on_scale_in);
-        formatter.finish()
-    }
-}
 /// See [`InstanceReusePolicy`](crate::model::InstanceReusePolicy).
 pub mod instance_reuse_policy {
 
     /// A builder for [`InstanceReusePolicy`](crate::model::InstanceReusePolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reuse_on_scale_in: std::option::Option<bool>,
     }
@@ -3443,6 +3651,42 @@ impl InstanceReusePolicy {
     }
 }
 
+/// When writing a match expression against `WarmPoolState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let warmpoolstate = unimplemented!();
+/// match warmpoolstate {
+///     WarmPoolState::Hibernated => { /* ... */ },
+///     WarmPoolState::Running => { /* ... */ },
+///     WarmPoolState::Stopped => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `warmpoolstate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `WarmPoolState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `WarmPoolState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `WarmPoolState::NewFeature` is defined.
+/// Specifically, when `warmpoolstate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `WarmPoolState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3461,8 +3705,8 @@ pub enum WarmPoolState {
     Running,
     #[allow(missing_docs)] // documentation missing in model
     Stopped,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for WarmPoolState {
     fn from(s: &str) -> Self {
@@ -3470,7 +3714,7 @@ impl std::convert::From<&str> for WarmPoolState {
             "Hibernated" => WarmPoolState::Hibernated,
             "Running" => WarmPoolState::Running,
             "Stopped" => WarmPoolState::Stopped,
-            other => WarmPoolState::Unknown(other.to_owned()),
+            other => WarmPoolState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -3488,11 +3732,11 @@ impl WarmPoolState {
             WarmPoolState::Hibernated => "Hibernated",
             WarmPoolState::Running => "Running",
             WarmPoolState::Stopped => "Stopped",
-            WarmPoolState::Unknown(s) => s.as_ref(),
+            WarmPoolState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Hibernated", "Running", "Stopped"]
     }
 }
@@ -3504,7 +3748,7 @@ impl AsRef<str> for WarmPoolState {
 
 /// <p>Describes an alarm.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Alarm {
     /// <p>The name of the alarm.</p>
     #[doc(hidden)]
@@ -3523,19 +3767,11 @@ impl Alarm {
         self.alarm_arn.as_deref()
     }
 }
-impl std::fmt::Debug for Alarm {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Alarm");
-        formatter.field("alarm_name", &self.alarm_name);
-        formatter.field("alarm_arn", &self.alarm_arn);
-        formatter.finish()
-    }
-}
 /// See [`Alarm`](crate::model::Alarm).
 pub mod alarm {
 
     /// A builder for [`Alarm`](crate::model::Alarm).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alarm_name: std::option::Option<std::string::String>,
         pub(crate) alarm_arn: std::option::Option<std::string::String>,
@@ -3579,7 +3815,7 @@ impl Alarm {
 
 /// <p>Represents a predictive scaling policy configuration to use with Amazon EC2 Auto Scaling.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PredictiveScalingConfiguration {
     /// <p>This structure includes the metrics and target utilization to use for predictive scaling. </p>
     /// <p>This is an array, but we currently only support a single metric specification. That is, you can specify a target value and a single metric pair, or a target value and one scaling metric and one load metric.</p>
@@ -3643,25 +3879,11 @@ impl PredictiveScalingConfiguration {
         self.max_capacity_buffer
     }
 }
-impl std::fmt::Debug for PredictiveScalingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PredictiveScalingConfiguration");
-        formatter.field("metric_specifications", &self.metric_specifications);
-        formatter.field("mode", &self.mode);
-        formatter.field("scheduling_buffer_time", &self.scheduling_buffer_time);
-        formatter.field(
-            "max_capacity_breach_behavior",
-            &self.max_capacity_breach_behavior,
-        );
-        formatter.field("max_capacity_buffer", &self.max_capacity_buffer);
-        formatter.finish()
-    }
-}
 /// See [`PredictiveScalingConfiguration`](crate::model::PredictiveScalingConfiguration).
 pub mod predictive_scaling_configuration {
 
     /// A builder for [`PredictiveScalingConfiguration`](crate::model::PredictiveScalingConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_specifications:
             std::option::Option<std::vec::Vec<crate::model::PredictiveScalingMetricSpecification>>,
@@ -3782,6 +4004,41 @@ impl PredictiveScalingConfiguration {
     }
 }
 
+/// When writing a match expression against `PredictiveScalingMaxCapacityBreachBehavior`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let predictivescalingmaxcapacitybreachbehavior = unimplemented!();
+/// match predictivescalingmaxcapacitybreachbehavior {
+///     PredictiveScalingMaxCapacityBreachBehavior::HonorMaxCapacity => { /* ... */ },
+///     PredictiveScalingMaxCapacityBreachBehavior::IncreaseMaxCapacity => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `predictivescalingmaxcapacitybreachbehavior` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PredictiveScalingMaxCapacityBreachBehavior::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PredictiveScalingMaxCapacityBreachBehavior::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PredictiveScalingMaxCapacityBreachBehavior::NewFeature` is defined.
+/// Specifically, when `predictivescalingmaxcapacitybreachbehavior` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PredictiveScalingMaxCapacityBreachBehavior::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3798,8 +4055,8 @@ pub enum PredictiveScalingMaxCapacityBreachBehavior {
     HonorMaxCapacity,
     #[allow(missing_docs)] // documentation missing in model
     IncreaseMaxCapacity,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PredictiveScalingMaxCapacityBreachBehavior {
     fn from(s: &str) -> Self {
@@ -3808,7 +4065,9 @@ impl std::convert::From<&str> for PredictiveScalingMaxCapacityBreachBehavior {
             "IncreaseMaxCapacity" => {
                 PredictiveScalingMaxCapacityBreachBehavior::IncreaseMaxCapacity
             }
-            other => PredictiveScalingMaxCapacityBreachBehavior::Unknown(other.to_owned()),
+            other => PredictiveScalingMaxCapacityBreachBehavior::Unknown(
+                crate::types::UnknownVariantValue(other.to_owned()),
+            ),
         }
     }
 }
@@ -3827,11 +4086,11 @@ impl PredictiveScalingMaxCapacityBreachBehavior {
             PredictiveScalingMaxCapacityBreachBehavior::IncreaseMaxCapacity => {
                 "IncreaseMaxCapacity"
             }
-            PredictiveScalingMaxCapacityBreachBehavior::Unknown(s) => s.as_ref(),
+            PredictiveScalingMaxCapacityBreachBehavior::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HonorMaxCapacity", "IncreaseMaxCapacity"]
     }
 }
@@ -3841,6 +4100,41 @@ impl AsRef<str> for PredictiveScalingMaxCapacityBreachBehavior {
     }
 }
 
+/// When writing a match expression against `PredictiveScalingMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let predictivescalingmode = unimplemented!();
+/// match predictivescalingmode {
+///     PredictiveScalingMode::ForecastAndScale => { /* ... */ },
+///     PredictiveScalingMode::ForecastOnly => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `predictivescalingmode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PredictiveScalingMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PredictiveScalingMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PredictiveScalingMode::NewFeature` is defined.
+/// Specifically, when `predictivescalingmode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PredictiveScalingMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3857,15 +4151,17 @@ pub enum PredictiveScalingMode {
     ForecastAndScale,
     #[allow(missing_docs)] // documentation missing in model
     ForecastOnly,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PredictiveScalingMode {
     fn from(s: &str) -> Self {
         match s {
             "ForecastAndScale" => PredictiveScalingMode::ForecastAndScale,
             "ForecastOnly" => PredictiveScalingMode::ForecastOnly,
-            other => PredictiveScalingMode::Unknown(other.to_owned()),
+            other => {
+                PredictiveScalingMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -3882,11 +4178,11 @@ impl PredictiveScalingMode {
         match self {
             PredictiveScalingMode::ForecastAndScale => "ForecastAndScale",
             PredictiveScalingMode::ForecastOnly => "ForecastOnly",
-            PredictiveScalingMode::Unknown(s) => s.as_ref(),
+            PredictiveScalingMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ForecastAndScale", "ForecastOnly"]
     }
 }
@@ -3908,7 +4204,7 @@ impl AsRef<str> for PredictiveScalingMode {
 /// </ul>
 /// <p>For information about using custom metrics with predictive scaling, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/predictive-scaling-customized-metric-specification.html">Advanced predictive scaling policy configurations using custom metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PredictiveScalingMetricSpecification {
     /// <p>Specifies the target utilization.</p> <note>
     /// <p>Some metrics are based on a count instead of a percentage, such as the request count for an Application Load Balancer or the number of messages in an SQS queue. If the scaling policy specifies one of these metrics, specify the target utilization as the optimal average request or message count per instance during any one-minute interval. </p>
@@ -3984,42 +4280,11 @@ impl PredictiveScalingMetricSpecification {
         self.customized_capacity_metric_specification.as_ref()
     }
 }
-impl std::fmt::Debug for PredictiveScalingMetricSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PredictiveScalingMetricSpecification");
-        formatter.field("target_value", &self.target_value);
-        formatter.field(
-            "predefined_metric_pair_specification",
-            &self.predefined_metric_pair_specification,
-        );
-        formatter.field(
-            "predefined_scaling_metric_specification",
-            &self.predefined_scaling_metric_specification,
-        );
-        formatter.field(
-            "predefined_load_metric_specification",
-            &self.predefined_load_metric_specification,
-        );
-        formatter.field(
-            "customized_scaling_metric_specification",
-            &self.customized_scaling_metric_specification,
-        );
-        formatter.field(
-            "customized_load_metric_specification",
-            &self.customized_load_metric_specification,
-        );
-        formatter.field(
-            "customized_capacity_metric_specification",
-            &self.customized_capacity_metric_specification,
-        );
-        formatter.finish()
-    }
-}
 /// See [`PredictiveScalingMetricSpecification`](crate::model::PredictiveScalingMetricSpecification).
 pub mod predictive_scaling_metric_specification {
 
     /// A builder for [`PredictiveScalingMetricSpecification`](crate::model::PredictiveScalingMetricSpecification).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_value: std::option::Option<f64>,
         pub(crate) predefined_metric_pair_specification:
@@ -4172,7 +4437,7 @@ impl PredictiveScalingMetricSpecification {
 
 /// <p>Describes a customized capacity metric for a predictive scaling policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PredictiveScalingCustomizedCapacityMetric {
     /// <p>One or more metric data queries to provide the data points for a capacity metric. Use multiple metric data queries only if you are performing a math expression on returned data. </p>
     #[doc(hidden)]
@@ -4184,18 +4449,11 @@ impl PredictiveScalingCustomizedCapacityMetric {
         self.metric_data_queries.as_deref()
     }
 }
-impl std::fmt::Debug for PredictiveScalingCustomizedCapacityMetric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PredictiveScalingCustomizedCapacityMetric");
-        formatter.field("metric_data_queries", &self.metric_data_queries);
-        formatter.finish()
-    }
-}
 /// See [`PredictiveScalingCustomizedCapacityMetric`](crate::model::PredictiveScalingCustomizedCapacityMetric).
 pub mod predictive_scaling_customized_capacity_metric {
 
     /// A builder for [`PredictiveScalingCustomizedCapacityMetric`](crate::model::PredictiveScalingCustomizedCapacityMetric).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_data_queries:
             std::option::Option<std::vec::Vec<crate::model::MetricDataQuery>>,
@@ -4238,7 +4496,7 @@ impl PredictiveScalingCustomizedCapacityMetric {
 /// <p>The metric data to return. Also defines whether this call is returning data for one metric only, or whether it is performing a math expression on the values of returned metric statistics to create a new time series. A time series is a series of data points, each of which is associated with a timestamp.</p>
 /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/predictive-scaling-customized-metric-specification.html">Advanced predictive scaling policy configurations using custom metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricDataQuery {
     /// <p>A short name that identifies the object's results in the response. This name must be unique among all <code>MetricDataQuery</code> objects specified for a single scaling policy. If you are performing math expressions on this set of data, this name represents that data and can serve as a variable in the mathematical expression. The valid characters are letters, numbers, and underscores. The first character must be a lowercase letter. </p>
     #[doc(hidden)]
@@ -4286,22 +4544,11 @@ impl MetricDataQuery {
         self.return_data
     }
 }
-impl std::fmt::Debug for MetricDataQuery {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricDataQuery");
-        formatter.field("id", &self.id);
-        formatter.field("expression", &self.expression);
-        formatter.field("metric_stat", &self.metric_stat);
-        formatter.field("label", &self.label);
-        formatter.field("return_data", &self.return_data);
-        formatter.finish()
-    }
-}
 /// See [`MetricDataQuery`](crate::model::MetricDataQuery).
 pub mod metric_data_query {
 
     /// A builder for [`MetricDataQuery`](crate::model::MetricDataQuery).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) expression: std::option::Option<std::string::String>,
@@ -4393,7 +4640,7 @@ impl MetricDataQuery {
 /// <p>This structure defines the CloudWatch metric to return, along with the statistic, period, and unit.</p>
 /// <p>For more information about the CloudWatch terminology below, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch concepts</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricStat {
     /// <p>The CloudWatch metric to return, including the metric name, namespace, and dimensions. To get the exact metric name, namespace, and dimensions, inspect the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a> object that is returned by a call to <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
     #[doc(hidden)]
@@ -4421,20 +4668,11 @@ impl MetricStat {
         self.unit.as_deref()
     }
 }
-impl std::fmt::Debug for MetricStat {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricStat");
-        formatter.field("metric", &self.metric);
-        formatter.field("stat", &self.stat);
-        formatter.field("unit", &self.unit);
-        formatter.finish()
-    }
-}
 /// See [`MetricStat`](crate::model::MetricStat).
 pub mod metric_stat {
 
     /// A builder for [`MetricStat`](crate::model::MetricStat).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric: std::option::Option<crate::model::Metric>,
         pub(crate) stat: std::option::Option<std::string::String>,
@@ -4492,7 +4730,7 @@ impl MetricStat {
 
 /// <p>Represents a specific metric. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Metric {
     /// <p>The namespace of the metric. For more information, see the table in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html">Amazon Web Services services that publish CloudWatch metrics </a> in the <i>Amazon CloudWatch User Guide</i>.</p>
     #[doc(hidden)]
@@ -4520,20 +4758,11 @@ impl Metric {
         self.dimensions.as_deref()
     }
 }
-impl std::fmt::Debug for Metric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Metric");
-        formatter.field("namespace", &self.namespace);
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.finish()
-    }
-}
 /// See [`Metric`](crate::model::Metric).
 pub mod metric {
 
     /// A builder for [`Metric`](crate::model::Metric).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace: std::option::Option<std::string::String>,
         pub(crate) metric_name: std::option::Option<std::string::String>,
@@ -4600,7 +4829,7 @@ impl Metric {
 
 /// <p>Describes the dimension of a metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricDimension {
     /// <p>The name of the dimension.</p>
     #[doc(hidden)]
@@ -4619,19 +4848,11 @@ impl MetricDimension {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for MetricDimension {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricDimension");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`MetricDimension`](crate::model::MetricDimension).
 pub mod metric_dimension {
 
     /// A builder for [`MetricDimension`](crate::model::MetricDimension).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -4675,7 +4896,7 @@ impl MetricDimension {
 
 /// <p>Describes a custom load metric for a predictive scaling policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PredictiveScalingCustomizedLoadMetric {
     /// <p>One or more metric data queries to provide the data points for a load metric. Use multiple metric data queries only if you are performing a math expression on returned data. </p>
     #[doc(hidden)]
@@ -4687,18 +4908,11 @@ impl PredictiveScalingCustomizedLoadMetric {
         self.metric_data_queries.as_deref()
     }
 }
-impl std::fmt::Debug for PredictiveScalingCustomizedLoadMetric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PredictiveScalingCustomizedLoadMetric");
-        formatter.field("metric_data_queries", &self.metric_data_queries);
-        formatter.finish()
-    }
-}
 /// See [`PredictiveScalingCustomizedLoadMetric`](crate::model::PredictiveScalingCustomizedLoadMetric).
 pub mod predictive_scaling_customized_load_metric {
 
     /// A builder for [`PredictiveScalingCustomizedLoadMetric`](crate::model::PredictiveScalingCustomizedLoadMetric).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_data_queries:
             std::option::Option<std::vec::Vec<crate::model::MetricDataQuery>>,
@@ -4740,7 +4954,7 @@ impl PredictiveScalingCustomizedLoadMetric {
 
 /// <p>Describes a custom scaling metric for a predictive scaling policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PredictiveScalingCustomizedScalingMetric {
     /// <p>One or more metric data queries to provide the data points for a scaling metric. Use multiple metric data queries only if you are performing a math expression on returned data. </p>
     #[doc(hidden)]
@@ -4752,18 +4966,11 @@ impl PredictiveScalingCustomizedScalingMetric {
         self.metric_data_queries.as_deref()
     }
 }
-impl std::fmt::Debug for PredictiveScalingCustomizedScalingMetric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PredictiveScalingCustomizedScalingMetric");
-        formatter.field("metric_data_queries", &self.metric_data_queries);
-        formatter.finish()
-    }
-}
 /// See [`PredictiveScalingCustomizedScalingMetric`](crate::model::PredictiveScalingCustomizedScalingMetric).
 pub mod predictive_scaling_customized_scaling_metric {
 
     /// A builder for [`PredictiveScalingCustomizedScalingMetric`](crate::model::PredictiveScalingCustomizedScalingMetric).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_data_queries:
             std::option::Option<std::vec::Vec<crate::model::MetricDataQuery>>,
@@ -4806,7 +5013,7 @@ impl PredictiveScalingCustomizedScalingMetric {
 /// <p>Describes a load metric for a predictive scaling policy.</p>
 /// <p>When returned in the output of <code>DescribePolicies</code>, it indicates that a predictive scaling policy uses individually specified load and scaling metrics instead of a metric pair.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PredictiveScalingPredefinedLoadMetric {
     /// <p>The metric type.</p>
     #[doc(hidden)]
@@ -4863,19 +5070,11 @@ impl PredictiveScalingPredefinedLoadMetric {
         self.resource_label.as_deref()
     }
 }
-impl std::fmt::Debug for PredictiveScalingPredefinedLoadMetric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PredictiveScalingPredefinedLoadMetric");
-        formatter.field("predefined_metric_type", &self.predefined_metric_type);
-        formatter.field("resource_label", &self.resource_label);
-        formatter.finish()
-    }
-}
 /// See [`PredictiveScalingPredefinedLoadMetric`](crate::model::PredictiveScalingPredefinedLoadMetric).
 pub mod predictive_scaling_predefined_load_metric {
 
     /// A builder for [`PredictiveScalingPredefinedLoadMetric`](crate::model::PredictiveScalingPredefinedLoadMetric).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) predefined_metric_type:
             std::option::Option<crate::model::PredefinedLoadMetricType>,
@@ -4963,6 +5162,43 @@ impl PredictiveScalingPredefinedLoadMetric {
     }
 }
 
+/// When writing a match expression against `PredefinedLoadMetricType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let predefinedloadmetrictype = unimplemented!();
+/// match predefinedloadmetrictype {
+///     PredefinedLoadMetricType::AlbTargetGroupRequestCount => { /* ... */ },
+///     PredefinedLoadMetricType::AsgTotalCpuUtilization => { /* ... */ },
+///     PredefinedLoadMetricType::AsgTotalNetworkIn => { /* ... */ },
+///     PredefinedLoadMetricType::AsgTotalNetworkOut => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `predefinedloadmetrictype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PredefinedLoadMetricType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PredefinedLoadMetricType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PredefinedLoadMetricType::NewFeature` is defined.
+/// Specifically, when `predefinedloadmetrictype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PredefinedLoadMetricType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -4983,8 +5219,8 @@ pub enum PredefinedLoadMetricType {
     AsgTotalNetworkIn,
     #[allow(missing_docs)] // documentation missing in model
     AsgTotalNetworkOut,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PredefinedLoadMetricType {
     fn from(s: &str) -> Self {
@@ -4993,7 +5229,9 @@ impl std::convert::From<&str> for PredefinedLoadMetricType {
             "ASGTotalCPUUtilization" => PredefinedLoadMetricType::AsgTotalCpuUtilization,
             "ASGTotalNetworkIn" => PredefinedLoadMetricType::AsgTotalNetworkIn,
             "ASGTotalNetworkOut" => PredefinedLoadMetricType::AsgTotalNetworkOut,
-            other => PredefinedLoadMetricType::Unknown(other.to_owned()),
+            other => PredefinedLoadMetricType::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -5012,11 +5250,11 @@ impl PredefinedLoadMetricType {
             PredefinedLoadMetricType::AsgTotalCpuUtilization => "ASGTotalCPUUtilization",
             PredefinedLoadMetricType::AsgTotalNetworkIn => "ASGTotalNetworkIn",
             PredefinedLoadMetricType::AsgTotalNetworkOut => "ASGTotalNetworkOut",
-            PredefinedLoadMetricType::Unknown(s) => s.as_ref(),
+            PredefinedLoadMetricType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ALBTargetGroupRequestCount",
             "ASGTotalCPUUtilization",
@@ -5034,7 +5272,7 @@ impl AsRef<str> for PredefinedLoadMetricType {
 /// <p>Describes a scaling metric for a predictive scaling policy.</p>
 /// <p>When returned in the output of <code>DescribePolicies</code>, it indicates that a predictive scaling policy uses individually specified load and scaling metrics instead of a metric pair.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PredictiveScalingPredefinedScalingMetric {
     /// <p>The metric type.</p>
     #[doc(hidden)]
@@ -5091,19 +5329,11 @@ impl PredictiveScalingPredefinedScalingMetric {
         self.resource_label.as_deref()
     }
 }
-impl std::fmt::Debug for PredictiveScalingPredefinedScalingMetric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PredictiveScalingPredefinedScalingMetric");
-        formatter.field("predefined_metric_type", &self.predefined_metric_type);
-        formatter.field("resource_label", &self.resource_label);
-        formatter.finish()
-    }
-}
 /// See [`PredictiveScalingPredefinedScalingMetric`](crate::model::PredictiveScalingPredefinedScalingMetric).
 pub mod predictive_scaling_predefined_scaling_metric {
 
     /// A builder for [`PredictiveScalingPredefinedScalingMetric`](crate::model::PredictiveScalingPredefinedScalingMetric).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) predefined_metric_type:
             std::option::Option<crate::model::PredefinedScalingMetricType>,
@@ -5191,6 +5421,43 @@ impl PredictiveScalingPredefinedScalingMetric {
     }
 }
 
+/// When writing a match expression against `PredefinedScalingMetricType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let predefinedscalingmetrictype = unimplemented!();
+/// match predefinedscalingmetrictype {
+///     PredefinedScalingMetricType::AlbRequestCountPerTarget => { /* ... */ },
+///     PredefinedScalingMetricType::AsgAverageCpuUtilization => { /* ... */ },
+///     PredefinedScalingMetricType::AsgAverageNetworkIn => { /* ... */ },
+///     PredefinedScalingMetricType::AsgAverageNetworkOut => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `predefinedscalingmetrictype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PredefinedScalingMetricType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PredefinedScalingMetricType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PredefinedScalingMetricType::NewFeature` is defined.
+/// Specifically, when `predefinedscalingmetrictype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PredefinedScalingMetricType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -5211,8 +5478,8 @@ pub enum PredefinedScalingMetricType {
     AsgAverageNetworkIn,
     #[allow(missing_docs)] // documentation missing in model
     AsgAverageNetworkOut,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PredefinedScalingMetricType {
     fn from(s: &str) -> Self {
@@ -5221,7 +5488,9 @@ impl std::convert::From<&str> for PredefinedScalingMetricType {
             "ASGAverageCPUUtilization" => PredefinedScalingMetricType::AsgAverageCpuUtilization,
             "ASGAverageNetworkIn" => PredefinedScalingMetricType::AsgAverageNetworkIn,
             "ASGAverageNetworkOut" => PredefinedScalingMetricType::AsgAverageNetworkOut,
-            other => PredefinedScalingMetricType::Unknown(other.to_owned()),
+            other => PredefinedScalingMetricType::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -5240,11 +5509,11 @@ impl PredefinedScalingMetricType {
             PredefinedScalingMetricType::AsgAverageCpuUtilization => "ASGAverageCPUUtilization",
             PredefinedScalingMetricType::AsgAverageNetworkIn => "ASGAverageNetworkIn",
             PredefinedScalingMetricType::AsgAverageNetworkOut => "ASGAverageNetworkOut",
-            PredefinedScalingMetricType::Unknown(s) => s.as_ref(),
+            PredefinedScalingMetricType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ALBRequestCountPerTarget",
             "ASGAverageCPUUtilization",
@@ -5261,7 +5530,7 @@ impl AsRef<str> for PredefinedScalingMetricType {
 
 /// <p>Represents a metric pair for a predictive scaling policy. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PredictiveScalingPredefinedMetricPair {
     /// <p>Indicates which metrics to use. There are two different types of metrics for each metric type: one is a load metric and one is a scaling metric. For example, if the metric type is <code>ASGCPUUtilization</code>, the Auto Scaling group's total CPU metric is used as the load metric, and the average CPU metric is used for the scaling metric.</p>
     #[doc(hidden)]
@@ -5318,19 +5587,11 @@ impl PredictiveScalingPredefinedMetricPair {
         self.resource_label.as_deref()
     }
 }
-impl std::fmt::Debug for PredictiveScalingPredefinedMetricPair {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PredictiveScalingPredefinedMetricPair");
-        formatter.field("predefined_metric_type", &self.predefined_metric_type);
-        formatter.field("resource_label", &self.resource_label);
-        formatter.finish()
-    }
-}
 /// See [`PredictiveScalingPredefinedMetricPair`](crate::model::PredictiveScalingPredefinedMetricPair).
 pub mod predictive_scaling_predefined_metric_pair {
 
     /// A builder for [`PredictiveScalingPredefinedMetricPair`](crate::model::PredictiveScalingPredefinedMetricPair).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) predefined_metric_type:
             std::option::Option<crate::model::PredefinedMetricPairType>,
@@ -5418,6 +5679,43 @@ impl PredictiveScalingPredefinedMetricPair {
     }
 }
 
+/// When writing a match expression against `PredefinedMetricPairType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let predefinedmetricpairtype = unimplemented!();
+/// match predefinedmetricpairtype {
+///     PredefinedMetricPairType::AlbRequestCount => { /* ... */ },
+///     PredefinedMetricPairType::AsgcpuUtilization => { /* ... */ },
+///     PredefinedMetricPairType::AsgNetworkIn => { /* ... */ },
+///     PredefinedMetricPairType::AsgNetworkOut => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `predefinedmetricpairtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PredefinedMetricPairType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PredefinedMetricPairType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PredefinedMetricPairType::NewFeature` is defined.
+/// Specifically, when `predefinedmetricpairtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PredefinedMetricPairType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -5438,8 +5736,8 @@ pub enum PredefinedMetricPairType {
     AsgNetworkIn,
     #[allow(missing_docs)] // documentation missing in model
     AsgNetworkOut,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PredefinedMetricPairType {
     fn from(s: &str) -> Self {
@@ -5448,7 +5746,9 @@ impl std::convert::From<&str> for PredefinedMetricPairType {
             "ASGCPUUtilization" => PredefinedMetricPairType::AsgcpuUtilization,
             "ASGNetworkIn" => PredefinedMetricPairType::AsgNetworkIn,
             "ASGNetworkOut" => PredefinedMetricPairType::AsgNetworkOut,
-            other => PredefinedMetricPairType::Unknown(other.to_owned()),
+            other => PredefinedMetricPairType::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -5467,11 +5767,11 @@ impl PredefinedMetricPairType {
             PredefinedMetricPairType::AsgcpuUtilization => "ASGCPUUtilization",
             PredefinedMetricPairType::AsgNetworkIn => "ASGNetworkIn",
             PredefinedMetricPairType::AsgNetworkOut => "ASGNetworkOut",
-            PredefinedMetricPairType::Unknown(s) => s.as_ref(),
+            PredefinedMetricPairType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ALBRequestCount",
             "ASGCPUUtilization",
@@ -5488,7 +5788,7 @@ impl AsRef<str> for PredefinedMetricPairType {
 
 /// <p>Represents a target tracking scaling policy configuration to use with Amazon EC2 Auto Scaling.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetTrackingConfiguration {
     /// <p>A predefined metric. You must specify either a predefined metric or a customized metric.</p>
     #[doc(hidden)]
@@ -5531,27 +5831,11 @@ impl TargetTrackingConfiguration {
         self.disable_scale_in
     }
 }
-impl std::fmt::Debug for TargetTrackingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetTrackingConfiguration");
-        formatter.field(
-            "predefined_metric_specification",
-            &self.predefined_metric_specification,
-        );
-        formatter.field(
-            "customized_metric_specification",
-            &self.customized_metric_specification,
-        );
-        formatter.field("target_value", &self.target_value);
-        formatter.field("disable_scale_in", &self.disable_scale_in);
-        formatter.finish()
-    }
-}
 /// See [`TargetTrackingConfiguration`](crate::model::TargetTrackingConfiguration).
 pub mod target_tracking_configuration {
 
     /// A builder for [`TargetTrackingConfiguration`](crate::model::TargetTrackingConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) predefined_metric_specification:
             std::option::Option<crate::model::PredefinedMetricSpecification>,
@@ -5645,7 +5929,7 @@ impl TargetTrackingConfiguration {
 /// <p>Each individual service provides information about the metrics, namespace, and dimensions they use. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html">Amazon Web Services services that publish CloudWatch metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomizedMetricSpecification {
     /// <p>The name of the metric. To get the exact metric name, namespace, and dimensions, inspect the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a> object that is returned by a call to <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
     #[doc(hidden)]
@@ -5687,22 +5971,11 @@ impl CustomizedMetricSpecification {
         self.unit.as_deref()
     }
 }
-impl std::fmt::Debug for CustomizedMetricSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomizedMetricSpecification");
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("statistic", &self.statistic);
-        formatter.field("unit", &self.unit);
-        formatter.finish()
-    }
-}
 /// See [`CustomizedMetricSpecification`](crate::model::CustomizedMetricSpecification).
 pub mod customized_metric_specification {
 
     /// A builder for [`CustomizedMetricSpecification`](crate::model::CustomizedMetricSpecification).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_name: std::option::Option<std::string::String>,
         pub(crate) namespace: std::option::Option<std::string::String>,
@@ -5794,6 +6067,44 @@ impl CustomizedMetricSpecification {
     }
 }
 
+/// When writing a match expression against `MetricStatistic`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let metricstatistic = unimplemented!();
+/// match metricstatistic {
+///     MetricStatistic::Average => { /* ... */ },
+///     MetricStatistic::Maximum => { /* ... */ },
+///     MetricStatistic::Minimum => { /* ... */ },
+///     MetricStatistic::SampleCount => { /* ... */ },
+///     MetricStatistic::Sum => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `metricstatistic` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `MetricStatistic::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `MetricStatistic::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `MetricStatistic::NewFeature` is defined.
+/// Specifically, when `metricstatistic` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `MetricStatistic::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -5816,8 +6127,8 @@ pub enum MetricStatistic {
     SampleCount,
     #[allow(missing_docs)] // documentation missing in model
     Sum,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for MetricStatistic {
     fn from(s: &str) -> Self {
@@ -5827,7 +6138,7 @@ impl std::convert::From<&str> for MetricStatistic {
             "Minimum" => MetricStatistic::Minimum,
             "SampleCount" => MetricStatistic::SampleCount,
             "Sum" => MetricStatistic::Sum,
-            other => MetricStatistic::Unknown(other.to_owned()),
+            other => MetricStatistic::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -5847,11 +6158,11 @@ impl MetricStatistic {
             MetricStatistic::Minimum => "Minimum",
             MetricStatistic::SampleCount => "SampleCount",
             MetricStatistic::Sum => "Sum",
-            MetricStatistic::Unknown(s) => s.as_ref(),
+            MetricStatistic::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Average", "Maximum", "Minimum", "SampleCount", "Sum"]
     }
 }
@@ -5863,7 +6174,7 @@ impl AsRef<str> for MetricStatistic {
 
 /// <p>Represents a predefined metric for a target tracking scaling policy to use with Amazon EC2 Auto Scaling.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PredefinedMetricSpecification {
     /// <p>The metric type. The following predefined metrics are available:</p>
     /// <ul>
@@ -5930,19 +6241,11 @@ impl PredefinedMetricSpecification {
         self.resource_label.as_deref()
     }
 }
-impl std::fmt::Debug for PredefinedMetricSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PredefinedMetricSpecification");
-        formatter.field("predefined_metric_type", &self.predefined_metric_type);
-        formatter.field("resource_label", &self.resource_label);
-        formatter.finish()
-    }
-}
 /// See [`PredefinedMetricSpecification`](crate::model::PredefinedMetricSpecification).
 pub mod predefined_metric_specification {
 
     /// A builder for [`PredefinedMetricSpecification`](crate::model::PredefinedMetricSpecification).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) predefined_metric_type: std::option::Option<crate::model::MetricType>,
         pub(crate) resource_label: std::option::Option<std::string::String>,
@@ -6038,6 +6341,43 @@ impl PredefinedMetricSpecification {
     }
 }
 
+/// When writing a match expression against `MetricType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let metrictype = unimplemented!();
+/// match metrictype {
+///     MetricType::AlbRequestCountPerTarget => { /* ... */ },
+///     MetricType::AsgAverageCpuUtilization => { /* ... */ },
+///     MetricType::AsgAverageNetworkIn => { /* ... */ },
+///     MetricType::AsgAverageNetworkOut => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `metrictype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `MetricType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `MetricType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `MetricType::NewFeature` is defined.
+/// Specifically, when `metrictype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `MetricType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -6058,8 +6398,8 @@ pub enum MetricType {
     AsgAverageNetworkIn,
     #[allow(missing_docs)] // documentation missing in model
     AsgAverageNetworkOut,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for MetricType {
     fn from(s: &str) -> Self {
@@ -6068,7 +6408,7 @@ impl std::convert::From<&str> for MetricType {
             "ASGAverageCPUUtilization" => MetricType::AsgAverageCpuUtilization,
             "ASGAverageNetworkIn" => MetricType::AsgAverageNetworkIn,
             "ASGAverageNetworkOut" => MetricType::AsgAverageNetworkOut,
-            other => MetricType::Unknown(other.to_owned()),
+            other => MetricType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -6087,11 +6427,11 @@ impl MetricType {
             MetricType::AsgAverageCpuUtilization => "ASGAverageCPUUtilization",
             MetricType::AsgAverageNetworkIn => "ASGAverageNetworkIn",
             MetricType::AsgAverageNetworkOut => "ASGAverageNetworkOut",
-            MetricType::Unknown(s) => s.as_ref(),
+            MetricType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ALBRequestCountPerTarget",
             "ASGAverageCPUUtilization",
@@ -6121,7 +6461,7 @@ impl AsRef<str> for MetricType {
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-steps">Step adjustments</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StepAdjustment {
     /// <p>The lower bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is above the breach threshold, the lower bound is inclusive (the metric must be greater than or equal to the threshold plus the lower bound). Otherwise, it is exclusive (the metric must be greater than the threshold plus the lower bound). A null value indicates negative infinity.</p>
     #[doc(hidden)]
@@ -6151,26 +6491,11 @@ impl StepAdjustment {
         self.scaling_adjustment
     }
 }
-impl std::fmt::Debug for StepAdjustment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StepAdjustment");
-        formatter.field(
-            "metric_interval_lower_bound",
-            &self.metric_interval_lower_bound,
-        );
-        formatter.field(
-            "metric_interval_upper_bound",
-            &self.metric_interval_upper_bound,
-        );
-        formatter.field("scaling_adjustment", &self.scaling_adjustment);
-        formatter.finish()
-    }
-}
 /// See [`StepAdjustment`](crate::model::StepAdjustment).
 pub mod step_adjustment {
 
     /// A builder for [`StepAdjustment`](crate::model::StepAdjustment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_interval_lower_bound: std::option::Option<f64>,
         pub(crate) metric_interval_upper_bound: std::option::Option<f64>,
@@ -6230,7 +6555,7 @@ impl StepAdjustment {
 
 /// <p>A <code>GetPredictiveScalingForecast</code> call returns the capacity forecast for a predictive scaling policy. This structure includes the data points for that capacity forecast, along with the timestamps of those data points. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CapacityForecast {
     /// <p>The timestamps for the data points, in UTC format.</p>
     #[doc(hidden)]
@@ -6249,19 +6574,11 @@ impl CapacityForecast {
         self.values.as_deref()
     }
 }
-impl std::fmt::Debug for CapacityForecast {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CapacityForecast");
-        formatter.field("timestamps", &self.timestamps);
-        formatter.field("values", &self.values);
-        formatter.finish()
-    }
-}
 /// See [`CapacityForecast`](crate::model::CapacityForecast).
 pub mod capacity_forecast {
 
     /// A builder for [`CapacityForecast`](crate::model::CapacityForecast).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
         pub(crate) values: std::option::Option<std::vec::Vec<f64>>,
@@ -6320,7 +6637,7 @@ impl CapacityForecast {
 
 /// <p>A <code>GetPredictiveScalingForecast</code> call returns the load forecast for a predictive scaling policy. This structure includes the data points for that load forecast, along with the timestamps of those data points and the metric specification. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoadForecast {
     /// <p>The timestamps for the data points, in UTC format.</p>
     #[doc(hidden)]
@@ -6349,20 +6666,11 @@ impl LoadForecast {
         self.metric_specification.as_ref()
     }
 }
-impl std::fmt::Debug for LoadForecast {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoadForecast");
-        formatter.field("timestamps", &self.timestamps);
-        formatter.field("values", &self.values);
-        formatter.field("metric_specification", &self.metric_specification);
-        formatter.finish()
-    }
-}
 /// See [`LoadForecast`](crate::model::LoadForecast).
 pub mod load_forecast {
 
     /// A builder for [`LoadForecast`](crate::model::LoadForecast).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
         pub(crate) values: std::option::Option<std::vec::Vec<f64>>,
@@ -6440,7 +6748,7 @@ impl LoadForecast {
 
 /// <p>Describes an EC2 instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Instance {
     /// <p>The ID of the instance.</p>
     #[doc(hidden)]
@@ -6512,26 +6820,11 @@ impl Instance {
         self.weighted_capacity.as_deref()
     }
 }
-impl std::fmt::Debug for Instance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Instance");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("lifecycle_state", &self.lifecycle_state);
-        formatter.field("health_status", &self.health_status);
-        formatter.field("launch_configuration_name", &self.launch_configuration_name);
-        formatter.field("launch_template", &self.launch_template);
-        formatter.field("protected_from_scale_in", &self.protected_from_scale_in);
-        formatter.field("weighted_capacity", &self.weighted_capacity);
-        formatter.finish()
-    }
-}
 /// See [`Instance`](crate::model::Instance).
 pub mod instance {
 
     /// A builder for [`Instance`](crate::model::Instance).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
         pub(crate) instance_type: std::option::Option<std::string::String>,
@@ -6680,6 +6973,62 @@ impl Instance {
     }
 }
 
+/// When writing a match expression against `LifecycleState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let lifecyclestate = unimplemented!();
+/// match lifecyclestate {
+///     LifecycleState::Detached => { /* ... */ },
+///     LifecycleState::Detaching => { /* ... */ },
+///     LifecycleState::EnteringStandby => { /* ... */ },
+///     LifecycleState::InService => { /* ... */ },
+///     LifecycleState::Pending => { /* ... */ },
+///     LifecycleState::PendingProceed => { /* ... */ },
+///     LifecycleState::PendingWait => { /* ... */ },
+///     LifecycleState::Quarantined => { /* ... */ },
+///     LifecycleState::Standby => { /* ... */ },
+///     LifecycleState::Terminated => { /* ... */ },
+///     LifecycleState::Terminating => { /* ... */ },
+///     LifecycleState::TerminatingProceed => { /* ... */ },
+///     LifecycleState::TerminatingWait => { /* ... */ },
+///     LifecycleState::WarmedHibernated => { /* ... */ },
+///     LifecycleState::WarmedPending => { /* ... */ },
+///     LifecycleState::WarmedPendingProceed => { /* ... */ },
+///     LifecycleState::WarmedPendingWait => { /* ... */ },
+///     LifecycleState::WarmedRunning => { /* ... */ },
+///     LifecycleState::WarmedStopped => { /* ... */ },
+///     LifecycleState::WarmedTerminated => { /* ... */ },
+///     LifecycleState::WarmedTerminating => { /* ... */ },
+///     LifecycleState::WarmedTerminatingProceed => { /* ... */ },
+///     LifecycleState::WarmedTerminatingWait => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `lifecyclestate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `LifecycleState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `LifecycleState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `LifecycleState::NewFeature` is defined.
+/// Specifically, when `lifecyclestate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `LifecycleState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -6738,8 +7087,8 @@ pub enum LifecycleState {
     WarmedTerminatingProceed,
     #[allow(missing_docs)] // documentation missing in model
     WarmedTerminatingWait,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for LifecycleState {
     fn from(s: &str) -> Self {
@@ -6767,7 +7116,7 @@ impl std::convert::From<&str> for LifecycleState {
             "Warmed:Terminating" => LifecycleState::WarmedTerminating,
             "Warmed:Terminating:Proceed" => LifecycleState::WarmedTerminatingProceed,
             "Warmed:Terminating:Wait" => LifecycleState::WarmedTerminatingWait,
-            other => LifecycleState::Unknown(other.to_owned()),
+            other => LifecycleState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -6805,11 +7154,11 @@ impl LifecycleState {
             LifecycleState::WarmedTerminating => "Warmed:Terminating",
             LifecycleState::WarmedTerminatingProceed => "Warmed:Terminating:Proceed",
             LifecycleState::WarmedTerminatingWait => "Warmed:Terminating:Wait",
-            LifecycleState::Unknown(s) => s.as_ref(),
+            LifecycleState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Detached",
             "Detaching",
@@ -6845,7 +7194,7 @@ impl AsRef<str> for LifecycleState {
 
 /// <p>Describes a warm pool configuration. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WarmPoolConfiguration {
     /// <p>The maximum number of instances that are allowed to be in the warm pool or in any state except <code>Terminated</code> for the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -6885,25 +7234,11 @@ impl WarmPoolConfiguration {
         self.instance_reuse_policy.as_ref()
     }
 }
-impl std::fmt::Debug for WarmPoolConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WarmPoolConfiguration");
-        formatter.field(
-            "max_group_prepared_capacity",
-            &self.max_group_prepared_capacity,
-        );
-        formatter.field("min_size", &self.min_size);
-        formatter.field("pool_state", &self.pool_state);
-        formatter.field("status", &self.status);
-        formatter.field("instance_reuse_policy", &self.instance_reuse_policy);
-        formatter.finish()
-    }
-}
 /// See [`WarmPoolConfiguration`](crate::model::WarmPoolConfiguration).
 pub mod warm_pool_configuration {
 
     /// A builder for [`WarmPoolConfiguration`](crate::model::WarmPoolConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_group_prepared_capacity: std::option::Option<i32>,
         pub(crate) min_size: std::option::Option<i32>,
@@ -6990,6 +7325,40 @@ impl WarmPoolConfiguration {
     }
 }
 
+/// When writing a match expression against `WarmPoolStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let warmpoolstatus = unimplemented!();
+/// match warmpoolstatus {
+///     WarmPoolStatus::PendingDelete => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `warmpoolstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `WarmPoolStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `WarmPoolStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `WarmPoolStatus::NewFeature` is defined.
+/// Specifically, when `warmpoolstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `WarmPoolStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -7004,14 +7373,14 @@ impl WarmPoolConfiguration {
 pub enum WarmPoolStatus {
     #[allow(missing_docs)] // documentation missing in model
     PendingDelete,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for WarmPoolStatus {
     fn from(s: &str) -> Self {
         match s {
             "PendingDelete" => WarmPoolStatus::PendingDelete,
-            other => WarmPoolStatus::Unknown(other.to_owned()),
+            other => WarmPoolStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -7027,11 +7396,11 @@ impl WarmPoolStatus {
     pub fn as_str(&self) -> &str {
         match self {
             WarmPoolStatus::PendingDelete => "PendingDelete",
-            WarmPoolStatus::Unknown(s) => s.as_ref(),
+            WarmPoolStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PendingDelete"]
     }
 }
@@ -7043,7 +7412,7 @@ impl AsRef<str> for WarmPoolStatus {
 
 /// <p>Describes a tag for an Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagDescription {
     /// <p>The name of the group.</p>
     #[doc(hidden)]
@@ -7083,22 +7452,11 @@ impl TagDescription {
         self.propagate_at_launch
     }
 }
-impl std::fmt::Debug for TagDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagDescription");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.field("propagate_at_launch", &self.propagate_at_launch);
-        formatter.finish()
-    }
-}
 /// See [`TagDescription`](crate::model::TagDescription).
 pub mod tag_description {
 
     /// A builder for [`TagDescription`](crate::model::TagDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<std::string::String>,
@@ -7183,7 +7541,7 @@ impl TagDescription {
 /// <p>If you specify multiple filters, the filters are automatically logically joined with an <code>AND</code>, and the request returns only the results that match all of the specified filters. </p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-tagging.html">Tag Auto Scaling groups and instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Filter {
     /// <p>The name of the filter.</p>
     /// <p>The valid values for <code>Name</code> depend on which API operation you're using with the filter (<code>DescribeAutoScalingGroups</code> or <code>DescribeTags</code>).</p>
@@ -7238,19 +7596,11 @@ impl Filter {
         self.values.as_deref()
     }
 }
-impl std::fmt::Debug for Filter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Filter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
-    }
-}
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
 
     /// A builder for [`Filter`](crate::model::Filter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7339,7 +7689,7 @@ impl Filter {
 
 /// <p>Describes a scheduled scaling action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduledUpdateGroupAction {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -7423,28 +7773,11 @@ impl ScheduledUpdateGroupAction {
         self.time_zone.as_deref()
     }
 }
-impl std::fmt::Debug for ScheduledUpdateGroupAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduledUpdateGroupAction");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("scheduled_action_name", &self.scheduled_action_name);
-        formatter.field("scheduled_action_arn", &self.scheduled_action_arn);
-        formatter.field("time", &self.time);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("recurrence", &self.recurrence);
-        formatter.field("min_size", &self.min_size);
-        formatter.field("max_size", &self.max_size);
-        formatter.field("desired_capacity", &self.desired_capacity);
-        formatter.field("time_zone", &self.time_zone);
-        formatter.finish()
-    }
-}
 /// See [`ScheduledUpdateGroupAction`](crate::model::ScheduledUpdateGroupAction).
 pub mod scheduled_update_group_action {
 
     /// A builder for [`ScheduledUpdateGroupAction`](crate::model::ScheduledUpdateGroupAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) scheduled_action_name: std::option::Option<std::string::String>,
@@ -7614,7 +7947,7 @@ impl ScheduledUpdateGroupAction {
 /// <p>Describes a process type.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html#process-types">Scaling processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProcessType {
     /// <p>One of the following processes:</p>
     /// <ul>
@@ -7648,18 +7981,11 @@ impl ProcessType {
         self.process_name.as_deref()
     }
 }
-impl std::fmt::Debug for ProcessType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProcessType");
-        formatter.field("process_name", &self.process_name);
-        formatter.finish()
-    }
-}
 /// See [`ProcessType`](crate::model::ProcessType).
 pub mod process_type {
 
     /// A builder for [`ProcessType`](crate::model::ProcessType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) process_name: std::option::Option<std::string::String>,
     }
@@ -7713,7 +8039,7 @@ impl ProcessType {
 
 /// <p>Describes a scaling policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScalingPolicy {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -7850,39 +8176,11 @@ impl ScalingPolicy {
         self.predictive_scaling_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for ScalingPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScalingPolicy");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("policy_arn", &self.policy_arn);
-        formatter.field("policy_type", &self.policy_type);
-        formatter.field("adjustment_type", &self.adjustment_type);
-        formatter.field("min_adjustment_step", &self.min_adjustment_step);
-        formatter.field("min_adjustment_magnitude", &self.min_adjustment_magnitude);
-        formatter.field("scaling_adjustment", &self.scaling_adjustment);
-        formatter.field("cooldown", &self.cooldown);
-        formatter.field("step_adjustments", &self.step_adjustments);
-        formatter.field("metric_aggregation_type", &self.metric_aggregation_type);
-        formatter.field("estimated_instance_warmup", &self.estimated_instance_warmup);
-        formatter.field("alarms", &self.alarms);
-        formatter.field(
-            "target_tracking_configuration",
-            &self.target_tracking_configuration,
-        );
-        formatter.field("enabled", &self.enabled);
-        formatter.field(
-            "predictive_scaling_configuration",
-            &self.predictive_scaling_configuration,
-        );
-        formatter.finish()
-    }
-}
 /// See [`ScalingPolicy`](crate::model::ScalingPolicy).
 pub mod scaling_policy {
 
     /// A builder for [`ScalingPolicy`](crate::model::ScalingPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -8150,7 +8448,7 @@ impl ScalingPolicy {
 
 /// <p>Describes a notification.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotificationConfiguration {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -8190,20 +8488,11 @@ impl NotificationConfiguration {
         self.notification_type.as_deref()
     }
 }
-impl std::fmt::Debug for NotificationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotificationConfiguration");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("topic_arn", &self.topic_arn);
-        formatter.field("notification_type", &self.notification_type);
-        formatter.finish()
-    }
-}
 /// See [`NotificationConfiguration`](crate::model::NotificationConfiguration).
 pub mod notification_configuration {
 
     /// A builder for [`NotificationConfiguration`](crate::model::NotificationConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) topic_arn: std::option::Option<std::string::String>,
@@ -8279,7 +8568,7 @@ impl NotificationConfiguration {
 
 /// <p>Describes a granularity of a metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricGranularityType {
     /// <p>The granularity. The only valid value is <code>1Minute</code>.</p>
     #[doc(hidden)]
@@ -8291,18 +8580,11 @@ impl MetricGranularityType {
         self.granularity.as_deref()
     }
 }
-impl std::fmt::Debug for MetricGranularityType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricGranularityType");
-        formatter.field("granularity", &self.granularity);
-        formatter.finish()
-    }
-}
 /// See [`MetricGranularityType`](crate::model::MetricGranularityType).
 pub mod metric_granularity_type {
 
     /// A builder for [`MetricGranularityType`](crate::model::MetricGranularityType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) granularity: std::option::Option<std::string::String>,
     }
@@ -8334,7 +8616,7 @@ impl MetricGranularityType {
 
 /// <p>Describes a metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricCollectionType {
     /// <p>One of the following metrics:</p>
     /// <ul>
@@ -8390,18 +8672,11 @@ impl MetricCollectionType {
         self.metric.as_deref()
     }
 }
-impl std::fmt::Debug for MetricCollectionType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricCollectionType");
-        formatter.field("metric", &self.metric);
-        formatter.finish()
-    }
-}
 /// See [`MetricCollectionType`](crate::model::MetricCollectionType).
 pub mod metric_collection_type {
 
     /// A builder for [`MetricCollectionType`](crate::model::MetricCollectionType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric: std::option::Option<std::string::String>,
     }
@@ -8477,7 +8752,7 @@ impl MetricCollectionType {
 
 /// <p>Describes the state of a target group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoadBalancerTargetGroupState {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     #[doc(hidden)]
@@ -8510,22 +8785,11 @@ impl LoadBalancerTargetGroupState {
         self.state.as_deref()
     }
 }
-impl std::fmt::Debug for LoadBalancerTargetGroupState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoadBalancerTargetGroupState");
-        formatter.field(
-            "load_balancer_target_group_arn",
-            &self.load_balancer_target_group_arn,
-        );
-        formatter.field("state", &self.state);
-        formatter.finish()
-    }
-}
 /// See [`LoadBalancerTargetGroupState`](crate::model::LoadBalancerTargetGroupState).
 pub mod load_balancer_target_group_state {
 
     /// A builder for [`LoadBalancerTargetGroupState`](crate::model::LoadBalancerTargetGroupState).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_target_group_arn: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<std::string::String>,
@@ -8589,7 +8853,7 @@ impl LoadBalancerTargetGroupState {
 
 /// <p>Describes the state of a Classic Load Balancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoadBalancerState {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
@@ -8622,19 +8886,11 @@ impl LoadBalancerState {
         self.state.as_deref()
     }
 }
-impl std::fmt::Debug for LoadBalancerState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoadBalancerState");
-        formatter.field("load_balancer_name", &self.load_balancer_name);
-        formatter.field("state", &self.state);
-        formatter.finish()
-    }
-}
 /// See [`LoadBalancerState`](crate::model::LoadBalancerState).
 pub mod load_balancer_state {
 
     /// A builder for [`LoadBalancerState`](crate::model::LoadBalancerState).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<std::string::String>,
@@ -8695,7 +8951,7 @@ impl LoadBalancerState {
 
 /// <p>Describes a lifecycle hook. A lifecycle hook lets you create solutions that are aware of events in the Auto Scaling instance lifecycle, and then perform a custom action on instances when the corresponding lifecycle event occurs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LifecycleHook {
     /// <p>The name of the lifecycle hook.</p>
     #[doc(hidden)]
@@ -8767,26 +9023,11 @@ impl LifecycleHook {
         self.default_result.as_deref()
     }
 }
-impl std::fmt::Debug for LifecycleHook {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LifecycleHook");
-        formatter.field("lifecycle_hook_name", &self.lifecycle_hook_name);
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("lifecycle_transition", &self.lifecycle_transition);
-        formatter.field("notification_target_arn", &self.notification_target_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("notification_metadata", &self.notification_metadata);
-        formatter.field("heartbeat_timeout", &self.heartbeat_timeout);
-        formatter.field("global_timeout", &self.global_timeout);
-        formatter.field("default_result", &self.default_result);
-        formatter.finish()
-    }
-}
 /// See [`LifecycleHook`](crate::model::LifecycleHook).
 pub mod lifecycle_hook {
 
     /// A builder for [`LifecycleHook`](crate::model::LifecycleHook).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lifecycle_hook_name: std::option::Option<std::string::String>,
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -8936,7 +9177,7 @@ impl LifecycleHook {
 
 /// <p>Describes a launch configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LaunchConfiguration {
     /// <p>The name of the launch configuration.</p>
     #[doc(hidden)]
@@ -9093,43 +9334,11 @@ impl LaunchConfiguration {
         self.metadata_options.as_ref()
     }
 }
-impl std::fmt::Debug for LaunchConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LaunchConfiguration");
-        formatter.field("launch_configuration_name", &self.launch_configuration_name);
-        formatter.field("launch_configuration_arn", &self.launch_configuration_arn);
-        formatter.field("image_id", &self.image_id);
-        formatter.field("key_name", &self.key_name);
-        formatter.field("security_groups", &self.security_groups);
-        formatter.field("classic_link_vpc_id", &self.classic_link_vpc_id);
-        formatter.field(
-            "classic_link_vpc_security_groups",
-            &self.classic_link_vpc_security_groups,
-        );
-        formatter.field("user_data", &self.user_data);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("kernel_id", &self.kernel_id);
-        formatter.field("ramdisk_id", &self.ramdisk_id);
-        formatter.field("block_device_mappings", &self.block_device_mappings);
-        formatter.field("instance_monitoring", &self.instance_monitoring);
-        formatter.field("spot_price", &self.spot_price);
-        formatter.field("iam_instance_profile", &self.iam_instance_profile);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("ebs_optimized", &self.ebs_optimized);
-        formatter.field(
-            "associate_public_ip_address",
-            &self.associate_public_ip_address,
-        );
-        formatter.field("placement_tenancy", &self.placement_tenancy);
-        formatter.field("metadata_options", &self.metadata_options);
-        formatter.finish()
-    }
-}
 /// See [`LaunchConfiguration`](crate::model::LaunchConfiguration).
 pub mod launch_configuration {
 
     /// A builder for [`LaunchConfiguration`](crate::model::LaunchConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) launch_configuration_name: std::option::Option<std::string::String>,
         pub(crate) launch_configuration_arn: std::option::Option<std::string::String>,
@@ -9458,7 +9667,7 @@ impl LaunchConfiguration {
 
 /// <p>The metadata options for the instances. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceMetadataOptions {
     /// <p>The state of token usage for your instance metadata requests. If the parameter is not specified in the request, the default state is <code>optional</code>.</p>
     /// <p>If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a signed token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role credentials are returned. If you retrieve the IAM role credentials using a valid signed token, the version 2.0 role credentials are returned.</p>
@@ -9498,23 +9707,11 @@ impl InstanceMetadataOptions {
         self.http_endpoint.as_ref()
     }
 }
-impl std::fmt::Debug for InstanceMetadataOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceMetadataOptions");
-        formatter.field("http_tokens", &self.http_tokens);
-        formatter.field(
-            "http_put_response_hop_limit",
-            &self.http_put_response_hop_limit,
-        );
-        formatter.field("http_endpoint", &self.http_endpoint);
-        formatter.finish()
-    }
-}
 /// See [`InstanceMetadataOptions`](crate::model::InstanceMetadataOptions).
 pub mod instance_metadata_options {
 
     /// A builder for [`InstanceMetadataOptions`](crate::model::InstanceMetadataOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) http_tokens: std::option::Option<crate::model::InstanceMetadataHttpTokensState>,
         pub(crate) http_put_response_hop_limit: std::option::Option<i32>,
@@ -9584,6 +9781,41 @@ impl InstanceMetadataOptions {
     }
 }
 
+/// When writing a match expression against `InstanceMetadataEndpointState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let instancemetadataendpointstate = unimplemented!();
+/// match instancemetadataendpointstate {
+///     InstanceMetadataEndpointState::Disabled => { /* ... */ },
+///     InstanceMetadataEndpointState::Enabled => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `instancemetadataendpointstate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `InstanceMetadataEndpointState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `InstanceMetadataEndpointState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `InstanceMetadataEndpointState::NewFeature` is defined.
+/// Specifically, when `instancemetadataendpointstate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `InstanceMetadataEndpointState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -9600,15 +9832,17 @@ pub enum InstanceMetadataEndpointState {
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for InstanceMetadataEndpointState {
     fn from(s: &str) -> Self {
         match s {
             "disabled" => InstanceMetadataEndpointState::Disabled,
             "enabled" => InstanceMetadataEndpointState::Enabled,
-            other => InstanceMetadataEndpointState::Unknown(other.to_owned()),
+            other => InstanceMetadataEndpointState::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -9625,11 +9859,11 @@ impl InstanceMetadataEndpointState {
         match self {
             InstanceMetadataEndpointState::Disabled => "disabled",
             InstanceMetadataEndpointState::Enabled => "enabled",
-            InstanceMetadataEndpointState::Unknown(s) => s.as_ref(),
+            InstanceMetadataEndpointState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["disabled", "enabled"]
     }
 }
@@ -9639,6 +9873,41 @@ impl AsRef<str> for InstanceMetadataEndpointState {
     }
 }
 
+/// When writing a match expression against `InstanceMetadataHttpTokensState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let instancemetadatahttptokensstate = unimplemented!();
+/// match instancemetadatahttptokensstate {
+///     InstanceMetadataHttpTokensState::Optional => { /* ... */ },
+///     InstanceMetadataHttpTokensState::Required => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `instancemetadatahttptokensstate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `InstanceMetadataHttpTokensState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `InstanceMetadataHttpTokensState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `InstanceMetadataHttpTokensState::NewFeature` is defined.
+/// Specifically, when `instancemetadatahttptokensstate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `InstanceMetadataHttpTokensState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -9655,15 +9924,17 @@ pub enum InstanceMetadataHttpTokensState {
     Optional,
     #[allow(missing_docs)] // documentation missing in model
     Required,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for InstanceMetadataHttpTokensState {
     fn from(s: &str) -> Self {
         match s {
             "optional" => InstanceMetadataHttpTokensState::Optional,
             "required" => InstanceMetadataHttpTokensState::Required,
-            other => InstanceMetadataHttpTokensState::Unknown(other.to_owned()),
+            other => InstanceMetadataHttpTokensState::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -9680,11 +9951,11 @@ impl InstanceMetadataHttpTokensState {
         match self {
             InstanceMetadataHttpTokensState::Optional => "optional",
             InstanceMetadataHttpTokensState::Required => "required",
-            InstanceMetadataHttpTokensState::Unknown(s) => s.as_ref(),
+            InstanceMetadataHttpTokensState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["optional", "required"]
     }
 }
@@ -9696,7 +9967,7 @@ impl AsRef<str> for InstanceMetadataHttpTokensState {
 
 /// <p>Describes whether detailed monitoring is enabled for the Auto Scaling instances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceMonitoring {
     /// <p>If <code>true</code>, detailed monitoring is enabled. Otherwise, basic monitoring is enabled.</p>
     #[doc(hidden)]
@@ -9708,18 +9979,11 @@ impl InstanceMonitoring {
         self.enabled
     }
 }
-impl std::fmt::Debug for InstanceMonitoring {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceMonitoring");
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
-    }
-}
 /// See [`InstanceMonitoring`](crate::model::InstanceMonitoring).
 pub mod instance_monitoring {
 
     /// A builder for [`InstanceMonitoring`](crate::model::InstanceMonitoring).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
     }
@@ -9751,7 +10015,7 @@ impl InstanceMonitoring {
 
 /// <p>Describes a block device mapping.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BlockDeviceMapping {
     /// <p>The name of the instance store volume (virtual device) to attach to an instance at launch. The name must be in the form ephemeral<i>X</i> where <i>X</i> is a number starting from zero (0), for example, <code>ephemeral0</code>.</p>
     #[doc(hidden)]
@@ -9790,21 +10054,11 @@ impl BlockDeviceMapping {
         self.no_device
     }
 }
-impl std::fmt::Debug for BlockDeviceMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BlockDeviceMapping");
-        formatter.field("virtual_name", &self.virtual_name);
-        formatter.field("device_name", &self.device_name);
-        formatter.field("ebs", &self.ebs);
-        formatter.field("no_device", &self.no_device);
-        formatter.finish()
-    }
-}
 /// See [`BlockDeviceMapping`](crate::model::BlockDeviceMapping).
 pub mod block_device_mapping {
 
     /// A builder for [`BlockDeviceMapping`](crate::model::BlockDeviceMapping).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_name: std::option::Option<std::string::String>,
         pub(crate) device_name: std::option::Option<std::string::String>,
@@ -9878,7 +10132,7 @@ impl BlockDeviceMapping {
 
 /// <p>Describes information used to set up an Amazon EBS volume specified in a block device mapping.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ebs {
     /// <p>The snapshot ID of the volume to use.</p>
     /// <p>You must specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>.</p>
@@ -9972,24 +10226,11 @@ impl Ebs {
         self.throughput
     }
 }
-impl std::fmt::Debug for Ebs {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ebs");
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.field("volume_size", &self.volume_size);
-        formatter.field("volume_type", &self.volume_type);
-        formatter.field("delete_on_termination", &self.delete_on_termination);
-        formatter.field("iops", &self.iops);
-        formatter.field("encrypted", &self.encrypted);
-        formatter.field("throughput", &self.throughput);
-        formatter.finish()
-    }
-}
 /// See [`Ebs`](crate::model::Ebs).
 pub mod ebs {
 
     /// A builder for [`Ebs`](crate::model::Ebs).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot_id: std::option::Option<std::string::String>,
         pub(crate) volume_size: std::option::Option<i32>,
@@ -10133,7 +10374,7 @@ impl Ebs {
 
 /// <p>Describes an instance refresh for an Auto Scaling group. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceRefresh {
     /// <p>The instance refresh ID.</p>
     #[doc(hidden)]
@@ -10235,28 +10476,11 @@ impl InstanceRefresh {
         self.desired_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for InstanceRefresh {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceRefresh");
-        formatter.field("instance_refresh_id", &self.instance_refresh_id);
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("status", &self.status);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("percentage_complete", &self.percentage_complete);
-        formatter.field("instances_to_update", &self.instances_to_update);
-        formatter.field("progress_details", &self.progress_details);
-        formatter.field("preferences", &self.preferences);
-        formatter.field("desired_configuration", &self.desired_configuration);
-        formatter.finish()
-    }
-}
 /// See [`InstanceRefresh`](crate::model::InstanceRefresh).
 pub mod instance_refresh {
 
     /// A builder for [`InstanceRefresh`](crate::model::InstanceRefresh).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_refresh_id: std::option::Option<std::string::String>,
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -10455,7 +10679,7 @@ impl InstanceRefresh {
 
 /// <p>Reports the progress of an instance refresh on an Auto Scaling group that has a warm pool. This includes separate details for instances in the warm pool and instances in the Auto Scaling group (the live pool).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceRefreshProgressDetails {
     /// <p>Indicates the progress of an instance refresh on instances that are in the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -10478,19 +10702,11 @@ impl InstanceRefreshProgressDetails {
         self.warm_pool_progress.as_ref()
     }
 }
-impl std::fmt::Debug for InstanceRefreshProgressDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceRefreshProgressDetails");
-        formatter.field("live_pool_progress", &self.live_pool_progress);
-        formatter.field("warm_pool_progress", &self.warm_pool_progress);
-        formatter.finish()
-    }
-}
 /// See [`InstanceRefreshProgressDetails`](crate::model::InstanceRefreshProgressDetails).
 pub mod instance_refresh_progress_details {
 
     /// A builder for [`InstanceRefreshProgressDetails`](crate::model::InstanceRefreshProgressDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) live_pool_progress:
             std::option::Option<crate::model::InstanceRefreshLivePoolProgress>,
@@ -10548,7 +10764,7 @@ impl InstanceRefreshProgressDetails {
 
 /// <p>Reports the progress of an instance refresh on instances that are in the warm pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceRefreshWarmPoolProgress {
     /// <p>The percentage of instances in the warm pool that have been replaced. For each instance replacement, Amazon EC2 Auto Scaling tracks the instance's health status and warm-up time. When the instance's health status changes to healthy and the specified warm-up time passes, the instance is considered updated and is added to the percentage complete.</p>
     #[doc(hidden)]
@@ -10567,19 +10783,11 @@ impl InstanceRefreshWarmPoolProgress {
         self.instances_to_update
     }
 }
-impl std::fmt::Debug for InstanceRefreshWarmPoolProgress {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceRefreshWarmPoolProgress");
-        formatter.field("percentage_complete", &self.percentage_complete);
-        formatter.field("instances_to_update", &self.instances_to_update);
-        formatter.finish()
-    }
-}
 /// See [`InstanceRefreshWarmPoolProgress`](crate::model::InstanceRefreshWarmPoolProgress).
 pub mod instance_refresh_warm_pool_progress {
 
     /// A builder for [`InstanceRefreshWarmPoolProgress`](crate::model::InstanceRefreshWarmPoolProgress).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) percentage_complete: std::option::Option<i32>,
         pub(crate) instances_to_update: std::option::Option<i32>,
@@ -10623,7 +10831,7 @@ impl InstanceRefreshWarmPoolProgress {
 
 /// <p>Reports the progress of an instance refresh on instances that are in the Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceRefreshLivePoolProgress {
     /// <p>The percentage of instances in the Auto Scaling group that have been replaced. For each instance replacement, Amazon EC2 Auto Scaling tracks the instance's health status and warm-up time. When the instance's health status changes to healthy and the specified warm-up time passes, the instance is considered updated and is added to the percentage complete.</p>
     #[doc(hidden)]
@@ -10642,19 +10850,11 @@ impl InstanceRefreshLivePoolProgress {
         self.instances_to_update
     }
 }
-impl std::fmt::Debug for InstanceRefreshLivePoolProgress {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceRefreshLivePoolProgress");
-        formatter.field("percentage_complete", &self.percentage_complete);
-        formatter.field("instances_to_update", &self.instances_to_update);
-        formatter.finish()
-    }
-}
 /// See [`InstanceRefreshLivePoolProgress`](crate::model::InstanceRefreshLivePoolProgress).
 pub mod instance_refresh_live_pool_progress {
 
     /// A builder for [`InstanceRefreshLivePoolProgress`](crate::model::InstanceRefreshLivePoolProgress).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) percentage_complete: std::option::Option<i32>,
         pub(crate) instances_to_update: std::option::Option<i32>,
@@ -10696,6 +10896,45 @@ impl InstanceRefreshLivePoolProgress {
     }
 }
 
+/// When writing a match expression against `InstanceRefreshStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let instancerefreshstatus = unimplemented!();
+/// match instancerefreshstatus {
+///     InstanceRefreshStatus::Cancelled => { /* ... */ },
+///     InstanceRefreshStatus::Cancelling => { /* ... */ },
+///     InstanceRefreshStatus::Failed => { /* ... */ },
+///     InstanceRefreshStatus::InProgress => { /* ... */ },
+///     InstanceRefreshStatus::Pending => { /* ... */ },
+///     InstanceRefreshStatus::Successful => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `instancerefreshstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `InstanceRefreshStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `InstanceRefreshStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `InstanceRefreshStatus::NewFeature` is defined.
+/// Specifically, when `instancerefreshstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `InstanceRefreshStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -10720,8 +10959,8 @@ pub enum InstanceRefreshStatus {
     Pending,
     #[allow(missing_docs)] // documentation missing in model
     Successful,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for InstanceRefreshStatus {
     fn from(s: &str) -> Self {
@@ -10732,7 +10971,9 @@ impl std::convert::From<&str> for InstanceRefreshStatus {
             "InProgress" => InstanceRefreshStatus::InProgress,
             "Pending" => InstanceRefreshStatus::Pending,
             "Successful" => InstanceRefreshStatus::Successful,
-            other => InstanceRefreshStatus::Unknown(other.to_owned()),
+            other => {
+                InstanceRefreshStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -10753,11 +10994,11 @@ impl InstanceRefreshStatus {
             InstanceRefreshStatus::InProgress => "InProgress",
             InstanceRefreshStatus::Pending => "Pending",
             InstanceRefreshStatus::Successful => "Successful",
-            InstanceRefreshStatus::Unknown(s) => s.as_ref(),
+            InstanceRefreshStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Cancelled",
             "Cancelling",
@@ -10776,7 +11017,7 @@ impl AsRef<str> for InstanceRefreshStatus {
 
 /// <p>Describes an EC2 instance associated with an Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoScalingInstanceDetails {
     /// <p>The ID of the instance.</p>
     #[doc(hidden)]
@@ -10857,27 +11098,11 @@ impl AutoScalingInstanceDetails {
         self.weighted_capacity.as_deref()
     }
 }
-impl std::fmt::Debug for AutoScalingInstanceDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoScalingInstanceDetails");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("lifecycle_state", &self.lifecycle_state);
-        formatter.field("health_status", &self.health_status);
-        formatter.field("launch_configuration_name", &self.launch_configuration_name);
-        formatter.field("launch_template", &self.launch_template);
-        formatter.field("protected_from_scale_in", &self.protected_from_scale_in);
-        formatter.field("weighted_capacity", &self.weighted_capacity);
-        formatter.finish()
-    }
-}
 /// See [`AutoScalingInstanceDetails`](crate::model::AutoScalingInstanceDetails).
 pub mod auto_scaling_instance_details {
 
     /// A builder for [`AutoScalingInstanceDetails`](crate::model::AutoScalingInstanceDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
         pub(crate) instance_type: std::option::Option<std::string::String>,
@@ -11045,7 +11270,7 @@ impl AutoScalingInstanceDetails {
 
 /// <p>Describes an Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoScalingGroup {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -11289,53 +11514,11 @@ impl AutoScalingGroup {
         self.default_instance_warmup
     }
 }
-impl std::fmt::Debug for AutoScalingGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoScalingGroup");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("auto_scaling_group_arn", &self.auto_scaling_group_arn);
-        formatter.field("launch_configuration_name", &self.launch_configuration_name);
-        formatter.field("launch_template", &self.launch_template);
-        formatter.field("mixed_instances_policy", &self.mixed_instances_policy);
-        formatter.field("min_size", &self.min_size);
-        formatter.field("max_size", &self.max_size);
-        formatter.field("desired_capacity", &self.desired_capacity);
-        formatter.field("predicted_capacity", &self.predicted_capacity);
-        formatter.field("default_cooldown", &self.default_cooldown);
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.field("load_balancer_names", &self.load_balancer_names);
-        formatter.field("target_group_ar_ns", &self.target_group_ar_ns);
-        formatter.field("health_check_type", &self.health_check_type);
-        formatter.field("health_check_grace_period", &self.health_check_grace_period);
-        formatter.field("instances", &self.instances);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("suspended_processes", &self.suspended_processes);
-        formatter.field("placement_group", &self.placement_group);
-        formatter.field("vpc_zone_identifier", &self.vpc_zone_identifier);
-        formatter.field("enabled_metrics", &self.enabled_metrics);
-        formatter.field("status", &self.status);
-        formatter.field("tags", &self.tags);
-        formatter.field("termination_policies", &self.termination_policies);
-        formatter.field(
-            "new_instances_protected_from_scale_in",
-            &self.new_instances_protected_from_scale_in,
-        );
-        formatter.field("service_linked_role_arn", &self.service_linked_role_arn);
-        formatter.field("max_instance_lifetime", &self.max_instance_lifetime);
-        formatter.field("capacity_rebalance", &self.capacity_rebalance);
-        formatter.field("warm_pool_configuration", &self.warm_pool_configuration);
-        formatter.field("warm_pool_size", &self.warm_pool_size);
-        formatter.field("context", &self.context);
-        formatter.field("desired_capacity_type", &self.desired_capacity_type);
-        formatter.field("default_instance_warmup", &self.default_instance_warmup);
-        formatter.finish()
-    }
-}
 /// See [`AutoScalingGroup`](crate::model::AutoScalingGroup).
 pub mod auto_scaling_group {
 
     /// A builder for [`AutoScalingGroup`](crate::model::AutoScalingGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) auto_scaling_group_arn: std::option::Option<std::string::String>,
@@ -11869,7 +12052,7 @@ impl AutoScalingGroup {
 
 /// <p>Describes an enabled Auto Scaling group metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnabledMetric {
     /// <p>One of the following metrics:</p>
     /// <ul>
@@ -11934,19 +12117,11 @@ impl EnabledMetric {
         self.granularity.as_deref()
     }
 }
-impl std::fmt::Debug for EnabledMetric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnabledMetric");
-        formatter.field("metric", &self.metric);
-        formatter.field("granularity", &self.granularity);
-        formatter.finish()
-    }
-}
 /// See [`EnabledMetric`](crate::model::EnabledMetric).
 pub mod enabled_metric {
 
     /// A builder for [`EnabledMetric`](crate::model::EnabledMetric).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric: std::option::Option<std::string::String>,
         pub(crate) granularity: std::option::Option<std::string::String>,
@@ -12037,7 +12212,7 @@ impl EnabledMetric {
 /// <p>Describes an auto scaling process that has been suspended.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html#process-types">Scaling processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SuspendedProcess {
     /// <p>The name of the suspended process.</p>
     #[doc(hidden)]
@@ -12056,19 +12231,11 @@ impl SuspendedProcess {
         self.suspension_reason.as_deref()
     }
 }
-impl std::fmt::Debug for SuspendedProcess {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SuspendedProcess");
-        formatter.field("process_name", &self.process_name);
-        formatter.field("suspension_reason", &self.suspension_reason);
-        formatter.finish()
-    }
-}
 /// See [`SuspendedProcess`](crate::model::SuspendedProcess).
 pub mod suspended_process {
 
     /// A builder for [`SuspendedProcess`](crate::model::SuspendedProcess).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) process_name: std::option::Option<std::string::String>,
         pub(crate) suspension_reason: std::option::Option<std::string::String>,
@@ -12115,7 +12282,7 @@ impl SuspendedProcess {
 
 /// <p>Describes a policy adjustment type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdjustmentType {
     /// <p>The policy adjustment type. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
     #[doc(hidden)]
@@ -12127,18 +12294,11 @@ impl AdjustmentType {
         self.adjustment_type.as_deref()
     }
 }
-impl std::fmt::Debug for AdjustmentType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdjustmentType");
-        formatter.field("adjustment_type", &self.adjustment_type);
-        formatter.finish()
-    }
-}
 /// See [`AdjustmentType`](crate::model::AdjustmentType).
 pub mod adjustment_type {
 
     /// A builder for [`AdjustmentType`](crate::model::AdjustmentType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) adjustment_type: std::option::Option<std::string::String>,
     }
@@ -12173,7 +12333,7 @@ impl AdjustmentType {
 
 /// <p>Describes a tag for an Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -12213,22 +12373,11 @@ impl Tag {
         self.propagate_at_launch
     }
 }
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.field("propagate_at_launch", &self.propagate_at_launch);
-        formatter.finish()
-    }
-}
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<std::string::String>,
@@ -12312,7 +12461,7 @@ impl Tag {
 /// <p>Describes information used to specify a lifecycle hook for an Auto Scaling group.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon EC2 Auto Scaling lifecycle hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LifecycleHookSpecification {
     /// <p>The name of the lifecycle hook.</p>
     #[doc(hidden)]
@@ -12378,24 +12527,11 @@ impl LifecycleHookSpecification {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for LifecycleHookSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LifecycleHookSpecification");
-        formatter.field("lifecycle_hook_name", &self.lifecycle_hook_name);
-        formatter.field("lifecycle_transition", &self.lifecycle_transition);
-        formatter.field("notification_metadata", &self.notification_metadata);
-        formatter.field("heartbeat_timeout", &self.heartbeat_timeout);
-        formatter.field("default_result", &self.default_result);
-        formatter.field("notification_target_arn", &self.notification_target_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 /// See [`LifecycleHookSpecification`](crate::model::LifecycleHookSpecification).
 pub mod lifecycle_hook_specification {
 
     /// A builder for [`LifecycleHookSpecification`](crate::model::LifecycleHookSpecification).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lifecycle_hook_name: std::option::Option<std::string::String>,
         pub(crate) lifecycle_transition: std::option::Option<std::string::String>,
@@ -12526,7 +12662,7 @@ impl LifecycleHookSpecification {
 
 /// <p>Describes a scheduled action that could not be created, updated, or deleted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FailedScheduledUpdateGroupActionRequest {
     /// <p>The name of the scheduled action.</p>
     #[doc(hidden)]
@@ -12552,20 +12688,11 @@ impl FailedScheduledUpdateGroupActionRequest {
         self.error_message.as_deref()
     }
 }
-impl std::fmt::Debug for FailedScheduledUpdateGroupActionRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FailedScheduledUpdateGroupActionRequest");
-        formatter.field("scheduled_action_name", &self.scheduled_action_name);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
-    }
-}
 /// See [`FailedScheduledUpdateGroupActionRequest`](crate::model::FailedScheduledUpdateGroupActionRequest).
 pub mod failed_scheduled_update_group_action_request {
 
     /// A builder for [`FailedScheduledUpdateGroupActionRequest`](crate::model::FailedScheduledUpdateGroupActionRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scheduled_action_name: std::option::Option<std::string::String>,
         pub(crate) error_code: std::option::Option<std::string::String>,
@@ -12627,7 +12754,7 @@ impl FailedScheduledUpdateGroupActionRequest {
 
 /// <p>Describes information used for one or more scheduled scaling action updates in a <code>BatchPutScheduledUpdateGroupAction</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduledUpdateGroupActionRequest {
     /// <p>The name of the scaling action.</p>
     #[doc(hidden)]
@@ -12698,25 +12825,11 @@ impl ScheduledUpdateGroupActionRequest {
         self.time_zone.as_deref()
     }
 }
-impl std::fmt::Debug for ScheduledUpdateGroupActionRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduledUpdateGroupActionRequest");
-        formatter.field("scheduled_action_name", &self.scheduled_action_name);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("recurrence", &self.recurrence);
-        formatter.field("min_size", &self.min_size);
-        formatter.field("max_size", &self.max_size);
-        formatter.field("desired_capacity", &self.desired_capacity);
-        formatter.field("time_zone", &self.time_zone);
-        formatter.finish()
-    }
-}
 /// See [`ScheduledUpdateGroupActionRequest`](crate::model::ScheduledUpdateGroupActionRequest).
 pub mod scheduled_update_group_action_request {
 
     /// A builder for [`ScheduledUpdateGroupActionRequest`](crate::model::ScheduledUpdateGroupActionRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scheduled_action_name: std::option::Option<std::string::String>,
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,

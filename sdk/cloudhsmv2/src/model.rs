@@ -2,7 +2,7 @@
 
 /// <p>Contains a tag. A tag is a key-value pair.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key of the tag.</p>
     #[doc(hidden)]
@@ -21,19 +21,11 @@ impl Tag {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -77,7 +69,7 @@ impl Tag {
 
 /// <p>Contains information about a backup of an AWS CloudHSM cluster. All backup objects contain the <code>BackupId</code>, <code>BackupState</code>, <code>ClusterId</code>, and <code>CreateTimestamp</code> parameters. Backups that were copied into a destination region additionally contain the <code>CopyTimestamp</code>, <code>SourceBackup</code>, <code>SourceCluster</code>, and <code>SourceRegion</code> parameters. A backup that is pending deletion will include the <code>DeleteTimestamp</code> parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Backup {
     /// <p>The identifier (ID) of the backup.</p>
     #[doc(hidden)]
@@ -159,28 +151,11 @@ impl Backup {
         self.tag_list.as_deref()
     }
 }
-impl std::fmt::Debug for Backup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Backup");
-        formatter.field("backup_id", &self.backup_id);
-        formatter.field("backup_state", &self.backup_state);
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.field("create_timestamp", &self.create_timestamp);
-        formatter.field("copy_timestamp", &self.copy_timestamp);
-        formatter.field("never_expires", &self.never_expires);
-        formatter.field("source_region", &self.source_region);
-        formatter.field("source_backup", &self.source_backup);
-        formatter.field("source_cluster", &self.source_cluster);
-        formatter.field("delete_timestamp", &self.delete_timestamp);
-        formatter.field("tag_list", &self.tag_list);
-        formatter.finish()
-    }
-}
 /// See [`Backup`](crate::model::Backup).
 pub mod backup {
 
     /// A builder for [`Backup`](crate::model::Backup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_id: std::option::Option<std::string::String>,
         pub(crate) backup_state: std::option::Option<crate::model::BackupState>,
@@ -360,6 +335,43 @@ impl Backup {
     }
 }
 
+/// When writing a match expression against `BackupState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let backupstate = unimplemented!();
+/// match backupstate {
+///     BackupState::CreateInProgress => { /* ... */ },
+///     BackupState::Deleted => { /* ... */ },
+///     BackupState::PendingDeletion => { /* ... */ },
+///     BackupState::Ready => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `backupstate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `BackupState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `BackupState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `BackupState::NewFeature` is defined.
+/// Specifically, when `backupstate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `BackupState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -380,8 +392,8 @@ pub enum BackupState {
     PendingDeletion,
     #[allow(missing_docs)] // documentation missing in model
     Ready,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for BackupState {
     fn from(s: &str) -> Self {
@@ -390,7 +402,7 @@ impl std::convert::From<&str> for BackupState {
             "DELETED" => BackupState::Deleted,
             "PENDING_DELETION" => BackupState::PendingDeletion,
             "READY" => BackupState::Ready,
-            other => BackupState::Unknown(other.to_owned()),
+            other => BackupState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -409,11 +421,11 @@ impl BackupState {
             BackupState::Deleted => "DELETED",
             BackupState::PendingDeletion => "PENDING_DELETION",
             BackupState::Ready => "READY",
-            BackupState::Unknown(s) => s.as_ref(),
+            BackupState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATE_IN_PROGRESS", "DELETED", "PENDING_DELETION", "READY"]
     }
 }
@@ -425,7 +437,7 @@ impl AsRef<str> for BackupState {
 
 /// <p>Contains information about an AWS CloudHSM cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Cluster {
     /// <p>The cluster's backup policy.</p>
     #[doc(hidden)]
@@ -541,32 +553,11 @@ impl Cluster {
         self.tag_list.as_deref()
     }
 }
-impl std::fmt::Debug for Cluster {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Cluster");
-        formatter.field("backup_policy", &self.backup_policy);
-        formatter.field("backup_retention_policy", &self.backup_retention_policy);
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.field("create_timestamp", &self.create_timestamp);
-        formatter.field("hsms", &self.hsms);
-        formatter.field("hsm_type", &self.hsm_type);
-        formatter.field("pre_co_password", &self.pre_co_password);
-        formatter.field("security_group", &self.security_group);
-        formatter.field("source_backup_id", &self.source_backup_id);
-        formatter.field("state", &self.state);
-        formatter.field("state_message", &self.state_message);
-        formatter.field("subnet_mapping", &self.subnet_mapping);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("certificates", &self.certificates);
-        formatter.field("tag_list", &self.tag_list);
-        formatter.finish()
-    }
-}
 /// See [`Cluster`](crate::model::Cluster).
 pub mod cluster {
 
     /// A builder for [`Cluster`](crate::model::Cluster).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_policy: std::option::Option<crate::model::BackupPolicy>,
         pub(crate) backup_retention_policy:
@@ -829,7 +820,7 @@ impl Cluster {
 
 /// <p>Contains one or more certificates or a certificate signing request (CSR).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Certificates {
     /// <p>The cluster's certificate signing request (CSR). The CSR exists only when the cluster's state is <code>UNINITIALIZED</code>.</p>
     #[doc(hidden)]
@@ -869,25 +860,11 @@ impl Certificates {
         self.cluster_certificate.as_deref()
     }
 }
-impl std::fmt::Debug for Certificates {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Certificates");
-        formatter.field("cluster_csr", &self.cluster_csr);
-        formatter.field("hsm_certificate", &self.hsm_certificate);
-        formatter.field("aws_hardware_certificate", &self.aws_hardware_certificate);
-        formatter.field(
-            "manufacturer_hardware_certificate",
-            &self.manufacturer_hardware_certificate,
-        );
-        formatter.field("cluster_certificate", &self.cluster_certificate);
-        formatter.finish()
-    }
-}
 /// See [`Certificates`](crate::model::Certificates).
 pub mod certificates {
 
     /// A builder for [`Certificates`](crate::model::Certificates).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_csr: std::option::Option<std::string::String>,
         pub(crate) hsm_certificate: std::option::Option<std::string::String>,
@@ -980,6 +957,48 @@ impl Certificates {
     }
 }
 
+/// When writing a match expression against `ClusterState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let clusterstate = unimplemented!();
+/// match clusterstate {
+///     ClusterState::Active => { /* ... */ },
+///     ClusterState::CreateInProgress => { /* ... */ },
+///     ClusterState::Degraded => { /* ... */ },
+///     ClusterState::Deleted => { /* ... */ },
+///     ClusterState::DeleteInProgress => { /* ... */ },
+///     ClusterState::Initialized => { /* ... */ },
+///     ClusterState::InitializeInProgress => { /* ... */ },
+///     ClusterState::Uninitialized => { /* ... */ },
+///     ClusterState::UpdateInProgress => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `clusterstate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ClusterState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ClusterState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ClusterState::NewFeature` is defined.
+/// Specifically, when `clusterstate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ClusterState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1010,8 +1029,8 @@ pub enum ClusterState {
     Uninitialized,
     #[allow(missing_docs)] // documentation missing in model
     UpdateInProgress,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ClusterState {
     fn from(s: &str) -> Self {
@@ -1025,7 +1044,7 @@ impl std::convert::From<&str> for ClusterState {
             "INITIALIZE_IN_PROGRESS" => ClusterState::InitializeInProgress,
             "UNINITIALIZED" => ClusterState::Uninitialized,
             "UPDATE_IN_PROGRESS" => ClusterState::UpdateInProgress,
-            other => ClusterState::Unknown(other.to_owned()),
+            other => ClusterState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1049,11 +1068,11 @@ impl ClusterState {
             ClusterState::InitializeInProgress => "INITIALIZE_IN_PROGRESS",
             ClusterState::Uninitialized => "UNINITIALIZED",
             ClusterState::UpdateInProgress => "UPDATE_IN_PROGRESS",
-            ClusterState::Unknown(s) => s.as_ref(),
+            ClusterState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "CREATE_IN_PROGRESS",
@@ -1075,7 +1094,7 @@ impl AsRef<str> for ClusterState {
 
 /// <p>Contains information about a hardware security module (HSM) in an AWS CloudHSM cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Hsm {
     /// <p>The Availability Zone that contains the HSM.</p>
     #[doc(hidden)]
@@ -1136,25 +1155,11 @@ impl Hsm {
         self.state_message.as_deref()
     }
 }
-impl std::fmt::Debug for Hsm {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Hsm");
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.field("eni_id", &self.eni_id);
-        formatter.field("eni_ip", &self.eni_ip);
-        formatter.field("hsm_id", &self.hsm_id);
-        formatter.field("state", &self.state);
-        formatter.field("state_message", &self.state_message);
-        formatter.finish()
-    }
-}
 /// See [`Hsm`](crate::model::Hsm).
 pub mod hsm {
 
     /// A builder for [`Hsm`](crate::model::Hsm).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_zone: std::option::Option<std::string::String>,
         pub(crate) cluster_id: std::option::Option<std::string::String>,
@@ -1274,6 +1279,44 @@ impl Hsm {
     }
 }
 
+/// When writing a match expression against `HsmState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let hsmstate = unimplemented!();
+/// match hsmstate {
+///     HsmState::Active => { /* ... */ },
+///     HsmState::CreateInProgress => { /* ... */ },
+///     HsmState::Degraded => { /* ... */ },
+///     HsmState::Deleted => { /* ... */ },
+///     HsmState::DeleteInProgress => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `hsmstate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `HsmState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `HsmState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `HsmState::NewFeature` is defined.
+/// Specifically, when `hsmstate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `HsmState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1296,8 +1339,8 @@ pub enum HsmState {
     Deleted,
     #[allow(missing_docs)] // documentation missing in model
     DeleteInProgress,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for HsmState {
     fn from(s: &str) -> Self {
@@ -1307,7 +1350,7 @@ impl std::convert::From<&str> for HsmState {
             "DEGRADED" => HsmState::Degraded,
             "DELETED" => HsmState::Deleted,
             "DELETE_IN_PROGRESS" => HsmState::DeleteInProgress,
-            other => HsmState::Unknown(other.to_owned()),
+            other => HsmState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1327,11 +1370,11 @@ impl HsmState {
             HsmState::Degraded => "DEGRADED",
             HsmState::Deleted => "DELETED",
             HsmState::DeleteInProgress => "DELETE_IN_PROGRESS",
-            HsmState::Unknown(s) => s.as_ref(),
+            HsmState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "CREATE_IN_PROGRESS",
@@ -1349,7 +1392,7 @@ impl AsRef<str> for HsmState {
 
 /// <p>A policy that defines the number of days to retain backups.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackupRetentionPolicy {
     /// <p>The type of backup retention policy. For the <code>DAYS</code> type, the value is the number of days to retain backups.</p>
     #[doc(hidden)]
@@ -1368,19 +1411,11 @@ impl BackupRetentionPolicy {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for BackupRetentionPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackupRetentionPolicy");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`BackupRetentionPolicy`](crate::model::BackupRetentionPolicy).
 pub mod backup_retention_policy {
 
     /// A builder for [`BackupRetentionPolicy`](crate::model::BackupRetentionPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::BackupRetentionType>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -1425,6 +1460,40 @@ impl BackupRetentionPolicy {
     }
 }
 
+/// When writing a match expression against `BackupRetentionType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let backupretentiontype = unimplemented!();
+/// match backupretentiontype {
+///     BackupRetentionType::Days => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `backupretentiontype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `BackupRetentionType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `BackupRetentionType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `BackupRetentionType::NewFeature` is defined.
+/// Specifically, when `backupretentiontype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `BackupRetentionType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1439,14 +1508,16 @@ impl BackupRetentionPolicy {
 pub enum BackupRetentionType {
     #[allow(missing_docs)] // documentation missing in model
     Days,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for BackupRetentionType {
     fn from(s: &str) -> Self {
         match s {
             "DAYS" => BackupRetentionType::Days,
-            other => BackupRetentionType::Unknown(other.to_owned()),
+            other => {
+                BackupRetentionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -1462,11 +1533,11 @@ impl BackupRetentionType {
     pub fn as_str(&self) -> &str {
         match self {
             BackupRetentionType::Days => "DAYS",
-            BackupRetentionType::Unknown(s) => s.as_ref(),
+            BackupRetentionType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DAYS"]
     }
 }
@@ -1476,6 +1547,40 @@ impl AsRef<str> for BackupRetentionType {
     }
 }
 
+/// When writing a match expression against `BackupPolicy`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let backuppolicy = unimplemented!();
+/// match backuppolicy {
+///     BackupPolicy::Default => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `backuppolicy` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `BackupPolicy::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `BackupPolicy::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `BackupPolicy::NewFeature` is defined.
+/// Specifically, when `backuppolicy` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `BackupPolicy::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1490,14 +1595,14 @@ impl AsRef<str> for BackupRetentionType {
 pub enum BackupPolicy {
     #[allow(missing_docs)] // documentation missing in model
     Default,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for BackupPolicy {
     fn from(s: &str) -> Self {
         match s {
             "DEFAULT" => BackupPolicy::Default,
-            other => BackupPolicy::Unknown(other.to_owned()),
+            other => BackupPolicy::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1513,11 +1618,11 @@ impl BackupPolicy {
     pub fn as_str(&self) -> &str {
         match self {
             BackupPolicy::Default => "DEFAULT",
-            BackupPolicy::Unknown(s) => s.as_ref(),
+            BackupPolicy::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEFAULT"]
     }
 }
@@ -1529,7 +1634,7 @@ impl AsRef<str> for BackupPolicy {
 
 /// <p>Contains information about the backup that will be copied and created by the <code>CopyBackupToRegion</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DestinationBackup {
     /// <p>The date and time when both the source backup was created.</p>
     #[doc(hidden)]
@@ -1562,21 +1667,11 @@ impl DestinationBackup {
         self.source_cluster.as_deref()
     }
 }
-impl std::fmt::Debug for DestinationBackup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DestinationBackup");
-        formatter.field("create_timestamp", &self.create_timestamp);
-        formatter.field("source_region", &self.source_region);
-        formatter.field("source_backup", &self.source_backup);
-        formatter.field("source_cluster", &self.source_cluster);
-        formatter.finish()
-    }
-}
 /// See [`DestinationBackup`](crate::model::DestinationBackup).
 pub mod destination_backup {
 
     /// A builder for [`DestinationBackup`](crate::model::DestinationBackup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) source_region: std::option::Option<std::string::String>,

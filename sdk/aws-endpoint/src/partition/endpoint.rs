@@ -54,7 +54,7 @@ impl ResolveAwsEndpoint for Metadata {
     fn resolve_endpoint(&self, region: &Region) -> Result<AwsEndpoint, BoxError> {
         let uri = self.uri_template.replace("{region}", region.as_ref());
         let uri = format!("{}://{}", self.protocol.as_str(), uri);
-        let endpoint = Endpoint::mutable(uri.parse()?);
+        let endpoint = Endpoint::mutable(uri)?;
         let mut credential_scope = CredentialScope::builder().region(
             self.credential_scope
                 .region()

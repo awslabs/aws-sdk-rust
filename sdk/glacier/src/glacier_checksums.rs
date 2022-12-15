@@ -29,7 +29,7 @@ const X_AMZ_CONTENT_SHA256: &str = "x-amz-content-sha256";
 /// chunk (if it exists) is paired at the end.
 ///
 /// See <https://docs.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html> for more information.
-pub async fn add_checksum_treehash(request: &mut Request) -> Result<(), byte_stream::Error> {
+pub async fn add_checksum_treehash(request: &mut Request) -> Result<(), byte_stream::error::Error> {
     let cloneable = request.http().body().try_clone();
     let http_request = request.http_mut();
     let body_to_process = if let Some(cloned_body) = cloneable {
@@ -68,7 +68,7 @@ const MEGABYTE: usize = 1024 * 1024;
 async fn compute_hashes(
     body: SdkBody,
     chunk_size: usize,
-) -> Result<(Digest, Vec<Digest>), byte_stream::Error> {
+) -> Result<(Digest, Vec<Digest>), byte_stream::error::Error> {
     let mut hashes = vec![];
     let mut remaining_in_chunk = chunk_size;
     let mut body = ByteStream::new(body);

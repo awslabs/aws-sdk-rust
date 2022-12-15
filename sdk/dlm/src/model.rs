@@ -2,7 +2,7 @@
 
 /// <p> <b>[All policy types]</b> Specifies the configuration of a lifecycle policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyDetails {
     /// <p> <b>[All policy types]</b> The valid target resource types and actions a policy can manage. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. Specify <code>EVENT_BASED_POLICY </code> to create an event-based policy that performs specific actions when a defined event occurs in your Amazon Web Services account.</p>
     /// <p>The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.</p>
@@ -74,25 +74,11 @@ impl PolicyDetails {
         self.actions.as_deref()
     }
 }
-impl std::fmt::Debug for PolicyDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyDetails");
-        formatter.field("policy_type", &self.policy_type);
-        formatter.field("resource_types", &self.resource_types);
-        formatter.field("resource_locations", &self.resource_locations);
-        formatter.field("target_tags", &self.target_tags);
-        formatter.field("schedules", &self.schedules);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("event_source", &self.event_source);
-        formatter.field("actions", &self.actions);
-        formatter.finish()
-    }
-}
 /// See [`PolicyDetails`](crate::model::PolicyDetails).
 pub mod policy_details {
 
     /// A builder for [`PolicyDetails`](crate::model::PolicyDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_type: std::option::Option<crate::model::PolicyTypeValues>,
         pub(crate) resource_types:
@@ -272,7 +258,7 @@ impl PolicyDetails {
 
 /// <p> <b>[Event-based policies only]</b> Specifies an action for an event-based policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Action {
     /// <p>A descriptive name for the action.</p>
     #[doc(hidden)]
@@ -291,19 +277,11 @@ impl Action {
         self.cross_region_copy.as_deref()
     }
 }
-impl std::fmt::Debug for Action {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Action");
-        formatter.field("name", &self.name);
-        formatter.field("cross_region_copy", &self.cross_region_copy);
-        formatter.finish()
-    }
-}
 /// See [`Action`](crate::model::Action).
 pub mod action {
 
     /// A builder for [`Action`](crate::model::Action).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) cross_region_copy:
@@ -359,7 +337,7 @@ impl Action {
 /// <p>To specify a cross-Region copy rule for snapshot and AMI policies, use <code>CrossRegionCopyRule</code>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CrossRegionCopyAction {
     /// <p>The target Region.</p>
     #[doc(hidden)]
@@ -387,20 +365,11 @@ impl CrossRegionCopyAction {
         self.retain_rule.as_ref()
     }
 }
-impl std::fmt::Debug for CrossRegionCopyAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CrossRegionCopyAction");
-        formatter.field("target", &self.target);
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.field("retain_rule", &self.retain_rule);
-        formatter.finish()
-    }
-}
 /// See [`CrossRegionCopyAction`](crate::model::CrossRegionCopyAction).
 pub mod cross_region_copy_action {
 
     /// A builder for [`CrossRegionCopyAction`](crate::model::CrossRegionCopyAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target: std::option::Option<std::string::String>,
         pub(crate) encryption_configuration:
@@ -466,7 +435,7 @@ impl CrossRegionCopyAction {
 
 /// <p>Specifies a retention rule for cross-Region snapshot copies created by snapshot or event-based policies, or cross-Region AMI copies created by AMI policies. After the retention period expires, the cross-Region copy is deleted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CrossRegionCopyRetainRule {
     /// <p>The amount of time to retain a cross-Region snapshot or AMI copy. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
     #[doc(hidden)]
@@ -485,19 +454,11 @@ impl CrossRegionCopyRetainRule {
         self.interval_unit.as_ref()
     }
 }
-impl std::fmt::Debug for CrossRegionCopyRetainRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CrossRegionCopyRetainRule");
-        formatter.field("interval", &self.interval);
-        formatter.field("interval_unit", &self.interval_unit);
-        formatter.finish()
-    }
-}
 /// See [`CrossRegionCopyRetainRule`](crate::model::CrossRegionCopyRetainRule).
 pub mod cross_region_copy_retain_rule {
 
     /// A builder for [`CrossRegionCopyRetainRule`](crate::model::CrossRegionCopyRetainRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interval: std::option::Option<i32>,
         pub(crate) interval_unit: std::option::Option<crate::model::RetentionIntervalUnitValues>,
@@ -542,6 +503,43 @@ impl CrossRegionCopyRetainRule {
     }
 }
 
+/// When writing a match expression against `RetentionIntervalUnitValues`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let retentionintervalunitvalues = unimplemented!();
+/// match retentionintervalunitvalues {
+///     RetentionIntervalUnitValues::Days => { /* ... */ },
+///     RetentionIntervalUnitValues::Months => { /* ... */ },
+///     RetentionIntervalUnitValues::Weeks => { /* ... */ },
+///     RetentionIntervalUnitValues::Years => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `retentionintervalunitvalues` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RetentionIntervalUnitValues::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RetentionIntervalUnitValues::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RetentionIntervalUnitValues::NewFeature` is defined.
+/// Specifically, when `retentionintervalunitvalues` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RetentionIntervalUnitValues::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -562,8 +560,8 @@ pub enum RetentionIntervalUnitValues {
     Weeks,
     #[allow(missing_docs)] // documentation missing in model
     Years,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for RetentionIntervalUnitValues {
     fn from(s: &str) -> Self {
@@ -572,7 +570,9 @@ impl std::convert::From<&str> for RetentionIntervalUnitValues {
             "MONTHS" => RetentionIntervalUnitValues::Months,
             "WEEKS" => RetentionIntervalUnitValues::Weeks,
             "YEARS" => RetentionIntervalUnitValues::Years,
-            other => RetentionIntervalUnitValues::Unknown(other.to_owned()),
+            other => RetentionIntervalUnitValues::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -591,11 +591,11 @@ impl RetentionIntervalUnitValues {
             RetentionIntervalUnitValues::Months => "MONTHS",
             RetentionIntervalUnitValues::Weeks => "WEEKS",
             RetentionIntervalUnitValues::Years => "YEARS",
-            RetentionIntervalUnitValues::Unknown(s) => s.as_ref(),
+            RetentionIntervalUnitValues::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DAYS", "MONTHS", "WEEKS", "YEARS"]
     }
 }
@@ -607,7 +607,7 @@ impl AsRef<str> for RetentionIntervalUnitValues {
 
 /// <p> <b>[Event-based policies only]</b> Specifies the encryption settings for cross-Region snapshot copies created by event-based policies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionConfiguration {
     /// <p>To encrypt a copy of an unencrypted snapshot when encryption by default is not enabled, enable encryption using this parameter. Copies of encrypted snapshots are encrypted, even if this parameter is false or when encryption by default is not enabled.</p>
     #[doc(hidden)]
@@ -626,19 +626,11 @@ impl EncryptionConfiguration {
         self.cmk_arn.as_deref()
     }
 }
-impl std::fmt::Debug for EncryptionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionConfiguration");
-        formatter.field("encrypted", &self.encrypted);
-        formatter.field("cmk_arn", &self.cmk_arn);
-        formatter.finish()
-    }
-}
 /// See [`EncryptionConfiguration`](crate::model::EncryptionConfiguration).
 pub mod encryption_configuration {
 
     /// A builder for [`EncryptionConfiguration`](crate::model::EncryptionConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encrypted: std::option::Option<bool>,
         pub(crate) cmk_arn: std::option::Option<std::string::String>,
@@ -682,7 +674,7 @@ impl EncryptionConfiguration {
 
 /// <p> <b>[Event-based policies only]</b> Specifies an event that activates an event-based policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventSource {
     /// <p>The source of the event. Currently only managed CloudWatch Events rules are supported.</p>
     #[doc(hidden)]
@@ -701,19 +693,11 @@ impl EventSource {
         self.parameters.as_ref()
     }
 }
-impl std::fmt::Debug for EventSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventSource");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
-    }
-}
 /// See [`EventSource`](crate::model::EventSource).
 pub mod event_source {
 
     /// A builder for [`EventSource`](crate::model::EventSource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::EventSourceValues>,
         pub(crate) parameters: std::option::Option<crate::model::EventParameters>,
@@ -763,7 +747,7 @@ impl EventSource {
 
 /// <p> <b>[Event-based policies only]</b> Specifies an event that activates an event-based policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventParameters {
     /// <p>The type of event. Currently, only snapshot sharing events are supported.</p>
     #[doc(hidden)]
@@ -791,20 +775,11 @@ impl EventParameters {
         self.description_regex.as_deref()
     }
 }
-impl std::fmt::Debug for EventParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventParameters");
-        formatter.field("event_type", &self.event_type);
-        formatter.field("snapshot_owner", &self.snapshot_owner);
-        formatter.field("description_regex", &self.description_regex);
-        formatter.finish()
-    }
-}
 /// See [`EventParameters`](crate::model::EventParameters).
 pub mod event_parameters {
 
     /// A builder for [`EventParameters`](crate::model::EventParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_type: std::option::Option<crate::model::EventTypeValues>,
         pub(crate) snapshot_owner: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -875,6 +850,40 @@ impl EventParameters {
     }
 }
 
+/// When writing a match expression against `EventTypeValues`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let eventtypevalues = unimplemented!();
+/// match eventtypevalues {
+///     EventTypeValues::ShareSnapshot => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `eventtypevalues` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EventTypeValues::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EventTypeValues::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EventTypeValues::NewFeature` is defined.
+/// Specifically, when `eventtypevalues` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EventTypeValues::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -889,14 +898,14 @@ impl EventParameters {
 pub enum EventTypeValues {
     #[allow(missing_docs)] // documentation missing in model
     ShareSnapshot,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EventTypeValues {
     fn from(s: &str) -> Self {
         match s {
             "shareSnapshot" => EventTypeValues::ShareSnapshot,
-            other => EventTypeValues::Unknown(other.to_owned()),
+            other => EventTypeValues::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -912,11 +921,11 @@ impl EventTypeValues {
     pub fn as_str(&self) -> &str {
         match self {
             EventTypeValues::ShareSnapshot => "shareSnapshot",
-            EventTypeValues::Unknown(s) => s.as_ref(),
+            EventTypeValues::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["shareSnapshot"]
     }
 }
@@ -926,6 +935,40 @@ impl AsRef<str> for EventTypeValues {
     }
 }
 
+/// When writing a match expression against `EventSourceValues`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let eventsourcevalues = unimplemented!();
+/// match eventsourcevalues {
+///     EventSourceValues::ManagedCwe => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `eventsourcevalues` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EventSourceValues::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EventSourceValues::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EventSourceValues::NewFeature` is defined.
+/// Specifically, when `eventsourcevalues` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EventSourceValues::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -940,14 +983,16 @@ impl AsRef<str> for EventTypeValues {
 pub enum EventSourceValues {
     #[allow(missing_docs)] // documentation missing in model
     ManagedCwe,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EventSourceValues {
     fn from(s: &str) -> Self {
         match s {
             "MANAGED_CWE" => EventSourceValues::ManagedCwe,
-            other => EventSourceValues::Unknown(other.to_owned()),
+            other => {
+                EventSourceValues::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -963,11 +1008,11 @@ impl EventSourceValues {
     pub fn as_str(&self) -> &str {
         match self {
             EventSourceValues::ManagedCwe => "MANAGED_CWE",
-            EventSourceValues::Unknown(s) => s.as_ref(),
+            EventSourceValues::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MANAGED_CWE"]
     }
 }
@@ -980,7 +1025,7 @@ impl AsRef<str> for EventSourceValues {
 /// <p> <b>[Snapshot and AMI policies only]</b> Specifies optional parameters for snapshot and AMI policies. The set of valid parameters depends on the combination of policy type and target resource type.</p>
 /// <p>If you choose to exclude boot volumes and you specify tags that consequently exclude all of the additional data volumes attached to an instance, then Amazon Data Lifecycle Manager will not create any snapshots for the affected instance, and it will emit a <code>SnapshotsCreateFailed</code> Amazon CloudWatch metric. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-dlm-cw-metrics.html">Monitor your policies using Amazon CloudWatch</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Parameters {
     /// <p> <b>[Snapshot policies that target instances only]</b> Indicates whether to exclude the root volume from multi-volume snapshot sets. The default is <code>false</code>. If you specify <code>true</code>, then the root volumes attached to targeted instances will be excluded from the multi-volume snapshot sets created by the policy.</p>
     #[doc(hidden)]
@@ -1008,20 +1053,11 @@ impl Parameters {
         self.exclude_data_volume_tags.as_deref()
     }
 }
-impl std::fmt::Debug for Parameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Parameters");
-        formatter.field("exclude_boot_volume", &self.exclude_boot_volume);
-        formatter.field("no_reboot", &self.no_reboot);
-        formatter.field("exclude_data_volume_tags", &self.exclude_data_volume_tags);
-        formatter.finish()
-    }
-}
 /// See [`Parameters`](crate::model::Parameters).
 pub mod parameters {
 
     /// A builder for [`Parameters`](crate::model::Parameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) exclude_boot_volume: std::option::Option<bool>,
         pub(crate) no_reboot: std::option::Option<bool>,
@@ -1088,7 +1124,7 @@ impl Parameters {
 
 /// <p>Specifies a tag for a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The tag key.</p>
     #[doc(hidden)]
@@ -1107,19 +1143,11 @@ impl Tag {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -1163,7 +1191,7 @@ impl Tag {
 
 /// <p> <b>[Snapshot and AMI policies only]</b> Specifies a schedule for a snapshot or AMI lifecycle policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Schedule {
     /// <p>The name of the schedule.</p>
     #[doc(hidden)]
@@ -1254,28 +1282,11 @@ impl Schedule {
         self.archive_rule.as_ref()
     }
 }
-impl std::fmt::Debug for Schedule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Schedule");
-        formatter.field("name", &self.name);
-        formatter.field("copy_tags", &self.copy_tags);
-        formatter.field("tags_to_add", &self.tags_to_add);
-        formatter.field("variable_tags", &self.variable_tags);
-        formatter.field("create_rule", &self.create_rule);
-        formatter.field("retain_rule", &self.retain_rule);
-        formatter.field("fast_restore_rule", &self.fast_restore_rule);
-        formatter.field("cross_region_copy_rules", &self.cross_region_copy_rules);
-        formatter.field("share_rules", &self.share_rules);
-        formatter.field("deprecate_rule", &self.deprecate_rule);
-        formatter.field("archive_rule", &self.archive_rule);
-        formatter.finish()
-    }
-}
 /// See [`Schedule`](crate::model::Schedule).
 pub mod schedule {
 
     /// A builder for [`Schedule`](crate::model::Schedule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) copy_tags: std::option::Option<bool>,
@@ -1485,7 +1496,7 @@ impl Schedule {
 
 /// <p> <b>[Snapshot policies only]</b> Specifies a snapshot archiving rule for a schedule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ArchiveRule {
     /// <p>Information about the retention period for the snapshot archiving rule.</p>
     #[doc(hidden)]
@@ -1497,18 +1508,11 @@ impl ArchiveRule {
         self.retain_rule.as_ref()
     }
 }
-impl std::fmt::Debug for ArchiveRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ArchiveRule");
-        formatter.field("retain_rule", &self.retain_rule);
-        formatter.finish()
-    }
-}
 /// See [`ArchiveRule`](crate::model::ArchiveRule).
 pub mod archive_rule {
 
     /// A builder for [`ArchiveRule`](crate::model::ArchiveRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) retain_rule: std::option::Option<crate::model::ArchiveRetainRule>,
     }
@@ -1543,7 +1547,7 @@ impl ArchiveRule {
 
 /// <p> <b>[Snapshot policies only]</b> Specifies information about the archive storage tier retention period.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ArchiveRetainRule {
     /// <p>Information about retention period in the Amazon EBS Snapshots Archive. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/snapshot-archive.html">Archive Amazon EBS snapshots</a>.</p>
     #[doc(hidden)]
@@ -1557,18 +1561,11 @@ impl ArchiveRetainRule {
         self.retention_archive_tier.as_ref()
     }
 }
-impl std::fmt::Debug for ArchiveRetainRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ArchiveRetainRule");
-        formatter.field("retention_archive_tier", &self.retention_archive_tier);
-        formatter.finish()
-    }
-}
 /// See [`ArchiveRetainRule`](crate::model::ArchiveRetainRule).
 pub mod archive_retain_rule {
 
     /// A builder for [`ArchiveRetainRule`](crate::model::ArchiveRetainRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) retention_archive_tier: std::option::Option<crate::model::RetentionArchiveTier>,
     }
@@ -1607,7 +1604,7 @@ impl ArchiveRetainRule {
 /// <p>For <b>count-based schedules</b>, you must specify <b>Count</b>. For <b>age-based schedules</b>, you must specify <b>Interval</b> and <b> IntervalUnit</b>.</p>
 /// <p>For more information about using snapshot archiving, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive">Considerations for snapshot lifecycle policies</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RetentionArchiveTier {
     /// <p>The maximum number of snapshots to retain in the archive storage tier for each volume. The count must ensure that each snapshot remains in the archive tier for at least 90 days. For example, if the schedule creates snapshots every 30 days, you must specify a count of 3 or more to ensure that each snapshot is archived for at least 90 days.</p>
     #[doc(hidden)]
@@ -1633,20 +1630,11 @@ impl RetentionArchiveTier {
         self.interval_unit.as_ref()
     }
 }
-impl std::fmt::Debug for RetentionArchiveTier {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RetentionArchiveTier");
-        formatter.field("count", &self.count);
-        formatter.field("interval", &self.interval);
-        formatter.field("interval_unit", &self.interval_unit);
-        formatter.finish()
-    }
-}
 /// See [`RetentionArchiveTier`](crate::model::RetentionArchiveTier).
 pub mod retention_archive_tier {
 
     /// A builder for [`RetentionArchiveTier`](crate::model::RetentionArchiveTier).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) count: std::option::Option<i32>,
         pub(crate) interval: std::option::Option<i32>,
@@ -1706,7 +1694,7 @@ impl RetentionArchiveTier {
 /// <p> <b>[AMI policies only]</b> Specifies an AMI deprecation rule for AMIs created by an AMI lifecycle policy.</p>
 /// <p>For age-based schedules, you must specify <b>Interval</b> and <b>IntervalUnit</b>. For count-based schedules, you must specify <b>Count</b>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeprecateRule {
     /// <p>If the schedule has a count-based retention rule, this parameter specifies the number of oldest AMIs to deprecate. The count must be less than or equal to the schedule's retention count, and it can't be greater than 1000.</p>
     #[doc(hidden)]
@@ -1732,20 +1720,11 @@ impl DeprecateRule {
         self.interval_unit.as_ref()
     }
 }
-impl std::fmt::Debug for DeprecateRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeprecateRule");
-        formatter.field("count", &self.count);
-        formatter.field("interval", &self.interval);
-        formatter.field("interval_unit", &self.interval_unit);
-        formatter.finish()
-    }
-}
 /// See [`DeprecateRule`](crate::model::DeprecateRule).
 pub mod deprecate_rule {
 
     /// A builder for [`DeprecateRule`](crate::model::DeprecateRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) count: std::option::Option<i32>,
         pub(crate) interval: std::option::Option<i32>,
@@ -1804,7 +1783,7 @@ impl DeprecateRule {
 
 /// <p> <b>[Snapshot policies only]</b> Specifies a rule for sharing snapshots across Amazon Web Services accounts.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ShareRule {
     /// <p>The IDs of the Amazon Web Services accounts with which to share the snapshots.</p>
     #[doc(hidden)]
@@ -1832,20 +1811,11 @@ impl ShareRule {
         self.unshare_interval_unit.as_ref()
     }
 }
-impl std::fmt::Debug for ShareRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ShareRule");
-        formatter.field("target_accounts", &self.target_accounts);
-        formatter.field("unshare_interval", &self.unshare_interval);
-        formatter.field("unshare_interval_unit", &self.unshare_interval_unit);
-        formatter.finish()
-    }
-}
 /// See [`ShareRule`](crate::model::ShareRule).
 pub mod share_rule {
 
     /// A builder for [`ShareRule`](crate::model::ShareRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) unshare_interval: std::option::Option<i32>,
@@ -1919,7 +1889,7 @@ impl ShareRule {
 /// <p>To specify a cross-Region copy action for event-based polices, use <code>CrossRegionCopyAction</code>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CrossRegionCopyRule {
     /// <note>
     /// <p>Avoid using this parameter when creating new policies. Instead, use <b>Target</b> to specify a target Region or a target Outpost for snapshot copies.</p>
@@ -1983,24 +1953,11 @@ impl CrossRegionCopyRule {
         self.deprecate_rule.as_ref()
     }
 }
-impl std::fmt::Debug for CrossRegionCopyRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CrossRegionCopyRule");
-        formatter.field("target_region", &self.target_region);
-        formatter.field("target", &self.target);
-        formatter.field("encrypted", &self.encrypted);
-        formatter.field("cmk_arn", &self.cmk_arn);
-        formatter.field("copy_tags", &self.copy_tags);
-        formatter.field("retain_rule", &self.retain_rule);
-        formatter.field("deprecate_rule", &self.deprecate_rule);
-        formatter.finish()
-    }
-}
 /// See [`CrossRegionCopyRule`](crate::model::CrossRegionCopyRule).
 pub mod cross_region_copy_rule {
 
     /// A builder for [`CrossRegionCopyRule`](crate::model::CrossRegionCopyRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_region: std::option::Option<std::string::String>,
         pub(crate) target: std::option::Option<std::string::String>,
@@ -2121,7 +2078,7 @@ impl CrossRegionCopyRule {
 
 /// <p> <b>[AMI policies only]</b> Specifies an AMI deprecation rule for cross-Region AMI copies created by an AMI policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CrossRegionCopyDeprecateRule {
     /// <p>The period after which to deprecate the cross-Region AMI copies. The period must be less than or equal to the cross-Region AMI copy retention period, and it can't be greater than 10 years. This is equivalent to 120 months, 520 weeks, or 3650 days.</p>
     #[doc(hidden)]
@@ -2140,19 +2097,11 @@ impl CrossRegionCopyDeprecateRule {
         self.interval_unit.as_ref()
     }
 }
-impl std::fmt::Debug for CrossRegionCopyDeprecateRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CrossRegionCopyDeprecateRule");
-        formatter.field("interval", &self.interval);
-        formatter.field("interval_unit", &self.interval_unit);
-        formatter.finish()
-    }
-}
 /// See [`CrossRegionCopyDeprecateRule`](crate::model::CrossRegionCopyDeprecateRule).
 pub mod cross_region_copy_deprecate_rule {
 
     /// A builder for [`CrossRegionCopyDeprecateRule`](crate::model::CrossRegionCopyDeprecateRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interval: std::option::Option<i32>,
         pub(crate) interval_unit: std::option::Option<crate::model::RetentionIntervalUnitValues>,
@@ -2199,7 +2148,7 @@ impl CrossRegionCopyDeprecateRule {
 
 /// <p> <b>[Snapshot policies only]</b> Specifies a rule for enabling fast snapshot restore for snapshots created by snapshot policies. You can enable fast snapshot restore based on either a count or a time interval.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FastRestoreRule {
     /// <p>The number of snapshots to be enabled with fast snapshot restore.</p>
     #[doc(hidden)]
@@ -2232,21 +2181,11 @@ impl FastRestoreRule {
         self.availability_zones.as_deref()
     }
 }
-impl std::fmt::Debug for FastRestoreRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FastRestoreRule");
-        formatter.field("count", &self.count);
-        formatter.field("interval", &self.interval);
-        formatter.field("interval_unit", &self.interval_unit);
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.finish()
-    }
-}
 /// See [`FastRestoreRule`](crate::model::FastRestoreRule).
 pub mod fast_restore_rule {
 
     /// A builder for [`FastRestoreRule`](crate::model::FastRestoreRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) count: std::option::Option<i32>,
         pub(crate) interval: std::option::Option<i32>,
@@ -2334,7 +2273,7 @@ impl FastRestoreRule {
 /// <li> <p> <b>Age-based retention</b> </p> <p>You must specify <b>Interval</b> and <b>IntervalUnit</b>. If you specify an <code>ArchiveRule</code> for the schedule, then you can specify a retention interval of <code>0</code> days to archive snapshots immediately after creation. If you specify a <code>FastRestoreRule</code>, <code>ShareRule</code>, or a <code>CrossRegionCopyRule</code>, then you must specify a retention interval of <code>1</code> day or more.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RetainRule {
     /// <p>The number of snapshots to retain for each volume, up to a maximum of 1000. For example if you want to retain a maximum of three snapshots, specify <code>3</code>. When the fourth snapshot is created, the oldest retained snapshot is deleted, or it is moved to the archive tier if you have specified an <code>ArchiveRule</code>.</p>
     #[doc(hidden)]
@@ -2360,20 +2299,11 @@ impl RetainRule {
         self.interval_unit.as_ref()
     }
 }
-impl std::fmt::Debug for RetainRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RetainRule");
-        formatter.field("count", &self.count);
-        formatter.field("interval", &self.interval);
-        formatter.field("interval_unit", &self.interval_unit);
-        formatter.finish()
-    }
-}
 /// See [`RetainRule`](crate::model::RetainRule).
 pub mod retain_rule {
 
     /// A builder for [`RetainRule`](crate::model::RetainRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) count: std::option::Option<i32>,
         pub(crate) interval: std::option::Option<i32>,
@@ -2437,7 +2367,7 @@ impl RetainRule {
 /// </ul>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRule {
     /// <p> <b>[Snapshot policies only]</b> Specifies the destination for snapshots created by the policy. To create snapshots in the same Region as the source resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is used by default.</p>
     /// <p>If the policy targets resources in an Amazon Web Services Region, then you must create snapshots in the same Region as the source resource. If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost as the source resource, or in the Region of that Outpost.</p>
@@ -2481,22 +2411,11 @@ impl CreateRule {
         self.cron_expression.as_deref()
     }
 }
-impl std::fmt::Debug for CreateRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRule");
-        formatter.field("location", &self.location);
-        formatter.field("interval", &self.interval);
-        formatter.field("interval_unit", &self.interval_unit);
-        formatter.field("times", &self.times);
-        formatter.field("cron_expression", &self.cron_expression);
-        formatter.finish()
-    }
-}
 /// See [`CreateRule`](crate::model::CreateRule).
 pub mod create_rule {
 
     /// A builder for [`CreateRule`](crate::model::CreateRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location: std::option::Option<crate::model::LocationValues>,
         pub(crate) interval: std::option::Option<i32>,
@@ -2596,6 +2515,40 @@ impl CreateRule {
     }
 }
 
+/// When writing a match expression against `IntervalUnitValues`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let intervalunitvalues = unimplemented!();
+/// match intervalunitvalues {
+///     IntervalUnitValues::Hours => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `intervalunitvalues` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `IntervalUnitValues::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `IntervalUnitValues::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `IntervalUnitValues::NewFeature` is defined.
+/// Specifically, when `intervalunitvalues` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `IntervalUnitValues::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2610,14 +2563,16 @@ impl CreateRule {
 pub enum IntervalUnitValues {
     #[allow(missing_docs)] // documentation missing in model
     Hours,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for IntervalUnitValues {
     fn from(s: &str) -> Self {
         match s {
             "HOURS" => IntervalUnitValues::Hours,
-            other => IntervalUnitValues::Unknown(other.to_owned()),
+            other => {
+                IntervalUnitValues::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -2633,11 +2588,11 @@ impl IntervalUnitValues {
     pub fn as_str(&self) -> &str {
         match self {
             IntervalUnitValues::Hours => "HOURS",
-            IntervalUnitValues::Unknown(s) => s.as_ref(),
+            IntervalUnitValues::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HOURS"]
     }
 }
@@ -2647,6 +2602,41 @@ impl AsRef<str> for IntervalUnitValues {
     }
 }
 
+/// When writing a match expression against `LocationValues`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let locationvalues = unimplemented!();
+/// match locationvalues {
+///     LocationValues::Cloud => { /* ... */ },
+///     LocationValues::OutpostLocal => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `locationvalues` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `LocationValues::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `LocationValues::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `LocationValues::NewFeature` is defined.
+/// Specifically, when `locationvalues` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `LocationValues::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2663,15 +2653,15 @@ pub enum LocationValues {
     Cloud,
     #[allow(missing_docs)] // documentation missing in model
     OutpostLocal,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for LocationValues {
     fn from(s: &str) -> Self {
         match s {
             "CLOUD" => LocationValues::Cloud,
             "OUTPOST_LOCAL" => LocationValues::OutpostLocal,
-            other => LocationValues::Unknown(other.to_owned()),
+            other => LocationValues::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2688,11 +2678,11 @@ impl LocationValues {
         match self {
             LocationValues::Cloud => "CLOUD",
             LocationValues::OutpostLocal => "OUTPOST_LOCAL",
-            LocationValues::Unknown(s) => s.as_ref(),
+            LocationValues::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CLOUD", "OUTPOST_LOCAL"]
     }
 }
@@ -2702,6 +2692,41 @@ impl AsRef<str> for LocationValues {
     }
 }
 
+/// When writing a match expression against `ResourceLocationValues`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let resourcelocationvalues = unimplemented!();
+/// match resourcelocationvalues {
+///     ResourceLocationValues::Cloud => { /* ... */ },
+///     ResourceLocationValues::Outpost => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `resourcelocationvalues` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ResourceLocationValues::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ResourceLocationValues::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ResourceLocationValues::NewFeature` is defined.
+/// Specifically, when `resourcelocationvalues` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ResourceLocationValues::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2718,15 +2743,17 @@ pub enum ResourceLocationValues {
     Cloud,
     #[allow(missing_docs)] // documentation missing in model
     Outpost,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ResourceLocationValues {
     fn from(s: &str) -> Self {
         match s {
             "CLOUD" => ResourceLocationValues::Cloud,
             "OUTPOST" => ResourceLocationValues::Outpost,
-            other => ResourceLocationValues::Unknown(other.to_owned()),
+            other => {
+                ResourceLocationValues::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -2743,11 +2770,11 @@ impl ResourceLocationValues {
         match self {
             ResourceLocationValues::Cloud => "CLOUD",
             ResourceLocationValues::Outpost => "OUTPOST",
-            ResourceLocationValues::Unknown(s) => s.as_ref(),
+            ResourceLocationValues::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CLOUD", "OUTPOST"]
     }
 }
@@ -2757,6 +2784,41 @@ impl AsRef<str> for ResourceLocationValues {
     }
 }
 
+/// When writing a match expression against `ResourceTypeValues`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let resourcetypevalues = unimplemented!();
+/// match resourcetypevalues {
+///     ResourceTypeValues::Instance => { /* ... */ },
+///     ResourceTypeValues::Volume => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `resourcetypevalues` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ResourceTypeValues::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ResourceTypeValues::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ResourceTypeValues::NewFeature` is defined.
+/// Specifically, when `resourcetypevalues` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ResourceTypeValues::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2773,15 +2835,17 @@ pub enum ResourceTypeValues {
     Instance,
     #[allow(missing_docs)] // documentation missing in model
     Volume,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ResourceTypeValues {
     fn from(s: &str) -> Self {
         match s {
             "INSTANCE" => ResourceTypeValues::Instance,
             "VOLUME" => ResourceTypeValues::Volume,
-            other => ResourceTypeValues::Unknown(other.to_owned()),
+            other => {
+                ResourceTypeValues::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -2798,11 +2862,11 @@ impl ResourceTypeValues {
         match self {
             ResourceTypeValues::Instance => "INSTANCE",
             ResourceTypeValues::Volume => "VOLUME",
-            ResourceTypeValues::Unknown(s) => s.as_ref(),
+            ResourceTypeValues::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INSTANCE", "VOLUME"]
     }
 }
@@ -2812,6 +2876,42 @@ impl AsRef<str> for ResourceTypeValues {
     }
 }
 
+/// When writing a match expression against `PolicyTypeValues`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let policytypevalues = unimplemented!();
+/// match policytypevalues {
+///     PolicyTypeValues::EbsSnapshotManagement => { /* ... */ },
+///     PolicyTypeValues::EventBasedPolicy => { /* ... */ },
+///     PolicyTypeValues::ImageManagement => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `policytypevalues` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PolicyTypeValues::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PolicyTypeValues::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PolicyTypeValues::NewFeature` is defined.
+/// Specifically, when `policytypevalues` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PolicyTypeValues::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2830,8 +2930,8 @@ pub enum PolicyTypeValues {
     EventBasedPolicy,
     #[allow(missing_docs)] // documentation missing in model
     ImageManagement,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PolicyTypeValues {
     fn from(s: &str) -> Self {
@@ -2839,7 +2939,7 @@ impl std::convert::From<&str> for PolicyTypeValues {
             "EBS_SNAPSHOT_MANAGEMENT" => PolicyTypeValues::EbsSnapshotManagement,
             "EVENT_BASED_POLICY" => PolicyTypeValues::EventBasedPolicy,
             "IMAGE_MANAGEMENT" => PolicyTypeValues::ImageManagement,
-            other => PolicyTypeValues::Unknown(other.to_owned()),
+            other => PolicyTypeValues::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2857,11 +2957,11 @@ impl PolicyTypeValues {
             PolicyTypeValues::EbsSnapshotManagement => "EBS_SNAPSHOT_MANAGEMENT",
             PolicyTypeValues::EventBasedPolicy => "EVENT_BASED_POLICY",
             PolicyTypeValues::ImageManagement => "IMAGE_MANAGEMENT",
-            PolicyTypeValues::Unknown(s) => s.as_ref(),
+            PolicyTypeValues::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "EBS_SNAPSHOT_MANAGEMENT",
             "EVENT_BASED_POLICY",
@@ -2875,6 +2975,41 @@ impl AsRef<str> for PolicyTypeValues {
     }
 }
 
+/// When writing a match expression against `SettablePolicyStateValues`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let settablepolicystatevalues = unimplemented!();
+/// match settablepolicystatevalues {
+///     SettablePolicyStateValues::Disabled => { /* ... */ },
+///     SettablePolicyStateValues::Enabled => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `settablepolicystatevalues` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SettablePolicyStateValues::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SettablePolicyStateValues::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SettablePolicyStateValues::NewFeature` is defined.
+/// Specifically, when `settablepolicystatevalues` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SettablePolicyStateValues::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2891,15 +3026,17 @@ pub enum SettablePolicyStateValues {
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SettablePolicyStateValues {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => SettablePolicyStateValues::Disabled,
             "ENABLED" => SettablePolicyStateValues::Enabled,
-            other => SettablePolicyStateValues::Unknown(other.to_owned()),
+            other => SettablePolicyStateValues::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -2916,11 +3053,11 @@ impl SettablePolicyStateValues {
         match self {
             SettablePolicyStateValues::Disabled => "DISABLED",
             SettablePolicyStateValues::Enabled => "ENABLED",
-            SettablePolicyStateValues::Unknown(s) => s.as_ref(),
+            SettablePolicyStateValues::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -2932,7 +3069,7 @@ impl AsRef<str> for SettablePolicyStateValues {
 
 /// <p> <b>[All policy types]</b> Detailed information about a snapshot, AMI, or event-based lifecycle policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LifecyclePolicy {
     /// <p>The identifier of the lifecycle policy.</p>
     #[doc(hidden)]
@@ -3011,27 +3148,11 @@ impl LifecyclePolicy {
         self.policy_arn.as_deref()
     }
 }
-impl std::fmt::Debug for LifecyclePolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LifecyclePolicy");
-        formatter.field("policy_id", &self.policy_id);
-        formatter.field("description", &self.description);
-        formatter.field("state", &self.state);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("execution_role_arn", &self.execution_role_arn);
-        formatter.field("date_created", &self.date_created);
-        formatter.field("date_modified", &self.date_modified);
-        formatter.field("policy_details", &self.policy_details);
-        formatter.field("tags", &self.tags);
-        formatter.field("policy_arn", &self.policy_arn);
-        formatter.finish()
-    }
-}
 /// See [`LifecyclePolicy`](crate::model::LifecyclePolicy).
 pub mod lifecycle_policy {
 
     /// A builder for [`LifecyclePolicy`](crate::model::LifecyclePolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -3204,6 +3325,42 @@ impl LifecyclePolicy {
     }
 }
 
+/// When writing a match expression against `GettablePolicyStateValues`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let gettablepolicystatevalues = unimplemented!();
+/// match gettablepolicystatevalues {
+///     GettablePolicyStateValues::Disabled => { /* ... */ },
+///     GettablePolicyStateValues::Enabled => { /* ... */ },
+///     GettablePolicyStateValues::Error => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `gettablepolicystatevalues` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `GettablePolicyStateValues::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `GettablePolicyStateValues::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `GettablePolicyStateValues::NewFeature` is defined.
+/// Specifically, when `gettablepolicystatevalues` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `GettablePolicyStateValues::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3222,8 +3379,8 @@ pub enum GettablePolicyStateValues {
     Enabled,
     #[allow(missing_docs)] // documentation missing in model
     Error,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for GettablePolicyStateValues {
     fn from(s: &str) -> Self {
@@ -3231,7 +3388,9 @@ impl std::convert::From<&str> for GettablePolicyStateValues {
             "DISABLED" => GettablePolicyStateValues::Disabled,
             "ENABLED" => GettablePolicyStateValues::Enabled,
             "ERROR" => GettablePolicyStateValues::Error,
-            other => GettablePolicyStateValues::Unknown(other.to_owned()),
+            other => GettablePolicyStateValues::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -3249,11 +3408,11 @@ impl GettablePolicyStateValues {
             GettablePolicyStateValues::Disabled => "DISABLED",
             GettablePolicyStateValues::Enabled => "ENABLED",
             GettablePolicyStateValues::Error => "ERROR",
-            GettablePolicyStateValues::Unknown(s) => s.as_ref(),
+            GettablePolicyStateValues::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED", "ERROR"]
     }
 }
@@ -3265,7 +3424,7 @@ impl AsRef<str> for GettablePolicyStateValues {
 
 /// <p>Summary information about a lifecycle policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LifecyclePolicySummary {
     /// <p>The identifier of the lifecycle policy.</p>
     #[doc(hidden)]
@@ -3309,22 +3468,11 @@ impl LifecyclePolicySummary {
         self.policy_type.as_ref()
     }
 }
-impl std::fmt::Debug for LifecyclePolicySummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LifecyclePolicySummary");
-        formatter.field("policy_id", &self.policy_id);
-        formatter.field("description", &self.description);
-        formatter.field("state", &self.state);
-        formatter.field("tags", &self.tags);
-        formatter.field("policy_type", &self.policy_type);
-        formatter.finish()
-    }
-}
 /// See [`LifecyclePolicySummary`](crate::model::LifecyclePolicySummary).
 pub mod lifecycle_policy_summary {
 
     /// A builder for [`LifecyclePolicySummary`](crate::model::LifecyclePolicySummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,

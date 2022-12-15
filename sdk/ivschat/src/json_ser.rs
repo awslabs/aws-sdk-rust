@@ -2,12 +2,13 @@
 pub fn serialize_structure_crate_input_create_chat_token_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateChatTokenInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.attributes {
+        #[allow(unused_mut)]
         let mut object_2 = object.key("attributes").start_object();
         for (key_3, value_4) in var_1 {
             {
-                object_2.key(key_3).string(value_4.as_str());
+                object_2.key(key_3.as_str()).string(value_4.as_str());
             }
         }
         object_2.finish();
@@ -39,7 +40,7 @@ pub fn serialize_structure_crate_input_create_chat_token_input(
 pub fn serialize_structure_crate_input_create_room_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateRoomInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.maximum_message_length != 0 {
         object.key("maximumMessageLength").number(
             #[allow(clippy::useless_conversion)]
@@ -53,6 +54,7 @@ pub fn serialize_structure_crate_input_create_room_input(
         );
     }
     if let Some(var_10) = &input.message_review_handler {
+        #[allow(unused_mut)]
         let mut object_11 = object.key("messageReviewHandler").start_object();
         crate::json_ser::serialize_structure_crate_model_message_review_handler(
             &mut object_11,
@@ -64,10 +66,11 @@ pub fn serialize_structure_crate_input_create_room_input(
         object.key("name").string(var_12.as_str());
     }
     if let Some(var_13) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_14 = object.key("tags").start_object();
         for (key_15, value_16) in var_13 {
             {
-                object_14.key(key_15).string(value_16.as_str());
+                object_14.key(key_15.as_str()).string(value_16.as_str());
             }
         }
         object_14.finish();
@@ -78,7 +81,7 @@ pub fn serialize_structure_crate_input_create_room_input(
 pub fn serialize_structure_crate_input_delete_message_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteMessageInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_17) = &input.id {
         object.key("id").string(var_17.as_str());
     }
@@ -94,7 +97,7 @@ pub fn serialize_structure_crate_input_delete_message_input(
 pub fn serialize_structure_crate_input_delete_room_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteRoomInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_20) = &input.identifier {
         object.key("identifier").string(var_20.as_str());
     }
@@ -104,7 +107,7 @@ pub fn serialize_structure_crate_input_delete_room_input(
 pub fn serialize_structure_crate_input_disconnect_user_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DisconnectUserInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_21) = &input.reason {
         object.key("reason").string(var_21.as_str());
     }
@@ -120,7 +123,7 @@ pub fn serialize_structure_crate_input_disconnect_user_input(
 pub fn serialize_structure_crate_input_get_room_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetRoomInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_24) = &input.identifier {
         object.key("identifier").string(var_24.as_str());
     }
@@ -130,7 +133,7 @@ pub fn serialize_structure_crate_input_get_room_input(
 pub fn serialize_structure_crate_input_list_rooms_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListRoomsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.max_results != 0 {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -154,12 +157,13 @@ pub fn serialize_structure_crate_input_list_rooms_input(
 pub fn serialize_structure_crate_input_send_event_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::SendEventInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_28) = &input.attributes {
+        #[allow(unused_mut)]
         let mut object_29 = object.key("attributes").start_object();
         for (key_30, value_31) in var_28 {
             {
-                object_29.key(key_30).string(value_31.as_str());
+                object_29.key(key_30.as_str()).string(value_31.as_str());
             }
         }
         object_29.finish();
@@ -176,12 +180,13 @@ pub fn serialize_structure_crate_input_send_event_input(
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_34) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_35 = object.key("tags").start_object();
         for (key_36, value_37) in var_34 {
             {
-                object_35.key(key_36).string(value_37.as_str());
+                object_35.key(key_36.as_str()).string(value_37.as_str());
             }
         }
         object_35.finish();
@@ -192,7 +197,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_input_update_room_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateRoomInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_38) = &input.identifier {
         object.key("identifier").string(var_38.as_str());
     }
@@ -209,6 +214,7 @@ pub fn serialize_structure_crate_input_update_room_input(
         );
     }
     if let Some(var_39) = &input.message_review_handler {
+        #[allow(unused_mut)]
         let mut object_40 = object.key("messageReviewHandler").start_object();
         crate::json_ser::serialize_structure_crate_model_message_review_handler(
             &mut object_40,
@@ -225,7 +231,7 @@ pub fn serialize_structure_crate_input_update_room_input(
 pub fn serialize_structure_crate_model_message_review_handler(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::MessageReviewHandler,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_42) = &input.uri {
         object.key("uri").string(var_42.as_str());
     }

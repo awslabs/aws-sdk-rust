@@ -15,6 +15,8 @@
 //! [compiler limitations]: https://github.com/rust-lang/rust/issues/20671
 //! [do not need to be repeated]: https://github.com/rust-lang/rust/issues/20671#issuecomment-529752828
 
+use crate::erase::DynConnector;
+use crate::http_connector::HttpConnector;
 use crate::*;
 use aws_smithy_http::result::ConnectorError;
 
@@ -60,6 +62,17 @@ where
 {
     type Error = T::Error;
     type Future = T::Future;
+}
+
+impl<T, E, F> From<T> for HttpConnector
+where
+    E: Into<ConnectorError> + Send + Sync + 'static,
+    F: Send + 'static,
+    T: SmithyConnector<Error = E, Future = F, Response = http::Response<SdkBody>>,
+{
+    fn from(smithy_connector: T) -> Self {
+        HttpConnector::Prebuilt(Some(DynConnector::new(smithy_connector)))
+    }
 }
 
 /// A Smithy middleware service that adjusts [`aws_smithy_http::operation::Request`]s.

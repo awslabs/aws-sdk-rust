@@ -10,7 +10,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_smithy_xml::decode::{try_data, Document, ScopedDecoder, XmlError};
+use aws_smithy_xml::decode::{try_data, Document, ScopedDecoder, XmlDecodeError};
 use std::collections::HashMap;
 
 #[derive(Eq, PartialEq, Debug)]
@@ -40,10 +40,11 @@ struct XmlAttribute {
     bar: String,
 }
 
-fn deserialize_xml_attribute(inp: &str) -> Result<XmlAttribute, XmlError> {
+fn deserialize_xml_attribute(inp: &str) -> Result<XmlAttribute, XmlDecodeError> {
     let mut doc = Document::new(inp);
     let mut root = doc.root_element()?;
     #[allow(unused_assignments)]
+    #[allow(clippy::blacklisted_name)]
     let mut foo: Option<String> = None;
     let mut bar: Option<String> = None;
     foo = root.start_el().attr("foo").map(|attr| attr.to_string());
@@ -53,12 +54,12 @@ fn deserialize_xml_attribute(inp: &str) -> Result<XmlAttribute, XmlError> {
         }
     }
     Ok(XmlAttribute {
-        foo: foo.ok_or_else(|| XmlError::custom("missing foo"))?,
-        bar: bar.ok_or_else(|| XmlError::custom("missing bar"))?,
+        foo: foo.ok_or_else(|| XmlDecodeError::custom("missing foo"))?,
+        bar: bar.ok_or_else(|| XmlDecodeError::custom("missing bar"))?,
     })
 }
 
-fn deserialize_flat_xml_map(inp: &str) -> Result<FlatXmlMap, XmlError> {
+fn deserialize_flat_xml_map(inp: &str) -> Result<FlatXmlMap, XmlDecodeError> {
     let mut doc = Document::new(inp);
     let mut root = doc.root_element()?;
     let mut my_map: Option<HashMap<String, FooEnum>> = None;
@@ -74,7 +75,7 @@ fn deserialize_flat_xml_map(inp: &str) -> Result<FlatXmlMap, XmlError> {
     })
 }
 
-fn deserialize_xml_map(inp: &str) -> Result<XmlMap, XmlError> {
+fn deserialize_xml_map(inp: &str) -> Result<XmlMap, XmlDecodeError> {
     let mut doc = Document::new(inp);
     let mut root = doc.root_element()?;
     let mut my_map: Option<HashMap<String, FooEnum>> = None;
@@ -84,13 +85,13 @@ fn deserialize_xml_map(inp: &str) -> Result<XmlMap, XmlError> {
         }
     }
     Ok(XmlMap {
-        values: my_map.ok_or_else(|| XmlError::custom("missing map"))?,
+        values: my_map.ok_or_else(|| XmlDecodeError::custom("missing map"))?,
     })
 }
 
 fn deserialize_foo_enum_map(
     decoder: &mut ScopedDecoder,
-) -> Result<HashMap<String, FooEnum>, XmlError> {
+) -> Result<HashMap<String, FooEnum>, XmlDecodeError> {
     let mut out: HashMap<String, FooEnum> = HashMap::new();
     while let Some(mut tag) = decoder.next_tag() {
         if tag.start_el().matches("entry") {
@@ -103,7 +104,7 @@ fn deserialize_foo_enum_map(
 fn deserialize_foo_enum_map_entry(
     decoder: &mut ScopedDecoder,
     out: &mut HashMap<String, FooEnum>,
-) -> Result<(), XmlError> {
+) -> Result<(), XmlDecodeError> {
     let mut k: Option<String> = None;
     let mut v: Option<FooEnum> = None;
     while let Some(mut tag) = decoder.next_tag() {
@@ -117,7 +118,7 @@ fn deserialize_foo_enum_map_entry(
         (Some(k), Some(v)) => {
             out.insert(k, v);
         }
-        _ => return Err(XmlError::custom("missing key value in map")),
+        _ => return Err(XmlDecodeError::custom("missing key value in map")),
     }
     Ok(())
 }
@@ -149,7 +150,7 @@ fn deserialize_map_test() {
 
 pub fn deserialize_nested_string_list(
     decoder: &mut ScopedDecoder,
-) -> Result<std::vec::Vec<std::vec::Vec<std::string::String>>, XmlError> {
+) -> Result<std::vec::Vec<std::vec::Vec<std::string::String>>, XmlDecodeError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -164,7 +165,7 @@ pub fn deserialize_nested_string_list(
 
 pub fn deserialize_string_list(
     decoder: &mut ScopedDecoder,
-) -> Result<std::vec::Vec<std::string::String>, XmlError> {
+) -> Result<std::vec::Vec<std::string::String>, XmlDecodeError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match dbg!(tag.start_el()) {

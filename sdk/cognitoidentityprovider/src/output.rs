@@ -2,19 +2,13 @@
 
 /// <p>A container representing the response from the server from the request to verify user attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VerifyUserAttributeOutput {}
-impl std::fmt::Debug for VerifyUserAttributeOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VerifyUserAttributeOutput");
-        formatter.finish()
-    }
-}
 /// See [`VerifyUserAttributeOutput`](crate::output::VerifyUserAttributeOutput).
 pub mod verify_user_attribute_output {
 
     /// A builder for [`VerifyUserAttributeOutput`](crate::output::VerifyUserAttributeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`VerifyUserAttributeOutput`](crate::output::VerifyUserAttributeOutput).
@@ -32,7 +26,7 @@ impl VerifyUserAttributeOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VerifySoftwareTokenOutput {
     /// <p>The status of the verify software token.</p>
     #[doc(hidden)]
@@ -51,19 +45,11 @@ impl VerifySoftwareTokenOutput {
         self.session.as_deref()
     }
 }
-impl std::fmt::Debug for VerifySoftwareTokenOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VerifySoftwareTokenOutput");
-        formatter.field("status", &self.status);
-        formatter.field("session", &self.session);
-        formatter.finish()
-    }
-}
 /// See [`VerifySoftwareTokenOutput`](crate::output::VerifySoftwareTokenOutput).
 pub mod verify_software_token_output {
 
     /// A builder for [`VerifySoftwareTokenOutput`](crate::output::VerifySoftwareTokenOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::VerifySoftwareTokenResponseType>,
         pub(crate) session: std::option::Option<std::string::String>,
@@ -110,7 +96,7 @@ impl VerifySoftwareTokenOutput {
 
 /// <p>The UpdateUserPoolDomain response output.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateUserPoolDomainOutput {
     /// <p>The Amazon CloudFront endpoint that Amazon Cognito set up when you added the custom domain to your user pool.</p>
     #[doc(hidden)]
@@ -122,18 +108,11 @@ impl UpdateUserPoolDomainOutput {
         self.cloud_front_domain.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateUserPoolDomainOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateUserPoolDomainOutput");
-        formatter.field("cloud_front_domain", &self.cloud_front_domain);
-        formatter.finish()
-    }
-}
 /// See [`UpdateUserPoolDomainOutput`](crate::output::UpdateUserPoolDomainOutput).
 pub mod update_user_pool_domain_output {
 
     /// A builder for [`UpdateUserPoolDomainOutput`](crate::output::UpdateUserPoolDomainOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_front_domain: std::option::Option<std::string::String>,
     }
@@ -168,7 +147,7 @@ impl UpdateUserPoolDomainOutput {
 
 /// <p>Represents the response from the server to the request to update the user pool client.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateUserPoolClientOutput {
     /// <p>The user pool client value from the response from the server when you request to update the user pool client.</p>
     #[doc(hidden)]
@@ -180,18 +159,11 @@ impl UpdateUserPoolClientOutput {
         self.user_pool_client.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateUserPoolClientOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateUserPoolClientOutput");
-        formatter.field("user_pool_client", &self.user_pool_client);
-        formatter.finish()
-    }
-}
 /// See [`UpdateUserPoolClientOutput`](crate::output::UpdateUserPoolClientOutput).
 pub mod update_user_pool_client_output {
 
     /// A builder for [`UpdateUserPoolClientOutput`](crate::output::UpdateUserPoolClientOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_client: std::option::Option<crate::model::UserPoolClientType>,
     }
@@ -226,19 +198,13 @@ impl UpdateUserPoolClientOutput {
 
 /// <p>Represents the response from the server when you make a request to update the user pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateUserPoolOutput {}
-impl std::fmt::Debug for UpdateUserPoolOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateUserPoolOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateUserPoolOutput`](crate::output::UpdateUserPoolOutput).
 pub mod update_user_pool_output {
 
     /// A builder for [`UpdateUserPoolOutput`](crate::output::UpdateUserPoolOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateUserPoolOutput`](crate::output::UpdateUserPoolOutput).
@@ -256,7 +222,7 @@ impl UpdateUserPoolOutput {
 
 /// <p>Represents the response from the server for the request to update user attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateUserAttributesOutput {
     /// <p>The code delivery details list from the server for the request to update user attributes.</p>
     #[doc(hidden)]
@@ -271,21 +237,11 @@ impl UpdateUserAttributesOutput {
         self.code_delivery_details_list.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateUserAttributesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateUserAttributesOutput");
-        formatter.field(
-            "code_delivery_details_list",
-            &self.code_delivery_details_list,
-        );
-        formatter.finish()
-    }
-}
 /// See [`UpdateUserAttributesOutput`](crate::output::UpdateUserAttributesOutput).
 pub mod update_user_attributes_output {
 
     /// A builder for [`UpdateUserAttributesOutput`](crate::output::UpdateUserAttributesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code_delivery_details_list:
             std::option::Option<std::vec::Vec<crate::model::CodeDeliveryDetailsType>>,
@@ -330,7 +286,7 @@ impl UpdateUserAttributesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateResourceServerOutput {
     /// <p>The resource server.</p>
     #[doc(hidden)]
@@ -342,18 +298,11 @@ impl UpdateResourceServerOutput {
         self.resource_server.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateResourceServerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateResourceServerOutput");
-        formatter.field("resource_server", &self.resource_server);
-        formatter.finish()
-    }
-}
 /// See [`UpdateResourceServerOutput`](crate::output::UpdateResourceServerOutput).
 pub mod update_resource_server_output {
 
     /// A builder for [`UpdateResourceServerOutput`](crate::output::UpdateResourceServerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_server: std::option::Option<crate::model::ResourceServerType>,
     }
@@ -388,7 +337,7 @@ impl UpdateResourceServerOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateIdentityProviderOutput {
     /// <p>The IdP object.</p>
     #[doc(hidden)]
@@ -400,18 +349,11 @@ impl UpdateIdentityProviderOutput {
         self.identity_provider.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateIdentityProviderOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateIdentityProviderOutput");
-        formatter.field("identity_provider", &self.identity_provider);
-        formatter.finish()
-    }
-}
 /// See [`UpdateIdentityProviderOutput`](crate::output::UpdateIdentityProviderOutput).
 pub mod update_identity_provider_output {
 
     /// A builder for [`UpdateIdentityProviderOutput`](crate::output::UpdateIdentityProviderOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_provider: std::option::Option<crate::model::IdentityProviderType>,
     }
@@ -446,7 +388,7 @@ impl UpdateIdentityProviderOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGroupOutput {
     /// <p>The group object for the group.</p>
     #[doc(hidden)]
@@ -458,18 +400,11 @@ impl UpdateGroupOutput {
         self.group.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGroupOutput");
-        formatter.field("group", &self.group);
-        formatter.finish()
-    }
-}
 /// See [`UpdateGroupOutput`](crate::output::UpdateGroupOutput).
 pub mod update_group_output {
 
     /// A builder for [`UpdateGroupOutput`](crate::output::UpdateGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group: std::option::Option<crate::model::GroupType>,
     }
@@ -499,19 +434,13 @@ impl UpdateGroupOutput {
 
 /// <p>The response to the request to update the device status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDeviceStatusOutput {}
-impl std::fmt::Debug for UpdateDeviceStatusOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDeviceStatusOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateDeviceStatusOutput`](crate::output::UpdateDeviceStatusOutput).
 pub mod update_device_status_output {
 
     /// A builder for [`UpdateDeviceStatusOutput`](crate::output::UpdateDeviceStatusOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateDeviceStatusOutput`](crate::output::UpdateDeviceStatusOutput).
@@ -529,19 +458,13 @@ impl UpdateDeviceStatusOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAuthEventFeedbackOutput {}
-impl std::fmt::Debug for UpdateAuthEventFeedbackOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAuthEventFeedbackOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateAuthEventFeedbackOutput`](crate::output::UpdateAuthEventFeedbackOutput).
 pub mod update_auth_event_feedback_output {
 
     /// A builder for [`UpdateAuthEventFeedbackOutput`](crate::output::UpdateAuthEventFeedbackOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateAuthEventFeedbackOutput`](crate::output::UpdateAuthEventFeedbackOutput).
@@ -559,19 +482,13 @@ impl UpdateAuthEventFeedbackOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput {}
-impl std::fmt::Debug for UntagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -589,19 +506,13 @@ impl UntagResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput {}
-impl std::fmt::Debug for TagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -619,7 +530,7 @@ impl TagResourceOutput {
 
 /// <p>Represents the response from the server to the request to stop the user import job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopUserImportJobOutput {
     /// <p>The job object that represents the user import job.</p>
     #[doc(hidden)]
@@ -631,18 +542,11 @@ impl StopUserImportJobOutput {
         self.user_import_job.as_ref()
     }
 }
-impl std::fmt::Debug for StopUserImportJobOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopUserImportJobOutput");
-        formatter.field("user_import_job", &self.user_import_job);
-        formatter.finish()
-    }
-}
 /// See [`StopUserImportJobOutput`](crate::output::StopUserImportJobOutput).
 pub mod stop_user_import_job_output {
 
     /// A builder for [`StopUserImportJobOutput`](crate::output::StopUserImportJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_import_job: std::option::Option<crate::model::UserImportJobType>,
     }
@@ -677,7 +581,7 @@ impl StopUserImportJobOutput {
 
 /// <p>Represents the response from the server to the request to start the user import job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartUserImportJobOutput {
     /// <p>The job object that represents the user import job.</p>
     #[doc(hidden)]
@@ -689,18 +593,11 @@ impl StartUserImportJobOutput {
         self.user_import_job.as_ref()
     }
 }
-impl std::fmt::Debug for StartUserImportJobOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartUserImportJobOutput");
-        formatter.field("user_import_job", &self.user_import_job);
-        formatter.finish()
-    }
-}
 /// See [`StartUserImportJobOutput`](crate::output::StartUserImportJobOutput).
 pub mod start_user_import_job_output {
 
     /// A builder for [`StartUserImportJobOutput`](crate::output::StartUserImportJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_import_job: std::option::Option<crate::model::UserImportJobType>,
     }
@@ -735,7 +632,7 @@ impl StartUserImportJobOutput {
 
 /// <p>The response from the server for a registration request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SignUpOutput {
     /// <p>A response from the server indicating that a user registration has been confirmed.</p>
     #[doc(hidden)]
@@ -763,20 +660,11 @@ impl SignUpOutput {
         self.user_sub.as_deref()
     }
 }
-impl std::fmt::Debug for SignUpOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SignUpOutput");
-        formatter.field("user_confirmed", &self.user_confirmed);
-        formatter.field("code_delivery_details", &self.code_delivery_details);
-        formatter.field("user_sub", &self.user_sub);
-        formatter.finish()
-    }
-}
 /// See [`SignUpOutput`](crate::output::SignUpOutput).
 pub mod sign_up_output {
 
     /// A builder for [`SignUpOutput`](crate::output::SignUpOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_confirmed: std::option::Option<bool>,
         pub(crate) code_delivery_details:
@@ -839,19 +727,13 @@ impl SignUpOutput {
 
 /// <p>The response from the server for a set user settings request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetUserSettingsOutput {}
-impl std::fmt::Debug for SetUserSettingsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetUserSettingsOutput");
-        formatter.finish()
-    }
-}
 /// See [`SetUserSettingsOutput`](crate::output::SetUserSettingsOutput).
 pub mod set_user_settings_output {
 
     /// A builder for [`SetUserSettingsOutput`](crate::output::SetUserSettingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SetUserSettingsOutput`](crate::output::SetUserSettingsOutput).
@@ -869,7 +751,7 @@ impl SetUserSettingsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetUserPoolMfaConfigOutput {
     /// <p>The SMS text message MFA configuration.</p>
     #[doc(hidden)]
@@ -908,23 +790,11 @@ impl SetUserPoolMfaConfigOutput {
         self.mfa_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for SetUserPoolMfaConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetUserPoolMfaConfigOutput");
-        formatter.field("sms_mfa_configuration", &self.sms_mfa_configuration);
-        formatter.field(
-            "software_token_mfa_configuration",
-            &self.software_token_mfa_configuration,
-        );
-        formatter.field("mfa_configuration", &self.mfa_configuration);
-        formatter.finish()
-    }
-}
 /// See [`SetUserPoolMfaConfigOutput`](crate::output::SetUserPoolMfaConfigOutput).
 pub mod set_user_pool_mfa_config_output {
 
     /// A builder for [`SetUserPoolMfaConfigOutput`](crate::output::SetUserPoolMfaConfigOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sms_mfa_configuration: std::option::Option<crate::model::SmsMfaConfigType>,
         pub(crate) software_token_mfa_configuration:
@@ -1003,19 +873,13 @@ impl SetUserPoolMfaConfigOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetUserMfaPreferenceOutput {}
-impl std::fmt::Debug for SetUserMfaPreferenceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetUserMfaPreferenceOutput");
-        formatter.finish()
-    }
-}
 /// See [`SetUserMfaPreferenceOutput`](crate::output::SetUserMfaPreferenceOutput).
 pub mod set_user_mfa_preference_output {
 
     /// A builder for [`SetUserMfaPreferenceOutput`](crate::output::SetUserMfaPreferenceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SetUserMfaPreferenceOutput`](crate::output::SetUserMfaPreferenceOutput).
@@ -1033,7 +897,7 @@ impl SetUserMfaPreferenceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetUiCustomizationOutput {
     /// <p>The UI customization information.</p>
     #[doc(hidden)]
@@ -1045,18 +909,11 @@ impl SetUiCustomizationOutput {
         self.ui_customization.as_ref()
     }
 }
-impl std::fmt::Debug for SetUiCustomizationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetUiCustomizationOutput");
-        formatter.field("ui_customization", &self.ui_customization);
-        formatter.finish()
-    }
-}
 /// See [`SetUiCustomizationOutput`](crate::output::SetUiCustomizationOutput).
 pub mod set_ui_customization_output {
 
     /// A builder for [`SetUiCustomizationOutput`](crate::output::SetUiCustomizationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ui_customization: std::option::Option<crate::model::UiCustomizationType>,
     }
@@ -1091,7 +948,7 @@ impl SetUiCustomizationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetRiskConfigurationOutput {
     /// <p>The risk configuration.</p>
     #[doc(hidden)]
@@ -1103,18 +960,11 @@ impl SetRiskConfigurationOutput {
         self.risk_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for SetRiskConfigurationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetRiskConfigurationOutput");
-        formatter.field("risk_configuration", &self.risk_configuration);
-        formatter.finish()
-    }
-}
 /// See [`SetRiskConfigurationOutput`](crate::output::SetRiskConfigurationOutput).
 pub mod set_risk_configuration_output {
 
     /// A builder for [`SetRiskConfigurationOutput`](crate::output::SetRiskConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) risk_configuration: std::option::Option<crate::model::RiskConfigurationType>,
     }
@@ -1149,19 +999,13 @@ impl SetRiskConfigurationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RevokeTokenOutput {}
-impl std::fmt::Debug for RevokeTokenOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RevokeTokenOutput");
-        formatter.finish()
-    }
-}
 /// See [`RevokeTokenOutput`](crate::output::RevokeTokenOutput).
 pub mod revoke_token_output {
 
     /// A builder for [`RevokeTokenOutput`](crate::output::RevokeTokenOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RevokeTokenOutput`](crate::output::RevokeTokenOutput).
@@ -1179,7 +1023,7 @@ impl RevokeTokenOutput {
 
 /// <p>The response to respond to the authentication challenge.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RespondToAuthChallengeOutput {
     /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
     #[doc(hidden)]
@@ -1218,21 +1062,11 @@ impl RespondToAuthChallengeOutput {
         self.authentication_result.as_ref()
     }
 }
-impl std::fmt::Debug for RespondToAuthChallengeOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RespondToAuthChallengeOutput");
-        formatter.field("challenge_name", &self.challenge_name);
-        formatter.field("session", &self.session);
-        formatter.field("challenge_parameters", &self.challenge_parameters);
-        formatter.field("authentication_result", &self.authentication_result);
-        formatter.finish()
-    }
-}
 /// See [`RespondToAuthChallengeOutput`](crate::output::RespondToAuthChallengeOutput).
 pub mod respond_to_auth_challenge_output {
 
     /// A builder for [`RespondToAuthChallengeOutput`](crate::output::RespondToAuthChallengeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) challenge_name: std::option::Option<crate::model::ChallengeNameType>,
         pub(crate) session: std::option::Option<std::string::String>,
@@ -1327,7 +1161,7 @@ impl RespondToAuthChallengeOutput {
 
 /// <p>The response from the server when Amazon Cognito makes the request to resend a confirmation code.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResendConfirmationCodeOutput {
     /// <p>The code delivery details returned by the server in response to the request to resend the confirmation code.</p>
     #[doc(hidden)]
@@ -1341,18 +1175,11 @@ impl ResendConfirmationCodeOutput {
         self.code_delivery_details.as_ref()
     }
 }
-impl std::fmt::Debug for ResendConfirmationCodeOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResendConfirmationCodeOutput");
-        formatter.field("code_delivery_details", &self.code_delivery_details);
-        formatter.finish()
-    }
-}
 /// See [`ResendConfirmationCodeOutput`](crate::output::ResendConfirmationCodeOutput).
 pub mod resend_confirmation_code_output {
 
     /// A builder for [`ResendConfirmationCodeOutput`](crate::output::ResendConfirmationCodeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code_delivery_details:
             std::option::Option<crate::model::CodeDeliveryDetailsType>,
@@ -1391,7 +1218,7 @@ impl ResendConfirmationCodeOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUsersInGroupOutput {
     /// <p>The users returned in the request to list users.</p>
     #[doc(hidden)]
@@ -1410,19 +1237,11 @@ impl ListUsersInGroupOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListUsersInGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUsersInGroupOutput");
-        formatter.field("users", &self.users);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListUsersInGroupOutput`](crate::output::ListUsersInGroupOutput).
 pub mod list_users_in_group_output {
 
     /// A builder for [`ListUsersInGroupOutput`](crate::output::ListUsersInGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) users: std::option::Option<std::vec::Vec<crate::model::UserType>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1475,7 +1294,7 @@ impl ListUsersInGroupOutput {
 
 /// <p>The response from the request to list users.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUsersOutput {
     /// <p>The users returned in the request to list users.</p>
     #[doc(hidden)]
@@ -1494,19 +1313,11 @@ impl ListUsersOutput {
         self.pagination_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListUsersOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUsersOutput");
-        formatter.field("users", &self.users);
-        formatter.field("pagination_token", &self.pagination_token);
-        formatter.finish()
-    }
-}
 /// See [`ListUsersOutput`](crate::output::ListUsersOutput).
 pub mod list_users_output {
 
     /// A builder for [`ListUsersOutput`](crate::output::ListUsersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) users: std::option::Option<std::vec::Vec<crate::model::UserType>>,
         pub(crate) pagination_token: std::option::Option<std::string::String>,
@@ -1562,7 +1373,7 @@ impl ListUsersOutput {
 
 /// <p>Represents the response to list user pools.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUserPoolsOutput {
     /// <p>The user pools from the response to list users.</p>
     #[doc(hidden)]
@@ -1581,19 +1392,11 @@ impl ListUserPoolsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListUserPoolsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUserPoolsOutput");
-        formatter.field("user_pools", &self.user_pools);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListUserPoolsOutput`](crate::output::ListUserPoolsOutput).
 pub mod list_user_pools_output {
 
     /// A builder for [`ListUserPoolsOutput`](crate::output::ListUserPoolsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pools:
             std::option::Option<std::vec::Vec<crate::model::UserPoolDescriptionType>>,
@@ -1647,7 +1450,7 @@ impl ListUserPoolsOutput {
 
 /// <p>Represents the response from the server that lists user pool clients.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUserPoolClientsOutput {
     /// <p>The user pool clients in the response that lists user pool clients.</p>
     #[doc(hidden)]
@@ -1669,19 +1472,11 @@ impl ListUserPoolClientsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListUserPoolClientsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUserPoolClientsOutput");
-        formatter.field("user_pool_clients", &self.user_pool_clients);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListUserPoolClientsOutput`](crate::output::ListUserPoolClientsOutput).
 pub mod list_user_pool_clients_output {
 
     /// A builder for [`ListUserPoolClientsOutput`](crate::output::ListUserPoolClientsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_clients:
             std::option::Option<std::vec::Vec<crate::model::UserPoolClientDescription>>,
@@ -1735,7 +1530,7 @@ impl ListUserPoolClientsOutput {
 
 /// <p>Represents the response from the server to the request to list the user import jobs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUserImportJobsOutput {
     /// <p>The user import jobs.</p>
     #[doc(hidden)]
@@ -1754,19 +1549,11 @@ impl ListUserImportJobsOutput {
         self.pagination_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListUserImportJobsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUserImportJobsOutput");
-        formatter.field("user_import_jobs", &self.user_import_jobs);
-        formatter.field("pagination_token", &self.pagination_token);
-        formatter.finish()
-    }
-}
 /// See [`ListUserImportJobsOutput`](crate::output::ListUserImportJobsOutput).
 pub mod list_user_import_jobs_output {
 
     /// A builder for [`ListUserImportJobsOutput`](crate::output::ListUserImportJobsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_import_jobs:
             std::option::Option<std::vec::Vec<crate::model::UserImportJobType>>,
@@ -1823,7 +1610,7 @@ impl ListUserImportJobsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags that are assigned to the user pool.</p>
     #[doc(hidden)]
@@ -1839,18 +1626,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceOutput");
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -1897,7 +1677,7 @@ impl ListTagsForResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResourceServersOutput {
     /// <p>The resource servers.</p>
     #[doc(hidden)]
@@ -1916,19 +1696,11 @@ impl ListResourceServersOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListResourceServersOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResourceServersOutput");
-        formatter.field("resource_servers", &self.resource_servers);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListResourceServersOutput`](crate::output::ListResourceServersOutput).
 pub mod list_resource_servers_output {
 
     /// A builder for [`ListResourceServersOutput`](crate::output::ListResourceServersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_servers:
             std::option::Option<std::vec::Vec<crate::model::ResourceServerType>>,
@@ -1982,7 +1754,7 @@ impl ListResourceServersOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListIdentityProvidersOutput {
     /// <p>A list of IdP objects.</p>
     #[doc(hidden)]
@@ -2001,19 +1773,11 @@ impl ListIdentityProvidersOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListIdentityProvidersOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListIdentityProvidersOutput");
-        formatter.field("providers", &self.providers);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListIdentityProvidersOutput`](crate::output::ListIdentityProvidersOutput).
 pub mod list_identity_providers_output {
 
     /// A builder for [`ListIdentityProvidersOutput`](crate::output::ListIdentityProvidersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) providers: std::option::Option<std::vec::Vec<crate::model::ProviderDescription>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2066,7 +1830,7 @@ impl ListIdentityProvidersOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGroupsOutput {
     /// <p>The group objects for the groups.</p>
     #[doc(hidden)]
@@ -2085,19 +1849,11 @@ impl ListGroupsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListGroupsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGroupsOutput");
-        formatter.field("groups", &self.groups);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListGroupsOutput`](crate::output::ListGroupsOutput).
 pub mod list_groups_output {
 
     /// A builder for [`ListGroupsOutput`](crate::output::ListGroupsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) groups: std::option::Option<std::vec::Vec<crate::model::GroupType>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2150,7 +1906,7 @@ impl ListGroupsOutput {
 
 /// <p>Represents the response to list devices.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDevicesOutput {
     /// <p>The devices returned in the list devices response.</p>
     #[doc(hidden)]
@@ -2169,19 +1925,11 @@ impl ListDevicesOutput {
         self.pagination_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListDevicesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDevicesOutput");
-        formatter.field("devices", &self.devices);
-        formatter.field("pagination_token", &self.pagination_token);
-        formatter.finish()
-    }
-}
 /// See [`ListDevicesOutput`](crate::output::ListDevicesOutput).
 pub mod list_devices_output {
 
     /// A builder for [`ListDevicesOutput`](crate::output::ListDevicesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) devices: std::option::Option<std::vec::Vec<crate::model::DeviceType>>,
         pub(crate) pagination_token: std::option::Option<std::string::String>,
@@ -2237,7 +1985,7 @@ impl ListDevicesOutput {
 
 /// <p>Initiates the authentication response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InitiateAuthOutput {
     /// <p>The name of the challenge that you're responding to with this call. This name is returned in the <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
     /// <p>Valid values include the following:</p> <note>
@@ -2306,21 +2054,11 @@ impl InitiateAuthOutput {
         self.authentication_result.as_ref()
     }
 }
-impl std::fmt::Debug for InitiateAuthOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InitiateAuthOutput");
-        formatter.field("challenge_name", &self.challenge_name);
-        formatter.field("session", &self.session);
-        formatter.field("challenge_parameters", &self.challenge_parameters);
-        formatter.field("authentication_result", &self.authentication_result);
-        formatter.finish()
-    }
-}
 /// See [`InitiateAuthOutput`](crate::output::InitiateAuthOutput).
 pub mod initiate_auth_output {
 
     /// A builder for [`InitiateAuthOutput`](crate::output::InitiateAuthOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) challenge_name: std::option::Option<crate::model::ChallengeNameType>,
         pub(crate) session: std::option::Option<std::string::String>,
@@ -2445,19 +2183,13 @@ impl InitiateAuthOutput {
 
 /// <p>The response to the request to sign out all devices.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GlobalSignOutOutput {}
-impl std::fmt::Debug for GlobalSignOutOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GlobalSignOutOutput");
-        formatter.finish()
-    }
-}
 /// See [`GlobalSignOutOutput`](crate::output::GlobalSignOutOutput).
 pub mod global_sign_out_output {
 
     /// A builder for [`GlobalSignOutOutput`](crate::output::GlobalSignOutOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GlobalSignOutOutput`](crate::output::GlobalSignOutOutput).
@@ -2475,7 +2207,7 @@ impl GlobalSignOutOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUserPoolMfaConfigOutput {
     /// <p>The SMS text message multi-factor authentication (MFA) configuration.</p>
     #[doc(hidden)]
@@ -2514,23 +2246,11 @@ impl GetUserPoolMfaConfigOutput {
         self.mfa_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for GetUserPoolMfaConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUserPoolMfaConfigOutput");
-        formatter.field("sms_mfa_configuration", &self.sms_mfa_configuration);
-        formatter.field(
-            "software_token_mfa_configuration",
-            &self.software_token_mfa_configuration,
-        );
-        formatter.field("mfa_configuration", &self.mfa_configuration);
-        formatter.finish()
-    }
-}
 /// See [`GetUserPoolMfaConfigOutput`](crate::output::GetUserPoolMfaConfigOutput).
 pub mod get_user_pool_mfa_config_output {
 
     /// A builder for [`GetUserPoolMfaConfigOutput`](crate::output::GetUserPoolMfaConfigOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sms_mfa_configuration: std::option::Option<crate::model::SmsMfaConfigType>,
         pub(crate) software_token_mfa_configuration:
@@ -2609,7 +2329,7 @@ impl GetUserPoolMfaConfigOutput {
 
 /// <p>The verification code response returned by the server response to get the user attribute verification code.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUserAttributeVerificationCodeOutput {
     /// <p>The code delivery details returned by the server in response to the request to get the user attribute verification code.</p>
     #[doc(hidden)]
@@ -2623,18 +2343,11 @@ impl GetUserAttributeVerificationCodeOutput {
         self.code_delivery_details.as_ref()
     }
 }
-impl std::fmt::Debug for GetUserAttributeVerificationCodeOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUserAttributeVerificationCodeOutput");
-        formatter.field("code_delivery_details", &self.code_delivery_details);
-        formatter.finish()
-    }
-}
 /// See [`GetUserAttributeVerificationCodeOutput`](crate::output::GetUserAttributeVerificationCodeOutput).
 pub mod get_user_attribute_verification_code_output {
 
     /// A builder for [`GetUserAttributeVerificationCodeOutput`](crate::output::GetUserAttributeVerificationCodeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code_delivery_details:
             std::option::Option<crate::model::CodeDeliveryDetailsType>,
@@ -2730,7 +2443,7 @@ impl std::fmt::Debug for GetUserOutput {
 pub mod get_user_output {
 
     /// A builder for [`GetUserOutput`](crate::output::GetUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
         pub(crate) user_attributes: std::option::Option<std::vec::Vec<crate::model::AttributeType>>,
@@ -2832,6 +2545,17 @@ pub mod get_user_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.field("user_attributes", &self.user_attributes);
+            formatter.field("mfa_options", &self.mfa_options);
+            formatter.field("preferred_mfa_setting", &self.preferred_mfa_setting);
+            formatter.field("user_mfa_setting_list", &self.user_mfa_setting_list);
+            formatter.finish()
+        }
+    }
 }
 impl GetUserOutput {
     /// Creates a new builder-style object to manufacture [`GetUserOutput`](crate::output::GetUserOutput).
@@ -2842,7 +2566,7 @@ impl GetUserOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUiCustomizationOutput {
     /// <p>The UI customization information.</p>
     #[doc(hidden)]
@@ -2854,18 +2578,11 @@ impl GetUiCustomizationOutput {
         self.ui_customization.as_ref()
     }
 }
-impl std::fmt::Debug for GetUiCustomizationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUiCustomizationOutput");
-        formatter.field("ui_customization", &self.ui_customization);
-        formatter.finish()
-    }
-}
 /// See [`GetUiCustomizationOutput`](crate::output::GetUiCustomizationOutput).
 pub mod get_ui_customization_output {
 
     /// A builder for [`GetUiCustomizationOutput`](crate::output::GetUiCustomizationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ui_customization: std::option::Option<crate::model::UiCustomizationType>,
     }
@@ -2900,7 +2617,7 @@ impl GetUiCustomizationOutput {
 
 /// <p>Response from Amazon Cognito for a signing certificate request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSigningCertificateOutput {
     /// <p>The signing certificate.</p>
     #[doc(hidden)]
@@ -2912,18 +2629,11 @@ impl GetSigningCertificateOutput {
         self.certificate.as_deref()
     }
 }
-impl std::fmt::Debug for GetSigningCertificateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSigningCertificateOutput");
-        formatter.field("certificate", &self.certificate);
-        formatter.finish()
-    }
-}
 /// See [`GetSigningCertificateOutput`](crate::output::GetSigningCertificateOutput).
 pub mod get_signing_certificate_output {
 
     /// A builder for [`GetSigningCertificateOutput`](crate::output::GetSigningCertificateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate: std::option::Option<std::string::String>,
     }
@@ -2955,7 +2665,7 @@ impl GetSigningCertificateOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIdentityProviderByIdentifierOutput {
     /// <p>The IdP object.</p>
     #[doc(hidden)]
@@ -2967,18 +2677,11 @@ impl GetIdentityProviderByIdentifierOutput {
         self.identity_provider.as_ref()
     }
 }
-impl std::fmt::Debug for GetIdentityProviderByIdentifierOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIdentityProviderByIdentifierOutput");
-        formatter.field("identity_provider", &self.identity_provider);
-        formatter.finish()
-    }
-}
 /// See [`GetIdentityProviderByIdentifierOutput`](crate::output::GetIdentityProviderByIdentifierOutput).
 pub mod get_identity_provider_by_identifier_output {
 
     /// A builder for [`GetIdentityProviderByIdentifierOutput`](crate::output::GetIdentityProviderByIdentifierOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_provider: std::option::Option<crate::model::IdentityProviderType>,
     }
@@ -3013,7 +2716,7 @@ impl GetIdentityProviderByIdentifierOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGroupOutput {
     /// <p>The group object for the group.</p>
     #[doc(hidden)]
@@ -3025,18 +2728,11 @@ impl GetGroupOutput {
         self.group.as_ref()
     }
 }
-impl std::fmt::Debug for GetGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGroupOutput");
-        formatter.field("group", &self.group);
-        formatter.finish()
-    }
-}
 /// See [`GetGroupOutput`](crate::output::GetGroupOutput).
 pub mod get_group_output {
 
     /// A builder for [`GetGroupOutput`](crate::output::GetGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group: std::option::Option<crate::model::GroupType>,
     }
@@ -3066,7 +2762,7 @@ impl GetGroupOutput {
 
 /// <p>Gets the device response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeviceOutput {
     /// <p>The device.</p>
     #[doc(hidden)]
@@ -3078,18 +2774,11 @@ impl GetDeviceOutput {
         self.device.as_ref()
     }
 }
-impl std::fmt::Debug for GetDeviceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeviceOutput");
-        formatter.field("device", &self.device);
-        formatter.finish()
-    }
-}
 /// See [`GetDeviceOutput`](crate::output::GetDeviceOutput).
 pub mod get_device_output {
 
     /// A builder for [`GetDeviceOutput`](crate::output::GetDeviceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device: std::option::Option<crate::model::DeviceType>,
     }
@@ -3121,7 +2810,7 @@ impl GetDeviceOutput {
 
 /// <p>Represents the response from the server to the request to get the header information of the CSV file for the user import job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCsvHeaderOutput {
     /// <p>The user pool ID for the user pool that the users are to be imported into.</p>
     #[doc(hidden)]
@@ -3140,19 +2829,11 @@ impl GetCsvHeaderOutput {
         self.csv_header.as_deref()
     }
 }
-impl std::fmt::Debug for GetCsvHeaderOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCsvHeaderOutput");
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("csv_header", &self.csv_header);
-        formatter.finish()
-    }
-}
 /// See [`GetCsvHeaderOutput`](crate::output::GetCsvHeaderOutput).
 pub mod get_csv_header_output {
 
     /// A builder for [`GetCsvHeaderOutput`](crate::output::GetCsvHeaderOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
         pub(crate) csv_header: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3205,7 +2886,7 @@ impl GetCsvHeaderOutput {
 
 /// <p>The response from Amazon Cognito to a request to reset a password.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ForgotPasswordOutput {
     /// <p>The code delivery details returned by the server in response to the request to reset a password.</p>
     #[doc(hidden)]
@@ -3219,18 +2900,11 @@ impl ForgotPasswordOutput {
         self.code_delivery_details.as_ref()
     }
 }
-impl std::fmt::Debug for ForgotPasswordOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ForgotPasswordOutput");
-        formatter.field("code_delivery_details", &self.code_delivery_details);
-        formatter.finish()
-    }
-}
 /// See [`ForgotPasswordOutput`](crate::output::ForgotPasswordOutput).
 pub mod forgot_password_output {
 
     /// A builder for [`ForgotPasswordOutput`](crate::output::ForgotPasswordOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code_delivery_details:
             std::option::Option<crate::model::CodeDeliveryDetailsType>,
@@ -3269,19 +2943,13 @@ impl ForgotPasswordOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ForgetDeviceOutput {}
-impl std::fmt::Debug for ForgetDeviceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ForgetDeviceOutput");
-        formatter.finish()
-    }
-}
 /// See [`ForgetDeviceOutput`](crate::output::ForgetDeviceOutput).
 pub mod forget_device_output {
 
     /// A builder for [`ForgetDeviceOutput`](crate::output::ForgetDeviceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`ForgetDeviceOutput`](crate::output::ForgetDeviceOutput).
@@ -3299,7 +2967,7 @@ impl ForgetDeviceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeUserPoolDomainOutput {
     /// <p>A domain description object containing information about the domain.</p>
     #[doc(hidden)]
@@ -3311,18 +2979,11 @@ impl DescribeUserPoolDomainOutput {
         self.domain_description.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeUserPoolDomainOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeUserPoolDomainOutput");
-        formatter.field("domain_description", &self.domain_description);
-        formatter.finish()
-    }
-}
 /// See [`DescribeUserPoolDomainOutput`](crate::output::DescribeUserPoolDomainOutput).
 pub mod describe_user_pool_domain_output {
 
     /// A builder for [`DescribeUserPoolDomainOutput`](crate::output::DescribeUserPoolDomainOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_description: std::option::Option<crate::model::DomainDescriptionType>,
     }
@@ -3357,7 +3018,7 @@ impl DescribeUserPoolDomainOutput {
 
 /// <p>Represents the response from the server from a request to describe the user pool client.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeUserPoolClientOutput {
     /// <p>The user pool client from a server response to describe the user pool client.</p>
     #[doc(hidden)]
@@ -3369,18 +3030,11 @@ impl DescribeUserPoolClientOutput {
         self.user_pool_client.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeUserPoolClientOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeUserPoolClientOutput");
-        formatter.field("user_pool_client", &self.user_pool_client);
-        formatter.finish()
-    }
-}
 /// See [`DescribeUserPoolClientOutput`](crate::output::DescribeUserPoolClientOutput).
 pub mod describe_user_pool_client_output {
 
     /// A builder for [`DescribeUserPoolClientOutput`](crate::output::DescribeUserPoolClientOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_client: std::option::Option<crate::model::UserPoolClientType>,
     }
@@ -3415,7 +3069,7 @@ impl DescribeUserPoolClientOutput {
 
 /// <p>Represents the response to describe the user pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeUserPoolOutput {
     /// <p>The container of metadata returned by the server to describe the pool.</p>
     #[doc(hidden)]
@@ -3427,18 +3081,11 @@ impl DescribeUserPoolOutput {
         self.user_pool.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeUserPoolOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeUserPoolOutput");
-        formatter.field("user_pool", &self.user_pool);
-        formatter.finish()
-    }
-}
 /// See [`DescribeUserPoolOutput`](crate::output::DescribeUserPoolOutput).
 pub mod describe_user_pool_output {
 
     /// A builder for [`DescribeUserPoolOutput`](crate::output::DescribeUserPoolOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool: std::option::Option<crate::model::UserPoolType>,
     }
@@ -3473,7 +3120,7 @@ impl DescribeUserPoolOutput {
 
 /// <p>Represents the response from the server to the request to describe the user import job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeUserImportJobOutput {
     /// <p>The job object that represents the user import job.</p>
     #[doc(hidden)]
@@ -3485,18 +3132,11 @@ impl DescribeUserImportJobOutput {
         self.user_import_job.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeUserImportJobOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeUserImportJobOutput");
-        formatter.field("user_import_job", &self.user_import_job);
-        formatter.finish()
-    }
-}
 /// See [`DescribeUserImportJobOutput`](crate::output::DescribeUserImportJobOutput).
 pub mod describe_user_import_job_output {
 
     /// A builder for [`DescribeUserImportJobOutput`](crate::output::DescribeUserImportJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_import_job: std::option::Option<crate::model::UserImportJobType>,
     }
@@ -3531,7 +3171,7 @@ impl DescribeUserImportJobOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRiskConfigurationOutput {
     /// <p>The risk configuration.</p>
     #[doc(hidden)]
@@ -3543,18 +3183,11 @@ impl DescribeRiskConfigurationOutput {
         self.risk_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeRiskConfigurationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRiskConfigurationOutput");
-        formatter.field("risk_configuration", &self.risk_configuration);
-        formatter.finish()
-    }
-}
 /// See [`DescribeRiskConfigurationOutput`](crate::output::DescribeRiskConfigurationOutput).
 pub mod describe_risk_configuration_output {
 
     /// A builder for [`DescribeRiskConfigurationOutput`](crate::output::DescribeRiskConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) risk_configuration: std::option::Option<crate::model::RiskConfigurationType>,
     }
@@ -3589,7 +3222,7 @@ impl DescribeRiskConfigurationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeResourceServerOutput {
     /// <p>The resource server.</p>
     #[doc(hidden)]
@@ -3601,18 +3234,11 @@ impl DescribeResourceServerOutput {
         self.resource_server.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeResourceServerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeResourceServerOutput");
-        formatter.field("resource_server", &self.resource_server);
-        formatter.finish()
-    }
-}
 /// See [`DescribeResourceServerOutput`](crate::output::DescribeResourceServerOutput).
 pub mod describe_resource_server_output {
 
     /// A builder for [`DescribeResourceServerOutput`](crate::output::DescribeResourceServerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_server: std::option::Option<crate::model::ResourceServerType>,
     }
@@ -3647,7 +3273,7 @@ impl DescribeResourceServerOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeIdentityProviderOutput {
     /// <p>The IdP that was deleted.</p>
     #[doc(hidden)]
@@ -3659,18 +3285,11 @@ impl DescribeIdentityProviderOutput {
         self.identity_provider.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeIdentityProviderOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeIdentityProviderOutput");
-        formatter.field("identity_provider", &self.identity_provider);
-        formatter.finish()
-    }
-}
 /// See [`DescribeIdentityProviderOutput`](crate::output::DescribeIdentityProviderOutput).
 pub mod describe_identity_provider_output {
 
     /// A builder for [`DescribeIdentityProviderOutput`](crate::output::DescribeIdentityProviderOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_provider: std::option::Option<crate::model::IdentityProviderType>,
     }
@@ -3705,19 +3324,13 @@ impl DescribeIdentityProviderOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUserPoolDomainOutput {}
-impl std::fmt::Debug for DeleteUserPoolDomainOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteUserPoolDomainOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteUserPoolDomainOutput`](crate::output::DeleteUserPoolDomainOutput).
 pub mod delete_user_pool_domain_output {
 
     /// A builder for [`DeleteUserPoolDomainOutput`](crate::output::DeleteUserPoolDomainOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteUserPoolDomainOutput`](crate::output::DeleteUserPoolDomainOutput).
@@ -3735,19 +3348,13 @@ impl DeleteUserPoolDomainOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUserPoolClientOutput {}
-impl std::fmt::Debug for DeleteUserPoolClientOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteUserPoolClientOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteUserPoolClientOutput`](crate::output::DeleteUserPoolClientOutput).
 pub mod delete_user_pool_client_output {
 
     /// A builder for [`DeleteUserPoolClientOutput`](crate::output::DeleteUserPoolClientOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteUserPoolClientOutput`](crate::output::DeleteUserPoolClientOutput).
@@ -3765,19 +3372,13 @@ impl DeleteUserPoolClientOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUserPoolOutput {}
-impl std::fmt::Debug for DeleteUserPoolOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteUserPoolOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteUserPoolOutput`](crate::output::DeleteUserPoolOutput).
 pub mod delete_user_pool_output {
 
     /// A builder for [`DeleteUserPoolOutput`](crate::output::DeleteUserPoolOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteUserPoolOutput`](crate::output::DeleteUserPoolOutput).
@@ -3795,19 +3396,13 @@ impl DeleteUserPoolOutput {
 
 /// <p>Represents the response from the server to delete user attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUserAttributesOutput {}
-impl std::fmt::Debug for DeleteUserAttributesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteUserAttributesOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteUserAttributesOutput`](crate::output::DeleteUserAttributesOutput).
 pub mod delete_user_attributes_output {
 
     /// A builder for [`DeleteUserAttributesOutput`](crate::output::DeleteUserAttributesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteUserAttributesOutput`](crate::output::DeleteUserAttributesOutput).
@@ -3825,19 +3420,13 @@ impl DeleteUserAttributesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUserOutput {}
-impl std::fmt::Debug for DeleteUserOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteUserOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteUserOutput`](crate::output::DeleteUserOutput).
 pub mod delete_user_output {
 
     /// A builder for [`DeleteUserOutput`](crate::output::DeleteUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteUserOutput`](crate::output::DeleteUserOutput).
@@ -3855,19 +3444,13 @@ impl DeleteUserOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourceServerOutput {}
-impl std::fmt::Debug for DeleteResourceServerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteResourceServerOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteResourceServerOutput`](crate::output::DeleteResourceServerOutput).
 pub mod delete_resource_server_output {
 
     /// A builder for [`DeleteResourceServerOutput`](crate::output::DeleteResourceServerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteResourceServerOutput`](crate::output::DeleteResourceServerOutput).
@@ -3885,19 +3468,13 @@ impl DeleteResourceServerOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteIdentityProviderOutput {}
-impl std::fmt::Debug for DeleteIdentityProviderOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteIdentityProviderOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteIdentityProviderOutput`](crate::output::DeleteIdentityProviderOutput).
 pub mod delete_identity_provider_output {
 
     /// A builder for [`DeleteIdentityProviderOutput`](crate::output::DeleteIdentityProviderOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteIdentityProviderOutput`](crate::output::DeleteIdentityProviderOutput).
@@ -3915,19 +3492,13 @@ impl DeleteIdentityProviderOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGroupOutput {}
-impl std::fmt::Debug for DeleteGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGroupOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
 pub mod delete_group_output {
 
     /// A builder for [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
@@ -3945,7 +3516,7 @@ impl DeleteGroupOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateUserPoolDomainOutput {
     /// <p>The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain Name Service (DNS) provider.</p>
     #[doc(hidden)]
@@ -3957,18 +3528,11 @@ impl CreateUserPoolDomainOutput {
         self.cloud_front_domain.as_deref()
     }
 }
-impl std::fmt::Debug for CreateUserPoolDomainOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateUserPoolDomainOutput");
-        formatter.field("cloud_front_domain", &self.cloud_front_domain);
-        formatter.finish()
-    }
-}
 /// See [`CreateUserPoolDomainOutput`](crate::output::CreateUserPoolDomainOutput).
 pub mod create_user_pool_domain_output {
 
     /// A builder for [`CreateUserPoolDomainOutput`](crate::output::CreateUserPoolDomainOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_front_domain: std::option::Option<std::string::String>,
     }
@@ -4003,7 +3567,7 @@ impl CreateUserPoolDomainOutput {
 
 /// <p>Represents the response from the server to create a user pool client.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateUserPoolClientOutput {
     /// <p>The user pool client that was just created.</p>
     #[doc(hidden)]
@@ -4015,18 +3579,11 @@ impl CreateUserPoolClientOutput {
         self.user_pool_client.as_ref()
     }
 }
-impl std::fmt::Debug for CreateUserPoolClientOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateUserPoolClientOutput");
-        formatter.field("user_pool_client", &self.user_pool_client);
-        formatter.finish()
-    }
-}
 /// See [`CreateUserPoolClientOutput`](crate::output::CreateUserPoolClientOutput).
 pub mod create_user_pool_client_output {
 
     /// A builder for [`CreateUserPoolClientOutput`](crate::output::CreateUserPoolClientOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_client: std::option::Option<crate::model::UserPoolClientType>,
     }
@@ -4061,7 +3618,7 @@ impl CreateUserPoolClientOutput {
 
 /// <p>Represents the response from the server for the request to create a user pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateUserPoolOutput {
     /// <p>A container for the user pool details.</p>
     #[doc(hidden)]
@@ -4073,18 +3630,11 @@ impl CreateUserPoolOutput {
         self.user_pool.as_ref()
     }
 }
-impl std::fmt::Debug for CreateUserPoolOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateUserPoolOutput");
-        formatter.field("user_pool", &self.user_pool);
-        formatter.finish()
-    }
-}
 /// See [`CreateUserPoolOutput`](crate::output::CreateUserPoolOutput).
 pub mod create_user_pool_output {
 
     /// A builder for [`CreateUserPoolOutput`](crate::output::CreateUserPoolOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool: std::option::Option<crate::model::UserPoolType>,
     }
@@ -4119,7 +3669,7 @@ impl CreateUserPoolOutput {
 
 /// <p>Represents the response from the server to the request to create the user import job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateUserImportJobOutput {
     /// <p>The job object that represents the user import job.</p>
     #[doc(hidden)]
@@ -4131,18 +3681,11 @@ impl CreateUserImportJobOutput {
         self.user_import_job.as_ref()
     }
 }
-impl std::fmt::Debug for CreateUserImportJobOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateUserImportJobOutput");
-        formatter.field("user_import_job", &self.user_import_job);
-        formatter.finish()
-    }
-}
 /// See [`CreateUserImportJobOutput`](crate::output::CreateUserImportJobOutput).
 pub mod create_user_import_job_output {
 
     /// A builder for [`CreateUserImportJobOutput`](crate::output::CreateUserImportJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_import_job: std::option::Option<crate::model::UserImportJobType>,
     }
@@ -4177,7 +3720,7 @@ impl CreateUserImportJobOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateResourceServerOutput {
     /// <p>The newly created resource server.</p>
     #[doc(hidden)]
@@ -4189,18 +3732,11 @@ impl CreateResourceServerOutput {
         self.resource_server.as_ref()
     }
 }
-impl std::fmt::Debug for CreateResourceServerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateResourceServerOutput");
-        formatter.field("resource_server", &self.resource_server);
-        formatter.finish()
-    }
-}
 /// See [`CreateResourceServerOutput`](crate::output::CreateResourceServerOutput).
 pub mod create_resource_server_output {
 
     /// A builder for [`CreateResourceServerOutput`](crate::output::CreateResourceServerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_server: std::option::Option<crate::model::ResourceServerType>,
     }
@@ -4235,7 +3771,7 @@ impl CreateResourceServerOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateIdentityProviderOutput {
     /// <p>The newly created IdP object.</p>
     #[doc(hidden)]
@@ -4247,18 +3783,11 @@ impl CreateIdentityProviderOutput {
         self.identity_provider.as_ref()
     }
 }
-impl std::fmt::Debug for CreateIdentityProviderOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateIdentityProviderOutput");
-        formatter.field("identity_provider", &self.identity_provider);
-        formatter.finish()
-    }
-}
 /// See [`CreateIdentityProviderOutput`](crate::output::CreateIdentityProviderOutput).
 pub mod create_identity_provider_output {
 
     /// A builder for [`CreateIdentityProviderOutput`](crate::output::CreateIdentityProviderOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_provider: std::option::Option<crate::model::IdentityProviderType>,
     }
@@ -4293,7 +3822,7 @@ impl CreateIdentityProviderOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGroupOutput {
     /// <p>The group object for the group.</p>
     #[doc(hidden)]
@@ -4305,18 +3834,11 @@ impl CreateGroupOutput {
         self.group.as_ref()
     }
 }
-impl std::fmt::Debug for CreateGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGroupOutput");
-        formatter.field("group", &self.group);
-        formatter.finish()
-    }
-}
 /// See [`CreateGroupOutput`](crate::output::CreateGroupOutput).
 pub mod create_group_output {
 
     /// A builder for [`CreateGroupOutput`](crate::output::CreateGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group: std::option::Option<crate::model::GroupType>,
     }
@@ -4346,19 +3868,13 @@ impl CreateGroupOutput {
 
 /// <p>Represents the response from the server for the registration confirmation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfirmSignUpOutput {}
-impl std::fmt::Debug for ConfirmSignUpOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfirmSignUpOutput");
-        formatter.finish()
-    }
-}
 /// See [`ConfirmSignUpOutput`](crate::output::ConfirmSignUpOutput).
 pub mod confirm_sign_up_output {
 
     /// A builder for [`ConfirmSignUpOutput`](crate::output::ConfirmSignUpOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`ConfirmSignUpOutput`](crate::output::ConfirmSignUpOutput).
@@ -4376,19 +3892,13 @@ impl ConfirmSignUpOutput {
 
 /// <p>The response from the server that results from a user's request to retrieve a forgotten password.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfirmForgotPasswordOutput {}
-impl std::fmt::Debug for ConfirmForgotPasswordOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfirmForgotPasswordOutput");
-        formatter.finish()
-    }
-}
 /// See [`ConfirmForgotPasswordOutput`](crate::output::ConfirmForgotPasswordOutput).
 pub mod confirm_forgot_password_output {
 
     /// A builder for [`ConfirmForgotPasswordOutput`](crate::output::ConfirmForgotPasswordOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`ConfirmForgotPasswordOutput`](crate::output::ConfirmForgotPasswordOutput).
@@ -4406,7 +3916,7 @@ impl ConfirmForgotPasswordOutput {
 
 /// <p>Confirms the device response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfirmDeviceOutput {
     /// <p>Indicates whether the user confirmation must confirm the device response.</p>
     #[doc(hidden)]
@@ -4418,21 +3928,11 @@ impl ConfirmDeviceOutput {
         self.user_confirmation_necessary
     }
 }
-impl std::fmt::Debug for ConfirmDeviceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfirmDeviceOutput");
-        formatter.field(
-            "user_confirmation_necessary",
-            &self.user_confirmation_necessary,
-        );
-        formatter.finish()
-    }
-}
 /// See [`ConfirmDeviceOutput`](crate::output::ConfirmDeviceOutput).
 pub mod confirm_device_output {
 
     /// A builder for [`ConfirmDeviceOutput`](crate::output::ConfirmDeviceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_confirmation_necessary: std::option::Option<bool>,
     }
@@ -4464,19 +3964,13 @@ impl ConfirmDeviceOutput {
 
 /// <p>The response from the server to the change password request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChangePasswordOutput {}
-impl std::fmt::Debug for ChangePasswordOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChangePasswordOutput");
-        formatter.finish()
-    }
-}
 /// See [`ChangePasswordOutput`](crate::output::ChangePasswordOutput).
 pub mod change_password_output {
 
     /// A builder for [`ChangePasswordOutput`](crate::output::ChangePasswordOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`ChangePasswordOutput`](crate::output::ChangePasswordOutput).
@@ -4525,7 +4019,7 @@ impl std::fmt::Debug for AssociateSoftwareTokenOutput {
 pub mod associate_software_token_output {
 
     /// A builder for [`AssociateSoftwareTokenOutput`](crate::output::AssociateSoftwareTokenOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) secret_code: std::option::Option<std::string::String>,
         pub(crate) session: std::option::Option<std::string::String>,
@@ -4559,6 +4053,14 @@ pub mod associate_software_token_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("secret_code", &"*** Sensitive Data Redacted ***");
+            formatter.field("session", &self.session);
+            formatter.finish()
+        }
+    }
 }
 impl AssociateSoftwareTokenOutput {
     /// Creates a new builder-style object to manufacture [`AssociateSoftwareTokenOutput`](crate::output::AssociateSoftwareTokenOutput).
@@ -4569,19 +4071,13 @@ impl AssociateSoftwareTokenOutput {
 
 /// <p>The global sign-out response, as an administrator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdminUserGlobalSignOutOutput {}
-impl std::fmt::Debug for AdminUserGlobalSignOutOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdminUserGlobalSignOutOutput");
-        formatter.finish()
-    }
-}
 /// See [`AdminUserGlobalSignOutOutput`](crate::output::AdminUserGlobalSignOutOutput).
 pub mod admin_user_global_sign_out_output {
 
     /// A builder for [`AdminUserGlobalSignOutOutput`](crate::output::AdminUserGlobalSignOutOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AdminUserGlobalSignOutOutput`](crate::output::AdminUserGlobalSignOutOutput).
@@ -4599,19 +4095,13 @@ impl AdminUserGlobalSignOutOutput {
 
 /// <p>Represents the response from the server for the request to update user attributes as an administrator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdminUpdateUserAttributesOutput {}
-impl std::fmt::Debug for AdminUpdateUserAttributesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdminUpdateUserAttributesOutput");
-        formatter.finish()
-    }
-}
 /// See [`AdminUpdateUserAttributesOutput`](crate::output::AdminUpdateUserAttributesOutput).
 pub mod admin_update_user_attributes_output {
 
     /// A builder for [`AdminUpdateUserAttributesOutput`](crate::output::AdminUpdateUserAttributesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AdminUpdateUserAttributesOutput`](crate::output::AdminUpdateUserAttributesOutput).
@@ -4629,19 +4119,13 @@ impl AdminUpdateUserAttributesOutput {
 
 /// <p>The status response to the request to update the device, as an administrator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdminUpdateDeviceStatusOutput {}
-impl std::fmt::Debug for AdminUpdateDeviceStatusOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdminUpdateDeviceStatusOutput");
-        formatter.finish()
-    }
-}
 /// See [`AdminUpdateDeviceStatusOutput`](crate::output::AdminUpdateDeviceStatusOutput).
 pub mod admin_update_device_status_output {
 
     /// A builder for [`AdminUpdateDeviceStatusOutput`](crate::output::AdminUpdateDeviceStatusOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AdminUpdateDeviceStatusOutput`](crate::output::AdminUpdateDeviceStatusOutput).
@@ -4659,19 +4143,13 @@ impl AdminUpdateDeviceStatusOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdminUpdateAuthEventFeedbackOutput {}
-impl std::fmt::Debug for AdminUpdateAuthEventFeedbackOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdminUpdateAuthEventFeedbackOutput");
-        formatter.finish()
-    }
-}
 /// See [`AdminUpdateAuthEventFeedbackOutput`](crate::output::AdminUpdateAuthEventFeedbackOutput).
 pub mod admin_update_auth_event_feedback_output {
 
     /// A builder for [`AdminUpdateAuthEventFeedbackOutput`](crate::output::AdminUpdateAuthEventFeedbackOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AdminUpdateAuthEventFeedbackOutput`](crate::output::AdminUpdateAuthEventFeedbackOutput).
@@ -4689,19 +4167,13 @@ impl AdminUpdateAuthEventFeedbackOutput {
 
 /// <p>Represents the response from the server to set user settings as an administrator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdminSetUserSettingsOutput {}
-impl std::fmt::Debug for AdminSetUserSettingsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdminSetUserSettingsOutput");
-        formatter.finish()
-    }
-}
 /// See [`AdminSetUserSettingsOutput`](crate::output::AdminSetUserSettingsOutput).
 pub mod admin_set_user_settings_output {
 
     /// A builder for [`AdminSetUserSettingsOutput`](crate::output::AdminSetUserSettingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AdminSetUserSettingsOutput`](crate::output::AdminSetUserSettingsOutput).
@@ -4719,19 +4191,13 @@ impl AdminSetUserSettingsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdminSetUserPasswordOutput {}
-impl std::fmt::Debug for AdminSetUserPasswordOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdminSetUserPasswordOutput");
-        formatter.finish()
-    }
-}
 /// See [`AdminSetUserPasswordOutput`](crate::output::AdminSetUserPasswordOutput).
 pub mod admin_set_user_password_output {
 
     /// A builder for [`AdminSetUserPasswordOutput`](crate::output::AdminSetUserPasswordOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AdminSetUserPasswordOutput`](crate::output::AdminSetUserPasswordOutput).
@@ -4749,19 +4215,13 @@ impl AdminSetUserPasswordOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdminSetUserMfaPreferenceOutput {}
-impl std::fmt::Debug for AdminSetUserMfaPreferenceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdminSetUserMfaPreferenceOutput");
-        formatter.finish()
-    }
-}
 /// See [`AdminSetUserMfaPreferenceOutput`](crate::output::AdminSetUserMfaPreferenceOutput).
 pub mod admin_set_user_mfa_preference_output {
 
     /// A builder for [`AdminSetUserMfaPreferenceOutput`](crate::output::AdminSetUserMfaPreferenceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AdminSetUserMfaPreferenceOutput`](crate::output::AdminSetUserMfaPreferenceOutput).
@@ -4779,7 +4239,7 @@ impl AdminSetUserMfaPreferenceOutput {
 
 /// <p>Responds to the authentication challenge, as an administrator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdminRespondToAuthChallengeOutput {
     /// <p>The name of the challenge. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
     #[doc(hidden)]
@@ -4818,21 +4278,11 @@ impl AdminRespondToAuthChallengeOutput {
         self.authentication_result.as_ref()
     }
 }
-impl std::fmt::Debug for AdminRespondToAuthChallengeOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdminRespondToAuthChallengeOutput");
-        formatter.field("challenge_name", &self.challenge_name);
-        formatter.field("session", &self.session);
-        formatter.field("challenge_parameters", &self.challenge_parameters);
-        formatter.field("authentication_result", &self.authentication_result);
-        formatter.finish()
-    }
-}
 /// See [`AdminRespondToAuthChallengeOutput`](crate::output::AdminRespondToAuthChallengeOutput).
 pub mod admin_respond_to_auth_challenge_output {
 
     /// A builder for [`AdminRespondToAuthChallengeOutput`](crate::output::AdminRespondToAuthChallengeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) challenge_name: std::option::Option<crate::model::ChallengeNameType>,
         pub(crate) session: std::option::Option<std::string::String>,
@@ -4927,19 +4377,13 @@ impl AdminRespondToAuthChallengeOutput {
 
 /// <p>Represents the response from the server to reset a user password as an administrator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdminResetUserPasswordOutput {}
-impl std::fmt::Debug for AdminResetUserPasswordOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdminResetUserPasswordOutput");
-        formatter.finish()
-    }
-}
 /// See [`AdminResetUserPasswordOutput`](crate::output::AdminResetUserPasswordOutput).
 pub mod admin_reset_user_password_output {
 
     /// A builder for [`AdminResetUserPasswordOutput`](crate::output::AdminResetUserPasswordOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AdminResetUserPasswordOutput`](crate::output::AdminResetUserPasswordOutput).
@@ -4957,19 +4401,13 @@ impl AdminResetUserPasswordOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdminRemoveUserFromGroupOutput {}
-impl std::fmt::Debug for AdminRemoveUserFromGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdminRemoveUserFromGroupOutput");
-        formatter.finish()
-    }
-}
 /// See [`AdminRemoveUserFromGroupOutput`](crate::output::AdminRemoveUserFromGroupOutput).
 pub mod admin_remove_user_from_group_output {
 
     /// A builder for [`AdminRemoveUserFromGroupOutput`](crate::output::AdminRemoveUserFromGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AdminRemoveUserFromGroupOutput`](crate::output::AdminRemoveUserFromGroupOutput).
@@ -4987,7 +4425,7 @@ impl AdminRemoveUserFromGroupOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdminListUserAuthEventsOutput {
     /// <p>The response object. It includes the <code>EventID</code>, <code>EventType</code>, <code>CreationDate</code>, <code>EventRisk</code>, and <code>EventResponse</code>.</p>
     #[doc(hidden)]
@@ -5006,19 +4444,11 @@ impl AdminListUserAuthEventsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for AdminListUserAuthEventsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdminListUserAuthEventsOutput");
-        formatter.field("auth_events", &self.auth_events);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`AdminListUserAuthEventsOutput`](crate::output::AdminListUserAuthEventsOutput).
 pub mod admin_list_user_auth_events_output {
 
     /// A builder for [`AdminListUserAuthEventsOutput`](crate::output::AdminListUserAuthEventsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auth_events: std::option::Option<std::vec::Vec<crate::model::AuthEventType>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5071,7 +4501,7 @@ impl AdminListUserAuthEventsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdminListGroupsForUserOutput {
     /// <p>The groups that the user belongs to.</p>
     #[doc(hidden)]
@@ -5090,19 +4520,11 @@ impl AdminListGroupsForUserOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for AdminListGroupsForUserOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdminListGroupsForUserOutput");
-        formatter.field("groups", &self.groups);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`AdminListGroupsForUserOutput`](crate::output::AdminListGroupsForUserOutput).
 pub mod admin_list_groups_for_user_output {
 
     /// A builder for [`AdminListGroupsForUserOutput`](crate::output::AdminListGroupsForUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) groups: std::option::Option<std::vec::Vec<crate::model::GroupType>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5155,7 +4577,7 @@ impl AdminListGroupsForUserOutput {
 
 /// <p>Lists the device's response, as an administrator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdminListDevicesOutput {
     /// <p>The devices in the list of devices response.</p>
     #[doc(hidden)]
@@ -5174,19 +4596,11 @@ impl AdminListDevicesOutput {
         self.pagination_token.as_deref()
     }
 }
-impl std::fmt::Debug for AdminListDevicesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdminListDevicesOutput");
-        formatter.field("devices", &self.devices);
-        formatter.field("pagination_token", &self.pagination_token);
-        formatter.finish()
-    }
-}
 /// See [`AdminListDevicesOutput`](crate::output::AdminListDevicesOutput).
 pub mod admin_list_devices_output {
 
     /// A builder for [`AdminListDevicesOutput`](crate::output::AdminListDevicesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) devices: std::option::Option<std::vec::Vec<crate::model::DeviceType>>,
         pub(crate) pagination_token: std::option::Option<std::string::String>,
@@ -5242,19 +4656,13 @@ impl AdminListDevicesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdminLinkProviderForUserOutput {}
-impl std::fmt::Debug for AdminLinkProviderForUserOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdminLinkProviderForUserOutput");
-        formatter.finish()
-    }
-}
 /// See [`AdminLinkProviderForUserOutput`](crate::output::AdminLinkProviderForUserOutput).
 pub mod admin_link_provider_for_user_output {
 
     /// A builder for [`AdminLinkProviderForUserOutput`](crate::output::AdminLinkProviderForUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AdminLinkProviderForUserOutput`](crate::output::AdminLinkProviderForUserOutput).
@@ -5272,7 +4680,7 @@ impl AdminLinkProviderForUserOutput {
 
 /// <p>Initiates the authentication response, as an administrator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdminInitiateAuthOutput {
     /// <p>The name of the challenge that you're responding to with this call. This is returned in the <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
     /// <ul>
@@ -5343,21 +4751,11 @@ impl AdminInitiateAuthOutput {
         self.authentication_result.as_ref()
     }
 }
-impl std::fmt::Debug for AdminInitiateAuthOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdminInitiateAuthOutput");
-        formatter.field("challenge_name", &self.challenge_name);
-        formatter.field("session", &self.session);
-        formatter.field("challenge_parameters", &self.challenge_parameters);
-        formatter.field("authentication_result", &self.authentication_result);
-        formatter.finish()
-    }
-}
 /// See [`AdminInitiateAuthOutput`](crate::output::AdminInitiateAuthOutput).
 pub mod admin_initiate_auth_output {
 
     /// A builder for [`AdminInitiateAuthOutput`](crate::output::AdminInitiateAuthOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) challenge_name: std::option::Option<crate::model::ChallengeNameType>,
         pub(crate) session: std::option::Option<std::string::String>,
@@ -5587,7 +4985,7 @@ impl std::fmt::Debug for AdminGetUserOutput {
 pub mod admin_get_user_output {
 
     /// A builder for [`AdminGetUserOutput`](crate::output::AdminGetUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
         pub(crate) user_attributes: std::option::Option<std::vec::Vec<crate::model::AttributeType>>,
@@ -5760,6 +5158,21 @@ pub mod admin_get_user_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.field("user_attributes", &self.user_attributes);
+            formatter.field("user_create_date", &self.user_create_date);
+            formatter.field("user_last_modified_date", &self.user_last_modified_date);
+            formatter.field("enabled", &self.enabled);
+            formatter.field("user_status", &self.user_status);
+            formatter.field("mfa_options", &self.mfa_options);
+            formatter.field("preferred_mfa_setting", &self.preferred_mfa_setting);
+            formatter.field("user_mfa_setting_list", &self.user_mfa_setting_list);
+            formatter.finish()
+        }
+    }
 }
 impl AdminGetUserOutput {
     /// Creates a new builder-style object to manufacture [`AdminGetUserOutput`](crate::output::AdminGetUserOutput).
@@ -5770,7 +5183,7 @@ impl AdminGetUserOutput {
 
 /// <p>Gets the device response, as an administrator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdminGetDeviceOutput {
     /// <p>The device.</p>
     #[doc(hidden)]
@@ -5782,18 +5195,11 @@ impl AdminGetDeviceOutput {
         self.device.as_ref()
     }
 }
-impl std::fmt::Debug for AdminGetDeviceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdminGetDeviceOutput");
-        formatter.field("device", &self.device);
-        formatter.finish()
-    }
-}
 /// See [`AdminGetDeviceOutput`](crate::output::AdminGetDeviceOutput).
 pub mod admin_get_device_output {
 
     /// A builder for [`AdminGetDeviceOutput`](crate::output::AdminGetDeviceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device: std::option::Option<crate::model::DeviceType>,
     }
@@ -5825,19 +5231,13 @@ impl AdminGetDeviceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdminForgetDeviceOutput {}
-impl std::fmt::Debug for AdminForgetDeviceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdminForgetDeviceOutput");
-        formatter.finish()
-    }
-}
 /// See [`AdminForgetDeviceOutput`](crate::output::AdminForgetDeviceOutput).
 pub mod admin_forget_device_output {
 
     /// A builder for [`AdminForgetDeviceOutput`](crate::output::AdminForgetDeviceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AdminForgetDeviceOutput`](crate::output::AdminForgetDeviceOutput).
@@ -5855,19 +5255,13 @@ impl AdminForgetDeviceOutput {
 
 /// <p>Represents the response from the server for the request to enable a user as an administrator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdminEnableUserOutput {}
-impl std::fmt::Debug for AdminEnableUserOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdminEnableUserOutput");
-        formatter.finish()
-    }
-}
 /// See [`AdminEnableUserOutput`](crate::output::AdminEnableUserOutput).
 pub mod admin_enable_user_output {
 
     /// A builder for [`AdminEnableUserOutput`](crate::output::AdminEnableUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AdminEnableUserOutput`](crate::output::AdminEnableUserOutput).
@@ -5885,19 +5279,13 @@ impl AdminEnableUserOutput {
 
 /// <p>Represents the response received from the server to disable the user as an administrator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdminDisableUserOutput {}
-impl std::fmt::Debug for AdminDisableUserOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdminDisableUserOutput");
-        formatter.finish()
-    }
-}
 /// See [`AdminDisableUserOutput`](crate::output::AdminDisableUserOutput).
 pub mod admin_disable_user_output {
 
     /// A builder for [`AdminDisableUserOutput`](crate::output::AdminDisableUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AdminDisableUserOutput`](crate::output::AdminDisableUserOutput).
@@ -5915,19 +5303,13 @@ impl AdminDisableUserOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdminDisableProviderForUserOutput {}
-impl std::fmt::Debug for AdminDisableProviderForUserOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdminDisableProviderForUserOutput");
-        formatter.finish()
-    }
-}
 /// See [`AdminDisableProviderForUserOutput`](crate::output::AdminDisableProviderForUserOutput).
 pub mod admin_disable_provider_for_user_output {
 
     /// A builder for [`AdminDisableProviderForUserOutput`](crate::output::AdminDisableProviderForUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AdminDisableProviderForUserOutput`](crate::output::AdminDisableProviderForUserOutput).
@@ -5945,19 +5327,13 @@ impl AdminDisableProviderForUserOutput {
 
 /// <p>Represents the response received from the server for a request to delete user attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdminDeleteUserAttributesOutput {}
-impl std::fmt::Debug for AdminDeleteUserAttributesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdminDeleteUserAttributesOutput");
-        formatter.finish()
-    }
-}
 /// See [`AdminDeleteUserAttributesOutput`](crate::output::AdminDeleteUserAttributesOutput).
 pub mod admin_delete_user_attributes_output {
 
     /// A builder for [`AdminDeleteUserAttributesOutput`](crate::output::AdminDeleteUserAttributesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AdminDeleteUserAttributesOutput`](crate::output::AdminDeleteUserAttributesOutput).
@@ -5975,19 +5351,13 @@ impl AdminDeleteUserAttributesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdminDeleteUserOutput {}
-impl std::fmt::Debug for AdminDeleteUserOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdminDeleteUserOutput");
-        formatter.finish()
-    }
-}
 /// See [`AdminDeleteUserOutput`](crate::output::AdminDeleteUserOutput).
 pub mod admin_delete_user_output {
 
     /// A builder for [`AdminDeleteUserOutput`](crate::output::AdminDeleteUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AdminDeleteUserOutput`](crate::output::AdminDeleteUserOutput).
@@ -6005,7 +5375,7 @@ impl AdminDeleteUserOutput {
 
 /// <p>Represents the response from the server to the request to create the user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdminCreateUserOutput {
     /// <p>The newly created user.</p>
     #[doc(hidden)]
@@ -6017,18 +5387,11 @@ impl AdminCreateUserOutput {
         self.user.as_ref()
     }
 }
-impl std::fmt::Debug for AdminCreateUserOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdminCreateUserOutput");
-        formatter.field("user", &self.user);
-        formatter.finish()
-    }
-}
 /// See [`AdminCreateUserOutput`](crate::output::AdminCreateUserOutput).
 pub mod admin_create_user_output {
 
     /// A builder for [`AdminCreateUserOutput`](crate::output::AdminCreateUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user: std::option::Option<crate::model::UserType>,
     }
@@ -6058,19 +5421,13 @@ impl AdminCreateUserOutput {
 
 /// <p>Represents the response from the server for the request to confirm registration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdminConfirmSignUpOutput {}
-impl std::fmt::Debug for AdminConfirmSignUpOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdminConfirmSignUpOutput");
-        formatter.finish()
-    }
-}
 /// See [`AdminConfirmSignUpOutput`](crate::output::AdminConfirmSignUpOutput).
 pub mod admin_confirm_sign_up_output {
 
     /// A builder for [`AdminConfirmSignUpOutput`](crate::output::AdminConfirmSignUpOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AdminConfirmSignUpOutput`](crate::output::AdminConfirmSignUpOutput).
@@ -6088,19 +5445,13 @@ impl AdminConfirmSignUpOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdminAddUserToGroupOutput {}
-impl std::fmt::Debug for AdminAddUserToGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdminAddUserToGroupOutput");
-        formatter.finish()
-    }
-}
 /// See [`AdminAddUserToGroupOutput`](crate::output::AdminAddUserToGroupOutput).
 pub mod admin_add_user_to_group_output {
 
     /// A builder for [`AdminAddUserToGroupOutput`](crate::output::AdminAddUserToGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AdminAddUserToGroupOutput`](crate::output::AdminAddUserToGroupOutput).
@@ -6118,19 +5469,13 @@ impl AdminAddUserToGroupOutput {
 
 /// <p>Represents the response from the server for the request to add custom attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddCustomAttributesOutput {}
-impl std::fmt::Debug for AddCustomAttributesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddCustomAttributesOutput");
-        formatter.finish()
-    }
-}
 /// See [`AddCustomAttributesOutput`](crate::output::AddCustomAttributesOutput).
 pub mod add_custom_attributes_output {
 
     /// A builder for [`AddCustomAttributesOutput`](crate::output::AddCustomAttributesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AddCustomAttributesOutput`](crate::output::AddCustomAttributesOutput).

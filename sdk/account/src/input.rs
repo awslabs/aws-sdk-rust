@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod delete_alternate_contact_input {
 
     /// A builder for [`DeleteAlternateContactInput`](crate::input::DeleteAlternateContactInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alternate_contact_type: std::option::Option<crate::model::AlternateContactType>,
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -47,8 +47,10 @@ pub mod delete_alternate_contact_input {
         /// Consumes the builder and constructs a [`DeleteAlternateContactInput`](crate::input::DeleteAlternateContactInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteAlternateContactInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteAlternateContactInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteAlternateContactInput {
                 alternate_contact_type: self.alternate_contact_type,
                 account_id: self.account_id,
@@ -69,13 +71,13 @@ impl DeleteAlternateContactInput {
             crate::operation::DeleteAlternateContact,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteAlternateContactInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/deleteAlternateContact").expect("formatting should succeed");
                 Ok(())
             }
@@ -83,8 +85,10 @@ impl DeleteAlternateContactInput {
             fn update_http_builder(
                 input: &crate::input::DeleteAlternateContactInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -170,7 +174,7 @@ impl DeleteAlternateContactInput {
 pub mod get_alternate_contact_input {
 
     /// A builder for [`GetAlternateContactInput`](crate::input::GetAlternateContactInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alternate_contact_type: std::option::Option<crate::model::AlternateContactType>,
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -212,8 +216,10 @@ pub mod get_alternate_contact_input {
         /// Consumes the builder and constructs a [`GetAlternateContactInput`](crate::input::GetAlternateContactInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetAlternateContactInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetAlternateContactInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetAlternateContactInput {
                 alternate_contact_type: self.alternate_contact_type,
                 account_id: self.account_id,
@@ -234,13 +240,13 @@ impl GetAlternateContactInput {
             crate::operation::GetAlternateContact,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetAlternateContactInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/getAlternateContact").expect("formatting should succeed");
                 Ok(())
             }
@@ -248,8 +254,10 @@ impl GetAlternateContactInput {
             fn update_http_builder(
                 input: &crate::input::GetAlternateContactInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -333,7 +341,7 @@ impl GetAlternateContactInput {
 pub mod get_contact_information_input {
 
     /// A builder for [`GetContactInformationInput`](crate::input::GetContactInformationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
     }
@@ -357,8 +365,10 @@ pub mod get_contact_information_input {
         /// Consumes the builder and constructs a [`GetContactInformationInput`](crate::input::GetContactInformationInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetContactInformationInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetContactInformationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetContactInformationInput {
                 account_id: self.account_id,
             })
@@ -378,13 +388,13 @@ impl GetContactInformationInput {
             crate::operation::GetContactInformation,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetContactInformationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/getContactInformation").expect("formatting should succeed");
                 Ok(())
             }
@@ -392,8 +402,10 @@ impl GetContactInformationInput {
             fn update_http_builder(
                 input: &crate::input::GetContactInformationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -479,7 +491,7 @@ impl GetContactInformationInput {
 pub mod put_alternate_contact_input {
 
     /// A builder for [`PutAlternateContactInput`](crate::input::PutAlternateContactInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) title: std::option::Option<std::string::String>,
@@ -568,8 +580,10 @@ pub mod put_alternate_contact_input {
         /// Consumes the builder and constructs a [`PutAlternateContactInput`](crate::input::PutAlternateContactInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutAlternateContactInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutAlternateContactInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutAlternateContactInput {
                 name: self.name,
                 title: self.title,
@@ -578,6 +592,18 @@ pub mod put_alternate_contact_input {
                 alternate_contact_type: self.alternate_contact_type,
                 account_id: self.account_id,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("title", &"*** Sensitive Data Redacted ***");
+            formatter.field("email_address", &"*** Sensitive Data Redacted ***");
+            formatter.field("phone_number", &"*** Sensitive Data Redacted ***");
+            formatter.field("alternate_contact_type", &self.alternate_contact_type);
+            formatter.field("account_id", &self.account_id);
+            formatter.finish()
         }
     }
 }
@@ -594,13 +620,13 @@ impl PutAlternateContactInput {
             crate::operation::PutAlternateContact,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutAlternateContactInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/putAlternateContact").expect("formatting should succeed");
                 Ok(())
             }
@@ -608,8 +634,10 @@ impl PutAlternateContactInput {
             fn update_http_builder(
                 input: &crate::input::PutAlternateContactInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -693,7 +721,7 @@ impl PutAlternateContactInput {
 pub mod put_contact_information_input {
 
     /// A builder for [`PutContactInformationInput`](crate::input::PutContactInformationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_information: std::option::Option<crate::model::ContactInformation>,
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -731,8 +759,10 @@ pub mod put_contact_information_input {
         /// Consumes the builder and constructs a [`PutContactInformationInput`](crate::input::PutContactInformationInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutContactInformationInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutContactInformationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutContactInformationInput {
                 contact_information: self.contact_information,
                 account_id: self.account_id,
@@ -753,13 +783,13 @@ impl PutContactInformationInput {
             crate::operation::PutContactInformation,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutContactInformationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/putContactInformation").expect("formatting should succeed");
                 Ok(())
             }
@@ -767,8 +797,10 @@ impl PutContactInformationInput {
             fn update_http_builder(
                 input: &crate::input::PutContactInformationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -852,7 +884,7 @@ impl PutContactInformationInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutContactInformationInput {
     /// <p>Contains the details of the primary contact information associated with an Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -877,18 +909,10 @@ impl PutContactInformationInput {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for PutContactInformationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutContactInformationInput");
-        formatter.field("contact_information", &self.contact_information);
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetContactInformationInput {
     /// <p>Specifies the 12-digit account ID number of the Amazon Web Services account that you want to access or modify with this operation. If you don't specify this parameter, it defaults to the Amazon Web Services account of the identity used to call the operation. To use this parameter, the caller must be an identity in the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's management account</a> or a delegated administrator account. The specified account ID must also be a member account in the same organization. The organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all features enabled</a>, and the organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-trusted-access.html">trusted access</a> enabled for the Account Management service, and optionally a <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-delegated-admin.html">delegated admin</a> account assigned.</p> <note>
     /// <p>The management account can't specify its own <code>AccountId</code>. It must call the operation in standalone context by not including the <code>AccountId</code> parameter.</p>
@@ -904,13 +928,6 @@ impl GetContactInformationInput {
     /// <p>To call this operation on an account that is not a member of an organization, don't specify this parameter. Instead, call the operation using an identity belonging to the account whose contacts you wish to retrieve or modify.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
-    }
-}
-impl std::fmt::Debug for GetContactInformationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetContactInformationInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
     }
 }
 
@@ -990,7 +1007,7 @@ impl std::fmt::Debug for PutAlternateContactInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAlternateContactInput {
     /// <p>Specifies which of the alternate contacts to delete. </p>
     #[doc(hidden)]
@@ -1021,18 +1038,10 @@ impl DeleteAlternateContactInput {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAlternateContactInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAlternateContactInput");
-        formatter.field("alternate_contact_type", &self.alternate_contact_type);
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAlternateContactInput {
     /// <p>Specifies which alternate contact you want to retrieve.</p>
     #[doc(hidden)]
@@ -1061,13 +1070,5 @@ impl GetAlternateContactInput {
     /// <p>To call this operation on an account that is not a member of an organization, then don't specify this parameter, and call the operation using an identity belonging to the account whose contacts you wish to retrieve or modify.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
-    }
-}
-impl std::fmt::Debug for GetAlternateContactInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAlternateContactInput");
-        formatter.field("alternate_contact_type", &self.alternate_contact_type);
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
     }
 }

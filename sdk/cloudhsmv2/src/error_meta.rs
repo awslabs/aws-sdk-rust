@@ -15,8 +15,15 @@ pub enum Error {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>The request was rejected because of a tagging failure. Verify the tag conditions in all applicable policies, and then retry the request.</p>
     CloudHsmTagException(crate::error::CloudHsmTagException),
-    /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -39,30 +46,37 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CopyBackupToRegionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CopyBackupToRegionErrorKind::CloudHsmAccessDeniedException(inner) => {
-                    Error::CloudHsmAccessDeniedException(inner)
-                }
-                crate::error::CopyBackupToRegionErrorKind::CloudHsmInternalFailureException(
-                    inner,
-                ) => Error::CloudHsmInternalFailureException(inner),
-                crate::error::CopyBackupToRegionErrorKind::CloudHsmInvalidRequestException(
-                    inner,
-                ) => Error::CloudHsmInvalidRequestException(inner),
-                crate::error::CopyBackupToRegionErrorKind::CloudHsmResourceNotFoundException(
-                    inner,
-                ) => Error::CloudHsmResourceNotFoundException(inner),
-                crate::error::CopyBackupToRegionErrorKind::CloudHsmServiceException(inner) => {
-                    Error::CloudHsmServiceException(inner)
-                }
-                crate::error::CopyBackupToRegionErrorKind::CloudHsmTagException(inner) => {
-                    Error::CloudHsmTagException(inner)
-                }
-                crate::error::CopyBackupToRegionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CopyBackupToRegionError> for Error {
+    fn from(err: crate::error::CopyBackupToRegionError) -> Self {
+        match err.kind {
+            crate::error::CopyBackupToRegionErrorKind::CloudHsmAccessDeniedException(inner) => {
+                Error::CloudHsmAccessDeniedException(inner)
+            }
+            crate::error::CopyBackupToRegionErrorKind::CloudHsmInternalFailureException(inner) => {
+                Error::CloudHsmInternalFailureException(inner)
+            }
+            crate::error::CopyBackupToRegionErrorKind::CloudHsmInvalidRequestException(inner) => {
+                Error::CloudHsmInvalidRequestException(inner)
+            }
+            crate::error::CopyBackupToRegionErrorKind::CloudHsmResourceNotFoundException(inner) => {
+                Error::CloudHsmResourceNotFoundException(inner)
+            }
+            crate::error::CopyBackupToRegionErrorKind::CloudHsmServiceException(inner) => {
+                Error::CloudHsmServiceException(inner)
+            }
+            crate::error::CopyBackupToRegionErrorKind::CloudHsmTagException(inner) => {
+                Error::CloudHsmTagException(inner)
+            }
+            crate::error::CopyBackupToRegionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -72,28 +86,37 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateClusterError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateClusterErrorKind::CloudHsmAccessDeniedException(inner) => {
-                    Error::CloudHsmAccessDeniedException(inner)
-                }
-                crate::error::CreateClusterErrorKind::CloudHsmInternalFailureException(inner) => {
-                    Error::CloudHsmInternalFailureException(inner)
-                }
-                crate::error::CreateClusterErrorKind::CloudHsmInvalidRequestException(inner) => {
-                    Error::CloudHsmInvalidRequestException(inner)
-                }
-                crate::error::CreateClusterErrorKind::CloudHsmResourceNotFoundException(inner) => {
-                    Error::CloudHsmResourceNotFoundException(inner)
-                }
-                crate::error::CreateClusterErrorKind::CloudHsmServiceException(inner) => {
-                    Error::CloudHsmServiceException(inner)
-                }
-                crate::error::CreateClusterErrorKind::CloudHsmTagException(inner) => {
-                    Error::CloudHsmTagException(inner)
-                }
-                crate::error::CreateClusterErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateClusterError> for Error {
+    fn from(err: crate::error::CreateClusterError) -> Self {
+        match err.kind {
+            crate::error::CreateClusterErrorKind::CloudHsmAccessDeniedException(inner) => {
+                Error::CloudHsmAccessDeniedException(inner)
+            }
+            crate::error::CreateClusterErrorKind::CloudHsmInternalFailureException(inner) => {
+                Error::CloudHsmInternalFailureException(inner)
+            }
+            crate::error::CreateClusterErrorKind::CloudHsmInvalidRequestException(inner) => {
+                Error::CloudHsmInvalidRequestException(inner)
+            }
+            crate::error::CreateClusterErrorKind::CloudHsmResourceNotFoundException(inner) => {
+                Error::CloudHsmResourceNotFoundException(inner)
+            }
+            crate::error::CreateClusterErrorKind::CloudHsmServiceException(inner) => {
+                Error::CloudHsmServiceException(inner)
+            }
+            crate::error::CreateClusterErrorKind::CloudHsmTagException(inner) => {
+                Error::CloudHsmTagException(inner)
+            }
+            crate::error::CreateClusterErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -103,25 +126,34 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateHsmError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateHsmErrorKind::CloudHsmAccessDeniedException(inner) => {
-                    Error::CloudHsmAccessDeniedException(inner)
-                }
-                crate::error::CreateHsmErrorKind::CloudHsmInternalFailureException(inner) => {
-                    Error::CloudHsmInternalFailureException(inner)
-                }
-                crate::error::CreateHsmErrorKind::CloudHsmInvalidRequestException(inner) => {
-                    Error::CloudHsmInvalidRequestException(inner)
-                }
-                crate::error::CreateHsmErrorKind::CloudHsmResourceNotFoundException(inner) => {
-                    Error::CloudHsmResourceNotFoundException(inner)
-                }
-                crate::error::CreateHsmErrorKind::CloudHsmServiceException(inner) => {
-                    Error::CloudHsmServiceException(inner)
-                }
-                crate::error::CreateHsmErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateHsmError> for Error {
+    fn from(err: crate::error::CreateHsmError) -> Self {
+        match err.kind {
+            crate::error::CreateHsmErrorKind::CloudHsmAccessDeniedException(inner) => {
+                Error::CloudHsmAccessDeniedException(inner)
+            }
+            crate::error::CreateHsmErrorKind::CloudHsmInternalFailureException(inner) => {
+                Error::CloudHsmInternalFailureException(inner)
+            }
+            crate::error::CreateHsmErrorKind::CloudHsmInvalidRequestException(inner) => {
+                Error::CloudHsmInvalidRequestException(inner)
+            }
+            crate::error::CreateHsmErrorKind::CloudHsmResourceNotFoundException(inner) => {
+                Error::CloudHsmResourceNotFoundException(inner)
+            }
+            crate::error::CreateHsmErrorKind::CloudHsmServiceException(inner) => {
+                Error::CloudHsmServiceException(inner)
+            }
+            crate::error::CreateHsmErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -131,25 +163,34 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteBackupError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteBackupErrorKind::CloudHsmAccessDeniedException(inner) => {
-                    Error::CloudHsmAccessDeniedException(inner)
-                }
-                crate::error::DeleteBackupErrorKind::CloudHsmInternalFailureException(inner) => {
-                    Error::CloudHsmInternalFailureException(inner)
-                }
-                crate::error::DeleteBackupErrorKind::CloudHsmInvalidRequestException(inner) => {
-                    Error::CloudHsmInvalidRequestException(inner)
-                }
-                crate::error::DeleteBackupErrorKind::CloudHsmResourceNotFoundException(inner) => {
-                    Error::CloudHsmResourceNotFoundException(inner)
-                }
-                crate::error::DeleteBackupErrorKind::CloudHsmServiceException(inner) => {
-                    Error::CloudHsmServiceException(inner)
-                }
-                crate::error::DeleteBackupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteBackupError> for Error {
+    fn from(err: crate::error::DeleteBackupError) -> Self {
+        match err.kind {
+            crate::error::DeleteBackupErrorKind::CloudHsmAccessDeniedException(inner) => {
+                Error::CloudHsmAccessDeniedException(inner)
+            }
+            crate::error::DeleteBackupErrorKind::CloudHsmInternalFailureException(inner) => {
+                Error::CloudHsmInternalFailureException(inner)
+            }
+            crate::error::DeleteBackupErrorKind::CloudHsmInvalidRequestException(inner) => {
+                Error::CloudHsmInvalidRequestException(inner)
+            }
+            crate::error::DeleteBackupErrorKind::CloudHsmResourceNotFoundException(inner) => {
+                Error::CloudHsmResourceNotFoundException(inner)
+            }
+            crate::error::DeleteBackupErrorKind::CloudHsmServiceException(inner) => {
+                Error::CloudHsmServiceException(inner)
+            }
+            crate::error::DeleteBackupErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -159,28 +200,37 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteClusterError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteClusterErrorKind::CloudHsmAccessDeniedException(inner) => {
-                    Error::CloudHsmAccessDeniedException(inner)
-                }
-                crate::error::DeleteClusterErrorKind::CloudHsmInternalFailureException(inner) => {
-                    Error::CloudHsmInternalFailureException(inner)
-                }
-                crate::error::DeleteClusterErrorKind::CloudHsmInvalidRequestException(inner) => {
-                    Error::CloudHsmInvalidRequestException(inner)
-                }
-                crate::error::DeleteClusterErrorKind::CloudHsmResourceNotFoundException(inner) => {
-                    Error::CloudHsmResourceNotFoundException(inner)
-                }
-                crate::error::DeleteClusterErrorKind::CloudHsmServiceException(inner) => {
-                    Error::CloudHsmServiceException(inner)
-                }
-                crate::error::DeleteClusterErrorKind::CloudHsmTagException(inner) => {
-                    Error::CloudHsmTagException(inner)
-                }
-                crate::error::DeleteClusterErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteClusterError> for Error {
+    fn from(err: crate::error::DeleteClusterError) -> Self {
+        match err.kind {
+            crate::error::DeleteClusterErrorKind::CloudHsmAccessDeniedException(inner) => {
+                Error::CloudHsmAccessDeniedException(inner)
+            }
+            crate::error::DeleteClusterErrorKind::CloudHsmInternalFailureException(inner) => {
+                Error::CloudHsmInternalFailureException(inner)
+            }
+            crate::error::DeleteClusterErrorKind::CloudHsmInvalidRequestException(inner) => {
+                Error::CloudHsmInvalidRequestException(inner)
+            }
+            crate::error::DeleteClusterErrorKind::CloudHsmResourceNotFoundException(inner) => {
+                Error::CloudHsmResourceNotFoundException(inner)
+            }
+            crate::error::DeleteClusterErrorKind::CloudHsmServiceException(inner) => {
+                Error::CloudHsmServiceException(inner)
+            }
+            crate::error::DeleteClusterErrorKind::CloudHsmTagException(inner) => {
+                Error::CloudHsmTagException(inner)
+            }
+            crate::error::DeleteClusterErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -190,25 +240,34 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteHsmError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteHsmErrorKind::CloudHsmAccessDeniedException(inner) => {
-                    Error::CloudHsmAccessDeniedException(inner)
-                }
-                crate::error::DeleteHsmErrorKind::CloudHsmInternalFailureException(inner) => {
-                    Error::CloudHsmInternalFailureException(inner)
-                }
-                crate::error::DeleteHsmErrorKind::CloudHsmInvalidRequestException(inner) => {
-                    Error::CloudHsmInvalidRequestException(inner)
-                }
-                crate::error::DeleteHsmErrorKind::CloudHsmResourceNotFoundException(inner) => {
-                    Error::CloudHsmResourceNotFoundException(inner)
-                }
-                crate::error::DeleteHsmErrorKind::CloudHsmServiceException(inner) => {
-                    Error::CloudHsmServiceException(inner)
-                }
-                crate::error::DeleteHsmErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteHsmError> for Error {
+    fn from(err: crate::error::DeleteHsmError) -> Self {
+        match err.kind {
+            crate::error::DeleteHsmErrorKind::CloudHsmAccessDeniedException(inner) => {
+                Error::CloudHsmAccessDeniedException(inner)
+            }
+            crate::error::DeleteHsmErrorKind::CloudHsmInternalFailureException(inner) => {
+                Error::CloudHsmInternalFailureException(inner)
+            }
+            crate::error::DeleteHsmErrorKind::CloudHsmInvalidRequestException(inner) => {
+                Error::CloudHsmInvalidRequestException(inner)
+            }
+            crate::error::DeleteHsmErrorKind::CloudHsmResourceNotFoundException(inner) => {
+                Error::CloudHsmResourceNotFoundException(inner)
+            }
+            crate::error::DeleteHsmErrorKind::CloudHsmServiceException(inner) => {
+                Error::CloudHsmServiceException(inner)
+            }
+            crate::error::DeleteHsmErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -218,28 +277,37 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeBackupsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeBackupsErrorKind::CloudHsmAccessDeniedException(inner) => {
-                    Error::CloudHsmAccessDeniedException(inner)
-                }
-                crate::error::DescribeBackupsErrorKind::CloudHsmInternalFailureException(inner) => {
-                    Error::CloudHsmInternalFailureException(inner)
-                }
-                crate::error::DescribeBackupsErrorKind::CloudHsmInvalidRequestException(inner) => {
-                    Error::CloudHsmInvalidRequestException(inner)
-                }
-                crate::error::DescribeBackupsErrorKind::CloudHsmResourceNotFoundException(
-                    inner,
-                ) => Error::CloudHsmResourceNotFoundException(inner),
-                crate::error::DescribeBackupsErrorKind::CloudHsmServiceException(inner) => {
-                    Error::CloudHsmServiceException(inner)
-                }
-                crate::error::DescribeBackupsErrorKind::CloudHsmTagException(inner) => {
-                    Error::CloudHsmTagException(inner)
-                }
-                crate::error::DescribeBackupsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeBackupsError> for Error {
+    fn from(err: crate::error::DescribeBackupsError) -> Self {
+        match err.kind {
+            crate::error::DescribeBackupsErrorKind::CloudHsmAccessDeniedException(inner) => {
+                Error::CloudHsmAccessDeniedException(inner)
+            }
+            crate::error::DescribeBackupsErrorKind::CloudHsmInternalFailureException(inner) => {
+                Error::CloudHsmInternalFailureException(inner)
+            }
+            crate::error::DescribeBackupsErrorKind::CloudHsmInvalidRequestException(inner) => {
+                Error::CloudHsmInvalidRequestException(inner)
+            }
+            crate::error::DescribeBackupsErrorKind::CloudHsmResourceNotFoundException(inner) => {
+                Error::CloudHsmResourceNotFoundException(inner)
+            }
+            crate::error::DescribeBackupsErrorKind::CloudHsmServiceException(inner) => {
+                Error::CloudHsmServiceException(inner)
+            }
+            crate::error::DescribeBackupsErrorKind::CloudHsmTagException(inner) => {
+                Error::CloudHsmTagException(inner)
+            }
+            crate::error::DescribeBackupsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -251,27 +319,34 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeClustersError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeClustersErrorKind::CloudHsmAccessDeniedException(inner) => {
-                    Error::CloudHsmAccessDeniedException(inner)
-                }
-                crate::error::DescribeClustersErrorKind::CloudHsmInternalFailureException(
-                    inner,
-                ) => Error::CloudHsmInternalFailureException(inner),
-                crate::error::DescribeClustersErrorKind::CloudHsmInvalidRequestException(inner) => {
-                    Error::CloudHsmInvalidRequestException(inner)
-                }
-                crate::error::DescribeClustersErrorKind::CloudHsmServiceException(inner) => {
-                    Error::CloudHsmServiceException(inner)
-                }
-                crate::error::DescribeClustersErrorKind::CloudHsmTagException(inner) => {
-                    Error::CloudHsmTagException(inner)
-                }
-                crate::error::DescribeClustersErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeClustersError> for Error {
+    fn from(err: crate::error::DescribeClustersError) -> Self {
+        match err.kind {
+            crate::error::DescribeClustersErrorKind::CloudHsmAccessDeniedException(inner) => {
+                Error::CloudHsmAccessDeniedException(inner)
+            }
+            crate::error::DescribeClustersErrorKind::CloudHsmInternalFailureException(inner) => {
+                Error::CloudHsmInternalFailureException(inner)
+            }
+            crate::error::DescribeClustersErrorKind::CloudHsmInvalidRequestException(inner) => {
+                Error::CloudHsmInvalidRequestException(inner)
+            }
+            crate::error::DescribeClustersErrorKind::CloudHsmServiceException(inner) => {
+                Error::CloudHsmServiceException(inner)
+            }
+            crate::error::DescribeClustersErrorKind::CloudHsmTagException(inner) => {
+                Error::CloudHsmTagException(inner)
+            }
+            crate::error::DescribeClustersErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -283,27 +358,34 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::InitializeClusterError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::InitializeClusterErrorKind::CloudHsmAccessDeniedException(inner) => {
-                    Error::CloudHsmAccessDeniedException(inner)
-                }
-                crate::error::InitializeClusterErrorKind::CloudHsmInternalFailureException(
-                    inner,
-                ) => Error::CloudHsmInternalFailureException(inner),
-                crate::error::InitializeClusterErrorKind::CloudHsmInvalidRequestException(
-                    inner,
-                ) => Error::CloudHsmInvalidRequestException(inner),
-                crate::error::InitializeClusterErrorKind::CloudHsmResourceNotFoundException(
-                    inner,
-                ) => Error::CloudHsmResourceNotFoundException(inner),
-                crate::error::InitializeClusterErrorKind::CloudHsmServiceException(inner) => {
-                    Error::CloudHsmServiceException(inner)
-                }
-                crate::error::InitializeClusterErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::InitializeClusterError> for Error {
+    fn from(err: crate::error::InitializeClusterError) -> Self {
+        match err.kind {
+            crate::error::InitializeClusterErrorKind::CloudHsmAccessDeniedException(inner) => {
+                Error::CloudHsmAccessDeniedException(inner)
+            }
+            crate::error::InitializeClusterErrorKind::CloudHsmInternalFailureException(inner) => {
+                Error::CloudHsmInternalFailureException(inner)
+            }
+            crate::error::InitializeClusterErrorKind::CloudHsmInvalidRequestException(inner) => {
+                Error::CloudHsmInvalidRequestException(inner)
+            }
+            crate::error::InitializeClusterErrorKind::CloudHsmResourceNotFoundException(inner) => {
+                Error::CloudHsmResourceNotFoundException(inner)
+            }
+            crate::error::InitializeClusterErrorKind::CloudHsmServiceException(inner) => {
+                Error::CloudHsmServiceException(inner)
+            }
+            crate::error::InitializeClusterErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -313,28 +395,37 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTagsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListTagsErrorKind::CloudHsmAccessDeniedException(inner) => {
-                    Error::CloudHsmAccessDeniedException(inner)
-                }
-                crate::error::ListTagsErrorKind::CloudHsmInternalFailureException(inner) => {
-                    Error::CloudHsmInternalFailureException(inner)
-                }
-                crate::error::ListTagsErrorKind::CloudHsmInvalidRequestException(inner) => {
-                    Error::CloudHsmInvalidRequestException(inner)
-                }
-                crate::error::ListTagsErrorKind::CloudHsmResourceNotFoundException(inner) => {
-                    Error::CloudHsmResourceNotFoundException(inner)
-                }
-                crate::error::ListTagsErrorKind::CloudHsmServiceException(inner) => {
-                    Error::CloudHsmServiceException(inner)
-                }
-                crate::error::ListTagsErrorKind::CloudHsmTagException(inner) => {
-                    Error::CloudHsmTagException(inner)
-                }
-                crate::error::ListTagsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListTagsError> for Error {
+    fn from(err: crate::error::ListTagsError) -> Self {
+        match err.kind {
+            crate::error::ListTagsErrorKind::CloudHsmAccessDeniedException(inner) => {
+                Error::CloudHsmAccessDeniedException(inner)
+            }
+            crate::error::ListTagsErrorKind::CloudHsmInternalFailureException(inner) => {
+                Error::CloudHsmInternalFailureException(inner)
+            }
+            crate::error::ListTagsErrorKind::CloudHsmInvalidRequestException(inner) => {
+                Error::CloudHsmInvalidRequestException(inner)
+            }
+            crate::error::ListTagsErrorKind::CloudHsmResourceNotFoundException(inner) => {
+                Error::CloudHsmResourceNotFoundException(inner)
+            }
+            crate::error::ListTagsErrorKind::CloudHsmServiceException(inner) => {
+                Error::CloudHsmServiceException(inner)
+            }
+            crate::error::ListTagsErrorKind::CloudHsmTagException(inner) => {
+                Error::CloudHsmTagException(inner)
+            }
+            crate::error::ListTagsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -347,15 +438,34 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ModifyBackupAttributesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::ModifyBackupAttributesErrorKind::CloudHsmAccessDeniedException(inner) => Error::CloudHsmAccessDeniedException(inner),
-                crate::error::ModifyBackupAttributesErrorKind::CloudHsmInternalFailureException(inner) => Error::CloudHsmInternalFailureException(inner),
-                crate::error::ModifyBackupAttributesErrorKind::CloudHsmInvalidRequestException(inner) => Error::CloudHsmInvalidRequestException(inner),
-                crate::error::ModifyBackupAttributesErrorKind::CloudHsmResourceNotFoundException(inner) => Error::CloudHsmResourceNotFoundException(inner),
-                crate::error::ModifyBackupAttributesErrorKind::CloudHsmServiceException(inner) => Error::CloudHsmServiceException(inner),
-                crate::error::ModifyBackupAttributesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ModifyBackupAttributesError> for Error {
+    fn from(err: crate::error::ModifyBackupAttributesError) -> Self {
+        match err.kind {
+            crate::error::ModifyBackupAttributesErrorKind::CloudHsmAccessDeniedException(inner) => {
+                Error::CloudHsmAccessDeniedException(inner)
+            }
+            crate::error::ModifyBackupAttributesErrorKind::CloudHsmInternalFailureException(
+                inner,
+            ) => Error::CloudHsmInternalFailureException(inner),
+            crate::error::ModifyBackupAttributesErrorKind::CloudHsmInvalidRequestException(
+                inner,
+            ) => Error::CloudHsmInvalidRequestException(inner),
+            crate::error::ModifyBackupAttributesErrorKind::CloudHsmResourceNotFoundException(
+                inner,
+            ) => Error::CloudHsmResourceNotFoundException(inner),
+            crate::error::ModifyBackupAttributesErrorKind::CloudHsmServiceException(inner) => {
+                Error::CloudHsmServiceException(inner)
+            }
+            crate::error::ModifyBackupAttributesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -365,25 +475,34 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ModifyClusterError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ModifyClusterErrorKind::CloudHsmAccessDeniedException(inner) => {
-                    Error::CloudHsmAccessDeniedException(inner)
-                }
-                crate::error::ModifyClusterErrorKind::CloudHsmInternalFailureException(inner) => {
-                    Error::CloudHsmInternalFailureException(inner)
-                }
-                crate::error::ModifyClusterErrorKind::CloudHsmInvalidRequestException(inner) => {
-                    Error::CloudHsmInvalidRequestException(inner)
-                }
-                crate::error::ModifyClusterErrorKind::CloudHsmResourceNotFoundException(inner) => {
-                    Error::CloudHsmResourceNotFoundException(inner)
-                }
-                crate::error::ModifyClusterErrorKind::CloudHsmServiceException(inner) => {
-                    Error::CloudHsmServiceException(inner)
-                }
-                crate::error::ModifyClusterErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ModifyClusterError> for Error {
+    fn from(err: crate::error::ModifyClusterError) -> Self {
+        match err.kind {
+            crate::error::ModifyClusterErrorKind::CloudHsmAccessDeniedException(inner) => {
+                Error::CloudHsmAccessDeniedException(inner)
+            }
+            crate::error::ModifyClusterErrorKind::CloudHsmInternalFailureException(inner) => {
+                Error::CloudHsmInternalFailureException(inner)
+            }
+            crate::error::ModifyClusterErrorKind::CloudHsmInvalidRequestException(inner) => {
+                Error::CloudHsmInvalidRequestException(inner)
+            }
+            crate::error::ModifyClusterErrorKind::CloudHsmResourceNotFoundException(inner) => {
+                Error::CloudHsmResourceNotFoundException(inner)
+            }
+            crate::error::ModifyClusterErrorKind::CloudHsmServiceException(inner) => {
+                Error::CloudHsmServiceException(inner)
+            }
+            crate::error::ModifyClusterErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -393,25 +512,34 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::RestoreBackupError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::RestoreBackupErrorKind::CloudHsmAccessDeniedException(inner) => {
-                    Error::CloudHsmAccessDeniedException(inner)
-                }
-                crate::error::RestoreBackupErrorKind::CloudHsmInternalFailureException(inner) => {
-                    Error::CloudHsmInternalFailureException(inner)
-                }
-                crate::error::RestoreBackupErrorKind::CloudHsmInvalidRequestException(inner) => {
-                    Error::CloudHsmInvalidRequestException(inner)
-                }
-                crate::error::RestoreBackupErrorKind::CloudHsmResourceNotFoundException(inner) => {
-                    Error::CloudHsmResourceNotFoundException(inner)
-                }
-                crate::error::RestoreBackupErrorKind::CloudHsmServiceException(inner) => {
-                    Error::CloudHsmServiceException(inner)
-                }
-                crate::error::RestoreBackupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::RestoreBackupError> for Error {
+    fn from(err: crate::error::RestoreBackupError) -> Self {
+        match err.kind {
+            crate::error::RestoreBackupErrorKind::CloudHsmAccessDeniedException(inner) => {
+                Error::CloudHsmAccessDeniedException(inner)
+            }
+            crate::error::RestoreBackupErrorKind::CloudHsmInternalFailureException(inner) => {
+                Error::CloudHsmInternalFailureException(inner)
+            }
+            crate::error::RestoreBackupErrorKind::CloudHsmInvalidRequestException(inner) => {
+                Error::CloudHsmInvalidRequestException(inner)
+            }
+            crate::error::RestoreBackupErrorKind::CloudHsmResourceNotFoundException(inner) => {
+                Error::CloudHsmResourceNotFoundException(inner)
+            }
+            crate::error::RestoreBackupErrorKind::CloudHsmServiceException(inner) => {
+                Error::CloudHsmServiceException(inner)
+            }
+            crate::error::RestoreBackupErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -421,28 +549,37 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::TagResourceErrorKind::CloudHsmAccessDeniedException(inner) => {
-                    Error::CloudHsmAccessDeniedException(inner)
-                }
-                crate::error::TagResourceErrorKind::CloudHsmInternalFailureException(inner) => {
-                    Error::CloudHsmInternalFailureException(inner)
-                }
-                crate::error::TagResourceErrorKind::CloudHsmInvalidRequestException(inner) => {
-                    Error::CloudHsmInvalidRequestException(inner)
-                }
-                crate::error::TagResourceErrorKind::CloudHsmResourceNotFoundException(inner) => {
-                    Error::CloudHsmResourceNotFoundException(inner)
-                }
-                crate::error::TagResourceErrorKind::CloudHsmServiceException(inner) => {
-                    Error::CloudHsmServiceException(inner)
-                }
-                crate::error::TagResourceErrorKind::CloudHsmTagException(inner) => {
-                    Error::CloudHsmTagException(inner)
-                }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::TagResourceError> for Error {
+    fn from(err: crate::error::TagResourceError) -> Self {
+        match err.kind {
+            crate::error::TagResourceErrorKind::CloudHsmAccessDeniedException(inner) => {
+                Error::CloudHsmAccessDeniedException(inner)
+            }
+            crate::error::TagResourceErrorKind::CloudHsmInternalFailureException(inner) => {
+                Error::CloudHsmInternalFailureException(inner)
+            }
+            crate::error::TagResourceErrorKind::CloudHsmInvalidRequestException(inner) => {
+                Error::CloudHsmInvalidRequestException(inner)
+            }
+            crate::error::TagResourceErrorKind::CloudHsmResourceNotFoundException(inner) => {
+                Error::CloudHsmResourceNotFoundException(inner)
+            }
+            crate::error::TagResourceErrorKind::CloudHsmServiceException(inner) => {
+                Error::CloudHsmServiceException(inner)
+            }
+            crate::error::TagResourceErrorKind::CloudHsmTagException(inner) => {
+                Error::CloudHsmTagException(inner)
+            }
+            crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -452,28 +589,37 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UntagResourceErrorKind::CloudHsmAccessDeniedException(inner) => {
-                    Error::CloudHsmAccessDeniedException(inner)
-                }
-                crate::error::UntagResourceErrorKind::CloudHsmInternalFailureException(inner) => {
-                    Error::CloudHsmInternalFailureException(inner)
-                }
-                crate::error::UntagResourceErrorKind::CloudHsmInvalidRequestException(inner) => {
-                    Error::CloudHsmInvalidRequestException(inner)
-                }
-                crate::error::UntagResourceErrorKind::CloudHsmResourceNotFoundException(inner) => {
-                    Error::CloudHsmResourceNotFoundException(inner)
-                }
-                crate::error::UntagResourceErrorKind::CloudHsmServiceException(inner) => {
-                    Error::CloudHsmServiceException(inner)
-                }
-                crate::error::UntagResourceErrorKind::CloudHsmTagException(inner) => {
-                    Error::CloudHsmTagException(inner)
-                }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UntagResourceError> for Error {
+    fn from(err: crate::error::UntagResourceError) -> Self {
+        match err.kind {
+            crate::error::UntagResourceErrorKind::CloudHsmAccessDeniedException(inner) => {
+                Error::CloudHsmAccessDeniedException(inner)
+            }
+            crate::error::UntagResourceErrorKind::CloudHsmInternalFailureException(inner) => {
+                Error::CloudHsmInternalFailureException(inner)
+            }
+            crate::error::UntagResourceErrorKind::CloudHsmInvalidRequestException(inner) => {
+                Error::CloudHsmInvalidRequestException(inner)
+            }
+            crate::error::UntagResourceErrorKind::CloudHsmResourceNotFoundException(inner) => {
+                Error::CloudHsmResourceNotFoundException(inner)
+            }
+            crate::error::UntagResourceErrorKind::CloudHsmServiceException(inner) => {
+                Error::CloudHsmServiceException(inner)
+            }
+            crate::error::UntagResourceErrorKind::CloudHsmTagException(inner) => {
+                Error::CloudHsmTagException(inner)
+            }
+            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }

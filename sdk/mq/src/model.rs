@@ -2,7 +2,7 @@
 
 /// <p>Returns information about the XML element or attribute that was sanitized in the configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SanitizationWarning {
     /// <p>The name of the XML attribute that has been sanitized.</p>
     #[doc(hidden)]
@@ -28,20 +28,11 @@ impl SanitizationWarning {
         self.reason.as_ref()
     }
 }
-impl std::fmt::Debug for SanitizationWarning {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SanitizationWarning");
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("element_name", &self.element_name);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
-    }
-}
 /// See [`SanitizationWarning`](crate::model::SanitizationWarning).
 pub mod sanitization_warning {
 
     /// A builder for [`SanitizationWarning`](crate::model::SanitizationWarning).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_name: std::option::Option<std::string::String>,
         pub(crate) element_name: std::option::Option<std::string::String>,
@@ -101,6 +92,42 @@ impl SanitizationWarning {
     }
 }
 
+/// When writing a match expression against `SanitizationWarningReason`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let sanitizationwarningreason = unimplemented!();
+/// match sanitizationwarningreason {
+///     SanitizationWarningReason::DisallowedAttributeRemoved => { /* ... */ },
+///     SanitizationWarningReason::DisallowedElementRemoved => { /* ... */ },
+///     SanitizationWarningReason::InvalidAttributeValueRemoved => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `sanitizationwarningreason` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SanitizationWarningReason::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SanitizationWarningReason::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SanitizationWarningReason::NewFeature` is defined.
+/// Specifically, when `sanitizationwarningreason` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SanitizationWarningReason::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 /// <p>The reason for which the XML elements or attributes were sanitized.</p>
 #[non_exhaustive]
 #[derive(
@@ -119,8 +146,8 @@ pub enum SanitizationWarningReason {
     DisallowedElementRemoved,
     #[allow(missing_docs)] // documentation missing in model
     InvalidAttributeValueRemoved,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SanitizationWarningReason {
     fn from(s: &str) -> Self {
@@ -130,7 +157,9 @@ impl std::convert::From<&str> for SanitizationWarningReason {
             "INVALID_ATTRIBUTE_VALUE_REMOVED" => {
                 SanitizationWarningReason::InvalidAttributeValueRemoved
             }
-            other => SanitizationWarningReason::Unknown(other.to_owned()),
+            other => SanitizationWarningReason::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -150,11 +179,11 @@ impl SanitizationWarningReason {
             SanitizationWarningReason::InvalidAttributeValueRemoved => {
                 "INVALID_ATTRIBUTE_VALUE_REMOVED"
             }
-            SanitizationWarningReason::Unknown(s) => s.as_ref(),
+            SanitizationWarningReason::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DISALLOWED_ATTRIBUTE_REMOVED",
             "DISALLOWED_ELEMENT_REMOVED",
@@ -170,7 +199,7 @@ impl AsRef<str> for SanitizationWarningReason {
 
 /// <p>Returns information about the specified configuration revision.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigurationRevision {
     /// <p>Required. The date and time of the configuration revision.</p>
     #[doc(hidden)]
@@ -196,20 +225,11 @@ impl ConfigurationRevision {
         self.revision
     }
 }
-impl std::fmt::Debug for ConfigurationRevision {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigurationRevision");
-        formatter.field("created", &self.created);
-        formatter.field("description", &self.description);
-        formatter.field("revision", &self.revision);
-        formatter.finish()
-    }
-}
 /// See [`ConfigurationRevision`](crate::model::ConfigurationRevision).
 pub mod configuration_revision {
 
     /// A builder for [`ConfigurationRevision`](crate::model::ConfigurationRevision).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -268,7 +288,7 @@ impl ConfigurationRevision {
 
 /// <p>The scheduled time period relative to UTC during which Amazon MQ begins to apply pending updates or patches to the broker.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WeeklyStartTime {
     /// <p>Required. The day of the week.</p>
     #[doc(hidden)]
@@ -294,20 +314,11 @@ impl WeeklyStartTime {
         self.time_zone.as_deref()
     }
 }
-impl std::fmt::Debug for WeeklyStartTime {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WeeklyStartTime");
-        formatter.field("day_of_week", &self.day_of_week);
-        formatter.field("time_of_day", &self.time_of_day);
-        formatter.field("time_zone", &self.time_zone);
-        formatter.finish()
-    }
-}
 /// See [`WeeklyStartTime`](crate::model::WeeklyStartTime).
 pub mod weekly_start_time {
 
     /// A builder for [`WeeklyStartTime`](crate::model::WeeklyStartTime).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) day_of_week: std::option::Option<crate::model::DayOfWeek>,
         pub(crate) time_of_day: std::option::Option<std::string::String>,
@@ -364,6 +375,46 @@ impl WeeklyStartTime {
     }
 }
 
+/// When writing a match expression against `DayOfWeek`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let dayofweek = unimplemented!();
+/// match dayofweek {
+///     DayOfWeek::Friday => { /* ... */ },
+///     DayOfWeek::Monday => { /* ... */ },
+///     DayOfWeek::Saturday => { /* ... */ },
+///     DayOfWeek::Sunday => { /* ... */ },
+///     DayOfWeek::Thursday => { /* ... */ },
+///     DayOfWeek::Tuesday => { /* ... */ },
+///     DayOfWeek::Wednesday => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `dayofweek` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DayOfWeek::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DayOfWeek::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DayOfWeek::NewFeature` is defined.
+/// Specifically, when `dayofweek` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DayOfWeek::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -390,8 +441,8 @@ pub enum DayOfWeek {
     Tuesday,
     #[allow(missing_docs)] // documentation missing in model
     Wednesday,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DayOfWeek {
     fn from(s: &str) -> Self {
@@ -403,7 +454,7 @@ impl std::convert::From<&str> for DayOfWeek {
             "THURSDAY" => DayOfWeek::Thursday,
             "TUESDAY" => DayOfWeek::Tuesday,
             "WEDNESDAY" => DayOfWeek::Wednesday,
-            other => DayOfWeek::Unknown(other.to_owned()),
+            other => DayOfWeek::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -425,11 +476,11 @@ impl DayOfWeek {
             DayOfWeek::Thursday => "THURSDAY",
             DayOfWeek::Tuesday => "TUESDAY",
             DayOfWeek::Wednesday => "WEDNESDAY",
-            DayOfWeek::Unknown(s) => s.as_ref(),
+            DayOfWeek::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "FRIDAY",
             "MONDAY",
@@ -449,7 +500,7 @@ impl AsRef<str> for DayOfWeek {
 
 /// <p>The list of information about logs to be enabled for the specified broker.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Logs {
     /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Does not apply to RabbitMQ brokers.</p>
     #[doc(hidden)]
@@ -468,19 +519,11 @@ impl Logs {
         self.general
     }
 }
-impl std::fmt::Debug for Logs {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Logs");
-        formatter.field("audit", &self.audit);
-        formatter.field("general", &self.general);
-        formatter.finish()
-    }
-}
 /// See [`Logs`](crate::model::Logs).
 pub mod logs {
 
     /// A builder for [`Logs`](crate::model::Logs).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audit: std::option::Option<bool>,
         pub(crate) general: std::option::Option<bool>,
@@ -524,7 +567,7 @@ impl Logs {
 
 /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LdapServerMetadataOutput {
     /// <p>Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory . Optional failover server.</p>
     #[doc(hidden)]
@@ -599,27 +642,11 @@ impl LdapServerMetadataOutput {
         self.user_search_subtree
     }
 }
-impl std::fmt::Debug for LdapServerMetadataOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LdapServerMetadataOutput");
-        formatter.field("hosts", &self.hosts);
-        formatter.field("role_base", &self.role_base);
-        formatter.field("role_name", &self.role_name);
-        formatter.field("role_search_matching", &self.role_search_matching);
-        formatter.field("role_search_subtree", &self.role_search_subtree);
-        formatter.field("service_account_username", &self.service_account_username);
-        formatter.field("user_base", &self.user_base);
-        formatter.field("user_role_name", &self.user_role_name);
-        formatter.field("user_search_matching", &self.user_search_matching);
-        formatter.field("user_search_subtree", &self.user_search_subtree);
-        formatter.finish()
-    }
-}
 /// See [`LdapServerMetadataOutput`](crate::model::LdapServerMetadataOutput).
 pub mod ldap_server_metadata_output {
 
     /// A builder for [`LdapServerMetadataOutput`](crate::model::LdapServerMetadataOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosts: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) role_base: std::option::Option<std::string::String>,
@@ -782,7 +809,7 @@ impl LdapServerMetadataOutput {
 /// <p>Does not apply to RabbitMQ brokers.</p>
 /// </important>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigurationId {
     /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
     #[doc(hidden)]
@@ -801,19 +828,11 @@ impl ConfigurationId {
         self.revision
     }
 }
-impl std::fmt::Debug for ConfigurationId {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigurationId");
-        formatter.field("id", &self.id);
-        formatter.field("revision", &self.revision);
-        formatter.finish()
-    }
-}
 /// See [`ConfigurationId`](crate::model::ConfigurationId).
 pub mod configuration_id {
 
     /// A builder for [`ConfigurationId`](crate::model::ConfigurationId).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) revision: std::option::Option<i32>,
@@ -855,6 +874,41 @@ impl ConfigurationId {
     }
 }
 
+/// When writing a match expression against `AuthenticationStrategy`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let authenticationstrategy = unimplemented!();
+/// match authenticationstrategy {
+///     AuthenticationStrategy::Ldap => { /* ... */ },
+///     AuthenticationStrategy::Simple => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `authenticationstrategy` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `AuthenticationStrategy::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `AuthenticationStrategy::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `AuthenticationStrategy::NewFeature` is defined.
+/// Specifically, when `authenticationstrategy` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `AuthenticationStrategy::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
 #[non_exhaustive]
 #[derive(
@@ -871,15 +925,17 @@ pub enum AuthenticationStrategy {
     Ldap,
     #[allow(missing_docs)] // documentation missing in model
     Simple,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AuthenticationStrategy {
     fn from(s: &str) -> Self {
         match s {
             "LDAP" => AuthenticationStrategy::Ldap,
             "SIMPLE" => AuthenticationStrategy::Simple,
-            other => AuthenticationStrategy::Unknown(other.to_owned()),
+            other => {
+                AuthenticationStrategy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -896,11 +952,11 @@ impl AuthenticationStrategy {
         match self {
             AuthenticationStrategy::Ldap => "LDAP",
             AuthenticationStrategy::Simple => "SIMPLE",
-            AuthenticationStrategy::Unknown(s) => s.as_ref(),
+            AuthenticationStrategy::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LDAP", "SIMPLE"]
     }
 }
@@ -914,7 +970,7 @@ impl AsRef<str> for AuthenticationStrategy {
 /// <p>Does not apply to RabbitMQ brokers.</p>
 /// </important>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LdapServerMetadataInput {
     /// <p>Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory . Optional failover server.</p>
     #[doc(hidden)]
@@ -996,28 +1052,11 @@ impl LdapServerMetadataInput {
         self.user_search_subtree
     }
 }
-impl std::fmt::Debug for LdapServerMetadataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LdapServerMetadataInput");
-        formatter.field("hosts", &self.hosts);
-        formatter.field("role_base", &self.role_base);
-        formatter.field("role_name", &self.role_name);
-        formatter.field("role_search_matching", &self.role_search_matching);
-        formatter.field("role_search_subtree", &self.role_search_subtree);
-        formatter.field("service_account_password", &self.service_account_password);
-        formatter.field("service_account_username", &self.service_account_username);
-        formatter.field("user_base", &self.user_base);
-        formatter.field("user_role_name", &self.user_role_name);
-        formatter.field("user_search_matching", &self.user_search_matching);
-        formatter.field("user_search_subtree", &self.user_search_subtree);
-        formatter.finish()
-    }
-}
 /// See [`LdapServerMetadataInput`](crate::model::LdapServerMetadataInput).
 pub mod ldap_server_metadata_input {
 
     /// A builder for [`LdapServerMetadataInput`](crate::model::LdapServerMetadataInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosts: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) role_base: std::option::Option<std::string::String>,
@@ -1193,7 +1232,7 @@ impl LdapServerMetadataInput {
 
 /// <p>Returns a list of all broker users. Does not apply to RabbitMQ brokers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserSummary {
     /// <p>The type of change pending for the broker user.</p>
     #[doc(hidden)]
@@ -1212,19 +1251,11 @@ impl UserSummary {
         self.username.as_deref()
     }
 }
-impl std::fmt::Debug for UserSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserSummary");
-        formatter.field("pending_change", &self.pending_change);
-        formatter.field("username", &self.username);
-        formatter.finish()
-    }
-}
 /// See [`UserSummary`](crate::model::UserSummary).
 pub mod user_summary {
 
     /// A builder for [`UserSummary`](crate::model::UserSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pending_change: std::option::Option<crate::model::ChangeType>,
         pub(crate) username: std::option::Option<std::string::String>,
@@ -1269,6 +1300,42 @@ impl UserSummary {
     }
 }
 
+/// When writing a match expression against `ChangeType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let changetype = unimplemented!();
+/// match changetype {
+///     ChangeType::Create => { /* ... */ },
+///     ChangeType::Delete => { /* ... */ },
+///     ChangeType::Update => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `changetype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ChangeType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ChangeType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ChangeType::NewFeature` is defined.
+/// Specifically, when `changetype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ChangeType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 /// <p>The type of change pending for the ActiveMQ user.</p>
 #[non_exhaustive]
 #[derive(
@@ -1287,8 +1354,8 @@ pub enum ChangeType {
     Delete,
     #[allow(missing_docs)] // documentation missing in model
     Update,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ChangeType {
     fn from(s: &str) -> Self {
@@ -1296,7 +1363,7 @@ impl std::convert::From<&str> for ChangeType {
             "CREATE" => ChangeType::Create,
             "DELETE" => ChangeType::Delete,
             "UPDATE" => ChangeType::Update,
-            other => ChangeType::Unknown(other.to_owned()),
+            other => ChangeType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1314,11 +1381,11 @@ impl ChangeType {
             ChangeType::Create => "CREATE",
             ChangeType::Delete => "DELETE",
             ChangeType::Update => "UPDATE",
-            ChangeType::Unknown(s) => s.as_ref(),
+            ChangeType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATE", "DELETE", "UPDATE"]
     }
 }
@@ -1330,7 +1397,7 @@ impl AsRef<str> for ChangeType {
 
 /// <p>Returns information about all configurations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Configuration {
     /// <p>Required. The ARN of the configuration.</p>
     #[doc(hidden)]
@@ -1411,27 +1478,11 @@ impl Configuration {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for Configuration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Configuration");
-        formatter.field("arn", &self.arn);
-        formatter.field("authentication_strategy", &self.authentication_strategy);
-        formatter.field("created", &self.created);
-        formatter.field("description", &self.description);
-        formatter.field("engine_type", &self.engine_type);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("id", &self.id);
-        formatter.field("latest_revision", &self.latest_revision);
-        formatter.field("name", &self.name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`Configuration`](crate::model::Configuration).
 pub mod configuration {
 
     /// A builder for [`Configuration`](crate::model::Configuration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) authentication_strategy:
@@ -1605,6 +1656,41 @@ impl Configuration {
     }
 }
 
+/// When writing a match expression against `EngineType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let enginetype = unimplemented!();
+/// match enginetype {
+///     EngineType::Activemq => { /* ... */ },
+///     EngineType::Rabbitmq => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `enginetype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EngineType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EngineType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EngineType::NewFeature` is defined.
+/// Specifically, when `enginetype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EngineType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 /// <p>The type of broker engine. Amazon MQ supports ActiveMQ and RabbitMQ.</p>
 #[non_exhaustive]
 #[derive(
@@ -1621,15 +1707,15 @@ pub enum EngineType {
     Activemq,
     #[allow(missing_docs)] // documentation missing in model
     Rabbitmq,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EngineType {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVEMQ" => EngineType::Activemq,
             "RABBITMQ" => EngineType::Rabbitmq,
-            other => EngineType::Unknown(other.to_owned()),
+            other => EngineType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1646,11 +1732,11 @@ impl EngineType {
         match self {
             EngineType::Activemq => "ACTIVEMQ",
             EngineType::Rabbitmq => "RABBITMQ",
-            EngineType::Unknown(s) => s.as_ref(),
+            EngineType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVEMQ", "RABBITMQ"]
     }
 }
@@ -1662,7 +1748,7 @@ impl AsRef<str> for EngineType {
 
 /// <p>Returns information about all brokers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BrokerSummary {
     /// <p>The broker's Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -1723,25 +1809,11 @@ impl BrokerSummary {
         self.host_instance_type.as_deref()
     }
 }
-impl std::fmt::Debug for BrokerSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BrokerSummary");
-        formatter.field("broker_arn", &self.broker_arn);
-        formatter.field("broker_id", &self.broker_id);
-        formatter.field("broker_name", &self.broker_name);
-        formatter.field("broker_state", &self.broker_state);
-        formatter.field("created", &self.created);
-        formatter.field("deployment_mode", &self.deployment_mode);
-        formatter.field("engine_type", &self.engine_type);
-        formatter.field("host_instance_type", &self.host_instance_type);
-        formatter.finish()
-    }
-}
 /// See [`BrokerSummary`](crate::model::BrokerSummary).
 pub mod broker_summary {
 
     /// A builder for [`BrokerSummary`](crate::model::BrokerSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) broker_arn: std::option::Option<std::string::String>,
         pub(crate) broker_id: std::option::Option<std::string::String>,
@@ -1870,6 +1942,42 @@ impl BrokerSummary {
     }
 }
 
+/// When writing a match expression against `DeploymentMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let deploymentmode = unimplemented!();
+/// match deploymentmode {
+///     DeploymentMode::ActiveStandbyMultiAz => { /* ... */ },
+///     DeploymentMode::ClusterMultiAz => { /* ... */ },
+///     DeploymentMode::SingleInstance => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `deploymentmode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DeploymentMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DeploymentMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DeploymentMode::NewFeature` is defined.
+/// Specifically, when `deploymentmode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DeploymentMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 /// <p>The broker's deployment mode.</p>
 #[non_exhaustive]
 #[derive(
@@ -1888,8 +1996,8 @@ pub enum DeploymentMode {
     ClusterMultiAz,
     #[allow(missing_docs)] // documentation missing in model
     SingleInstance,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DeploymentMode {
     fn from(s: &str) -> Self {
@@ -1897,7 +2005,7 @@ impl std::convert::From<&str> for DeploymentMode {
             "ACTIVE_STANDBY_MULTI_AZ" => DeploymentMode::ActiveStandbyMultiAz,
             "CLUSTER_MULTI_AZ" => DeploymentMode::ClusterMultiAz,
             "SINGLE_INSTANCE" => DeploymentMode::SingleInstance,
-            other => DeploymentMode::Unknown(other.to_owned()),
+            other => DeploymentMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1915,11 +2023,11 @@ impl DeploymentMode {
             DeploymentMode::ActiveStandbyMultiAz => "ACTIVE_STANDBY_MULTI_AZ",
             DeploymentMode::ClusterMultiAz => "CLUSTER_MULTI_AZ",
             DeploymentMode::SingleInstance => "SINGLE_INSTANCE",
-            DeploymentMode::Unknown(s) => s.as_ref(),
+            DeploymentMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE_STANDBY_MULTI_AZ",
             "CLUSTER_MULTI_AZ",
@@ -1933,6 +2041,45 @@ impl AsRef<str> for DeploymentMode {
     }
 }
 
+/// When writing a match expression against `BrokerState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let brokerstate = unimplemented!();
+/// match brokerstate {
+///     BrokerState::CreationFailed => { /* ... */ },
+///     BrokerState::CreationInProgress => { /* ... */ },
+///     BrokerState::CriticalActionRequired => { /* ... */ },
+///     BrokerState::DeletionInProgress => { /* ... */ },
+///     BrokerState::RebootInProgress => { /* ... */ },
+///     BrokerState::Running => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `brokerstate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `BrokerState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `BrokerState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `BrokerState::NewFeature` is defined.
+/// Specifically, when `brokerstate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `BrokerState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 /// <p>The broker's status.</p>
 #[non_exhaustive]
 #[derive(
@@ -1957,8 +2104,8 @@ pub enum BrokerState {
     RebootInProgress,
     #[allow(missing_docs)] // documentation missing in model
     Running,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for BrokerState {
     fn from(s: &str) -> Self {
@@ -1969,7 +2116,7 @@ impl std::convert::From<&str> for BrokerState {
             "DELETION_IN_PROGRESS" => BrokerState::DeletionInProgress,
             "REBOOT_IN_PROGRESS" => BrokerState::RebootInProgress,
             "RUNNING" => BrokerState::Running,
-            other => BrokerState::Unknown(other.to_owned()),
+            other => BrokerState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1990,11 +2137,11 @@ impl BrokerState {
             BrokerState::DeletionInProgress => "DELETION_IN_PROGRESS",
             BrokerState::RebootInProgress => "REBOOT_IN_PROGRESS",
             BrokerState::Running => "RUNNING",
-            BrokerState::Unknown(s) => s.as_ref(),
+            BrokerState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATION_FAILED",
             "CREATION_IN_PROGRESS",
@@ -2013,7 +2160,7 @@ impl AsRef<str> for BrokerState {
 
 /// <p>Returns information about the status of the changes pending for the ActiveMQ user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserPendingChanges {
     /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
     #[doc(hidden)]
@@ -2039,20 +2186,11 @@ impl UserPendingChanges {
         self.pending_change.as_ref()
     }
 }
-impl std::fmt::Debug for UserPendingChanges {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserPendingChanges");
-        formatter.field("console_access", &self.console_access);
-        formatter.field("groups", &self.groups);
-        formatter.field("pending_change", &self.pending_change);
-        formatter.finish()
-    }
-}
 /// See [`UserPendingChanges`](crate::model::UserPendingChanges).
 pub mod user_pending_changes {
 
     /// A builder for [`UserPendingChanges`](crate::model::UserPendingChanges).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) console_access: std::option::Option<bool>,
         pub(crate) groups: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2120,7 +2258,7 @@ impl UserPendingChanges {
 
 /// <p>Option for host instance type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BrokerInstanceOption {
     /// <p>The list of available az.</p>
     #[doc(hidden)]
@@ -2170,26 +2308,11 @@ impl BrokerInstanceOption {
         self.supported_engine_versions.as_deref()
     }
 }
-impl std::fmt::Debug for BrokerInstanceOption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BrokerInstanceOption");
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.field("engine_type", &self.engine_type);
-        formatter.field("host_instance_type", &self.host_instance_type);
-        formatter.field("storage_type", &self.storage_type);
-        formatter.field(
-            "supported_deployment_modes",
-            &self.supported_deployment_modes,
-        );
-        formatter.field("supported_engine_versions", &self.supported_engine_versions);
-        formatter.finish()
-    }
-}
 /// See [`BrokerInstanceOption`](crate::model::BrokerInstanceOption).
 pub mod broker_instance_option {
 
     /// A builder for [`BrokerInstanceOption`](crate::model::BrokerInstanceOption).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_zones:
             std::option::Option<std::vec::Vec<crate::model::AvailabilityZone>>,
@@ -2318,6 +2441,41 @@ impl BrokerInstanceOption {
     }
 }
 
+/// When writing a match expression against `BrokerStorageType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let brokerstoragetype = unimplemented!();
+/// match brokerstoragetype {
+///     BrokerStorageType::Ebs => { /* ... */ },
+///     BrokerStorageType::Efs => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `brokerstoragetype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `BrokerStorageType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `BrokerStorageType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `BrokerStorageType::NewFeature` is defined.
+/// Specifically, when `brokerstoragetype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `BrokerStorageType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 /// <p>The broker's storage type.</p> <important><p>EFS is not supported for RabbitMQ engine type.</p></important>
 #[non_exhaustive]
 #[derive(
@@ -2334,15 +2492,17 @@ pub enum BrokerStorageType {
     Ebs,
     #[allow(missing_docs)] // documentation missing in model
     Efs,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for BrokerStorageType {
     fn from(s: &str) -> Self {
         match s {
             "EBS" => BrokerStorageType::Ebs,
             "EFS" => BrokerStorageType::Efs,
-            other => BrokerStorageType::Unknown(other.to_owned()),
+            other => {
+                BrokerStorageType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -2359,11 +2519,11 @@ impl BrokerStorageType {
         match self {
             BrokerStorageType::Ebs => "EBS",
             BrokerStorageType::Efs => "EFS",
-            BrokerStorageType::Unknown(s) => s.as_ref(),
+            BrokerStorageType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EBS", "EFS"]
     }
 }
@@ -2375,7 +2535,7 @@ impl AsRef<str> for BrokerStorageType {
 
 /// <p>Name of the availability zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AvailabilityZone {
     /// <p>Id for the availability zone.</p>
     #[doc(hidden)]
@@ -2387,18 +2547,11 @@ impl AvailabilityZone {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for AvailabilityZone {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AvailabilityZone");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 /// See [`AvailabilityZone`](crate::model::AvailabilityZone).
 pub mod availability_zone {
 
     /// A builder for [`AvailabilityZone`](crate::model::AvailabilityZone).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -2428,7 +2581,7 @@ impl AvailabilityZone {
 
 /// <p>Types of broker engines.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BrokerEngineType {
     /// <p>The broker's engine type.</p>
     #[doc(hidden)]
@@ -2447,19 +2600,11 @@ impl BrokerEngineType {
         self.engine_versions.as_deref()
     }
 }
-impl std::fmt::Debug for BrokerEngineType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BrokerEngineType");
-        formatter.field("engine_type", &self.engine_type);
-        formatter.field("engine_versions", &self.engine_versions);
-        formatter.finish()
-    }
-}
 /// See [`BrokerEngineType`](crate::model::BrokerEngineType).
 pub mod broker_engine_type {
 
     /// A builder for [`BrokerEngineType`](crate::model::BrokerEngineType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine_type: std::option::Option<crate::model::EngineType>,
         pub(crate) engine_versions: std::option::Option<std::vec::Vec<crate::model::EngineVersion>>,
@@ -2515,7 +2660,7 @@ impl BrokerEngineType {
 
 /// <p>Id of the engine version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EngineVersion {
     /// <p>Id for the version.</p>
     #[doc(hidden)]
@@ -2527,18 +2672,11 @@ impl EngineVersion {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for EngineVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EngineVersion");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 /// See [`EngineVersion`](crate::model::EngineVersion).
 pub mod engine_version {
 
     /// A builder for [`EngineVersion`](crate::model::EngineVersion).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -2568,7 +2706,7 @@ impl EngineVersion {
 
 /// <p>The list of information about logs currently enabled and pending to be deployed for the specified broker.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogsSummary {
     /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.</p>
     #[doc(hidden)]
@@ -2608,22 +2746,11 @@ impl LogsSummary {
         self.pending.as_ref()
     }
 }
-impl std::fmt::Debug for LogsSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogsSummary");
-        formatter.field("audit", &self.audit);
-        formatter.field("audit_log_group", &self.audit_log_group);
-        formatter.field("general", &self.general);
-        formatter.field("general_log_group", &self.general_log_group);
-        formatter.field("pending", &self.pending);
-        formatter.finish()
-    }
-}
 /// See [`LogsSummary`](crate::model::LogsSummary).
 pub mod logs_summary {
 
     /// A builder for [`LogsSummary`](crate::model::LogsSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audit: std::option::Option<bool>,
         pub(crate) audit_log_group: std::option::Option<std::string::String>,
@@ -2712,7 +2839,7 @@ impl LogsSummary {
 
 /// <p>The list of information about logs to be enabled for the specified broker.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PendingLogs {
     /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.</p>
     #[doc(hidden)]
@@ -2731,19 +2858,11 @@ impl PendingLogs {
         self.general
     }
 }
-impl std::fmt::Debug for PendingLogs {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PendingLogs");
-        formatter.field("audit", &self.audit);
-        formatter.field("general", &self.general);
-        formatter.finish()
-    }
-}
 /// See [`PendingLogs`](crate::model::PendingLogs).
 pub mod pending_logs {
 
     /// A builder for [`PendingLogs`](crate::model::PendingLogs).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audit: std::option::Option<bool>,
         pub(crate) general: std::option::Option<bool>,
@@ -2790,7 +2909,7 @@ impl PendingLogs {
 /// </important>
 /// <p>Encryption options for the broker.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionOptions {
     /// <p>The customer master key (CMK) to use for the AWS Key Management Service (KMS). This key is used to encrypt your data at rest. If not provided, Amazon MQ will use a default CMK to encrypt your data.</p>
     #[doc(hidden)]
@@ -2809,19 +2928,11 @@ impl EncryptionOptions {
         self.use_aws_owned_key
     }
 }
-impl std::fmt::Debug for EncryptionOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionOptions");
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("use_aws_owned_key", &self.use_aws_owned_key);
-        formatter.finish()
-    }
-}
 /// See [`EncryptionOptions`](crate::model::EncryptionOptions).
 pub mod encryption_options {
 
     /// A builder for [`EncryptionOptions`](crate::model::EncryptionOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
         pub(crate) use_aws_owned_key: std::option::Option<bool>,
@@ -2865,7 +2976,7 @@ impl EncryptionOptions {
 
 /// <p>Broker configuration information</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Configurations {
     /// <p>The broker's current configuration.</p>
     #[doc(hidden)]
@@ -2891,20 +3002,11 @@ impl Configurations {
         self.pending.as_ref()
     }
 }
-impl std::fmt::Debug for Configurations {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Configurations");
-        formatter.field("current", &self.current);
-        formatter.field("history", &self.history);
-        formatter.field("pending", &self.pending);
-        formatter.finish()
-    }
-}
 /// See [`Configurations`](crate::model::Configurations).
 pub mod configurations {
 
     /// A builder for [`Configurations`](crate::model::Configurations).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) current: std::option::Option<crate::model::ConfigurationId>,
         pub(crate) history: std::option::Option<std::vec::Vec<crate::model::ConfigurationId>>,
@@ -2975,7 +3077,7 @@ impl Configurations {
 
 /// <p>Returns information about all brokers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BrokerInstance {
     /// <p>The brokers web console URL.</p>
     #[doc(hidden)]
@@ -3001,20 +3103,11 @@ impl BrokerInstance {
         self.ip_address.as_deref()
     }
 }
-impl std::fmt::Debug for BrokerInstance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BrokerInstance");
-        formatter.field("console_url", &self.console_url);
-        formatter.field("endpoints", &self.endpoints);
-        formatter.field("ip_address", &self.ip_address);
-        formatter.finish()
-    }
-}
 /// See [`BrokerInstance`](crate::model::BrokerInstance).
 pub mod broker_instance {
 
     /// A builder for [`BrokerInstance`](crate::model::BrokerInstance).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) console_url: std::option::Option<std::string::String>,
         pub(crate) endpoints: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3079,7 +3172,7 @@ impl BrokerInstance {
 
 /// <p>The action required to resolve a broker issue when the broker is in a CRITICAL_ACTION_REQUIRED state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActionRequired {
     /// <p>The code you can use to resolve your broker issue when the broker is in a CRITICAL_ACTION_REQUIRED state. You can find instructions by choosing the link for your code from the list of action required codes in <a href="https://docs.aws.amazon.com//latest/developer-guide/troubleshooting-action-required-codes.html">Amazon MQ action required codes</a>. Each code references a topic with detailed information, instructions, and recommendations for how to resolve the issue and prevent future occurrences.</p>
     #[doc(hidden)]
@@ -3098,19 +3191,11 @@ impl ActionRequired {
         self.action_required_info.as_deref()
     }
 }
-impl std::fmt::Debug for ActionRequired {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActionRequired");
-        formatter.field("action_required_code", &self.action_required_code);
-        formatter.field("action_required_info", &self.action_required_info);
-        formatter.finish()
-    }
-}
 /// See [`ActionRequired`](crate::model::ActionRequired).
 pub mod action_required {
 
     /// A builder for [`ActionRequired`](crate::model::ActionRequired).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_required_code: std::option::Option<std::string::String>,
         pub(crate) action_required_info: std::option::Option<std::string::String>,
@@ -3160,7 +3245,7 @@ impl ActionRequired {
 
 /// <p>A user associated with the broker. For RabbitMQ brokers, one and only one administrative user is accepted and created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web console.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct User {
     /// <p>Enables access to the ActiveMQ Web Console for the ActiveMQ user. Does not apply to RabbitMQ brokers.</p>
     #[doc(hidden)]
@@ -3203,21 +3288,11 @@ impl User {
         self.username.as_deref()
     }
 }
-impl std::fmt::Debug for User {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("User");
-        formatter.field("console_access", &self.console_access);
-        formatter.field("groups", &self.groups);
-        formatter.field("password", &self.password);
-        formatter.field("username", &self.username);
-        formatter.finish()
-    }
-}
 /// See [`User`](crate::model::User).
 pub mod user {
 
     /// A builder for [`User`](crate::model::User).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) console_access: std::option::Option<bool>,
         pub(crate) groups: std::option::Option<std::vec::Vec<std::string::String>>,

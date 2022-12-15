@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod add_tags_input {
 
     /// A builder for [`AddTagsInput`](crate::input::AddTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -52,7 +52,8 @@ pub mod add_tags_input {
         /// Consumes the builder and constructs a [`AddTagsInput`](crate::input::AddTagsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::AddTagsInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::AddTagsInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::AddTagsInput {
                 load_balancer_names: self.load_balancer_names,
                 tags: self.tags,
@@ -73,13 +74,13 @@ impl AddTagsInput {
             crate::operation::AddTags,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AddTagsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -87,8 +88,10 @@ impl AddTagsInput {
             fn update_http_builder(
                 input: &crate::input::AddTagsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -170,7 +173,7 @@ impl AddTagsInput {
 pub mod apply_security_groups_to_load_balancer_input {
 
     /// A builder for [`ApplySecurityGroupsToLoadBalancerInput`](crate::input::ApplySecurityGroupsToLoadBalancerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -213,7 +216,7 @@ pub mod apply_security_groups_to_load_balancer_input {
             self,
         ) -> Result<
             crate::input::ApplySecurityGroupsToLoadBalancerInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ApplySecurityGroupsToLoadBalancerInput {
                 load_balancer_name: self.load_balancer_name,
@@ -235,13 +238,13 @@ impl ApplySecurityGroupsToLoadBalancerInput {
             crate::operation::ApplySecurityGroupsToLoadBalancer,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ApplySecurityGroupsToLoadBalancerInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -249,8 +252,10 @@ impl ApplySecurityGroupsToLoadBalancerInput {
             fn update_http_builder(
                 input: &crate::input::ApplySecurityGroupsToLoadBalancerInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -333,7 +338,7 @@ impl ApplySecurityGroupsToLoadBalancerInput {
 pub mod attach_load_balancer_to_subnets_input {
 
     /// A builder for [`AttachLoadBalancerToSubnetsInput`](crate::input::AttachLoadBalancerToSubnetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) subnets: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -376,7 +381,7 @@ pub mod attach_load_balancer_to_subnets_input {
             self,
         ) -> Result<
             crate::input::AttachLoadBalancerToSubnetsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::AttachLoadBalancerToSubnetsInput {
                 load_balancer_name: self.load_balancer_name,
@@ -398,13 +403,13 @@ impl AttachLoadBalancerToSubnetsInput {
             crate::operation::AttachLoadBalancerToSubnets,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AttachLoadBalancerToSubnetsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -412,8 +417,10 @@ impl AttachLoadBalancerToSubnetsInput {
             fn update_http_builder(
                 input: &crate::input::AttachLoadBalancerToSubnetsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -496,7 +503,7 @@ impl AttachLoadBalancerToSubnetsInput {
 pub mod configure_health_check_input {
 
     /// A builder for [`ConfigureHealthCheckInput`](crate::input::ConfigureHealthCheckInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) health_check: std::option::Option<crate::model::HealthCheck>,
@@ -531,8 +538,10 @@ pub mod configure_health_check_input {
         /// Consumes the builder and constructs a [`ConfigureHealthCheckInput`](crate::input::ConfigureHealthCheckInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ConfigureHealthCheckInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ConfigureHealthCheckInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ConfigureHealthCheckInput {
                 load_balancer_name: self.load_balancer_name,
                 health_check: self.health_check,
@@ -553,13 +562,13 @@ impl ConfigureHealthCheckInput {
             crate::operation::ConfigureHealthCheck,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ConfigureHealthCheckInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -567,8 +576,10 @@ impl ConfigureHealthCheckInput {
             fn update_http_builder(
                 input: &crate::input::ConfigureHealthCheckInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -654,7 +665,7 @@ impl ConfigureHealthCheckInput {
 pub mod create_app_cookie_stickiness_policy_input {
 
     /// A builder for [`CreateAppCookieStickinessPolicyInput`](crate::input::CreateAppCookieStickinessPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -699,7 +710,7 @@ pub mod create_app_cookie_stickiness_policy_input {
             self,
         ) -> Result<
             crate::input::CreateAppCookieStickinessPolicyInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateAppCookieStickinessPolicyInput {
                 load_balancer_name: self.load_balancer_name,
@@ -722,13 +733,13 @@ impl CreateAppCookieStickinessPolicyInput {
             crate::operation::CreateAppCookieStickinessPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateAppCookieStickinessPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -736,8 +747,10 @@ impl CreateAppCookieStickinessPolicyInput {
             fn update_http_builder(
                 input: &crate::input::CreateAppCookieStickinessPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -820,7 +833,7 @@ impl CreateAppCookieStickinessPolicyInput {
 pub mod create_lb_cookie_stickiness_policy_input {
 
     /// A builder for [`CreateLbCookieStickinessPolicyInput`](crate::input::CreateLbCookieStickinessPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -865,7 +878,7 @@ pub mod create_lb_cookie_stickiness_policy_input {
             self,
         ) -> Result<
             crate::input::CreateLbCookieStickinessPolicyInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateLbCookieStickinessPolicyInput {
                 load_balancer_name: self.load_balancer_name,
@@ -888,13 +901,13 @@ impl CreateLbCookieStickinessPolicyInput {
             crate::operation::CreateLBCookieStickinessPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateLbCookieStickinessPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -902,8 +915,10 @@ impl CreateLbCookieStickinessPolicyInput {
             fn update_http_builder(
                 input: &crate::input::CreateLbCookieStickinessPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -986,7 +1001,7 @@ impl CreateLbCookieStickinessPolicyInput {
 pub mod create_load_balancer_input {
 
     /// A builder for [`CreateLoadBalancerInput`](crate::input::CreateLoadBalancerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) listeners: std::option::Option<std::vec::Vec<crate::model::Listener>>,
@@ -1132,8 +1147,10 @@ pub mod create_load_balancer_input {
         /// Consumes the builder and constructs a [`CreateLoadBalancerInput`](crate::input::CreateLoadBalancerInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateLoadBalancerInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateLoadBalancerInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateLoadBalancerInput {
                 load_balancer_name: self.load_balancer_name,
                 listeners: self.listeners,
@@ -1159,13 +1176,13 @@ impl CreateLoadBalancerInput {
             crate::operation::CreateLoadBalancer,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateLoadBalancerInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1173,8 +1190,10 @@ impl CreateLoadBalancerInput {
             fn update_http_builder(
                 input: &crate::input::CreateLoadBalancerInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1258,7 +1277,7 @@ impl CreateLoadBalancerInput {
 pub mod create_load_balancer_listeners_input {
 
     /// A builder for [`CreateLoadBalancerListenersInput`](crate::input::CreateLoadBalancerListenersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) listeners: std::option::Option<std::vec::Vec<crate::model::Listener>>,
@@ -1301,7 +1320,7 @@ pub mod create_load_balancer_listeners_input {
             self,
         ) -> Result<
             crate::input::CreateLoadBalancerListenersInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateLoadBalancerListenersInput {
                 load_balancer_name: self.load_balancer_name,
@@ -1323,13 +1342,13 @@ impl CreateLoadBalancerListenersInput {
             crate::operation::CreateLoadBalancerListeners,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateLoadBalancerListenersInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1337,8 +1356,10 @@ impl CreateLoadBalancerListenersInput {
             fn update_http_builder(
                 input: &crate::input::CreateLoadBalancerListenersInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1421,7 +1442,7 @@ impl CreateLoadBalancerListenersInput {
 pub mod create_load_balancer_policy_input {
 
     /// A builder for [`CreateLoadBalancerPolicyInput`](crate::input::CreateLoadBalancerPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -1490,7 +1511,7 @@ pub mod create_load_balancer_policy_input {
             self,
         ) -> Result<
             crate::input::CreateLoadBalancerPolicyInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateLoadBalancerPolicyInput {
                 load_balancer_name: self.load_balancer_name,
@@ -1514,13 +1535,13 @@ impl CreateLoadBalancerPolicyInput {
             crate::operation::CreateLoadBalancerPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateLoadBalancerPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1528,8 +1549,10 @@ impl CreateLoadBalancerPolicyInput {
             fn update_http_builder(
                 input: &crate::input::CreateLoadBalancerPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1615,7 +1638,7 @@ impl CreateLoadBalancerPolicyInput {
 pub mod delete_load_balancer_input {
 
     /// A builder for [`DeleteLoadBalancerInput`](crate::input::DeleteLoadBalancerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
     }
@@ -1636,8 +1659,10 @@ pub mod delete_load_balancer_input {
         /// Consumes the builder and constructs a [`DeleteLoadBalancerInput`](crate::input::DeleteLoadBalancerInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteLoadBalancerInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteLoadBalancerInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteLoadBalancerInput {
                 load_balancer_name: self.load_balancer_name,
             })
@@ -1657,13 +1682,13 @@ impl DeleteLoadBalancerInput {
             crate::operation::DeleteLoadBalancer,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteLoadBalancerInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1671,8 +1696,10 @@ impl DeleteLoadBalancerInput {
             fn update_http_builder(
                 input: &crate::input::DeleteLoadBalancerInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1756,7 +1783,7 @@ impl DeleteLoadBalancerInput {
 pub mod delete_load_balancer_listeners_input {
 
     /// A builder for [`DeleteLoadBalancerListenersInput`](crate::input::DeleteLoadBalancerListenersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) load_balancer_ports: std::option::Option<std::vec::Vec<i32>>,
@@ -1799,7 +1826,7 @@ pub mod delete_load_balancer_listeners_input {
             self,
         ) -> Result<
             crate::input::DeleteLoadBalancerListenersInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteLoadBalancerListenersInput {
                 load_balancer_name: self.load_balancer_name,
@@ -1821,13 +1848,13 @@ impl DeleteLoadBalancerListenersInput {
             crate::operation::DeleteLoadBalancerListeners,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteLoadBalancerListenersInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1835,8 +1862,10 @@ impl DeleteLoadBalancerListenersInput {
             fn update_http_builder(
                 input: &crate::input::DeleteLoadBalancerListenersInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1919,7 +1948,7 @@ impl DeleteLoadBalancerListenersInput {
 pub mod delete_load_balancer_policy_input {
 
     /// A builder for [`DeleteLoadBalancerPolicyInput`](crate::input::DeleteLoadBalancerPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -1953,7 +1982,7 @@ pub mod delete_load_balancer_policy_input {
             self,
         ) -> Result<
             crate::input::DeleteLoadBalancerPolicyInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteLoadBalancerPolicyInput {
                 load_balancer_name: self.load_balancer_name,
@@ -1975,13 +2004,13 @@ impl DeleteLoadBalancerPolicyInput {
             crate::operation::DeleteLoadBalancerPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteLoadBalancerPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1989,8 +2018,10 @@ impl DeleteLoadBalancerPolicyInput {
             fn update_http_builder(
                 input: &crate::input::DeleteLoadBalancerPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2076,7 +2107,7 @@ impl DeleteLoadBalancerPolicyInput {
 pub mod deregister_instances_from_load_balancer_input {
 
     /// A builder for [`DeregisterInstancesFromLoadBalancerInput`](crate::input::DeregisterInstancesFromLoadBalancerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
@@ -2119,7 +2150,7 @@ pub mod deregister_instances_from_load_balancer_input {
             self,
         ) -> Result<
             crate::input::DeregisterInstancesFromLoadBalancerInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeregisterInstancesFromLoadBalancerInput {
                 load_balancer_name: self.load_balancer_name,
@@ -2141,13 +2172,13 @@ impl DeregisterInstancesFromLoadBalancerInput {
             crate::operation::DeregisterInstancesFromLoadBalancer,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeregisterInstancesFromLoadBalancerInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2155,8 +2186,10 @@ impl DeregisterInstancesFromLoadBalancerInput {
             fn update_http_builder(
                 input: &crate::input::DeregisterInstancesFromLoadBalancerInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2239,7 +2272,7 @@ impl DeregisterInstancesFromLoadBalancerInput {
 pub mod describe_account_limits_input {
 
     /// A builder for [`DescribeAccountLimitsInput`](crate::input::DescribeAccountLimitsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) page_size: std::option::Option<i32>,
@@ -2268,8 +2301,10 @@ pub mod describe_account_limits_input {
         /// Consumes the builder and constructs a [`DescribeAccountLimitsInput`](crate::input::DescribeAccountLimitsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeAccountLimitsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeAccountLimitsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeAccountLimitsInput {
                 marker: self.marker,
                 page_size: self.page_size,
@@ -2290,13 +2325,13 @@ impl DescribeAccountLimitsInput {
             crate::operation::DescribeAccountLimits,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeAccountLimitsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2304,8 +2339,10 @@ impl DescribeAccountLimitsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeAccountLimitsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2391,7 +2428,7 @@ impl DescribeAccountLimitsInput {
 pub mod describe_instance_health_input {
 
     /// A builder for [`DescribeInstanceHealthInput`](crate::input::DescribeInstanceHealthInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
@@ -2432,8 +2469,10 @@ pub mod describe_instance_health_input {
         /// Consumes the builder and constructs a [`DescribeInstanceHealthInput`](crate::input::DescribeInstanceHealthInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeInstanceHealthInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeInstanceHealthInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeInstanceHealthInput {
                 load_balancer_name: self.load_balancer_name,
                 instances: self.instances,
@@ -2454,13 +2493,13 @@ impl DescribeInstanceHealthInput {
             crate::operation::DescribeInstanceHealth,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeInstanceHealthInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2468,8 +2507,10 @@ impl DescribeInstanceHealthInput {
             fn update_http_builder(
                 input: &crate::input::DescribeInstanceHealthInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2555,7 +2596,7 @@ impl DescribeInstanceHealthInput {
 pub mod describe_load_balancer_attributes_input {
 
     /// A builder for [`DescribeLoadBalancerAttributesInput`](crate::input::DescribeLoadBalancerAttributesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
     }
@@ -2578,7 +2619,7 @@ pub mod describe_load_balancer_attributes_input {
             self,
         ) -> Result<
             crate::input::DescribeLoadBalancerAttributesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeLoadBalancerAttributesInput {
                 load_balancer_name: self.load_balancer_name,
@@ -2599,13 +2640,13 @@ impl DescribeLoadBalancerAttributesInput {
             crate::operation::DescribeLoadBalancerAttributes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeLoadBalancerAttributesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2613,8 +2654,10 @@ impl DescribeLoadBalancerAttributesInput {
             fn update_http_builder(
                 input: &crate::input::DescribeLoadBalancerAttributesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2697,7 +2740,7 @@ impl DescribeLoadBalancerAttributesInput {
 pub mod describe_load_balancer_policies_input {
 
     /// A builder for [`DescribeLoadBalancerPoliciesInput`](crate::input::DescribeLoadBalancerPoliciesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2740,7 +2783,7 @@ pub mod describe_load_balancer_policies_input {
             self,
         ) -> Result<
             crate::input::DescribeLoadBalancerPoliciesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeLoadBalancerPoliciesInput {
                 load_balancer_name: self.load_balancer_name,
@@ -2762,13 +2805,13 @@ impl DescribeLoadBalancerPoliciesInput {
             crate::operation::DescribeLoadBalancerPolicies,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeLoadBalancerPoliciesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2776,8 +2819,10 @@ impl DescribeLoadBalancerPoliciesInput {
             fn update_http_builder(
                 input: &crate::input::DescribeLoadBalancerPoliciesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2860,7 +2905,7 @@ impl DescribeLoadBalancerPoliciesInput {
 pub mod describe_load_balancer_policy_types_input {
 
     /// A builder for [`DescribeLoadBalancerPolicyTypesInput`](crate::input::DescribeLoadBalancerPolicyTypesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_type_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -2889,7 +2934,7 @@ pub mod describe_load_balancer_policy_types_input {
             self,
         ) -> Result<
             crate::input::DescribeLoadBalancerPolicyTypesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeLoadBalancerPolicyTypesInput {
                 policy_type_names: self.policy_type_names,
@@ -2910,13 +2955,13 @@ impl DescribeLoadBalancerPolicyTypesInput {
             crate::operation::DescribeLoadBalancerPolicyTypes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeLoadBalancerPolicyTypesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2924,8 +2969,10 @@ impl DescribeLoadBalancerPolicyTypesInput {
             fn update_http_builder(
                 input: &crate::input::DescribeLoadBalancerPolicyTypesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3008,7 +3055,7 @@ impl DescribeLoadBalancerPolicyTypesInput {
 pub mod describe_load_balancers_input {
 
     /// A builder for [`DescribeLoadBalancersInput`](crate::input::DescribeLoadBalancersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -3057,8 +3104,10 @@ pub mod describe_load_balancers_input {
         /// Consumes the builder and constructs a [`DescribeLoadBalancersInput`](crate::input::DescribeLoadBalancersInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeLoadBalancersInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeLoadBalancersInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeLoadBalancersInput {
                 load_balancer_names: self.load_balancer_names,
                 marker: self.marker,
@@ -3080,13 +3129,13 @@ impl DescribeLoadBalancersInput {
             crate::operation::DescribeLoadBalancers,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeLoadBalancersInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3094,8 +3143,10 @@ impl DescribeLoadBalancersInput {
             fn update_http_builder(
                 input: &crate::input::DescribeLoadBalancersInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3181,7 +3232,7 @@ impl DescribeLoadBalancersInput {
 pub mod describe_tags_input {
 
     /// A builder for [`DescribeTagsInput`](crate::input::DescribeTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -3208,7 +3259,7 @@ pub mod describe_tags_input {
         /// Consumes the builder and constructs a [`DescribeTagsInput`](crate::input::DescribeTagsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeTagsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeTagsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeTagsInput {
                 load_balancer_names: self.load_balancer_names,
@@ -3229,13 +3280,13 @@ impl DescribeTagsInput {
             crate::operation::DescribeTags,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeTagsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3243,8 +3294,10 @@ impl DescribeTagsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeTagsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3328,7 +3381,7 @@ impl DescribeTagsInput {
 pub mod detach_load_balancer_from_subnets_input {
 
     /// A builder for [`DetachLoadBalancerFromSubnetsInput`](crate::input::DetachLoadBalancerFromSubnetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) subnets: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3371,7 +3424,7 @@ pub mod detach_load_balancer_from_subnets_input {
             self,
         ) -> Result<
             crate::input::DetachLoadBalancerFromSubnetsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DetachLoadBalancerFromSubnetsInput {
                 load_balancer_name: self.load_balancer_name,
@@ -3393,13 +3446,13 @@ impl DetachLoadBalancerFromSubnetsInput {
             crate::operation::DetachLoadBalancerFromSubnets,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DetachLoadBalancerFromSubnetsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3407,8 +3460,10 @@ impl DetachLoadBalancerFromSubnetsInput {
             fn update_http_builder(
                 input: &crate::input::DetachLoadBalancerFromSubnetsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3491,7 +3546,7 @@ impl DetachLoadBalancerFromSubnetsInput {
 pub mod disable_availability_zones_for_load_balancer_input {
 
     /// A builder for [`DisableAvailabilityZonesForLoadBalancerInput`](crate::input::DisableAvailabilityZonesForLoadBalancerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3534,7 +3589,7 @@ pub mod disable_availability_zones_for_load_balancer_input {
             self,
         ) -> Result<
             crate::input::DisableAvailabilityZonesForLoadBalancerInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DisableAvailabilityZonesForLoadBalancerInput {
                 load_balancer_name: self.load_balancer_name,
@@ -3556,13 +3611,13 @@ impl DisableAvailabilityZonesForLoadBalancerInput {
             crate::operation::DisableAvailabilityZonesForLoadBalancer,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisableAvailabilityZonesForLoadBalancerInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3570,8 +3625,10 @@ impl DisableAvailabilityZonesForLoadBalancerInput {
             fn update_http_builder(
                 input: &crate::input::DisableAvailabilityZonesForLoadBalancerInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3654,7 +3711,7 @@ impl DisableAvailabilityZonesForLoadBalancerInput {
 pub mod enable_availability_zones_for_load_balancer_input {
 
     /// A builder for [`EnableAvailabilityZonesForLoadBalancerInput`](crate::input::EnableAvailabilityZonesForLoadBalancerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3697,7 +3754,7 @@ pub mod enable_availability_zones_for_load_balancer_input {
             self,
         ) -> Result<
             crate::input::EnableAvailabilityZonesForLoadBalancerInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::EnableAvailabilityZonesForLoadBalancerInput {
                 load_balancer_name: self.load_balancer_name,
@@ -3719,13 +3776,13 @@ impl EnableAvailabilityZonesForLoadBalancerInput {
             crate::operation::EnableAvailabilityZonesForLoadBalancer,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::EnableAvailabilityZonesForLoadBalancerInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3733,8 +3790,10 @@ impl EnableAvailabilityZonesForLoadBalancerInput {
             fn update_http_builder(
                 input: &crate::input::EnableAvailabilityZonesForLoadBalancerInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3817,7 +3876,7 @@ impl EnableAvailabilityZonesForLoadBalancerInput {
 pub mod modify_load_balancer_attributes_input {
 
     /// A builder for [`ModifyLoadBalancerAttributesInput`](crate::input::ModifyLoadBalancerAttributesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) load_balancer_attributes:
@@ -3858,7 +3917,7 @@ pub mod modify_load_balancer_attributes_input {
             self,
         ) -> Result<
             crate::input::ModifyLoadBalancerAttributesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ModifyLoadBalancerAttributesInput {
                 load_balancer_name: self.load_balancer_name,
@@ -3880,13 +3939,13 @@ impl ModifyLoadBalancerAttributesInput {
             crate::operation::ModifyLoadBalancerAttributes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ModifyLoadBalancerAttributesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3894,8 +3953,10 @@ impl ModifyLoadBalancerAttributesInput {
             fn update_http_builder(
                 input: &crate::input::ModifyLoadBalancerAttributesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3978,7 +4039,7 @@ impl ModifyLoadBalancerAttributesInput {
 pub mod register_instances_with_load_balancer_input {
 
     /// A builder for [`RegisterInstancesWithLoadBalancerInput`](crate::input::RegisterInstancesWithLoadBalancerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
@@ -4021,7 +4082,7 @@ pub mod register_instances_with_load_balancer_input {
             self,
         ) -> Result<
             crate::input::RegisterInstancesWithLoadBalancerInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::RegisterInstancesWithLoadBalancerInput {
                 load_balancer_name: self.load_balancer_name,
@@ -4043,13 +4104,13 @@ impl RegisterInstancesWithLoadBalancerInput {
             crate::operation::RegisterInstancesWithLoadBalancer,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RegisterInstancesWithLoadBalancerInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4057,8 +4118,10 @@ impl RegisterInstancesWithLoadBalancerInput {
             fn update_http_builder(
                 input: &crate::input::RegisterInstancesWithLoadBalancerInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4141,7 +4204,7 @@ impl RegisterInstancesWithLoadBalancerInput {
 pub mod remove_tags_input {
 
     /// A builder for [`RemoveTagsInput`](crate::input::RemoveTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::TagKeyOnly>>,
@@ -4188,7 +4251,8 @@ pub mod remove_tags_input {
         /// Consumes the builder and constructs a [`RemoveTagsInput`](crate::input::RemoveTagsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::RemoveTagsInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::RemoveTagsInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::RemoveTagsInput {
                 load_balancer_names: self.load_balancer_names,
                 tags: self.tags,
@@ -4209,13 +4273,13 @@ impl RemoveTagsInput {
             crate::operation::RemoveTags,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RemoveTagsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4223,8 +4287,10 @@ impl RemoveTagsInput {
             fn update_http_builder(
                 input: &crate::input::RemoveTagsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4308,7 +4374,7 @@ impl RemoveTagsInput {
 pub mod set_load_balancer_listener_ssl_certificate_input {
 
     /// A builder for [`SetLoadBalancerListenerSslCertificateInput`](crate::input::SetLoadBalancerListenerSslCertificateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) load_balancer_port: std::option::Option<i32>,
@@ -4356,7 +4422,7 @@ pub mod set_load_balancer_listener_ssl_certificate_input {
             self,
         ) -> Result<
             crate::input::SetLoadBalancerListenerSslCertificateInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::SetLoadBalancerListenerSslCertificateInput {
                 load_balancer_name: self.load_balancer_name,
@@ -4379,13 +4445,13 @@ impl SetLoadBalancerListenerSslCertificateInput {
             crate::operation::SetLoadBalancerListenerSSLCertificate,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SetLoadBalancerListenerSslCertificateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4393,8 +4459,10 @@ impl SetLoadBalancerListenerSslCertificateInput {
             fn update_http_builder(
                 input: &crate::input::SetLoadBalancerListenerSslCertificateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4477,7 +4545,7 @@ impl SetLoadBalancerListenerSslCertificateInput {
 pub mod set_load_balancer_policies_for_backend_server_input {
 
     /// A builder for [`SetLoadBalancerPoliciesForBackendServerInput`](crate::input::SetLoadBalancerPoliciesForBackendServerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) instance_port: std::option::Option<i32>,
@@ -4531,7 +4599,7 @@ pub mod set_load_balancer_policies_for_backend_server_input {
             self,
         ) -> Result<
             crate::input::SetLoadBalancerPoliciesForBackendServerInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::SetLoadBalancerPoliciesForBackendServerInput {
                 load_balancer_name: self.load_balancer_name,
@@ -4554,13 +4622,13 @@ impl SetLoadBalancerPoliciesForBackendServerInput {
             crate::operation::SetLoadBalancerPoliciesForBackendServer,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SetLoadBalancerPoliciesForBackendServerInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4568,8 +4636,10 @@ impl SetLoadBalancerPoliciesForBackendServerInput {
             fn update_http_builder(
                 input: &crate::input::SetLoadBalancerPoliciesForBackendServerInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4652,7 +4722,7 @@ impl SetLoadBalancerPoliciesForBackendServerInput {
 pub mod set_load_balancer_policies_of_listener_input {
 
     /// A builder for [`SetLoadBalancerPoliciesOfListenerInput`](crate::input::SetLoadBalancerPoliciesOfListenerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) load_balancer_port: std::option::Option<i32>,
@@ -4706,7 +4776,7 @@ pub mod set_load_balancer_policies_of_listener_input {
             self,
         ) -> Result<
             crate::input::SetLoadBalancerPoliciesOfListenerInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::SetLoadBalancerPoliciesOfListenerInput {
                 load_balancer_name: self.load_balancer_name,
@@ -4729,13 +4799,13 @@ impl SetLoadBalancerPoliciesOfListenerInput {
             crate::operation::SetLoadBalancerPoliciesOfListener,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SetLoadBalancerPoliciesOfListenerInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4743,8 +4813,10 @@ impl SetLoadBalancerPoliciesOfListenerInput {
             fn update_http_builder(
                 input: &crate::input::SetLoadBalancerPoliciesOfListenerInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4825,7 +4897,7 @@ impl SetLoadBalancerPoliciesOfListenerInput {
 
 /// <p>Contains the parameters for SetLoadBalancePoliciesOfListener.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetLoadBalancerPoliciesOfListenerInput {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
@@ -4851,19 +4923,10 @@ impl SetLoadBalancerPoliciesOfListenerInput {
         self.policy_names.as_deref()
     }
 }
-impl std::fmt::Debug for SetLoadBalancerPoliciesOfListenerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetLoadBalancerPoliciesOfListenerInput");
-        formatter.field("load_balancer_name", &self.load_balancer_name);
-        formatter.field("load_balancer_port", &self.load_balancer_port);
-        formatter.field("policy_names", &self.policy_names);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for SetLoadBalancerPoliciesForBackendServer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetLoadBalancerPoliciesForBackendServerInput {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
@@ -4889,19 +4952,10 @@ impl SetLoadBalancerPoliciesForBackendServerInput {
         self.policy_names.as_deref()
     }
 }
-impl std::fmt::Debug for SetLoadBalancerPoliciesForBackendServerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetLoadBalancerPoliciesForBackendServerInput");
-        formatter.field("load_balancer_name", &self.load_balancer_name);
-        formatter.field("instance_port", &self.instance_port);
-        formatter.field("policy_names", &self.policy_names);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for SetLoadBalancerListenerSSLCertificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetLoadBalancerListenerSslCertificateInput {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
@@ -4927,19 +4981,10 @@ impl SetLoadBalancerListenerSslCertificateInput {
         self.ssl_certificate_id.as_deref()
     }
 }
-impl std::fmt::Debug for SetLoadBalancerListenerSslCertificateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetLoadBalancerListenerSslCertificateInput");
-        formatter.field("load_balancer_name", &self.load_balancer_name);
-        formatter.field("load_balancer_port", &self.load_balancer_port);
-        formatter.field("ssl_certificate_id", &self.ssl_certificate_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for RemoveTags.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveTagsInput {
     /// <p>The name of the load balancer. You can specify a maximum of one load balancer name.</p>
     #[doc(hidden)]
@@ -4958,18 +5003,10 @@ impl RemoveTagsInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveTagsInput");
-        formatter.field("load_balancer_names", &self.load_balancer_names);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for RegisterInstancesWithLoadBalancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterInstancesWithLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
@@ -4988,18 +5025,10 @@ impl RegisterInstancesWithLoadBalancerInput {
         self.instances.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterInstancesWithLoadBalancerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterInstancesWithLoadBalancerInput");
-        formatter.field("load_balancer_name", &self.load_balancer_name);
-        formatter.field("instances", &self.instances);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for ModifyLoadBalancerAttributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyLoadBalancerAttributesInput {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
@@ -5020,18 +5049,10 @@ impl ModifyLoadBalancerAttributesInput {
         self.load_balancer_attributes.as_ref()
     }
 }
-impl std::fmt::Debug for ModifyLoadBalancerAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyLoadBalancerAttributesInput");
-        formatter.field("load_balancer_name", &self.load_balancer_name);
-        formatter.field("load_balancer_attributes", &self.load_balancer_attributes);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for EnableAvailabilityZonesForLoadBalancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableAvailabilityZonesForLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
@@ -5050,18 +5071,10 @@ impl EnableAvailabilityZonesForLoadBalancerInput {
         self.availability_zones.as_deref()
     }
 }
-impl std::fmt::Debug for EnableAvailabilityZonesForLoadBalancerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableAvailabilityZonesForLoadBalancerInput");
-        formatter.field("load_balancer_name", &self.load_balancer_name);
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for DisableAvailabilityZonesForLoadBalancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableAvailabilityZonesForLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
@@ -5080,18 +5093,10 @@ impl DisableAvailabilityZonesForLoadBalancerInput {
         self.availability_zones.as_deref()
     }
 }
-impl std::fmt::Debug for DisableAvailabilityZonesForLoadBalancerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableAvailabilityZonesForLoadBalancerInput");
-        formatter.field("load_balancer_name", &self.load_balancer_name);
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for DetachLoadBalancerFromSubnets.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetachLoadBalancerFromSubnetsInput {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
@@ -5110,18 +5115,10 @@ impl DetachLoadBalancerFromSubnetsInput {
         self.subnets.as_deref()
     }
 }
-impl std::fmt::Debug for DetachLoadBalancerFromSubnetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetachLoadBalancerFromSubnetsInput");
-        formatter.field("load_balancer_name", &self.load_balancer_name);
-        formatter.field("subnets", &self.subnets);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for DescribeTags.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTagsInput {
     /// <p>The names of the load balancers.</p>
     #[doc(hidden)]
@@ -5133,17 +5130,10 @@ impl DescribeTagsInput {
         self.load_balancer_names.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTagsInput");
-        formatter.field("load_balancer_names", &self.load_balancer_names);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for DescribeLoadBalancers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLoadBalancersInput {
     /// <p>The names of the load balancers.</p>
     #[doc(hidden)]
@@ -5169,19 +5159,10 @@ impl DescribeLoadBalancersInput {
         self.page_size
     }
 }
-impl std::fmt::Debug for DescribeLoadBalancersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLoadBalancersInput");
-        formatter.field("load_balancer_names", &self.load_balancer_names);
-        formatter.field("marker", &self.marker);
-        formatter.field("page_size", &self.page_size);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for DescribeLoadBalancerPolicyTypes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLoadBalancerPolicyTypesInput {
     /// <p>The names of the policy types. If no names are specified, describes all policy types defined by Elastic Load Balancing.</p>
     #[doc(hidden)]
@@ -5193,17 +5174,10 @@ impl DescribeLoadBalancerPolicyTypesInput {
         self.policy_type_names.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLoadBalancerPolicyTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLoadBalancerPolicyTypesInput");
-        formatter.field("policy_type_names", &self.policy_type_names);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for DescribeLoadBalancerPolicies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLoadBalancerPoliciesInput {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
@@ -5222,18 +5196,10 @@ impl DescribeLoadBalancerPoliciesInput {
         self.policy_names.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLoadBalancerPoliciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLoadBalancerPoliciesInput");
-        formatter.field("load_balancer_name", &self.load_balancer_name);
-        formatter.field("policy_names", &self.policy_names);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for DescribeLoadBalancerAttributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLoadBalancerAttributesInput {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
@@ -5245,17 +5211,10 @@ impl DescribeLoadBalancerAttributesInput {
         self.load_balancer_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLoadBalancerAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLoadBalancerAttributesInput");
-        formatter.field("load_balancer_name", &self.load_balancer_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for DescribeInstanceHealth.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInstanceHealthInput {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
@@ -5274,18 +5233,10 @@ impl DescribeInstanceHealthInput {
         self.instances.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeInstanceHealthInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInstanceHealthInput");
-        formatter.field("load_balancer_name", &self.load_balancer_name);
-        formatter.field("instances", &self.instances);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAccountLimitsInput {
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     #[doc(hidden)]
@@ -5304,18 +5255,10 @@ impl DescribeAccountLimitsInput {
         self.page_size
     }
 }
-impl std::fmt::Debug for DescribeAccountLimitsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAccountLimitsInput");
-        formatter.field("marker", &self.marker);
-        formatter.field("page_size", &self.page_size);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for DeregisterInstancesFromLoadBalancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterInstancesFromLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
@@ -5334,18 +5277,10 @@ impl DeregisterInstancesFromLoadBalancerInput {
         self.instances.as_deref()
     }
 }
-impl std::fmt::Debug for DeregisterInstancesFromLoadBalancerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterInstancesFromLoadBalancerInput");
-        formatter.field("load_balancer_name", &self.load_balancer_name);
-        formatter.field("instances", &self.instances);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for DeleteLoadBalancerPolicy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLoadBalancerPolicyInput {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
@@ -5364,18 +5299,10 @@ impl DeleteLoadBalancerPolicyInput {
         self.policy_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLoadBalancerPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLoadBalancerPolicyInput");
-        formatter.field("load_balancer_name", &self.load_balancer_name);
-        formatter.field("policy_name", &self.policy_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for DeleteLoadBalancerListeners.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLoadBalancerListenersInput {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
@@ -5394,18 +5321,10 @@ impl DeleteLoadBalancerListenersInput {
         self.load_balancer_ports.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLoadBalancerListenersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLoadBalancerListenersInput");
-        formatter.field("load_balancer_name", &self.load_balancer_name);
-        formatter.field("load_balancer_ports", &self.load_balancer_ports);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for DeleteLoadBalancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
@@ -5417,17 +5336,10 @@ impl DeleteLoadBalancerInput {
         self.load_balancer_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLoadBalancerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLoadBalancerInput");
-        formatter.field("load_balancer_name", &self.load_balancer_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for CreateLoadBalancerPolicy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLoadBalancerPolicyInput {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
@@ -5460,20 +5372,10 @@ impl CreateLoadBalancerPolicyInput {
         self.policy_attributes.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLoadBalancerPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLoadBalancerPolicyInput");
-        formatter.field("load_balancer_name", &self.load_balancer_name);
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("policy_type_name", &self.policy_type_name);
-        formatter.field("policy_attributes", &self.policy_attributes);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for CreateLoadBalancerListeners.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLoadBalancerListenersInput {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
@@ -5492,18 +5394,10 @@ impl CreateLoadBalancerListenersInput {
         self.listeners.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLoadBalancerListenersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLoadBalancerListenersInput");
-        formatter.field("load_balancer_name", &self.load_balancer_name);
-        formatter.field("listeners", &self.listeners);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for CreateLoadBalancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
     /// <p>This name must be unique within your set of load balancers for the region, must have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</p>
@@ -5571,23 +5465,10 @@ impl CreateLoadBalancerInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLoadBalancerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLoadBalancerInput");
-        formatter.field("load_balancer_name", &self.load_balancer_name);
-        formatter.field("listeners", &self.listeners);
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.field("subnets", &self.subnets);
-        formatter.field("security_groups", &self.security_groups);
-        formatter.field("scheme", &self.scheme);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for CreateLBCookieStickinessPolicy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLbCookieStickinessPolicyInput {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
@@ -5613,19 +5494,10 @@ impl CreateLbCookieStickinessPolicyInput {
         self.cookie_expiration_period
     }
 }
-impl std::fmt::Debug for CreateLbCookieStickinessPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLbCookieStickinessPolicyInput");
-        formatter.field("load_balancer_name", &self.load_balancer_name);
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("cookie_expiration_period", &self.cookie_expiration_period);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for CreateAppCookieStickinessPolicy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAppCookieStickinessPolicyInput {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
@@ -5651,19 +5523,10 @@ impl CreateAppCookieStickinessPolicyInput {
         self.cookie_name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAppCookieStickinessPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAppCookieStickinessPolicyInput");
-        formatter.field("load_balancer_name", &self.load_balancer_name);
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("cookie_name", &self.cookie_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for ConfigureHealthCheck.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigureHealthCheckInput {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
@@ -5682,18 +5545,10 @@ impl ConfigureHealthCheckInput {
         self.health_check.as_ref()
     }
 }
-impl std::fmt::Debug for ConfigureHealthCheckInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigureHealthCheckInput");
-        formatter.field("load_balancer_name", &self.load_balancer_name);
-        formatter.field("health_check", &self.health_check);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for AttachLoaBalancerToSubnets.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachLoadBalancerToSubnetsInput {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
@@ -5712,18 +5567,10 @@ impl AttachLoadBalancerToSubnetsInput {
         self.subnets.as_deref()
     }
 }
-impl std::fmt::Debug for AttachLoadBalancerToSubnetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachLoadBalancerToSubnetsInput");
-        formatter.field("load_balancer_name", &self.load_balancer_name);
-        formatter.field("subnets", &self.subnets);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for ApplySecurityGroupsToLoadBalancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplySecurityGroupsToLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
@@ -5742,18 +5589,10 @@ impl ApplySecurityGroupsToLoadBalancerInput {
         self.security_groups.as_deref()
     }
 }
-impl std::fmt::Debug for ApplySecurityGroupsToLoadBalancerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplySecurityGroupsToLoadBalancerInput");
-        formatter.field("load_balancer_name", &self.load_balancer_name);
-        formatter.field("security_groups", &self.security_groups);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for AddTags.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddTagsInput {
     /// <p>The name of the load balancer. You can specify one load balancer only.</p>
     #[doc(hidden)]
@@ -5770,13 +5609,5 @@ impl AddTagsInput {
     /// <p>The tags.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for AddTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddTagsInput");
-        formatter.field("load_balancer_names", &self.load_balancer_names);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }

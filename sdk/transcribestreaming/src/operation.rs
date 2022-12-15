@@ -5,7 +5,7 @@
 /// [`start_medical_stream_transcription`](crate::client::Client::start_medical_stream_transcription).
 ///
 /// See [`crate::client::fluent_builders::StartMedicalStreamTranscription`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartMedicalStreamTranscription {
     _private: (),
 }
@@ -46,7 +46,7 @@ impl aws_smithy_http::response::ParseHttpResponse for StartMedicalStreamTranscri
 /// [`start_stream_transcription`](crate::client::Client::start_stream_transcription).
 ///
 /// See [`crate::client::fluent_builders::StartStreamTranscription`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartStreamTranscription {
     _private: (),
 }

@@ -3,7 +3,7 @@
 /// <p>An object that identifies an item.</p>
 /// <p>The and APIs return a list of <code>PredictedItem</code>s.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PredictedItem {
     /// <p>The recommended item ID.</p>
     #[doc(hidden)]
@@ -29,20 +29,11 @@ impl PredictedItem {
         self.promotion_name.as_deref()
     }
 }
-impl std::fmt::Debug for PredictedItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PredictedItem");
-        formatter.field("item_id", &self.item_id);
-        formatter.field("score", &self.score);
-        formatter.field("promotion_name", &self.promotion_name);
-        formatter.finish()
-    }
-}
 /// See [`PredictedItem`](crate::model::PredictedItem).
 pub mod predicted_item {
 
     /// A builder for [`PredictedItem`](crate::model::PredictedItem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) item_id: std::option::Option<std::string::String>,
         pub(crate) score: std::option::Option<f64>,
@@ -101,7 +92,7 @@ impl PredictedItem {
 
 /// <p>Contains information on a promotion. A promotion defines additional business rules that apply to a configurable subset of recommended items.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Promotion {
     /// <p>The name of the promotion.</p>
     #[doc(hidden)]
@@ -142,21 +133,11 @@ impl Promotion {
         self.filter_values.as_ref()
     }
 }
-impl std::fmt::Debug for Promotion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Promotion");
-        formatter.field("name", &self.name);
-        formatter.field("percent_promoted_items", &self.percent_promoted_items);
-        formatter.field("filter_arn", &self.filter_arn);
-        formatter.field("filter_values", &self.filter_values);
-        formatter.finish()
-    }
-}
 /// See [`Promotion`](crate::model::Promotion).
 pub mod promotion {
 
     /// A builder for [`Promotion`](crate::model::Promotion).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) percent_promoted_items: std::option::Option<i32>,

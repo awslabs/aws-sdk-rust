@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod describe_services_input {
 
     /// A builder for [`DescribeServicesInput`](crate::input::DescribeServicesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
         pub(crate) format_version: std::option::Option<std::string::String>,
@@ -61,8 +61,10 @@ pub mod describe_services_input {
         /// Consumes the builder and constructs a [`DescribeServicesInput`](crate::input::DescribeServicesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeServicesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeServicesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeServicesInput {
                 service_code: self.service_code,
                 format_version: self.format_version,
@@ -85,13 +87,13 @@ impl DescribeServicesInput {
             crate::operation::DescribeServices,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeServicesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -99,8 +101,10 @@ impl DescribeServicesInput {
             fn update_http_builder(
                 input: &crate::input::DescribeServicesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -189,7 +193,7 @@ impl DescribeServicesInput {
 pub mod get_attribute_values_input {
 
     /// A builder for [`GetAttributeValuesInput`](crate::input::GetAttributeValuesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
         pub(crate) attribute_name: std::option::Option<std::string::String>,
@@ -243,8 +247,10 @@ pub mod get_attribute_values_input {
         /// Consumes the builder and constructs a [`GetAttributeValuesInput`](crate::input::GetAttributeValuesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetAttributeValuesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetAttributeValuesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetAttributeValuesInput {
                 service_code: self.service_code,
                 attribute_name: self.attribute_name,
@@ -267,13 +273,13 @@ impl GetAttributeValuesInput {
             crate::operation::GetAttributeValues,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetAttributeValuesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -281,8 +287,10 @@ impl GetAttributeValuesInput {
             fn update_http_builder(
                 input: &crate::input::GetAttributeValuesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -371,7 +379,7 @@ impl GetAttributeValuesInput {
 pub mod get_products_input {
 
     /// A builder for [`GetProductsInput`](crate::input::GetProductsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -447,7 +455,7 @@ pub mod get_products_input {
         /// Consumes the builder and constructs a [`GetProductsInput`](crate::input::GetProductsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetProductsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetProductsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetProductsInput {
                 service_code: self.service_code,
@@ -472,13 +480,13 @@ impl GetProductsInput {
             crate::operation::GetProducts,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetProductsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -486,8 +494,10 @@ impl GetProductsInput {
             fn update_http_builder(
                 input: &crate::input::GetProductsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -574,7 +584,7 @@ impl GetProductsInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetProductsInput {
     /// <p>The code for the service whose products you want to retrieve. </p>
     #[doc(hidden)]
@@ -616,21 +626,10 @@ impl GetProductsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetProductsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetProductsInput");
-        formatter.field("service_code", &self.service_code);
-        formatter.field("filters", &self.filters);
-        formatter.field("format_version", &self.format_version);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAttributeValuesInput {
     /// <p>The service code for the service whose attributes you want to retrieve. For example, if you want the retrieve an EC2 attribute, use <code>AmazonEC2</code>.</p>
     #[doc(hidden)]
@@ -663,20 +662,10 @@ impl GetAttributeValuesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetAttributeValuesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAttributeValuesInput");
-        formatter.field("service_code", &self.service_code);
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeServicesInput {
     /// <p>The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>. You can use the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call. To retrieve a list of all services, leave this blank.</p>
     #[doc(hidden)]
@@ -709,15 +698,5 @@ impl DescribeServicesInput {
     /// <p>The maximum number of results that you want returned in the response.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
-    }
-}
-impl std::fmt::Debug for DescribeServicesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeServicesInput");
-        formatter.field("service_code", &self.service_code);
-        formatter.field("format_version", &self.format_version);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
     }
 }

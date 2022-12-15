@@ -2,7 +2,7 @@
 
 /// <p>Information about a single retained message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RetainedMessageSummary {
     /// <p>The topic name to which the retained message was published.</p>
     #[doc(hidden)]
@@ -35,21 +35,11 @@ impl RetainedMessageSummary {
         self.last_modified_time
     }
 }
-impl std::fmt::Debug for RetainedMessageSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RetainedMessageSummary");
-        formatter.field("topic", &self.topic);
-        formatter.field("payload_size", &self.payload_size);
-        formatter.field("qos", &self.qos);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.finish()
-    }
-}
 /// See [`RetainedMessageSummary`](crate::model::RetainedMessageSummary).
 pub mod retained_message_summary {
 
     /// A builder for [`RetainedMessageSummary`](crate::model::RetainedMessageSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic: std::option::Option<std::string::String>,
         pub(crate) payload_size: std::option::Option<i64>,

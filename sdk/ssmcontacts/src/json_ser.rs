@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_accept_page_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AcceptPageInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.page_id {
         object.key("PageId").string(var_1.as_str());
     }
@@ -27,7 +27,7 @@ pub fn serialize_structure_crate_input_accept_page_input(
 pub fn serialize_structure_crate_input_activate_contact_channel_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ActivateContactChannelInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_7) = &input.contact_channel_id {
         object.key("ContactChannelId").string(var_7.as_str());
     }
@@ -40,7 +40,7 @@ pub fn serialize_structure_crate_input_activate_contact_channel_input(
 pub fn serialize_structure_crate_input_create_contact_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateContactInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_9) = &input.alias {
         object.key("Alias").string(var_9.as_str());
     }
@@ -51,6 +51,7 @@ pub fn serialize_structure_crate_input_create_contact_input(
         object.key("Type").string(var_11.as_str());
     }
     if let Some(var_12) = &input.plan {
+        #[allow(unused_mut)]
         let mut object_13 = object.key("Plan").start_object();
         crate::json_ser::serialize_structure_crate_model_plan(&mut object_13, var_12)?;
         object_13.finish();
@@ -59,6 +60,7 @@ pub fn serialize_structure_crate_input_create_contact_input(
         let mut array_15 = object.key("Tags").start_array();
         for item_16 in var_14 {
             {
+                #[allow(unused_mut)]
                 let mut object_17 = array_15.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_17, item_16)?;
                 object_17.finish();
@@ -75,7 +77,7 @@ pub fn serialize_structure_crate_input_create_contact_input(
 pub fn serialize_structure_crate_input_create_contact_channel_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateContactChannelInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_19) = &input.contact_id {
         object.key("ContactId").string(var_19.as_str());
     }
@@ -86,6 +88,7 @@ pub fn serialize_structure_crate_input_create_contact_channel_input(
         object.key("Type").string(var_21.as_str());
     }
     if let Some(var_22) = &input.delivery_address {
+        #[allow(unused_mut)]
         let mut object_23 = object.key("DeliveryAddress").start_object();
         crate::json_ser::serialize_structure_crate_model_contact_channel_address(
             &mut object_23,
@@ -105,7 +108,7 @@ pub fn serialize_structure_crate_input_create_contact_channel_input(
 pub fn serialize_structure_crate_input_deactivate_contact_channel_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeactivateContactChannelInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_26) = &input.contact_channel_id {
         object.key("ContactChannelId").string(var_26.as_str());
     }
@@ -115,7 +118,7 @@ pub fn serialize_structure_crate_input_deactivate_contact_channel_input(
 pub fn serialize_structure_crate_input_delete_contact_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteContactInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_27) = &input.contact_id {
         object.key("ContactId").string(var_27.as_str());
     }
@@ -125,7 +128,7 @@ pub fn serialize_structure_crate_input_delete_contact_input(
 pub fn serialize_structure_crate_input_delete_contact_channel_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteContactChannelInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_28) = &input.contact_channel_id {
         object.key("ContactChannelId").string(var_28.as_str());
     }
@@ -135,7 +138,7 @@ pub fn serialize_structure_crate_input_delete_contact_channel_input(
 pub fn serialize_structure_crate_input_describe_engagement_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeEngagementInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_29) = &input.engagement_id {
         object.key("EngagementId").string(var_29.as_str());
     }
@@ -145,7 +148,7 @@ pub fn serialize_structure_crate_input_describe_engagement_input(
 pub fn serialize_structure_crate_input_describe_page_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribePageInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_30) = &input.page_id {
         object.key("PageId").string(var_30.as_str());
     }
@@ -155,7 +158,7 @@ pub fn serialize_structure_crate_input_describe_page_input(
 pub fn serialize_structure_crate_input_get_contact_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetContactInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_31) = &input.contact_id {
         object.key("ContactId").string(var_31.as_str());
     }
@@ -165,7 +168,7 @@ pub fn serialize_structure_crate_input_get_contact_input(
 pub fn serialize_structure_crate_input_get_contact_channel_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetContactChannelInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_32) = &input.contact_channel_id {
         object.key("ContactChannelId").string(var_32.as_str());
     }
@@ -175,7 +178,7 @@ pub fn serialize_structure_crate_input_get_contact_channel_input(
 pub fn serialize_structure_crate_input_get_contact_policy_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetContactPolicyInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_33) = &input.contact_arn {
         object.key("ContactArn").string(var_33.as_str());
     }
@@ -185,7 +188,7 @@ pub fn serialize_structure_crate_input_get_contact_policy_input(
 pub fn serialize_structure_crate_input_list_contact_channels_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListContactChannelsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_34) = &input.contact_id {
         object.key("ContactId").string(var_34.as_str());
     }
@@ -204,7 +207,7 @@ pub fn serialize_structure_crate_input_list_contact_channels_input(
 pub fn serialize_structure_crate_input_list_contacts_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListContactsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_37) = &input.next_token {
         object.key("NextToken").string(var_37.as_str());
     }
@@ -226,7 +229,7 @@ pub fn serialize_structure_crate_input_list_contacts_input(
 pub fn serialize_structure_crate_input_list_engagements_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListEngagementsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_41) = &input.next_token {
         object.key("NextToken").string(var_41.as_str());
     }
@@ -240,6 +243,7 @@ pub fn serialize_structure_crate_input_list_engagements_input(
         object.key("IncidentId").string(var_43.as_str());
     }
     if let Some(var_44) = &input.time_range_value {
+        #[allow(unused_mut)]
         let mut object_45 = object.key("TimeRangeValue").start_object();
         crate::json_ser::serialize_structure_crate_model_time_range(&mut object_45, var_44)?;
         object_45.finish();
@@ -250,7 +254,7 @@ pub fn serialize_structure_crate_input_list_engagements_input(
 pub fn serialize_structure_crate_input_list_page_receipts_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListPageReceiptsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_46) = &input.page_id {
         object.key("PageId").string(var_46.as_str());
     }
@@ -269,7 +273,7 @@ pub fn serialize_structure_crate_input_list_page_receipts_input(
 pub fn serialize_structure_crate_input_list_pages_by_contact_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListPagesByContactInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_49) = &input.contact_id {
         object.key("ContactId").string(var_49.as_str());
     }
@@ -288,7 +292,7 @@ pub fn serialize_structure_crate_input_list_pages_by_contact_input(
 pub fn serialize_structure_crate_input_list_pages_by_engagement_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListPagesByEngagementInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_52) = &input.engagement_id {
         object.key("EngagementId").string(var_52.as_str());
     }
@@ -307,7 +311,7 @@ pub fn serialize_structure_crate_input_list_pages_by_engagement_input(
 pub fn serialize_structure_crate_input_list_tags_for_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListTagsForResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_55) = &input.resource_arn {
         object.key("ResourceARN").string(var_55.as_str());
     }
@@ -317,7 +321,7 @@ pub fn serialize_structure_crate_input_list_tags_for_resource_input(
 pub fn serialize_structure_crate_input_put_contact_policy_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutContactPolicyInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_56) = &input.contact_arn {
         object.key("ContactArn").string(var_56.as_str());
     }
@@ -330,7 +334,7 @@ pub fn serialize_structure_crate_input_put_contact_policy_input(
 pub fn serialize_structure_crate_input_send_activation_code_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::SendActivationCodeInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_58) = &input.contact_channel_id {
         object.key("ContactChannelId").string(var_58.as_str());
     }
@@ -340,7 +344,7 @@ pub fn serialize_structure_crate_input_send_activation_code_input(
 pub fn serialize_structure_crate_input_start_engagement_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartEngagementInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_59) = &input.contact_id {
         object.key("ContactId").string(var_59.as_str());
     }
@@ -371,7 +375,7 @@ pub fn serialize_structure_crate_input_start_engagement_input(
 pub fn serialize_structure_crate_input_stop_engagement_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StopEngagementInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_67) = &input.engagement_id {
         object.key("EngagementId").string(var_67.as_str());
     }
@@ -384,7 +388,7 @@ pub fn serialize_structure_crate_input_stop_engagement_input(
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_69) = &input.resource_arn {
         object.key("ResourceARN").string(var_69.as_str());
     }
@@ -392,6 +396,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_71 = object.key("Tags").start_array();
         for item_72 in var_70 {
             {
+                #[allow(unused_mut)]
                 let mut object_73 = array_71.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_73, item_72)?;
                 object_73.finish();
@@ -405,7 +410,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_input_untag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UntagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_74) = &input.resource_arn {
         object.key("ResourceARN").string(var_74.as_str());
     }
@@ -424,7 +429,7 @@ pub fn serialize_structure_crate_input_untag_resource_input(
 pub fn serialize_structure_crate_input_update_contact_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateContactInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_78) = &input.contact_id {
         object.key("ContactId").string(var_78.as_str());
     }
@@ -432,6 +437,7 @@ pub fn serialize_structure_crate_input_update_contact_input(
         object.key("DisplayName").string(var_79.as_str());
     }
     if let Some(var_80) = &input.plan {
+        #[allow(unused_mut)]
         let mut object_81 = object.key("Plan").start_object();
         crate::json_ser::serialize_structure_crate_model_plan(&mut object_81, var_80)?;
         object_81.finish();
@@ -442,7 +448,7 @@ pub fn serialize_structure_crate_input_update_contact_input(
 pub fn serialize_structure_crate_input_update_contact_channel_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateContactChannelInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_82) = &input.contact_channel_id {
         object.key("ContactChannelId").string(var_82.as_str());
     }
@@ -450,6 +456,7 @@ pub fn serialize_structure_crate_input_update_contact_channel_input(
         object.key("Name").string(var_83.as_str());
     }
     if let Some(var_84) = &input.delivery_address {
+        #[allow(unused_mut)]
         let mut object_85 = object.key("DeliveryAddress").start_object();
         crate::json_ser::serialize_structure_crate_model_contact_channel_address(
             &mut object_85,
@@ -463,11 +470,12 @@ pub fn serialize_structure_crate_input_update_contact_channel_input(
 pub fn serialize_structure_crate_model_plan(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Plan,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_86) = &input.stages {
         let mut array_87 = object.key("Stages").start_array();
         for item_88 in var_86 {
             {
+                #[allow(unused_mut)]
                 let mut object_89 = array_87.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_stage(&mut object_89, item_88)?;
                 object_89.finish();
@@ -481,7 +489,7 @@ pub fn serialize_structure_crate_model_plan(
 pub fn serialize_structure_crate_model_tag(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Tag,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_90) = &input.key {
         object.key("Key").string(var_90.as_str());
     }
@@ -494,7 +502,7 @@ pub fn serialize_structure_crate_model_tag(
 pub fn serialize_structure_crate_model_contact_channel_address(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ContactChannelAddress,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_92) = &input.simple_address {
         object.key("SimpleAddress").string(var_92.as_str());
     }
@@ -504,7 +512,7 @@ pub fn serialize_structure_crate_model_contact_channel_address(
 pub fn serialize_structure_crate_model_time_range(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TimeRange,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_93) = &input.start_time {
         object
             .key("StartTime")
@@ -521,7 +529,7 @@ pub fn serialize_structure_crate_model_time_range(
 pub fn serialize_structure_crate_model_stage(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Stage,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_95) = &input.duration_in_minutes {
         object.key("DurationInMinutes").number(
             #[allow(clippy::useless_conversion)]
@@ -532,6 +540,7 @@ pub fn serialize_structure_crate_model_stage(
         let mut array_97 = object.key("Targets").start_array();
         for item_98 in var_96 {
             {
+                #[allow(unused_mut)]
                 let mut object_99 = array_97.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_target(&mut object_99, item_98)?;
                 object_99.finish();
@@ -545,8 +554,9 @@ pub fn serialize_structure_crate_model_stage(
 pub fn serialize_structure_crate_model_target(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Target,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_100) = &input.channel_target_info {
+        #[allow(unused_mut)]
         let mut object_101 = object.key("ChannelTargetInfo").start_object();
         crate::json_ser::serialize_structure_crate_model_channel_target_info(
             &mut object_101,
@@ -555,6 +565,7 @@ pub fn serialize_structure_crate_model_target(
         object_101.finish();
     }
     if let Some(var_102) = &input.contact_target_info {
+        #[allow(unused_mut)]
         let mut object_103 = object.key("ContactTargetInfo").start_object();
         crate::json_ser::serialize_structure_crate_model_contact_target_info(
             &mut object_103,
@@ -568,7 +579,7 @@ pub fn serialize_structure_crate_model_target(
 pub fn serialize_structure_crate_model_channel_target_info(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ChannelTargetInfo,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_104) = &input.contact_channel_id {
         object.key("ContactChannelId").string(var_104.as_str());
     }
@@ -584,7 +595,7 @@ pub fn serialize_structure_crate_model_channel_target_info(
 pub fn serialize_structure_crate_model_contact_target_info(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ContactTargetInfo,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_106) = &input.contact_id {
         object.key("ContactId").string(var_106.as_str());
     }

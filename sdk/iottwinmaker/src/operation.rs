@@ -5,7 +5,7 @@
 /// [`batch_put_property_values`](crate::client::Client::batch_put_property_values).
 ///
 /// See [`crate::client::fluent_builders::BatchPutPropertyValues`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchPutPropertyValues {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchPutPropertyValues {
 /// [`create_component_type`](crate::client::Client::create_component_type).
 ///
 /// See [`crate::client::fluent_builders::CreateComponentType`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateComponentType {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateComponentType {
 /// [`create_entity`](crate::client::Client::create_entity).
 ///
 /// See [`crate::client::fluent_builders::CreateEntity`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateEntity {
     _private: (),
 }
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEntity {
 /// [`create_scene`](crate::client::Client::create_scene).
 ///
 /// See [`crate::client::fluent_builders::CreateScene`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateScene {
     _private: (),
 }
@@ -137,7 +137,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateScene {
 /// [`create_workspace`](crate::client::Client::create_workspace).
 ///
 /// See [`crate::client::fluent_builders::CreateWorkspace`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateWorkspace {
     _private: (),
 }
@@ -171,7 +171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkspace {
 /// [`delete_component_type`](crate::client::Client::delete_component_type).
 ///
 /// See [`crate::client::fluent_builders::DeleteComponentType`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteComponentType {
     _private: (),
 }
@@ -205,7 +205,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteComponentType {
 /// [`delete_entity`](crate::client::Client::delete_entity).
 ///
 /// See [`crate::client::fluent_builders::DeleteEntity`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteEntity {
     _private: (),
 }
@@ -237,7 +237,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEntity {
 /// [`delete_scene`](crate::client::Client::delete_scene).
 ///
 /// See [`crate::client::fluent_builders::DeleteScene`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteScene {
     _private: (),
 }
@@ -269,7 +269,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteScene {
 /// [`delete_workspace`](crate::client::Client::delete_workspace).
 ///
 /// See [`crate::client::fluent_builders::DeleteWorkspace`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteWorkspace {
     _private: (),
 }
@@ -303,7 +303,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkspace {
 /// [`get_component_type`](crate::client::Client::get_component_type).
 ///
 /// See [`crate::client::fluent_builders::GetComponentType`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetComponentType {
     _private: (),
 }
@@ -337,7 +337,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetComponentType {
 /// [`get_entity`](crate::client::Client::get_entity).
 ///
 /// See [`crate::client::fluent_builders::GetEntity`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetEntity {
     _private: (),
 }
@@ -368,7 +368,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEntity {
 /// [`get_property_value`](crate::client::Client::get_property_value).
 ///
 /// See [`crate::client::fluent_builders::GetPropertyValue`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPropertyValue {
     _private: (),
 }
@@ -402,7 +402,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPropertyValue {
 /// [`get_property_value_history`](crate::client::Client::get_property_value_history).
 ///
 /// See [`crate::client::fluent_builders::GetPropertyValueHistory`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPropertyValueHistory {
     _private: (),
 }
@@ -436,7 +436,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPropertyValueHistory 
 /// [`get_scene`](crate::client::Client::get_scene).
 ///
 /// See [`crate::client::fluent_builders::GetScene`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetScene {
     _private: (),
 }
@@ -467,7 +467,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetScene {
 /// [`get_workspace`](crate::client::Client::get_workspace).
 ///
 /// See [`crate::client::fluent_builders::GetWorkspace`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetWorkspace {
     _private: (),
 }
@@ -499,7 +499,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWorkspace {
 /// [`list_component_types`](crate::client::Client::list_component_types).
 ///
 /// See [`crate::client::fluent_builders::ListComponentTypes`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListComponentTypes {
     _private: (),
 }
@@ -533,7 +533,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListComponentTypes {
 /// [`list_entities`](crate::client::Client::list_entities).
 ///
 /// See [`crate::client::fluent_builders::ListEntities`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListEntities {
     _private: (),
 }
@@ -565,7 +565,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEntities {
 /// [`list_scenes`](crate::client::Client::list_scenes).
 ///
 /// See [`crate::client::fluent_builders::ListScenes`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListScenes {
     _private: (),
 }
@@ -597,7 +597,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListScenes {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -631,7 +631,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`list_workspaces`](crate::client::Client::list_workspaces).
 ///
 /// See [`crate::client::fluent_builders::ListWorkspaces`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListWorkspaces {
     _private: (),
 }
@@ -663,7 +663,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkspaces {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -695,7 +695,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -727,7 +727,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_component_type`](crate::client::Client::update_component_type).
 ///
 /// See [`crate::client::fluent_builders::UpdateComponentType`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateComponentType {
     _private: (),
 }
@@ -761,7 +761,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateComponentType {
 /// [`update_entity`](crate::client::Client::update_entity).
 ///
 /// See [`crate::client::fluent_builders::UpdateEntity`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateEntity {
     _private: (),
 }
@@ -793,7 +793,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateEntity {
 /// [`update_scene`](crate::client::Client::update_scene).
 ///
 /// See [`crate::client::fluent_builders::UpdateScene`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateScene {
     _private: (),
 }
@@ -825,7 +825,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateScene {
 /// [`update_workspace`](crate::client::Client::update_workspace).
 ///
 /// See [`crate::client::fluent_builders::UpdateWorkspace`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateWorkspace {
     _private: (),
 }

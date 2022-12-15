@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod delete_thing_shadow_input {
 
     /// A builder for [`DeleteThingShadowInput`](crate::input::DeleteThingShadowInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_name: std::option::Option<std::string::String>,
         pub(crate) shadow_name: std::option::Option<std::string::String>,
@@ -34,8 +34,10 @@ pub mod delete_thing_shadow_input {
         /// Consumes the builder and constructs a [`DeleteThingShadowInput`](crate::input::DeleteThingShadowInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteThingShadowInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteThingShadowInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteThingShadowInput {
                 thing_name: self.thing_name,
                 shadow_name: self.shadow_name,
@@ -56,26 +58,31 @@ impl DeleteThingShadowInput {
             crate::operation::DeleteThingShadow,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteThingShadowInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.thing_name;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "thing_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let thing_name = aws_smithy_http::label::fmt_string(input_1, false);
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "thing_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let thing_name = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if thing_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "thing_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "thing_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/things/{thingName}/shadow", thingName = thing_name)
                     .expect("formatting should succeed");
@@ -84,10 +91,12 @@ impl DeleteThingShadowInput {
             fn uri_query(
                 _input: &crate::input::DeleteThingShadowInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_2) = &_input.shadow_name {
-                    query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_2));
+                    {
+                        query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_2));
+                    }
                 }
                 Ok(())
             }
@@ -95,8 +104,10 @@ impl DeleteThingShadowInput {
             fn update_http_builder(
                 input: &crate::input::DeleteThingShadowInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -167,7 +178,7 @@ impl DeleteThingShadowInput {
 pub mod get_retained_message_input {
 
     /// A builder for [`GetRetainedMessageInput`](crate::input::GetRetainedMessageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic: std::option::Option<std::string::String>,
     }
@@ -185,8 +196,10 @@ pub mod get_retained_message_input {
         /// Consumes the builder and constructs a [`GetRetainedMessageInput`](crate::input::GetRetainedMessageInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetRetainedMessageInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetRetainedMessageInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetRetainedMessageInput { topic: self.topic })
         }
     }
@@ -204,26 +217,31 @@ impl GetRetainedMessageInput {
             crate::operation::GetRetainedMessage,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetRetainedMessageInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_3 = &_input.topic;
-                let input_3 = input_3.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "topic",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let topic = aws_smithy_http::label::fmt_string(input_3, false);
+                let input_3 = input_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "topic",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let topic = aws_smithy_http::label::fmt_string(
+                    input_3,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if topic.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "topic",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "topic",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/retainedMessage/{topic}", topic = topic)
                     .expect("formatting should succeed");
@@ -233,8 +251,10 @@ impl GetRetainedMessageInput {
             fn update_http_builder(
                 input: &crate::input::GetRetainedMessageInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -304,7 +324,7 @@ impl GetRetainedMessageInput {
 pub mod get_thing_shadow_input {
 
     /// A builder for [`GetThingShadowInput`](crate::input::GetThingShadowInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_name: std::option::Option<std::string::String>,
         pub(crate) shadow_name: std::option::Option<std::string::String>,
@@ -333,7 +353,7 @@ pub mod get_thing_shadow_input {
         /// Consumes the builder and constructs a [`GetThingShadowInput`](crate::input::GetThingShadowInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetThingShadowInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetThingShadowInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetThingShadowInput {
                 thing_name: self.thing_name,
@@ -355,26 +375,31 @@ impl GetThingShadowInput {
             crate::operation::GetThingShadow,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetThingShadowInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_4 = &_input.thing_name;
-                let input_4 = input_4.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "thing_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let thing_name = aws_smithy_http::label::fmt_string(input_4, false);
+                let input_4 = input_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "thing_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let thing_name = aws_smithy_http::label::fmt_string(
+                    input_4,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if thing_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "thing_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "thing_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/things/{thingName}/shadow", thingName = thing_name)
                     .expect("formatting should succeed");
@@ -383,10 +408,12 @@ impl GetThingShadowInput {
             fn uri_query(
                 _input: &crate::input::GetThingShadowInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_5) = &_input.shadow_name {
-                    query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_5));
+                    {
+                        query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_5));
+                    }
                 }
                 Ok(())
             }
@@ -394,8 +421,10 @@ impl GetThingShadowInput {
             fn update_http_builder(
                 input: &crate::input::GetThingShadowInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -466,7 +495,7 @@ impl GetThingShadowInput {
 pub mod list_named_shadows_for_thing_input {
 
     /// A builder for [`ListNamedShadowsForThingInput`](crate::input::ListNamedShadowsForThingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_name: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -508,7 +537,7 @@ pub mod list_named_shadows_for_thing_input {
             self,
         ) -> Result<
             crate::input::ListNamedShadowsForThingInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListNamedShadowsForThingInput {
                 thing_name: self.thing_name,
@@ -531,26 +560,31 @@ impl ListNamedShadowsForThingInput {
             crate::operation::ListNamedShadowsForThing,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListNamedShadowsForThingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_6 = &_input.thing_name;
-                let input_6 = input_6.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "thing_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let thing_name = aws_smithy_http::label::fmt_string(input_6, false);
+                let input_6 = input_6.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "thing_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let thing_name = aws_smithy_http::label::fmt_string(
+                    input_6,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if thing_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "thing_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "thing_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -563,16 +597,20 @@ impl ListNamedShadowsForThingInput {
             fn uri_query(
                 _input: &crate::input::ListNamedShadowsForThingInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_7) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_7));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_7));
+                    }
                 }
                 if let Some(inner_8) = &_input.page_size {
-                    query.push_kv(
-                        "pageSize",
-                        aws_smithy_types::primitive::Encoder::from(*inner_8).encode(),
-                    );
+                    if *inner_8 != 0 {
+                        query.push_kv(
+                            "pageSize",
+                            aws_smithy_types::primitive::Encoder::from(*inner_8).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -580,8 +618,10 @@ impl ListNamedShadowsForThingInput {
             fn update_http_builder(
                 input: &crate::input::ListNamedShadowsForThingInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -652,7 +692,7 @@ impl ListNamedShadowsForThingInput {
 pub mod list_retained_messages_input {
 
     /// A builder for [`ListRetainedMessagesInput`](crate::input::ListRetainedMessagesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -681,8 +721,10 @@ pub mod list_retained_messages_input {
         /// Consumes the builder and constructs a [`ListRetainedMessagesInput`](crate::input::ListRetainedMessagesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListRetainedMessagesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListRetainedMessagesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListRetainedMessagesInput {
                 next_token: self.next_token,
                 max_results: self.max_results.unwrap_or_default(),
@@ -703,23 +745,25 @@ impl ListRetainedMessagesInput {
             crate::operation::ListRetainedMessages,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListRetainedMessagesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/retainedMessage").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListRetainedMessagesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_9) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_9));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_9));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -733,8 +777,10 @@ impl ListRetainedMessagesInput {
             fn update_http_builder(
                 input: &crate::input::ListRetainedMessagesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -805,7 +851,7 @@ impl ListRetainedMessagesInput {
 pub mod publish_input {
 
     /// A builder for [`PublishInput`](crate::input::PublishInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic: std::option::Option<std::string::String>,
         pub(crate) qos: std::option::Option<i32>,
@@ -864,7 +910,8 @@ pub mod publish_input {
         /// Consumes the builder and constructs a [`PublishInput`](crate::input::PublishInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PublishInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::PublishInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::PublishInput {
                 topic: self.topic,
                 qos: self.qos.unwrap_or_default(),
@@ -887,26 +934,31 @@ impl PublishInput {
             crate::operation::Publish,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PublishInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_10 = &_input.topic;
-                let input_10 = input_10.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "topic",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let topic = aws_smithy_http::label::fmt_string(input_10, false);
+                let input_10 = input_10.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "topic",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let topic = aws_smithy_http::label::fmt_string(
+                    input_10,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if topic.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "topic",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "topic",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/topics/{topic}", topic = topic)
                     .expect("formatting should succeed");
@@ -915,7 +967,7 @@ impl PublishInput {
             fn uri_query(
                 _input: &crate::input::PublishInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if _input.qos != 0 {
                     query.push_kv(
@@ -935,8 +987,10 @@ impl PublishInput {
             fn update_http_builder(
                 input: &crate::input::PublishInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1019,7 +1073,7 @@ impl PublishInput {
 pub mod update_thing_shadow_input {
 
     /// A builder for [`UpdateThingShadowInput`](crate::input::UpdateThingShadowInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_name: std::option::Option<std::string::String>,
         pub(crate) shadow_name: std::option::Option<std::string::String>,
@@ -1059,8 +1113,10 @@ pub mod update_thing_shadow_input {
         /// Consumes the builder and constructs a [`UpdateThingShadowInput`](crate::input::UpdateThingShadowInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateThingShadowInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateThingShadowInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateThingShadowInput {
                 thing_name: self.thing_name,
                 shadow_name: self.shadow_name,
@@ -1082,26 +1138,31 @@ impl UpdateThingShadowInput {
             crate::operation::UpdateThingShadow,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateThingShadowInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_11 = &_input.thing_name;
-                let input_11 = input_11.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "thing_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let thing_name = aws_smithy_http::label::fmt_string(input_11, false);
+                let input_11 = input_11.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "thing_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let thing_name = aws_smithy_http::label::fmt_string(
+                    input_11,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if thing_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "thing_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "thing_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/things/{thingName}/shadow", thingName = thing_name)
                     .expect("formatting should succeed");
@@ -1110,10 +1171,12 @@ impl UpdateThingShadowInput {
             fn uri_query(
                 _input: &crate::input::UpdateThingShadowInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_12) = &_input.shadow_name {
-                    query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_12));
+                    {
+                        query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_12));
+                    }
                 }
                 Ok(())
             }
@@ -1121,8 +1184,10 @@ impl UpdateThingShadowInput {
             fn update_http_builder(
                 input: &crate::input::UpdateThingShadowInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1205,7 +1270,7 @@ impl UpdateThingShadowInput {
 
 /// <p>The input for the UpdateThingShadow operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateThingShadowInput {
     /// <p>The name of the thing.</p>
     #[doc(hidden)]
@@ -1231,19 +1296,10 @@ impl UpdateThingShadowInput {
         self.payload.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateThingShadowInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateThingShadowInput");
-        formatter.field("thing_name", &self.thing_name);
-        formatter.field("shadow_name", &self.shadow_name);
-        formatter.field("payload", &self.payload);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the Publish operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublishInput {
     /// <p>The name of the MQTT topic.</p>
     #[doc(hidden)]
@@ -1284,20 +1340,10 @@ impl PublishInput {
         self.payload.as_ref()
     }
 }
-impl std::fmt::Debug for PublishInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublishInput");
-        formatter.field("topic", &self.topic);
-        formatter.field("qos", &self.qos);
-        formatter.field("retain", &self.retain);
-        formatter.field("payload", &self.payload);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRetainedMessagesInput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     #[doc(hidden)]
@@ -1316,18 +1362,10 @@ impl ListRetainedMessagesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListRetainedMessagesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRetainedMessagesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListNamedShadowsForThingInput {
     /// <p>The name of the thing.</p>
     #[doc(hidden)]
@@ -1353,19 +1391,10 @@ impl ListNamedShadowsForThingInput {
         self.page_size
     }
 }
-impl std::fmt::Debug for ListNamedShadowsForThingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListNamedShadowsForThingInput");
-        formatter.field("thing_name", &self.thing_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("page_size", &self.page_size);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the GetThingShadow operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetThingShadowInput {
     /// <p>The name of the thing.</p>
     #[doc(hidden)]
@@ -1384,18 +1413,10 @@ impl GetThingShadowInput {
         self.shadow_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetThingShadowInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetThingShadowInput");
-        formatter.field("thing_name", &self.thing_name);
-        formatter.field("shadow_name", &self.shadow_name);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the GetRetainedMessage operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRetainedMessageInput {
     /// <p>The topic name of the retained message to retrieve.</p>
     #[doc(hidden)]
@@ -1407,17 +1428,10 @@ impl GetRetainedMessageInput {
         self.topic.as_deref()
     }
 }
-impl std::fmt::Debug for GetRetainedMessageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRetainedMessageInput");
-        formatter.field("topic", &self.topic);
-        formatter.finish()
-    }
-}
 
 /// <p>The input for the DeleteThingShadow operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteThingShadowInput {
     /// <p>The name of the thing.</p>
     #[doc(hidden)]
@@ -1434,13 +1448,5 @@ impl DeleteThingShadowInput {
     /// <p>The name of the shadow.</p>
     pub fn shadow_name(&self) -> std::option::Option<&str> {
         self.shadow_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteThingShadowInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteThingShadowInput");
-        formatter.field("thing_name", &self.thing_name);
-        formatter.field("shadow_name", &self.shadow_name);
-        formatter.finish()
     }
 }

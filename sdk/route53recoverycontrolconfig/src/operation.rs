@@ -5,7 +5,7 @@
 /// [`create_cluster`](crate::client::Client::create_cluster).
 ///
 /// See [`crate::client::fluent_builders::CreateCluster`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateCluster {
     _private: (),
 }
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCluster {
 /// [`create_control_panel`](crate::client::Client::create_control_panel).
 ///
 /// See [`crate::client::fluent_builders::CreateControlPanel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateControlPanel {
     _private: (),
 }
@@ -71,7 +71,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateControlPanel {
 /// [`create_routing_control`](crate::client::Client::create_routing_control).
 ///
 /// See [`crate::client::fluent_builders::CreateRoutingControl`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateRoutingControl {
     _private: (),
 }
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRoutingControl {
 /// [`create_safety_rule`](crate::client::Client::create_safety_rule).
 ///
 /// See [`crate::client::fluent_builders::CreateSafetyRule`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateSafetyRule {
     _private: (),
 }
@@ -139,7 +139,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSafetyRule {
 /// [`delete_cluster`](crate::client::Client::delete_cluster).
 ///
 /// See [`crate::client::fluent_builders::DeleteCluster`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteCluster {
     _private: (),
 }
@@ -171,7 +171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCluster {
 /// [`delete_control_panel`](crate::client::Client::delete_control_panel).
 ///
 /// See [`crate::client::fluent_builders::DeleteControlPanel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteControlPanel {
     _private: (),
 }
@@ -205,7 +205,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteControlPanel {
 /// [`delete_routing_control`](crate::client::Client::delete_routing_control).
 ///
 /// See [`crate::client::fluent_builders::DeleteRoutingControl`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRoutingControl {
     _private: (),
 }
@@ -239,7 +239,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRoutingControl {
 /// [`delete_safety_rule`](crate::client::Client::delete_safety_rule).
 ///
 /// See [`crate::client::fluent_builders::DeleteSafetyRule`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteSafetyRule {
     _private: (),
 }
@@ -273,7 +273,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSafetyRule {
 /// [`describe_cluster`](crate::client::Client::describe_cluster).
 ///
 /// See [`crate::client::fluent_builders::DescribeCluster`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeCluster {
     _private: (),
 }
@@ -307,7 +307,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCluster {
 /// [`describe_control_panel`](crate::client::Client::describe_control_panel).
 ///
 /// See [`crate::client::fluent_builders::DescribeControlPanel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeControlPanel {
     _private: (),
 }
@@ -341,7 +341,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeControlPanel {
 /// [`describe_routing_control`](crate::client::Client::describe_routing_control).
 ///
 /// See [`crate::client::fluent_builders::DescribeRoutingControl`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeRoutingControl {
     _private: (),
 }
@@ -375,7 +375,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRoutingControl {
 /// [`describe_safety_rule`](crate::client::Client::describe_safety_rule).
 ///
 /// See [`crate::client::fluent_builders::DescribeSafetyRule`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeSafetyRule {
     _private: (),
 }
@@ -409,7 +409,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSafetyRule {
 /// [`list_associated_route53_health_checks`](crate::client::Client::list_associated_route53_health_checks).
 ///
 /// See [`crate::client::fluent_builders::ListAssociatedRoute53HealthChecks`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAssociatedRoute53HealthChecks {
     _private: (),
 }
@@ -443,7 +443,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAssociatedRoute53Hea
 /// [`list_clusters`](crate::client::Client::list_clusters).
 ///
 /// See [`crate::client::fluent_builders::ListClusters`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListClusters {
     _private: (),
 }
@@ -475,7 +475,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListClusters {
 /// [`list_control_panels`](crate::client::Client::list_control_panels).
 ///
 /// See [`crate::client::fluent_builders::ListControlPanels`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListControlPanels {
     _private: (),
 }
@@ -509,7 +509,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListControlPanels {
 /// [`list_routing_controls`](crate::client::Client::list_routing_controls).
 ///
 /// See [`crate::client::fluent_builders::ListRoutingControls`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRoutingControls {
     _private: (),
 }
@@ -543,7 +543,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRoutingControls {
 /// [`list_safety_rules`](crate::client::Client::list_safety_rules).
 ///
 /// See [`crate::client::fluent_builders::ListSafetyRules`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSafetyRules {
     _private: (),
 }
@@ -577,7 +577,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSafetyRules {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -611,7 +611,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -643,7 +643,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -675,7 +675,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_control_panel`](crate::client::Client::update_control_panel).
 ///
 /// See [`crate::client::fluent_builders::UpdateControlPanel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateControlPanel {
     _private: (),
 }
@@ -709,7 +709,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateControlPanel {
 /// [`update_routing_control`](crate::client::Client::update_routing_control).
 ///
 /// See [`crate::client::fluent_builders::UpdateRoutingControl`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateRoutingControl {
     _private: (),
 }
@@ -743,7 +743,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRoutingControl {
 /// [`update_safety_rule`](crate::client::Client::update_safety_rule).
 ///
 /// See [`crate::client::fluent_builders::UpdateSafetyRule`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateSafetyRule {
     _private: (),
 }

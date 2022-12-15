@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod send_command_input {
 
     /// A builder for [`SendCommandInput`](crate::input::SendCommandInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) session_token: std::option::Option<std::string::String>,
         pub(crate) start_session: std::option::Option<crate::model::StartSessionRequest>,
@@ -126,7 +126,7 @@ pub mod send_command_input {
         /// Consumes the builder and constructs a [`SendCommandInput`](crate::input::SendCommandInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SendCommandInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::SendCommandInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::SendCommandInput {
                 session_token: self.session_token,
@@ -154,13 +154,13 @@ impl SendCommandInput {
             crate::operation::SendCommand,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SendCommandInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -168,8 +168,10 @@ impl SendCommandInput {
             fn update_http_builder(
                 input: &crate::input::SendCommandInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -256,7 +258,7 @@ impl SendCommandInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendCommandInput {
     /// <p>Specifies the session token for the current command. A session token is constant throughout the life of the session.</p>
     /// <p>To obtain a session token, run the <code>StartSession</code> command. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
@@ -319,19 +321,5 @@ impl SendCommandInput {
     /// <p>Command to fetch a page.</p>
     pub fn fetch_page(&self) -> std::option::Option<&crate::model::FetchPageRequest> {
         self.fetch_page.as_ref()
-    }
-}
-impl std::fmt::Debug for SendCommandInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendCommandInput");
-        formatter.field("session_token", &self.session_token);
-        formatter.field("start_session", &self.start_session);
-        formatter.field("start_transaction", &self.start_transaction);
-        formatter.field("end_session", &self.end_session);
-        formatter.field("commit_transaction", &self.commit_transaction);
-        formatter.field("abort_transaction", &self.abort_transaction);
-        formatter.field("execute_statement", &self.execute_statement);
-        formatter.field("fetch_page", &self.fetch_page);
-        formatter.finish()
     }
 }

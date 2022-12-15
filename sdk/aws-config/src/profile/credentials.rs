@@ -28,6 +28,7 @@ use crate::profile::parser::ProfileParseError;
 use crate::profile::profile_file::ProfileFiles;
 use crate::profile::Profile;
 use crate::provider_config::ProviderConfig;
+use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_types::credentials::{self, future, CredentialsError, ProvideCredentials};
 use std::borrow::Cow;
 use std::collections::HashMap;
@@ -45,10 +46,7 @@ impl ProvideCredentials for ProfileFileCredentialsProvider {
     where
         Self: 'a,
     {
-        future::ProvideCredentials::new(self.load_credentials().instrument(tracing::debug_span!(
-            "load_credentials",
-            provider = %"Profile"
-        )))
+        future::ProvideCredentials::new(self.load_credentials())
     }
 }
 
@@ -186,7 +184,7 @@ impl ProfileFileCredentialsProvider {
                 creds
             }
             Err(e) => {
-                tracing::warn!(error = %e, "failed to load base credentials");
+                tracing::warn!(error = %DisplayErrorContext(&e), "failed to load base credentials");
                 return Err(CredentialsError::provider_error(e));
             }
         };

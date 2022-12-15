@@ -3,6 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+//! Providers that load configuration from environment variables
+
 /// Load app name from the environment
 pub mod app_name;
 pub use app_name::EnvironmentVariableAppNameProvider;

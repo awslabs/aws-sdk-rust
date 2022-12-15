@@ -2,112 +2,116 @@
 pub fn add_headers_send_api_asset(
     input: &crate::input::SendApiAssetInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_1) = &input.asset_id {
-        let formatted_2 = AsRef::<str>::as_ref(inner_1);
+        let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "asset_id",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "asset_id",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amzn-dataexchange-asset-id", header_value);
         }
     }
     if let Some(inner_3) = &input.data_set_id {
-        let formatted_4 = AsRef::<str>::as_ref(inner_3);
+        let formatted_4 = inner_3.as_str();
         if !formatted_4.is_empty() {
             let header_value = formatted_4;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "data_set_id",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "data_set_id",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amzn-dataexchange-data-set-id", header_value);
         }
     }
     if let Some(inner_5) = &input.method {
-        let formatted_6 = AsRef::<str>::as_ref(inner_5);
+        let formatted_6 = inner_5.as_str();
         if !formatted_6.is_empty() {
             let header_value = formatted_6;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "method",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "method",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amzn-dataexchange-http-method", header_value);
         }
     }
     if let Some(inner_7) = &input.path {
-        let formatted_8 = AsRef::<str>::as_ref(inner_7);
+        let formatted_8 = inner_7.as_str();
         if !formatted_8.is_empty() {
             let header_value = formatted_8;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "path",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "path",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amzn-dataexchange-path", header_value);
         }
     }
     if let Some(inner_9) = &input.revision_id {
-        let formatted_10 = AsRef::<str>::as_ref(inner_9);
+        let formatted_10 = inner_9.as_str();
         if !formatted_10.is_empty() {
             let header_value = formatted_10;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "revision_id",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "revision_id",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amzn-dataexchange-revision-id", header_value);
         }
     }
     if let Some(inner_11) = &input.request_headers {
-        for (k, v) in inner_11 {
-            use std::str::FromStr;
-            let header_name = http::header::HeaderName::from_str(&format!(
-                "{}{}",
-                "x-amzn-dataexchange-header-", &k
-            ))
-            .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                field: "request_headers",
-                details: format!("`{}` cannot be used as a header name: {}", k, err),
-            })?;
-            let header_value = AsRef::<str>::as_ref(v);
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "request_headers",
-                        details: format!("`{}` cannot be used as a header value: {}", v, err),
-                    }
+        {
+            for (k, v) in inner_11 {
+                use std::str::FromStr;
+                let header_name = http::header::HeaderName::from_str(&format!(
+                    "{}{}",
+                    "x-amzn-dataexchange-header-", &k
+                ))
+                .map_err(|err| {
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "request_headers",
+                        format!("`{k}` cannot be used as a header name: {err}"),
+                    )
                 })?;
-            builder = builder.header(header_name, header_value);
+                let header_value = v.as_str();
+                let header_value =
+                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                        aws_smithy_http::operation::error::BuildError::invalid_field(
+                            "request_headers",
+                            format!("`{}` cannot be used as a header value: {}", v, err),
+                        )
+                    })?;
+                builder = builder.header(header_name, header_value);
+            }
         }
     }
     Ok(builder)
@@ -126,7 +130,7 @@ pub fn deser_payload_send_api_asset_send_api_asset_output_body(
         .transpose()
 }
 
-pub fn deser_prefix_header_send_api_asset_send_api_asset_output_response_headers(
+pub(crate) fn deser_prefix_header_send_api_asset_send_api_asset_output_response_headers(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -136,8 +140,8 @@ pub fn deser_prefix_header_send_api_asset_send_api_asset_output_response_headers
     let out: std::result::Result<_, _> = headers.map(|(key, header_name)| {
                             let values = header_map.get_all(header_name);
                             crate::http_serde::deser_prefix_header_send_api_asset_send_api_asset_output_response_headers_inner(values.iter()).map(|v| (key.to_string(), v.expect(
-                                "we have checked there is at least one value for this header name; please file a bug report under https://github.com/awslabs/smithy-rs/issues
-                            ")))
+                                "we have checked there is at least one value for this header name; please file a bug report under https://github.com/awslabs/smithy-rs/issues"
+                            )))
                         }).collect();
     out.map(Some)
 }

@@ -2,7 +2,7 @@
 
 /// <p>The response elements represent the output of a request to perform a rollback of a transaction.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RollbackTransactionOutput {
     /// <p>The status of the rollback operation.</p>
     #[doc(hidden)]
@@ -14,18 +14,11 @@ impl RollbackTransactionOutput {
         self.transaction_status.as_deref()
     }
 }
-impl std::fmt::Debug for RollbackTransactionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RollbackTransactionOutput");
-        formatter.field("transaction_status", &self.transaction_status);
-        formatter.finish()
-    }
-}
 /// See [`RollbackTransactionOutput`](crate::output::RollbackTransactionOutput).
 pub mod rollback_transaction_output {
 
     /// A builder for [`RollbackTransactionOutput`](crate::output::RollbackTransactionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transaction_status: std::option::Option<std::string::String>,
     }
@@ -60,7 +53,7 @@ impl RollbackTransactionOutput {
 
 /// <p>The response elements represent the output of a request to run a SQL statement against a database.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecuteStatementOutput {
     /// <p>The records returned by the SQL statement. This field is blank if the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
     #[doc(hidden)]
@@ -106,22 +99,11 @@ impl ExecuteStatementOutput {
         self.formatted_records.as_deref()
     }
 }
-impl std::fmt::Debug for ExecuteStatementOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecuteStatementOutput");
-        formatter.field("records", &self.records);
-        formatter.field("column_metadata", &self.column_metadata);
-        formatter.field("number_of_records_updated", &self.number_of_records_updated);
-        formatter.field("generated_fields", &self.generated_fields);
-        formatter.field("formatted_records", &self.formatted_records);
-        formatter.finish()
-    }
-}
 /// See [`ExecuteStatementOutput`](crate::output::ExecuteStatementOutput).
 pub mod execute_statement_output {
 
     /// A builder for [`ExecuteStatementOutput`](crate::output::ExecuteStatementOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) records: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::Field>>>,
         pub(crate) column_metadata:
@@ -238,7 +220,7 @@ impl ExecuteStatementOutput {
 
 /// <p>The response elements represent the output of a request to run one or more SQL statements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecuteSqlOutput {
     /// <p>The results of the SQL statement or statements.</p>
     #[doc(hidden)]
@@ -252,18 +234,11 @@ impl ExecuteSqlOutput {
         self.sql_statement_results.as_deref()
     }
 }
-impl std::fmt::Debug for ExecuteSqlOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecuteSqlOutput");
-        formatter.field("sql_statement_results", &self.sql_statement_results);
-        formatter.finish()
-    }
-}
 /// See [`ExecuteSqlOutput`](crate::output::ExecuteSqlOutput).
 pub mod execute_sql_output {
 
     /// A builder for [`ExecuteSqlOutput`](crate::output::ExecuteSqlOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sql_statement_results:
             std::option::Option<std::vec::Vec<crate::model::SqlStatementResult>>,
@@ -305,7 +280,7 @@ impl ExecuteSqlOutput {
 
 /// <p>The response elements represent the output of a commit transaction request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommitTransactionOutput {
     /// <p>The status of the commit operation.</p>
     #[doc(hidden)]
@@ -317,18 +292,11 @@ impl CommitTransactionOutput {
         self.transaction_status.as_deref()
     }
 }
-impl std::fmt::Debug for CommitTransactionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommitTransactionOutput");
-        formatter.field("transaction_status", &self.transaction_status);
-        formatter.finish()
-    }
-}
 /// See [`CommitTransactionOutput`](crate::output::CommitTransactionOutput).
 pub mod commit_transaction_output {
 
     /// A builder for [`CommitTransactionOutput`](crate::output::CommitTransactionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transaction_status: std::option::Option<std::string::String>,
     }
@@ -363,7 +331,7 @@ impl CommitTransactionOutput {
 
 /// <p>The response elements represent the output of a request to start a SQL transaction.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BeginTransactionOutput {
     /// <p>The transaction ID of the transaction started by the call.</p>
     #[doc(hidden)]
@@ -375,18 +343,11 @@ impl BeginTransactionOutput {
         self.transaction_id.as_deref()
     }
 }
-impl std::fmt::Debug for BeginTransactionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BeginTransactionOutput");
-        formatter.field("transaction_id", &self.transaction_id);
-        formatter.finish()
-    }
-}
 /// See [`BeginTransactionOutput`](crate::output::BeginTransactionOutput).
 pub mod begin_transaction_output {
 
     /// A builder for [`BeginTransactionOutput`](crate::output::BeginTransactionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transaction_id: std::option::Option<std::string::String>,
     }
@@ -421,7 +382,7 @@ impl BeginTransactionOutput {
 
 /// <p>The response elements represent the output of a SQL statement over an array of data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchExecuteStatementOutput {
     /// <p>The execution results of each batch entry.</p>
     #[doc(hidden)]
@@ -433,18 +394,11 @@ impl BatchExecuteStatementOutput {
         self.update_results.as_deref()
     }
 }
-impl std::fmt::Debug for BatchExecuteStatementOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchExecuteStatementOutput");
-        formatter.field("update_results", &self.update_results);
-        formatter.finish()
-    }
-}
 /// See [`BatchExecuteStatementOutput`](crate::output::BatchExecuteStatementOutput).
 pub mod batch_execute_statement_output {
 
     /// A builder for [`BatchExecuteStatementOutput`](crate::output::BatchExecuteStatementOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_results: std::option::Option<std::vec::Vec<crate::model::UpdateResult>>,
     }

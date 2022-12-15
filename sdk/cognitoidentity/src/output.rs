@@ -2,7 +2,7 @@
 
 /// <p>An object representing an Amazon Cognito identity pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateIdentityPoolOutput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     #[doc(hidden)]
@@ -88,36 +88,11 @@ impl UpdateIdentityPoolOutput {
         self.identity_pool_tags.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateIdentityPoolOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateIdentityPoolOutput");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("identity_pool_name", &self.identity_pool_name);
-        formatter.field(
-            "allow_unauthenticated_identities",
-            &self.allow_unauthenticated_identities,
-        );
-        formatter.field("allow_classic_flow", &self.allow_classic_flow);
-        formatter.field("supported_login_providers", &self.supported_login_providers);
-        formatter.field("developer_provider_name", &self.developer_provider_name);
-        formatter.field(
-            "open_id_connect_provider_ar_ns",
-            &self.open_id_connect_provider_ar_ns,
-        );
-        formatter.field(
-            "cognito_identity_providers",
-            &self.cognito_identity_providers,
-        );
-        formatter.field("saml_provider_ar_ns", &self.saml_provider_ar_ns);
-        formatter.field("identity_pool_tags", &self.identity_pool_tags);
-        formatter.finish()
-    }
-}
 /// See [`UpdateIdentityPoolOutput`](crate::output::UpdateIdentityPoolOutput).
 pub mod update_identity_pool_output {
 
     /// A builder for [`UpdateIdentityPoolOutput`](crate::output::UpdateIdentityPoolOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
         pub(crate) identity_pool_name: std::option::Option<std::string::String>,
@@ -340,19 +315,13 @@ impl UpdateIdentityPoolOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput {}
-impl std::fmt::Debug for UntagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -370,19 +339,13 @@ impl UntagResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnlinkIdentityOutput {}
-impl std::fmt::Debug for UnlinkIdentityOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnlinkIdentityOutput");
-        formatter.finish()
-    }
-}
 /// See [`UnlinkIdentityOutput`](crate::output::UnlinkIdentityOutput).
 pub mod unlink_identity_output {
 
     /// A builder for [`UnlinkIdentityOutput`](crate::output::UnlinkIdentityOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UnlinkIdentityOutput`](crate::output::UnlinkIdentityOutput).
@@ -400,19 +363,13 @@ impl UnlinkIdentityOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnlinkDeveloperIdentityOutput {}
-impl std::fmt::Debug for UnlinkDeveloperIdentityOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnlinkDeveloperIdentityOutput");
-        formatter.finish()
-    }
-}
 /// See [`UnlinkDeveloperIdentityOutput`](crate::output::UnlinkDeveloperIdentityOutput).
 pub mod unlink_developer_identity_output {
 
     /// A builder for [`UnlinkDeveloperIdentityOutput`](crate::output::UnlinkDeveloperIdentityOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UnlinkDeveloperIdentityOutput`](crate::output::UnlinkDeveloperIdentityOutput).
@@ -430,19 +387,13 @@ impl UnlinkDeveloperIdentityOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput {}
-impl std::fmt::Debug for TagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -460,7 +411,7 @@ impl TagResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetPrincipalTagAttributeMapOutput {
     /// <p>The ID of the Identity Pool you want to set attribute mappings for.</p>
     #[doc(hidden)]
@@ -497,21 +448,11 @@ impl SetPrincipalTagAttributeMapOutput {
         self.principal_tags.as_ref()
     }
 }
-impl std::fmt::Debug for SetPrincipalTagAttributeMapOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetPrincipalTagAttributeMapOutput");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("identity_provider_name", &self.identity_provider_name);
-        formatter.field("use_defaults", &self.use_defaults);
-        formatter.field("principal_tags", &self.principal_tags);
-        formatter.finish()
-    }
-}
 /// See [`SetPrincipalTagAttributeMapOutput`](crate::output::SetPrincipalTagAttributeMapOutput).
 pub mod set_principal_tag_attribute_map_output {
 
     /// A builder for [`SetPrincipalTagAttributeMapOutput`](crate::output::SetPrincipalTagAttributeMapOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
         pub(crate) identity_provider_name: std::option::Option<std::string::String>,
@@ -602,19 +543,13 @@ impl SetPrincipalTagAttributeMapOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetIdentityPoolRolesOutput {}
-impl std::fmt::Debug for SetIdentityPoolRolesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetIdentityPoolRolesOutput");
-        formatter.finish()
-    }
-}
 /// See [`SetIdentityPoolRolesOutput`](crate::output::SetIdentityPoolRolesOutput).
 pub mod set_identity_pool_roles_output {
 
     /// A builder for [`SetIdentityPoolRolesOutput`](crate::output::SetIdentityPoolRolesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SetIdentityPoolRolesOutput`](crate::output::SetIdentityPoolRolesOutput).
@@ -632,7 +567,7 @@ impl SetIdentityPoolRolesOutput {
 
 /// <p>Returned in response to a successful <code>MergeDeveloperIdentities</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MergeDeveloperIdentitiesOutput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     #[doc(hidden)]
@@ -644,18 +579,11 @@ impl MergeDeveloperIdentitiesOutput {
         self.identity_id.as_deref()
     }
 }
-impl std::fmt::Debug for MergeDeveloperIdentitiesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MergeDeveloperIdentitiesOutput");
-        formatter.field("identity_id", &self.identity_id);
-        formatter.finish()
-    }
-}
 /// See [`MergeDeveloperIdentitiesOutput`](crate::output::MergeDeveloperIdentitiesOutput).
 pub mod merge_developer_identities_output {
 
     /// A builder for [`MergeDeveloperIdentitiesOutput`](crate::output::MergeDeveloperIdentitiesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_id: std::option::Option<std::string::String>,
     }
@@ -687,7 +615,7 @@ impl MergeDeveloperIdentitiesOutput {
 
 /// <p>Returned in response to a successful <code>LookupDeveloperIdentity</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LookupDeveloperIdentityOutput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     #[doc(hidden)]
@@ -713,23 +641,11 @@ impl LookupDeveloperIdentityOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for LookupDeveloperIdentityOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LookupDeveloperIdentityOutput");
-        formatter.field("identity_id", &self.identity_id);
-        formatter.field(
-            "developer_user_identifier_list",
-            &self.developer_user_identifier_list,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`LookupDeveloperIdentityOutput`](crate::output::LookupDeveloperIdentityOutput).
 pub mod lookup_developer_identity_output {
 
     /// A builder for [`LookupDeveloperIdentityOutput`](crate::output::LookupDeveloperIdentityOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_id: std::option::Option<std::string::String>,
         pub(crate) developer_user_identifier_list:
@@ -798,7 +714,7 @@ impl LookupDeveloperIdentityOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags that are assigned to the identity pool.</p>
     #[doc(hidden)]
@@ -814,18 +730,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceOutput");
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -872,7 +781,7 @@ impl ListTagsForResourceOutput {
 
 /// <p>The result of a successful ListIdentityPools action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListIdentityPoolsOutput {
     /// <p>The identity pools returned by the ListIdentityPools action.</p>
     #[doc(hidden)]
@@ -894,19 +803,11 @@ impl ListIdentityPoolsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListIdentityPoolsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListIdentityPoolsOutput");
-        formatter.field("identity_pools", &self.identity_pools);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListIdentityPoolsOutput`](crate::output::ListIdentityPoolsOutput).
 pub mod list_identity_pools_output {
 
     /// A builder for [`ListIdentityPoolsOutput`](crate::output::ListIdentityPoolsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pools:
             std::option::Option<std::vec::Vec<crate::model::IdentityPoolShortDescription>>,
@@ -960,7 +861,7 @@ impl ListIdentityPoolsOutput {
 
 /// <p>The response to a ListIdentities request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListIdentitiesOutput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     #[doc(hidden)]
@@ -986,20 +887,11 @@ impl ListIdentitiesOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListIdentitiesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListIdentitiesOutput");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("identities", &self.identities);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListIdentitiesOutput`](crate::output::ListIdentitiesOutput).
 pub mod list_identities_output {
 
     /// A builder for [`ListIdentitiesOutput`](crate::output::ListIdentitiesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
         pub(crate) identities:
@@ -1068,7 +960,7 @@ impl ListIdentitiesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPrincipalTagAttributeMapOutput {
     /// <p>You can use this operation to get the ID of the Identity Pool you setup attribute mappings for.</p>
     #[doc(hidden)]
@@ -1105,21 +997,11 @@ impl GetPrincipalTagAttributeMapOutput {
         self.principal_tags.as_ref()
     }
 }
-impl std::fmt::Debug for GetPrincipalTagAttributeMapOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPrincipalTagAttributeMapOutput");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("identity_provider_name", &self.identity_provider_name);
-        formatter.field("use_defaults", &self.use_defaults);
-        formatter.field("principal_tags", &self.principal_tags);
-        formatter.finish()
-    }
-}
 /// See [`GetPrincipalTagAttributeMapOutput`](crate::output::GetPrincipalTagAttributeMapOutput).
 pub mod get_principal_tag_attribute_map_output {
 
     /// A builder for [`GetPrincipalTagAttributeMapOutput`](crate::output::GetPrincipalTagAttributeMapOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
         pub(crate) identity_provider_name: std::option::Option<std::string::String>,
@@ -1210,7 +1092,7 @@ impl GetPrincipalTagAttributeMapOutput {
 
 /// <p>Returned in response to a successful <code>GetOpenIdTokenForDeveloperIdentity</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetOpenIdTokenForDeveloperIdentityOutput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     #[doc(hidden)]
@@ -1229,19 +1111,11 @@ impl GetOpenIdTokenForDeveloperIdentityOutput {
         self.token.as_deref()
     }
 }
-impl std::fmt::Debug for GetOpenIdTokenForDeveloperIdentityOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetOpenIdTokenForDeveloperIdentityOutput");
-        formatter.field("identity_id", &self.identity_id);
-        formatter.field("token", &self.token);
-        formatter.finish()
-    }
-}
 /// See [`GetOpenIdTokenForDeveloperIdentityOutput`](crate::output::GetOpenIdTokenForDeveloperIdentityOutput).
 pub mod get_open_id_token_for_developer_identity_output {
 
     /// A builder for [`GetOpenIdTokenForDeveloperIdentityOutput`](crate::output::GetOpenIdTokenForDeveloperIdentityOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_id: std::option::Option<std::string::String>,
         pub(crate) token: std::option::Option<std::string::String>,
@@ -1285,7 +1159,7 @@ impl GetOpenIdTokenForDeveloperIdentityOutput {
 
 /// <p>Returned in response to a successful GetOpenIdToken request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetOpenIdTokenOutput {
     /// <p>A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.</p>
     #[doc(hidden)]
@@ -1304,19 +1178,11 @@ impl GetOpenIdTokenOutput {
         self.token.as_deref()
     }
 }
-impl std::fmt::Debug for GetOpenIdTokenOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetOpenIdTokenOutput");
-        formatter.field("identity_id", &self.identity_id);
-        formatter.field("token", &self.token);
-        formatter.finish()
-    }
-}
 /// See [`GetOpenIdTokenOutput`](crate::output::GetOpenIdTokenOutput).
 pub mod get_open_id_token_output {
 
     /// A builder for [`GetOpenIdTokenOutput`](crate::output::GetOpenIdTokenOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_id: std::option::Option<std::string::String>,
         pub(crate) token: std::option::Option<std::string::String>,
@@ -1360,7 +1226,7 @@ impl GetOpenIdTokenOutput {
 
 /// <p>Returned in response to a successful <code>GetIdentityPoolRoles</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIdentityPoolRolesOutput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     #[doc(hidden)]
@@ -1396,20 +1262,11 @@ impl GetIdentityPoolRolesOutput {
         self.role_mappings.as_ref()
     }
 }
-impl std::fmt::Debug for GetIdentityPoolRolesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIdentityPoolRolesOutput");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("roles", &self.roles);
-        formatter.field("role_mappings", &self.role_mappings);
-        formatter.finish()
-    }
-}
 /// See [`GetIdentityPoolRolesOutput`](crate::output::GetIdentityPoolRolesOutput).
 pub mod get_identity_pool_roles_output {
 
     /// A builder for [`GetIdentityPoolRolesOutput`](crate::output::GetIdentityPoolRolesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
         pub(crate) roles: std::option::Option<
@@ -1502,7 +1359,7 @@ impl GetIdentityPoolRolesOutput {
 
 /// <p>Returned in response to a GetId request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIdOutput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     #[doc(hidden)]
@@ -1514,18 +1371,11 @@ impl GetIdOutput {
         self.identity_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetIdOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIdOutput");
-        formatter.field("identity_id", &self.identity_id);
-        formatter.finish()
-    }
-}
 /// See [`GetIdOutput`](crate::output::GetIdOutput).
 pub mod get_id_output {
 
     /// A builder for [`GetIdOutput`](crate::output::GetIdOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_id: std::option::Option<std::string::String>,
     }
@@ -1557,7 +1407,7 @@ impl GetIdOutput {
 
 /// <p>Returned in response to a successful <code>GetCredentialsForIdentity</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCredentialsForIdentityOutput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     #[doc(hidden)]
@@ -1576,19 +1426,11 @@ impl GetCredentialsForIdentityOutput {
         self.credentials.as_ref()
     }
 }
-impl std::fmt::Debug for GetCredentialsForIdentityOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCredentialsForIdentityOutput");
-        formatter.field("identity_id", &self.identity_id);
-        formatter.field("credentials", &self.credentials);
-        formatter.finish()
-    }
-}
 /// See [`GetCredentialsForIdentityOutput`](crate::output::GetCredentialsForIdentityOutput).
 pub mod get_credentials_for_identity_output {
 
     /// A builder for [`GetCredentialsForIdentityOutput`](crate::output::GetCredentialsForIdentityOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_id: std::option::Option<std::string::String>,
         pub(crate) credentials: std::option::Option<crate::model::Credentials>,
@@ -1635,7 +1477,7 @@ impl GetCredentialsForIdentityOutput {
 
 /// <p>An object representing an Amazon Cognito identity pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeIdentityPoolOutput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     #[doc(hidden)]
@@ -1721,36 +1563,11 @@ impl DescribeIdentityPoolOutput {
         self.identity_pool_tags.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeIdentityPoolOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeIdentityPoolOutput");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("identity_pool_name", &self.identity_pool_name);
-        formatter.field(
-            "allow_unauthenticated_identities",
-            &self.allow_unauthenticated_identities,
-        );
-        formatter.field("allow_classic_flow", &self.allow_classic_flow);
-        formatter.field("supported_login_providers", &self.supported_login_providers);
-        formatter.field("developer_provider_name", &self.developer_provider_name);
-        formatter.field(
-            "open_id_connect_provider_ar_ns",
-            &self.open_id_connect_provider_ar_ns,
-        );
-        formatter.field(
-            "cognito_identity_providers",
-            &self.cognito_identity_providers,
-        );
-        formatter.field("saml_provider_ar_ns", &self.saml_provider_ar_ns);
-        formatter.field("identity_pool_tags", &self.identity_pool_tags);
-        formatter.finish()
-    }
-}
 /// See [`DescribeIdentityPoolOutput`](crate::output::DescribeIdentityPoolOutput).
 pub mod describe_identity_pool_output {
 
     /// A builder for [`DescribeIdentityPoolOutput`](crate::output::DescribeIdentityPoolOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
         pub(crate) identity_pool_name: std::option::Option<std::string::String>,
@@ -1973,7 +1790,7 @@ impl DescribeIdentityPoolOutput {
 
 /// <p>A description of the identity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeIdentityOutput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     #[doc(hidden)]
@@ -2006,21 +1823,11 @@ impl DescribeIdentityOutput {
         self.last_modified_date.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeIdentityOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeIdentityOutput");
-        formatter.field("identity_id", &self.identity_id);
-        formatter.field("logins", &self.logins);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.finish()
-    }
-}
 /// See [`DescribeIdentityOutput`](crate::output::DescribeIdentityOutput).
 pub mod describe_identity_output {
 
     /// A builder for [`DescribeIdentityOutput`](crate::output::DescribeIdentityOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_id: std::option::Option<std::string::String>,
         pub(crate) logins: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2103,19 +1910,13 @@ impl DescribeIdentityOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteIdentityPoolOutput {}
-impl std::fmt::Debug for DeleteIdentityPoolOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteIdentityPoolOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteIdentityPoolOutput`](crate::output::DeleteIdentityPoolOutput).
 pub mod delete_identity_pool_output {
 
     /// A builder for [`DeleteIdentityPoolOutput`](crate::output::DeleteIdentityPoolOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteIdentityPoolOutput`](crate::output::DeleteIdentityPoolOutput).
@@ -2133,7 +1934,7 @@ impl DeleteIdentityPoolOutput {
 
 /// <p>Returned in response to a successful <code>DeleteIdentities</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteIdentitiesOutput {
     /// <p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>
     #[doc(hidden)]
@@ -2148,18 +1949,11 @@ impl DeleteIdentitiesOutput {
         self.unprocessed_identity_ids.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteIdentitiesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteIdentitiesOutput");
-        formatter.field("unprocessed_identity_ids", &self.unprocessed_identity_ids);
-        formatter.finish()
-    }
-}
 /// See [`DeleteIdentitiesOutput`](crate::output::DeleteIdentitiesOutput).
 pub mod delete_identities_output {
 
     /// A builder for [`DeleteIdentitiesOutput`](crate::output::DeleteIdentitiesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) unprocessed_identity_ids:
             std::option::Option<std::vec::Vec<crate::model::UnprocessedIdentityId>>,
@@ -2204,7 +1998,7 @@ impl DeleteIdentitiesOutput {
 
 /// <p>An object representing an Amazon Cognito identity pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateIdentityPoolOutput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     #[doc(hidden)]
@@ -2290,36 +2084,11 @@ impl CreateIdentityPoolOutput {
         self.identity_pool_tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateIdentityPoolOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateIdentityPoolOutput");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("identity_pool_name", &self.identity_pool_name);
-        formatter.field(
-            "allow_unauthenticated_identities",
-            &self.allow_unauthenticated_identities,
-        );
-        formatter.field("allow_classic_flow", &self.allow_classic_flow);
-        formatter.field("supported_login_providers", &self.supported_login_providers);
-        formatter.field("developer_provider_name", &self.developer_provider_name);
-        formatter.field(
-            "open_id_connect_provider_ar_ns",
-            &self.open_id_connect_provider_ar_ns,
-        );
-        formatter.field(
-            "cognito_identity_providers",
-            &self.cognito_identity_providers,
-        );
-        formatter.field("saml_provider_ar_ns", &self.saml_provider_ar_ns);
-        formatter.field("identity_pool_tags", &self.identity_pool_tags);
-        formatter.finish()
-    }
-}
 /// See [`CreateIdentityPoolOutput`](crate::output::CreateIdentityPoolOutput).
 pub mod create_identity_pool_output {
 
     /// A builder for [`CreateIdentityPoolOutput`](crate::output::CreateIdentityPoolOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
         pub(crate) identity_pool_name: std::option::Option<std::string::String>,

@@ -2,7 +2,7 @@
 
 /// <p>Represents the Amazon Simple Storage Service (Amazon S3) location where AWS Application Cost Profiler reports are generated and then written to.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Location {
     /// <p>Name of the S3 bucket.</p>
     #[doc(hidden)]
@@ -21,19 +21,11 @@ impl S3Location {
         self.prefix.as_deref()
     }
 }
-impl std::fmt::Debug for S3Location {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Location");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("prefix", &self.prefix);
-        formatter.finish()
-    }
-}
 /// See [`S3Location`](crate::model::S3Location).
 pub mod s3_location {
 
     /// A builder for [`S3Location`](crate::model::S3Location).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) prefix: std::option::Option<std::string::String>,
@@ -75,6 +67,41 @@ impl S3Location {
     }
 }
 
+/// When writing a match expression against `Format`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let format = unimplemented!();
+/// match format {
+///     Format::Csv => { /* ... */ },
+///     Format::Parquet => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `format` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Format::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Format::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Format::NewFeature` is defined.
+/// Specifically, when `format` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Format::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -91,15 +118,15 @@ pub enum Format {
     Csv,
     #[allow(missing_docs)] // documentation missing in model
     Parquet,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Format {
     fn from(s: &str) -> Self {
         match s {
             "CSV" => Format::Csv,
             "PARQUET" => Format::Parquet,
-            other => Format::Unknown(other.to_owned()),
+            other => Format::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -116,11 +143,11 @@ impl Format {
         match self {
             Format::Csv => "CSV",
             Format::Parquet => "PARQUET",
-            Format::Unknown(s) => s.as_ref(),
+            Format::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CSV", "PARQUET"]
     }
 }
@@ -130,6 +157,42 @@ impl AsRef<str> for Format {
     }
 }
 
+/// When writing a match expression against `ReportFrequency`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let reportfrequency = unimplemented!();
+/// match reportfrequency {
+///     ReportFrequency::All => { /* ... */ },
+///     ReportFrequency::Daily => { /* ... */ },
+///     ReportFrequency::Monthly => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `reportfrequency` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ReportFrequency::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ReportFrequency::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ReportFrequency::NewFeature` is defined.
+/// Specifically, when `reportfrequency` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ReportFrequency::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -148,8 +211,8 @@ pub enum ReportFrequency {
     Daily,
     #[allow(missing_docs)] // documentation missing in model
     Monthly,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ReportFrequency {
     fn from(s: &str) -> Self {
@@ -157,7 +220,7 @@ impl std::convert::From<&str> for ReportFrequency {
             "ALL" => ReportFrequency::All,
             "DAILY" => ReportFrequency::Daily,
             "MONTHLY" => ReportFrequency::Monthly,
-            other => ReportFrequency::Unknown(other.to_owned()),
+            other => ReportFrequency::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -175,11 +238,11 @@ impl ReportFrequency {
             ReportFrequency::All => "ALL",
             ReportFrequency::Daily => "DAILY",
             ReportFrequency::Monthly => "MONTHLY",
-            ReportFrequency::Unknown(s) => s.as_ref(),
+            ReportFrequency::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "DAILY", "MONTHLY"]
     }
 }
@@ -191,7 +254,7 @@ impl AsRef<str> for ReportFrequency {
 
 /// <p>The configuration of a report in AWS Application Cost Profiler.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReportDefinition {
     /// <p>The ID of the report.</p>
     #[doc(hidden)]
@@ -245,24 +308,11 @@ impl ReportDefinition {
         self.last_updated_at.as_ref()
     }
 }
-impl std::fmt::Debug for ReportDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReportDefinition");
-        formatter.field("report_id", &self.report_id);
-        formatter.field("report_description", &self.report_description);
-        formatter.field("report_frequency", &self.report_frequency);
-        formatter.field("format", &self.format);
-        formatter.field("destination_s3_location", &self.destination_s3_location);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.finish()
-    }
-}
 /// See [`ReportDefinition`](crate::model::ReportDefinition).
 pub mod report_definition {
 
     /// A builder for [`ReportDefinition`](crate::model::ReportDefinition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_id: std::option::Option<std::string::String>,
         pub(crate) report_description: std::option::Option<std::string::String>,
@@ -381,7 +431,7 @@ impl ReportDefinition {
 
 /// <p>Represents the Amazon Simple Storage Service (Amazon S3) location where usage data is read from.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceS3Location {
     /// <p>Name of the bucket.</p>
     #[doc(hidden)]
@@ -407,20 +457,11 @@ impl SourceS3Location {
         self.region.as_ref()
     }
 }
-impl std::fmt::Debug for SourceS3Location {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceS3Location");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("region", &self.region);
-        formatter.finish()
-    }
-}
 /// See [`SourceS3Location`](crate::model::SourceS3Location).
 pub mod source_s3_location {
 
     /// A builder for [`SourceS3Location`](crate::model::SourceS3Location).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
@@ -477,6 +518,43 @@ impl SourceS3Location {
     }
 }
 
+/// When writing a match expression against `S3BucketRegion`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let s3bucketregion = unimplemented!();
+/// match s3bucketregion {
+///     S3BucketRegion::AfSouth1 => { /* ... */ },
+///     S3BucketRegion::ApEast1 => { /* ... */ },
+///     S3BucketRegion::EuSouth1 => { /* ... */ },
+///     S3BucketRegion::MeSouth1 => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `s3bucketregion` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `S3BucketRegion::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `S3BucketRegion::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `S3BucketRegion::NewFeature` is defined.
+/// Specifically, when `s3bucketregion` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `S3BucketRegion::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -497,8 +575,8 @@ pub enum S3BucketRegion {
     EuSouth1,
     #[allow(missing_docs)] // documentation missing in model
     MeSouth1,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for S3BucketRegion {
     fn from(s: &str) -> Self {
@@ -507,7 +585,7 @@ impl std::convert::From<&str> for S3BucketRegion {
             "ap-east-1" => S3BucketRegion::ApEast1,
             "eu-south-1" => S3BucketRegion::EuSouth1,
             "me-south-1" => S3BucketRegion::MeSouth1,
-            other => S3BucketRegion::Unknown(other.to_owned()),
+            other => S3BucketRegion::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -526,11 +604,11 @@ impl S3BucketRegion {
             S3BucketRegion::ApEast1 => "ap-east-1",
             S3BucketRegion::EuSouth1 => "eu-south-1",
             S3BucketRegion::MeSouth1 => "me-south-1",
-            S3BucketRegion::Unknown(s) => s.as_ref(),
+            S3BucketRegion::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["af-south-1", "ap-east-1", "eu-south-1", "me-south-1"]
     }
 }

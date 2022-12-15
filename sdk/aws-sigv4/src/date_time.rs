@@ -95,6 +95,8 @@ mod tests {
     use crate::date_time::test_parsers::{parse_date, parse_date_time};
     use time::format_description::well_known::Rfc3339;
 
+    // TODO(https://github.com/awslabs/smithy-rs/issues/1857)
+    #[cfg(not(any(target_arch = "powerpc", target_arch = "x86")))]
     #[test]
     fn date_format() {
         let time: SystemTime = OffsetDateTime::parse("2039-02-04T23:01:09.104Z", &Rfc3339)
@@ -107,6 +109,8 @@ mod tests {
         assert_eq!("01000102", format_date(time));
     }
 
+    // TODO(https://github.com/awslabs/smithy-rs/issues/1857)
+    #[cfg(not(any(target_arch = "powerpc", target_arch = "x86")))]
     #[test]
     fn date_time_format() {
         let time: SystemTime = OffsetDateTime::parse("2039-02-04T23:01:09.104Z", &Rfc3339)
@@ -131,6 +135,8 @@ mod tests {
         assert_eq!("20150830", format_date(time));
     }
 
+    // TODO(https://github.com/awslabs/smithy-rs/issues/1857)
+    #[cfg(not(any(target_arch = "powerpc", target_arch = "x86")))]
     #[test]
     fn test_truncate_subsecs() {
         let time: SystemTime = OffsetDateTime::parse("2039-02-04T23:01:09.104Z", &Rfc3339)

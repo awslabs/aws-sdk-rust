@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod associate_accounts_input {
 
     /// A builder for [`AssociateAccountsInput`](crate::input::AssociateAccountsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -43,8 +43,10 @@ pub mod associate_accounts_input {
         /// Consumes the builder and constructs a [`AssociateAccountsInput`](crate::input::AssociateAccountsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::AssociateAccountsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::AssociateAccountsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::AssociateAccountsInput {
                 arn: self.arn,
                 account_ids: self.account_ids,
@@ -65,13 +67,13 @@ impl AssociateAccountsInput {
             crate::operation::AssociateAccounts,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AssociateAccountsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/associate-accounts").expect("formatting should succeed");
                 Ok(())
             }
@@ -79,8 +81,10 @@ impl AssociateAccountsInput {
             fn update_http_builder(
                 input: &crate::input::AssociateAccountsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -164,7 +168,7 @@ impl AssociateAccountsInput {
 pub mod associate_pricing_rules_input {
 
     /// A builder for [`AssociatePricingRulesInput`](crate::input::AssociatePricingRulesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) pricing_rule_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -202,8 +206,10 @@ pub mod associate_pricing_rules_input {
         /// Consumes the builder and constructs a [`AssociatePricingRulesInput`](crate::input::AssociatePricingRulesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::AssociatePricingRulesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::AssociatePricingRulesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::AssociatePricingRulesInput {
                 arn: self.arn,
                 pricing_rule_arns: self.pricing_rule_arns,
@@ -224,13 +230,13 @@ impl AssociatePricingRulesInput {
             crate::operation::AssociatePricingRules,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AssociatePricingRulesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/associate-pricing-rules").expect("formatting should succeed");
                 Ok(())
             }
@@ -238,8 +244,10 @@ impl AssociatePricingRulesInput {
             fn update_http_builder(
                 input: &crate::input::AssociatePricingRulesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -325,7 +333,7 @@ impl AssociatePricingRulesInput {
 pub mod batch_associate_resources_to_custom_line_item_input {
 
     /// A builder for [`BatchAssociateResourcesToCustomLineItemInput`](crate::input::BatchAssociateResourcesToCustomLineItemInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_arn: std::option::Option<std::string::String>,
         pub(crate) resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -383,7 +391,7 @@ pub mod batch_associate_resources_to_custom_line_item_input {
             self,
         ) -> Result<
             crate::input::BatchAssociateResourcesToCustomLineItemInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::BatchAssociateResourcesToCustomLineItemInput {
                 target_arn: self.target_arn,
@@ -406,13 +414,13 @@ impl BatchAssociateResourcesToCustomLineItemInput {
             crate::operation::BatchAssociateResourcesToCustomLineItem,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::BatchAssociateResourcesToCustomLineItemInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/batch-associate-resources-to-custom-line-item")
                     .expect("formatting should succeed");
                 Ok(())
@@ -421,8 +429,10 @@ impl BatchAssociateResourcesToCustomLineItemInput {
             fn update_http_builder(
                 input: &crate::input::BatchAssociateResourcesToCustomLineItemInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -505,7 +515,7 @@ impl BatchAssociateResourcesToCustomLineItemInput {
 pub mod batch_disassociate_resources_from_custom_line_item_input {
 
     /// A builder for [`BatchDisassociateResourcesFromCustomLineItemInput`](crate::input::BatchDisassociateResourcesFromCustomLineItemInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_arn: std::option::Option<std::string::String>,
         pub(crate) resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -563,7 +573,7 @@ pub mod batch_disassociate_resources_from_custom_line_item_input {
             self,
         ) -> Result<
             crate::input::BatchDisassociateResourcesFromCustomLineItemInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(
                 crate::input::BatchDisassociateResourcesFromCustomLineItemInput {
@@ -588,13 +598,13 @@ impl BatchDisassociateResourcesFromCustomLineItemInput {
             crate::operation::BatchDisassociateResourcesFromCustomLineItem,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::BatchDisassociateResourcesFromCustomLineItemInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(
                     output,
                     "/batch-disassociate-resources-from-custom-line-item"
@@ -606,8 +616,10 @@ impl BatchDisassociateResourcesFromCustomLineItemInput {
             fn update_http_builder(
                 input: &crate::input::BatchDisassociateResourcesFromCustomLineItemInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -691,7 +703,7 @@ impl BatchDisassociateResourcesFromCustomLineItemInput {
 pub mod create_billing_group_input {
 
     /// A builder for [`CreateBillingGroupInput`](crate::input::CreateBillingGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -804,8 +816,10 @@ pub mod create_billing_group_input {
         /// Consumes the builder and constructs a [`CreateBillingGroupInput`](crate::input::CreateBillingGroupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateBillingGroupInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateBillingGroupInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateBillingGroupInput {
                 client_token: self.client_token,
                 name: self.name,
@@ -815,6 +829,19 @@ pub mod create_billing_group_input {
                 description: self.description,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_token", &self.client_token);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("account_grouping", &self.account_grouping);
+            formatter.field("computation_preference", &self.computation_preference);
+            formatter.field("primary_account_id", &self.primary_account_id);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -831,7 +858,7 @@ impl CreateBillingGroupInput {
             crate::operation::CreateBillingGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -840,7 +867,7 @@ impl CreateBillingGroupInput {
             fn uri_base(
                 _input: &crate::input::CreateBillingGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/create-billing-group").expect("formatting should succeed");
                 Ok(())
             }
@@ -848,8 +875,10 @@ impl CreateBillingGroupInput {
             fn update_http_builder(
                 input: &crate::input::CreateBillingGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_create_billing_group(input, builder)?;
@@ -934,7 +963,7 @@ impl CreateBillingGroupInput {
 pub mod create_custom_line_item_input {
 
     /// A builder for [`CreateCustomLineItemInput`](crate::input::CreateCustomLineItemInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1048,8 +1077,10 @@ pub mod create_custom_line_item_input {
         /// Consumes the builder and constructs a [`CreateCustomLineItemInput`](crate::input::CreateCustomLineItemInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateCustomLineItemInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateCustomLineItemInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateCustomLineItemInput {
                 client_token: self.client_token,
                 name: self.name,
@@ -1059,6 +1090,19 @@ pub mod create_custom_line_item_input {
                 tags: self.tags,
                 charge_details: self.charge_details,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_token", &self.client_token);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("billing_group_arn", &self.billing_group_arn);
+            formatter.field("billing_period_range", &self.billing_period_range);
+            formatter.field("tags", &self.tags);
+            formatter.field("charge_details", &self.charge_details);
+            formatter.finish()
         }
     }
 }
@@ -1075,7 +1119,7 @@ impl CreateCustomLineItemInput {
             crate::operation::CreateCustomLineItem,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -1084,7 +1128,7 @@ impl CreateCustomLineItemInput {
             fn uri_base(
                 _input: &crate::input::CreateCustomLineItemInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/create-custom-line-item").expect("formatting should succeed");
                 Ok(())
             }
@@ -1092,8 +1136,10 @@ impl CreateCustomLineItemInput {
             fn update_http_builder(
                 input: &crate::input::CreateCustomLineItemInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -1181,7 +1227,7 @@ impl CreateCustomLineItemInput {
 pub mod create_pricing_plan_input {
 
     /// A builder for [`CreatePricingPlanInput`](crate::input::CreatePricingPlanInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1269,8 +1315,10 @@ pub mod create_pricing_plan_input {
         /// Consumes the builder and constructs a [`CreatePricingPlanInput`](crate::input::CreatePricingPlanInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreatePricingPlanInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreatePricingPlanInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreatePricingPlanInput {
                 client_token: self.client_token,
                 name: self.name,
@@ -1278,6 +1326,17 @@ pub mod create_pricing_plan_input {
                 pricing_rule_arns: self.pricing_rule_arns,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_token", &self.client_token);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("pricing_rule_arns", &self.pricing_rule_arns);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -1294,7 +1353,7 @@ impl CreatePricingPlanInput {
             crate::operation::CreatePricingPlan,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -1303,7 +1362,7 @@ impl CreatePricingPlanInput {
             fn uri_base(
                 _input: &crate::input::CreatePricingPlanInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/create-pricing-plan").expect("formatting should succeed");
                 Ok(())
             }
@@ -1311,8 +1370,10 @@ impl CreatePricingPlanInput {
             fn update_http_builder(
                 input: &crate::input::CreatePricingPlanInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_create_pricing_plan(input, builder)?;
@@ -1397,7 +1458,7 @@ impl CreatePricingPlanInput {
 pub mod create_pricing_rule_input {
 
     /// A builder for [`CreatePricingRuleInput`](crate::input::CreatePricingRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1515,8 +1576,10 @@ pub mod create_pricing_rule_input {
         /// Consumes the builder and constructs a [`CreatePricingRuleInput`](crate::input::CreatePricingRuleInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreatePricingRuleInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreatePricingRuleInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreatePricingRuleInput {
                 client_token: self.client_token,
                 name: self.name,
@@ -1527,6 +1590,20 @@ pub mod create_pricing_rule_input {
                 service: self.service,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_token", &self.client_token);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("scope", &self.scope);
+            formatter.field("r#type", &self.r#type);
+            formatter.field("modifier_percentage", &self.modifier_percentage);
+            formatter.field("service", &self.service);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -1543,7 +1620,7 @@ impl CreatePricingRuleInput {
             crate::operation::CreatePricingRule,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -1552,7 +1629,7 @@ impl CreatePricingRuleInput {
             fn uri_base(
                 _input: &crate::input::CreatePricingRuleInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/create-pricing-rule").expect("formatting should succeed");
                 Ok(())
             }
@@ -1560,8 +1637,10 @@ impl CreatePricingRuleInput {
             fn update_http_builder(
                 input: &crate::input::CreatePricingRuleInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_create_pricing_rule(input, builder)?;
@@ -1646,7 +1725,7 @@ impl CreatePricingRuleInput {
 pub mod delete_billing_group_input {
 
     /// A builder for [`DeleteBillingGroupInput`](crate::input::DeleteBillingGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
@@ -1664,8 +1743,10 @@ pub mod delete_billing_group_input {
         /// Consumes the builder and constructs a [`DeleteBillingGroupInput`](crate::input::DeleteBillingGroupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteBillingGroupInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteBillingGroupInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteBillingGroupInput { arn: self.arn })
         }
     }
@@ -1683,13 +1764,13 @@ impl DeleteBillingGroupInput {
             crate::operation::DeleteBillingGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBillingGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/delete-billing-group").expect("formatting should succeed");
                 Ok(())
             }
@@ -1697,8 +1778,10 @@ impl DeleteBillingGroupInput {
             fn update_http_builder(
                 input: &crate::input::DeleteBillingGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1782,7 +1865,7 @@ impl DeleteBillingGroupInput {
 pub mod delete_custom_line_item_input {
 
     /// A builder for [`DeleteCustomLineItemInput`](crate::input::DeleteCustomLineItemInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) billing_period_range:
@@ -1818,8 +1901,10 @@ pub mod delete_custom_line_item_input {
         /// Consumes the builder and constructs a [`DeleteCustomLineItemInput`](crate::input::DeleteCustomLineItemInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteCustomLineItemInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteCustomLineItemInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteCustomLineItemInput {
                 arn: self.arn,
                 billing_period_range: self.billing_period_range,
@@ -1840,13 +1925,13 @@ impl DeleteCustomLineItemInput {
             crate::operation::DeleteCustomLineItem,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteCustomLineItemInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/delete-custom-line-item").expect("formatting should succeed");
                 Ok(())
             }
@@ -1854,8 +1939,10 @@ impl DeleteCustomLineItemInput {
             fn update_http_builder(
                 input: &crate::input::DeleteCustomLineItemInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1941,7 +2028,7 @@ impl DeleteCustomLineItemInput {
 pub mod delete_pricing_plan_input {
 
     /// A builder for [`DeletePricingPlanInput`](crate::input::DeletePricingPlanInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
@@ -1959,8 +2046,10 @@ pub mod delete_pricing_plan_input {
         /// Consumes the builder and constructs a [`DeletePricingPlanInput`](crate::input::DeletePricingPlanInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeletePricingPlanInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeletePricingPlanInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeletePricingPlanInput { arn: self.arn })
         }
     }
@@ -1978,13 +2067,13 @@ impl DeletePricingPlanInput {
             crate::operation::DeletePricingPlan,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeletePricingPlanInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/delete-pricing-plan").expect("formatting should succeed");
                 Ok(())
             }
@@ -1992,8 +2081,10 @@ impl DeletePricingPlanInput {
             fn update_http_builder(
                 input: &crate::input::DeletePricingPlanInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2077,7 +2168,7 @@ impl DeletePricingPlanInput {
 pub mod delete_pricing_rule_input {
 
     /// A builder for [`DeletePricingRuleInput`](crate::input::DeletePricingRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
@@ -2095,8 +2186,10 @@ pub mod delete_pricing_rule_input {
         /// Consumes the builder and constructs a [`DeletePricingRuleInput`](crate::input::DeletePricingRuleInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeletePricingRuleInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeletePricingRuleInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeletePricingRuleInput { arn: self.arn })
         }
     }
@@ -2114,13 +2207,13 @@ impl DeletePricingRuleInput {
             crate::operation::DeletePricingRule,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeletePricingRuleInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/delete-pricing-rule").expect("formatting should succeed");
                 Ok(())
             }
@@ -2128,8 +2221,10 @@ impl DeletePricingRuleInput {
             fn update_http_builder(
                 input: &crate::input::DeletePricingRuleInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2213,7 +2308,7 @@ impl DeletePricingRuleInput {
 pub mod disassociate_accounts_input {
 
     /// A builder for [`DisassociateAccountsInput`](crate::input::DisassociateAccountsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2251,8 +2346,10 @@ pub mod disassociate_accounts_input {
         /// Consumes the builder and constructs a [`DisassociateAccountsInput`](crate::input::DisassociateAccountsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DisassociateAccountsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DisassociateAccountsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DisassociateAccountsInput {
                 arn: self.arn,
                 account_ids: self.account_ids,
@@ -2273,13 +2370,13 @@ impl DisassociateAccountsInput {
             crate::operation::DisassociateAccounts,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisassociateAccountsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/disassociate-accounts").expect("formatting should succeed");
                 Ok(())
             }
@@ -2287,8 +2384,10 @@ impl DisassociateAccountsInput {
             fn update_http_builder(
                 input: &crate::input::DisassociateAccountsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2372,7 +2471,7 @@ impl DisassociateAccountsInput {
 pub mod disassociate_pricing_rules_input {
 
     /// A builder for [`DisassociatePricingRulesInput`](crate::input::DisassociatePricingRulesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) pricing_rule_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2412,7 +2511,7 @@ pub mod disassociate_pricing_rules_input {
             self,
         ) -> Result<
             crate::input::DisassociatePricingRulesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DisassociatePricingRulesInput {
                 arn: self.arn,
@@ -2434,13 +2533,13 @@ impl DisassociatePricingRulesInput {
             crate::operation::DisassociatePricingRules,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisassociatePricingRulesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/disassociate-pricing-rules").expect("formatting should succeed");
                 Ok(())
             }
@@ -2448,8 +2547,10 @@ impl DisassociatePricingRulesInput {
             fn update_http_builder(
                 input: &crate::input::DisassociatePricingRulesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -2535,7 +2636,7 @@ impl DisassociatePricingRulesInput {
 pub mod list_account_associations_input {
 
     /// A builder for [`ListAccountAssociationsInput`](crate::input::ListAccountAssociationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) billing_period: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<crate::model::ListAccountAssociationsFilter>,
@@ -2589,7 +2690,7 @@ pub mod list_account_associations_input {
             self,
         ) -> Result<
             crate::input::ListAccountAssociationsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListAccountAssociationsInput {
                 billing_period: self.billing_period,
@@ -2612,13 +2713,13 @@ impl ListAccountAssociationsInput {
             crate::operation::ListAccountAssociations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListAccountAssociationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/list-account-associations").expect("formatting should succeed");
                 Ok(())
             }
@@ -2626,8 +2727,10 @@ impl ListAccountAssociationsInput {
             fn update_http_builder(
                 input: &crate::input::ListAccountAssociationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2713,7 +2816,7 @@ impl ListAccountAssociationsInput {
 pub mod list_billing_group_cost_reports_input {
 
     /// A builder for [`ListBillingGroupCostReportsInput`](crate::input::ListBillingGroupCostReportsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) billing_period: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2772,7 +2875,7 @@ pub mod list_billing_group_cost_reports_input {
             self,
         ) -> Result<
             crate::input::ListBillingGroupCostReportsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListBillingGroupCostReportsInput {
                 billing_period: self.billing_period,
@@ -2796,13 +2899,13 @@ impl ListBillingGroupCostReportsInput {
             crate::operation::ListBillingGroupCostReports,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListBillingGroupCostReportsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/list-billing-group-cost-reports")
                     .expect("formatting should succeed");
                 Ok(())
@@ -2811,8 +2914,10 @@ impl ListBillingGroupCostReportsInput {
             fn update_http_builder(
                 input: &crate::input::ListBillingGroupCostReportsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2895,7 +3000,7 @@ impl ListBillingGroupCostReportsInput {
 pub mod list_billing_groups_input {
 
     /// A builder for [`ListBillingGroupsInput`](crate::input::ListBillingGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) billing_period: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2952,8 +3057,10 @@ pub mod list_billing_groups_input {
         /// Consumes the builder and constructs a [`ListBillingGroupsInput`](crate::input::ListBillingGroupsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListBillingGroupsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListBillingGroupsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListBillingGroupsInput {
                 billing_period: self.billing_period,
                 max_results: self.max_results,
@@ -2976,13 +3083,13 @@ impl ListBillingGroupsInput {
             crate::operation::ListBillingGroups,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListBillingGroupsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/list-billing-groups").expect("formatting should succeed");
                 Ok(())
             }
@@ -2990,8 +3097,10 @@ impl ListBillingGroupsInput {
             fn update_http_builder(
                 input: &crate::input::ListBillingGroupsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3075,7 +3184,7 @@ impl ListBillingGroupsInput {
 pub mod list_custom_line_items_input {
 
     /// A builder for [`ListCustomLineItemsInput`](crate::input::ListCustomLineItemsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) billing_period: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3132,8 +3241,10 @@ pub mod list_custom_line_items_input {
         /// Consumes the builder and constructs a [`ListCustomLineItemsInput`](crate::input::ListCustomLineItemsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListCustomLineItemsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListCustomLineItemsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListCustomLineItemsInput {
                 billing_period: self.billing_period,
                 max_results: self.max_results,
@@ -3156,13 +3267,13 @@ impl ListCustomLineItemsInput {
             crate::operation::ListCustomLineItems,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListCustomLineItemsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/list-custom-line-items").expect("formatting should succeed");
                 Ok(())
             }
@@ -3170,8 +3281,10 @@ impl ListCustomLineItemsInput {
             fn update_http_builder(
                 input: &crate::input::ListCustomLineItemsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3257,7 +3370,7 @@ impl ListCustomLineItemsInput {
 pub mod list_pricing_plans_input {
 
     /// A builder for [`ListPricingPlansInput`](crate::input::ListPricingPlansInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) billing_period: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<crate::model::ListPricingPlansFilter>,
@@ -3314,8 +3427,10 @@ pub mod list_pricing_plans_input {
         /// Consumes the builder and constructs a [`ListPricingPlansInput`](crate::input::ListPricingPlansInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListPricingPlansInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListPricingPlansInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListPricingPlansInput {
                 billing_period: self.billing_period,
                 filters: self.filters,
@@ -3338,13 +3453,13 @@ impl ListPricingPlansInput {
             crate::operation::ListPricingPlans,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListPricingPlansInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/list-pricing-plans").expect("formatting should succeed");
                 Ok(())
             }
@@ -3352,8 +3467,10 @@ impl ListPricingPlansInput {
             fn update_http_builder(
                 input: &crate::input::ListPricingPlansInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3437,7 +3554,7 @@ impl ListPricingPlansInput {
 pub mod list_pricing_plans_associated_with_pricing_rule_input {
 
     /// A builder for [`ListPricingPlansAssociatedWithPricingRuleInput`](crate::input::ListPricingPlansAssociatedWithPricingRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) billing_period: std::option::Option<std::string::String>,
         pub(crate) pricing_rule_arn: std::option::Option<std::string::String>,
@@ -3496,7 +3613,7 @@ pub mod list_pricing_plans_associated_with_pricing_rule_input {
             self,
         ) -> Result<
             crate::input::ListPricingPlansAssociatedWithPricingRuleInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(
                 crate::input::ListPricingPlansAssociatedWithPricingRuleInput {
@@ -3522,13 +3639,13 @@ impl ListPricingPlansAssociatedWithPricingRuleInput {
             crate::operation::ListPricingPlansAssociatedWithPricingRule,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListPricingPlansAssociatedWithPricingRuleInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/list-pricing-plans-associated-with-pricing-rule")
                     .expect("formatting should succeed");
                 Ok(())
@@ -3537,8 +3654,10 @@ impl ListPricingPlansAssociatedWithPricingRuleInput {
             fn update_http_builder(
                 input: &crate::input::ListPricingPlansAssociatedWithPricingRuleInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3622,7 +3741,7 @@ impl ListPricingPlansAssociatedWithPricingRuleInput {
 pub mod list_pricing_rules_input {
 
     /// A builder for [`ListPricingRulesInput`](crate::input::ListPricingRulesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) billing_period: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<crate::model::ListPricingRulesFilter>,
@@ -3679,8 +3798,10 @@ pub mod list_pricing_rules_input {
         /// Consumes the builder and constructs a [`ListPricingRulesInput`](crate::input::ListPricingRulesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListPricingRulesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListPricingRulesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListPricingRulesInput {
                 billing_period: self.billing_period,
                 filters: self.filters,
@@ -3703,13 +3824,13 @@ impl ListPricingRulesInput {
             crate::operation::ListPricingRules,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListPricingRulesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/list-pricing-rules").expect("formatting should succeed");
                 Ok(())
             }
@@ -3717,8 +3838,10 @@ impl ListPricingRulesInput {
             fn update_http_builder(
                 input: &crate::input::ListPricingRulesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3802,7 +3925,7 @@ impl ListPricingRulesInput {
 pub mod list_pricing_rules_associated_to_pricing_plan_input {
 
     /// A builder for [`ListPricingRulesAssociatedToPricingPlanInput`](crate::input::ListPricingRulesAssociatedToPricingPlanInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) billing_period: std::option::Option<std::string::String>,
         pub(crate) pricing_plan_arn: std::option::Option<std::string::String>,
@@ -3861,7 +3984,7 @@ pub mod list_pricing_rules_associated_to_pricing_plan_input {
             self,
         ) -> Result<
             crate::input::ListPricingRulesAssociatedToPricingPlanInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListPricingRulesAssociatedToPricingPlanInput {
                 billing_period: self.billing_period,
@@ -3885,13 +4008,13 @@ impl ListPricingRulesAssociatedToPricingPlanInput {
             crate::operation::ListPricingRulesAssociatedToPricingPlan,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListPricingRulesAssociatedToPricingPlanInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/list-pricing-rules-associated-to-pricing-plan")
                     .expect("formatting should succeed");
                 Ok(())
@@ -3900,8 +4023,10 @@ impl ListPricingRulesAssociatedToPricingPlanInput {
             fn update_http_builder(
                 input: &crate::input::ListPricingRulesAssociatedToPricingPlanInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3984,7 +4109,7 @@ impl ListPricingRulesAssociatedToPricingPlanInput {
 pub mod list_resources_associated_to_custom_line_item_input {
 
     /// A builder for [`ListResourcesAssociatedToCustomLineItemInput`](crate::input::ListResourcesAssociatedToCustomLineItemInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) billing_period: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4058,7 +4183,7 @@ pub mod list_resources_associated_to_custom_line_item_input {
             self,
         ) -> Result<
             crate::input::ListResourcesAssociatedToCustomLineItemInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListResourcesAssociatedToCustomLineItemInput {
                 billing_period: self.billing_period,
@@ -4083,13 +4208,13 @@ impl ListResourcesAssociatedToCustomLineItemInput {
             crate::operation::ListResourcesAssociatedToCustomLineItem,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListResourcesAssociatedToCustomLineItemInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/list-resources-associated-to-custom-line-item")
                     .expect("formatting should succeed");
                 Ok(())
@@ -4098,8 +4223,10 @@ impl ListResourcesAssociatedToCustomLineItemInput {
             fn update_http_builder(
                 input: &crate::input::ListResourcesAssociatedToCustomLineItemInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4182,7 +4309,7 @@ impl ListResourcesAssociatedToCustomLineItemInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -4200,8 +4327,10 @@ pub mod list_tags_for_resource_input {
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
             })
@@ -4221,26 +4350,31 @@ impl ListTagsForResourceInput {
             crate::operation::ListTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.resource_arn;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_1, false);
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
                     .expect("formatting should succeed");
@@ -4250,8 +4384,10 @@ impl ListTagsForResourceInput {
             fn update_http_builder(
                 input: &crate::input::ListTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -4321,7 +4457,7 @@ impl ListTagsForResourceInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -4367,7 +4503,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
@@ -4389,26 +4525,31 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_2 = &_input.resource_arn;
-                let input_2 = input_2.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_2, false);
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_2,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
                     .expect("formatting should succeed");
@@ -4418,8 +4559,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4503,7 +4646,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4541,7 +4684,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
@@ -4563,26 +4706,31 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_3 = &_input.resource_arn;
-                let input_3 = input_3.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_3, false);
+                let input_3 = input_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_3,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
                     .expect("formatting should succeed");
@@ -4591,12 +4739,17 @@ impl UntagResourceInput {
             fn uri_query(
                 _input: &crate::input::UntagResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_4) = &_input.tag_keys {
-                    for inner_5 in inner_4 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_5));
-                    }
+                let inner_4 = &_input.tag_keys;
+                let inner_4 = inner_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_5 in inner_4 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_5));
                 }
                 Ok(())
             }
@@ -4604,8 +4757,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4676,7 +4831,7 @@ impl UntagResourceInput {
 pub mod update_billing_group_input {
 
     /// A builder for [`UpdateBillingGroupInput`](crate::input::UpdateBillingGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4747,8 +4902,10 @@ pub mod update_billing_group_input {
         /// Consumes the builder and constructs a [`UpdateBillingGroupInput`](crate::input::UpdateBillingGroupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateBillingGroupInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateBillingGroupInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateBillingGroupInput {
                 arn: self.arn,
                 name: self.name,
@@ -4756,6 +4913,17 @@ pub mod update_billing_group_input {
                 computation_preference: self.computation_preference,
                 description: self.description,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("arn", &self.arn);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("status", &self.status);
+            formatter.field("computation_preference", &self.computation_preference);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -4772,13 +4940,13 @@ impl UpdateBillingGroupInput {
             crate::operation::UpdateBillingGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateBillingGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/update-billing-group").expect("formatting should succeed");
                 Ok(())
             }
@@ -4786,8 +4954,10 @@ impl UpdateBillingGroupInput {
             fn update_http_builder(
                 input: &crate::input::UpdateBillingGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4871,7 +5041,7 @@ impl UpdateBillingGroupInput {
 pub mod update_custom_line_item_input {
 
     /// A builder for [`UpdateCustomLineItemInput`](crate::input::UpdateCustomLineItemInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4947,8 +5117,10 @@ pub mod update_custom_line_item_input {
         /// Consumes the builder and constructs a [`UpdateCustomLineItemInput`](crate::input::UpdateCustomLineItemInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateCustomLineItemInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateCustomLineItemInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateCustomLineItemInput {
                 arn: self.arn,
                 name: self.name,
@@ -4956,6 +5128,17 @@ pub mod update_custom_line_item_input {
                 charge_details: self.charge_details,
                 billing_period_range: self.billing_period_range,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("arn", &self.arn);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("charge_details", &self.charge_details);
+            formatter.field("billing_period_range", &self.billing_period_range);
+            formatter.finish()
         }
     }
 }
@@ -4972,13 +5155,13 @@ impl UpdateCustomLineItemInput {
             crate::operation::UpdateCustomLineItem,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateCustomLineItemInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/update-custom-line-item").expect("formatting should succeed");
                 Ok(())
             }
@@ -4986,8 +5169,10 @@ impl UpdateCustomLineItemInput {
             fn update_http_builder(
                 input: &crate::input::UpdateCustomLineItemInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5073,7 +5258,7 @@ impl UpdateCustomLineItemInput {
 pub mod update_pricing_plan_input {
 
     /// A builder for [`UpdatePricingPlanInput`](crate::input::UpdatePricingPlanInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5113,13 +5298,24 @@ pub mod update_pricing_plan_input {
         /// Consumes the builder and constructs a [`UpdatePricingPlanInput`](crate::input::UpdatePricingPlanInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdatePricingPlanInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdatePricingPlanInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdatePricingPlanInput {
                 arn: self.arn,
                 name: self.name,
                 description: self.description,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("arn", &self.arn);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -5136,13 +5332,13 @@ impl UpdatePricingPlanInput {
             crate::operation::UpdatePricingPlan,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdatePricingPlanInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/update-pricing-plan").expect("formatting should succeed");
                 Ok(())
             }
@@ -5150,8 +5346,10 @@ impl UpdatePricingPlanInput {
             fn update_http_builder(
                 input: &crate::input::UpdatePricingPlanInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -5235,7 +5433,7 @@ impl UpdatePricingPlanInput {
 pub mod update_pricing_rule_input {
 
     /// A builder for [`UpdatePricingRuleInput`](crate::input::UpdatePricingRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5300,8 +5498,10 @@ pub mod update_pricing_rule_input {
         /// Consumes the builder and constructs a [`UpdatePricingRuleInput`](crate::input::UpdatePricingRuleInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdatePricingRuleInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdatePricingRuleInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdatePricingRuleInput {
                 arn: self.arn,
                 name: self.name,
@@ -5309,6 +5509,17 @@ pub mod update_pricing_rule_input {
                 r#type: self.r#type,
                 modifier_percentage: self.modifier_percentage,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("arn", &self.arn);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("r#type", &self.r#type);
+            formatter.field("modifier_percentage", &self.modifier_percentage);
+            formatter.finish()
         }
     }
 }
@@ -5325,13 +5536,13 @@ impl UpdatePricingRuleInput {
             crate::operation::UpdatePricingRule,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdatePricingRuleInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/update-pricing-rule").expect("formatting should succeed");
                 Ok(())
             }
@@ -5339,8 +5550,10 @@ impl UpdatePricingRuleInput {
             fn update_http_builder(
                 input: &crate::input::UpdatePricingRuleInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -5422,7 +5635,7 @@ impl UpdatePricingRuleInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPricingRulesAssociatedToPricingPlanInput {
     /// <p> The billing period for which the pricing rule associations are to be listed. </p>
     #[doc(hidden)]
@@ -5455,20 +5668,10 @@ impl ListPricingRulesAssociatedToPricingPlanInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPricingRulesAssociatedToPricingPlanInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPricingRulesAssociatedToPricingPlanInput");
-        formatter.field("billing_period", &self.billing_period);
-        formatter.field("pricing_plan_arn", &self.pricing_plan_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPricingRulesInput {
     /// <p> The preferred billing period to get the pricing plan. </p>
     #[doc(hidden)]
@@ -5499,16 +5702,6 @@ impl ListPricingRulesInput {
     /// <p> The pagination token used on subsequent call to get pricing rules. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListPricingRulesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPricingRulesInput");
-        formatter.field("billing_period", &self.billing_period);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 
@@ -5596,7 +5789,7 @@ impl std::fmt::Debug for CreatePricingRuleInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePricingRuleInput {
     /// <p> The Amazon Resource Name (ARN) of the pricing rule you are deleting. </p>
     #[doc(hidden)]
@@ -5606,13 +5799,6 @@ impl DeletePricingRuleInput {
     /// <p> The Amazon Resource Name (ARN) of the pricing rule you are deleting. </p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for DeletePricingRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePricingRuleInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 
@@ -5672,7 +5858,7 @@ impl std::fmt::Debug for UpdatePricingRuleInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociatePricingRulesInput {
     /// <p> The pricing plan Amazon Resource Name (ARN) to disassociate pricing rules from. </p>
     #[doc(hidden)]
@@ -5691,18 +5877,10 @@ impl DisassociatePricingRulesInput {
         self.pricing_rule_arns.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociatePricingRulesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociatePricingRulesInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("pricing_rule_arns", &self.pricing_rule_arns);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociatePricingRulesInput {
     /// <p> The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated with. </p>
     #[doc(hidden)]
@@ -5721,18 +5899,10 @@ impl AssociatePricingRulesInput {
         self.pricing_rule_arns.as_deref()
     }
 }
-impl std::fmt::Debug for AssociatePricingRulesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociatePricingRulesInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("pricing_rule_arns", &self.pricing_rule_arns);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPricingPlansAssociatedWithPricingRuleInput {
     /// <p> The pricing plan billing period for which associations will be listed. </p>
     #[doc(hidden)]
@@ -5765,20 +5935,10 @@ impl ListPricingPlansAssociatedWithPricingRuleInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPricingPlansAssociatedWithPricingRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPricingPlansAssociatedWithPricingRuleInput");
-        formatter.field("billing_period", &self.billing_period);
-        formatter.field("pricing_rule_arn", &self.pricing_rule_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPricingPlansInput {
     /// <p>The preferred billing period to get pricing plan. </p>
     #[doc(hidden)]
@@ -5809,16 +5969,6 @@ impl ListPricingPlansInput {
     /// <p>The pagination token used on subsequent call to get pricing plans. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListPricingPlansInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPricingPlansInput");
-        formatter.field("billing_period", &self.billing_period);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 
@@ -5882,7 +6032,7 @@ impl std::fmt::Debug for CreatePricingPlanInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePricingPlanInput {
     /// <p>The Amazon Resource Name (ARN) of the pricing plan you're deleting. </p>
     #[doc(hidden)]
@@ -5892,13 +6042,6 @@ impl DeletePricingPlanInput {
     /// <p>The Amazon Resource Name (ARN) of the pricing plan you're deleting. </p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for DeletePricingPlanInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePricingPlanInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 
@@ -5942,7 +6085,7 @@ impl std::fmt::Debug for UpdatePricingPlanInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResourcesAssociatedToCustomLineItemInput {
     /// <p> The billing period for which the resource associations will be listed. </p>
     #[doc(hidden)]
@@ -5984,21 +6127,10 @@ impl ListResourcesAssociatedToCustomLineItemInput {
         self.filters.as_ref()
     }
 }
-impl std::fmt::Debug for ListResourcesAssociatedToCustomLineItemInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResourcesAssociatedToCustomLineItemInput");
-        formatter.field("billing_period", &self.billing_period);
-        formatter.field("arn", &self.arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDisassociateResourcesFromCustomLineItemInput {
     /// <p> A percentage custom line item ARN to disassociate the resources from. </p>
     #[doc(hidden)]
@@ -6026,19 +6158,10 @@ impl BatchDisassociateResourcesFromCustomLineItemInput {
         self.billing_period_range.as_ref()
     }
 }
-impl std::fmt::Debug for BatchDisassociateResourcesFromCustomLineItemInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDisassociateResourcesFromCustomLineItemInput");
-        formatter.field("target_arn", &self.target_arn);
-        formatter.field("resource_arns", &self.resource_arns);
-        formatter.field("billing_period_range", &self.billing_period_range);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchAssociateResourcesToCustomLineItemInput {
     /// <p> A percentage custom line item ARN to associate the resources to. </p>
     #[doc(hidden)]
@@ -6066,19 +6189,10 @@ impl BatchAssociateResourcesToCustomLineItemInput {
         self.billing_period_range.as_ref()
     }
 }
-impl std::fmt::Debug for BatchAssociateResourcesToCustomLineItemInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchAssociateResourcesToCustomLineItemInput");
-        formatter.field("target_arn", &self.target_arn);
-        formatter.field("resource_arns", &self.resource_arns);
-        formatter.field("billing_period_range", &self.billing_period_range);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCustomLineItemsInput {
     /// <p> The preferred billing period to get custom line items (FFLIs). </p>
     #[doc(hidden)]
@@ -6109,16 +6223,6 @@ impl ListCustomLineItemsInput {
     /// <p>A <code>ListCustomLineItemsFilter</code> that specifies the custom line item names and/or billing group Amazon Resource Names (ARNs) to retrieve FFLI information.</p>
     pub fn filters(&self) -> std::option::Option<&crate::model::ListCustomLineItemsFilter> {
         self.filters.as_ref()
-    }
-}
-impl std::fmt::Debug for ListCustomLineItemsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCustomLineItemsInput");
-        formatter.field("billing_period", &self.billing_period);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
     }
 }
 
@@ -6202,7 +6306,7 @@ impl std::fmt::Debug for CreateCustomLineItemInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCustomLineItemInput {
     /// <p> The ARN of the custom line item to be deleted. </p>
     #[doc(hidden)]
@@ -6221,14 +6325,6 @@ impl DeleteCustomLineItemInput {
         &self,
     ) -> std::option::Option<&crate::model::CustomLineItemBillingPeriodRange> {
         self.billing_period_range.as_ref()
-    }
-}
-impl std::fmt::Debug for DeleteCustomLineItemInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCustomLineItemInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("billing_period_range", &self.billing_period_range);
-        formatter.finish()
     }
 }
 
@@ -6292,7 +6388,7 @@ impl std::fmt::Debug for UpdateCustomLineItemInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateAccountsInput {
     /// <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs will disassociate from. </p>
     #[doc(hidden)]
@@ -6311,18 +6407,10 @@ impl DisassociateAccountsInput {
         self.account_ids.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateAccountsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateAccountsInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("account_ids", &self.account_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateAccountsInput {
     /// <p> The Amazon Resource Name (ARN) of the billing group that associates the array of account IDs. </p>
     #[doc(hidden)]
@@ -6341,18 +6429,10 @@ impl AssociateAccountsInput {
         self.account_ids.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateAccountsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateAccountsInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("account_ids", &self.account_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBillingGroupsInput {
     /// <p>The preferred billing period to get billing groups. </p>
     #[doc(hidden)]
@@ -6383,16 +6463,6 @@ impl ListBillingGroupsInput {
     /// <p>A <code>ListBillingGroupsFilter</code> that specifies the billing group and pricing plan to retrieve billing group information. </p>
     pub fn filters(&self) -> std::option::Option<&crate::model::ListBillingGroupsFilter> {
         self.filters.as_ref()
-    }
-}
-impl std::fmt::Debug for ListBillingGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBillingGroupsInput");
-        formatter.field("billing_period", &self.billing_period);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
     }
 }
 
@@ -6474,7 +6544,7 @@ impl std::fmt::Debug for CreateBillingGroupInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBillingGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the billing group you're deleting.</p>
     #[doc(hidden)]
@@ -6484,13 +6554,6 @@ impl DeleteBillingGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the billing group you're deleting.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteBillingGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBillingGroupInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 
@@ -6552,7 +6615,7 @@ impl std::fmt::Debug for UpdateBillingGroupInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the resource to which to delete tags. </p>
     #[doc(hidden)]
@@ -6571,18 +6634,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the resource to which to add tags. </p>
     #[doc(hidden)]
@@ -6605,18 +6660,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p> The Amazon Resource Name (ARN) that identifies the resource to list the tags. </p>
     #[doc(hidden)]
@@ -6628,17 +6675,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBillingGroupCostReportsInput {
     /// <p>The preferred billing period for your report. </p>
     #[doc(hidden)]
@@ -6671,20 +6711,10 @@ impl ListBillingGroupCostReportsInput {
         self.filters.as_ref()
     }
 }
-impl std::fmt::Debug for ListBillingGroupCostReportsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBillingGroupCostReportsInput");
-        formatter.field("billing_period", &self.billing_period);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAccountAssociationsInput {
     /// <p> The preferred billing period to get account associations. </p>
     #[doc(hidden)]
@@ -6714,14 +6744,5 @@ impl ListAccountAssociationsInput {
     /// <p> The pagination token used on subsequent calls to retrieve accounts. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListAccountAssociationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAccountAssociationsInput");
-        formatter.field("billing_period", &self.billing_period);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }

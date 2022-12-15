@@ -86,6 +86,7 @@ use aws_smithy_async::future::timeout::TimedOutError;
 use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep};
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::result::ConnectorError;
+use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_smithy_types::retry::ErrorKind;
 use http::Uri;
 use hyper::client::connect::{Connected, Connection};
@@ -177,7 +178,7 @@ fn to_connector_error(err: hyper::Error) -> ConnectorError {
     else if err.is_incomplete_message() {
         ConnectorError::other(err.into(), Some(ErrorKind::TransientError))
     } else {
-        tracing::warn!(err = ?err, "unrecognized error from Hyper. If this error should be retried, please file an issue.");
+        tracing::warn!(err = %DisplayErrorContext(&err), "unrecognized error from Hyper. If this error should be retried, please file an issue.");
         ConnectorError::other(err.into(), None)
     }
 }
@@ -534,6 +535,7 @@ mod timeout_middleware {
         use aws_smithy_async::assert_elapsed;
         use aws_smithy_async::rt::sleep::TokioSleep;
         use aws_smithy_http::body::SdkBody;
+        use aws_smithy_types::error::display::DisplayErrorContext;
         use aws_smithy_types::timeout::TimeoutConfig;
         use std::sync::Arc;
         use std::time::Duration;
@@ -575,9 +577,12 @@ mod timeout_middleware {
                 "expected resp.is_timeout() to be true but it was false, resp == {:?}",
                 resp
             );
-            assert_eq!(
-                format!("{}", resp),
-                "timeout: error trying to connect: HTTP connect timeout occurred after 1s"
+            let message = DisplayErrorContext(&resp).to_string();
+            let expected =
+                "timeout: error trying to connect: HTTP connect timeout occurred after 1s";
+            assert!(
+                message.contains(expected),
+                "expected '{message}' to contain '{expected}'"
             );
             assert_elapsed!(now, Duration::from_secs(1));
         }
@@ -611,9 +616,11 @@ mod timeout_middleware {
                 "expected resp.is_timeout() to be true but it was false, resp == {:?}",
                 resp
             );
-            assert_eq!(
-                format!("{}", resp),
-                "timeout: HTTP read timeout occurred after 2s"
+            let message = format!("{}", DisplayErrorContext(&resp));
+            let expected = "timeout: HTTP read timeout occurred after 2s";
+            assert!(
+                message.contains(expected),
+                "expected '{message}' to contain '{expected}'"
             );
             assert_elapsed!(now, Duration::from_secs(2));
         }

@@ -2,7 +2,7 @@
 
 /// <p>Displays errors that occurred during validation of the resource policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationErrorsEntry {
     /// <p>Checks the name of the policy.</p>
     #[doc(hidden)]
@@ -21,19 +21,11 @@ impl ValidationErrorsEntry {
         self.error_message.as_deref()
     }
 }
-impl std::fmt::Debug for ValidationErrorsEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationErrorsEntry");
-        formatter.field("check_name", &self.check_name);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
-    }
-}
 /// See [`ValidationErrorsEntry`](crate::model::ValidationErrorsEntry).
 pub mod validation_errors_entry {
 
     /// A builder for [`ValidationErrorsEntry`](crate::model::ValidationErrorsEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) check_name: std::option::Option<std::string::String>,
         pub(crate) error_message: std::option::Option<std::string::String>,
@@ -80,7 +72,7 @@ impl ValidationErrorsEntry {
 
 /// <p>A structure that contains information about a tag.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key identifier, or name, of the tag.</p>
     #[doc(hidden)]
@@ -99,19 +91,11 @@ impl Tag {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -155,7 +139,7 @@ impl Tag {
 
 /// <p>A structure that defines the rotation configuration for the secret.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RotationRulesType {
     /// <p>The number of days between automatic scheduled rotations of the secret. You can use this value to check that your secret meets your compliance guidelines for how often secrets must be rotated.</p>
     /// <p>In <code>DescribeSecret</code> and <code>ListSecrets</code>, this value is calculated from the rotation schedule after every successful rotation. In <code>RotateSecret</code>, you can set the rotation schedule in <code>RotationRules</code> with <code>AutomaticallyAfterDays</code> or <code>ScheduleExpression</code>, but not both.</p>
@@ -187,20 +171,11 @@ impl RotationRulesType {
         self.schedule_expression.as_deref()
     }
 }
-impl std::fmt::Debug for RotationRulesType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RotationRulesType");
-        formatter.field("automatically_after_days", &self.automatically_after_days);
-        formatter.field("duration", &self.duration);
-        formatter.field("schedule_expression", &self.schedule_expression);
-        formatter.finish()
-    }
-}
 /// See [`RotationRulesType`](crate::model::RotationRulesType).
 pub mod rotation_rules_type {
 
     /// A builder for [`RotationRulesType`](crate::model::RotationRulesType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automatically_after_days: std::option::Option<i64>,
         pub(crate) duration: std::option::Option<std::string::String>,
@@ -265,7 +240,7 @@ impl RotationRulesType {
 
 /// <p>A replication object consisting of a <code>RegionReplicationStatus</code> object and includes a Region, KMSKeyId, status, and status message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicationStatusType {
     /// <p>The Region where replication occurs.</p>
     #[doc(hidden)]
@@ -305,22 +280,11 @@ impl ReplicationStatusType {
         self.last_accessed_date.as_ref()
     }
 }
-impl std::fmt::Debug for ReplicationStatusType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicationStatusType");
-        formatter.field("region", &self.region);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("last_accessed_date", &self.last_accessed_date);
-        formatter.finish()
-    }
-}
 /// See [`ReplicationStatusType`](crate::model::ReplicationStatusType).
 pub mod replication_status_type {
 
     /// A builder for [`ReplicationStatusType`](crate::model::ReplicationStatusType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) region: std::option::Option<std::string::String>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
@@ -404,6 +368,42 @@ impl ReplicationStatusType {
     }
 }
 
+/// When writing a match expression against `StatusType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let statustype = unimplemented!();
+/// match statustype {
+///     StatusType::Failed => { /* ... */ },
+///     StatusType::InProgress => { /* ... */ },
+///     StatusType::InSync => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `statustype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `StatusType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `StatusType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `StatusType::NewFeature` is defined.
+/// Specifically, when `statustype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `StatusType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -422,8 +422,8 @@ pub enum StatusType {
     InProgress,
     #[allow(missing_docs)] // documentation missing in model
     InSync,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for StatusType {
     fn from(s: &str) -> Self {
@@ -431,7 +431,7 @@ impl std::convert::From<&str> for StatusType {
             "Failed" => StatusType::Failed,
             "InProgress" => StatusType::InProgress,
             "InSync" => StatusType::InSync,
-            other => StatusType::Unknown(other.to_owned()),
+            other => StatusType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -449,11 +449,11 @@ impl StatusType {
             StatusType::Failed => "Failed",
             StatusType::InProgress => "InProgress",
             StatusType::InSync => "InSync",
-            StatusType::Unknown(s) => s.as_ref(),
+            StatusType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Failed", "InProgress", "InSync"]
     }
 }
@@ -465,7 +465,7 @@ impl AsRef<str> for StatusType {
 
 /// <p>A custom type that specifies a <code>Region</code> and the <code>KmsKeyId</code> for a replica secret.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicaRegionType {
     /// <p>A Region code. For a list of Region codes, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints">Name and code of Regions</a>.</p>
     #[doc(hidden)]
@@ -484,19 +484,11 @@ impl ReplicaRegionType {
         self.kms_key_id.as_deref()
     }
 }
-impl std::fmt::Debug for ReplicaRegionType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicaRegionType");
-        formatter.field("region", &self.region);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.finish()
-    }
-}
 /// See [`ReplicaRegionType`](crate::model::ReplicaRegionType).
 pub mod replica_region_type {
 
     /// A builder for [`ReplicaRegionType`](crate::model::ReplicaRegionType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) region: std::option::Option<std::string::String>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
@@ -540,7 +532,7 @@ impl ReplicaRegionType {
 
 /// <p>A structure that contains information about one version of a secret.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SecretVersionsListEntry {
     /// <p>The unique version identifier of this version of the secret.</p>
     #[doc(hidden)]
@@ -580,22 +572,11 @@ impl SecretVersionsListEntry {
         self.kms_key_ids.as_deref()
     }
 }
-impl std::fmt::Debug for SecretVersionsListEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SecretVersionsListEntry");
-        formatter.field("version_id", &self.version_id);
-        formatter.field("version_stages", &self.version_stages);
-        formatter.field("last_accessed_date", &self.last_accessed_date);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("kms_key_ids", &self.kms_key_ids);
-        formatter.finish()
-    }
-}
 /// See [`SecretVersionsListEntry`](crate::model::SecretVersionsListEntry).
 pub mod secret_versions_list_entry {
 
     /// A builder for [`SecretVersionsListEntry`](crate::model::SecretVersionsListEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version_id: std::option::Option<std::string::String>,
         pub(crate) version_stages: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -699,7 +680,7 @@ impl SecretVersionsListEntry {
 
 /// <p>A structure that contains the details about a secret. It does not include the encrypted <code>SecretString</code> and <code>SecretBinary</code> values. To get those values, use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html">GetSecretValue</a> .</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SecretListEntry {
     /// <p>The Amazon Resource Name (ARN) of the secret.</p>
     #[doc(hidden)]
@@ -826,33 +807,11 @@ impl SecretListEntry {
         self.primary_region.as_deref()
     }
 }
-impl std::fmt::Debug for SecretListEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SecretListEntry");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("rotation_enabled", &self.rotation_enabled);
-        formatter.field("rotation_lambda_arn", &self.rotation_lambda_arn);
-        formatter.field("rotation_rules", &self.rotation_rules);
-        formatter.field("last_rotated_date", &self.last_rotated_date);
-        formatter.field("last_changed_date", &self.last_changed_date);
-        formatter.field("last_accessed_date", &self.last_accessed_date);
-        formatter.field("deleted_date", &self.deleted_date);
-        formatter.field("tags", &self.tags);
-        formatter.field("secret_versions_to_stages", &self.secret_versions_to_stages);
-        formatter.field("owning_service", &self.owning_service);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("primary_region", &self.primary_region);
-        formatter.finish()
-    }
-}
 /// See [`SecretListEntry`](crate::model::SecretListEntry).
 pub mod secret_list_entry {
 
     /// A builder for [`SecretListEntry`](crate::model::SecretListEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1119,6 +1078,41 @@ impl SecretListEntry {
     }
 }
 
+/// When writing a match expression against `SortOrderType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let sortordertype = unimplemented!();
+/// match sortordertype {
+///     SortOrderType::Asc => { /* ... */ },
+///     SortOrderType::Desc => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `sortordertype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SortOrderType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SortOrderType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SortOrderType::NewFeature` is defined.
+/// Specifically, when `sortordertype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SortOrderType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1135,15 +1129,15 @@ pub enum SortOrderType {
     Asc,
     #[allow(missing_docs)] // documentation missing in model
     Desc,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SortOrderType {
     fn from(s: &str) -> Self {
         match s {
             "asc" => SortOrderType::Asc,
             "desc" => SortOrderType::Desc,
-            other => SortOrderType::Unknown(other.to_owned()),
+            other => SortOrderType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1160,11 +1154,11 @@ impl SortOrderType {
         match self {
             SortOrderType::Asc => "asc",
             SortOrderType::Desc => "desc",
-            SortOrderType::Unknown(s) => s.as_ref(),
+            SortOrderType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["asc", "desc"]
     }
 }
@@ -1176,7 +1170,7 @@ impl AsRef<str> for SortOrderType {
 
 /// <p>Allows you to add filters when you use the search function in Secrets Manager. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_search-secret.html">Find secrets in Secrets Manager</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Filter {
     /// <p>The following are keys you can use:</p>
     /// <ul>
@@ -1213,19 +1207,11 @@ impl Filter {
         self.values.as_deref()
     }
 }
-impl std::fmt::Debug for Filter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Filter");
-        formatter.field("key", &self.key);
-        formatter.field("values", &self.values);
-        formatter.finish()
-    }
-}
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
 
     /// A builder for [`Filter`](crate::model::Filter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<crate::model::FilterNameStringType>,
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1297,6 +1283,45 @@ impl Filter {
     }
 }
 
+/// When writing a match expression against `FilterNameStringType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let filternamestringtype = unimplemented!();
+/// match filternamestringtype {
+///     FilterNameStringType::All => { /* ... */ },
+///     FilterNameStringType::Description => { /* ... */ },
+///     FilterNameStringType::Name => { /* ... */ },
+///     FilterNameStringType::PrimaryRegion => { /* ... */ },
+///     FilterNameStringType::TagKey => { /* ... */ },
+///     FilterNameStringType::TagValue => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `filternamestringtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `FilterNameStringType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `FilterNameStringType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `FilterNameStringType::NewFeature` is defined.
+/// Specifically, when `filternamestringtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `FilterNameStringType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1321,8 +1346,8 @@ pub enum FilterNameStringType {
     TagKey,
     #[allow(missing_docs)] // documentation missing in model
     TagValue,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for FilterNameStringType {
     fn from(s: &str) -> Self {
@@ -1333,7 +1358,9 @@ impl std::convert::From<&str> for FilterNameStringType {
             "primary-region" => FilterNameStringType::PrimaryRegion,
             "tag-key" => FilterNameStringType::TagKey,
             "tag-value" => FilterNameStringType::TagValue,
-            other => FilterNameStringType::Unknown(other.to_owned()),
+            other => {
+                FilterNameStringType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -1354,11 +1381,11 @@ impl FilterNameStringType {
             FilterNameStringType::PrimaryRegion => "primary-region",
             FilterNameStringType::TagKey => "tag-key",
             FilterNameStringType::TagValue => "tag-value",
-            FilterNameStringType::Unknown(s) => s.as_ref(),
+            FilterNameStringType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "all",
             "description",

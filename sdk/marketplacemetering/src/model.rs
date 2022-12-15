@@ -3,7 +3,7 @@
 /// <p>Usage allocations allow you to split usage into buckets by tags.</p>
 /// <p>Each <code>UsageAllocation</code> indicates the usage quantity for a specific set of tags.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UsageAllocation {
     /// <p>The total quantity allocated to this bucket of usage.</p>
     #[doc(hidden)]
@@ -22,19 +22,11 @@ impl UsageAllocation {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for UsageAllocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UsageAllocation");
-        formatter.field("allocated_usage_quantity", &self.allocated_usage_quantity);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`UsageAllocation`](crate::model::UsageAllocation).
 pub mod usage_allocation {
 
     /// A builder for [`UsageAllocation`](crate::model::UsageAllocation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allocated_usage_quantity: std::option::Option<i32>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -87,7 +79,7 @@ impl UsageAllocation {
 
 /// <p>Metadata assigned to an allocation. Each tag is made up of a <code>key</code> and a <code>value</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>One part of a key-value pair that makes up a <code>tag</code>. A <code>key</code> is a label that acts like a category for the specific tag values.</p>
     #[doc(hidden)]
@@ -106,19 +98,11 @@ impl Tag {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -163,7 +147,7 @@ impl Tag {
 /// <p>A <code>UsageRecord</code> indicates a quantity of usage for a given product, customer, dimension and time.</p>
 /// <p>Multiple requests with the same <code>UsageRecords</code> as input will be de-duplicated to prevent double charges.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UsageRecord {
     /// <p>Timestamp, in UTC, for which the usage is being reported.</p>
     /// <p>Your application can meter usage for up to one hour in the past. Make sure the <code>timestamp</code> value is not before the start of the software usage.</p>
@@ -205,22 +189,11 @@ impl UsageRecord {
         self.usage_allocations.as_deref()
     }
 }
-impl std::fmt::Debug for UsageRecord {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UsageRecord");
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("customer_identifier", &self.customer_identifier);
-        formatter.field("dimension", &self.dimension);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("usage_allocations", &self.usage_allocations);
-        formatter.finish()
-    }
-}
 /// See [`UsageRecord`](crate::model::UsageRecord).
 pub mod usage_record {
 
     /// A builder for [`UsageRecord`](crate::model::UsageRecord).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) customer_identifier: std::option::Option<std::string::String>,
@@ -318,7 +291,7 @@ impl UsageRecord {
 
 /// <p>A <code>UsageRecordResult</code> indicates the status of a given <code>UsageRecord</code> processed by <code>BatchMeterUsage</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UsageRecordResult {
     /// <p>The <code>UsageRecord</code> that was part of the <code>BatchMeterUsage</code> request.</p>
     #[doc(hidden)]
@@ -364,20 +337,11 @@ impl UsageRecordResult {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for UsageRecordResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UsageRecordResult");
-        formatter.field("usage_record", &self.usage_record);
-        formatter.field("metering_record_id", &self.metering_record_id);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 /// See [`UsageRecordResult`](crate::model::UsageRecordResult).
 pub mod usage_record_result {
 
     /// A builder for [`UsageRecordResult`](crate::model::UsageRecordResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) usage_record: std::option::Option<crate::model::UsageRecord>,
         pub(crate) metering_record_id: std::option::Option<std::string::String>,
@@ -460,6 +424,42 @@ impl UsageRecordResult {
     }
 }
 
+/// When writing a match expression against `UsageRecordResultStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let usagerecordresultstatus = unimplemented!();
+/// match usagerecordresultstatus {
+///     UsageRecordResultStatus::CustomerNotSubscribed => { /* ... */ },
+///     UsageRecordResultStatus::DuplicateRecord => { /* ... */ },
+///     UsageRecordResultStatus::Success => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `usagerecordresultstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `UsageRecordResultStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `UsageRecordResultStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `UsageRecordResultStatus::NewFeature` is defined.
+/// Specifically, when `usagerecordresultstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `UsageRecordResultStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -478,8 +478,8 @@ pub enum UsageRecordResultStatus {
     DuplicateRecord,
     #[allow(missing_docs)] // documentation missing in model
     Success,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for UsageRecordResultStatus {
     fn from(s: &str) -> Self {
@@ -487,7 +487,9 @@ impl std::convert::From<&str> for UsageRecordResultStatus {
             "CustomerNotSubscribed" => UsageRecordResultStatus::CustomerNotSubscribed,
             "DuplicateRecord" => UsageRecordResultStatus::DuplicateRecord,
             "Success" => UsageRecordResultStatus::Success,
-            other => UsageRecordResultStatus::Unknown(other.to_owned()),
+            other => UsageRecordResultStatus::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -505,11 +507,11 @@ impl UsageRecordResultStatus {
             UsageRecordResultStatus::CustomerNotSubscribed => "CustomerNotSubscribed",
             UsageRecordResultStatus::DuplicateRecord => "DuplicateRecord",
             UsageRecordResultStatus::Success => "Success",
-            UsageRecordResultStatus::Unknown(s) => s.as_ref(),
+            UsageRecordResultStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CustomerNotSubscribed", "DuplicateRecord", "Success"]
     }
 }

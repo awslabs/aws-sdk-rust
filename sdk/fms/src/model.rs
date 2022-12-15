@@ -2,7 +2,7 @@
 
 /// <p>A collection of key:value pairs associated with an Amazon Web Services resource. The key:value pair can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each Amazon Web Services resource. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>Part of the key:value pair that defines a tag. You can use a tag key to describe a category of information, such as "customer." Tag keys are case-sensitive.</p>
     #[doc(hidden)]
@@ -21,19 +21,11 @@ impl Tag {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -77,7 +69,7 @@ impl Tag {
 
 /// <p>An Firewall Manager protocols list.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProtocolsListData {
     /// <p>The ID of the Firewall Manager protocols list.</p>
     #[doc(hidden)]
@@ -137,24 +129,11 @@ impl ProtocolsListData {
         self.previous_protocols_list.as_ref()
     }
 }
-impl std::fmt::Debug for ProtocolsListData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProtocolsListData");
-        formatter.field("list_id", &self.list_id);
-        formatter.field("list_name", &self.list_name);
-        formatter.field("list_update_token", &self.list_update_token);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.field("protocols_list", &self.protocols_list);
-        formatter.field("previous_protocols_list", &self.previous_protocols_list);
-        formatter.finish()
-    }
-}
 /// See [`ProtocolsListData`](crate::model::ProtocolsListData).
 pub mod protocols_list_data {
 
     /// A builder for [`ProtocolsListData`](crate::model::ProtocolsListData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) list_id: std::option::Option<std::string::String>,
         pub(crate) list_name: std::option::Option<std::string::String>,
@@ -293,7 +272,7 @@ impl ProtocolsListData {
 
 /// <p>An Firewall Manager policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Policy {
     /// <p>The ID of the Firewall Manager policy.</p>
     #[doc(hidden)]
@@ -442,35 +421,11 @@ impl Policy {
         self.exclude_map.as_ref()
     }
 }
-impl std::fmt::Debug for Policy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Policy");
-        formatter.field("policy_id", &self.policy_id);
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("policy_update_token", &self.policy_update_token);
-        formatter.field(
-            "security_service_policy_data",
-            &self.security_service_policy_data,
-        );
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_type_list", &self.resource_type_list);
-        formatter.field("resource_tags", &self.resource_tags);
-        formatter.field("exclude_resource_tags", &self.exclude_resource_tags);
-        formatter.field("remediation_enabled", &self.remediation_enabled);
-        formatter.field(
-            "delete_unused_fm_managed_resources",
-            &self.delete_unused_fm_managed_resources,
-        );
-        formatter.field("include_map", &self.include_map);
-        formatter.field("exclude_map", &self.exclude_map);
-        formatter.finish()
-    }
-}
 /// See [`Policy`](crate::model::Policy).
 pub mod policy {
 
     /// A builder for [`Policy`](crate::model::Policy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_id: std::option::Option<std::string::String>,
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -748,6 +703,41 @@ impl Policy {
     }
 }
 
+/// When writing a match expression against `CustomerPolicyScopeIdType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let customerpolicyscopeidtype = unimplemented!();
+/// match customerpolicyscopeidtype {
+///     CustomerPolicyScopeIdType::Account => { /* ... */ },
+///     CustomerPolicyScopeIdType::OrgUnit => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `customerpolicyscopeidtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CustomerPolicyScopeIdType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CustomerPolicyScopeIdType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CustomerPolicyScopeIdType::NewFeature` is defined.
+/// Specifically, when `customerpolicyscopeidtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CustomerPolicyScopeIdType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -764,15 +754,17 @@ pub enum CustomerPolicyScopeIdType {
     Account,
     #[allow(missing_docs)] // documentation missing in model
     OrgUnit,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CustomerPolicyScopeIdType {
     fn from(s: &str) -> Self {
         match s {
             "ACCOUNT" => CustomerPolicyScopeIdType::Account,
             "ORG_UNIT" => CustomerPolicyScopeIdType::OrgUnit,
-            other => CustomerPolicyScopeIdType::Unknown(other.to_owned()),
+            other => CustomerPolicyScopeIdType::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -789,11 +781,11 @@ impl CustomerPolicyScopeIdType {
         match self {
             CustomerPolicyScopeIdType::Account => "ACCOUNT",
             CustomerPolicyScopeIdType::OrgUnit => "ORG_UNIT",
-            CustomerPolicyScopeIdType::Unknown(s) => s.as_ref(),
+            CustomerPolicyScopeIdType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACCOUNT", "ORG_UNIT"]
     }
 }
@@ -805,7 +797,7 @@ impl AsRef<str> for CustomerPolicyScopeIdType {
 
 /// <p>The resource tags that Firewall Manager uses to determine if a particular resource should be included or excluded from the Firewall Manager policy. Tags enable you to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value. Firewall Manager combines the tags with "AND" so that, if you add more than one tag to a policy scope, a resource must have all the specified tags to be included or excluded. For more information, see <a href="https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html">Working with Tag Editor</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceTag {
     /// <p>The resource tag key.</p>
     #[doc(hidden)]
@@ -824,19 +816,11 @@ impl ResourceTag {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for ResourceTag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceTag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`ResourceTag`](crate::model::ResourceTag).
 pub mod resource_tag {
 
     /// A builder for [`ResourceTag`](crate::model::ResourceTag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -880,7 +864,7 @@ impl ResourceTag {
 
 /// <p>Details about the security service that is being used to protect the resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SecurityServicePolicyData {
     /// <p>The service that the policy is using to protect the resources. This specifies the type of policy that is created, either an WAF policy, a Shield Advanced policy, or a security group policy. For security group policies, Firewall Manager supports one security group for each common policy and for each content audit policy. This is an adjustable limit that you can increase by contacting Amazon Web Services Support.</p>
     #[doc(hidden)]
@@ -946,20 +930,11 @@ impl SecurityServicePolicyData {
         self.policy_option.as_ref()
     }
 }
-impl std::fmt::Debug for SecurityServicePolicyData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SecurityServicePolicyData");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("managed_service_data", &self.managed_service_data);
-        formatter.field("policy_option", &self.policy_option);
-        formatter.finish()
-    }
-}
 /// See [`SecurityServicePolicyData`](crate::model::SecurityServicePolicyData).
 pub mod security_service_policy_data {
 
     /// A builder for [`SecurityServicePolicyData`](crate::model::SecurityServicePolicyData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::SecurityServiceType>,
         pub(crate) managed_service_data: std::option::Option<std::string::String>,
@@ -1064,7 +1039,7 @@ impl SecurityServicePolicyData {
 
 /// <p>Contains the Network Firewall firewall policy options to configure the policy's deployment model and third-party firewall policy settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyOption {
     /// <p>Defines the deployment model to use for the firewall policy.</p>
     #[doc(hidden)]
@@ -1087,22 +1062,11 @@ impl PolicyOption {
         self.third_party_firewall_policy.as_ref()
     }
 }
-impl std::fmt::Debug for PolicyOption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyOption");
-        formatter.field("network_firewall_policy", &self.network_firewall_policy);
-        formatter.field(
-            "third_party_firewall_policy",
-            &self.third_party_firewall_policy,
-        );
-        formatter.finish()
-    }
-}
 /// See [`PolicyOption`](crate::model::PolicyOption).
 pub mod policy_option {
 
     /// A builder for [`PolicyOption`](crate::model::PolicyOption).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_firewall_policy:
             std::option::Option<crate::model::NetworkFirewallPolicy>,
@@ -1160,7 +1124,7 @@ impl PolicyOption {
 
 /// <p>Configures the deployment model for the third-party firewall.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThirdPartyFirewallPolicy {
     /// <p>Defines the deployment model to use for the third-party firewall policy.</p>
     #[doc(hidden)]
@@ -1174,18 +1138,11 @@ impl ThirdPartyFirewallPolicy {
         self.firewall_deployment_model.as_ref()
     }
 }
-impl std::fmt::Debug for ThirdPartyFirewallPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThirdPartyFirewallPolicy");
-        formatter.field("firewall_deployment_model", &self.firewall_deployment_model);
-        formatter.finish()
-    }
-}
 /// See [`ThirdPartyFirewallPolicy`](crate::model::ThirdPartyFirewallPolicy).
 pub mod third_party_firewall_policy {
 
     /// A builder for [`ThirdPartyFirewallPolicy`](crate::model::ThirdPartyFirewallPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_deployment_model:
             std::option::Option<crate::model::FirewallDeploymentModel>,
@@ -1222,6 +1179,41 @@ impl ThirdPartyFirewallPolicy {
     }
 }
 
+/// When writing a match expression against `FirewallDeploymentModel`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let firewalldeploymentmodel = unimplemented!();
+/// match firewalldeploymentmodel {
+///     FirewallDeploymentModel::Centralized => { /* ... */ },
+///     FirewallDeploymentModel::Distributed => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `firewalldeploymentmodel` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `FirewallDeploymentModel::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `FirewallDeploymentModel::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `FirewallDeploymentModel::NewFeature` is defined.
+/// Specifically, when `firewalldeploymentmodel` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `FirewallDeploymentModel::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1238,15 +1230,17 @@ pub enum FirewallDeploymentModel {
     Centralized,
     #[allow(missing_docs)] // documentation missing in model
     Distributed,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for FirewallDeploymentModel {
     fn from(s: &str) -> Self {
         match s {
             "CENTRALIZED" => FirewallDeploymentModel::Centralized,
             "DISTRIBUTED" => FirewallDeploymentModel::Distributed,
-            other => FirewallDeploymentModel::Unknown(other.to_owned()),
+            other => FirewallDeploymentModel::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -1263,11 +1257,11 @@ impl FirewallDeploymentModel {
         match self {
             FirewallDeploymentModel::Centralized => "CENTRALIZED",
             FirewallDeploymentModel::Distributed => "DISTRIBUTED",
-            FirewallDeploymentModel::Unknown(s) => s.as_ref(),
+            FirewallDeploymentModel::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CENTRALIZED", "DISTRIBUTED"]
     }
 }
@@ -1279,7 +1273,7 @@ impl AsRef<str> for FirewallDeploymentModel {
 
 /// <p>Configures the firewall policy deployment model of Network Firewall. For information about Network Firewall deployment models, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/architectures.html">Network Firewall example architectures with routing</a> in the <i>Network Firewall Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkFirewallPolicy {
     /// <p>Defines the deployment model to use for the firewall policy. To use a distributed model, set <a href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PolicyOption.html">PolicyOption</a> to <code>NULL</code>.</p>
     #[doc(hidden)]
@@ -1293,18 +1287,11 @@ impl NetworkFirewallPolicy {
         self.firewall_deployment_model.as_ref()
     }
 }
-impl std::fmt::Debug for NetworkFirewallPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkFirewallPolicy");
-        formatter.field("firewall_deployment_model", &self.firewall_deployment_model);
-        formatter.finish()
-    }
-}
 /// See [`NetworkFirewallPolicy`](crate::model::NetworkFirewallPolicy).
 pub mod network_firewall_policy {
 
     /// A builder for [`NetworkFirewallPolicy`](crate::model::NetworkFirewallPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_deployment_model:
             std::option::Option<crate::model::FirewallDeploymentModel>,
@@ -1341,6 +1328,48 @@ impl NetworkFirewallPolicy {
     }
 }
 
+/// When writing a match expression against `SecurityServiceType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let securityservicetype = unimplemented!();
+/// match securityservicetype {
+///     SecurityServiceType::DnsFirewall => { /* ... */ },
+///     SecurityServiceType::NetworkFirewall => { /* ... */ },
+///     SecurityServiceType::SecurityGroupsCommon => { /* ... */ },
+///     SecurityServiceType::SecurityGroupsContentAudit => { /* ... */ },
+///     SecurityServiceType::SecurityGroupsUsageAudit => { /* ... */ },
+///     SecurityServiceType::ShieldAdvanced => { /* ... */ },
+///     SecurityServiceType::ThirdPartyFirewall => { /* ... */ },
+///     SecurityServiceType::Waf => { /* ... */ },
+///     SecurityServiceType::Wafv2 => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `securityservicetype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SecurityServiceType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SecurityServiceType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SecurityServiceType::NewFeature` is defined.
+/// Specifically, when `securityservicetype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SecurityServiceType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1371,8 +1400,8 @@ pub enum SecurityServiceType {
     Waf,
     #[allow(missing_docs)] // documentation missing in model
     Wafv2,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SecurityServiceType {
     fn from(s: &str) -> Self {
@@ -1386,7 +1415,9 @@ impl std::convert::From<&str> for SecurityServiceType {
             "THIRD_PARTY_FIREWALL" => SecurityServiceType::ThirdPartyFirewall,
             "WAF" => SecurityServiceType::Waf,
             "WAFV2" => SecurityServiceType::Wafv2,
-            other => SecurityServiceType::Unknown(other.to_owned()),
+            other => {
+                SecurityServiceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -1410,11 +1441,11 @@ impl SecurityServiceType {
             SecurityServiceType::ThirdPartyFirewall => "THIRD_PARTY_FIREWALL",
             SecurityServiceType::Waf => "WAF",
             SecurityServiceType::Wafv2 => "WAFV2",
-            SecurityServiceType::Unknown(s) => s.as_ref(),
+            SecurityServiceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DNS_FIREWALL",
             "NETWORK_FIREWALL",
@@ -1436,7 +1467,7 @@ impl AsRef<str> for SecurityServiceType {
 
 /// <p>An Firewall Manager applications list.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AppsListData {
     /// <p>The ID of the Firewall Manager applications list.</p>
     #[doc(hidden)]
@@ -1496,24 +1527,11 @@ impl AppsListData {
         self.previous_apps_list.as_ref()
     }
 }
-impl std::fmt::Debug for AppsListData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AppsListData");
-        formatter.field("list_id", &self.list_id);
-        formatter.field("list_name", &self.list_name);
-        formatter.field("list_update_token", &self.list_update_token);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.field("apps_list", &self.apps_list);
-        formatter.field("previous_apps_list", &self.previous_apps_list);
-        formatter.finish()
-    }
-}
 /// See [`AppsListData`](crate::model::AppsListData).
 pub mod apps_list_data {
 
     /// A builder for [`AppsListData`](crate::model::AppsListData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) list_id: std::option::Option<std::string::String>,
         pub(crate) list_name: std::option::Option<std::string::String>,
@@ -1652,7 +1670,7 @@ impl AppsListData {
 
 /// <p>An individual Firewall Manager application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct App {
     /// <p>The application's name.</p>
     #[doc(hidden)]
@@ -1678,20 +1696,11 @@ impl App {
         self.port
     }
 }
-impl std::fmt::Debug for App {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("App");
-        formatter.field("app_name", &self.app_name);
-        formatter.field("protocol", &self.protocol);
-        formatter.field("port", &self.port);
-        formatter.finish()
-    }
-}
 /// See [`App`](crate::model::App).
 pub mod app {
 
     /// A builder for [`App`](crate::model::App).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_name: std::option::Option<std::string::String>,
         pub(crate) protocol: std::option::Option<std::string::String>,
@@ -1747,7 +1756,7 @@ impl App {
 
 /// <p>Configures the third-party firewall's firewall policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThirdPartyFirewallFirewallPolicy {
     /// <p>The ID of the specified firewall policy.</p>
     #[doc(hidden)]
@@ -1766,19 +1775,11 @@ impl ThirdPartyFirewallFirewallPolicy {
         self.firewall_policy_name.as_deref()
     }
 }
-impl std::fmt::Debug for ThirdPartyFirewallFirewallPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThirdPartyFirewallFirewallPolicy");
-        formatter.field("firewall_policy_id", &self.firewall_policy_id);
-        formatter.field("firewall_policy_name", &self.firewall_policy_name);
-        formatter.finish()
-    }
-}
 /// See [`ThirdPartyFirewallFirewallPolicy`](crate::model::ThirdPartyFirewallFirewallPolicy).
 pub mod third_party_firewall_firewall_policy {
 
     /// A builder for [`ThirdPartyFirewallFirewallPolicy`](crate::model::ThirdPartyFirewallFirewallPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_policy_id: std::option::Option<std::string::String>,
         pub(crate) firewall_policy_name: std::option::Option<std::string::String>,
@@ -1826,6 +1827,40 @@ impl ThirdPartyFirewallFirewallPolicy {
     }
 }
 
+/// When writing a match expression against `ThirdPartyFirewall`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let thirdpartyfirewall = unimplemented!();
+/// match thirdpartyfirewall {
+///     ThirdPartyFirewall::PaloAltoNetworksCloudNgfw => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `thirdpartyfirewall` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ThirdPartyFirewall::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ThirdPartyFirewall::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ThirdPartyFirewall::NewFeature` is defined.
+/// Specifically, when `thirdpartyfirewall` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ThirdPartyFirewall::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1840,14 +1875,16 @@ impl ThirdPartyFirewallFirewallPolicy {
 pub enum ThirdPartyFirewall {
     #[allow(missing_docs)] // documentation missing in model
     PaloAltoNetworksCloudNgfw,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ThirdPartyFirewall {
     fn from(s: &str) -> Self {
         match s {
             "PALO_ALTO_NETWORKS_CLOUD_NGFW" => ThirdPartyFirewall::PaloAltoNetworksCloudNgfw,
-            other => ThirdPartyFirewall::Unknown(other.to_owned()),
+            other => {
+                ThirdPartyFirewall::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -1863,11 +1900,11 @@ impl ThirdPartyFirewall {
     pub fn as_str(&self) -> &str {
         match self {
             ThirdPartyFirewall::PaloAltoNetworksCloudNgfw => "PALO_ALTO_NETWORKS_CLOUD_NGFW",
-            ThirdPartyFirewall::Unknown(s) => s.as_ref(),
+            ThirdPartyFirewall::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PALO_ALTO_NETWORKS_CLOUD_NGFW"]
     }
 }
@@ -1879,7 +1916,7 @@ impl AsRef<str> for ThirdPartyFirewall {
 
 /// <p>Details of the Firewall Manager protocols list.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProtocolsListDataSummary {
     /// <p>The Amazon Resource Name (ARN) of the specified protocols list.</p>
     #[doc(hidden)]
@@ -1912,21 +1949,11 @@ impl ProtocolsListDataSummary {
         self.protocols_list.as_deref()
     }
 }
-impl std::fmt::Debug for ProtocolsListDataSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProtocolsListDataSummary");
-        formatter.field("list_arn", &self.list_arn);
-        formatter.field("list_id", &self.list_id);
-        formatter.field("list_name", &self.list_name);
-        formatter.field("protocols_list", &self.protocols_list);
-        formatter.finish()
-    }
-}
 /// See [`ProtocolsListDataSummary`](crate::model::ProtocolsListDataSummary).
 pub mod protocols_list_data_summary {
 
     /// A builder for [`ProtocolsListDataSummary`](crate::model::ProtocolsListDataSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) list_arn: std::option::Option<std::string::String>,
         pub(crate) list_id: std::option::Option<std::string::String>,
@@ -2003,7 +2030,7 @@ impl ProtocolsListDataSummary {
 
 /// <p>Details of the Firewall Manager policy. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicySummary {
     /// <p>The Amazon Resource Name (ARN) of the specified policy.</p>
     #[doc(hidden)]
@@ -2061,27 +2088,11 @@ impl PolicySummary {
         self.delete_unused_fm_managed_resources
     }
 }
-impl std::fmt::Debug for PolicySummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicySummary");
-        formatter.field("policy_arn", &self.policy_arn);
-        formatter.field("policy_id", &self.policy_id);
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("security_service_type", &self.security_service_type);
-        formatter.field("remediation_enabled", &self.remediation_enabled);
-        formatter.field(
-            "delete_unused_fm_managed_resources",
-            &self.delete_unused_fm_managed_resources,
-        );
-        formatter.finish()
-    }
-}
 /// See [`PolicySummary`](crate::model::PolicySummary).
 pub mod policy_summary {
 
     /// A builder for [`PolicySummary`](crate::model::PolicySummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_arn: std::option::Option<std::string::String>,
         pub(crate) policy_id: std::option::Option<std::string::String>,
@@ -2200,7 +2211,7 @@ impl PolicySummary {
 
 /// <p>Indicates whether the account is compliant with the specified policy. An account is considered noncompliant if it includes resources that are not protected by the policy, for WAF and Shield Advanced policies, or that are noncompliant with the policy, for security group policies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyComplianceStatus {
     /// <p>The Amazon Web Services account that created the Firewall Manager policy.</p>
     #[doc(hidden)]
@@ -2260,24 +2271,11 @@ impl PolicyComplianceStatus {
         self.issue_info_map.as_ref()
     }
 }
-impl std::fmt::Debug for PolicyComplianceStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyComplianceStatus");
-        formatter.field("policy_owner", &self.policy_owner);
-        formatter.field("policy_id", &self.policy_id);
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("member_account", &self.member_account);
-        formatter.field("evaluation_results", &self.evaluation_results);
-        formatter.field("last_updated", &self.last_updated);
-        formatter.field("issue_info_map", &self.issue_info_map);
-        formatter.finish()
-    }
-}
 /// See [`PolicyComplianceStatus`](crate::model::PolicyComplianceStatus).
 pub mod policy_compliance_status {
 
     /// A builder for [`PolicyComplianceStatus`](crate::model::PolicyComplianceStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_owner: std::option::Option<std::string::String>,
         pub(crate) policy_id: std::option::Option<std::string::String>,
@@ -2412,6 +2410,43 @@ impl PolicyComplianceStatus {
     }
 }
 
+/// When writing a match expression against `DependentServiceName`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let dependentservicename = unimplemented!();
+/// match dependentservicename {
+///     DependentServiceName::AwsConfig => { /* ... */ },
+///     DependentServiceName::AwsShieldAdvanced => { /* ... */ },
+///     DependentServiceName::AwsVirtualPrivateCloud => { /* ... */ },
+///     DependentServiceName::Awswaf => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `dependentservicename` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DependentServiceName::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DependentServiceName::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DependentServiceName::NewFeature` is defined.
+/// Specifically, when `dependentservicename` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DependentServiceName::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2432,8 +2467,8 @@ pub enum DependentServiceName {
     AwsVirtualPrivateCloud,
     #[allow(missing_docs)] // documentation missing in model
     Awswaf,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DependentServiceName {
     fn from(s: &str) -> Self {
@@ -2442,7 +2477,9 @@ impl std::convert::From<&str> for DependentServiceName {
             "AWSSHIELD_ADVANCED" => DependentServiceName::AwsShieldAdvanced,
             "AWSVPC" => DependentServiceName::AwsVirtualPrivateCloud,
             "AWSWAF" => DependentServiceName::Awswaf,
-            other => DependentServiceName::Unknown(other.to_owned()),
+            other => {
+                DependentServiceName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -2461,11 +2498,11 @@ impl DependentServiceName {
             DependentServiceName::AwsShieldAdvanced => "AWSSHIELD_ADVANCED",
             DependentServiceName::AwsVirtualPrivateCloud => "AWSVPC",
             DependentServiceName::Awswaf => "AWSWAF",
-            DependentServiceName::Unknown(s) => s.as_ref(),
+            DependentServiceName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWSCONFIG", "AWSSHIELD_ADVANCED", "AWSVPC", "AWSWAF"]
     }
 }
@@ -2477,7 +2514,7 @@ impl AsRef<str> for DependentServiceName {
 
 /// <p>Describes the compliance status for the account. An account is considered noncompliant if it includes resources that are not protected by the specified policy or that don't comply with the policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EvaluationResult {
     /// <p>Describes an Amazon Web Services account's compliance with the Firewall Manager policy.</p>
     #[doc(hidden)]
@@ -2505,20 +2542,11 @@ impl EvaluationResult {
         self.evaluation_limit_exceeded
     }
 }
-impl std::fmt::Debug for EvaluationResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EvaluationResult");
-        formatter.field("compliance_status", &self.compliance_status);
-        formatter.field("violator_count", &self.violator_count);
-        formatter.field("evaluation_limit_exceeded", &self.evaluation_limit_exceeded);
-        formatter.finish()
-    }
-}
 /// See [`EvaluationResult`](crate::model::EvaluationResult).
 pub mod evaluation_result {
 
     /// A builder for [`EvaluationResult`](crate::model::EvaluationResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compliance_status: std::option::Option<crate::model::PolicyComplianceStatusType>,
         pub(crate) violator_count: std::option::Option<i64>,
@@ -2578,6 +2606,41 @@ impl EvaluationResult {
     }
 }
 
+/// When writing a match expression against `PolicyComplianceStatusType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let policycompliancestatustype = unimplemented!();
+/// match policycompliancestatustype {
+///     PolicyComplianceStatusType::Compliant => { /* ... */ },
+///     PolicyComplianceStatusType::NonCompliant => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `policycompliancestatustype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PolicyComplianceStatusType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PolicyComplianceStatusType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PolicyComplianceStatusType::NewFeature` is defined.
+/// Specifically, when `policycompliancestatustype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PolicyComplianceStatusType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2594,15 +2657,17 @@ pub enum PolicyComplianceStatusType {
     Compliant,
     #[allow(missing_docs)] // documentation missing in model
     NonCompliant,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PolicyComplianceStatusType {
     fn from(s: &str) -> Self {
         match s {
             "COMPLIANT" => PolicyComplianceStatusType::Compliant,
             "NON_COMPLIANT" => PolicyComplianceStatusType::NonCompliant,
-            other => PolicyComplianceStatusType::Unknown(other.to_owned()),
+            other => PolicyComplianceStatusType::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -2619,11 +2684,11 @@ impl PolicyComplianceStatusType {
         match self {
             PolicyComplianceStatusType::Compliant => "COMPLIANT",
             PolicyComplianceStatusType::NonCompliant => "NON_COMPLIANT",
-            PolicyComplianceStatusType::Unknown(s) => s.as_ref(),
+            PolicyComplianceStatusType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLIANT", "NON_COMPLIANT"]
     }
 }
@@ -2635,7 +2700,7 @@ impl AsRef<str> for PolicyComplianceStatusType {
 
 /// <p>Details of the Firewall Manager applications list.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AppsListDataSummary {
     /// <p>The Amazon Resource Name (ARN) of the applications list.</p>
     #[doc(hidden)]
@@ -2668,21 +2733,11 @@ impl AppsListDataSummary {
         self.apps_list.as_deref()
     }
 }
-impl std::fmt::Debug for AppsListDataSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AppsListDataSummary");
-        formatter.field("list_arn", &self.list_arn);
-        formatter.field("list_id", &self.list_id);
-        formatter.field("list_name", &self.list_name);
-        formatter.field("apps_list", &self.apps_list);
-        formatter.finish()
-    }
-}
 /// See [`AppsListDataSummary`](crate::model::AppsListDataSummary).
 pub mod apps_list_data_summary {
 
     /// A builder for [`AppsListDataSummary`](crate::model::AppsListDataSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) list_arn: std::option::Option<std::string::String>,
         pub(crate) list_id: std::option::Option<std::string::String>,
@@ -2759,7 +2814,7 @@ impl AppsListDataSummary {
 
 /// <p>Violations for a resource based on the specified Firewall Manager policy and Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ViolationDetail {
     /// <p>The ID of the Firewall Manager policy that the violation details were requested for.</p>
     #[doc(hidden)]
@@ -2813,24 +2868,11 @@ impl ViolationDetail {
         self.resource_description.as_deref()
     }
 }
-impl std::fmt::Debug for ViolationDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ViolationDetail");
-        formatter.field("policy_id", &self.policy_id);
-        formatter.field("member_account", &self.member_account);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_violations", &self.resource_violations);
-        formatter.field("resource_tags", &self.resource_tags);
-        formatter.field("resource_description", &self.resource_description);
-        formatter.finish()
-    }
-}
 /// See [`ViolationDetail`](crate::model::ViolationDetail).
 pub mod violation_detail {
 
     /// A builder for [`ViolationDetail`](crate::model::ViolationDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_id: std::option::Option<std::string::String>,
         pub(crate) member_account: std::option::Option<std::string::String>,
@@ -2962,7 +3004,7 @@ impl ViolationDetail {
 
 /// <p>Violation detail based on resource type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceViolation {
     /// <p>Violation detail for security groups.</p>
     #[doc(hidden)]
@@ -3205,109 +3247,11 @@ impl ResourceViolation {
         self.firewall_subnet_missing_vpc_endpoint_violation.as_ref()
     }
 }
-impl std::fmt::Debug for ResourceViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceViolation");
-        formatter.field(
-            "aws_vpc_security_group_violation",
-            &self.aws_vpc_security_group_violation,
-        );
-        formatter.field(
-            "aws_ec2_network_interface_violation",
-            &self.aws_ec2_network_interface_violation,
-        );
-        formatter.field(
-            "aws_ec2_instance_violation",
-            &self.aws_ec2_instance_violation,
-        );
-        formatter.field(
-            "network_firewall_missing_firewall_violation",
-            &self.network_firewall_missing_firewall_violation,
-        );
-        formatter.field(
-            "network_firewall_missing_subnet_violation",
-            &self.network_firewall_missing_subnet_violation,
-        );
-        formatter.field(
-            "network_firewall_missing_expected_rt_violation",
-            &self.network_firewall_missing_expected_rt_violation,
-        );
-        formatter.field(
-            "network_firewall_policy_modified_violation",
-            &self.network_firewall_policy_modified_violation,
-        );
-        formatter.field(
-            "network_firewall_internet_traffic_not_inspected_violation",
-            &self.network_firewall_internet_traffic_not_inspected_violation,
-        );
-        formatter.field(
-            "network_firewall_invalid_route_configuration_violation",
-            &self.network_firewall_invalid_route_configuration_violation,
-        );
-        formatter.field(
-            "network_firewall_black_hole_route_detected_violation",
-            &self.network_firewall_black_hole_route_detected_violation,
-        );
-        formatter.field(
-            "network_firewall_unexpected_firewall_routes_violation",
-            &self.network_firewall_unexpected_firewall_routes_violation,
-        );
-        formatter.field(
-            "network_firewall_unexpected_gateway_routes_violation",
-            &self.network_firewall_unexpected_gateway_routes_violation,
-        );
-        formatter.field(
-            "network_firewall_missing_expected_routes_violation",
-            &self.network_firewall_missing_expected_routes_violation,
-        );
-        formatter.field(
-            "dns_rule_group_priority_conflict_violation",
-            &self.dns_rule_group_priority_conflict_violation,
-        );
-        formatter.field(
-            "dns_duplicate_rule_group_violation",
-            &self.dns_duplicate_rule_group_violation,
-        );
-        formatter.field(
-            "dns_rule_group_limit_exceeded_violation",
-            &self.dns_rule_group_limit_exceeded_violation,
-        );
-        formatter.field(
-            "possible_remediation_actions",
-            &self.possible_remediation_actions,
-        );
-        formatter.field(
-            "firewall_subnet_is_out_of_scope_violation",
-            &self.firewall_subnet_is_out_of_scope_violation,
-        );
-        formatter.field(
-            "route_has_out_of_scope_endpoint_violation",
-            &self.route_has_out_of_scope_endpoint_violation,
-        );
-        formatter.field(
-            "third_party_firewall_missing_firewall_violation",
-            &self.third_party_firewall_missing_firewall_violation,
-        );
-        formatter.field(
-            "third_party_firewall_missing_subnet_violation",
-            &self.third_party_firewall_missing_subnet_violation,
-        );
-        formatter.field(
-            "third_party_firewall_missing_expected_route_table_violation",
-            &self.third_party_firewall_missing_expected_route_table_violation,
-        );
-        formatter.field(
-            "firewall_subnet_missing_vpc_endpoint_violation",
-            &self.firewall_subnet_missing_vpc_endpoint_violation,
-        );
-        formatter.finish()
-    }
-}
 /// See [`ResourceViolation`](crate::model::ResourceViolation).
 pub mod resource_violation {
 
     /// A builder for [`ResourceViolation`](crate::model::ResourceViolation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_vpc_security_group_violation:
             std::option::Option<crate::model::AwsVpcSecurityGroupViolation>,
@@ -3794,7 +3738,7 @@ impl ResourceViolation {
 
 /// <p>The violation details for a firewall subnet's VPC endpoint that's deleted or missing.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FirewallSubnetMissingVpcEndpointViolation {
     /// <p>The ID of the firewall that this VPC endpoint is associated with.</p>
     #[doc(hidden)]
@@ -3827,24 +3771,11 @@ impl FirewallSubnetMissingVpcEndpointViolation {
         self.subnet_availability_zone_id.as_deref()
     }
 }
-impl std::fmt::Debug for FirewallSubnetMissingVpcEndpointViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FirewallSubnetMissingVpcEndpointViolation");
-        formatter.field("firewall_subnet_id", &self.firewall_subnet_id);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("subnet_availability_zone", &self.subnet_availability_zone);
-        formatter.field(
-            "subnet_availability_zone_id",
-            &self.subnet_availability_zone_id,
-        );
-        formatter.finish()
-    }
-}
 /// See [`FirewallSubnetMissingVpcEndpointViolation`](crate::model::FirewallSubnetMissingVpcEndpointViolation).
 pub mod firewall_subnet_missing_vpc_endpoint_violation {
 
     /// A builder for [`FirewallSubnetMissingVpcEndpointViolation`](crate::model::FirewallSubnetMissingVpcEndpointViolation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_subnet_id: std::option::Option<std::string::String>,
         pub(crate) vpc_id: std::option::Option<std::string::String>,
@@ -3924,7 +3855,7 @@ impl FirewallSubnetMissingVpcEndpointViolation {
 
 /// <p>The violation details for a third-party firewall that's not associated with an Firewall Manager managed route table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThirdPartyFirewallMissingExpectedRouteTableViolation {
     /// <p>The ID of the third-party firewall or VPC resource that's causing the violation.</p>
     #[doc(hidden)]
@@ -3964,22 +3895,11 @@ impl ThirdPartyFirewallMissingExpectedRouteTableViolation {
         self.expected_route_table.as_deref()
     }
 }
-impl std::fmt::Debug for ThirdPartyFirewallMissingExpectedRouteTableViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThirdPartyFirewallMissingExpectedRouteTableViolation");
-        formatter.field("violation_target", &self.violation_target);
-        formatter.field("vpc", &self.vpc);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("current_route_table", &self.current_route_table);
-        formatter.field("expected_route_table", &self.expected_route_table);
-        formatter.finish()
-    }
-}
 /// See [`ThirdPartyFirewallMissingExpectedRouteTableViolation`](crate::model::ThirdPartyFirewallMissingExpectedRouteTableViolation).
 pub mod third_party_firewall_missing_expected_route_table_violation {
 
     /// A builder for [`ThirdPartyFirewallMissingExpectedRouteTableViolation`](crate::model::ThirdPartyFirewallMissingExpectedRouteTableViolation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
         pub(crate) vpc: std::option::Option<std::string::String>,
@@ -4073,7 +3993,7 @@ impl ThirdPartyFirewallMissingExpectedRouteTableViolation {
 
 /// <p>The violation details for a third-party firewall for an Availability Zone that's missing the Firewall Manager managed subnet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThirdPartyFirewallMissingSubnetViolation {
     /// <p>The ID of the third-party firewall or VPC resource that's causing the violation.</p>
     #[doc(hidden)]
@@ -4106,21 +4026,11 @@ impl ThirdPartyFirewallMissingSubnetViolation {
         self.target_violation_reason.as_deref()
     }
 }
-impl std::fmt::Debug for ThirdPartyFirewallMissingSubnetViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThirdPartyFirewallMissingSubnetViolation");
-        formatter.field("violation_target", &self.violation_target);
-        formatter.field("vpc", &self.vpc);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("target_violation_reason", &self.target_violation_reason);
-        formatter.finish()
-    }
-}
 /// See [`ThirdPartyFirewallMissingSubnetViolation`](crate::model::ThirdPartyFirewallMissingSubnetViolation).
 pub mod third_party_firewall_missing_subnet_violation {
 
     /// A builder for [`ThirdPartyFirewallMissingSubnetViolation`](crate::model::ThirdPartyFirewallMissingSubnetViolation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
         pub(crate) vpc: std::option::Option<std::string::String>,
@@ -4197,7 +4107,7 @@ impl ThirdPartyFirewallMissingSubnetViolation {
 
 /// <p>The violation details about a third-party firewall's subnet that doesn't have a Firewall Manager managed firewall in its VPC.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThirdPartyFirewallMissingFirewallViolation {
     /// <p>The ID of the third-party firewall that's causing the violation.</p>
     #[doc(hidden)]
@@ -4230,21 +4140,11 @@ impl ThirdPartyFirewallMissingFirewallViolation {
         self.target_violation_reason.as_deref()
     }
 }
-impl std::fmt::Debug for ThirdPartyFirewallMissingFirewallViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThirdPartyFirewallMissingFirewallViolation");
-        formatter.field("violation_target", &self.violation_target);
-        formatter.field("vpc", &self.vpc);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("target_violation_reason", &self.target_violation_reason);
-        formatter.finish()
-    }
-}
 /// See [`ThirdPartyFirewallMissingFirewallViolation`](crate::model::ThirdPartyFirewallMissingFirewallViolation).
 pub mod third_party_firewall_missing_firewall_violation {
 
     /// A builder for [`ThirdPartyFirewallMissingFirewallViolation`](crate::model::ThirdPartyFirewallMissingFirewallViolation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
         pub(crate) vpc: std::option::Option<std::string::String>,
@@ -4321,7 +4221,7 @@ impl ThirdPartyFirewallMissingFirewallViolation {
 
 /// <p>Contains details about the route endpoint that violates the policy scope.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RouteHasOutOfScopeEndpointViolation {
     /// <p>The ID of the subnet associated with the route that violates the policy scope.</p>
     #[doc(hidden)]
@@ -4410,38 +4310,11 @@ impl RouteHasOutOfScopeEndpointViolation {
         self.internet_gateway_routes.as_deref()
     }
 }
-impl std::fmt::Debug for RouteHasOutOfScopeEndpointViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RouteHasOutOfScopeEndpointViolation");
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("route_table_id", &self.route_table_id);
-        formatter.field("violating_routes", &self.violating_routes);
-        formatter.field("subnet_availability_zone", &self.subnet_availability_zone);
-        formatter.field(
-            "subnet_availability_zone_id",
-            &self.subnet_availability_zone_id,
-        );
-        formatter.field(
-            "current_firewall_subnet_route_table",
-            &self.current_firewall_subnet_route_table,
-        );
-        formatter.field("firewall_subnet_id", &self.firewall_subnet_id);
-        formatter.field("firewall_subnet_routes", &self.firewall_subnet_routes);
-        formatter.field("internet_gateway_id", &self.internet_gateway_id);
-        formatter.field(
-            "current_internet_gateway_route_table",
-            &self.current_internet_gateway_route_table,
-        );
-        formatter.field("internet_gateway_routes", &self.internet_gateway_routes);
-        formatter.finish()
-    }
-}
 /// See [`RouteHasOutOfScopeEndpointViolation`](crate::model::RouteHasOutOfScopeEndpointViolation).
 pub mod route_has_out_of_scope_endpoint_violation {
 
     /// A builder for [`RouteHasOutOfScopeEndpointViolation`](crate::model::RouteHasOutOfScopeEndpointViolation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_id: std::option::Option<std::string::String>,
         pub(crate) vpc_id: std::option::Option<std::string::String>,
@@ -4662,7 +4535,7 @@ impl RouteHasOutOfScopeEndpointViolation {
 
 /// <p>Describes a route in a route table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Route {
     /// <p>The type of destination for the route.</p>
     #[doc(hidden)]
@@ -4695,21 +4568,11 @@ impl Route {
         self.target.as_deref()
     }
 }
-impl std::fmt::Debug for Route {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Route");
-        formatter.field("destination_type", &self.destination_type);
-        formatter.field("target_type", &self.target_type);
-        formatter.field("destination", &self.destination);
-        formatter.field("target", &self.target);
-        formatter.finish()
-    }
-}
 /// See [`Route`](crate::model::Route).
 pub mod route {
 
     /// A builder for [`Route`](crate::model::Route).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_type: std::option::Option<crate::model::DestinationType>,
         pub(crate) target_type: std::option::Option<crate::model::TargetType>,
@@ -4781,6 +4644,49 @@ impl Route {
     }
 }
 
+/// When writing a match expression against `TargetType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let targettype = unimplemented!();
+/// match targettype {
+///     TargetType::CarrierGateway => { /* ... */ },
+///     TargetType::EgressOnlyInternetGateway => { /* ... */ },
+///     TargetType::Gateway => { /* ... */ },
+///     TargetType::Instance => { /* ... */ },
+///     TargetType::LocalGateway => { /* ... */ },
+///     TargetType::NatGateway => { /* ... */ },
+///     TargetType::NetworkInterface => { /* ... */ },
+///     TargetType::TransitGateway => { /* ... */ },
+///     TargetType::VpcEndpoint => { /* ... */ },
+///     TargetType::VpcPeeringConnection => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `targettype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `TargetType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `TargetType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `TargetType::NewFeature` is defined.
+/// Specifically, when `targettype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `TargetType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -4813,8 +4719,8 @@ pub enum TargetType {
     VpcEndpoint,
     #[allow(missing_docs)] // documentation missing in model
     VpcPeeringConnection,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TargetType {
     fn from(s: &str) -> Self {
@@ -4829,7 +4735,7 @@ impl std::convert::From<&str> for TargetType {
             "TRANSIT_GATEWAY" => TargetType::TransitGateway,
             "VPC_ENDPOINT" => TargetType::VpcEndpoint,
             "VPC_PEERING_CONNECTION" => TargetType::VpcPeeringConnection,
-            other => TargetType::Unknown(other.to_owned()),
+            other => TargetType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -4854,11 +4760,11 @@ impl TargetType {
             TargetType::TransitGateway => "TRANSIT_GATEWAY",
             TargetType::VpcEndpoint => "VPC_ENDPOINT",
             TargetType::VpcPeeringConnection => "VPC_PEERING_CONNECTION",
-            TargetType::Unknown(s) => s.as_ref(),
+            TargetType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CARRIER_GATEWAY",
             "EGRESS_ONLY_INTERNET_GATEWAY",
@@ -4879,6 +4785,42 @@ impl AsRef<str> for TargetType {
     }
 }
 
+/// When writing a match expression against `DestinationType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let destinationtype = unimplemented!();
+/// match destinationtype {
+///     DestinationType::Ipv4 => { /* ... */ },
+///     DestinationType::Ipv6 => { /* ... */ },
+///     DestinationType::PrefixList => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `destinationtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DestinationType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DestinationType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DestinationType::NewFeature` is defined.
+/// Specifically, when `destinationtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DestinationType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -4897,8 +4839,8 @@ pub enum DestinationType {
     Ipv6,
     #[allow(missing_docs)] // documentation missing in model
     PrefixList,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DestinationType {
     fn from(s: &str) -> Self {
@@ -4906,7 +4848,7 @@ impl std::convert::From<&str> for DestinationType {
             "IPV4" => DestinationType::Ipv4,
             "IPV6" => DestinationType::Ipv6,
             "PREFIX_LIST" => DestinationType::PrefixList,
-            other => DestinationType::Unknown(other.to_owned()),
+            other => DestinationType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -4924,11 +4866,11 @@ impl DestinationType {
             DestinationType::Ipv4 => "IPV4",
             DestinationType::Ipv6 => "IPV6",
             DestinationType::PrefixList => "PREFIX_LIST",
-            DestinationType::Unknown(s) => s.as_ref(),
+            DestinationType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IPV4", "IPV6", "PREFIX_LIST"]
     }
 }
@@ -4940,7 +4882,7 @@ impl AsRef<str> for DestinationType {
 
 /// <p>Contains details about the firewall subnet that violates the policy scope.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FirewallSubnetIsOutOfScopeViolation {
     /// <p>The ID of the firewall subnet that violates the policy scope.</p>
     #[doc(hidden)]
@@ -4980,25 +4922,11 @@ impl FirewallSubnetIsOutOfScopeViolation {
         self.vpc_endpoint_id.as_deref()
     }
 }
-impl std::fmt::Debug for FirewallSubnetIsOutOfScopeViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FirewallSubnetIsOutOfScopeViolation");
-        formatter.field("firewall_subnet_id", &self.firewall_subnet_id);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("subnet_availability_zone", &self.subnet_availability_zone);
-        formatter.field(
-            "subnet_availability_zone_id",
-            &self.subnet_availability_zone_id,
-        );
-        formatter.field("vpc_endpoint_id", &self.vpc_endpoint_id);
-        formatter.finish()
-    }
-}
 /// See [`FirewallSubnetIsOutOfScopeViolation`](crate::model::FirewallSubnetIsOutOfScopeViolation).
 pub mod firewall_subnet_is_out_of_scope_violation {
 
     /// A builder for [`FirewallSubnetIsOutOfScopeViolation`](crate::model::FirewallSubnetIsOutOfScopeViolation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_subnet_id: std::option::Option<std::string::String>,
         pub(crate) vpc_id: std::option::Option<std::string::String>,
@@ -5093,7 +5021,7 @@ impl FirewallSubnetIsOutOfScopeViolation {
 
 /// <p>A list of possible remediation action lists. Each individual possible remediation action is a list of individual remediation actions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PossibleRemediationActions {
     /// <p>A description of the possible remediation actions list.</p>
     #[doc(hidden)]
@@ -5112,19 +5040,11 @@ impl PossibleRemediationActions {
         self.actions.as_deref()
     }
 }
-impl std::fmt::Debug for PossibleRemediationActions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PossibleRemediationActions");
-        formatter.field("description", &self.description);
-        formatter.field("actions", &self.actions);
-        formatter.finish()
-    }
-}
 /// See [`PossibleRemediationActions`](crate::model::PossibleRemediationActions).
 pub mod possible_remediation_actions {
 
     /// A builder for [`PossibleRemediationActions`](crate::model::PossibleRemediationActions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) actions:
@@ -5178,7 +5098,7 @@ impl PossibleRemediationActions {
 
 /// <p>A list of remediation actions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PossibleRemediationAction {
     /// <p>A description of the list of remediation actions.</p>
     #[doc(hidden)]
@@ -5207,23 +5127,11 @@ impl PossibleRemediationAction {
         self.is_default_action
     }
 }
-impl std::fmt::Debug for PossibleRemediationAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PossibleRemediationAction");
-        formatter.field("description", &self.description);
-        formatter.field(
-            "ordered_remediation_actions",
-            &self.ordered_remediation_actions,
-        );
-        formatter.field("is_default_action", &self.is_default_action);
-        formatter.finish()
-    }
-}
 /// See [`PossibleRemediationAction`](crate::model::PossibleRemediationAction).
 pub mod possible_remediation_action {
 
     /// A builder for [`PossibleRemediationAction`](crate::model::PossibleRemediationAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) ordered_remediation_actions:
@@ -5292,7 +5200,7 @@ impl PossibleRemediationAction {
 
 /// <p>An ordered list of actions you can take to remediate a violation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemediationActionWithOrder {
     /// <p>Information about an action you can take to remediate a violation.</p>
     #[doc(hidden)]
@@ -5311,19 +5219,11 @@ impl RemediationActionWithOrder {
         self.order
     }
 }
-impl std::fmt::Debug for RemediationActionWithOrder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemediationActionWithOrder");
-        formatter.field("remediation_action", &self.remediation_action);
-        formatter.field("order", &self.order);
-        formatter.finish()
-    }
-}
 /// See [`RemediationActionWithOrder`](crate::model::RemediationActionWithOrder).
 pub mod remediation_action_with_order {
 
     /// A builder for [`RemediationActionWithOrder`](crate::model::RemediationActionWithOrder).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) remediation_action: std::option::Option<crate::model::RemediationAction>,
         pub(crate) order: std::option::Option<i32>,
@@ -5370,7 +5270,7 @@ impl RemediationActionWithOrder {
 
 /// <p>Information about an individual action you can take to remediate a violation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemediationAction {
     /// <p>A description of a remediation action.</p>
     #[doc(hidden)]
@@ -5458,41 +5358,11 @@ impl RemediationAction {
             .as_ref()
     }
 }
-impl std::fmt::Debug for RemediationAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemediationAction");
-        formatter.field("description", &self.description);
-        formatter.field("ec2_create_route_action", &self.ec2_create_route_action);
-        formatter.field("ec2_replace_route_action", &self.ec2_replace_route_action);
-        formatter.field("ec2_delete_route_action", &self.ec2_delete_route_action);
-        formatter.field(
-            "ec2_copy_route_table_action",
-            &self.ec2_copy_route_table_action,
-        );
-        formatter.field(
-            "ec2_replace_route_table_association_action",
-            &self.ec2_replace_route_table_association_action,
-        );
-        formatter.field(
-            "ec2_associate_route_table_action",
-            &self.ec2_associate_route_table_action,
-        );
-        formatter.field(
-            "ec2_create_route_table_action",
-            &self.ec2_create_route_table_action,
-        );
-        formatter.field(
-            "fms_policy_update_firewall_creation_config_action",
-            &self.fms_policy_update_firewall_creation_config_action,
-        );
-        formatter.finish()
-    }
-}
 /// See [`RemediationAction`](crate::model::RemediationAction).
 pub mod remediation_action {
 
     /// A builder for [`RemediationAction`](crate::model::RemediationAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) ec2_create_route_action: std::option::Option<crate::model::Ec2CreateRouteAction>,
@@ -5676,7 +5546,7 @@ impl RemediationAction {
 
 /// <p>Contains information about the actions that you can take to remediate scope violations caused by your policy's <code>FirewallCreationConfig</code>. <code>FirewallCreationConfig</code> is an optional configuration that you can use to choose which Availability Zones Firewall Manager creates Network Firewall endpoints in.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FmsPolicyUpdateFirewallCreationConfigAction {
     /// <p>Describes the remedial action.</p>
     #[doc(hidden)]
@@ -5695,19 +5565,11 @@ impl FmsPolicyUpdateFirewallCreationConfigAction {
         self.firewall_creation_config.as_deref()
     }
 }
-impl std::fmt::Debug for FmsPolicyUpdateFirewallCreationConfigAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FmsPolicyUpdateFirewallCreationConfigAction");
-        formatter.field("description", &self.description);
-        formatter.field("firewall_creation_config", &self.firewall_creation_config);
-        formatter.finish()
-    }
-}
 /// See [`FmsPolicyUpdateFirewallCreationConfigAction`](crate::model::FmsPolicyUpdateFirewallCreationConfigAction).
 pub mod fms_policy_update_firewall_creation_config_action {
 
     /// A builder for [`FmsPolicyUpdateFirewallCreationConfigAction`](crate::model::FmsPolicyUpdateFirewallCreationConfigAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) firewall_creation_config: std::option::Option<std::string::String>,
@@ -5754,7 +5616,7 @@ impl FmsPolicyUpdateFirewallCreationConfigAction {
 
 /// <p>Information about the CreateRouteTable action in Amazon EC2.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2CreateRouteTableAction {
     /// <p>A description of the CreateRouteTable action.</p>
     #[doc(hidden)]
@@ -5773,19 +5635,11 @@ impl Ec2CreateRouteTableAction {
         self.vpc_id.as_ref()
     }
 }
-impl std::fmt::Debug for Ec2CreateRouteTableAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ec2CreateRouteTableAction");
-        formatter.field("description", &self.description);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.finish()
-    }
-}
 /// See [`Ec2CreateRouteTableAction`](crate::model::Ec2CreateRouteTableAction).
 pub mod ec2_create_route_table_action {
 
     /// A builder for [`Ec2CreateRouteTableAction`](crate::model::Ec2CreateRouteTableAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) vpc_id: std::option::Option<crate::model::ActionTarget>,
@@ -5832,7 +5686,7 @@ impl Ec2CreateRouteTableAction {
 
 /// <p>Describes a remediation action target.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActionTarget {
     /// <p>The ID of the remediation target.</p>
     #[doc(hidden)]
@@ -5851,19 +5705,11 @@ impl ActionTarget {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for ActionTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActionTarget");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 /// See [`ActionTarget`](crate::model::ActionTarget).
 pub mod action_target {
 
     /// A builder for [`ActionTarget`](crate::model::ActionTarget).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -5907,7 +5753,7 @@ impl ActionTarget {
 
 /// <p>The action of associating an EC2 resource, such as a subnet or internet gateway, with a route table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2AssociateRouteTableAction {
     /// <p>A description of the EC2 route table that is associated with the remediation action.</p>
     #[doc(hidden)]
@@ -5940,21 +5786,11 @@ impl Ec2AssociateRouteTableAction {
         self.gateway_id.as_ref()
     }
 }
-impl std::fmt::Debug for Ec2AssociateRouteTableAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ec2AssociateRouteTableAction");
-        formatter.field("description", &self.description);
-        formatter.field("route_table_id", &self.route_table_id);
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.field("gateway_id", &self.gateway_id);
-        formatter.finish()
-    }
-}
 /// See [`Ec2AssociateRouteTableAction`](crate::model::Ec2AssociateRouteTableAction).
 pub mod ec2_associate_route_table_action {
 
     /// A builder for [`Ec2AssociateRouteTableAction`](crate::model::Ec2AssociateRouteTableAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) route_table_id: std::option::Option<crate::model::ActionTarget>,
@@ -6031,7 +5867,7 @@ impl Ec2AssociateRouteTableAction {
 
 /// <p>Information about the ReplaceRouteTableAssociation action in Amazon EC2.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2ReplaceRouteTableAssociationAction {
     /// <p>A description of the ReplaceRouteTableAssociation action in Amazon EC2.</p>
     #[doc(hidden)]
@@ -6057,20 +5893,11 @@ impl Ec2ReplaceRouteTableAssociationAction {
         self.route_table_id.as_ref()
     }
 }
-impl std::fmt::Debug for Ec2ReplaceRouteTableAssociationAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ec2ReplaceRouteTableAssociationAction");
-        formatter.field("description", &self.description);
-        formatter.field("association_id", &self.association_id);
-        formatter.field("route_table_id", &self.route_table_id);
-        formatter.finish()
-    }
-}
 /// See [`Ec2ReplaceRouteTableAssociationAction`](crate::model::Ec2ReplaceRouteTableAssociationAction).
 pub mod ec2_replace_route_table_association_action {
 
     /// A builder for [`Ec2ReplaceRouteTableAssociationAction`](crate::model::Ec2ReplaceRouteTableAssociationAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) association_id: std::option::Option<crate::model::ActionTarget>,
@@ -6132,7 +5959,7 @@ impl Ec2ReplaceRouteTableAssociationAction {
 
 /// <p>An action that copies the EC2 route table for use in remediation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2CopyRouteTableAction {
     /// <p>A description of the copied EC2 route table that is associated with the remediation action.</p>
     #[doc(hidden)]
@@ -6158,20 +5985,11 @@ impl Ec2CopyRouteTableAction {
         self.route_table_id.as_ref()
     }
 }
-impl std::fmt::Debug for Ec2CopyRouteTableAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ec2CopyRouteTableAction");
-        formatter.field("description", &self.description);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("route_table_id", &self.route_table_id);
-        formatter.finish()
-    }
-}
 /// See [`Ec2CopyRouteTableAction`](crate::model::Ec2CopyRouteTableAction).
 pub mod ec2_copy_route_table_action {
 
     /// A builder for [`Ec2CopyRouteTableAction`](crate::model::Ec2CopyRouteTableAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) vpc_id: std::option::Option<crate::model::ActionTarget>,
@@ -6233,7 +6051,7 @@ impl Ec2CopyRouteTableAction {
 
 /// <p>Information about the DeleteRoute action in Amazon EC2.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2DeleteRouteAction {
     /// <p>A description of the DeleteRoute action.</p>
     #[doc(hidden)]
@@ -6273,28 +6091,11 @@ impl Ec2DeleteRouteAction {
         self.route_table_id.as_ref()
     }
 }
-impl std::fmt::Debug for Ec2DeleteRouteAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ec2DeleteRouteAction");
-        formatter.field("description", &self.description);
-        formatter.field("destination_cidr_block", &self.destination_cidr_block);
-        formatter.field(
-            "destination_prefix_list_id",
-            &self.destination_prefix_list_id,
-        );
-        formatter.field(
-            "destination_ipv6_cidr_block",
-            &self.destination_ipv6_cidr_block,
-        );
-        formatter.field("route_table_id", &self.route_table_id);
-        formatter.finish()
-    }
-}
 /// See [`Ec2DeleteRouteAction`](crate::model::Ec2DeleteRouteAction).
 pub mod ec2_delete_route_action {
 
     /// A builder for [`Ec2DeleteRouteAction`](crate::model::Ec2DeleteRouteAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) destination_cidr_block: std::option::Option<std::string::String>,
@@ -6389,7 +6190,7 @@ impl Ec2DeleteRouteAction {
 
 /// <p>Information about the ReplaceRoute action in Amazon EC2.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2ReplaceRouteAction {
     /// <p>A description of the ReplaceRoute action in Amazon EC2.</p>
     #[doc(hidden)]
@@ -6436,29 +6237,11 @@ impl Ec2ReplaceRouteAction {
         self.route_table_id.as_ref()
     }
 }
-impl std::fmt::Debug for Ec2ReplaceRouteAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ec2ReplaceRouteAction");
-        formatter.field("description", &self.description);
-        formatter.field("destination_cidr_block", &self.destination_cidr_block);
-        formatter.field(
-            "destination_prefix_list_id",
-            &self.destination_prefix_list_id,
-        );
-        formatter.field(
-            "destination_ipv6_cidr_block",
-            &self.destination_ipv6_cidr_block,
-        );
-        formatter.field("gateway_id", &self.gateway_id);
-        formatter.field("route_table_id", &self.route_table_id);
-        formatter.finish()
-    }
-}
 /// See [`Ec2ReplaceRouteAction`](crate::model::Ec2ReplaceRouteAction).
 pub mod ec2_replace_route_action {
 
     /// A builder for [`Ec2ReplaceRouteAction`](crate::model::Ec2ReplaceRouteAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) destination_cidr_block: std::option::Option<std::string::String>,
@@ -6568,7 +6351,7 @@ impl Ec2ReplaceRouteAction {
 
 /// <p>Information about the CreateRoute action in Amazon EC2.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Ec2CreateRouteAction {
     /// <p>A description of CreateRoute action in Amazon EC2.</p>
     #[doc(hidden)]
@@ -6622,30 +6405,11 @@ impl Ec2CreateRouteAction {
         self.route_table_id.as_ref()
     }
 }
-impl std::fmt::Debug for Ec2CreateRouteAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Ec2CreateRouteAction");
-        formatter.field("description", &self.description);
-        formatter.field("destination_cidr_block", &self.destination_cidr_block);
-        formatter.field(
-            "destination_prefix_list_id",
-            &self.destination_prefix_list_id,
-        );
-        formatter.field(
-            "destination_ipv6_cidr_block",
-            &self.destination_ipv6_cidr_block,
-        );
-        formatter.field("vpc_endpoint_id", &self.vpc_endpoint_id);
-        formatter.field("gateway_id", &self.gateway_id);
-        formatter.field("route_table_id", &self.route_table_id);
-        formatter.finish()
-    }
-}
 /// See [`Ec2CreateRouteAction`](crate::model::Ec2CreateRouteAction).
 pub mod ec2_create_route_action {
 
     /// A builder for [`Ec2CreateRouteAction`](crate::model::Ec2CreateRouteAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) destination_cidr_block: std::option::Option<std::string::String>,
@@ -6770,7 +6534,7 @@ impl Ec2CreateRouteAction {
 
 /// <p>The VPC that Firewall Manager was applying a DNS Fireall policy to reached the limit for associated DNS Firewall rule groups. Firewall Manager tried to associate another rule group with the VPC and failed due to the limit. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DnsRuleGroupLimitExceededViolation {
     /// <p>Information about the VPC ID. </p>
     #[doc(hidden)]
@@ -6796,26 +6560,11 @@ impl DnsRuleGroupLimitExceededViolation {
         self.number_of_rule_groups_already_associated
     }
 }
-impl std::fmt::Debug for DnsRuleGroupLimitExceededViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DnsRuleGroupLimitExceededViolation");
-        formatter.field("violation_target", &self.violation_target);
-        formatter.field(
-            "violation_target_description",
-            &self.violation_target_description,
-        );
-        formatter.field(
-            "number_of_rule_groups_already_associated",
-            &self.number_of_rule_groups_already_associated,
-        );
-        formatter.finish()
-    }
-}
 /// See [`DnsRuleGroupLimitExceededViolation`](crate::model::DnsRuleGroupLimitExceededViolation).
 pub mod dns_rule_group_limit_exceeded_violation {
 
     /// A builder for [`DnsRuleGroupLimitExceededViolation`](crate::model::DnsRuleGroupLimitExceededViolation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
         pub(crate) violation_target_description: std::option::Option<std::string::String>,
@@ -6885,7 +6634,7 @@ impl DnsRuleGroupLimitExceededViolation {
 
 /// <p>A DNS Firewall rule group that Firewall Manager tried to associate with a VPC is already associated with the VPC and can't be associated again. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DnsDuplicateRuleGroupViolation {
     /// <p>Information about the VPC ID. </p>
     #[doc(hidden)]
@@ -6904,22 +6653,11 @@ impl DnsDuplicateRuleGroupViolation {
         self.violation_target_description.as_deref()
     }
 }
-impl std::fmt::Debug for DnsDuplicateRuleGroupViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DnsDuplicateRuleGroupViolation");
-        formatter.field("violation_target", &self.violation_target);
-        formatter.field(
-            "violation_target_description",
-            &self.violation_target_description,
-        );
-        formatter.finish()
-    }
-}
 /// See [`DnsDuplicateRuleGroupViolation`](crate::model::DnsDuplicateRuleGroupViolation).
 pub mod dns_duplicate_rule_group_violation {
 
     /// A builder for [`DnsDuplicateRuleGroupViolation`](crate::model::DnsDuplicateRuleGroupViolation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
         pub(crate) violation_target_description: std::option::Option<std::string::String>,
@@ -6972,7 +6710,7 @@ impl DnsDuplicateRuleGroupViolation {
 
 /// <p>A rule group that Firewall Manager tried to associate with a VPC has the same priority as a rule group that's already associated. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DnsRuleGroupPriorityConflictViolation {
     /// <p>Information about the VPC ID. </p>
     #[doc(hidden)]
@@ -7012,25 +6750,11 @@ impl DnsRuleGroupPriorityConflictViolation {
         self.unavailable_priorities.as_deref()
     }
 }
-impl std::fmt::Debug for DnsRuleGroupPriorityConflictViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DnsRuleGroupPriorityConflictViolation");
-        formatter.field("violation_target", &self.violation_target);
-        formatter.field(
-            "violation_target_description",
-            &self.violation_target_description,
-        );
-        formatter.field("conflicting_priority", &self.conflicting_priority);
-        formatter.field("conflicting_policy_id", &self.conflicting_policy_id);
-        formatter.field("unavailable_priorities", &self.unavailable_priorities);
-        formatter.finish()
-    }
-}
 /// See [`DnsRuleGroupPriorityConflictViolation`](crate::model::DnsRuleGroupPriorityConflictViolation).
 pub mod dns_rule_group_priority_conflict_violation {
 
     /// A builder for [`DnsRuleGroupPriorityConflictViolation`](crate::model::DnsRuleGroupPriorityConflictViolation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
         pub(crate) violation_target_description: std::option::Option<std::string::String>,
@@ -7131,7 +6855,7 @@ impl DnsRuleGroupPriorityConflictViolation {
 
 /// <p>Violation detail for an expected route missing in Network Firewall.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkFirewallMissingExpectedRoutesViolation {
     /// <p>The target of the violation.</p>
     #[doc(hidden)]
@@ -7157,20 +6881,11 @@ impl NetworkFirewallMissingExpectedRoutesViolation {
         self.vpc_id.as_deref()
     }
 }
-impl std::fmt::Debug for NetworkFirewallMissingExpectedRoutesViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkFirewallMissingExpectedRoutesViolation");
-        formatter.field("violation_target", &self.violation_target);
-        formatter.field("expected_routes", &self.expected_routes);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.finish()
-    }
-}
 /// See [`NetworkFirewallMissingExpectedRoutesViolation`](crate::model::NetworkFirewallMissingExpectedRoutesViolation).
 pub mod network_firewall_missing_expected_routes_violation {
 
     /// A builder for [`NetworkFirewallMissingExpectedRoutesViolation`](crate::model::NetworkFirewallMissingExpectedRoutesViolation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
         pub(crate) expected_routes: std::option::Option<std::vec::Vec<crate::model::ExpectedRoute>>,
@@ -7238,7 +6953,7 @@ impl NetworkFirewallMissingExpectedRoutesViolation {
 
 /// <p>Information about the expected route in the route table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExpectedRoute {
     /// <p>Information about the IPv4 CIDR block.</p>
     #[doc(hidden)]
@@ -7285,23 +7000,11 @@ impl ExpectedRoute {
         self.route_table_id.as_deref()
     }
 }
-impl std::fmt::Debug for ExpectedRoute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExpectedRoute");
-        formatter.field("ip_v4_cidr", &self.ip_v4_cidr);
-        formatter.field("prefix_list_id", &self.prefix_list_id);
-        formatter.field("ip_v6_cidr", &self.ip_v6_cidr);
-        formatter.field("contributing_subnets", &self.contributing_subnets);
-        formatter.field("allowed_targets", &self.allowed_targets);
-        formatter.field("route_table_id", &self.route_table_id);
-        formatter.finish()
-    }
-}
 /// See [`ExpectedRoute`](crate::model::ExpectedRoute).
 pub mod expected_route {
 
     /// A builder for [`ExpectedRoute`](crate::model::ExpectedRoute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_v4_cidr: std::option::Option<std::string::String>,
         pub(crate) prefix_list_id: std::option::Option<std::string::String>,
@@ -7417,7 +7120,7 @@ impl ExpectedRoute {
 
 /// <p>Violation detail for an unexpected gateway route that’s present in a route table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkFirewallUnexpectedGatewayRoutesViolation {
     /// <p>Information about the gateway ID.</p>
     #[doc(hidden)]
@@ -7450,21 +7153,11 @@ impl NetworkFirewallUnexpectedGatewayRoutesViolation {
         self.vpc_id.as_deref()
     }
 }
-impl std::fmt::Debug for NetworkFirewallUnexpectedGatewayRoutesViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkFirewallUnexpectedGatewayRoutesViolation");
-        formatter.field("gateway_id", &self.gateway_id);
-        formatter.field("violating_routes", &self.violating_routes);
-        formatter.field("route_table_id", &self.route_table_id);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.finish()
-    }
-}
 /// See [`NetworkFirewallUnexpectedGatewayRoutesViolation`](crate::model::NetworkFirewallUnexpectedGatewayRoutesViolation).
 pub mod network_firewall_unexpected_gateway_routes_violation {
 
     /// A builder for [`NetworkFirewallUnexpectedGatewayRoutesViolation`](crate::model::NetworkFirewallUnexpectedGatewayRoutesViolation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_id: std::option::Option<std::string::String>,
         pub(crate) violating_routes: std::option::Option<std::vec::Vec<crate::model::Route>>,
@@ -7545,7 +7238,7 @@ impl NetworkFirewallUnexpectedGatewayRoutesViolation {
 
 /// <p>Violation detail for an unexpected route that's present in a route table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkFirewallUnexpectedFirewallRoutesViolation {
     /// <p>The subnet ID for the firewall.</p>
     #[doc(hidden)]
@@ -7585,22 +7278,11 @@ impl NetworkFirewallUnexpectedFirewallRoutesViolation {
         self.vpc_id.as_deref()
     }
 }
-impl std::fmt::Debug for NetworkFirewallUnexpectedFirewallRoutesViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkFirewallUnexpectedFirewallRoutesViolation");
-        formatter.field("firewall_subnet_id", &self.firewall_subnet_id);
-        formatter.field("violating_routes", &self.violating_routes);
-        formatter.field("route_table_id", &self.route_table_id);
-        formatter.field("firewall_endpoint", &self.firewall_endpoint);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.finish()
-    }
-}
 /// See [`NetworkFirewallUnexpectedFirewallRoutesViolation`](crate::model::NetworkFirewallUnexpectedFirewallRoutesViolation).
 pub mod network_firewall_unexpected_firewall_routes_violation {
 
     /// A builder for [`NetworkFirewallUnexpectedFirewallRoutesViolation`](crate::model::NetworkFirewallUnexpectedFirewallRoutesViolation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_subnet_id: std::option::Option<std::string::String>,
         pub(crate) violating_routes: std::option::Option<std::vec::Vec<crate::model::Route>>,
@@ -7699,7 +7381,7 @@ impl NetworkFirewallUnexpectedFirewallRoutesViolation {
 
 /// <p>Violation detail for an internet gateway route with an inactive state in the customer subnet route table or Network Firewall subnet route table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkFirewallBlackHoleRouteDetectedViolation {
     /// <p>The subnet that has an inactive state.</p>
     #[doc(hidden)]
@@ -7732,21 +7414,11 @@ impl NetworkFirewallBlackHoleRouteDetectedViolation {
         self.violating_routes.as_deref()
     }
 }
-impl std::fmt::Debug for NetworkFirewallBlackHoleRouteDetectedViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkFirewallBlackHoleRouteDetectedViolation");
-        formatter.field("violation_target", &self.violation_target);
-        formatter.field("route_table_id", &self.route_table_id);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("violating_routes", &self.violating_routes);
-        formatter.finish()
-    }
-}
 /// See [`NetworkFirewallBlackHoleRouteDetectedViolation`](crate::model::NetworkFirewallBlackHoleRouteDetectedViolation).
 pub mod network_firewall_black_hole_route_detected_violation {
 
     /// A builder for [`NetworkFirewallBlackHoleRouteDetectedViolation`](crate::model::NetworkFirewallBlackHoleRouteDetectedViolation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
         pub(crate) route_table_id: std::option::Option<std::string::String>,
@@ -7830,7 +7502,7 @@ impl NetworkFirewallBlackHoleRouteDetectedViolation {
 
 /// <p>Violation detail for the improperly configured subnet route. It's possible there is a missing route table route, or a configuration that causes traffic to cross an Availability Zone boundary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkFirewallInvalidRouteConfigurationViolation {
     /// <p>The subnets that are affected.</p>
     #[doc(hidden)]
@@ -7953,60 +7625,11 @@ impl NetworkFirewallInvalidRouteConfigurationViolation {
         self.vpc_id.as_deref()
     }
 }
-impl std::fmt::Debug for NetworkFirewallInvalidRouteConfigurationViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkFirewallInvalidRouteConfigurationViolation");
-        formatter.field("affected_subnets", &self.affected_subnets);
-        formatter.field("route_table_id", &self.route_table_id);
-        formatter.field(
-            "is_route_table_used_in_different_az",
-            &self.is_route_table_used_in_different_az,
-        );
-        formatter.field("violating_route", &self.violating_route);
-        formatter.field(
-            "current_firewall_subnet_route_table",
-            &self.current_firewall_subnet_route_table,
-        );
-        formatter.field(
-            "expected_firewall_endpoint",
-            &self.expected_firewall_endpoint,
-        );
-        formatter.field("actual_firewall_endpoint", &self.actual_firewall_endpoint);
-        formatter.field(
-            "expected_firewall_subnet_id",
-            &self.expected_firewall_subnet_id,
-        );
-        formatter.field("actual_firewall_subnet_id", &self.actual_firewall_subnet_id);
-        formatter.field(
-            "expected_firewall_subnet_routes",
-            &self.expected_firewall_subnet_routes,
-        );
-        formatter.field(
-            "actual_firewall_subnet_routes",
-            &self.actual_firewall_subnet_routes,
-        );
-        formatter.field("internet_gateway_id", &self.internet_gateway_id);
-        formatter.field(
-            "current_internet_gateway_route_table",
-            &self.current_internet_gateway_route_table,
-        );
-        formatter.field(
-            "expected_internet_gateway_routes",
-            &self.expected_internet_gateway_routes,
-        );
-        formatter.field(
-            "actual_internet_gateway_routes",
-            &self.actual_internet_gateway_routes,
-        );
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.finish()
-    }
-}
 /// See [`NetworkFirewallInvalidRouteConfigurationViolation`](crate::model::NetworkFirewallInvalidRouteConfigurationViolation).
 pub mod network_firewall_invalid_route_configuration_violation {
 
     /// A builder for [`NetworkFirewallInvalidRouteConfigurationViolation`](crate::model::NetworkFirewallInvalidRouteConfigurationViolation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) affected_subnets: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) route_table_id: std::option::Option<std::string::String>,
@@ -8315,7 +7938,7 @@ impl NetworkFirewallInvalidRouteConfigurationViolation {
 
 /// <p>Violation detail for the subnet for which internet traffic that hasn't been inspected.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkFirewallInternetTrafficNotInspectedViolation {
     /// <p>The subnet ID.</p>
     #[doc(hidden)]
@@ -8431,56 +8054,11 @@ impl NetworkFirewallInternetTrafficNotInspectedViolation {
         self.vpc_id.as_deref()
     }
 }
-impl std::fmt::Debug for NetworkFirewallInternetTrafficNotInspectedViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkFirewallInternetTrafficNotInspectedViolation");
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.field("subnet_availability_zone", &self.subnet_availability_zone);
-        formatter.field("route_table_id", &self.route_table_id);
-        formatter.field("violating_routes", &self.violating_routes);
-        formatter.field(
-            "is_route_table_used_in_different_az",
-            &self.is_route_table_used_in_different_az,
-        );
-        formatter.field(
-            "current_firewall_subnet_route_table",
-            &self.current_firewall_subnet_route_table,
-        );
-        formatter.field(
-            "expected_firewall_endpoint",
-            &self.expected_firewall_endpoint,
-        );
-        formatter.field("firewall_subnet_id", &self.firewall_subnet_id);
-        formatter.field(
-            "expected_firewall_subnet_routes",
-            &self.expected_firewall_subnet_routes,
-        );
-        formatter.field(
-            "actual_firewall_subnet_routes",
-            &self.actual_firewall_subnet_routes,
-        );
-        formatter.field("internet_gateway_id", &self.internet_gateway_id);
-        formatter.field(
-            "current_internet_gateway_route_table",
-            &self.current_internet_gateway_route_table,
-        );
-        formatter.field(
-            "expected_internet_gateway_routes",
-            &self.expected_internet_gateway_routes,
-        );
-        formatter.field(
-            "actual_internet_gateway_routes",
-            &self.actual_internet_gateway_routes,
-        );
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.finish()
-    }
-}
 /// See [`NetworkFirewallInternetTrafficNotInspectedViolation`](crate::model::NetworkFirewallInternetTrafficNotInspectedViolation).
 pub mod network_firewall_internet_traffic_not_inspected_violation {
 
     /// A builder for [`NetworkFirewallInternetTrafficNotInspectedViolation`](crate::model::NetworkFirewallInternetTrafficNotInspectedViolation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_id: std::option::Option<std::string::String>,
         pub(crate) subnet_availability_zone: std::option::Option<std::string::String>,
@@ -8768,7 +8346,7 @@ impl NetworkFirewallInternetTrafficNotInspectedViolation {
 
 /// <p>Violation detail for Network Firewall for a firewall policy that has a different <code>NetworkFirewallPolicyDescription</code> than is required by the Firewall Manager policy. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkFirewallPolicyModifiedViolation {
     /// <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
     #[doc(hidden)]
@@ -8800,26 +8378,11 @@ impl NetworkFirewallPolicyModifiedViolation {
         self.expected_policy_description.as_ref()
     }
 }
-impl std::fmt::Debug for NetworkFirewallPolicyModifiedViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkFirewallPolicyModifiedViolation");
-        formatter.field("violation_target", &self.violation_target);
-        formatter.field(
-            "current_policy_description",
-            &self.current_policy_description,
-        );
-        formatter.field(
-            "expected_policy_description",
-            &self.expected_policy_description,
-        );
-        formatter.finish()
-    }
-}
 /// See [`NetworkFirewallPolicyModifiedViolation`](crate::model::NetworkFirewallPolicyModifiedViolation).
 pub mod network_firewall_policy_modified_violation {
 
     /// A builder for [`NetworkFirewallPolicyModifiedViolation`](crate::model::NetworkFirewallPolicyModifiedViolation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
         pub(crate) current_policy_description:
@@ -8892,7 +8455,7 @@ impl NetworkFirewallPolicyModifiedViolation {
 
 /// <p>The definition of the Network Firewall firewall policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkFirewallPolicyDescription {
     /// <p>The stateless rule groups that are used in the Network Firewall firewall policy. </p>
     #[doc(hidden)]
@@ -8966,27 +8529,11 @@ impl NetworkFirewallPolicyDescription {
         self.stateful_engine_options.as_ref()
     }
 }
-impl std::fmt::Debug for NetworkFirewallPolicyDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkFirewallPolicyDescription");
-        formatter.field("stateless_rule_groups", &self.stateless_rule_groups);
-        formatter.field("stateless_default_actions", &self.stateless_default_actions);
-        formatter.field(
-            "stateless_fragment_default_actions",
-            &self.stateless_fragment_default_actions,
-        );
-        formatter.field("stateless_custom_actions", &self.stateless_custom_actions);
-        formatter.field("stateful_rule_groups", &self.stateful_rule_groups);
-        formatter.field("stateful_default_actions", &self.stateful_default_actions);
-        formatter.field("stateful_engine_options", &self.stateful_engine_options);
-        formatter.finish()
-    }
-}
 /// See [`NetworkFirewallPolicyDescription`](crate::model::NetworkFirewallPolicyDescription).
 pub mod network_firewall_policy_description {
 
     /// A builder for [`NetworkFirewallPolicyDescription`](crate::model::NetworkFirewallPolicyDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stateless_rule_groups:
             std::option::Option<std::vec::Vec<crate::model::StatelessRuleGroup>>,
@@ -9174,7 +8721,7 @@ impl NetworkFirewallPolicyDescription {
 
 /// <p>Configuration settings for the handling of the stateful rule groups in a Network Firewall firewall policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StatefulEngineOptions {
     /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.</p>
     #[doc(hidden)]
@@ -9186,18 +8733,11 @@ impl StatefulEngineOptions {
         self.rule_order.as_ref()
     }
 }
-impl std::fmt::Debug for StatefulEngineOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StatefulEngineOptions");
-        formatter.field("rule_order", &self.rule_order);
-        formatter.finish()
-    }
-}
 /// See [`StatefulEngineOptions`](crate::model::StatefulEngineOptions).
 pub mod stateful_engine_options {
 
     /// A builder for [`StatefulEngineOptions`](crate::model::StatefulEngineOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_order: std::option::Option<crate::model::RuleOrder>,
     }
@@ -9230,6 +8770,41 @@ impl StatefulEngineOptions {
     }
 }
 
+/// When writing a match expression against `RuleOrder`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let ruleorder = unimplemented!();
+/// match ruleorder {
+///     RuleOrder::DefaultActionOrder => { /* ... */ },
+///     RuleOrder::StrictOrder => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `ruleorder` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RuleOrder::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RuleOrder::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RuleOrder::NewFeature` is defined.
+/// Specifically, when `ruleorder` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RuleOrder::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -9246,15 +8821,15 @@ pub enum RuleOrder {
     DefaultActionOrder,
     #[allow(missing_docs)] // documentation missing in model
     StrictOrder,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for RuleOrder {
     fn from(s: &str) -> Self {
         match s {
             "DEFAULT_ACTION_ORDER" => RuleOrder::DefaultActionOrder,
             "STRICT_ORDER" => RuleOrder::StrictOrder,
-            other => RuleOrder::Unknown(other.to_owned()),
+            other => RuleOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -9271,11 +8846,11 @@ impl RuleOrder {
         match self {
             RuleOrder::DefaultActionOrder => "DEFAULT_ACTION_ORDER",
             RuleOrder::StrictOrder => "STRICT_ORDER",
-            RuleOrder::Unknown(s) => s.as_ref(),
+            RuleOrder::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEFAULT_ACTION_ORDER", "STRICT_ORDER"]
     }
 }
@@ -9287,7 +8862,7 @@ impl AsRef<str> for RuleOrder {
 
 /// <p>Network Firewall stateful rule group, used in a <code>NetworkFirewallPolicyDescription</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StatefulRuleGroup {
     /// <p>The name of the rule group.</p>
     #[doc(hidden)]
@@ -9317,20 +8892,11 @@ impl StatefulRuleGroup {
         self.priority
     }
 }
-impl std::fmt::Debug for StatefulRuleGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StatefulRuleGroup");
-        formatter.field("rule_group_name", &self.rule_group_name);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("priority", &self.priority);
-        formatter.finish()
-    }
-}
 /// See [`StatefulRuleGroup`](crate::model::StatefulRuleGroup).
 pub mod stateful_rule_group {
 
     /// A builder for [`StatefulRuleGroup`](crate::model::StatefulRuleGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_group_name: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -9393,7 +8959,7 @@ impl StatefulRuleGroup {
 
 /// <p>Network Firewall stateless rule group, used in a <code>NetworkFirewallPolicyDescription</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StatelessRuleGroup {
     /// <p>The name of the rule group.</p>
     #[doc(hidden)]
@@ -9419,20 +8985,11 @@ impl StatelessRuleGroup {
         self.priority
     }
 }
-impl std::fmt::Debug for StatelessRuleGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StatelessRuleGroup");
-        formatter.field("rule_group_name", &self.rule_group_name);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("priority", &self.priority);
-        formatter.finish()
-    }
-}
 /// See [`StatelessRuleGroup`](crate::model::StatelessRuleGroup).
 pub mod stateless_rule_group {
 
     /// A builder for [`StatelessRuleGroup`](crate::model::StatelessRuleGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_group_name: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -9491,7 +9048,7 @@ impl StatelessRuleGroup {
 
 /// <p>Violation detail for Network Firewall for a subnet that's not associated to the expected Firewall Manager managed route table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkFirewallMissingExpectedRtViolation {
     /// <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
     #[doc(hidden)]
@@ -9531,22 +9088,11 @@ impl NetworkFirewallMissingExpectedRtViolation {
         self.expected_route_table.as_deref()
     }
 }
-impl std::fmt::Debug for NetworkFirewallMissingExpectedRtViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkFirewallMissingExpectedRtViolation");
-        formatter.field("violation_target", &self.violation_target);
-        formatter.field("vpc", &self.vpc);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("current_route_table", &self.current_route_table);
-        formatter.field("expected_route_table", &self.expected_route_table);
-        formatter.finish()
-    }
-}
 /// See [`NetworkFirewallMissingExpectedRtViolation`](crate::model::NetworkFirewallMissingExpectedRtViolation).
 pub mod network_firewall_missing_expected_rt_violation {
 
     /// A builder for [`NetworkFirewallMissingExpectedRtViolation`](crate::model::NetworkFirewallMissingExpectedRtViolation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
         pub(crate) vpc: std::option::Option<std::string::String>,
@@ -9638,7 +9184,7 @@ impl NetworkFirewallMissingExpectedRtViolation {
 
 /// <p>Violation detail for Network Firewall for an Availability Zone that's missing the expected Firewall Manager managed subnet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkFirewallMissingSubnetViolation {
     /// <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
     #[doc(hidden)]
@@ -9671,21 +9217,11 @@ impl NetworkFirewallMissingSubnetViolation {
         self.target_violation_reason.as_deref()
     }
 }
-impl std::fmt::Debug for NetworkFirewallMissingSubnetViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkFirewallMissingSubnetViolation");
-        formatter.field("violation_target", &self.violation_target);
-        formatter.field("vpc", &self.vpc);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("target_violation_reason", &self.target_violation_reason);
-        formatter.finish()
-    }
-}
 /// See [`NetworkFirewallMissingSubnetViolation`](crate::model::NetworkFirewallMissingSubnetViolation).
 pub mod network_firewall_missing_subnet_violation {
 
     /// A builder for [`NetworkFirewallMissingSubnetViolation`](crate::model::NetworkFirewallMissingSubnetViolation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
         pub(crate) vpc: std::option::Option<std::string::String>,
@@ -9762,7 +9298,7 @@ impl NetworkFirewallMissingSubnetViolation {
 
 /// <p>Violation detail for Network Firewall for a subnet that doesn't have a Firewall Manager managed firewall in its VPC. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkFirewallMissingFirewallViolation {
     /// <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
     #[doc(hidden)]
@@ -9795,21 +9331,11 @@ impl NetworkFirewallMissingFirewallViolation {
         self.target_violation_reason.as_deref()
     }
 }
-impl std::fmt::Debug for NetworkFirewallMissingFirewallViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkFirewallMissingFirewallViolation");
-        formatter.field("violation_target", &self.violation_target);
-        formatter.field("vpc", &self.vpc);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("target_violation_reason", &self.target_violation_reason);
-        formatter.finish()
-    }
-}
 /// See [`NetworkFirewallMissingFirewallViolation`](crate::model::NetworkFirewallMissingFirewallViolation).
 pub mod network_firewall_missing_firewall_violation {
 
     /// A builder for [`NetworkFirewallMissingFirewallViolation`](crate::model::NetworkFirewallMissingFirewallViolation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
         pub(crate) vpc: std::option::Option<std::string::String>,
@@ -9886,7 +9412,7 @@ impl NetworkFirewallMissingFirewallViolation {
 
 /// <p>Violation detail for an EC2 instance resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AwsEc2InstanceViolation {
     /// <p>The resource ID of the EC2 instance.</p>
     #[doc(hidden)]
@@ -9908,22 +9434,11 @@ impl AwsEc2InstanceViolation {
         self.aws_ec2_network_interface_violations.as_deref()
     }
 }
-impl std::fmt::Debug for AwsEc2InstanceViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AwsEc2InstanceViolation");
-        formatter.field("violation_target", &self.violation_target);
-        formatter.field(
-            "aws_ec2_network_interface_violations",
-            &self.aws_ec2_network_interface_violations,
-        );
-        formatter.finish()
-    }
-}
 /// See [`AwsEc2InstanceViolation`](crate::model::AwsEc2InstanceViolation).
 pub mod aws_ec2_instance_violation {
 
     /// A builder for [`AwsEc2InstanceViolation`](crate::model::AwsEc2InstanceViolation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
         pub(crate) aws_ec2_network_interface_violations:
@@ -9987,7 +9502,7 @@ impl AwsEc2InstanceViolation {
 
 /// <p>Violation detail for network interfaces associated with an EC2 instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AwsEc2NetworkInterfaceViolation {
     /// <p>The resource ID of the network interface.</p>
     #[doc(hidden)]
@@ -10006,19 +9521,11 @@ impl AwsEc2NetworkInterfaceViolation {
         self.violating_security_groups.as_deref()
     }
 }
-impl std::fmt::Debug for AwsEc2NetworkInterfaceViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AwsEc2NetworkInterfaceViolation");
-        formatter.field("violation_target", &self.violation_target);
-        formatter.field("violating_security_groups", &self.violating_security_groups);
-        formatter.finish()
-    }
-}
 /// See [`AwsEc2NetworkInterfaceViolation`](crate::model::AwsEc2NetworkInterfaceViolation).
 pub mod aws_ec2_network_interface_violation {
 
     /// A builder for [`AwsEc2NetworkInterfaceViolation`](crate::model::AwsEc2NetworkInterfaceViolation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
         pub(crate) violating_security_groups:
@@ -10075,7 +9582,7 @@ impl AwsEc2NetworkInterfaceViolation {
 
 /// <p>Violation detail for the rule violation in a security group when compared to the primary security group of the Firewall Manager policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AwsVpcSecurityGroupViolation {
     /// <p>The security group rule that is being evaluated.</p>
     #[doc(hidden)]
@@ -10111,27 +9618,11 @@ impl AwsVpcSecurityGroupViolation {
         self.possible_security_group_remediation_actions.as_deref()
     }
 }
-impl std::fmt::Debug for AwsVpcSecurityGroupViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AwsVpcSecurityGroupViolation");
-        formatter.field("violation_target", &self.violation_target);
-        formatter.field(
-            "violation_target_description",
-            &self.violation_target_description,
-        );
-        formatter.field("partial_matches", &self.partial_matches);
-        formatter.field(
-            "possible_security_group_remediation_actions",
-            &self.possible_security_group_remediation_actions,
-        );
-        formatter.finish()
-    }
-}
 /// See [`AwsVpcSecurityGroupViolation`](crate::model::AwsVpcSecurityGroupViolation).
 pub mod aws_vpc_security_group_violation {
 
     /// A builder for [`AwsVpcSecurityGroupViolation`](crate::model::AwsVpcSecurityGroupViolation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
         pub(crate) violation_target_description: std::option::Option<std::string::String>,
@@ -10233,7 +9724,7 @@ impl AwsVpcSecurityGroupViolation {
 
 /// <p>Remediation option for the rule specified in the <code>ViolationTarget</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SecurityGroupRemediationAction {
     /// <p>The remediation action that will be performed.</p>
     #[doc(hidden)]
@@ -10270,21 +9761,11 @@ impl SecurityGroupRemediationAction {
         self.is_default_action
     }
 }
-impl std::fmt::Debug for SecurityGroupRemediationAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SecurityGroupRemediationAction");
-        formatter.field("remediation_action_type", &self.remediation_action_type);
-        formatter.field("description", &self.description);
-        formatter.field("remediation_result", &self.remediation_result);
-        formatter.field("is_default_action", &self.is_default_action);
-        formatter.finish()
-    }
-}
 /// See [`SecurityGroupRemediationAction`](crate::model::SecurityGroupRemediationAction).
 pub mod security_group_remediation_action {
 
     /// A builder for [`SecurityGroupRemediationAction`](crate::model::SecurityGroupRemediationAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) remediation_action_type:
             std::option::Option<crate::model::RemediationActionType>,
@@ -10366,7 +9847,7 @@ impl SecurityGroupRemediationAction {
 
 /// <p>Describes a set of permissions for a security group rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SecurityGroupRuleDescription {
     /// <p>The IPv4 ranges for the security group rule.</p>
     #[doc(hidden)]
@@ -10413,23 +9894,11 @@ impl SecurityGroupRuleDescription {
         self.to_port
     }
 }
-impl std::fmt::Debug for SecurityGroupRuleDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SecurityGroupRuleDescription");
-        formatter.field("ipv4_range", &self.ipv4_range);
-        formatter.field("ipv6_range", &self.ipv6_range);
-        formatter.field("prefix_list_id", &self.prefix_list_id);
-        formatter.field("protocol", &self.protocol);
-        formatter.field("from_port", &self.from_port);
-        formatter.field("to_port", &self.to_port);
-        formatter.finish()
-    }
-}
 /// See [`SecurityGroupRuleDescription`](crate::model::SecurityGroupRuleDescription).
 pub mod security_group_rule_description {
 
     /// A builder for [`SecurityGroupRuleDescription`](crate::model::SecurityGroupRuleDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ipv4_range: std::option::Option<std::string::String>,
         pub(crate) ipv6_range: std::option::Option<std::string::String>,
@@ -10522,6 +9991,41 @@ impl SecurityGroupRuleDescription {
     }
 }
 
+/// When writing a match expression against `RemediationActionType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let remediationactiontype = unimplemented!();
+/// match remediationactiontype {
+///     RemediationActionType::Modify => { /* ... */ },
+///     RemediationActionType::Remove => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `remediationactiontype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RemediationActionType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RemediationActionType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RemediationActionType::NewFeature` is defined.
+/// Specifically, when `remediationactiontype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RemediationActionType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -10538,15 +10042,17 @@ pub enum RemediationActionType {
     Modify,
     #[allow(missing_docs)] // documentation missing in model
     Remove,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for RemediationActionType {
     fn from(s: &str) -> Self {
         match s {
             "MODIFY" => RemediationActionType::Modify,
             "REMOVE" => RemediationActionType::Remove,
-            other => RemediationActionType::Unknown(other.to_owned()),
+            other => {
+                RemediationActionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -10563,11 +10069,11 @@ impl RemediationActionType {
         match self {
             RemediationActionType::Modify => "MODIFY",
             RemediationActionType::Remove => "REMOVE",
-            RemediationActionType::Unknown(s) => s.as_ref(),
+            RemediationActionType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MODIFY", "REMOVE"]
     }
 }
@@ -10579,7 +10085,7 @@ impl AsRef<str> for RemediationActionType {
 
 /// <p>The reference rule that partially matches the <code>ViolationTarget</code> rule and violation reason.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PartialMatch {
     /// <p>The reference rule from the primary security group of the Firewall Manager policy.</p>
     #[doc(hidden)]
@@ -10598,19 +10104,11 @@ impl PartialMatch {
         self.target_violation_reasons.as_deref()
     }
 }
-impl std::fmt::Debug for PartialMatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PartialMatch");
-        formatter.field("reference", &self.reference);
-        formatter.field("target_violation_reasons", &self.target_violation_reasons);
-        formatter.finish()
-    }
-}
 /// See [`PartialMatch`](crate::model::PartialMatch).
 pub mod partial_match {
 
     /// A builder for [`PartialMatch`](crate::model::PartialMatch).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reference: std::option::Option<std::string::String>,
         pub(crate) target_violation_reasons:
@@ -10662,6 +10160,42 @@ impl PartialMatch {
     }
 }
 
+/// When writing a match expression against `MarketplaceSubscriptionOnboardingStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let marketplacesubscriptiononboardingstatus = unimplemented!();
+/// match marketplacesubscriptiononboardingstatus {
+///     MarketplaceSubscriptionOnboardingStatus::Complete => { /* ... */ },
+///     MarketplaceSubscriptionOnboardingStatus::NotComplete => { /* ... */ },
+///     MarketplaceSubscriptionOnboardingStatus::NoSubscription => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `marketplacesubscriptiononboardingstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `MarketplaceSubscriptionOnboardingStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `MarketplaceSubscriptionOnboardingStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `MarketplaceSubscriptionOnboardingStatus::NewFeature` is defined.
+/// Specifically, when `marketplacesubscriptiononboardingstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `MarketplaceSubscriptionOnboardingStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -10680,8 +10214,8 @@ pub enum MarketplaceSubscriptionOnboardingStatus {
     NotComplete,
     #[allow(missing_docs)] // documentation missing in model
     NoSubscription,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for MarketplaceSubscriptionOnboardingStatus {
     fn from(s: &str) -> Self {
@@ -10689,7 +10223,9 @@ impl std::convert::From<&str> for MarketplaceSubscriptionOnboardingStatus {
             "COMPLETE" => MarketplaceSubscriptionOnboardingStatus::Complete,
             "NOT_COMPLETE" => MarketplaceSubscriptionOnboardingStatus::NotComplete,
             "NO_SUBSCRIPTION" => MarketplaceSubscriptionOnboardingStatus::NoSubscription,
-            other => MarketplaceSubscriptionOnboardingStatus::Unknown(other.to_owned()),
+            other => MarketplaceSubscriptionOnboardingStatus::Unknown(
+                crate::types::UnknownVariantValue(other.to_owned()),
+            ),
         }
     }
 }
@@ -10707,11 +10243,11 @@ impl MarketplaceSubscriptionOnboardingStatus {
             MarketplaceSubscriptionOnboardingStatus::Complete => "COMPLETE",
             MarketplaceSubscriptionOnboardingStatus::NotComplete => "NOT_COMPLETE",
             MarketplaceSubscriptionOnboardingStatus::NoSubscription => "NO_SUBSCRIPTION",
-            MarketplaceSubscriptionOnboardingStatus::Unknown(s) => s.as_ref(),
+            MarketplaceSubscriptionOnboardingStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETE", "NOT_COMPLETE", "NO_SUBSCRIPTION"]
     }
 }
@@ -10721,6 +10257,44 @@ impl AsRef<str> for MarketplaceSubscriptionOnboardingStatus {
     }
 }
 
+/// When writing a match expression against `ThirdPartyFirewallAssociationStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let thirdpartyfirewallassociationstatus = unimplemented!();
+/// match thirdpartyfirewallassociationstatus {
+///     ThirdPartyFirewallAssociationStatus::NotExist => { /* ... */ },
+///     ThirdPartyFirewallAssociationStatus::Offboarding => { /* ... */ },
+///     ThirdPartyFirewallAssociationStatus::OffboardComplete => { /* ... */ },
+///     ThirdPartyFirewallAssociationStatus::Onboarding => { /* ... */ },
+///     ThirdPartyFirewallAssociationStatus::OnboardComplete => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `thirdpartyfirewallassociationstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ThirdPartyFirewallAssociationStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ThirdPartyFirewallAssociationStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ThirdPartyFirewallAssociationStatus::NewFeature` is defined.
+/// Specifically, when `thirdpartyfirewallassociationstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ThirdPartyFirewallAssociationStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -10743,8 +10317,8 @@ pub enum ThirdPartyFirewallAssociationStatus {
     Onboarding,
     #[allow(missing_docs)] // documentation missing in model
     OnboardComplete,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ThirdPartyFirewallAssociationStatus {
     fn from(s: &str) -> Self {
@@ -10754,7 +10328,9 @@ impl std::convert::From<&str> for ThirdPartyFirewallAssociationStatus {
             "OFFBOARD_COMPLETE" => ThirdPartyFirewallAssociationStatus::OffboardComplete,
             "ONBOARDING" => ThirdPartyFirewallAssociationStatus::Onboarding,
             "ONBOARD_COMPLETE" => ThirdPartyFirewallAssociationStatus::OnboardComplete,
-            other => ThirdPartyFirewallAssociationStatus::Unknown(other.to_owned()),
+            other => ThirdPartyFirewallAssociationStatus::Unknown(
+                crate::types::UnknownVariantValue(other.to_owned()),
+            ),
         }
     }
 }
@@ -10774,11 +10350,11 @@ impl ThirdPartyFirewallAssociationStatus {
             ThirdPartyFirewallAssociationStatus::OffboardComplete => "OFFBOARD_COMPLETE",
             ThirdPartyFirewallAssociationStatus::Onboarding => "ONBOARDING",
             ThirdPartyFirewallAssociationStatus::OnboardComplete => "ONBOARD_COMPLETE",
-            ThirdPartyFirewallAssociationStatus::Unknown(s) => s.as_ref(),
+            ThirdPartyFirewallAssociationStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "NOT_EXIST",
             "OFFBOARDING",
@@ -10796,7 +10372,7 @@ impl AsRef<str> for ThirdPartyFirewallAssociationStatus {
 
 /// <p>Describes the noncompliant resources in a member account for a specific Firewall Manager policy. A maximum of 100 entries are displayed. If more than 100 resources are noncompliant, <code>EvaluationLimitExceeded</code> is set to <code>True</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyComplianceDetail {
     /// <p>The Amazon Web Services account that created the Firewall Manager policy.</p>
     #[doc(hidden)]
@@ -10856,24 +10432,11 @@ impl PolicyComplianceDetail {
         self.issue_info_map.as_ref()
     }
 }
-impl std::fmt::Debug for PolicyComplianceDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyComplianceDetail");
-        formatter.field("policy_owner", &self.policy_owner);
-        formatter.field("policy_id", &self.policy_id);
-        formatter.field("member_account", &self.member_account);
-        formatter.field("violators", &self.violators);
-        formatter.field("evaluation_limit_exceeded", &self.evaluation_limit_exceeded);
-        formatter.field("expired_at", &self.expired_at);
-        formatter.field("issue_info_map", &self.issue_info_map);
-        formatter.finish()
-    }
-}
 /// See [`PolicyComplianceDetail`](crate::model::PolicyComplianceDetail).
 pub mod policy_compliance_detail {
 
     /// A builder for [`PolicyComplianceDetail`](crate::model::PolicyComplianceDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_owner: std::option::Option<std::string::String>,
         pub(crate) policy_id: std::option::Option<std::string::String>,
@@ -11009,7 +10572,7 @@ impl PolicyComplianceDetail {
 
 /// <p>Details of the resource that is not protected by the policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComplianceViolator {
     /// <p>The resource ID.</p>
     #[doc(hidden)]
@@ -11046,21 +10609,11 @@ impl ComplianceViolator {
         self.metadata.as_ref()
     }
 }
-impl std::fmt::Debug for ComplianceViolator {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComplianceViolator");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("violation_reason", &self.violation_reason);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("metadata", &self.metadata);
-        formatter.finish()
-    }
-}
 /// See [`ComplianceViolator`](crate::model::ComplianceViolator).
 pub mod compliance_violator {
 
     /// A builder for [`ComplianceViolator`](crate::model::ComplianceViolator).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
         pub(crate) violation_reason: std::option::Option<crate::model::ViolationReason>,
@@ -11149,6 +10702,67 @@ impl ComplianceViolator {
     }
 }
 
+/// When writing a match expression against `ViolationReason`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let violationreason = unimplemented!();
+/// match violationreason {
+///     ViolationReason::BlackHoleRouteDetected => { /* ... */ },
+///     ViolationReason::BlackHoleRouteDetectedInFirewallSubnet => { /* ... */ },
+///     ViolationReason::FirewallSubnetIsOutOfScope => { /* ... */ },
+///     ViolationReason::FirewallSubnetMissingExpectedRoute => { /* ... */ },
+///     ViolationReason::FirewallSubnetMissingVpcEndpoint => { /* ... */ },
+///     ViolationReason::FmsCreatedSecurityGroupEdited => { /* ... */ },
+///     ViolationReason::InternetGatewayMissingExpectedRoute => { /* ... */ },
+///     ViolationReason::InternetTrafficNotInspected => { /* ... */ },
+///     ViolationReason::InvalidRouteConfiguration => { /* ... */ },
+///     ViolationReason::MissingExpectedRouteTable => { /* ... */ },
+///     ViolationReason::MissingFirewall => { /* ... */ },
+///     ViolationReason::MissingFirewallSubnetInAz => { /* ... */ },
+///     ViolationReason::MissingTargetGateway => { /* ... */ },
+///     ViolationReason::NetworkFirewallPolicyModified => { /* ... */ },
+///     ViolationReason::ResourceIncorrectWebAcl => { /* ... */ },
+///     ViolationReason::ResourceMissingDnsFirewall => { /* ... */ },
+///     ViolationReason::ResourceMissingSecurityGroup => { /* ... */ },
+///     ViolationReason::ResourceMissingShieldProtection => { /* ... */ },
+///     ViolationReason::ResourceMissingWebAcl => { /* ... */ },
+///     ViolationReason::ResourceMissingWebaclOrShieldProtection => { /* ... */ },
+///     ViolationReason::ResourceViolatesAuditSecurityGroup => { /* ... */ },
+///     ViolationReason::RouteHasOutOfScopeEndpoint => { /* ... */ },
+///     ViolationReason::SecurityGroupRedundant => { /* ... */ },
+///     ViolationReason::SecurityGroupUnused => { /* ... */ },
+///     ViolationReason::TrafficInspectionCrossesAzBoundary => { /* ... */ },
+///     ViolationReason::UnexpectedFirewallRoutes => { /* ... */ },
+///     ViolationReason::UnexpectedTargetGatewayRoutes => { /* ... */ },
+///     ViolationReason::WebAclMissingRuleGroup => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `violationreason` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ViolationReason::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ViolationReason::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ViolationReason::NewFeature` is defined.
+/// Specifically, when `violationreason` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ViolationReason::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -11217,8 +10831,8 @@ pub enum ViolationReason {
     UnexpectedTargetGatewayRoutes,
     #[allow(missing_docs)] // documentation missing in model
     WebAclMissingRuleGroup,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ViolationReason {
     fn from(s: &str) -> Self {
@@ -11267,7 +10881,7 @@ impl std::convert::From<&str> for ViolationReason {
             "UNEXPECTED_FIREWALL_ROUTES" => ViolationReason::UnexpectedFirewallRoutes,
             "UNEXPECTED_TARGET_GATEWAY_ROUTES" => ViolationReason::UnexpectedTargetGatewayRoutes,
             "WEB_ACL_MISSING_RULE_GROUP" => ViolationReason::WebAclMissingRuleGroup,
-            other => ViolationReason::Unknown(other.to_owned()),
+            other => ViolationReason::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -11326,11 +10940,11 @@ impl ViolationReason {
             ViolationReason::UnexpectedFirewallRoutes => "UNEXPECTED_FIREWALL_ROUTES",
             ViolationReason::UnexpectedTargetGatewayRoutes => "UNEXPECTED_TARGET_GATEWAY_ROUTES",
             ViolationReason::WebAclMissingRuleGroup => "WEB_ACL_MISSING_RULE_GROUP",
-            ViolationReason::Unknown(s) => s.as_ref(),
+            ViolationReason::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BLACK_HOLE_ROUTE_DETECTED",
             "BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET",
@@ -11369,6 +10983,44 @@ impl AsRef<str> for ViolationReason {
     }
 }
 
+/// When writing a match expression against `AccountRoleStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let accountrolestatus = unimplemented!();
+/// match accountrolestatus {
+///     AccountRoleStatus::Creating => { /* ... */ },
+///     AccountRoleStatus::Deleted => { /* ... */ },
+///     AccountRoleStatus::Deleting => { /* ... */ },
+///     AccountRoleStatus::PendingDeletion => { /* ... */ },
+///     AccountRoleStatus::Ready => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `accountrolestatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `AccountRoleStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `AccountRoleStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `AccountRoleStatus::NewFeature` is defined.
+/// Specifically, when `accountrolestatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `AccountRoleStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -11391,8 +11043,8 @@ pub enum AccountRoleStatus {
     PendingDeletion,
     #[allow(missing_docs)] // documentation missing in model
     Ready,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AccountRoleStatus {
     fn from(s: &str) -> Self {
@@ -11402,7 +11054,9 @@ impl std::convert::From<&str> for AccountRoleStatus {
             "DELETING" => AccountRoleStatus::Deleting,
             "PENDING_DELETION" => AccountRoleStatus::PendingDeletion,
             "READY" => AccountRoleStatus::Ready,
-            other => AccountRoleStatus::Unknown(other.to_owned()),
+            other => {
+                AccountRoleStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -11422,11 +11076,11 @@ impl AccountRoleStatus {
             AccountRoleStatus::Deleting => "DELETING",
             AccountRoleStatus::PendingDeletion => "PENDING_DELETION",
             AccountRoleStatus::Ready => "READY",
-            AccountRoleStatus::Unknown(s) => s.as_ref(),
+            AccountRoleStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATING",
             "DELETED",

@@ -23,7 +23,7 @@ pub fn parse_assume_role_error(
                     output = crate::xml_deser::deser_structure_crate_error_expired_token_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -41,7 +41,7 @@ pub fn parse_assume_role_error(
                     output = crate::xml_deser::deser_structure_crate_error_malformed_policy_document_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -59,7 +59,7 @@ pub fn parse_assume_role_error(
                     output = crate::xml_deser::deser_structure_crate_error_packed_policy_too_large_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -76,7 +76,7 @@ pub fn parse_assume_role_error(
                     output = crate::xml_deser::deser_structure_crate_error_region_disabled_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -130,7 +130,7 @@ pub fn parse_assume_role_with_saml_error(
                     output = crate::xml_deser::deser_structure_crate_error_expired_token_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleWithSAMLError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -147,7 +147,7 @@ pub fn parse_assume_role_with_saml_error(
                     output = crate::xml_deser::deser_structure_crate_error_idp_rejected_claim_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleWithSAMLError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -165,7 +165,7 @@ pub fn parse_assume_role_with_saml_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_identity_token_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleWithSAMLError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -183,7 +183,7 @@ pub fn parse_assume_role_with_saml_error(
                     output = crate::xml_deser::deser_structure_crate_error_malformed_policy_document_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleWithSAMLError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -201,7 +201,7 @@ pub fn parse_assume_role_with_saml_error(
                     output = crate::xml_deser::deser_structure_crate_error_packed_policy_too_large_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleWithSAMLError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -218,7 +218,7 @@ pub fn parse_assume_role_with_saml_error(
                     output = crate::xml_deser::deser_structure_crate_error_region_disabled_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleWithSAMLError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -279,7 +279,7 @@ pub fn parse_assume_role_with_web_identity_error(
                     output = crate::xml_deser::deser_structure_crate_error_expired_token_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleWithWebIdentityError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -298,7 +298,7 @@ pub fn parse_assume_role_with_web_identity_error(
                         output = crate::xml_deser::deser_structure_crate_error_idp_communication_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleWithWebIdentityError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -316,7 +316,7 @@ pub fn parse_assume_role_with_web_identity_error(
                     output = crate::xml_deser::deser_structure_crate_error_idp_rejected_claim_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleWithWebIdentityError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -335,7 +335,7 @@ pub fn parse_assume_role_with_web_identity_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_identity_token_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleWithWebIdentityError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -357,7 +357,7 @@ pub fn parse_assume_role_with_web_identity_error(
                             output = crate::xml_deser::deser_structure_crate_error_malformed_policy_document_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleWithWebIdentityError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -377,7 +377,7 @@ pub fn parse_assume_role_with_web_identity_error(
                         output = crate::xml_deser::deser_structure_crate_error_packed_policy_too_large_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleWithWebIdentityError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -395,7 +395,7 @@ pub fn parse_assume_role_with_web_identity_error(
                     output = crate::xml_deser::deser_structure_crate_error_region_disabled_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleWithWebIdentityError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -454,7 +454,7 @@ pub fn parse_decode_authorization_message_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -567,7 +567,7 @@ pub fn parse_get_federation_token_error(
                     output = crate::xml_deser::deser_structure_crate_error_malformed_policy_document_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetFederationTokenError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -585,7 +585,7 @@ pub fn parse_get_federation_token_error(
                     output = crate::xml_deser::deser_structure_crate_error_packed_policy_too_large_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetFederationTokenError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -602,7 +602,7 @@ pub fn parse_get_federation_token_error(
                     output = crate::xml_deser::deser_structure_crate_error_region_disabled_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetFederationTokenError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -656,7 +656,7 @@ pub fn parse_get_session_token_error(
                     output = crate::xml_deser::deser_structure_crate_error_region_disabled_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetSessionTokenError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
